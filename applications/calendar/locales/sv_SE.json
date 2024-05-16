@@ -7277,20 +7277,6 @@
         "Säker valvdelning"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Privata användare kan befordras till admin när de har loggat in för första gången"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
-      ]
-    },
     "Payment method option": {
       "Bitcoin": [
         "Bitcoin"
@@ -7737,19 +7723,9 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Lösenordsåterställning avbruten"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Begäran om lösenordsåterställning avbröts (${ user.Email }). Om du inte gjorde denna begäran, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7974,11 +7950,6 @@
         "Stöder integritet online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -8105,11 +8076,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nu kan du se när deltagarna är lediga för att delta i ditt möte."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Avbryter din prenumeration, vänta"
       ]
     },
     "Storage": {
@@ -8528,7 +8494,7 @@
       "Verification successful": [
         "Verifiering lyckades"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
       ],
       "You have successfully unsubscribed": [

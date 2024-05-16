@@ -176,6 +176,9 @@
       "Download": [
         "Last ned"
       ],
+      "Download CSV sample": [
+        "Last ned CSV-eksempel"
+      ],
       "Download our CSV template": [
         "Last ned vår CSV-mal"
       ],
@@ -199,6 +202,12 @@
       ],
       "Edit name": [
         "Rediger navn"
+      ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
+      ],
+      "Edit organization name": [
+        "Rediger organisasjonsnavn"
       ],
       "Edit password": [
         "Rediger passord"
@@ -232,6 +241,9 @@
       ],
       "Fit to window": [
         "Tilpass til vindu"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
@@ -2469,6 +2481,9 @@
       "You have successfully joined the Family plan": [
         "Du har blitt med i familieplanen"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Du må konfigurere et egendefinert domene før du kan opprette en ny bruker."
       ],
@@ -2498,7 +2513,7 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
@@ -2538,6 +2553,11 @@
         "Dette vil fjerne alle ${ BRAND_NAME }-premiumfunksjoner for hvert familiemedlem."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familie"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } er fjernet fra ${ organizationName }"
@@ -2570,6 +2590,9 @@
       ],
       "Invite a user": [
         "Inviter en bruker"
+      ],
+      "Manage family group": [
+        "Administrer familiegruppe"
       ],
       "Set family name": [
         "Angi familienavn"
@@ -2837,11 +2860,17 @@
       "IP address": [
         "IP-adresse"
       ],
+      "Key type": [
+        "Nøkkeltype"
+      ],
       "Members": [
         "Medlemmer"
       ],
       "Name": [
         "Navn"
+      ],
+      "Organization key fingerprint": [
+        "Organisasjonsnøkkelfingeravtrykk"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Spar stort med de beste tilbudene på ${ VPN_APP_NAME }"
@@ -3010,6 +3039,9 @@
       ],
       "Add domain": [
         "Legg til domene"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Legg til flere brukere til din organisasjon på engang."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
@@ -3232,6 +3264,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Last ned vår CSV-mal, fyll ut brukerinformasjonen og deretter last opp den fullførte CSV-filen for å kunne opprette kontoer for disse brukerne."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
@@ -3473,6 +3508,9 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
+      "Multi-user support not enabled.": [
+        "Flerbruker støtte er ikke aktivert."
+      ],
       "Must be between 3 and 20 characters long.": [
         "Må bestå av mellom 3 og 20 tegn."
       ],
@@ -3678,6 +3716,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skann denne koden med din to-faktor-autentiseringsenhet for å sette opp din konto. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "SCIM-integrasjon deaktivert"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
@@ -4216,6 +4260,9 @@
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
       ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Organisasjonens e-post er beskyttet med ende-til-ende kryptering ved hjelp av organisasjonsnøkkelen. Dette fingeravtrykket kan brukes til å bekrefte at alle administratorer i kontoen din har samme nøkkel."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingsdetaljene dine er beskyttet med TLS-kryptering og sveitsisk personvernlovgivning."
       ],
@@ -4471,6 +4518,9 @@
       "Current email": [
         "Nåværende e-post"
       ],
+      "Current organization identity": [
+        "Gjeldende organisasjonsidentitet"
+      ],
       "Default language": [
         "Standard språk"
       ],
@@ -4582,6 +4632,9 @@
       "New mailbox password": [
         "Nytt postbokspassord"
       ],
+      "New organization identity": [
+        "Ny organisasjonsidentitet"
+      ],
       "New organization password": [
         "Nytt organisasjonspassord"
       ],
@@ -4611,6 +4664,9 @@
       ],
       "Optional": [
         "Valgfritt"
+      ],
+      "Organization identity": [
+        "Organisasjonsidentitet"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -4836,6 +4892,9 @@
       ],
       "Create account": [
         "Opprett konto"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ],
       "Forgot username?": [
         "Glemt brukernavn?"
@@ -6296,8 +6355,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunne ikke bekrefte ektheten til denne identiteten."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kan ikke bekrefte sikkerheten til denne avsenderens adressenøkkel. Noen ganger er det en forsinkelse i oppdateringen av avsenderens informasjon. Prøv igjen senere. Hvis du ikke stoler på gyldigheten av denne invitasjonen eller avsenderen, kan du kontakte kundestøtte for ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har verifisert ektheten av denne identiteten."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Vi har bekreftet ektheten til denne avsenderen og invitasjonen."
@@ -6805,7 +6870,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Tilbakestilling av passord avbrutt"
       ]
     },
@@ -6815,7 +6880,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Forespørsel om tilbakestillng av passord avbrutt (${ user.Email }). Hvis du ikke gjorde denne forespørselen, ${ changePasswordLink }."
       ]
     },
@@ -6973,6 +7038,11 @@
         "Forespørsel om tilbakestilling av passord"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organisasjon"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delt av ${ ownerName }"
@@ -7046,7 +7116,7 @@
         "64 land"
       ],
       "All paid Mail and Calendar features": [
-        "Alle betalte e-post- og kalenderfunksjoner"
+        "Alle betalte Mail- og Calendar-funksjoner"
       ],
       "High speed VPN": [
         "Høyhastighets VPN"
@@ -7077,7 +7147,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
       ]
     },
@@ -7201,7 +7271,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
       ]
     },
@@ -7589,7 +7659,7 @@
       "Verification successful": [
         "Vellykket verifisering"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
       ],
       "You have successfully unsubscribed": [
@@ -7814,6 +7884,9 @@
       "Card verification": [
         "Verifisering av kort"
       ],
+      "Catch-all address": [
+        "Catch-all-adresse"
+      ],
       "Change login password": [
         "Endre påloggingspassord"
       ],
@@ -7890,6 +7963,9 @@
       "Custom selection of users": [
         "Tilpasset valg av brukere"
       ],
+      "Customization": [
+        "Tilpasning"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Tilpass antall IP-adresser i planen din"
       ],
@@ -7933,6 +8009,9 @@
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
       ],
+      "Domain names": [
+        "Domenenavn"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -7959,6 +8038,9 @@
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
+      ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
       ],
       "Edit servers": [
         "Rediger tjenere"
@@ -8065,6 +8147,12 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
+      ],
+      "Organization filters": [
+        "Organisasjonfiltre"
+      ],
+      "Organization key": [
+        "Organisasjonsnøkkel"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -8192,6 +8280,9 @@
       "Single sign-on": [
         "Enkel pålogging"
       ],
+      "Spam, block, and allow lists": [
+        "Lister over søppelpost, blokkeringer og tillatelser"
+      ],
       "Status": [
         "Status"
       ],
@@ -8240,6 +8331,9 @@
       ],
       "Users": [
         "Brukere"
+      ],
+      "Users and addresses": [
+        "Brukere og adresser"
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
@@ -8355,6 +8449,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte temaet vil være aktivt når systemet er satt til \"lys modus\"."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."

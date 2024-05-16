@@ -445,6 +445,9 @@
       "Font": [
         "字型"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Forward as attachment": [
         "以附件形式轉寄"
       ],
@@ -5445,9 +5448,6 @@
       "and": [
         "和"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "任何已規劃或延後的訊息將會被取消。"
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "所有附屬資料夾會被刪除。但儲存在 ${ nameDeleted } 資料夾的電子郵件不會被刪除，你可以在所有郵件中找回郵件。"
       ],
@@ -6317,9 +6317,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "延後至明天，${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "延後對話內容將取消。"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此郵件不存在或已過期。"
@@ -9271,14 +9268,6 @@
         "您"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
@@ -9868,19 +9857,9 @@
         "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "已取消密碼重設"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密碼重設？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10095,11 +10074,6 @@
         "支援線上隱私"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "查看訂購授權"
@@ -10231,11 +10205,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "請稍後，正在取消您的訂閱"
       ]
     },
     "Status": {
@@ -10660,9 +10629,6 @@
       "Message deleted": [
         "郵件已刪除"
       ],
-      "Message expiration cancelled": [
-        "已取消郵件過期"
-      ],
       "Message marked as legitimate": [
         "郵件標記為合法"
       ],
@@ -10737,9 +10703,6 @@
       ],
       "Verification successful": [
         "驗證成功"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "你取消了訂購授權"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

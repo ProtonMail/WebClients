@@ -176,6 +176,9 @@
       "Download": [
         "Herunterladen"
       ],
+      "Download CSV sample": [
+        "CSV-Beispiel herunterladen"
+      ],
       "Download our CSV template": [
         "Lade unsere CSV-Vorlage herunter"
       ],
@@ -2466,6 +2469,9 @@
       "You have successfully joined the Family plan": [
         "Du bist dem Family-Abonnement erfolgreich beigetreten"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
@@ -2494,9 +2500,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
@@ -2535,6 +2538,11 @@
         "Dadurch werden alle Premiumfunktionen von ${ BRAND_NAME } für jedes Family-Mitglied entfernt."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familie"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } wurde aus ${ organizationName } entfernt."
@@ -2567,6 +2575,9 @@
       ],
       "Invite a user": [
         "Benutzer einladen"
+      ],
+      "Manage family group": [
+        "Family-Gruppe bearbeiten"
       ],
       "Set family name": [
         "Family-Name festlegen"
@@ -2834,11 +2845,17 @@
       "IP address": [
         "IP-Adresse"
       ],
+      "Key type": [
+        "Schlüsseltyp"
+      ],
       "Members": [
         "Mitglieder"
       ],
       "Name": [
         "Name"
+      ],
+      "Organization key fingerprint": [
+        "Fingerabdruck des Organisationsschlüssels"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Spare mit den besten Angeboten für ${ VPN_APP_NAME }"
@@ -3007,6 +3024,9 @@
       ],
       "Add domain": [
         "Domain hinzufügen"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Füge mehrere Benutzer gleichzeitig zu deiner Organisation hinzu."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Server hinzufügen (${ availableAddedCount } verfügbar)",
@@ -3229,6 +3249,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Lade unsere CSV-Vorlage herunter, gib die Benutzerdaten ein und lade dann deine fertige CSV-Datei hoch, um Konten für diese Benutzer zu erstellen."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überall hin mit."
@@ -3469,6 +3492,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Multi-user support not enabled.": [
+        "Mehrbenutzerunterstützung nicht aktiviert."
       ],
       "Must be between 3 and 20 characters long.": [
         "Muss zwischen 3 und 20 Zeichen lang sein."
@@ -4203,6 +4229,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Deine Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -6771,19 +6800,9 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Passwortzurücksetzung abgebrochen"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6940,6 +6959,11 @@
         "Anfrage zur Passwortzurücksetzung"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Geteilt von ${ ownerName }"
@@ -7041,11 +7065,6 @@
       ],
       "Support online privacy": [
         "Unterstütze Online-Privatsphäre"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
       ]
     },
     "specialoffer: Link": {
@@ -7165,11 +7184,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Storage": {
@@ -7553,9 +7567,6 @@
       "Verification successful": [
         "Verifizierung erfolgreich"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Du hast dein Abonnement erfolgreich gekündigt."
-      ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
       ]
@@ -7781,6 +7792,9 @@
       "Card verification": [
         "Kartenprüfung"
       ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
+      ],
       "Change login password": [
         "Anmeldepasswort ändern"
       ],
@@ -7857,6 +7871,9 @@
       "Custom selection of users": [
         "Individuelle Auswahl von Nutzern"
       ],
+      "Customization": [
+        "Anpassung"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Passe die Anzahl der IP-Adressen in deinem Abonnement an"
       ],
@@ -7899,6 +7916,9 @@
       ],
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
+      ],
+      "Domain names": [
+        "Domainnamen"
       ],
       "Downgrade account": [
         "Konto downgraden"
@@ -8033,6 +8053,12 @@
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"
       ],
+      "Organization filters": [
+        "Organisationsfilter"
+      ],
+      "Organization key": [
+        "Organisationsschlüssel"
+      ],
       "Organization name": [
         "Name der Organisation"
       ],
@@ -8159,6 +8185,9 @@
       "Single sign-on": [
         "Single Sign-on"
       ],
+      "Spam, block, and allow lists": [
+        "Listen gesperrter und zugelassener Absender"
+      ],
       "Status": [
         "Status"
       ],
@@ -8207,6 +8236,9 @@
       ],
       "Users": [
         "Benutzer"
+      ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
       ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"

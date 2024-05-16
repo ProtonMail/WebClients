@@ -7267,20 +7267,6 @@
         "Compartición segura de cajas fuertes"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "La clave de la organización debe activarse para conceder privilegios de administrador."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Los usuarios privados podrán ser administradores una vez que entran a su cuenta por primera vez"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Debes privatizar todos los usuarios antes de generar una clave nueva de la organización"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
@@ -7726,19 +7712,9 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "El restablecimiento de contraseña ha sido cancelado."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7963,11 +7939,6 @@
         "Apoya la privacidad en línea"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -8097,11 +8068,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Ahora puedes ver cuando los participantes están disponibles para atender tu reunión."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Estamos cancelando tu suscripción. Espera."
       ]
     },
     "Storage": {
@@ -8522,9 +8488,6 @@
       ],
       "Verification successful": [
         "Verificación completada"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Has cancelado tu suscripción."
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."

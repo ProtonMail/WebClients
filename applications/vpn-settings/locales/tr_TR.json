@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Anahtarı panoya kopyala"
       ],
+      "Copy version number to clipboard": [
+        "Sürüm numarasını kopyala"
+      ],
       "Create": [
         "Ekle"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "İndir"
       ],
+      "Download CSV sample": [
+        "Örnek CSV dosyasını indir"
+      ],
       "Download our CSV template": [
         "CSV kalıbımızı indirin"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Pencereye sığdır"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
@@ -1930,11 +1939,32 @@
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
       ],
+      "I do not wish to share": [
+        "Paylaşmak istemiyorum"
+      ],
+      "I found a cheaper VPN": [
+        "Daha ucuz bir VPN buldum"
+      ],
+      "I found a VPN with better features": [
+        "Daha iyi özellikleri olan bir VPN buldum"
+      ],
+      "I have not managed to connect": [
+        "Bağlantı kuramadım"
+      ],
+      "I only needed a VPN short-term": [
+        "Yalnızca kısa bir süre için VPN gerekliydi"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
+      "It doesn't do what I need": [
+        "Gerek duyduğum şeyi yapmıyor"
+      ],
       "Missing feature(s)": [
         "Eksik özellikler"
+      ],
+      "Other reason (please comment)": [
+        "Diğer nedenler (lütfen yazın)"
       ],
       "Subscription is too expensive": [
         "Abonelik çok pahalı"
@@ -1944,6 +1974,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Geçici olarak ayrılıyorum. İleride yeniden kullanabilirim"
+      ],
+      "The VPN is too slow": [
+        "VPN çok yavaş çalışıyor"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2442,6 +2475,9 @@
       "You have successfully joined the Family plan": [
         "Aile tarifesine katıldınız"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
       ],
@@ -2470,9 +2506,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Kullanıcının zaten bir ${ MAIL_APP_NAME } adresi varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Davet iptal edilecek ve kullanıcı ${ organizationName } kuruluşuna katılamayacak."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
@@ -2511,6 +2544,11 @@
         "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Aile"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name }, ${ organizationName } kuruluşundan kaldırıldı"
@@ -2543,6 +2581,9 @@
       ],
       "Invite a user": [
         "Kullanıcı davet et"
+      ],
+      "Manage family group": [
+        "Aile grubu yönetimi"
       ],
       "Set family name": [
         "Aile adını ayarla"
@@ -2810,11 +2851,17 @@
       "IP address": [
         "IP adresi"
       ],
+      "Key type": [
+        "Anahtar türü"
+      ],
       "Members": [
         "Üyeler"
       ],
       "Name": [
         "Ad"
+      ],
+      "Organization key fingerprint": [
+        "Kuruluş anahtarı parmak izi"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "En iyi ${ VPN_APP_NAME } teklifleriyle büyük kazanç sağlayın"
@@ -2983,6 +3030,9 @@
       ],
       "Add domain": [
         "Etki alanı ekle"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Kuruluşunuza bir kerede birkaç kullanıcı ekleyin."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
@@ -3205,6 +3255,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "CSV dosyası kalıbımızı indirin, kullanıcı bilgilerini yazın ve bu kullanıcı hesaplarını eklemek için CSV dosyasını yükleyin."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
@@ -3445,6 +3498,9 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Multi-user support not enabled.": [
+        "Çok kullanıcı desteği açılmamış."
       ],
       "Must be between 3 and 20 characters long.": [
         "Uzunluğu 3 ile 20 karakter arasında olmalıdır."
@@ -3944,6 +4000,9 @@
       "Version ${ version }": [
         "Sürüm ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Sürüm numarası kopyalandı"
+      ],
       "View, download, and manage your invoices.": [
         "Faturalarınızı görüntüleyin, indirin ve yönetin."
       ],
@@ -4173,6 +4232,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -6722,19 +6784,9 @@
         "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Parola sıfırlama işlemi iptal edildi"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Parola sıfırlama işlemi iptal edilsin mi?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Parola sıfırlama isteği iptal edildi (${ user.Email }). Bu isteği siz yapmadıysanız, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6891,6 +6943,11 @@
         "Parola sıfırlama isteği"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Kuruluş"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } tarafından paylaşılmış"
@@ -6992,11 +7049,6 @@
       ],
       "Support online privacy": [
         "Çevrim içi gizliliği destekleyin"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ]
     },
     "specialoffer: Link": {
@@ -7116,11 +7168,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
     "Storage": {
@@ -7507,9 +7554,6 @@
       "Verification successful": [
         "Doğrulandı"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Aboneliğinizi iptal ettiniz."
-      ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
       ]
@@ -7735,6 +7779,9 @@
       "Card verification": [
         "Kart doğrulama"
       ],
+      "Catch-all address": [
+        "Tümünü toplama adresi"
+      ],
       "Change login password": [
         "Oturum açma parolasını değiştir"
       ],
@@ -7811,6 +7858,9 @@
       "Custom selection of users": [
         "Özel kullanıcı seçimi"
       ],
+      "Customization": [
+        "Özelleştirme"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Tarifenizdeki IP adreslerinin sayısını özelleştirin"
       ],
@@ -7853,6 +7903,9 @@
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
+      ],
+      "Domain names": [
+        "Etki alanları"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
@@ -7987,6 +8040,12 @@
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
+      "Organization filters": [
+        "Kuruluş süzgeçleri"
+      ],
+      "Organization key": [
+        "Kuruluş anahtarı"
+      ],
       "Organization name": [
         "Kuruluş adı"
       ],
@@ -8113,6 +8172,9 @@
       "Single sign-on": [
         "Tek oturum açma"
       ],
+      "Spam, block, and allow lists": [
+        "Engellenen ve izin verilen adresler listesi"
+      ],
       "Status": [
         "Durum"
       ],
@@ -8161,6 +8223,9 @@
       ],
       "Users": [
         "Kullanıcılar"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ],
       "Verification failed": [
         "Doğrulanamadı"

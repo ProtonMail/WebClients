@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copiere cheie în memorie"
       ],
+      "Copy version number to clipboard": [
+        "Copiere număr versiune în memorie"
+      ],
       "Create": [
         "Creare"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download CSV sample": [
+        "Descărcare exemplu de CSV"
+      ],
       "Download our CSV template": [
         "Descărcare șablon CSV"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Potrivire la fereastră"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Get ${ vpnPlus }": [
         "Obțineți ${ vpnPlus }"
@@ -1938,11 +1947,32 @@
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
       ],
+      "I do not wish to share": [
+        "Nu vreau să spun"
+      ],
+      "I found a cheaper VPN": [
+        "Am găsit un VPN mai ieftin"
+      ],
+      "I found a VPN with better features": [
+        "Am găsit un VPN cu funcții mai bune"
+      ],
+      "I have not managed to connect": [
+        "Nu am reușit să mă conectez"
+      ],
+      "I only needed a VPN short-term": [
+        "Am avut nevoie de VPN doar temporar"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Folosesc un cont ${ BRAND_NAME } diferit"
       ],
+      "It doesn't do what I need": [
+        "Nu face ceea ce am nevoie"
+      ],
       "Missing feature(s)": [
         "Funcție (funcții) lipsă."
+      ],
+      "Other reason (please comment)": [
+        "Alt motiv (comentați motivul)"
       ],
       "Subscription is too expensive": [
         "Abonamentul este prea scump."
@@ -1952,6 +1982,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nevoie temporară, poate voi mai reveni."
+      ],
+      "The VPN is too slow": [
+        "Viteza pe VPN e prea mică"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2450,6 +2483,9 @@
       "You have successfully joined the Family plan": [
         "V-ați alăturat cu succes planului de familie."
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Trebuie să configurați un domeniu personal înainte de a adăuga utilizatori multipli."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Trebuie să configurați un domeniu personal înainte de a crea un utilizator."
       ],
@@ -2478,9 +2514,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
@@ -2519,6 +2552,11 @@
         "Aceasta va elimina toate funcțiile ${ BRAND_NAME } premium pentru fiecare membru al familiei."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familie"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } a fost eliminat din ${ organizationName }."
@@ -2551,6 +2589,9 @@
       ],
       "Invite a user": [
         "Invitare utilizator"
+      ],
+      "Manage family group": [
+        "Gestionare grup familie"
       ],
       "Set family name": [
         "Setare nume familie"
@@ -2827,11 +2868,17 @@
       "IP address": [
         "Adresa IP"
       ],
+      "Key type": [
+        "Tip cheie"
+      ],
       "Members": [
         "Membri"
       ],
       "Name": [
         "Nume"
+      ],
+      "Organization key fingerprint": [
+        "Amprentă cheie organizație"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Economisiți cu cea mai bună ofertă pentru ${ VPN_APP_NAME }"
@@ -3008,6 +3055,9 @@
       ],
       "Add domain": [
         "Adăugare domeniu"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Adăugați deodată utilizatori multipli la organizație."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Adăugare server (${ availableAddedCount } disponibil)",
@@ -3236,6 +3286,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Descărcați șablonul CSV, completați datele utilizatorului și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
@@ -3476,6 +3529,9 @@
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Multi-user support not enabled.": [
+        "Suportul pentru utilizatori multipli nu e activat."
       ],
       "Must be between 3 and 20 characters long.": [
         "Trebuie să aibă între 3 și 20 de caractere."
@@ -3984,6 +4040,9 @@
       "Version ${ version }": [
         "Versiunea ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Numărul versiunii a fost copiat în memorie."
+      ],
       "View, download, and manage your invoices.": [
         "Examinați, descărcați și gestionați facturile personale."
       ],
@@ -4218,6 +4277,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Mesajele organizației sunt protejate bilateral folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detaliile de plată vă sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -6830,19 +6892,9 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetarea parolei a fost anulată."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitare de resetare parolă anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7004,6 +7056,11 @@
         "Solicitare resetare parolă"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organizația"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partajat de ${ ownerName }"
@@ -7110,11 +7167,6 @@
       ],
       "Support online privacy": [
         "Susțineți confidențialitatea online"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ]
     },
     "specialoffer: Link": {
@@ -7235,11 +7287,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Storage": {
@@ -7640,9 +7687,6 @@
       "Verification successful": [
         "Verificare reușită"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Ați anulat abonamentul."
-      ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
       ]
@@ -7868,6 +7912,9 @@
       "Card verification": [
         "Verificare card"
       ],
+      "Catch-all address": [
+        "Adresă de agregare"
+      ],
       "Change login password": [
         "Schimbare parolă conectare"
       ],
@@ -7945,6 +7992,9 @@
       "Custom selection of users": [
         "Selectare utilizatori preferați"
       ],
+      "Customization": [
+        "Personalizare"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Personalizați-vă numărul adreselor IP din plan"
       ],
@@ -7988,6 +8038,9 @@
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
+      ],
+      "Domain names": [
+        "Nume domenii"
       ],
       "Downgrade account": [
         "Retrogradare cont"
@@ -8123,6 +8176,12 @@
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
       ],
+      "Organization filters": [
+        "Filtre organizație"
+      ],
+      "Organization key": [
+        "Cheie organizație"
+      ],
       "Organization name": [
         "Nume organizație"
       ],
@@ -8249,6 +8308,9 @@
       "Single sign-on": [
         "Autentificare unică"
       ],
+      "Spam, block, and allow lists": [
+        "Listă adrese blocate și permise"
+      ],
       "Status": [
         "Stare"
       ],
@@ -8298,6 +8360,9 @@
       ],
       "Users": [
         "Utilizatori"
+      ],
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ],
       "Verification failed": [
         "Verificarea a eșuat"

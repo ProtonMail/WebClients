@@ -44,6 +44,21 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i ${ remainingCount } innych usług. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i 1 innej usługi. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
       ]
@@ -471,6 +486,9 @@
       ],
       "Font": [
         "Czcionka"
+      ],
+      "Forgot password?": [
+        "Przypomnij hasło?"
       ],
       "Generate": [
         "Generuj"
@@ -4970,9 +4988,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jeśli użytkownik już ma adres ${ MAIL_APP_NAME }, wpisz go tutaj. W przeciwnym razie utwórz konto."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
@@ -11083,9 +11098,6 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
-      "Pass Monitor - premium features": [
-        "Monitoring Proton Pass — funkcje premium"
-      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -13171,6 +13183,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i ${ remainingCount } innych usług. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i 1 innej usługi. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
       ]
@@ -13345,19 +13366,9 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetowanie hasła zostało anulowane"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13782,11 +13793,6 @@
         "Wspieraj prywatność w Internecie"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -13906,11 +13912,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Step in filter modal": {
@@ -14301,6 +14302,9 @@
       "Yearly free storage bonuses": [
         "Bonusowa przestrzeń dyskowa"
       ],
+      "Your ${ planName } has been canceled.": [
+        "Plan ${ planName } został anulowany."
+      ],
       "Your own custom email domain": [
         "Własna niestandardowa domena"
       ],
@@ -14568,9 +14572,6 @@
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Subskrypcja została anulowana."
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"

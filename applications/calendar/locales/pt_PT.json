@@ -20,6 +20,11 @@
         "Reencaminhamento de correio interrompido"
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar meididas. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -241,7 +246,7 @@
         "Transferir"
       ],
       "Download now": [
-        "Descarregar agora"
+        "Transferir agora"
       ],
       "Edit": [
         "Editar"
@@ -276,6 +281,9 @@
       "Export contacts": [
         "Exportar contactos"
       ],
+      "Forgot password?": [
+        "Esqueci-me da palavra-passe?"
+      ],
       "Forward as attachment": [
         "Encaminhar como anexo"
       ],
@@ -294,6 +302,9 @@
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
+      "Go to settings": [
+        "Ir para as definições"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -305,6 +316,9 @@
       ],
       "Hide affected calendars": [
         "Ocultar os calendários afetados"
+      ],
+      "Hide busy times": [
+        "Ocultar os horários ocupados"
       ],
       "Hide time zones": [
         "Ocultar fusos horários"
@@ -383,6 +397,9 @@
       ],
       "Manage labels": [
         "Gerir etiquetas"
+      ],
+      "Mark as resolved": [
+        "Marcar como resolvida"
       ],
       "Mark for deletion": [
         "Marcar para eliminação"
@@ -516,6 +533,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Request a call": [
+        "Solicitar uma chamada"
+      ],
       "Request a feature": [
         "Pedir uma funcionalidade"
       ],
@@ -584,6 +604,9 @@
       ],
       "Show affected calendars": [
         "Mostrar os calendários afetados"
+      ],
+      "Show busy times": [
+        "Mostrar os horários ocupados"
       ],
       "Show less": [
         "Mostrar menos"
@@ -916,6 +939,9 @@
       "${ n } month": [
         "${ n } mês",
         "os primeiros ${ n } meses"
+      ],
+      "the first month": [
+        "o primeiro mês"
       ]
     },
     "bf2023: Tooltip": {
@@ -1032,6 +1058,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuar a utilizar ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continue a sua subscrição"
       ]
     },
     "Calendar access select label": {
@@ -2276,6 +2305,9 @@
       ]
     },
     "Description": {
+      "Availability unknown": [
+        "Disponibilidade desconhecida"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
       ],
@@ -2290,6 +2322,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
+      ],
+      "Loading availability": [
+        "A carregar as disponibilidades"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
@@ -2353,6 +2388,9 @@
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Não faz o que eu preciso."
+      ],
       "Missing feature(s)": [
         "Funções ausentes"
       ],
@@ -2364,6 +2402,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Trata-se de um requisito pontual de que poderei vir a necessitar no futuro."
+      ],
+      "The VPN is too slow": [
+        "A VPN está demasiada lenta."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2390,6 +2431,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
+      ],
+      "Limited-time offer": [
+        "Oferta por tempo limitado"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2646,6 +2690,9 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to get event": [
+        "Erro ao obter o evento"
+      ],
       "Failed to get original occurrence in series": [
         "Erro ao obter a ocorrência original na série"
       ],
@@ -2666,6 +2713,9 @@
       ],
       "Incorrect username": [
         "Nome de utilizador incorreto"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "O destinatário pretendido não suporta a partilha de calendário."
       ],
       "Interval cannot be empty": [
         "O intervalo não pode estar vazio"
@@ -2956,6 +3006,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Endereço convidado não existe"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Erro ao alterar a palavra-passe"
       ]
     },
     "Error importing calendar": {
@@ -3976,6 +4031,9 @@
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Todos os participantes receberão um e-mail de cancelamento. Que evento gostaria de eliminar?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
@@ -3991,6 +4049,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "Será enviado um convite aos participantes adicionados."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Um convite será enviado para todos os participantes. Que evento gostaria de atualizar?"
       ],
       "An invitation will be sent to the event participants.": [
         "Será enviado um convite aos participantes do evento."
@@ -4133,6 +4194,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não está a ver nada? Lembre-se de desativar os bloqueadores de pop-ups."
+      ],
+      "Downgrade": [
+        "Optar por um plano inferior"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
@@ -4289,6 +4353,9 @@
       "Large imports can take several days.": [
         "As importações grandes podem demorar vários dias."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aprenda como ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -4319,11 +4386,17 @@
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioridade média"
+      ],
       "Merged": [
         "Unido"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Monitor de contas"
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
@@ -4372,6 +4445,9 @@
       ],
       "Organization size": [
         "Tamanho da organização"
+      ],
+      "password": [
+        "palavra-passe"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -4589,6 +4665,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -4808,6 +4887,9 @@
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "As suas informações foram encontradas em ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será guardada após concluir a importação."
       ],
@@ -4954,6 +5036,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
+      ],
+      "Access to my events": [
+        "Acesso aos meus eventos"
       ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
@@ -5316,6 +5401,9 @@
       "Select your plan": [
         "Selecione o seu plano"
       ],
+      "Show others when I'm busy": [
+        "Mostrar quando estou ocupado para outros"
+      ],
       "Show week numbers": [
         "Mostrar números de semana"
       ],
@@ -5478,6 +5566,9 @@
       "Request an invite": [
         "Pedir um convite"
       ],
+      "stay safer online": [
+        "mantenha-se mais seguro conectado"
+      ],
       "What’s this?": [
         "O que é isto?"
       ]
@@ -5556,6 +5647,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+      ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
@@ -5915,6 +6009,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } com aliases hide-my-email Ilimitados"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
@@ -5935,6 +6032,9 @@
       ],
       "Admin console": [
         "Consola de administração"
+      ],
+      "Administration Panel": [
+        "Painel de administração"
       ],
       "Advanced sharing security": [
         "Segurança avançada de partilha"
@@ -5983,6 +6083,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitoramento de violações de dados (em breve)"
+      ],
+      "Desktop app": [
+        "Aplicativo de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6053,6 +6156,12 @@
       ],
       "Organize items with multiple vaults": [
         "Organize os itens com vários cofres"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funcionalidades premium"
+      ],
+      "Passkeys supported": [
+        "Chaves de acesso suportadas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
@@ -6136,8 +6245,15 @@
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
       ],
+      "Unlimited vaults": [
+        "Cofres ilimitados"
+      ],
       "Unlimited volume/bandwidth": [
         "Largura de banda e volume ilimitados"
+      ],
+      "Up to ${ n } user": [
+        "Até ${ n } utilizador",
+        "Até ${ n } utilizadores"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
@@ -6784,6 +6900,11 @@
         "Expanda a lista de participantes"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Partilha segura de cofre"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
@@ -6804,6 +6925,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "O tempo limite foi excedido."
       ]
     },
     "Payments.Error": {
@@ -6812,6 +6936,9 @@
       ],
       "Invalid expiration date": [
         "A data de expiração é inválida."
+      ],
+      "Invalid security code": [
+        "O código de segurança não é válido."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
@@ -7059,6 +7186,11 @@
         "Usado na Amazon para compras, etc."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Ver os registos"
@@ -7150,19 +7282,9 @@
         "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Reposição de palavra-passe cancelada"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Pedido de reposição de palavra-passe cancelado (${ user.Email }). Se não fez este pedido, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7387,11 +7509,6 @@
         "Apoiar a privacidade online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir para os planos de subscrição"
@@ -7504,16 +7621,17 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Utilize cores no seu calendário para melhor organizar o seu dia, organizar o seu tempo e muito mais."
+      ],
+      "Custom event colors": [
+        "Cores de eventos personalizados"
+      ],
       "Get up to ${ credits } in credits.": [
         "Obtenha até ${ credits } em créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convidar amigos para ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "A cancelar a sua subscrição, por favor aguarde"
       ]
     },
     "Storage": {
@@ -7572,6 +7690,18 @@
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
       ],
+      "Billed for 15 months": [
+        "Faturação para 15 meses"
+      ],
+      "Billed for 18 months": [
+        "Faturação para 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Faturação para 3 meses"
+      ],
+      "Billed for 30 months": [
+        "Faturação para 30 meses"
+      ],
       "Billed monthly": [
         "Faturado mensalmente"
       ],
@@ -7629,8 +7759,23 @@
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Desktop app": [
+        "Aplicativo de desktop"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
       "Upgrade": [
         "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
       ]
     },
     "Subscription renewal state": {
@@ -7832,9 +7977,6 @@
       "Verification successful": [
         "A verificação é terminada."
       ],
-      "You have successfully cancelled your subscription.": [
-        "Cancelou a sua subscrição."
-      ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
       ]
@@ -8007,6 +8149,9 @@
       ],
       "Add participants": [
         "Adicionar participantes"
+      ],
+      "Add some color to your day": [
+        "Adicione alguma cor ao seu dia"
       ],
       "Add to ${ groupCount } group": [
         "Adicionar a ${ groupCount } grupo",
@@ -8200,6 +8345,9 @@
       "Get advanced protection": [
         "Obtenha proteção avançada"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Obter os aplicativos do ${ appName[APP_NAME] }"
+      ],
       "Gift": [
         "Presente"
       ],
@@ -8299,6 +8447,9 @@
       ],
       "Recommended": [
         "Recomendado"
+      ],
+      "Recommended actions": [
+        "Ações recomendadas"
       ],
       "Reconnect your account": [
         "Religue a sua conta"
@@ -8455,6 +8606,9 @@
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
+      ],
+      "Your exposed information": [
+        "As suas informações expostas"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -8494,6 +8648,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
+      ],
+      "Change start date to unselect": [
+        "Alterar a data de início para desselecionar"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"

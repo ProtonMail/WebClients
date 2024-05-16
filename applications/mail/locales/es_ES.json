@@ -5589,9 +5589,6 @@
       "and": [
         "y"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Se cancelará cualquier programación o mensajes pausados."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en esta carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
@@ -6478,9 +6475,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En pausa hasta mañana a las ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Se cancelarà la pausa de esta conversación."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Este mensaje no existe o ya ha expirado."
@@ -9541,20 +9535,6 @@
         "Compartición segura de cajas fuertes"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "La clave de la organización debe activarse para conceder privilegios de administrador."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Los usuarios privados podrán ser administradores una vez que entran a su cuenta por primera vez"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Debes privatizar todos los usuarios antes de generar una clave nueva de la organización"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
@@ -10179,19 +10159,9 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "El restablecimiento de contraseña ha sido cancelado."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10414,11 +10384,6 @@
         "Apoya la privacidad en línea"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -10551,11 +10516,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Estamos cancelando tu suscripción. Espera."
       ]
     },
     "Status": {
@@ -11025,9 +10985,6 @@
       "Message deleted": [
         "Mensaje eliminado"
       ],
-      "Message expiration cancelled": [
-        "Expiración del mensaje cancelada"
-      ],
       "Message marked as legitimate": [
         "Mensaje marcado como legítimo"
       ],
@@ -11104,9 +11061,6 @@
       ],
       "Verification successful": [
         "Verificación completada"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Has cancelado tu suscripción."
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."

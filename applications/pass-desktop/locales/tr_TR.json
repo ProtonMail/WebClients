@@ -291,7 +291,7 @@
         "iOS için Proton Pass"
       ],
       "Pass Monitor": [
-        "Pass izleyici"
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "İzlemeyi duraklat"
@@ -2192,6 +2192,20 @@
         "Notunuzu yazın"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
@@ -2203,7 +2217,7 @@
         "${ BRAND_NAME } adresleri"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } izleyici"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "Hesap koruması"

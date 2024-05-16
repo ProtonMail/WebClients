@@ -5495,9 +5495,6 @@
       "and": [
         "dan"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Seluruh pesan yang terjadwal atau ditunda akan dibatalkan."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
       ],
@@ -6370,9 +6367,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Tunda sampai besok, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Penundaan percakapan ini akan dibatalkan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
@@ -8664,7 +8658,7 @@
         "Kelola item dengan berbagai brankas"
       ],
       "Pass Monitor - premium features": [
-        "Pemantauan Pass - fitur premium"
+        "Pass Monitor - fitur premium"
       ],
       "Passkeys supported": [
         "Passkey didukung"
@@ -9371,20 +9365,6 @@
         "Pembagian brankas yang aman"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Kunci organisasi harus diaktifkan untuk memberikan hak admin"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Pengguna privat dapat diangkat sebagai admin pada saat mereka memasuki akun untuk yang pertama kalinya"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Anda harus menetapkan seluruh pengguna sebagai pengguna privat sebelum membuat kunci organisasi baru"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kartu kredit/debit"
@@ -9989,19 +9969,9 @@
         "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Pengaturan ulang kata sandi dibatalkan"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Batalkan pengaturan ulang kata sandi?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10216,11 +10186,6 @@
         "Dukung privasi online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Tuju daftar paket langganan"
@@ -10352,11 +10317,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Membatalkan langganan Anda, silakan tunggu"
       ]
     },
     "Status": {
@@ -10796,9 +10756,6 @@
       "Message deleted": [
         "Pesan dihapus"
       ],
-      "Message expiration cancelled": [
-        "Kedaluwarsa pesan dibatalkan"
-      ],
       "Message marked as legitimate": [
         "Pesan ditandai sebagai sah"
       ],
@@ -10873,9 +10830,6 @@
       ],
       "Verification successful": [
         "Verifikasi berhasil"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"

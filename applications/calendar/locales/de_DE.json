@@ -7244,20 +7244,6 @@
         "Sicheres Teilen von Tresoren"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Nicht-private Benutzer können zu Administratoren befördert werden, wenn sie Setup-Schlüssel haben"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Der Organisationsschlüssel muss aktiviert sein, um Admin-Rechte zu erhalten"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du musst alle Benutzer privatisieren, bevor du einen neuen Organisationsschlüssel erzeugst."
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
@@ -7578,6 +7564,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden. ${ learnMoreLink }"
       ],
@@ -7586,6 +7575,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     },
     "Select files": {
@@ -7691,19 +7683,9 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Passwortzurücksetzung abgebrochen"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7928,11 +7910,6 @@
         "Unterstütze Online-Privatsphäre"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
@@ -8062,11 +8039,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Jetzt kannst du sehen, wann die Teilnehmer verfügbar sind, um an deiner Besprechung teilzunehmen."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Storage": {
@@ -8484,9 +8456,6 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."

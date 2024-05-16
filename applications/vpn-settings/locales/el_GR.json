@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Αντιγραφή του κλειδιού στο πρόχειρο"
       ],
+      "Copy version number to clipboard": [
+        "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
+      ],
       "Create": [
         "Δημιουργία"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Λήψη"
       ],
+      "Download CSV sample": [
+        "Λήψη δείγματος CSV"
+      ],
       "Download our CSV template": [
         "Λήψη του προτύπου CSV αρχείου μας"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Προσάρμοση στο μέγεθος του παραθύρου"
+      ],
+      "Forgot password?": [
+        "Ξέχασα τον κωδικό πρόσβασης?"
       ],
       "Get ${ vpnPlus }": [
         "Λήψη ${ vpnPlus }"
@@ -1930,11 +1939,32 @@
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
       ],
+      "I do not wish to share": [
+        "Δεν επιθυμώ να μοιραστώ"
+      ],
+      "I found a cheaper VPN": [
+        "Βρήκα ένα φθηνότερο VPN"
+      ],
+      "I found a VPN with better features": [
+        "Βρήκα ένα VPN με καλύτερα χαρακτηριστικά"
+      ],
+      "I have not managed to connect": [
+        "Δεν κατάφερα να συνδεθώ"
+      ],
+      "I only needed a VPN short-term": [
+        "Χρειαζόμουν μόνο ένα VPN βραχυπρόθεσμα"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Χρησιμοποιώ διαφορετικό ${ BRAND_NAME } λογαριασμό"
       ],
+      "It doesn't do what I need": [
+        "Δεν κάνει αυτό που χρειάζομαι"
+      ],
       "Missing feature(s)": [
         "Έλλειψη χαρακτηριστικών"
+      ],
+      "Other reason (please comment)": [
+        "Άλλος λόγος (παρακαλούμε σχολιάστε)"
       ],
       "Subscription is too expensive": [
         "Υπερβολικά ακριβή συνδρομή"
@@ -1944,6 +1974,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Προσωρινή ανάγκη, ενδεχόμενη επιστροφή στο μέλλον"
+      ],
+      "The VPN is too slow": [
+        "Το PIN είναι πολύ αργό"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2442,6 +2475,9 @@
       "You have successfully joined the Family plan": [
         "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε πολλούς χρήστες."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν δημιουργήσετε έναν νέο χρήστη."
       ],
@@ -2470,9 +2506,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Εάν ο χρήστης έχει ήδη διεύθυνση ${ MAIL_APP_NAME }, πληκτρολογήστε την εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
@@ -2511,6 +2544,11 @@
         "Αυτό θα καταργήσει όλες τις premium δυνατότητες του ${ BRAND_NAME } για κάθε μέλος της οικογένειας σας."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Οικογένεια"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "Το ${ member.Name } αφαιρέθηκε από το ${ organizationName }"
@@ -2543,6 +2581,9 @@
       ],
       "Invite a user": [
         "Πρόσκληση χρήστη"
+      ],
+      "Manage family group": [
+        "Διαχείριση ομάδας οικογένειας"
       ],
       "Set family name": [
         "Ορισμός ονόματος οικογένειας"
@@ -2810,11 +2851,17 @@
       "IP address": [
         "Διεύθυνση IP"
       ],
+      "Key type": [
+        "Τύπος κλειδιού"
+      ],
       "Members": [
         "Μέλη"
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Organization key fingerprint": [
+        "Αποτύπωμα κλειδιού οργανισμού"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Εξοικονομήστε χρήματα με τις καλύτερες προσφορές στο ${ VPN_APP_NAME }"
@@ -2983,6 +3030,9 @@
       ],
       "Add domain": [
         "Προσθήκη τομέα"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Προσθέστε πολλούς χρήστες στον οργανισμό σας ταυτόχρονα."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
@@ -3205,6 +3255,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Κατεβάστε το πρότυπο CSV, συμπληρώστε τα στοιχεία χρήστη και, στη συνέχεια, ανεβάστε το ολοκληρωμένο αρχείο CSV για να δημιουργήσετε λογαριασμούς για αυτούς τους χρήστες."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
@@ -3445,6 +3498,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
+      ],
+      "Multi-user support not enabled.": [
+        "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
       ],
       "Must be between 3 and 20 characters long.": [
         "Πρέπει να είναι μεταξύ 3 και 20 χαρακτήρες."
@@ -3944,6 +4000,9 @@
       "Version ${ version }": [
         "'Εκδοση ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
+      ],
       "View, download, and manage your invoices.": [
         "Προβολή, λήψη και διαχείριση των τιμολογίων σας."
       ],
@@ -4173,6 +4232,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί καθολική σύνδεση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Τα ηλ. μηνύματα της εταιρείας σας προστατεύονται με διατερματική κρυπτογράφηση, χρησιμοποιώντας το κλειδί του οργανισμού. Αυτό το δακτυλικό αποτύπωμα μπορεί να χρησιμοποιηθεί για να επαληθεύσει ότι όλοι οι διαχειριστές στον λογαριασμό σας έχουν το ίδιο κλειδί."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Τα στοιχεία πληρωμών σας είναι προστατευμένα με κρυπτογράφηση TLS καθώς και με νόμους της Ελβετίας περί ιδιωτικότητας."
@@ -6722,19 +6784,9 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6891,6 +6943,11 @@
         "Αίτηση Επαναφοράς Κωδικού Πρόσβασης"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Οργανισμός"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Κοινοποιήθηκε από τον/την ${ ownerName }"
@@ -6992,11 +7049,6 @@
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
     },
     "specialoffer: Link": {
@@ -7116,11 +7168,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Storage": {
@@ -7507,9 +7554,6 @@
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
-      ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
       ]
@@ -7732,6 +7776,9 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
+      "Catch-all address": [
+        "Διευθύνσεις Catch all"
+      ],
       "Change login password": [
         "Αλλαγή κωδικού σύνδεσης"
       ],
@@ -7808,6 +7855,9 @@
       "Custom selection of users": [
         "Προσαρμοσμένη επιλογή χρηστών"
       ],
+      "Customization": [
+        "Προσαρμογή"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Προσαρμόστε τον αριθμό των διευθύνσεων IP στο πλάνο σας"
       ],
@@ -7850,6 +7900,9 @@
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
+      ],
+      "Domain names": [
+        "Ονόματα τομέων"
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
@@ -7984,6 +8037,12 @@
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
       ],
+      "Organization filters": [
+        "Φίλτρα οργανισμού"
+      ],
+      "Organization key": [
+        "Κλειδί οργανισμού"
+      ],
       "Organization name": [
         "Όνομα οργανισμού"
       ],
@@ -8110,6 +8169,9 @@
       "Single sign-on": [
         "Καθολική σύνδεση"
       ],
+      "Spam, block, and allow lists": [
+        "Λίστες ανεπιθύμητης αλληλογραφίας, αποκλεισμού και αποδοχής"
+      ],
       "Status": [
         "Κατάσταση"
       ],
@@ -8158,6 +8220,9 @@
       ],
       "Users": [
         "Χρήστες"
+      ],
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"

@@ -331,6 +331,9 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
       ],
@@ -4701,9 +4704,6 @@
       "Share via link settings": [
         "ბმულით გაზიარების მორგება"
       ],
-      "Share with": [
-        "გაზიარება"
-      ],
       "Share with anyone": [
         "ყველასთვის გაზიარება"
       ],
@@ -7401,20 +7401,6 @@
         "თქვენ"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
@@ -7826,19 +7812,9 @@
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "პაროლის შეცვლა გაუქმდა"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8019,11 +7995,6 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -8147,11 +8118,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "შეგიძლიათ იოლად და უსაფრთხოდ მოძებნოთ ფაილები დრაივზე."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
       ]
     },
     "Storage": {
@@ -8447,9 +8413,6 @@
       ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "თქვენი ტარიფი წარმატებით გააუქმეთ."
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"

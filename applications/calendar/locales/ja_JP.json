@@ -273,6 +273,9 @@
       "Export contacts": [
         "連絡先のエクスポート"
       ],
+      "Forgot password?": [
+        "パスワードを忘れた?"
+      ],
       "Forward as attachment": [
         "添付ファイルとして送信"
       ],
@@ -6734,20 +6737,6 @@
         "参加者一覧を展開"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "プライベート以外のユーザーは、セットアップ キーを持っている場合に管理者に昇格できます"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "管理者権限を付与するには、組織キーをアクティブ化する必要があります"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "プライベート ユーザーは、初めてサインインしたときに管理者に昇格できます"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "クレジット/デビット カード"
@@ -7135,19 +7124,9 @@
         "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "パスワードリセットが取り消されました"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "パスワードリセットを取り消しますか？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。もしリクエストを行っていない場合、${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7360,11 +7339,6 @@
         "オンラインプライバシーをサポート"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
@@ -7481,11 +7455,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "サブスクリプションをキャンセルします。"
       ]
     },
     "Storage": {
@@ -7837,9 +7806,6 @@
       ],
       "Verification successful": [
         "検証に成功しました"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "サブスクリプションのキャンセルが正常に完了しました"
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"

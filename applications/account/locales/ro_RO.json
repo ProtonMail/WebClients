@@ -257,6 +257,9 @@
       "Copy link": [
         "Copiere legătură"
       ],
+      "Copy version number to clipboard": [
+        "Copiere număr versiune în memorie"
+      ],
       "Create": [
         "Creare"
       ],
@@ -466,6 +469,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Generate": [
         "Generare"
@@ -3318,11 +3324,32 @@
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
       ],
+      "I do not wish to share": [
+        "Nu vreau să spun"
+      ],
+      "I found a cheaper VPN": [
+        "Am găsit un VPN mai ieftin"
+      ],
+      "I found a VPN with better features": [
+        "Am găsit un VPN cu funcții mai bune"
+      ],
+      "I have not managed to connect": [
+        "Nu am reușit să mă conectez"
+      ],
+      "I only needed a VPN short-term": [
+        "Am avut nevoie de VPN doar temporar"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Folosesc un cont ${ BRAND_NAME } diferit"
       ],
+      "It doesn't do what I need": [
+        "Nu face ceea ce am nevoie"
+      ],
       "Missing feature(s)": [
         "Funcție (funcții) lipsă."
+      ],
+      "Other reason (please comment)": [
+        "Alt motiv (comentați motivul)"
       ],
       "Subscription is too expensive": [
         "Abonamentul este prea scump."
@@ -3332,6 +3359,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nevoie temporară, poate voi mai reveni."
+      ],
+      "The VPN is too slow": [
+        "Viteza pe VPN e prea mică"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4927,9 +4957,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
@@ -8085,6 +8112,9 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numărul versiunii a fost copiat în memorie."
       ],
       "View, download, and manage your invoices.": [
         "Examinați, descărcați și gestionați facturile personale."
@@ -13005,6 +13035,20 @@
         "Adresa URL a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o potențială divulgare pentru ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Încărcați un fișier CSV"
@@ -13167,19 +13211,9 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetarea parolei a fost anulată."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitare de resetare parolă anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13593,11 +13627,6 @@
         "Susțineți confidențialitatea online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -13716,11 +13745,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Step in filter modal": {
@@ -14339,9 +14363,6 @@
       ],
       "Verification successful": [
         "Verificare reușită"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"

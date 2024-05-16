@@ -170,6 +170,9 @@
       "Download": [
         "Prenesi"
       ],
+      "Download CSV sample": [
+        "Prenesi vzorčno CSV datoteko"
+      ],
       "Download our CSV template": [
         "Prenesi našo vzorčno CSV datoteko."
       ],
@@ -226,6 +229,9 @@
       ],
       "Fit to window": [
         "Prilagodi oknu"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
       ],
       "Get ${ vpnPlus }": [
         "Pridobi ${ vpnPlus }"
@@ -2417,6 +2423,9 @@
       "You have successfully joined the Family plan": [
         "Uspešno ste se pridružili družinskemu paketu."
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred ustvarjanjem novega uporabnika morate nastaviti domeno po meri."
       ],
@@ -2445,9 +2454,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Če uporabnik že ima ${ MAIL_APP_NAME } naslov, ga vnesite tukaj. V nasprotnem primeru mora najprej ustvariti račun."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Povabilo bo preklicano in uporabnik ne bo mogel pristopiti k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Račun uporabnika bo prestavljen na brezplačen poskus paketa ${ BRAND_NAME } Unlimited za 30 dni*."
@@ -2486,6 +2492,11 @@
         "To bo odstranilo vse ${ BRAND_NAME } premijske funkcije za vsakega družinskega člana."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Družina"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } je bil odstranjen iz ${ organizationName }"
@@ -2518,6 +2529,9 @@
       ],
       "Invite a user": [
         "Povabite uporabnika"
+      ],
+      "Manage family group": [
+        "Uredi družinsko skupino"
       ],
       "Set family name": [
         "Določite družinsko ime."
@@ -2803,11 +2817,17 @@
       "IP address": [
         "IP naslov"
       ],
+      "Key type": [
+        "Vrsta ključa"
+      ],
       "Members": [
         "Člani"
       ],
       "Name": [
         "Ime"
+      ],
+      "Organization key fingerprint": [
+        "Prstni odtis organizacijskega ključa"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Prihranite z najboljšimi ponudbami ${ VPN_APP_NAME }"
@@ -2987,6 +3007,9 @@
       ],
       "Add domain": [
         "Dodaj domeno"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Hkrati dodajte več uporabnikov v svojo organizacijo."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Dodaj strežnik (${ availableAddedCount } na voljo)",
@@ -3215,6 +3238,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Prenesite našo predlogo CSV, izpolnite podrobnosti uporabnikov in nato naložite dokončano CSV datoteko, da ustvarite račune za te uporabnike."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
@@ -3446,6 +3472,9 @@
       ],
       "MM/YY": [
         "MM/LL"
+      ],
+      "Multi-user support not enabled.": [
+        "Podpora za več uporabnikov ni omogočena."
       ],
       "Must be between 3 and 20 characters long.": [
         "Mora vsebovati od 3 do 20 znakov."
@@ -4184,6 +4213,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizacija uporablja enotno prijavo (SSO). Pritisnite Prijava, da nadaljujete s svojim ponudnikom SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "E-pošta vaše organizacije je zaščitena s celovitim šifriranjem s pomočjo ključa organizacije. Ta prstni odtis se lahko uporabi za preverjanje, ali imajo vsi skrbniki v vašem računu isti ključ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaši podatki o plačilu so zaščiteni s šifriranjem TLS in švicarskimi zakoni o zasebnosti."
@@ -6672,19 +6704,9 @@
         "Vpišite vaše trenutno geslo in s tem ustavite postopek za ponastavitev gesla. Prišlo ne bo do nobenih drugih sprememb."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Ponastavitev gesla je preklicana."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Prekliči ponastavitev gesla?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Zahteva za ponastavitev gesla je bila preklicana (${ user.Email }). Če niste podali te zahteve, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6851,6 +6873,11 @@
         "Zahteva za ponastavitev gesla"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organizacija"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delil z ${ ownerName }"
@@ -6962,11 +6989,6 @@
       ],
       "Support online privacy": [
         "Podprite zasebnost na spletu"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
       ]
     },
     "specialoffer: Link": {
@@ -7088,11 +7110,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Preklic vaše naročnine, počakajte"
       ]
     },
     "Storage": {
@@ -7477,9 +7494,6 @@
       "Verification successful": [
         "Preverjanje uspešno"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Uspešno ste preklicali naročnino."
-      ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
       ]
@@ -7702,6 +7716,9 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
+      "Catch-all address": [
+        "Prestreženi naslovi"
+      ],
       "Change login password": [
         "Spremenite geslo za prijavo"
       ],
@@ -7821,6 +7838,9 @@
       ],
       "Disable two-factor authentication": [
         "Onemogoči dvojno preverjanje pristnosti"
+      ],
+      "Domain names": [
+        "Imena domen"
       ],
       "Downgrade account": [
         "Zmanjšaj račun"
@@ -7954,6 +7974,12 @@
       "OpenVPN configuration files": [
         "OpenVPN nastavitvene datoteke"
       ],
+      "Organization filters": [
+        "Filtri organizacije"
+      ],
+      "Organization key": [
+        "Organizacijski ključ"
+      ],
       "Organization name": [
         "Ime organizacije"
       ],
@@ -8080,6 +8106,9 @@
       "Single sign-on": [
         "Enotna prijava"
       ],
+      "Spam, block, and allow lists": [
+        "Seznami neželene pošte, blokiranih naslovov in dovoljenih naslovov"
+      ],
       "Status": [
         "Stanje"
       ],
@@ -8127,6 +8156,9 @@
       ],
       "Users": [
         "Uporabniki"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
       ],
       "Verification failed": [
         "Preverjanje ni uspelo"

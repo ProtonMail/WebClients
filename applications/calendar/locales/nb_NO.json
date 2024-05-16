@@ -299,6 +299,9 @@
       "Export contacts": [
         "Eksporter kontakter"
       ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
       "Forward as attachment": [
         "Videresend som vedlegg"
       ],
@@ -7261,20 +7264,6 @@
         "Sikker hvelvdeling"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Ikke-private brukere kan forfremmes til administrator når de har installasjonsnøkler."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisasjonsnøkkelen må aktiveres for å gi administratorrettigheter."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditt-/debetkort"
@@ -7721,7 +7710,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Tilbakestilling av passord avbrutt"
       ]
     },
@@ -7731,7 +7720,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Forespørsel om tilbakestillng av passord avbrutt (${ user.Email }). Hvis du ikke gjorde denne forespørselen, ${ changePasswordLink }."
       ]
     },
@@ -7927,7 +7916,7 @@
         "64 land"
       ],
       "All paid Mail and Calendar features": [
-        "Alle betalte e-post- og kalenderfunksjoner"
+        "Alle betalte Mail- og Calendar-funksjoner"
       ],
       "High speed VPN": [
         "Høyhastighets VPN"
@@ -7958,7 +7947,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
       ]
     },
@@ -8094,7 +8083,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
       ]
     },
@@ -8517,7 +8506,7 @@
       "Verification successful": [
         "Vellykket verifisering"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
       ],
       "You have successfully unsubscribed": [
