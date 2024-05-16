@@ -50,6 +50,8 @@ enum DriveFeatureFlag {
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
     DriveWebOptimisticUploadEnabled = 'DriveWebOptimisticUploadEnabled',
+    DriveDocs = 'DriveDocs',
+    DriveDocsDisabled = 'DriveDocsDisabled',
 }
 
 enum MailFeatureFlag {

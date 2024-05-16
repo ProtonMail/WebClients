@@ -62,7 +62,7 @@ const NewFeatureTag = ({
     }
 
     const content = (
-        <span className={clsx('bg-success px-1 py-0.5 rounded text-semibold', className)}>{c('Info').t`New`}</span>
+        <span className={clsx('bg-success px-1.5 py-0.5 rounded text-semibold', className)}>{c('Info').t`New`}</span>
     );
     if (displaySpotlight) {
         return <Spotlight {...spotlightProps}>{content}</Spotlight>;
