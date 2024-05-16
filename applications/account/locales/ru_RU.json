@@ -467,6 +467,9 @@
       "Font": [
         "Шрифт"
       ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
       "Generate": [
         "Сгенерировать"
       ],
@@ -4807,9 +4810,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Приглашение будет отменено и пользователь не сможет присоединиться к группе «${ organizationName }»."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
@@ -12703,11 +12703,6 @@
         "Отменить сброс пароля"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Сброс пароля отменен"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -13104,11 +13099,6 @@
         "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти к тарифам"
@@ -13228,11 +13218,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Отмена подписки, подождите"
       ]
     },
     "Step in filter modal": {
@@ -13538,14 +13523,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
       "No ads or tracking": [
         "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
       ],
       "Upgrade": [
         "Сменить тариф"
       ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
       "We don't sell your data": [
         "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -13767,9 +13782,6 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Вы успешно отменили свою подписку."
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"

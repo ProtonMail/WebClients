@@ -461,6 +461,9 @@
       "Font": [
         "フォント"
       ],
+      "Forgot password?": [
+        "パスワードを忘れた?"
+      ],
       "Generate": [
         "生成"
       ],
@@ -4646,9 +4649,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "招待はキャンセルされ、ユーザーは ${ organizationName } に参加できなくなります。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
@@ -12079,19 +12079,9 @@
         "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "パスワードリセットが取り消されました"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "パスワードリセットを取り消しますか？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。もしリクエストを行っていない場合、${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -12480,11 +12470,6 @@
         "オンラインプライバシーをサポート"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
@@ -12601,11 +12586,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "サブスクリプションをキャンセルします。"
       ]
     },
     "Step in filter modal": {
@@ -13086,9 +13066,6 @@
       ],
       "Verification successful": [
         "検証に成功しました"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "サブスクリプションのキャンセルが正常に完了しました"
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"

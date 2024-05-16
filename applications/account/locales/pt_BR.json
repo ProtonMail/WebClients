@@ -43,6 +43,11 @@
         "Você interromperá o encaminhamento de correspondência."
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -412,6 +417,12 @@
       ],
       "Edit name": [
         "Editar nome"
+      ],
+      "Edit organization identity": [
+        "Editar identidade da organização"
+      ],
+      "Edit organization name": [
+        "Editar nome da organização"
       ],
       "Edit password": [
         "Alterar senha"
@@ -4935,9 +4946,6 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Caso o usuário já tenha um endereço ${ MAIL_APP_NAME }, insira-o aqui. Caso contrário, ele precisará criar uma conta primeiro."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
-      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
       ],
@@ -6941,6 +6949,9 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se você deseja combinar esta conta com outra, NÃO a apague."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou uma ${ boldZoomMeeting } com um de nossos especialistas de suporte, ou abra o ${ boldLiveChat } para suporte via chat."
+      ],
       "Image description": [
         "Descrição da imagem"
       ],
@@ -7972,6 +7983,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Envie o seu arquivo CSV completo para criar contas"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carregue o logo da organização para potenciar sua identidade de marca e criar uma experiência personalizada para seus usuários."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Verifique e tente novamente."
@@ -9108,6 +9122,9 @@
       "Current email": [
         "E-mail atual"
       ],
+      "Current organization identity": [
+        "Identidade atual da organização"
+      ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
       ],
@@ -9408,6 +9425,9 @@
       "New mailbox password": [
         "Nova senha da caixa de correio"
       ],
+      "New organization identity": [
+        "Nova identidade da organização"
+      ],
       "New organization password": [
         "Nova senha da organização"
       ],
@@ -9455,6 +9475,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Organization identity": [
+        "Identidade da organização"
       ],
       "Organization name": [
         "Nome da organização"
@@ -9789,7 +9812,7 @@
         "Atualizações de produto do ${ app }"
       ],
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados da ${ BRAND_NAME } beta"
+        "Comunicados beta da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim da ${ BRAND_NAME } for Business"
@@ -9952,6 +9975,9 @@
       ],
       "Encryption and keys": [
         "Criptografia e chaves"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Forgot username?": [
         "Esqueceu o seu nome de usuário?"
@@ -11897,10 +11923,10 @@
         "Evite imagens muitos comprimidas."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Opte por uma imagem PNG de 128x128 pixels para maior claridade."
+        "Opte por uma imagem PNG de 128x128 píxeis para maior claridade."
       ],
       "Tips on choosing a good logo": [
-        "Dicas para escolherum bom logotipo"
+        "Dicas para escolher um bom logotipo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Use um ícone gráfico ou imagem no lugar de texto."
@@ -12065,6 +12091,9 @@
       "Advanced protection that goes beyond industry standards": [
         "Proteção avançada que vai além dos padrões da indústria"
       ],
+      "Aliases for email protection from breaches": [
+        "Aliases para proteger o e-mail de violações"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
@@ -12176,6 +12205,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando o ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Oferta por tempo limitado: : ${ title } por ${ price } no primeiro mês."
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Oferta por tempo limitado: Obtenha ${ title } por ${ price } por usuário mensalmente!"
       ],
@@ -12187,6 +12219,9 @@
       ],
       "Open-source and audited": [
         "Código aberto e auditado"
+      ],
+      "Passkeys supported on all devices": [
+        "Claves de acesso são suportadas em todos os dispositivos."
       ],
       "per month": [
         "por mês"
@@ -12218,6 +12253,9 @@
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secured by end-to-end encryption": [
+        "Seguro com criptografia de ponta a ponta"
       ],
       "Setting up your organization": [
         "Configurando a sua organização"
@@ -12829,6 +12867,20 @@
         "Provisionamento automático SCIM"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e outro potencial vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial ${ name } vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Enviar arquivo CSV"
@@ -12983,19 +13035,9 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "A redefinição de senha foi cancelada"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13398,11 +13440,6 @@
         "Suporte à privacidade online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -13520,11 +13557,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Cancelando a sua assinatura"
       ]
     },
     "Step in filter modal": {
@@ -13867,6 +13899,9 @@
       "Manage your calendar": [
         "Gerencie seu calendário"
       ],
+      "Online privacy, for your whole family": [
+        "Privacidade online para toda sua família"
+      ],
       "Our fight against censorship in Russia": [
         "Nossa luta contra a censura na Rússia"
       ],
@@ -14179,9 +14214,6 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -14822,6 +14854,9 @@
       "Edit invoice details": [
         "Editar de fatura de crédito"
       ],
+      "Edit organization identity": [
+        "Editar identidade da organização"
+      ],
       "Edit servers": [
         "Editar servidores"
       ],
@@ -15430,6 +15465,12 @@
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
+      ],
+      "You have no open alerts": [
+        "Você não tem avisos abertos"
+      ],
+      "You have no resolved alerts": [
+        "Você não tem avisos resolvidos"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"

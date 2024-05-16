@@ -257,6 +257,9 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Copy version number to clipboard": [
+        "Zkopírovat číslo verze do schránky"
+      ],
       "Create": [
         "Vytvořit"
       ],
@@ -466,6 +469,9 @@
       ],
       "Font": [
         "Písmo"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Generate": [
         "Vygenerovat"
@@ -3335,16 +3341,16 @@
         "Nepřeji si sdílet"
       ],
       "I found a cheaper VPN": [
-        "Našel/la jsem levnější VPN"
+        "Objevil(a) jsem levnější VPN"
       ],
       "I found a VPN with better features": [
-        "Našel/la jsem VPN s lepšími funkcemi"
+        "Objevil(a) jsem VPN s lepšími funkcemi"
       ],
       "I have not managed to connect": [
-        "Nepodařilo se mně připojit"
+        "Nepodařilo se mi připojit"
       ],
       "I only needed a VPN short-term": [
-        "Potřeboval/a jsem VPN na chvíli"
+        "Potřeboval(a) jsem VPN jen na chvíli"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
@@ -4971,9 +4977,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
@@ -8183,6 +8186,9 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verze úspěšně zkopírováno do schránky"
       ],
       "View, download, and manage your invoices.": [
         "Prohlížení, stahování a správa faktur."
@@ -13174,6 +13180,11 @@
         "URL konektoru SCIM které váš IdP agent zprovoznění přeposílá data SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Nahrát CSV soubor"
@@ -13344,18 +13355,13 @@
         "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetování hesla zrušeno"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušit resetování hesla?"
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
       ]
     },
@@ -13782,8 +13788,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        null
       ]
     },
     "specialoffer: Link": {
@@ -13908,7 +13914,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
       ]
     },
@@ -14544,7 +14550,7 @@
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Úspěšně jste zrušili své předplatné."
       ],
       "You have successfully unsubscribed": [
