@@ -14,6 +14,7 @@ import { GpuLlmManager } from './gpu';
 import {
     PromptRejectedError,
     buildMLCConfig,
+    checkHarmful,
     getAssistantHasCompatibleBrowser,
     getAssistantHasCompatibleHardware,
     getAssistantStatus,
@@ -590,6 +591,8 @@ export const AssistantProvider = ({
     };
 
     const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
+        // TODO prevent submit if user made too much harmful requests recently
+
         // Do not start multiple actions in the same assistant
         const runningActionInAssistant = getRunningActionFromAssistantID(assistantID);
         if (runningActionInAssistant) {
@@ -639,18 +642,12 @@ export const AssistantProvider = ({
                             return;
                         }
                         generatedTokensNumber.current++;
-                        try {
+                        const isHarmful = checkHarmful(fulltext);
+
+                        if (!isHarmful) {
                             callback(fulltext);
-                        } catch (e) {
-                            if (e instanceof PromptRejectedError) {
-                                cancelAssistantRunningAction(assistantID);
-                                // todo: take UI action instead of console.log
-                                // eslint-disable-next-line no-console
-                                console.log('--- Prompt Rejected ---');
-                                promptRejectedOnce = true;
-                            } else {
-                                throw e;
-                            }
+                        } else {
+                            promptRejectedOnce = true;
                         }
                     };
 
@@ -658,6 +655,11 @@ export const AssistantProvider = ({
                     const runningAction = await llmModel.current.performAction(action, generationCallback);
                     runningActionsRef.current.push({ runningAction, assistantID });
                     await runningAction.waitForCompletion();
+
+                    // Throw an error if the user made a harmful request
+                    if (promptRejectedOnce) {
+                        throw new PromptRejectedError();
+                    }
 
                     // Send telemetry report
                     const generationEnd = performance.now();
@@ -670,10 +672,16 @@ export const AssistantProvider = ({
                     generatedTokensNumber.current = 0;
                 }
             } catch (e: any) {
+                if (e.name === 'PromptRejectedError') {
+                    const errorMessage = c('loc_nightly_assistant')
+                        .t`I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.`;
+                    addSpecificError({ assistantID, errorMessage });
+                } else {
+                    const errorMessage = c('loc_nightly_assistant').t`Something went wrong while generating a result`;
+                    addSpecificError({ assistantID, errorMessage });
+                }
                 traceInitiativeError('assistant', e);
                 console.error(e);
-                const errorMessage = c('loc_nightly_assistant').t`Something went wrong while generating a result`;
-                addSpecificError({ assistantID, errorMessage });
             }
 
             // Reset the generating state

@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, Tooltip } from '@proton/components/components';
-import { ASSISTANT_FEATURE_NAME, PromptRejectedError, checkHarmful } from '@proton/llm/lib';
+import { ASSISTANT_FEATURE_NAME } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
@@ -91,14 +91,6 @@ const ComposerAssistant = ({
     const handleGenerateResult = (fulltext: string): void => {
         const cleanedText = onCleanGeneration ? onCleanGeneration(fulltext) : fulltext;
         setResult(cleanedText);
-    };
-
-    const handleGenerateResultDetox = (fulltext: string): void => {
-        const isHarmful = checkHarmful(fulltext);
-        if (isHarmful) {
-            throw new PromptRejectedError();
-        }
-        return handleGenerateResult(fulltext);
     };
 
     const handleCloseAssistant = () => {
@@ -209,7 +201,7 @@ const ComposerAssistant = ({
 
                 <div className="relative shrink-0 flex flex-row flex-nowrap flex-column md:flex-row items-start my-0 w-full">
                     <ComposerAssistantInput
-                        onGenerateResult={handleGenerateResultDetox}
+                        onGenerateResult={handleGenerateResult}
                         assistantID={assistantID}
                         onContentChange={() => setExpanded(true)}
                         isAssistantInitialSetup={isAssistantInitialSetup}
