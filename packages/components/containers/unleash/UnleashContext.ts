@@ -8,7 +8,6 @@ enum CommonFeatureFlag {
     DisableElectronMail = 'DisableElectronMail',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
-    EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
     BreachesSecurityCenter = 'BreachesSecurityCenter',

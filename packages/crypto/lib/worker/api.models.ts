@@ -23,10 +23,6 @@ import type { PartialConfig, SubkeyOptions, enums } from 'pmcrypto-v6-canary/lib
 export type MaybeArray<T> = T[] | T;
 export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment };
 
-export interface InitOptions {
-    checkEdDSAFaultySignatures?: boolean;
-}
-
 // TODO TS: do not allow mutually exclusive properties
 export interface WorkerDecryptionOptions
     extends Omit<
