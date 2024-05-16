@@ -4,6 +4,11 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Adicionar"
@@ -482,6 +487,9 @@
         "${ total } outro início de sessão usa a mesma senha",
         "${ total } outros inícios de sessão usam a mesma senha"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "A autenticação de dois fatores (2FA) adiciona outra camada de segurança aos seus logins. ${ PASS_APP_NAME } torna o 2FA mais fácil armazenando e preenchendo automaticamente seus códigos 2FA."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
       ],
@@ -517,6 +525,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta conta está vulnerável, visite o serviço e altere sua senha."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para aumentar a segurança da sua conta."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Seus endereços de email foram vazados em pelo menos 1 violação de dados."
@@ -615,6 +626,9 @@
       "Failed to add email address": [
         "Falha ao adicionar o email"
       ],
+      "Failed to delete email address from monitoring": [
+        "Falha ao excluir o endereço de e-mail do monitoramento"
+      ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
       ],
@@ -623,6 +637,12 @@
       ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
+      ],
+      "Failed to load breaches for this address": [
+        "Falha ao carregar violações para este endereço"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Falha ao carregar violações para este e-mail alias"
       ],
       "Failed to load item history": [
         "Falha ao carregar o histórico do item"
@@ -642,6 +662,12 @@
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
       ],
+      "Failed to resend verification for custom email": [
+        "Falha ao reenviar a verificação para o e-mail personalizado"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Falha ao resolver violações para este endereço"
+      ],
       "Failed to restore items from trash": [
         "Falha ao restaurar itens da lixeira"
       ],
@@ -651,8 +677,20 @@
       "Failed to unpin item": [
         "Falha ao desafixar item"
       ],
+      "Failed to update monitoring settings": [
+        "Falha ao atualizar as configurações de monitoramento"
+      ],
       "Failed to verify email address": [
         "Falha ao verificar o email"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Falha ao atualizar a configuração de ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Falha ao atualizar a bandeira de monitoramento do item"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Falha ao atualizar o status de monitoramento para este endereço de e-mail"
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
@@ -921,6 +959,9 @@
       "Access successfully confirmed": [
         "Acesso confirmado com sucesso"
       ],
+      "Add your custom email address to monitor :": [
+        "Adicione seu endereço de e-mail personalizado para monitoramento:"
+      ],
       "Admin": [
         "Administrador"
       ],
@@ -932,6 +973,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Os e-mails aliases com domínios personalizados não são monitorados, por favor adicione-os como um e-mail personalizado para monitoramento."
+      ],
+      "All breaches for this address were resolved": [
+        "Todas as violações para este endereço foram resolvidas"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Todas as violações atuais serão marcadas como resolvidas. Em caso de futuras violações de dados, você será notificado."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
@@ -1023,6 +1073,15 @@
       "email": [
         "e-mail"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Endereço de e-mail excluído com sucesso do monitoramento"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Endereço de e-mail excluído com sucesso do monitoramento"
+      ],
+      "Email address successfully included in monitoring": [
+        "Endereço de e-mail incluído com sucesso no monitoramento"
+      ],
       "Emptying trash...": [
         "Esvaziando lixeira..."
       ],
@@ -1077,7 +1136,7 @@
         "Instale o ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus inícios de sessão."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Instale o ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus logins rapidamente."
+        "Instale o ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus ‘logins’ rapidamente. "
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -1248,6 +1307,9 @@
       ],
       "Pinning item...": [
         "Fixando item..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Por favor, verifique sua pasta de spam ou tente reenviar o código."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
@@ -1445,6 +1507,9 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos tendo problemas em sincronizar seus dados para o seu armazenamento local. Verifique se você tem espaço livre em seu disco para que o ${ PASS_SHORT_APP_NAME } funcione corretamente."
       ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Enviamos um código de verificação para ${ email }. Por favor, insira-o abaixo:"
+      ],
       "You are about to create:": [
         "Você está prestes a criar:"
       ],
@@ -1475,6 +1540,18 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Você será notificado sobre violações de dados para estes endereços de e-mail."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Você será notificado sobre violações de dados para este endereço de e-mail."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Você não será mais notificado sobre violações de dados para estes endereços de e-mail."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Você não receberá mais notificações sobre violações de dados para este endereço de e-mail."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Você usará este PIN para desbloquear o ${ PASS_APP_NAME } quando ele bloquear automaticamente após um período de inatividade."
@@ -2065,6 +2142,9 @@
       "Full Name": [
         "Nome completo"
       ],
+      "me@example.com": [
+        "eu@exemplo.com"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2115,6 +2195,20 @@
       ],
       "Write your note": [
         "Escreva sua nota"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e outro potencial vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial ${ name } vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "Success": {
@@ -2265,6 +2359,9 @@
       "No excluded items": [
         "Sem itens excluídos"
       ],
+      "No inactive 2FAs": [
+        "Nenhuma autenticação de dois fatores (2FA) inativa."
+      ],
       "No insecure passwords": [
         "Senhas não seguras"
       ],
@@ -2284,7 +2381,7 @@
         "Senha"
       ],
       "Password Health": [
-        "Estado da senha"
+        "Integridade da senha"
       ],
       "Pause monitoring?": [
         "Pausar monitoramento?"
@@ -2462,6 +2559,9 @@
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"
       ],
+      "Failed to load breaches.": [
+        "Falha ao carregar violações."
+      ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
       ],
@@ -2531,6 +2631,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "O prefixo do alias não pode ter mais de 40 caracteres"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Este endereço de e-mail não será mais monitorado para violações de dados."
       ],
       "Title is required": [
         "O título é obrigatório"
