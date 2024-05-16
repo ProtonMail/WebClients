@@ -30,7 +30,6 @@ export const isHostCalendar = (host: string) => {
 
         return urls.calendar === hostURl.origin;
     } catch (error) {
-        Logger.error("isHostCalendar", error);
         return false;
     }
 };
@@ -42,7 +41,6 @@ export const isHostMail = (host: string) => {
 
         return urls.mail === hostURl.origin;
     } catch (error) {
-        Logger.error("isHostMail", error);
         return false;
     }
 };
@@ -54,7 +52,6 @@ export const isHostAccount = (host: string) => {
 
         return urls.account === hostURl.origin;
     } catch (error) {
-        Logger.error("isHostAccount", error);
         return false;
     }
 };
