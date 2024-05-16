@@ -79,10 +79,10 @@ export const createInjectionService = () => {
 
         const scriptConfig = {
             target: { tabId: tab?.id!, allFrames: false },
-            world: (BUILD_TARGET === 'chrome' ? 'MAIN' : undefined) as any,
+            world: (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari' ? 'MAIN' : undefined) as any,
         };
 
-        if (BUILD_TARGET === 'chrome') {
+        if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
             /** In Chrome, we can directly register custom elements via injection in the MAIN
              * world. Firefox isolates custom elements from this realm, which can have unintended
              * side effects in page-scripts. For Firefox, we leverage the injected script trick.

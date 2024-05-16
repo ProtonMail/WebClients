@@ -114,9 +114,11 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onIdle, onFailed }:
         }
     };
 
-    browser.webRequest.onBeforeRequest.addListener(onBeforeRequest, filter, ['requestBody']);
-    browser.webRequest.onCompleted.addListener(onCompleted, filter);
-    browser.webRequest.onErrorOccurred.addListener(onErrorOccured, filter);
+    if (BUILD_TARGET !== 'safari') {
+        browser.webRequest.onBeforeRequest.addListener(onBeforeRequest, filter, ['requestBody']);
+        browser.webRequest.onCompleted.addListener(onCompleted, filter);
+        browser.webRequest.onErrorOccurred.addListener(onErrorOccured, filter);
+    }
 
     return { reset };
 };

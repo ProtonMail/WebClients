@@ -46,7 +46,7 @@ export const createMainFrameRequestTracker = ({
     };
 
     browser.tabs.onRemoved.addListener(onMainFrameDeleted);
-    browser.webRequest.onCompleted.addListener(onMainFrameCompleted, filter);
+    if (BUILD_TARGET !== 'safari') browser.webRequest.onCompleted.addListener(onMainFrameCompleted, filter);
 
     return {};
 };
