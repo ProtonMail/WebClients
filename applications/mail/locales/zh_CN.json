@@ -442,6 +442,9 @@
       "Font": [
         "字体"
       ],
+      "Forgot password?": [
+        "忘记密码?"
+      ],
       "Forward as attachment": [
         "作为附件转发"
       ],
@@ -5151,7 +5154,7 @@
         "${ addressCount } 个邮箱地址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您授权${ enableDesktopNotifications }。"
+        "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
@@ -5187,10 +5190,10 @@
         "${ elementsCount } 项会话将添加下列标签："
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } 条会话将被标记为已读。"
+        "${ elementsCount } 项会话将被标记为已读。"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } 条会话将被标记为未读。"
+        "${ elementsCount } 项会话将被标记为未读。"
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } 项会话将被移动"
@@ -5232,7 +5235,7 @@
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
       "${ n } unread conversation": [
-        "${ n } 条未读会话"
+        "${ n } 项未读会话"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "已屏蔽 ${ numberOfImageTrackers } 款邮件跟踪器"
@@ -5280,7 +5283,7 @@
         "${ storage } 存储空间"
       ],
       "${ total } conversation": [
-        "${ total } 条会话"
+        "${ total } 项会话"
       ],
       "${ total } message": [
         "${ total } 封邮件"
@@ -5390,9 +5393,6 @@
       "and": [
         "并"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "所有的定时发送和延迟通知都将取消。"
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "任何子文件夹也将被删除。然而，存储在此文件夹 ${ nameDeleted } 中的电子邮件将不会被删除，并且可以在所有邮件文件夹中找到。"
       ],
@@ -5427,7 +5427,7 @@
         "确定要将此处所有邮件移至废件箱吗？"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "确定要永久删除 ${ count } 条会话吗？"
+        "确定要永久删除 ${ count } 项会话吗？"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "确定要永久删除 ${ count } 份草稿吗？"
@@ -6256,9 +6256,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "通知已推迟至明天 ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "此会话将取消延迟通知。"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
@@ -9684,19 +9681,9 @@
         "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "密码重置已取消"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密码重置？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密码重置请求已取消 (${ user.Email })。 如果您没有提出此请求，则${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -9909,11 +9896,6 @@
       ],
       "Support online privacy": [
         "支持网络隐私保护"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
     },
     "specialoffer: Link": {
@@ -10220,7 +10202,7 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "${ count } 条会话已删除"
+        "${ count } 项会话已删除"
       ],
       "${ count } draft deleted": [
         "${ count } 份草稿已删除"
@@ -10232,28 +10214,28 @@
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } 条会话已添加 ${ labelName } 标签。"
+        "${ elementsCount } 项会话已添加 ${ labelName } 标签。"
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } 条会话已标记为已读。"
+        "${ elementsCount } 项会话已标记为已读。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } 条会话已加星标。"
+        "${ elementsCount } 项会话已加星标。"
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } 条会话已标记为未读。"
+        "${ elementsCount } 项会话已标记为未读。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } 项会话已移至${ folderName }，其发件人已加入白名单。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } 条会话已移至${ folderName }。"
+        "${ elementsCount } 项会话已移至${ folderName }。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } 项会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } 条会话已移除 ${ labelName } 标签。"
+        "${ elementsCount } 项会话已移除 ${ labelName } 标签。"
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } 项会话已延迟通知"
@@ -10384,9 +10366,6 @@
       "Message deleted": [
         "邮件已删除"
       ],
-      "Message expiration cancelled": [
-        "邮件有效期已移除"
-      ],
       "Message marked as legitimate": [
         "邮件已标为非垃圾邮件"
       ],
@@ -10418,7 +10397,7 @@
         "来自 ${ sendersList } 的邮件将被移动到 ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
-        "移动 ${ selectionCount } 条会话"
+        "移动 ${ selectionCount } 项会话"
       ],
       "Move ${ selectionCount } message": [
         "移动 ${ selectionCount } 封邮件"
@@ -10461,9 +10440,6 @@
       ],
       "Verification successful": [
         "验证成功"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "您已成功取消订阅。"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
@@ -10793,7 +10769,7 @@
         "删除 ${ count } 个联系人组"
       ],
       "Delete ${ count } conversation": [
-        "删除 ${ count } 条会话"
+        "删除 ${ count } 项会话"
       ],
       "Delete ${ count } draft": [
         "删除 ${ count } 份草稿"
@@ -11054,7 +11030,7 @@
         "撰写邮件"
       ],
       "Next conversation": [
-        "下一条会话"
+        "下一项会话"
       ],
       "Next message": [
         "下一封邮件"
@@ -11102,7 +11078,7 @@
         "预览"
       ],
       "Previous conversation": [
-        "上一条会话"
+        "上一项会话"
       ],
       "Previous message": [
         "上一封邮件"

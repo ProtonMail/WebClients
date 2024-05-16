@@ -14,19 +14,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
@@ -470,6 +470,9 @@
       ],
       "Font": [
         "Police"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
@@ -5586,9 +5589,6 @@
       "and": [
         "et"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Tous les messages programmés ou en attente seront annulés."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier Tous les messages."
       ],
@@ -6475,9 +6475,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En attente jusqu'à demain, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "La mise en attente de cette conversation sera annulée."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -9535,20 +9532,6 @@
         "Partage sécurisé de coffre-forts"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Carte de paiement"
@@ -9962,13 +9945,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers. ${ learnMoreLink }"
@@ -10173,19 +10156,9 @@
         "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "La réinitialisation du mot de passe a été annulée."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Annuler la réinitialisation du mot de passe ?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10408,11 +10381,6 @@
         "Soutenez la protection de la vie privée en ligne"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -10545,11 +10513,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "L'annulation de votre abonnement est en cours, veuillez patienter."
       ]
     },
     "Status": {
@@ -11019,9 +10982,6 @@
       "Message deleted": [
         "Le message a été supprimé."
       ],
-      "Message expiration cancelled": [
-        "L'expiration du message a été annulée."
-      ],
       "Message marked as legitimate": [
         "Le message a été marqué comme légitime."
       ],
@@ -11098,9 +11058,6 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Vous avez résilié votre abonnement."
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."

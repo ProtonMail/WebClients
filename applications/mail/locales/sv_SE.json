@@ -5610,9 +5610,6 @@
       "and": [
         "och"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Alla schemalagda eller snoozade meddelanden kommer att avbrytas."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuella undermappar kommer också att raderas. E-post som finns i mappen ${ nameDeleted } kommer inte att raderas, de finns i mappen All e-post."
       ],
@@ -6499,9 +6496,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Snoozad till imorgon, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Snoozning av denna konversation kommer att avbrytas."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Detta meddelande finns inte eller har redan löpt ut."
@@ -9564,20 +9558,6 @@
         "Säker valvdelning"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Privata användare kan befordras till admin när de har loggat in för första gången"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
-      ]
-    },
     "Payment method option": {
       "Bitcoin": [
         "Bitcoin"
@@ -10203,19 +10183,9 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Lösenordsåterställning avbruten"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Begäran om lösenordsåterställning avbröts (${ user.Email }). Om du inte gjorde denna begäran, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10438,11 +10408,6 @@
         "Stöder integritet online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -10575,11 +10540,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Avbryter din prenumeration, vänta"
       ]
     },
     "Status": {
@@ -11046,9 +11006,6 @@
       "Message deleted": [
         "Meddelande borttaget"
       ],
-      "Message expiration cancelled": [
-        "Meddelandets utgång avbröts"
-      ],
       "Message marked as legitimate": [
         "Meddelande markerat som legitimt"
       ],
@@ -11126,7 +11083,7 @@
       "Verification successful": [
         "Verifiering lyckades"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
       ],
       "You have successfully unsubscribed": [

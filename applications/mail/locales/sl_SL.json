@@ -454,6 +454,9 @@
       "Font": [
         "Pisava"
       ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
       "Forward as attachment": [
         "Posreduj kot priponko"
       ],
@@ -5742,9 +5745,6 @@
       "and": [
         "in"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Vsa načrtovana ali preložena sporočila bodo preklicana."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Izbrisane bodo tudi vse podmape. Vendar e-poštna sporočila, shranjena v tej mapi ${ nameDeleted }, ne bodo izbrisana in jih je mogoče najti v mapi Vsa pošta."
       ],
@@ -6656,9 +6656,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Dremež do jutri, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Dremež tega pogovora bo preklican."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Žal to sporočilo ne obstaja ali je že poteklo."
@@ -9793,20 +9790,6 @@
         "Vi"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Nezasebni uporabniki se lahko povišajo v skrbnike, če imajo nastavitvene ključe"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organizacijski ključ mora biti aktiviran, če želite pridobiti skrbniške pravice"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Zasebni uporabniki so lahko povišani v skrbnike, ko se prvič prijavijo"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Preden ustvarite nov organizacijski ključ, morate privatizirati vse uporabnike"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditna / debetna kartica"
@@ -10459,19 +10442,9 @@
         "Vpišite vaše trenutno geslo in s tem ustavite postopek za ponastavitev gesla. Prišlo ne bo do nobenih drugih sprememb."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Ponastavitev gesla je preklicana."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Prekliči ponastavitev gesla?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Zahteva za ponastavitev gesla je bila preklicana (${ user.Email }). Če niste podali te zahteve, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10710,11 +10683,6 @@
         "Podprite zasebnost na spletu"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -10846,11 +10814,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Zdaj lahko načrtujete pošiljanje sporočil za kasneje."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Preklic vaše naročnine je v teku, počakajte."
       ]
     },
     "Status": {
@@ -11350,9 +11313,6 @@
       "Message deleted": [
         "Sporočilo izbrisano"
       ],
-      "Message expiration cancelled": [
-        "Iztek veljavnosti sporočila preklican"
-      ],
       "Message marked as legitimate": [
         "Sporočilo označeno kot legitimno"
       ],
@@ -11433,9 +11393,6 @@
       ],
       "Verification successful": [
         "Preverjanje uspešno"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Uspešno ste preklicali naročnino."
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"

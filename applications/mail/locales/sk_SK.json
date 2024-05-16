@@ -262,6 +262,9 @@
       "Copy password to clipboard": [
         "Skopírovať heslo do schránky"
       ],
+      "Copy version number to clipboard": [
+        "Skopírovať číslo verzie do schránky"
+      ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
@@ -453,6 +456,9 @@
       ],
       "Font": [
         "Písmo"
+      ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
@@ -3377,11 +3383,32 @@
       "Bugs or quality issue": [
         "Chyby alebo problém s kvalitou"
       ],
+      "I do not wish to share": [
+        "Nechcem sa podeliť"
+      ],
+      "I found a cheaper VPN": [
+        "Mám nájdenú lacnejšiu VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mám nájdenú VPN s lepšími funkciami"
+      ],
+      "I have not managed to connect": [
+        "Nepodarilo sa mi pripojiť"
+      ],
+      "I only needed a VPN short-term": [
+        "Potreba VPN bola len krátkodobá"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Používam iný účet ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Nerobí to, čo potrebujem"
+      ],
       "Missing feature(s)": [
         "Chýbajúce funkcie"
+      ],
+      "Other reason (please comment)": [
+        "Iný dôvod (uveďte, prosím)"
       ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
@@ -3391,6 +3418,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Dočasná potreba, môže sa v budúcnosti vrátiť"
+      ],
+      "The VPN is too slow": [
+        "VPN je príliš pomalá"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5727,9 +5757,6 @@
       "and": [
         "a"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Všetky naplánované alebo odložené správy budú zrušené."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
       ],
@@ -6645,9 +6672,6 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Odložené do zajtra, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
-        "Odloženie tejto konverzácie bude zrušené."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
@@ -6986,6 +7010,9 @@
       ],
       "Version ${ appVersion }": [
         "Verzia ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verzie bolo úspešne skopírované do schránky"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -9787,20 +9814,6 @@
         "Vy"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Platobná karta"
@@ -10225,6 +10238,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán. ${ learnMoreLink }"
       ],
@@ -10233,6 +10255,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktívny** a chráni váš účet."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select files": {
@@ -10453,19 +10478,9 @@
         "Zadaním aktuálneho hesla zrušíte proces obnovenia hesla. Žiadne ďalšie zmeny sa neuskutočnia."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Obnovenie hesla zrušené"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušiť obnovenie hesla?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10704,11 +10719,6 @@
         "Podporte online súkromie"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Prejsť na plány predplatného"
@@ -10843,11 +10853,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Teraz môžete naplánovať odosielanie správ na neskôr"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
     "Status": {
@@ -11377,9 +11382,6 @@
       "Message deleted": [
         "Správa bola zmazaná"
       ],
-      "Message expiration cancelled": [
-        "Platnosť správy bola zrušená"
-      ],
       "Message marked as legitimate": [
         "Správa označená ako legitímna"
       ],
@@ -11460,9 +11462,6 @@
       ],
       "Verification successful": [
         "Overenie prebehlo úspešne"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Úspešne ste zrušili svoje predplatné."
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"

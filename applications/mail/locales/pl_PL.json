@@ -13,6 +13,21 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i ${ remainingCount } innych usług. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i 1 innej usługi. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
       ]
@@ -458,6 +473,9 @@
       ],
       "Font": [
         "Czcionka"
+      ],
+      "Forgot password?": [
+        "Przypomnij hasło?"
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
@@ -5750,9 +5768,6 @@
       "and": [
         "i"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Zaplanowane lub odłożone wiadomości zostaną anulowane."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
       ],
@@ -6667,9 +6682,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Odłożono: jutro, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Odłożenie wątku zostanie anulowane."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
@@ -9099,7 +9111,7 @@
         "Organizuj elementy w wielu sejfach"
       ],
       "Pass Monitor - premium features": [
-        "Monitoring Proton Pass — funkcje premium"
+        "Pass Monitor — funkcje premium"
       ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
@@ -9830,20 +9842,6 @@
         "Bezpieczne udostępnianie sejfu"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Służbowi użytkownicy mogą uzyskać uprawnienia administratora po skonfigurowaniu kluczy"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Musisz aktywować klucz organizacji, aby przyznać uprawnienia administratora"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Prywatni użytkownicy mogą uzyskać uprawnienia administratora po pierwszym zalogowaniu się."
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Musisz zmienić służbowych użytkowników na prywatnych przed wygenerowaniem nowego klucza organizacji"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Karta płatnicza"
@@ -10268,6 +10266,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i ${ remainingCount } innych usług. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name } i 1 innej usługi. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Wykryto potencjalny wyciek danych ${ name }. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich. ${ learnMoreLink }"
       ],
@@ -10499,19 +10506,9 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetowanie hasła zostało anulowane"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10750,11 +10747,6 @@
         "Wspieraj prywatność w Internecie"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -10889,11 +10881,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Status": {
@@ -11423,9 +11410,6 @@
       "Message deleted": [
         "Wiadomość została usunięta"
       ],
-      "Message expiration cancelled": [
-        "Wygaśniecie wiadomości zostało anulowane"
-      ],
       "Message marked as legitimate": [
         "Wiadomość została oznaczona jako wiarygodna"
       ],
@@ -11506,9 +11490,6 @@
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Subskrypcja została anulowana."
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
