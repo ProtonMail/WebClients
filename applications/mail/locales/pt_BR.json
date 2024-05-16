@@ -12,6 +12,11 @@
         "Encaminhamento de correio parou"
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -5589,9 +5594,6 @@
       "and": [
         "e"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Todas as mensagens agendadas ou adiadas serão canceladas."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
@@ -6478,9 +6480,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Adiado até amanhã, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "O adiamento desta conversa será cancelado"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
@@ -9549,20 +9548,6 @@
         "Compartilhamento seguro de cofres"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Usuários não privados podem ser promovidos a administradores quando configurarem suas chaves"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "A chave da organização deve ser ativada para conceder privilégios de administrador"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Usuários privados podem ser promovidos a administradores quando fizerem login pela primeira vez"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Você deve tornar privados todos os usuários antes de gerar uma nova chave de organização."
-      ]
-    },
     "Payment method option": {
       "Bitcoin": [
         "Bitcoin"
@@ -9981,6 +9966,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e outro potencial vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial ${ name } vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros. ${ learnMoreLink }"
       ],
@@ -9989,6 +9983,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **ativo** e protegendo sua conta."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "Select files": {
@@ -10181,19 +10178,9 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "A redefinição de senha foi cancelada"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10416,11 +10403,6 @@
         "Suporte à privacidade online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -10553,11 +10535,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Cancelando a sua assinatura"
       ]
     },
     "Status": {
@@ -11027,9 +11004,6 @@
       "Message deleted": [
         "Mensagem excluida"
       ],
-      "Message expiration cancelled": [
-        "Expiração de mensagem cancelada"
-      ],
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
       ],
@@ -11106,9 +11080,6 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"

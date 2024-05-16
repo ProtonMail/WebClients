@@ -173,6 +173,9 @@
       "Download": [
         "Baixa"
       ],
+      "Download CSV sample": [
+        "Descarrega una mostra de CSV"
+      ],
       "Download our CSV template": [
         "Descarregueu la nostra plantilla CSV"
       ],
@@ -229,6 +232,9 @@
       ],
       "Fit to window": [
         "Ajusta a la finestra"
+      ],
+      "Forgot password?": [
+        "He oblidat la contrasenya?"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -438,7 +444,7 @@
         "Seleccioneu el país"
       ],
       "select file": [
-        "seleccioneu un fitxer"
+        "selecciona un fitxer"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -1903,11 +1909,32 @@
       "Bugs or quality issue": [
         "Errors o problema de qualitat"
       ],
+      "I do not wish to share": [
+        "No vull compartir"
+      ],
+      "I found a cheaper VPN": [
+        "He trobat una VPN més barata"
+      ],
+      "I found a VPN with better features": [
+        "He trobat una VPN amb millors característiques"
+      ],
+      "I have not managed to connect": [
+        "No he aconseguit connectar-me"
+      ],
+      "I only needed a VPN short-term": [
+        "Només necessitava una VPN a curt termini"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Faig ús d'un compte ${ BRAND_NAME } diferent"
       ],
+      "It doesn't do what I need": [
+        "No fa el que necessito"
+      ],
       "Missing feature(s)": [
         "Característiques que falten"
+      ],
+      "Other reason (please comment)": [
+        "Un altre motiu (si us plau comenti)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -1917,6 +1944,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessitat temporal, potser torni més endavant"
+      ],
+      "The VPN is too slow": [
+        "La VPN és massa lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2036,13 +2066,13 @@
         "Error al connectar a l'API de Bitcoin."
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
-        "Fitxer massa gran. El seu logotip ha de tenir 30 KB o menys."
+        "El fitxer és massa gran. El logo ha de tenir 30 KB o menys."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el temps a la vostra televisió s'ha exhaurit, premeu a Refresca a la vostra televisió i escriviu-hi el codi un altre cop."
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
-        "Tipus de fitxer incorrecte. Carregui un fitxer en format PNG o JPEG."
+        "El tipus de fitxer és incorrecte. Carregueu un fitxer en format PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -2385,6 +2415,9 @@
       "You have successfully joined the Family plan": [
         "Us heu unit al pla familiar"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
       ],
@@ -2413,9 +2446,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
@@ -2454,6 +2484,11 @@
         "Això esborrarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Família"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "S'ha esborrat ${ member.Name } de ${ organizationName }"
@@ -2486,6 +2521,9 @@
       ],
       "Invite a user": [
         "Convida un usuari"
+      ],
+      "Manage family group": [
+        "Gestiona el grup familiar"
       ],
       "Set family name": [
         "Configura el nom de la família"
@@ -2750,11 +2788,17 @@
       "IP address": [
         "Adreça IP"
       ],
+      "Key type": [
+        "Tipus de clau"
+      ],
       "Members": [
         "Membres"
       ],
       "Name": [
         "Nom"
+      ],
+      "Organization key fingerprint": [
+        "Clau d'identificació de la clau d'organització"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Estalvieu amb les millors ofertes en ${ VPN_APP_NAME }"
@@ -2911,6 +2955,9 @@
       ],
       "Add domain": [
         "Afegeix un domini"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Afegiu diversos usuaris alhora a la vostra organització."
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Afegiu el vostre nom i logo per a crear una experiència més personalitzada per a la vostra organització."
@@ -3083,6 +3130,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Descarregueu la nostra plantilla CSV, empleneu els detalls dels usuaris i després carregueu el fitxer CSV complet per a crear comptes per a aquests usuaris."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
@@ -3305,6 +3355,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Multi-user support not enabled.": [
+        "Suport multi-usuari no activat."
       ],
       "Must not contain spaces.": [
         "No pot contenir espais."
@@ -3960,6 +4013,9 @@
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
       ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Els correus electrònics de la vostra organització es protegeixen amb xifratge d'extrem a extrem mitjançant la clau d’organització. Aquesta empremta digital es pot utilitzar per verificar que tots els administradors del vostre compte tinguin la mateixa clau."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Les dades de pagament estan protegides amb el xifratge TLS i les lleis de privadesa de Suïssa."
       ],
@@ -4279,7 +4335,7 @@
         "Nivell de filtratge del bloquejador NetShield"
       ],
       "Logo": [
-        "Logotip"
+        "Logo"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
@@ -4946,7 +5002,7 @@
         "Seguretat avançada en la compartició"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i neteja la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -5048,7 +5104,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Group management (coming soon)": [
-        "Gestió del grup (aviat)"
+        "Gestió de grups (aviat)"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -5107,7 +5163,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Require 2FA for organization": [
-        "Requereix 2FA per a l'organització"
+        "Requereix A2F per a l'organització"
       ],
       "Router support": [
         "Suport per a router"
@@ -5195,7 +5251,7 @@
         "Caixes fortes compartides il·limitades amb permisos d'accés"
       ],
       "Unlimited vault sharing": [
-        "Compartició il·limitada de la caixa forta"
+        "Compartició il·limitada de caixes fortes"
       ],
       "Unlimited vaults": [
         "Caixes fortes il·limitades"
@@ -5409,7 +5465,7 @@
         "Permet configurar respostes automàtiques per als missatges entrants"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Neteja automàticament les carpetes de paperera i brossa els missatges amb més de 30 dies d'antiguitat."
+        "Netegeu automàticament els missatges amb més de 30 dies de la paperera i el correu brossa."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'enviament massiu de correus electrònics promocionals o programàtics no està suportat actualment. Recomanem utilitzar un proveïdor de serveis de correu electrònic dedicat per a aquesta finalitat."
@@ -5613,7 +5669,7 @@
         "Gestor de comptes dedicat"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Ubicacions del servidor dedicades a ${ numberOfCountries }+ països"
+        "Ubicacions del servidor dedicades a més de ${ numberOfCountries } països"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicacions de servidors dedicats a Amèrica del Nord i Europa"
@@ -6388,19 +6444,9 @@
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "S'ha cancel·lat el restabliment de la contrasenya."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Voleu cancel·lar el restabliment de la contrasenya?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu fet aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6548,6 +6594,11 @@
         "Sol·licitud de restabliment de la contrasenya"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organització"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
@@ -6649,11 +6700,6 @@
       ],
       "Support online privacy": [
         "Doneu suport a la privacitat en línia"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ]
     },
     "specialoffer: Link": {
@@ -6851,10 +6897,10 @@
         "Facturació per 15 mesos"
       ],
       "Billed for 18 months": [
-        "Facturació per 18 mesos"
+        "Facturació durant 18 mesos"
       ],
       "Billed for 3 months": [
-        "Facturació per 3 mesos"
+        "Facturació durant 3 mesos"
       ],
       "Billed for 30 months": [
         "Facturació per 30 mesos"
@@ -6922,7 +6968,7 @@
         "1 connexió VPN"
       ],
       "Access to streaming services globally": [
-        "Accés a serveis de transmissió en línia a tot el món"
+        "Accés a serveis d'estríming a tot el món"
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"
@@ -7115,9 +7161,6 @@
       ],
       "Verification successful": [
         "Èxit de verificació"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Heu cancel·lat la vostra subscripció."
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
@@ -7344,6 +7387,9 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
+      "Catch-all address": [
+        "Adreça d'arreplega"
+      ],
       "Change login password": [
         "Canviar contrasenya d'inici de sessió"
       ],
@@ -7417,6 +7463,9 @@
       "Currency": [
         "Moneda"
       ],
+      "Customization": [
+        "Personalització"
+      ],
       "Customize your plan": [
         "Personalitzar el vostre pla"
       ],
@@ -7456,6 +7505,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
+      ],
+      "Domain names": [
+        "Noms de domini"
       ],
       "Downgrade account": [
         "Passa a un pla inferior"
@@ -7578,6 +7630,12 @@
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"
       ],
+      "Organization filters": [
+        "Filtres de l'organització"
+      ],
+      "Organization key": [
+        "Clau de l'organització"
+      ],
       "Organization name": [
         "Nom de l'organització"
       ],
@@ -7698,6 +7756,9 @@
       "Single sign-on": [
         "Inici de sessió únic"
       ],
+      "Spam, block, and allow lists": [
+        "Llistes de correu brossa, bloquejats i permesos"
+      ],
       "Status": [
         "Estat"
       ],
@@ -7739,6 +7800,9 @@
       ],
       "Users": [
         "Usuaris"
+      ],
+      "Users and addresses": [
+        "Usuaris i adreces"
       ],
       "Verification failed": [
         "La verificació ha fallat."

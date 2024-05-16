@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopioi avain leikepöydälle"
       ],
+      "Copy version number to clipboard": [
+        "Kopioi versionumero leikepöydälle"
+      ],
       "Create": [
         "Luo"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Lataa"
       ],
+      "Download CSV sample": [
+        "Lataa CSV-näyte"
+      ],
       "Download our CSV template": [
         "Lataa CSV-malli"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Sovita ikkunaan"
+      ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
       ],
       "Get ${ vpnPlus }": [
         "Hanki ${ vpnPlus }"
@@ -905,7 +914,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }In työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -1930,11 +1939,32 @@
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
       ],
+      "I do not wish to share": [
+        "En halua kertoa"
+      ],
+      "I found a cheaper VPN": [
+        "Löysin edullisemman VPN:n"
+      ],
+      "I found a VPN with better features": [
+        "Löysin VPN:n paremmilla ominaisuuksilla"
+      ],
+      "I have not managed to connect": [
+        "En ole onnistunut muodostamaan yhteyttä"
+      ],
+      "I only needed a VPN short-term": [
+        "Tarvitsin VPN:n vain lyhyeksi ajaksi"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Käytän eri ${ BRAND_NAME }-tiliä"
       ],
+      "It doesn't do what I need": [
+        "Se ei vastaa tarpeitani"
+      ],
       "Missing feature(s)": [
         "Ominaisuuksia puuttuu"
+      ],
+      "Other reason (please comment)": [
+        "Muu syy (kerro mikä)"
       ],
       "Subscription is too expensive": [
         "Tilaus on liian kallis"
@@ -1944,6 +1974,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tilapäinen tarve, palaan luultavasti takaisin"
+      ],
+      "The VPN is too slow": [
+        "VPN on liian hidas"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2016,7 +2049,7 @@
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Varhainen pääsy ${ MAIL_APP_NAME } -työpöytäsovellukseen"
+        "Varhainen käyttöoikeus ${ MAIL_APP_NAME }in työpöytäsovellukseen"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
@@ -2442,6 +2475,9 @@
       "You have successfully joined the Family plan": [
         "Olet liittynyt perhetilaukseen"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Sinun on määritettävä oma verkkotunnus ennen kuin voit lisätä useita käyttäjiä."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
       ],
@@ -2470,9 +2506,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, syötä se tähän. Muutoin heidän on ensin luotava tili."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen ilmaiseen 30 päivän kokeiluun*."
@@ -2511,6 +2544,11 @@
         "Tämä poistaa kaikki ${ BRAND_NAME }in premium-ominaisuudet kaikilta perheenjäseniltä."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Perhe"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } poistettiin organisaatiosta ${ organizationName }"
@@ -2543,6 +2581,9 @@
       ],
       "Invite a user": [
         "Kutsu käyttäjä"
+      ],
+      "Manage family group": [
+        "Hallinnoi perheryhmää"
       ],
       "Set family name": [
         "Aseta perheen nimi"
@@ -2810,11 +2851,17 @@
       "IP address": [
         "IP-osoite"
       ],
+      "Key type": [
+        "Avaimen tyyppi"
+      ],
       "Members": [
         "Jäsenet"
       ],
       "Name": [
         "Nimi"
+      ],
+      "Organization key fingerprint": [
+        "Organisaation avaimen sormenjälki"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }:n huipputarjouksilla säästät selvää rahaa"
@@ -2983,6 +3030,9 @@
       ],
       "Add domain": [
         "Lisää verkkotunnus"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Lisää organisaatioosi kerralla useita käyttäjiä."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Lisää palvelin (${ availableAddedCount } käytettävissä)",
@@ -3205,6 +3255,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Lataa CSV-mallimme ja täytä käyttäjien tiedot, ja luo käyttäjille tilit käyttämällä täytettämääsi CSV-tiedostoa."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
@@ -3445,6 +3498,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Multi-user support not enabled.": [
+        "Usean käyttäjän tuki ei ole käytössä."
       ],
       "Must be between 3 and 20 characters long.": [
         "Täytyy sisältää 3–20 merkkiä."
@@ -3947,6 +4003,9 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Versionumero kopioitiin leikepöydälle"
+      ],
       "View, download, and manage your invoices.": [
         "Tarkastele, lataa ja hallinnoi laskujasi."
       ],
@@ -4176,6 +4235,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Organisaatiosi sähköpostit on suojattu päästä päähän -salauksella käyttäen organisaation avainta. Tällä sormenjäljellä voidaan vahvistaa, että kaikilla tilisi ylläpitäjillä on sama avain."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Maksutietosi on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -4795,6 +4857,9 @@
       "Create account": [
         "Luo tili"
       ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
+      ],
       "Forgot username?": [
         "Unohditko käyttäjätunnuksesi?"
       ],
@@ -4912,7 +4977,7 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
@@ -5316,6 +5381,9 @@
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor – premium-ominaisuudet"
+      ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
       ],
@@ -5401,6 +5469,9 @@
       ],
       "Unlimited devices": [
         "Rajattomasti laitteita"
+      ],
+      "Unlimited devices and aliases": [
+        "Rajattomasti laitteita ja aliaksia"
       ],
       "Unlimited filters": [
         "Rajattomasti suodattimia"
@@ -5687,7 +5758,7 @@
         "Pakota käyttäjäistuntojen uloskirjaus, kun käyttäjätietojen epäillään vaarantuneen"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridge -sovelluksen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
+        "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridgen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
@@ -6129,6 +6200,12 @@
       ],
       "Preparing your Recovery Kit": [
         "Palautuspakettiasi valmistellaan"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Turvallinen useamman holvin jako"
+      ],
+      "Secure vault sharing": [
+        "Turvallinen holvien jako"
       ],
       "Updating your account": [
         "Tiliäsi päivitetään"
@@ -6698,19 +6775,9 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Salasanan nollaus peruttiin"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Salasanan nollauspyyntö peruutettu (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6867,6 +6934,11 @@
         "Salasanan nollauspyyntö"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organisaatio"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Hakanut ${ ownerName }"
@@ -6968,11 +7040,6 @@
       ],
       "Support online privacy": [
         "Tue verkkoyksityisyyttä"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
     },
     "specialoffer: Link": {
@@ -7092,11 +7159,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Tilaustasi perutaan. Odota."
       ]
     },
     "Storage": {
@@ -7483,9 +7545,6 @@
       "Verification successful": [
         "Vahvistus onnistui"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
-      ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
       ]
@@ -7711,6 +7770,9 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
+      "Catch-all address": [
+        "Nappaa kaikki -osoite"
+      ],
       "Change login password": [
         "Vaihda kirjautumisen salasana"
       ],
@@ -7787,6 +7849,9 @@
       "Custom selection of users": [
         "Mukautettu käyttäjävalinta"
       ],
+      "Customization": [
+        "Mukautus"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Muuta tilauksesi IP-osoitemäärää"
       ],
@@ -7829,6 +7894,9 @@
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ],
       "Downgrade account": [
         "Alenna tili"
@@ -7963,6 +8031,12 @@
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
       ],
+      "Organization filters": [
+        "Organisaation suodattimet"
+      ],
+      "Organization key": [
+        "Organisaation avain"
+      ],
       "Organization name": [
         "Organisaation nimi"
       ],
@@ -8089,6 +8163,9 @@
       "Single sign-on": [
         "Kertakirjautuminen"
       ],
+      "Spam, block, and allow lists": [
+        "Roskapostin, estettyjen ja sallittujen listat"
+      ],
       "Status": [
         "Tila"
       ],
@@ -8137,6 +8214,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "Verification failed": [
         "Vahvistus epäonnistui"

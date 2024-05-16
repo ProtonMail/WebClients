@@ -433,6 +433,12 @@
       "Edit name": [
         "Rediger navn"
       ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
+      ],
+      "Edit organization name": [
+        "Rediger organisasjonsnavn"
+      ],
       "Edit password": [
         "Rediger passord"
       ],
@@ -489,6 +495,9 @@
       ],
       "Font": [
         "Skrifttype"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ],
       "Generate": [
         "Generer"
@@ -4955,7 +4964,7 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
@@ -7542,6 +7551,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skann denne koden med din to-faktor-autentiseringsenhet for å sette opp din konto. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "SCIM-integrasjon deaktivert"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
       ],
@@ -9167,6 +9182,9 @@
       "Current email": [
         "Nåværende e-post"
       ],
+      "Current organization identity": [
+        "Gjeldende organisasjonsidentitet"
+      ],
       "Daily email notifications": [
         "Daglige e-postvarslinger"
       ],
@@ -9467,6 +9485,9 @@
       "New mailbox password": [
         "Nytt postbokspassord"
       ],
+      "New organization identity": [
+        "Ny organisasjonsidentitet"
+      ],
       "New organization password": [
         "Nytt organisasjonspassord"
       ],
@@ -9514,6 +9535,9 @@
       ],
       "Or": [
         "Eller"
+      ],
+      "Organization identity": [
+        "Organisasjonsidentitet"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -10017,6 +10041,9 @@
       ],
       "Encryption and keys": [
         "Kryptering og nøkler"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ],
       "Forgot username?": [
         "Glemt brukernavn?"
@@ -12466,8 +12493,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunne ikke bekrefte ektheten til denne identiteten."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kan ikke bekrefte sikkerheten til denne avsenderens adressenøkkel. Noen ganger er det en forsinkelse i oppdateringen av avsenderens informasjon. Prøv igjen senere. Hvis du ikke stoler på gyldigheten av denne invitasjonen eller avsenderen, kan du kontakte kundestøtte for ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har verifisert ektheten av denne identiteten."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Vi har bekreftet ektheten til denne avsenderen og invitasjonen."
@@ -13143,7 +13176,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Tilbakestilling av passord avbrutt"
       ]
     },
@@ -13153,7 +13186,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Forespørsel om tilbakestillng av passord avbrutt (${ user.Email }). Hvis du ikke gjorde denne forespørselen, ${ changePasswordLink }."
       ]
     },
@@ -13527,7 +13560,7 @@
         "64 land"
       ],
       "All paid Mail and Calendar features": [
-        "Alle betalte e-post- og kalenderfunksjoner"
+        "Alle betalte Mail- og Calendar-funksjoner"
       ],
       "High speed VPN": [
         "Høyhastighets VPN"
@@ -13558,7 +13591,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
       ]
     },
@@ -13682,7 +13715,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
       ]
     },
@@ -14402,7 +14435,7 @@
       "Verification successful": [
         "Vellykket verifisering"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
       ],
       "You have successfully unsubscribed": [
@@ -15040,6 +15073,9 @@
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
+      ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
       ],
       "Edit servers": [
         "Rediger tjenere"
@@ -15916,6 +15952,9 @@
       ],
       "This address has been disabled": [
         "Denne adressen er deaktivert"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Denne funksjonen forsinker utsending av e-postene dine. På denne måte kan du angre sending av e-posten i den valgte tidsrammen."

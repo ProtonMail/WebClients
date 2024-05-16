@@ -464,6 +464,9 @@
       "Font": [
         "Pisava"
       ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
       "Generate": [
         "Ustvari"
       ],
@@ -4903,9 +4906,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Če uporabnik že ima ${ MAIL_APP_NAME } naslov, ga vnesite tukaj. V nasprotnem primeru mora najprej ustvariti račun."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Povabilo bo preklicano in uporabnik ne bo mogel pristopiti k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Račun uporabnika bo prestavljen na brezplačen poskus paketa ${ BRAND_NAME } Unlimited za 30 dni*."
@@ -12994,19 +12994,9 @@
         "Vpišite vaše trenutno geslo in s tem ustavite postopek za ponastavitev gesla. Prišlo ne bo do nobenih drugih sprememb."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Ponastavitev gesla je preklicana."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Prekliči ponastavitev gesla?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Zahteva za ponastavitev gesla je bila preklicana (${ user.Email }). Če niste podali te zahteve, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13431,11 +13421,6 @@
         "Podprite zasebnost na spletu"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -13555,11 +13540,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Preklic vaše naročnine je v teku, počakajte."
       ]
     },
     "Step in filter modal": {
@@ -14121,9 +14101,6 @@
       ],
       "Verification successful": [
         "Preverjanje uspešno"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Uspešno ste preklicali naročnino."
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"

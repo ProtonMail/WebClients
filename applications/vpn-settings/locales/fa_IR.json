@@ -122,6 +122,9 @@
       "Download": [
         "بارگیری"
       ],
+      "Download CSV sample": [
+        "دانلود نمونه CSV"
+      ],
       "Edit": [
         "ویرایش"
       ],
@@ -154,6 +157,9 @@
       ],
       "Fit to window": [
         "متناسب کردن با پنجره"
+      ],
+      "Forgot password?": [
+        "فراموشی گذرواژه?"
       ],
       "Get ${ vpnPlus }": [
         "دریافت ${ vpnPlus }"
@@ -1826,8 +1832,14 @@
       ]
     },
     "Header": {
+      "Key type": [
+        "نوع کلید"
+      ],
       "Name": [
         "نام"
+      ],
+      "Organization key fingerprint": [
+        "اثر انگشت کلید سازمان"
       ],
       "Status": [
         "وضعیت"
@@ -2142,6 +2154,9 @@
       "Member": [
         "عضو"
       ],
+      "Multi-user support not enabled.": [
+        "پشتیبانی چند کاربره فعال نیست."
+      ],
       "No addresses exist": [
         "نشانی‌ای وجود ندارد"
       ],
@@ -2447,6 +2462,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "فایل‌های شما رمزگذاری شده و سپس ذخیره می‌شوند"
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "رایانامه‌های سازمان شما با رمزگذاری سرتاسری توسط کلید سازمان محافظت می‌شوند. این اثر انگشت می‌تواند برای تایید این موضوع مورد استفاده قرار گیرد که تمام مدیران در حساب شما دارای کلید یکسانی هستند."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "جزئیات پرداخت‌ شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
@@ -3757,11 +3775,6 @@
         "لغو بازنشانی رمزعبور"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "بازنشانی رمز عبور لغو شد"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "بازنشانی رمزعبور لغو شود؟"
@@ -3781,6 +3794,11 @@
       "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } ساعت",
         "${ gracePeriodHoursRemaining } ساعت"
+      ]
+    },
+    "Settings section title": {
+      "Organization": [
+        "سازمان"
       ]
     },
     "Signup label": {
@@ -4155,6 +4173,9 @@
       "Card verification": [
         "تایید کارت"
       ],
+      "Catch-all address": [
+        "نشانی دریافت-همه"
+      ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
       ],
@@ -4226,6 +4247,9 @@
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
+      ],
+      "Domain names": [
+        "نام‌های دامنه"
       ],
       "Downgrade account": [
         "تنزیل درجه حساب کاربری"
@@ -4415,6 +4439,9 @@
       ],
       "Unlock your mailbox": [
         "نامه‌دان خود را باز کنید"
+      ],
+      "Users and addresses": [
+        "کاربران و نشانی‌ها"
       ],
       "Verifying your payment...": [
         "درحال تایید پرداخت شما..."

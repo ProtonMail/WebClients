@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Zkopírovat klíč do schránky"
       ],
+      "Copy version number to clipboard": [
+        "Zkopírovat číslo verze do schránky"
+      ],
       "Create": [
         "Vytvořit"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Stáhnout"
       ],
+      "Download CSV sample": [
+        "Stáhnout ukázku CSV"
+      ],
       "Download our CSV template": [
         "Stáhnout naši šablonu CSV"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Přizpůsobit oknu"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
@@ -1950,16 +1959,16 @@
         "Nepřeji si sdílet"
       ],
       "I found a cheaper VPN": [
-        "Našel/la jsem levnější VPN"
+        "Objevil(a) jsem levnější VPN"
       ],
       "I found a VPN with better features": [
-        "Našel/la jsem VPN s lepšími funkcemi"
+        "Objevil(a) jsem VPN s lepšími funkcemi"
       ],
       "I have not managed to connect": [
-        "Nepodařilo se mně připojit"
+        "Nepodařilo se mi připojit"
       ],
       "I only needed a VPN short-term": [
-        "Potřeboval/a jsem VPN na chvíli"
+        "Potřeboval(a) jsem VPN jen na chvíli"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
@@ -2482,6 +2491,9 @@
       "You have successfully joined the Family plan": [
         "Úspěšně jste se připojili k rodinnému tarifu"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
       ],
@@ -2510,9 +2522,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
@@ -2551,6 +2560,11 @@
         "Toto odebere všechny prémiové funkce ${ BRAND_NAME } všem členům rodiny."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Rodina"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } odebrán(a) z ${ organizationName }"
@@ -2583,6 +2597,9 @@
       ],
       "Invite a user": [
         "Pozvat uživatele"
+      ],
+      "Manage family group": [
+        "Spravovat rodinnou skupinu"
       ],
       "Set family name": [
         "Nastavit jméno rodiny"
@@ -2868,11 +2885,17 @@
       "IP address": [
         "IP adresa"
       ],
+      "Key type": [
+        "Typ klíče"
+      ],
       "Members": [
         "Členové"
       ],
       "Name": [
         "Jméno"
+      ],
+      "Organization key fingerprint": [
+        "Otisk klíče organizace"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Ušetřete s nejlepšími nabídkami ${ VPN_APP_NAME }"
@@ -3057,6 +3080,9 @@
       ],
       "Add domain": [
         "Přidat doménu"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Přidejte do organizace více uživatelů najednou."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Přidat server (${ availableAddedCount } k dispozici)",
@@ -3291,6 +3317,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Stáhněte si naši šablonu CSV, vyplňte údaje o uživateli a poté nahrajte vyplněný soubor CSV a vytvořte účty pro tyto uživatele."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
@@ -3531,6 +3560,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Multi-user support not enabled.": [
+        "Podpora více uživatelů není povolena."
       ],
       "Must be between 3 and 20 characters long.": [
         "Musí obsahovat 3 až 20 znaků."
@@ -4045,6 +4077,9 @@
       "Version ${ version }": [
         "Verze ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verze úspěšně zkopírováno do schránky"
+      ],
       "View, download, and manage your invoices.": [
         "Prohlížení, stahování a správa faktur."
       ],
@@ -4284,6 +4319,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "E-maily vaší organizace jsou chráněny koncovým šifrováním pomocí klíče organizace. Tento otisk klíče lze použít k ověření, že všichni správci účtu mají stejný klíč."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platební údaje jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -6947,18 +6985,13 @@
         "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetování hesla zrušeno"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušit resetování hesla?"
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
       ]
     },
@@ -7126,6 +7159,11 @@
         "Žádost o resetování hesla"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organizace"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Sdílel/a ${ ownerName }"
@@ -7240,8 +7278,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        null
       ]
     },
     "specialoffer: Link": {
@@ -7366,7 +7404,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
       ]
     },
@@ -7782,7 +7820,7 @@
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Úspěšně jste zrušili své předplatné."
       ],
       "You have successfully unsubscribed": [
@@ -8010,6 +8048,9 @@
       "Card verification": [
         "Ověření karty"
       ],
+      "Catch-all address": [
+        "Adresa doménového koše"
+      ],
       "Change login password": [
         "Změnit přihlašovací heslo"
       ],
@@ -8088,6 +8129,9 @@
       "Custom selection of users": [
         "Vlastní výběr uživatelů"
       ],
+      "Customization": [
+        "Přizpůsobení"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Přizpůsobení počtu IP adres v plánu"
       ],
@@ -8132,6 +8176,9 @@
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
+      ],
+      "Domain names": [
+        "Názvy domén"
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"
@@ -8268,6 +8315,12 @@
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
       ],
+      "Organization filters": [
+        "Filtry organizace"
+      ],
+      "Organization key": [
+        "Klíč organizace"
+      ],
       "Organization name": [
         "Název organizace"
       ],
@@ -8394,6 +8447,9 @@
       "Single sign-on": [
         "Jednotné přihlášení"
       ],
+      "Spam, block, and allow lists": [
+        "Seznamy spamu, blokovaných a povolených"
+      ],
       "Status": [
         "Stav"
       ],
@@ -8444,6 +8500,9 @@
       ],
       "Users": [
         "Uživatelé"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
       ],
       "Verification failed": [
         "Ověření selhalo"

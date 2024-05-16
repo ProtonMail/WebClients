@@ -164,6 +164,9 @@
       "Download": [
         "डाउनलोड करें"
       ],
+      "Download CSV sample": [
+        "CSV नमूना डाउनलोड करें"
+      ],
       "Download our CSV template": [
         "हमारा CSV साँचा डाउनलोड करें"
       ],
@@ -2187,6 +2190,9 @@
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "आपको एकाधिक उपयोगकर्ताओं को जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
       ],
@@ -2209,9 +2215,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "यदि उपयोगकर्ता के पास पहले से ही ${ MAIL_APP_NAME } पता है, तो उसे यहाँ दर्ज करें। अन्यथा उन्हें पहले एक खाता बनाना होगा।"
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "आमंत्रण रद्द कर दिया जाएगा और उपयोगकर्ता ${ organizationName } में शामिल नहीं हो सकेगा।"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "उपयोगकर्ता का खाता 30-दिन के निःशुल्क परीक्षण* के लिए ${ BRAND_NAME } असीमित योजना में स्थानांतरित कर दिया जाएगा।"
@@ -2237,6 +2240,11 @@
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "यह आपके संगठन से जुड़े सभी उप-उपयोगकर्ताओं, खातों और डेटा को स्थायी रूप से हटा देगा।"
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "परिवार"
       ]
     },
     "familyOffer_2023:Success": {
@@ -2268,6 +2276,9 @@
       ],
       "Invite a user": [
         "किसी यूज़र को न्योता भेजें"
+      ],
+      "Manage family group": [
+        "परिवार ग्रुप संभालें"
       ],
       "Set family name": [
         "परिवार नाम सेट करें"
@@ -2510,11 +2521,17 @@
       "Create your account": [
         "अपना खाता बनाएं"
       ],
+      "Key type": [
+        "कुंजी प्रकार"
+      ],
       "Members": [
         "सदस्य"
       ],
       "Name": [
         "नाम"
+      ],
+      "Organization key fingerprint": [
+        "संगठन कुंजी फिंगरप्रिंट"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
@@ -2665,6 +2682,9 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "अपने खाते पे सुरक्षा की एक और परत डालें। आपको हर बार साइनइन करते वक्त 2-एफए से खुद को सत्यापित करना पड़ेगा।"
+      ],
+      "Add multiple users to your organization at once.": [
+        "एक समय में अपने संगठन में कई यूज़र एक साथ जोड़े"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "अपने संगठन के लिए व्यक्तिगत अनुभव बनाने के लिए अपना नाम और चिन्ह जोड़ें।"
@@ -2819,6 +2839,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "हमारा CSV टेम्पलेट डाउनलोड करें, यूज़र की जानकारी भरें, और फिर यूज़र के लिए खाते बनाने के लिए अपनी भरी हुई CSV फाइल अपलोड करें।"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
@@ -3023,6 +3046,9 @@
       ],
       "MM/YY": [
         "महीना/साल"
+      ],
+      "Multi-user support not enabled.": [
+        "बहु-उपयोगकर्ता समर्थन सक्षम नहीं है।"
       ],
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
@@ -3641,6 +3667,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "आपका संगठन सिंगल साइन-ऑन (SSO) का उपयोग करता है। आगे बढ़ने के लिए अपने SSO प्रदाता के साथ साइन इन करें।"
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "संगठन कुंजी का उपयोग करके आपके संगठन के ईमेल एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित हैं। इस फिंगरप्रिंट का उपयोग यह सत्यापित करने के लिए किया जा सकता है कि आपके खाते के सभी व्यवस्थापकों के पास एक ही कुंजी है।"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "आपके भुगतान विवरण TLS एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं।"
@@ -5732,6 +5761,11 @@
         "पासवर्ड रिसेट करें"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "संगठन"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } द्वारा साझा किया गया"
@@ -5830,11 +5864,6 @@
       ],
       "Support online privacy": [
         "ऑनलाइन निजता को बढ़ावा दें"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "यह सदस्यता रद्द होने तक हर 2 साल में उसी दर पर स्वतः नवीनीकृत हो जाएगी।"
       ]
     },
     "specialoffer: Link": {
@@ -6211,9 +6240,6 @@
       "Verification successful": [
         "सत्यापन सफल रहा"
       ],
-      "You have successfully cancelled your subscription.": [
-        "आपने अपनी सदस्यता सफलतापूर्वक रद्द कर दी है।"
-      ],
       "You have successfully unsubscribed": [
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त किया"
       ]
@@ -6427,6 +6453,9 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
+      "Catch-all address": [
+        "कैच-ऑल एड्रेस"
+      ],
       "Change login password": [
         "लॉगिन पासवर्ड बदलें"
       ],
@@ -6491,6 +6520,9 @@
       "Currency": [
         "मुद्रा"
       ],
+      "Customization": [
+        "अनुकूलन"
+      ],
       "Customize your plan": [
         "अपना प्लान अनुकूलित करे"
       ],
@@ -6527,6 +6559,9 @@
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
+      ],
+      "Domain names": [
+        "डोमेन नाम"
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
@@ -6630,6 +6665,12 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN विन्यास फाइल"
+      ],
+      "Organization filters": [
+        "संगठन फ़िल्टर"
+      ],
+      "Organization key": [
+        "संगठन कुंजी"
       ],
       "Organization name": [
         "संगठन नाम"
@@ -6736,6 +6777,9 @@
       "Signed in to member account": [
         "सदस्य खाते पे साइनइन हुए"
       ],
+      "Spam, block, and allow lists": [
+        "स्पैम, ब्लॉक और अलाउ सूची"
+      ],
       "Status": [
         "स्थिति"
       ],
@@ -6781,6 +6825,9 @@
       ],
       "Users": [
         "यूज़र"
+      ],
+      "Users and addresses": [
+        "उपयोगकर्ता और ई-मेल पते"
       ],
       "Verification failed": [
         "सत्यापन असफल"

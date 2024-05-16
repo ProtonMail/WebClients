@@ -296,6 +296,9 @@
       "Export contacts": [
         "Exportar contactes"
       ],
+      "Forgot password?": [
+        "He oblidat la contrasenya?"
+      ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
       ],
@@ -2380,7 +2383,7 @@
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
       "Availability unknown": [
-        "Es desconeix la disponibilitat"
+        "Se'n desconeix la disponibilitat"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
@@ -2480,11 +2483,32 @@
       "Bugs or quality issue": [
         "Errors o problema de qualitat"
       ],
+      "I do not wish to share": [
+        "No vull compartir"
+      ],
+      "I found a cheaper VPN": [
+        "He trobat una VPN més barata"
+      ],
+      "I found a VPN with better features": [
+        "He trobat una VPN amb millors característiques"
+      ],
+      "I have not managed to connect": [
+        "No he aconseguit connectar-me"
+      ],
+      "I only needed a VPN short-term": [
+        "Només necessitava una VPN a curt termini"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Faig ús d'un compte ${ BRAND_NAME } diferent"
       ],
+      "It doesn't do what I need": [
+        "No fa el que necessito"
+      ],
       "Missing feature(s)": [
         "Característiques que falten"
+      ],
+      "Other reason (please comment)": [
+        "Un altre motiu (si us plau comenti)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -2494,6 +2518,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessitat temporal, potser torni més endavant"
+      ],
+      "The VPN is too slow": [
+        "La VPN és massa lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -6248,7 +6275,7 @@
         "Seguretat avançada en la compartició"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i neteja la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -6344,7 +6371,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Group management (coming soon)": [
-        "Gestió del grup (aviat)"
+        "Gestió de grups (aviat)"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -6397,7 +6424,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Require 2FA for organization": [
-        "Requereix 2FA per a l'organització"
+        "Requereix A2F per a l'organització"
       ],
       "Router support": [
         "Suport per a router"
@@ -6475,7 +6502,7 @@
         "Caixes fortes compartides il·limitades amb permisos d'accés"
       ],
       "Unlimited vault sharing": [
-        "Compartició il·limitada de la caixa forta"
+        "Compartició il·limitada de caixes fortes"
       ],
       "Unlimited vaults": [
         "Caixes fortes il·limitades"
@@ -6659,7 +6686,7 @@
         "Permet configurar respostes automàtiques per als missatges entrants"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Neteja automàticament les carpetes de paperera i brossa els missatges amb més de 30 dies d'antiguitat."
+        "Netegeu automàticament els missatges amb més de 30 dies de la paperera i el correu brossa."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'enviament massiu de correus electrònics promocionals o programàtics no està suportat actualment. Recomanem utilitzar un proveïdor de serveis de correu electrònic dedicat per a aquesta finalitat."
@@ -6858,7 +6885,7 @@
         "Gestor de comptes dedicat"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Ubicacions del servidor dedicades a ${ numberOfCountries }+ països"
+        "Ubicacions del servidor dedicades a més de ${ numberOfCountries } països"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicacions de servidors dedicats a Amèrica del Nord i Europa"
@@ -7172,14 +7199,6 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Desplega la llista de participants"
-      ]
-    },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
       ]
     },
     "Payment method option": {
@@ -7624,19 +7643,9 @@
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "S'ha cancel·lat el restabliment de la contrasenya."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Voleu cancel·lar el restabliment de la contrasenya?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu fet aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7861,11 +7870,6 @@
         "Doneu suport a la privacitat en línia"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ves als plans de subscripció"
@@ -8080,10 +8084,10 @@
         "Facturació per 15 mesos"
       ],
       "Billed for 18 months": [
-        "Facturació per 18 mesos"
+        "Facturació durant 18 mesos"
       ],
       "Billed for 3 months": [
-        "Facturació per 3 mesos"
+        "Facturació durant 3 mesos"
       ],
       "Billed for 30 months": [
         "Facturació per 30 mesos"
@@ -8367,9 +8371,6 @@
       "Verification successful": [
         "Èxit de verificació"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Heu cancel·lat la vostra subscripció."
-      ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
       ]
@@ -8520,7 +8521,7 @@
         "Seguretat del compte"
       ],
       "Add a custom logo": [
-        "Afegiu un logotip personalitzat"
+        "Afegeix un logotip personalitzat"
       ],
       "Add another notification to remind you of this event": [
         "Afegeix una altra notificació per recordar-vos aquest esdeveniment"

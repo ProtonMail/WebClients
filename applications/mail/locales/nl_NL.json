@@ -260,6 +260,9 @@
       "Copy password to clipboard": [
         "Wachtwoord kopiëren naar klembord"
       ],
+      "Copy version number to clipboard": [
+        "Kopieer versienummer naar klembord"
+      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
@@ -447,6 +450,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
@@ -3339,11 +3345,32 @@
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
       ],
+      "I do not wish to share": [
+        "Ik wens dit niet te delen"
+      ],
+      "I found a cheaper VPN": [
+        "Ik vond een goedkopere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Ik heb een VPN gevonden met betere functies"
+      ],
+      "I have not managed to connect": [
+        "Ik kon niet verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ik had enkel een VPN nodig voor korte termijn"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
       ],
+      "It doesn't do what I need": [
+        "Het doet niet wat ik nodig heb"
+      ],
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
+      ],
+      "Other reason (please comment)": [
+        "Andere reden (graag verduidelijken)"
       ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
@@ -3353,6 +3380,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tijdelijke behoefte, kan in de toekomst terugkomen"
+      ],
+      "The VPN is too slow": [
+        "De VPN is te traag"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5539,9 +5569,6 @@
       "and": [
         "en"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Eventuele geplande of uitgestelde berichten zullen geannuleerd worden."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden gewist. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden gewist en zijn terug te vinden in de map Alle berichten."
       ],
@@ -6429,9 +6456,6 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Gesnoozed tot morgen, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
-        "Dit gesprek uitstellen wordt geannuleerd"
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
@@ -6764,6 +6788,9 @@
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versienummer succesvol gekopieerd naar klembord"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -9467,20 +9494,6 @@
         "U"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
@@ -9893,6 +9906,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt van een externe dienst. ${ learnMoreLink }"
       ],
@@ -9901,6 +9923,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel is **actief** en beschermt uw account."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
       ]
     },
     "Select files": {
@@ -10093,19 +10118,9 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Wachtwoord reset geannuleerd"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Aanvraag wijziging wachtwoord (${ user.Email }) geannuleerd. Als u deze aanvraag niet hebt gemaakt, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10328,11 +10343,6 @@
         "Ondersteun online privacy"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -10465,11 +10475,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Status": {
@@ -10939,9 +10944,6 @@
       "Message deleted": [
         "Bericht verwijderd"
       ],
-      "Message expiration cancelled": [
-        "Verloopdatum bericht geannuleerd"
-      ],
       "Message marked as legitimate": [
         "Bericht gemarkeerd als legitiem"
       ],
@@ -11018,9 +11020,6 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "U hebt met succes uw abonnement opgezegd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"

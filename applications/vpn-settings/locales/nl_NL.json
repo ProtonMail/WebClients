@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopieer sleutel naar klembord"
       ],
+      "Copy version number to clipboard": [
+        "Kopieer versienummer naar klembord"
+      ],
       "Create": [
         "Aanmaken"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Download CSV sample": [
+        "CSV-voorbeeld downloaden"
+      ],
       "Download our CSV template": [
         "Ons CSV-sjabloon downloaden"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Passend in venster"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
@@ -1930,11 +1939,32 @@
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
       ],
+      "I do not wish to share": [
+        "Ik wens dit niet te delen"
+      ],
+      "I found a cheaper VPN": [
+        "Ik vond een goedkopere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Ik heb een VPN gevonden met betere functies"
+      ],
+      "I have not managed to connect": [
+        "Ik kon niet verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ik had enkel een VPN nodig voor korte termijn"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
       ],
+      "It doesn't do what I need": [
+        "Het doet niet wat ik nodig heb"
+      ],
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
+      ],
+      "Other reason (please comment)": [
+        "Andere reden (graag verduidelijken)"
       ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
@@ -1944,6 +1974,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tijdelijke behoefte, kan in de toekomst terugkomen"
+      ],
+      "The VPN is too slow": [
+        "De VPN is te traag"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2442,6 +2475,9 @@
       "You have successfully joined the Family plan": [
         "U hebt zich aangesloten bij het Family-abonnement"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "U moet een eigen domein configureren voordat u meerdere gebruikers toevoegt."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
       ],
@@ -2470,9 +2506,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
@@ -2511,6 +2544,11 @@
         "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Gezin"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } is verwijderd uit ${ organizationName }"
@@ -2543,6 +2581,9 @@
       ],
       "Invite a user": [
         "Een gebruiker uitnodigen"
+      ],
+      "Manage family group": [
+        "Gezinsgroep beheren"
       ],
       "Set family name": [
         "Gezinsnaam instellen"
@@ -2810,11 +2851,17 @@
       "IP address": [
         "IP-adres"
       ],
+      "Key type": [
+        "Sleuteltype"
+      ],
       "Members": [
         "Leden"
       ],
       "Name": [
         "Naam"
+      ],
+      "Organization key fingerprint": [
+        "Vingerafdruk van organisatiesleutel"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Bespaar veel met de beste deals van ${ VPN_APP_NAME }"
@@ -2983,6 +3030,9 @@
       ],
       "Add domain": [
         "Domein toevoegen"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Voeg meerdere gebruikers tegelijk toe aan uw organisatie."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
@@ -3205,6 +3255,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Download ons CSV-sjabloon, vul de gebruikersgegevens in en upload vervolgens uw ingevulde CSV-bestand om accounts voor deze gebruikers aan te maken."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -3445,6 +3498,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Multi-user support not enabled.": [
+        "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
       ],
       "Must be between 3 and 20 characters long.": [
         "Moet tussen de 3 en 20 tekens lang zijn."
@@ -3944,6 +4000,9 @@
       "Version ${ version }": [
         "Versie ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Versienummer succesvol gekopieerd naar klembord"
+      ],
       "View, download, and manage your invoices.": [
         "Bekijk, download, en beheer uw facturen."
       ],
@@ -4173,6 +4232,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Uw organisatie maakt gebruik van een enkele aanmelding (SSO). Druk op aanmelden om door te gaan met uw SSO-provider."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "De e-mails van uw organisatie worden beschermd met end-to-end encryptie met behulp van de organisatiesleutel. Deze vingerafdruk kan worden gebruikt om te controleren of alle beheerders in uw account dezelfde sleutel hebben."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
@@ -6722,19 +6784,9 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Wachtwoord reset geannuleerd"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Aanvraag wijziging wachtwoord (${ user.Email }) geannuleerd. Als u deze aanvraag niet hebt gemaakt, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6891,6 +6943,11 @@
         "Aanvraag wijziging wachtwoord"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Bedrijf"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Gedeeld door ${ ownerName }"
@@ -6992,11 +7049,6 @@
       ],
       "Support online privacy": [
         "Ondersteun online privacy"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
       ]
     },
     "specialoffer: Link": {
@@ -7116,11 +7168,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Storage": {
@@ -7507,9 +7554,6 @@
       "Verification successful": [
         "Verificatie gelukt"
       ],
-      "You have successfully cancelled your subscription.": [
-        "U hebt met succes uw abonnement opgezegd."
-      ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ]
@@ -7735,6 +7779,9 @@
       "Card verification": [
         "Kaartverificatie"
       ],
+      "Catch-all address": [
+        "Catch-all adres"
+      ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
       ],
@@ -7811,6 +7858,9 @@
       "Custom selection of users": [
         "Aangepaste selectie van gebruikers"
       ],
+      "Customization": [
+        "Maatwerk"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Verander de hoeveelheid IP-adressen in uw abonnement"
       ],
@@ -7853,6 +7903,9 @@
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
+      ],
+      "Domain names": [
+        "Domeinnamen"
       ],
       "Downgrade account": [
         "Account downgraden"
@@ -7987,6 +8040,12 @@
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
       ],
+      "Organization filters": [
+        "Organisatiefilters"
+      ],
+      "Organization key": [
+        "Organisatie sleutel"
+      ],
       "Organization name": [
         "Organisatienaam"
       ],
@@ -8113,6 +8172,9 @@
       "Single sign-on": [
         "Single sign-on"
       ],
+      "Spam, block, and allow lists": [
+        "Spam, blokkeer en accepteer lijsten"
+      ],
       "Status": [
         "Status"
       ],
@@ -8161,6 +8223,9 @@
       ],
       "Users": [
         "Gebruikers"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ],
       "Verification failed": [
         "Verificatie mislukt"

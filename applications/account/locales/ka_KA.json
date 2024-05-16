@@ -467,6 +467,9 @@
       "Font": [
         "ფონტი"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Generate": [
         "გენერაცია"
       ],
@@ -4863,9 +4866,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -12779,19 +12779,9 @@
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "პაროლის შეცვლა გაუქმდა"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13194,11 +13184,6 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -13316,11 +13301,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
       ]
     },
     "Step in filter modal": {
@@ -13859,9 +13839,6 @@
       ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "თქვენი ტარიფი წარმატებით გააუქმეთ."
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"

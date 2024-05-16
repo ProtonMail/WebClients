@@ -12,6 +12,26 @@
         "Postin edelleenlähetys pysäytettiin"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
@@ -260,6 +280,9 @@
       "Copy password to clipboard": [
         "Kopioi salasana leikepöydälle"
       ],
+      "Copy version number to clipboard": [
+        "Kopioi versionumero leikepöydälle"
+      ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
@@ -447,6 +470,9 @@
       ],
       "Font": [
         "Fontti"
+      ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
@@ -1274,13 +1300,13 @@
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Lähennä"
@@ -1596,7 +1622,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }In työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -3339,11 +3365,32 @@
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
       ],
+      "I do not wish to share": [
+        "En halua kertoa"
+      ],
+      "I found a cheaper VPN": [
+        "Löysin edullisemman VPN:n"
+      ],
+      "I found a VPN with better features": [
+        "Löysin VPN:n paremmilla ominaisuuksilla"
+      ],
+      "I have not managed to connect": [
+        "En ole onnistunut muodostamaan yhteyttä"
+      ],
+      "I only needed a VPN short-term": [
+        "Tarvitsin VPN:n vain lyhyeksi ajaksi"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Käytän eri ${ BRAND_NAME }-tiliä"
       ],
+      "It doesn't do what I need": [
+        "Se ei vastaa tarpeitani"
+      ],
       "Missing feature(s)": [
         "Ominaisuuksia puuttuu"
+      ],
+      "Other reason (please comment)": [
+        "Muu syy (kerro mikä)"
       ],
       "Subscription is too expensive": [
         "Tilaus on liian kallis"
@@ -3353,6 +3400,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tilapäinen tarve, palaan luultavasti takaisin"
+      ],
+      "The VPN is too slow": [
+        "VPN on liian hidas"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3552,7 +3602,7 @@
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Varhainen pääsy ${ MAIL_APP_NAME } -työpöytäsovellukseen"
+        "Varhainen käyttöoikeus ${ MAIL_APP_NAME }in työpöytäsovellukseen"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
@@ -4739,7 +4789,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
       "14-day desktop app trial.": [
         "Työpöytäsovelluksen 14 päivän kokeilujakso."
@@ -5538,9 +5588,6 @@
       ],
       "and": [
         "ja"
-      ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Kaikki ajoitetut tai torkutetut viestit perutaan."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansioon ${ nameDeleted } tallennettuja sähköpostiviestejä ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
@@ -6429,9 +6476,6 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Torkutettu huomiseen asti, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
-        "Tämän keskustelun torkuttaminen perutaan."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
       ],
@@ -6764,6 +6808,9 @@
       ],
       "Version ${ appVersion }": [
         "Versio ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionumero kopioitiin leikepöydälle"
       ],
       "Visa Secure logo": [
         "Visa Secure -logo"
@@ -8244,7 +8291,7 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
@@ -8765,6 +8812,9 @@
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor – premium-ominaisuudet"
+      ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
       ],
@@ -8840,6 +8890,9 @@
       ],
       "Unlimited devices": [
         "Rajattomasti laitteita"
+      ],
+      "Unlimited devices and aliases": [
+        "Rajattomasti laitteita ja aliaksia"
       ],
       "Unlimited filters": [
         "Rajattomasti suodattimia"
@@ -9096,7 +9149,7 @@
         "Pakota käyttäjäistuntojen uloskirjaus, kun käyttäjätietojen epäillään vaarantuneen"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridge -sovelluksen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
+        "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridgen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
@@ -9467,18 +9520,12 @@
         "Sinä"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+    "pass_signup_2023: Info": {
+      "Secure sharing with multiple vaults": [
+        "Turvallinen useamman holvin jako"
       ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisaation avain on aktivoitava, jotta voit antaa ylläpitäjän oikeudet"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
+      "Secure vault sharing": [
+        "Turvallinen holvien jako"
       ]
     },
     "Payment method option": {
@@ -9893,6 +9940,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut ulkopuolisesta palvelusta. ${ learnMoreLink }"
       ],
@@ -9901,6 +9957,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "Select files": {
@@ -10093,19 +10152,9 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Salasanan nollaus peruttiin"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Salasanan nollauspyyntö peruutettu (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10328,11 +10377,6 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -10465,11 +10509,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Tilaustasi perutaan. Odota."
       ]
     },
     "Status": {
@@ -10939,9 +10978,6 @@
       "Message deleted": [
         "Viesti poistettiin"
       ],
-      "Message expiration cancelled": [
-        "Viestin tuhoutuminen on peruttu"
-      ],
       "Message marked as legitimate": [
         "Viesti merkittiin kelvolliseksi"
       ],
@@ -11018,9 +11054,6 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"

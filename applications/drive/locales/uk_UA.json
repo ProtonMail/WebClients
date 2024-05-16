@@ -190,6 +190,9 @@
       "Copy link": [
         "Копіювати посилання"
       ],
+      "Copy version number to clipboard": [
+        "Копіювати номер версії в буфер обміну"
+      ],
       "Create": [
         "Створити"
       ],
@@ -336,6 +339,9 @@
       ],
       "Fit to window": [
         "Припасувати до вікна"
+      ],
+      "Forgot password?": [
+        "Забули пароль?"
       ],
       "Forward as attachment": [
         "Переслати як вкладення"
@@ -2238,11 +2244,32 @@
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
       ],
+      "I do not wish to share": [
+        "Не хочу говорити"
+      ],
+      "I found a cheaper VPN": [
+        "Я знайшов дешевший VPN"
+      ],
+      "I found a VPN with better features": [
+        "Я знайшов VPN з кращими функціями"
+      ],
+      "I have not managed to connect": [
+        "Мені не вдалося під'єднатися"
+      ],
+      "I only needed a VPN short-term": [
+        "Мені був потрібен VPN лише на короткий термін"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Я користуюсь іншим обліковим записом ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Не задовільняє мої потреби"
+      ],
       "Missing feature(s)": [
         "Відсутні функції"
+      ],
+      "Other reason (please comment)": [
+        "Інша причина (напишіть про неї)"
       ],
       "Subscription is too expensive": [
         "Надто висока вартість передплати"
@@ -2252,6 +2279,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Тимчасова необхідність. Можливо, повернуся в майбутньому"
+      ],
+      "The VPN is too slow": [
+        "VPN занадто повільний"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4827,9 +4857,6 @@
       "Share via link settings": [
         "Поділитись через налаштування посилань"
       ],
-      "Share with": [
-        "Поділитися з"
-      ],
       "Share with anyone": [
         "Поділіться з ким завгодно"
       ],
@@ -5105,6 +5132,9 @@
       ],
       "Version is restored": [
         "Версію відновлено"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версії успішно скопійовано до буфера обміну"
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -7638,20 +7668,6 @@
         "Ви"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Неприватні користувачі можуть бути підвищені до адміністратора, якщо у них є ключі налаштування"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Ключ організації повинен бути активований для надання прав адміністратора"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Приватні користувачі можуть бути підвищені до адміністратора, коли вони вперше увійшли в систему"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Ви повинні приватизувати всіх користувачів перед створенням нового ключа організації"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Банківська картка"
@@ -7966,6 +7982,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Отримувати сповіщення про те, що ваш пароль чи інші дані були просочені від стороннього сервісу. ${ learnMoreLink }"
       ],
@@ -7974,6 +7999,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша інформація була знайдена принаймні в одному витоку даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
       ]
     },
     "Select files": {
@@ -8074,19 +8102,9 @@
         "Введіть поточний пароль, щоб скасувати скидання пароля. Жодні інші зміни не набудуть чинності."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Скидання пароля скасовано"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не робили цей запит, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8271,11 +8289,6 @@
         "Підтримка онлайн-приватності"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти до тарифних планів"
@@ -8401,11 +8414,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Зачекайте поки триває скасування вашої передплати..."
       ]
     },
     "Storage": {
@@ -8756,9 +8764,6 @@
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Ви успішно скасували передплату."
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"

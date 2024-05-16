@@ -319,6 +319,9 @@
       "Fit to window": [
         "适应窗口大小"
       ],
+      "Forgot password?": [
+        "忘记密码?"
+      ],
       "Forward as attachment": [
         "作为附件转发"
       ],
@@ -3551,7 +3554,7 @@
         "${ addressCount } 个邮箱地址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您授权${ enableDesktopNotifications }。"
+        "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
@@ -7138,19 +7141,9 @@
         "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "密码重置已取消"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密码重置？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密码重置请求已取消 (${ user.Email })。 如果您没有提出此请求，则${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7321,11 +7314,6 @@
       ],
       "Support online privacy": [
         "支持网络隐私保护"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
     },
     "specialoffer: Link": {
@@ -7674,9 +7662,6 @@
       ],
       "Verification successful": [
         "验证成功"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "您已成功取消订阅。"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"

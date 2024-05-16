@@ -433,6 +433,12 @@
       "Edit name": [
         "Modifica nome"
       ],
+      "Edit organization identity": [
+        "Modifica l'identità dell'organizzazione"
+      ],
+      "Edit organization name": [
+        "Modifica il nome dell'organizzazione"
+      ],
       "Edit password": [
         "Modifica la password"
       ],
@@ -4958,7 +4964,7 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se l'utente ha già un indirizzo ${ MAIL_APP_NAME }, inseriscilo qui. In caso contrario, deve prima creare un account."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "L'invito verrà annullato e l'utente non potrà unirsi a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
@@ -7545,6 +7551,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scansiona questo codice con il tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Integrazione SCIM disabilitata"
+      ],
+      "SCIM token active": [
+        "Token SCIM attivo"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteggi il tuo account ${ BRAND_NAME }"
       ],
@@ -9170,6 +9182,9 @@
       "Current email": [
         "Email attuale"
       ],
+      "Current organization identity": [
+        "Identità dell'organizzazione attuale"
+      ],
       "Daily email notifications": [
         "Notifiche email giornaliere"
       ],
@@ -9470,6 +9485,9 @@
       "New mailbox password": [
         "Nuova password della casella di posta"
       ],
+      "New organization identity": [
+        "Nuova identità dell'organizzazione"
+      ],
       "New organization password": [
         "Nuova password dell'organizzazione"
       ],
@@ -9517,6 +9535,9 @@
       ],
       "Or": [
         "O"
+      ],
+      "Organization identity": [
+        "Identità dell'organizzazione"
       ],
       "Organization name": [
         "Nome dell'organizzazione"
@@ -12475,8 +12496,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilizza un metodo di recupero dei dati, contatta un altro amministratore o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Non è stato possibile verificare l'autenticità di questa identità."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Non siamo riusciti a verificare la sicurezza della chiave dell'indirizzo di questo mittente. A volte potrebbe verificarsi un ritardo nell'aggiornamento delle informazioni del mittente. Riprova più tardi. Se non sei sicuro della validità di questo invito o del mittente, contatta l'assistenza clienti di ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Abbiamo verificato l'autenticità di questa identità."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Abbiamo verificato l'autenticità di questo mittente e dell'invito."
@@ -13152,7 +13179,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Reimpostazione della password annullata"
       ]
     },
@@ -13162,7 +13189,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Richiesta di reimpostazione della password annullata (${ user.Email }). Se non hai effettuato tu questa richiesta, ${ changePasswordLink }."
       ]
     },
@@ -13567,8 +13594,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Questo abbonamento si rinnoverà automaticamente ogni 2 anni alla stessa tariffa fino all'annullamento."
       ]
     },
     "specialoffer: Link": {
@@ -13691,8 +13718,8 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
-        "Annullamento dell'abbonamento. Per favore attendi"
+      "Canceling your subscription, please wait": [
+        "Annullamento dell'abbonamento, attendi"
       ]
     },
     "Step in filter modal": {
@@ -14411,8 +14438,8 @@
       "Verification successful": [
         "Verifica riuscita"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Hai annullato l'abbonamento con successo."
+      "You have successfully canceled your subscription.": [
+        "Hai annullato l'abbonamento."
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
@@ -15052,6 +15079,9 @@
       ],
       "Edit invoice details": [
         "Modifica i dettagli delle fatture"
+      ],
+      "Edit organization identity": [
+        "Modifica l'identità dell'organizzazione"
       ],
       "Edit servers": [
         "Modifica server"
@@ -15928,6 +15958,9 @@
       ],
       "This address has been disabled": [
         "Questo indirizzo è stato disabilitato"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Questo indirizzo email verrà mostrato a tutti i membri dell'organizzazione durante l'esecuzione delle operazioni di gestione dell'account."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Questa funzione ritarda l'invio delle tue email, consentendoti di annullare l'invio durante il periodo di tempo selezionato."

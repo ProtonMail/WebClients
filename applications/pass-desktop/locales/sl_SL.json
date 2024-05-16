@@ -288,7 +288,7 @@
         "ProtonPass za iOS"
       ],
       "Pass Monitor": [
-        "Nadzor nad Proton Pass"
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "Začasno ustavi spremljanje"
@@ -913,6 +913,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Vse trenutne kršitve bodo označene kot odpravljene. V primeru prihodnjih kršitev podatkov boste obveščeni."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Vsi premeti iz »${ payload.content.name }« so bili premaknjeni."
@@ -2235,6 +2238,9 @@
       "Password Health": [
         "Močno geslo"
       ],
+      "Pause monitoring?": [
+        "Začasno ustavi spremljanje?"
+      ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
       ],
@@ -2249,6 +2255,9 @@
       ],
       "Restore this version?": [
         "Obnovi to različico?"
+      ],
+      "Resume monitoring?": [
+        "Nadaljuj spremljanje?"
       ],
       "Reused ${ count } time": [
         "Ponovno uporabljeno ${ count }-krat",

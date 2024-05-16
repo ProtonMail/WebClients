@@ -2048,6 +2048,14 @@
         "Schreibe deine Notiz"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
@@ -2203,7 +2211,7 @@
         "Passwort"
       ],
       "Password Health": [
-        "Passwort Sicherheit"
+        "Passwortsicherheit"
       ],
       "Pause monitoring?": [
         "Überwachung pausieren?"

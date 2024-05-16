@@ -173,6 +173,9 @@
       "Download": [
         "下載"
       ],
+      "Download CSV sample": [
+        "下載 CSV 範本"
+      ],
       "Download our CSV template": [
         "下載我們的CSV模板"
       ],
@@ -229,6 +232,9 @@
       ],
       "Fit to window": [
         "貼齊視窗邊沿"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
@@ -2405,6 +2411,9 @@
       "You have successfully joined the Family plan": [
         "您已成功加入家庭方案"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "您需要先架構自訂網域，才能加入多位使用者。"
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "你必須先設定自訂網域，才可以創建新的使用者"
       ],
@@ -2433,9 +2442,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "邀請將會取消，此使用者亦不會能夠加入 ${ organizationName }。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
@@ -2474,6 +2480,11 @@
         "這將會為每一家庭成員移除所有 ${ BRAND_NAME } 尊享功能。"
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "家庭"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } 已從 ${ organizationName } 中移除"
@@ -2506,6 +2517,9 @@
       ],
       "Invite a user": [
         "邀請使用者"
+      ],
+      "Manage family group": [
+        "管理家庭群組"
       ],
       "Set family name": [
         "設定家庭名稱"
@@ -2764,11 +2778,17 @@
       "IP address": [
         "IP 位址"
       ],
+      "Key type": [
+        "金鑰類型"
+      ],
       "Members": [
         "成員"
       ],
       "Name": [
         "名稱"
+      ],
+      "Organization key fingerprint": [
+        "組織金鑰指紋"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "於${ VPN_APP_NAME }存取鉅額優惠"
@@ -2929,6 +2949,9 @@
       ],
       "Add domain": [
         "加入網域"
+      ],
+      "Add multiple users to your organization at once.": [
+        "一次新增多個使用者到您的組織中。"
       ],
       "Add server (${ availableAddedCount } available)": [
         "新增伺服器 (${ availableAddedCount } 台可用)"
@@ -3133,6 +3156,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上傳您完成的 CSV 檔案，即可創建這些使用者的帳號。"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
@@ -3367,6 +3393,9 @@
       ],
       "MM/YY": [
         "月月/年年"
+      ],
+      "Multi-user support not enabled.": [
+        "多使用者支援尚未啟用。"
       ],
       "Must be between 3 and 20 characters long.": [
         "必須在 3 到 20 個字元長度之間。"
@@ -4078,6 +4107,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的組織機構使用單一登入（SSO）。按「登入」以 SSO 登入。"
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "您的組織中所有電郵均使用組織金鑰作端對端加密受到保護。此指紋可用來驗證您的帳號中所有系統管理員均擁有相同的金鑰。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "您的付款詳情是受 TLS 加密及瑞士隱私法律保護。"
@@ -6385,19 +6417,9 @@
         "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "已取消密碼重設"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密碼重設？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6549,6 +6571,11 @@
         "需求重設密碼"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "組織"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
@@ -6645,11 +6672,6 @@
       ],
       "Support online privacy": [
         "支援線上隱私"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
     },
     "specialoffer: Link": {
@@ -6768,11 +6790,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "請稍後，正在取消您的訂閱"
       ]
     },
     "Storage": {
@@ -7130,9 +7147,6 @@
       "Verification successful": [
         "驗證成功"
       ],
-      "You have successfully cancelled your subscription.": [
-        "你取消了訂購授權"
-      ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
       ]
@@ -7358,6 +7372,9 @@
       "Card verification": [
         "信用卡驗證"
       ],
+      "Catch-all address": [
+        "全部擷取電郵位址"
+      ],
       "Change login password": [
         "更改登入密碼"
       ],
@@ -7433,6 +7450,9 @@
       "Custom selection of users": [
         "自選使用者"
       ],
+      "Customization": [
+        "自訂"
+      ],
       "Customize the number of IP addresses in your plan": [
         "自訂方案使用的 IP 位址數量"
       ],
@@ -7474,6 +7494,9 @@
       ],
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
+      ],
+      "Domain names": [
+        "網域名稱"
       ],
       "Downgrade account": [
         "降級帳號"
@@ -7607,6 +7630,12 @@
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
       ],
+      "Organization filters": [
+        "機構過濾系統"
+      ],
+      "Organization key": [
+        "組織金鑰"
+      ],
       "Organization name": [
         "組織名稱"
       ],
@@ -7733,6 +7762,9 @@
       "Single sign-on": [
         "單一登入"
       ],
+      "Spam, block, and allow lists": [
+        "垃圾郵件、攔截和允許清單"
+      ],
       "Status": [
         "狀態"
       ],
@@ -7780,6 +7812,9 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
       ],
       "Verification failed": [
         "驗證失敗"

@@ -5589,7 +5589,7 @@
       "and": [
         "e"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
+      "Any scheduled or snoozed messages will be canceled.": [
         "Qualsiasi messaggio programmato o posticipato verrà annullato."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
@@ -6479,7 +6479,7 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Posticipata fino alle ${ formattedTime } di domani"
       ],
-      "Snoozing this conversation will be cancelled.": [
+      "Snoozing this conversation will be canceled.": [
         "La posticipazione di questa conversazione verrà annullata."
       ],
       "Sorry, this message does not exist or has already expired.": [
@@ -9546,20 +9546,6 @@
         "Condivisione sicura della cassaforte"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Gli utenti non privati possono essere promossi ad amministratore quando dispongono delle chiavi di configurazione"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "La chiave dell'organizzazione deve essere attivata per poter concedere i privilegi di amministratore"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Devi rendere privati tutti gli utenti prima di poter generare una nuova chiave dell’organizzazione"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Carta di credito/debito"
@@ -10185,7 +10171,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Reimpostazione della password annullata"
       ]
     },
@@ -10195,7 +10181,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Richiesta di reimpostazione della password annullata (${ user.Email }). Se non hai effettuato tu questa richiesta, ${ changePasswordLink }."
       ]
     },
@@ -10420,8 +10406,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Questo abbonamento si rinnoverà automaticamente ogni 2 anni alla stessa tariffa fino all'annullamento."
       ]
     },
     "specialoffer: Link": {
@@ -10559,8 +10545,8 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
-        "Annullamento dell'abbonamento. Per favore attendi"
+      "Canceling your subscription, please wait": [
+        "Annullamento dell'abbonamento, attendi"
       ]
     },
     "Status": {
@@ -11030,7 +11016,7 @@
       "Message deleted": [
         "Messaggio eliminato"
       ],
-      "Message expiration cancelled": [
+      "Message expiration canceled": [
         "Scadenza del messaggio annullata"
       ],
       "Message marked as legitimate": [
@@ -11110,8 +11096,8 @@
       "Verification successful": [
         "Verifica riuscita"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Hai annullato l'abbonamento con successo."
+      "You have successfully canceled your subscription.": [
+        "Hai annullato l'abbonamento."
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
