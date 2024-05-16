@@ -23,34 +23,31 @@ export const getSessionID = (url?: string) => {
     }
 };
 
-export const isHostCalendar = (host: string) => {
+export const isCalendar = (urlString: string) => {
     try {
         const urls = getConfig().url;
-        const hostURl = new URL(host);
-
-        return urls.calendar === hostURl.origin;
+        const url = new URL(urlString);
+        return urls.calendar === url.origin;
     } catch (error) {
         return false;
     }
 };
 
-export const isHostMail = (host: string) => {
+export const isMail = (urlString: string) => {
     try {
         const urls = getConfig().url;
-        const hostURl = new URL(host);
-
-        return urls.mail === hostURl.origin;
+        const url = new URL(urlString);
+        return urls.mail === url.origin;
     } catch (error) {
         return false;
     }
 };
 
-export const isHostAccount = (host: string) => {
+export const isAccount = (urlString: string) => {
     try {
         const urls = getConfig().url;
-        const hostURl = new URL(host);
-
-        return urls.account === hostURl.origin;
+        const url = new URL(urlString);
+        return urls.account === url.origin;
     } catch (error) {
         return false;
     }
@@ -67,13 +64,13 @@ export const isAccoutLite = (host: string) => {
 };
 
 export const isCalendarSettings = (host: string) => {
-    if (!isHostAccount(host)) return false;
+    if (!isAccount(host)) return false;
     const url = new URL(host);
     return /^\/u\/\d\/calendar/.test(url.pathname);
 }
 
 export const isMailSettings = (host: string) => {
-    if (!isHostAccount(host)) return false;
+    if (!isAccount(host)) return false;
     const url = new URL(host);
     return /^\/u\/\d\/mail/.test(url.pathname);
 }

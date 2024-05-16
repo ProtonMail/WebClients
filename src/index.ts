@@ -16,10 +16,10 @@ import {
     getSessionID,
     isAccoutLite,
     isCalendarSettings,
-    isHostAccount,
+    isAccount,
     isHostAllowed,
-    isHostCalendar,
-    isHostMail,
+    isCalendar,
+    isMail,
     isMailSettings,
     isUpgradeURL,
     isUpsellURL,
@@ -187,14 +187,14 @@ import pkg from "../package.json";
             }
 
             // This is used to redirect users to the external browser for internal upgrade modals
-            if (isHostAccount(url) && isUpgradeURL(url)) {
+            if (isAccount(url) && isUpgradeURL(url)) {
                 return;
             }
 
             const sessionID = getSessionID(url);
             const calendarView = getCalendarView();
             const calendarSessionID = getSessionID(calendarView.webContents.getURL());
-            if (isHostMail(url) && sessionID && !calendarSessionID) {
+            if (isMail(url) && sessionID && !calendarSessionID) {
                 Logger.info("Refresh calendar session", sessionID);
                 reloadCalendarWithSession(sessionID);
             }
@@ -227,19 +227,19 @@ import pkg from "../package.json";
         contents.setWindowOpenHandler((details) => {
             const { url } = details;
 
-            if (isHostCalendar(url)) {
+            if (isCalendar(url)) {
                 Logger.info("Open calendar window");
                 updateView("calendar");
                 return { action: "deny" };
             }
 
-            if (isHostMail(url)) {
+            if (isMail(url)) {
                 Logger.info("Open mail window");
                 updateView("mail");
                 return { action: "deny" };
             }
 
-            if (isHostAccount(url)) {
+            if (isAccount(url)) {
                 // Upsell links should be opened in browser to avoid 3D secure issues
                 Logger.info("Account link");
                 if (isAccoutLite(url) || isUpsellURL(url)) {
