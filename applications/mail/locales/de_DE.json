@@ -5569,9 +5569,6 @@
       "and": [
         "und"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Alle geplanten oder aufgeschobenen Nachrichten werden gelöscht."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
       ],
@@ -6458,9 +6455,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Aufgeschoben bis morgen, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Das Stummschalten dieser Unterhaltung wird abgebrochen."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
@@ -9518,20 +9512,6 @@
         "Sicheres Teilen von Tresoren"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Nicht-private Benutzer können zu Administratoren befördert werden, wenn sie Setup-Schlüssel haben"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Der Organisationsschlüssel muss aktiviert sein, um Admin-Rechte zu erhalten"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du musst alle Benutzer privatisieren, bevor du einen neuen Organisationsschlüssel erzeugst."
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
@@ -9944,6 +9924,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden. ${ learnMoreLink }"
       ],
@@ -9952,6 +9935,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     },
     "Select files": {
@@ -10144,19 +10130,9 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Passwortzurücksetzung abgebrochen"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10379,11 +10355,6 @@
         "Unterstütze Online-Privatsphäre"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
@@ -10516,11 +10487,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Status": {
@@ -10987,9 +10953,6 @@
       "Message deleted": [
         "Nachricht gelöscht"
       ],
-      "Message expiration cancelled": [
-        "Gültigkeitsdauer der Nachricht aufgehoben."
-      ],
       "Message marked as legitimate": [
         "Nachricht als seriös markiert"
       ],
@@ -11066,9 +11029,6 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."

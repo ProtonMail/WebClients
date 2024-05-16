@@ -5589,8 +5589,8 @@
       "and": [
         "og"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Alle planlagte eller udsatte beskeder vil blive annulleret."
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Enhver planlagt eller slumret besked vil blive annulleret."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i denne mappe ${ nameDeleted }, vil dog ikke blive slettet og kan findes i mappen Alle e-mails."
@@ -6479,8 +6479,8 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Udsat indtil i morgen, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
-        "Udsættelse af denne samtale vil blive annulleret."
+      "Snoozing this conversation will be canceled.": [
+        "At slumre denne samtale vil blive annulleret."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
@@ -9538,20 +9538,6 @@
         "Sikker deling af boks"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit/debetkort"
@@ -10177,8 +10163,8 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Nulstilling af adgangskode annulleret"
+      "Password reset canceled": [
+        "Nulstilling af adgangskode aflyst"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -10187,8 +10173,8 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode aflyst (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10412,8 +10398,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
       ]
     },
     "specialoffer: Link": {
@@ -10551,8 +10537,8 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
-        "Annullerer dit abonnement, vent venligst"
+      "Canceling your subscription, please wait": [
+        "Opsiger dit abonnement, vent venligst"
       ]
     },
     "Status": {
@@ -11022,8 +11008,8 @@
       "Message deleted": [
         "Besked slettet"
       ],
-      "Message expiration cancelled": [
-        "Beskedudløb annulleret"
+      "Message expiration canceled": [
+        "Beskedens udløb annulleret"
       ],
       "Message marked as legitimate": [
         "Besked markeret som legitim"
@@ -11102,8 +11088,8 @@
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Du har opsagt dit abonnement."
+      "You have successfully canceled your subscription.": [
+        "Du har opsagt dit abonnement med succes."
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"

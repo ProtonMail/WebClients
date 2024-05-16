@@ -262,6 +262,9 @@
       "Copy password to clipboard": [
         "Zkopírovat heslo do schránky"
       ],
+      "Copy version number to clipboard": [
+        "Zkopírovat číslo verze do schránky"
+      ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
@@ -453,6 +456,9 @@
       ],
       "Font": [
         "Písmo"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
@@ -3381,16 +3387,16 @@
         "Nepřeji si sdílet"
       ],
       "I found a cheaper VPN": [
-        "Našel/la jsem levnější VPN"
+        "Objevil(a) jsem levnější VPN"
       ],
       "I found a VPN with better features": [
-        "Našel/la jsem VPN s lepšími funkcemi"
+        "Objevil(a) jsem VPN s lepšími funkcemi"
       ],
       "I have not managed to connect": [
-        "Nepodařilo se mně připojit"
+        "Nepodařilo se mi připojit"
       ],
       "I only needed a VPN short-term": [
-        "Potřeboval/a jsem VPN na chvíli"
+        "Potřeboval(a) jsem VPN jen na chvíli"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
@@ -5751,7 +5757,7 @@
       "and": [
         "a"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
+      "Any scheduled or snoozed messages will be canceled.": [
         "Všechny naplánované nebo odložené zprávy budou zrušeny."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
@@ -6669,7 +6675,7 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Odloženo do zítřka, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
+      "Snoozing this conversation will be canceled.": [
         "Odložení této konverzace bude zrušeno."
       ],
       "Sorry, this message does not exist or has already expired.": [
@@ -7010,6 +7016,9 @@
       ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verze úspěšně zkopírováno do schránky"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -9825,20 +9834,6 @@
         "Zabezpečené sdílení trezorů"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Nesoukromí uživatelé se mohou stát správci po tom, co si nastaví klíče"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Pro nastavení oprávnění správce musí být aktivován klíč organizace"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Soukromí uživatelé se mohou stát správci po tom, co se poprvé přihlásí"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Než vytvoříte nový klíč organizace, musíte privatizovat všechny uživatele"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
@@ -10271,6 +10266,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
       ]
     },
     "Select files": {
@@ -10491,18 +10489,13 @@
         "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetování hesla zrušeno"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušit resetování hesla?"
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
       ]
     },
@@ -10743,8 +10736,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        null
       ]
     },
     "specialoffer: Link": {
@@ -10884,7 +10877,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
       ]
     },
@@ -11415,7 +11408,7 @@
       "Message deleted": [
         "Zpráva byla smazána"
       ],
-      "Message expiration cancelled": [
+      "Message expiration canceled": [
         "Expirace zpráv byla zrušena"
       ],
       "Message marked as legitimate": [
@@ -11499,7 +11492,7 @@
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Úspěšně jste zrušili své předplatné."
       ],
       "You have successfully unsubscribed": [

@@ -442,6 +442,9 @@
       "Font": [
         "Betűtípus"
       ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
+      ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
       ],
@@ -9016,19 +9019,9 @@
         "Adja meg a jelenlegi jelszavát a jelszóvisszaállítási folyamat megszakításához. Más változás nem lép életbe."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Jelszó visszaállítás megszakítva"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Jelszó visszaállítás megszakítása?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "A jelszóvisszaállítási kérés megszakadt (${ user.Email }). Ha nem ön kezdeményezte ezt a kérést, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -9238,11 +9231,6 @@
       ],
       "Support online privacy": [
         "Támogatja az online adatvédelmet"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül"
       ]
     },
     "specialoffer: Link": {
@@ -9655,9 +9643,6 @@
       "Message deleted": [
         "Üzenet törölve"
       ],
-      "Message expiration cancelled": [
-        "Üzenet lejárati dátuma törölve"
-      ],
       "Message marked as legitimate": [
         "Üzenet helyénvalóként megjelölve"
       ],
@@ -9734,9 +9719,6 @@
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Sikeresen törölte feliratkozását."
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
