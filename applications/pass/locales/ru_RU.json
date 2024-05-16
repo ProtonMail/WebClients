@@ -137,6 +137,12 @@
       "Edit vault": [
         "Редактировать хранилище"
       ],
+      "Enable Dark Web Monitoring": [
+        "Включить мониторинг Темной паутины"
+      ],
+      "Exclude from monitoring": [
+        "Исключить из мониторинга"
+      ],
       "Export": [
         "Экспорт"
       ],
@@ -161,6 +167,9 @@
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
+      "Get Pass Plus": [
+        "Получить Pass Plus"
+      ],
       "Get Started": [
         "Начать"
       ],
@@ -178,6 +187,9 @@
       ],
       "Importing": [
         "Идёт импорт"
+      ],
+      "Include in monitoring": [
+        "Включить в мониторинг"
       ],
       "Invite others": [
         "Пригласить других"
@@ -251,6 +263,12 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Приостановить мониторинг"
+      ],
       "Pin item": [
         "Закрепить элемент"
       ],
@@ -281,6 +299,9 @@
       "Resend code": [
         "Повторно отправить код"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Повторно отправить код (в ${ remaining }с)"
+      ],
       "Resend invitation": [
         "Отправить повторное приглашение"
       ],
@@ -290,6 +311,9 @@
       "Restore item": [
         "Восстановить элемент"
       ],
+      "Resume monitoring": [
+        "Возобновить мониторинг"
+      ],
       "Retry": [
         "Повторить"
       ],
@@ -298,6 +322,9 @@
       ],
       "Saving": [
         "Сохранение"
+      ],
+      "See all": [
+        "Посмотреть все"
       ],
       "See members": [
         "Просмотреть участников"
@@ -368,6 +395,9 @@
       "Verify": [
         "Подтвердить"
       ],
+      "View details": [
+        "Просмотреть информацию"
+      ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
       ],
@@ -409,6 +439,54 @@
     "Description": {
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Двухфакторная идентификация добавляет еще один уровень безопасности к вашим именам пользователей. ${ PASS_APP_NAME } делает двухфакторную идентификацию проще, сохраняя и автоматически заполняя ваши коды двухфакторной идентификации."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
+      ],
+      "Change your passwords": [
+        "Измените ваши пароли"
+      ],
+      "Create unique passwords": [
+        "Создать уникальный пароль"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Доступен платный тариф мониторинга Черной паутины. Улучшите приложение для немедленного доступа."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Получите уведомление о том, что ваш адрес электронной почты, пароль или другие личные данные подверглись утечке."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Обеспечьте защищенность и конфиденциальность своей информации с помощью этих руководств и советов."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передовое средство безопасности на основе искусственного интеллекта, предназначенное для пользователей, желающих обеспечить надежную защиту своих учетных записей. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Начните отслеживать утечки данных, связанные с аккаунтами, созданными с помощью вашего адреса электронной почты и псевдонимов hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
+      ],
+      "These items remain at risk": [
+        "Эти элементы остаются под угрозой"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Этот аккаунт уязвим, посетите службу и смените пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "С помощью ${ PASS_SHORT_APP_NAME } Monitor вы сможете опережать угрозы, получая мгновенные уведомления о том, что ваши учетные данные раскрыты. Разблокируйте расширенные функции безопасности и подробные журналы, чтобы защитить свое присутствие в Интернете."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваши адреса электронной почты стали известны как минимум в одном случае утечки данных."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Ваша личная информация стала известна в результате утечки данных из сторонней службы."
       ]
     },
     "Error": {
@@ -490,11 +568,23 @@
       "Failed resending invite.": [
         "Не удалось повторно отправить приглашение."
       ],
+      "Failed to add email address": [
+        "Не удалось добавить адрес электронной почты"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Не удалось исключить адрес электронной почты из мониторинга"
+      ],
       "Failed to delete selected items": [
         "Не удалось удалить выбранные элементы"
       ],
       "Failed to edit user's access.": [
         "Не удалось изменить доступ пользователя."
+      ],
+      "Failed to load breaches for this address": [
+        "Не удалось загрузить утечки для этого адреса"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Не удалось загрузить утечки для этого псевдонима электронной почты"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
@@ -511,6 +601,9 @@
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
+      "Failed to resend verification for custom email": [
+        "Не удалось повторно отправить проверку для пользовательской электронной почты"
+      ],
       "Failed to resolve breaches for this address": [
         "Не удалось устранить утечки по этому адресу"
       ],
@@ -522,6 +615,21 @@
       ],
       "Failed to unpin item": [
         "Сбой при откреплении элемента"
+      ],
+      "Failed to update monitoring settings": [
+        "Не удалось обновить настройки мониторинга"
+      ],
+      "Failed to verify email address": [
+        "Не удалось проверить адрес электронной почты"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Не удалось обновить настройки ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Не удалось обновить флаг монитора элемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Не удалось обновить состояние мониторинга для этого адреса электронной почты"
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
@@ -653,6 +761,9 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Мониторинг Темной паутины"
+      ],
       "Integrated 2FA authenticator": [
         "Интегрированная двухфакторная аутентификация"
       ],
@@ -752,6 +863,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } успешно отключен"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } успешно включен"
+      ],
       "${ row.breachCount } breach detected": [
         "Обнаружена ${ row.breachCount } утечка",
         "Обнаружены ${ row.breachCount } утечки",
@@ -767,6 +884,9 @@
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
       ],
+      "Add your custom email address to monitor :": [
+        "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
+      ],
       "Admin": [
         "Админ"
       ],
@@ -779,8 +899,14 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдоним \"${ item.aliasEmail }\" перемещен в корзину - это остановит пересылку писем в ваш почтовый ящик"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Псевдонимы с пользовательскими доменами не отслеживаются, добавьте их в качестве пользовательского электронного адреса для мониторинга."
+      ],
       "All breaches for this address were resolved": [
         "Все утечки по этому адресу были устранены"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Все текущие утечки будут отмечены как устраненные. В случае будущих утечек данных вы будете уведомлены."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
@@ -802,6 +928,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Автоблокировка успешно отключена"
+      ],
+      "Breaches detected": [
+        "Обнаружены утечки"
       ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
@@ -842,6 +971,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Удаление \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Не получили код?"
+      ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
       ],
@@ -853,6 +985,15 @@
       ],
       "email": [
         "электронная почта"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Адрес электронной почты успешно удален из мониторинга"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адрес электронной почты успешно исключен из мониторинга"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адрес электронной почты успешно включен в мониторинг"
       ],
       "Emptying trash...": [
         "Очистка корзины..."
@@ -944,6 +1085,12 @@
       "Item restored": [
         "Элемент восстановлен"
       ],
+      "Item successfully excluded from monitoring": [
+        "Элемент успешно удален из мониторинга"
+      ],
+      "Item successfully included in monitoring": [
+        "Элемент успешно включен в мониторинг"
+      ],
       "Item successfully moved": [
         "Элемент успешно перемещен"
       ],
@@ -952,6 +1099,9 @@
       ],
       "Item successfully unpinned": [
         "Элемент откреплен"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Последняя утечка ${ formattedDate }"
       ],
       "Leaving vault...": [
         "Покидаю хранилище..."
@@ -983,6 +1133,9 @@
       "Monitor accounts": [
         "Отслеживать аккаунты"
       ],
+      "Monitoring settings successfully updated": [
+        "Настройки мониторинга успешно обновлены"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
       ],
@@ -1000,6 +1153,9 @@
       ],
       "Never": [
         "Никогда"
+      ],
+      "No breaches detected": [
+        "Утечки не обнаружены"
       ],
       "No network connection": [
         "Нет подключения к сети"
@@ -1042,6 +1198,9 @@
       ],
       "Pinning item...": [
         "Закрепление элемента..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Проверьте папку Спам или попробуйте повторно отправить код."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
@@ -1129,6 +1288,9 @@
       ],
       "Successfully synced all vaults": [
         "Все хранилища успешно синхронизированы"
+      ],
+      "Suggested": [
+        "Рекомендуется"
       ],
       "Switch to another vault or create an item in this vault": [
         "Переход в другое хранилище или создание элемента в этом хранилище"
@@ -1220,11 +1382,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Хранилище \"${ share.content.name }\" было удалено"
       ],
+      "Verification code sent.": [
+        "Код подтверждения отправлен"
+      ],
       "Viewer": [
         "Читатель"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "У нас возникли проблемы при синхронизации данных со средствами локального хранения. Пожалуйста, убедитесь, что у вас достаточно места на диске, чтобы ${ PASS_SHORT_APP_NAME } работал без сбоев."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Мы отправили код подтверждения на ${ email }. Введите его ниже:"
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
@@ -1259,8 +1427,14 @@
       "You will be notified of data breaches for these email addresses.": [
         "Вы будете получать уведомления об утечках данных по этим адресам электронной почты."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Вы будете получать уведомления об утечках данных для этого адреса электронной почты."
+      ],
       "You will no longer be notified of data breaches for these email addresses.": [
         "Вы больше не будете получать уведомления об утечках данных для этих адресов электронной почты."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Вы больше не будете получать уведомления об утечках данных на этот адрес электронной почты."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Вы будете использовать этот ПИН-код, чтобы разблокировать ${ PASS_APP_NAME }, когда он автоматически заблокируется после бездействия."
@@ -1489,6 +1663,9 @@
       "Last month": [
         "Последний месяц"
       ],
+      "Last updated": [
+        "Последнее обновление"
+      ],
       "Last week": [
         "Последняя неделя"
       ],
@@ -1536,6 +1713,9 @@
       ],
       "No history": [
         "Нет истории"
+      ],
+      "None": [
+        "Нет"
       ],
       "Note": [
         "Заметка"
@@ -1665,6 +1845,9 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Used in": [
+        "Используется в"
       ],
       "Username": [
         "Имя пользователя"
@@ -1808,6 +1991,9 @@
       "Full Name": [
         "Полное имя"
       ],
+      "me@example.com": [
+        "ya@primer.com"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -1872,11 +2058,29 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адресов"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Монитор ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Защита аккаунта"
+      ],
       "Auto-lock update": [
         "Обновление авто-блокировки"
       ],
+      "Breach detected": [
+        "Обнаружена утечка"
+      ],
+      "Breaches": [
+        "Утечки"
+      ],
+      "Breaches detected for": [
+        "Обнаружены утечки для"
+      ],
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
+      ],
+      "Confirm your email": [
+        "Подтвердите свою электронную почту"
       ],
       "Create a vault": [
         "Создать хранилище"
@@ -1886,6 +2090,18 @@
       ],
       "Current version": [
         "Текущая версия"
+      ],
+      "Custom addresses": [
+        "Пользовательские адреса"
+      ],
+      "Custom email monitoring": [
+        "Мониторинг пользовательской электронной почты"
+      ],
+      "Custom emails": [
+        "Пользовательские адреса электронной почты"
+      ],
+      "Dark Web Monitoring": [
+        "Мониторинг Темной паутины"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Удалить хранилище \"${ vaultName }\"?"
@@ -1908,6 +2124,9 @@
       "Enter your PIN": [
         "Введите свой PIN"
       ],
+      "Excluded items": [
+        "Исключенные элементы"
+      ],
       "Get Started": [
         "Начать"
       ],
@@ -1926,6 +2145,9 @@
       "Import to vault(s)": [
         "Импорт в хранилище"
       ],
+      "Inactive 2FA": [
+        "Неактивная двухфакторная аутентификация"
+      ],
       "Last autofill": [
         "Последнее автозаполнение"
       ],
@@ -1935,8 +2157,14 @@
       "Leave vault ?": [
         "Оставить хранилище?"
       ],
+      "Loading breaches...": [
+        "Загрузка утечек..."
+      ],
       "Low disk space": [
         "Мало места на диске"
+      ],
+      "Mark as resolved?": [
+        "Отметить как устраненную?"
       ],
       "Member limit": [
         "Ограничение количества участников"
@@ -1956,11 +2184,29 @@
       "Move items?": [
         "Переместить элементы?"
       ],
+      "No excluded items": [
+        "Нет исключенных элементов"
+      ],
+      "No inactive 2FAs": [
+        "Нет неактивных двухфакторных идентификаций"
+      ],
+      "No insecure passwords": [
+        "Никаких ненадежных паролей"
+      ],
+      "No reused passwords": [
+        "Нет повторно использованных паролей"
+      ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Health": [
+        "Здоровье пароля"
+      ],
+      "Pause monitoring?": [
+        "Приостановить мониторинг?"
       ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
@@ -1974,14 +2220,26 @@
       "Recommended actions": [
         "Рекомендуемые действия"
       ],
+      "Remove email address?": [
+        "Удалить адрес электронной почты?"
+      ],
+      "Resolved breaches": [
+        "Устраненные утечки"
+      ],
       "Restore this version?": [
         "Восстановить эту версию?"
+      ],
+      "Resume monitoring?": [
+        "Возобновить мониторинг?"
       ],
       "Reused ${ count } time": [
         "Повторно использовано ${ count } раз",
         "Повторно использовано ${ count } раза",
         "Повторно использовано ${ count } раз",
         "Повторно использовано ${ count } раз"
+      ],
+      "Reused passwords": [
+        "Повторно используемые пароли"
       ],
       "Review and share": [
         "Review and share"
@@ -1995,11 +2253,17 @@
       "Set up 2FA for better security": [
         "Настройте двухфакторную идентификацию для повышения безопасности"
       ],
+      "Set up 2FA for more security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
+      ],
       "Settings": [
         "Настройки"
       ],
       "Share with": [
         "Поделиться с"
+      ],
+      "Stay safer online": [
+        "Будьте в безопасности в Интернете"
       ],
       "Suggestions": [
         "Рекомендации"
@@ -2024,6 +2288,12 @@
       ],
       "Want to learn more?": [
         "Хотите узнать больше?"
+      ],
+      "Weak password": [
+        "Слабый Пароль"
+      ],
+      "Weak passwords": [
+        "Слабые пароли"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Почему ${ PASS_APP_NAME }?"
@@ -2083,6 +2353,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
       ],
+      "Email is required": [
+        "Требуется адрес электронной почты"
+      ],
       "Empty note": [
         "Пустая заметка"
       ],
@@ -2092,11 +2365,17 @@
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
       ],
+      "Failed to load breaches.": [
+        "Не удалось загрузить утечки."
+      ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
       "Invalid code": [
         "Недействительный код"
+      ],
+      "Invalid email": [
+        "Недействительная электронная почта"
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Приглашение адресов электронной почты из вне организации запрещено."
@@ -2155,6 +2434,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Префикс псевдонима не может быть длиннее 40 символов"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Этот адрес электронной почты больше не будет отслеживаться на предмет утечек."
+      ],
       "Title is required": [
         "Название обязательно"
       ],
@@ -2172,6 +2454,9 @@
       ],
       "Vault name is required": [
         "Требуется название хранилища"
+      ],
+      "Verification code is required": [
+        "Требуется код подтверждения"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."

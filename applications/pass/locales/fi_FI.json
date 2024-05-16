@@ -4,6 +4,26 @@
     "language": "fi_FI"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Lisää"
@@ -291,7 +311,7 @@
         "Pass iOS:lle"
       ],
       "Pass Monitor": [
-        "Pass-valvonta"
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "Keskeytä valvonta"
@@ -461,7 +481,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } -työpöytäsovellus"
+        "${ MAIL_APP_NAME }In työpöytäsovellus"
       ]
     },
     "Button": {
@@ -736,7 +756,7 @@
         "PIN-koodit eivät täsmää"
       ],
       "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -työpöytäsovellukseen"
+        "Päivitä tilauksesi saadaksesi varhaisen käyttöokeuden ${ PASS_APP_NAME }in työpöytäsovellukseen"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -1554,6 +1574,9 @@
         "${ config.options.wordCount } sana",
         "${ config.options.wordCount } sanaa"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }-versio"
+      ],
       "${ usageCount } login": [
         "${ usageCount } kirjautuminen",
         "${ usageCount } kirjautumista"
@@ -2173,6 +2196,20 @@
         "Kirjoita muistiinpanosi"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
@@ -2184,7 +2221,7 @@
         "${ BRAND_NAME } osoitetta"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } -Valvonta"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "Tilisuojaus"
