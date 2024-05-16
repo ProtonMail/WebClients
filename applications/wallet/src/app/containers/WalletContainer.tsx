@@ -41,9 +41,12 @@ export const WalletContainer = () => {
         return <CircleLoader />;
     }
 
-    // TODO: add a reactivation modal similar to calendar's one
-    if (!wallet || wallet.IsNotDecryptable) {
+    if (!wallet) {
         return <Redirect to={'/'} />;
+    }
+
+    if (wallet.IsNotDecryptable) {
+        return <Redirect to={`/wallets/${wallet.Wallet.ID}/locked`} />;
     }
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);

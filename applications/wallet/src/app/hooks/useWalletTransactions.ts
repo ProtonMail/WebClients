@@ -1,12 +1,13 @@
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import {
     WasmApiClients,
     WasmApiWalletAccount,
     WasmApiWalletTransaction,
-    WasmTransactionDetails
+    WasmTransactionDetails,
 } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
 import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
@@ -77,10 +78,10 @@ const decryptTransactionData = async (
         };
     }
 
-    const Body = await decryptArmoredData(apiTransaction.Body, addressKeys);
-    const Sender = await decryptArmoredData(apiTransaction.Sender, addressKeys);
+    const Body = apiTransaction.Body && (await decryptArmoredData(apiTransaction.Body, addressKeys));
+    const Sender = apiTransaction.Sender && (await decryptArmoredData(apiTransaction.Sender, addressKeys));
+    const SerialisedToList = apiTransaction.ToList && (await decryptArmoredData(apiTransaction.ToList, addressKeys));
 
-    const SerialisedToList = await decryptArmoredData(apiTransaction.ToList, addressKeys);
     const ToList = parsedRecipientList(SerialisedToList);
 
     return {
@@ -257,6 +258,67 @@ const createMissingTxData = async (
     return createdTransactionDataByHashedTxId;
 };
 
+const fetchTransactions = async ({
+    userKeys,
+    transactionDataByHashedTxId,
+    walletId,
+    getTransactionsApiData,
+    walletMap,
+    walletKey,
+    getWalletAccountPrimaryAddressKeys,
+}: {
+    userKeys: DecryptedKey[];
+    transactionDataByHashedTxId: TransactionDataByHashedTxId;
+    walletId: string;
+    getTransactionsApiData: ReturnType<typeof useGetApiWalletTransactionData>;
+    walletMap: WalletMap;
+    walletKey: string;
+    getWalletAccountPrimaryAddressKeys: (account: WasmApiWalletAccount) => Promise<PrivateKeyReference[]>;
+}) => {
+    const hashedTxids = Object.keys(transactionDataByHashedTxId);
+
+    const [primaryUserKey] = userKeys;
+
+    const transactionsApiData = hashedTxids.length
+        ? await getTransactionsApiData(walletId, undefined, hashedTxids)
+        : [];
+
+    // populate txData with api data
+    for (const { Data: transactionApiData } of transactionsApiData) {
+        const { HashedTransactionID } = transactionApiData;
+
+        // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
+        const account =
+            transactionApiData.WalletAccountID &&
+            walletMap[transactionApiData.WalletID]?.accounts[transactionApiData.WalletAccountID];
+
+        if (HashedTransactionID && account) {
+            const txNetworkData = transactionDataByHashedTxId[HashedTransactionID]?.[0];
+
+            if (txNetworkData) {
+                const [decryptedLabel] = await decryptWalletData([transactionApiData.Label], walletKey, userKeys).catch(
+                    () => []
+                );
+
+                const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
+
+                const decryptedTransactionData = await decryptTransactionData(
+                    transactionApiData,
+                    primaryUserKey.privateKey,
+                    accountKeys
+                );
+
+                transactionDataByHashedTxId[HashedTransactionID] = [
+                    txNetworkData,
+                    { ...decryptedTransactionData, Label: decryptedLabel },
+                ];
+            }
+        }
+    }
+
+    return transactionDataByHashedTxId;
+};
+
 /**
  * This is hook is responsible for
  * - fetching API part of transaction
@@ -275,7 +337,7 @@ export const useWalletTransactions = ({
     wallet?: IWasmApiWalletData;
 }) => {
     const currentProcessUid = useRef(generateUID('use-wallet-transactions'));
-    const api = useWalletApiClients();
+    const clients = useWalletApiClients();
 
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
@@ -299,13 +361,12 @@ export const useWalletTransactions = ({
         [getAddressesKeys]
     );
 
-    const fetchWalletTransactions = useCallback(async () => {
+    const fetchOrSetWalletTransactions = useCallback(async () => {
         if (!wallet || !userKeys) {
             return;
         }
 
         const [primaryUserKey] = userKeys;
-
         const {
             WalletKey,
             Wallet: { ID: walletId },
@@ -314,7 +375,6 @@ export const useWalletTransactions = ({
         if (!WalletKey) {
             return;
         }
-
         const processUid = generateUID('use-wallet-transactions');
         currentProcessUid.current = processUid;
 
@@ -326,7 +386,6 @@ export const useWalletTransactions = ({
         const initResult = (await withLoadingRecordInit(async () => {
             const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, userKeys);
             const localTransactionDataByHashedTxId = await keyTxNetworkDataByHashedTxId(transactions, hmacKey);
-
             guardSetTransactionData(localTransactionDataByHashedTxId);
 
             // Return a clone of set reference, so that we can later mutate it and set it again
@@ -334,58 +393,26 @@ export const useWalletTransactions = ({
         })) as [CryptoKey, Partial<Record<string, TransactionDataTuple>>];
 
         const [hmacKey, localTransactionDataByHashedTxId] = initResult;
+        const transactionDataByHashedTxId = await fetchTransactions({
+            userKeys,
+            transactionDataByHashedTxId: localTransactionDataByHashedTxId,
+            walletId,
+            getTransactionsApiData,
+            walletMap,
+            walletKey: WalletKey.WalletKey,
+            getWalletAccountPrimaryAddressKeys,
+        });
 
-        const hashedTxids = Object.keys(localTransactionDataByHashedTxId);
-
-        const transactionsApiData = hashedTxids.length
-            ? await getTransactionsApiData(walletId, undefined, hashedTxids)
-            : [];
-
-        // populate txData with api data
-        for (const { Data: transactionApiData } of transactionsApiData) {
-            const { HashedTransactionID } = transactionApiData;
-
-            // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
-            const account =
-                transactionApiData.WalletAccountID &&
-                walletMap[transactionApiData.WalletID]?.accounts[transactionApiData.WalletAccountID];
-
-            if (HashedTransactionID && account) {
-                const txNetworkData = localTransactionDataByHashedTxId[HashedTransactionID]?.[0];
-
-                if (txNetworkData) {
-                    const [decryptedLabel] = await decryptWalletData(
-                        [transactionApiData.Label],
-                        WalletKey.WalletKey,
-                        userKeys
-                    ).catch(() => []);
-
-                    const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
-
-                    const decryptedTransactionData = await decryptTransactionData(
-                        transactionApiData,
-                        primaryUserKey.privateKey,
-                        accountKeys
-                    );
-
-                    localTransactionDataByHashedTxId[HashedTransactionID] = [
-                        txNetworkData,
-                        { ...decryptedTransactionData, Label: decryptedLabel },
-                    ];
-                }
-            }
-        }
-
-        guardSetTransactionData(localTransactionDataByHashedTxId);
+        guardSetTransactionData(transactionDataByHashedTxId);
 
         // If we already fetched all api data for the page, we don't need to go further
-        if (transactionsApiData.length === hashedTxids.length) {
+        if (compact(Object.values(transactionDataByHashedTxId)).every(([, api]) => !!api)) {
             return;
         }
 
         // Check if there are wallet transaction already created but not hashed yet
         const withMissingHashTransactions = await addMissingHashToWalletTransactions(
-            api,
+            clients,
             walletId,
             walletMap,
             localTransactionDataByHashedTxId,
@@ -401,10 +428,9 @@ export const useWalletTransactions = ({
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
         } else {
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
-
             // Else we create missing tx in api
             await createMissingTxData(
-                api,
+                clients,
                 primaryUserKey,
                 walletId,
                 accountIDByDerivationPathByWalletID,
@@ -417,7 +443,7 @@ export const useWalletTransactions = ({
         userKeys,
         withLoadingRecordInit,
         getTransactionsApiData,
-        api,
+        clients,
         walletMap,
         getWalletAccountPrimaryAddressKeys,
         transactions,
@@ -446,7 +472,7 @@ export const useWalletTransactions = ({
                     const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
                     const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], decryptedKey);
 
-                    const { Data: updatedTx } = await api.wallet.updateWalletTransactionLabel(
+                    const { Data: updatedTx } = await clients.wallet.updateWalletTransactionLabel(
                         WalletID,
                         WalletAccountID,
                         TransactionID,
@@ -477,16 +503,23 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [userKeys, walletMap, wallet?.WalletKey?.WalletKey, api, getWalletAccountPrimaryAddressKeys, createNotification]
+        [
+            userKeys,
+            walletMap,
+            wallet?.WalletKey?.WalletKey,
+            clients,
+            getWalletAccountPrimaryAddressKeys,
+            createNotification,
+        ]
     );
 
     useEffect(() => {
         const bootstrap = async () => {
-            await withLoadingApiData(fetchWalletTransactions());
+            await withLoadingApiData(fetchOrSetWalletTransactions());
         };
 
         void bootstrap();
-    }, [withLoadingApiData, fetchWalletTransactions]);
+    }, [withLoadingApiData, fetchOrSetWalletTransactions]);
 
     const transactionDetails: TransactionData[] = useMemo(() => {
         return Object.entries(transactionDataByHashedTxId) // typeguard: since record is partial, we first need to filter out keys with no value

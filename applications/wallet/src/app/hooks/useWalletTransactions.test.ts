@@ -57,8 +57,26 @@ const wallet: IWasmApiWalletData = {
         UserKeyID: '',
         // encrypted with key in tests/fixtures/keys.ts
         // 195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248, 126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36
-        WalletKey:
-            'wcBMA5fAXxAlQaycAQf/QUHd1dN32croM9sPR/rF53JFie2ZKEEw88Uj77VnUUhuzv1dgRTKNiUHaFNfd7m/r5xLOqEGiPQCPAt4MhHbgwilrxu52Jqq3xh2ErBIgYnRM+WNvAkzZK6PMVJhppx3ciiCMMkBkB3iaaunAtXssZzzdAPPC/+TNEyh1ugQKgKhx+Ov/ygoPSXwDS+DvwtOQX0O6OMCrvixhHMiYJg8EBSc6+DM06N28A9t4UsECqE/2VwLfYfcFMgXQVIhedvKbu2GD18S2K4d1t5ycDVXCoIvB45OjjovpLaLw205TiMmXX6TW5XJho/RaXnqPjkDC01PoTbMZbbN4OhelZ+wmtLA1gFnTJmSkkAhT/S62cm8eVJRLKMnRqMYDRGYKDZkBOk5XWkZiKl7/5MftfKV4WqdGu8htj3MiJkFEdLAo7ARzkzf1Mz6ab1lhI5j/uy1bYriNk1AjGPfsk0RMotad/Zb93F7YPRL3ol2h8kLMjPDtqtIDYG8HjavtS639tD2N0tLsnxekA/miwDAeMuAZDEPT9tuzkiMMfM8wyCtKpBVDOfM1DnH/9v+XTFit/EqBh9F/6x3KUtHikFffq7hrITZf2xCG9aFgR2UFNYi7r4i97lhsN6XkbItmAYzYEIrTDuvq8+ionBfiS5NDqkqq1LP8eJjwDb1b4mxvhLeVm2zELbNtuX5ClCU3qi5o++aRP1BTp+yFWDJOrONEu8zPpsw/JJWb0JjZ9F6nCZXs/D4ankiCfHjIt1ONC3u7JTmFeDBeL7PdYtwVMEkrFTEl4DOUmegW0k+VdWMLHNOTGr0NR1xJeC+rcJFN9neaAEakyutHrGnzSIn8wKNALzt/u4HF7NFTYuBEoUKjTZ49vMYKNrqzDTUX9Q=',
+        WalletKey: `-----BEGIN PGP MESSAGE-----
+
+wcBMA5fAXxAlQaycAQf/YrLl4EudmkXNDT7uQPAHTbySRIVJ9l57E1HmYABl
+YYTTloQwHqd8QYJCodgJx7qB5HQ+S9EgZBxBFlTyR+pmnmCcY6mkao0k6Zat
+IqYfleFvgnqoCP3srLGxp/sWZLSCXSf3yUiepNXerwsDHRmEBf7jGO49gGDn
+KnxajEEDEOA/RYcbwkO01wblauJIPw1Uf1y0+LvnVg68uxpMvycMHG8ydWSV
+dSxbJh0VWsaeXEAInI/SkGbUxX2BP8xzt8AyerLzAFrmmils1+15ck5pnmo6
+B186J5Xl8nYVxJg9vURDQTsXivsp7RGLfxfE3j86Q/xK4Dj22+mRewtLq5sJ
+EdLA4wHG3GnsrJhRZYus666haS2MDtJlYWefp2KE+2GQ7LNE0lhrxGP6C007
+OG5sMk2wJ2ensoeLQffWItOf73MmfctomweZHasj3FVyN254zV/iZteZn++9
+E9coMKv506xS9KUhR8r4ZbwwWttlEWgE/Twt6d6pV+PlK2+XyMYyQOaoOuIZ
+VA7Quz4aaa8KxtlTRxi/rkCy2HmO75dWBdJcCEMoK1XjIlvDQko+pLygeCF+
+r7RtRLHoDhEZYfos/k81TsAaP36vK9jkYKpUK+pvNklL7OmSK7FJVsSyDwrf
+FDWwY+Zw+X/j8fNCTusPqGDcMk97Gxg8Hm/Za6+FVKn+p2O7NK0DuUbxLsFo
+MloDsQGe01hbwa25HfxAVSuLDOxCLsFqNX3IJc2VJB3oYlek2mYUcFeLi5D/
+6ZM6uHS6mmtgFqe1zzqQ4PJYdrnBTgSKEGhMDxiB6ifqYQuDxmBQnuMXGs0U
+6plRJ9rLQeA/YeviDoMenLPn6e8V6VSoulmHpGGQVqQR2ZSq3qmYqY+T5r7E
+q6AjCb/dZa+rCJTp+37e/i4K
+=gDR6
+-----END PGP MESSAGE-----`,
     },
     WalletSettings: {
         WalletID: '01',
