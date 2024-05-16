@@ -4,10 +4,9 @@ import { getIsNetworkError } from '@proton/shared/lib/api/helpers/apiErrorHelper
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
-import { InitOptions } from './api.models';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
-export interface WorkerInitOptions extends InitOptions {
+export interface WorkerInitOptions {
     v6Canary?: boolean;
 }
 
@@ -32,12 +31,6 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
 }
 
 const errorReporter = (err: Error) => {
-    if (err.message?.toLowerCase().includes('transient signing failure')) {
-        captureMessage('EdDSA faulty signature', {
-            level: 'info',
-        });
-    }
-
     if (getIsNetworkError(err)) {
         captureMessage('Network error in crypto worker', {
             level: 'info',
@@ -82,7 +75,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
                       )
                   )
         );
-        await RemoteApi.init(openpgpConfigOptions);
+
         const worker = await new RemoteApi();
         return worker;
     };
