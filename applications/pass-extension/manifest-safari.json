@@ -1,0 +1,90 @@
+{
+    "name": "Proton Pass: Free Password Manager",
+    "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
+    "version": "1.17.2",
+    "manifest_version": 3,
+    "browser_specific_settings": {
+        "safari": {
+            "strict_min_version": "15.4"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
+            ],
+            "js": ["orchestrator.js"],
+            "all_frames": false,
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
+            ],
+            "js": ["webauthn.js"],
+            "all_frames": false,
+            "run_at": "document_start",
+            "world": "MAIN"
+        }
+    ],
+    "externally_connectable": {
+        "matches": [
+            "https://*.proton.me/*",
+            "https://*.proton.local/*",
+            "https://*.proton.black/*",
+            "https://*.proton.pink/*",
+            "https://*.protontech.ch/*"
+        ]
+    },
+    "permissions": ["activeTab", "alarms", "scripting", "storage", "unlimitedStorage"],
+    "host_permissions": ["*://*/*"],
+    "options_ui": {
+        "page": "settings.html"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/assets/protonpass-icon-16.png",
+            "32": "/assets/protonpass-icon-32.png",
+            "48": "/assets/protonpass-icon-48.png",
+            "128": "/assets/protonpass-icon-128.png"
+        }
+    },
+    "icons": {
+        "16": "/assets/protonpass-icon-16.png",
+        "32": "/assets/protonpass-icon-32.png",
+        "48": "/assets/protonpass-icon-48.png",
+        "128": "/assets/protonpass-icon-128.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "dropdown.html",
+                "notification.html",
+                "elements.js",
+                "assets/*.csv",
+                "assets/*.png",
+                "assets/*.svg",
+                "assets/*.woff",
+                "assets/*.woff2"
+            ],
+            "matches": ["https://*/*", "http://*/*"]
+        }
+    ]
+}
