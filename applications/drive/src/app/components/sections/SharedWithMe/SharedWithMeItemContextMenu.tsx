@@ -2,10 +2,11 @@ import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
+import { useOpenInDocs } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
-import { DetailsButton, DownloadButton, PreviewButton } from '../ContextMenu';
+import { DetailsButton, DownloadButton, OpenInDocsButton, PreviewButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { RemoveMeButton } from './ContextMenuButtons';
 
@@ -19,8 +20,9 @@ export function SharedWithMeContextMenu({
 }: ContextMenuProps & {
     selectedLinks: DecryptedLink[];
 }) {
-    const selectedLink = selectedLinks[0];
-    const isOnlyOneItem = selectedLinks.length === 1;
+    const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
+    const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
+    const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
     const hasPreviewAvailable =
         isOnlyOneItem &&
         selectedLink.isFile &&
@@ -30,6 +32,7 @@ export function SharedWithMeContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
 
     return (
         <>
@@ -37,15 +40,22 @@ export function SharedWithMeContextMenu({
                 {hasPreviewAvailable && (
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
-                {<DownloadButton selectedLinks={selectedLinks} close={close} />}
+                {isOnlyOneFileItem && showOpenInDocs && (
+                    <OpenInDocsButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />
+                )}
+                <DownloadButton selectedLinks={selectedLinks} close={close} />
                 <DetailsButton
                     selectedLinks={selectedLinks}
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
                 />
-                <ContextSeparator />
-                <RemoveMeButton selectedLink={selectedLink} showConfirmModal={showConfirmModal} close={close} />
+                {!!selectedLink && (
+                    <>
+                        <ContextSeparator />
+                        <RemoveMeButton selectedLink={selectedLink} showConfirmModal={showConfirmModal} close={close} />
+                    </>
+                )}
             </ItemContextMenu>
             {detailsModal}
             {filesDetailsModal}

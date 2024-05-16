@@ -6,6 +6,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
+import { useOpenInDocs } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
@@ -17,6 +18,7 @@ import {
     CopyLinkButton,
     DetailsButton,
     DownloadButton,
+    OpenInDocsButton,
     PreviewButton,
     RenameButton,
     RevisionsButton,
@@ -43,8 +45,8 @@ export function DriveItemContextMenu({
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
 }) {
-    const selectedLink = selectedLinks[0];
-    const isOnlyOneItem = selectedLinks.length === 1;
+    const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
+    const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
     const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
@@ -62,6 +64,8 @@ export function DriveItemContextMenu({
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const driveSharing = useDriveSharingFeatureFlag();
 
+    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
+
     const ShareLinkButtonComponent = driveSharing ? ShareLinkButton : ShareLinkButtonLEGACY;
 
     return (
@@ -70,7 +74,10 @@ export function DriveItemContextMenu({
                 {hasPreviewAvailable && (
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
-                {hasPreviewAvailable && <ContextSeparator />}
+                {isOnlyOneFileItem && showOpenInDocs && (
+                    <OpenInDocsButton shareId={shareId} link={selectedLink} close={close} />
+                )}
+                {(hasPreviewAvailable || (isOnlyOneFileItem && showOpenInDocs)) && <ContextSeparator />}
                 <DownloadButton selectedLinks={selectedLinks} close={close} />
                 {isAdmin && hasLink && (
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
