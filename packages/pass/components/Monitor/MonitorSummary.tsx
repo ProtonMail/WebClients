@@ -17,7 +17,7 @@ import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectMonitorPreview, selectPassPlan } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -33,6 +33,8 @@ export const MonitorSummary: FC = () => {
     const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
 
     const paid = isPaidPlan(useSelector(selectPassPlan));
+    const preview = useSelector(selectMonitorPreview);
+
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
     const onUpsell = () => setUpsellModalOpen(true);
 
@@ -59,12 +61,16 @@ export const MonitorSummary: FC = () => {
                                     />
                                 )}
 
-                                {!paid && (
-                                    <>
+                                {!paid &&
+                                    (preview ? (
+                                        <BreachPreviewCard
+                                            className="xl:self-start"
+                                            preview={preview}
+                                            onUpsell={onUpsell}
+                                        />
+                                    ) : (
                                         <BreachUpsellCard className="xl:self-start" onUpsell={onUpsell} />
-                                        <BreachPreviewCard className="xl:self-start" onUpsell={onUpsell} />
-                                    </>
-                                )}
+                                    ))}
                             </div>
                         </section>
 
