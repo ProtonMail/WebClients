@@ -111,7 +111,7 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
                 key={item.name}
                 hidden={item.hidden}
                 onContextMenu={(e) => e.stopPropagation()}
-                className="flex flex-nowrap text-left"
+                className="flex flex-nowrap items-center text-left"
                 onClick={(e) => {
                     e.stopPropagation();
                     item.action();
@@ -119,7 +119,7 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
                 }}
                 data-testid={item.testId}
             >
-                <Icon className="mt-1 mr-2" name={item.icon} />
+                <Icon className="mr-2" name={item.icon} />
                 {item.name}
             </DropdownMenuButton>
         ));

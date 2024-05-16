@@ -9,6 +9,7 @@ import {
     DetailsButton,
     DownloadButton,
     LayoutButton,
+    OpenInDocsButton,
     PreviewButton,
     RenameButton,
     ShareButton,
@@ -46,6 +47,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
         return (
             <>
                 <PreviewButton selectedLinks={selectedItems} />
+                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
                 <Vr />
                 <RenameButton selectedLinks={selectedItems} />
