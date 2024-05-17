@@ -1,28 +1,22 @@
-import { type FC, type ReactElement, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/components/icon';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '@proton/pass/components/Form/Field/UrlGroupField';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
+import { LoginEditCredentials } from '@proton/pass/components/Item/Login/Login.edit.credentials';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
@@ -30,27 +24,20 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import {
-    deriveAliasPrefix,
-    sanitizeLoginAliasHydration,
-    sanitizeLoginAliasSave,
-} from '@proton/pass/lib/validation/alias';
+import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues, NewLoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const FORM_ID = 'new-login';
 
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
-    const passwordContext = usePasswordContext();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
@@ -179,7 +166,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
         validateOnBlur: true,
     });
 
-    const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
+    const { aliasOptions } = useAliasForLoginModal(form);
 
     const draft = useItemDraft<NewLoginItemFormValues>(form, {
         type: 'login',
@@ -226,84 +213,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <Field
-                                    name="itemEmail"
-                                    label={(() => {
-                                        if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
-                                        if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
-                                        return c('Label').t`Email`;
-                                    })()}
-                                    placeholder={c('Placeholder').t`Enter email`}
-                                    component={TextField}
-                                    itemType="login"
-                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'envelope'}
-                                    actions={
-                                        [
-                                            aliasModal.willCreate && (
-                                                <QuickActionsDropdown color="weak" shape="solid" key="edit-alias">
-                                                    <DropdownMenuButton
-                                                        label={c('Action').t`Delete alias`}
-                                                        icon="trash"
-                                                        onClick={() =>
-                                                            form.setValues((values) =>
-                                                                merge(values, {
-                                                                    withAlias: false,
-                                                                    aliasPrefix: '',
-                                                                    aliasSuffix: undefined,
-                                                                    mailboxes: [],
-                                                                    itemEmail: initialValues.itemEmail,
-                                                                })
-                                                            )
-                                                        }
-                                                    />
-                                                </QuickActionsDropdown>
-                                            ),
-                                            aliasModal.canCreate && (
-                                                <Button
-                                                    icon
-                                                    pill
-                                                    color="weak"
-                                                    shape="solid"
-                                                    size="medium"
-                                                    className="pass-item-icon"
-                                                    title={c('Action').t`Generate alias`}
-                                                    key="generate-alias"
-                                                    tabIndex={-1}
-                                                    onClick={() =>
-                                                        form
-                                                            .setValues((values) =>
-                                                                merge(values, {
-                                                                    withAlias: true,
-                                                                    aliasPrefix: deriveAliasPrefix(values.name),
-                                                                    aliasSuffix: undefined,
-                                                                    mailboxes: [],
-                                                                })
-                                                            )
-                                                            .then<any>(() => form.setFieldTouched('aliasPrefix', false))
-                                                            .finally(() => aliasModal.setOpen(true))
-                                                    }
-                                                >
-                                                    <Icon name="alias" size={5} />
-                                                </Button>
-                                            ),
-                                        ].filter(Boolean) as ReactElement[]
-                                    }
-                                />
-                                <Field
-                                    name="password"
-                                    label={c('Label').t`Password`}
-                                    placeholder={c('Placeholder').t`Enter password`}
-                                    icon="key"
-                                    component={PasswordField}
-                                    showStrength
-                                    onPasswordGenerated={(value: string) => {
-                                        const { urls, url } = form.values;
-                                        const baseUrl = urls?.[0]?.url ?? url;
-                                        const { subdomain, domain, hostname } = parseUrl(baseUrl);
-                                        const origin = subdomain ?? domain ?? hostname;
-                                        passwordContext.history.add({ value, origin });
-                                    }}
-                                />
+                                <LoginEditCredentials form={form} isNew />
 
                                 {
                                     /* only allow adding a new TOTP code if user
@@ -345,38 +255,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                     </FormikProvider>
                 )}
             </ItemCreatePanel>
-
-            <AliasModal
-                form={form}
-                shareId={shareId}
-                aliasOptions={aliasOptions.value}
-                loading={aliasOptions.loading}
-                open={aliasModal.open}
-                onClose={() =>
-                    form
-                        .setValues((values) =>
-                            merge(values, {
-                                withAlias: false,
-                                aliasPrefix: '',
-                                aliasSuffix: undefined,
-                                mailboxes: [],
-                            })
-                        )
-                        .then<any>(() => form.setFieldTouched('aliasPrefix', undefined))
-                        .finally(() => aliasModal.setOpen(false))
-                }
-                handleSubmitClick={() =>
-                    form
-                        .setValues((values) => {
-                            const { aliasPrefix, aliasSuffix } = values;
-                            return !isEmptyString(aliasPrefix) && aliasSuffix
-                                ? merge(values, { itemEmail: aliasPrefix! + aliasSuffix!.value })
-                                : values;
-                        })
-                        .then<any>(() => form.setFieldTouched('aliasPrefix', true))
-                        .finally(() => aliasModal.setOpen(false))
-                }
-            />
         </>
     );
 };
