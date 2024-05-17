@@ -1,10 +1,10 @@
-import { type FC, type ReactElement, useEffect } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
@@ -20,6 +20,8 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
+import './Login.edit.credentials.scss';
+
 type Props = {
     form: FormikContextType<LoginItemFormValues>;
     isNew?: boolean;
@@ -34,14 +36,16 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
 
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
-    useEffect(
-        () => () => {
+    const [usernameExpanded, setUsernameExpanded] = useState(false);
+    const showUsername = usernameExpanded || form.values.itemUsername.length > 0;
+
+    useEffect(() => {
+        return () => {
             if (!isNew) return;
             searchParams.delete('email');
             history.replace({ search: searchParams.toString() });
-        },
-        []
-    );
+        };
+    }, []);
 
     return (
         <>
@@ -55,7 +59,29 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 placeholder={c('Placeholder').t`Enter email`}
                 component={TextField}
                 itemType="login"
-                icon={aliasModal.usernameIsAlias ? 'alias' : 'envelope'}
+                icon={
+                    <>
+                        <Icon name={aliasModal.usernameIsAlias ? 'alias' : 'envelope'} size={5} className="mt-2" />
+                        {!showUsername && (
+                            <ButtonLike
+                                as="div"
+                                icon
+                                pill
+                                size="small"
+                                onClick={() => setUsernameExpanded(true)}
+                                shape="solid"
+                                title={c('Action').t`Add username field`}
+                                className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
+                                style={{
+                                    '--top-custom': '8px',
+                                    '--left-custom': '16px',
+                                }}
+                            >
+                                <Icon name="plus" size={4} className="shrink-0" />
+                            </ButtonLike>
+                        )}
+                    </>
+                }
                 actions={
                     [
                         aliasModal.willCreate && (
@@ -108,6 +134,15 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     ].filter(Boolean) as ReactElement[]
                 }
             />
+            {showUsername && (
+                <Field
+                    name="itemUsername"
+                    label={c('Label').t`Username`}
+                    placeholder={c('Placeholder').t`Enter username`}
+                    component={TextField}
+                    icon="user"
+                />
+            )}
             <Field
                 name="password"
                 label={c('Label').t`Password`}
