@@ -49,6 +49,7 @@ export const viewCreationAppStartup = (session: Session) => {
 
 const createViews = (session: Session) => {
     const config = getWindowConfig(session);
+    Logger.info("Creating mail and calendar views");
     browserViewMap.mail = new BrowserView({ ...config });
     browserViewMap.calendar = new BrowserView({ ...config });
 
@@ -106,6 +107,7 @@ const createBrowserWindow = (session: Session) => {
 };
 
 const configureViews = () => {
+    Logger.info("Configuring mail and calendar views");
     browserViewMap.mail!.setAutoResize({ width: true, height: true });
     browserViewMap.mail!.webContents.loadURL(config.url.mail);
 
@@ -131,7 +133,7 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
 const loadMailView = (window: BrowserWindow) => {
     Logger.info("Loading mail view");
     if (!browserViewMap.mail) {
-        Logger.info("mailView not created");
+        Logger.error("Mail view not created");
         return;
     }
 
@@ -143,7 +145,7 @@ const loadMailView = (window: BrowserWindow) => {
 const loadCalendarView = (window: BrowserWindow) => {
     Logger.info("Loading calendar view");
     if (!browserViewMap.calendar) {
-        Logger.info("calendarView not created");
+        Logger.error("Calendar view not created");
         return;
     }
 
@@ -155,7 +157,7 @@ const loadCalendarView = (window: BrowserWindow) => {
 export const loadAccountView = (window: BrowserWindow) => {
     Logger.info("Loading account view");
     if (!browserViewMap.account) {
-        Logger.info("accountView not created");
+        Logger.info("Creating account view");
         const config = getWindowConfig(window.webContents.session);
         browserViewMap.account = new BrowserView({ ...config });
     }
@@ -175,6 +177,8 @@ export const updateView = (target: VIEW_TARGET) => {
         return;
     }
 
+    Logger.info(`Switching to ${target} view`);
+
     switch (target) {
         case "mail":
             loadMailView(mainWindow);
@@ -192,7 +196,7 @@ export const updateView = (target: VIEW_TARGET) => {
             currentViewID = "account";
             break;
         default:
-            Logger.error("unsupported view", target);
+            Logger.error("Unsupported view", target);
             break;
     }
 };
@@ -220,7 +224,7 @@ export const refreshHiddenViews = () => {
 export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!browserViewMap.calendar) {
-        Logger.error("calendarView not created");
+        Logger.error("Calendar view not created");
         const config = getWindowConfig(mainWindow!.webContents.session);
         browserViewMap.calendar = new BrowserView({ ...config });
     }

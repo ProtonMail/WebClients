@@ -37,11 +37,19 @@ import {
 } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
+import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 
 (async function () {
     // Log initialization
     Logger.initialize({ preload: true });
     Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
+
+    Logger.info(
+        "Desktop features:",
+        Object.entries(DESKTOP_FEATURES)
+            .map(([key, value]) => `${key}:${value}`)
+            .join(", "),
+    );
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
@@ -181,7 +189,8 @@ import pkg from "../package.json";
         };
 
         contents.on("did-navigate-in-page", (ev, url) => {
-            Logger.info("did-navigate-in-page");
+            Logger.info("did-navigate-in-page", app.isPackaged ? "" : url);
+
             if (!isHostAllowed(url)) {
                 return preventDefault(ev);
             }
@@ -229,40 +238,43 @@ import pkg from "../package.json";
 
         contents.setWindowOpenHandler((details) => {
             const { url } = details;
+            const loggedURL = app.isPackaged ? "" : url;
 
             if (isCalendar(url)) {
-                Logger.info("Open calendar window");
+                Logger.info("Calendar link", loggedURL);
                 updateView("calendar");
                 return { action: "deny" };
             }
 
             if (isMail(url)) {
-                Logger.info("Open mail window");
+                Logger.info("Mail link", loggedURL);
                 updateView("mail");
                 return { action: "deny" };
             }
 
             if (isAccount(url)) {
                 // Upsell links should be opened in browser to avoid 3D secure issues
-                Logger.info("Account link");
                 if (isAccoutLite(url) || isUpsellURL(url)) {
+                    Logger.info("Account lite or upsell in browser", loggedURL);
                     shell.openExternal(url);
                     return { action: "deny" };
                 }
+                Logger.info("Account link", loggedURL);
                 return { action: "allow" };
             } else if (isHostAllowed(url)) {
                 return { action: "allow" };
             } else if (global.oauthProcess) {
-                Logger.info("Open OAuth link in app");
+                Logger.info("OAuth link in app", loggedURL);
                 return { action: "allow" };
             } else if (global.subscriptionProcess) {
-                Logger.info("Open Subscription link in modal");
+                Logger.info("Subscription link in modal", loggedURL);
                 return { action: "allow" };
             } else {
-                Logger.info("Open link in browser");
+                Logger.info("Other link in browser", loggedURL);
                 shell.openExternal(url);
             }
 
+            Logger.warn("Unknown link, denied", loggedURL);
             return { action: "deny" };
         });
     });
