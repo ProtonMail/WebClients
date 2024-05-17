@@ -1170,6 +1170,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "Edit organization name": [
+        "Editar el nombre de la organización"
       ]
     },
     "action": {
@@ -4972,6 +4978,9 @@
       ],
       "You left this plan": [
         "Has abandonado este plan"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "La invitación se cancelará y el usuario no podrá unirse a ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -6941,7 +6950,7 @@
         "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountAndRecovery } configurado. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
+        "Si pierdes tu contraseña y necesitas restablecer tu cuenta, es ${ boldImperative } que tengas una ${ boldAccountAndRecovery } configurada, de lo contrario es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierdes tu dispositivo activado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
@@ -8458,6 +8467,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "SCIM integration disabled": [
+        "Integración SCIM desactivada"
+      ],
+      "SCIM token active": [
+        "Token SCIM activo"
       ]
     },
     "Info - folder colouring feature": {
@@ -9796,6 +9811,15 @@
       ],
       "Your referral link": [
         "Tu enlace de referido"
+      ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
       ]
     },
     "label": {
@@ -10110,6 +10134,9 @@
       ],
       "Why set recovery methods?": [
         "¿Por qué establecer métodos de recuperación?"
+      ],
+      "Help": [
+        "Ayuda"
       ]
     },
     "Loading info": {
@@ -12459,6 +12486,12 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Necesitas acceso a la clave de la organización para realizar esta acción."
+      ],
+      "We couldn't verify authenticity of this identity.": [
+        "No hemos podido verificar la autenticidad de esta identidad."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Hemos verificado la autenticidad de esta identidad."
       ]
     },
     "Payment method option": {
@@ -13124,6 +13157,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "El restablecimiento de contraseña ha sido cancelado."
+      ],
+      "Password reset canceled": [
+        "El restablecimiento de contraseña ha sido cancelado."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13133,6 +13169,9 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
@@ -13539,6 +13578,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
       ]
     },
     "specialoffer: Link": {
@@ -13663,6 +13705,9 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Estamos cancelando tu suscripción. Espera."
+      ],
+      "Canceling your subscription, please wait": [
+        "Estamos cancelando la suscripción. Espera."
       ]
     },
     "Step in filter modal": {
@@ -14386,6 +14431,9 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "You have successfully canceled your subscription.": [
+        "La suscripción ha sido cancelada."
       ]
     },
     "Success message": {
@@ -15667,6 +15715,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Estás invitado a probar ${ MAIL_APP_NAME }."
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -15961,6 +16012,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Es posible que tu cuenta externa haya alcanzado el límite de ancho de banda de 24 horas. ${ BRAND_NAME } intentará reanudar la importación tan pronto como sea posible."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
       ]
     },
     "tooltip": {

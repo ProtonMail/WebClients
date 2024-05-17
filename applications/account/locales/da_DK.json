@@ -1170,6 +1170,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
+      ],
+      "Edit organization name": [
+        "Rediger organisationsnavn"
       ]
     },
     "action": {
@@ -4972,6 +4978,9 @@
       ],
       "You left this plan": [
         "Du forlod dette abonnement"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Invitationen vil blive annulleret, og brugeren kan ikke blive medlem af ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -7426,7 +7435,7 @@
         "Plus- eller Visionary abonnement påkrævet"
       ],
       "Preview": [
-        "Smugkig"
+        "Forhåndsvisning"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -7880,7 +7889,7 @@
         "for at fortsætte til ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at monitorere, at vores applikationer fungerer korrekt. Disse oplysninger deles ikke med nogen tredjepartstjenester."
+        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. Disse oplysninger deles ikke med nogen tredjepartstjenester."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
@@ -8458,6 +8467,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "SCIM integration disabled": [
+        "SCIM-integration slået fra"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
       ]
     },
     "Info - folder colouring feature": {
@@ -9796,6 +9811,15 @@
       ],
       "Your referral link": [
         "Dit henvisningslink"
+      ],
+      "Current organization identity": [
+        "Nuværende organisationsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
       ]
     },
     "label": {
@@ -10110,6 +10134,9 @@
       ],
       "Why set recovery methods?": [
         "Hvorfor indstille gendannelsesmetoder?"
+      ],
+      "Help": [
+        "Hjælp"
       ]
     },
     "Loading info": {
@@ -10900,7 +10927,7 @@
         "Organiser elementer med flere bokse"
       ],
       "Pass Monitor - premium features": [
-        "Pass Monitor - eksklusive funktioner"
+        "Pass Monitor - premium-funktioner"
       ],
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
@@ -12459,6 +12486,12 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
+      ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunne ikke bekræfte ægtheden af denne identitet."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har bekræftet ægtheden af denne identitet."
       ]
     },
     "Payment method option": {
@@ -13124,6 +13157,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Nulstilling af adgangskode annulleret"
+      ],
+      "Password reset canceled": [
+        "Nulstilling af adgangskode annulleret"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13134,6 +13170,9 @@
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13539,6 +13578,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
       ]
     },
     "specialoffer: Link": {
@@ -13663,6 +13705,9 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullerer dit abonnement, vent venligst"
+      ],
+      "Canceling your subscription, please wait": [
+        "Opsiger dit abonnement, vent venligst"
       ]
     },
     "Step in filter modal": {
@@ -14386,6 +14431,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Du har nu opsagt dit abonnement."
       ]
     },
     "Success message": {
@@ -15667,6 +15715,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
+      ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -15961,6 +16012,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denne e-mailadresse vises til alle organisationsmedlemmer, når de udfører administrative kontohandlinger."
       ]
     },
     "tooltip": {

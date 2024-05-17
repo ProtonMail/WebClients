@@ -1057,6 +1057,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Forgot password?": [
+        "忘记密码?"
       ]
     },
     "Action for user session": {
@@ -5313,7 +5316,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您授权${ enableDesktopNotifications }。"
+        "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
       "${ boldName } will be set as default calendar.": [
         "${ boldName } 将设置为默认日历。"

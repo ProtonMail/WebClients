@@ -1144,6 +1144,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Copy version number to clipboard": [
+        "Sürüm numarasını kopyala"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
       ]
     },
     "action": {
@@ -3319,6 +3325,30 @@
       ],
       "Temporary need, may come back in the future": [
         "Geçici olarak ayrılıyorum. İleride yeniden kullanabilirim"
+      ],
+      "I do not wish to share": [
+        "Paylaşmak istemiyorum"
+      ],
+      "I found a cheaper VPN": [
+        "Daha ucuz bir VPN buldum"
+      ],
+      "I found a VPN with better features": [
+        "Daha iyi özellikleri olan bir VPN buldum"
+      ],
+      "I have not managed to connect": [
+        "Bağlantı kuramadım"
+      ],
+      "I only needed a VPN short-term": [
+        "Yalnızca kısa bir süre için VPN gerekliydi"
+      ],
+      "It doesn't do what I need": [
+        "Gerek duyduğum şeyi yapmıyor"
+      ],
+      "Other reason (please comment)": [
+        "Diğer nedenler (lütfen yazın)"
+      ],
+      "The VPN is too slow": [
+        "VPN çok yavaş çalışıyor"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -8393,6 +8423,9 @@
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Sürüm numarası kopyalandı"
       ]
     },
     "Info - folder colouring feature": {
@@ -16315,6 +16348,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ]
     }
   }

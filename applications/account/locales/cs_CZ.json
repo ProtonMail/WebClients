@@ -1144,6 +1144,12 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Copy version number to clipboard": [
+        "Zkopírovat číslo verze do schránky"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ]
     },
     "action": {
@@ -3335,16 +3341,16 @@
         "Nepřeji si sdílet"
       ],
       "I found a cheaper VPN": [
-        "Našel/la jsem levnější VPN"
+        "Objevil(a) jsem levnější VPN"
       ],
       "I found a VPN with better features": [
-        "Našel/la jsem VPN s lepšími funkcemi"
+        "Objevil(a) jsem VPN s lepšími funkcemi"
       ],
       "I have not managed to connect": [
-        "Nepodařilo se mně připojit"
+        "Nepodařilo se mi připojit"
       ],
       "I only needed a VPN short-term": [
-        "Potřeboval/a jsem VPN na chvíli"
+        "Potřeboval(a) jsem VPN jen na chvíli"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
@@ -8585,6 +8591,9 @@
       ],
       "Zoom meeting": [
         "setkání na Zoomu"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verze úspěšně zkopírováno do schránky"
       ]
     },
     "Info - folder colouring feature": {
@@ -13357,6 +13366,9 @@
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13784,6 +13796,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        null
       ]
     },
     "specialoffer: Link": {
@@ -13909,6 +13924,9 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
+        "Rušení předplatného, počkejte prosím"
+      ],
+      "Canceling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
       ]
     },
@@ -14549,6 +14567,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Úspěšně jste zrušili své předplatné."
       ]
     },
     "Success message": {
@@ -16833,6 +16854,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a zjištěn 1 další potenciální únik. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
       ]
     }
   }

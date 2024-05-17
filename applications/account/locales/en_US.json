@@ -40,6 +40,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "You have reached the number of contacts limit for your account"
+      ],
+      "Please upload a square file": [
+        "Please upload a square logo"
       ]
     },
     "familyOffer_2023:Action": {
@@ -218,6 +221,16 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         "Your recovery phrase is outdated. It can't recover new data if you reset your password again."
+      ]
+    },
+    "passwordless": {
+      "We couldn't verify authenticity of this identity.": [
+        "We couldn't verify the authenticity of this identity."
+      ]
+    },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "Enter the token into your identity provider"
       ]
     }
   }

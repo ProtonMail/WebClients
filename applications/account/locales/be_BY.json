@@ -1170,6 +1170,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Edit organization identity": [
+        "Рэдагаваць ідэнтычнасць арганізацыі"
+      ],
+      "Edit organization name": [
+        "Рэдагаваць назву арганізацыі"
       ]
     },
     "action": {
@@ -5012,6 +5018,9 @@
       ],
       "You left this plan": [
         "Вы выйшлі са складу гэтага тарыфнага плана"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -8620,6 +8629,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "SCIM integration disabled": [
+        "Інтэграцыя SCIM адключана"
+      ],
+      "SCIM token active": [
+        "Токен SCIM актыўны"
       ]
     },
     "Info - folder colouring feature": {
@@ -9970,6 +9985,15 @@
       ],
       "Your referral link": [
         "Ваша рэферальная спасылка"
+      ],
+      "Current organization identity": [
+        "Бягучая ідэнтычнасць арганізацыі"
+      ],
+      "New organization identity": [
+        "Новая ідэнтычнасць арганізацыі"
+      ],
+      "Organization identity": [
+        "Ідэнтычнасць арганізацыі"
       ]
     },
     "label": {
@@ -10284,6 +10308,9 @@
       ],
       "Why set recovery methods?": [
         "Навошта задаваць спосаб аднаўлення?"
+      ],
+      "Help": [
+        "Даведка"
       ]
     },
     "Loading info": {
@@ -12715,6 +12742,12 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
+      ],
+      "We couldn't verify authenticity of this identity.": [
+        "Мы не можам праверыць аўтэнтыфікацыю гэтай ідэнтычнасці."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Мы праверылі аўтэнтыфікацыю гэтай ідэнтычнасці."
       ]
     },
     "Payment method option": {
@@ -13402,6 +13435,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Скіданне пароля скасавана."
+      ],
+      "Password reset canceled": [
+        "Скіданне пароля скасавана."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13411,6 +13447,9 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запыт скідання пароля скасаваны (${ user.Email }). Калі вы не рабілі дадзены запыт, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Запыт скідання пароля скасаваны (${ user.Email }). Калі вы не рабілі дадзены запыт, ${ changePasswordLink }."
       ]
     },
@@ -13839,6 +13878,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
       ]
     },
     "specialoffer: Link": {
@@ -13964,6 +14006,9 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
+        "Скасаванне вашай падпіскі. Пачакайце..."
+      ],
+      "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
@@ -14281,7 +14326,7 @@
         "Агульны аб'ём сховішча: ${ planMaxSpace }"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } дае вам доступ да ўсіх праграм і прэміяльных функцый. Прыватнасць уключана ў іх прадвызначана і такім чынам вы атрымаеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
+        "${ planName } дае вам доступ да ўсіх праграм і прэміяльных функцый. Прыватнасць уключана ў іх прадвызначана і такім чынам, вы атрымаеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
@@ -14718,6 +14763,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Вы паспяхова скасавалі сваю падпіску."
       ]
     },
     "Success message": {
@@ -16021,6 +16069,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
+      ],
+      "Edit organization identity": [
+        "Рэдагаваць ідэнтычнасць арганізацыі"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -16315,6 +16366,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
       ]
     },
     "tooltip": {

@@ -1144,6 +1144,12 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Copy version number to clipboard": [
+        "Копіювати номер версії в буфер обміну"
+      ],
+      "Forgot password?": [
+        "Забули пароль?"
       ]
     },
     "action": {
@@ -3321,6 +3327,30 @@
       ],
       "Temporary need, may come back in the future": [
         "Тимчасова необхідність. Можливо, повернуся в майбутньому"
+      ],
+      "I do not wish to share": [
+        "Не хочу говорити"
+      ],
+      "I found a cheaper VPN": [
+        "Я знайшов дешевший VPN"
+      ],
+      "I found a VPN with better features": [
+        "Я знайшов VPN з кращими функціями"
+      ],
+      "I have not managed to connect": [
+        "Мені не вдалося під'єднатися"
+      ],
+      "I only needed a VPN short-term": [
+        "Мені був потрібен VPN лише на короткий термін"
+      ],
+      "It doesn't do what I need": [
+        "Не задовільняє мої потреби"
+      ],
+      "Other reason (please comment)": [
+        "Інша причина (напишіть про неї)"
+      ],
+      "The VPN is too slow": [
+        "VPN занадто повільний"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -8522,6 +8552,9 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версії успішно скопійовано до буфера обміну"
       ]
     },
     "Info - folder colouring feature": {
@@ -16558,6 +16591,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша інформація була знайдена принаймні в одному витоку даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
       ]
     }
   }

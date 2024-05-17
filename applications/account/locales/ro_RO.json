@@ -1144,6 +1144,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Copy version number to clipboard": [
+        "Copiere număr versiune în memorie"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ]
     },
     "action": {
@@ -3332,6 +3338,30 @@
       ],
       "Temporary need, may come back in the future": [
         "Nevoie temporară, poate voi mai reveni."
+      ],
+      "I do not wish to share": [
+        "Nu vreau să spun"
+      ],
+      "I found a cheaper VPN": [
+        "Am găsit un VPN mai ieftin"
+      ],
+      "I found a VPN with better features": [
+        "Am găsit un VPN cu funcții mai bune"
+      ],
+      "I have not managed to connect": [
+        "Nu am reușit să mă conectez"
+      ],
+      "I only needed a VPN short-term": [
+        "Am avut nevoie de VPN doar temporar"
+      ],
+      "It doesn't do what I need": [
+        "Nu face ceea ce am nevoie"
+      ],
+      "Other reason (please comment)": [
+        "Alt motiv (comentați motivul)"
+      ],
+      "The VPN is too slow": [
+        "Viteza pe VPN e prea mică"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -8477,6 +8507,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numărul versiunii a fost copiat în memorie."
       ]
     },
     "Info - folder colouring feature": {
@@ -16578,6 +16611,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o potențială divulgare pentru ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ link }"
       ]
     }
   }

@@ -1144,6 +1144,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Copy version number to clipboard": [
+        "Skopírovať číslo verzie do schránky"
+      ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
       ]
     },
     "action": {
@@ -3345,6 +3351,30 @@
       ],
       "Temporary need, may come back in the future": [
         "Dočasná potreba, môže sa v budúcnosti vrátiť"
+      ],
+      "I do not wish to share": [
+        "Nechcem sa podeliť"
+      ],
+      "I found a cheaper VPN": [
+        "Mám nájdenú lacnejšiu VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mám nájdenú VPN s lepšími funkciami"
+      ],
+      "I have not managed to connect": [
+        "Nepodarilo sa mi pripojiť"
+      ],
+      "I only needed a VPN short-term": [
+        "Potreba VPN bola len krátkodobá"
+      ],
+      "It doesn't do what I need": [
+        "Nerobí to, čo potrebujem"
+      ],
+      "Other reason (please comment)": [
+        "Iný dôvod (uveďte, prosím)"
+      ],
+      "The VPN is too slow": [
+        "VPN je príliš pomalá"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -8555,6 +8585,9 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verzie bolo úspešne skopírované do schránky"
       ]
     },
     "Info - folder colouring feature": {
@@ -16744,6 +16777,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     }
   }

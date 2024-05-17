@@ -1150,6 +1150,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
+      "Edit organization name": [
+        "Organisationsname bearbeiten"
       ]
     },
     "action": {
@@ -1330,6 +1336,12 @@
       ],
       "Secure your communications": [
         "Sichere deine Kommunikation"
+      ],
+      "Browse the web privately and block ads": [
+        "Surfe privat im Internet und blockiere Werbung"
+      ],
+      "Safeguard your files and photos": [
+        "Sichere deine Dateien und Fotos"
       ]
     },
     "Apps dropdown": {
@@ -8396,6 +8408,39 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } gibt deine Daten niemals an Dritte weiter. Die Daten stammen aus den eigenen Analysen von ${ BRAND_NAME } und Constella Intelligence."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ein E-Mail-Alias funktioniert wie eine E-Mail-Adresse, verhindert aber Spam und hält deine tatsächliche E-Mail-Adresse und Identität verborgen."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere persönliche Daten bekannt geworden sind. ${ learnMoreLinkNoBreach }"
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield ist eine Werbeblocker-Funktion von ${ VPN_APP_NAME }, die dein Gerät vor Werbung, Trackern und Malware schützt."
+      ],
+      "SCIM integration disabled": [
+        "SCIM-Integration deaktiviert"
+      ],
+      "SCIM token active": [
+        "SCIM-Token aktiv"
+      ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Unterstützung für die Überwachung von benutzerdefinierten Domains und nicht-${ BRAND_NAME }-E-Mail-Adressen ist in Kürze verfügbar."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Das Dark Web ist ein verborgener Teil des Internets, in dem gestohlene persönliche Informationen, wie z. B. Identitäten, gekauft und verkauft werden können."
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Verwende einen Passwort-Manager, um deine Passwörter zu erstellen und sicher zu speichern, um sichere Passwörter und einfachere Anmeldungen zu gewährleisten."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Wir überwachen das Dark Web auf Fälle, in denen deine persönlichen Daten (z. B. eine E-Mail-Adresse oder ein Kennwort, das auf einer Website eines Drittanbieters verwendet wird) geleakt wurden oder gefährdet sind."
       ]
     },
     "Info - folder colouring feature": {
@@ -9734,6 +9779,15 @@
       ],
       "Your referral link": [
         "Dein Empfehlungslink"
+      ],
+      "Current organization identity": [
+        "Aktuelle Organisationsidentität"
+      ],
+      "New organization identity": [
+        "Neue Organisationsidentität"
+      ],
+      "Organization identity": [
+        "Organisationsidentität"
       ]
     },
     "label": {
@@ -13042,6 +13096,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Passwortzurücksetzung abgebrochen"
+      ],
+      "Password reset canceled": [
+        "Passwortzurücksetzung abgebrochen"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13051,6 +13108,9 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
@@ -13457,6 +13517,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
       ]
     },
     "specialoffer: Link": {
@@ -13580,6 +13643,9 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
+        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
+      ],
+      "Canceling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
@@ -13961,6 +14027,15 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hilfe für Aktivisten in Hongkong"
+      ],
+      "Unblocking internet access in Iran": [
+        "Entsperrung des Internetzugangs im Iran"
+      ],
+      "Yearly free storage bonuses": [
+        "Jährliche Boni für kostenlosen Speicherplatz"
       ]
     },
     "subscription reminder": {
@@ -13999,6 +14074,9 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
       ]
     },
     "Subscription renewal state": {
@@ -14226,6 +14304,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "You have successfully canceled your subscription.": [
+        "Du hast dein Abonnement erfolgreich gekündigt."
       ]
     },
     "Success message": {
@@ -15501,6 +15582,15 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
+      ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
+      "You have no open alerts": [
+        "Du hast keine offenen Warnungen"
+      ],
+      "You have no resolved alerts": [
+        "Du hast keine gelösten Warnungen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -16379,6 +16469,40 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     }
   }

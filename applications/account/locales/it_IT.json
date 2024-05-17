@@ -1170,6 +1170,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Edit organization identity": [
+        "Modifica l'identità dell'organizzazione"
+      ],
+      "Edit organization name": [
+        "Modifica il nome dell'organizzazione"
       ]
     },
     "action": {
@@ -4972,6 +4978,9 @@
       ],
       "You left this plan": [
         "Hai abbandonato questo piano"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "L'invito verrà annullato e l'utente non potrà unirsi a ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -8461,6 +8470,12 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "SCIM integration disabled": [
+        "Integrazione SCIM disabilitata"
+      ],
+      "SCIM token active": [
+        "Token SCIM attivo"
       ]
     },
     "Info - folder colouring feature": {
@@ -9802,6 +9817,15 @@
       ],
       "Your referral link": [
         "Il tuo link di riferimento"
+      ],
+      "Current organization identity": [
+        "Identità dell'organizzazione attuale"
+      ],
+      "New organization identity": [
+        "Nuova identità dell'organizzazione"
+      ],
+      "Organization identity": [
+        "Identità dell'organizzazione"
       ]
     },
     "label": {
@@ -10116,6 +10140,9 @@
       ],
       "Why set recovery methods?": [
         "Perché impostare dei metodi di recupero?"
+      ],
+      "Help": [
+        "Aiuto"
       ]
     },
     "Loading info": {
@@ -12489,6 +12516,12 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
+      ],
+      "We couldn't verify authenticity of this identity.": [
+        "Non è stato possibile verificare l'autenticità di questa identità."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Abbiamo verificato l'autenticità di questa identità."
       ]
     },
     "Payment method option": {
@@ -13154,6 +13187,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Reimpostazione della password annullata"
+      ],
+      "Password reset canceled": [
+        "Reimpostazione della password annullata"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13163,6 +13199,9 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Richiesta di reimpostazione della password annullata (${ user.Email }). Se non hai effettuato tu questa richiesta, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Richiesta di reimpostazione della password annullata (${ user.Email }). Se non hai effettuato tu questa richiesta, ${ changePasswordLink }."
       ]
     },
@@ -13569,6 +13608,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Questo abbonamento si rinnoverà automaticamente ogni 2 anni alla stessa tariffa fino all'annullamento."
       ]
     },
     "specialoffer: Link": {
@@ -13693,6 +13735,9 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullamento dell'abbonamento. Per favore attendi"
+      ],
+      "Canceling your subscription, please wait": [
+        "Annullamento dell'abbonamento, attendi"
       ]
     },
     "Step in filter modal": {
@@ -14416,6 +14461,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Hai annullato l'abbonamento."
       ]
     },
     "Success message": {
@@ -15697,6 +15745,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
+      ],
+      "Edit organization identity": [
+        "Modifica l'identità dell'organizzazione"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -15991,6 +16042,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Il tuo account esterno potrebbe aver raggiunto il suo limite di larghezza di banda di 24 ore. ${ BRAND_NAME } proverà a riprendere l'importazione appena possibile."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Questo indirizzo email verrà mostrato a tutti i membri dell'organizzazione durante l'esecuzione delle operazioni di gestione dell'account."
       ]
     },
     "tooltip": {

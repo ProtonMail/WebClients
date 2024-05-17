@@ -1170,6 +1170,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Edit organization identity": [
+        "Redigera organisationsidentitet"
+      ],
+      "Edit organization name": [
+        "Redigera organisationsnamn"
       ]
     },
     "action": {
@@ -4968,6 +4974,9 @@
       ],
       "You left this plan": [
         "Du lämnade detta paket"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -8447,6 +8456,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "SCIM integration disabled": [
+        "SCIM-integration inaktiverad"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
       ]
     },
     "Info - folder colouring feature": {
@@ -9779,6 +9794,15 @@
       ],
       "Your referral link": [
         "Din hänvisningslänk"
+      ],
+      "Current organization identity": [
+        "Nuvarande organisationsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
       ]
     },
     "label": {
@@ -10093,6 +10117,9 @@
       ],
       "Why set recovery methods?": [
         "Varför ställa in återställningsmetoder?"
+      ],
+      "Help": [
+        "Hjälp"
       ]
     },
     "Loading info": {
@@ -12445,6 +12472,12 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
+      ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunde inte verifiera äktheten av denna identitet."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har verifierat äktheten av denna identitet."
       ]
     },
     "Payment method option": {
@@ -13079,6 +13112,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Lösenordsåterställning avbruten"
+      ],
+      "Password reset canceled": [
+        "Lösenordsåterställning avbruten"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13494,6 +13530,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
       ]
     },
     "specialoffer: Link": {
@@ -13617,6 +13656,9 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
+        "Avbryter din prenumeration, vänta"
+      ],
+      "Canceling your subscription, please wait": [
         "Avbryter din prenumeration, vänta"
       ]
     },
@@ -14320,6 +14362,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Du har avbrutit din prenumeration."
       ]
     },
     "Success message": {
@@ -15613,6 +15658,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
+      ],
+      "Edit organization identity": [
+        "Redigera organisationsidentitet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -15901,6 +15949,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
       ]
     },
     "tooltip": {

@@ -1150,6 +1150,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Edit organization identity": [
+        "Editar identidade da organização"
+      ],
+      "Edit organization name": [
+        "Editar nome da organização"
       ]
     },
     "action": {
@@ -3144,6 +3150,9 @@
     "Delete address prompt": {
       "You can only delete 1 address per year.": [
         "Você somente pode excluir 1 endereço por ano."
+      ],
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Uma vez excluído, este endereço não pode ser usado novamente por qualquer outra pessoa."
       ]
     },
     "Delete address tooltip": {
@@ -4949,6 +4958,9 @@
       ],
       "You left this plan": [
         "Você saiu deste plano"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -8417,6 +8429,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou uma ${ boldZoomMeeting } com um de nossos especialistas de suporte, ou abra o ${ boldLiveChat } para suporte via chat."
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "A senha deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carregue o logo da organização para potenciar sua identidade de marca e criar uma experiência personalizada para seus usuários."
       ]
     },
     "Info - folder colouring feature": {
@@ -9737,6 +9758,15 @@
       ],
       "Your referral link": [
         "Seu link de referência"
+      ],
+      "Current organization identity": [
+        "Identidade atual da organização"
+      ],
+      "New organization identity": [
+        "Nova identidade da organização"
+      ],
+      "Organization identity": [
+        "Identidade da organização"
       ]
     },
     "label": {
@@ -9745,6 +9775,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperação"
+      ],
+      "Device-based recovery": [
+        "Recuperação baseada no dispositivo"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9789,7 +9822,7 @@
         "Atualizações de produto do ${ app }"
       ],
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados da ${ BRAND_NAME } beta"
+        "Comunicados beta da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim da ${ BRAND_NAME } for Business"
@@ -10045,6 +10078,12 @@
       ],
       "Why set recovery methods?": [
         "Por que definir métodos de recuperação?"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
+      "Help": [
+        "Ajuda"
       ]
     },
     "Loading info": {
@@ -11897,10 +11936,10 @@
         "Evite imagens muitos comprimidas."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Opte por uma imagem PNG de 128x128 pixels para maior claridade."
+        "Opte por uma imagem PNG de 128x128 píxeis para maior claridade."
       ],
       "Tips on choosing a good logo": [
-        "Dicas para escolherum bom logotipo"
+        "Dicas para escolher um bom logotipo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Use um ícone gráfico ou imagem no lugar de texto."
@@ -12260,6 +12299,18 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Sua organização tem acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, solicite a atualização ao administrador da sua organização."
+      ],
+      "Aliases for email protection from breaches": [
+        "Aliases para proteger o e-mail de violações"
+      ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Oferta por tempo limitado: : ${ title } por ${ price } no primeiro mês."
+      ],
+      "Passkeys supported on all devices": [
+        "Claves de acesso são suportadas em todos os dispositivos."
+      ],
+      "Secured by end-to-end encryption": [
+        "Seguro com criptografia de ponta a ponta"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12379,6 +12430,9 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "Você precisa ter acesso à chave da organização para realizar esta operação."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Verificamos a autenticidade dessa identidade."
       ]
     },
     "Payment method option": {
@@ -12986,6 +13040,9 @@
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "A redefinição de senha foi cancelada"
+      ],
+      "Password reset canceled": [
+        "A redefinição de senha foi cancelada"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -12995,6 +13052,9 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
+      ],
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
@@ -13401,6 +13461,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
       ]
     },
     "specialoffer: Link": {
@@ -13524,6 +13587,9 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
+        "Cancelando a sua assinatura"
+      ],
+      "Canceling your subscription, please wait": [
         "Cancelando a sua assinatura"
       ]
     },
@@ -13917,6 +13983,21 @@
       ],
       "Your own custom email domain": [
         "Seu domínio de e-mail personalizado"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } e todos os recursos premium"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluindo aliases de hide-my-email ilimitados"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } com acesso a todos os servidores de alta velocidade em ${ vpnCountries } países"
+      ],
+      "Comprehensive privacy and security": [
+        "Privacidade e segurança abrangentes"
+      ],
+      "Online privacy, for your whole family": [
+        "Privacidade online para toda sua família"
       ]
     },
     "subscription reminder": {
@@ -14185,6 +14266,9 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Você cancelou sua assinatura com sucesso."
       ]
     },
     "Success message": {
@@ -15460,6 +15544,15 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
+      ],
+      "Edit organization identity": [
+        "Editar identidade da organização"
+      ],
+      "You have no open alerts": [
+        "Você não tem avisos abertos"
+      ],
+      "You have no resolved alerts": [
+        "Você não tem avisos resolvidos"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -16340,6 +16433,25 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e outro potencial vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial ${ name } vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     }
   }
