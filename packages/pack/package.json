@@ -36,7 +36,7 @@
         "chalk": "4.1.2",
         "commander": "^12.0.0",
         "copy-webpack-plugin": "^12.0.2",
-        "core-js": "^3.37.0",
+        "core-js": "^3.37.1",
         "cross-env": "^7.0.3",
         "css-loader": "^7.1.1",
         "css-minimizer-webpack-plugin": "^6.0.0",
@@ -51,12 +51,12 @@
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
         "postcss": "^8.4.38",
-        "postcss-color-functional-notation": "^6.0.9",
+        "postcss-color-functional-notation": "^6.0.11",
         "postcss-loader": "^8.1.1",
         "postcss-logical": "^7.0.1",
         "react-refresh": "^0.14.2",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.76.0",
+        "sass": "^1.77.2",
         "sass-loader": "^14.2.1",
         "terser-webpack-plugin": "^5.3.10",
         "ttag": "^1.8.6",
@@ -73,6 +73,6 @@
         "webpack-bundle-analyzer": "^4.10.2"
     },
     "engines": {
-        "node": ">= 20.12.2"
+        "node": ">= 20.13.1"
     }
 }
