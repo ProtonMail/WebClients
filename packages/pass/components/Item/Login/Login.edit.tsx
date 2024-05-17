@@ -21,6 +21,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
@@ -46,6 +47,11 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
+    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({
+        itemEmail: content.itemEmail,
+        itemUsername: content.itemUsername,
+    });
+
     const initialValues: EditLoginItemFormValues = {
         aliasPrefix: '',
         aliasSuffix: undefined,
@@ -59,14 +65,26 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        itemEmail: content.itemEmail,
-        itemUsername: content.itemUsername,
+        itemEmail: emailDisplay,
+        itemUsername: usernameDisplay,
         withAlias: false,
     };
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
-        onSubmit: ({ name, itemEmail, password, totpUri, url, urls, note, extraFields, passkeys, ...values }) => {
+        onSubmit: ({
+            name,
+            itemEmail,
+            itemUsername,
+            password,
+            totpUri,
+            url,
+            urls,
+            note,
+            extraFields,
+            passkeys,
+            ...values
+        }) => {
             const mutationTime = getEpoch();
 
             const withAlias =
@@ -112,8 +130,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                     totpUri: obfuscate(normalizedOtpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     itemEmail: obfuscate(itemEmail),
-                    // TODO: add username field in the UI
-                    itemUsername: obfuscate(''),
+                    itemUsername: obfuscate(itemUsername),
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
