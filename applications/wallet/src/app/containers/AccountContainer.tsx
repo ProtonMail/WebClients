@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
@@ -75,7 +77,12 @@ export const AccountContainer = () => {
                                 setAccountPreferencesModalState(true);
                             }}
                         >
-                            <Icon name="pen-square" className="color-hint" size={5} />
+                            <Icon
+                                alt={c('Account container').t`Edit`}
+                                name="pen-square"
+                                className="color-hint"
+                                size={5}
+                            />
                         </CoreButton>
                     </div>
 

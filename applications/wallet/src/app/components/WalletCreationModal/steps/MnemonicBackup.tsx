@@ -12,9 +12,10 @@ import './MnemonicBackup.scss';
 interface Props {
     mnemonic: WasmMnemonic;
     onContinue: () => void;
+    isLastStep: boolean;
 }
 
-export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
+export const MnemonicBackup = ({ isLastStep, mnemonic, onContinue }: Props) => {
     const mnemonicWords = mnemonic?.asWords();
 
     return (
@@ -43,7 +44,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
             />
 
             <Button pill className="block w-4/5 mx-auto mt-6" shape="solid" color="norm" onClick={() => onContinue()}>
-                {c('Wallet setup').t`Continue`}
+                {isLastStep ? c('Wallet setup').t`Done` : c('Wallet setup').t`Continue`}
             </Button>
         </div>
     );

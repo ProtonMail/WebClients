@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
@@ -14,17 +16,20 @@ import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
+import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { getThemeByIndex } from '../utils';
 
 export const WalletContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
     const history = useHistory();
+    const { openDrawer } = useWalletDrawerContext();
 
-    const [walletPreferencesModalState, setWalletPreferencesModalState] = useModalState();
+    const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
+        useModalState();
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletReceiveModal, setWalletReceiveModal] = useModalState();
 
-    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
 
     const walletIndex = useMemo(
         () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
@@ -56,25 +61,42 @@ export const WalletContainer = () => {
     // TODO: add account selector instead of that
     const firstAccount = wallet.WalletAccounts[0];
 
+    const isSyncingChainData = isSyncing(wallet.Wallet.ID);
+
     return (
         <>
             <div className={clsx('flex flex-row w-full min-h-full flex-nowrap', theme)}>
                 <div className="flex flex-column flex-1 p-8 pt-0 flex-nowrap grow">
-                    <div className="flex flex-row m-4 items-center">
-                        <h1 className="mr-4 text-semibold">{wallet.Wallet.Name}</h1>
+                    <div className="flex flex-row justify-space-between m-4 items-center">
+                        <div className="flex flex-row items-center">
+                            <h1 className="mr-4 text-semibold">{wallet.Wallet.Name}</h1>
+
+                            <CoreButton
+                                icon
+                                size="medium"
+                                shape="ghost"
+                                color="weak"
+                                className="ml-2 rounded-full bg-weak"
+                                onClick={() => {
+                                    setWalletPreferencesModalState(true);
+                                }}
+                            >
+                                <Icon
+                                    alt={c('Wallet container').t`Edit`}
+                                    name="pen-square"
+                                    className="color-hint"
+                                    size={5}
+                                />
+                            </CoreButton>
+                        </div>
 
                         <CoreButton
-                            icon
-                            size="medium"
-                            shape="ghost"
-                            color="weak"
-                            className="ml-2 rounded-full bg-weak"
+                            shape="underline"
+                            color="norm"
                             onClick={() => {
-                                setWalletPreferencesModalState(true);
+                                openDrawer({ discover: true, wallet });
                             }}
-                        >
-                            <Icon name="pen-square" className="color-hint" size={5} />
-                        </CoreButton>
+                        >{c('Wallet header').t`Secure your wallet`}</CoreButton>
                     </div>
 
                     {/* Balance */}
@@ -82,6 +104,7 @@ export const WalletContainer = () => {
 
                     {/* Wallet metrics and cta (send, buy, receive) */}
                     <MetricsAndCtas
+                        disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => setWalletReceiveModal(true)}
                     />
@@ -98,11 +121,13 @@ export const WalletContainer = () => {
                         }}
                     />
 
-                    <WalletPreferencesModal
-                        wallet={wallet}
-                        otherWallets={otherWallets}
-                        {...walletPreferencesModalState}
-                    />
+                    {renderWalletPreferencesModalState && (
+                        <WalletPreferencesModal
+                            wallet={wallet}
+                            otherWallets={otherWallets}
+                            {...walletPreferencesModalState}
+                        />
+                    )}
 
                     {firstAccount && (
                         <>

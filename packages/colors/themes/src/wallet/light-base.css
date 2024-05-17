@@ -13,6 +13,7 @@
     --text-hint: #9395a4;
     --text-disabled: #ced0de;
     --text-invert: #ffffff;
+    --signal-danger-contrast: #ffffff;
 
     --border-weak: #f3f5f6;
     --border-norm: #e6e8ec;
@@ -35,7 +36,7 @@
     --interaction-norm-active: var(--interaction-norm-major-2);
     --interaction-weak-hover: var(--interaction-weak-major-1);
     --interaction-weak-active: var(--interaction-weak-major-2);
-    
+
     --interaction-default: transparent;
     --interaction-default-hover: rgb(191 181 233 / 0.2);
     --interaction-default-active: rgb(191 181 233 / 0.35);

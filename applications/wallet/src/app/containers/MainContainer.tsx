@@ -5,7 +5,6 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
-import { BitcoinBlockchainContextProvider } from '../contexts/BitcoinBlockchainContext/BitcoinBlockchainContextProvider';
 import { AccountContainer } from './AccountContainer';
 import { EmptyViewContainer } from './EmptyViewContainer';
 import { LockedWalletContainer } from './LockedWalletContainer';
@@ -16,33 +15,31 @@ const MainContainer = () => {
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>
                 <ContactEmailsProvider>
-                    <BitcoinBlockchainContextProvider>
-                        <Switch>
-                            <Route exact path={'/wallets/:walletId/accounts/:accountId'}>
-                                <PrivateWalletLayout>
-                                    <AccountContainer />
-                                </PrivateWalletLayout>
-                            </Route>
+                    <Switch>
+                        <Route exact path={'/wallets/:walletId/accounts/:accountId'}>
+                            <PrivateWalletLayout>
+                                <AccountContainer />
+                            </PrivateWalletLayout>
+                        </Route>
 
-                            <Route exact path={'/wallets/:walletId/locked'}>
-                                <PrivateWalletLayout>
-                                    <LockedWalletContainer />
-                                </PrivateWalletLayout>
-                            </Route>
+                        <Route exact path={'/wallets/:walletId/locked'}>
+                            <PrivateWalletLayout>
+                                <LockedWalletContainer />
+                            </PrivateWalletLayout>
+                        </Route>
 
-                            <Route exact path={'/wallets/:walletId'}>
-                                <PrivateWalletLayout>
-                                    <WalletContainer />
-                                </PrivateWalletLayout>
-                            </Route>
+                        <Route exact path={'/wallets/:walletId'}>
+                            <PrivateWalletLayout>
+                                <WalletContainer />
+                            </PrivateWalletLayout>
+                        </Route>
 
-                            <Route>
-                                <PrivateWalletLayout>
-                                    <EmptyViewContainer />
-                                </PrivateWalletLayout>
-                            </Route>
-                        </Switch>
-                    </BitcoinBlockchainContextProvider>
+                        <Route>
+                            <PrivateWalletLayout>
+                                <EmptyViewContainer />
+                            </PrivateWalletLayout>
+                        </Route>
+                    </Switch>
                 </ContactEmailsProvider>
             </QuickSettingsRemindersProvider>
         </ErrorBoundary>

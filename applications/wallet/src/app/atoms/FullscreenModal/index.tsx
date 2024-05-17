@@ -13,9 +13,9 @@ interface Props extends ModalOwnProps {
     key?: string;
 }
 
-export const FullscreenModal = ({ title, subline, children, key, ...rest }: PropsWithChildren<Props>) => {
+export const FullscreenModal = ({ title, subline, children, key, className, ...rest }: PropsWithChildren<Props>) => {
     return (
-        <ModalTwo {...rest} key={key} size="full" fullscreen>
+        <ModalTwo {...rest} className={clsx(className, 'bg-weak')} key={key} size="full" fullscreen>
             <ModalTwoHeader
                 title={title}
                 titleClassName="h2 mr-auto"
@@ -27,7 +27,7 @@ export const FullscreenModal = ({ title, subline, children, key, ...rest }: Prop
             <div className={clsx('pb-6 px-3 modal-two-content flex items-center justify-center grow')}>
                 <div
                     className="w-full max-w-custom max-h-custom overflow-auto p-2"
-                    style={{ '--max-w-custom': '26rem', '--max-h-custom': '36rem' }}
+                    style={{ '--max-w-custom': '26rem', '--max-h-custom': '50rem' }}
                 >
                     {children}
                 </div>

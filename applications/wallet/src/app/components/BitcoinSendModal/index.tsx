@@ -64,7 +64,7 @@ export const BitcoinSendModal = ({ wallet, account, ...modalProps }: Props) => {
     }, [updateTxBuilder]);
 
     return (
-        <FullscreenModal title={c('Wallet send').t`Send bitcoin`} className="bg-weak" {...modalProps}>
+        <FullscreenModal title={c('Wallet send').t`Send bitcoin`} {...modalProps}>
             {stepWithData.key === StepKey.RecipientsSelection && (
                 <RecipientsSelection
                     txBuilder={txBuilder}

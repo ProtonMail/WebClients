@@ -25,8 +25,8 @@ export const Input = ({ containerClassName, containerStyle, ...props }: InputPro
         >
             <CoreInput
                 assistContainerClassName="empty:hidden"
-                labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
-                inputClassName="p-0 mt-1 rounded-none"
+                labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm color-weak"
+                inputClassName="p-0 rounded-none"
                 unstyled
                 {...props}
             />

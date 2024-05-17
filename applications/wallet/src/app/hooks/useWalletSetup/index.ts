@@ -4,8 +4,15 @@ import { useHistory } from 'react-router-dom';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmDerivationPath, WasmMnemonic, WasmWallet, WasmWordCount } from '@proton/andromeda';
-import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import {
+    WasmApiEmailAddress,
+    WasmDerivationPath,
+    WasmFiatCurrencySymbol,
+    WasmMnemonic,
+    WasmWallet,
+    WasmWordCount,
+} from '@proton/andromeda';
+import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
 import usePrevious from '@proton/hooks/usePrevious';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { encryptWalletData } from '@proton/wallet';
@@ -28,7 +35,7 @@ const getSetupStepsFromScheme = (scheme?: WalletSetupScheme): WalletSetupStep[] 
             return [WalletSetupStep.MnemonicInput, WalletSetupStep.PassphraseInput, WalletSetupStep.Settings];
         case WalletSetupScheme.WalletAutocreationFinalize:
             return [WalletSetupStep.Settings];
-        case WalletSetupScheme.WalletAutocreationBackup:
+        case WalletSetupScheme.WalletBackup:
             return [WalletSetupStep.Intro, WalletSetupStep.MnemonicBackup];
     }
 };
@@ -47,6 +54,8 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
     const history = useHistory();
 
     const prevSchemeAndData = usePrevious(schemeAndData);
+
+    const [addresses] = useAddresses();
 
     useEffect(() => {
         if (initSchemeAndData && !isDeepEqual(prevSchemeAndData, initSchemeAndData)) {
@@ -98,8 +107,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
     };
 
     // TODO: use fiatCurrency later
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const onWalletSubmit = async (walletName: string, _fiatCurrency: string) => {
+    const onWalletSubmit = async (walletName: string, fiatCurrency: WasmFiatCurrencySymbol) => {
         // Typeguard
         if (!userKeys || !network || !schemeAndData) {
             return;
@@ -151,14 +159,29 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
                           .catch(noop)
                     : undefined;
 
-                // TODO: add email integration here?
+                const addedEmailAddresses: WasmApiEmailAddress[] = [];
+                if (account) {
+                    await api.wallet.updateWalletAccountFiatCurrency(Wallet.ID, account.Data.ID, fiatCurrency);
+
+                    // We enable email integration by default during autocreation
+                    if (schemeAndData.scheme === WalletSetupScheme.WalletAutocreationFinalize) {
+                        for (const address of addresses ?? []) {
+                            try {
+                                await api.wallet.addEmailAddress(Wallet.ID, account.Data.ID, address.ID);
+                                addedEmailAddresses.push({ ID: address.ID, Email: address.Email });
+                            } catch (e) {}
+                        }
+                    }
+                }
 
                 dispatch(
                     walletCreation({
                         Wallet,
                         WalletKey,
                         WalletSettings,
-                        WalletAccounts: account ? [account.Data] : [],
+                        WalletAccounts: account
+                            ? [{ ...account.Data, FiatCurrency: fiatCurrency, Addresses: addedEmailAddresses }]
+                            : [],
                     })
                 );
 
@@ -173,6 +196,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
 
     return {
         step: steps?.[currentStepIndex],
+        isLastStep: currentStepIndex >= (steps?.length ?? 0) - 1,
         mnemonic,
         schemeAndData,
         onSetupSchemeChange,

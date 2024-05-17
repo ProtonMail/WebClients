@@ -8,6 +8,11 @@
 		transition: none;
 	}
 
+	.user-dropdown-displayName,
+	.user-dropdown-email {
+		text-align: start;
+	}
+
 	svg {
 		display: block;
 	}

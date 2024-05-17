@@ -9,12 +9,13 @@ import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Button, Input, Select } from '../../../atoms';
 import { MIN_WALLET_NAME_LENGTH } from '../../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../../contexts';
+import { useWalletSetup } from '../../../hooks/useWalletSetup';
 import { useFiatCurrencies } from '../../../store/hooks';
 import { getDefaultWalletName } from '../../../utils/wallet';
 
 interface Props {
     isImported: boolean;
-    onContinue: (name: string, fiatCurrency: string) => Promise<void>;
+    onContinue: ReturnType<typeof useWalletSetup>['onWalletSubmit'];
 }
 
 export const WalletSettings = ({ isImported, onContinue }: Props) => {
@@ -65,7 +66,9 @@ export const WalletSettings = ({ isImported, onContinue }: Props) => {
                 className="block w-4/5 mx-auto mt-4 mb-2"
                 shape="solid"
                 color="norm"
-                onClick={() => withLoading(name ? onContinue(name, selectedCurrency) : Promise.resolve())}
+                onClick={() => {
+                    void withLoading(onContinue(name, selectedCurrency));
+                }}
             >
                 {c('Wallet setup').t`Continue`}
             </Button>

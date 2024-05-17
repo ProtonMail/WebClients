@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useModalState } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
@@ -14,13 +14,18 @@ import {
     walletNameUpdate,
 } from '@proton/wallet';
 
+import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
+
+    const { open: openBackupModal } = useWalletSetupModalContext();
+
+    const [walletDeletionConfirmationModal, setWalletDeletionConfirmationModal] = useModalState();
+
     const [loadingWalletNameUpdate, withLoadingWalletNameUpdate] = useLoading();
-    const [showDeletionConfirmation, setShowDeletionConfirmation] = useState(false);
-    const [walletDeletionInputValue, setWalletDeletionInputValue] = useState('');
+
     const [loadingDeletion, withLoadingDeletion] = useLoading();
     const api = useWalletApiClients();
     const { createNotification } = useNotifications();
@@ -83,16 +88,21 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
         dispatch,
     ]);
 
+    const openWalletDeletionConfirmationModal = () => {
+        setWalletDeletionConfirmationModal(true);
+    };
+
     return {
         walletName,
         loadingWalletNameUpdate,
         setWalletName,
         updateWalletName,
-        showDeletionConfirmation,
-        setShowDeletionConfirmation,
-        walletDeletionInputValue,
-        setWalletDeletionInputValue,
+
+        walletDeletionConfirmationModal,
+        openWalletDeletionConfirmationModal,
         loadingDeletion,
         handleWalletDeletion,
+
+        openBackupModal,
     };
 };

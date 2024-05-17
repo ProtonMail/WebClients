@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { vi } from 'vitest';
 
-import { mockUseNotifications, mockUseUser, mockUseUserKey } from '@proton/testing/lib/vitest';
+import { mockUseAddresses, mockUseNotifications, mockUseUser, mockUseUserKey } from '@proton/testing/lib/vitest';
 
 import { useWalletSetup } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletApiClients, mockUseWalletDispatch } from '../../tests/mocks';
@@ -17,6 +17,7 @@ describe('useWalletSetupModal', () => {
         mockUseDecryptedWallets();
         mockUseBitcoinBlockchainContext();
         mockUseWalletApiClients();
+        mockUseAddresses();
     });
 
     describe('onSetupSchemeChange', () => {

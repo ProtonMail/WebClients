@@ -41,6 +41,7 @@
 	0% {
 		background-color: var(--interaction-norm-minor-1);
 	}
+
 	100% {
 		background-color: var(--background-strong);
 	}
@@ -56,12 +57,34 @@
 	/* Chrome, Safari, Edge, Opera */
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
-		-webkit-appearance: none;
+		appearance: none;
 		margin: 0;
 	}
 
 	/* Firefox */
 	input[type='number'] {
-		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+}
+
+.modal-two-dialog {
+	border-radius: 1.5rem;
+}
+
+.dropdown {
+	border: none;
+
+	.dropdown-content {
+		background-color: var(--background-weak);
+	}
+
+	.dropdown-item-button {
+		&:hover {
+			background-color: var(--interaction-weak-major-1) !important;
+		}
+	}
+
+	.dropdown-item--is-selected {
+		background-color: var(--interaction-weak-major-2) !important;
 	}
 }

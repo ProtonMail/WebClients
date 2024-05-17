@@ -13,21 +13,14 @@ interface Props extends ModalOwnProps {
     key?: string;
 }
 
-export const Modal = ({
-    title,
-    subline,
-    children,
-    enableCloseWhenClickOutside = true,
-    key,
-    ...rest
-}: PropsWithChildren<Props>) => {
+export const Modal = ({ title, subline, children, key, ...rest }: PropsWithChildren<Props>) => {
     return (
-        <ModalTwo {...rest} key={key} enableCloseWhenClickOutside={enableCloseWhenClickOutside}>
+        <ModalTwo {...rest} key={key}>
             <ModalTwoHeader
                 title={title}
                 titleClassName="text-4xl mx-auto text-center"
                 subline={subline && <p className="text-center mx-12">{subline}</p>}
-                hasClose={false}
+                closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
             />
             <ModalTwoContent className="pb-6 px-3">{children}</ModalTwoContent>
         </ModalTwo>

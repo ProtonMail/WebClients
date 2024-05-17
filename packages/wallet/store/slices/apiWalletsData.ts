@@ -5,7 +5,7 @@ import { WasmApiWalletAccount } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
 import { IWasmApiWalletData, WalletEventLoop } from '../../types';
-import { replaceAt, stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';
+import { stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';
 import { WalletThunkArguments } from '../thunk';
 
 export const apiWalletsDataSliceName = 'api_wallets_data' as const;
@@ -78,9 +78,6 @@ export const walletAccountDeletion = createAction(
     (payload: { walletID: string; walletAccountID: string }) => ({ payload })
 );
 
-// TODO: handle wallet account update
-// TODO: handle wallet settings update
-
 const slice = createSlice({
     name: apiWalletsDataSliceName,
     initialState,
@@ -110,29 +107,21 @@ const slice = createSlice({
             })
             .addCase(walletDeletion, (state, action) => {
                 if (state.value) {
-                    state.value = state.value.filter((data) => data.Wallet.ID !== action.payload.walletID);
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
+                    state.value = state.value.splice(walletIndex, 0);
                 }
             })
             .addCase(walletNameUpdate, (state, action) => {
                 if (state.value) {
-                    state.value = state.value.map((data) => {
-                        if (data.Wallet.ID === action.payload.walletID) {
-                            return { ...data, Wallet: { ...data.Wallet, Name: action.payload.name } };
-                        }
-
-                        return data;
-                    });
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
+                    state.value[walletIndex].Wallet.Name = action.payload.name;
                 }
             })
             .addCase(walletAccountCreation, (state, action) => {
                 if (state.value) {
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
-                    const walletAtIndex = state.value[walletIndex];
 
-                    state.value = replaceAt(state.value, walletIndex, {
-                        ...walletAtIndex,
-                        WalletAccounts: [...walletAtIndex.WalletAccounts, action.payload.account],
-                    });
+                    state.value[walletIndex].WalletAccounts.push(action.payload.account);
                 }
             })
             .addCase(walletAccountUpdate, (state, action) => {
@@ -144,14 +133,7 @@ const slice = createSlice({
                         (data) => data.ID === action.payload.account.ID
                     );
 
-                    state.value = replaceAt(state.value, walletIndex, {
-                        ...walletAtIndex,
-                        WalletAccounts: replaceAt(
-                            walletAtIndex.WalletAccounts,
-                            walletAccountIndex,
-                            action.payload.account
-                        ),
-                    });
+                    state.value[walletIndex].WalletAccounts[walletAccountIndex] = action.payload.account;
                 }
             })
             .addCase(walletAccountDeletion, (state, action) => {
@@ -159,12 +141,11 @@ const slice = createSlice({
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
                     const walletAtIndex = state.value[walletIndex];
 
-                    state.value = replaceAt(state.value, walletIndex, {
-                        ...walletAtIndex,
-                        WalletAccounts: walletAtIndex.WalletAccounts.filter(
-                            ({ ID }) => ID !== action.payload.walletAccountID
-                        ),
-                    });
+                    const walletAccountIndex = walletAtIndex.WalletAccounts.findIndex(
+                        (data) => data.ID === action.payload.walletAccountID
+                    );
+
+                    state.value[walletIndex].WalletAccounts.splice(walletAccountIndex, 0);
                 }
             });
     },
