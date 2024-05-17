@@ -474,7 +474,7 @@ describe('EmailReminderWidget', () => {
     it('displays an error and no widget if there are no events found with the first event API call fails', async () => {
         server.use(
             http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
-                throw new Error('Anything can happen');
+                return HttpResponse.json({ Error: 'Anything can happen' }, { status: 422 });
             })
         );
 
@@ -498,7 +498,7 @@ describe('EmailReminderWidget', () => {
     it('falls back to calling by uid in case the main api call fails', async () => {
         server.use(
             http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
-                throw new Error('Anything can happen');
+                return HttpResponse.json({ Error: 'Anything can happen' }, { status: 422 });
             })
         );
         server.use(
@@ -522,13 +522,13 @@ describe('EmailReminderWidget', () => {
     it('displays a generic error when both event API calls fail', async () => {
         server.use(
             http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
-                throw new Error('Anything can happen');
+                return HttpResponse.json({ Error: 'Anything can happen' }, { status: 422 });
             })
         );
 
         server.use(
             http.get(`/calendar/v1/events`, () => {
-                throw new Error('Anything can happen in the fallback');
+                return HttpResponse.json({ Error: 'Anything can happen in the fallback' }, { status: 422 });
             })
         );
 
@@ -538,7 +538,7 @@ describe('EmailReminderWidget', () => {
         await waitFor(() => expect(screen.queryByText(/DateHeader/)).not.toBeInTheDocument());
         expect(mockedUseNotifications().createNotification).toHaveBeenCalledWith({
             type: 'error',
-            text: expect.stringContaining('Failed to fetch'),
+            text: 'Unknown error',
         });
     });
 });
