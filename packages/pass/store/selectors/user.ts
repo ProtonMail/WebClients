@@ -14,6 +14,7 @@ export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
+export const selectSentinelEligible = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Eligible ?? false);
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
 export const selectUserVerified = ({ user }: State) =>

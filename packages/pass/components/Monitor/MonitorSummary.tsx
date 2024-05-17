@@ -15,26 +15,26 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { useUpsellPlanFeatures } from '@proton/pass/hooks/usePlanFeatures';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectMonitorPreview, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectMonitorPreview } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
 import { MonitorLearnMore } from './MonitorLearnMore';
 import { useMonitor } from './MonitorProvider';
-import { getMonitorUpsellFeatures } from './utils';
 
 import './MonitorSummary.scss';
 
 export const MonitorSummary: FC = () => {
     const { navigate } = useNavigation();
     const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
+    const { plan, features, upsellType } = useUpsellPlanFeatures();
 
-    const paid = isPaidPlan(useSelector(selectPassPlan));
+    const paid = isPaidPlan(plan);
     const preview = useSelector(selectMonitorPreview);
-
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
     const onUpsell = () => setUpsellModalOpen(true);
 
@@ -123,12 +123,12 @@ export const MonitorSummary: FC = () => {
 
                         <UpsellingModal
                             upsellRef={UpsellRef.PASS_MONITOR}
-                            upsellType="pass-monitor"
+                            upsellType={upsellType}
                             open={upsellModalOpen}
                             onClose={() => setUpsellModalOpen(false)}
                             features={
                                 <div className="border border-norm p-4 w-full rounded-xl">
-                                    {getMonitorUpsellFeatures().map(({ label, icon }) => (
+                                    {features.map(({ label, icon }) => (
                                         <CardContent
                                             key={label}
                                             className="p-2 text-lg color-primary"
