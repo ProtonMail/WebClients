@@ -15,7 +15,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import useUpsellPlanFeaturesHook from '@proton/pass/hooks/usePlanFeaturesHook';
+import { useUpsellPlanFeatures } from '@proton/pass/hooks/usePlanFeatures';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectMonitorPreview } from '@proton/pass/store/selectors';
@@ -31,7 +31,7 @@ import './MonitorSummary.scss';
 export const MonitorSummary: FC = () => {
     const { navigate } = useNavigation();
     const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
-    const { plan, upsellPlanFeatures } = useUpsellPlanFeaturesHook();
+    const { plan, features, upsellType } = useUpsellPlanFeatures();
 
     const paid = isPaidPlan(plan);
     const preview = useSelector(selectMonitorPreview);
@@ -123,12 +123,12 @@ export const MonitorSummary: FC = () => {
 
                         <UpsellingModal
                             upsellRef={UpsellRef.PASS_MONITOR}
-                            upsellType={upsellPlanFeatures?.upsellType ?? 'pass-monitor'}
+                            upsellType={upsellType}
                             open={upsellModalOpen}
                             onClose={() => setUpsellModalOpen(false)}
                             features={
                                 <div className="border border-norm p-4 w-full rounded-xl">
-                                    {upsellPlanFeatures?.features.map(({ label, icon }) => (
+                                    {features.map(({ label, icon }) => (
                                         <CardContent
                                             key={label}
                                             className="p-2 text-lg color-primary"
