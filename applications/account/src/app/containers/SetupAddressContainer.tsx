@@ -12,6 +12,7 @@ import {
     useApi,
     useAuthentication,
     useErrorHandler,
+    useEventManager,
     useGetUser,
     useModalState,
     useTheme,
@@ -130,6 +131,7 @@ const SetupAddressContainer = () => {
     const toRef = useRef(defaultToResult);
     const fromRef = useRef(defaultFromResult);
     const authentication = useAuthentication();
+    const { stop } = useEventManager();
     const getUser = useGetUser();
     const { setThemeSetting } = useTheme();
     const ktActivation = useKTActivation();
@@ -206,7 +208,9 @@ const SetupAddressContainer = () => {
                 ? await getDecryptedSetupBlob(authentication.getClientKey(), hash).catch(noop)
                 : undefined;
 
-            history.replace({ ...location, hash: '' });
+            if (hash) {
+                history.replace({ ...location, hash: '' });
+            }
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
             setThemeSetting();
