@@ -218,19 +218,21 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
                 return preventDefault(details);
             }
 
-            if (
-                (isCalendarSettings(details.url) || isCalendar(details.url)) &&
-                getCurrentView() !== getCalendarView()
-            ) {
-                Logger.info("switching to calendar view");
-                loadURL("calendar", details.url);
-                return preventDefault(details);
-            }
+            // Only redirect to a different browser view if the navigation is happening in
+            // the visible web contents.
+            if (getCurrentView()!.webContents === contents) {
+                if (
+                    (isCalendarSettings(details.url) || isCalendar(details.url)) &&
+                    getCurrentView() !== getCalendarView()
+                ) {
+                    loadURL("calendar", details.url);
+                    return preventDefault(details);
+                }
 
-            if ((isMailSettings(details.url) || isMail(details.url)) && getCurrentView() !== getMailView()) {
-                Logger.info("switching to mail view");
-                loadURL("mail", details.url);
-                return preventDefault(details);
+                if ((isMailSettings(details.url) || isMail(details.url)) && getCurrentView() !== getMailView()) {
+                    loadURL("mail", details.url);
+                    return preventDefault(details);
+                }
             }
 
             return details;
