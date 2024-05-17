@@ -202,15 +202,19 @@ export const updateView = (target: VIEW_TARGET) => {
 };
 
 export const loadURL = async (viewID: ViewID, url: string) => {
-    Logger.info(`loading URL in ${viewID}`);
-
-    if (viewID === currentViewID) {
-        getCurrentView()!.webContents.loadURL(url);
-        return;
+    if (viewID !== currentViewID) {
+        updateView(viewID);
     }
 
-    updateView(viewID);
-    getCurrentView()!.webContents.loadURL(url);
+    const currentView = getCurrentView()!;
+    const loggedURL = app.isPackaged ? "" : url;
+
+    if (currentView.webContents.getURL() !== url) {
+        Logger.info(`Loading URL in ${viewID}`, loggedURL);
+        currentView.webContents.loadURL(url);
+    } else {
+        Logger.info(`View ${viewID} already in given url`, loggedURL);
+    }
 };
 
 export const refreshHiddenViews = () => {
