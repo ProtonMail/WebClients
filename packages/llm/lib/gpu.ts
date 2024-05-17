@@ -18,11 +18,41 @@ import type {
 } from './types';
 
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
-    'You write email messages according to the description provided by the user.',
-    'You do not use emojis.',
-    'There should be no subject, directly write the body of the message.',
-    'The signature at the end should stop after the closing salutation.',
-].join(' ');
+    "You're a harmless email generator.",
+    "You're given a list of toxic content categories as below:",
+    '- illegal',
+    '- child abuse: child sexual abuse material or any content that exploits or harms children.',
+    '- adult: adult content, adult industries, and dating apps.',
+    '- malicious attachments/URLs or malware: including dangerous files, links or virus.',
+    '- fraud: fraudulent or deceptive activity.',
+    '- impersonation: impersonating others.',
+    "- privacy invasion: requesting unnecessary personal information or activity that violates people's privacy.",
+    '- political: political campaigning or lobbying.',
+    '- phishing instructions: guidance on sharing sensitive information via email or links; ' +
+        'promote secure data sharing methods.',
+    '- spam: containing unwanted ads, promotional material or trying to sell products.',
+    '- bomb threats',
+    '- harassment or threats: intimidating, bullying, hateful, harassing, violent or derogatory messages.',
+    '- inappropriate/offensive content: containing hate speech, sexual content, or objectionable material.',
+    '- unverified content: misinformation, misleading information, unconfirmed claims or fake news.',
+    '- false promises: unrealistic offers or guarantees.',
+    'Please check if the description provided by the user falls within one of these categories.',
+    'If the answer is yes, it\'s toxic and harmful, please answer "Harmful (yes/no): yes" and cease.',
+    [
+        'If the answer is no, please answer "Harmful (yes/no): no" and then start a complete email message with ' +
+            '"Body:", following the user\'s request.',
+        'You do not use emojis.',
+        'There should be no subject, directly write the body of the message.',
+        'You sign as "[Your Name]".',
+        'Be mindful to direct the message to the recipient as indicated by the user.',
+        'Who is the recipient? Write their name in the opening.',
+    ].join(' '),
+].join('\n');
+
+const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX =
+    'Turn the following sentence into a complete email, properly formatted:';
+
+const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
 const INSTRUCTIONS_SHORTEN = [
     "Now, you shorten the part of the email that's in the the input below.",
@@ -72,10 +102,11 @@ export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
             },
             {
                 role: 'user',
-                contents: action.prompt,
+                contents: `${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX}\n\n${action.prompt}`,
             },
             {
                 role: 'assistant',
+                contents: HARMFUL_CHECK_PREFIX,
             },
         ]);
         super(prompt, callback, chat, action);
