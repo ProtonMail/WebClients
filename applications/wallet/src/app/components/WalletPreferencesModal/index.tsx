@@ -2,13 +2,22 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
-import { Icon, ModalOwnProps } from '@proton/components/components';
+import { WasmMnemonic } from '@proton/andromeda';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    ModalOwnProps,
+} from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton, CoreInput, Input, Modal } from '../../atoms';
+import { Button, Input, Modal } from '../../atoms';
+import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountPreferences } from '../AccountPreferences';
 import { useWalletPreferences } from './useWalletPreferences';
+import warningSignSrc from './warning-sign.svg';
 
 interface Props extends ModalOwnProps {
     wallet: IWasmApiWalletData;
@@ -21,109 +30,147 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
         setWalletName,
         loadingWalletNameUpdate,
         updateWalletName,
-        showDeletionConfirmation,
-        setShowDeletionConfirmation,
-        walletDeletionInputValue,
-        setWalletDeletionInputValue,
+        walletDeletionConfirmationModal,
+        openWalletDeletionConfirmationModal,
         loadingDeletion,
         handleWalletDeletion,
+        openBackupModal,
     } = useWalletPreferences(wallet);
 
     return (
-        <Modal
-            title={c('Wallet preference').t`Your wallet preferences`}
-            enableCloseWhenClickOutside
-            size="large"
-            {...modalProps}
-        >
-            <div className="flex flex-column">
-                <Input
-                    label={c('Wallet preference').t`Wallet name`}
-                    placeholder={c('Wallet preference').t`My super wallet`}
-                    value={walletName}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                        setWalletName(e.target.value);
-                    }}
-                    disabled={loadingWalletNameUpdate}
-                    suffix={
-                        <CoreButton icon size="small">
-                            <Icon
-                                name="arrow-down-line"
-                                onClick={() => {
-                                    updateWalletName();
-                                }}
-                            />
-                        </CoreButton>
-                    }
-                />
+        <>
+            <Modal
+                title={c('Wallet preference').t`Your wallet preferences`}
+                enableCloseWhenClickOutside
+                size="large"
+                {...modalProps}
+            >
+                <div className="flex flex-column">
+                    <Input
+                        label={c('Wallet preference').t`Wallet name`}
+                        placeholder={c('Wallet preference').t`My super wallet`}
+                        value={walletName}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                            setWalletName(e.target.value);
+                        }}
+                        onBlur={() => {
+                            if (walletName) {
+                                updateWalletName();
+                            }
+                        }}
+                        disabled={loadingWalletNameUpdate}
+                    />
 
-                <div className="flex flex-column my-3">
-                    <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
+                    <div className="flex flex-column my-3">
+                        <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
 
-                    {wallet.WalletAccounts.map((walletAccount) => {
-                        return (
-                            <AccountPreferences
-                                key={walletAccount.ID}
-                                wallet={wallet}
-                                walletAccount={walletAccount}
-                                otherWallets={otherWallets}
-                            />
-                        );
-                    })}
-                </div>
-
-                <div className="flex flex-column my-3">
-                    <span className="block color-danger">{c('Wallet preference').t`Danger zone`}</span>
-                    {showDeletionConfirmation ? (
-                        <Card className="flex flex-column my-2 border border-danger">
-                            <span className="block">{c('Wallet preference')
-                                .t`Are you sure you want to delete this wallet?`}</span>
-                            <span className="block">{c('Wallet preference')
-                                .t`Please enter your wallet's name to confirm`}</span>
-
-                            <div className="mt-2">
-                                <CoreInput
-                                    color="danger"
-                                    disabled={loadingDeletion}
-                                    placeholder={c('Wallet preference').t`Your wallet's name`}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                                        setWalletDeletionInputValue(e.target.value);
-                                    }}
+                        {wallet.WalletAccounts.map((walletAccount) => {
+                            return (
+                                <AccountPreferences
+                                    key={walletAccount.ID}
+                                    wallet={wallet}
+                                    walletAccount={walletAccount}
+                                    otherWallets={otherWallets}
                                 />
+                            );
+                        })}
+                    </div>
+
+                    <Collapsible>
+                        <CollapsibleHeader
+                            suffix={
+                                <CollapsibleHeaderIconButton>
+                                    <Icon name="chevron-down" />
+                                </CollapsibleHeaderIconButton>
+                            }
+                        >
+                            <div className="flex flex-row items-center color-weak">
+                                <Icon name="cog-wheel" />
+                                <div className="ml-1">{c('Wallet preference').t`Advanced options`}</div>
                             </div>
-
-                            <div className="flex flex-row justify-end">
-                                <Button
-                                    disabled={walletDeletionInputValue !== wallet.Wallet.Name || loadingDeletion}
-                                    pill
-                                    shape="ghost"
-                                    color="danger"
-                                    size="small"
-                                    className="mr-2"
-                                    onClick={() => handleWalletDeletion()}
-                                >{c('Wallet preference').t`Confirm deletion`}</Button>
-
+                        </CollapsibleHeader>
+                        <CollapsibleContent>
+                            <div className="flex flex-column items-center">
                                 <Button
                                     pill
+                                    fullWidth
                                     disabled={loadingDeletion}
                                     shape="solid"
                                     color="norm"
-                                    size="small"
-                                    onClick={() => setShowDeletionConfirmation(false)}
-                                >{c('Wallet preference').t`Cancel`}</Button>
+                                    className="mt-6"
+                                    onClick={() => {
+                                        if (wallet.Wallet.Mnemonic) {
+                                            openBackupModal({
+                                                schemeAndData: {
+                                                    scheme: WalletSetupScheme.WalletBackup,
+                                                    mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
+                                                },
+                                            });
+                                        }
+                                    }}
+                                >{c('Wallet preference').t`Back up wallet`}</Button>
+
+                                <Button
+                                    pill
+                                    fullWidth
+                                    disabled={loadingDeletion}
+                                    shape="solid"
+                                    color="danger"
+                                    onClick={() => openWalletDeletionConfirmationModal()}
+                                    className="mt-2"
+                                >{c('Wallet preference').t`Delete wallet`}</Button>
                             </div>
-                        </Card>
-                    ) : (
-                        <Button
-                            pill
-                            shape="solid"
-                            color="danger"
-                            className="my-2"
-                            onClick={() => setShowDeletionConfirmation(true)}
-                        >{c('Wallet preference').t`Delete wallet`}</Button>
-                    )}
+                        </CollapsibleContent>
+                    </Collapsible>
                 </div>
-            </div>
-        </Modal>
+            </Modal>
+
+            <Modal {...walletDeletionConfirmationModal}>
+                <div className="flex flex-column mb-4">
+                    <div className="flex mx-auto mb-6">
+                        <img src={warningSignSrc} alt={c('Wallet deletion').t`Warning:'`} />
+                    </div>
+                    <h3 className="text-4xl text-bold mx-auto text-center">{c('Wallet deletion')
+                        .t`Confirm to delete '${wallet.Wallet.Name}'`}</h3>
+
+                    <p className="color-weak text-center mx-12">
+                        <span className="block my-2">{c('Wallet setup')
+                            .t`Please backup your secret recovery phrase before you delete your wallet.`}</span>
+                        <span className="block my-2">{c('Wallet setup')
+                            .t`This mnemonic can help you restoring your wallet next time or on another compatible software.`}</span>
+                    </p>
+                </div>
+
+                <div className="flex flex-column">
+                    <Button
+                        fullWidth
+                        pill
+                        disabled={loadingDeletion}
+                        shape="solid"
+                        color="norm"
+                        onClick={() => {
+                            if (wallet.Wallet.Mnemonic) {
+                                openBackupModal({
+                                    schemeAndData: {
+                                        scheme: WalletSetupScheme.WalletBackup,
+                                        mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
+                                    },
+                                });
+                            }
+                        }}
+                    >{c('Wallet preference').t`Back up wallet first`}</Button>
+
+                    <Button
+                        fullWidth
+                        pill
+                        disabled={loadingDeletion}
+                        shape="solid"
+                        color="weak"
+                        onClick={() => handleWalletDeletion()}
+                        className="mt-2 color-weak"
+                    >{c('Wallet preference').t`Delete this wallet`}</Button>
+                </div>
+            </Modal>
+        </>
     );
 };

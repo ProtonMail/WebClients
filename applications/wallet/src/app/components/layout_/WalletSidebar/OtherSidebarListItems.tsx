@@ -13,7 +13,6 @@ import {
 } from '@proton/components/components';
 
 import { APP_NAME } from '../../../config';
-import { useWalletDrawerContext } from '../../../contexts/WalletDrawerContext';
 
 interface Props {
     label: string;
@@ -42,8 +41,6 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
 };
 
 export const OtherSidebarListItems = () => {
-    const { openDrawer } = useWalletDrawerContext();
-
     const discoverLabel = c('Wallet Sidebar').t`Discover`;
     const recoveryLabel = c('Wallet Sidebar').t`Recovery`;
     const upgradeLabel = c('Wallet Sidebar').t`Upgrade`;
@@ -53,7 +50,7 @@ export const OtherSidebarListItems = () => {
     return (
         <>
             <SidebarListItem className="my-3">
-                <SidebarListItemButton onClick={() => openDrawer({ discover: true })}>
+                <SidebarListItemButton>
                     <SidebarListItemContent
                         data-testid="wallet-sidebar:discover"
                         left={<SidebarListItemContentIcon className="color-hint" name="grid-2" />}

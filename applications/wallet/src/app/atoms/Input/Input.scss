@@ -1,6 +1,26 @@
 .wallet-input {
+	&:hover {
+		z-index: 1;
+		outline: 1px solid var(--interaction-weak-major-1);
+	}
+
 	&:focus-within {
 		z-index: 1;
-		outline: 2px solid var(--interaction-norm-major-2);
+		outline: 2px solid var(--interaction-weak-major-1);
+	}
+
+	.field-two-label-container {
+		font-size: 14px;
+		color: var(--text-weak);
+	}
+
+	::placeholder {
+		color: var(--text-hint);
+		font-size: 16px;
+	}
+
+	.input-element {
+		color: var(--text-norm);
+		font-size: 16px;
 	}
 }

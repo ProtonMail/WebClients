@@ -1,4 +1,4 @@
-import { Key, useCallback, useMemo, useState } from 'react';
+import { Key, useCallback, useEffect, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
@@ -84,6 +84,12 @@ export const useModalStateWithData = <T extends unknown>(
         },
         [handleSetOpen]
     );
+
+    useEffect(() => {
+        if (!modalCoreProps.open) {
+            setModalData(undefined);
+        }
+    }, [modalCoreProps.open]);
 
     const modalProps = useMemo(() => ({ ...modalCoreProps, data: modalData }), [modalData, modalCoreProps]);
 

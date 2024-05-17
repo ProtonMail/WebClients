@@ -17,13 +17,21 @@ interface Props extends ModalOwnProps {
 }
 
 export const WalletCreationModal = ({ schemeAndData, ...modalProps }: Props) => {
-    const { mnemonic, step, onSetupSchemeChange, onNextStep, onPassphraseInput, onWalletSubmit, onMnemonicInput } =
-        useWalletSetup({
-            schemeAndData,
-            onSetupFinish: () => {
-                modalProps.onClose?.();
-            },
-        });
+    const {
+        mnemonic,
+        step,
+        isLastStep,
+        onSetupSchemeChange,
+        onNextStep,
+        onPassphraseInput,
+        onWalletSubmit,
+        onMnemonicInput,
+    } = useWalletSetup({
+        schemeAndData,
+        onSetupFinish: () => {
+            modalProps.onClose?.();
+        },
+    });
 
     const [content, title, subline] = useMemo(() => {
         if (!step) {
@@ -46,7 +54,7 @@ export const WalletCreationModal = ({ schemeAndData, ...modalProps }: Props) => 
             case WalletSetupStep.MnemonicBackup:
                 const m = schemeAndData && 'mnemonic' in schemeAndData ? schemeAndData.mnemonic : mnemonic;
                 return [
-                    m ? <MnemonicBackup mnemonic={m} onContinue={onNextStep} /> : null,
+                    m ? <MnemonicBackup isLastStep={isLastStep} mnemonic={m} onContinue={onNextStep} /> : null,
                     c('Wallet setup').t`Wallet seed phrase`,
                     c('Wallet setup')
                         .t`Use this secret recovery phrase to recover your wallet if you lose access to your account.`,
@@ -71,6 +79,7 @@ export const WalletCreationModal = ({ schemeAndData, ...modalProps }: Props) => 
         }
     }, [
         step,
+        isLastStep,
         mnemonic,
         onMnemonicInput,
         onNextStep,
