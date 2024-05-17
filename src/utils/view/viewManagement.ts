@@ -202,18 +202,43 @@ export const updateView = (target: VIEW_TARGET) => {
 };
 
 export const loadURL = async (viewID: ViewID, url: string) => {
-    if (viewID !== currentViewID) {
-        updateView(viewID);
-    }
-
     const currentView = getCurrentView()!;
+    const nextView = browserViewMap[viewID];
     const loggedURL = app.isPackaged ? "" : url;
 
-    if (currentView.webContents.getURL() !== url) {
-        Logger.info(`Loading URL in ${viewID}`, loggedURL);
-        currentView.webContents.loadURL(url);
+    if (currentView === nextView) {
+        if (currentView.webContents.getURL() !== url) {
+            Logger.info(`Loading URL in current view ${viewID}`, loggedURL);
+            currentView.webContents.loadURL(url);
+        } else {
+            Logger.info(`Current view ${viewID} already in given url`, loggedURL);
+        }
     } else {
-        Logger.info(`View ${viewID} already in given url`, loggedURL);
+        if (nextView?.webContents.getURL() === url) {
+            Logger.info(`View ${viewID} already in given url`, loggedURL);
+            updateView(viewID);
+        } else if (nextView) {
+            Logger.info(`Loading URL in ${viewID}`, loggedURL);
+            // Clear nextView before changing to it show it does not show a flash of content
+            await nextView.webContents.loadURL("about:blank");
+            updateView(viewID);
+            nextView.webContents.loadURL(url);
+        } else {
+            // View hasn't loaded yet, try to load it now
+            updateView(viewID);
+            const loadedNextView = getCurrentView();
+
+            if (loadedNextView) {
+                if (loadedNextView.webContents.getURL() !== url) {
+                    Logger.info(`Loading URL in ${viewID}`, loggedURL);
+                    loadedNextView.webContents.loadURL(url);
+                } else {
+                    Logger.info(`View ${viewID} already in given url`, loggedURL);
+                }
+            } else {
+                Logger.error(`Cant load URL in ${viewID}, view is not available`, loggedURL);
+            }
+        }
     }
 };
 
