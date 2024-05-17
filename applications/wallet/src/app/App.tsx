@@ -19,7 +19,6 @@ import { setPanicHook } from '@proton/andromeda';
 import {
     AuthenticationProvider,
     DelinquentContainer,
-    DrawerProvider,
     ErrorBoundary,
     EventManagerProvider,
     LoaderPage,
@@ -41,7 +40,9 @@ import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/Exte
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
+import { BitcoinBlockchainContextProvider } from './contexts/BitcoinBlockchainContext/BitcoinBlockchainContextProvider';
 import { WalletDrawerContextProvider } from './contexts/WalletDrawerContext/WalletDrawerContextProvider';
+import { WalletSetupModalContextProvider } from './contexts/WalletSetupModalContext/WalletSetupModalContextProvider';
 import locales from './locales';
 import { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
@@ -110,30 +111,28 @@ const App = () => {
                                 api={extraThunkArguments.api}
                                 walletApi={extraThunkArguments.walletApi}
                             >
-                                <WalletDrawerContextProvider>
-                                    {/* TODO: remove drawer provider */}
-                                    <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                        <FlagProvider
-                                            unleashClient={extraThunkArguments.unleashClient}
-                                            startClient={false}
-                                        >
-                                            <Router history={extraThunkArguments.history}>
-                                                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <StandardPrivateApp
-                                                            hasReadableMemberKeyActivation
-                                                            hasMemberKeyMigration
-                                                            hasPrivateMemberKeyGeneration
-                                                            loader={loader}
-                                                        >
-                                                            <state.MainContainer />
-                                                        </StandardPrivateApp>
-                                                    </ErrorBoundary>
-                                                </EventManagerProvider>
-                                            </Router>
-                                        </FlagProvider>
-                                    </DrawerProvider>
-                                </WalletDrawerContextProvider>
+                                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                    <Router history={extraThunkArguments.history}>
+                                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                <BitcoinBlockchainContextProvider>
+                                                    <WalletSetupModalContextProvider>
+                                                        <WalletDrawerContextProvider>
+                                                            <StandardPrivateApp
+                                                                hasReadableMemberKeyActivation
+                                                                hasMemberKeyMigration
+                                                                hasPrivateMemberKeyGeneration
+                                                                loader={loader}
+                                                            >
+                                                                <state.MainContainer />
+                                                            </StandardPrivateApp>
+                                                        </WalletDrawerContextProvider>
+                                                    </WalletSetupModalContextProvider>
+                                                </BitcoinBlockchainContextProvider>
+                                            </ErrorBoundary>
+                                        </EventManagerProvider>
+                                    </Router>
+                                </FlagProvider>
                             </ExtendedApiProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>

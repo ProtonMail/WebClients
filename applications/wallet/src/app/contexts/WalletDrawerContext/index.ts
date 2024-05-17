@@ -12,7 +12,7 @@ export interface WalletTransactionDrawerData {
 
 export interface WalletDiscoverDrawerData {
     discover: true;
-    wallet?: IWasmApiWalletData;
+    wallet: IWasmApiWalletData;
 }
 
 // will be an union later

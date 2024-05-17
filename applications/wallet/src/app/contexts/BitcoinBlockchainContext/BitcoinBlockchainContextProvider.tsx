@@ -45,28 +45,32 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         3000
     );
 
-    const value = {
-        network,
+    return (
+        <BitcoinBlockchainContext.Provider
+            value={{
+                network,
 
-        decryptedApiWalletsData,
-        walletMap,
-        loadingApiWalletsData,
-        setPassphrase,
+                decryptedApiWalletsData,
+                walletMap,
+                loadingApiWalletsData,
+                setPassphrase,
 
-        walletsChainData,
-        accountIDByDerivationPathByWalletID,
-        syncingMetatadaByAccountId,
-        syncManyWallets,
-        syncSingleWallet,
-        syncSingleWalletAccount,
+                walletsChainData,
+                accountIDByDerivationPathByWalletID,
+                syncingMetatadaByAccountId,
+                syncManyWallets,
+                syncSingleWallet,
+                syncSingleWalletAccount,
 
-        isSyncing,
+                isSyncing,
 
-        feesEstimation,
-        loadingFeesEstimation,
-    };
-
-    return <BitcoinBlockchainContext.Provider value={value}>{children}</BitcoinBlockchainContext.Provider>;
+                feesEstimation,
+                loadingFeesEstimation,
+            }}
+        >
+            {children}
+        </BitcoinBlockchainContext.Provider>
+    );
 };
 
 export const useBitcoinBlockchainContext = () => useContext(BitcoinBlockchainContext);

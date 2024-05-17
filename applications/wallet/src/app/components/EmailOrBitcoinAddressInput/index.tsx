@@ -303,6 +303,7 @@ export const EmailOrBitcoinAddressInput = ({
                     {...rest}
                     label={c('Bitcoin send').t`Send to Email/BTC address`}
                     dense
+                    autofocus
                     value={input}
                     disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || loading}
                     onValue={(value: string) => {

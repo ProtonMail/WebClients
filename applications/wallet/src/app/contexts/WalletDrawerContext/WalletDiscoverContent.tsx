@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmMnemonic } from '@proton/andromeda';
-import { Icon, useModalState } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { WalletCreationModal } from '../../components/WalletCreationModal';
 import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
+import { useWalletSetupModalContext } from '../WalletSetupModalContext';
 
 interface ChecklistItemProps {
     done?: boolean;
@@ -56,68 +56,62 @@ const DiscoverPreview = () => {
 };
 
 interface Props {
-    wallet?: IWasmApiWalletData;
+    wallet: IWasmApiWalletData;
 }
 
 export const WalletDiscoverContent = ({ wallet }: Props) => {
     const [checkedItem, setCheckedItem] = useState(1);
-    const [walletSetupModal, setWalletSetupModal] = useModalState({
-        onClose: () => {
-            setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
-        },
-    });
+
+    const { open } = useWalletSetupModalContext();
 
     return (
-        <>
-            <div className="flex flex-column">
-                <div className="flex flex-column mb-10">
-                    <div className="text-3xl text-semibold mb-6">{c('Wallet discover')
-                        .t`Finish your account set up`}</div>
+        <div className="flex flex-column">
+            <div className="flex flex-column mb-10">
+                <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Finish your account setup`}</div>
 
-                    <div className="flex flex-column gap-1">
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.ClaimWallet)}
-                            text={c('Wallet discover').t`Claim your wallet`}
-                        />
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.BackupAccount)}
-                            text={c('Wallet discover').t`Backup your ${BRAND_NAME} account`}
-                        />
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.BackupWallet)}
-                            text={c('Wallet discover').t`Backup your wallet's mnemonic`}
-                            onClick={() => {
-                                setWalletSetupModal(true);
-                            }}
-                        />
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.Setup2FA)}
-                            text={c('Wallet discover').t`Set up your 2FA`}
-                        />
-                    </div>
-                </div>
-
-                <div className="flex flex-column mb-10">
-                    <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
-
-                    <div className="flex flex-column gap-2">
-                        <DiscoverPreview />
-                        <DiscoverPreview />
-                        <DiscoverPreview />
-                        <DiscoverPreview />
-                    </div>
+                <div className="flex flex-column gap-1">
+                    <ChecklistItem
+                        done={hasBit(checkedItem, ChecklistItems.ClaimWallet)}
+                        text={c('Wallet discover').t`Claim your wallet`}
+                    />
+                    <ChecklistItem
+                        done={hasBit(checkedItem, ChecklistItems.BackupAccount)}
+                        text={c('Wallet discover').t`Backup your ${BRAND_NAME} account`}
+                    />
+                    <ChecklistItem
+                        done={hasBit(checkedItem, ChecklistItems.BackupWallet)}
+                        text={c('Wallet discover').t`Backup your wallet's mnemonic`}
+                        onClick={() => {
+                            if (wallet.Wallet.Mnemonic) {
+                                open({
+                                    schemeAndData: {
+                                        scheme: WalletSetupScheme.WalletBackup,
+                                        mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
+                                    },
+                                    onClose: () => {
+                                        setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
+                                    },
+                                });
+                            }
+                        }}
+                    />
+                    <ChecklistItem
+                        done={hasBit(checkedItem, ChecklistItems.Setup2FA)}
+                        text={c('Wallet discover').t`Set up your 2FA`}
+                    />
                 </div>
             </div>
 
-            {wallet?.Wallet.Mnemonic && (
-                <WalletCreationModal
-                    schemeAndData={{
-                        scheme: WalletSetupScheme.WalletAutocreationBackup,
-                        mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                    }}
-                    {...walletSetupModal}
-                />
-            )}
-        </>
+            <div className="flex flex-column mb-10">
+                <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
+
+                <div className="flex flex-column gap-2">
+                    <DiscoverPreview />
+                    <DiscoverPreview />
+                    <DiscoverPreview />
+                    <DiscoverPreview />
+                </div>
+            </div>
+        </div>
     );
 };

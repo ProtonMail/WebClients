@@ -5,3 +5,4 @@ export * from './mockUseNotifications';
 export * from './mockUseUser';
 export * from './mockUseUserKeys';
 export * from './mockUseAddressKeys';
+export * from './mockUseAddresses';

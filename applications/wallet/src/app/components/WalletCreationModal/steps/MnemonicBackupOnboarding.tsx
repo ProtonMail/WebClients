@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button } from '../../../atoms';
+import { Button, ButtonLike } from '../../../atoms';
 import accessKey from './access-key.svg';
 
 interface Props {
@@ -30,8 +32,17 @@ export const MnemonicBackupOnboarding = ({ onViewMnemonic }: Props) => {
                 color="norm"
                 onClick={() => onViewMnemonic()}
             >
-                {c('Wallet setup').t`View wallet seed phrases`}
+                {c('Wallet setup').t`View wallet seed phrase`}
             </Button>
+
+            <ButtonLike
+                as={Href}
+                href={getKnowledgeBaseUrl('/proton-wallet-seed-phrase')}
+                target="_blank"
+                className="block w-4/5 mx-auto text-semibold"
+                shape="ghost"
+                color="weak"
+            >{c('Wallet setup').t`Learn more`}</ButtonLike>
         </div>
     );
 };

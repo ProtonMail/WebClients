@@ -22,13 +22,13 @@ export enum WalletSetupScheme {
 
     /**
      *
-     * Use case: after autocreation, user can click on `Back up your wallet` in the discover checklist, then we use this scheme.
+     * Flow that's lets the user backup the newly created wallet
      */
-    WalletAutocreationBackup = 'WalletAutocreationBackup',
+    WalletBackup = 'WalletBackup',
 }
 
 export type SchemeAndData =
-    | { scheme: WalletSetupScheme.WalletAutocreationBackup; mnemonic: WasmMnemonic }
+    | { scheme: WalletSetupScheme.WalletBackup; mnemonic: WasmMnemonic }
     /**
      * If walletId is truthy, this means that a wallet has already been autocreated and setup only needs to be finalised (only settings step to display)
      */

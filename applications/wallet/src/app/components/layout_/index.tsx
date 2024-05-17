@@ -2,19 +2,13 @@ import { ReactNode, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import {
-    PrivateAppContainer,
-    PrivateMainArea,
-    useModalState,
-    useModalStateWithData,
-    useToggle,
-} from '@proton/components';
+import { PrivateAppContainer, PrivateMainArea, useModalState, useToggle } from '@proton/components';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { SchemeAndData, WalletSetupScheme } from '../../hooks/useWalletSetup/type';
+import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
+import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountCreationModal } from '../AccountCreationModal';
 import { WalletAutoCreationNoticeModal } from '../WalletAutoCreationNoticeModal';
-import { WalletCreationModal } from '../WalletCreationModal';
 import WalletHeader from './WalletHeader';
 import WalletSidebar from './WalletSidebar';
 
@@ -26,8 +20,9 @@ export const PrivateWalletLayout = ({ children }: Props) => {
     const { walletId } = useParams<{ walletId?: string }>();
 
     const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
-    const [walletSetupModal, setWalletSetupModal] = useModalStateWithData<{ schemeAndData?: SchemeAndData }>();
     const [walletAccountSetupModal, setWalletAccountSetupModal] = useModalState();
+
+    const { open } = useWalletSetupModalContext();
 
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
@@ -46,7 +41,9 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                     expanded={expanded}
                     apiWalletsData={decryptedApiWalletsData}
                     onToggleExpand={toggleExpanded}
-                    onAddWallet={() => setWalletSetupModal({})}
+                    onAddWallet={() => {
+                        open({});
+                    }}
                     onAddWalletAccount={() => setWalletAccountSetupModal(true)}
                 />
             }
@@ -68,11 +65,9 @@ export const PrivateWalletLayout = ({ children }: Props) => {
             <WalletAutoCreationNoticeModal
                 open={hasNoWalletSetupYet && !walletAccountSetupModal.open}
                 handleClickImport={() => {
-                    setWalletSetupModal({ schemeAndData: { scheme: WalletSetupScheme.WalletImport } });
+                    open({ schemeAndData: { scheme: WalletSetupScheme.WalletImport } });
                 }}
             />
-
-            <WalletCreationModal schemeAndData={walletSetupModal.data?.schemeAndData} {...walletSetupModal} />
 
             {wallet && <AccountCreationModal apiWalletData={wallet} {...walletAccountSetupModal} />}
         </PrivateAppContainer>

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,6 +19,7 @@ import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { getLabelByScriptType } from '../../utils';
+import { getDefaultWalletAccountName } from '../../utils/wallet';
 
 interface Props extends ModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -36,16 +37,20 @@ const SCRIPT_TYPES: WasmScriptType[] = [
 
 const purposeByScriptType: Record<WasmScriptType, number> = {
     [WasmScriptType.Legacy]: 44,
-    [WasmScriptType.NestedSegwit]: 48,
+    [WasmScriptType.NestedSegwit]: 49,
     [WasmScriptType.NativeSegwit]: 84,
     [WasmScriptType.Taproot]: 86,
 };
 
 export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) => {
     // TODO use different default if 0 is already added
-    const [label, setLabel] = useState('');
+    const [label, setLabel] = useState(getDefaultWalletAccountName(apiWalletData.WalletAccounts));
+
+    const [selectedScriptType, setSelectedScriptType] = useState(WasmScriptType.NativeSegwit);
+
     const [selectedIndex, setSelectedIndex] = useState<string | number>(DEFAULT_INDEX);
     const [inputIndex, setInputIndex] = useState<number>(DEFAULT_INDEX);
+
     const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
     const [loading, withLoading] = useLoading();
     const { network } = useBitcoinBlockchainContext();
@@ -55,18 +60,41 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
 
     const api = useWalletApiClients();
 
-    const [selectedScriptType, setSelectedScriptType] = useState(WasmScriptType.NativeSegwit);
+    const indexesByScriptType = useMemo(() => {
+        return apiWalletData.WalletAccounts.reduce((acc: Partial<Record<WasmScriptType, Set<number>>>, cur) => {
+            const set = acc[cur.ScriptType as WasmScriptType] ?? new Set();
+
+            // TODO: find a better to get index, maybe store on db side?
+            const i = Number(cur.DerivationPath.split('/')[3]?.replace("'", '') ?? null);
+
+            if (!Number.isFinite(i)) {
+                return acc;
+            }
+
+            set.add(i);
+            return {
+                ...acc,
+                [cur.ScriptType as WasmScriptType]: set,
+            };
+        }, {});
+    }, [apiWalletData.WalletAccounts]);
+
+    useEffect(() => {
+        let index = 0;
+        while (indexesByScriptType[selectedScriptType]?.has(index)) {
+            index++;
+        }
+        setSelectedIndex(index);
+        setInputIndex(index);
+    }, [selectedScriptType, indexesByScriptType]);
 
     const onAccountCreation = async () => {
-        if (!network || !userKeys) {
+        const index = Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex;
+        if (!network || !userKeys || indexesByScriptType[selectedScriptType]?.has(index)) {
             return;
         }
 
-        const derivationPath = WasmDerivationPath.fromParts(
-            purposeByScriptType[selectedScriptType],
-            network,
-            Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex
-        );
+        const derivationPath = WasmDerivationPath.fromParts(purposeByScriptType[selectedScriptType], network, index);
 
         // Typeguard
         if (!apiWalletData.WalletKey?.WalletKey) {
@@ -165,6 +193,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
                                     label: index.toString(),
                                     value: index,
                                     id: index.toString(),
+                                    disabled: indexesByScriptType[selectedScriptType]?.has(Number(index)),
                                 }))}
                             />
                         </div>
@@ -182,6 +211,10 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
                                     onChange={(event: ChangeEvent<HTMLInputElement>) => {
                                         setInputIndex(Number(event.target.value));
                                     }}
+                                    error={
+                                        indexesByScriptType[selectedScriptType]?.has(inputIndex) &&
+                                        c('Wallet account').t`This account is already created`
+                                    }
                                 />
                             </div>
                         )}

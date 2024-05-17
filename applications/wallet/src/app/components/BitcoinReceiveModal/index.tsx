@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
-import Card from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
@@ -49,12 +48,18 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
     }, [exchangeRate]);
 
     return (
-        <FullscreenModal
-            title={c('Wallet receive').t`Receive bitcoin`}
-            subline={c('Wallet receive')
-                .t`Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.`}
-            {...modalProps}
-        >
+        <FullscreenModal title={c('Wallet receive').t`Receive bitcoin`} {...modalProps}>
+            <div className="flex flex-column">
+                <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
+                    .t`Your bitcoin address`}</h3>
+                <div className="color-weak text-break mb-6">
+                    <p className="text-center my-2">
+                        {c('Receive bitcoin')
+                            .t`Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.`}
+                    </p>
+                </div>
+            </div>
+
             <div className="flex flex-column items-center">
                 {/* Payment info data */}
                 {paymentLink && !loadingPaymentLink ? (
@@ -63,7 +68,7 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <Card bordered={false} className="rounded-xl p-6 flex flex-column items-center">
+                            <div className="bg-norm rounded-xl p-6 flex flex-column items-center">
                                 <div className="w-custom" style={{ '--w-custom': '12.5rem' }}>
                                     <QRCode data-testid="serialized-payment-info-qrcode" value={paymentLinkString} />
                                 </div>
@@ -127,7 +132,7 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                                         </>
                                     )}
                                 </div>
-                            </Card>
+                            </div>
                         );
                     })()
                 ) : (
@@ -137,21 +142,24 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                     </div>
                 )}
 
-                <div className="flex flex-column items-center mt-6 w-full">
+                <div className="flex flex-column items-center mt-6 w-full px-8">
                     <Button
                         pill
                         fullWidth
                         shape="solid"
                         color="norm"
                         disabled={!paymentLink || loadingPaymentLink}
+                        className="py-3"
+                        shadow
                         onClick={() => {}}
                     >{c('Wallet receive').t`Share address`}</Button>
+
                     <Button
                         className="mt-2 color-weak"
                         shape="ghost"
                         color="weak"
                         onClick={() => incrementIndex()}
-                        disabled={!isIndexAboveGap || !paymentLink || loadingPaymentLink}
+                        disabled={isIndexAboveGap || !paymentLink || loadingPaymentLink}
                     >{c('Wallet receive').t`Generate new address`}</Button>
 
                     {isIndexAboveGap && (

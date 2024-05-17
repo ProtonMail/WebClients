@@ -100,15 +100,18 @@ export const TransactionReview = ({
                 encryptionKeys: [...accountAddressesKeys, ...compact(recipients.map((r) => r.addressKey))],
             });
 
+            onSent();
+
             createNotification({
                 text: c('Wallet send').t`Transaction was succesfully sent`,
             });
-
-            onSent();
-        } catch (e) {
+        } catch (error) {
             createNotification({
                 type: 'error',
-                text: c('Wallet send').t`The transaction could be sent. Please try again later`,
+                text:
+                    typeof error === 'object' && error && 'message' in error
+                        ? (error.message as string)
+                        : c('Wallet send').t`The transaction could not be sent. Please try again later`,
             });
         }
     };

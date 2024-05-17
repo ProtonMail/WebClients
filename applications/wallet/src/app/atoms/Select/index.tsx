@@ -8,7 +8,7 @@ type Props<V> = Omit<
     SelectTwoProps<V> & InputFieldOwnProps,
     'children' | 'assistContainerClassName' | 'labelContainerClassName' | 'originalPlacement' | 'unstyled'
 > & {
-    options: { id: string; value: V; label: string }[];
+    options: { id: string; value: V; label: string; disabled?: boolean }[];
     label: string | JSX.Element;
 };
 
@@ -25,7 +25,7 @@ export const Select = <V extends unknown>({ options, ...props }: Props<V>) => {
                 {...props}
             >
                 {options.map((opt) => (
-                    <Option key={opt.id} title={opt.label} value={opt.value} />
+                    <Option key={opt.id} title={opt.label} value={opt.value} disabled={opt.disabled} />
                 ))}
             </InputField>
         </div>

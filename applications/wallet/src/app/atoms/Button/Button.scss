@@ -3,18 +3,19 @@
 }
 
 .wallet-button.button-ghost-weak {
-	font-weight: var(--font-weight-weak);
 	&:hover {
 		background: transparent !important;
 	}
 }
 
 .wallet-button.button-solid-norm {
-	// box-shadow: var(--shadow-lifted);
-
 	--button-default-text-color: var(--text-invert);
 	--button-hover-text-color: var(--text-invert);
 	--button-active-text-color: var(--text-invert);
+}
+
+.shadow {
+	box-shadow: 0 20px 30px 0 var(--interaction-weak-major-2);
 }
 
 .wallet-button.button-solid-weak {
@@ -27,7 +28,6 @@
 	--button-default-background-color: var(--interaction-norm-contrast);
 	--button-hover-background-color: var(--interaction-norm-contrast);
 	--button-active-background-color: var(--interaction-norm-contrast);
-
 	--button-default-text-color: var(--text-invert) !important;
 	--button-hover-text-color: var(--text-invert) !important;
 	--button-active-text-color: var(--text-invert) !important;

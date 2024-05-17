@@ -14,6 +14,7 @@ import {
     decryptWalletKey,
     encryptWalletDataWithWalletKey,
     useWalletApiClients,
+    walletAccountDeletion,
     walletAccountUpdate,
 } from '@proton/wallet';
 
@@ -77,6 +78,21 @@ export const useAccountPreferences = (
         walletAccount.Label,
         withLoadingLabelUpdate,
     ]);
+
+    const deleteWalletAccount = useCallback(() => {
+        const promise = async () => {
+            try {
+                await api.wallet.deleteWalletAccount(wallet.Wallet.ID, walletAccount.ID);
+
+                createNotification({ text: c('Wallet Settings').t`Account was deleted` });
+                dispatch(walletAccountDeletion({ walletID: wallet.Wallet.ID, walletAccountID: walletAccount.ID }));
+            } catch (e) {
+                createNotification({ type: 'error', text: c('Wallet Settings').t`Account name could not be deleted` });
+            }
+        };
+
+        void withLoadingLabelUpdate(promise());
+    }, []);
 
     const addressesWithAvailability = useMemo(() => {
         const alreadyUsedAddresses = [wallet, ...otherWallets].flatMap(({ WalletAccounts }) =>
@@ -155,6 +171,8 @@ export const useAccountPreferences = (
         isLoadingLabelUpdate,
         onChangeLabel,
         updateWalletAccountLabel,
+
+        deleteWalletAccount,
 
         currencies,
         loadingCurrencies,

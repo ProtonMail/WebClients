@@ -53,7 +53,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         message,
         encryptionKeys,
     }: BroadcastData) => {
-        void withLoadingBroadcast(async () => {
+        return withLoadingBroadcast(async () => {
             const wasmAccount = getAccountWithChainDataFromManyWallets(
                 walletsChainData,
                 wallet?.Wallet.ID,
@@ -64,42 +64,49 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 return;
             }
 
-            const signed = await psbt.sign(wasmAccount.account, network);
+            const signed = await psbt.sign(wasmAccount.account, network).catch(() => {
+                throw new Error(c('Wallet Send').t`Could not sign transaction`);
+            });
 
-            try {
-                const signingKeys = userKeys.map((k) => k.privateKey);
-                const { message: encryptedData } = await CryptoProxy.encryptMessage({
-                    textData: message,
-                    encryptionKeys,
-                    signingKeys,
-                    format: 'armored',
-                }).catch(() => ({ message: null }));
+            const signingKeys = userKeys.map((k) => k.privateKey);
+            const { message: encryptedData } = await CryptoProxy.encryptMessage({
+                textData: message,
+                encryptionKeys,
+                signingKeys,
+                format: 'armored',
+            }).catch(() => ({ message: null }));
 
-                const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
-                const [encryptedNoteToSelf] = await encryptWalletDataWithWalletKey([noteToSelf], decryptedKey);
+            const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys).catch(() => {
+                throw new Error(c('Wallet Send').t`Could not decrypt wallet key`);
+            });
 
-                const txId = await blockchainClient.broadcastPsbt(
+            const [encryptedNoteToSelf] = await encryptWalletDataWithWalletKey([noteToSelf], decryptedKey).catch(() => [
+                null,
+            ]);
+
+            const txId = await blockchainClient
+                .broadcastPsbt(
                     signed,
                     wallet.Wallet.ID,
                     account.ID,
                     {
-                        label: encryptedNoteToSelf as string,
+                        label: encryptedNoteToSelf,
                         exchange_rate_or_transaction_time: {
                             key: 'ExchangeRate',
                             value: exchangeRateId,
                         },
                     },
                     { address_id: account.Addresses[0]?.ID ?? null, subject: null, body: encryptedData }
-                );
+                )
+                .catch(() => {
+                    throw new Error(c('Wallet Send').t`Could not broadcast transaction`);
+                });
 
-                setBroadcastedTxId(txId);
+            setBroadcastedTxId(txId);
 
-                setTimeout(() => {
-                    void syncSingleWalletAccount(wallet.Wallet.ID, account.ID);
-                }, 1 * SECOND);
-            } catch (err) {
-                createNotification({ text: c('Wallet Send').t`Could not broadcast transaction`, type: 'error' });
-            }
+            setTimeout(() => {
+                void syncSingleWalletAccount(wallet.Wallet.ID, account.ID);
+            }, 1 * SECOND);
         });
     };
 

@@ -1,10 +1,18 @@
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
-import { Icon, ModalOwnProps } from '@proton/components/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    ModalOwnProps,
+    usePopperAnchor,
+} from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { CoreButton, Input, Select } from '../../atoms';
+import { Input, Select } from '../../atoms';
 import { EmailIntegrationInput } from '../EmailIntegrationInput';
 import { useAccountPreferences } from './useAccountPreferences';
 
@@ -15,11 +23,15 @@ interface Props extends ModalOwnProps {
 }
 
 export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Props) => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
     const {
         label,
         isLoadingLabelUpdate,
         onChangeLabel,
         updateWalletAccountLabel,
+
+        deleteWalletAccount,
 
         currencies,
         loadingCurrencies,
@@ -42,15 +54,48 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     value={label}
                     onChange={onChangeLabel}
                     disabled={isLoadingLabelUpdate}
+                    onBlur={() => {
+                        if (label) {
+                            updateWalletAccountLabel();
+                        }
+                    }}
                     suffix={
-                        <CoreButton icon size="small">
-                            <Icon
-                                name="arrow-down-line"
-                                onClick={() => {
-                                    updateWalletAccountLabel();
-                                }}
-                            />
-                        </CoreButton>
+                        <>
+                            <DropdownButton
+                                ref={anchorRef}
+                                isOpen={isOpen}
+                                onClick={toggle}
+                                icon
+                                className="rounded-full"
+                                size="small"
+                                disabled={isLoadingLabelUpdate}
+                            >
+                                <Icon size={3} name="three-dots-vertical" alt={c('Action').t`More options`} />
+                            </DropdownButton>
+                            <Dropdown
+                                isOpen={isOpen}
+                                anchorRef={anchorRef}
+                                onClose={close}
+                                originalPlacement="bottom-start"
+                                className="bg-weak"
+                            >
+                                <DropdownMenu>
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-row items-center"
+                                        actionType="delete"
+                                        disabled={isLoadingLabelUpdate}
+                                        onClick={() => {
+                                            deleteWalletAccount();
+                                        }}
+                                    >
+                                        {c('Wallet preference').t`Delete account`}
+                                        <div className="flex ml-2">
+                                            <Icon name="pass-trash" />
+                                        </div>
+                                    </DropdownMenuButton>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </>
                     }
                 />
                 <hr className="my-0" />

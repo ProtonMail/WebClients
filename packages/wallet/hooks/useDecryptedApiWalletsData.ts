@@ -109,10 +109,15 @@ export const useDecryptedApiWalletsData = () => {
         return buildMapFromWallets(decryptedApiWalletsData);
     }, [decryptedApiWalletsData]);
 
+    /**
+     * We want to display a loading state either when we are fetching api data or when we are decrypting it and we don't have data on client yet
+     */
+    const loading = loadingWalletFetch || (loadingWalletDecryption && !decryptedApiWalletsData);
+
     return {
         decryptedApiWalletsData,
         walletMap,
-        loading: loadingWalletFetch || loadingWalletDecryption,
+        loading,
         setPassphrase,
     };
 };

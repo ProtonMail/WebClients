@@ -217,15 +217,17 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                         pill
                         shape="solid"
                         color="weak"
-                        className="w-custom mx-1 shadow-lifted"
-                        style={{ '--w-custom': '7.5rem', boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)' }}
+                        className="text-lg w-custom mx-1 py-3"
+                        shadow
+                        style={{ '--w-custom': '7.5rem' }}
                     >
                         {c('Wallet transaction').t`Receive`}
                     </Button>
                     <Button
                         pill
                         shape="solid"
-                        className="button-darker w-custom mx-1 shadow-lifted"
+                        className="button-darker text-lg w-custom mx-1 py-3"
+                        shadow
                         style={{ '--w-custom': '7.5rem' }}
                     >
                         {c('Wallet transaction').t`Buy`}
@@ -262,10 +264,10 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                         shape="ghost"
                         color="weak"
                         className="ml-2 rounded-full bg-weak"
-                        disabled={!transactionDetails?.length || isSyncingWalletData}
+                        disabled={isSyncingWalletData}
                         onClick={() => handleClickSync()}
                     >
-                        <Icon name="arrows-rotate" size={5} />
+                        <Icon name="arrows-rotate" size={5} alt={c('Wallet transactions list').t`Sync`} />
                     </CoreButton>
                     <CoreButton
                         icon
@@ -280,7 +282,19 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                             )
                         }
                     >
-                        <Icon name={sortOrder === WasmSortOrder.Asc ? 'list-arrow-down' : 'list-arrow-up'} size={5} />
+                        {sortOrder === WasmSortOrder.Asc ? (
+                            <Icon
+                                alt={c('Wallet transactions list').t`Descending order`}
+                                name="list-arrow-down"
+                                size={5}
+                            />
+                        ) : (
+                            <Icon
+                                alt={c('Wallet transactions list').t`Ascending order`}
+                                name="list-arrow-up"
+                                size={5}
+                            />
+                        )}
                     </CoreButton>
                 </div>
             </div>
