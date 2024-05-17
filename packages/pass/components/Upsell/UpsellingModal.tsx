@@ -18,7 +18,7 @@ type UpsellModalContent = {
     image: string;
 };
 
-export type UpsellType = 'free-trial' | 'pass-plus' | 'early-access' | 'pass-monitor';
+export type UpsellType = 'free-trial' | 'pass-plus' | 'early-access' | 'pass-monitor' | 'pass-monitor-business';
 
 export type Props = Omit<AdapativeModalProps, 'actions'> & {
     extraActions?: (props: AdapativeModalProps) => ReactNode[];
@@ -54,6 +54,13 @@ const getContent = (type: UpsellType): UpsellModalContent =>
             description: c('Description')
                 .t`Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.`,
             upgradeLabel: c('Action').t`Get Pass Plus`,
+            image: monitorSVG,
+        },
+        'pass-monitor-business': {
+            title: c('Title').t`Stay safer online`,
+            description: c('Description')
+                .t`Unlock advanced security features and detailed logs to safeguard your online presence.`,
+            upgradeLabel: c('Action').t`Get Pass Business`,
             image: monitorSVG,
         },
     })[type];

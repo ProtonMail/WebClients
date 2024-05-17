@@ -11,7 +11,7 @@ import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { sentinelToggle } from '@proton/pass/store/actions';
-import { selectPassPlan, selectSentinelEnabled } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectSentinelEligible, selectSentinelEnabled } from '@proton/pass/store/selectors';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
@@ -23,10 +23,11 @@ export const Sentinel: FC<Props> = ({ onUpsell }) => {
     const sentinelUpdate = useActionRequest(sentinelToggle.intent);
     const sentinelEnabled = useSelector(selectSentinelEnabled);
     const passPlan = useSelector(selectPassPlan);
+    const isSentinelEligible = useSelector(selectSentinelEligible);
 
     const toggleSentinel = () => {
         const value = SETTINGS_PROTON_SENTINEL_STATE[sentinelEnabled ? 'DISABLED' : 'ENABLED'];
-        if (isPaidPlan(passPlan)) sentinelUpdate.dispatch(value);
+        if (isPaidPlan(passPlan) && isSentinelEligible) sentinelUpdate.dispatch(value);
         else onUpsell();
     };
     const learnMoreLink = (
