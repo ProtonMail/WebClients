@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { FeatureType } from '@proton/pass/components/Monitor/types';
 import { getPlanFeatures } from '@proton/pass/components/Monitor/utils';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
+import type { FeatureType } from '@proton/pass/components/Upsell/types';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
