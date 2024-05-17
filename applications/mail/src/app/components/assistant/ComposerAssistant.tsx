@@ -88,8 +88,8 @@ const ComposerAssistant = ({
         closeAssistant(assistantID);
     };
 
-    const handleGenerateResult = (fulltext: string) => {
-        const cleanedText = onCleanGeneration?.(fulltext) || fulltext;
+    const handleGenerateResult = (fulltext: string): void => {
+        const cleanedText = onCleanGeneration ? onCleanGeneration(fulltext) : fulltext;
         setResult(cleanedText);
     };
 
