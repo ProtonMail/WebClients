@@ -17,7 +17,7 @@ export const createPasskeyService = () => {
         WorkerMessageType.PASSKEY_CREATE,
         withContext(async (ctx, { payload: { request, domain } }) => ({
             intercept: true,
-            response: await ctx.service.core.exec('generate_passkey', domain, request),
+            response: await ctx.service.core.generate_passkey(domain, request),
         }))
     );
 
@@ -38,7 +38,7 @@ export const createPasskeyService = () => {
 
             return {
                 intercept: true,
-                response: await ctx.service.core.exec('resolve_passkey_challenge', domain, content, request),
+                response: await ctx.service.core.resolve_passkey_challenge(domain, content, request),
             };
         })
     );
