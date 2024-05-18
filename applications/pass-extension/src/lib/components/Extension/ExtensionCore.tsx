@@ -4,6 +4,7 @@ import { type FC, useMemo, useRef } from 'react';
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
+import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
@@ -12,10 +13,11 @@ import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider'
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
-import { type I18nService, createI18nService } from '@proton/pass/lib/i18n/service';
+import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
@@ -23,17 +25,23 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
-const getExtensionCoreProps = (
-    endpoint: ClientEndpoint,
-    config: PassConfig,
-    i18n: I18nService
-): PassCoreProviderProps => {
+const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
 
     return {
         config,
+        core: createPassCoreProxy(createCoreServiceBridge(messageFactory)),
         endpoint,
-        i18n,
+        i18n: createI18nService({
+            locales,
+            /* resolve the extension locale through the I18nService instead of reading
+             * from the store as some extension sub-apps are not redux connected but
+             * should be aware of the current localisation setting */
+            getLocale: () =>
+                sendMessage.on(resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }), (res) =>
+                    res.type === 'success' ? res.locale : undefined
+                ),
+        }),
         monitor: createMonitorBridge(messageFactory),
 
         exportData: (payload) =>
@@ -136,26 +144,11 @@ const getExtensionCoreProps = (
 
 export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-
-    const i18n = useMemo(
-        () =>
-            createI18nService({
-                locales,
-                /* resolve the extension locale through the I18nService instead of reading
-                 * from the store as some extension sub-apps are not redux connected but
-                 * should be aware of the current localisation setting */
-                getLocale: () =>
-                    sendMessage.on(
-                        resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }),
-                        (res) => (res.type === 'success' ? res.locale : undefined)
-                    ),
-            }),
-        []
-    );
+    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config), []);
 
     return (
         <PassCoreProvider
-            {...getExtensionCoreProps(endpoint, config, i18n)}
+            {...coreProps}
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
         >
