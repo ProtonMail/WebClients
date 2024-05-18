@@ -1,4 +1,3 @@
-import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
@@ -90,7 +89,6 @@ export enum WorkerMessageType {
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
-    MONITOR_PASSWORD = 'MONITOR_PASSWORD',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
@@ -156,7 +154,6 @@ export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED,
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
-export type MonitorPasswordMessage = WithPayload<WorkerMessageType.MONITOR_PASSWORD, { password: string }>;
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
@@ -220,7 +217,6 @@ export type WorkerMessage =
     | LogEventMessage
     | LogRequestMessage
     | Monitor2FAsMessage
-    | MonitorPasswordMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
     | OnboardingAckMessage
@@ -277,7 +273,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
-    [WorkerMessageType.MONITOR_PASSWORD]: { result: WasmPasswordScoreResult };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };

@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
+import type { PassCoreProxy } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
@@ -18,6 +19,8 @@ export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
+    /** Core proxy instance */
+    core: PassCoreProxy;
     /** i18n service instance */
     i18n: I18nService;
     /** current locale */
