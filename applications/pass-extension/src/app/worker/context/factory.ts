@@ -5,6 +5,7 @@ import { createApiProxyService } from 'proton-pass-extension/app/worker/services
 import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
+import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
 import { createExportService } from 'proton-pass-extension/app/worker/services/export';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
@@ -34,7 +35,6 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import { createPassCoreSyncService } from '@proton/pass/lib/core/sync.service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
@@ -53,7 +53,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
-    const core = createPassCoreSyncService();
+    const core = createPassCoreProxyService();
 
     exposePassCrypto(createPassCrypto());
 
