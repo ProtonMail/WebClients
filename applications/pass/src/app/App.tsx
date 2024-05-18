@@ -1,6 +1,8 @@
 import { Router } from 'react-router-dom';
 
-import { PASS_CONFIG } from 'proton-pass-web/lib/core';
+import * as config from 'proton-pass-web/app/config';
+import { core } from 'proton-pass-web/lib/core';
+import { PASS_CONFIG } from 'proton-pass-web/lib/env';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
@@ -25,9 +27,14 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
-import { api } from '@proton/pass/lib/api/api';
+import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
+import { api, exposeApi } from '@proton/pass/lib/api/api';
+import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { exposePassCrypto } from '@proton/pass/lib/crypto';
+import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
@@ -37,6 +44,7 @@ import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
@@ -47,7 +55,11 @@ import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerPro
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
+import locales from './locales';
 
+exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposePassCrypto(createPassCrypto());
+exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
 sentry({ config: PASS_CONFIG });
 
 export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): PassCoreProviderProps => {
@@ -55,8 +67,9 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
 
     return {
         config: PASS_CONFIG,
+        core,
         endpoint: 'web',
-        i18n: i18n,
+        i18n: i18n(locales),
         monitor,
 
         exportData: async (options) => {

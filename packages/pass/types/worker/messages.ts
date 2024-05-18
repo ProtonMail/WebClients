@@ -1,8 +1,8 @@
-import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
+import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type {
@@ -90,13 +90,13 @@ export enum WorkerMessageType {
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
-    MONITOR_PASSWORD = 'MONITOR_PASSWORD',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
     ONBOARDING_CHECK = 'ONBOARDING_CHECK',
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
+    PASS_CORE_RPC = 'PASS_CORE_RPC',
     PASSKEY_CREATE = 'PASSKEY_CREATE',
     PASSKEY_GET = 'PASSKEY_GET',
     PASSKEY_INTERCEPT = 'PASSKEY_INTERCEPT',
@@ -156,13 +156,13 @@ export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED,
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
-export type MonitorPasswordMessage = WithPayload<WorkerMessageType.MONITOR_PASSWORD, { password: string }>;
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
+export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
 export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
 export type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
 export type PasskeyInterceptMessage = { type: WorkerMessageType.PASSKEY_INTERCEPT };
@@ -220,13 +220,13 @@ export type WorkerMessage =
     | LogEventMessage
     | LogRequestMessage
     | Monitor2FAsMessage
-    | MonitorPasswordMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
     | OnboardingAckMessage
     | OnboardingCheckMessage
     | OnboardingRequestMessage
     | OTPCodeGenerateMessage
+    | PassCoreRPCMessage
     | PasskeyCreateMessage
     | PasskeyGetMessage
     | PasskeyInterceptMessage
@@ -277,11 +277,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
-    [WorkerMessageType.MONITOR_PASSWORD]: { result: WasmPasswordScoreResult };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
+    [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;
     [WorkerMessageType.PASSKEY_GET]: PasskeyGetResponse;
     [WorkerMessageType.PASSKEY_INTERCEPT]: { intercept: boolean };
