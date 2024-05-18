@@ -6,6 +6,8 @@ import { AuthServiceProvider } from 'proton-pass-web/app/Context/AuthServiceProv
 import { ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
+import { core } from 'proton-pass-web/lib/core';
+import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
@@ -28,7 +30,7 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { api } from '@proton/pass/lib/api/api';
+import { api, exposeApi } from '@proton/pass/lib/api/api';
 import {
     CACHED_IMAGE_DEFAULT_MAX_AGE,
     CACHED_IMAGE_FALLBACK_MAX_AGE,
@@ -36,8 +38,12 @@ import {
     getMaxAgeHeaders,
     shouldRevalidate,
 } from '@proton/pass/lib/api/cache';
+import { createApi } from '@proton/pass/lib/api/factory';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { exposePassCrypto } from '@proton/pass/lib/crypto';
+import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
@@ -46,19 +52,26 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
+import sentry from '@proton/shared/lib/helpers/sentry';
 
-import { PASS_CONFIG } from '../lib/core';
-import { i18n } from '../lib/i18n';
-import '../lib/sentry';
+import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
+import locales from './locales';
 
 import './app.scss';
 
 const history = createHashHistory();
 
+exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposePassCrypto(createPassCrypto());
+exposeApi(createApi({ config: PASS_CONFIG }));
+sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
+
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
+    core,
     endpoint: 'desktop',
-    i18n: i18n,
+    i18n: i18n(locales),
     monitor,
 
     exportData: async (options) => {

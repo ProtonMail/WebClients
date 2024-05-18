@@ -17,7 +17,7 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
-import { arch } from './lib/utils/helpers';
+import { ARCH } from './lib/env';
 import { isSquirrelStartup } from './startup';
 import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
@@ -164,7 +164,7 @@ app.addListener('ready', async () => {
         session: secureSession,
         updateSource: {
             type: SourceType.StaticStorage,
-            baseUrl: `https://proton.me/download/PassDesktop/${process.platform}/${arch}`,
+            baseUrl: `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`,
         },
     });
 });
