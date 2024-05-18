@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
+import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type {
@@ -95,6 +96,7 @@ export enum WorkerMessageType {
     ONBOARDING_CHECK = 'ONBOARDING_CHECK',
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
+    PASS_CORE_RPC = 'PASS_CORE_RPC',
     PASSKEY_CREATE = 'PASSKEY_CREATE',
     PASSKEY_GET = 'PASSKEY_GET',
     PASSKEY_INTERCEPT = 'PASSKEY_INTERCEPT',
@@ -160,6 +162,7 @@ export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK,
 export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
+export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
 export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
 export type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
 export type PasskeyInterceptMessage = { type: WorkerMessageType.PASSKEY_INTERCEPT };
@@ -223,6 +226,7 @@ export type WorkerMessage =
     | OnboardingCheckMessage
     | OnboardingRequestMessage
     | OTPCodeGenerateMessage
+    | PassCoreRPCMessage
     | PasskeyCreateMessage
     | PasskeyGetMessage
     | PasskeyInterceptMessage
@@ -277,6 +281,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
+    [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;
     [WorkerMessageType.PASSKEY_GET]: PasskeyGetResponse;
     [WorkerMessageType.PASSKEY_INTERCEPT]: { intercept: boolean };
