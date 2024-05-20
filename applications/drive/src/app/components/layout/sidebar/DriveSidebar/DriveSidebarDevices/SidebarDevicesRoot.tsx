@@ -5,15 +5,7 @@ import { getDevicesSectionName } from '../../../../sections/Devices/constants';
 import ExpandButton from '../DriveSidebarFolders/ExpandButton';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 
-export function SidebarDevicesRoot({
-    path,
-    isExpanded,
-    toggleExpand,
-}: {
-    path: string;
-    toggleExpand: () => void;
-    isExpanded: boolean;
-}) {
+export function SidebarDevicesRoot({ isExpanded, toggleExpand }: { toggleExpand: () => void; isExpanded: boolean }) {
     const { cachedDevices, isLoading } = useDevicesListing();
     const sectionTitle = getDevicesSectionName();
 
@@ -22,7 +14,7 @@ export function SidebarDevicesRoot({
             key="devices-root"
             to={'/devices'}
             icon="tv"
-            isActive={path === '/devices'}
+            isActive={(match) => match?.url === '/devices'}
             onDoubleClick={toggleExpand}
         >
             <span className="text-ellipsis" title={sectionTitle}>
