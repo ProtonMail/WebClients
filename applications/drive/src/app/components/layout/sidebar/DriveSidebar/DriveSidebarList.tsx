@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -8,7 +7,6 @@ import { SidebarList } from '@proton/components';
 import { ShareWithKey, useDriveSharingFlags, usePhotos, usePhotosFeatureFlag } from '../../../../store';
 //TODO: This should be removed after full sharing rollout
 import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
-import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
 import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
@@ -19,7 +17,6 @@ interface Props {
 }
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
-    const match = useRouteMatch<DriveSectionRouteProps>();
     const isPhotosEnabled = usePhotosFeatureFlag();
     const { hasPhotosShare } = usePhotos();
 
@@ -38,15 +35,14 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
             {userShares.map((userShare) => (
                 <DriveSidebarFolders
                     key={userShare.shareId}
-                    path={match.url}
                     shareId={userShare.shareId}
                     linkId={userShare.rootLinkId}
                     setSidebarLevel={setSidebarLevel}
                 />
             ))}
-            <DriveSidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
+            <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
             {(isPhotosEnabled || hasPhotosShare) && (
-                <DriveSidebarListItem to="/photos" icon="image" isActive={match.url === '/photos'}>
+                <DriveSidebarListItem to="/photos" icon="image" isActive={(match) => match?.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
@@ -56,7 +52,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 to="/shared-urls"
                 icon="link"
                 shareId={shareId}
-                isActive={match.url === '/shared-urls'}
+                isActive={(match) => match?.url === '/shared-urls'}
             >
                 <span className="text-ellipsis" title={c('Link').t`Shared`}>{c('Link').t`Shared`}</span>
             </DriveSidebarListItem>
@@ -65,13 +61,18 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                     to="/shared-with-me"
                     icon="users"
                     shareId={shareId}
-                    isActive={match.url === '/shared-with-me'}
+                    isActive={(match) => match?.url === '/shared-with-me'}
                 >
                     <span className="text-ellipsis" title={c('Link').t`Shared with me`}>{c('Link')
                         .t`Shared with me`}</span>
                 </DriveSidebarListItem>
             )}
-            <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} isActive={match.url === '/trash'}>
+            <DriveSidebarListItem
+                to="/trash"
+                icon="trash"
+                shareId={shareId}
+                isActive={(match) => match?.url === '/trash'}
+            >
                 <span className="text-ellipsis" title={c('Link').t`Trash`}>{c('Link').t`Trash`}</span>
             </DriveSidebarListItem>
         </SidebarList>

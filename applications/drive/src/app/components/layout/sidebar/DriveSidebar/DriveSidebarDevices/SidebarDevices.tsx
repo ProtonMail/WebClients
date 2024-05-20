@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { SidebarDeviceList } from './SidebarDevicesList';
 import { SidebarDevicesRoot } from './SidebarDevicesRoot';
 
-const DriveSidebarDevices = ({ path, setSidebarLevel }: { path: string; setSidebarLevel: (level: number) => void }) => {
+const DriveSidebarDevices = ({ setSidebarLevel }: { setSidebarLevel: (level: number) => void }) => {
     const [isListExpanded, setListExpanded] = useState(false);
 
     const toggleList = () => {
@@ -12,7 +12,7 @@ const DriveSidebarDevices = ({ path, setSidebarLevel }: { path: string; setSideb
 
     return (
         <>
-            <SidebarDevicesRoot path={path} toggleExpand={toggleList} isExpanded={isListExpanded} />
+            <SidebarDevicesRoot toggleExpand={toggleList} isExpanded={isListExpanded} />
             <SidebarDeviceList isRootExpanded={isListExpanded} setSidebarLevel={setSidebarLevel} />
         </>
     );
