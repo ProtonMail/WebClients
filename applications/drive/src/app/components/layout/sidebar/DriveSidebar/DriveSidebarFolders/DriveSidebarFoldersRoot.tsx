@@ -9,14 +9,13 @@ import DriveSidebarListItem from '../DriveSidebarListItem';
 import ExpandButton from './ExpandButton';
 
 interface Props {
-    path: string;
     shareId: string;
     linkId: string;
     rootFolder?: TreeItem;
     toggleExpand: (linkId: string) => void;
 }
 
-export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFolder, toggleExpand }: Props) {
+export default function DriveSidebarFoldersRoot({ shareId, linkId, rootFolder, toggleExpand }: Props) {
     const isLoading = !rootFolder?.isLoaded;
 
     const url = `/${shareId}/${LinkURLType.FOLDER}/${linkId}`;
@@ -26,7 +25,7 @@ export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFol
             to={url}
             icon="inbox"
             shareId={shareId}
-            isActive={path === url}
+            isActive={(match) => match?.url === url}
             onDoubleClick={() => toggleExpand(linkId)}
         >
             <span className="text-ellipsis">{c('Title').t`My files`}</span>
