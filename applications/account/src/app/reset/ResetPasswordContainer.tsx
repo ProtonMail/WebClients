@@ -10,6 +10,7 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useFlag,
     useLocalState,
     useMyCountry,
     useNotifications,
@@ -35,7 +36,7 @@ import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
@@ -81,6 +82,8 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
     const [defaultCountry] = useMyCountry();
 
     const createFlow = useFlowRef();
+
+    const showNoRecoveryMethodFlow = useFlag('ShowNoRecoveryMethodFlow');
 
     const handleBack = () => {
         history.push(loginUrl);
@@ -278,6 +281,11 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
         }
         return handleCancel;
     })();
+    const signedInPasswordResetLink = (
+        <Href href={getKnowledgeBaseUrl('/signed-in-reset')} key="signed-in-reset">
+            {c('Link').t`perform a password reset from your active session`}
+        </Href>
+    );
 
     const children = (
         <Main>
@@ -330,19 +338,72 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
                     <Header title={c('Title').t`No recovery method`} onBack={handleBackStep} />
                     <Content>
                         <Text>{c('Info').t`Unfortunately there is no recovery method saved for this account.`}</Text>
+                        {showNoRecoveryMethodFlow && (
+                            <Text>{c('Info')
+                                .jt`If you are signed in somewhere else, you may be able to ${signedInPasswordResetLink}.`}</Text>
+                        )}
                         <form>
-                            <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')
-                                .t`Return to sign in`}</Button>
+                            {showNoRecoveryMethodFlow ? (
+                                <>
+                                    <Button color="norm" size="large" onClick={handleBack} fullWidth>
+                                        {c('Action').t`Return to sign in`}
+                                    </Button>
+                                    <ButtonLike
+                                        className="mt-2"
+                                        as={Href}
+                                        shape="ghost"
+                                        color="norm"
+                                        size="large"
+                                        href={getKnowledgeBaseUrl('/common-login-problems')}
+                                        fullWidth
+                                    >
+                                        {c('Link').t`Common sign in issues`}
+                                    </ButtonLike>
+                                </>
+                            ) : (
+                                <>
+                                    <Button color="norm" size="large" onClick={handleBack} fullWidth>
+                                        {c('Action').t`Return to sign in`}
+                                    </Button>
+                                    <ButtonLike
+                                        as={Href}
+                                        shape="ghost"
+                                        color="norm"
+                                        size="large"
+                                        href={getStaticURL('/support')}
+                                        target="_self"
+                                        fullWidth
+                                        className="mt-2"
+                                    >{c('Action').t`Contact support`}</ButtonLike>
+                                </>
+                            )}
+                        </form>
+                    </Content>
+                </>
+            )}
+            {step === STEPS.FORGOT_RECOVERY_METHOD && (
+                <>
+                    <Header title={c('Title').t`Forgot recovery method`} onBack={handleBackStep} />
+                    <Content>
+                        <Text>
+                            {c('Info')
+                                .jt`If you are signed in somewhere else, you may be able to ${signedInPasswordResetLink}.`}
+                        </Text>
+                        <form>
+                            <Button color="norm" size="large" onClick={handleBack} fullWidth>
+                                {c('Action').t`Return to sign in`}
+                            </Button>
                             <ButtonLike
+                                className="mt-2"
                                 as={Href}
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                href={getStaticURL('/support')}
-                                target="_self"
+                                href={getKnowledgeBaseUrl('/common-login-problems')}
                                 fullWidth
-                                className="mt-2"
-                            >{c('Action').t`Contact support`}</ButtonLike>
+                            >
+                                {c('Link').t`Common sign in issues`}
+                            </ButtonLike>
                         </form>
                     </Content>
                 </>
@@ -353,6 +414,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
                     <Content>
                         <RequestResetTokenForm
                             loginUrl={loginUrl}
+                            onForgotRecoveryMethodClick={() => setStep(STEPS.FORGOT_RECOVERY_METHOD)}
                             defaultCountry={defaultCountry}
                             defaultEmail={
                                 cache.type === 'external' && cache.Methods.includes('login')

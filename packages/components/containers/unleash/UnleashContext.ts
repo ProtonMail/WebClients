@@ -36,6 +36,8 @@ enum AccountFlag {
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
     DisableLoginPageBugReport = 'DisableLoginPageBugReport',
+    ShowNoRecoveryMethodFlow = 'ShowNoRecoveryMethodFlow',
+    ForgotRecoveryMethodStep = 'ForgotRecoveryMethodStep',
 }
 
 enum CalendarFeatureFlag {
