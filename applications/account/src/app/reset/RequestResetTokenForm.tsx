@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/components';
+import { Icon, InputFieldTwo, PhoneInput, Tabs, useFlag, useFormErrors } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
@@ -33,6 +33,7 @@ interface Props {
     defaultMethod?: RecoveryMethod;
     defaultValue?: string;
     defaultEmail?: string;
+    onForgotRecoveryMethodClick: () => void;
     loginUrl: string;
 }
 
@@ -43,10 +44,12 @@ const RequestResetTokenForm = ({
     methods,
     defaultMethod,
     defaultValue = '',
+    onForgotRecoveryMethodClick,
     loginUrl,
 }: Props) => {
     const history = useHistory();
     const [loading, withLoading] = useLoading();
+    const showForgotRecoveryMethodStep = useFlag('ForgotRecoveryMethodStep');
 
     const recoveryMethods = [
         methods?.includes('mnemonic') ? ('mnemonic' as const) : undefined,
@@ -242,14 +245,26 @@ const RequestResetTokenForm = ({
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {currentMethod === 'mnemonic' ? c('Action').t`Reset password` : c('Action').t`Send code`}
             </Button>
-            <Button
-                size="large"
-                color="norm"
-                shape="ghost"
-                fullWidth
-                className="mt-2"
-                onClick={() => history.push(loginUrl)}
-            >{c('Action').t`Return to sign in`}</Button>
+
+            {showForgotRecoveryMethodStep ? (
+                <Button
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    fullWidth
+                    className="mt-2"
+                    onClick={onForgotRecoveryMethodClick}
+                >{c('Action').t`Forgot recovery method?`}</Button>
+            ) : (
+                <Button
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    fullWidth
+                    className="mt-2"
+                    onClick={() => history.push(loginUrl)}
+                >{c('Action').t`Return to sign in`}</Button>
+            )}
         </form>
     );
 };
