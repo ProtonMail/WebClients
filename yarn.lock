@@ -6342,7 +6342,7 @@ __metadata:
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     typescript: "npm:^5.4.5"
-    vite: "npm:^5.2.9"
+    vite: "npm:^5.2.11"
     vite-plugin-mkcert: "npm:^1.17.5"
     vite-plugin-singlefile: "npm:^2.0.1"
   languageName: unknown
@@ -39731,7 +39731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.11, vite@npm:^5.2.9":
+"vite@npm:^5.2.11":
   version: 5.2.11
   resolution: "vite@npm:5.2.11"
   dependencies:
