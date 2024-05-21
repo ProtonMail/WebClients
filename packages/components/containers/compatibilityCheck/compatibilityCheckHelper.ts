@@ -42,6 +42,18 @@ const hasReplaceAll = () => {
     }
 };
 
+const isBigIntSupported = () => {
+    try {
+        // The Palemoon browser v32.4.0.x supports BigInts but not increment/decrements;
+        // We check support for these operations to avoid unexpected errors in e.g. the KT VRF.
+        let check = BigInt('0x1'); // eslint-disable-line @typescript-eslint/no-unused-vars
+        check--; // eslint-disable-line @typescript-eslint/no-unused-vars
+        return true;
+    } catch {
+        return false;
+    }
+};
+
 // Locale is not loaded here so no translations
 export const getCompatibilityList = () => {
     const isSSR = typeof window === 'undefined';
@@ -68,7 +80,7 @@ export const getCompatibilityList = () => {
         },
         {
             name: 'BigInt',
-            valid: typeof BigInt !== 'undefined',
+            valid: isBigIntSupported(),
             text: 'Please update to a modern browser with BigInt support',
         },
         {
