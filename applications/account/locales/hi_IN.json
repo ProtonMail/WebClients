@@ -1747,7 +1747,7 @@
         "महीना"
       ],
       "Week": [
-        "हफ्ता"
+        "सप्ताह"
       ]
     },
     "Call Scheduled Confirmation": {
@@ -2225,7 +2225,7 @@
         "केप वर्दे"
       ],
       "Cayman Islands": [
-        "कैमेन द्वीपसमूह"
+        "केमैन आइलैंड्स"
       ],
       "Central African Republic": [
         "मध्य अफ्रीकी गणराज्य"
@@ -2243,7 +2243,7 @@
         "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
-        "कोकोस (कीलिंग) द्वीप समूह"
+        "कोकोस (कीलिंग) आइलैंड्स"
       ],
       "Colombia": [
         "कोलंबिया"
@@ -2279,7 +2279,7 @@
         "चेक रिपब्लिक"
       ],
       "Côte d'Ivoire": [
-        "कोटे डी आइवर\""
+        "कोटे डी आइवर"
       ],
       "Denmark": [
         "डेनमार्क"
@@ -2339,7 +2339,7 @@
         "फ्रेंच गयाना"
       ],
       "French Polynesia": [
-        "फ़्रेंच पोलिनेशिया"
+        "फ़्रानसीसी पोलिनेशिया"
       ],
       "French Southern Territories": [
         "फ़्रांसीसी दक्षिणी क्षेत्र"
@@ -2600,7 +2600,7 @@
         "उत्तर मैसिडोनिया"
       ],
       "Northern Mariana Islands": [
-        "उत्तरी मारियाना द्वीपसमूह"
+        "उत्तरी मैरियाना आइलैंड्स"
       ],
       "Norway": [
         "नॉर्वे"
@@ -2723,7 +2723,7 @@
         "सोमालिया"
       ],
       "South Africa": [
-        "दक्षिण अफ़्रीका"
+        "दक्षिण अफ्रीका"
       ],
       "South Georgia and the South Sandwich Islands": [
         "दक्षिण जॉर्जिया और दक्षिण सैंडविच आइलैंड"
@@ -2840,13 +2840,13 @@
         "वियतनाम"
       ],
       "Virgin Islands, British": [
-        "वर्जिन द्वीप समूह, ब्रिटिश"
+        "वर्जिन आइलैंड्स, ब्रिटिश"
       ],
       "Virgin Islands, U.S.": [
-        "वर्जिन आइलैंड्स, यू.एस."
+        "वर्जिन आइलैंड्स, अमेरिका"
       ],
       "Wallis and Futuna": [
-        "वालीस और फ्युटुना"
+        "वालिस और फ़्युटुना"
       ],
       "Western Sahara": [
         "पश्चिमी सहारा"
@@ -3883,7 +3883,7 @@
         "गलत सत्यापन कोड। कृपया सुनिश्चित करें कि आपने सत्यापन कोड को सही तरीके से कॉपी किया है और पुनः प्रयास करें। परिवर्तनों को प्रभावी होने में 24 घंटे तक का समय लग सकता है।"
       ],
       "You already added this holidays calendar": [
-        "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
+        "आपने यह अवकाश कैलेंडर पहले ही जोड़ लिया है"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
@@ -3898,7 +3898,7 @@
         "एक एसएमटीपी सब्मिशन टोकन बनाने के लिए आपके पास एक कस्टम डोमेन पता होना चाहिए।"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "आपके खाते या संगठन का इनवॉइस बकाया है. कृपया सभी बकाया चालानों का भुगतान करें।"
+        "आपके खाते या संगठन की रसीद लंबित है। कृपया सभी बकाया रसीदों का भुगतान करें।"
       ],
       "Your forward will not be processed.": [
         "आपका फॉरवर्ड प्रॉसेस नहीं किया जाएगा।"
@@ -4787,6 +4787,9 @@
       "Large": [
         "बड़ा"
       ],
+      "Medium (recommended)": [
+        "मध्यम (सुझावित)"
+      ],
       "Small": [
         "छोटा"
       ],
@@ -5519,7 +5522,7 @@
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } फ़ोल्डर चयनित",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
         "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
@@ -5932,6 +5935,9 @@
       "Custom yearly": [
         "कस्टम वार्षिक"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
+      ],
       "Daily": [
         "रोज़"
       ],
@@ -6042,7 +6048,7 @@
         "${ userName } यूज़र के लिए पासवर्ड डाले।"
       ],
       "Enter the code from your authenticator app": [
-        "अपने प्रमाणीकरण अनुप्रयोग में से कूटक लिखें"
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "अपने फ़ोन नंबर ${ phone } पर भेजे गए कोड को दर्ज करें।"
@@ -6368,7 +6374,7 @@
         "लोड हो रहा है"
       ],
       "Loading ${ appName }": [
-        "लोड हो रहा है ${ appName }"
+        "${ appName } लोड हो रहा है"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "कैलेंडर लोड हो रहा है, कृपया प्रतीक्षा करें। आपको एक नए टैब में हमारे शेड्यूलिंग प्लेटफ़ॉर्म Calendly पर पुनः निर्देशित किया जाएगा।"
@@ -7110,7 +7116,7 @@
         "जब तक आप अपने खाते से साइन आउट नहीं करते या अपना पासवर्ड नहीं बदलते, आपका सत्र सक्रिय रहेगा। 60 दिनों की निष्क्रियता के बाद सत्र समाप्त हो जाते हैं।"
       ],
       "Unlimited folders, labels, and filters": [
-        "असीमित फोल्डर, लेबल, और फिल्टर"
+        "असीमित फ़ोल्डर, लेबल और फ़िल्टर"
       ],
       "Unlimited messages": [
         "असीमित संदेश"
@@ -7281,7 +7287,7 @@
         "हफ्ता"
       ],
       "Week and month views only apply to desktop.": [
-        "हफ्ते और महीने का व्यू सिर्फ डेस्कटॉप पे लागू होता है।"
+        "सप्ताह और माह का दृश्य केवल डेस्कटॉप पर लागू होता है।"
       ],
       "Welcome": [
         "स्वागत है"
@@ -7420,7 +7426,7 @@
         "आपका कोई चालान नहीं है।"
       ],
       "You have no saved payment methods.": [
-        "आपके पास कोई भुगतान विधि नहीं है।"
+        "आपने कोई भी भुगतान विधि नहीं जोड़ी है"
       ],
       "You may be redirected to your bank’s website.": [
         "आप अपने बैंक की वेबसाइट पे रीडायरेक्ट हो सकते हो।"
@@ -7941,7 +7947,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "ऐसे"
+        "देखिए कैसे"
       ],
       "Learn more": [
         "और जानें"
@@ -8160,7 +8166,7 @@
         "रंग"
       ],
       "Composer": [
-        "लिखें"
+        "ईमेल रचयिता"
       ],
       "Composer default font/size": [
         "संगीतकार डिफ़ॉल्ट फ़ॉन्ट/आकार"
@@ -8262,7 +8268,7 @@
         "डिफ़ॉल्ट स्क्रॉलबार"
       ],
       "Default view": [
-        "डिफॉल्ट व्यू"
+        "डिफ़ॉल्ट दृश्य"
       ],
       "Delete": [
         "मिटाएं"
@@ -8691,7 +8697,7 @@
         "फ़ेविकॉन में अपठित संख्या दिखाएँ"
       ],
       "Show week numbers": [
-        "हफ्ता नंबर दिखाएं"
+        "सप्ताह क्रमांक दिखाएं"
       ],
       "Sign external messages": [
         "बाहरी संदेशों पर हस्ताक्षर करें"
@@ -8737,6 +8743,9 @@
       ],
       "Subscription options": [
         "सदस्यता विकल्प"
+      ],
+      "Synchronize with system": [
+        "सिस्टम के साथ तालमेल बिठाएं"
       ],
       "System information": [
         "प्रणाली की जानकारी"
@@ -9120,7 +9129,7 @@
         "आपके संगठन के ${ members.length } में से ${ twoFAMembers.length } सदस्‍य टू फ़ैक्टर ऑथेन्टिकेशन का उपयोग करते हैं।"
       ],
       "Almost there": [
-        "वहाँ लगभग"
+        "लगभग हो गया"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
@@ -9256,7 +9265,7 @@
         "सार्वजनिक छुट्टियां जोड़ें"
       ],
       "Edit calendar": [
-        "कैलेंडर बदलाव करें"
+        "कैलेंडर संपादित करें"
       ],
       "Get a country's official public holidays calendar.": [
         "किसी भी देश की आधिकारिक सार्वजनिक छुट्टियों का कैलेंडर प्राप्त करें।"
@@ -10952,10 +10961,10 @@
         "आपसे संपर्क करने का एक तरीका"
       ],
       "Add a calendar description": [
-        "एक कैलेंडर विवरण जोड़ें"
+        "कैलेंडर का विवरण जोड़ें"
       ],
       "Add a calendar name": [
-        "एक कैलेंडर नाम जोड़ें"
+        "कैलेंडर का नाम जोड़ें"
       ],
       "Add gift code": [
         "उपहार कोड जोड़ें"
@@ -11012,7 +11021,7 @@
         "कृपया पहले लिंक डालें"
       ],
       "Please select a country": [
-        "एक देश चुनें"
+        "कृपया एक देश चुनें"
       ],
       "Please select the main reason": [
         "कृपया मुख्य कारण काे चुनें"
@@ -11679,7 +11688,7 @@
         "64 देश"
       ],
       "All paid Mail and Calendar features": [
-        "सारे प्रीमियम मेल और कैलेंडर सुविधाएं"
+        "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
       ],
       "High speed VPN": [
         "तेज़ वीपीएन"
@@ -11890,7 +11899,7 @@
         "कैलेंडर यूआरएल"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "किसी बाहरी या सार्वजनिक कैलेंडर और उसके अपडेट की सदस्यता लेने के लिए, यूआरएल दर्ज करें। कैलेंडर का केवल पढ़ने योग्य संस्करण आपके अन्य कैलेंडर में जोड़ा जाएगा।\n${ kbLink }"
+        "बाहरी या सार्वजनिक कैलेंडर और उसके अपडेट की सदस्यता लेने के लिए, URL दर्ज करें। कैलेंडर का केवल पढ़ने वाला संस्करण आपके अन्य कैलेंडर में जोड़ा जाएगा।\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -12176,10 +12185,10 @@
         "न्योता भेजा गया"
       ],
       "Invoice customized": [
-        "चालान अनुकूलित"
+        "अनुकूलित रसीद"
       ],
       "Invoice paid": [
-        "चालान भुगतान किया"
+        "रसीद का भुगतान हो गया"
       ],
       "Keyboard shortcuts preferences updated": [
         "कीबोर्ड शॉर्टकट प्राथमिकताएं अपडेट की गईं"
@@ -12768,6 +12777,9 @@
       "Date": [
         "दिनांक"
       ],
+      "Day theme": [
+        "दिन का थीम"
+      ],
       "Decrypt key": [
         "डिक्रिप्ट कुंजी"
       ],
@@ -12978,7 +12990,7 @@
         "मानव सत्यापन"
       ],
       "Identity and addresses": [
-        "पहचान और ईमेल पते"
+        "पहचान और ईमेल पता"
       ],
       "Import": [
         "आयात"
@@ -13018,7 +13030,7 @@
         "आमंत्रण"
       ],
       "Invoices": [
-        "चालान"
+        "रसीद"
       ],
       "Keep your inbox organized": [
         "अपना इनबॉक्स व्यवस्थित रखें"
@@ -13048,7 +13060,7 @@
         "संदेश"
       ],
       "Messages and composing": [
-        "संदेश और लिखना"
+        "संदेश और ईमेल रचना"
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
@@ -13067,6 +13079,9 @@
       ],
       "Next": [
         "अगला"
+      ],
+      "Night theme": [
+        "रात की थीम"
       ],
       "No account information was found in any data breaches": [
         "किसी भी डेटा ब्रीच में कोई खाता संबंधित जानकारी नहीं मिली"
@@ -13150,7 +13165,7 @@
         "डेटा पुनर्प्राप्त करें"
       ],
       "Recovery": [
-        "स्वास्थ्य लाभ"
+        "पुनर्प्राप्ति"
       ],
       "Recovery file": [
         "पुनर्प्राप्ति फ़ाइल"
@@ -13346,7 +13361,7 @@
         "अपना मेलबॉक्स अनलॉक करें"
       ],
       "Upgrade plan": [
-        "प्लान अपग्रेड करें"
+        "योजना अपग्रेड करें"
       ],
       "Upload CSV file to create multiple accounts": [
         "एक से अधिक खाते बनाने के लिए CSV फ़ाइल अपलोड करें"
@@ -13629,6 +13644,12 @@
       ],
       "The reduce motion setting is already enabled on this device": [
         "इस डिवाइस पर गति को कम करने की सेटिंग पहले से ही सक्षम है"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "जब आपका सिस्टम \"डार्क मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "जब आपका सिस्टम \"लाइट मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
       ],
       "This address has been disabled": [
         "यह पता अक्षम कर दिया गया है"
