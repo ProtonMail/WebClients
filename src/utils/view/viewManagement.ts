@@ -201,20 +201,24 @@ export const updateView = (target: VIEW_TARGET) => {
     }
 };
 
+function isSameURL(urlA: string, urlB: string) {
+    return urlA.replace(/\/$/, "") === urlB.replace(/\/$/, "");
+}
+
 export const loadURL = async (viewID: ViewID, url: string) => {
     const currentView = getCurrentView()!;
     const nextView = browserViewMap[viewID];
     const loggedURL = app.isPackaged ? "" : url;
 
     if (currentView === nextView) {
-        if (currentView.webContents.getURL() !== url) {
+        if (isSameURL(currentView.webContents.getURL(), url)) {
+            Logger.info(`Current view ${viewID} already in given url`, loggedURL);
+        } else {
             Logger.info(`Loading URL in current view ${viewID}`, loggedURL);
             currentView.webContents.loadURL(url);
-        } else {
-            Logger.info(`Current view ${viewID} already in given url`, loggedURL);
         }
     } else {
-        if (nextView?.webContents.getURL() === url) {
+        if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
             Logger.info(`View ${viewID} already in given url`, loggedURL);
             updateView(viewID);
         } else if (nextView) {
@@ -229,11 +233,11 @@ export const loadURL = async (viewID: ViewID, url: string) => {
             const loadedNextView = getCurrentView();
 
             if (loadedNextView) {
-                if (loadedNextView.webContents.getURL() !== url) {
+                if (isSameURL(loadedNextView.webContents.getURL(), url)) {
+                    Logger.info(`View ${viewID} already in given url`, loggedURL);
+                } else {
                     Logger.info(`Loading URL in ${viewID}`, loggedURL);
                     loadedNextView.webContents.loadURL(url);
-                } else {
-                    Logger.info(`View ${viewID} already in given url`, loggedURL);
                 }
             } else {
                 Logger.error(`Cant load URL in ${viewID}, view is not available`, loggedURL);
