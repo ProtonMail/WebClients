@@ -1152,9 +1152,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1547,7 +1544,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Akses konten terblokir dan jelajahi secara privat. Termasuk 3000+ server di 65+ negara, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan pemblokir iklan, unduhan BitTorrent yang cepat, dan lainnya."
+        "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 3000+ server di 65+ negara, kecepatan VPN tertinggi, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent kilat, dan masih banyak lagi."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten di layanan streaming termasuk Netflix, Disney+, Prime Video, dan lainnya, dari mana pun."
@@ -3983,7 +3980,7 @@
         "Jangka waktu kedaluwarsa maksimum adalah 4 minggu"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
+        "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
@@ -7503,7 +7500,7 @@
         "Bagaimana Anda menggambarkan pengalaman Anda dengan ${ BRAND_NAME } yang baru?"
       ],
       "I understand the risk": [
-        "Saya paham akan resikonya"
+        "Saya paham akan risikonya"
       ],
       "IF": [
         "JIKA"
@@ -8613,7 +8610,7 @@
         "Enkripsi end-to-end"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Unduhan P2P/BitTorrent cepat"
+        "Unduhan P2P/BitTorrent kilat"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Fitur gratis dari ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }"
@@ -8930,7 +8927,7 @@
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
+        "${ VPN_APP_NAME }: Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent kilat, dan masih banyak lagi."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Akses ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME } secara langsung dari desktop Anda"
@@ -9900,7 +9897,7 @@
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
       ],
       "Please generate keys before you try to change your password": [
-        "Silakan buat kunci terlebih dahulu sebelum Anda mencoba untuk mengubah kata sandi"
+        "Silakan hasilkan kunci sebelum Anda mencoba untuk mengubah kata sandi Anda"
       ]
     },
     "session_recovery:available:info": {
@@ -9969,9 +9966,19 @@
         "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Pengaturan ulang kata sandi dibatalkan"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Batalkan pengaturan ulang kata sandi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10049,7 +10056,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Keluar tanpa mengatur ulang kata sandi?"
+        "Keluar tanpa pengaturan ulang kata sandi?"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -10184,6 +10191,11 @@
       ],
       "Support online privacy": [
         "Dukung privasi online"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
       ]
     },
     "specialoffer: Link": {
@@ -10756,6 +10768,9 @@
       "Message deleted": [
         "Pesan dihapus"
       ],
+      "Message expiration canceled": [
+        "Kedaluwarsa pesan dibatalkan"
+      ],
       "Message marked as legitimate": [
         "Pesan ditandai sebagai sah"
       ],
@@ -10830,6 +10845,9 @@
       ],
       "Verification successful": [
         "Verifikasi berhasil"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
