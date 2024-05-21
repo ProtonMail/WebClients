@@ -4,7 +4,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import store from 'proton-pass-extension/app/worker/store';
 import { c } from 'ttag';
 
-import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
+import { SAFARI_MESSAGE_KEY, SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
@@ -29,12 +29,14 @@ import {
 } from '@proton/pass/store/actions';
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import { withContext } from '../context';
@@ -65,6 +67,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
+            if (BUILD_TARGET === 'safari') {
+                void browser.runtime.sendNativeMessage(
+                    SAFARI_MESSAGE_KEY,
+                    JSON.stringify({
+                        environment: getSecondLevelDomain(SSO_URL),
+                    })
+                );
+            }
+
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
              * return as the authentication store will have been configured */
@@ -93,6 +104,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.service.activation.boot();
             void ctx.service.storage.local.removeItem('forceLock');
             setSentryUID(authStore.getUID());
+
+            if (BUILD_TARGET === 'safari') {
+                void pipe(
+                    () => ({ credentials: authStore.getSession() }),
+                    JSON.stringify,
+                    (msg) => browser.runtime.sendNativeMessage(SAFARI_MESSAGE_KEY, msg)
+                )();
+            }
         }),
 
         onUnauthorized: withContext((ctx, _) => {
@@ -117,6 +136,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.local.clear();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+
+            if (BUILD_TARGET === 'safari') {
+                void browser.runtime.sendNativeMessage(
+                    SAFARI_MESSAGE_KEY,
+                    JSON.stringify({
+                        credentials: null,
+                    })
+                );
+            }
         }),
 
         onSessionInvalid: withContext(async (ctx, error, _data) => {
