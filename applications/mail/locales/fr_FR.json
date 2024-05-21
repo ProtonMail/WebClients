@@ -1156,10 +1156,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -5589,6 +5585,9 @@
       "and": [
         "et"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Tous les messages programmés ou en attente seront annulés."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier Tous les messages."
       ],
@@ -6475,6 +6474,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En attente jusqu'à demain, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "La mise en attente de cette conversation sera annulée."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -10156,9 +10158,19 @@
         "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "La réinitialisation du mot de passe a été annulée."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Annuler la réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10381,6 +10393,11 @@
         "Soutenez la protection de la vie privée en ligne"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -10513,6 +10530,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "L'annulation de votre abonnement est en cours. Veuillez patienter."
       ]
     },
     "Status": {
@@ -10982,6 +11004,9 @@
       "Message deleted": [
         "Le message a été supprimé."
       ],
+      "Message expiration canceled": [
+        "L'expiration du message a été annulée."
+      ],
       "Message marked as legitimate": [
         "Le message a été marqué comme légitime."
       ],
@@ -11058,6 +11083,9 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
+      ],
+      "You have successfully canceled your subscription.": [
+        "Vous avez résilié votre abonnement."
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."

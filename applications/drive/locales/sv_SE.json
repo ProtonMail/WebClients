@@ -513,6 +513,12 @@
       "New": [
         "Ny"
       ],
+      "New document": [
+        "Nytt dokument"
+      ],
+      "New folder": [
+        "Ny mapp"
+      ],
       "New message": [
         "Nytt meddelande"
       ],
@@ -533,6 +539,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Öppna i Docs"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -4801,6 +4810,9 @@
       "Shared link not found": [
         "Delad länk hittades inte"
       ],
+      "Shared with": [
+        "Delad med"
+      ],
       "Shared with me": [
         "Delat med mig"
       ],
@@ -7407,6 +7419,9 @@
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
       ],
+      "Failed to open document": [
+        "Misslyckades att öppna dokument"
+      ],
       "Failed to remove the file": [
         "Misslyckades att ta bort filen"
       ],
@@ -8032,6 +8047,11 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Lösenordsåterställning avbruten"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
@@ -8215,6 +8235,11 @@
         "Stöder integritet online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -8338,6 +8363,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Avbryter din prenumeration, vänta"
       ]
     },
     "Storage": {

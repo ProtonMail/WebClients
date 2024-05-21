@@ -1144,10 +1144,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -5594,6 +5590,9 @@
       "and": [
         "e"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Todas as mensagens agendadas ou adiadas serão canceladas."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
@@ -6480,6 +6479,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Adiado até amanhã, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "O adiamento desta conversa será cancelado"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
@@ -10178,9 +10180,19 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10403,6 +10415,11 @@
         "Suporte à privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -10535,6 +10552,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Cancelando a sua assinatura"
       ]
     },
     "Status": {
@@ -11004,6 +11026,9 @@
       "Message deleted": [
         "Mensagem excluida"
       ],
+      "Message expiration canceled": [
+        "Expiração de mensagem cancelada"
+      ],
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
       ],
@@ -11080,6 +11105,9 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"

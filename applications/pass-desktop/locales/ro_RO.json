@@ -1431,9 +1431,6 @@
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Adresa de e-mail personală va fi trimisă către ${ href } pentru monitorizare. Nu vor fi trimise alte date către HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "Exportarea va conține doar seifurile pe care le dețineți."
       ],
@@ -2090,6 +2087,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Articole selectate în acest seif: ${ semiboldText }"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Este necesară A2F pentru organizație"
+      ],
+      "SSO integration (coming soon)": [
+        "Integrare SSO (în curând)"
       ]
     },
     "Notification": {

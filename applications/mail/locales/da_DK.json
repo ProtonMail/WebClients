@@ -1156,10 +1156,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -5590,7 +5586,7 @@
         "og"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Enhver planlagt eller slumret besked vil blive annulleret."
+        "Enhver planlagt eller udsat besked vil blive annulleret."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i denne mappe ${ nameDeleted }, vil dog ikke blive slettet og kan findes i mappen Alle e-mails."
@@ -6480,7 +6476,7 @@
         "Udsat indtil i morgen, ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
-        "At slumre denne samtale vil blive annulleret."
+        "Udsættelse af denne samtale vil blive annulleret."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
@@ -8819,7 +8815,7 @@
         "Organiser elementer med flere bokse"
       ],
       "Pass Monitor - premium features": [
-        "Pass Monitor - eksklusive funktioner"
+        "Pass Monitor - premium-funktioner"
       ],
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
@@ -10164,7 +10160,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "Nulstilling af adgangskode aflyst"
+        "Nulstilling af adgangskode annulleret"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -10174,7 +10170,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Anmodning om nulstilling af adgangskode aflyst (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
+        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -11089,7 +11085,7 @@
         "Bekræftelse gennemført"
       ],
       "You have successfully canceled your subscription.": [
-        "Du har opsagt dit abonnement med succes."
+        "Du har nu opsagt dit abonnement."
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"

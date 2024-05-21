@@ -1448,9 +1448,6 @@
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Vlastný email bude odoslaný na adresu ${ href } na monitorovanie. Do systému HIBP sa nebudú odosielať žiadne iné údaje."
-      ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovať iba trezory, ktoré vlastníte."
       ],
@@ -2113,6 +2110,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Vybrali ste ${ semiboldText } v tomto trezore"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Vyžadovať 2FA pre organizáciu"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO integrácia (už čoskoro)"
       ]
     },
     "Notification": {

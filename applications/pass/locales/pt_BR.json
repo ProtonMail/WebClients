@@ -193,6 +193,9 @@
       "Get mobile apps": [
         "Baixar aplicativos móveis"
       ],
+      "Get Pass Business": [
+        "Obtenha o Pass Business"
+      ],
       "Get Pass Plus": [
         "Obter Pass Plus"
       ],
@@ -528,6 +531,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para aumentar a segurança da sua conta."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Seus endereços de email foram vazados em pelo menos 1 violação de dados."
@@ -1394,9 +1400,6 @@
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "O e-mail personalizado será enviado para ${ href } para monitoramento. Nenhum outro dado será enviado ao HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "A exportação conterá apenas cofres que você possui."
       ],
@@ -2058,6 +2061,14 @@
         "Você selecionou ${ semiboldText } neste cofre"
       ]
     },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Requer A2F para a organização"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
@@ -2344,7 +2355,7 @@
         "Sem itens excluídos"
       ],
       "No inactive 2FAs": [
-        "Nenhuma autenticação de dois fatores (2FA) inativa."
+        "Nenhuma A2Fs inativas."
       ],
       "No insecure passwords": [
         "Senhas não seguras"

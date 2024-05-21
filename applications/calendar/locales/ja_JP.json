@@ -4150,6 +4150,9 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "finance": [
+        "ファイナンス"
+      ],
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
       ],
@@ -4197,6 +4200,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
       ],
       "Indexing events: ${ current }/${ total }": [
         "イベントのインデックスを作成します： ${ current }/${ total }"
@@ -4270,6 +4276,9 @@
       "MM/YY": [
         "MM/YY"
       ],
+      "Monitor accounts": [
+        "アカウントモニター"
+      ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
@@ -4278,6 +4287,9 @@
       ],
       "New": [
         "新規"
+      ],
+      "No changes made to the current subscription": [
+        "現在のサブスクリプションに変更は加えられていません"
       ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
@@ -4317,6 +4329,9 @@
       ],
       "Organization size": [
         "組織の規模"
+      ],
+      "password": [
+        "パスワード"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -5503,6 +5518,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "2024 年 4 月 2 日までの期間限定オファー"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "サブスクリプションは ${ renewTime } に ${ renewablePrice } で自動更新され、いつでもキャンセルできます"
       ]
     },
     "mailtrial2024: Title": {
@@ -5852,6 +5870,9 @@
       "1 user": [
         "1ユーザー"
       ],
+      "24/7 account management support": [
+        "24時間365日のアカウント管理サポート"
+      ],
       "99.95% SLA": [
         "SLA 99.95%"
       ],
@@ -5860,6 +5881,9 @@
       ],
       "Admin console": [
         "管理者コンソール"
+      ],
+      "Administration Panel": [
+        "管理パネル"
       ],
       "Advanced sharing security": [
         "高度な共有セキュリティ"
@@ -6011,6 +6035,9 @@
       "Router support": [
         "ルーター対応"
       ],
+      "Schedule and snooze emails for any time": [
+        "いつでもメールをスケジュールしてスヌーズする"
+      ],
       "Schedule messages at any time": [
         "いつでもメッセージを送信予約できます"
       ],
@@ -6080,6 +6107,9 @@
       "Unlimited shared vaults with access permissions": [
         "アクセス権限のある無制限の共有コンテナー"
       ],
+      "Unlimited vault sharing": [
+        "無制限の保管庫共有"
+      ],
       "Unlimited vaults": [
         "無制限の保管庫"
       ],
@@ -6139,6 +6169,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "業界標準を超えたチーム向けの高度な保護。"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
@@ -6244,6 +6277,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: ブロックされたコンテンツにアクセスし、プライベートに閲覧します。 ${ serversAndCountries }、最高の VPN 速度、世界中のストリーミング サービスへのアクセス、マルウェアと広告ブロッカー、高速 BitTorrent ダウンロードなどが含まれます。"
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "デスクトップから ${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } にアクセスします"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
       ],
@@ -6256,11 +6292,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "受信メッセージへの(自動)返信が可能になります"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "30 日を超えたメッセージをゴミ箱やスパムから自動的に削除します"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "${ MAIL_APP_NAME }アカウントに送信されたメールを自動的に他のメールアドレスに転送します。"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "電子メールについて通知するか、メッセージが到着するカスタム時間を選択します"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
@@ -6303,6 +6345,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "フォルダーと同様に、保管庫はアイテムを整理するのに便利な方法です"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "企業のリソースを一般インターネットからロックダウンし、プライベートゲートウェイ経由でのみアクセスできるようにする。"
@@ -6765,6 +6810,9 @@
       ],
       "Invalid expiration date": [
         "無効な有効期限です"
+      ],
+      "Invalid security code": [
+        "無効なセキュリティコード"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"
@@ -8261,6 +8309,9 @@
       "Recommended": [
         "おすすめ"
       ],
+      "Recommended actions": [
+        "推奨されるアクション"
+      ],
       "Reconnect your account": [
         "アカウントに再接続"
       ],
@@ -8575,8 +8626,20 @@
       ]
     },
     "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "サブスクリプションは 1 か月ごとに自動更新されます。次回の請求日は 1 か月後です。"
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "サブスクリプションは 3 か月ごとに自動更新されます。次回の請求日は 3 か月後です。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "その後、12 か月ごとに ${ renewPrice } が請求されます。"
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
       ]
     },
     "vpn_2step: feature": {

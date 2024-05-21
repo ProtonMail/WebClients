@@ -277,6 +277,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versió al porta-retalls"
+      ],
       "Create": [
         "Crear"
       ],
@@ -429,6 +432,9 @@
       ],
       "Edit name": [
         "Edita el nom"
+      ],
+      "Edit organization name": [
+        "Edita el nom de l’organització"
       ],
       "Edit password": [
         "Edita la contrasenya"
@@ -858,6 +864,9 @@
       ],
       "Save ICS file": [
         "Desa el fitxer ICS"
+      ],
+      "Save SAML configuration": [
+        "Desa la configuració SAML"
       ],
       "Search": [
         "Cerca"
@@ -1306,7 +1315,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Això desconnectarà tots els routers i clients que utilitzin aquest certificat."
+        "Això desconnectarà tots els rúters i clients que utilitzin aquest certificat."
       ]
     },
     "Animation": {
@@ -3842,7 +3851,7 @@
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } és el seu nom d'usuari. Per crear ${ emailAddress }, vagi a Configuració > Missatges i redacció > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -4562,7 +4571,7 @@
         "inicia la sessió"
       ],
       "There was a problem unsubscribing you.": [
-        "Hi ha hagut un problema en anul·lar la subscripció."
+        "Hi ha hagut un problema en cancel·lar la subscripció."
       ]
     },
     "Error notification": {
@@ -6403,7 +6412,7 @@
         "Tanqueu la finestra per sortir."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -6591,7 +6600,7 @@
         "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
       ],
       "Enable single sign-on to keep your organization safe": [
-        "Activi l'inici de sessió únic per mantenir la seva organització segura"
+        "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
       ],
       "Enable this address to join this calendar": [
         "Habiliteu aquesta adreça per a unir-vos a aquest calendari."
@@ -6899,7 +6908,7 @@
         "Obteniu més informació sobre les passarel·les"
       ],
       "Lean more about single sign-on": [
-        "Obtingui més informació sobre l'inici de sessió únic"
+        "Obteniu més informació sobre l'inici de sessió únic"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Més informació sobre com ${ staySaferOnlineLink }"
@@ -7808,6 +7817,9 @@
       "Version history": [
         "Historial de versions"
       ],
+      "Version number successfully copied to clipboard": [
+        "El número de versió s'ha copiat correctament al porta-retalls"
+      ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
       ],
@@ -8291,6 +8303,9 @@
     "Key generation": {
       "Generate key": [
         "Genera una clau"
+      ],
+      "Key successfully generated.": [
+        "La clau s'ha generat correctament."
       ]
     },
     "Key state badge": {
@@ -9133,6 +9148,9 @@
       "New mailbox password": [
         "Nova contrasenya de la bústia"
       ],
+      "New organization identity": [
+        "Nova identitat de l'organització"
+      ],
       "New organization password": [
         "Nova contrasenya de l'organització"
       ],
@@ -9180,6 +9198,9 @@
       ],
       "Or": [
         "O"
+      ],
+      "Organization identity": [
+        "Identitat de l'organització"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -9459,6 +9480,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Recuperació basada en el dispositiu"
+      ],
       "Recovery phone number": [
         "Número de telèfon de recuperació"
       ],
@@ -9667,6 +9691,9 @@
       "Encryption and keys": [
         "Xifratge i claus"
       ],
+      "Forgot password?": [
+        "Contrasenya oblidada?"
+      ],
       "Forgot username?": [
         "Heu oblidat el nom d'usuari?"
       ],
@@ -9678,6 +9705,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtén ${ VPN_APP_NAME }"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Help translate": [
         "Ajudeu a traduir"
@@ -9932,7 +9962,7 @@
         "Activa l'usuari"
       ],
       "Add address": [
-        "Afegeixi una adreça"
+        "Afegeix una adreça"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -9992,7 +10022,7 @@
         "Troba el vostre nom d'usuari del compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
@@ -10004,7 +10034,7 @@
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicieu la sessió al compte de ${ appName }"
+        "Inicieu la sessió per accedir al vostre compte de ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu sessió al vostre compte ${ BRAND_NAME } per accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
@@ -11753,7 +11783,7 @@
         "Protecció essencial i col·laboració segura per a usuaris il·limitats"
       ],
       "Everything from ${ planTitle }, plus...": [
-        "Tot des de ${ planTitle }, més..."
+        "Tot el que inclou ${ planTitle }, més..."
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
@@ -11827,6 +11857,9 @@
       "Save your recovery kit to continue": [
         "Deseu el vostre kit de recuperació per continuar"
       ],
+      "Secure vault sharing": [
+        "Compartició segura de caixes fortes"
+      ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
       ],
@@ -11834,7 +11867,7 @@
         "S'està iniciant la sessió a ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta de llançament especial: obtingueu ${ title } per a sempre per ${ price }!"
+        "Oferta especial de llançament: obteniu ${ title } per a sempre per ${ price }!"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Solucions a mida per a organitzacions més grans amb necessitats personalitzades."
@@ -11843,7 +11876,7 @@
         "L'oferta que heu seleccionat no està disponible per als subscriptors de ${ currentPlanTitle }."
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
-        "per a començar a utilitzar ${ PASS_APP_NAME } al vostre telèfon"
+        "per començar a utilitzar ${ PASS_APP_NAME } al vostre telèfon."
       ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
         "Desbloquegeu característiques prèmium de ${ PASS_APP_NAME } millorant la subscripció"
@@ -12429,16 +12462,16 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "${ name } i 1 altra possible filtració detectada. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'ha detectat una possible fuita de ${ name }. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "La seva informació s'ha trobat en almenys una fuita de dades. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ]
     },
     "Select file": {
@@ -12593,6 +12626,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13356,6 +13394,9 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "6 users": [
+        "6 usuaris"
+      ],
       "Calendar sharing": [
         "Compartició de calendari"
       ],
@@ -13371,17 +13412,32 @@
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
       ],
+      "Early access to new apps and features": [
+        "Accés anticipat a noves aplicacions i característiques"
+      ],
       "Have a question?": [
         "Teniu una pregunta?"
       ],
       "Keep ${ planName }": [
         "Segueix amb ${ planName }"
       ],
+      "Learn more about our impact": [
+        "Descobriu més sobre el nostre impacte"
+      ],
+      "Manage your calendar": [
+        "Gestió dels vostres calendaris"
+      ],
+      "Online privacy, for your whole family": [
+        "Privacitat en línia per a tota la vostra família"
+      ],
       "Priority support": [
         "Suport prioritari"
       ],
       "Read the story": [
         "Llegiu la història"
+      ],
+      "Receive new emails": [
+        "Rebi nous correus electrònics"
       ],
       "Resubscribe": [
         "Resubscriviu-vos"
@@ -13392,11 +13448,20 @@
       "Subscription canceled": [
         "La subscripció s'ha cancel·lat."
       ],
+      "The best of ${ BRAND_NAME }": [
+        "El millor de ${ BRAND_NAME }"
+      ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
       ],
+      "Version history": [
+        "Historial de versions"
+      ],
       "Watch the interview": [
         "Mireu l'entrevista"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonificacions anuals d'emmagatzematge gratuïtes"
       ]
     },
     "subscription reminder": {
@@ -13412,11 +13477,20 @@
       "No ads or tracking": [
         "Sense anuncis ni rastreig"
       ],
+      "Support our mission": [
+        "Dona suport a la nostra missió"
+      ],
       "Upgrade": [
         "Millora"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -14541,6 +14615,9 @@
       "Password reset settings": [
         "Preferències de restabliment de contrasenya"
       ],
+      "Passwords made easy": [
+        "Contrasenyes fàcils"
+      ],
       "Pay invoice": [
         "Paga la factura"
       ],
@@ -14852,6 +14929,12 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
+      ],
+      "You have no open alerts": [
+        "No teniu alertes obertes"
+      ],
+      "You have no resolved alerts": [
+        "No teniu alertes resoltes"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"

@@ -143,6 +143,12 @@
       "Edit vault": [
         "編輯保管庫"
       ],
+      "Enable Dark Web Monitoring": [
+        "啟用暗網監控"
+      ],
+      "Exclude from monitoring": [
+        "排除監控"
+      ],
       "Export": [
         "匯出"
       ],
@@ -167,6 +173,9 @@
       "Get mobile apps": [
         "取得手機應用程式"
       ],
+      "Get Pass Plus": [
+        "取得Pass Plus"
+      ],
       "Get Started": [
         "入門指南"
       ],
@@ -184,6 +193,9 @@
       ],
       "Importing": [
         "正在匯入"
+      ],
+      "Include in monitoring": [
+        "於監控中"
       ],
       "Install extension": [
         "安裝擴充套件"
@@ -260,6 +272,12 @@
       "Pass for iOS": [
         "Proton Pass 的 iOS 版本"
       ],
+      "Pass Monitor": [
+        "Pass 監控"
+      ],
+      "Pause monitoring": [
+        "暫停監控"
+      ],
       "Pin item": [
         "固定物品"
       ],
@@ -290,6 +308,9 @@
       "Resend code": [
         "重新傳送驗證碼"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "重新寄送代碼(於${ remaining }秒)"
+      ],
       "Resend invitation": [
         "重新發送邀請"
       ],
@@ -299,6 +320,9 @@
       "Restore item": [
         "還原項目"
       ],
+      "Resume monitoring": [
+        "繼續監控"
+      ],
       "Retry": [
         "重試"
       ],
@@ -307,6 +331,9 @@
       ],
       "Saving": [
         "儲存中..."
+      ],
+      "See all": [
+        "查看全部"
       ],
       "See members": [
         "檢視成員"
@@ -356,6 +383,9 @@
       "Trash": [
         "丟到垃圾桶"
       ],
+      "Try again.": [
+        "重試。"
+      ],
       "Unpin item": [
         "取消固定項目"
       ],
@@ -373,6 +403,9 @@
       ],
       "Verify": [
         "驗證"
+      ],
+      "View details": [
+        "詳情查看"
       ],
       "View history": [
         "查看歷史"
@@ -422,8 +455,17 @@
       ]
     },
     "Description": {
+      "Change your passwords": [
+        "更改您的密碼"
+      ],
+      "Create unique passwords": [
+        "建立獨立的密碼"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "為更好安全設定雙重驗證"
       ]
     },
     "Error": {
@@ -502,6 +544,9 @@
       "Failed resending invite.": [
         "重新發送邀請時失敗。"
       ],
+      "Failed to add email address": [
+        "新增電子郵件地址失敗"
+      ],
       "Failed to delete selected items": [
         "無法刪除選擇的項目"
       ],
@@ -523,6 +568,9 @@
       "Failed to move items to trash": [
         "移動項目至垃圾桶失敗"
       ],
+      "Failed to pin item": [
+        "釘選項目失敗"
+      ],
       "Failed to remove user's access.": [
         "失敗移除使用者存取權。"
       ],
@@ -532,8 +580,17 @@
       "Failed to transfer this vault's ownership.": [
         "轉移保管庫所有權失敗。"
       ],
+      "Failed to unpin item": [
+        "取消釘選項目失敗"
+      ],
+      "Failed to verify email address": [
+        "驗證電子郵件地址失敗"
+      ],
       "File could not be parsed": [
         "檔案無法剖析"
+      ],
+      "File does not match expected format": [
+        "檔案不符合預期格式"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "匯入保管庫失敗${ vaultData.name }:${ description }"
@@ -650,6 +707,9 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "暗網監控"
+      ],
       "Integrated 2FA authenticator": [
         "整合了雙重驗證的驗證器"
       ],
@@ -744,6 +804,12 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }將僅匯入登入，筆記和信用。"
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } 成功停用"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } 成功啟用"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "為期 7 天完全免費體驗頂級質子版功能。${ BRAND_NAME } 授權後首週七天內皆可額外享用。"
       ],
@@ -783,6 +849,9 @@
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
       ],
+      "Breaches detected": [
+        "已偵測到外洩"
+      ],
       "Built in 2FA authenticator": [
         "內建雙重驗證機制"
       ],
@@ -816,6 +885,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "刪除${ payload.content.name }"
       ],
+      "Didn't receive the code?": [
+        "沒收到驗證碼嗎?"
+      ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
       ],
@@ -827,6 +899,9 @@
       ],
       "email": [
         "電子信箱"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "電子郵件地址成功從於監控刪除"
       ],
       "Emptying trash...": [
         "清空垃圾桶..."
@@ -851,6 +926,9 @@
       ],
       "High Priority": [
         "首要優先順序"
+      ],
+      "How does monitoring work?": [
+        "監控如何工作"
       ],
       "Import in progress:": [
         "匯入進行中:"
@@ -950,6 +1028,9 @@
       ],
       "Monitor accounts": [
         "監控帳號"
+      ],
+      "Monitoring settings successfully updated": [
+        "監控設定已成功更新"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
@@ -1077,6 +1158,9 @@
       "Successfully synced all vaults": [
         "成功同步保管庫"
       ],
+      "Suggested": [
+        "建議"
+      ],
       "Syncing your vaults…": [
         "同步你的保管庫…"
       ],
@@ -1140,6 +1224,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫 ${ share.content.name } 已移除"
       ],
+      "Verification code sent.": [
+        "驗證碼寄送。"
+      ],
       "Viewer": [
         "檢視者"
       ],
@@ -1180,6 +1267,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }登入"
       ],
       "1 hour": [
         "1 小時"
@@ -1379,6 +1469,9 @@
       "Last month": [
         "上個月"
       ],
+      "Last updated": [
+        "最後更新"
+      ],
       "Last week": [
         "上週"
       ],
@@ -1426,6 +1519,9 @@
       ],
       "No history": [
         "無歷史紀錄"
+      ],
+      "None": [
+        "無"
       ],
       "Note": [
         "備註"
@@ -1508,6 +1604,12 @@
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
       ],
+      "Status": [
+        "狀態"
+      ],
+      "Strong": [
+        "強"
+      ],
       "Suffix": [
         "後綴"
       ],
@@ -1553,6 +1655,9 @@
       "Update": [
         "更新"
       ],
+      "Used in": [
+        "使用於："
+      ],
       "Username": [
         "使用者名稱"
       ],
@@ -1576,6 +1681,12 @@
       ],
       "View logs": [
         "檢視記錄檔"
+      ],
+      "Vulnerable": [
+        "具有風險"
+      ],
+      "Weak": [
+        "弱"
       ],
       "Websites": [
         "網頁"
@@ -1619,6 +1730,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "您選取於保管庫的${ semiboldText }"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "要求組織雙重驗證"
+      ],
+      "SSO integration (coming soon)": [
+        "單一登入整合 (即將到來)"
       ]
     },
     "Notification": {
@@ -1689,6 +1808,9 @@
       "Full Name": [
         "全名"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "月月/年年"
       ],
@@ -1750,6 +1872,12 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 個電郵位址"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }監控"
+      ],
+      "Account protection": [
+        "帳號保護"
+      ],
       "Auto-lock update": [
         "更新自動鎖定"
       ],
@@ -1767,6 +1895,12 @@
       ],
       "Current version": [
         "目前版本"
+      ],
+      "Custom addresses": [
+        "自訂地址"
+      ],
+      "Custom emails": [
+        "自訂電子郵件"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "刪除保管庫${ vaultName }?"
@@ -1789,6 +1923,9 @@
       "Enter your PIN": [
         "輸入 PIN"
       ],
+      "Excluded items": [
+        "排除的物品"
+      ],
       "Get Started": [
         "入門指南"
       ],
@@ -1809,6 +1946,9 @@
       ],
       "Import your data": [
         "匯入您的資料"
+      ],
+      "Inactive 2FA": [
+        "未啟用雙重驗證"
       ],
       "Install extension": [
         "安裝擴充套件"
@@ -1849,6 +1989,9 @@
       "No items selected": [
         "未選擇任何項目"
       ],
+      "No reused passwords": [
+        "無重複使用的密碼"
+      ],
       "Our welcome gift to you": [
         "我們為您準備的迎賓禮"
       ],
@@ -1857,6 +2000,9 @@
       ],
       "Password": [
         "密碼"
+      ],
+      "Password Health": [
+        "密碼健檢"
       ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
@@ -1870,6 +2016,12 @@
       "Restore this version?": [
         "還原此版本?"
       ],
+      "Reused ${ count } time": [
+        "接續${ count }時間"
+      ],
+      "Reused passwords": [
+        "重複使用的密碼"
+      ],
       "Review and share": [
         "審閱並分享"
       ],
@@ -1879,11 +2031,20 @@
       "Set access level": [
         "設定存取層級"
       ],
+      "Set up 2FA for better security": [
+        "為更好安全設定雙重驗證"
+      ],
       "Settings": [
         "設定"
       ],
+      "Share vaults with your team": [
+        "與您的團隊共享保管庫"
+      ],
       "Share with": [
         "與分享"
+      ],
+      "Stay safer online": [
+        "保持在線安全"
       ],
       "Suggestions": [
         "建議"
@@ -1908,6 +2069,9 @@
       ],
       "Want to learn more?": [
         "點擊瞭解更多"
+      ],
+      "Weak passwords": [
+        "強度不足的密碼"
       ],
       "What is an alias?": [
         "甚麼是別名?"
@@ -1979,11 +2143,20 @@
       "Duplicate email addresses.": [
         "重複的電子郵件位址"
       ],
+      "Email is required": [
+        "電子郵件為必填項"
+      ],
       "Empty note": [
         "清空備註"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"
+      ],
+      "Invalid code": [
+        "代碼無效"
+      ],
+      "Invalid email": [
+        "無效的電子信箱"
       ],
       "Invalid email addresses.": [
         "無效的電子郵件位址"
@@ -2047,6 +2220,9 @@
       ],
       "Vault name is required": [
         "保管庫需要名字"
+      ],
+      "Verification code is required": [
+        "驗證碼為必要"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "您無法創建多於訂購授權的保管庫。"

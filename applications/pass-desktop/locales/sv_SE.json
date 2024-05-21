@@ -205,6 +205,9 @@
       "Get mobile apps": [
         "Skaffa mobilappar"
       ],
+      "Get Pass Business": [
+        "Skaffa Pass Business"
+      ],
       "Get Pass Plus": [
         "Skaffa Pass Plus"
       ],
@@ -537,6 +540,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Dina e-postadresser läckte vid minst 1 dataintrång."
@@ -1407,9 +1413,6 @@
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Den anpassad e-posten kommer att skickas till ${ href } för övervakning. Ingen annan data kommer att skickas till HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "Exporten kommer endast innehålla valv som du äger."
       ],
@@ -2060,6 +2063,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Du markerade ${ semiboldText } i detta valv"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kräver 2FA för organisation"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integration (kommer snart)"
       ]
     },
     "Notification": {

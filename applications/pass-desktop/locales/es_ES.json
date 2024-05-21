@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Descargar las aplicaciones móviles"
       ],
+      "Get Pass Business": [
+        "Obtén Pass Business"
+      ],
       "Get Pass Plus": [
         "Obtener Pass Plus"
       ],
@@ -311,7 +314,7 @@
         "Pass para iOS"
       ],
       "Pass Monitor": [
-        "Monitor de Pass"
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "Pausar el monitoreo"
@@ -543,6 +546,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Desbloquea funciones de seguridad avanzadas y registros detallados para proteger tu presencia en línea."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Con el Monitoreo de ${ PASS_SHORT_APP_NAME } mantente un paso adelante de las amenazas al recibir alertas instantáneas si tus credenciales son comprometidas. Desbloquea funciones avanzadas de seguridad y registros detallados para salvaguardar tu presencia en línea."
@@ -1245,7 +1251,7 @@
         "Prioridad baja"
       ],
       "me": [
-        "yo"
+        "conmigo"
       ],
       "Medium Priority": [
         "Prioridad media"
@@ -1433,9 +1439,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
-      ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "El correo electrónico personalizado será enviado a ${ href } para el monitoreo. Ningún otro dato será enviado a HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las cajas fuertes que te pertenecen."
@@ -2087,6 +2090,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Has seleccionado ${ semiboldText } en esta caja fuerte."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Requerir 2FA para organización"
+      ],
+      "SSO integration (coming soon)": [
+        "Integración SSO (próximamente)"
       ]
     },
     "Notification": {
