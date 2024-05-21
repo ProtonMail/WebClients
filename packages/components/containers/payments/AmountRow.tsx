@@ -12,9 +12,17 @@ interface Props {
     onChangeAmount: (value: number) => void;
     currency?: Currency;
     onChangeCurrency: (currency: Currency) => void;
+    disableCurrencySelector: boolean;
 }
 
-const AmountRow = ({ paymentMethodType, amount, onChangeAmount, currency, onChangeCurrency }: Props) => {
+const AmountRow = ({
+    paymentMethodType,
+    amount,
+    onChangeAmount,
+    currency,
+    onChangeCurrency,
+    disableCurrencySelector,
+}: Props) => {
     if (paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return null;
     }
@@ -28,6 +36,7 @@ const AmountRow = ({ paymentMethodType, amount, onChangeAmount, currency, onChan
                     onChangeAmount={onChangeAmount}
                     currency={currency}
                     onChangeCurrency={onChangeCurrency}
+                    disableCurrencySelector={disableCurrencySelector}
                 />
             </Field>
         </Row>

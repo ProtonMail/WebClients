@@ -58,6 +58,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
+    ChargebeeEnabled,
     Currency,
     Cycle,
     FreePlanDefault,
@@ -613,7 +614,8 @@ const SubscriptionContainer = ({
             return true;
         }
 
-        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.currency, copyNewModel.cycle)) {
+        const isInhouseForcedUser = chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED;
+        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.cycle) && !isInhouseForcedUser) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
@@ -798,7 +800,7 @@ const SubscriptionContainer = ({
 
     const handleCustomizationSubmit = () => {
         const run = async () => {
-            const samePlan = isSubscriptionUnchanged(subscription, model.planIDs, model.currency);
+            const samePlan = isSubscriptionUnchanged(subscription, model.planIDs);
             if (samePlan) {
                 createNotification({ text: c('Info').t`No changes made to the current subscription`, type: 'info' });
                 return;
