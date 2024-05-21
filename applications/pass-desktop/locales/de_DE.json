@@ -4,6 +4,26 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Hinzufügen"
@@ -478,6 +498,9 @@
       ]
     },
     "Description": {
+      "Change your passwords": [
+        "Ändere deine Passwörter"
+      ],
       "Create unique passwords": [
         "Erstelle einzigartige Passwörter"
       ],
@@ -487,8 +510,17 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Lass dich benachrichtigen, wenn deine E-Mail, dein Passwort oder andere persönliche Daten entwendet wurden."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Unsere hochmoderne, KI-gesteuerte Sicherheitslösung für Benutzer, die einen erhöhten Schutz für ihre Konten wünschen. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Richte 2FA für mehr Sicherheit ein"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Beginne mit der Überwachung auf Datenschutzverletzungen im Zusammenhang mit Konten, welche du mit deiner E-Mail-Adresse oder deinen hide-my-email Aliassen erstellt hast."
       ],
       "These items remain at risk": [
         "Diese Einträge sind weiterhin gefährdet"
@@ -498,6 +530,9 @@
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Deine E-Mail-Adressen sind bei mindestens 1 Datendiebstahl veröffentlicht worden."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Deine persönlichen Daten wurden durch ein Datenleck bei einem Drittanbieterdienst bekannt."
       ]
     },
     "Error": {
@@ -587,6 +622,12 @@
       "Failed resending invite.": [
         "Fehler beim erneuten Senden der Einladung."
       ],
+      "Failed to add email address": [
+        "Hinzufügen der E-Mail Adresse fehlgeschlagen"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Löschen der E-Mail-Adresse aus der Überwachung fehlgeschlagen"
+      ],
       "Failed to delete selected items": [
         "Ausgewählten Einträge konnten nicht gelöscht werden"
       ],
@@ -595,6 +636,12 @@
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
+      ],
+      "Failed to load breaches for this address": [
+        "Datendiebstähle für diese Adresse konnten nicht geladen werden"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Datendiebstahl für diesen E-Mail-Alias konnten nicht geladen werden"
       ],
       "Failed to load item history": [
         "Fehler beim Laden der Eintraghistorie."
@@ -614,6 +661,12 @@
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
       ],
+      "Failed to resend verification for custom email": [
+        "Überprüfung für benutzerdefinierte E-Mail konnte nicht erneut gesendet werden"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Datendiebstahl für diese Adresse konnten nicht aufgeklärt werden"
+      ],
       "Failed to restore items from trash": [
         "Einträge konnten nicht aus dem Papierkorb wiederhergestellt werden"
       ],
@@ -622,6 +675,21 @@
       ],
       "Failed to unpin item": [
         "Loslösen des Eintrags fehlgeschlagen"
+      ],
+      "Failed to update monitoring settings": [
+        "Aktualisierung der Überwachungseinstellungen fehlgeschlagen"
+      ],
+      "Failed to verify email address": [
+        "Verifizierung der E-Mail Adresse fehlgeschlagen"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Aktualisierung der Einstellung ${ PROTON_SENTINEL_NAME } fehlgeschlagen"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Aktualisierung des Monitor Indikators für das Element fehlgeschlagen"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Aktualisierung des Überwachungsstatus für diese E-Mail-Adresse fehlgeschlagen"
       ],
       "File could not be parsed": [
         "Datei konnte nicht geparst werden."
@@ -874,6 +942,9 @@
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } erfolgreich gelöscht"
       ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } erfolgreich aktiviert"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } Datendiebstahl entdeckt",
         "${ row.breachCount } Datendiebstähle entdeckt"
@@ -887,6 +958,9 @@
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
       ],
+      "Add your custom email address to monitor :": [
+        "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
+      ],
       "Admin": [
         "Administrator"
       ],
@@ -898,6 +972,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
+      ],
+      "All breaches for this address were resolved": [
+        "Alle Datendiebstähle für diese Adresse wurden behoben"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle Einträge von \"${ payload.content.name }\" erfolgreich verschoben."
@@ -988,6 +1065,15 @@
       ],
       "email": [
         "E-Mail"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-Mail-Adresse erfolgreich aus der Überwachung gelöscht"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-Mail-Adresse erfolgreich von der Überwachung ausgeschlossen"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-Mail Adresse erfolgreich in die Überwachung aufgenommen"
       ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
@@ -1142,6 +1228,9 @@
       "Monitor accounts": [
         "Konten überwachen"
       ],
+      "Monitoring settings successfully updated": [
+        "Überwachungseinstellungen erfolgreich aktualisiert"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
       ],
@@ -1164,7 +1253,7 @@
         "Niemals"
       ],
       "No breaches detected": [
-        "Kein Datendiebstahl entdeckt"
+        "Keine Datenlecks entdeckt"
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
@@ -1211,6 +1300,9 @@
       ],
       "Pinning item...": [
         "Eintrag wird angeheftet..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
@@ -1393,11 +1485,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Tresor \"${ share.content.name }\" wurde entfernt."
       ],
+      "Verification code sent.": [
+        "Bestätigungscode gesendet"
+      ],
       "Viewer": [
         "Betrachter"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Wir haben Probleme bei der Synchronisierung von Daten mit deinem lokalen Speicher. Bitte vergewissere dich, dass du genügend Speicherplatz für ${ PASS_SHORT_APP_NAME } hast, damit die Synchronisation reibungslos funktioniert."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Wir haben einen Verifizierungscode an ${ email } gesendet. Bitte gib ihn unten ein:"
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
@@ -1454,6 +1552,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } Version"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } Login",
+        "${ usageCount } Logins"
       ],
       "1 hour": [
         "1 Stunde"
@@ -1944,6 +2046,14 @@
         "Du hast ${ semiboldText } in diesem Tresor ausgewählt"
       ]
     },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "2FA für die Organisation erforderlich"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-Integration (demnächst verfügbar)"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } wurde deaktiviert."
@@ -2068,8 +2178,14 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
@@ -2172,6 +2288,9 @@
       "Import your data": [
         "Importiere deine Daten"
       ],
+      "Inactive 2FA": [
+        "Inaktive 2FA"
+      ],
       "Install extension": [
         "Erweiterung installieren"
       ],
@@ -2207,6 +2326,9 @@
       ],
       "Move items?": [
         "Einträge verschieben?"
+      ],
+      "No excluded items": [
+        "Keine ausgeschlossenen Einträge"
       ],
       "No inactive 2FAs": [
         "Keine inaktiven 2FAs"
@@ -2274,6 +2396,12 @@
       ],
       "Set access level": [
         "Zugriffsstufe festlegen"
+      ],
+      "Set up 2FA for better security": [
+        "Richte 2FA für bessere Sicherheit ein"
+      ],
+      "Set up 2FA for more security": [
+        "Richte 2FA für mehr Sicherheit ein"
       ],
       "Settings": [
         "Einstellungen"
