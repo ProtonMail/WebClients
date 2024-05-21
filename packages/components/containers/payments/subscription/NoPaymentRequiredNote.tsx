@@ -23,7 +23,6 @@ export const NoPaymentRequiredNote = ({
 
     return (
         <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-            <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
             {!trial && (
                 <>
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
