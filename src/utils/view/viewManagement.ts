@@ -12,6 +12,7 @@ import { getTrialEndURL } from "../urls/trial";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
+import { isMail, isMailHome } from "../urls/urlTests";
 
 const config = getConfig();
 const settings = getSettings();
@@ -202,7 +203,19 @@ export const updateView = (target: VIEW_TARGET) => {
 };
 
 function isSameURL(urlA: string, urlB: string) {
-    return urlA.replace(/\/$/, "") === urlB.replace(/\/$/, "");
+    if (urlA === urlB) {
+        return true;
+    }
+
+    if (urlA.replace(/\/$/, "") === urlB.replace(/\/$/, "")) {
+        return true;
+    }
+
+    if (isMailHome(urlA) && isMailHome(urlB)) {
+        return true;
+    }
+
+    return false;
 }
 
 export const loadURL = async (viewID: ViewID, url: string) => {

@@ -43,6 +43,26 @@ export const isMail = (urlString: string) => {
     }
 };
 
+export const isMailHome = (urlString: string) => {
+    try {
+        const urls = getConfig().url;
+        const url = new URL(urlString);
+
+        if (urls.mail !== url.origin) {
+            return false;
+        }
+
+        return (
+            url.pathname === "" ||
+            url.pathname === "/" ||
+            /^\/u\/\d\/?$/.test(url.pathname) || // /u/0
+            /^\/u\/\d\/inbox\/?$/.test(url.pathname) // /u/0/inbox
+        );
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccount = (urlString: string) => {
     try {
         const urls = getConfig().url;
