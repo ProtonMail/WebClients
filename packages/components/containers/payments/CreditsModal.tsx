@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,17 +17,19 @@ import {
     MAX_BITCOIN_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
+    isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import {
     Form,
+    Loader,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -36,7 +38,7 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useApi, useConfig, useEventManager, useNotifications, useSubscription } from '../../hooks';
+import { useApi, useConfig, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
@@ -64,7 +66,8 @@ const CreditsModal = (props: ModalProps) => {
     const api = useApi();
     const pollEventsMultipleTimes = usePollEvents();
     const chargebeeContext = useChargebeeContext();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
+    const [user, loadingUser] = useUser();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
@@ -89,6 +92,15 @@ const CreditsModal = (props: ModalProps) => {
 
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
+
+    useEffect(() => {
+        const currency = subscription?.Currency ?? user.Currency ?? DEFAULT_CURRENCY;
+        setCurrency(currency);
+    }, [user, subscription]);
+
+    if (loadingSubscription || loadingUser) {
+        return <Loader />;
+    }
 
     const exitSuccess = async () => {
         props.onClose?.();
@@ -203,6 +215,10 @@ const CreditsModal = (props: ModalProps) => {
             }
         });
 
+    const disableCurrencySelector =
+        chargebeeContext.enableChargebeeRef.current !== ChargebeeEnabled.INHOUSE_FORCED &&
+        !isFreeSubscription(subscription);
+
     return (
         <ModalTwo
             className="credits-modal"
@@ -235,6 +251,7 @@ const CreditsModal = (props: ModalProps) => {
                     onChangeAmount={setAmount}
                     currency={currency}
                     onChangeCurrency={setCurrency}
+                    disableCurrencySelector={disableCurrencySelector}
                 />
                 <PaymentWrapper
                     {...paymentFacade}
