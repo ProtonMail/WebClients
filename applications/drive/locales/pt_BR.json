@@ -498,6 +498,12 @@
       "New": [
         "Novo"
       ],
+      "New document": [
+        "Novo documento"
+      ],
+      "New folder": [
+        "Nova pasta"
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -518,6 +524,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Abrir em Docs"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -4873,6 +4882,9 @@
       "There is nothing to see here": [
         "Não há nada para ver aqui"
       ],
+      "This action will delete the link and revoke access for all users.": [
+        "Essa ação excluirá o link e revogará o acesso para todos os usuários."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
@@ -7336,6 +7348,9 @@
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
       ],
+      "Failed to open document": [
+        "Falha ao abrir o documento"
+      ],
       "Failed to remove the file": [
         "Falha ao remover o arquivo"
       ],
@@ -7966,9 +7981,19 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8149,6 +8174,11 @@
         "Suporte à privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -8272,6 +8302,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Agora você pode facilmente pesquisar os arquivos do Drive enquanto mantém seus dados seguros."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Cancelando a sua assinatura"
       ]
     },
     "Storage": {
@@ -8608,6 +8643,9 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"

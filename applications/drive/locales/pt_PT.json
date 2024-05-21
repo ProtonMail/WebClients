@@ -3590,6 +3590,10 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } ficheiro cifrado",
+        "${ nbFile } ficheiros cifrados"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -3982,6 +3986,9 @@
         "A pesquisa encriptada está aqui"
       ],
       "End-to-end encrypted": [
+        "Encriptado de ponta a ponta"
+      ],
+      "End-to-End Encrypted": [
         "Encriptado de ponta a ponta"
       ],
       "Enter password": [
@@ -4519,6 +4526,9 @@
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
       ],
+      "Shared with": [
+        "Partilhado com"
+      ],
       "Shared with me": [
         "Partilhado comigo"
       ],
@@ -4835,6 +4845,9 @@
       "Yesterday": [
         "Ontem"
       ],
+      "you": [
+        "você"
+      ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
       ],
@@ -5081,6 +5094,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Anyone with the link": [
+        "Qualquer pessoa com a ligação"
       ],
       "App password": [
         "Palavra-passe da aplicação"
@@ -5488,6 +5504,9 @@
       "Set expiration date": [
         "Definir data de validade"
       ],
+      "Set link password": [
+        "Defina a palavra-passe da ligação"
+      ],
       "Set recovery method": [
         "Definir um método de recuperação"
       ],
@@ -5765,6 +5784,9 @@
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
@@ -6057,6 +6079,9 @@
       "Advanced sharing security": [
         "Segurança avançada de partilha"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],
@@ -6065,6 +6090,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Preenchimento automático de cartões de crédito (em breve)"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
@@ -6262,6 +6290,9 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited vault sharing": [
+        "Partilha de cofre ilimitada"
       ],
       "Unlimited vaults": [
         "Cofres ilimitados"
@@ -6754,6 +6785,9 @@
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
       ],
+      "Failed to open document": [
+        "Não foi possível abrir o documento."
+      ],
       "Failed to upload files: ${ err }": [
         "Erro ao carregar ficheiros: ${ err }"
       ],
@@ -6776,6 +6810,10 @@
       "Move ${ n } file": [
         "Mover ${ n } ficheiro",
         "Mover ${ n } ficheiros"
+      ],
+      "Move ${ n } folder": [
+        "Mover ${ n } pasta",
+        "Mover ${ n } pastas"
       ],
       "Move ${ n } item": [
         "Mover ${ n } item",
@@ -7273,6 +7311,11 @@
         "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição da palavra-passe foi cancelada."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
@@ -7719,6 +7762,9 @@
       ],
       "Upgrade your productivity": [
         "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
       ]
     },
     "Subscription renewal state": {
