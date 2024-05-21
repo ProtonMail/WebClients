@@ -208,6 +208,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versió al porta-retalls"
+      ],
       "Create": [
         "Crear"
       ],
@@ -510,6 +513,12 @@
       "New": [
         "Nou"
       ],
+      "New document": [
+        "Nou document"
+      ],
+      "New folder": [
+        "Carpeta nova"
+      ],
       "New message": [
         "Nou missatge"
       ],
@@ -530,6 +539,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Obrir a Docs"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -4755,6 +4767,9 @@
       "Share files with links": [
         "Compartiu fitxers amb enllaços"
       ],
+      "Share via link settings": [
+        "Comparteix mitjançant la configuració de l'enllaç"
+      ],
       "Share with anyone": [
         "Comparteix amb tothom"
       ],
@@ -4763,6 +4778,9 @@
       ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
+      ],
+      "Shared with": [
+        "Compartit amb"
       ],
       "Shared with me": [
         "Compartit amb mi"
@@ -5028,6 +5046,9 @@
       ],
       "Version is restored": [
         "S'ha restaurat la versió"
+      ],
+      "Version number successfully copied to clipboard": [
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -6146,6 +6167,9 @@
       ]
     },
     "Mimetype": {
+      "3GPP2 audio/video container": [
+        "Contenidor d'àudio/vídeo 3GPP2"
+      ],
       "7-zip archive": [
         "Arxiu 7-zip"
       ],
@@ -6200,6 +6224,9 @@
       "GZip Compressed Archive": [
         "Arxiu comprimit GZip"
       ],
+      "HyperText Markup Language (HTML)": [
+        "Llenguatge d'etiquetatge d'hipertext (HTML)"
+      ],
       "iCalendar format": [
         "Format iCalendar"
       ],
@@ -6217,6 +6244,9 @@
       ],
       "MP3 audio": [
         "Àudio MP3"
+      ],
+      "MPEG transport stream": [
+        "Flux de transport MPEG"
       ],
       "MPEG Video": [
         "Vídeo MPEG"
@@ -6271,6 +6301,9 @@
       ],
       "Video file": [
         "Fitxer de vídeo"
+      ],
+      "Waveform Audio Format": [
+        "Format d'àudio Waveform"
       ],
       "WEBM audio": [
         "Àudio WEBM"
@@ -7218,6 +7251,9 @@
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
       ],
+      "Failed to open document": [
+        "No s'ha pogut obrir el document."
+      ],
       "Failed to remove the file": [
         "No s'ha pogut esborrar el fitxer"
       ],
@@ -7405,6 +7441,11 @@
     "Participant name": {
       "You": [
         "Vós"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Compartició segura de caixes fortes"
       ]
     },
     "Payment method option": {
@@ -7709,13 +7750,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "${ name } i 1 altra possible filtració detectada. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'ha detectat una possible fuita de ${ name }. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
@@ -7727,7 +7768,7 @@
         "Sentinel està **actiu** i salvaguardant el vostre compte."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "La seva informació s'ha trobat en almenys una fuita de dades. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ]
     },
     "Select files": {
@@ -7828,6 +7869,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -8301,11 +8347,20 @@
       "No ads or tracking": [
         "Sense anuncis ni rastreig"
       ],
+      "Support our mission": [
+        "Dona suport a la nostra missió"
+      ],
       "Upgrade": [
         "Millora"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -9076,6 +9131,9 @@
       ],
       "Stop sharing with everyone?": [
         "Deixar de compartir amb tothom?"
+      ],
+      "Stop sharing?": [
+        "Deixa de compartir?"
       ],
       "Stop transfers?": [
         "Aturar transferències?"
