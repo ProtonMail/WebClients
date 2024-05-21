@@ -3,7 +3,6 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, VPN_HOSTNAME } from '@proton/shared/lib/constants';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
 import { useAuthentication, useConfig } from '../../hooks';
@@ -14,8 +13,6 @@ export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElemen
     toApp?: APP_NAMES;
     selfOpening?: boolean;
 }
-
-const INTERNAL_LINK_TARGET: AppLinkProps['target'] = isElectronMail ? '_top' : '_blank';
 
 const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
@@ -30,7 +27,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
                 const href = `https://${VPN_HOSTNAME}/${stripLeadingAndTrailingSlash(to)}`;
                 return (
                     // internal link, trusted
-                    <a ref={ref} {...rest} target={INTERNAL_LINK_TARGET} href={href}>
+                    <a ref={ref} {...rest} target="_blank" href={href}>
                         {children}
                     </a>
                 );
@@ -40,7 +37,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
             const href = getAppHref(to, targetApp, localID);
             return (
                 // internal link, trusted
-                <a ref={ref} target={INTERNAL_LINK_TARGET} {...rest} href={href}>
+                <a ref={ref} target="_blank" {...rest} href={href}>
                     {children}
                 </a>
             );
@@ -49,7 +46,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
             const href = getAppHref(to, targetApp);
             return (
                 // internal link, trusted
-                <a ref={ref} target={INTERNAL_LINK_TARGET} {...rest} href={href}>
+                <a ref={ref} target="_blank" {...rest} href={href}>
                     {children}
                 </a>
             );
