@@ -7724,7 +7724,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
+        "La solicitud de restablecimiento de contraseña fue cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {

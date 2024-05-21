@@ -1161,7 +1161,7 @@
     },
     "Calendar view": {
       "Custom": [
-        "कस्टम"
+        "अनुकूल"
       ],
       "Day": [
         "दिन"
@@ -1170,7 +1170,7 @@
         "महीना"
       ],
       "Week": [
-        "हफ्ता"
+        "सप्ताह"
       ]
     },
     "Calendar view selector": {
@@ -1496,7 +1496,7 @@
         "केप वर्दे"
       ],
       "Cayman Islands": [
-        "कैमेन द्वीपसमूह"
+        "केमैन आइलैंड्स"
       ],
       "Central African Republic": [
         "मध्य अफ्रीकी गणराज्य"
@@ -1514,7 +1514,7 @@
         "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
-        "कोकोस (कीलिंग) द्वीप समूह"
+        "कोकोस (कीलिंग) आइलैंड्स"
       ],
       "Colombia": [
         "कोलंबिया"
@@ -1550,7 +1550,7 @@
         "चेक रिपब्लिक"
       ],
       "Côte d'Ivoire": [
-        "कोटे डी आइवर\""
+        "कोटे डी आइवर"
       ],
       "Denmark": [
         "डेनमार्क"
@@ -1610,7 +1610,7 @@
         "फ्रेंच गयाना"
       ],
       "French Polynesia": [
-        "फ़्रेंच पोलिनेशिया"
+        "फ़्रानसीसी पोलिनेशिया"
       ],
       "French Southern Territories": [
         "फ़्रांसीसी दक्षिणी क्षेत्र"
@@ -1871,7 +1871,7 @@
         "उत्तर मैसिडोनिया"
       ],
       "Northern Mariana Islands": [
-        "उत्तरी मारियाना द्वीपसमूह"
+        "उत्तरी मैरियाना आइलैंड्स"
       ],
       "Norway": [
         "नॉर्वे"
@@ -1994,7 +1994,7 @@
         "सोमालिया"
       ],
       "South Africa": [
-        "दक्षिण अफ़्रीका"
+        "दक्षिण अफ्रीका"
       ],
       "South Georgia and the South Sandwich Islands": [
         "दक्षिण जॉर्जिया और दक्षिण सैंडविच आइलैंड"
@@ -2111,13 +2111,13 @@
         "वियतनाम"
       ],
       "Virgin Islands, British": [
-        "वर्जिन द्वीप समूह, ब्रिटिश"
+        "वर्जिन आइलैंड्स, ब्रिटिश"
       ],
       "Virgin Islands, U.S.": [
-        "वर्जिन आइलैंड्स, यू.एस."
+        "वर्जिन आइलैंड्स, अमेरिका"
       ],
       "Wallis and Futuna": [
-        "वालीस और फ्युटुना"
+        "वालिस और फ़्युटुना"
       ],
       "Western Sahara": [
         "पश्चिमी सहारा"
@@ -2479,7 +2479,7 @@
         "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "डिक्रिप्शन त्रुटि: इस घटना की सामग्री का डिक्रिप्शन विफल रहा।"
+        "डिक्रिप्शन त्रुटि: इस कार्यक्रम की सामग्री का डिक्रिप्शन विफल रहा।"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
@@ -2511,7 +2511,7 @@
         "6 अंक दर्ज करें"
       ],
       "Error": [
-        "गड़बड़"
+        "त्रुटि"
       ],
       "Error connecting to the Bitcoin API.": [
         "बिटकॉइन एपीआई से जुड़ने में त्रुटि।"
@@ -2798,7 +2798,7 @@
         "मान्यता त्रुटि"
       ],
       "You already added this holidays calendar": [
-        "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
+        "आपने यह अवकाश कैलेंडर पहले ही जोड़ लिया है"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
@@ -3303,6 +3303,9 @@
       "Large": [
         "बड़ा"
       ],
+      "Medium (recommended)": [
+        "मध्यम (सुझावित)"
+      ],
       "Small": [
         "छोटा"
       ],
@@ -3692,7 +3695,7 @@
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } फ़ोल्डर चयनित",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
         "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
@@ -3952,7 +3955,7 @@
         "ईमेल पे अपनेआप साइन होता है"
       ],
       "Enter the code from your authenticator app": [
-        "अपने प्रमाणीकरण अनुप्रयोग में से कूटक लिखें"
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
@@ -4089,7 +4092,7 @@
         "लोड हो रहा है"
       ],
       "Loading ${ appName }": [
-        "लोड हो रहा है ${ appName }"
+        "${ appName } लोड हो रहा है"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "कैलेंडर लोड हो रहा है, कृपया प्रतीक्षा करें। आपको एक नए टैब में हमारे शेड्यूलिंग प्लेटफ़ॉर्म Calendly पर पुनः निर्देशित किया जाएगा।"
@@ -4426,7 +4429,7 @@
         "हफ्ता"
       ],
       "Week and month views only apply to desktop.": [
-        "हफ्ते और महीने का व्यू सिर्फ डेस्कटॉप पे लागू होता है।"
+        "सप्ताह और माह का दृश्य केवल डेस्कटॉप पर लागू होता है।"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
@@ -4727,7 +4730,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "ऐसे"
+        "देखिए कैसे"
       ]
     },
     "Label": {
@@ -4856,7 +4859,7 @@
         "तारीख और समय"
       ],
       "Default view": [
-        "डिफॉल्ट व्यू"
+        "डिफ़ॉल्ट दृश्य"
       ],
       "Delete": [
         "मिटाएं"
@@ -4901,7 +4904,7 @@
         "ईमेल एन्क्रिप्ट करें"
       ],
       "Ends": [
-        "खत्म"
+        "समाप्त"
       ],
       "Event duration": [
         "इवेंट समय"
@@ -5033,7 +5036,7 @@
         "संगठन का साइज़"
       ],
       "Organizer": [
-        "व्यवस्था करनेवाला"
+        "आयोजक"
       ],
       "participant": [
         "प्रतिभागी",
@@ -5070,7 +5073,7 @@
         "डाक कोड"
       ],
       "Primary": [
-        "मुख्य"
+        "प्राथमिक"
       ],
       "Proration": [
         "प्रोडशन"
@@ -5106,7 +5109,7 @@
         "मैं कब व्यस्त हूँ ये दुसरो को दिखाएँ"
       ],
       "Show week numbers": [
-        "हफ्ता नंबर दिखाएं"
+        "सप्ताह क्रमांक दिखाएं"
       ],
       "Sign emails": [
         "ईमेल पे हस्ताक्षर करें"
@@ -5119,6 +5122,9 @@
       ],
       "Subscription options": [
         "सदस्यता विकल्प"
+      ],
+      "Sync with system": [
+        "सिस्टम के साथ तालमेल बिठाएं"
       ],
       "System information": [
         "प्रणाली की जानकारी"
@@ -5274,7 +5280,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "वहाँ लगभग"
+        "लगभग हो गया"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
@@ -5378,7 +5384,7 @@
         "और कैलेंडर नहीं जोड़ सकते"
       ],
       "Edit calendar": [
-        "कैलेंडर बदलाव करें"
+        "कैलेंडर संपादित करें"
       ],
       "Get a country's official public holidays calendar.": [
         "किसी भी देश की आधिकारिक सार्वजनिक छुट्टियों का कैलेंडर प्राप्त करें।"
@@ -6418,11 +6424,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "सारे ${ BRAND_NAME } सेवा देखे"
       ],
+      "Pick a theme": [
+        "थीम चुनें"
+      ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } की सभी सेवाओं तक पहुंचने के लिए ऊपर बाईं ओर ऐप चयनकर्ता का उपयोग करें: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ PASS_SHORT_APP_NAME }।"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "आप किसी भी समय अपनी सेटिंग्स में जाकर अपनी थीम बदल सकते हैं।"
       ]
     },
     "Option": {
@@ -6550,10 +6562,10 @@
         "आपसे संपर्क करने का एक तरीका"
       ],
       "Add a calendar description": [
-        "एक कैलेंडर विवरण जोड़ें"
+        "कैलेंडर का विवरण जोड़ें"
       ],
       "Add a calendar name": [
-        "एक कैलेंडर नाम जोड़ें"
+        "कैलेंडर का नाम जोड़ें"
       ],
       "Add description": [
         "जानकारी जोड़े"
@@ -6607,7 +6619,7 @@
         "कृपया समस्या का वर्णन करें और किसी भी त्रुटि संदेश शामिल करें"
       ],
       "Please select a country": [
-        "एक देश चुनें"
+        "कृपया एक देश चुनें"
       ],
       "Search events": [
         "कार्यक्रम खोजें"
@@ -6951,7 +6963,7 @@
         "64 देश"
       ],
       "All paid Mail and Calendar features": [
-        "सारे प्रीमियम मेल और कैलेंडर सुविधाएं"
+        "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
       ],
       "High speed VPN": [
         "तेज़ वीपीएन"
@@ -7136,7 +7148,7 @@
         "कैलेंडर यूआरएल"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "किसी बाहरी या सार्वजनिक कैलेंडर और उसके अपडेट की सदस्यता लेने के लिए, यूआरएल दर्ज करें। कैलेंडर का केवल पढ़ने योग्य संस्करण आपके अन्य कैलेंडर में जोड़ा जाएगा।\n${ kbLink }"
+        "बाहरी या सार्वजनिक कैलेंडर और उसके अपडेट की सदस्यता लेने के लिए, URL दर्ज करें। कैलेंडर का केवल पढ़ने वाला संस्करण आपके अन्य कैलेंडर में जोड़ा जाएगा।\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7284,7 +7296,7 @@
         "रद्द करना भेजा गया और प्रतिभागी हटाएं गए"
       ],
       "Cancellation sent and participants removed from all events": [
-        "रद्द किया भेजा गया और प्रतिभागी सारे इवेंट से हटाए गए"
+        "रद्दीकरण भेजा गया और सभी कार्यक्रम से प्रतिभागी हटा दिए गए"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } को कोड भेजा गया"
@@ -7660,6 +7672,9 @@
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"
       ],
+      "Day theme": [
+        "दिन का थीम"
+      ],
       "Delete ${ count } contact": [
         "${ count } संपर्क हटाएं",
         "${ count } संपर्क हटाएं"
@@ -7779,6 +7794,9 @@
       ],
       "Network error": [
         "नेटवर्क एरर"
+      ],
+      "Night theme": [
+        "रात की थीम"
       ],
       "Notes": [
         "नोट"
