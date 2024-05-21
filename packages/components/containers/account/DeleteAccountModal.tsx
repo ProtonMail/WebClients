@@ -50,6 +50,24 @@ interface Props extends Omit<ModalProps<'form'>, 'as'> {
     hideHeader?: boolean;
 }
 
+const SupportParagraph = () => {
+    {
+        /* translator: Full sentence: "This message won't reach the support team, if you have an issue with our service or need further action from our side please open a support ticket." */
+    }
+    const supportLink = (
+        <Href key="link-to-support" href="https://proton.me/support/contact-product">{c('Info')
+            .t`please open a support ticket`}</Href>
+    );
+
+    return (
+        <p className="text-sm color-weak mt-0">
+            {/* translator: Full sentence: "This message won't reach the support team, if you have an issue with our service or need further action from our side please open a support ticket." */}
+            {c('Info')
+                .jt`This message won't reach the support team, if you have an issue with our service or need further action from our side ${supportLink}.`}
+        </p>
+    );
+};
+
 const DeleteAccountModal = (props: Props) => {
     const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
     const { createNotification } = useNotifications();
@@ -217,6 +235,8 @@ const DeleteAccountModal = (props: Props) => {
                     >
                         {c('Label').t`Yes, I want to permanently delete this account and all its data.`}
                     </InputFieldTwo>
+
+                    <SupportParagraph />
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
