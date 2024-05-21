@@ -245,6 +245,9 @@
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
+      "Forgot recovery method?": [
+        "Esqueceu um método de recuperação?"
+      ],
       "Get ${ vpnPlus }": [
         "Obtenha o ${ vpnPlus }"
       ],
@@ -1916,6 +1919,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Uma vez excluído, este endereço não pode ser usado novamente por qualquer outra pessoa."
+      ],
       "You can only delete 1 address per year.": [
         "Você somente pode excluir 1 endereço por ano."
       ]
@@ -2510,6 +2516,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Caso o usuário já tenha um endereço ${ MAIL_APP_NAME }, insira-o aqui. Caso contrário, ele precisará criar uma conta primeiro."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
       ],
@@ -3047,6 +3056,9 @@
         "Adicionar servidor (${ availableAddedCount } disponíveis)",
         "Adicionar servidor (${ availableAddedCount } disponíveis)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Adicione o nome e logotipo para criar uma experiência mais personalizada para sua organização."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Adicionando ${ addedServerCount } servidor gateway",
         "Adicionando ${ addedServerCount } servidores gateway"
@@ -3415,6 +3427,9 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou uma ${ boldZoomMeeting } com um de nossos especialistas de suporte, ou abra o ${ boldLiveChat } para suporte via chat."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou uma ${ boldZoomMeeting } com um de nossos especialistas de suporte."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
       ],
@@ -3580,6 +3595,9 @@
       "Password copied to clipboard": [
         "Senha copiada para a área de transferências"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "A senha deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
@@ -3707,6 +3725,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escaneie este código com seu dispositivo de autenticação de dois fatores para configurar sua conta. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "Integração SCIM desativada"
+      ],
+      "SCIM token active": [
+        "Token SCIM ativo"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteja sua conta da ${ BRAND_NAME }."
@@ -3867,6 +3891,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Isso excluirá permanentemente sua conta e todas as suas informações. Você não conseguirá reativar essa conta."
+      ],
+      "This will remove any enabled 2FA methods.": [
+        "Isso removerá qualquer método A2F ativado."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Isso removerá a autenticação única (SSO) para ${ boldDomainName }."
@@ -4077,6 +4104,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Quando você cancela sua atual assinatura, o saldo da sua assinatura será devolvido como crédito de conta e você fará downgrade para o plano ${ BRAND_NAME } ${ PLANS.FREE } ."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
@@ -4874,6 +4904,9 @@
       ],
       "Forgot username?": [
         "Esqueceu o seu nome de usuário?"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Help translate": [
         "Ajude a traduzir"
@@ -6316,6 +6349,9 @@
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Não foi possível verificar a segurança da chave do endereço deste remetente. Às vezes, há um atraso na atualização das informações do remetente. Tente novamente mais tarde. Se você não confia na validade deste convite ou remetente, entre em contato com o Suporte ao Cliente ${ BRAND_NAME }."
       ],
+      "We have verified the authenticity of this identity.": [
+        "Verificamos a autenticidade dessa identidade."
+      ],
       "We have verified the authenticity of this sender and invitation.": [
         "Verificamos a autenticidade deste remetente e convite."
       ],
@@ -6608,8 +6644,14 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Pré-requisito:** autenticação SAML deve ser configurada para ativar o provisionamento SCIM"
+      ],
       "Enter token into your identity provider": [
         "Insira o token em seu provedor de identidade"
+      ],
+      "For security reasons, the token is hidden": [
+        "Por motivos de segurança, o token está oculto."
       ],
       "The SCIM base URL and token will be deleted.": [
         "O URL base e o token do SCIM serão excluídos."
@@ -6777,9 +6819,19 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7044,6 +7096,11 @@
         "Suporte à privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -7161,6 +7218,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Cancelando a sua assinatura"
       ]
     },
     "Storage": {
@@ -7546,6 +7608,9 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -7975,6 +8040,9 @@
       ],
       "Find email or username": [
         "Encontrar e-mail ou nome de usuário"
+      ],
+      "Forgot recovery method": [
+        "Esqueceu um método de recuperação"
       ],
       "Gateways": [
         "Gateways"

@@ -2513,6 +2513,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si el usuario ya dispone de una dirección de ${ MAIL_APP_NAME }, introdúcela aquí. De lo contrario, tendrá que crearse primero una cuenta."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "La invitación se cancelará y el usuario no podrá unirse a ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Se moverá la cuenta del usuario a un plan Unlimited de ${ BRAND_NAME } que podrá disfrutar a modo de prueba gratuita durante 30 días*."
       ],
@@ -4890,6 +4893,9 @@
       "Forgot username?": [
         "¿Has olvidado tu nombre de usuario?"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "Help translate": [
         "Ayúdanos a traducir"
       ],
@@ -6839,9 +6845,19 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "El restablecimiento de contraseña ha sido cancelado."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7106,6 +7122,11 @@
         "Apoya la privacidad en línea"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -7223,6 +7244,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Estamos cancelando la suscripción. Espera."
       ]
     },
     "Storage": {
@@ -7608,6 +7634,9 @@
       ],
       "Verification successful": [
         "Verificación completada"
+      ],
+      "You have successfully canceled your subscription.": [
+        "La suscripción ha sido cancelada."
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
