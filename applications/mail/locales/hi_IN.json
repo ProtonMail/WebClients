@@ -83,7 +83,7 @@
         "अलाइनमेंट"
       ],
       "All Read": [
-        "सब पढ़ें"
+        "सभी पढ़े हुए"
       ],
       "All Starred": [
         "सारे तारे लगे"
@@ -581,7 +581,7 @@
         "सत्यापन लोड हो रहा है"
       ],
       "Loading${ ellipsis }": [
-        "लोड हो रहा है ${ ellipsis }"
+        "${ ellipsis } लोड हो रहा है"
       ],
       "Manage folders": [
         "फोल्डर संभाले"
@@ -964,6 +964,9 @@
       "Set": [
         "सेट करें"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } को डिफ़ॉल्ट ईमेल एप्लिकेशन के रूप में सेट करें"
+      ],
       "Set as default": [
         "डिफाल्ट के रूप में सेट करें"
       ],
@@ -1074,10 +1077,6 @@
       ],
       "Trust": [
         "भरोसा करें"
-      ],
-      "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -2329,7 +2328,7 @@
         "केप वर्दे"
       ],
       "Cayman Islands": [
-        "कैमेन द्वीपसमूह"
+        "केमैन आइलैंड्स"
       ],
       "Central African Republic": [
         "मध्य अफ्रीकी गणराज्य"
@@ -2347,7 +2346,7 @@
         "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
-        "कोकोस (कीलिंग) द्वीप समूह"
+        "कोकोस (कीलिंग) आइलैंड्स"
       ],
       "Colombia": [
         "कोलंबिया"
@@ -2383,7 +2382,7 @@
         "चेक रिपब्लिक"
       ],
       "Côte d'Ivoire": [
-        "कोटे डी आइवर\""
+        "कोटे डी आइवर"
       ],
       "Denmark": [
         "डेनमार्क"
@@ -2443,7 +2442,7 @@
         "फ्रेंच गयाना"
       ],
       "French Polynesia": [
-        "फ़्रेंच पोलिनेशिया"
+        "फ़्रानसीसी पोलिनेशिया"
       ],
       "French Southern Territories": [
         "फ़्रांसीसी दक्षिणी क्षेत्र"
@@ -2704,7 +2703,7 @@
         "उत्तर मैसिडोनिया"
       ],
       "Northern Mariana Islands": [
-        "उत्तरी मारियाना द्वीपसमूह"
+        "उत्तरी मैरियाना आइलैंड्स"
       ],
       "Norway": [
         "नॉर्वे"
@@ -2827,7 +2826,7 @@
         "सोमालिया"
       ],
       "South Africa": [
-        "दक्षिण अफ़्रीका"
+        "दक्षिण अफ्रीका"
       ],
       "South Georgia and the South Sandwich Islands": [
         "दक्षिण जॉर्जिया और दक्षिण सैंडविच आइलैंड"
@@ -2944,13 +2943,13 @@
         "वियतनाम"
       ],
       "Virgin Islands, British": [
-        "वर्जिन द्वीप समूह, ब्रिटिश"
+        "वर्जिन आइलैंड्स, ब्रिटिश"
       ],
       "Virgin Islands, U.S.": [
-        "वर्जिन आइलैंड्स, यू.एस."
+        "वर्जिन आइलैंड्स, अमेरिका"
       ],
       "Wallis and Futuna": [
-        "वालीस और फ्युटुना"
+        "वालिस और फ़्युटुना"
       ],
       "Western Sahara": [
         "पश्चिमी सहारा"
@@ -4268,6 +4267,9 @@
       "Large": [
         "बड़ा"
       ],
+      "Medium (recommended)": [
+        "मध्यम (सुझावित)"
+      ],
       "Small": [
         "छोटा"
       ],
@@ -4810,7 +4812,7 @@
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } फ़ोल्डर चयनित",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
         "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
@@ -5002,6 +5004,9 @@
       "Calendar side panel": [
         "कैलेंडर साइड पैनल"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "वह चीज़ नहीं मिल रही है जिसे आप ढूंढ रहे हैं? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "आपका पासवर्ड याद नहीं है? हम इस कुंजी के साथ एन्क्रिप्ट किए गए सभी संपर्कों के एन्क्रिप्टेड डेटा को साफ़ करने में आपकी सहायता कर सकते हैं और प्रक्रिया में अलर्ट को खारिज कर सकते हैं।"
       ],
@@ -5083,6 +5088,9 @@
       ],
       "Custom yearly": [
         "कस्टम वार्षिक"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
       "Daily": [
         "रोज़"
@@ -5180,7 +5188,7 @@
         "संदेश एन्क्रिप्ट करें"
       ],
       "Enter the code from your authenticator app": [
-        "अपने प्रमाणीकरण अनुप्रयोग में से कूटक लिखें"
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
@@ -5306,7 +5314,7 @@
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
       ],
       "Include Spam/Trash.": [
-        "स्पैम/कचरा शामिल करें"
+        "स्पैम/कूड़ेदान शामिल करें"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
@@ -5360,7 +5368,7 @@
         "लोड हो रहा है"
       ],
       "Loading ${ appName }": [
-        "लोड हो रहा है ${ appName }"
+        "${ appName } लोड हो रहा है"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "कैलेंडर लोड हो रहा है, कृपया प्रतीक्षा करें। आपको एक नए टैब में हमारे शेड्यूलिंग प्लेटफ़ॉर्म Calendly पर पुनः निर्देशित किया जाएगा।"
@@ -5941,6 +5949,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "अपने खाते में अधिक पते जोड़ने के लिए अपग्रेड करें।"
+      ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "30 दिनों से ज़्यादा समय से ट्रैश और स्पैम में मौजूद संदेशों को स्वचालित रूप से हटाने के लिए अपग्रेड करें।"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "अधिक फ़ोल्डर, फ़िल्टर और पते बनाने के लिए अपग्रेड करें।"
@@ -6657,7 +6668,7 @@
         "रंग"
       ],
       "Composer": [
-        "लिखें"
+        "ईमेल रचयिता"
       ],
       "Conditions": [
         "शर्ते"
@@ -6992,6 +7003,12 @@
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
+      "Sync with system": [
+        "सिस्टम के साथ तालमेल बिठाएं"
+      ],
+      "Synchronize with system": [
+        "सिस्टम के साथ तालमेल बिठाएं"
+      ],
       "System information": [
         "प्रणाली की जानकारी"
       ],
@@ -7133,7 +7150,7 @@
         "एक उपहार कोड जोड़ें"
       ],
       "All mail": [
-        "सारे मेल"
+        "सभी मेल"
       ],
       "Archive": [
         "संग्रह"
@@ -7298,7 +7315,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "वहाँ लगभग"
+        "लगभग हो गया"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
@@ -8302,11 +8319,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "सारे ${ BRAND_NAME } सेवा देखे"
       ],
+      "Pick a theme": [
+        "थीम चुनें"
+      ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } की सभी सेवाओं तक पहुंचने के लिए ऊपर बाईं ओर ऐप चयनकर्ता का उपयोग करें: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ PASS_SHORT_APP_NAME }।"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "आप किसी भी समय अपनी सेटिंग्स में जाकर अपनी थीम बदल सकते हैं।"
       ]
     },
     "Online Accounts Name": {
@@ -8965,7 +8988,7 @@
         "64 देश"
       ],
       "All paid Mail and Calendar features": [
-        "सारे प्रीमियम मेल और कैलेंडर सुविधाएं"
+        "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
       ],
       "High speed VPN": [
         "तेज़ वीपीएन"
@@ -9821,6 +9844,9 @@
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"
       ],
+      "Day theme": [
+        "दिन का थीम"
+      ],
       "Decryption error": [
         "डीक्रिप्शन त्रुटि"
       ],
@@ -10054,6 +10080,9 @@
       ],
       "Next message": [
         "अगला संदेश"
+      ],
+      "Night theme": [
+        "रात की थीम"
       ],
       "No attachment found": [
         "कोई अनुलग्नक नहीं मिला"
@@ -10356,6 +10385,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "जब आपका सिस्टम \"डार्क मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "जब आपका सिस्टम \"लाइट मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
       ],
       "This feature is only available for paid users": [
         "यह सुविधा केवल सशुल्क उपयोगकर्ताओं के लिए उपलब्ध है"

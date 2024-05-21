@@ -1159,10 +1159,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -10183,6 +10179,11 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Lösenordsåterställning avbruten"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
@@ -10408,6 +10409,11 @@
         "Stöder integritet online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -10540,6 +10546,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Avbryter din prenumeration, vänta"
       ]
     },
     "Status": {
