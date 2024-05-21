@@ -10,6 +10,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 type UpsellPlanFeatures = {
     features: FeatureType[];
     upsellType: UpsellType;
+    upgradePath: string;
 };
 
 export const useUpsellPlanFeatures = () => {
@@ -17,11 +18,15 @@ export const useUpsellPlanFeatures = () => {
     const planFeatures = useMemo(() => getPlanFeatures(), []);
 
     return useMemo(() => {
-        const { features, upsellType }: UpsellPlanFeatures =
+        const { features, upsellType, upgradePath }: UpsellPlanFeatures =
             plan === UserPassPlan.BUSINESS
-                ? { features: planFeatures.business, upsellType: 'pass-monitor-business' }
-                : { features: planFeatures.individuals, upsellType: 'pass-monitor' };
+                ? {
+                      features: planFeatures.business,
+                      upsellType: 'pass-monitor-business',
+                      upgradePath: 'pass/signup/business',
+                  }
+                : { features: planFeatures.individuals, upsellType: 'pass-monitor', upgradePath: 'pass/signup' };
 
-        return { plan, features, upsellType };
+        return { plan, features, upsellType, upgradePath };
     }, [plan]);
 };
