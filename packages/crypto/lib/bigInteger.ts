@@ -1,3 +1,1 @@
-import BigInteger from '@openpgp/noble-hashes/esm/biginteger/native.interface';
-
-export default BigInteger;
+export * from 'pmcrypto-v6-canary/lib/bigInteger';

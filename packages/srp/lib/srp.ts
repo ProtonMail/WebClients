@@ -1,4 +1,10 @@
-import BigInteger from '@proton/crypto/lib/bigInteger';
+import {
+    byteLength as bigIntByteLength,
+    bigIntToUint8Array,
+    mod,
+    modExp,
+    uint8ArrayToBigInt,
+} from '@proton/crypto/lib/bigInteger';
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -10,7 +16,7 @@ import { checkUsername } from './utils/username';
 
 export const srpHasher = (arr: Uint8Array) => expandHash(arr);
 
-const littleEndianArrayToBigInteger = async (arr: Uint8Array) => new BigInteger(arr.slice().reverse());
+const littleEndianArrayToBigInteger = async (arr: Uint8Array) => uint8ArrayToBigInt(arr.slice().reverse());
 
 /**
  * Generate a random client secret.
@@ -22,15 +28,15 @@ const generateClientSecret = (length: number) => {
 
 interface GenerateParametersArgs {
     byteLength: number;
-    generator: BigInteger;
-    modulus: BigInteger;
+    generator: bigint;
+    modulus: bigint;
     serverEphemeralArray: Uint8Array;
 }
 
 const generateParameters = async ({ byteLength, generator, modulus, serverEphemeralArray }: GenerateParametersArgs) => {
     const clientSecret = await generateClientSecret(byteLength);
-    const clientEphemeral = generator.modExp(clientSecret, modulus);
-    const clientEphemeralArray = clientEphemeral.toUint8Array('le', byteLength);
+    const clientEphemeral = modExp(generator, clientSecret, modulus);
+    const clientEphemeralArray = bigIntToUint8Array(clientEphemeral, 'le', byteLength);
 
     const clientServerHash = await srpHasher(mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray]));
     const scramblingParam = await littleEndianArrayToBigInteger(clientServerHash);
@@ -54,7 +60,7 @@ const getParameters = async ({ byteLength, generator, modulus, serverEphemeralAr
             serverEphemeralArray,
         });
 
-        if (scramblingParam.isZero() || clientEphemeral.isZero()) {
+        if (scramblingParam === BigInt(0) || clientEphemeral === BigInt(0)) {
             continue;
         }
 
@@ -81,7 +87,7 @@ export const generateProofs = async ({
     serverEphemeralArray,
 }: GenerateProofsArgs) => {
     const modulus = await littleEndianArrayToBigInteger(modulusArray);
-    if (modulus.byteLength() !== byteLength) {
+    if (bigIntByteLength(modulus) !== byteLength) {
         throw new Error('SRP modulus has incorrect size');
     }
 
@@ -128,17 +134,19 @@ export const generateProofs = async ({
      * The host will abort if it detects that A == 0 (mod N).
      */
 
-    const generator = new BigInteger(2);
-    const hashedArray = await srpHasher(mergeUint8Arrays([generator.toUint8Array('le', byteLength), modulusArray]));
+    const generator = BigInt(2);
+    const hashedArray = await srpHasher(
+        mergeUint8Arrays([bigIntToUint8Array(generator, 'le', byteLength), modulusArray])
+    );
 
     const multiplier = await littleEndianArrayToBigInteger(hashedArray);
     const serverEphemeral = await littleEndianArrayToBigInteger(serverEphemeralArray);
     const hashedPassword = await littleEndianArrayToBigInteger(hashedPasswordArray);
 
-    const modulusMinusOne = modulus.dec();
-    const multiplierReduced = multiplier.mod(modulus);
+    const modulusMinusOne = modulus - BigInt(1);
+    const multiplierReduced = mod(multiplier, modulus);
 
-    if (serverEphemeral.isZero()) {
+    if (serverEphemeral === BigInt(0)) {
         throw new Error('SRP server ephemeral is out of bounds');
     }
 
@@ -149,13 +157,13 @@ export const generateProofs = async ({
         serverEphemeralArray,
     });
 
-    const kgx = generator.modExp(hashedPassword, modulus).imul(multiplierReduced).imod(modulus);
-    const sharedSessionKeyExponent = scramblingParam.imul(hashedPassword).iadd(clientSecret).imod(modulusMinusOne);
-    const sharedSessionKeyBase = serverEphemeral.sub(kgx).imod(modulus);
-    const sharedSessionKey = sharedSessionKeyBase.modExp(sharedSessionKeyExponent, modulus);
+    const kgx = mod(modExp(generator, hashedPassword, modulus) * multiplierReduced, modulus);
+    const sharedSessionKeyExponent = mod(scramblingParam * hashedPassword + clientSecret, modulusMinusOne);
+    const sharedSessionKeyBase = mod(serverEphemeral - kgx, modulus);
+    const sharedSessionKey = modExp(sharedSessionKeyBase, sharedSessionKeyExponent, modulus);
 
-    const clientEphemeralArray = clientEphemeral.toUint8Array('le', byteLength);
-    const sharedSessionArray = sharedSessionKey.toUint8Array('le', byteLength);
+    const clientEphemeralArray = bigIntToUint8Array(clientEphemeral, 'le', byteLength);
+    const sharedSessionArray = bigIntToUint8Array(sharedSessionKey, 'le', byteLength);
 
     const clientProof = await srpHasher(
         mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray])
@@ -212,13 +220,13 @@ export const getSrp = async (
 };
 
 const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Array, modulusBytes: Uint8Array) => {
-    const generator = new BigInteger(2);
+    const generator = BigInt(2);
 
     const modulus = await littleEndianArrayToBigInteger(modulusBytes);
     const hashedPassword = await littleEndianArrayToBigInteger(hashedPasswordBytes);
 
-    const verifier = generator.modExp(hashedPassword, modulus);
-    return verifier.toUint8Array('le', byteLength);
+    const verifier = modExp(generator, hashedPassword, modulus);
+    return bigIntToUint8Array(verifier, 'le', byteLength);
 };
 
 export const getRandomSrpVerifier = async (
