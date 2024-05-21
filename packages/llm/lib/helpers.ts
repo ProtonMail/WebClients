@@ -1,10 +1,13 @@
+import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { getAssistantModels } from '@proton/llm/lib/api';
-import { ASSISTANT_STATUS } from '@proton/llm/lib/constants';
+import { ASSISTANT_STATUS, assistantAuthorizedApps } from '@proton/llm/lib/constants';
 import { checkGpu } from '@proton/llm/lib/hardware';
-import { AssistantModel } from '@proton/llm/lib/types';
+import { ASSISTANT_ACTION, ASSISTANT_EVENTS, AssistantModel } from '@proton/llm/lib/types';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import window from '@proton/shared/lib/window';
 
 export const getAssistantHasCompatibleBrowser = () => {
     const isOnMobile = isMobile();
@@ -159,7 +162,10 @@ export const buildMLCConfig = (models: AssistantModel[]) => {
     if (model) {
         const modelURL = getModelURL(model.ModelURL).toString();
         // TODO need to do more for localhost, we want to access to http://localhost:8080/assets/ml-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm
-        const modelLibURL = getModelURL(model.ModelLibURL).toString();
+
+        // TODO, test in alpha, revert this asap
+        const modelLibURL =
+            'https://raw.githubusercontent.com/mlc-ai/binary-mlc-llm-libs/main/web-llm-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm';
 
         return {
             model_list: [
@@ -186,3 +192,85 @@ export class PromptRejectedError extends Error {
         }
     }
 }
+
+export const getAssistantIframeURL = () => {
+    // If running the assistant iframe in localhost, use this instead:
+    // return new URL('https://localhost:5173').toString();
+
+    // Else, forge the url on which the iframe html is available
+    return getApiSubdomainUrl('/mail/v4/ai-assistant', window.location.origin).toString();
+};
+
+// Function used to validate events coming from the iframe. Are we actually receiving event from the assistant iframe?
+const isAuthorizedIframeAssistantURL = (url: string, hostname: string) => {
+    try {
+        const iframeURLString = getAssistantIframeURL();
+
+        const iframeURL = new URL(iframeURLString);
+        const incomingURL = new URL(url);
+
+        return isURLProtonInternal(url, hostname) && incomingURL.hostname === iframeURL.hostname;
+    } catch {
+        return false;
+    }
+};
+
+// Function used to validate events coming from iframe parent apps. Are we actually receiving event from authorized apps?
+const isAuthorizedAssistantAppURL = (url: string, hostname: string) => {
+    try {
+        const originURL = new URL(url);
+
+        // Get subdomain of the url => e.g. mail, calendar, drive
+        const appFromUrl = originURL.hostname.split('.')[0];
+
+        // In localhost, allow the app to send events to the iframe
+        if (originURL.hostname === 'localhost') {
+            return true;
+        }
+
+        // Else, check that
+        // - The app url is internal
+        // - The app sending an event is an authorized app
+        return isURLProtonInternal(url, hostname) && assistantAuthorizedApps.includes(appFromUrl);
+    } catch {
+        return false;
+    }
+};
+
+// Function used to validate events assistant events
+export const isAssistantPostMessage = (event: MessageEvent, hostname = window.location.hostname) => {
+    const origin = event.origin;
+
+    if (!origin || origin === 'null') {
+        return false;
+    }
+
+    const isIframeURL = isAuthorizedIframeAssistantURL(origin, hostname);
+    const isAssistantAppURL = isAuthorizedAssistantAppURL(origin, hostname);
+    const isValidURL = isIframeURL || isAssistantAppURL;
+
+    // Check that the assistant event is a valid event based on
+    // - The url of the event origin, is it an authorized url?
+    // - Does the event contain a valid `ASSISTANT_EVENTS`
+    return isValidURL && event.data && Object.values(ASSISTANT_EVENTS).includes(event.data.type);
+};
+
+// Function used to post messages to the assistant iframe
+export const postMessageToAssistantIframe = (message: ASSISTANT_ACTION) => {
+    const iframe = document.querySelector('[id^=assistant-iframe]') as HTMLIFrameElement | null;
+    const assistantURL = getAssistantIframeURL();
+    iframe?.contentWindow?.postMessage(message, assistantURL);
+};
+
+// Function used to post messages to the assistant iframe parent app
+export const postMessageToAssistantParent = (
+    message: ASSISTANT_ACTION,
+    parentURL: string,
+    arrayBuffers?: ArrayBuffer[]
+) => {
+    if (arrayBuffers) {
+        window.parent?.postMessage(message, parentURL, arrayBuffers);
+    } else {
+        window.parent?.postMessage(message, parentURL);
+    }
+};
