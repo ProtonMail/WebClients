@@ -1560,7 +1560,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Akses konten terblokir dan jelajahi secara privat. Termasuk 3000+ server di 65+ negara, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan pemblokir iklan, unduhan BitTorrent yang cepat, dan lainnya."
+        "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 3000+ server di 65+ negara, kecepatan VPN tertinggi, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent kilat, dan masih banyak lagi."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten di layanan streaming termasuk Netflix, Disney+, Prime Video, dan lainnya, dari mana pun."
@@ -4266,7 +4266,7 @@
         "Nama label terlalu panjang. Mohon pilih nama lain."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
+        "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
@@ -4938,6 +4938,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Undangan ini akan dibatalkan dan pengguna yang bersangkutan tidak akan dapat bergabung ke ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
       ],
@@ -5518,7 +5521,7 @@
         "Alamat IP"
       ],
       "Key type": [
-        "Tipe kunci"
+        "Jenis kunci"
       ],
       "Label": [
         "Label"
@@ -5597,7 +5600,7 @@
         "Prioritas"
       ],
       "Type": [
-        "Tipe"
+        "Jenis"
       ],
       "Value / Data": [
         "Nilai / Data"
@@ -6873,7 +6876,7 @@
         "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk mengatur ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko untuk tidak lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
+        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk mengatur ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
@@ -7140,7 +7143,7 @@
         "Tidak ada kunci akun"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko untuk kehilangan akses menuju akun Anda"
+        "Tidak ada metode pemulihan akun yang ditentukan; Anda berisiko untuk kehilangan akses menuju akun Anda"
       ],
       "No action selected": [
         "Tidak ada tindakan yang dipilih"
@@ -7155,7 +7158,7 @@
         "Tanpa perlu kartu kredit"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Tidak ada metode pemulihan data yang ditentukan; Anda beresiko untuk kehilangan akses menuju data Anda"
+        "Tidak ada metode pemulihan data yang ditentukan; Anda berisiko untuk kehilangan akses menuju data Anda"
       ],
       "No folder selected": [
         "Tidak ada folder yang dipilih"
@@ -7788,7 +7791,7 @@
         "Untuk memberikan izin penggunaan SAML SSO kepada domain ${ boldDomainName }, Anda harus memverifikasi kepemilikan domain ini dengan menambahkan rekaman TXT DNS berikut ke dalam domain Anda pada penyedia layanan DNS Anda."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda benar-benar paham akan resikonya atau apabila Anda telah mengekspor salinan kunci."
+        "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda benar-benar paham akan risikonya atau apabila Anda telah mengekspor salinan kunci."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Untuk membatalkan langganan Anda, silakan menghubungi kami."
@@ -8832,7 +8835,7 @@
         "Alamat"
       ],
       "Address type": [
-        "Tipe alamat"
+        "Jenis alamat"
       ],
       "Addresses": [
         "Alamat"
@@ -8871,7 +8874,7 @@
         "Domain yang Diizinkan"
       ],
       "Amount": [
-        "Jumlah"
+        "Nominal"
       ],
       "Amount due": [
         "Jumlah tagihan"
@@ -9234,7 +9237,7 @@
         "Sembunyikan kata sandi"
       ],
       "I understand the risk": [
-        "Saya paham akan resikonya"
+        "Saya paham akan risikonya"
       ],
       "IF": [
         "JIKA"
@@ -10733,7 +10736,7 @@
         "Enkripsi end-to-end"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Unduhan P2P/BitTorrent cepat"
+        "Unduhan P2P/BitTorrent kilat"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Fitur gratis dari ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }"
@@ -10782,6 +10785,9 @@
       ],
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - fitur premium"
       ],
       "Passkeys supported": [
         "Passkey didukung"
@@ -11143,7 +11149,7 @@
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
+        "${ VPN_APP_NAME }: Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent kilat, dan masih banyak lagi."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Akses ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME } secara langsung dari desktop Anda"
@@ -12321,7 +12327,7 @@
         "Anda telah diangkat sebagai administrator organisasi **${ organizationName }** oleh"
       ],
       "You must privatize all users before generating a new organization key": [
-        "Anda harus menetapkan seluruh pengguna sebagai pengguna privat sebelum membuat kunci organisasi baru"
+        "Anda harus memprivatkan seluruh pengguna sebelum menghasilkan kunci organisasi baru"
       ],
       "You need access to the organization key to perform this operation.": [
         "Anda memerlukan akses ke kunci organisasi untuk melangsungkan tindakan ini."
@@ -12895,7 +12901,7 @@
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
       ],
       "Please generate keys before you try to change your password": [
-        "Silakan buat kunci terlebih dahulu sebelum Anda mencoba untuk mengubah kata sandi"
+        "Silakan hasilkan kunci sebelum Anda mencoba untuk mengubah kata sandi Anda"
       ]
     },
     "session_recovery:available:info": {
@@ -12976,9 +12982,19 @@
         "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Pengaturan ulang kata sandi dibatalkan"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Batalkan pengaturan ulang kata sandi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13148,7 +13164,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Keluar tanpa mengatur ulang kata sandi?"
+        "Keluar tanpa pengaturan ulang kata sandi?"
       ]
     },
     "session_recovery:status:info": {
@@ -13368,6 +13384,11 @@
       ],
       "Support online privacy": [
         "Dukung privasi online"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
       ]
     },
     "specialoffer: Link": {
@@ -13834,6 +13855,9 @@
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
       ],
+      "Manage your calendar": [
+        "Kelola kalender Anda"
+      ],
       "Online privacy, for your whole family": [
         "Privasi online, untuk seluruh keluarga Anda"
       ],
@@ -14171,6 +14195,9 @@
       "Verification successful": [
         "Verifikasi berhasil"
       ],
+      "You have successfully canceled your subscription.": [
+        "Anda telah berhasil membatalkan langganan Anda."
+      ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
       ]
@@ -14500,7 +14527,7 @@
         "Alokasikan ruang penyimpanan"
       ],
       "Amount": [
-        "Jumlah"
+        "Nominal"
       ],
       "Amount due": [
         "Jumlah tagihan"

@@ -499,6 +499,9 @@
       "Forgot password?": [
         "Забылі пароль?"
       ],
+      "Forgot recovery method?": [
+        "Забылі спосаб аднаўлення?"
+      ],
       "Generate": [
         "Згенерыраваць"
       ],
@@ -7055,6 +7058,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "У вас будзе магчымасць ${ signedInPasswordResetLink }, калі вы ўвайшлі на якой-небудзь іншай прыладзе."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
@@ -10225,6 +10231,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Атрымаць ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        "Даведка"
+      ],
       "Help translate": [
         "Дапамагчы з перакладам"
       ],
@@ -10260,6 +10269,9 @@
       ],
       "Paypal without credit card": [
         "PayPal без крэдытнай карткі"
+      ],
+      "perform a password reset from your active session": [
+        "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
       "Privacy policy": [
         "Палітыка прыватнасці"
@@ -14308,7 +14320,7 @@
         "Агульны аб'ём сховішча: ${ planMaxSpace }"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } дае вам доступ да ўсіх праграм і прэміяльных функцый. Прыватнасць уключана ў іх прадвызначана і такім чынам вы атрымаеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
+        "${ planName } дае вам доступ да ўсіх праграм і прэміяльных функцый. Прыватнасць уключана ў іх прадвызначана і такім чынам, вы атрымліваеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
@@ -15502,6 +15514,9 @@
       ],
       "For Windows": [
         "Для Windows"
+      ],
+      "Forgot recovery method": [
+        "Забылі спосаб аднаўлення"
       ],
       "Forward and auto-reply": [
         "Перасылка і аўтаматычны адказ"
