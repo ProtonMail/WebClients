@@ -43,6 +43,26 @@
         "Die E-Mail-Weiterleitung wird angehalten."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
@@ -412,6 +432,12 @@
       ],
       "Edit name": [
         "Name bearbeiten"
+      ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
+      "Edit organization name": [
+        "Organisationsname bearbeiten"
       ],
       "Edit password": [
         "Passwort bearbeiten"
@@ -1322,11 +1348,17 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surfe privat im Internet und blockiere Werbung"
+      ],
       "Keep your schedule private": [
         "Halte deinen Terminplan privat"
       ],
       "Protect your passwords and identity": [
         "Schütze deine Passwörter und Identität"
+      ],
+      "Safeguard your files and photos": [
+        "Sichere deine Dateien und Fotos"
       ],
       "Secure your communications": [
         "Sichere deine Kommunikation"
@@ -3444,7 +3476,7 @@
         "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Die Häufigkeit des Termins wurde abgebrochen."
+        "Dieses Ereignis wurde abgesagt."
       ],
       "This event occurrence was updated.": [
         "Die Häufigkeit des Termins wurde aktualisiert."
@@ -6025,6 +6057,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } ist Datenschutz, dem du vertrauen kannst, gewährleistet durch starke Verschlüsselung, quelloffenen Code und Schweizer Datenschutzgesetze. Wir glauben, dass niemand in der Lage sein sollte, deine Daten auszunutzen, Punkt. Unsere Technologie und unser Geschäft basieren auf dieser grundlegend stärkeren Definition von Privatsphäre."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } gibt deine Daten niemals an Dritte weiter. Die Daten stammen aus den eigenen Analysen von ${ BRAND_NAME } und Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } hat einen Import angehalten, weil es die Verbindung mit deinem anderen E-Mail-Anbieter verloren hat. Bitte verbinde dich erneut."
       ],
@@ -6327,6 +6362,9 @@
       ],
       "Amount due": [
         "Fälliger Betrag"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ein E-Mail-Alias funktioniert wie eine E-Mail-Adresse, verhindert aber Spam und hält deine tatsächliche E-Mail-Adresse und Identität verborgen."
       ],
       "An error occurred while communicating with the extension": [
         "Bei der Kommunikation mit der Erweiterung ist ein Fehler aufgetreten."
@@ -6845,6 +6883,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Erhalte Zugang, indem du ein Konto bei ${ BRAND_NAME } erstellst und die Einladung annimmst."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere persönliche Daten bekannt geworden sind. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gib dem Token einen beschreibenden Namen, z. B. den Dienst, für den du es verwenden möchtest und wähle eine deiner aktiven eigenen Domain-Adressen. Nur diese Adresse ist in der Lage, E-Mails mit diesem Token zu senden."
       ],
@@ -7027,6 +7068,9 @@
       "Just send them your personal referral link.": [
         "Sende ihnen einfach deinen persönlichen Empfehlungslink."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
+      ],
       "Key deletion is irreversible!": [
         "Das Löschen eines Schlüssels kann nicht rückgängig gemacht werden!"
       ],
@@ -7158,6 +7202,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield ist eine Werbeblocker-Funktion von ${ VPN_APP_NAME }, die dein Gerät vor Werbung, Trackern und Malware schützt."
       ],
       "New": [
         "Neu"
@@ -7495,6 +7542,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "SCIM-Integration deaktiviert"
+      ],
+      "SCIM token active": [
+        "SCIM-Token aktiv"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Schütze dein ${ BRAND_NAME }-Konto"
       ],
@@ -7625,6 +7678,9 @@
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Unterstützung für die Überwachung von benutzerdefinierten Domains und nicht-${ BRAND_NAME }-E-Mail-Adressen ist in Kürze verfügbar."
+      ],
       "support team": [
         "Support-Team"
       ],
@@ -7660,6 +7716,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Das Dark Web ist ein verborgener Teil des Internets, in dem gestohlene persönliche Informationen, wie z. B. Identitäten, gekauft und verkauft werden können."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Der E-Mail-Verifizierungslink ist abgelaufen. Bitte melde dich an, um den Verifizierungslink erneut zu versenden."
@@ -7961,6 +8020,9 @@
       "URL link": [
         "URL-Link"
       ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Verwende einen Passwort-Manager, um deine Passwörter zu erstellen und sicher zu speichern, um sichere Passwörter und einfachere Anmeldungen zu gewährleisten."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
       ],
@@ -8041,6 +8103,9 @@
       ],
       "We just sent you a new link.": [
         "Wir haben dir gerade einen neuen Link gesendet."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Wir überwachen das Dark Web auf Fälle, in denen deine persönlichen Daten (z. B. eine E-Mail-Adresse oder ein Kennwort, das auf einer Website eines Drittanbieters verwendet wird) geleakt wurden oder gefährdet sind."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
@@ -9102,6 +9167,9 @@
       "Current email": [
         "Aktuelle E-Mail-Adresse"
       ],
+      "Current organization identity": [
+        "Aktuelle Organisationsidentität"
+      ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
       ],
@@ -9402,6 +9470,9 @@
       "New mailbox password": [
         "Neues Postfachpasswort"
       ],
+      "New organization identity": [
+        "Neue Organisationsidentität"
+      ],
       "New organization password": [
         "Neues Organisationspasswort"
       ],
@@ -9449,6 +9520,9 @@
       ],
       "Or": [
         "Oder"
+      ],
+      "Organization identity": [
+        "Organisationsidentität"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -12883,8 +12957,14 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
@@ -13044,9 +13124,19 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Passwortzurücksetzung abgebrochen"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13449,6 +13539,11 @@
         "Unterstütze Online-Privatsphäre"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
@@ -13566,6 +13661,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Step in filter modal": {
@@ -13887,6 +13987,9 @@
       "Have a question?": [
         "Du hast eine Frage?"
       ],
+      "Helping activists in Hong Kong": [
+        "Hilfe für Aktivisten in Hongkong"
+      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Wie wir uns gewehrt haben, als ${ BRAND_NAME } zur Zielscheibe einer aggressiven Zensurkampagne wurde."
       ],
@@ -13932,6 +14035,9 @@
       "Sync files on devices": [
         "Synchronisiere Dateien mit Geräten"
       ],
+      "Unblocking internet access in Iran": [
+        "Entsperrung des Internetzugangs im Iran"
+      ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ],
@@ -13940,6 +14046,9 @@
       ],
       "Watch the interview": [
         "Schau dir das Interview an"
+      ],
+      "Yearly free storage bonuses": [
+        "Jährliche Boni für kostenlosen Speicherplatz"
       ],
       "Your own custom email domain": [
         "Deine eigene E-Mail-Domain"
@@ -13957,6 +14066,9 @@
       ],
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -14205,6 +14317,9 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
@@ -14845,6 +14960,9 @@
       "Edit invoice details": [
         "Rechnungsdetails bearbeiten"
       ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
       "Edit servers": [
         "Server bearbeiten"
       ],
@@ -15453,6 +15571,12 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
+      ],
+      "You have no open alerts": [
+        "Du hast keine offenen Warnungen"
+      ],
+      "You have no resolved alerts": [
+        "Du hast keine gelösten Warnungen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."

@@ -214,6 +214,9 @@
       "Color": [
         "Cor"
       ],
+      "Configure SAML": [
+        "Configurar SAML"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -841,6 +844,9 @@
       "Save ICS file": [
         "Guardar ficheiro ICS"
       ],
+      "Save SAML configuration": [
+        "Salvar a configuração SAML"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -858,6 +864,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
+      ],
+      "Select a calendar to export": [
+        "Selecione um calendário para exportar"
       ],
       "Select calendar view": [
         "Selecionar vista de calendário"
@@ -1306,6 +1315,11 @@
       ],
       "New email": [
         "Novo e-mail"
+      ]
+    },
+    "app-switcher": {
+      "Secure your communications": [
+        "Proteja as suas comunicações"
       ]
     },
     "Apps dropdown": {
@@ -3698,6 +3712,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
       ],
+      "Failed to process the logo": [
+        "Erro ao processar o logo"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "O ficheiro é demasiado grande. O seu logótipo tem de ter 30 KB ou menos."
       ],
@@ -5039,6 +5056,9 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Voltar para o inicio de sessão"
       ]
     },
     "Frequency of news": {
@@ -5914,6 +5934,10 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
+      "Affected user is on row": [
+        "O utilizador afetado está na linha.",
+        "Os utilizadores afetados estão nas linhas."
+      ],
       "Align left": [
         "Alinhar à esquerda"
       ],
@@ -6228,6 +6252,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "DNS TXT record": [
+        "Registo DNS TXT"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
@@ -7005,6 +7032,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "A integração SCIM foi desativada."
+      ],
+      "SCIM token active": [
+        "O token SCIM é ativo."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Garanta a sua Conta ${ BRAND_NAME }"
@@ -9116,6 +9149,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Recuperação a partir de um dispositivo"
+      ],
       "Recovery phone number": [
         "Número de telefone de recuperação"
       ],
@@ -9333,14 +9369,23 @@
       "General": [
         "Geral"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Obtenha ${ BRAND_NAME } Pass"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "Obtenha o ${ VPN_APP_NAME }"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Help translate": [
         "Ajude a traduzir"
       ],
       "here": [
         "aqui"
+      ],
+      "How does monitoring work?": [
+        "Como funciona o monitoramento?"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -9500,6 +9545,9 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
+      ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
       ]
@@ -9507,6 +9555,9 @@
     "mailtrial2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
+      ],
+      "for your first month": [
+        "para o seu primeiro mês"
       ],
       "Get ${ planName } for ${ price }": [
         "Obtenha ${ planName } para ${ price }"
@@ -10005,6 +10056,9 @@
       "Advanced sharing security": [
         "Segurança avançada de partilha"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],
@@ -10013,6 +10067,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Preenchimento automático de cartões de crédito (em breve)"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
@@ -10232,6 +10289,9 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited vault sharing": [
+        "Partilha de cofre ilimitada"
       ],
       "Unlimited vaults": [
         "Cofres ilimitados"
@@ -11103,6 +11163,11 @@
         "O seu plano inclui um máximo de mais ${ humanReadableAvailableSpace } de armazenamento."
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Ficheiro em formato PNG ou JPEG"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (para Debian/Ubuntu)"
@@ -11148,6 +11213,9 @@
       ],
       "Create another account instead": [
         "Crie outra conta em vez disso"
+      ],
+      "Download PDF ${ size }": [
+        "Descarregar PDF ${ size }"
       ],
       "Keep this plan": [
         "Manter este plano"
@@ -11394,6 +11462,15 @@
     "passwordless": {
       "Change organization key": [
         "Alterar a chave da organização"
+      ],
+      "Organization key activated": [
+        "A chave da organização foi ativada."
+      ],
+      "Organization key restored": [
+        "A chave da organização foi restaurada."
+      ],
+      "Organization key updated": [
+        "A chave da organização foi atualizada."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
@@ -11785,6 +11862,9 @@
       "Disable SCIM": [
         "Desativar SCIM"
       ],
+      "Disable SCIM integration": [
+        "Desativar a integração SCIM"
+      ],
       "Generate new token": [
         "Gerar um novo token"
       ],
@@ -11798,8 +11878,19 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "URL base do SCIM"
+      ],
       "SCIM token": [
         "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Desativar a integração SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Gerar um novo token SCIM?"
       ]
     },
     "Select file": {
@@ -11876,6 +11967,9 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
       ],
@@ -11930,6 +12024,11 @@
         "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição da palavra-passe foi cancelada."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
@@ -11976,6 +12075,9 @@
       "${ gracePeriodHoursRemaining } more hour": [
         "${ gracePeriodHoursRemaining } hora restante",
         "${ gracePeriodHoursRemaining } horas restantes"
+      ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
@@ -12667,11 +12769,20 @@
       "Close": [
         "Fechar"
       ],
+      "Extra storage and bonuses": [
+        "Armazenamento adicional e bónus"
+      ],
       "Have a question?": [
         "Tem uma pergunta?"
       ],
+      "I still want to cancel": [
+        "Eu ainda quero cancelar."
+      ],
       "Keep ${ planName }": [
         "Manter ${ planName }"
+      ],
+      "Manage your calendar": [
+        "Gerencie o seu calendário"
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
@@ -12684,6 +12795,12 @@
       ],
       "Resubscribe": [
         "Renovar a subscrição"
+      ],
+      "Subscription canceled": [
+        "A subscrição foi cancelada."
+      ],
+      "Sync files on devices": [
+        "Sincronizar ficheiros nos dispositivos"
       ],
       "Version history": [
         "Histórico das versões"
@@ -12713,6 +12830,9 @@
       ],
       "Upgrade your productivity": [
         "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
       ]
     },
     "Subscription renewal state": {
@@ -13483,6 +13603,9 @@
       "Delete account": [
         "Eliminar conta"
       ],
+      "Delete address permanently?": [
+        "Eliminar o endereço permanentemente?"
+      ],
       "Delete calendar": [
         "Eliminar um calendário"
       ],
@@ -13703,6 +13826,9 @@
       ],
       "How does it work?": [
         "Como funciona?"
+      ],
+      "How to choose a good logo": [
+        "Como escolher um bom logo"
       ],
       "How to refer a friend and get credits": [
         "Como recomendar um amigo e obter créditos"
@@ -14047,6 +14173,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Support ticket closed": [
+        "O ticket de suporte foi fechado."
+      ],
       "Switch account": [
         "Trocar de conta"
       ],
@@ -14134,11 +14263,20 @@
       "What is an alias?": [
         "O que é um alias?"
       ],
+      "What is the dark web?": [
+        "O que é a dark web?"
+      ],
       "What would you like to import?": [
         "O que gostaria de importar?"
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"
+      ],
+      "You have no open alerts": [
+        "Não há alertas abertos."
+      ],
+      "You have no resolved alerts": [
+        "Não há alertas resolvidos."
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
@@ -14319,6 +14457,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "A ativação dos registos avançados regista o endereço IP de cada evento no registo de segurança."
+      ],
+      "Feature in early access": [
+        "Funcionalidade em acesso antecipado"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."

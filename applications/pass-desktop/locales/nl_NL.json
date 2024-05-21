@@ -498,7 +498,7 @@
         "Dark Web Monitoring is beschikbaar met een betaald abonnement. Upgrade voor directe toegang."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Ontvang een melding als je e-mail, wachtwoord of andere persoonlijke gegevens zijn gelekt."
+        "Ontvang een melding als uw e-mail, wachtwoord of andere persoonlijke gegevens zijn gelekt."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
@@ -528,7 +528,7 @@
         "Met ${ PASS_SHORT_APP_NAME } Monitor, blijf bedreigingen voor door onmiddellijke waarschuwingen te krijgen als uw inloggegevens in gevaar komen. Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "Je e-mailadressen zijn gelekt in ten minste 1 datalek."
+        "Uw e-mailadressen zijn gelekt in ten minste 1 datalek."
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Uw persoonlijke informatie is uitgelekt in een data-inbreuk van een service van derden."
@@ -676,7 +676,7 @@
         "Kan item niet losmaken"
       ],
       "Failed to update monitoring settings": [
-        "Bijwerken van monitoring-instellingen mislukt"
+        "Bijwerken van monitoringinstellingen mislukt"
       ],
       "Failed to verify email address": [
         "E-mailadres verifiëren mislukt"
@@ -1414,9 +1414,6 @@
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "De aangepaste e-mail zal worden verzonden naar ${ href } om te monitoren. Er worden geen andere gegevens naar HIBP verzonden."
-      ],
       "The export will only contain vaults that you own.": [
         "De export zal alleen kluizen bevatten die u heeft."
       ],
@@ -2069,6 +2066,14 @@
         "U heeft ${ semiboldText } geselecteerd in deze kluis"
       ]
     },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Tweestapsauthenticatie vereist voor organisatie"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integratie (binnenkort beschikbaar)"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
@@ -2355,7 +2360,7 @@
         "Geen uitgesloten onderdelen"
       ],
       "No inactive 2FAs": [
-        "Geen inactieve 2FAs"
+        "Geen inactieve 2FA's"
       ],
       "No insecure passwords": [
         "Geen onveilige wachtwoorden"

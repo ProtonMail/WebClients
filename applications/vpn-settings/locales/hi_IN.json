@@ -1092,7 +1092,7 @@
         "केप वर्दे"
       ],
       "Cayman Islands": [
-        "कैमेन द्वीपसमूह"
+        "केमैन आइलैंड्स"
       ],
       "Central African Republic": [
         "मध्य अफ्रीकी गणराज्य"
@@ -1110,7 +1110,7 @@
         "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
-        "कोकोस (कीलिंग) द्वीप समूह"
+        "कोकोस (कीलिंग) आइलैंड्स"
       ],
       "Colombia": [
         "कोलंबिया"
@@ -1146,7 +1146,7 @@
         "चेक रिपब्लिक"
       ],
       "Côte d'Ivoire": [
-        "कोटे डी आइवर\""
+        "कोटे डी आइवर"
       ],
       "Denmark": [
         "डेनमार्क"
@@ -1206,7 +1206,7 @@
         "फ्रेंच गयाना"
       ],
       "French Polynesia": [
-        "फ़्रेंच पोलिनेशिया"
+        "फ़्रानसीसी पोलिनेशिया"
       ],
       "French Southern Territories": [
         "फ़्रांसीसी दक्षिणी क्षेत्र"
@@ -1467,7 +1467,7 @@
         "उत्तर मैसिडोनिया"
       ],
       "Northern Mariana Islands": [
-        "उत्तरी मारियाना द्वीपसमूह"
+        "उत्तरी मैरियाना आइलैंड्स"
       ],
       "Norway": [
         "नॉर्वे"
@@ -1590,7 +1590,7 @@
         "सोमालिया"
       ],
       "South Africa": [
-        "दक्षिण अफ़्रीका"
+        "दक्षिण अफ्रीका"
       ],
       "South Georgia and the South Sandwich Islands": [
         "दक्षिण जॉर्जिया और दक्षिण सैंडविच आइलैंड"
@@ -1707,13 +1707,13 @@
         "वियतनाम"
       ],
       "Virgin Islands, British": [
-        "वर्जिन द्वीप समूह, ब्रिटिश"
+        "वर्जिन आइलैंड्स, ब्रिटिश"
       ],
       "Virgin Islands, U.S.": [
-        "वर्जिन आइलैंड्स, यू.एस."
+        "वर्जिन आइलैंड्स, अमेरिका"
       ],
       "Wallis and Futuna": [
-        "वालीस और फ्युटुना"
+        "वालिस और फ़्युटुना"
       ],
       "Western Sahara": [
         "पश्चिमी सहारा"
@@ -2047,7 +2047,7 @@
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "आपके खाते या संगठन का इनवॉइस बकाया है. कृपया सभी बकाया चालानों का भुगतान करें।"
+        "आपके खाते या संगठन की रसीद लंबित है। कृपया सभी बकाया रसीदों का भुगतान करें।"
       ]
     },
     "Error importing users": {
@@ -2454,6 +2454,9 @@
       "Large": [
         "बड़ा"
       ],
+      "Medium (recommended)": [
+        "मध्यम (सुझावित)"
+      ],
       "Small": [
         "छोटा"
       ],
@@ -2816,6 +2819,9 @@
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
+      ],
       "Dedicated servers": [
         "विशेष सर्वर"
       ],
@@ -2868,7 +2874,7 @@
         "${ userName } यूज़र के लिए पासवर्ड डाले।"
       ],
       "Enter the code from your authenticator app": [
-        "अपने प्रमाणीकरण अनुप्रयोग में से कूटक लिखें"
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "अपने फ़ोन नंबर ${ phone } पर भेजे गए कोड को दर्ज करें।"
@@ -3021,7 +3027,7 @@
         "लोड हो रहा है"
       ],
       "Loading ${ appName }": [
-        "लोड हो रहा है ${ appName }"
+        "${ appName } लोड हो रहा है"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "कैलेंडर लोड हो रहा है, कृपया प्रतीक्षा करें। आपको एक नए टैब में हमारे शेड्यूलिंग प्लेटफ़ॉर्म Calendly पर पुनः निर्देशित किया जाएगा।"
@@ -3597,7 +3603,7 @@
         "आपका कोई चालान नहीं है।"
       ],
       "You have no saved payment methods.": [
-        "आपके पास कोई भुगतान विधि नहीं है।"
+        "आपने कोई भी भुगतान विधि नहीं जोड़ी है"
       ],
       "You may be redirected to your bank’s website.": [
         "आप अपने बैंक की वेबसाइट पे रीडायरेक्ट हो सकते हो।"
@@ -4097,6 +4103,9 @@
       ],
       "Subscription options": [
         "सदस्यता विकल्प"
+      ],
+      "Synchronize with system": [
+        "सिस्टम के साथ तालमेल बिठाएं"
       ],
       "System information": [
         "प्रणाली की जानकारी"
@@ -5839,7 +5848,7 @@
         "64 देश"
       ],
       "All paid Mail and Calendar features": [
-        "सारे प्रीमियम मेल और कैलेंडर सुविधाएं"
+        "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
       ],
       "High speed VPN": [
         "तेज़ वीपीएन"
@@ -6190,10 +6199,10 @@
         "न्योता भेजा गया"
       ],
       "Invoice customized": [
-        "चालान अनुकूलित"
+        "अनुकूलित रसीद"
       ],
       "Invoice paid": [
-        "चालान भुगतान किया"
+        "रसीद का भुगतान हो गया"
       ],
       "Keys updated": [
         "कुंजी अद्यतन की गई"
@@ -6529,6 +6538,9 @@
       "Date": [
         "दिनांक"
       ],
+      "Day theme": [
+        "दिन का थीम"
+      ],
       "Delete": [
         "मिटाएं"
       ],
@@ -6637,7 +6649,7 @@
         "अवैध सत्यापन कोड"
       ],
       "Invoices": [
-        "चालान"
+        "रसीद"
       ],
       "Login password": [
         "लॉग इन पासवर्ड"
@@ -6650,6 +6662,9 @@
       ],
       "Next": [
         "अगला"
+      ],
+      "Night theme": [
+        "रात की थीम"
       ],
       "No recovery method": [
         "कोई पुनर्प्राप्ति विधि नहीं"
@@ -6712,7 +6727,7 @@
         "सलाह"
       ],
       "Recovery": [
-        "स्वास्थ्य लाभ"
+        "पुनर्प्राप्ति"
       ],
       "Remove user?": [
         "यूज़र हटाएं?"
@@ -6910,6 +6925,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "जब आपका सिस्टम \"डार्क मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "जब आपका सिस्टम \"लाइट मोड\" पर सेट होगा, तो चुना हुआ थीम सक्रिय हो जाएगी"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"

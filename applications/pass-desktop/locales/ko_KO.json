@@ -544,7 +544,7 @@
         "이 서비스는 2단계 인증을 지원합니다. 향상된 계정 보안을 위해 활성화 해주세요."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "${ PASS_SHORT_APP_NAME } 모니터를 사용하면 자격 증명이 손상된 경우 즉각적인 경고를 받아 위협보다 앞서 나갈 수 있습니다. 고급 보안 기능과 자세한 로그를 잠금 해제하여 온라인 신원을 보호하세요."
+        "${ PASS_SHORT_APP_NAME } Monitor를 사용하여 자격 증명이 훼손되었을 때 위협을 앞서나가십시오. 당신의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제하십시오."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "사용자의 이메일 주소가 하나 이상의 데이터 침해에 처해있습니다."
@@ -1417,9 +1417,6 @@
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "커스텀 이메일이 모니터링을 위해 ${ href }으로 보내질 것입니다. 그 외 데이터는 보내지 않습니다."
-      ],
       "The export will only contain vaults that you own.": [
         "내보낼 시 개인이 소유한 금고만 포함됩니다."
       ],
@@ -2064,6 +2061,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "이 금고애서 ${ semiboldText }개 선택했습니다."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "조직에 2단계 인증 요구"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO 통합 (출시 예정)"
       ]
     },
     "Notification": {

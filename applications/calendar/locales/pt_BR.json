@@ -7723,9 +7723,19 @@
         "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7950,6 +7960,11 @@
         "Suporte à privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -8079,6 +8094,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Agora você pode ver quando os participantes estão livres para comparecer à sua reunião."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Cancelando a sua assinatura"
       ]
     },
     "Storage": {
@@ -8499,6 +8519,9 @@
       ],
       "Verification successful": [
         "Verificado com sucesso"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"

@@ -32,6 +32,21 @@
       "Back": [
         "Zpět"
       ],
+      "Bulk delete items from trash": [
+        "Hromadné smazání položek z koše"
+      ],
+      "Bulk move items to another vault": [
+        "Hromadné přesunutí položek do jiného trezoru"
+      ],
+      "Bulk move items to trash": [
+        "Hromadný přesun položek do koše"
+      ],
+      "Bulk restore items from trash": [
+        "Hromadné obnovení položek z koše"
+      ],
+      "Bulk select items": [
+        "Hromadný výběr položek"
+      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -311,6 +326,9 @@
       "Resend code": [
         "Znovu odeslat kód"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Znovu odeslat kód (za ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Znovu poslat pozvánku"
       ],
@@ -331,6 +349,9 @@
       ],
       "Saving": [
         "Ukládání"
+      ],
+      "See all": [
+        "Zobrazit vše"
       ],
       "See members": [
         "Zobrazit členy"
@@ -913,6 +934,9 @@
       "Access successfully confirmed": [
         "Přístup úspěšně potvrzen"
       ],
+      "Add your custom email address to monitor :": [
+        "Přidejte vlastní e-mailovou adresu pro sledování :"
+      ],
       "Admin": [
         "Správce"
       ],
@@ -924,6 +948,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasy s vlastními doménami nejsou sledovány, přidejte je prosím jako vlastní e-mail pro sledování."
       ],
       "All breaches for this address were resolved": [
         "Všechny úniky informací pro tuto adresu byly vyřešeny"
@@ -957,6 +984,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
+      ],
+      "Breaches detected": [
+        "Zjištěny úniky informací"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Přeneste svá stávající hesla do ${ BRAND_NAME }."
@@ -1029,6 +1059,9 @@
       ],
       "Emptying trash...": [
         "Vysypávání koše..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Povolit ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
@@ -1150,6 +1183,9 @@
       "Item successfully unpinned": [
         "Položka úspěšně odepnuta"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Poslední únik informací v(e) ${ formattedDate }"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Zjistěte, jak ${ staySaferOnlineLink }"
       ],
@@ -1258,6 +1294,9 @@
       "Pinning item...": [
         "Připínání položky..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Zkontrolujte prosím složku se spamem nebo zkuste kód odeslat znovu."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
       ],
@@ -1347,6 +1386,9 @@
       ],
       "Successfully synced all vaults": [
         "Všechny trezory byly úspěšně synchronizovány"
+      ],
+      "Suggested": [
+        "Návrhy"
       ],
       "Switch to another vault or create an item in this vault": [
         "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
@@ -1489,6 +1531,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "U těchto e-mailových adres budete informováni o únicích informací."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Na tuto e-mailovou adresu budete informováni o narušení bezpečnosti údajů."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "U těchto e-mailových adres již nebudete informováni o únicích informací."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Na této e-mailové adrese již nebudete informováni o narušení bezpečnosti údajů."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
       ],
@@ -1514,6 +1568,9 @@
         "${ config.options.wordCount } slova",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } verze"
       ],
       "${ usageCount } login": [
         "${ usageCount } přihlášení",
@@ -1623,11 +1680,20 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Created at": [
+        "Vytvořeno v"
+      ],
       "Date": [
         "Datum"
       ],
       "Device": [
         "Zařízení"
+      ],
+      "Disable data export for team members": [
+        "Deaktivovat export dat pro členy týmu"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázat sdílení mimo organizaci"
       ],
       "Display": [
         "Zobrazení"
@@ -1655,6 +1721,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Exporting policy": [
+        "Exportovat politiku"
       ],
       "Field name": [
         "Název pole"
@@ -1779,6 +1848,9 @@
       "No history": [
         "Žádná historie"
       ],
+      "None": [
+        "Žádné"
+      ],
       "Note": [
         "Poznámka"
       ],
@@ -1856,6 +1928,9 @@
       ],
       "Set PIN code": [
         "Nastavit PIN kód"
+      ],
+      "Sharing policy": [
+        "Politika sdílení"
       ],
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
@@ -1992,6 +2067,17 @@
         "${ count } položky",
         "${ count } položek",
         "${ count } položek"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "V tomto trezoru jste vybrali ${ semiboldText }"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Vyžaduje 2FA pro organizaci"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO integrace (již brzy)"
       ]
     },
     "Notification": {
@@ -2062,6 +2148,9 @@
       "Full Name": [
         "Celé jméno"
       ],
+      "me@example.com": [
+        "ja@priklad.com"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -2115,6 +2204,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a zjištěn 1 další potenciální únik. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
       ]
@@ -2167,8 +2265,14 @@
       "Current version": [
         "Aktuální verze"
       ],
+      "Custom addresses": [
+        "Vlastní adresy"
+      ],
       "Custom email monitoring": [
         "Sledování vlastního e-mailu"
+      ],
+      "Custom emails": [
+        "Vlastní e-maily"
       ],
       "Dark Web Monitoring": [
         "Sledování Dark webu"
@@ -2263,8 +2367,14 @@
       "No inactive 2FAs": [
         "Žádné neaktivní 2FA"
       ],
+      "No insecure passwords": [
+        "Žádná nezabezpečená hesla"
+      ],
       "No items selected": [
         "Žádné vybrané položky"
+      ],
+      "No reused passwords": [
+        "Žádná opakovaně používaná hesla"
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"

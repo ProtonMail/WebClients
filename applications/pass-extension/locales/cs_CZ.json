@@ -38,6 +38,21 @@
       "Back": [
         "Zpět"
       ],
+      "Bulk delete items from trash": [
+        "Hromadné smazání položek z koše"
+      ],
+      "Bulk move items to another vault": [
+        "Hromadné přesunutí položek do jiného trezoru"
+      ],
+      "Bulk move items to trash": [
+        "Hromadný přesun položek do koše"
+      ],
+      "Bulk restore items from trash": [
+        "Hromadné obnovení položek z koše"
+      ],
+      "Bulk select items": [
+        "Hromadný výběr položek"
+      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -361,6 +376,9 @@
       ],
       "Saving passkey...": [
         "Ukládání přístupového klíče..."
+      ],
+      "See all": [
+        "Zobrazit vše"
       ],
       "See members": [
         "Zobrazit členy"
@@ -920,14 +938,23 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vás vyzve, jakmile se vygenerovaná hesla automaticky vyplní."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vás vyzve k uložení nebo aktualizaci přihlašovacích údajů."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } navrhne ověřování pomocí uložených přístupových klíčů"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } bude navrhovat vytváření e-mailových aliasů v registračních formulářích."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } bude navrhovat vytváření silných hesel v registračních formulářích."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } navrhne uložení přístupových klíčů."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspěšně deaktivován"
@@ -1019,8 +1046,17 @@
       "Can view items in this vault.": [
         "Může zobrazovat položky v tomto trezoru."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Výběr uloženého přístupového klíče pro přihlášení do ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Otevřete kdykoli kliknutím na ikonu."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Zavřete toto okno, abyste mohli použít bezpečnostní klíč nebo jiný přístupový klíč."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Zavřete toto okno, abyste mohli použít jiného správce přístupových klíčů."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahopřejeme, váš přístup byl potvrzen"
@@ -1256,6 +1292,9 @@
       "Pass Plus trial": [
         "Zkušební verze Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Přihlášení pomocí přístupového klíče"
+      ],
       "Password copied": [
         "Heslo zkopírováno"
       ],
@@ -1433,6 +1472,9 @@
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Odemkněte ${ PASS_APP_NAME } pomocí kódu PIN a získejte přístup ke svým přístupovým klíčům"
+      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
@@ -1549,6 +1591,12 @@
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } verze"
+      ],
       "1 hour": [
         "1 hodina"
       ],
@@ -1602,6 +1650,9 @@
       ],
       "Application logs": [
         "Logy aplikace"
+      ],
+      "Authenticate with passkeys": [
+        "Ověření pomocí přístupových klíčů"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Auto uzamčení ${ PASS_APP_NAME }"
@@ -1663,8 +1714,17 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Created at": [
+        "Vytvořeno v"
+      ],
       "Device": [
         "Zařízení"
+      ],
+      "Disable data export for team members": [
+        "Deaktivovat export dat pro členy týmu"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázat sdílení mimo organizaci"
       ],
       "Display": [
         "Zobrazení"
@@ -1692,6 +1752,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Exporting policy": [
+        "Exportovat politiku"
       ],
       "Field name": [
         "Název pole"
@@ -1831,6 +1894,9 @@
       "Passkey": [
         "Přístupový klíč"
       ],
+      "Passkeys": [
+        "Přístupové klíče"
+      ],
       "Passphrase": [
         "Heslo"
       ],
@@ -1857,6 +1923,9 @@
       ],
       "Prompt for auto-save": [
         "Výzva automatického ukládání"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Výzva k automatickému uložení při generování hesel"
       ],
       "Rate us": [
         "Ohodnoťte nás"
@@ -1902,6 +1971,9 @@
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Sharing policy": [
+        "Politika sdílení"
       ],
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
@@ -2019,6 +2091,9 @@
         "${ count } položky",
         "${ count } položek",
         "${ count } položek"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "V tomto trezoru jste vybrali ${ semiboldText }"
       ]
     },
     "Onboarding": {

@@ -1156,10 +1156,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -5589,6 +5585,9 @@
       "and": [
         "y"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Se cancelará cualquier programación o mensajes pausados."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en esta carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
@@ -6475,6 +6474,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En pausa hasta mañana a las ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Se cancelará la pausa de esta conversación."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Este mensaje no existe o ya ha expirado."
@@ -10159,9 +10161,19 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "El restablecimiento de contraseña ha sido cancelado."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10384,6 +10396,11 @@
         "Apoya la privacidad en línea"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -10516,6 +10533,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Estamos cancelando la suscripción. Espera."
       ]
     },
     "Status": {
@@ -10985,6 +11007,9 @@
       "Message deleted": [
         "Mensaje eliminado"
       ],
+      "Message expiration canceled": [
+        "Expiración del mensaje cancelada."
+      ],
       "Message marked as legitimate": [
         "Mensaje marcado como legítimo"
       ],
@@ -11061,6 +11086,9 @@
       ],
       "Verification successful": [
         "Verificación completada"
+      ],
+      "You have successfully canceled your subscription.": [
+        "La suscripción ha sido cancelada."
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."

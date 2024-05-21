@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copia la clau al porta-retalls"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versió al porta-retalls"
+      ],
       "Create": [
         "Crear"
       ],
@@ -199,6 +202,9 @@
       ],
       "Edit name": [
         "Edita el nom"
+      ],
+      "Edit organization name": [
+        "Edita el nom de l’organització"
       ],
       "Edit password": [
         "Edita la contrasenya"
@@ -421,6 +427,9 @@
       ],
       "Save address": [
         "Desar adreça"
+      ],
+      "Save SAML configuration": [
+        "Desa la configuració SAML"
       ],
       "Search": [
         "Cerca"
@@ -693,7 +702,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Això desconnectarà tots els routers i clients que utilitzin aquest certificat."
+        "Això desconnectarà tots els rúters i clients que utilitzin aquest certificat."
       ]
     },
     "app-switcher": {
@@ -2030,7 +2039,7 @@
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } és el seu nom d'usuari. Per crear ${ emailAddress }, vagi a Configuració > Missatges i redacció > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
@@ -2069,7 +2078,7 @@
         "El fitxer és massa gran. El logo ha de tenir 30 KB o menys."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Si el temps a la vostra televisió s'ha exhaurit, premeu a Refresca a la vostra televisió i escriviu-hi el codi un altre cop."
+        "Si el temps a la vostra televisió s'ha exhaurit, premeu-hi a Refresca i escriviu-hi el codi un altre cop."
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "El tipus de fitxer és incorrecte. Carregueu un fitxer en format PNG o JPEG."
@@ -3057,7 +3066,7 @@
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -3159,7 +3168,7 @@
         "Preferència de correu desada"
       ],
       "Enable single sign-on to keep your organization safe": [
-        "Activi l'inici de sessió únic per mantenir la seva organització segura"
+        "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
       ],
       "Enter key manually instead": [
         "Introduir clau manualment"
@@ -3312,7 +3321,7 @@
         "Obteniu més informació sobre les passarel·les"
       ],
       "Lean more about single sign-on": [
-        "Obtingui més informació sobre l'inici de sessió únic"
+        "Obteniu més informació sobre l'inici de sessió únic"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
@@ -3808,6 +3817,9 @@
       ],
       "Version ${ version }": [
         "Versió ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -4370,6 +4382,9 @@
       "New mailbox password": [
         "Nova contrasenya de la bústia"
       ],
+      "New organization identity": [
+        "Nova identitat de l'organització"
+      ],
       "New organization password": [
         "Nova contrasenya de l'organització"
       ],
@@ -4399,6 +4414,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Organization identity": [
+        "Identitat de l'organització"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -4622,8 +4640,14 @@
       "Create account": [
         "Crea un compte"
       ],
+      "Forgot password?": [
+        "Contrasenya oblidada?"
+      ],
       "Forgot username?": [
         "Heu oblidat el nom d'usuari?"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Help translate": [
         "Ajudeu a traduir"
@@ -4685,13 +4709,13 @@
         "El xat en viu està disponible amb ${ planName }"
       ],
       "Open support form": [
-        "Formulari de suport gratuït"
+        "Obri el formulari de suport"
       ],
       "Upgrade subscription": [
         "Millora la subscripció"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Milloreu el vostre pla per a desbloquejar el xat de suport i altres característiques prèmium, o utilitza el nostre formulari de suport gratuït per a reportar el teu problema."
+        "Milloreu el vostre pla per a desbloquejar el suport per xat i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per a informar del vostre problema."
       ]
     },
     "Loading info": {
@@ -4780,7 +4804,7 @@
         "Activa l'usuari"
       ],
       "Add address": [
-        "Afegeixi una adreça"
+        "Afegeix una adreça"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -4825,7 +4849,7 @@
         "Troba el vostre nom d'usuari del compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
@@ -4834,7 +4858,7 @@
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicieu la sessió al compte de ${ appName }"
+        "Inicieu la sessió per accedir al vostre compte de ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -5903,6 +5927,9 @@
       "Preparing your Recovery Kit": [
         "S'està preparant el vostre kit de recuperació"
       ],
+      "Secure vault sharing": [
+        "Compartició segura de caixes fortes"
+      ],
       "Updating your account": [
         "S'està actualitzant el compte"
       ],
@@ -6442,6 +6469,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7019,11 +7051,20 @@
       "No ads or tracking": [
         "Sense anuncis ni rastreig"
       ],
+      "Support our mission": [
+        "Dona suport a la nostra missió"
+      ],
       "Upgrade": [
         "Millora"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {

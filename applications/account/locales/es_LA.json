@@ -499,6 +499,9 @@
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
+      "Forgot recovery method?": [
+        "¿Olvidó el método de recuperación?"
+      ],
       "Generate": [
         "Generar"
       ],
@@ -6925,6 +6928,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Si ha iniciado sesión en otro lugar, es posible que pueda ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
       ],
@@ -10051,6 +10057,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Obtener ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "Help translate": [
         "Ayúdenos a traducir"
       ],
@@ -10086,6 +10095,9 @@
       ],
       "Paypal without credit card": [
         "PayPal sin tarjeta de crédito"
+      ],
+      "perform a password reset from your active session": [
+        "realizar un restablecimiento de contraseña desde su sesión activa"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -13160,7 +13172,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
+        "La solicitud de restablecimiento de contraseña fue cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -15152,6 +15164,9 @@
       ],
       "For Windows": [
         "Para Windows"
+      ],
+      "Forgot recovery method": [
+        "Olvidó el método de recuperación"
       ],
       "Forward and auto-reply": [
         "Reenvío y respuesta automática"

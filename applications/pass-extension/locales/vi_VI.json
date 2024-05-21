@@ -593,7 +593,7 @@
         "LastPass sẽ xuất ra một tập tin CSV bị hỏng nếu bất kỳ trường nội dung nào bạn chứa các dấu phẩy, dấu ngoặc kép hoặc nhiều dòng không mong đợi."
       ],
       "Missing passkey": [
-        "Thiếu passkey"
+        "Thiếu khóa truy cập"
       ],
       "Moving item failed": [
         "Dời nội dung thất bại"
@@ -668,7 +668,7 @@
         "Nội dung không xác định"
       ],
       "Unknown passkey": [
-        "Passkey không xác định"
+        "Khóa truy cập không xác định"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Định dạng tệp ${ PASS_APP_NAME } không được hỗ trợ"
@@ -768,6 +768,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Một phiên bản mới của ${ PASS_APP_NAME } đã có. Cập nhật nó để tận hưởng các tính năng mới nhất và các bản sửa lỗi."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Một khóa truy cập cho \"${ username }\" sẽ được lưu và có sẵn trên những thiết bị mà ${ PASS_APP_NAME } được cài đặt."
+      ],
       "Access successfully confirmed": [
         "Xác thực truy cập thành công"
       ],
@@ -834,8 +837,14 @@
       "Can view items in this vault.": [
         "Cho phép xem nội dung trong kho lưu trữ này."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Chọn một khóa đăng nhập đã lưu để đăng nhập vào ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Nhấn vào biểu tượng để mở nó bất kỳ lúc nào."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Đóng cửa sổ này để dùng một trình quản lý khóa truy cập khác."
       ],
       "Congratulations, your access has been confirmed": [
         "Chúc mừng, truy cập của bạn đã được xác nhận"
@@ -1008,6 +1017,9 @@
       "Pass Plus trial": [
         "Dùng thử Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Đăng nhập bằng khóa truy cập"
+      ],
       "Password copied": [
         "Đã sao chép mật khẩu"
       ],
@@ -1058,6 +1070,9 @@
       ],
       "Save login": [
         "Lưu đăng nhập"
+      ],
+      "Save passkey": [
+        "Lưu khóa truy cập"
       ],
       "Select an existing login item to update.": [
         "Chọn một nội dung đăng nhập hiện có để cập nhật."
@@ -1151,6 +1166,12 @@
       ],
       "Unable to copy to clipboard": [
         "Không thể sao chép vào bộ nhớ tạm"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Mở khóa ${ PASS_APP_NAME } với mã PIN của bạn để truy cập các khóa truy cập của bạn"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Mở khóa ${ PASS_APP_NAME } với mã PIN của bạn để lưu khóa truy cập này"
       ],
       "Unlock it with your PIN to access the settings": [
         "Mở khóa bằng mã PIN của bạn để truy cập các cài đặt"
@@ -1518,10 +1539,10 @@
         "Tổ chức"
       ],
       "Passkey": [
-        "Passkey"
+        "Khóa truy cập"
       ],
       "Passkeys": [
-        "Passkeys"
+        "Các khóa truy cập"
       ],
       "Passphrase": [
         "Cụm từ mật khẩu"
@@ -1563,7 +1584,7 @@
         "Hiện mật khẩu"
       ],
       "Save passkeys": [
-        "Lưu passkeys"
+        "Lưu các khóa truy cập"
       ],
       "Security": [
         "Bảo mật"
@@ -2033,7 +2054,7 @@
         "Không có nội dung phù hợp"
       ],
       "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Không tìm thấy passkey nào. Lưu các passkey của bạn ở ${ PASS_APP_NAME } để đăng nhập vào ${ domain }."
+        "Không tìm thấy khóa truy cập nào. Lưu các khóa truy cập của bạn ở ${ PASS_APP_NAME } để đăng nhập vào ${ domain }."
       ],
       "No password manager selected": [
         "Không có trình quản lý mật khẩu nào được chọn"

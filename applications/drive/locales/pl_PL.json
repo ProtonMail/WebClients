@@ -210,6 +210,9 @@
       "Copy link": [
         "Kopiuj link"
       ],
+      "Copy version number to clipboard": [
+        "Kopiuj numer wersji do schowka"
+      ],
       "Create": [
         "Utwórz"
       ],
@@ -358,7 +361,7 @@
         "Dopasuj do okna"
       ],
       "Forgot password?": [
-        "Przypomnij hasło?"
+        "Nie pamiętasz hasła?"
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
@@ -516,6 +519,12 @@
       "New": [
         "Nowy"
       ],
+      "New document": [
+        "Nowy dokument"
+      ],
+      "New folder": [
+        "Nowy folder"
+      ],
       "New message": [
         "Nowa wiadomość"
       ],
@@ -536,6 +545,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Otwórz w Docs"
       ],
       "Open navigation": [
         "Otwórz nawigację"
@@ -3300,7 +3312,7 @@
         "To spowoduje trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "To spowoduje usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
+        "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4934,6 +4946,9 @@
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
+      "Shared with": [
+        "Udostępnij"
+      ],
       "Shared with me": [
         "Udostępnione Tobie"
       ],
@@ -5203,6 +5218,9 @@
       ],
       "Version is restored": [
         "Wersja została przywrócona"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numer wersji został skopiowany do schowka"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -6931,6 +6949,9 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funkcja premium"
+      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -7621,6 +7642,9 @@
       "Failed to move, please try again": [
         "Przenoszenie nie powiodło się. Spróbuj ponownie"
       ],
+      "Failed to open document": [
+        "Nie udało się otworzyć dokumentu"
+      ],
       "Failed to remove the file": [
         "Nie udało się usunąć pliku"
       ],
@@ -8289,9 +8313,19 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetowanie hasła zostało anulowane"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8488,6 +8522,11 @@
         "Wspieraj prywatność w Internecie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Subskrypcja będzie automatycznie odnawiana co 2 lata po tej samej cenie do momentu jej anulowania."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -8613,6 +8652,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Możesz łatwo wyszukiwać pliki, zachowując bezpieczeństwo danych."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Storage": {
@@ -8969,6 +9013,9 @@
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Subskrypcja została anulowana."
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
