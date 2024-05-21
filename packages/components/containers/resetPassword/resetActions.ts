@@ -110,7 +110,7 @@ export const handleNewPassword = async ({
                 addresses,
                 domains,
                 preAuthKTVerify,
-                productParam: cache.appName,
+                productParam: cache.productParam,
             });
             // Refetch the user to update the keys that got generated
             user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
