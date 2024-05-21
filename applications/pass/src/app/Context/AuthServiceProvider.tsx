@@ -14,15 +14,13 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { useNotifications } from '@proton/components/hooks';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { isOffline, isOnline } from '@proton/pass/lib/api/utils';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
-import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
+import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -32,7 +30,6 @@ import { AppStatus, type Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -384,43 +381,17 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         };
     }, []);
 
-    const probe = useActivityProbe(async () => {
-        if (!authStore.hasSession()) return;
-
-        const { booted } = client.current.state;
-        const lockMode = authStore.getLockMode();
-        const lastExtendTime = authStore.getLockLastExtendTime();
-        const lockTTL = authStore.getLockTTL();
-        const canLock = lockMode !== LockMode.NONE && lockTTL;
-
-        if (booted && canLock) {
-            const now = getEpoch();
-            const diff = now - (lastExtendTime ?? 0);
-
-            if (diff > lockTTL) return authService.lock(lockMode, { soft: true, broadcast: true });
-
-            if (diff > lockTTL * 0.5) {
-                logger.info('[AuthServiceProvider] Activity probe extending lock time');
-                return authService.checkLock().catch(noop);
-            }
+    const handleUnlock = useCallback(async ({ mode, secret }: UnlockDTO) => {
+        try {
+            await authService.unlock(mode, secret);
+        } catch (err) {
+            throw new Error(getErrorMessage(err));
         }
-    });
-
-    useVisibleEffect((visible) => probe[visible ? 'start' : 'cancel']());
+    }, []);
 
     return (
         <AuthServiceContext.Provider value={authService}>
-            <UnlockProvider
-                unlock={useCallback(async ({ mode, secret }) => {
-                    try {
-                        await authService.unlock(mode, secret);
-                    } catch (err) {
-                        throw new Error(getErrorMessage(err));
-                    }
-                }, [])}
-            >
-                {children}
-            </UnlockProvider>
+            <UnlockProvider unlock={handleUnlock}>{children}</UnlockProvider>
         </AuthServiceContext.Provider>
     );
 };

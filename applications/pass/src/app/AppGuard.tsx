@@ -1,15 +1,17 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import { useClient, useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 
+import { ActivityProbeProvider } from '@proton/pass/components/Core/ActivityProbeProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline, clientPasswordLocked, clientReady, clientSessionLocked } from '@proton/pass/lib/client';
 import { offlineResume, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { ping } from '@proton/shared/lib/api/tests';
+import noop from '@proton/utils/noop';
 
 import { useAuthService } from './Context/AuthServiceProvider';
 import { Lobby } from './Views/Lobby';
@@ -48,9 +50,22 @@ export const AppGuard: FC = () => {
         }
     };
 
+    const handleProbe = useCallback(() => auth.checkLock().catch(noop), []);
+
     return (
         <ConnectivityProvider subscribe={api.subscribe} onPing={onPing} onChange={onConnectivityChange}>
-            <Route path="*" render={() => (state.booted ? <Main /> : <Lobby />)} />
+            <Route
+                path="*"
+                render={() =>
+                    state.booted ? (
+                        <ActivityProbeProvider onProbe={handleProbe}>
+                            <Main />
+                        </ActivityProbeProvider>
+                    ) : (
+                        <Lobby />
+                    )
+                }
+            />
         </ConnectivityProvider>
     );
 };

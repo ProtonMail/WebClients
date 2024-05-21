@@ -1,25 +1,30 @@
 import { useEffect, useRef } from 'react';
 
+import { logger } from '../utils/logger';
+
 export type ActivityProbe = ReturnType<typeof createActivityProbe>;
 
-const ACTIVITY_PROBE_TIMEOUT = 5_000;
+export const createActivityProbe = () => {
+    const state: { interval?: NodeJS.Timeout } = {};
 
-export const createActivityProbe = (onProbe: () => void, timeout: number = ACTIVITY_PROBE_TIMEOUT) => {
-    const timer: { interval?: ReturnType<typeof setInterval> } = {};
+    const cancel = () => {
+        logger.debug(`[ActivityProbe] Cancelling probe..`);
+        clearInterval(state?.interval);
+    };
 
-    const cancel = () => clearInterval(timer?.interval);
+    const start = (onProbe: () => void, timeout: number) => {
+        logger.debug(`[ActivityProbe] probe set to ${timeout}ms`);
 
-    const start = () => {
-        cancel();
-        timer.interval = setInterval(onProbe, timeout);
+        clearInterval(state?.interval);
+        state.interval = setInterval(onProbe, timeout);
         void onProbe();
     };
 
     return { start, cancel };
 };
 
-export const useActivityProbe = (onProbe: () => void): ActivityProbe => {
-    const probe = useRef(createActivityProbe(onProbe)).current;
+export const useActivityProbe = (): ActivityProbe => {
+    const probe = useRef(createActivityProbe()).current;
     useEffect(() => () => probe.cancel(), []);
     return probe;
 };
