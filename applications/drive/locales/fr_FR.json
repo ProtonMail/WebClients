@@ -513,6 +513,12 @@
       "New": [
         "Nouveau"
       ],
+      "New document": [
+        "Nouveau document"
+      ],
+      "New folder": [
+        "Nouveau dossier"
+      ],
       "New message": [
         "Nouveau message"
       ],
@@ -533,6 +539,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Ouvrir dans Docs"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -7336,6 +7345,9 @@
       "Failed to move, please try again": [
         "Le déplacement n'a pas abouti, réessayez."
       ],
+      "Failed to open document": [
+        "L'ouverture du document n' pas abouti."
+      ],
       "Failed to remove the file": [
         "Le fichier n'a pu être retiré."
       ],
@@ -7966,9 +7978,19 @@
         "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "La réinitialisation du mot de passe a été annulée."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Annuler la réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8149,6 +8171,11 @@
         "Soutenez la protection de la vie privée en ligne"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -8272,6 +8299,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Vous pouvez maintenant facilement rechercher des fichiers Drive tout en gardant vos données en sécurité."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "L'annulation de votre abonnement est en cours. Veuillez patienter."
       ]
     },
     "Storage": {
@@ -8608,6 +8640,9 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
+      ],
+      "You have successfully canceled your subscription.": [
+        "Vous avez résilié votre abonnement."
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
