@@ -1,4 +1,4 @@
-import type { sha1 } from '@openpgp/noble-hashes/sha1';
+import type { sha1 } from '@noble/hashes/sha1';
 
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
