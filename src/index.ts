@@ -31,7 +31,6 @@ import {
     getMainWindow,
     loadURL,
     reloadCalendarWithSession,
-    updateView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
@@ -245,13 +244,13 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 
             if (isCalendar(url)) {
                 Logger.info("Calendar link", loggedURL);
-                updateView("calendar");
+                loadURL("calendar", url);
                 return { action: "deny" };
             }
 
             if (isMail(url)) {
                 Logger.info("Mail link", loggedURL);
-                updateView("mail");
+                loadURL("mail", url);
                 return { action: "deny" };
             }
 
@@ -260,24 +259,31 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
                 if (isAccoutLite(url) || isUpsellURL(url)) {
                     Logger.info("Account lite or upsell in browser", loggedURL);
                     shell.openExternal(url);
-                    return { action: "deny" };
+                } else {
+                    Logger.info("Account link", loggedURL);
+                    loadURL("account", url);
                 }
-                Logger.info("Account link", loggedURL);
-                return { action: "allow" };
-            } else if (isHostAllowed(url)) {
-                return { action: "allow" };
-            } else if (global.oauthProcess) {
-                Logger.info("OAuth link in app", loggedURL);
-                return { action: "allow" };
-            } else if (global.subscriptionProcess) {
-                Logger.info("Subscription link in modal", loggedURL);
-                return { action: "allow" };
-            } else {
-                Logger.info("Other link in browser", loggedURL);
-                shell.openExternal(url);
+
+                return { action: "deny" };
             }
 
-            Logger.warn("Unknown link, denied", loggedURL);
+            if (isHostAllowed(url)) {
+                Logger.info("Allowed host", loggedURL);
+                return { action: "allow" };
+            }
+
+            if (global.oauthProcess) {
+                Logger.info("OAuth link in app", loggedURL);
+                return { action: "allow" };
+            }
+
+            if (global.subscriptionProcess) {
+                Logger.info("Subscription link in modal", loggedURL);
+                return { action: "allow" };
+            }
+
+            Logger.info("Other link in browser", loggedURL);
+            shell.openExternal(url);
             return { action: "deny" };
         });
     });
