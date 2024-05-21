@@ -285,6 +285,7 @@ export const toggleSpellCheck = (enabled: boolean) => {
 
 export const getMailView = () => browserViewMap.mail!;
 export const getCalendarView = () => browserViewMap.calendar!;
+export const getAccountView = () => browserViewMap.account;
 export const getMainWindow = () => mainWindow!;
 
 export const getCurrentView = () => {

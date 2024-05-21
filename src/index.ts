@@ -15,17 +15,16 @@ import { getTrialEndURL } from "./utils/urls/trial";
 import {
     getSessionID,
     isAccoutLite,
-    isCalendarSettings,
     isAccount,
     isHostAllowed,
     isCalendar,
     isMail,
-    isMailSettings,
     isUpgradeURL,
     isUpsellURL,
 } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {
+    getAccountView,
     getCalendarView,
     getCurrentView,
     getMailView,
@@ -221,15 +220,17 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
             // Only redirect to a different browser view if the navigation is happening in
             // the visible web contents.
             if (getCurrentView()!.webContents === contents) {
-                if (
-                    (isCalendarSettings(details.url) || isCalendar(details.url)) &&
-                    getCurrentView() !== getCalendarView()
-                ) {
+                if (isAccount(details.url) && getCurrentView() !== getAccountView()) {
+                    loadURL("account", details.url);
+                    return preventDefault(details);
+                }
+
+                if (isCalendar(details.url) && getCurrentView() !== getCalendarView()) {
                     loadURL("calendar", details.url);
                     return preventDefault(details);
                 }
 
-                if ((isMailSettings(details.url) || isMail(details.url)) && getCurrentView() !== getMailView()) {
+                if (isMail(details.url) && getCurrentView() !== getMailView()) {
                     loadURL("mail", details.url);
                     return preventDefault(details);
                 }
