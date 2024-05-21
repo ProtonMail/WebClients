@@ -1,4 +1,6 @@
-import { MINUTE } from '@proton/shared/lib/constants';
+import {APPS, APPS_CONFIGURATION, MINUTE} from '@proton/shared/lib/constants';
+
+const { PROTONMAIL} = APPS;
 
 export const ASSISTANT_FEATURE_NAME = 'AI Assistant';
 
@@ -13,3 +15,7 @@ export const enum ASSISTANT_STATUS {
     LOADING_GPU,
     READY,
 }
+
+export const assistantAuthorizedApps = [
+    APPS_CONFIGURATION[PROTONMAIL].subdomain,
+];

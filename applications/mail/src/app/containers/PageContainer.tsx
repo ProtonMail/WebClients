@@ -14,6 +14,7 @@ import {
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
+import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
@@ -77,6 +78,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                 />
             </LabelActionsContextProvider>
             <MailShortcutsModal {...mailShortcutsProps} />
+            <AssistantIframe />
         </PrivateLayout>
     );
 };
