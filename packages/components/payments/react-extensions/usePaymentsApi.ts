@@ -281,7 +281,7 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const samePlan = isSubscriptionUnchanged(subscription, Plans, Currency, Cycle);
+        const samePlan = isSubscriptionUnchanged(subscription, Plans, Cycle);
         if (!samePlan) {
             return null;
         }

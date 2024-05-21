@@ -10,7 +10,7 @@ describe('isSubscriptionUnchanged', () => {
         const subscription = getSubscriptionMock();
         const planIds: PlanIDs = getPlanIDs(subscription); // Assuming getPlanIDs is a function that extracts plan IDs from a subscription
 
-        const result = isSubscriptionUnchanged(subscription, planIds, 'EUR');
+        const result = isSubscriptionUnchanged(subscription, planIds);
         expect(result).toBe(true);
     });
 
@@ -20,12 +20,12 @@ describe('isSubscriptionUnchanged', () => {
             mail2022: 1,
         };
 
-        const result = isSubscriptionUnchanged(subscription, planIds, 'EUR');
+        const result = isSubscriptionUnchanged(subscription, planIds);
         expect(result).toBe(false);
     });
 
     it('returns true when both subscription and planIds are empty', () => {
-        const result = isSubscriptionUnchanged(null, {}, 'EUR');
+        const result = isSubscriptionUnchanged(null, {});
         expect(result).toBe(true);
     });
 
@@ -34,14 +34,14 @@ describe('isSubscriptionUnchanged', () => {
             bundle2022: 1,
         };
 
-        const result = isSubscriptionUnchanged(null, planIds, 'EUR');
+        const result = isSubscriptionUnchanged(null, planIds);
         expect(result).toBe(false);
     });
 
     it('returns false when subscription is not null and planIds is null', () => {
         const subscription = getSubscriptionMock();
 
-        const result = isSubscriptionUnchanged(subscription, null as any, 'EUR');
+        const result = isSubscriptionUnchanged(subscription, null as any);
         expect(result).toBe(false);
     });
 
@@ -51,7 +51,7 @@ describe('isSubscriptionUnchanged', () => {
 
         const planIds: PlanIDs = getPlanIDs(subscription);
 
-        const result = isSubscriptionUnchanged(subscription, planIds, 'EUR', CYCLE.MONTHLY);
+        const result = isSubscriptionUnchanged(subscription, planIds, CYCLE.MONTHLY);
         expect(result).toBe(true);
     });
 
@@ -61,19 +61,10 @@ describe('isSubscriptionUnchanged', () => {
 
         const planIds: PlanIDs = getPlanIDs(subscription);
 
-        const result = isSubscriptionUnchanged(subscription, planIds, 'EUR', CYCLE.YEARLY);
+        const result = isSubscriptionUnchanged(subscription, planIds, CYCLE.YEARLY);
         expect(result).toBe(false);
     });
 
-    it('should return false when currency is different from the subscription', () => {
-        const subscription = getSubscriptionMock();
-        subscription.Currency = 'EUR';
-
-        const planIds: PlanIDs = getPlanIDs(subscription);
-
-        const result = isSubscriptionUnchanged(subscription, planIds, 'USD');
-        expect(result).toBe(false);
-    });
     it('should return true if the upcoming subscription unchanged', () => {
         const subscription = getSubscriptionMock();
         subscription.Cycle = CYCLE.MONTHLY;
@@ -82,20 +73,10 @@ describe('isSubscriptionUnchanged', () => {
 
         const planIds: PlanIDs = getPlanIDs(subscription);
 
-        const currentSubscriptionUnchanged = isSubscriptionUnchanged(
-            subscription,
-            planIds,
-            subscription.Currency,
-            CYCLE.MONTHLY
-        );
+        const currentSubscriptionUnchanged = isSubscriptionUnchanged(subscription, planIds, CYCLE.MONTHLY);
         expect(currentSubscriptionUnchanged).toBe(true);
 
-        const upcomingSubscriptionUnchanged = isSubscriptionUnchanged(
-            subscription,
-            planIds,
-            subscription.Currency,
-            CYCLE.YEARLY
-        );
+        const upcomingSubscriptionUnchanged = isSubscriptionUnchanged(subscription, planIds, CYCLE.YEARLY);
         expect(upcomingSubscriptionUnchanged).toBe(true);
     });
 
@@ -105,28 +86,13 @@ describe('isSubscriptionUnchanged', () => {
 
         const planIds: PlanIDs = getPlanIDs(subscription);
 
-        const currentSubscriptionUnchanged = isSubscriptionUnchanged(
-            subscription,
-            planIds,
-            subscription.Currency,
-            CYCLE.MONTHLY
-        );
+        const currentSubscriptionUnchanged = isSubscriptionUnchanged(subscription, planIds, CYCLE.MONTHLY);
         expect(currentSubscriptionUnchanged).toBe(true);
 
-        const upcomingSubscriptionUnchangedYearly = isSubscriptionUnchanged(
-            subscription,
-            planIds,
-            subscription.Currency,
-            CYCLE.YEARLY
-        );
+        const upcomingSubscriptionUnchangedYearly = isSubscriptionUnchanged(subscription, planIds, CYCLE.YEARLY);
         expect(upcomingSubscriptionUnchangedYearly).toBe(false);
 
-        const upcomingSubscriptionUnchangedTwoYears = isSubscriptionUnchanged(
-            subscription,
-            planIds,
-            subscription.Currency,
-            CYCLE.TWO_YEARS
-        );
+        const upcomingSubscriptionUnchangedTwoYears = isSubscriptionUnchanged(subscription, planIds, CYCLE.TWO_YEARS);
         expect(upcomingSubscriptionUnchangedTwoYears).toBe(false);
     });
 });
