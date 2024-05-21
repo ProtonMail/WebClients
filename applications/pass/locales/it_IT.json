@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Scarica le applicazioni per dispositivi mobili"
       ],
+      "Get Pass Business": [
+        "Ottieni Pass Business"
+      ],
       "Get Pass Plus": [
         "Ottieni Pass Plus"
       ],
@@ -544,6 +547,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
       ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Sblocca funzionalità di sicurezza avanzate e log dettagliati per proteggere la tua presenza online."
+      ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Con ${ PASS_SHORT_APP_NAME } Monitor, stai al passo con le minacce ricevendo avvisi istantanei se le tue credenziali vengono compromesse. Sblocca funzionalità di sicurezza avanzate e log dettagliati per salvaguardare la tua presenza online."
       ],
@@ -750,7 +756,7 @@
         "L'accesso offline non è attualmente disponibile con la modalità a doppia password e con il tuo piano."
       ],
       "Passphrase is incorrect": [
-        "Frase d'accesso non corretta"
+        "Passphrase non valida"
       ],
       "PIN codes do not match": [
         "I codici PIN non corrispondono"
@@ -1412,9 +1418,6 @@
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "L'email personalizzata verrà inviata a ${ href } per il monitoraggio. Non verranno inviati altri dati a HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "L'esportazione conterrà solamente le casseforti che possiedi."
       ],
@@ -1876,7 +1879,7 @@
         "Passkey"
       ],
       "Passphrase": [
-        "Frase d'accesso"
+        "Passphrase"
       ],
       "Password": [
         "Password"
@@ -2071,6 +2074,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Hai selezionato ${ semiboldText } in questa cassaforte"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Richiedi 2FA per l'organizzazione"
+      ],
+      "SSO integration (coming soon)": [
+        "Integrazione SSO (in arrivo)"
       ]
     },
     "Notification": {
@@ -2611,7 +2622,7 @@
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
       ],
       "Passphrase is required": [
-        "Frase segreta necessaria"
+        "Passphrase necessaria"
       ],
       "PGP encrypted export file requires passphrase": [
         "L'esportazione del file crittografato mediante PGP richiede una passphrase"

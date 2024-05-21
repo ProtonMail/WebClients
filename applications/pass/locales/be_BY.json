@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
+      "Get Pass Business": [
+        "Атрымаць Pass Business"
+      ],
       "Get Pass Plus": [
         "Атрымаць Pass Plus"
       ],
@@ -517,7 +520,7 @@
         "Стварэнне ўнікальнага пароля"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Функцыя Dark Web Monitoring даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+        "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да яе."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
@@ -545,6 +548,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "З дапамогай назірання ${ PASS_SHORT_APP_NAME } вы будзеце заўсёды надзейна абаронены ад пагроз. Сістэма неадкладна апавясціць вас, калі адбудзецца кампраметацыя вашых уліковых даных. Разблакіруйце пашыраныя функцыі бяспекі і падрабязны журнал бяспекі, каб абараніць сябе ў інтэрнэце."
@@ -1446,9 +1452,6 @@
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Карыстальніцкая электронная пошта будзе адпраўлена ў ${ href } для назірання. Ніякія іншыя даныя не будуць апраўлены ў HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
       ],
@@ -2117,6 +2120,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Вы выбралі ${ semiboldText } у гэтым сховішчы"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Патрабаванне 2ФА для арганізацыі"
+      ],
+      "SSO integration (coming soon)": [
+        "Інтэграцыя SSO (неўзабаве)"
       ]
     },
     "Notification": {

@@ -158,6 +158,9 @@
       "Edit vault": [
         "Uredi trezor"
       ],
+      "Enable Dark Web Monitoring": [
+        "Omogoči nadzor temnega spleta"
+      ],
       "Exclude from monitoring": [
         "Izključi iz spremljanja"
       ],
@@ -475,6 +478,18 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } druga prijava uporablja isto geslo",
+        "${ total } drugi prijavi uporabljata isto geslo",
+        "${ total } druge prijave uporabljajo isto geslo",
+        "${ total } druge prijave uporabljajo isto geslo"
+      ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA doda še eno raven varnosti vašim prijavam. ${ PASS_APP_NAME } olajša 2FA s shranjevanjem in samodejnim izpolnjevanjem vaših 2FA kod."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-poštni vzdevek deluje kot e-poštni naslov, vendar zmanjša neželeno pošto in skriva vaš dejanski e-poštni naslov in identiteto."
+      ],
       "Change your passwords": [
         "Spremenite svoja gesla"
       ],
@@ -487,17 +502,38 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Prejmite obvestilo, če je pricurljal vaš e-poštni naslov, geslo ali drugi osebni podatki."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
         "Nastavite 2FA za večjo varnost"
       ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Začnite nadzorovati kršitve podatkov, povezane z računi, ustvarjenimi z vašim e-poštnim naslovom in vašimi vzdevki hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Temni splet je skriti del interneta, kjer je mogoče kupiti in prodati ukradene osebne podatke, kot je identiteta."
+      ],
+      "These items remain at risk": [
+        "Ti predmeti ostajajo ogroženi"
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Vaš račun je ranljiv, pojdite v nastavitve in spremenite geslo."
       ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Ta storitev ponuja 2FA. Omogočite ga za dodatno varnost računa."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Z ${ PASS_SHORT_APP_NAME } nadzorom bodite korak pred grožnjami, tako da prejmete takojšnja opozorila, če so vaše poverilnice ogrožene. Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svoje spletne aktivnosti."
+      ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Vaši e-poštni naslovi so pricurljali zaradi vsaj 1 kršitve podatkov"
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Vaši osebni podatki so pricurljali zaradi kršitve podatkov storitve tretje osebe"
       ]
     },
     "Error": {
@@ -591,6 +627,12 @@
       "Failed resending invite.": [
         "Ponovno pošiljanje povabila ni uspelo."
       ],
+      "Failed to add email address": [
+        "E-poštnega naslova ni bilo mogoče dodati"
+      ],
+      "Failed to delete email address from monitoring": [
+        "E-poštnega naslova ni bilo mogoče izbrisati iz nadzora"
+      ],
       "Failed to delete selected items": [
         "Izbranih predmetov ni bilo mogoče izbrisati"
       ],
@@ -599,6 +641,12 @@
       ],
       "Failed to edit user's access.": [
         "Uporabnikovega dostopa ni bilo mogoče urediti."
+      ],
+      "Failed to load breaches for this address": [
+        "Za ta naslov ni bilo mogoče naložiti kršitev"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Nalaganje kršitev za ta e-poštni vzdevek ni uspelo"
       ],
       "Failed to load item history": [
         "Neuspešno nalaganje zgodovine predmeta"
@@ -618,6 +666,12 @@
       "Failed to remove user's access.": [
         "Uporabnikovega dostopa ni bilo mogoče odstraniti."
       ],
+      "Failed to resend verification for custom email": [
+        "Ponovno pošiljanje potrditve za e-pošto po meri ni uspelo"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Odpravljanje kršitev za ta naslov ni uspelo"
+      ],
       "Failed to restore items from trash": [
         "Predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
@@ -626,6 +680,21 @@
       ],
       "Failed to unpin item": [
         "Predmeta ni bilo mogoče odpeti"
+      ],
+      "Failed to update monitoring settings": [
+        "Nastavitev spremljanja ni bilo mogoče posodobiti"
+      ],
+      "Failed to verify email address": [
+        "E-poštnega naslova ni bilo mogoče preveriti"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Posodabljanje ni uspelo ${ PROTON_SENTINEL_NAME } nastavitve"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Posodabljanje nadzorne zastavice predmeta ni uspelo"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Posodabljanje stanja spremljanja za ta e-poštni naslov ni uspelo"
       ],
       "File could not be parsed": [
         "Datoteke ni bilo mogoče razčleniti"
@@ -868,6 +937,18 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bo zahteval ${ BRAND_NAME } geslo za dostop do podatkov v načinu brez povezave."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } je uspešno onemogočen"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } je uspešno omogočeno"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zaznana kršitev",
+        "${ row.breachCount } zaznani kršitvi",
+        "${ row.breachCount } zaznanih kršitev",
+        "${ row.breachCount } zaznanih kršitev"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
       ],
@@ -876,6 +957,9 @@
       ],
       "Access successfully confirmed": [
         "Dostop je potrjen"
+      ],
+      "Add your custom email address to monitor :": [
+        "Dodajte svoj e-poštni naslov po meri v nadzor:"
       ],
       "Admin": [
         "Administrator"
@@ -888,6 +972,12 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Vzdevki z domenami po meri se ne nadzorujejo, dodajte jih kot e-poštni naslov po meri za spremljanje."
+      ],
+      "All breaches for this address were resolved": [
+        "Vse kršitve za ta naslov so bile odpravljene"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Vse trenutne kršitve bodo označene kot odpravljene. V primeru prihodnjih kršitev podatkov boste obveščeni."
@@ -964,6 +1054,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Brisanje »${ payload.content.name }«"
       ],
+      "Didn't receive the code?": [
+        "Niste prejeli kode?"
+      ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
       ],
@@ -975,6 +1068,15 @@
       ],
       "email": [
         "e-pošta"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-poštni naslov uspešno izbrisan iz nadzora"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-poštni naslov je bil uspešno izključen iz nadzora"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-poštni naslov je bil uspešno vključen v nadzor"
       ],
       "Emptying trash...": [
         "Praznim smetnjak ..."
@@ -1011,6 +1113,9 @@
       ],
       "High Priority": [
         "Visoka pomembnost"
+      ],
+      "How does monitoring work?": [
+        "Kako poteka nadzor?"
       ],
       "Import in progress:": [
         "Uvoz v teku:"
@@ -1135,6 +1240,9 @@
       "Monitor accounts": [
         "Nadzor računov"
       ],
+      "Monitoring settings successfully updated": [
+        "Nastavitve nadzora so bile uspešno posodobljene"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
       ],
@@ -1206,6 +1314,9 @@
       ],
       "Pinning item...": [
         "Pripenjanje predmeta..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Preverite mapo z vsiljeno pošto ali poskusite znova poslati kodo."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave."
@@ -1296,6 +1407,9 @@
       ],
       "Successfully synced all vaults": [
         "Uspešno so sinhronizirani vsi trezorji"
+      ],
+      "Suggested": [
+        "Predlagano"
       ],
       "Switch to another vault or create an item in this vault": [
         "Preklopite v drug trezor ali ustvarite predmet v tem trezorju"
@@ -1393,11 +1507,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" je bil odstranjen"
       ],
+      "Verification code sent.": [
+        "Koda za preverjanje je poslana."
+      ],
       "Viewer": [
         "Preglednik"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Poslali smo potrditveno kodo na ${ email }. Vnesite jo spodaj:"
       ],
       "You are about to create:": [
         "Ustvarili boste:"
@@ -1432,6 +1552,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "O kršitvah podatkov za te e-poštne naslove boste obveščeni."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "O kršitvah podatkov za ta e-poštni naslov boste obveščeni."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Ne boste več obveščeni o kršitvah podatkov za ta e-poštni naslov."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Ne boste več obveščeni o kršitvah podatkov za ta e-poštni naslov."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
       ],
@@ -1457,6 +1589,12 @@
         "${ config.options.wordCount } besedi",
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } vpis",
+        "${ usageCount } vpisa",
+        "${ usageCount } vpisi",
+        "${ usageCount } vpisi"
       ],
       "1 hour": [
         "1 ura"
@@ -1949,6 +2087,14 @@
         "V tem trezorju ste izbrali ${ semiboldText }"
       ]
     },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Za organizacijo zahtevajte 2FA"
+      ],
+      "SSO integration (coming soon)": [
+        "Integracija SSO (kmalu na voljo)"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } je bil onemogočen."
@@ -2084,6 +2230,9 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } naslovov"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Nadzor"
+      ],
       "Account protection": [
         "Zaščita računa"
       ],
@@ -2092,6 +2241,9 @@
       ],
       "Breach detected": [
         "Odkrito je uhajanje podatkov"
+      ],
+      "Breaches": [
+        "Kršitve"
       ],
       "Breaches detected for": [
         "Zaznane kršitve za"
@@ -2116,6 +2268,9 @@
       ],
       "Custom addresses": [
         "Naslovi po meri"
+      ],
+      "Custom email monitoring": [
+        "Nadzor elektronske pošte po meri"
       ],
       "Custom emails": [
         "E-poštni naslovi po meri"
@@ -2168,6 +2323,9 @@
       "Import your data": [
         "Uvozi svoje podatke"
       ],
+      "Inactive 2FA": [
+        "Neaktiven 2FA"
+      ],
       "Install extension": [
         "Namestite razširitev"
       ],
@@ -2179,6 +2337,9 @@
       ],
       "Leave vault ?": [
         "Zapuščate trezor ?"
+      ],
+      "Loading breaches...": [
+        "Nalaganje kršitev..."
       ],
       "Low disk space": [
         "Malo prostora na disku"
@@ -2203,6 +2364,15 @@
       ],
       "Move items?": [
         "Premaknem predmete?"
+      ],
+      "No excluded items": [
+        "Izključeni predmeti"
+      ],
+      "No inactive 2FAs": [
+        "Ni neaktivnih 2FA"
+      ],
+      "No insecure passwords": [
+        "Brez nevarnih gesel"
       ],
       "No items selected": [
         "Izbran ni noben predmet"
@@ -2237,6 +2407,12 @@
       "Recommended actions": [
         "Priporočena dejanja"
       ],
+      "Remove email address?": [
+        "Želite odstraniti e-poštni naslov?"
+      ],
+      "Resolved breaches": [
+        "Odpravljene kršitve"
+      ],
       "Restore this version?": [
         "Obnovi to različico?"
       ],
@@ -2260,6 +2436,9 @@
       ],
       "Set access level": [
         "Nastavite raven dostopa"
+      ],
+      "Set up 2FA for better security": [
+        "Nastavite 2FA za večjo varnost"
       ],
       "Set up 2FA for more security": [
         "Nastavite 2FA za večjo varnost"
@@ -2299,6 +2478,9 @@
       ],
       "Want to learn more?": [
         "Si želite izvedeti več?"
+      ],
+      "Weak password": [
+        "Šibko geslo."
       ],
       "Weak passwords": [
         "Šibka gesla"
@@ -2385,6 +2567,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Datum poteka ni v obliki MM/LL"
       ],
+      "Failed to load breaches.": [
+        "Nalaganje kršitev ni uspelo."
+      ],
       "Invalid alias prefix": [
         "Neveljavna predpona vzdevka"
       ],
@@ -2456,6 +2641,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Predpona vzdevka ne sme biti daljša od 40 znakov"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ta e-poštni naslov ne bo več nadzorovan zaradi kršitev podatkov."
       ],
       "Title is required": [
         "Naslov je obvezen"
