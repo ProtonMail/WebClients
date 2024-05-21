@@ -6969,7 +6969,7 @@ __metadata:
   resolution: "@proton/drive-store@workspace:packages/drive-store"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
-    "@openpgp/noble-hashes": "npm:^1.3.3"
+    "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/components": "workspace:packages/components"
     "@proton/crypto": "workspace:packages/crypto"
@@ -32830,7 +32830,7 @@ __metadata:
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
-    "@openpgp/noble-hashes": "npm:^1.3.3"
+    "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"

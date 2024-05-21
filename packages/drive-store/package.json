@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
-        "@openpgp/noble-hashes": "^1.3.3",
+        "@noble/hashes": "^1.4.0",
         "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/components": "workspace:packages/components",
         "@proton/crypto": "workspace:packages/crypto",
