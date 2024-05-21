@@ -16,7 +16,15 @@ const isBlacklisted = (specs: HardwareSpecs, adapter: GPUAdapter): GpuAssessment
     // Some graphics cards like GTX 1060 have enough RAM (6GB) but lack FP16 support, so we must blacklist them.
     if (!adapter.features.has('shader-f16')) {
         console.error("Feature 'shader-f16' is not supported by this GPU adapter, but is required to run the LLM.");
-        return 'noShaderF16';
+        if (isBrave()) {
+            console.error(
+                "It looks like you're running Brave. In some cases, Brave may not expose the 'shader-f16' feature. " +
+                    'Consider trying in another Chromium browser.'
+            );
+            return 'noShaderF16Brave';
+        } else {
+            return 'noShaderF16';
+        }
     }
 
     // Unlike what the name says, 'MacIntel' appears for both older Intel CPUs and newer Apple CPUs (M1 and later).
@@ -26,7 +34,7 @@ const isBlacklisted = (specs: HardwareSpecs, adapter: GPUAdapter): GpuAssessment
         // based on hardware data analysis on a bunch of machines, it was a good differentiator of pre- vs post-M1.
         const macPostM1 = adapter.limits.maxBufferSize >= 4294967292;
         if (!macPostM1) {
-            console.error('This Mac appears to not have a GPU sufficiently powerful for LLM text generation.');
+            console.error('Mac with Intel chips are not sufficiently powerful for LLM text generation.');
             return 'macPreM1';
         }
     } else {
