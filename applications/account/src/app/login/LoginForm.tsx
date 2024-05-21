@@ -496,16 +496,16 @@ const LoginForm = ({
                                         >
                                             <Link
                                                 to={paths.reset}
-                                                className="dropdown-item-link w-full px-4 py-2 flex items-center text-no-decoration text-left"
+                                                className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                <Icon name="key" className="mr-2" />
+                                                <Icon name="key" />
                                                 {c('Link').t`Forgot password?`}
                                             </Link>
                                             <Link
                                                 to={paths.forgotUsername}
-                                                className="dropdown-item-link w-full px-4 py-2 flex items-center text-no-decoration text-left"
+                                                className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                <Icon name="user-circle" className="mr-2" />
+                                                <Icon name="user-circle" />
                                                 {c('Link').t`Forgot username?`}
                                             </Link>
                                         </SupportDropdown>
