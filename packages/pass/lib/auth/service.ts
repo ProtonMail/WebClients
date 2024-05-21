@@ -11,6 +11,7 @@ import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -291,6 +292,17 @@ export const createAuthService = (config: AuthServiceConfig) => {
         checkLock: async (): Promise<Lock> => {
             const mode = authStore.getLockMode();
             if (mode === LockMode.NONE) return { mode: LockMode.NONE, locked: false };
+
+            /** If we have a TTL and lastExtendTime - check early
+             * if the TTL has been reached and lock accordingly */
+            const ttl = authStore.getLockTTL();
+            const lastExtendTime = authStore.getLockLastExtendTime();
+
+            if (ttl && lastExtendTime) {
+                const now = getEpoch();
+                const diff = now - (lastExtendTime ?? 0);
+                if (diff > ttl) return authService.lock(mode, { soft: true, broadcast: true });
+            }
 
             const adapter = getLockAdapter(mode);
             const lock = await adapter.check();
