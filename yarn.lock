@@ -5543,6 +5543,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/hashes@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@noble/hashes@npm:1.4.0"
+  checksum: 10c0/8c3f005ee72e7b8f9cff756dfae1241485187254e3f743873e22073d63906863df5d4f13d441b7530ea614b7a093f0d889309f28b59850f33b66cb26a779a4a5
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -6870,7 +6877,7 @@ __metadata:
     karma-webpack: "npm:^5.0.1"
     playwright: "npm:^1.44.0"
     pmcrypto: "npm:@protontech/pmcrypto@^7.20.0"
-    pmcrypto-v6-canary: "npm:@protontech/pmcrypto@^8.0.0-canary.2.patch.0"
+    pmcrypto-v6-canary: "npm:@protontech/pmcrypto@^8.0.0-canary.3.patch.0"
     prettier: "npm:^3.2.5"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.4.5"
@@ -30320,10 +30327,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~6.0.0-beta.0.patch.0":
-  version: 6.0.0-beta.0.patch.0
-  resolution: "@protontech/openpgp@npm:6.0.0-beta.0.patch.0"
-  checksum: 10c0/cd4ff10cf8e518ba1453f79e84d764e11fa9670bd642bb93a35271740a77bd77fd6eabc18f2e567cbe750500e55cde6c3d52a46e4a7c5474597f8824d57f37e8
+"openpgp@npm:@protontech/openpgp@~6.0.0-beta.1":
+  version: 6.0.0-beta.1
+  resolution: "@protontech/openpgp@npm:6.0.0-beta.1"
+  checksum: 10c0/d0bb5349af2610ef690187ea49bd8f604b519d7f5e07d7db8bc6bf564d3fce064a57736efdb86f0755469b916eff591c0ad60c8a0fd70ba7d4620f5f5edec259
   languageName: node
   linkType: hard
 
@@ -31525,16 +31532,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pmcrypto-v6-canary@npm:@protontech/pmcrypto@^8.0.0-canary.2.patch.0":
-  version: 8.0.0-canary.2.patch.0
-  resolution: "@protontech/pmcrypto@npm:8.0.0-canary.2.patch.0"
+"pmcrypto-v6-canary@npm:@protontech/pmcrypto@^8.0.0-canary.3.patch.0":
+  version: 8.0.0-canary.3.patch.0
+  resolution: "@protontech/pmcrypto@npm:8.0.0-canary.3.patch.0"
   dependencies:
+    "@noble/hashes": "npm:^1.4.0"
     "@openpgp/asmcrypto.js": "npm:^3.1.0"
-    "@openpgp/noble-hashes": "npm:^1.3.3"
     "@openpgp/web-stream-tools": "npm:~0.1.1"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.1"
-    openpgp: "npm:@protontech/openpgp@~6.0.0-beta.0.patch.0"
-  checksum: 10c0/83ef6744ef61548c3c797d9b79495ae7d7c8a1bd7ee9f9d155112c763af289f94cd9ff84648e5eb5d7fe4102b51a2c4aa0f804abc12a2067cda007c8a68d8ac7
+    openpgp: "npm:@protontech/openpgp@~6.0.0-beta.1"
+  checksum: 10c0/0c5cbccec5b5681dba1ef2030948a7074c30e88ddc44dbce19815d2accf18723f0839465be7aa389fb8f513cee05bdb542e2d0319d6f7079935cdc297477c2a2
   languageName: node
   linkType: hard
 
