@@ -192,6 +192,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versió al porta-retalls"
+      ],
       "Create": [
         "Crear"
       ],
@@ -4864,6 +4867,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
       ],
+      "Version number successfully copied to clipboard": [
+        "El número de versió s'ha copiat correctament al porta-retalls"
+      ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
@@ -7201,6 +7207,11 @@
         "Desplega la llista de participants"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Compartició segura de caixes fortes"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
@@ -7519,13 +7530,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "${ name } i 1 altra possible filtració detectada. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'ha detectat una possible fuita de ${ name }. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
@@ -7537,7 +7548,7 @@
         "Sentinel està **actiu** i salvaguardant el vostre compte."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "La seva informació s'ha trobat en almenys una fuita de dades. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ]
     },
     "Select files": {
@@ -7641,6 +7652,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7982,6 +7998,9 @@
       ]
     },
     "Spotlight": {
+      "Custom event colors": [
+        "Colors d'esdeveniments personalitzats"
+      ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
       ],
@@ -8162,11 +8181,20 @@
       "No ads or tracking": [
         "Sense anuncis ni rastreig"
       ],
+      "Support our mission": [
+        "Dona suport a la nostra missió"
+      ],
       "Upgrade": [
         "Millora"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
