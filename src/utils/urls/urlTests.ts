@@ -53,6 +53,21 @@ export const isAccount = (urlString: string) => {
     }
 };
 
+export const isAccountAuthorize = (urlString: string) => {
+    try {
+        const urls = getConfig().url;
+        const url = new URL(urlString);
+
+        if (urls.account !== url.origin) {
+            return false;
+        }
+
+        return /^\/authorize\/?$/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccoutLite = (host: string) => {
     try {
         const hostURl = new URL(host);

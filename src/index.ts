@@ -21,6 +21,7 @@ import {
     isMail,
     isUpgradeURL,
     isUpsellURL,
+    isAccountAuthorize,
 } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {
@@ -219,7 +220,11 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
             // Only redirect to a different browser view if the navigation is happening in
             // the visible web contents.
             if (getCurrentView()!.webContents === contents) {
-                if (isAccount(details.url) && getCurrentView() !== getAccountView()) {
+                if (
+                    isAccount(details.url) &&
+                    !isAccountAuthorize(details.url) &&
+                    getCurrentView() !== getAccountView()
+                ) {
                     loadURL("account", details.url);
                     return preventDefault(details);
                 }
