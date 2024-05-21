@@ -513,6 +513,12 @@
       "New": [
         "Nuevo"
       ],
+      "New document": [
+        "Documento nuevo"
+      ],
+      "New folder": [
+        "Carpeta nueva"
+      ],
       "New message": [
         "Mensaje nuevo"
       ],
@@ -533,6 +539,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Abrir en Docs"
       ],
       "Open navigation": [
         "Abrir navegación"
@@ -7396,6 +7405,9 @@
       "Failed to move, please try again": [
         "Error al mover, inténtelo de nuevo"
       ],
+      "Failed to open document": [
+        "Error al abrir el documento"
+      ],
       "Failed to remove the file": [
         "Error al borrar el archivo"
       ],
@@ -8038,7 +8050,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
+        "La solicitud de restablecimiento de contraseña fue cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {

@@ -1434,9 +1434,6 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Mukautettu sähköpostiosoite lähetetään valvottavaksi palveluun ${ href }. HIPB:lle ei lähetetä muita tietoja."
-      ],
       "The export will only contain vaults that you own.": [
         "Vienti sisältää vain omistamasi holvit."
       ],
@@ -2087,6 +2084,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Olet valinnut holvista ${ semiboldText } kohdetta"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Vaadi organisaatiolle 2FA"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integraatio (tulossa pian)"
       ]
     },
     "Notification": {

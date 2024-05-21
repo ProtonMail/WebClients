@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
+      "Get Pass Business": [
+        "Wybierz plan Pass Business"
+      ],
       "Get Pass Plus": [
         "Wybierz plan Pass Plus"
       ],
@@ -546,8 +549,11 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
       ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
+      ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Otrzymuj natychmiastowe powiadomienia o naruszeniach danych logowania dzięki monitoringowi ${ PASS_SHORT_APP_NAME }. Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
+        "Otrzymuj natychmiastowe powiadomienia o naruszeniach danych logowania dzięki funkcji ${ PASS_SHORT_APP_NAME } Monitor. Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Twoje adresy e-mail zostały ujawnione w co najmniej 1 wycieku danych."
@@ -1443,9 +1449,6 @@
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Niestandardowe adresy e-mail zostaną wysłane do usługi ${ href } w celu ich monitorowania. Żadne inne dane nie zostaną udostępnione."
-      ],
       "The export will only contain vaults that you own.": [
         "Plik eksportu będzie zawierał tylko Twoje sejfy."
       ],
@@ -2031,7 +2034,7 @@
         "Zaktualizuj"
       ],
       "Used in": [
-        "Użyty w"
+        "Użyte"
       ],
       "Username": [
         "Nazwa użytkownika"
@@ -2111,6 +2114,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Zaznaczono ${ semiboldText } w sejfie"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Wymagaj uwierzytelniania dwustopniowego w organizacji"
+      ],
+      "SSO integration (coming soon)": [
+        "Logowanie SSO (wkrótce)"
       ]
     },
     "Notification": {

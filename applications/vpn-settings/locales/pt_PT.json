@@ -86,6 +86,9 @@
       "Close this banner": [
         "Fechar esta faixa"
       ],
+      "Configure SAML": [
+        "Configurar SAML"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -419,6 +422,9 @@
       "Save address": [
         "Guardar endereço"
       ],
+      "Save SAML configuration": [
+        "Salvar a configuração SAML"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -691,6 +697,11 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isto desligará todos os routers e clientes que utilizam este certificado."
+      ]
+    },
+    "app-switcher": {
+      "Secure your communications": [
+        "Proteja as suas comunicações"
       ]
     },
     "bf2023: Action": {
@@ -1907,6 +1918,9 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
       ],
+      "Failed to process the logo": [
+        "Erro ao processar o logo"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "O ficheiro é demasiado grande. O seu logótipo tem de ter 30 KB ou menos."
       ],
@@ -2816,6 +2830,10 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
+      "Affected user is on row": [
+        "O utilizador afetado está na linha.",
+        "Os utilizadores afetados estão nas linhas."
+      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -2955,6 +2973,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "DNS TXT record": [
+        "Registo DNS TXT"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
@@ -3371,6 +3392,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "A integração SCIM foi desativada."
+      ],
+      "SCIM token active": [
+        "O token SCIM é ativo."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Garanta a sua Conta ${ BRAND_NAME }"
@@ -4458,6 +4485,9 @@
       "Forgot username?": [
         "Esqueceu o nome de utilizador?"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Help translate": [
         "Ajude a traduzir"
       ],
@@ -4555,6 +4585,9 @@
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
@@ -4788,6 +4821,9 @@
       "Advanced sharing security": [
         "Segurança avançada de partilha"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminação automática das pastas Spam e Lixo"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],
@@ -4796,6 +4832,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Preenchimento automático de cartões de crédito (em breve)"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
@@ -5015,6 +5054,9 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited vault sharing": [
+        "Partilha de cofre ilimitada"
       ],
       "Unlimited vaults": [
         "Cofres ilimitados"
@@ -5541,6 +5583,11 @@
         "O seu plano inclui um máximo de mais ${ humanReadableAvailableSpace } de armazenamento."
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Ficheiro em formato PNG ou JPEG"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "Configure a sua organização"
@@ -5626,6 +5673,15 @@
     "passwordless": {
       "Change organization key": [
         "Alterar a chave da organização"
+      ],
+      "Organization key activated": [
+        "A chave da organização foi ativada."
+      ],
+      "Organization key restored": [
+        "A chave da organização foi restaurada."
+      ],
+      "Organization key updated": [
+        "A chave da organização foi atualizada."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
@@ -5877,6 +5933,9 @@
       "Disable SCIM": [
         "Desativar SCIM"
       ],
+      "Disable SCIM integration": [
+        "Desativar a integração SCIM"
+      ],
       "Generate new token": [
         "Gerar um novo token"
       ],
@@ -5890,8 +5949,19 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "URL base do SCIM"
+      ],
       "SCIM token": [
         "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Desativar a integração SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Gerar um novo token SCIM?"
       ]
     },
     "Select file": {
@@ -5954,6 +6024,9 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
       ],
@@ -6008,6 +6081,11 @@
         "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "A redefinição da palavra-passe foi cancelada."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
@@ -6036,6 +6114,9 @@
       "${ gracePeriodHoursRemaining } more hour": [
         "${ gracePeriodHoursRemaining } hora restante",
         "${ gracePeriodHoursRemaining } horas restantes"
+      ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
@@ -6558,6 +6639,9 @@
       ],
       "Upgrade your productivity": [
         "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
       ]
     },
     "Subscription renewal state": {
@@ -7021,6 +7105,9 @@
       "Delete account": [
         "Eliminar conta"
       ],
+      "Delete address permanently?": [
+        "Eliminar o endereço permanentemente?"
+      ],
       "Delete organization logo?": [
         "Eliminar o logo da organização?"
       ],
@@ -7127,6 +7214,9 @@
       ],
       "Gift code": [
         "Código de oferta"
+      ],
+      "How to choose a good logo": [
+        "Como escolher um bom logo"
       ],
       "Human verification": [
         "Verificação humana"
@@ -7416,6 +7506,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
+      ],
+      "Feature in early access": [
+        "Funcionalidade em acesso antecipado"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."

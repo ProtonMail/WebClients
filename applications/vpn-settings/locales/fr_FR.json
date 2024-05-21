@@ -2513,6 +2513,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'utilisateur a déjà une adresse ${ MAIL_APP_NAME }, saisissez-la ici. Sinon, il doit d'abord créer un compte."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
       ],
@@ -4890,6 +4893,9 @@
       "Forgot username?": [
         "Nom d'utilisateur oublié ?"
       ],
+      "Help": [
+        "Aide"
+      ],
       "Help translate": [
         "Contribuez à la traduction"
       ],
@@ -6839,9 +6845,19 @@
         "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "La réinitialisation du mot de passe a été annulée."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Annuler la réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7106,6 +7122,11 @@
         "Soutenez la protection de la vie privée en ligne"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -7223,6 +7244,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "L'annulation de votre abonnement est en cours. Veuillez patienter."
       ]
     },
     "Storage": {
@@ -7608,6 +7634,9 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
+      ],
+      "You have successfully canceled your subscription.": [
+        "Vous avez résilié votre abonnement."
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."

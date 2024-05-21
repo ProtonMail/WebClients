@@ -203,6 +203,12 @@
       "Edit name": [
         "Name bearbeiten"
       ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
+      "Edit organization name": [
+        "Organisationsname bearbeiten"
+      ],
       "Edit password": [
         "Passwort bearbeiten"
       ],
@@ -709,11 +715,17 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surfe privat im Internet und blockiere Werbung"
+      ],
       "Keep your schedule private": [
         "Halte deinen Terminplan privat"
       ],
       "Protect your passwords and identity": [
         "Schütze deine Passwörter und Identität"
+      ],
+      "Safeguard your files and photos": [
+        "Sichere deine Dateien und Fotos"
       ],
       "Secure your communications": [
         "Sichere deine Kommunikation"
@@ -3696,6 +3708,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "SCIM-Integration deaktiviert"
+      ],
+      "SCIM token active": [
+        "SCIM-Token aktiv"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Schütze dein ${ BRAND_NAME }-Konto"
       ],
@@ -4488,6 +4506,9 @@
       "Current email": [
         "Aktuelle E-Mail-Adresse"
       ],
+      "Current organization identity": [
+        "Aktuelle Organisationsidentität"
+      ],
       "Default language": [
         "Standardsprache"
       ],
@@ -4599,6 +4620,9 @@
       "New mailbox password": [
         "Neues Postfachpasswort"
       ],
+      "New organization identity": [
+        "Neue Organisationsidentität"
+      ],
       "New organization password": [
         "Neues Organisationspasswort"
       ],
@@ -4628,6 +4652,9 @@
       ],
       "Optional": [
         "Optional"
+      ],
+      "Organization identity": [
+        "Organisationsidentität"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -6800,9 +6827,19 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Passwortzurücksetzung abgebrochen"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7067,6 +7104,11 @@
         "Unterstütze Online-Privatsphäre"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
@@ -7184,6 +7226,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Storage": {
@@ -7403,6 +7450,9 @@
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
       ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
       "Desktop app": [
         "Desktop-App"
       ],
@@ -7566,6 +7616,9 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
@@ -7946,6 +7999,9 @@
       ],
       "Edit invoice details": [
         "Rechnungsdetails bearbeiten"
+      ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
       ],
       "Edit servers": [
         "Server bearbeiten"

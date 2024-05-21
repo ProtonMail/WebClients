@@ -245,6 +245,9 @@
       "Forgot password?": [
         "Glömt lösenord?"
       ],
+      "Forgot recovery method?": [
+        "Glömt återställningsmetod?"
+      ],
       "Get ${ vpnPlus }": [
         "Skaffa ${ vpnPlus }"
       ],
@@ -2510,6 +2513,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Om användaren redan har en ${ MAIL_APP_NAME }-adress anger du den här. Annars måste de skapa ett konto först."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Användarens konto kommer att flyttas till ett ${ BRAND_NAME } Unlimited-paket för en 30-dagars gratis provperiod*."
       ],
@@ -3711,6 +3717,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skanna denna kod med din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "SCIM-integration inaktiverad"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Skydda ditt ${ BRAND_NAME }-konto"
       ],
@@ -4871,6 +4883,9 @@
       ],
       "Forgot username?": [
         "Glömt användarnamn?"
+      ],
+      "Help": [
+        "Hjälp"
       ],
       "Help translate": [
         "Hjälp till att översätta"
@@ -6322,6 +6337,9 @@
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunde inte verifiera säkerheten för denna avsändares adressnyckel. Ibland uppstår en fördröjning i uppdateringen av avsändarens information. Försök igen senare. Om du inte litar på giltigheten av denna inbjudan eller avsändare, kontakta ${ BRAND_NAME } kundsupport."
       ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har verifierat äktheten av denna identitet."
+      ],
       "We have verified the authenticity of this sender and invitation.": [
         "Vi har verifierat äktheten av denna avsändare och inbjudan."
       ],
@@ -6801,6 +6819,11 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Lösenordsåterställning avbruten"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
@@ -7068,6 +7091,11 @@
         "Stöder integritet online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -7185,6 +7213,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Avbryter din prenumeration, vänta"
       ]
     },
     "Storage": {
@@ -7999,6 +8032,9 @@
       ],
       "Find email or username": [
         "Hitta e-post eller användarnamn"
+      ],
+      "Forgot recovery method": [
+        "Glömt återställningsmetod"
       ],
       "Gateways": [
         "Gateways"

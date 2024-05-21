@@ -215,6 +215,9 @@
       "Get mobile apps": [
         "Dapatkan Pass versi mobile"
       ],
+      "Get Pass Business": [
+        "Dapatkan Pass Business"
+      ],
       "Get Pass Plus": [
         "Dapatkan Pass Plus"
       ],
@@ -531,6 +534,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Layanan ini menawarkan 2FA. Aktifkan fitur ini untuk meningkatkan keamanan akun."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Dapatkan berbagai fitur keamanan mutakhir dan log yang terperinci untuk melindungi presensi online Anda."
       ]
     },
     "Error": {
@@ -625,10 +631,10 @@
         "Undangan gagal dikirim ulang."
       ],
       "Failed to add email address": [
-        "Alamat email gagal ditambahkan"
+        "Alamat surel gagal ditambahkan"
       ],
       "Failed to delete email address from monitoring": [
-        "Alamat email gagal dihapus dari pemantauan"
+        "Alamat surel gagal dihapus dari pemantauan"
       ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
@@ -664,7 +670,7 @@
         "Akses pengguna gagal dihapus."
       ],
       "Failed to resend verification for custom email": [
-        "Verifikasi untuk email khusus gagal dikirim ulang"
+        "Verifikasi untuk surel khusus gagal dikirim ulang"
       ],
       "Failed to resolve breaches for this address": [
         "Kebocoran untuk alamat ini gagal diselesaikan"
@@ -682,7 +688,7 @@
         "Pengaturan pemantauan gagal diperbarui"
       ],
       "Failed to verify email address": [
-        "Alamat email gagal diverifikasi"
+        "Alamat surel gagal diverifikasi"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Pengaturan ${ PROTON_SENTINEL_NAME } gagal diperbarui"
@@ -691,7 +697,7 @@
         "Status pemantauan item ini gagal diperbarui"
       ],
       "Failed updating monitoring status for this email address": [
-        "Status pemantauan untuk alamat email ini gagal diperbarui"
+        "Status pemantauan untuk alamat surel ini gagal diperbarui"
       ],
       "File could not be parsed": [
         "Berkas tidak dapat diurai"

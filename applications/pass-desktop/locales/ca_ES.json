@@ -52,6 +52,9 @@
       "Back": [
         "Torna"
       ],
+      "Bulk move items to trash": [
+        "Mou en massa els elements a la paperera"
+      ],
       "Bulk select items": [
         "Selecciona elements en massa"
       ],
@@ -196,6 +199,12 @@
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
       ],
+      "Get Pass Business": [
+        "Aconsegueixi Pass Business"
+      ],
+      "Get Pass Plus": [
+        "Obtingui Pass Plus"
+      ],
       "Get Started": [
         "Comença"
       ],
@@ -294,6 +303,9 @@
       ],
       "Pass for iOS": [
         "Pass per a iOS"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "Posar en pausa la supervisió"
@@ -901,6 +913,12 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Totes les infraccions actuals es marcaran com a resoltes. En cas de futures infraccions de dades, se li notificarà."
       ],
+      "All items successfully moved": [
+        "S'han mogut tots els elements."
+      ],
+      "All trashed items successfully restored": [
+        "S'han restaurat tots els elements a la paperera."
+      ],
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
@@ -1077,6 +1095,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Carregant ${ PASS_APP_NAME }"
       ],
+      "Locking your session...": [
+        "S'està bloquejant la sessió..."
+      ],
       "Logging you out...": [
         "Desconnectant-vos..."
       ],
@@ -1191,6 +1212,9 @@
       "Set up a PIN code to easily lock your data": [
         "Configureu un codi PIN per a bloquejar fàcilment les dades"
       ],
+      "Setting up offline mode...": [
+        "S'està configurant el mode fora de línia..."
+      ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
@@ -1217,9 +1241,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
-      ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "El correu electrònic personalitzat s'enviarà a ${ href } per al seguiment. No s'enviarà cap altra dada a HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la seva propietat."
@@ -1362,6 +1383,9 @@
         "${ config.options.wordCount } paraula",
         "${ config.options.wordCount } paraules"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versió ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } inici de sessió",
         "${ usageCount } inicis de sessió"
@@ -1464,6 +1488,9 @@
       ],
       "Created": [
         "Creat"
+      ],
+      "Created at": [
+        "Creat a"
       ],
       "Date": [
         "Data"
@@ -1843,6 +1870,14 @@
         "${ count } elements"
       ]
     },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Requereix A2F per a l'organització"
+      ],
+      "SSO integration (coming soon)": [
+        "Integració SSO (pròximament)"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -1911,6 +1946,9 @@
       "Full Name": [
         "Nom complert"
       ],
+      "me@example.com": [
+        "correu@exemple.cat"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -1965,16 +2003,16 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "${ name } i 1 altra possible filtració detectada. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'ha detectat una possible fuita de ${ name }. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "La seva informació s'ha trobat en almenys una fuita de dades. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
       ]
     },
     "Success": {
@@ -2023,8 +2061,14 @@
       "Current version": [
         "Versió actual"
       ],
+      "Custom addresses": [
+        "Adreces personalitzades"
+      ],
       "Custom email monitoring": [
         "Supervisió personalitzada del correu electrònic"
+      ],
+      "Custom emails": [
+        "Correus electrònics personalitzats"
       ],
       "Dark Web Monitoring": [
         "Supervisió del web fosc"
@@ -2049,6 +2093,9 @@
       ],
       "Enter your PIN": [
         "Introduïu el vostre codi PIN"
+      ],
+      "Excluded items": [
+        "Elements exclosos"
       ],
       "Get Started": [
         "Comenceu"
@@ -2221,6 +2268,9 @@
       ],
       "Weak password": [
         "Contrasenya feble"
+      ],
+      "Weak passwords": [
+        "Contrasenyes febles"
       ],
       "What is an alias?": [
         "Què és un àlies?"

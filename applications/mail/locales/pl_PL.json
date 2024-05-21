@@ -282,6 +282,9 @@
       "Copy password to clipboard": [
         "Kopiuj hasło do schowka"
       ],
+      "Copy version number to clipboard": [
+        "Kopiuj numer wersji do schowka"
+      ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
@@ -475,7 +478,7 @@
         "Czcionka"
       ],
       "Forgot password?": [
-        "Przypomnij hasło?"
+        "Nie pamiętasz hasła?"
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
@@ -1160,12 +1163,6 @@
       ],
       "Trust": [
         "Zaufaj"
-      ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -4580,7 +4577,7 @@
         "To spowoduje trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "To spowoduje usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
+        "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -5768,6 +5765,9 @@
       "and": [
         "i"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Zaplanowane lub odłożone wiadomości zostaną anulowane."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
       ],
@@ -6683,6 +6683,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Odłożono: jutro, ${ formattedTime }"
       ],
+      "Snoozing this conversation will be canceled.": [
+        "Odłożenie wątku zostanie anulowane."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
       ],
@@ -7021,6 +7024,9 @@
       ],
       "Version ${ appVersion }": [
         "Wersja ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numer wersji został skopiowany do schowka"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -10506,9 +10512,19 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetowanie hasła zostało anulowane"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10747,6 +10763,11 @@
         "Wspieraj prywatność w Internecie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Subskrypcja będzie automatycznie odnawiana co 2 lata po tej samej cenie do momentu jej anulowania."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -10881,6 +10902,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Status": {
@@ -11410,6 +11436,9 @@
       "Message deleted": [
         "Wiadomość została usunięta"
       ],
+      "Message expiration canceled": [
+        "Wygaśniecie wiadomości zostało anulowane"
+      ],
       "Message marked as legitimate": [
         "Wiadomość została oznaczona jako wiarygodna"
       ],
@@ -11490,6 +11519,9 @@
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Subskrypcja została anulowana."
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"

@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Télécharger les applications mobiles"
       ],
+      "Get Pass Business": [
+        "Obtenir Pass Business"
+      ],
       "Get Pass Plus": [
         "Je choisis Pass Plus"
       ],
@@ -543,6 +546,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ce service offre l'A2F. Activez-le pour améliorer votre sécurité."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Débloquez des fonctionnalités de sécurité avancées et des journaux détaillés pour protéger votre présence en ligne."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Grâce à la fonction de surveillance de ${ PASS_SHORT_APP_NAME }, restez à l'affût des menaces en recevant des alertes instantanées lorsque vos informations d'identification sont compromises. Débloquez des fonctions de sécurité avancées et des journaux détaillés pour protéger vos activités en ligne."
@@ -1434,9 +1440,6 @@
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Cette adresse personnalisée sera envoyée à ${ href } pour être surveillée. Aucune autre information n'est partagée avec HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "L'exportation ne contiendra que les coffres-forts que vous possédez"
       ],
@@ -2087,6 +2090,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Vous avez sélectionné ${ semiboldText } dans ce coffre-fort."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "A2F requis pour organisation"
+      ],
+      "SSO integration (coming soon)": [
+        "Intégration de l'authentification unique SSO (bientôt disponible)"
       ]
     },
     "Notification": {

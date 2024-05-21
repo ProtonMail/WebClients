@@ -1304,9 +1304,6 @@
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Пользовательский адрес электронной почты будет отправлен ${ href } для мониторинга. Никакие другие данные не будут отправлены в HIBP."
-      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
       ],
@@ -1921,6 +1918,14 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Требуется двухфакторная идентификация для организации"
+      ],
+      "SSO integration (coming soon)": [
+        "Интеграция с SSO (скоро появится)"
       ]
     },
     "Notification": {

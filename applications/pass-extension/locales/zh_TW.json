@@ -173,6 +173,9 @@
       "Edit vault": [
         "編輯保管庫"
       ],
+      "Exclude from monitoring": [
+        "排除監控"
+      ],
       "Export": [
         "匯出"
       ],
@@ -197,6 +200,9 @@
       "Get mobile apps": [
         "取得手機應用程式"
       ],
+      "Get Pass Plus": [
+        "取得Pass Plus"
+      ],
       "Help us improve": [
         "幫助我們改善"
       ],
@@ -217,6 +223,9 @@
       ],
       "Importing": [
         "正在匯入"
+      ],
+      "Include in monitoring": [
+        "於監控中"
       ],
       "Invite others": [
         "邀請他人"
@@ -349,6 +358,9 @@
       ],
       "Saving passkey...": [
         "儲存Passkey..."
+      ],
+      "See all": [
+        "查看全部"
       ],
       "See members": [
         "檢視成員"
@@ -560,6 +572,9 @@
       "Failed resending invite.": [
         "重新發送邀請時失敗。"
       ],
+      "Failed to add email address": [
+        "新增電子郵件地址失敗"
+      ],
       "Failed to delete selected items": [
         "無法刪除選擇的項目"
       ],
@@ -581,6 +596,9 @@
       "Failed to move items to trash": [
         "移動項目至垃圾桶失敗"
       ],
+      "Failed to pin item": [
+        "釘選項目失敗"
+      ],
       "Failed to remove user's access.": [
         "失敗移除使用者存取權。"
       ],
@@ -590,8 +608,17 @@
       "Failed to transfer this vault's ownership.": [
         "轉移保管庫所有權失敗。"
       ],
+      "Failed to unpin item": [
+        "取消釘選項目失敗"
+      ],
+      "Failed to verify email address": [
+        "驗證電子郵件地址失敗"
+      ],
       "File could not be parsed": [
         "檔案無法剖析"
+      ],
+      "File does not match expected format": [
+        "檔案不符合預期格式"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "匯入保管庫失敗${ vaultData.name }:${ description }"
@@ -799,6 +826,12 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }將會於註冊時建議密碼"
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } 成功停用"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } 成功啟用"
+      ],
       "${ trialDaysLeft } day left": [
         "剩下${ trialDaysLeft }天"
       ],
@@ -897,6 +930,9 @@
       ],
       "Editor": [
         "編輯器"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "電子郵件地址成功從於監控刪除"
       ],
       "Emptying trash...": [
         "清空垃圾桶..."
@@ -1015,6 +1051,9 @@
       "me": [
         "我"
       ],
+      "Monitoring settings successfully updated": [
+        "監控設定已成功更新"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
       ],
@@ -1107,6 +1146,9 @@
       ],
       "Save passkey": [
         "儲存密碼金鑰"
+      ],
+      "Select an existing login item to update.": [
+        "選取一個以存在的登入項目以更新。"
       ],
       "Select destination vault": [
         "選取目標保管庫"
@@ -1629,6 +1671,9 @@
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
       ],
+      "Strong": [
+        "強"
+      ],
       "Suffix": [
         "後綴"
       ],
@@ -1694,6 +1739,12 @@
       ],
       "View logs": [
         "檢視記錄檔"
+      ],
+      "Vulnerable": [
+        "具有風險"
+      ],
+      "Weak": [
+        "弱"
       ],
       "Website": [
         "網站"
@@ -1983,6 +2034,9 @@
       ],
       "Share with": [
         "與分享"
+      ],
+      "Stay safer online": [
+        "保持在線安全"
       ],
       "Suggestions": [
         "建議"

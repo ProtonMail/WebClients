@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopiuj klucz do schowka"
       ],
+      "Copy version number to clipboard": [
+        "Kopiuj numer wersji do schowka"
+      ],
       "Create": [
         "Utwórz"
       ],
@@ -200,6 +203,12 @@
       "Edit name": [
         "Edytuj nazwę"
       ],
+      "Edit organization identity": [
+        "Edytuj tożsamość organizacji"
+      ],
+      "Edit organization name": [
+        "Edytuj nazwę organizacji"
+      ],
       "Edit password": [
         "Edytuj hasło"
       ],
@@ -234,7 +243,10 @@
         "Dopasuj do okna"
       ],
       "Forgot password?": [
-        "Przypomnij hasło?"
+        "Nie pamiętasz hasła?"
+      ],
+      "Forgot recovery method?": [
+        "Nie pamiętasz metody odzyskiwania?"
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
@@ -2514,6 +2526,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jeśli użytkownik już ma adres ${ MAIL_APP_NAME }, wpisz go tutaj. W przeciwnym razie utwórz konto."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Zaproszenie zostanie anulowane. Użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
       ],
@@ -2548,7 +2563,7 @@
         "To spowoduje trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "To spowoduje usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
+        "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -3759,6 +3774,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Integracja SCIM została wyłączona"
+      ],
+      "SCIM token active": [
+        "Token SCIM jest aktywny"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpiecz konto ${ BRAND_NAME }"
       ],
@@ -3927,6 +3948,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ta czynność spowoduje trwałe usunięcie konta. Nie będziesz mógł reaktywować tego konta."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Spowoduje to usunięcie metod uwierzytelniania dwustopniowego."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Spowoduje to usunięcie logowania SSO w domenie ${ boldDomainName }."
       ],
@@ -4065,6 +4089,9 @@
       "Version ${ version }": [
         "Wersja ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Numer wersji został skopiowany do schowka"
+      ],
       "View, download, and manage your invoices.": [
         "Wyświetlaj, pobieraj i zarządzaj fakturami."
       ],
@@ -4133,6 +4160,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Po włączeniu uwierzytelniania SAML dla ${ appName } może być koniecznie użycie adresu URL odpowiedzi usługi ACS i identyfikatora dostawcy. Kopiuj i wklej poniższe dane do pól dostawcy tożsamości."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Po anulowaniu obecnej płatnej subskrypcji niewykorzystane koszty subskrypcji zostaną zwrócone na Twoje konto w postaci środków, a Twoje konto zostanie obniżone do planu ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
@@ -4569,6 +4599,9 @@
       "Current email": [
         "Obecny adres"
       ],
+      "Current organization identity": [
+        "Obecna tożsamość organizacji"
+      ],
       "Default language": [
         "Język domyślny"
       ],
@@ -4680,6 +4713,9 @@
       "New mailbox password": [
         "Nowe hasło skrzynki pocztowej"
       ],
+      "New organization identity": [
+        "Nowa tożsamość organizacji"
+      ],
       "New organization password": [
         "Nowe hasło organizacji"
       ],
@@ -4709,6 +4745,9 @@
       ],
       "Optional": [
         "Opcjonalnie"
+      ],
+      "Organization identity": [
+        "Tożsamość organizacji"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -4932,8 +4971,14 @@
       "Create account": [
         "Utwórz konto"
       ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
+      ],
       "Forgot username?": [
         "Nie pamiętasz nazwy użytkownika?"
+      ],
+      "Help": [
+        "Pomoc"
       ],
       "Help translate": [
         "Pomóż w tłumaczeniu"
@@ -5484,6 +5529,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funkcja premium"
       ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
@@ -6419,8 +6467,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Aby przywrócić uprawnienia administratora, użyj metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Nie możemy zweryfikować autentyczności tożsamości."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nie możemy zweryfikować klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli nie ufasz zaproszeniu lub nadawcy, skontaktuj się ze wsparciem klienta ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Zweryfikowaliśmy autentyczność tożsamości."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Zweryfikowaliśmy autentyczność nadawcy i zaproszenia."
@@ -6949,9 +7003,19 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetowanie hasła zostało anulowane"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7236,6 +7300,11 @@
         "Wspieraj prywatność w Internecie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Subskrypcja będzie automatycznie odnawiana co 2 lata po tej samej cenie do momentu jej anulowania."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -7355,6 +7424,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Storage": {
@@ -7769,6 +7843,9 @@
       "Verification successful": [
         "Weryfikacja powiodła się"
       ],
+      "You have successfully canceled your subscription.": [
+        "Subskrypcja została anulowana."
+      ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ]
@@ -8153,6 +8230,9 @@
       "Edit invoice details": [
         "Edytuj szczegóły faktury"
       ],
+      "Edit organization identity": [
+        "Edytuj tożsamość organizacji"
+      ],
       "Edit servers": [
         "Edytuj serwery"
       ],
@@ -8200,6 +8280,9 @@
       ],
       "Find email or username": [
         "Znajdź adres e-mail lub nazwę użytkownika"
+      ],
+      "Forgot recovery method": [
+        "Przypomnij metodę odzyskiwania"
       ],
       "Gateways": [
         "Bramy"
@@ -8564,6 +8647,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Adres e-mail będzie widoczny dla wszystkich użytkowników organizacji podczas zarządzania kontem."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Użytkownicy zobaczą logo zamiast ikony ${ BRAND_NAME } po zalogowaniu się do aplikacji internetowej."
