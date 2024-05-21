@@ -1392,9 +1392,6 @@
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Το προσαρμοσμένο email θα σταλεί στο ${ href } για παρακολούθηση. Δε θα σταλούν άλλα δεδομένα στο HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "Η εξαγωγή θα περιέχει μόνο κρύπτες που σας ανήκουν."
       ],
@@ -2051,6 +2048,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Απαιτείται 2FA για οργάνωση"
+      ],
+      "SSO integration (coming soon)": [
+        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
       ]
     },
     "Notification": {
