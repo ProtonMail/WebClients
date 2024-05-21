@@ -43,7 +43,7 @@ export const isMail = (urlString: string) => {
     }
 };
 
-export const isMailHome = (urlString: string) => {
+const isMailHome = (urlString: string) => {
     try {
         const urls = getConfig().url;
         const url = new URL(urlString);
@@ -141,4 +141,20 @@ export const isHostAllowed = (host: string) => {
         Logger.error("isHostAllowed", error);
         return false;
     }
+};
+
+export const isSameURL = (urlA: string, urlB: string) => {
+    if (urlA === urlB) {
+        return true;
+    }
+
+    if (urlA.replace(/\/$/, "") === urlB.replace(/\/$/, "")) {
+        return true;
+    }
+
+    if (isMailHome(urlA) && isMailHome(urlB)) {
+        return true;
+    }
+
+    return false;
 };
