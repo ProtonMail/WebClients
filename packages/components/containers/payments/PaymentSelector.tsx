@@ -16,9 +16,18 @@ interface Props {
     onChangeAmount: (amount: number) => void;
     maxAmount?: number;
     minAmount?: number;
+    disableCurrencySelector: boolean;
 }
 
-const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, minAmount, maxAmount }: Props) => {
+const PaymentSelector = ({
+    currency,
+    amount,
+    onChangeCurrency,
+    onChangeAmount,
+    minAmount,
+    maxAmount,
+    disableCurrencySelector,
+}: Props) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleButton = (value: number) => {
@@ -107,6 +116,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         id="id_desc_currency"
                         currency={currency}
                         onSelect={onChangeCurrency}
+                        disabled={disableCurrencySelector}
                     />
                 </div>
             </div>
