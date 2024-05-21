@@ -392,7 +392,6 @@ const hasAccess = ({
     if (toApp === APPS.PROTONPASS) {
         if (audience === Audience.B2B) {
             return [
-                PLANS.PASS_PRO,
                 PLANS.PASS_BUSINESS,
                 PLANS.NEW_VISIONARY,
                 PLANS.FAMILY,
