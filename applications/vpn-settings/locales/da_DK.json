@@ -245,6 +245,9 @@
       "Forgot password?": [
         "Glemt adgangskode?"
       ],
+      "Forgot recovery method?": [
+        "Glemt gendannelsesmetoden?"
+      ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
       ],
@@ -3385,6 +3388,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Du kan være i stand til at ${ signedInPasswordResetLink }, hvis du er logget ind et andet sted."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
@@ -4893,6 +4899,9 @@
       "Forgot username?": [
         "Glemt brugernavn?"
       ],
+      "Help": [
+        "Hjælp"
+      ],
       "Help translate": [
         "Hjælp med at oversætte"
       ],
@@ -4913,6 +4922,9 @@
       ],
       "Paypal without credit card": [
         "Paypal uden betalingskort"
+      ],
+      "perform a password reset from your active session": [
+        "udføre en nulstilling af adgangskoden fra din aktive session"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -5412,7 +5424,7 @@
         "Organiser elementer med flere bokse"
       ],
       "Pass Monitor - premium features": [
-        "Pass Monitor - eksklusive funktioner"
+        "Pass Monitor - premium-funktioner"
       ],
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
@@ -6844,7 +6856,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "Nulstilling af adgangskode aflyst"
+        "Nulstilling af adgangskode annulleret"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -6854,7 +6866,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Anmodning om nulstilling af adgangskode aflyst (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
+        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7633,7 +7645,7 @@
         "Bekræftelse gennemført"
       ],
       "You have successfully canceled your subscription.": [
-        "Du har opsagt dit abonnement med succes."
+        "Du har nu opsagt dit abonnement."
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
@@ -8063,6 +8075,9 @@
       ],
       "Find email or username": [
         "Find e-mail eller brugernavn"
+      ],
+      "Forgot recovery method": [
+        "Glemt gendannelsesmetoden"
       ],
       "Gateways": [
         "Gateways"
