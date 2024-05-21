@@ -97,25 +97,16 @@ describe('LlmModel', () => {
 
     it('should write a full email', async () => {
         let acc = '';
-        const callback = jest.fn((token: string, fulltext: string) => {
-            expect(token.length).toBeGreaterThan(0);
-            acc += token;
-            expect(fulltext).toEqual(acc);
-        });
         // @ts-ignore
-        const runningAction = await model.performAction(
-            {
-                type: 'writeFullEmail',
-                prompt: 'write a sample email',
-            },
-            callback
-        );
+        const runningAction = await model.performAction({
+            type: 'writeFullEmail',
+            prompt: 'write a sample email',
+        });
         let resolved = false;
         void runningAction.waitForCompletion().then(() => (resolved = true));
         expect(resolved).toEqual(false);
         await jest.runAllTimersAsync();
         expect(resolved).toEqual(true);
-        expect(callback).toHaveBeenCalled();
         expect(acc.length).toBeGreaterThanOrEqual(10);
     });
 
@@ -146,9 +137,7 @@ describe('LlmModel', () => {
 
     it('should shorten text', async () => {
         let acc = '';
-        const callback = jest.fn((token: string, fulltext: string) => {
-            expect(token.length).toBeGreaterThan(0);
-            acc += token;
+        const callback = jest.fn((fulltext: string) => {
             expect(fulltext).toEqual(acc);
         });
         // @ts-ignore
