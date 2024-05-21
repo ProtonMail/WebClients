@@ -1315,6 +1315,11 @@
         "新電子郵件"
       ]
     },
+    "app-switcher": {
+      "Secure your communications": [
+        "安全您的通訊"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
@@ -3260,8 +3265,23 @@
       "Bugs or quality issue": [
         "臭蟲或品質問題"
       ],
+      "I do not wish to share": [
+        "我不想要共享"
+      ],
+      "I found a cheaper VPN": [
+        "我找到較便宜的VPN"
+      ],
+      "I found a VPN with better features": [
+        "我找到VPN有更好的功能"
+      ],
+      "I only needed a VPN short-term": [
+        "我只有短時間需要VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "我使用不同的 ${ BRAND_NAME } 帳號"
+      ],
+      "It doesn't do what I need": [
+        "它沒有達到我的要求"
       ],
       "Missing feature(s)": [
         "缺少功能"
@@ -3274,6 +3294,9 @@
       ],
       "Temporary need, may come back in the future": [
         "暫時需要，以後可能會回來"
+      ],
+      "The VPN is too slow": [
+        "此VPN太慢了"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -6411,6 +6434,9 @@
       "Custom": [
         "自訂"
       ],
+      "Custom branding": [
+        "自訂品牌"
+      ],
       "Custom daily": [
         "自訂每天"
       ],
@@ -8298,6 +8324,12 @@
     "Key generation": {
       "Generate key": [
         "產生金鑰"
+      ],
+      "Generating key failed. Please try again later.": [
+        "金鑰生成失敗。請稍候再試。"
+      ],
+      "Key successfully generated.": [
+        "金鑰成功生成"
       ]
     },
     "Key state badge": {
@@ -10572,6 +10604,9 @@
       "Router support": [
         "路由器支援"
       ],
+      "Schedule and snooze emails for any time": [
+        "隨時計畫和延後電子郵件"
+      ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
       ],
@@ -11544,7 +11579,18 @@
         "您的方案包含最高 ${ humanReadableAvailableSpace } 的儲存空間。"
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "變免過度壓縮檔案。"
+      ],
+      "Tips on choosing a good logo": [
+        "選擇好標誌的方法"
+      ]
+    },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "拖放檔案到此處以上傳或"
+      ],
       "File in PNG or JPEG format": [
         "PNG 或 JPEG 格式檔案"
       ],
@@ -12319,6 +12365,11 @@
       ],
       "Generate token": [
         "產生權杖"
+      ]
+    },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "於身分提供者輸入憑證"
       ]
     },
     "scim: Label": {
@@ -13231,11 +13282,17 @@
       "Cancel subscription?": [
         "取消訂購授權?"
       ],
+      "Close": [
+        "關閉"
+      ],
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
       "Have a question?": [
         "有問題嗎？"
+      ],
+      "Helping activists in Hong Kong": [
+        "支持於香港的行動"
       ],
       "I still want to cancel": [
         "我還想取消"
@@ -13243,22 +13300,49 @@
       "Keep ${ planName }": [
         "保留 ${ planName }"
       ],
+      "Learn more about our impact": [
+        "了解更多我們的影響"
+      ],
+      "Our fight against censorship in Russia": [
+        "我們對抗俄羅斯審查"
+      ],
       "Priority support": [
         "優先支援"
       ],
       "Read the story": [
         "已讀的訊息"
       ],
+      "Resubscribe": [
+        "重新訂閱"
+      ],
+      "Subscription canceled": [
+        "訂閱已取消"
+      ],
+      "Unblocking internet access in Iran": [
+        "解除於伊朗的網路存取權"
+      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
       ],
       "Watch the interview": [
         "瀏覽訪談"
+      ],
+      "Yearly free storage bonuses": [
+        "年度免費儲存加成"
+      ],
+      "Your own custom email domain": [
+        "您持有的自訂電子郵件網域名稱"
+      ],
+      "Your own short @pm.me email alias": [
+        "您自己短@pm.me電子郵件別名"
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
       ],
       "Automatic email forwarding ${ strongText }": [
         "自動郵件轉寄${ strongText }"

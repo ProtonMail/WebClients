@@ -5327,6 +5327,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } 是您可以信赖的隐私，由强大的加密、开源代码和瑞士隐私法确保。我们相信没有人能够利用您的数据。我们的技术和业务基于这种从根本上更严格的隐私定义。"
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } 绝不向第三方透露您的信息。数据均来源于 ${ BRAND_NAME } 的独立分析以及 Constella Intelligence。"
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "与邮件服务商的连接中断，${ BRAND_NAME } 已暂停导入。请重新连接。"
       ],
@@ -6056,6 +6059,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "创建 ${ BRAND_NAME } 账户并接受邀请即可查看。"
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "为专用密码设置一个清晰的名称，以便说明其用途；然后选择一个自有域名地址，只有所选地址能够使用该专用密码发送邮件。"
       ],
@@ -6752,6 +6758,9 @@
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "对自有域名和非 ${ BRAND_NAME } 邮箱的监测即将推出。"
+      ],
       "support team": [
         "客服团队"
       ],
@@ -7129,6 +7138,9 @@
       ],
       "We just sent you a new link.": [
         "我们刚向您发送新的链接"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "我们可以实时监测暗网数据，检查您的个人信息（例如在第三方网站上使用的邮箱和密码）是否遭到泄露。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
@@ -8689,6 +8701,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "通过设备恢复"
+      ],
       "Recovery phone number": [
         "密保手机"
       ],
@@ -8903,6 +8918,9 @@
       ],
       "here": [
         "此处"
+      ],
+      "How does monitoring work?": [
+        "监测原理是什么？"
       ],
       "How to unlock data": [
         "如何解锁数据"
@@ -10208,6 +10226,12 @@
       ],
       "An external address cannot be default": [
         "其他邮箱的地址不能作为首选地址"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "暗网监测已关闭"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "暗网监测已开启"
       ],
       "Invalid code": [
         "无效的验证码"
