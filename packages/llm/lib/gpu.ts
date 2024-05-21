@@ -1,7 +1,8 @@
 import '@mlc-ai/web-llm';
 import { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
-import { downloadModel } from '@proton/llm/lib/downloader';
+import { AppCaches, getCachedFiles, getDestinationCacheFromID, storeInCache } from '@proton/llm/lib/downloader';
+import { isAssistantPostMessage, postMessageToAssistantIframe } from '@proton/llm/lib/helpers';
 import { BaseRunningAction } from '@proton/llm/lib/runningAction';
 
 import type {
@@ -16,6 +17,7 @@ import type {
     ShortenAction,
     WriteFullEmailAction,
 } from './types';
+import { ASSISTANT_EVENTS } from './types';
 
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
     "You're a harmless email generator.",
@@ -204,14 +206,11 @@ export class GpuLlmManager implements LlmManager {
 
     private status: undefined | 'downloading' | 'loading' | 'loaded' | 'unloaded' | 'error';
 
-    private model: GpuLlmModel | undefined; // defined iff status === 'loaded'
-
-    private abortController: AbortController | undefined; // defined iff status === 'loading'
+    private model: GpuLlmModel | undefined; // defined if status === 'loaded'
 
     constructor() {
         this.chat = undefined;
         this.status = undefined;
-        this.abortController = undefined;
     }
 
     isDownloading(): boolean {
@@ -220,24 +219,111 @@ export class GpuLlmManager implements LlmManager {
 
     async startDownload(updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig): Promise<boolean> {
         this.status = 'downloading';
-        this.abortController = new AbortController();
-        try {
-            await downloadModel(MODEL_VARIANT, updateProgress, assistantConfig, this.abortController);
-            this.status = 'unloaded';
-            return true;
-        } catch (e: any) {
-            if (typeof e === 'object' && e.name === 'AbortError') {
-                // user aborted, and it was successful
-                this.status = undefined;
-                return false;
-            } else {
+        const promises: Promise<void>[] = [];
+        let appCaches: AppCaches;
+        let downloadPromiseResolve: (value: boolean | PromiseLike<boolean>) => void;
+        let downloadPromiseReject: (reason?: any) => void;
+
+        const handleReceived = async (event: MessageEvent) => {
+            if (!isAssistantPostMessage(event)) {
+                return;
+            }
+
+            switch (event.data.type) {
+                case ASSISTANT_EVENTS.DOWNLOAD_PROGRESS:
+                    {
+                        // Call the download callback when receiving progress updates
+                        const { progress } = event.data.payload;
+                        updateProgress(progress);
+                    }
+                    break;
+                case ASSISTANT_EVENTS.DOWNLOAD_DATA:
+                    {
+                        // Get downloaded data from the iframe and store it in the cache
+                        const { downloadResult, url, destinationCacheID, expectedMd5, terminate } = event.data.payload;
+
+                        if (appCaches) {
+                            const destinationCache = getDestinationCacheFromID(destinationCacheID, appCaches);
+                            if (destinationCache) {
+                                const promise = storeInCache(downloadResult, url, destinationCache, expectedMd5);
+                                promises.push(promise);
+                            } else {
+                                // throw an error?
+                            }
+
+                            // Resolve the promise when receiving the last file
+                            if (terminate) {
+                                this.status = 'unloaded';
+                                await Promise.all(promises);
+                                downloadPromiseResolve(true);
+                            }
+                        }
+                    }
+                    break;
+                case ASSISTANT_EVENTS.DOWNLOAD_ERROR:
+                    {
+                        const { error } = event.data.payload;
+
+                        if (typeof error === 'object' && error.name === 'AbortError') {
+                            // user aborted, and it was successful
+                            this.status = undefined;
+                            downloadPromiseResolve(false);
+                        } else {
+                            console.error(error);
+                            this.status = 'error';
+                            downloadPromiseReject(error);
+                        }
+                    }
+                    break;
+            }
+        };
+
+        // Creating a promise so that we can wait for the entire downloading process to be complete on the iframe side before
+        // ending this function.
+        const downloadPromise = await new Promise<boolean>(async (resolve, reject) => {
+            downloadPromiseResolve = resolve;
+            downloadPromiseReject = reject;
+            try {
+                // Search for files already present in the cache, download the ones that are not downloaded yet
+                const modelVariant = assistantConfig.model_list[0].model_id;
+                const {
+                    filesAlreadyDownloaded,
+                    needsAdditionalDownload,
+                    appCaches: currentAppCaches,
+                } = await getCachedFiles(modelVariant, assistantConfig);
+
+                appCaches = currentAppCaches;
+
+                // Post message to the iframe if we need to download some files
+                if (needsAdditionalDownload) {
+                    window.addEventListener('message', handleReceived);
+
+                    postMessageToAssistantIframe({
+                        type: ASSISTANT_EVENTS.START_DOWNLOAD,
+                        payload: {
+                            config: assistantConfig,
+                            modelVariant,
+                            filesToIgnore: filesAlreadyDownloaded,
+                        },
+                    });
+                }
+
+                // Resolve the promise if all files are already cached
+                if (!needsAdditionalDownload) {
+                    this.status = 'unloaded';
+                    await Promise.all(promises);
+                    resolve(true);
+                }
+            } catch (e: any) {
                 console.error(e);
                 this.status = 'error';
-                throw e;
+                reject(e);
             }
-        } finally {
-            this.abortController = undefined;
-        }
+        }).finally(() => {
+            window.removeEventListener('message', handleReceived);
+        });
+
+        return downloadPromise;
     }
 
     private async startMlcEngine(assistantConfig: AssistantConfig) {
@@ -271,18 +357,10 @@ export class GpuLlmManager implements LlmManager {
         }
     }
 
-    // Request to cancel an ongoing download. Returns whether there was a download in progress
-    // that we did request to abort.
-    //
-    // This will return immediately, but the cancellation will be complete when the startDownload() promise is
-    // resolved, which shouldn't take long.
-    cancelDownload(): boolean {
-        if (this.abortController) {
-            this.abortController.abort();
-            return true;
-        } else {
-            return false;
-        }
+    cancelDownload() {
+        postMessageToAssistantIframe({
+            type: ASSISTANT_EVENTS.PAUSE_DOWNLOAD,
+        });
     }
 
     async loadOnGpu(assistantConfig: AssistantConfig): Promise<LlmModel> {

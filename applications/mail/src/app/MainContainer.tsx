@@ -11,9 +11,9 @@ import {
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import { AssistantProvider } from '@proton/llm/lib/useAssistant';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
-import { AssistantProvider } from '@proton/llm/lib/useAssistant';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
