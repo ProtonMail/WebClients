@@ -58,6 +58,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import {
+    CancellationReminderSection,
     OrganizationScheduleCallSection,
     OrganizationTwoFAEnforcementSection,
     OrganizationTwoFAHeader,
@@ -67,6 +68,7 @@ import {
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/b2cCancellationFlow/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -327,6 +329,9 @@ const MainContainer: FunctionComponent = () => {
                                     </PrivateMainSettingsAreaBase>
                                 </Route>
                             )}
+                            <Route path={`${CANCEL_ROUTE}`}>
+                                <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
+                            </Route>
                             {loadingSubscription || loadingOrganization ? (
                                 <PrivateMainAreaLoading />
                             ) : (
