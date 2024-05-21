@@ -1,5 +1,3 @@
-import JSBI from 'jsbi';
-
 /**
  * Set bit on the number
  */
@@ -20,8 +18,7 @@ export const clearBit = (number = 0, mask: number): number => number & ~mask;
  */
 export const hasBit = (number = 0, mask: number): boolean => (number & mask) === mask;
 
-export const hasBitBigInt = (number = JSBI.BigInt(0), mask: JSBI): boolean =>
-    JSBI.equal(JSBI.bitwiseAnd(number, JSBI.BigInt(mask)), JSBI.BigInt(mask));
+export const hasBitBigInt = (number = BigInt(0), mask: bigint): boolean => (number & BigInt(mask)) === BigInt(mask);
 
 /**
  * Get all bits which are toggled on in the respective bitmap

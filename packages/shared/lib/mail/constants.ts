@@ -1,5 +1,3 @@
-import JSBI from 'jsbi';
-
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: Math.pow(2, 0), // whether a message is received
     FLAG_SENT: Math.pow(2, 1), // whether a message is sent
@@ -22,10 +20,10 @@ export const MESSAGE_FLAGS = {
     FLAG_DMARC_FAIL: Math.pow(2, 26), // Incoming mail failed dmarc authentication.
     FLAG_HAM_MANUAL: Math.pow(2, 27), // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
     FLAG_PHISHING_AUTO: Math.pow(2, 30), // Incoming mail is marked as phishing by anti-spam filters.
-    FLAG_FROZEN_EXPIRATION: JSBI.BigInt(Math.pow(2, 32)), // Messages where the expiration time cannot be changed
-    FLAG_SUSPICIOUS: JSBI.BigInt(Math.pow(2, 33)), // System flagged this message as a suspicious email
-    FLAG_AUTO_FORWARDER: JSBI.BigInt(Math.pow(2, 34)), // Message is auto-forwarded
-    FLAG_AUTO_FORWARDEE: JSBI.BigInt(Math.pow(2, 35)), // Message is auto-forwarded
+    FLAG_FROZEN_EXPIRATION: BigInt(Math.pow(2, 32)), // Messages where the expiration time cannot be changed
+    FLAG_SUSPICIOUS: BigInt(Math.pow(2, 33)), // System flagged this message as a suspicious email
+    FLAG_AUTO_FORWARDER: BigInt(Math.pow(2, 34)), // Message is auto-forwarded
+    FLAG_AUTO_FORWARDEE: BigInt(Math.pow(2, 35)), // Message is auto-forwarded
 };
 
 export enum VERIFICATION_STATUS {
