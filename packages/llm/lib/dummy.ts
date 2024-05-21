@@ -114,7 +114,7 @@ export class DummyWriteFullEmailRunningAction extends DummyRunningActionBase {
                 await delay(150);
                 let word = words[i] + ' ';
                 fulltext += word;
-                callback(word, fulltext);
+                callback(fulltext);
             }
             this.done = true;
             this.running = false;
@@ -145,7 +145,7 @@ export class DummyShortenRunningAction extends DummyRunningActionBase {
                 await delay(150);
                 let word = words[i] + ' ';
                 fulltext += word;
-                callback(word, fulltext);
+                callback(fulltext);
             }
             this.done = true;
             this.running = false;

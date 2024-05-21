@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/lines-between-class-members */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import { DESTINATION_CACHE, DownloadResult } from '@proton/llm/lib/downloader';
 
 export type PromiseResolve = (value: PromiseLike<void> | void) => void;
 
@@ -16,7 +19,7 @@ export type GpuAssessmentResult =
 export interface LlmManager {
     // prefer passing a canvas, it will allow us to get some info using WebGL
     startDownload: (updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig) => Promise<boolean>; // returns whether it completed
-    cancelDownload: () => boolean;
+    cancelDownload: () => void;
     loadOnGpu: (assistantConfig: AssistantConfig) => Promise<LlmModel>;
 }
 
@@ -94,3 +97,61 @@ export interface AssistantConfig {
     model_list: AssistantConfigModel[];
     use_web_worker: boolean;
 }
+
+/**
+ * Events sent from or to the assistant iframe
+ */
+export enum ASSISTANT_EVENTS {
+    // Messages from parent to iframe
+    START_DOWNLOAD = 'start-download',
+    PAUSE_DOWNLOAD = 'pause-download',
+
+    // Messages from iframe to parent
+    DOWNLOAD_DATA = 'download-data',
+    DOWNLOAD_PROGRESS = 'download-progress',
+    DOWNLOAD_ERROR = 'download-error',
+}
+
+interface START_DOWNLOAD {
+    type: ASSISTANT_EVENTS.START_DOWNLOAD;
+    payload: {
+        config: AssistantConfig;
+        modelVariant: string;
+        filesToIgnore: string[];
+    };
+}
+
+interface PAUSE_DOWNLOAD {
+    type: ASSISTANT_EVENTS.PAUSE_DOWNLOAD;
+}
+
+interface DOWNLOAD_DATA {
+    type: ASSISTANT_EVENTS.DOWNLOAD_DATA;
+    payload: {
+        downloadResult: DownloadResult;
+        url: string;
+        destinationCacheID: DESTINATION_CACHE;
+        expectedMd5?: string;
+        terminate: boolean;
+    };
+}
+
+interface DOWNLOAD_PROGRESS {
+    type: ASSISTANT_EVENTS.DOWNLOAD_PROGRESS;
+    payload: {
+        progress: DownloadProgressInfo;
+    };
+}
+
+interface DOWNLOAD_ERROR {
+    type: ASSISTANT_EVENTS.DOWNLOAD_ERROR,
+    payload: {
+        error: any;
+    }
+}
+
+export type ASSISTANT_ACTION = START_DOWNLOAD
+    | PAUSE_DOWNLOAD
+    | DOWNLOAD_DATA
+    | DOWNLOAD_PROGRESS
+    | DOWNLOAD_ERROR;
