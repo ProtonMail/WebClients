@@ -41,9 +41,15 @@ export const formatItems = ({ isLabelMapping, mapping, labels, folders }: Format
  * @param newFolder the current folder that is renamed
  * @param newFolders the list of all folders in the current mapping
  * @param newName the new name of the folder
+ * @param isLabelMapping whether the mapping is for labels or folders
  * @returns an updated mapping where all childIDs of the updated folder are renamed
  */
-export const renameChildFolders = (newFolder: FolderMapItem, newFolders: FolderMapItem[], newName: string) => {
+export const renameChildFolders = (
+    newFolder: FolderMapItem,
+    newFolders: FolderMapItem[],
+    newName: string,
+    isLabelMapping: boolean
+) => {
     const foldersCopy = [...newFolders];
 
     if (newFolder.folderChildIDS && newFolder.folderChildIDS.length) {
@@ -59,8 +65,15 @@ export const renameChildFolders = (newFolder: FolderMapItem, newFolders: FolderM
                 return;
             }
 
-            childFolder.protonPath = [...childFolder.protonPath];
-            childFolder.protonPath[providerPathIndex] = newName;
+            // In label mapping we want to split the current label into parts to only update the providerPathIndex index and not overide the whole string
+            if (isLabelMapping) {
+                const splittedProtonPath = childFolder.protonPath[0].split('-');
+                splittedProtonPath[providerPathIndex] = newName;
+                childFolder.protonPath = [splittedProtonPath.join('-')];
+            } else {
+                childFolder.protonPath = [...childFolder.protonPath];
+                childFolder.protonPath[providerPathIndex] = newName;
+            }
 
             foldersCopy[childFolderIndex] = childFolder;
         });
