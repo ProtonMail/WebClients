@@ -3,6 +3,7 @@ import { Route, RouteComponentProps } from 'react-router';
 
 import { useAppTitle } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
@@ -13,7 +14,7 @@ import { useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
-    const { navigateToRoot } = useNavigate();
+    const { navigateToRoot, navigateToNoAccess } = useNavigate();
     const { activeFolder, setFolder } = useActiveShare();
     const volumesState = useVolumesState();
     const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
@@ -65,7 +66,11 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
             })
             .catch((err) => {
                 console.warn(err);
-                navigateToRoot();
+                if (err.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    navigateToNoAccess();
+                } else {
+                    navigateToRoot();
+                }
             });
     }, [folderPromise]);
 
