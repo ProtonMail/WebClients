@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
@@ -37,6 +37,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         navigateToSharedWithMe,
         navigateToTrash,
         navigateToRoot,
+        navigateToNoAccess,
         navigateToSearch,
     } = useNavigate();
     const { setFolder } = useActiveShare();
@@ -84,12 +85,12 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         if (!error) {
             return;
         }
-        if (
+        if (error.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+            navigateToNoAccess();
+        } else if (
             // Block not found (storage response).
             error.status === HTTP_STATUS_CODE.NOT_FOUND ||
-            // Meta data not found (API response).
-            error.data?.Code === RESPONSE_CODE.NOT_FOUND ||
-            error.data?.Code === RESPONSE_CODE.INVALID_ID
+            error.data?.Code === API_CUSTOM_ERROR_CODES.INVALID_ID
         ) {
             navigateToRoot();
         }

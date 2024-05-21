@@ -30,6 +30,7 @@ import {
 import { useShareActions } from '../store/_shares';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
+import NoAccessContainer from './NoAccessContainer';
 import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
@@ -117,6 +118,7 @@ const InitContainer = () => {
                 <Switch>
                     <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
+                    <Route path="/no-access" component={NoAccessContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
                     {isDriveSharingEnabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
                     {(isPhotosEnabled || hasPhotosShare) && <Route path="/photos" component={PhotosContainer} />}
