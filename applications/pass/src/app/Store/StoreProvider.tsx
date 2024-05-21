@@ -20,15 +20,9 @@ import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/clien
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import {
-    selectFeatureFlag,
-    selectLocale,
-    selectLockEnabled,
-    selectOnboardingEnabled,
-} from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { useAuthService } from '../Context/AuthServiceProvider';
@@ -71,8 +65,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     if (res.ok) {
                         telemetry.start().catch(noop);
                         core.i18n.setLocale(selectLocale(state)).catch(noop);
+
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
-                        if (selectLockEnabled(state)) authStore.setLockLastExtendTime(getEpoch());
 
                         const onboardingEnabled = selectOnboardingEnabled(installed)(state);
                         const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
