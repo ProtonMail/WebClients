@@ -208,6 +208,9 @@
       "Get mobile apps": [
         "Hent mobilapps"
       ],
+      "Get Pass Business": [
+        "Få Pass Business"
+      ],
       "Get Pass Plus": [
         "Få Pass Plus"
       ],
@@ -543,6 +546,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Frigør avancerede sikkerhedsfunktioner og udførlige logfiler for at beskytte din færden på nettet."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Med ${ PASS_SHORT_APP_NAME } Monitor er du på forkant af trusler ved at få øjeblikkelige varsler, hvis dine legitimationsoplysninger kompromitteres. Lås op for avancerede sikkerhedsfunktioner og detaljerede logfiler for at beskytte din online tilstedeværelse."
@@ -1434,9 +1440,6 @@
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
       ],
-      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Denne brugertilpassede e-mail sendes til ${ href } til overvågning. Ingen andre data vil blive sendt til HIBP."
-      ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."
       ],
@@ -2087,6 +2090,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Du valgte ${ semiboldText } i denne boks"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kræv 2FA for organisation"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integration (kommer snart)"
       ]
     },
     "Notification": {
