@@ -31,7 +31,7 @@ import './MonitorSummary.scss';
 export const MonitorSummary: FC = () => {
     const { navigate } = useNavigation();
     const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
-    const { plan, features, upsellType } = useUpsellPlanFeatures();
+    const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
 
     const paid = isPaidPlan(plan);
     const preview = useSelector(selectMonitorPreview);
@@ -124,6 +124,7 @@ export const MonitorSummary: FC = () => {
                         <UpsellingModal
                             upsellRef={UpsellRef.PASS_MONITOR}
                             upsellType={upsellType}
+                            upgradePath={upgradePath}
                             open={upsellModalOpen}
                             onClose={() => setUpsellModalOpen(false)}
                             features={
