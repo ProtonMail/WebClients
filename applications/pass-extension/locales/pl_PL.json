@@ -215,6 +215,9 @@
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
+      "Get Pass Business": [
+        "Wybierz plan Pass Business"
+      ],
       "Get Pass Plus": [
         "Wybierz plan Pass Plus"
       ],
@@ -534,6 +537,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
       ]
     },
     "Error": {
@@ -1595,7 +1601,7 @@
         "${ config.options.wordCount } słów"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "Monitoring ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
