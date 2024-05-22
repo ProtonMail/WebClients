@@ -52,7 +52,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
         return () => {
             ac.abort();
         };
-    }, [shareId, linkId, getSharePermissions]);
+    }, [shareId, linkId]);
 
     return {
         permissions,
