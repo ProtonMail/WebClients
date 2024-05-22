@@ -30,6 +30,23 @@ export const saveSettings = (settings: SettingsStore) => {
 export const getSettings = (): SettingsStore => {
     const settings = store.get("settings");
     if (settings) {
+        let saveDefaults = false
+
+        if (!settings.releaseCategory) {
+            settings.releaseCategory = defaultSettings.releaseCategory
+            saveDefaults = true
+        }
+
+        if (!settings.rolloutProportion) {
+            settings.rolloutProportion = defaultSettings.rolloutProportion
+            saveDefaults = true
+        }
+
+        if (saveDefaults) {
+            Logger.info("Some default values were missing, saving settings.")
+            saveSettings(settings)
+        }
+
         return settings;
     }
 
