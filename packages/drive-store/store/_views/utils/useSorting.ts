@@ -17,6 +17,8 @@ export enum SortField {
     linkExpireTime = 'linkExpireTime',
     numAccesses = 'numAccesses',
     trashed = 'trashed',
+    sharedOn = 'sharedOn',
+    sharedBy = 'sharedBy',
 }
 
 export interface SortParams<T extends SortField = SortField> {
@@ -33,6 +35,8 @@ interface LinkSortFields {
     fileModifyTime: number;
     trashed: number | null;
     shareUrl?: LinkShareUrl;
+    sharedOn?: number;
+    sharedBy?: string;
 }
 
 /**
@@ -95,6 +99,8 @@ function sortParamsToSortConfig({ sortField, sortOrder: direction }: SortParams)
         linkExpireTime: [getShareLinkExpiresSortConfig(direction), { key: 'isFile', direction }, getNameSortConfig()],
         numAccesses: [getShareLinkNumAccessesSortConfig(direction), { key: 'isFile', direction }, getNameSortConfig()],
         trashed: [{ key: 'trashed', direction }, getNameSortConfig()],
+        sharedOn: [{ key: 'sharedOn', direction }, getNameSortConfig()],
+        sharedBy: [{ key: 'sharedBy', direction }, getNameSortConfig()],
     };
     return configs[sortField];
 }

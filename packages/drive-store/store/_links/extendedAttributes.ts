@@ -175,7 +175,24 @@ export function createFileExtendedAttributes({
     };
 }
 
-async function encryptExtendedAttributes(
+/**
+ * Creates and encryptes XAttr for documents.
+ */
+export async function encryptDocumentExtendedAttributes(
+    nodePrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference
+) {
+    const xattr = createDocumentExtendedAttributes();
+    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
+}
+
+export function createDocumentExtendedAttributes() {
+    return {
+        Common: {},
+    };
+}
+
+export async function encryptExtendedAttributes(
     xattr: ExtendedAttributes,
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference

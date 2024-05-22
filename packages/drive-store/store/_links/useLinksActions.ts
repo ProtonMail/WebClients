@@ -9,7 +9,8 @@ import {
 } from '@proton/shared/lib/api/drive/link';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
-import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
@@ -26,12 +27,16 @@ import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
 
-const INVALID_REQUEST_ERROR_CODES = [RESPONSE_CODE.ALREADY_EXISTS, RESPONSE_CODE.INVALID_REQUIREMENT];
+const INVALID_REQUEST_ERROR_CODES = [
+    API_CODES.ALREADY_EXISTS_ERROR,
+    API_CODES.INVALID_REQUIREMENT_ERROR,
+    API_CODES.NOT_ALLOWED_ERROR,
+];
 
 interface APIResponses {
     Responses: {
         Response: {
-            Code: RESPONSE_CODE;
+            Code: API_CODES;
             Error?: string;
         };
     }[];

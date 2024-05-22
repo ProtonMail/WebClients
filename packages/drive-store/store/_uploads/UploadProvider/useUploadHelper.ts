@@ -192,9 +192,24 @@ export default function useUploadHelper() {
         return links?.find((link) => link.name === name);
     };
 
+    const findHash = async (
+        abortSignal: AbortSignal,
+        { shareId, parentLinkId, filename }: { shareId: string; parentLinkId: string; filename: string }
+    ) => {
+        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkId);
+        if (!parentHashKey) {
+            throw Error('Missing hash key on folder link');
+        }
+
+        const hash = await generateLookupHash(filename, parentHashKey);
+
+        return hash;
+    };
+
     return {
         findAvailableName,
         findDuplicateContentHash,
+        findHash,
         getLinkByName,
     };
 }
