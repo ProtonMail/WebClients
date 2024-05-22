@@ -121,7 +121,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
             const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOFILL_QUERY,
-                    payload: { domain },
+                    payload: { domain, writable: true },
                 })
             );
 

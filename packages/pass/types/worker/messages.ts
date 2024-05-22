@@ -27,7 +27,7 @@ import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, AliasOptions, SelectedItem, UniqueItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
-import type { AutofillResult } from './autofill';
+import type { AutofillOptions, AutofillResult } from './autofill';
 import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
 import type { OnboardingMessage } from './onboarding';
@@ -136,7 +136,7 @@ export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: Auth
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG };
-export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, { domain?: string }>;
+export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, AutofillOptions>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
