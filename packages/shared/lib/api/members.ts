@@ -29,6 +29,11 @@ export const getMember = (memberID: string) => ({
     url: `core/v4/members/${memberID}`,
 });
 
+export const getSelfMember = () => ({
+    method: 'get',
+    url: 'core/v4/members/me',
+});
+
 export const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',
     url: `core/v4/members/${memberID}/addresses`,

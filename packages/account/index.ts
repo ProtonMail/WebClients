@@ -16,6 +16,7 @@ export * from './organization/theme';
 export * from './organizationKey';
 export * from './organizationKey/listener';
 export * from './organizationKey/actions';
+export * from './member';
 export * from './members';
 export * from './members/actions';
 export * from './members/validateAddUser';
