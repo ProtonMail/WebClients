@@ -2,10 +2,13 @@ import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
+import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
+import { Spotlight } from '@proton/components/index';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -13,9 +16,12 @@ import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import type { LoginItemFormValues } from '@proton/pass/types';
+import { type LoginItemFormValues, OnboardingMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -28,6 +34,8 @@ type Props = {
 };
 
 export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
+    const { onboardingCheck } = usePassCore();
+    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
     const passwordContext = usePasswordContext();
     const { search } = useLocation();
     const history = useHistory();
@@ -37,7 +45,41 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
     const [usernameExpanded, setUsernameExpanded] = useState(false);
+    const [showUsernameOnboarding, setShowUsernameOnboarding] = useState(false);
     const showUsername = usernameExpanded || form.values.itemUsername.length > 0;
+
+    const { acknowledge } = useSpotlight();
+
+    const addUsernameButton = (
+        <ButtonLike
+            as="div"
+            icon
+            pill
+            size="small"
+            onClick={() => setUsernameExpanded(true)}
+            shape="solid"
+            title={c('Action').t`Add username field`}
+            className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
+            style={{
+                '--top-custom': '8px',
+                '--left-custom': '16px',
+            }}
+        >
+            <Icon name="plus" size={4} className="shrink-0" />
+        </ButtonLike>
+    );
+
+    useEffect(() => {
+        (async () => usernameSplitEnabled && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
+            .then((show) => setShowUsernameOnboarding(Boolean(show)))
+            .catch(noop);
+
+        return () => {
+            if (usernameSplitEnabled) {
+                acknowledge(OnboardingMessage.USERNAME_TOOLTIP);
+            }
+        };
+    }, [usernameSplitEnabled]);
 
     useEffect(() => {
         return () => {
@@ -63,22 +105,19 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     <>
                         <Icon name={aliasModal.usernameIsAlias ? 'alias' : 'envelope'} size={5} className="mt-2" />
                         {!showUsername && (
-                            <ButtonLike
-                                as="div"
-                                icon
-                                pill
-                                size="small"
-                                onClick={() => setUsernameExpanded(true)}
-                                shape="solid"
-                                title={c('Action').t`Add username field`}
-                                className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
-                                style={{
-                                    '--top-custom': '8px',
-                                    '--left-custom': '16px',
-                                }}
+                            <Spotlight
+                                content={
+                                    <>
+                                        <div className="text-bold">{c('Info').t`Add a username field`}</div>
+                                        <div className="color-weak">{c('Info')
+                                            .t`Click here to add a field for a username.`}</div>
+                                    </>
+                                }
+                                originalPlacement="bottom-start"
+                                show={showUsernameOnboarding}
                             >
-                                <Icon name="plus" size={4} className="shrink-0" />
-                            </ButtonLike>
+                                {addUsernameButton}
+                            </Spotlight>
                         )}
                     </>
                 }
