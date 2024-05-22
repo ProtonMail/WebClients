@@ -14,7 +14,7 @@ const result = (env: any): webpack.Configuration => {
         new webpack.DefinePlugin({
             BUILD_TARGET: JSON.stringify('web'),
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
-            OFFLINE_SUPPORTED: process.env.OFFLINE === '1' || process.env.OFFLINE === 'true',
+            OFFLINE_SUPPORTED: true,
         })
     );
 
