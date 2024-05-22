@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave, useUser } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -31,15 +31,18 @@ import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
+import useUploadMetrics from './useUploadMetrics';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
 export default function useUpload(): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
+    const [user] = useUser();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
 
+    const metrics = useUploadMetrics(user.isPaid);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
@@ -236,6 +239,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                 })
                 .then(() => {
                     queue.updateState(nextFileUpload.id, TransferState.Done);
+                    metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
                 })
                 .catch((error) => {
                     if (isPhotosDisabledUploadError(error)) {
@@ -251,6 +255,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
+                        metrics.uploadFailed(nextFileUpload.shareId, error, nextFileUpload.numberOfErrors);
                     }
 
                     // If the error is 429 (rate limited), we should not continue

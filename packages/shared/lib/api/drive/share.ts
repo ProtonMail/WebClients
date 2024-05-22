@@ -119,3 +119,8 @@ export const queryMigrateLegacyShares = (data: {
     data,
     silence: [HTTP_STATUS_CODE.NOT_FOUND],
 });
+
+export const queryResolveContextShare = ({ volumeId, linkId }: { volumeId: string; linkId: string }) => ({
+    url: `drive/volumes/${volumeId}/links/${linkId}/context`,
+    method: 'get',
+});
