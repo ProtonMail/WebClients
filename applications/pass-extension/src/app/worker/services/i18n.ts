@@ -11,6 +11,7 @@ import { withContext } from '../context';
 export const createI18nService = () => {
     const service = createCoreI18nService({
         locales,
+        loadDateLocale: false,
         getLocale: withContext(async (ctx) => {
             const { locale } = await ctx.service.settings.resolve();
             return locale;

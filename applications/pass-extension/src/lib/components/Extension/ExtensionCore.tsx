@@ -34,6 +34,7 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
         endpoint,
         i18n: createI18nService({
             locales,
+            loadDateLocale: true,
             /* resolve the extension locale through the I18nService instead of reading
              * from the store as some extension sub-apps are not redux connected but
              * should be aware of the current localisation setting */
