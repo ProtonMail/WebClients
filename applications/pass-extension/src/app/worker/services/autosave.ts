@@ -6,9 +6,15 @@ import { c } from 'ttag';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import { selectAutosaveCandidate, selectAutosaveVault, selectItem } from '@proton/pass/store/selectors';
+import {
+    selectAutosaveCandidate,
+    selectAutosaveVault,
+    selectItem,
+    selectWritableVaults,
+} from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -20,9 +26,11 @@ export const createAutoSaveService = () => {
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
         const { username, password } = data;
+        const state = store.getState();
+        const shareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
 
         if (type === 'register') {
-            const candidates = selectAutosaveCandidate({ domain, subdomain, username: '' })(store.getState());
+            const candidates = selectAutosaveCandidate({ domain, subdomain, username: '', shareIds })(state);
             const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
             const fullMatch = username && pwMatch.some((item) => deobfuscate(item.data.content.username) === username);
 
@@ -39,7 +47,7 @@ export const createAutoSaveService = () => {
 
         /* If no login items found for the current domain & the
          * current username - prompt for autosaving a new entry */
-        const candidates = selectAutosaveCandidate({ domain, subdomain, username })(store.getState());
+        const candidates = selectAutosaveCandidate({ domain, subdomain, username, shareIds })(state);
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
