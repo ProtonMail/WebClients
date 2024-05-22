@@ -4,7 +4,7 @@ import { postMessageToAssistantParent } from '@proton/llm/lib/helpers';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 import throttle from '@proton/utils/throttle';
 
-import type { AssistantConfig } from './types';
+import type { AssistantConfig, AssistantConfigModel } from './types';
 import { ASSISTANT_EVENTS } from './types';
 
 type NdarrayCache = {
@@ -58,15 +58,6 @@ export type DownloadResult = {
 
 export type AppCaches = { wasm: Cache; model: Cache; config: Cache };
 
-type VariantConfig = {
-    low_resource_required: boolean;
-    model_lib_url: string;
-    required_features: string[];
-    model_url: string;
-    model_id: string;
-    vram_required_MB: number;
-};
-
 // A function to monitor the progress of a single file.
 type OneFileProgressCallback = (url: string, received: number, total: number) => void;
 
@@ -113,11 +104,18 @@ async function downloadFile(
     return { status, statusText, headers: serializedHeaders, chunks };
 }
 
+// Compute the file url using the model_url so that we cache the file correctly in the parent app
+function getFileParentURL(url: string, variantConfig: AssistantConfigModel) {
+    const parentBaseURL = new URL(variantConfig.model_url);
+    return `${parentBaseURL.origin}${new URL(url).pathname}`;
+}
+
 async function downloadFilesSequentially(
     files: FileDownload[],
     callback: OneFileProgressCallback,
     abortController: AbortController,
     filesToIgnore: string[],
+    variantConfig: AssistantConfigModel,
     parentURL: string
 ) {
     let filesDownloaded = 0;
@@ -143,7 +141,8 @@ async function downloadFilesSequentially(
                             status: downloadResult.status,
                             statusText: downloadResult.statusText,
                         },
-                        url,
+                        // use the parent model url so that we put the right element in cache
+                        url: getFileParentURL(url, variantConfig),
                         destinationCacheID,
                         expectedMd5,
                         terminate: filesDownloaded === totalFilesToDownload,
@@ -157,11 +156,12 @@ async function downloadFilesSequentially(
 }
 
 // Prepare the list of all the files we need to download
-function listFilesToDownload(variantConfig: VariantConfig) {
-    const baseKey = new URL(variantConfig.model_url).pathname;
-    const baseUrl = variantConfig.model_url;
-    const wasmUrl = variantConfig.model_lib_url; // 'https://mail.proton.me/.../file.wasm'
-    const wasmKey = new URL(variantConfig.model_lib_url).pathname; // '/.../file.wasm'
+function listFilesToDownload(variantConfig: AssistantConfigModel) {
+    // From the iframe, we are downloading files using the model_download_url
+    // Then, before sending an event to the parent app,
+    // we will update the url so that we use the model_url domain instead for the file caching
+    const baseKey = new URL(variantConfig.model_download_url).pathname;
+    const baseUrl = variantConfig.model_download_url;
 
     const chatConfigURL = new URL('mlc-chat-config.json', baseUrl).href;
     const tokenizerURL = new URL('tokenizer.json', baseUrl).href;
@@ -181,13 +181,6 @@ function listFilesToDownload(variantConfig: VariantConfig) {
         url: tokenizerURL,
         key: `${baseKey}tokenizer.json`,
         destinationCacheID: DESTINATION_CACHE.MODEL,
-    });
-
-    files.push({
-        // "webllm/wasm" -> ".../file.wasm"
-        url: wasmUrl,
-        key: wasmKey,
-        destinationCacheID: DESTINATION_CACHE.WASM,
     });
 
     files.push(
@@ -242,7 +235,7 @@ export async function downloadModel(
     // Consequently, it will be frequently updated, namely each time we receive a new chunk of data.
     const receivedSizes: Map<string, number> = new Map();
     for (const f of files) {
-        if (filesToIgnore.includes(f.url)) {
+        if (filesToIgnore.includes(getFileParentURL(f.url, variantConfig))) {
             receivedSizes.set(f.url, f.expectedSize || 0);
         } else {
             receivedSizes.set(f.url, 0);
@@ -283,7 +276,14 @@ export async function downloadModel(
             parentURL
         );
     };
-    await downloadFilesSequentially(files, updateProgressOneFile, abortController, filesToIgnore, parentURL);
+    await downloadFilesSequentially(
+        files,
+        updateProgressOneFile,
+        abortController,
+        filesToIgnore,
+        variantConfig,
+        parentURL
+    );
 }
 
 /**
@@ -361,11 +361,11 @@ async function existsInCache(url: string, destinationCache: Cache, expectedMd5?:
 }
 
 // List all files that we need to use the model
-function listFilesNeeded(variantConfig: VariantConfig, appCaches: AppCaches) {
+function listFilesNeeded(variantConfig: AssistantConfigModel, appCaches: AppCaches) {
+    // From the parent app, we are caching files using the model_url
+    // However, from the iframe, we will have to download the files using the model_download_url
     const baseKey = new URL(variantConfig.model_url).pathname;
     const baseUrl = variantConfig.model_url;
-    const wasmUrl = variantConfig.model_lib_url; // 'https://mail.proton.me/.../file.wasm'
-    const wasmKey = new URL(variantConfig.model_lib_url).pathname; // '/.../file.wasm'
 
     const chatConfigURL = new URL('mlc-chat-config.json', baseUrl).href;
     const tokenizerURL = new URL('tokenizer.json', baseUrl).href;
@@ -385,13 +385,6 @@ function listFilesNeeded(variantConfig: VariantConfig, appCaches: AppCaches) {
         destinationCache: appCaches.model,
     });
 
-    files.push({
-        // "webllm/wasm" -> ".../file.wasm"
-        url: wasmUrl,
-        key: wasmKey,
-        destinationCache: appCaches.wasm,
-    });
-
     files.push(
         ...ndarrayCache.records.map((record) => ({
             // "webllm/model" -> ".../params_shard_*.bin"
@@ -403,6 +396,27 @@ function listFilesNeeded(variantConfig: VariantConfig, appCaches: AppCaches) {
         }))
     );
     return files;
+}
+
+// Put files that we don't need to download from the iframe in the cache
+async function cacheParentAppFiles(appCaches: AppCaches, variantConfig: AssistantConfigModel) {
+    // Cache files we already have statically and don't need to download. We pretend we have downloaded it, but
+    // in fact we just create a fake response to a nonexistent request, pretend the server sent it to us, and store
+    // it in the cache.
+    const origin = window.location.origin;
+    const baseKey = new URL(variantConfig.model_url).pathname;
+    // - "webllm/model" -> ".../ndarray-cache.json"
+    await storeLocalDataInCache(ndarrayCache, 'ndarray-cache.json', appCaches.model, origin, baseKey);
+
+    // Cache files that we stored in the app assets
+    // "webllm/wasm" -> ".../file.wasm"
+    const wasmUrl = variantConfig.model_lib_url; // 'https://mail.proton.me/.../file.wasm'
+    const isWasmInCache = await existsInCache(wasmUrl, appCaches.wasm);
+    if (!isWasmInCache) {
+        const wasmKey = new URL(variantConfig.model_lib_url).pathname; // '/.../file.wasm'
+        const wasmResponse = await fetch(wasmUrl);
+        await appCaches.wasm.put(wasmKey, wasmResponse);
+    }
 }
 
 // Search for files that we have already downloaded and stored in the cache
@@ -423,13 +437,8 @@ export async function getCachedFiles(variant: string, assistantConfig: Assistant
         throw Error(`Model not found in MLC config: ${variant}`);
     }
 
-    // Cache files we already have statically and don't need to download. We pretend we have downloaded it, but
-    // in fact we just create a fake response to a nonexistent request, pretend the server sent it to us, and store
-    // it in the cache.
-    const origin = window.location.origin;
-    const baseKey = new URL(variantConfig.model_url).pathname;
-    // - "webllm/model" -> ".../ndarray-cache.json"
-    await storeLocalDataInCache(ndarrayCache, 'ndarray-cache.json', appCaches.model, origin, baseKey);
+    // Put files that we don't need to download from the iframe in the cache
+    await cacheParentAppFiles(appCaches, variantConfig);
 
     // Prepare a list of files that we need to run the model
     const files = listFilesNeeded(variantConfig, appCaches);
