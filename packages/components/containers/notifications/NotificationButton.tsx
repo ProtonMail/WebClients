@@ -45,7 +45,7 @@ const NotificationButton: PolymorphicForwardRefExoticComponent<NotificationOwnPr
 export const NotificationCloseButton = ({ onClick }: { onClick?: () => void }) => {
     return (
         <NotificationButton icon onClick={onClick} close>
-            <Icon name="cross-big" />
+            <Icon name="cross-big" data-testid="notification:close-button" />
         </NotificationButton>
     );
 };
