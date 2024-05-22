@@ -9,11 +9,46 @@ type HardwareSpecs = {
     webGlVendor: string;
 };
 
-const isBlacklisted = (specs: HardwareSpecs): boolean => {
-    // This function is meant to be completed with more cases
-    const isMacPreAppleSilicon = specs.userAgent.match(/OS X 10_([789]|1[01234])/);
-    if (isMacPreAppleSilicon) return true;
-    return false;
+const isBlacklisted = (specs: HardwareSpecs, adapter: GPUAdapter): GpuAssessmentResult | null => {
+    // Returns null if not blacklisted, else returns a reason why it was blacklisted
+
+    // Check FP16 support.
+    // Some graphics cards like GTX 1060 have enough RAM (6GB) but lack FP16 support, so we must blacklist them.
+    if (!adapter.features.has('shader-f16')) {
+        console.error("Feature 'shader-f16' is not supported by this GPU adapter, but is required to run the LLM.");
+        if (isBrave()) {
+            console.error(
+                "It looks like you're running Brave. In some cases, Brave may not expose the 'shader-f16' feature. " +
+                    'Consider trying in another Chromium browser.'
+            );
+            return 'noShaderF16Brave';
+        } else {
+            return 'noShaderF16';
+        }
+    }
+
+    // Unlike what the name says, 'MacIntel' appears for both older Intel CPUs and newer Apple CPUs (M1 and later).
+    let isMac = specs.platform === 'MacIntel';
+    if (isMac) {
+        // The following criterion on maxBufferSize was chosen not because of the impact on the LLM, but because
+        // based on hardware data analysis on a bunch of machines, it was a good differentiator of pre- vs post-M1.
+        const macPostM1 = adapter.limits.maxBufferSize >= 4294967292;
+        if (!macPostM1) {
+            console.error('Mac with Intel chips are not sufficiently powerful for LLM text generation.');
+            return 'macPreM1';
+        }
+    } else {
+        // We lack sufficient data to distinguish Windows/Linux machines that have decent hardware, but we've seen at
+        // least one Windows configuration where the maxBufferSize was < 4294967292 yet the LLM was working well.
+        // I'm putting this criterion for now, but it's likely inexact and will have to evolve over time.
+        const maxBufferSizeTooLow = adapter.limits.maxBufferSize < 2147483644;
+        if (maxBufferSizeTooLow) {
+            console.error(`maxBufferSize = ${adapter.limits.maxBufferSize} could be too low to run the LLM`);
+            return 'maxBufferSizeTooLow';
+        }
+    }
+
+    return null; // ok
 };
 
 export const checkGpu = async (): Promise<GpuAssessmentResult> => {
@@ -25,7 +60,7 @@ export const checkGpu = async (): Promise<GpuAssessmentResult> => {
     if (canvas) {
         const gl = canvas.getContext('webgl');
         if (!gl) {
-            return 'noWebGpu'; // no WebGL really, but it doesn't really change the conclusion
+            return 'noWebGpu'; // no WebGL really, but it doesn't change the conclusion
         }
         webGlRenderer = gl.getParameter(gl.RENDERER);
         webGlVendor = gl.getParameter(gl.VENDOR);
@@ -39,35 +74,35 @@ export const checkGpu = async (): Promise<GpuAssessmentResult> => {
         webGlVendor: webGlVendor || '',
     };
 
-    // Test if system is not blacklisted
-    if (isBlacklisted(specs)) {
-        return 'blacklisted';
-    }
-
     // Test if there's enough memory
     // ...except for Brave, which under-reports the device memory
     // https://github.com/brave/brave-browser/issues/1157
     if (!isBrave()) {
         if (specs.deviceMemory !== null && specs.deviceMemory < 8) {
+            console.error('This machine reports RAM under 8GB which may be too low to run the LLM.');
             return 'insufficientRam';
         }
     }
 
     // Test if we can load webgpu
     try {
-        // TODO fixme
         const navigator = globalThis.navigator as any;
-        const adapter = await navigator.gpu.requestAdapter();
+        const adapter: GPUAdapter | undefined = await navigator.gpu.requestAdapter();
         if (!adapter) {
+            console.error('WebGPU is not available.');
             if (specs.userAgent.includes('Firefox')) {
                 return 'noWebGpuFirefox';
             } else {
                 return 'noWebGpu';
             }
         }
+        // Test if system is not blacklisted
+        const reason = isBlacklisted(specs, adapter);
+        if (reason) {
+            return reason;
+        }
     } catch (e) {
-        // eslint-disable-next-line no-console
-        console.log(e);
+        console.error(e);
         if (specs.userAgent.includes('Firefox')) {
             return 'noWebGpuFirefox';
         } else {

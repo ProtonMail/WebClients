@@ -14,7 +14,10 @@ export type GpuAssessmentResult =
     | 'noWebGpu' // we cannot load WebGPU
     | 'noWebGpuFirefox' // we cannot load WebGPU and we specifically know it's because the user uses Firefox
     | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
-    | 'blacklisted'; // maybe WebGPU could load, but we know that token generation will be too slow
+    | 'macPreM1' // Mac detected, but it seems to be an older Intel CPU that cannot run LLMs
+    | 'noShaderF16' // this GPU is lacking newer features that are required for LLM text generation
+    | 'noShaderF16Brave' // in some cases Brave won't report shader-f16 despite the hardware supporting it
+    | 'maxBufferSizeTooLow'; // this GPU is likely underpowered
 
 export interface LlmManager {
     // prefer passing a canvas, it will allow us to get some info using WebGL
