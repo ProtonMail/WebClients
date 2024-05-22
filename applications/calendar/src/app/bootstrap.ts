@@ -26,6 +26,7 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -57,6 +58,20 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
+    }
+
+    // Temporary log for debugging
+    if (isIframe && !isDrawerApp) {
+        captureMessage('Drawer iframe bootstrap', {
+            level: 'info',
+            extra: {
+                isIframe,
+                parentApp,
+                isAuthorizedApp: getIsAuthorizedApp(parentApp || ''),
+                locationOrigin: window.location.origin,
+                locationHref: window.location.href,
+            },
+        });
     }
 
     const run = async () => {
