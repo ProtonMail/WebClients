@@ -12,6 +12,7 @@ import noop from '@proton/utils/noop';
 
 type I18nServiceOptions = {
     locales: TtagLocaleMap;
+    loadDateLocale: boolean;
     getLocale: () => MaybePromise<Maybe<string>>;
     onLocaleChange?: (locale: string) => void;
 };
@@ -37,7 +38,8 @@ export const createI18nService = (options: I18nServiceOptions) => {
         try {
             const nextLocale = getClosestLocaleCode(locale ?? (await getLocale()), options.locales);
 
-            await loadDateLocale(nextLocale).catch(noop);
+            if (options.loadDateLocale) await loadDateLocale(nextLocale).catch(noop);
+
             await loadLocale(nextLocale, options.locales);
             options.onLocaleChange?.(nextLocale);
             pubsub.publish({ locale: nextLocale });
