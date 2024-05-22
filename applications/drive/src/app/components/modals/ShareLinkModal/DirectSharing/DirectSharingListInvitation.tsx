@@ -27,6 +27,7 @@ interface Props {
     selectedPermissions: SHARE_MEMBER_PERMISSIONS;
     onInvitationRemove: (invitationId: string) => void;
     onInvitationPermissionsChange: (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
+    onResendInvitationEmail: (invitationId: string) => Promise<void>;
 }
 
 interface PermissionOption {
@@ -66,6 +67,7 @@ export const DirectSharingListInvitation = ({
     selectedPermissions,
     onInvitationRemove,
     onInvitationPermissionsChange,
+    onResendInvitationEmail,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [isLoading, setIsLoading] = useState(false);
@@ -104,6 +106,13 @@ export const DirectSharingListInvitation = ({
         });
     };
 
+    const handleResendInvitationEmail = () => {
+        setIsLoading(true);
+        onResendInvitationEmail(invitationId).finally(() => {
+            setIsLoading(false);
+        });
+    };
+
     return (
         <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
             <div className={'flex items-center'}>
@@ -130,29 +139,43 @@ export const DirectSharingListInvitation = ({
                     {dropdownLabel}
                 </DropdownButton>
                 <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                    <DropdownMenu>
-                        <MenuItem
-                            iconName={permissionsOptions[0].icon}
-                            label={permissionsOptions[0].label}
-                            isSelected={permissionsOptions[0].value === selectedPermissions}
-                            onClick={() => handleInvitationPermissionsChange(invitationId, permissionsOptions[0].value)}
-                        />
-                        <MenuItem
-                            iconName={permissionsOptions[1].icon}
-                            label={permissionsOptions[1].label}
-                            isSelected={permissionsOptions[1].value === selectedPermissions}
-                            onClick={() => handleInvitationPermissionsChange(invitationId, permissionsOptions[1].value)}
-                        />
-                        <MenuItem
-                            iconName="link"
-                            label={c('Action').t`Copy invite link`}
-                            onClick={copyShareInviteLinkUrl}
-                        />
-                        <MenuItem
-                            iconName="cross-big"
-                            label={c('Action').t`Remove access`}
-                            onClick={handleInviteRemove}
-                        />
+                    <DropdownMenu className=" divide-y">
+                        {/* Those divs was added to support render of divider in the list */}
+                        <div>
+                            <MenuItem
+                                iconName={permissionsOptions[0].icon}
+                                label={permissionsOptions[0].label}
+                                isSelected={permissionsOptions[0].value === selectedPermissions}
+                                onClick={() =>
+                                    handleInvitationPermissionsChange(invitationId, permissionsOptions[0].value)
+                                }
+                            />
+                            <MenuItem
+                                iconName={permissionsOptions[1].icon}
+                                label={permissionsOptions[1].label}
+                                isSelected={permissionsOptions[1].value === selectedPermissions}
+                                onClick={() =>
+                                    handleInvitationPermissionsChange(invitationId, permissionsOptions[1].value)
+                                }
+                            />
+                        </div>
+                        <div>
+                            <MenuItem
+                                iconName="paper-plane-horizontal"
+                                label={c('Action').t`Resend invite`}
+                                onClick={handleResendInvitationEmail}
+                            />
+                            <MenuItem
+                                iconName="link"
+                                label={c('Action').t`Copy invite link`}
+                                onClick={copyShareInviteLinkUrl}
+                            />
+                            <MenuItem
+                                iconName="cross-big"
+                                label={c('Action').t`Remove access`}
+                                onClick={handleInviteRemove}
+                            />
+                        </div>
                     </DropdownMenu>
                 </Dropdown>
             </div>
