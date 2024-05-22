@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -111,7 +111,7 @@ export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureD
     return {
         text: n === 'unlimited' ? getUnlimitedHideMyEmailAliasesText() : getNHideMyEmailAliasesText(10),
         tooltip: c('new_plans: tooltip')
-            .t`Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${BRAND_NAME}.`,
+            .t`Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).`,
         included: true,
         icon: 'eye-slash',
     };
@@ -145,6 +145,26 @@ export const getCustomFields = (included: boolean = false): PlanCardFeatureDefin
     return {
         text: c('new_plans: feature').t`Custom fields`,
         included,
+        icon: 'pen-square',
+    };
+};
+
+export const getDarkWebMonitoring = (): PlanCardFeatureDefinition => {
+    return {
+        text: DARK_WEB_MONITORING_NAME,
+        tooltip: c('new_plans: feature')
+            .t`We scan the dark web to check if your ${BRAND_NAME} addresses or aliases have been leaked and alert you immediately if we find anything.`,
+        included: true,
+        icon: 'pen-square',
+    };
+};
+
+export const getPasswordHealth = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Password health`,
+        tooltip: c('new_plans: feature')
+            .t`Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.`,
+        included: true,
         icon: 'pen-square',
     };
 };
