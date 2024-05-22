@@ -1,7 +1,28 @@
+import type { CaptureContext } from '@sentry/types';
+
 import { CryptoProxy } from '@proton/crypto';
 
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { VerificationData } from '../interface';
 import { Verifier } from './interface';
+
+const VERIFIER_ERROR_MESSAGE = 'Upload failed: Verification of data failed';
+
+export const isVerificationError = (err: any) => {
+    const message = err ? err.message || '' : '';
+    return message.includes(VERIFIER_ERROR_MESSAGE);
+};
+
+export class VerificationError extends EnrichedError {
+    constructor(context?: CaptureContext) {
+        super(VERIFIER_ERROR_MESSAGE, context);
+
+        // It is important that the name is "Error", as we want it
+        // to be compatible with existing handlers, and mitigate
+        // the chances of the actual name showing in the UI
+        this.name = 'Error';
+    }
+}
 
 export const createVerifier = ({ verificationCode, verifierSessionKey }: VerificationData): Verifier => {
     return async (encryptedData: Uint8Array) => {

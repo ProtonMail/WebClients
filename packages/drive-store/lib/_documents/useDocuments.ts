@@ -1,8 +1,10 @@
-import { sha1 } from '@openpgp/noble-hashes/sha1';
-import { c } from 'ttag';
-
+import { useAuthentication } from '@proton/components/hooks';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
+import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import {
     encryptName,
     generateContentKeys,
@@ -11,29 +13,29 @@ import {
     sign,
 } from '@proton/shared/lib/keys/driveKeys';
 
+import { useActions } from '../../store/_actions';
 import { useDebouncedRequest } from '../../store/_api';
 import { useLink } from '../../store/_links';
 import { encryptExtendedAttributes } from '../../store/_links/extendedAttributes';
 import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { DocumentShell } from './DocumentShell';
+import { LegacyNodeMeta, NodeMeta } from '../interface';
+import { DocumentKeys, DocumentManifest, DocumentNode, DocumentNodeMeta } from './interface';
+import { linkToDocumentNode } from './utils';
 
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();
     const abortSignal = useAbortSignal([]);
-    const { getLinkPrivateKey, getLinkHashKey } = useLink();
+    const { getLinkPrivateKey, getLinkHashKey, getLinkSessionKey, getLink } = useLink();
     const { getShareCreatorKeys } = useShare();
+    const { renameLink } = useActions();
+    const { getLocalID } = useAuthentication();
 
-    const createDocumentShell = async (
-        shareId: string,
-        parentLinkId: string,
-        name?: string
-    ): Promise<DocumentShell> => {
-        const date = new Date().toLocaleString();
-        // translator: Name of a new Proton Document
-        const useName = name ?? c('Title').t`Untitled document ${date}`;
-
+    const createDocumentNode = async (
+        { shareId, linkId: parentLinkId }: LegacyNodeMeta,
+        name: string
+    ): Promise<DocumentNodeMeta> => {
         const [parentPrivateKey, parentHashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, parentLinkId),
             getLinkHashKey(abortSignal, shareId, parentLinkId),
@@ -42,7 +44,7 @@ export const useDocuments = () => {
 
         const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
             await Promise.all([
-                generateLookupHash(useName, parentHashKey).catch((e) =>
+                generateLookupHash(name, parentHashKey).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to generate document link lookup hash during document creation', {
                             tags: {
@@ -64,7 +66,7 @@ export const useDocuments = () => {
                         })
                     )
                 ),
-                encryptName(useName, parentPrivateKey, addressKey).catch((e) =>
+                encryptName(name, parentPrivateKey, addressKey).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt document link name during document creation', {
                             tags: {
@@ -85,13 +87,15 @@ export const useDocuments = () => {
             addressKey
         );
 
-        const { ContentKeyPacket, ContentKeyPacketSignature, sessionKey } = await generateContentKeys(privateKey);
+        const {
+            ContentKeyPacket,
+            ContentKeyPacketSignature,
+            sessionKey: contentKey,
+        } = await generateContentKeys(privateKey);
 
-        const content = '';
-        const hasher = sha1.create();
-        hasher.update(content);
-        const manifest = hasher.digest();
-        const ManifestSignature = await sign(manifest, addressKey);
+        const content = stringToUtf8Array('');
+        const manifest = await generateContentHash(content);
+        const ManifestSignature = await sign(manifest.BlockHash, addressKey);
 
         const { Document } = await debouncedRequest<CreateDocumentResult>(
             queryCreateDocument(shareId, {
@@ -104,7 +108,7 @@ export const useDocuments = () => {
                 NodeKey,
                 ContentKeyPacket,
                 ContentKeyPacketSignature,
-                ManifestSignature, // why?
+                ManifestSignature,
                 XAttr: xattr,
             }),
             abortSignal
@@ -112,15 +116,72 @@ export const useDocuments = () => {
 
         return {
             linkId: Document.ID,
-            shareId,
             volumeId: Document.VolumeID,
-            sessionKey,
+            contentKey,
+        };
+    };
+
+    const getDocumentKeys = async ({ shareId, linkId }: LegacyNodeMeta): Promise<DocumentKeys> => {
+        const contentKey = await getLinkSessionKey(abortSignal, shareId, linkId);
+
+        if (!contentKey) {
+            throw new EnrichedError('Could not find document key', {
+                tags: { shareId, linkId },
+            });
+        }
+
+        return {
+            contentKey,
+        };
+    };
+
+    const getDocumentNode = async ({ shareId, linkId }: LegacyNodeMeta): Promise<DocumentNode> => {
+        const link = await getLink(abortSignal, shareId, linkId);
+
+        return linkToDocumentNode(link);
+    };
+
+    const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
+        await renameLink(abortSignal, shareId, linkId, newName);
+    };
+
+    const getDocumentUrl = ({ volumeId, linkId }: NodeMeta): URL => {
+        const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
+        const url = new URL(href);
+
+        url.searchParams.append('volumeId', volumeId);
+        url.searchParams.append('linkId', linkId);
+
+        return url;
+    };
+
+    /**
+     * Content passed assumes documents are only one block.
+     */
+    const signDocumentManifest = async (
+        { shareId }: LegacyNodeMeta,
+        content: Uint8Array
+    ): Promise<DocumentManifest> => {
+        // getShareCreatorKeys gets the key from `share.addressId` which is always
+        // corresponding to the member of a share. This function will be renamed in a refactor.
+        const { privateKey: addressKey, address } = await getShareCreatorKeys(abortSignal, shareId);
+
+        const manifest = await generateContentHash(content);
+        const manifestSignature = await sign(manifest.BlockHash, addressKey);
+
+        return {
+            manifest: manifest.BlockHash,
+            manifestSignature,
+            signatureAddress: address.Email,
         };
     };
 
     return {
-        createDocumentShell,
+        createDocumentNode,
+        getDocumentKeys,
+        getDocumentNode,
+        renameDocument,
+        getDocumentUrl,
+        signDocumentManifest,
     };
 };
-
-export default useDocuments;

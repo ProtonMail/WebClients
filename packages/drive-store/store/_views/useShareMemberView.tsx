@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,7 +19,8 @@ import {
 } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { inviteProtonUser, listInvitations, deleteInvitation } = useShareInvitation();
+    const { inviteProtonUser, listInvitations, deleteInvitation, updateShareInvitationPermissions } =
+        useShareInvitation();
     const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const { createNotification } = useNotifications();
@@ -31,6 +32,12 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { createShare } = useShareActions();
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
+
+    const existingEmails = useMemo(() => {
+        const membersEmail = members.map((member) => member.email);
+        const invitationsEmail = invitations.map((invitation) => invitation.inviteeEmail);
+        return [...membersEmail, ...invitationsEmail];
+    }, [members, invitations]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -147,6 +154,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 await addNewMember(invitee, permissions).then((invitation) => newInvitations.push(invitation));
             }
             setInvitations((oldInvitations: ShareInvitation[]) => [...oldInvitations, ...newInvitations]);
+            createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
         });
     };
 
@@ -177,10 +185,22 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         createNotification({ type: 'info', text: c('Notification').t`Invitation removed from the share` });
     };
 
+    const updateInvitePermissions = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await updateShareInvitationPermissions(abortSignal, { shareId, invitationId, permissions });
+        setInvitations((current) =>
+            current.map((item) => (item.invitationId === invitationId ? { ...item, permissions } : item))
+        );
+        createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+    };
+
     return {
         volumeId,
         members,
         invitations,
+        existingEmails,
         isLoading,
         isAdding,
         removeInvitation,
@@ -188,6 +208,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         addNewMember,
         addNewMembers,
         updateMemberPermissions,
+        updateInvitePermissions,
     };
 };
 
