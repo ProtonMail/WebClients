@@ -160,17 +160,22 @@ export const buildMLCConfig = (models: AssistantModel[]) => {
     });
 
     if (model) {
-        const modelURL = getModelURL(model.ModelURL).toString();
+        /**
+         * The api return us the ModelURL which contains the url on which we will download the model => https://huggingface.co/mlc-ai/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/resolve/main/
+         * However, in we want to store files in the cache using the current url.
+         * So we need to build the model_url in the assistant configuration with the same format https://mail.proton.me/mlc-ai/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/resolve/main/
+         */
+        const modelURLDownloadURL = getModelURL(model.ModelURL).toString();
         // TODO need to do more for localhost, we want to access to http://localhost:8080/assets/ml-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm
-
-        // TODO, test in alpha, revert this asap
-        const modelLibURL =
-            'https://raw.githubusercontent.com/mlc-ai/binary-mlc-llm-libs/main/web-llm-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm';
+        const modelLibURL = getModelURL(model.ModelLibURL).toString();
+        // compute the model url with the needed format https://mail.proton.me/mlc-ai/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/resolve/main/
+        const modelURL = `${window.origin}${new URL(modelURLDownloadURL).pathname}`;
 
         return {
             model_list: [
                 {
-                    model_url: modelURL,
+                    model_url: `${window.origin}${new URL(modelURL).pathname}`,
+                    model_download_url: modelURLDownloadURL,
                     model_id: model.ModelID,
                     model_lib_url: modelLibURL,
                     vram_required_MB: model.VRAMRequiredMB,

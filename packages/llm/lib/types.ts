@@ -89,6 +89,7 @@ export interface AssistantModel {
 
 export interface AssistantConfigModel {
     model_url: string;
+    model_download_url: string;
     model_id: string;
     model_lib_url: string;
     vram_required_MB: number;
@@ -147,14 +148,10 @@ interface DOWNLOAD_PROGRESS {
 }
 
 interface DOWNLOAD_ERROR {
-    type: ASSISTANT_EVENTS.DOWNLOAD_ERROR,
+    type: ASSISTANT_EVENTS.DOWNLOAD_ERROR;
     payload: {
         error: any;
-    }
+    };
 }
 
-export type ASSISTANT_ACTION = START_DOWNLOAD
-    | PAUSE_DOWNLOAD
-    | DOWNLOAD_DATA
-    | DOWNLOAD_PROGRESS
-    | DOWNLOAD_ERROR;
+export type ASSISTANT_ACTION = START_DOWNLOAD | PAUSE_DOWNLOAD | DOWNLOAD_DATA | DOWNLOAD_PROGRESS | DOWNLOAD_ERROR;
