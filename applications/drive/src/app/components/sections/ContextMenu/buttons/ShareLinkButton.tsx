@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useNewFeatureTag } from '@proton/components/components';
+
 import { DecryptedLink } from '../../../../store';
 import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 import ContextMenuButton from '../ContextMenuButton';
@@ -13,14 +15,23 @@ interface Props {
 }
 
 const ShareLinkButton = ({ shareId, link, showLinkSharingModal, isSharedWithMe, close }: Props) => {
+    const { onWasShown, Component: NewFeatureTag } = useNewFeatureTag('drive-sharing');
+
+    const handleAction = () => {
+        showLinkSharingModal({ shareId, linkId: link.linkId });
+        onWasShown();
+    };
+
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
             icon={isSharedWithMe ? 'users' : 'user-plus'}
             testId="context-menu-share-link"
-            action={() => showLinkSharingModal({ shareId, linkId: link.linkId })}
+            action={handleAction}
             close={close}
-        />
+        >
+            <NewFeatureTag background="bg-primary" className="ml-2 md:ml-12 shrink-0 px-2" />
+        </ContextMenuButton>
     );
 };
 

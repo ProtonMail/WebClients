@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 export type IsActiveInEnvironmentContainer = { [key in EnvironmentExtended]?: boolean };
 
-interface Props {
+export interface NewFeatureTagProps {
     /** Used for localStorage key */
     featureKey: string;
     /** Will be hide after the user saw it once */
@@ -22,6 +22,7 @@ interface Props {
     className?: string;
     /** When provided, NewFeatureTag will wrap the tag in a Spotlight and pass this property object to it */
     spotlightProps?: SpotlightProps;
+    background?: 'bg-success' | 'bg-primary';
     /**
      * When provided, NewFeatureTag be rendered only in environments listed as true in the container
      * E.g.: { default: true, alpha: ture } will be rendered in default and alpha but not in beta
@@ -37,8 +38,9 @@ const NewFeatureTag = ({
     endDate,
     className,
     spotlightProps,
+    background = 'bg-success',
     isActiveInEnvironment,
-}: Props) => {
+}: NewFeatureTagProps) => {
     const key = `${featureKey}-new-tag`;
     const [wasShown] = useState<boolean>(Boolean(getItem(key, 'false')));
     const hasEnded = endDate && isPast(endDate);
@@ -62,7 +64,7 @@ const NewFeatureTag = ({
     }
 
     const content = (
-        <span className={clsx('bg-success px-1.5 py-0.5 rounded text-semibold', className)}>{c('Info').t`New`}</span>
+        <span className={clsx('px-1.5 py-0.5 rounded text-semibold', background, className)}>{c('Info').t`New`}</span>
     );
     if (displaySpotlight) {
         return <Spotlight {...spotlightProps}>{content}</Spotlight>;
