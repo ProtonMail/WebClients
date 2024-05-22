@@ -48,7 +48,11 @@ const MemberItem = ({
     };
 
     return (
-        <div key={memberId} className="flex my-4 justify-space-between items-center" data-testid="share-accepted-members">
+        <div
+            key={memberId}
+            className="flex my-4 justify-space-between items-center"
+            data-testid="share-accepted-members"
+        >
             <div className={'flex items-center'}>
                 <Avatar color="weak" className="mr-2">
                     {getInitials(contactName || contactEmail)}
