@@ -91,7 +91,7 @@ export const DirectSharingListInvitation = ({
     const copyShareInviteLinkUrl = useCallback(() => {
         textToClipboard(`${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}`);
         createNotification({
-            text: c('Info').t`Link copied to clipboard`,
+            text: c('Info').t`Invite link copied`,
         });
     }, [volumeId, linkId, invitationId]);
 
