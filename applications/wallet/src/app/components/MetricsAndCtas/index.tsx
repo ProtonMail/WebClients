@@ -13,7 +13,7 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { useGetExchangeRate } from '../../store/hooks';
 import { satsToFiat } from '../../utils';
-import btcSvg from './btc.svg';
+import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 
 interface Props {
     disabled?: boolean;
