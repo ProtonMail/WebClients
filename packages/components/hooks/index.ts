@@ -70,6 +70,7 @@ export { default as useLoad } from './useLoad';
 export { default as useLocalState } from './useLocalState';
 export * from './useMailSettings';
 export { default as useMainArea, MainAreaContext } from './useMainArea';
+export * from './useMember';
 export * from './useMembers';
 export * from './useMessageCounts';
 export { default as useModals } from './useModals';
