@@ -7,6 +7,7 @@ import {
     createPendingShareAccessRule,
     createSecurityRule,
     createTrialRule,
+    createUsernameTooltipRule,
 } from '@proton/pass/lib/onboarding/rules';
 import { createOnboardingService } from '@proton/pass/lib/onboarding/service';
 
@@ -19,5 +20,6 @@ export const onboarding = createOnboardingService({
         createSecurityRule(store),
         createB2BRule(store),
         createMonitorLearnMoreRule(),
+        createUsernameTooltipRule(),
     ],
 });
