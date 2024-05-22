@@ -248,8 +248,8 @@ export const selectAutofillCandidates = (options: SelectAutofillCandidatesOption
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) =>
     createSelector(
         [
-            selectItemsByDomain(options.subdomain, { protocol: null, isPrivate: false }),
-            selectItemsByDomain(options.domain, { protocol: null, isPrivate: false }),
+            selectItemsByDomain(options.subdomain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
+            selectItemsByDomain(options.domain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
             () => options.username,
         ],
         (subdomainItems, domainItems, username) => {
