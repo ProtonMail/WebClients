@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import accessKey from '@proton/styles/assets/img/illustrations/access-key.svg';
 
 import { Button, ButtonLike } from '../../../atoms';
-import accessKey from './access-key.svg';
 
 interface Props {
     onViewMnemonic: () => void;

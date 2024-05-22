@@ -6,6 +6,7 @@ import { WasmApiWalletAccount, WasmSortOrder, WasmTransactionDetails } from '@pr
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
+import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, SimplePaginator } from '../../atoms';
@@ -19,7 +20,6 @@ import { useBitcoinNetwork } from '../../store/hooks';
 import { getAccountTransactions, getWalletTransactions } from '../../utils';
 import { DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
-import arrowsExchange from './arrows-exchange.svg';
 import {
     AmountDataListItem,
     ConfirmationTimeDataListItem,
