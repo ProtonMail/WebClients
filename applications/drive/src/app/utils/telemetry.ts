@@ -1,6 +1,10 @@
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
 import { Api } from '@proton/shared/lib/interfaces';
+
+import { sendErrorReport } from './errorHandling';
+import { EnrichedError } from './errorHandling/EnrichedError';
 
 export enum ExperimentGroup {
     control = 'control',
@@ -48,29 +52,41 @@ export const measureExperimentalPerformance = <T>(
     controlFunction: () => Promise<T>,
     treatmentFunction: () => Promise<T>
 ): Promise<T> => {
-    const now = performance.now();
-    const startMark = `start-${feature}-${now}`;
-    const endMark = `end-${feature}-${now}`;
-    const measureName = `measure-${feature}-${now}`;
+    // Something somewhat unique, if we have collision it's not end of the world we drop the metric
+    const distinguisher = `${performance.now()}-${randomHexString4()}`;
+    const startMark = `start-${feature}-${distinguisher}`;
+    const endMark = `end-${feature}-${distinguisher}`;
+    const measureName = `measure-${feature}-${distinguisher}`;
 
     performance.mark(startMark);
     const result = applyTreatment ? treatmentFunction() : controlFunction();
 
     result.finally(() => {
-        performance.mark(endMark);
-        const measure = performance.measure(measureName, startMark, endMark);
-        // it can be undefined on browsers below Safari below 14.1 and Firefox 103
-        if (measure) {
-            sendTelemetryFeaturePerformance(
-                api,
-                feature,
-                measure.duration,
-                applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
+        try {
+            performance.mark(endMark);
+            const measure = performance.measure(measureName, startMark, endMark);
+            // it can be undefined on browsers below Safari below 14.1 and Firefox 103
+            if (measure) {
+                sendTelemetryFeaturePerformance(
+                    api,
+                    feature,
+                    measure.duration,
+                    applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
+                );
+            }
+
+            performance.clearMarks(endMark);
+            performance.clearMeasures(measureName);
+        } catch (e) {
+            sendErrorReport(
+                new EnrichedError('Telemetry Error', {
+                    extra: {
+                        e,
+                    },
+                })
             );
         }
         performance.clearMarks(startMark);
-        performance.clearMarks(endMark);
-        performance.clearMeasures(measureName);
     });
 
     return result;
