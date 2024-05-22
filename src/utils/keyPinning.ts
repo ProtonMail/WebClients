@@ -13,18 +13,47 @@ export const checkKeys = (request: Request) => {
             return 0;
         }
 
-        const pk = crypto.createPublicKey(request.validatedCertificate.data);
-        const hash = crypto
-            .createHash("sha256")
-            .update(pk.export({ type: "spki", format: "der" }))
-            .digest("base64");
-
-        if (CERT_PROTON_ME.includes(hash)) {
-            return 0;
-        }
+        if (hasProtonMeCert(request)) return 0;
 
         return -2;
     }
 
     return -3;
 };
+
+function hasProtonMeCert(request: Request): boolean {
+    const pk = crypto.createPublicKey(request.validatedCertificate.data);
+    const hash = crypto
+        .createHash("sha256")
+        .update(pk.export({ type: "spki", format: "der" }))
+        .digest("base64");
+
+    return CERT_PROTON_ME.includes(hash);
+}
+
+export enum VerificationResult {
+    Accept = 0,
+    Reject = -2,
+    UseVerificationFromChromium = -3,
+}
+
+export function verifyDownloadCertificate(request: Request, callback: (code: VerificationResult) => void) {
+    const code = ((): VerificationResult => {
+        if (request.hostname.replace(/^https:\/\//, "") !== "proton.me") {
+            return VerificationResult.UseVerificationFromChromium;
+        }
+
+        // We dont do any verification for dev and testing environments
+        if (!app.isPackaged || !isProdEnv(config)) {
+            return VerificationResult.Accept;
+        }
+
+        if (!hasProtonMeCert(request)) {
+            return VerificationResult.Reject;
+        }
+
+        return VerificationResult.Accept;
+    })();
+
+    callback(code);
+}
