@@ -86,6 +86,7 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
                         displayColorName={false}
                         className="ml-2"
                         onClickColorPicker={handleClickColorPicker}
+                        data-testid="event-color-picker"
                     />
                 </div>
             </Spotlight>
