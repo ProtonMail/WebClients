@@ -6,6 +6,7 @@ import {
     queryInvitationDetails,
     queryInvitationList,
     queryInviteProtonUser,
+    queryResendInvitation,
     queryShareInvitationDetails,
     queryShareInvitationsListing,
     queryUpdateShareInvitationPermissions,
@@ -117,6 +118,13 @@ export const useShareInvitation = () => {
         return debouncedRequest<{ Code: number }>(queryDeleteInvitation(shareId, invitationId), abortSignal);
     };
 
+    const resendInvitationEmail = async (
+        abortSignal: AbortSignal,
+        { shareId, invitationId }: { shareId: string; invitationId: string }
+    ) => {
+        return debouncedRequest<{ Code: number }>(queryResendInvitation(shareId, invitationId), abortSignal);
+    };
+
     const acceptInvitation = async (
         abortSignal: AbortSignal,
         params: {
@@ -179,6 +187,7 @@ export const useShareInvitation = () => {
         listInvitations,
         deleteInvitation,
         acceptInvitation,
+        resendInvitationEmail,
         updateShareInvitationPermissions,
     };
 };
