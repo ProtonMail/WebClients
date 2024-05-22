@@ -187,7 +187,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
         await deleteInvitation(abortSignal, { shareId, invitationId });
         setInvitations((current) => current.filter((item) => item.invitationId !== invitationId));
-        createNotification({ type: 'info', text: c('Notification').t`Invitation removed from the share` });
+        createNotification({ type: 'info', text: c('Notification').t`Access updated` });
     };
 
     const resendInvitation = async (invitationId: string) => {
