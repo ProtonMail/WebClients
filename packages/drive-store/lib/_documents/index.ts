@@ -1,2 +1,2 @@
 export * from './useDocuments';
-export * from './useOpenDocument';
+export * from './interface';

@@ -1,6 +1,8 @@
 import { useCallback, useRef } from 'react';
 
+import { querySharedByMeLinks } from '@proton/shared/lib/api/drive/sharing';
 import { queryVolumeSharedLinks } from '@proton/shared/lib/api/drive/volume';
+import { ListDriveSharedByMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { useDebouncedRequest } from '../../_api';
@@ -27,7 +29,7 @@ export function useSharedLinksListing() {
     const linksState = useLinksState();
     const volumesState = useVolumesState();
 
-    const { loadFullListing, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
+    const { loadFullListing, loadFullListingWithAnchor, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const sharedLinksFetchState = useRef<SharedLinksFetchState>({});
 
     const getSharedLinksFetchState = useCallback((volumeId: string) => {
@@ -99,15 +101,49 @@ export function useSharedLinksListing() {
         return hasNextPage;
     };
 
+    const fetchSharedByMeLinksNextPage = async (
+        signal: AbortSignal,
+        volumeId: string,
+        loadLinksMeta: FetchLoadLinksMeta,
+        AnchorID?: string
+    ): Promise<{ AnchorID: string; More: boolean }> => {
+        const response = await debouncedRequest<ListDriveSharedByMeLinksPayload>(
+            querySharedByMeLinks(volumeId, { AnchorID })
+        );
+
+        const volumeShareIds = response.Links.map((link) => link.ContextShareID);
+        volumesState.setVolumeShareIds(volumeId, volumeShareIds);
+
+        const transformedResponse = transformSharedByMeLinksResponseToLinkMap(response);
+        await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
+
+        return {
+            AnchorID: response.AnchorID,
+            More: response.More,
+        };
+    };
+
     /**
      * Loads shared links for a given volume.
      */
-    const loadSharedLinks = async (
+    const loadSharedLinksLEGACY = async (
         signal: AbortSignal,
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta
     ): Promise<void> => {
         return loadFullListing(() => fetchSharedLinksNextPage(signal, volumeId, loadLinksMeta));
+    };
+
+    /**
+     * Loads shared by me links.
+     */
+    const loadSharedByMeLinks = async (
+        signal: AbortSignal,
+        volumeId: string,
+        loadLinksMeta: FetchLoadLinksMeta
+    ): Promise<void> => {
+        const callback = (AnchorID?: string) => fetchSharedByMeLinksNextPage(signal, volumeId, loadLinksMeta, AnchorID);
+        return loadFullListingWithAnchor(callback);
     };
 
     /**
@@ -148,7 +184,9 @@ export function useSharedLinksListing() {
     );
 
     return {
-        loadSharedLinks,
+        loadSharedLinksLEGACY,
+        // This include direct sharing shares,
+        loadSharedByMeLinks,
         getCachedSharedLinks,
     };
 }
@@ -162,6 +200,21 @@ function transformSharedLinksResponseToLinkMap(response: ListDriveVolumeSharedLi
         [shareId: string]: string[];
     }>((acc, share) => {
         acc[share.ContextShareID] = share.LinkIDs;
+        return acc;
+    }, {});
+}
+
+/**
+ * Transforms a shared links response from the API into an object with ContextShare IDs as keys,
+ * and link IDs as values
+ */
+function transformSharedByMeLinksResponseToLinkMap(response: ListDriveSharedByMeLinksPayload) {
+    return response.Links.reduce<{
+        [shareId: string]: string[];
+    }>((acc, link) => {
+        acc[link.ContextShareID] = acc[link.ContextShareID]
+            ? [...acc[link.ContextShareID], link.LinkID]
+            : [link.LinkID];
         return acc;
     }, {});
 }

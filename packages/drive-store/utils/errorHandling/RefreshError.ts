@@ -1,6 +1,4 @@
-import { c } from 'ttag';
-
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
 
 export const isRefreshError = (err: any): err is RefreshError => {
     return err.name === 'RefreshError';
@@ -15,8 +13,7 @@ export const isRefreshError = (err: any): err is RefreshError => {
  *
  * import('./module').catch(() => Promise.reject(getRefreshError()));
  */
-export const getRefreshError = () =>
-    new RefreshError(c('Error').t`${DRIVE_APP_NAME} has updated. Please refresh the page.`);
+export const getRefreshError = () => new RefreshError(ERROR_REQUIRE_PAGE_REFRESH);
 
 const REFRESH_MESSAGE = 'Please refresh the page.';
 
