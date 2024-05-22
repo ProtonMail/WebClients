@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText, isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
-import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
@@ -26,13 +25,11 @@ import {
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
-    PASS_APP_NAME,
     PLANS,
     PLAN_TYPES,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
@@ -54,7 +51,6 @@ import {
     getPlanIDs,
     getPlanNameFromIDs,
     hasNewVisionary,
-    hasPassPlus,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
@@ -818,33 +814,6 @@ const SubscriptionContainer = ({
         void withLoading(run());
     };
 
-    const handleUpsellVPNPassBundle = () => {
-        if (loadingCheck) {
-            return;
-        }
-
-        let newModel: Model;
-        if (model.planIDs[PLANS.VPN]) {
-            newModel = {
-                ...model,
-                planIDs: {
-                    [PLANS.VPN_PASS_BUNDLE]: 1,
-                },
-            };
-        } else {
-            newModel = {
-                ...model,
-                planIDs: {
-                    [PLANS.VPN]: 1,
-                },
-            };
-        }
-        setModel(newModel);
-        const checkPromise = check(newModel);
-        void withLoadingCheck(checkPromise);
-        void withBlockCycleSelector(checkPromise);
-    };
-
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
@@ -1017,32 +986,6 @@ const SubscriptionContainer = ({
                                                             />
                                                         );
                                                     })()}
-                                                    {canUpsellToVPNPassBundle(
-                                                        model.planIDs,
-                                                        model.cycle,
-                                                        couponCode
-                                                    ) && (
-                                                        <VPNPassPromotionButton
-                                                            onClick={handleUpsellVPNPassBundle}
-                                                            currency={model.currency}
-                                                            cycle={model.cycle}
-                                                        />
-                                                    )}
-                                                    {model.planIDs[PLANS.VPN_PASS_BUNDLE] &&
-                                                        !hasPassPlus(subscription) && (
-                                                            <Button
-                                                                className="flex flex-nowrap items-center justify-center"
-                                                                fullWidth
-                                                                color="weak"
-                                                                shape="outline"
-                                                                onClick={handleUpsellVPNPassBundle}
-                                                            >
-                                                                <Icon name="trash" size={3.5} />
-                                                                <span className="ml-2">
-                                                                    {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
-                                                                </span>
-                                                            </Button>
-                                                        )}
                                                 </div>
                                             </>
                                         );

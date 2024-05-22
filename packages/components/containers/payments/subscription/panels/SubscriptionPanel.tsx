@@ -155,7 +155,12 @@ const ActionButtons = ({
         });
 
     const showEditBillingDetails =
-        user.isPaid && user.canPay && !hasMaximumCycle(subscription) && !hasPassB2B && !getIsCustomCycle(subscription);
+        user.isPaid &&
+        user.canPay &&
+        !hasMaximumCycle(subscription) &&
+        !hasPassB2B &&
+        !getIsCustomCycle(subscription) &&
+        !hasVPNPassBundle(subscription);
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
     const showExploreOtherPlans = user.canPay;
 
