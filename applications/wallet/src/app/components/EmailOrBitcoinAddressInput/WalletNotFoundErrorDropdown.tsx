@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Dropdown, Icon, usePopperAnchor } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 
 import { Button } from '../../atoms';
-import walletNotFoundImg from './wallet_not_found.svg';
 
 interface Props {
     email: String;

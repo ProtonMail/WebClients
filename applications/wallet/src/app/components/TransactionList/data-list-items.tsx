@@ -10,8 +10,8 @@ import { CoreButton } from '../../atoms';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { getFormattedPeriodSinceConfirmation, satsToFiat } from '../../utils';
 import { DataListItem } from '../DataList';
-import arrowReceiveSvg from './arrow-receive.svg';
-import arrowSendSvg from './arrow-send.svg';
+import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
+import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 
 export interface TxDataListItemProps {
     tx: TransactionData;

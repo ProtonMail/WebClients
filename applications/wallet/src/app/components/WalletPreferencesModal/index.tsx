@@ -11,13 +11,13 @@ import {
     Icon,
     ModalOwnProps,
 } from '@proton/components/components';
+import warningSignSrc from '@proton/styles/assets/img/illustrations/warning-sign.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
 import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountPreferences } from '../AccountPreferences';
 import { useWalletPreferences } from './useWalletPreferences';
-import warningSignSrc from './warning-sign.svg';
 
 interface Props extends ModalOwnProps {
     wallet: IWasmApiWalletData;

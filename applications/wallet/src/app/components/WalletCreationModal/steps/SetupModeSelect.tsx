@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import walletBitcoinSrc from '@proton/styles/assets/img/illustrations/wallet-bitcoin.svg';
+
 import { Button } from '../../../atoms';
 import { WalletSetupScheme } from '../../../hooks/useWalletSetup/type';
-import walletBitcoinSrc from './wallet-bitcoin.svg';
 
 interface Props {
     onModeSelection: (mode: WalletSetupScheme.ManualCreation | WalletSetupScheme.WalletImport) => void;
