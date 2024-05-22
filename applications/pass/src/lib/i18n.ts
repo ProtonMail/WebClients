@@ -8,6 +8,7 @@ import { settings } from './settings';
 export const i18n = (locales: TtagLocaleMap) =>
     createI18nService({
         locales,
+        loadDateLocale: true,
         getLocale: async () => (await settings.resolve()).locale,
         onLocaleChange: (locale) => {
             if (authStore.hasSession()) {
