@@ -3,16 +3,16 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Radio } from '@proton/components/components';
+import { PassLogo, Radio } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { Currency, CycleMapping } from '@proton/shared/lib/interfaces';
+import { Currency, CycleMapping, PlanIDs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel2 from './SaveLabel2';
-import { getBillingCycleText, getOffText } from './helper';
+import { getBillingCycleText, getOffText, getPassText } from './helper';
 
 import './CycleSelector.scss';
 
@@ -61,6 +61,7 @@ const CycleItemView = ({
     onSelect,
     upsell,
     cta,
+    extra,
     bg,
 }: {
     cycle: CYCLE;
@@ -77,6 +78,7 @@ const CycleItemView = ({
     onSelect: () => void;
     upsell: ReactNode;
     cta: ReactNode;
+    extra?: ReactNode;
     bg?: boolean;
 }) => {
     return (
@@ -154,7 +156,7 @@ const CycleItemView = ({
                             </div>
                         </div>
                     </div>
-
+                    {extra}
                     {cta && selected && <div className="mt-4">{cta}</div>}
                 </div>
             </div>
@@ -164,31 +166,29 @@ const CycleItemView = ({
 };
 
 const CycleSelector = ({
+    mode,
     cycle,
     cycles,
     onChangeCycle,
     currency,
     onGetTheDeal,
     checkoutMapping,
-    upsellCycle,
     bg,
+    upsell,
 }: {
-    onGetTheDeal: (cycle: CYCLE) => void;
+    onGetTheDeal: (data: { cycle: CYCLE; planIDs: PlanIDs }) => void;
     cycle: CYCLE;
+    mode: 'vpn-pass-promotion' | 'signup' | 'pricing';
     currency: Currency;
     cycles: CYCLE[];
-    upsellCycle?: CYCLE;
-    onChangeCycle: (cycle: CYCLE, upsellFrom?: CYCLE) => void;
+    onChangeCycle: (data: { cycle: CYCLE; upsellFrom?: CYCLE; planIDs: PlanIDs }) => void;
     checkoutMapping: CycleMapping<SubscriptionCheckoutData>;
+    upsell?: {
+        cycle: CYCLE;
+        mapping: SubscriptionCheckoutData;
+    };
     bg?: boolean;
 }) => {
-    const upsellMapping = upsellCycle ? checkoutMapping[upsellCycle] : undefined;
-    if (!upsellMapping && upsellCycle) {
-        return null;
-    }
-    const discount24months = upsellMapping?.discountPercent;
-    const discountPercentage = `${discount24months}%`;
-    const offText = upsellCycle ? getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '') : '';
     let firstNonBestOffer = false;
     return (
         <>
@@ -198,7 +198,7 @@ const CycleSelector = ({
                     return null;
                 }
                 const currentCheckout = cycleMapping;
-                const bestOffer = cycleItem === upsellCycle;
+                const bestOffer = cycleItem === upsell?.cycle;
                 let orderGroup = 2;
                 if (bestOffer) {
                     orderGroup = 1;
@@ -213,7 +213,7 @@ const CycleSelector = ({
                         orderGroup={orderGroup}
                         headerText={bestOffer ? c('Header').t`Best deal` : undefined}
                         onSelect={() => {
-                            onChangeCycle(cycleItem);
+                            onChangeCycle({ cycle: cycleItem, planIDs: currentCheckout.planIDs });
                         }}
                         highlightPrice={bestOffer}
                         selected={cycle === cycleItem}
@@ -227,22 +227,59 @@ const CycleSelector = ({
                         totalPerMonth={currentCheckout.withDiscountPerMonth}
                         totalWithoutPerMonth={currentCheckout.withoutDiscountPerMonth}
                         discountPercentage={currentCheckout.discountPercent}
-                        upsell={
-                            cycleItem !== upsellCycle &&
-                            upsellCycle &&
-                            offText && (
-                                <button
-                                    onClick={() => {
-                                        onChangeCycle(upsellCycle, cycleItem);
-                                    }}
-                                    className="color-primary bg-norm-weak text-center rounded w-full py-2 px-4"
-                                >
-                                    {offText}
-                                </button>
-                            )
-                        }
+                        upsell={(() => {
+                            if (!upsell) {
+                                return null;
+                            }
+                            const discount24months = upsell.mapping.discountPercent;
+                            const discountPercentage = `${discount24months}%`;
+                            const offText = getOffText(discountPercentage, getBillingCycleText(upsell.cycle) || '');
+                            return (
+                                cycleItem !== upsell.cycle &&
+                                offText && (
+                                    <button
+                                        onClick={() => {
+                                            onChangeCycle({
+                                                cycle: upsell.cycle,
+                                                upsellFrom: cycleItem,
+                                                planIDs: upsell.mapping.planIDs,
+                                            });
+                                        }}
+                                        className="color-primary bg-norm-weak text-center rounded w-full py-2 px-4"
+                                    >
+                                        {offText}
+                                    </button>
+                                )
+                            );
+                        })()}
+                        extra={(() => {
+                            if (
+                                mode === 'vpn-pass-promotion' &&
+                                currentCheckout.planIDs[PLANS.VPN_PASS_BUNDLE] &&
+                                cycleItem === CYCLE.YEARLY
+                            ) {
+                                return (
+                                    <div className="mt-4 flex flex-nowrap gap-2">
+                                        <div>
+                                            <PassLogo variant="glyph-only" size={8} />
+                                        </div>
+                                        <div className="flex-1 text-semibold color-weak text-sm">{getPassText()}</div>
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })()}
                         cta={
-                            <Button color="norm" fullWidth onClick={() => onGetTheDeal(cycleItem)}>
+                            <Button
+                                color="norm"
+                                fullWidth
+                                onClick={() =>
+                                    onGetTheDeal({
+                                        cycle: cycleItem,
+                                        planIDs: currentCheckout.planIDs,
+                                    })
+                                }
+                            >
                                 {!currentCheckout.discountPercent
                                     ? c('Action').t`Continue`
                                     : c('Action').t`Get the deal`}
