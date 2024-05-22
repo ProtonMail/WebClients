@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { DecryptedLinkWithShareInfo, useLinksListing } from '../_links';
+import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
+import { useLoadLinksShareInfo } from '../_shares/useLoadLinksShareInfo';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -19,56 +19,35 @@ const DEFAULT_SORT = {
  * useSharedWithMeView provides data for shared with me links view (file browser of shared links).
  */
 export default function useSharedWithMeView(shareId: string) {
-    const abortSignal = useAbortSignal([shareId]);
     const [isLoading, withLoading] = useLoading(true);
-    const [linksWithShareInfo, setLinksWithShareInfo] = useState<DecryptedLinkWithShareInfo[]>([]);
-    const { getDirectSharingInfo } = useDirectSharingInfo();
-
     const linksListing = useLinksListing();
+
+    const loadSharedWithMeLinks = useCallback(async (signal: AbortSignal) => {
+        await linksListing.loadLinksSharedWithMeLink(signal);
+    }, []); //TODO: No deps params as too much work needed in linksListing
+
+    const abortSignal = useAbortSignal([shareId, withLoading, loadSharedWithMeLinks]);
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
 
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
 
     const { layout } = useUserSettings();
-    const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedSharedLinks, DEFAULT_SORT);
 
-    const loadSharedWithMeLinks = async (signal: AbortSignal) => {
-        await linksListing.loadLinksSharedWithMeLink(signal);
-    };
-
-    const loadLinksShareInfo = useCallback(
-        async (signal: AbortSignal) => {
-            const links = await Promise.all(
-                sortedList.map(async (link) => {
-                    const directSharingInfo = await getDirectSharingInfo(signal, link.rootShareId);
-                    if (!directSharingInfo) {
-                        return link;
-                    }
-                    return { ...link, ...directSharingInfo };
-                })
-            );
-            setLinksWithShareInfo(links);
-        },
-        [sortedList, getDirectSharingInfo]
-    );
+    const { isLoading: isShareInfoLoading, linksWithShareInfo } = useLoadLinksShareInfo({
+        shareId,
+        links: cachedSharedLinks,
+    });
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(linksWithShareInfo, DEFAULT_SORT);
 
     useEffect(() => {
-        const ac = new AbortController();
-        void withLoading(
-            loadSharedWithMeLinks(ac.signal)
-                .then(() => loadLinksShareInfo(ac.signal))
-                .catch(sendErrorReport)
-        );
-        return () => {
-            ac.abort();
-        };
-    }, [shareId, loadLinksShareInfo]);
+        void withLoading(loadSharedWithMeLinks(abortSignal).catch(sendErrorReport));
+    }, [shareId, withLoading, loadSharedWithMeLinks, abortSignal]);
 
     return {
         layout,
-        items: linksWithShareInfo,
+        items: sortedList,
         sortParams,
         setSorting,
-        isLoading: isLoading || isDecrypting,
+        isLoading: isLoading || isDecrypting || isShareInfoLoading,
     };
 }

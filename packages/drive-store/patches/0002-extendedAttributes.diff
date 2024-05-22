@@ -1,0 +1,13 @@
+diff --git a/packages/drive-store/store/_links/extendedAttributes.ts b/packages/drive-store/store/_links/extendedAttributes.ts
+index ae2e292060..bb3892c0b1 100644
+--- a/packages/drive-store/store/_links/extendedAttributes.ts
++++ b/packages/drive-store/store/_links/extendedAttributes.ts
+@@ -175,7 +175,7 @@ export function createFileExtendedAttributes({
+     };
+ }
+ 
+-async function encryptExtendedAttributes(
++export async function encryptExtendedAttributes(
+     xattr: ExtendedAttributes,
+     nodePrivateKey: PrivateKeyReference,
+     addressPrivateKey: PrivateKeyReference

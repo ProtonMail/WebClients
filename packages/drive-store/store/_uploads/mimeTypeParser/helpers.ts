@@ -1,14 +1,14 @@
 import { EXTRA_EXTENSION_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { getRefreshError } from '../../../utils/errorHandling/RefreshError';
+import { getWebpackChunkFailedToLoadError } from '../../../utils/errorHandling/WebpackChunkFailedToLoadError';
 
 export async function mimetypeFromExtension(filename: string) {
     const { lookup } = await import(/* webpackChunkName: "mime-types" */ 'mime-types').catch((e) => {
-        console.warn(e);
-        sendErrorReport(e);
-
-        return Promise.reject(getRefreshError());
+        const report = getWebpackChunkFailedToLoadError(e, 'mime-types');
+        console.warn(report);
+        sendErrorReport(report);
+        return Promise.reject(report);
     });
     const extension = filename.split('.').pop();
 
