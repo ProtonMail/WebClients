@@ -94,13 +94,15 @@ export const createAutoFillService = () => {
 
             const tabId = sender.tab?.id;
             const parsedUrl = parseUrl(payload.domain ?? sender.url!);
+            const state = store.getState();
 
-            const writableShareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
-            const { didDowngrade } = selectVaultLimits(store.getState());
+            const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
+            const { didDowngrade } = selectVaultLimits(state);
+            const shareIds = didDowngrade || payload.writable ? writableShareIds : undefined;
 
             /* if user has exceeded his vault count limit - this likely means has downgraded
              * to a free plan : only allow him to autofill from his writable vaults */
-            const items = getCandidates({ ...parsedUrl, shareIds: didDowngrade ? writableShareIds : undefined });
+            const items = getCandidates({ ...parsedUrl, shareIds });
             if (tabId) void setPopupIconBadge(tabId, items.length);
 
             return {
