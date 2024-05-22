@@ -34,6 +34,7 @@ export type AuthSession = {
     RefreshToken: string;
     sessionLockToken?: string;
     UID: string;
+    unlockRetryCount?: number;
     UserID: string;
 };
 

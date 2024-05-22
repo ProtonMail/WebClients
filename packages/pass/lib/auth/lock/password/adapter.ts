@@ -5,6 +5,7 @@ import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import type { Maybe } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -20,7 +21,21 @@ export const passwordLockAdapterFactory = (
     auth: AuthService,
     options: { getEncryptedCacheKey: (userID: string) => Promise<Maybe<string>> }
 ): LockAdapter => {
-    const { authStore } = auth.config;
+    const { authStore, getPersistedSession, onSessionPersist } = auth.config;
+
+    /** Persist the `unlockRetryCount` without re-encrypting
+     * the authentication session blob */
+    const setRetryCount = async (retryCount: number) => {
+        authStore.setUnlockRetryCount(retryCount);
+
+        const localID = authStore.getLocalID();
+        const encryptedSession = await getPersistedSession(localID);
+
+        if (encryptedSession) {
+            encryptedSession.unlockRetryCount = retryCount;
+            await onSessionPersist?.(JSON.stringify(encryptedSession));
+        }
+    };
 
     const adapter: LockAdapter = {
         type: LockMode.PASSWORD,
@@ -51,6 +66,7 @@ export const passwordLockAdapterFactory = (
             authStore.setLockMode(adapter.type);
             authStore.setLockTTL(ttl);
             authStore.setLockLastExtendTime(getEpoch());
+            authStore.setUnlockRetryCount(0);
 
             await auth.persistSession().catch(noop);
 
@@ -65,6 +81,7 @@ export const passwordLockAdapterFactory = (
             authStore.setLockTTL(undefined);
             authStore.setLockMode(LockMode.NONE);
             authStore.setLocked(false);
+            authStore.setUnlockRetryCount(0);
 
             await auth.persistSession().catch(noop);
 
@@ -91,8 +108,12 @@ export const passwordLockAdapterFactory = (
          * Load the crypto workers early in case password unlocking
          * happens before we boot the application state (hydrate.saga) */
         unlock: async (secret) => {
+            const retryCount = authStore.getUnlockRetryCount() + 1;
+
             try {
-                await loadCryptoWorker();
+                await loadCryptoWorker().catch(() => {
+                    throw new PassCryptoError('Could not load worker');
+                });
 
                 const offlineConfig = authStore.getOfflineConfig();
                 const userID = authStore.getUserID();
@@ -107,9 +128,18 @@ export const passwordLockAdapterFactory = (
                 await decryptData(offlineKey, stringToUint8Array(encryptedCacheKey), PassEncryptionTag.Offline);
                 const hash = uint8ArrayToString(offlineKD);
                 authStore.setOfflineKD(hash);
+                await setRetryCount(0).catch(noop);
 
                 return hash;
-            } catch {
+            } catch (err) {
+                if (err instanceof PassCryptoError) throw err;
+
+                if (retryCount >= 3) {
+                    await auth.logout({ soft: false, broadcast: true });
+                    throw new Error(c('Warning').t`Too many attempts`);
+                }
+
+                await setRetryCount(retryCount).catch(noop);
                 throw Error(c('Error').t`Wrong password`);
             }
         },
