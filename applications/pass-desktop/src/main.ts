@@ -36,6 +36,14 @@ const createSession = () => {
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
     if (app.isPackaged) {
+        // Always use system DNS settings
+        app.configureHostResolver({
+            enableAdditionalDnsQueryTypes: false,
+            enableBuiltInResolver: true,
+            secureDnsMode: 'off',
+            secureDnsServers: [],
+        });
+
         // Use certificate pinning
         if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
