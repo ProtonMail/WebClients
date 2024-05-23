@@ -12,6 +12,26 @@
         "Η προώθηση αλληλογραφίας σταμάτησε"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -1135,6 +1155,10 @@
       ],
       "Trust": [
         "Αξιόπιστο"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5565,6 +5589,9 @@
       "and": [
         "και"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Τυχόν προγραμματισμένα μηνύματα ή μηνύματα που έχουν αναβληθεί θα ακυρωθούν."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
       ],
@@ -6451,6 +6478,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Αναβολή έως αύριο, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Η αναβολή αυτής της συνομιλίας θα ακυρωθεί."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
@@ -8788,6 +8818,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium χαρακτηριστικά"
+      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -8863,6 +8896,9 @@
       ],
       "Unlimited devices": [
         "Απεριόριστες συσκευές"
+      ],
+      "Unlimited devices and aliases": [
+        "Απεριόριστες συσκευές και ψευδώνυμα"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -9490,6 +9526,18 @@
         "Εσείς"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      ],
+      "Secure vault sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
@@ -10114,9 +10162,19 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10339,6 +10397,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -10471,6 +10534,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Status": {
@@ -10940,6 +11008,9 @@
       "Message deleted": [
         "Το μήνυμα διαγράφηκε"
       ],
+      "Message expiration canceled": [
+        "Η λήξη του μηνύματος ακυρώθηκε"
+      ],
       "Message marked as legitimate": [
         "Το μήνυμα σημάνθηκε ως αποδεκτό"
       ],
@@ -11016,6 +11087,9 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"

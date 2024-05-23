@@ -1159,6 +1159,10 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -9628,6 +9632,11 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-postadressen hittades inte bland användar-id som definierats i sändningsnyckeln (${ keyUserIds })"
       ]
     },
     "Placeholder": {
