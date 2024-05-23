@@ -1,6 +1,6 @@
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 
-import { PASS_UPGRADE_PATH, type UpsellRef, UpsellRefPrefix } from '../constants';
+import { PASS_UPGRADE_PATH, SAFARI_MESSAGE_KEY, type UpsellRef, UpsellRefPrefix } from '../constants';
 import { authStore } from '../lib/auth/store';
 
 /** `pathRef` will be passed to the upgrade link */
@@ -22,6 +22,16 @@ export const useNavigateToUpgrade = (options: { path?: string; upsellRef: Upsell
 
     const localID = authStore?.getLocalID();
     if (localID !== undefined) searchParams.append('u', localID.toString());
+
+    if (BUILD_TARGET === 'safari') {
+        return () =>
+            (globalThis as any).browser.runtime.sendNativeMessage(
+                SAFARI_MESSAGE_KEY,
+                JSON.stringify({
+                    upgrade: {},
+                })
+            );
+    }
 
     const upgradeHref = `${config.SSO_URL}/${options.path ?? PASS_UPGRADE_PATH}?${searchParams.toString()}`;
 
