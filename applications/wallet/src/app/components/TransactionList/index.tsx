@@ -214,20 +214,16 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 </div>
                 <div className="flex flex-row justify-center mt-6 ui-standard">
                     <Button
-                        pill
-                        shape="solid"
-                        color="weak"
-                        className="text-lg w-custom mx-1 py-3"
-                        shadow
+                        shape="ghost"
+                        color="norm"
+                        className="text-lg w-custom mx-1"
                         style={{ '--w-custom': '7.5rem' }}
                     >
                         {c('Wallet transaction').t`Receive`}
                     </Button>
                     <Button
-                        pill
                         shape="solid"
-                        className="button-darker text-lg w-custom mx-1 py-3"
-                        shadow
+                        className="button-darker text-lg w-custom mx-1"
                         style={{ '--w-custom': '7.5rem' }}
                     >
                         {c('Wallet transaction').t`Buy`}

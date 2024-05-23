@@ -29,7 +29,6 @@ export const SetupModeSelect = ({ onModeSelection }: Props) => {
 
             <div className="flex">
                 <Button
-                    pill
                     className="block w-4/5 mx-auto mb-2"
                     shape="solid"
                     color="norm"
@@ -39,6 +38,7 @@ export const SetupModeSelect = ({ onModeSelection }: Props) => {
                     className="block w-4/5 mx-auto text-semibold"
                     shape="ghost"
                     color="weak"
+                    size="medium"
                     onClick={() => onModeSelection(WalletSetupScheme.WalletImport)}
                 >{c('Wallet setup').t`Import an existing wallet`}</Button>
             </div>

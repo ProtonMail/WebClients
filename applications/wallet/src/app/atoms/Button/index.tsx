@@ -9,10 +9,7 @@ import './Button.scss';
 export { CoreButton };
 
 export const Button = ({ children, className, shadow, ...rest }: ButtonProps & { shadow?: boolean }) => (
-    <CoreButton
-        className={clsx(className, 'wallet-button', rest.size === 'small' ? 'py-1' : 'py-3', shadow && 'shadow')}
-        {...rest}
-    >
+    <CoreButton className={clsx(className, 'wallet-button')} pill {...rest}>
         {children}
     </CoreButton>
 );
@@ -20,6 +17,6 @@ export const Button = ({ children, className, shadow, ...rest }: ButtonProps & {
 const defaultElement = 'button';
 
 export const ButtonLike = <E extends ElementType = typeof defaultElement>(props: ButtonLikeProps<E>) => {
-    const className = clsx(props.className, 'wallet-button', props.size === 'small' ? 'py-1' : 'py-3');
-    return <CoreButtonLike {...{ ...props, className }} />;
+    const className = clsx(props.className, 'wallet-button');
+    return <CoreButtonLike pill {...{ ...props, className }} />;
 };

@@ -12,7 +12,6 @@ import {
     DropdownMenuButton,
     Icon,
     Toggle,
-    useModalState,
     usePopperAnchor,
 } from '@proton/components/components';
 
@@ -27,7 +26,6 @@ interface Props {
 }
 
 export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress, onAddAddresses }: Props) => {
-    const [] = useModalState();
     const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
     const [selectedAddresses, setSelectedAddresses] = useState<string[]>([]);
 
@@ -107,13 +105,9 @@ export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress
                                 disabled={!isAvailable || loading}
                             >
                                 <div>{opt.Email}</div>
-                                <div className="flex">
+                                <div className="flex flex-row items-center">
                                     {(() => {
-                                        if (isAvailable) {
-                                            return null;
-                                        }
-
-                                        if (value.some(({ ID }) => ID === opt.ID)) {
+                                        if (isSelected || value.some(({ ID }) => ID === opt.ID)) {
                                             return (
                                                 <Icon
                                                     size={4}
@@ -121,6 +115,10 @@ export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress
                                                     className="color-success"
                                                 />
                                             );
+                                        }
+
+                                        if (isAvailable) {
+                                            return null;
                                         }
 
                                         return <Icon size={4} name="cross-circle-filled" className="color-danger" />;

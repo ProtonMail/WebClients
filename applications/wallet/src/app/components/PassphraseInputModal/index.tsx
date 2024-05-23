@@ -60,7 +60,6 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
                 </div>
 
                 <Button
-                    pill
                     disabled={!passphrase || Boolean(error)}
                     className="block w-4/5 mx-auto mt-4 mb-2"
                     shape="solid"

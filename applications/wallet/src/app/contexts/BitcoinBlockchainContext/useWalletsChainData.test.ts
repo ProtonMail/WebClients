@@ -19,12 +19,12 @@ const accounts = {
             '8': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
+                scriptType: 3,
             },
             '9': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/86'/0'/0'",
-                scriptType: 3,
+                scriptType: 4,
             },
         },
     },
@@ -34,12 +34,12 @@ const accounts = {
             '10': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/49'/0'/0'",
-                scriptType: 1,
+                scriptType: 2,
             },
             '11': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
+                scriptType: 3,
             },
         },
     },
@@ -49,7 +49,7 @@ const accounts = {
             '12': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
+                scriptType: 3,
             },
         },
     },

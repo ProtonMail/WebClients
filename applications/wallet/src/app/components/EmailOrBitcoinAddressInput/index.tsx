@@ -1,4 +1,4 @@
-import { KeyboardEvent, ReactNode, useCallback, useMemo, useState } from 'react';
+import { KeyboardEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
@@ -70,15 +70,19 @@ const EmailListItem = ({ chunks = [], name, address, onClick, leftNode, rightNod
                     color: 'var(--interaction-norm)',
                 }}
             >
-                {getInitials(name ?? address)}
+                {getInitials(name || address)}
             </div>
-            <div className="flex flex-column justify-center mr-auto">
-                <span className={clsx('block w-full text-ellipsis text-left text-lg')}>{name}</span>
-                <span className={clsx('block w-full text-ellipsis text-left color-hint')}>
-                    {<Marks chunks={chunks}>{address}</Marks>}
+            <div className="flex flex-column justify-center items-center mr-auto">
+                <span className={clsx('block w-full text-ellipsis text-left text-lg')}>
+                    {<Marks chunks={chunks}>{name || address}</Marks>}
                 </span>
+                {Boolean(name && address) && name !== address && (
+                    <span className={clsx('block w-full text-ellipsis text-left color-hint')}>
+                        {<Marks chunks={chunks}>{address}</Marks>}
+                    </span>
+                )}
             </div>
-            {error && <WalletNotFoundErrorDropdown />}
+            {error && <WalletNotFoundErrorDropdown email={address} />}
             {rightNode}
         </>
     );
@@ -87,7 +91,7 @@ const EmailListItem = ({ chunks = [], name, address, onClick, leftNode, rightNod
         return (
             <button
                 onClick={onClick}
-                className="email-select-button flex flex-row flex-nowrap items-center grow py-2 rounded-lg"
+                className="email-select-button flex flex-row flex-nowrap items-center grow p-2 rounded-lg"
             >
                 {inner}
             </button>
@@ -116,6 +120,8 @@ export const EmailOrBitcoinAddressInput = ({
     loading,
     ...rest
 }: Props) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
     const [input, setInput] = useState('');
     const [emailError, setEmailError] = useState('');
 
@@ -151,16 +157,19 @@ export const EmailOrBitcoinAddressInput = ({
             const recipients = newRecipients.filter(({ Address }) => {
                 return !validateInput(Address || '', network);
             });
-            if (!recipients.length) {
-                return;
-            }
 
-            setInput('');
-            setEmailError('');
-            onAddRecipients(recipients);
+            if (recipients.length) {
+                setInput('');
+                setEmailError('');
+                onAddRecipients(recipients);
+            }
         },
         [onAddRecipients, network]
     );
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    });
 
     const handleAddRecipientFromInput = (input: string) => {
         const trimmedInput = input.trim();
@@ -278,6 +287,9 @@ export const EmailOrBitcoinAddressInput = ({
             );
         }
 
+        // TODO: implement this later
+        const recentRecipients = [];
+
         return (
             <>
                 <div className="flex flex-row flex-nowrap bg-norm items-center p-4 rounded-lg">
@@ -291,21 +303,26 @@ export const EmailOrBitcoinAddressInput = ({
                         .t`Try adding an email address to start sending Bitcoin!`}</span>
                 </div>
 
-                <span className="block mt-6 color-hint text-sm mb-1">{c('Wallet send').t`Recent recipients`}</span>
+                {recentRecipients.length ? (
+                    <span className="block mt-6 color-hint text-sm mb-1">{c('Wallet send').t`Recent recipients`}</span>
+                ) : null}
             </>
         );
     }, [filteredOptions, handleSelect, input, loading, onRemoveRecipient, recipientsWithBtcAddress]);
 
     return (
-        <div className="flex flex-column w-full">
-            <div className="mb-4 w-full">
+        <div className="flex flex-column flex-nowrap justify-center w-full grow">
+            <div className="mb-4 w-full shrink-0">
                 <Input
                     {...rest}
-                    label={c('Bitcoin send').t`Send to Email/BTC address`}
+                    label={c('Bitcoin send').t`To`}
+                    placeholder={c('Bitcoin send').t`Email address or BTC address`}
                     dense
-                    autofocus
+                    ref={inputRef}
+                    autoFocus
                     value={input}
                     disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || loading}
+                    data-protonpass-ignore
                     onValue={(value: string) => {
                         handleInputChange(value.trimStart());
                         onChange?.(value);
@@ -326,11 +343,16 @@ export const EmailOrBitcoinAddressInput = ({
                     containerClassName="border"
                     style={rest.style}
                     error={emailError}
+                    suffix={
+                        <div>
+                            <Icon className="color-weak" name="magnifier" />
+                        </div>
+                    }
                 />
             </div>
 
-            <div className="flex flex-column min-h-custom w-full" style={{ '--min-h-custom': '16rem' }}>
-                {listContent}
+            <div className="flex flex-column justify-center grow w-full">
+                <div className="grow overflow-auto">{listContent}</div>
             </div>
         </div>
     );

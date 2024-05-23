@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
-import Icon from '@proton/components/components/icon/Icon';
+import Icon, { IconName } from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
@@ -47,11 +47,20 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
      * min and max values visually.
      */
     marks?: boolean;
-    /**
-     * Controls the color of the track (filled out portion of the Slider rail)
-     * And maybe the color of other things in the future, hehe. #future-proof-docs
-     */
+
     color?: ThemeColorUnion;
+    /**
+     * Classname for the slider button input
+     */
+    buttonClassName?: string;
+    /**
+     * Icon to render in the slider button input
+     */
+    buttonIcon?: IconName;
+    /**
+     * Whether to skip rendering icon in slider button input or not
+     */
+    noButtonIcon?: boolean;
     /**
      * Allows for custom formatting of the value that is displayed in the
      * Slider's label. By default, unless `step` is specified the number shown
@@ -81,6 +90,9 @@ const Slider = ({
     size = 'medium',
     color = 'success',
     step,
+    buttonClassName,
+    buttonIcon,
+    noButtonIcon,
     getDisplayedValue,
     onChange,
     onInput,
@@ -322,6 +334,7 @@ const Slider = ({
                     style={{ '--left-custom': `${valueInPercent}%` }}
                     data-testid="slider-thumb"
                     className={clsx(
+                        buttonClassName,
                         'slider-thumb left-custom shadow-norm relative',
                         dragging && 'slider-thumb-dragging'
                     )}
@@ -347,7 +360,7 @@ const Slider = ({
                         onInput={handleInputInput}
                         {...rest}
                     />
-                    <Icon name="arrows-left-right" />
+                    {!noButtonIcon && <Icon name={buttonIcon ?? 'arrows-left-right'} />}
                 </ButtonLike>
             </Tooltip>
         </div>

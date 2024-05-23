@@ -69,7 +69,6 @@ export const WalletAutoCreationNoticeModal = ({ open, dryRun, handleClickImport 
             <div className="flex flex-column items-center my-6 w-full">
                 <Button
                     disabled={loadingWalletCreation}
-                    pill
                     fullWidth
                     shape="solid"
                     color="norm"
