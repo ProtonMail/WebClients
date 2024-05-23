@@ -23,7 +23,7 @@ export type LockOptions = { broadcast?: boolean; soft?: boolean };
 export interface LockAdapter {
     type: LockMode;
     check: () => Promise<Lock>;
-    create: (payload: LockCreateDTO) => Promise<Lock>;
+    create: (payload: LockCreateDTO, beforeCreate?: () => Promise<void>) => Promise<Lock>;
     delete: (secret: string) => Promise<Lock>;
     lock: (options: LockOptions) => Promise<Lock>;
     unlock: (secret: string) => Promise<Maybe<string>>;

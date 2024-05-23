@@ -243,15 +243,17 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const localID = authStore.getLocalID();
             const sessionLockRegistered = authStore.getLockMode() === LockMode.SESSION;
 
-            /** If we're creating a new lock over an active
-             * API session lock - delete it first */
-            if (sessionLockRegistered) {
-                if (!payload.current) throw new Error('Invalid lock creation');
-                const lock = await getLockAdapter(LockMode.SESSION).delete(payload.current.secret);
-                void config.onLockUpdate?.(lock, localID, false);
-            }
+            /** If we're creating a new lock over an
+             * active API session lock - delete it first */
+            const onBeforeCreate = sessionLockRegistered
+                ? async () => {
+                      if (!payload.current) throw new Error('Invalid lock creation');
+                      const lock = await getLockAdapter(LockMode.SESSION).delete(payload.current.secret);
+                      void config.onLockUpdate?.(lock, localID, false);
+                  }
+                : undefined;
 
-            const lock = await adapter.create(payload);
+            const lock = await adapter.create(payload, onBeforeCreate);
             void config.onLockUpdate?.(lock, localID, true);
         },
 
