@@ -1,7 +1,4 @@
-import { useMemo } from 'react';
-import { useCallback } from 'react';
-import { useState } from 'react';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +8,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import {
     IWasmApiWalletData,
-    decryptWalletKey,
     encryptWalletDataWithWalletKey,
     useWalletApiClients,
     walletAccountDeletion,
@@ -44,12 +40,11 @@ export const useAccountPreferences = (
 
     const updateWalletAccountLabel = useCallback(() => {
         const promise = async () => {
-            if (!userKeys || !wallet.WalletKey?.WalletKey || label === walletAccount.Label) {
+            if (!userKeys || !wallet.WalletKey?.DecryptedKey || label === walletAccount.Label) {
                 return;
             }
 
-            const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
-            const [encryptedWalletName] = await encryptWalletDataWithWalletKey([label], decryptedKey);
+            const [encryptedWalletName] = await encryptWalletDataWithWalletKey([label], wallet.WalletKey.DecryptedKey);
 
             try {
                 const { Data: updatedAccount } = await api.wallet.updateWalletAccountLabel(
@@ -73,7 +68,7 @@ export const useAccountPreferences = (
         label,
         userKeys,
         wallet.Wallet.ID,
-        wallet.WalletKey?.WalletKey,
+        wallet.WalletKey?.DecryptedKey,
         walletAccount.ID,
         walletAccount.Label,
         withLoadingLabelUpdate,

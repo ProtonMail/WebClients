@@ -85,18 +85,21 @@ const apiWalletKeyOne: WasmApiWalletKey = {
     WalletID: '0',
     UserKeyID: '998',
     WalletKey: '3',
+    WalletKeySignature: '"-----BEGIN PGP SIGNATURE-----.*-----END PGP SIGNATURE-----"',
 };
 
 const apiWalletKeyTwo: WasmApiWalletKey = {
     WalletID: '1',
     UserKeyID: '998',
     WalletKey: '1',
+    WalletKeySignature: '"-----BEGIN PGP SIGNATURE-----.*-----END PGP SIGNATURE-----"',
 };
 
 const apiWalletKeyThree: WasmApiWalletKey = {
     WalletID: '2',
     UserKeyID: '998',
     WalletKey: '2',
+    WalletKeySignature: '"-----BEGIN PGP SIGNATURE-----.*-----END PGP SIGNATURE-----"',
 };
 
 const apiWalletSettingsOne: WasmApiWalletSettings = {

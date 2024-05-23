@@ -12,10 +12,11 @@ import {
     WasmScriptType,
     WasmWallet,
 } from '@proton/andromeda';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import { CryptoProxy } from '@proton/crypto/lib';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { verifySignedData } from '@proton/wallet';
 
 import { useBitcoinAddressPool } from '.';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
@@ -40,12 +41,8 @@ const expectSignedBy = async (k: DecryptedKey, a?: string, w?: string) => {
     expect(a).toBeTruthy();
     expect(w).toBeTruthy();
 
-    const { verified } = await CryptoProxy.verifyMessage({
-        armoredSignature: w,
-        textData: a,
-        verificationKeys: [k.publicKey],
-    });
-    expect(verified).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    const isVerified = await verifySignedData(a as string, w as string, [k.publicKey]);
+    expect(isVerified).toBeTruthy();
 };
 
 const wallet = {
@@ -83,6 +80,17 @@ const wallet = {
         // 195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248, 126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36
         WalletKey:
             'wcBMA5fAXxAlQaycAQf/QUHd1dN32croM9sPR/rF53JFie2ZKEEw88Uj77VnUUhuzv1dgRTKNiUHaFNfd7m/r5xLOqEGiPQCPAt4MhHbgwilrxu52Jqq3xh2ErBIgYnRM+WNvAkzZK6PMVJhppx3ciiCMMkBkB3iaaunAtXssZzzdAPPC/+TNEyh1ugQKgKhx+Ov/ygoPSXwDS+DvwtOQX0O6OMCrvixhHMiYJg8EBSc6+DM06N28A9t4UsECqE/2VwLfYfcFMgXQVIhedvKbu2GD18S2K4d1t5ycDVXCoIvB45OjjovpLaLw205TiMmXX6TW5XJho/RaXnqPjkDC01PoTbMZbbN4OhelZ+wmtLA1gFnTJmSkkAhT/S62cm8eVJRLKMnRqMYDRGYKDZkBOk5XWkZiKl7/5MftfKV4WqdGu8htj3MiJkFEdLAo7ARzkzf1Mz6ab1lhI5j/uy1bYriNk1AjGPfsk0RMotad/Zb93F7YPRL3ol2h8kLMjPDtqtIDYG8HjavtS639tD2N0tLsnxekA/miwDAeMuAZDEPT9tuzkiMMfM8wyCtKpBVDOfM1DnH/9v+XTFit/EqBh9F/6x3KUtHikFffq7hrITZf2xCG9aFgR2UFNYi7r4i97lhsN6XkbItmAYzYEIrTDuvq8+ionBfiS5NDqkqq1LP8eJjwDb1b4mxvhLeVm2zELbNtuX5ClCU3qi5o++aRP1BTp+yFWDJOrONEu8zPpsw/JJWb0JjZ9F6nCZXs/D4ankiCfHjIt1ONC3u7JTmFeDBeL7PdYtwVMEkrFTEl4DOUmegW0k+VdWMLHNOTGr0NR1xJeC+rcJFN9neaAEakyutHrGnzSIn8wKNALzt/u4HF7NFTYuBEoUKjTZ49vMYKNrqzDTUX9Q=',
+        WalletKeySignature: `-----BEGIN PGP SIGNATURE-----
+
+wsBzBAEBCgAnBYJmT0SQCZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl
+QaycAACuGAf9Ha67rkSNj2v6Wg3SCq2YGF2g1h57UK6TiARHXRtogIizJgfo
+eGH8Dc9tvY1qIEuHnNsdXpsqMfiew3adIC6nbreAm4nar6LNNYlLcYlitVNC
+EVo+V6Z61rCCYhr/MeauTtyNr5k+qPjhuu9QZK8yeBwBVbFS8DyqzyTIMQ7a
+xotvjVdbJvk9PfOFa9XCbVmO6vpXMB/B5fq8ZunLyB6xwU8cJ0NwM6GZYfzc
+lMEI2ft4eIleErp1RB2O8rfsS4GyozquaQzSuOOPMasJFQqaKyfqpXESfoA1
+nyr3eeFVNk3i/iBJmSuCGT+a6rfZAa7jI9NTQKC+1tpf5ZqYHFqGyA==
+=PsbX
+-----END PGP SIGNATURE-----`,
     },
     WalletSettings: {
         WalletID: '01',

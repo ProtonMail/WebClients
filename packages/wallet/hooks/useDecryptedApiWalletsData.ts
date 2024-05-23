@@ -5,7 +5,7 @@ import { useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData, useApiWalletsData } from '@proton/wallet';
 
-import { decryptWalletData } from '../utils/crypto';
+import { decryptWalletData, decryptWalletKey } from '../utils/crypto';
 import { buildMapFromWallets } from '../utils/wallet';
 
 export type WalletMap = Partial<
@@ -34,11 +34,16 @@ export const useDecryptedApiWalletsData = () => {
                             const encryptedLabels = WalletAccounts.map((account) => account.Label);
 
                             try {
+                                const decryptedWalletKey = await decryptWalletKey(
+                                    WalletKey.WalletKey,
+                                    WalletKey.WalletKeySignature,
+                                    userKeys
+                                );
+
                                 const [decryptedMnemonic, decryptedWalletName, decryptedPublickey, ...decryptedLabels] =
                                     await decryptWalletData(
                                         [Wallet.Mnemonic, Wallet.Name, Wallet.PublicKey, ...encryptedLabels],
-                                        WalletKey.WalletKey,
-                                        userKeys
+                                        decryptedWalletKey
                                     );
 
                                 const decryptedWallet = {
@@ -59,7 +64,7 @@ export const useDecryptedApiWalletsData = () => {
                                 const data: IWasmApiWalletData = {
                                     Wallet: decryptedWallet,
                                     WalletAccounts: decryptedAccounts,
-                                    WalletKey: WalletKey,
+                                    WalletKey: { ...WalletKey, DecryptedKey: decryptedWalletKey },
                                     WalletSettings: WalletSettings,
                                 };
 

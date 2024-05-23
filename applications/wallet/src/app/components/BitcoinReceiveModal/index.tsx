@@ -142,13 +142,13 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                     </div>
                 )}
 
-                <div className="flex flex-column items-center mt-6 w-full px-8">
+                <div className="flex flex-column items-center mt-6 w-full px-12">
                     <Button
                         fullWidth
                         shape="solid"
                         color="norm"
                         disabled={!paymentLink || loadingPaymentLink}
-                        className="py-3"
+                        size="large"
                         shadow
                         onClick={() => {}}
                     >{c('Wallet receive').t`Share address`}</Button>
@@ -156,7 +156,7 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                     <Button
                         className="mt-2 color-weak"
                         shape="ghost"
-                        color="weak"
+                        style={{ background: 'transparent' }}
                         onClick={() => incrementIndex()}
                         disabled={isIndexAboveGap || !paymentLink || loadingPaymentLink}
                     >{c('Wallet receive').t`Generate new address`}</Button>

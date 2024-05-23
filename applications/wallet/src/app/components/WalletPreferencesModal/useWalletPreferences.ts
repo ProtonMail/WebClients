@@ -7,7 +7,6 @@ import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     IWasmApiWalletData,
-    decryptWalletKey,
     encryptWalletDataWithWalletKey,
     useWalletApiClients,
     walletDeletion,
@@ -53,12 +52,14 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
 
     const updateWalletName = useCallback(() => {
         const promise = async () => {
-            if (!userKeys || !wallet.WalletKey?.WalletKey || walletName === wallet.Wallet.Name) {
+            if (!userKeys || !wallet.WalletKey?.DecryptedKey || walletName === wallet.Wallet.Name) {
                 return;
             }
 
-            const decryptedKey = await decryptWalletKey(wallet.WalletKey?.WalletKey, userKeys);
-            const [encryptedWalletName] = await encryptWalletDataWithWalletKey([walletName], decryptedKey);
+            const [encryptedWalletName] = await encryptWalletDataWithWalletKey(
+                [walletName],
+                wallet.WalletKey.DecryptedKey
+            );
 
             try {
                 await api.wallet.updateWalletName(wallet.Wallet.ID, encryptedWalletName);
@@ -82,7 +83,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
         walletName,
         wallet.Wallet.Name,
         wallet.Wallet.ID,
-        wallet.WalletKey?.WalletKey,
+        wallet.WalletKey?.DecryptedKey,
         api,
         createNotification,
         dispatch,

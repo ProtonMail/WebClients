@@ -9,7 +9,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import {
     IWasmApiWalletData,
-    decryptWalletKey,
     encryptWalletDataWithWalletKey,
     useWalletApiClients,
     walletAccountCreation,
@@ -96,16 +95,13 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
 
         const derivationPath = WasmDerivationPath.fromParts(purposeByScriptType[selectedScriptType], network, index);
 
-        // Typeguard
-        if (!apiWalletData.WalletKey?.WalletKey) {
+        const { Wallet, WalletKey } = apiWalletData;
+
+        if (!WalletKey?.DecryptedKey) {
             return;
         }
 
-        const { WalletKey, Wallet } = apiWalletData;
-
-        // TODO: maybe we should have this in a context
-        const key = await decryptWalletKey(WalletKey.WalletKey, userKeys);
-        const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], key);
+        const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], WalletKey.DecryptedKey);
 
         // Typeguard
         if (!encryptedLabel) {
