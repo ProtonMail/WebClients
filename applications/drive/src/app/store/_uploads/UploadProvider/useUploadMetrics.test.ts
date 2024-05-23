@@ -24,6 +24,15 @@ jest.mock('../../_shares/useSharesState', () => {
 });
 
 describe('useUploadMetrics::', () => {
+    const freeSpaceExceeded = new Error('Unprocessable Content');
+    (freeSpaceExceeded as any).data = {
+        Code: API_CUSTOM_ERROR_CODES.FREE_SPACE_EXCEEDED,
+        Error: 'Free space exceeded',
+    };
+
+    const tooManyChildren = new Error('Unprocessable Content');
+    (tooManyChildren as any).data = { Code: API_CUSTOM_ERROR_CODES.TOO_MANY_CHILDREN, Error: 'Too many children' };
+
     describe('getShareType', () => {
         it('for default share', () => {
             expect(
@@ -95,15 +104,11 @@ describe('useUploadMetrics::', () => {
         });
 
         it('for free space exceeded error', () => {
-            const error = new Error('Unprocessable Content');
-            (error as any).data = { Code: API_CUSTOM_ERROR_CODES.FREE_SPACE_EXCEEDED, Error: 'Free space exceeded' };
-            expect(getErrorCategory(error)).toBe(UploadErrorCategory.FreeSpaceExceeded);
+            expect(getErrorCategory(freeSpaceExceeded)).toBe(UploadErrorCategory.FreeSpaceExceeded);
         });
 
         it('for too many children error', () => {
-            const error = new Error('Unprocessable Content');
-            (error as any).data = { Code: API_CUSTOM_ERROR_CODES.TOO_MANY_CHILDREN, Error: 'Too many children' };
-            expect(getErrorCategory(error)).toBe(UploadErrorCategory.TooManyChildren);
+            expect(getErrorCategory(tooManyChildren)).toBe(UploadErrorCategory.TooManyChildren);
         });
 
         it('for any error', () => {
@@ -169,6 +174,22 @@ describe('useUploadMetrics::', () => {
                 initiator: 'explicit',
                 plan: 'paid',
                 shareType: 'shared',
+            });
+        });
+
+        it('ignores sucess rate metric for validation error', () => {
+            act(() => {
+                hook.current.uploadFailed('defaultShareId', freeSpaceExceeded, 1);
+                expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(0);
+                expect(mockMetricsErrors).toHaveBeenCalledTimes(1);
+            });
+        });
+
+        it('doesnt ignore sucess rate metric for unknown error', () => {
+            act(() => {
+                hook.current.uploadFailed('defaultShareId', new Error('unknown error'), 1);
+                expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(1);
+                expect(mockMetricsErrors).toHaveBeenCalledTimes(1);
             });
         });
     });

@@ -23,6 +23,12 @@ export enum UploadErrorCategory {
     Unknown = 'unknown',
 }
 
+const IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE = [
+    UploadErrorCategory.FreeSpaceExceeded,
+    UploadErrorCategory.TooManyChildren,
+    UploadErrorCategory.NetworkError,
+];
+
 const REPORT_ERROR_USERS_EVERY = 10 * 60 * 1000; // 10 minutes,
 
 export default function useUploadMetrics(isPaid: boolean, metricsModule = metrics) {
@@ -56,12 +62,14 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         const errorCategory = getErrorCategory(error);
         const retry = numberOfErrors > 1;
 
-        metricsModule.drive_upload_success_rate_total.increment({
-            status: 'failure',
-            shareType,
-            retry: retry ? 'true' : 'false',
-            initiator: 'explicit',
-        });
+        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory)) {
+            metricsModule.drive_upload_success_rate_total.increment({
+                status: 'failure',
+                shareType,
+                retry: retry ? 'true' : 'false',
+                initiator: 'explicit',
+            });
+        }
         metricsModule.drive_upload_errors_total.increment({
             type: errorCategory,
             shareType,
