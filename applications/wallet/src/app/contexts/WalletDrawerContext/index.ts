@@ -2,12 +2,15 @@ import { createContext, useContext } from 'react';
 
 import { noop } from 'lodash';
 
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { TransactionData } from '../../hooks/useWalletTransactions';
 
 export interface WalletTransactionDrawerData {
     transaction: TransactionData;
+    apiAccount: WasmApiWalletAccount | undefined;
+    apiWalletData: IWasmApiWalletData;
 }
 
 export interface WalletDiscoverDrawerData {

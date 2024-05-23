@@ -78,6 +78,7 @@ export const BitcoinSendModal = ({ wallet, account, ...modalProps }: Props) => {
 
             {stepWithData.key === StepKey.AmountInput && wasmAccount?.account && (
                 <AmountInput
+                    apiAccount={account}
                     account={wasmAccount}
                     txBuilder={txBuilder}
                     updateTxBuilder={updateTxBuilder}

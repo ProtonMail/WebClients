@@ -3,11 +3,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 
 import { BitcoinReceiveModal } from '.';
-import { mockUseBitcoinBlockchainContext, mockUseUserExchangeRate } from '../../tests';
+import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../tests';
 import { apiWalletsData } from '../../tests/fixtures/api';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
-describe('BitcoinReceive', () => {
+describe('BitcoinReceiveModal', () => {
     let helper: useBitcoinReceiveModule.UseBitcoinReceiveHelper;
 
     const mockUseBitcoinReceive = vi.spyOn(useBitcoinReceiveModule, 'useBitcoinReceive');
@@ -17,7 +17,7 @@ describe('BitcoinReceive', () => {
 
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
-        mockUseUserExchangeRate(null);
+        mockUseWalletAccountExchangeRate(null);
 
         const bitcoinURI = WasmPaymentLink.tryParse(
             'bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h?amount=0.005',
