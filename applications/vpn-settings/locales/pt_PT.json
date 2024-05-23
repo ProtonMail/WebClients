@@ -177,7 +177,7 @@
         "Transferir a amostra CSV"
       ],
       "Download our CSV template": [
-        "Descarregue o nosso modelo CSV"
+        "Transfere o nosso modelo CSV"
       ],
       "Edit": [
         "Editar"
@@ -807,6 +807,11 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicação para desktop do ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -1815,6 +1820,15 @@
       "Bugs or quality issue": [
         "Erros ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não desejo partilhar o motivo."
+      ],
+      "I found a cheaper VPN": [
+        "Encontrei uma VPN mais barata."
+      ],
+      "I found a VPN with better features": [
+        "Encontrei uma VPN com melhores funcionalidades."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
@@ -1823,6 +1837,9 @@
       ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outra razão (comente)"
       ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
@@ -1866,6 +1883,11 @@
         "Oferta por tempo limitado"
       ]
     },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "E-mail de verificação enviado para ${ address }"
@@ -1882,6 +1904,12 @@
       ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcionalidades pagas ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -2092,13 +2120,13 @@
         "Ocorreu um erro ao ler o ficheiro \"${ formattedFilename }\". O formato de ficheiro é incorreto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro \"${ formattedFilename }\". O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro «${ formattedFilename }». O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "Carregue um ficheiro CSV com ${ MAX_NUMBER_OF_USER_ROWS } contas de utilizador ou menos."
+        "Envie um ficheiro CSV com ${ MAX_NUMBER_OF_USER_ROWS } contas de utilizador ou menos."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "O seu ficheiro \"${ formattedFilename }\" está vazio."
@@ -2993,13 +3021,13 @@
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Descarregue o nosso modelo CSV, preencha os detalhes do utilizador e, em seguida, carregue o seu arquivo CSV completo para criar as contas para estes utilizadores."
+        "Transfere o nosso modelo CSV, preencha os detalhes do utilizador e, em seguida, envie o seu ficheiro CSV completo para criar as contas para estes utilizadores."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
       ],
       "Drop file here to upload": [
-        "Solte os ficheiros aqui para os carregar"
+        "Solte os ficheiros aqui para os enviar"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -3575,7 +3603,7 @@
         "Para continuar, selecione um método de recuperação de conta para podermos verificar o pedido."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Para proteger a sua conexão de internet, descarregue e instale a aplicação ${ VPN_APP_NAME } no seu dispositivo e ligar-se a um servidor."
+        "Para proteger a sua conexão de internet, Transfere e instale a aplicação ${ VPN_APP_NAME } no seu dispositivo e ligar-se a um servidor."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
@@ -3626,7 +3654,7 @@
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
       "Upload your completed CSV file to create accounts": [
-        "Carregue o seu ficheiro CSV preenchido para criar contas"
+        "Envie o seu ficheiro CSV preenchido para criar contas"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilize o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
@@ -3663,6 +3691,9 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "O número de versão foi copiado para a área de transferência."
       ],
       "View, download, and manage your invoices.": [
         "Ver, transferir, e gerir as suas faturas."
@@ -3841,10 +3872,10 @@
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
         "A sua palavra-passe do ${ BRAND_NAME }"
@@ -4317,6 +4348,9 @@
       "Recovery phrase": [
         "Frase de recuperação"
       ],
+      "Reply (ACS) URL": [
+        "URL de resposta (ACS)"
+      ],
       "Require 2FA for administrators": [
         "Exigir A2F para administradores"
       ],
@@ -4581,16 +4615,19 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "mailtrial2024: Info": {
@@ -4599,6 +4636,11 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Member action": {
@@ -4822,10 +4864,10 @@
         "Segurança avançada de partilha"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixo"
+        "Eliminar automaticamente mensagens de spam e de lixeira"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -5351,7 +5393,7 @@
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A criptografia de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
+        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A encriptação de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
@@ -5966,7 +6008,7 @@
     },
     "Select file": {
       "Upload CSV file": [
-        "Carregar um ficheiro CSV"
+        "Enviar um ficheiro CSV"
       ]
     },
     "Select invoice document": {
@@ -6041,8 +6083,14 @@
         "Esta permissão expira em ${ timeRemaining.inHours } hora",
         "Esta permissão expira em ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Pode reinicializar a sua palavra-passe"
@@ -6050,6 +6098,14 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
@@ -6483,11 +6539,17 @@
       "${ app } storage": [
         "${ app } de armazenamento"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% cheio"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
       ],
       "contact your administrator": [
         "contacte o seu administrador"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar ficheiros, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
@@ -6497,6 +6559,9 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "O seu ${ storage } está cheio. ${ cta }"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
@@ -6618,6 +6683,81 @@
         "Por"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para desktop do ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } de armazenamento total"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "6 users": [
+        "6 utilizadores"
+      ],
+      "Add any new files": [
+        "Adicionar qualquer novo ficheiro"
+      ],
+      "Calendar sharing": [
+        "Partilha de calendário"
+      ],
+      "Cancel subscription": [
+        "Cancelar subscrição"
+      ],
+      "Cancel subscription?": [
+        "Cancelar subscrição?"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Extra storage and bonuses": [
+        "Armazenamento adicional e bónus"
+      ],
+      "Have a question?": [
+        "Tem uma pergunta?"
+      ],
+      "I still want to cancel": [
+        "Eu ainda quero cancelar."
+      ],
+      "Keep ${ planName }": [
+        "Manter ${ planName }"
+      ],
+      "Manage your calendar": [
+        "Gerencie o seu calendário"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
+      "Read the story": [
+        "Leia a história"
+      ],
+      "Receive new emails": [
+        "Receber novos e-mails"
+      ],
+      "Resubscribe": [
+        "Renovar a subscrição"
+      ],
+      "Subscription canceled": [
+        "A subscrição foi cancelada."
+      ],
+      "Sync files on devices": [
+        "Sincronizar ficheiros nos dispositivos"
+      ],
+      "Version history": [
+        "Histórico das versões"
+      ],
+      "Watch the interview": [
+        "Assistir à entrevista"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de armazenamento"
@@ -6626,10 +6766,13 @@
         "e mais 15 funcionalidades premium"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
       ],
       "Support our mission": [
         "Apoie a nossa missão"
@@ -6642,6 +6785,9 @@
       ],
       "We don't sell your data": [
         "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -6809,7 +6955,7 @@
         "Certificado prolongado até ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou descarregar esta configuração."
+        "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou transferir esta configuração."
       ],
       "Creating config file for ${ serverName }": [
         "Criação de ficheiro de configuração para ${ serverName }"
@@ -7276,7 +7422,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -7285,7 +7431,7 @@
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Falha na verificação PayPal"
+        "Erro na verificação PayPal"
       ],
       "Phone": [
         "Telefone"
@@ -7380,6 +7526,9 @@
       "Signed in to member account": [
         "Iniciou sessão na conta de membro"
       ],
+      "Single sign-on": [
+        "Início de sessão único"
+      ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"
       ],
@@ -7420,7 +7569,7 @@
         "Faça \"upgrade\" à sua proteção da rede com servidores dedicados"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Carregar ficheiro CSV para criar múltiplas contas"
+        "Envie um ficheiro CSV para criar múltiplas contas."
       ],
       "Users": [
         "Utilizadores"
@@ -7429,7 +7578,7 @@
         "Utilizadores e endereços"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -7442,6 +7591,9 @@
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
