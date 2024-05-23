@@ -364,7 +364,7 @@
         "Transferir ${ attachmentName }"
       ],
       "Download Desktop App": [
-        "Transferir o aplicativo para desktop"
+        "Transferir a aplicação para desktop"
       ],
       "Download now": [
         "Transferir agora"
@@ -707,7 +707,7 @@
         "Mover tudo para o arquivo"
       ],
       "Move all to trash": [
-        "Mover tudo para o lixo"
+        "Mover tudo para a lixeira"
       ],
       "move emails to": [
         "mover os e-mails para"
@@ -731,7 +731,7 @@
         "Mover para a pasta de spam e cancelar subscrição"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -1135,6 +1135,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1199,7 +1203,7 @@
         "Actualizar agora"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -1273,6 +1277,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contacto.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em 5 dias. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Ampliar"
@@ -1533,6 +1543,11 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicação para desktop do ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2102,7 +2117,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixo"
+        "Ir para Lixeira"
       ],
       "New message": [
         "Nova mensagem"
@@ -3154,7 +3169,7 @@
         "${ manageBlockedAddressesSettingsLink } nas definições."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Limpe automaticamente as mensagens com mais de 30 dias do lixo e do spam. Desfrute desta e de outras vantagens ao actualizar."
+        "Limpe automaticamente as mensagens com mais de 30 dias da lixeira e do spam. Desfrute desta e de outras vantagens ao actualizar."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
@@ -3189,6 +3204,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Poupe tempo enviando e-mails ou convites a todos de uma só vez, uma funcionalidade premium entre muitas outras. Actualize hoje mesmo."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Defina um método de recuperação para evitar a perda de acesso à sua conta."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
@@ -3251,6 +3269,15 @@
       "Bugs or quality issue": [
         "Erros ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não desejo partilhar o motivo."
+      ],
+      "I found a cheaper VPN": [
+        "Encontrei uma VPN mais barata."
+      ],
+      "I found a VPN with better features": [
+        "Encontrei uma VPN com melhores funcionalidades."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
@@ -3259,6 +3286,9 @@
       ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outra razão (comente)"
       ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
@@ -3307,6 +3337,11 @@
         "Oferta por tempo limitado"
       ]
     },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -3351,6 +3386,14 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOCAL:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aceitou o seu convite para ${ eventTitle }."
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } recusou o seu convite para ${ eventTitle }."
       ]
     },
     "Email reminder banner": {
@@ -3420,6 +3463,12 @@
       ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcionalidades pagas ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3485,6 +3534,10 @@
       ],
       "Choose a date in the future.": [
         "Escolha uma data no futuro."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Selecione uma data no próximo ${ n } dia.",
+        "Selecione uma data nos próximos ${ n } dias."
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -3564,7 +3617,7 @@
         "Erro ao enviar a mensagem. A mensagem não foi enviada."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        "Erro ao carregar os anexos. A mensagem não foi enviada."
+        "Erro ao enviar os anexos. A mensagem não foi enviada."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Erro ao encriptar o anexo. Tente novamente."
@@ -3668,6 +3721,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Não foram encontrados e-mails para importar - a conta não tem uma caixa de entrada"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Nenhuma das chaves externas recuperadas para o utilizador é válida para o envio."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -3948,13 +4004,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "Ocorreu um erro ao enviar o seu ficheiro ${ formattedFilename }. Só são permitidos formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
@@ -3992,13 +4048,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf selecionado"
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf foi selecionado."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -4448,7 +4504,7 @@
         "Spam"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ]
     },
     "Filter modal operators": {
@@ -4593,7 +4649,10 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
+      ],
+      "14-day desktop app trial.": [
+        "14 dias de avaliação para a aplicação para desktop"
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Desfrute de acesso rápido, seguro e sem distrações à sua caixa de entrada e calendário."
@@ -4603,6 +4662,12 @@
       ],
       "No credit card required.": [
         "Não é necessário um cartão de crédito."
+      ],
+      "Start free trial": [
+        "Iniciar a avaliação gratuita"
+      ],
+      "Try the app-new desktop app": [
+        "Experimente a nova aplicação para desktop"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -4778,7 +4843,7 @@
     },
     "Header": {
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Search": [
         "Pesquisar"
@@ -4894,7 +4959,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Contato ${ contactId }: "
+        "Contacto ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -5140,6 +5205,38 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } conversa será etiquetada como:",
+        "${ elementsCount } conversas serão etiquetadas como:"
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } conversa será marcada como não lida.",
+        "${ elementsCount } conversas serão marcadas como não lidas."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } conversa será movida.",
+        "${ elementsCount } conversa serão movidas."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } mensagem será etiquetada como:",
+        "${ elementsCount } mensagens serão etiquetadas como:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } mensagem será marcada como lida.",
+        "${ elementsCount } mensagens serão marcadas como lidas."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } mensagem será marcada como não lida.",
+        "${ elementsCount } mensagens serão marcadas como não lidas."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mensagem será movida.",
+        "${ elementsCount } mensagens serão movidas."
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } mensagem não terá esta etiqueta:",
+        "${ elementsCount } mensagens não terão esta etiqueta:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagem incorporada",
         "${ embeddedAttachmentsCount } imagens incorporadas"
@@ -5344,6 +5441,9 @@
       "and": [
         "e"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Todas as mensagens agendadas ou adiadas serão canceladas."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados em Todo o correio."
       ],
@@ -5375,7 +5475,7 @@
         "Tem a certeza que deseja mover todas as mensagens deste local para o Arquivo?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Tem a certeza que deseja mover todas as mensagens deste local para o Lixo?"
+        "Tem a certeza que deseja mover todas as mensagens deste local para o Lixeira?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -5405,7 +5505,7 @@
         "Atenção Requerida"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Elimine automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
+        "Elimine automaticamente as mensagens que se encontram na lixeira e no spam há mais de 30 dias."
       ],
       "Awaiting transaction": [
         "A aguardar transação"
@@ -5590,7 +5690,7 @@
         "Rascunho guardado."
       ],
       "Drop file here to upload": [
-        "Solte os ficheiros aqui para os carregar"
+        "Solte os ficheiros aqui para os enviar"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -5780,7 +5880,7 @@
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
       "Include Spam/Trash.": [
-        "Incluir Spam/Lixo."
+        "Incluir Spam/Lixeira."
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
@@ -5903,7 +6003,7 @@
         "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem no lixo e no spam há mais de 30 dias serão automaticamente eliminadas."
+        "As mensagens que estiverem na lixeira e no spam há mais de 30 dias serão automaticamente eliminadas."
       ],
       "MM/YY": [
         "MM/AA"
@@ -5963,7 +6063,7 @@
         "que não utilizam o ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Nenhuma das chaves carregadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative \"Encriptar os e-mails\"."
+        "Nenhuma das chaves enviadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative «Encriptar os e-mails»."
       ],
       "Normal": [
         "Normal"
@@ -6304,13 +6404,13 @@
         "Esta conversa contém uma mensagem agendada. O envio desta mensagem será cancelado."
       ],
       "This conversation contains non-trashed messages.": [
-        "Esta conversa contém mensagens não enviadas para o lixo."
+        "Esta conversa contém mensagens não enviadas para a lixeira."
       ],
       "This conversation contains one or more expiring messages": [
         "Esta conversa contém uma ou mais mensagens com expiração."
       ],
       "This conversation contains trashed messages.": [
-        "Esta conversa contém mensagens enviadas para o lixo."
+        "Esta conversa contém mensagens enviadas para a lixeira."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta conversação será marcada como spam. Gostaria também de remover a subscrição a futuros e-mails?",
@@ -6474,7 +6574,7 @@
         "Faça o upgrade para poder adicionar mais endereços à sua conta."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Actualize para eliminar automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
+        "Actualize para eliminar automaticamente as mensagens que se encontram na lixeira e no spam há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Faça o upgrade para poder criar mais pastas, filtros e endereços."
@@ -6510,7 +6610,7 @@
         "Actualize para utilizar a resposta automática quando estiver ausente."
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "URL link": [
         "Hiperligação do URL"
@@ -6538,6 +6638,9 @@
       ],
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "O número de versão foi copiado para a área de transferência."
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -6720,6 +6823,22 @@
         "Selecionou **${ count } mensagem** com esta etiqueta",
         "Selecionou **${ count } mensagens** com esta etiqueta"
       ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Selecionou **${ elementsCount } conversa** em ${ location }.",
+        "Selecionou **${ elementsCount } conversas** em ${ location }."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Selecionou **${ elementsCount }** conversa.",
+        "Selecionou **${ elementsCount }** conversas."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Selecionou **${ elementsCount } mensagem** em ${ location }.",
+        "Selecionou **${ elementsCount } mensagens** em ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Selecionou **${ elementsCount } mensagem**.",
+        "Selecionou **${ elementsCount } mensagens**."
+      ],
       "You will lose access to Plus features on this date.": [
         "Perderá o acesso a funcionalidades Plus nesta data."
       ],
@@ -6742,10 +6861,10 @@
         "A sua conta ${ BRAND_NAME } inclui SimpleLogin. Instale a extensão do navegador com um clique para começar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -6864,7 +6983,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Chave confiável\", esta chave pública será associada a este remetente e os e-mails deste endereço serão automaticamente verificados de forma criptografada."
+        "Ao clicar em \"Chave confiável\", esta chave pública será associada a este remetente e os e-mails deste endereço serão automaticamente verificados de forma encriptada."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Clicar em \"Confiar na chave\" associaráestachave pública a este remetente e os e-mails deste endereço serão automaticamente verificados com encriptação."
@@ -6939,7 +7058,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixo"
+        "Ir para Lixeira"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -6987,7 +7106,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para Lixo"
+        "Mover para Lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -7223,7 +7342,7 @@
         "Confirmar a palavra-passe"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
@@ -7595,7 +7714,7 @@
         "Destinatários não divulgados"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "VAT": [
         "IVA"
@@ -7853,7 +7972,7 @@
         "Este ficheiro ICS contém mais do que um evento. Transfira-o e importe os eventos em ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -7959,7 +8078,7 @@
         "Spam"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ]
     },
     "mailtrial2024: Action": {
@@ -7972,16 +8091,19 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "mailtrial2024: Info": {
@@ -7990,6 +8112,11 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Message": {
@@ -8345,10 +8472,10 @@
         "Segurança avançada de partilha"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixo"
+        "Eliminar automaticamente mensagens de spam e de lixeira"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -8822,7 +8949,7 @@
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A criptografia de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
+        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A encriptação de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
@@ -8969,6 +9096,9 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Encaminhar e-mails automaticamente"
+      ],
       "Block unsavory senders": [
         "Bloqueie remetentes indesejados"
       ],
@@ -9602,12 +9732,26 @@
         "Esta permissão expira em ${ timeRemaining.inHours } hora",
         "Esta permissão expira em ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
@@ -10039,6 +10183,9 @@
       "${ app } storage": [
         "${ app } de armazenamento"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% cheio"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
       ],
@@ -10046,10 +10193,13 @@
         "contacte o seu administrador"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Para continuar a carregar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
+        "Para continuar a enviar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar ficheiros, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
@@ -10059,6 +10209,9 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "O seu ${ storage } está cheio. ${ cta }"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
@@ -10144,10 +10297,13 @@
         "e mais 15 funcionalidades premium"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
       ],
       "Support our mission": [
         "Apoie a nossa missão"
@@ -10160,6 +10316,9 @@
       ],
       "We don't sell your data": [
         "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -10312,8 +10471,8 @@
         "Código enviado para ${ methodTo }"
       ],
       "Contact deleted": [
-        "Contato eliminado",
-        "Contatos eliminados"
+        "Contacto eliminado",
+        "Contactos eliminados"
       ],
       "Contact group deleted": [
         "Grupo de contactos eliminado",
@@ -10323,7 +10482,7 @@
         "Contacto guardado"
       ],
       "Contacts deleted": [
-        "Contatos eliminados"
+        "Contactos eliminados"
       ],
       "Conversation added to ${ labelName }.": [
         "Conversa adicionada a ${ labelName }."
@@ -10390,6 +10549,9 @@
       ],
       "Message deleted": [
         "Mensagem eliminada"
+      ],
+      "Message expiration canceled": [
+        "A expiração da mensagem foi cancelada."
       ],
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
@@ -10727,7 +10889,7 @@
         "Alterar a palavra-passe"
       ],
       "Clear out the junk": [
-        "Limpe o lixo"
+        "Limpe a lixeira"
       ],
       "Clearing data": [
         "A limpar os dados"
@@ -10748,7 +10910,7 @@
         "Grupo de contactos"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
@@ -10927,7 +11089,7 @@
         "Obtenha proteção avançada"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Obter os aplicativos do ${ appName[APP_NAME] }"
+        "Obter as aplicações do ${ appName[APP_NAME] }"
       ],
       "Gift": [
         "Presente"
@@ -11042,7 +11204,7 @@
         "Mover todas as mensagens para o Arquivo"
       ],
       "Move all messages to trash": [
-        "Mover todas as mensagens para o Lixo"
+        "Mover todas as mensagens para o Lixeira"
       ],
       "Move to": [
         "Mover para"
@@ -11057,7 +11219,7 @@
         "Mover para spam"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "Moving a scheduled message": [
         "A mover uma mensagem agendada"
@@ -11108,13 +11270,13 @@
         "Palavra-passe"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment verification": [
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Falha na verificação PayPal"
+        "Erro na verificação PayPal"
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -11279,7 +11441,7 @@
         "Para"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "Trust new key?": [
         "Confiar em nova chave?",
@@ -11304,7 +11466,7 @@
         "Erro de verificação"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -11333,6 +11495,9 @@
       ],
       "What would you like to import?": [
         "O que gostaria de importar?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
       ],
       "Your account is protected": [
         "A sua conta está protegida"
