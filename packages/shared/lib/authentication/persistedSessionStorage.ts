@@ -17,7 +17,8 @@ import { OfflineKey } from './offlineKey';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 import { getValidatedLocalID } from './sessionForkValidation';
 
-const STORAGE_PREFIX = 'ps-';
+// We have business logic relying on this constant, please change with caution!
+export const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;
 
 const sessionRemovalListeners = createListeners<PersistedSession[], Promise<void>>();

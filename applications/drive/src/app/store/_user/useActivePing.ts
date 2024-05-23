@@ -26,11 +26,13 @@ import { ACTIVE_PING_INTERVAL } from '@proton/shared/lib/drive/constants';
         - Customer leaves the tab open in the foreground (active) at T+6HOURS -> active ping is sent
 */
 
+// We have business logic relying on this constant, please change with caution!
 export const LAST_ACTIVE_PING = 'drive-last-active';
 
 export const useActivePing = (interval: number = ACTIVE_PING_INTERVAL) => {
     const api = useApi();
     const [user] = useUser();
+    // We have business logic relying on this key, please change with caution!
     const key = `${LAST_ACTIVE_PING}-${user.ID}`;
 
     const shouldSendActivePing = () => {
