@@ -14,7 +14,7 @@ import { ITEMS_PER_PAGE } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
 import { useBitcoinNetwork } from '../../store/hooks';
 import { getAccountTransactions, getWalletTransactions } from '../../utils';
@@ -33,7 +33,9 @@ interface Props {
 }
 
 export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
-    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
+        apiAccount ?? apiWalletData.WalletAccounts[0]
+    );
     const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, isSyncing } = useBitcoinBlockchainContext();
     const { openDrawer } = useWalletDrawerContext();
     const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
@@ -53,9 +55,9 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
 
     const handleClickRow = useCallback(
         async (transaction: TransactionData) => {
-            openDrawer({ transaction });
+            openDrawer({ transaction, apiWalletData, apiAccount });
         },
-        [openDrawer]
+        [openDrawer, apiWalletData, apiAccount]
     );
 
     useEffect(() => {

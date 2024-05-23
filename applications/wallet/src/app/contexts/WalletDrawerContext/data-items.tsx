@@ -5,10 +5,7 @@ import { Icon, Price, Tooltip } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
-import {
-    TxDataListItemProps,
-    TxDataWithExchangeRateListItemProps,
-} from '../../components/TransactionList/data-list-items';
+import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import { multilineStrToMultilineJsx } from '../../utils/string';
@@ -142,42 +139,6 @@ export const AmountDataListItem = ({
                 </div>
             </div>
             <div className="color-weak">{satsToBitcoin(amount ?? 0)} BTC</div>
-        </div>
-    );
-};
-
-export const NetworkFeesDataListItem = ({ tx, exchangeRate }: TxDataWithExchangeRateListItemProps) => {
-    const fees = tx.networkData.fee;
-
-    return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Network fee`}</span>
-            <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
-                <div className={clsx('text-semibold', !exchangeRate && 'skeleton-loader')}>
-                    <Price currency={exchangeRate?.FiatCurrency}>
-                        {exchangeRate ? satsToFiat(fees ?? 0, exchangeRate).toFixed(2) : '-'}
-                    </Price>
-                </div>
-            </div>
-            <div className="color-weak">{satsToBitcoin(fees ?? 0)} BTC</div>
-        </div>
-    );
-};
-
-export const TotalSentAmountDataListItem = ({ tx, exchangeRate }: TxDataWithExchangeRateListItemProps) => {
-    const value = tx.networkData.fee ?? 0 + tx.networkData.sent;
-
-    return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Total (sent amount + fee)`}</span>
-            <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
-                <div className={clsx('text-semibold', !exchangeRate && 'skeleton-loader')}>
-                    <Price currency={exchangeRate?.FiatCurrency}>
-                        {exchangeRate ? satsToFiat(value, exchangeRate).toFixed(2) : '-'}
-                    </Price>
-                </div>
-            </div>
-            <div className="color-weak">{satsToBitcoin(value)} BTC</div>
         </div>
     );
 };

@@ -49,7 +49,11 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                     bg={'discover' in drawerData.data ? 'bg-norm' : 'bg-weak'}
                 >
                     {'transaction' in drawerData.data && (
-                        <WalletTransactionDataDrawer transaction={drawerData.data.transaction} />
+                        <WalletTransactionDataDrawer
+                            transaction={drawerData.data.transaction}
+                            apiAccount={drawerData.data.apiAccount}
+                            apiWalletData={drawerData.data.apiWalletData}
+                        />
                     )}
 
                     {'discover' in drawerData.data && <WalletDiscoverContent wallet={drawerData.data.wallet} />}

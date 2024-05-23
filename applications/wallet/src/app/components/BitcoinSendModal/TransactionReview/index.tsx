@@ -16,7 +16,7 @@ import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
-import { useUserExchangeRate } from '../../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
 import { convertAmount } from '../../../utils';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { RecipientListItem } from '../RecipientListItem';
@@ -46,7 +46,7 @@ export const TransactionReview = ({
     updateTxBuilder,
 }: Props) => {
     const [showMore, setShowMore] = useState(false);
-    const [exchangeRate] = useUserExchangeRate();
+    const [exchangeRate] = useWalletAccountExchangeRate(account);
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
     const api = useApi();

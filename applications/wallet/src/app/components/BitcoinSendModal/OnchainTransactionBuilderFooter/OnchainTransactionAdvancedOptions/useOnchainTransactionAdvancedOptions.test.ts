@@ -1,8 +1,7 @@
 import { ChangeEvent } from 'react';
-import { act } from 'react-dom/test-utils';
 
 import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, WasmTxBuilder } from '@proton/andromeda';
 

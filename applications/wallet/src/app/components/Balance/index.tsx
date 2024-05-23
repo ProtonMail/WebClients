@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import { useBalance } from './useBalance';
 
@@ -35,9 +35,13 @@ interface Props {
 }
 
 export const Balance = ({ apiWalletData, apiAccount }: Props) => {
+    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
+        apiAccount ?? apiWalletData.WalletAccounts[0]
+    );
+
     const balanceRef = useRef<HTMLDivElement>(null);
     const { state: showBalance, toggle: toggleShowBalance } = useToggle(true);
-    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const [lineColor, setLineColor] = useState<string>();
 
     const { totalBalance, balanceEvolutionLineChartData } = useBalance(apiWalletData, apiAccount);

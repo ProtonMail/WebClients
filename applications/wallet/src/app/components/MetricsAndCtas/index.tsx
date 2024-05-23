@@ -3,27 +3,31 @@ import { useEffect, useState } from 'react';
 import { sub } from 'date-fns';
 import { c } from 'ttag';
 
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Price } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import { useWalletSettings } from '@proton/wallet';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../atoms/Button';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useGetExchangeRate } from '../../store/hooks';
 import { satsToFiat } from '../../utils';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 
 interface Props {
+    apiWalletData: IWasmApiWalletData;
+    apiAccount?: WasmApiWalletAccount;
     disabled?: boolean;
     onClickSend: () => void;
     onClickReceive: () => void;
 }
 
-export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props) => {
-    const [walletSettings] = useWalletSettings();
-    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSend, onClickReceive }: Props) => {
+    const account = apiAccount ?? apiWalletData.WalletAccounts[0];
+    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
+
     const [twentyFourHourChange, setTwentyFourHourChange] = useState<number>();
     const { feesEstimation, loadingFeesEstimation } = useBitcoinBlockchainContext();
 
@@ -32,8 +36,8 @@ export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props)
     useEffect(() => {
         const yesterday = sub(new Date(Number(exchangeRate?.ExchangeRateTime) * SECOND), { days: 1 });
 
-        if (walletSettings?.FiatCurrency && exchangeRate?.ExchangeRate) {
-            void getExchangeRate(walletSettings?.FiatCurrency, yesterday).then((prevExchangeRate) => {
+        if (account?.FiatCurrency && exchangeRate?.ExchangeRate) {
+            void getExchangeRate(account?.FiatCurrency, yesterday).then((prevExchangeRate) => {
                 if (prevExchangeRate) {
                     const absoluteChange = exchangeRate.ExchangeRate - prevExchangeRate?.ExchangeRate;
                     const relativeChange = absoluteChange / prevExchangeRate.ExchangeRate;
@@ -41,7 +45,7 @@ export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props)
                 }
             });
         }
-    }, [walletSettings?.FiatCurrency, exchangeRate, getExchangeRate]);
+    }, [account?.FiatCurrency, exchangeRate, getExchangeRate]);
 
     return (
         <div className="flex flex-row py-6 px-6 m-4 bg-weak rounded-xl items-center justify-space-between">

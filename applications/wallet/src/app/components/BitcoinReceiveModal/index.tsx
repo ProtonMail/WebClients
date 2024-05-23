@@ -17,7 +17,7 @@ import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { DEFAULT_BITCOIN_UNIT } from '../../constants';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 interface Props extends ModalOwnProps {
@@ -26,7 +26,7 @@ interface Props extends ModalOwnProps {
 
 export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
     const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
-    const [exchangeRate] = useUserExchangeRate();
+    const [exchangeRate] = useWalletAccountExchangeRate(account);
 
     const {
         shouldShowAmountInput,

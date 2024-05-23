@@ -2,13 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Icon, Price, useModalStateWithData } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
 import { TransactionNoteModal } from '../../components/TransactionNoteModal';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import {
@@ -20,11 +22,16 @@ import {
 } from './data-items';
 
 interface Props {
+    apiWalletData: IWasmApiWalletData;
+    apiAccount: WasmApiWalletAccount | undefined;
     transaction: TransactionData;
 }
 
-export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
-    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+export const WalletTransactionDataDrawer = ({ apiAccount, apiWalletData, transaction }: Props) => {
+    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
+        apiAccount ?? apiWalletData.WalletAccounts[0]
+    );
+
     const [showMore, setShowMore] = useState(false);
 
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
@@ -85,7 +92,7 @@ export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
                         <hr className="my-4" />
 
                         <AmountDataListItem
-                            amount={transaction.networkData.fee ?? 0 + transaction.networkData.sent}
+                            amount={(transaction.networkData.fee ?? 0) + transaction.networkData.sent}
                             label={c('Wallet transaction').t`Total (sent amount + fee)`}
                             exchangeRate={exchangeRate}
                         />

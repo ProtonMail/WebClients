@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { Button, CoreButton } from '../../atoms';
@@ -12,7 +12,7 @@ import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/Bitc
 import { Price } from '../../atoms/Price';
 import { DEFAULT_BITCOIN_UNIT } from '../../constants';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
-import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
@@ -24,17 +24,26 @@ interface Props {
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
     btcAddressMap: BtcAddressMap;
     account: AccountWithChainData;
+    apiAccount: WasmApiWalletAccount;
     onBack: () => void;
     onReview: (unit: WasmBitcoinUnit | WasmApiExchangeRate) => void;
 }
 
-export const AmountInput = ({ txBuilder, updateTxBuilder, btcAddressMap, onBack, account, onReview }: Props) => {
+export const AmountInput = ({
+    txBuilder,
+    updateTxBuilder,
+    btcAddressMap,
+    onBack,
+    account,
+    apiAccount,
+    onReview,
+}: Props) => {
     // We disable the single amount input if some recipients have been attributed different amounts
     const isSingleAmountInputHidden = txBuilder.getRecipients().reduce((acc, current, index, recipients) => {
         return acc || (index > 0 && current[2] !== recipients[index - 1][2]);
     }, false);
 
-    const [exchangeRate] = useUserExchangeRate();
+    const [exchangeRate] = useWalletAccountExchangeRate(apiAccount);
     const [useDetailledInput, setUseDetailledInput] = useState(isSingleAmountInputHidden);
     const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
 
