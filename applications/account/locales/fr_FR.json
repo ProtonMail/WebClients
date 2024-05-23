@@ -499,6 +499,9 @@
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
+      "Forgot recovery method?": [
+        "Méthode de récupération oubliée ?"
+      ],
       "Generate": [
         "Générer"
       ],
@@ -3427,7 +3430,7 @@
         "pour le premier mois"
       ],
       "Limited-time offer": [
-        "Offre limitée dans le temps"
+        "Offre à durée limitée"
       ]
     },
     "drivePlus2024: Title": {
@@ -6033,17 +6036,6 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -6508,7 +6500,7 @@
         "Empêche les expéditeurs de voir si vous avez ouvert un message et à quel moment vous l'avez ouvert."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Mettez en avant l'image de marque de votre organisation et créez une véritable expérience en ligne pour vos utilisateurs."
+        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -6924,6 +6916,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Si vous êtes connecté autre part, vous pourriez ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
@@ -7404,6 +7399,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
       ],
+      "please open a support ticket": [
+        "ouvrez un ticket de support"
+      ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
       ],
@@ -7812,6 +7810,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Ce message ne parviendra pas à l'équipe support. Si vous rencontrez un problème avec notre service ou si vous avez besoin de plus d'assistance de notre part ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "Ce lien promotionnel a expiré."
@@ -8472,6 +8473,17 @@
         "réunion Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -8484,7 +8496,7 @@
     },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
-        "Ajoutez une nouvelle adresse aux utilisateurs existants de votre organisation."
+        "Ajoutez une nouvelle adresse pour les utilisateurs existants de votre organisation."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Ajoutez un nouvel utilisateur à votre organisation et créez-lui une adresse."
@@ -10090,6 +10102,9 @@
       "Paypal without credit card": [
         "PayPal sans carte de paiement"
       ],
+      "perform a password reset from your active session": [
+        "réinitialiser le mot de passe depuis votre session active"
+      ],
       "Privacy policy": [
         "Politique de confidentialité"
       ],
@@ -10927,7 +10942,7 @@
         "Pass Monitor - fonctionnalités premium"
       ],
       "Passkeys supported": [
-        "Les clés d'identification sont prises en charge."
+        "Les clés d'accès sont prises en charge."
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -12287,7 +12302,7 @@
         "Open source et audité"
       ],
       "Passkeys supported on all devices": [
-        "Les clés d'identification sont prises en charge sur tous les appareils."
+        "Les clés d'accès sont prises en charge sur tous les appareils."
       ],
       "per month": [
         "par mois"
@@ -12315,7 +12330,7 @@
         "Partage sécurisé avec ${ n } coffre-forts"
       ],
       "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffre-forts"
+        "Partage sécurisé avec plusieurs coffres-forts"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-forts"
@@ -13973,7 +13988,7 @@
         "Application de bureau ${ MAIL_APP_NAME }"
       ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } comprenant un nombre d'alias « hide-my-email » illimité"
+        "${ PASS_APP_NAME } comprenant un nombre illimité d'alias « hide-my-email »"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'espace de stockage total"
@@ -13982,25 +13997,25 @@
         "${ planName } vous donne accès à toutes les applications et les fonctionnalités premium. La protection de votre vie privée est garantie pour que vous puissiez continuer à travailler en sachant que vos données et votre identité sont en sécurité."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vous donne accès à toutes les applications, les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName } va au-delà d'un simple outil de base et vous permet d'améliorer votre productivité, d'être plus organisé et de contrôler votre boîte de réception, votre identité de messagerie et bien plus encore."
+        "${ planName } ne se limite pas à l'essentiel et vous permet d'améliorer votre productivité, d'être plus organisé et de contrôler votre boite de réception, votre identité de messagerie et bien plus encore."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } vous permet de vous assurer que chaque membre de votre famille, ainsi qu leurs données, sont protégés lorsqu'ils sont en ligne."
+        "${ planName } vous permet de vous assurer que chaque membre de votre famille, ainsi que leurs données, sont protégés lorsqu'ils sont en ligne."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage pour vos messages, pièces jointes, événements, mots de passe et fichiers. Vous pouvez également bénéficier de bonus de stockage annuels."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage pour vos messages, pièces jointes, événements, mots de passe et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage pour vos fichiers et photos. Vous pouvez également bénéficier de bonus de stockage annuels."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage pour vos fichiers et photos. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programme ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
-        "${ VPN_APP_NAME } comprenant un accès à tous les serveurs ultrarapides dans ${ vpnCountries } pays"
+        "${ VPN_APP_NAME } comprenant un accès à tous les serveurs ultra-rapides dans ${ vpnCountries } pays"
       ],
       "10 email addresses": [
         "10 adresses e-mail"
@@ -14027,7 +14042,7 @@
         "Fermer"
       ],
       "Comprehensive privacy and security": [
-        "Protection complète de la vie privée et de la sécurité"
+        "Protection de la vie privée et sécurité"
       ],
       "Custom schedule send and snooze times": [
         "Personnalisation de l'heure d'envoi et de la période de mise en attente"
@@ -14039,7 +14054,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Extra storage and bonuses": [
-        "Stockage supplémentaire et bonus"
+        "Espace de stockage supplémentaire et bonus"
       ],
       "Have a question?": [
         "Vous avez une question ?"
@@ -14060,7 +14075,7 @@
         "Je souhaite toujours annuler"
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "Si vous dépassez les limites de l'abonnement gratuit lorsque votre abonnement ${ planName } arrive à expiration, nous ne pourrez plus effectuer les actions suivantes :"
+        "Si vous dépassez les limites de l'abonnement gratuit lorsque votre abonnement ${ planName } arrive à expiration, vous ne pourrez plus effectuer les actions suivantes :"
       ],
       "Keep ${ planName }": [
         "Conserver ${ planName }"
@@ -14072,7 +14087,7 @@
         "Gérer votre calendrier"
       ],
       "Online privacy, for your whole family": [
-        "Pour que toute la famille protège sa vie privée en ligne"
+        "La protection de la vie privée en ligne, pour toute la famille"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -14096,7 +14111,7 @@
         "Se réabonner"
       ],
       "Resubscribe to restore access to ${ planName } features.": [
-        "Réabonnez-vous pour à nouveau avoir accès aux fonctionnalités ${ planName }."
+        "Réabonnez-vous pour retrouver l'accès aux fonctionnalités de ${ planName }."
       ],
       "Send emails with attachments": [
         "Envoyer des e-mails avec pièces jointes"
@@ -15156,6 +15171,9 @@
       "For Windows": [
         "Pour Windows"
       ],
+      "Forgot recovery method": [
+        "Méthode de récupération oubliée"
+      ],
       "Forward and auto-reply": [
         "Transfert et réponse automatique"
       ],
@@ -15196,7 +15214,7 @@
         "Comment ça marche ?"
       ],
       "How to choose a good logo": [
-        "Comment choisir un bon logo"
+        "Comment choisir un bon logo ?"
       ],
       "How to refer a friend and get credits": [
         "Comment parrainer un ami et gagner des crédits ?"

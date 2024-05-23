@@ -257,6 +257,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
       "Create": [
         "創建"
       ],
@@ -5891,17 +5894,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -7826,6 +7818,9 @@
       "Version history": [
         "版本歷史紀錄"
       ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
+      ],
       "View, download, and manage your invoices.": [
         "檢視、下載與管理您的收據。"
       ],
@@ -8200,6 +8195,17 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -12377,6 +12383,11 @@
         "SMTP 憑證"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "已有至少一次的資料外洩，可從中查找到您的資訊。 開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "上傳 CSV 檔案"
@@ -13029,6 +13040,11 @@
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "操作"
@@ -13594,6 +13610,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

@@ -171,6 +171,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
       "Create": [
         "創建"
       ],
@@ -4766,6 +4769,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
       ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
+      ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
@@ -7354,6 +7360,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "已有至少一次的資料外洩，可從中查找到您的資訊。 開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "Select files": {
@@ -7780,6 +7789,9 @@
       ]
     },
     "Spotlight": {
+      "Custom event colors": [
+        "自訂行程顯示色彩"
+      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
@@ -7791,6 +7803,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "現在您可以查看參與者何時有空加入您的會議。"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
       ]
     },
     "Storage": {
@@ -8190,6 +8207,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

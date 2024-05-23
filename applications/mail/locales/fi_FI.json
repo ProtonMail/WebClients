@@ -1156,6 +1156,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -5585,6 +5589,9 @@
       "and": [
         "ja"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Kaikki ajoitetut tai torkutetut viestit perutaan."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansioon ${ nameDeleted } tallennettuja sähköpostiviestejä ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
       ],
@@ -6471,6 +6478,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Torkutettu huomiseen asti, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Tämän keskustelun torkuttaminen perutaan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
@@ -9517,6 +9527,10 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Turvallinen jakaminen ${ n } holvin kanssa",
+        "Turvallinen jakaminen ${ n } holvin kanssa"
+      ],
       "Secure sharing with multiple vaults": [
         "Turvallinen useamman holvin jako"
       ],
@@ -10148,9 +10162,19 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruttiin (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10373,6 +10397,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -10505,6 +10534,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Tilaustasi perutaan. Odota."
       ]
     },
     "Status": {
@@ -10974,6 +11008,9 @@
       "Message deleted": [
         "Viesti poistettiin"
       ],
+      "Message expiration canceled": [
+        "Viestin erääntyminen peruttiin"
+      ],
       "Message marked as legitimate": [
         "Viesti merkittiin kelvolliseksi"
       ],
@@ -11050,6 +11087,9 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"

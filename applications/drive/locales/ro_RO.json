@@ -12,6 +12,26 @@
         "Redirecționare mesaje oprită"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a lua măsuri. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
@@ -367,6 +387,9 @@
       "Go to label": [
         "Accesare etichetă"
       ],
+      "Go to my files": [
+        "Accesare fișierele mele"
+      ],
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
@@ -496,6 +519,12 @@
       "New": [
         "Nou"
       ],
+      "New document": [
+        "Document nou"
+      ],
+      "New folder": [
+        "Folder nou"
+      ],
       "New message": [
         "Mesaj nou"
       ],
@@ -516,6 +545,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Deschidere în Docs"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -2554,6 +2586,9 @@
       ],
       "Error decrypting a computer": [
         "Eroare decriptare un calculator."
+      ],
+      "External accounts are not supported yet": [
+        "Conturile externe încă nu sunt acceptate."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -4757,6 +4792,9 @@
       "Report link": [
         "Raportare legătură"
       ],
+      "Request access, or switch to an account with access.": [
+        "Solicitați accesul sau comutați la un cont care are acces."
+      ],
       "Restore": [
         "Restaurare"
       ],
@@ -4843,6 +4881,9 @@
       "Shared link not found": [
         "Legătură partajată negăsită"
       ],
+      "Shared with": [
+        "Partajat cu"
+      ],
       "Shared with me": [
         "Partajate cu mine"
       ],
@@ -4926,6 +4967,9 @@
       ],
       "There is nothing to see here": [
         "Nu e nimic de văzut aici"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Această acțiune va șterge legătura web și va anula accesul pentru toți utilizatorii."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -5255,6 +5299,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
+      ],
+      "You need access": [
+        "Aveți nevoie de acces"
       ],
       "You will lose access to Plus features on this date.": [
         "Veți pierde accesul la funcțiile Plus la această dată."
@@ -5855,6 +5902,12 @@
       ],
       "Public keys": [
         "Chei publice"
+      ],
+      "Public link expiration date": [
+        "Dată expirare legătură web"
+      ],
+      "Public link password": [
+        "Parolă legătură web"
       ],
       "Region": [
         "Județ"
@@ -6747,6 +6800,9 @@
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funcții premium"
+      ],
       "Passkeys supported": [
         "Chei de acces suportate"
       ],
@@ -6823,6 +6879,9 @@
       ],
       "Unlimited devices": [
         "Dispozitive nelimitate"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispozitive și aliasuri nelimitate"
       ],
       "Unlimited filters": [
         "Filtre nelimitate"
@@ -7418,6 +7477,9 @@
       "Failed to move, please try again": [
         "Mutarea a eșuat, mai reîncercați."
       ],
+      "Failed to open document": [
+        "Deschiderea documentului a eșuat."
+      ],
       "Failed to remove the file": [
         "Eliminarea fișierului a eșuat."
       ],
@@ -7437,9 +7499,6 @@
       ],
       "File removed": [
         "Fișierul a fost eliminat."
-      ],
-      "Invitation removed from the share": [
-        "Invitația a fost eliminată din partajare."
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -7491,6 +7550,9 @@
       ],
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
+      ],
+      "You stopped sharing this item": [
+        "Ați oprit partajarea acestui articol."
       ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
@@ -7610,6 +7672,19 @@
     "Participant name": {
       "You": [
         "Dvs."
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Partajare sigură cu ${ n } seif",
+        "Partajare sigură cu ${ n } seifuri",
+        "Partajare sigură cu ${ n } de seifuri"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partajare sigură cu seifuri multiple"
+      ],
+      "Secure vault sharing": [
+        "Partajare sigură a seifurilor"
       ]
     },
     "Payment method option": {
@@ -8051,9 +8126,19 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetarea parolei a fost anulată."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitarea de resetare a parolei a fost anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8242,6 +8327,11 @@
         "Susțineți confidențialitatea online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -8366,6 +8456,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Storage": {
@@ -8712,6 +8807,9 @@
       ],
       "Verification successful": [
         "Verificare reușită"
+      ],
+      "You have successfully canceled your subscription.": [
+        "V-ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
@@ -9168,6 +9266,9 @@
       "Item details": [
         "Detalii articol"
       ],
+      "Last edited by": [
+        "Editat de către"
+      ],
       "Link confirmation": [
         "Legătură de confirmare"
       ],
@@ -9371,6 +9472,9 @@
       ],
       "Stop sharing with everyone?": [
         "Opriți partajarea cu toată lumea?"
+      ],
+      "Stop sharing?": [
+        "Opriți partajarea?"
       ],
       "Stop transfers?": [
         "Opriți transferurile?"

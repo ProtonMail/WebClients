@@ -6024,17 +6024,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -8449,6 +8438,17 @@
       ],
       "Zoom meeting": [
         "Zoom-tapaamista"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -12265,6 +12265,10 @@
       "Save your recovery kit to continue": [
         "Jatka tallentamalla palautuspakettisi"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Turvallinen jakaminen ${ n } holvin kanssa",
+        "Turvallinen jakaminen ${ n } holvin kanssa"
+      ],
       "Secure sharing with multiple vaults": [
         "Turvallinen useamman holvin jako"
       ],
@@ -13093,9 +13097,19 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruttiin (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13498,6 +13512,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -13615,6 +13634,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Tilaustasi perutaan. Odota."
       ]
     },
     "Step in filter modal": {
@@ -14218,6 +14242,9 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"

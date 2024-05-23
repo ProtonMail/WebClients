@@ -259,6 +259,9 @@
       "Copy password to clipboard": [
         "密碼已複製到剪貼簿"
       ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
       "Create a new contact group": [
         "創建新連絡人群組"
       ],
@@ -1128,6 +1131,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -6333,6 +6339,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "延後至明天，${ formattedTime }"
       ],
+      "Snoozing this conversation will be canceled.": [
+        "此對話內容的延後通知將被取消"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此郵件不存在或已過期。"
       ],
@@ -6662,6 +6671,9 @@
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
       ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
@@ -9697,6 +9709,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "已有至少一次的資料外洩，可從中查找到您的資訊。 開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "Select files": {
@@ -10225,6 +10240,11 @@
         "您現在可以安排稍後傳送訊息"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "此訊息是大量傳送清單的郵件。"
@@ -10650,6 +10670,9 @@
       "Message deleted": [
         "郵件已刪除"
       ],
+      "Message expiration canceled": [
+        "已取消郵件逾期"
+      ],
       "Message marked as legitimate": [
         "郵件標記為合法"
       ],
@@ -10724,6 +10747,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

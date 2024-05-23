@@ -493,6 +493,9 @@
       "Forgot password?": [
         "Lupa kata sandi?"
       ],
+      "Forgot recovery method?": [
+        "Lupa metode pemulihan?"
+      ],
       "Generate": [
         "Hasilkan"
       ],
@@ -4790,7 +4793,7 @@
         "Atur grup keluarga"
       ],
       "Switch plans": [
-        "Ganti paket"
+        "Ubah paket"
       ],
       "View invitation": [
         "Tampilkan undangan"
@@ -4865,7 +4868,7 @@
         "Undangan tertunda"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Maaf, Anda tidak dapat mengganti paket saat ini."
+        "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
@@ -5990,17 +5993,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -6854,6 +6846,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Apabila Anda sedang terhubung masuk di tempat lain, Anda mungkin akan dapat ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
@@ -7328,6 +7323,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
+      "please open a support ticket": [
+        "silakan buka tiket layanan dukungan"
+      ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
       ],
@@ -7726,6 +7724,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Pesan ini tidak akan tersampaikan ke tim layanan dukungan. Apabila Anda memiliki masalah dengan layanan kami atau membutuhkan tindak lanjut dari kami, ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "Tautan promosi ini telah kedaluwarsa"
@@ -8377,6 +8378,17 @@
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9978,6 +9990,9 @@
       ],
       "Paypal without credit card": [
         "PayPal tanpa kartu kredit"
+      ],
+      "perform a password reset from your active session": [
+        "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
       "Privacy policy": [
         "Kebijakan privasi"
