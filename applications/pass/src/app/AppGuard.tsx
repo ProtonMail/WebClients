@@ -6,6 +6,8 @@ import { useClient, useClientRef } from 'proton-pass-web/app/Context/ClientProvi
 
 import { ActivityProbeProvider } from '@proton/pass/components/Core/ActivityProbeProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
+import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline, clientPasswordLocked, clientReady, clientSessionLocked } from '@proton/pass/lib/client';
@@ -59,7 +61,11 @@ export const AppGuard: FC = () => {
                 render={() =>
                     state.booted ? (
                         <ActivityProbeProvider onProbe={handleProbe}>
-                            <Main />
+                            <PasswordUnlockProvider>
+                                <PinUnlockProvider>
+                                    <Main />
+                                </PinUnlockProvider>
+                            </PasswordUnlockProvider>
                         </ActivityProbeProvider>
                     ) : (
                         <Lobby />

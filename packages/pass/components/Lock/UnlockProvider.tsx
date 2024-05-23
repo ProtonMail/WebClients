@@ -3,19 +3,15 @@ import { type FC, type PropsWithChildren, createContext, useCallback, useContext
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { MaybeNull } from '@proton/pass/types';
 
-import { PasswordUnlockProvider } from './PasswordUnlockProvider';
-import { PinUnlockProvider } from './PinUnlockProvider';
-
 type UnlockContextValue = { unlock: (dto: UnlockDTO) => Promise<void> };
 
 const UnlockContext = createContext<MaybeNull<UnlockContextValue>>(null);
 
+/** Ideally we could move this to `PassCoreProvider` but as
+ * the `unlock` implementation can depend on other context
+ * objects, we resort to a custom context provider */
 export const UnlockProvider: FC<PropsWithChildren<UnlockContextValue>> = ({ unlock, children }) => (
-    <UnlockContext.Provider value={{ unlock }}>
-        <PasswordUnlockProvider>
-            <PinUnlockProvider>{children}</PinUnlockProvider>
-        </PasswordUnlockProvider>
-    </UnlockContext.Provider>
+    <UnlockContext.Provider value={{ unlock }}>{children}</UnlockContext.Provider>
 );
 
 export const useUnlock = (onError?: (error: Error) => void) => {
