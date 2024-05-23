@@ -20,6 +20,26 @@
         "Η προώθηση αλληλογραφίας σταμάτησε"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -890,6 +910,11 @@
     "Attendee role": {
       "Optional": [
         "Προαιρετικό"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Νέο!"
       ]
     },
     "bf2023: Action": {
@@ -2372,6 +2397,9 @@
       "Availability unknown": [
         "'Αγνωστη διαθεσιμότητα"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Οργανώστε καλύτερα την ημέρα σας, παρακολουθήστε το χρόνο σας και ιεραρχήστε τις εργασίες. Κωδικοποιήστε χρωματικά το ημερολόγιό σας με προσαρμοσμένα χρώματα εκδηλώσεων."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
       ],
@@ -3742,6 +3770,9 @@
     "Header": {
       "Contacts": [
         "Επαφές"
+      ],
+      "Custom recurrence": [
+        "Προσαρμοσμένη περιοδικότητα"
       ],
       "Name": [
         "Όνομα"
@@ -6397,6 +6428,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium χαρακτηριστικά"
+      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -6472,6 +6506,9 @@
       ],
       "Unlimited devices": [
         "Απεριόριστες συσκευές"
+      ],
+      "Unlimited devices and aliases": [
+        "Απεριόριστες συσκευές και ψευδώνυμα"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -7145,6 +7182,9 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
       "Day": [
         "Ημέρα",
         "Ημέρες"
@@ -7210,6 +7250,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Επέκταση λίστας συμμετεχόντων"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      ],
+      "Secure vault sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης"
       ]
     },
     "Payment method option": {
@@ -7657,9 +7709,19 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7884,6 +7946,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -7996,6 +8063,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Κωδικοποιήστε χρωματικά το ημερολόγιό σας για να οργανώσετε καλύτερα την ημέρα σας, να παρακολουθείτε το χρόνο σας και πολλά άλλα."
+      ],
+      "Custom event colors": [
+        "Προσαρμοσμένα χρώματα εκδηλώσεων"
+      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
@@ -8007,6 +8080,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Τώρα μπορείτε να δείτε πότε οι συμμετέχοντες είναι ελεύθεροι να παρακολουθήσουν τη συνάντησή σας."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Storage": {
@@ -8427,6 +8505,9 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"

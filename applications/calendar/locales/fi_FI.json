@@ -7253,6 +7253,10 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Turvallinen jakaminen ${ n } holvin kanssa",
+        "Turvallinen jakaminen ${ n } holvin kanssa"
+      ],
       "Secure sharing with multiple vaults": [
         "Turvallinen useamman holvin jako"
       ],
@@ -7705,9 +7709,19 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruttiin (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7932,6 +7946,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -8061,6 +8080,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nyt voit nähdä milloin osallistujat ovat vapaita osallistumaan kokoukseesi."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Tilaustasi perutaan. Odota."
       ]
     },
     "Storage": {
@@ -8481,6 +8505,9 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
