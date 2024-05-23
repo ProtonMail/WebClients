@@ -12,6 +12,26 @@
         "Η προώθηση αλληλογραφίας σταμάτησε"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -364,6 +384,9 @@
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
+      "Go to my files": [
+        "Μετάβαση στα αρχεία μου"
+      ],
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
       ],
@@ -493,6 +516,12 @@
       "New": [
         "Νέο"
       ],
+      "New document": [
+        "Νέο έγγραφο"
+      ],
+      "New folder": [
+        "Νέος φάκελος"
+      ],
       "New message": [
         "Νέο μήνυμα"
       ],
@@ -513,6 +542,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Άνοιγμα στα Docs"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -2540,6 +2572,9 @@
       ],
       "Error decrypting a computer": [
         "Σφάλμα κατά την αποκρυπτογράφηση ενός υπολογιστή"
+      ],
+      "External accounts are not supported yet": [
+        "Οι εξωτερικοί λογαριασμοί δεν υποστηρίζονται ακόμα"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
@@ -4681,6 +4716,9 @@
       "Report link": [
         "Αναφορά συνδέσμου"
       ],
+      "Request access, or switch to an account with access.": [
+        "Ζητήστε πρόσβαση ή μεταβείτε σε λογαριασμό με πρόσβαση."
+      ],
       "Restore": [
         "Επαναφορά"
       ],
@@ -4766,6 +4804,9 @@
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δε βρέθηκε"
       ],
+      "Shared with": [
+        "Κοινή χρήση με"
+      ],
       "Shared with me": [
         "Κοινοποιημένο με εμένα"
       ],
@@ -4849,6 +4890,9 @@
       ],
       "There is nothing to see here": [
         "Δεν υπάρχει τίποτα να δείτε εδώ"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -5174,6 +5218,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
+      ],
+      "You need access": [
+        "Χρειάζεστε πρόσβαση"
       ],
       "You will lose access to Plus features on this date.": [
         "Θα χάσετε την πρόσβαση στις λειτουργίες του Plus αυτήν την ημέρα."
@@ -5768,6 +5815,12 @@
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
+      ],
+      "Public link expiration date": [
+        "Ημερομηνία λήξης δημόσιου συνδέσμου"
+      ],
+      "Public link password": [
+        "Κωδικός πρόσβασης δημόσιου συνδέσμου"
       ],
       "Region": [
         "Περιοχή"
@@ -6640,6 +6693,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium χαρακτηριστικά"
+      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -6715,6 +6771,9 @@
       ],
       "Unlimited devices": [
         "Απεριόριστες συσκευές"
+      ],
+      "Unlimited devices and aliases": [
+        "Απεριόριστες συσκευές και ψευδώνυμα"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -7295,6 +7354,9 @@
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
       ],
+      "Failed to open document": [
+        "Αποτυχία ανοίγματος εγγράφου"
+      ],
       "Failed to remove the file": [
         "Αποτυχία κατάργησης του αρχείου"
       ],
@@ -7313,9 +7375,6 @@
       ],
       "File removed": [
         "Το αρχείο αφαιρέθηκε"
-      ],
-      "Invitation removed from the share": [
-        "Η πρόσκληση καταργήθηκε από το κοινόχρηστο στοιχείο"
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
@@ -7364,6 +7423,9 @@
       ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
+      ],
+      "You stopped sharing this item": [
+        "Σταματήσατε την κοινοποίηση αυτού του στοιχείου"
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
@@ -7482,6 +7544,18 @@
     "Participant name": {
       "You": [
         "Εσείς"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      ],
+      "Secure vault sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης"
       ]
     },
     "Payment method option": {
@@ -7910,9 +7984,19 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8093,6 +8177,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -8216,6 +8305,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Τώρα είναι δυνατή η αναζήτηση στην Αρχειοθήκη, εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Storage": {
@@ -8552,6 +8646,9 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
@@ -8993,6 +9090,9 @@
       "Item details": [
         "Λεπτομέρειες αντικειμένου"
       ],
+      "Last edited by": [
+        "Τελευταία επεξεργασία από τον χρήστη"
+      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
@@ -9196,6 +9296,9 @@
       ],
       "Stop sharing with everyone?": [
         "Διακοπή κοινοποίησης σε όλους;"
+      ],
+      "Stop sharing?": [
+        "Διακοπή κοινής χρήσης;"
       ],
       "Stop transfers?": [
         "Διακοπή μεταφορών;"
