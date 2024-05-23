@@ -9,11 +9,13 @@ import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSucces
 import {
     selectAutosaveCandidate,
     selectAutosaveVault,
+    selectFeatureFlag,
     selectItem,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -86,8 +88,10 @@ export const createAutoSaveService = () => {
                 .set('urls', valid ? [url] : [])
                 .set('passkeys', payload.passkey ? [payload.passkey] : []);
 
+            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
+
             // TODO: migrate to use Rust's email validation
-            if (validateEmailAddress(payload.userIdentifier)) {
+            if (validateEmailAddress(payload.userIdentifier) || !usernameSplitEnabled) {
                 item.get('content').set('itemEmail', payload.userIdentifier);
             } else {
                 item.get('content').set('itemUsername', payload.userIdentifier);
@@ -125,8 +129,10 @@ export const createAutoSaveService = () => {
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
+            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
+
             // TODO: migrate to use Rust's email validation
-            if (validateEmailAddress(payload.userIdentifier)) {
+            if (validateEmailAddress(payload.userIdentifier) || !usernameSplitEnabled) {
                 item.get('content').set('itemEmail', (itemEmail) => (passkey ? itemEmail : payload.userIdentifier));
             } else {
                 item.get('content').set('itemUsername', (itemUsername) =>
