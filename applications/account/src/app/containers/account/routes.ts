@@ -13,7 +13,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -60,7 +60,8 @@ export const getAccountAppRoutes = ({
 
     const cancellablePlan = hasCancellablePlan(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
-    const hasSplitStorage = getHasStorageSplit(user);
+    const hasSplitStorage =
+        getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
     const showEasySwitchSection = !getIsExternalAccount(user) && app !== APPS.PROTONPASS && !isSSOUser;
 
@@ -77,7 +78,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
                         id: 'your-storage',
-                        available: hasSplitStorage && app !== APPS.PROTONVPN_SETTINGS,
+                        available: hasSplitStorage,
                     },
                     {
                         text: hasSplitStorage ? c('Title').t`Your plan` : undefined,
