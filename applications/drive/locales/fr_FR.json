@@ -384,6 +384,9 @@
       "Go to label": [
         "Afficher le label"
       ],
+      "Go to my files": [
+        "Accéder à mes fichiers"
+      ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
@@ -635,6 +638,9 @@
       ],
       "Resend code": [
         "Renvoyer le code"
+      ],
+      "Resend invite": [
+        "Renvoyer l'invitation"
       ],
       "Reset to default": [
         "Rétablir les valeurs par défaut"
@@ -2332,7 +2338,7 @@
         "pour le premier mois"
       ],
       "Limited-time offer": [
-        "Offre limitée dans le temps"
+        "Offre à durée limitée"
       ]
     },
     "drivePlus2024: Title": {
@@ -3990,7 +3996,7 @@
         "Cycle de facturation : ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Mettez en avant l'image de marque de votre organisation et créez une véritable expérience en ligne pour vos utilisateurs."
+        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -4372,7 +4378,7 @@
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez et partagez vos données en toute sécurité avec le chiffrement de bout en bout."
+        "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
@@ -4400,6 +4406,9 @@
       ],
       "Internet connection restored.": [
         "La connexion internet est rétablie."
+      ],
+      "Invite link copied": [
+        "Le lien de l'invitation a été copié."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement n'a pas abouti, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
@@ -4712,6 +4721,9 @@
       ],
       "Report link": [
         "Signaler le lien"
+      ],
+      "Request access, or switch to an account with access.": [
+        "Demandez l'accès ou utilisez un compte qui a accès."
       ],
       "Restore": [
         "Restauration"
@@ -5212,6 +5224,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de paiement ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
+      ],
+      "You need access": [
+        "Accès requis"
       ],
       "You will lose access to Plus features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de Plus."
@@ -5808,7 +5823,7 @@
         "Clés publiques"
       ],
       "Public link expiration date": [
-        "Date d'expiration du lien"
+        "Date d'expiration du lien public"
       ],
       "Public link password": [
         "Mot de passe du lien public"
@@ -6688,7 +6703,7 @@
         "Pass Monitor - fonctionnalités premium"
       ],
       "Passkeys supported": [
-        "Les clés d'identification sont prises en charge."
+        "Les clés d'accès sont prises en charge."
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -7303,6 +7318,9 @@
       "Access for the member removed": [
         "L'accès pour le membre a été retiré."
       ],
+      "Access updated": [
+        "L'accès a été mis à jour."
+      ],
       "Access updated and shared": [
         "L'accès a été mis à jour et partagé."
       ],
@@ -7346,7 +7364,7 @@
         "Le déplacement n'a pas abouti, réessayez."
       ],
       "Failed to open document": [
-        "L'ouverture du document n' pas abouti."
+        "L'ouverture du document n'a pas abouti."
       ],
       "Failed to remove the file": [
         "Le fichier n'a pu être retiré."
@@ -7367,8 +7385,8 @@
       "File removed": [
         "Le fichier a été retiré."
       ],
-      "Invitation removed from the share": [
-        "L'invitation a été retirée du partage."
+      "Invitation email was sent again": [
+        "L'e-mail d'invitation a été renvoyé."
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -7546,7 +7564,7 @@
         "Partage sécurisé avec ${ n } coffre-forts"
       ],
       "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffre-forts"
+        "Partage sécurisé avec plusieurs coffres-forts"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-forts"
@@ -8631,6 +8649,9 @@
       ],
       "Recovery has started": [
         "La récupération a commencé."
+      ],
+      "Secure link copied": [
+        "Le lien sécurisé a été copié."
       ],
       "The link to your file was successfully copied": [
         "Le lien vers votre fichier a été copié."

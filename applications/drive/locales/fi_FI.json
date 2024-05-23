@@ -384,6 +384,9 @@
       "Go to label": [
         "Siirry tunnisteeseen"
       ],
+      "Go to my files": [
+        "Mene omiin tiedostoihin"
+      ],
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
       ],
@@ -513,6 +516,12 @@
       "New": [
         "Uusi"
       ],
+      "New document": [
+        "Uusi dokumentti"
+      ],
+      "New folder": [
+        "Uusi kansio"
+      ],
       "New message": [
         "Uusi viesti"
       ],
@@ -533,6 +542,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
+      ],
+      "Open in Docs": [
+        "Avaa Docsissa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -4704,6 +4716,9 @@
       "Report link": [
         "Ilmoita linkistä"
       ],
+      "Request access, or switch to an account with access.": [
+        "Pyydä käyttöoikeutta tai vaihda tilille, jolla on jo käyttöoikeus."
+      ],
       "Restore": [
         "Palauta"
       ],
@@ -4788,6 +4803,9 @@
       ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
+      ],
+      "Shared with": [
+        "Jaettu"
       ],
       "Shared with me": [
         "Jaettu minulle"
@@ -5200,6 +5218,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
+      ],
+      "You need access": [
+        "Tarvitset käyttöoikeuden"
       ],
       "You will lose access to Plus features on this date.": [
         "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
@@ -7333,6 +7354,9 @@
       "Failed to move, please try again": [
         "Siirto epäonnistui. Yritä uudelleen"
       ],
+      "Failed to open document": [
+        "Dokumentin avaaminen epäonnistui"
+      ],
       "Failed to remove the file": [
         "Tiedoston poisto epäonnistui"
       ],
@@ -7351,9 +7375,6 @@
       ],
       "File removed": [
         "Tiedosto poistettiin"
-      ],
-      "Invitation removed from the share": [
-        "Kutsu poistettiin jaosta"
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
@@ -7526,6 +7547,10 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Turvallinen jakaminen ${ n } holvin kanssa",
+        "Turvallinen jakaminen ${ n } holvin kanssa"
+      ],
       "Secure sharing with multiple vaults": [
         "Turvallinen useamman holvin jako"
       ],
@@ -7959,9 +7984,19 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruttiin (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8142,6 +8177,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -8265,6 +8305,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyt voit etsiä Driven tiedostoja helposti pitäen tietosi samalla turvassa."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Tilaustasi perutaan. Odota."
       ]
     },
     "Storage": {
@@ -8601,6 +8646,9 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"

@@ -381,6 +381,9 @@
       "Go to label": [
         "라벨로 이동"
       ],
+      "Go to my files": [
+        "내 파일로 가기"
+      ],
       "Go to panel ${ index }": [
         "패널로 가기 ${ index }"
       ],
@@ -510,6 +513,12 @@
       "New": [
         "신규"
       ],
+      "New document": [
+        "새 문서"
+      ],
+      "New folder": [
+        "새 폴더"
+      ],
       "New message": [
         "새 메시지"
       ],
@@ -530,6 +539,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
+      ],
+      "Open in Docs": [
+        "Docs에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -623,6 +635,9 @@
       ],
       "Resend code": [
         "코드 다시 보내기"
+      ],
+      "Resend invite": [
+        "초대 다시 보내기"
       ],
       "Reset to default": [
         "기본값으로 재설정"
@@ -4319,6 +4334,9 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
+      "Invite link copied": [
+        "초대 링크를 복사했습니다"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
@@ -4627,6 +4645,9 @@
       ],
       "Report link": [
         "링크 신고하기"
+      ],
+      "Request access, or switch to an account with access.": [
+        "접근 권한을 요청하거나, 권한이 있는 다른 계정으로 전환하세요."
       ],
       "Restore": [
         "복원"
@@ -5119,6 +5140,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
+      ],
+      "You need access": [
+        "접근 권한이 필요합니다"
       ],
       "You will lose access to Plus features on this date.": [
         "오늘 부터 Plus 기능을 잃게 됩니다."
@@ -7168,6 +7192,9 @@
       "Access for the member removed": [
         "이 구성원의 접근이 삭제되었습니다."
       ],
+      "Access updated": [
+        "접근 권한이 업데이트되었습니다"
+      ],
       "Access updated and shared": [
         "접근을 업데이트 및 공유했습니다."
       ],
@@ -7210,6 +7237,9 @@
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
       ],
+      "Failed to open document": [
+        "문서 열기에 실패했습니다"
+      ],
       "Failed to remove the file": [
         "이 파일을 지우는데 실패했습니다."
       ],
@@ -7228,8 +7258,8 @@
       "File removed": [
         "파일 삭제됨"
       ],
-      "Invitation removed from the share": [
-        "이 공유에서 초대 삭제됨"
+      "Invitation email was sent again": [
+        "초대 이메일을 다시 보냈습니다"
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
@@ -7821,9 +7851,19 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "비밀번호 재설정을 취소했습니다"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "비밀번호 재설정 요청이 취소되었습니다 (${ user.Email }). 본인이 이 요청을 하지 않았다면, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7996,6 +8036,11 @@
         "온라인 개인정보 보호 지원"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "구독 요금제 보러가기"
@@ -8118,6 +8163,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "구독을 취소하고 있습니다. 기다려 주세요"
       ]
     },
     "Storage": {
@@ -8436,6 +8486,9 @@
       "Recovery has started": [
         "복구가 시작되었습니다"
       ],
+      "Secure link copied": [
+        "보안 링크 복사함"
+      ],
       "The link to your file was successfully copied": [
         "파일의 링크가 성공적으로 복사되었습니다"
       ],
@@ -8444,6 +8497,9 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "You have successfully canceled your subscription.": [
+        "구독을 성공적으로 취소하셨습니다."
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."

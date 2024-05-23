@@ -364,6 +364,9 @@
       "Go to label": [
         "Ga naar label"
       ],
+      "Go to my files": [
+        "Ga naar mijn bestanden"
+      ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
@@ -493,6 +496,12 @@
       "New": [
         "Nieuw"
       ],
+      "New document": [
+        "Nieuw document"
+      ],
+      "New folder": [
+        "Nieuwe map"
+      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -513,6 +522,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
+      "Open in Docs": [
+        "Openen in Documenten"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -2540,6 +2552,9 @@
       ],
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
+      ],
+      "External accounts are not supported yet": [
+        "Externe accounts worden nog niet ondersteund"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
@@ -4681,6 +4696,9 @@
       "Report link": [
         "Link rapporteren"
       ],
+      "Request access, or switch to an account with access.": [
+        "Vraag toegang aan, of schakel over naar een account met toegang."
+      ],
       "Restore": [
         "Herstel"
       ],
@@ -4765,6 +4783,9 @@
       ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
+      ],
+      "Shared with": [
+        "Gedeeld met"
       ],
       "Shared with me": [
         "Gedeeld met mij"
@@ -5174,6 +5195,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
+      ],
+      "You need access": [
+        "U heeft toegang nodig"
       ],
       "You will lose access to Plus features on this date.": [
         "U zult toegang verliezen tot Plus-functies op deze datum."
@@ -6640,6 +6664,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium functies"
+      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -6715,6 +6742,9 @@
       ],
       "Unlimited devices": [
         "Onbeperkt aantal apparaten"
+      ],
+      "Unlimited devices and aliases": [
+        "Onbeperkte apparaten en aliassen"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -7295,6 +7325,9 @@
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
+      "Failed to open document": [
+        "Kan document niet openen"
+      ],
       "Failed to remove the file": [
         "Verwijderen van bestand is mislukt"
       ],
@@ -7313,9 +7346,6 @@
       ],
       "File removed": [
         "Bestand verwijderd"
-      ],
-      "Invitation removed from the share": [
-        "Uitnodiging is verwijderd uit de share"
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
@@ -7485,6 +7515,18 @@
     "Participant name": {
       "You": [
         "U"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Veilig delen met kluis ${ n }",
+        "Veilig delen met ${ n } kluizen"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Veilig delen met meerdere kluizen"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
       ]
     },
     "Payment method option": {
@@ -7913,9 +7955,19 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Wachtwoord reset geannuleerd"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Wachtwoord wijzigen voor ${ user.Email } geannuleerd. Als u deze aanvraag niet hebt gedaan, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8096,6 +8148,11 @@
         "Ondersteun online privacy"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -8219,6 +8276,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Storage": {
@@ -8555,6 +8617,9 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
@@ -8995,6 +9060,9 @@
       ],
       "Item details": [
         "Gegevens van item"
+      ],
+      "Last edited by": [
+        "Laatst bewerkt door"
       ],
       "Link confirmation": [
         "Link bevestigen"
