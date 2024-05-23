@@ -233,6 +233,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             store.dispatch(notification({ ...data, type: 'error', key: data.key ?? 'authservice', deduplicate: true })),
 
         onSessionRefresh: withContext(async (ctx, localID, { AccessToken, RefreshToken, RefreshTime }) => {
+            if (BUILD_TARGET === 'safari') {
+                void browser.runtime.sendNativeMessage(
+                    SAFARI_MESSAGE_KEY,
+                    JSON.stringify({
+                        refreshCredentials: { AccessToken, RefreshToken, RefreshTime },
+                    })
+                );
+            }
+
             const persistedSession = await ctx.service.auth.config.getPersistedSession(localID);
 
             if (persistedSession) {
