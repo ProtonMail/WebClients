@@ -21,6 +21,7 @@ import { WalletType, useWalletApiClients, walletCreation } from '@proton/wallet'
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
+import { isUndefined } from '../../utils';
 import { SchemeAndData, WalletSetupScheme, WalletSetupStep } from './type';
 
 const getSetupStepsFromScheme = (scheme?: WalletSetupScheme): WalletSetupStep[] | null => {
@@ -109,7 +110,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
     // TODO: use fiatCurrency later
     const onWalletSubmit = async (walletName: string, fiatCurrency: WasmFiatCurrencySymbol) => {
         // Typeguard
-        if (!userKeys || !network || !schemeAndData) {
+        if (!userKeys || isUndefined(network) || !schemeAndData) {
             return;
         }
 

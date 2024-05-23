@@ -10,7 +10,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { IWasmApiWalletData, decryptWalletKey, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
-import { getAccountWithChainDataFromManyWallets } from '../utils';
+import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';
 import { useBlockchainClient } from './useBlockchainClient';
 
 interface BroadcastData
@@ -60,7 +60,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 account?.ID
             );
 
-            if (!psbt || !userKeys || !wasmAccount || !network || !wallet?.WalletKey) {
+            if (!psbt || !userKeys || !wasmAccount || isUndefined(network) || !wallet?.WalletKey) {
                 return;
             }
 

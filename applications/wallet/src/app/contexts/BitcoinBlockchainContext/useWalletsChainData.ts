@@ -18,6 +18,7 @@ import {
     AccountIdByDerivationPathAndWalletId,
     WalletChainDataByWalletId,
 } from '../../types';
+import { isUndefined } from '../../utils';
 import { useDebounceEffect } from '../../utils/hooks/useDebouncedEffect';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
@@ -40,7 +41,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     // Data used to iterate over to sync accounts
     // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
     const initWalletsChainData: WalletChainDataByWalletId | undefined = useMemo(() => {
-        if (!apiWalletsData || !network) {
+        if (!apiWalletsData || isUndefined(network)) {
             return;
         }
 

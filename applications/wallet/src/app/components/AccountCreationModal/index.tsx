@@ -18,7 +18,7 @@ import {
 import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { getLabelByScriptType } from '../../utils';
+import { getLabelByScriptType, isUndefined } from '../../utils';
 import { getDefaultWalletAccountName } from '../../utils/wallet';
 
 interface Props extends ModalOwnProps {
@@ -90,7 +90,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
 
     const onAccountCreation = async () => {
         const index = Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex;
-        if (!network || !userKeys || indexesByScriptType[selectedScriptType]?.has(index)) {
+        if (isUndefined(network) || !userKeys || indexesByScriptType[selectedScriptType]?.has(index)) {
             return;
         }
 
