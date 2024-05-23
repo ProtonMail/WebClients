@@ -6201,6 +6201,10 @@
       "Preparing your Recovery Kit": [
         "Palautuspakettiasi valmistellaan"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Turvallinen jakaminen ${ n } holvin kanssa",
+        "Turvallinen jakaminen ${ n } holvin kanssa"
+      ],
       "Secure sharing with multiple vaults": [
         "Turvallinen useamman holvin jako"
       ],
@@ -6802,9 +6806,19 @@
         "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruttiin (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7069,6 +7083,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -7186,6 +7205,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Tilaustasi perutaan. Odota."
       ]
     },
     "Storage": {
@@ -7395,6 +7419,90 @@
         "Hintaan"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Yhteensä ${ planMaxSpace } tallennustilaa"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
+      "Calendar sharing": [
+        "Kalenterien jakaminen"
+      ],
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Cancel subscription?": [
+        "Perutaanko tilaus?"
+      ],
+      "Close": [
+        "Sulje"
+      ],
+      "Custom schedule send and snooze times": [
+        "Mukautetut lähetys- ja torkutusajat"
+      ],
+      "Have a question?": [
+        "Onko sinulla kysyttävää?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Aktivistien auttaminen Hongkongissa"
+      ],
+      "I still want to cancel": [
+        "Haluan edelleen perua"
+      ],
+      "Keep ${ planName }": [
+        "Pidä ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Lue lisää vaikutuksestamme"
+      ],
+      "Our fight against censorship in Russia": [
+        "Taistelumme Venäjän sensuuria vastaan"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ],
+      "Read the story": [
+        "Lue juttu"
+      ],
+      "Resubscribe": [
+        "Tilaa uudelleen"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi tilaamalla uudelleen."
+      ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
+      "Unblocking internet access in Iran": [
+        "Internet-yhteyksien vapauttaminen Iranissa"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Watch the interview": [
+        "Katso haastattelu"
+      ],
+      "Yearly free storage bonuses": [
+        "Vuotuiset ilmaiset tallennustilakorotukset"
+      ],
+      "Your own custom email domain": [
+        "Oma sähköpostiverkkotunnuksesi"
+      ],
+      "Your own short @pm.me email alias": [
+        "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -7571,6 +7679,9 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Olet onnistuneesti perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
