@@ -17,7 +17,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectSortedFiatCurrencies = (state: FiatCurrenciesState) => {
     const cloned = state[name]?.value ? [...state[name]?.value] : undefined;
-    cloned?.sort((a, b) => (a.Symbol > b.Symbol ? 1 : -1));
+    cloned?.sort((a, b) => (a.Name > b.Name ? 1 : -1));
     return { ...state[name], value: cloned };
 };
 

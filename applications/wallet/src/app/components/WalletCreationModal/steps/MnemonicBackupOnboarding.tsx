@@ -25,13 +25,7 @@ export const MnemonicBackupOnboarding = ({ onViewMnemonic }: Props) => {
                     .t`Never give them to anyone else. ${BRAND_NAME} will never ask for them. Write them down carefully and hide it in a safe place.`}</span>
             </p>
 
-            <Button
-                pill
-                className="block w-4/5 mx-auto mb-2"
-                shape="solid"
-                color="norm"
-                onClick={() => onViewMnemonic()}
-            >
+            <Button className="block w-4/5 mx-auto mb-2" shape="solid" color="norm" onClick={() => onViewMnemonic()}>
                 {c('Wallet setup').t`View wallet seed phrase`}
             </Button>
 

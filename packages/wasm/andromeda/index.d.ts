@@ -16,74 +16,11 @@ export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount):
 export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
-}
-/**
-*/
 export enum WasmCoinSelection {
   BranchAndBound = 0,
   LargestFirst = 1,
   OldestFirst = 2,
   Manual = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
 }
 /**
 */
@@ -105,6 +42,156 @@ export enum WasmPaymentLinkKind {
   LightningURI = 2,
   UnifiedURI = 3,
 }
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmScriptType {
+  Legacy = 1,
+  NestedSegwit = 2,
+  NativeSegwit = 3,
+  Taproot = 4,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+export interface WasmApiWalletBitcoinAddressLookup {
+    BitcoinAddress: string | null;
+    BitcoinAddressSignature: string | null;
+}
+
+export interface WasmApiExchangeRate {
+    ID: string;
+    BitcoinUnit: WasmBitcoinUnit;
+    FiatCurrency: WasmFiatCurrencySymbol;
+    ExchangeRateTime: string;
+    ExchangeRate: number;
+    Cents: number;
+}
+
+export interface WasmApiFiatCurrency {
+    ID: string;
+    Name: string;
+    Symbol: WasmFiatCurrencySymbol;
+    Sign: string;
+    Cents: number;
+}
+
+export type WasmFiatCurrencySymbol = "ALL" | "DZD" | "ARS" | "AMD" | "AUD" | "AZN" | "BHD" | "BDT" | "BYN" | "BMD" | "BOB" | "BAM" | "BRL" | "BGN" | "KHR" | "CAD" | "CLP" | "CNY" | "COP" | "CRC" | "HRK" | "CUP" | "CZK" | "DKK" | "DOP" | "EGP" | "EUR" | "GEL" | "GHS" | "GTQ" | "HNL" | "HKD" | "HUF" | "ISK" | "INR" | "IDR" | "IRR" | "IQD" | "ILS" | "JMD" | "JPY" | "JOD" | "KZT" | "KES" | "KWD" | "KGS" | "LBP" | "MKD" | "MYR" | "MUR" | "MXN" | "MDL" | "MNT" | "MAD" | "MMK" | "NAD" | "NPR" | "TWD" | "NZD" | "NIO" | "NGN" | "NOK" | "OMR" | "PKR" | "PAB" | "PEN" | "PHP" | "PLN" | "GBP" | "QAR" | "RON" | "RUB" | "SAR" | "RSD" | "SGD" | "ZAR" | "KRW" | "SSP" | "VES" | "LKR" | "SEK" | "CHF" | "THB" | "TTD" | "TND" | "TRY" | "UGX" | "UAH" | "AED" | "USD" | "UYU" | "UZS" | "VND";
+
+export interface WasmUserSettings {
+    BitcoinUnit: WasmBitcoinUnit;
+    FiatCurrency: WasmFiatCurrencySymbol;
+    HideEmptyUsedAddresses: number;
+    ShowWalletRecovery: number;
+    TwoFactorAmountThreshold: number | null;
+}
+
+export interface WasmAddressInfo {
+    index: number;
+    address: string;
+    keychain: WasmKeychainKind;
+}
+
+export interface WasmTxOut {
+    value: number;
+    script_pubkey: WasmScript;
+    is_mine: boolean;
+    address: string;
+}
+
+export interface WasmTransactionDetails {
+    txid: string;
+    received: number;
+    sent: number;
+    fee: number | null;
+    time: WasmTransactionTime;
+    inputs: WasmDetailledTxIn[];
+    outputs: WasmTxOut[];
+    account_derivation_path: string;
+}
+
+export interface WasmTransactionTime {
+    confirmed: boolean;
+    confirmation_time: number | null;
+    last_seen: number | null;
+}
+
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    subject: string | null;
+    body: string | null;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
     BitcoinAddressSignature: string | null;
@@ -192,93 +279,6 @@ export interface WasmCreateWalletTransactionPayload {
     transaction_time: string | null;
 }
 
-export interface WasmApiWalletBitcoinAddressLookup {
-    BitcoinAddress: string | null;
-    BitcoinAddressSignature: string | null;
-}
-
-export interface WasmApiExchangeRate {
-    ID: string;
-    BitcoinUnit: WasmBitcoinUnit;
-    FiatCurrency: WasmFiatCurrencySymbol;
-    ExchangeRateTime: string;
-    ExchangeRate: number;
-    Cents: number;
-}
-
-export interface WasmApiFiatCurrency {
-    ID: string;
-    Name: string;
-    Symbol: WasmFiatCurrencySymbol;
-    Sign: string;
-    Cents: number;
-}
-
-export type WasmFiatCurrencySymbol = "ALL" | "DZD" | "ARS" | "AMD" | "AUD" | "AZN" | "BHD" | "BDT" | "BYN" | "BMD" | "BOB" | "BAM" | "BRL" | "BGN" | "KHR" | "CAD" | "CLP" | "CNY" | "COP" | "CRC" | "HRK" | "CUP" | "CZK" | "DKK" | "DOP" | "EGP" | "EUR" | "GEL" | "GHS" | "GTQ" | "HNL" | "HKD" | "HUF" | "ISK" | "INR" | "IDR" | "IRR" | "IQD" | "ILS" | "JMD" | "JPY" | "JOD" | "KZT" | "KES" | "KWD" | "KGS" | "LBP" | "MKD" | "MYR" | "MUR" | "MXN" | "MDL" | "MNT" | "MAD" | "MMK" | "NAD" | "NPR" | "TWD" | "NZD" | "NIO" | "NGN" | "NOK" | "OMR" | "PKR" | "PAB" | "PEN" | "PHP" | "PLN" | "GBP" | "QAR" | "RON" | "RUB" | "SAR" | "RSD" | "SGD" | "ZAR" | "KRW" | "SSP" | "VES" | "LKR" | "SEK" | "CHF" | "THB" | "TTD" | "TND" | "TRY" | "UGX" | "UAH" | "AED" | "USD" | "UYU" | "UZS" | "VND";
-
-export interface WasmUserSettings {
-    BitcoinUnit: WasmBitcoinUnit;
-    FiatCurrency: WasmFiatCurrencySymbol;
-    HideEmptyUsedAddresses: number;
-    ShowWalletRecovery: number;
-    TwoFactorAmountThreshold: number | null;
-}
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    subject: string | null;
-    body: string | null;
-}
-
-export interface WasmAddressInfo {
-    index: number;
-    address: string;
-    keychain: WasmKeychainKind;
-}
-
-export interface WasmTxOut {
-    value: number;
-    script_pubkey: WasmScript;
-    is_mine: boolean;
-    address: string;
-}
-
-export interface WasmTransactionDetails {
-    txid: string;
-    received: number;
-    sent: number;
-    fee: number | null;
-    time: WasmTransactionTime;
-    inputs: WasmDetailledTxIn[];
-    outputs: WasmTxOut[];
-    account_derivation_path: string;
-}
-
-export interface WasmTransactionTime {
-    confirmed: boolean;
-    confirmation_time: number | null;
-    last_seen: number | null;
-}
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
-}
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
 /**
 */
 export class WasmAccount {
@@ -316,9 +316,9 @@ export class WasmAccount {
 */
   getBalance(): Promise<WasmBalance>;
 /**
-* @returns {Promise<string>}
+* @returns {string}
 */
-  getDerivationPath(): Promise<string>;
+  getDerivationPath(): string;
 /**
 * @returns {Promise<WasmUtxoArray>}
 */

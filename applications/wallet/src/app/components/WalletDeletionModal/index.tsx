@@ -33,7 +33,6 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                 <div className="flex flex-row justify-end">
                     <Button
                         disabled={loadingDeletion}
-                        pill
                         shape="ghost"
                         color="danger"
                         size="small"
@@ -42,7 +41,6 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                     >{c('Wallet preference').t`Confirm deletion`}</Button>
 
                     <Button
-                        pill
                         disabled={loadingDeletion}
                         shape="solid"
                         color="norm"

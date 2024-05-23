@@ -61,7 +61,6 @@ export const WalletSettings = ({ isImported, onContinue }: Props) => {
             </div>
 
             <Button
-                pill
                 disabled={name.length <= MIN_WALLET_NAME_LENGTH || loading}
                 className="block w-4/5 mx-auto mt-4 mb-2"
                 shape="solid"

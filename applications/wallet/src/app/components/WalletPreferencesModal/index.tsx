@@ -92,7 +92,6 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                         <CollapsibleContent>
                             <div className="flex flex-column items-center">
                                 <Button
-                                    pill
                                     fullWidth
                                     disabled={loadingDeletion}
                                     shape="solid"
@@ -111,7 +110,6 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                                 >{c('Wallet preference').t`Back up wallet`}</Button>
 
                                 <Button
-                                    pill
                                     fullWidth
                                     disabled={loadingDeletion}
                                     shape="solid"
@@ -144,7 +142,6 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                 <div className="flex flex-column">
                     <Button
                         fullWidth
-                        pill
                         disabled={loadingDeletion}
                         shape="solid"
                         color="norm"
@@ -162,7 +159,6 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
 
                     <Button
                         fullWidth
-                        pill
                         disabled={loadingDeletion}
                         shape="solid"
                         color="weak"

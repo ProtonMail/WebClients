@@ -108,7 +108,7 @@ const slice = createSlice({
             .addCase(walletDeletion, (state, action) => {
                 if (state.value) {
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
-                    state.value = state.value.splice(walletIndex, 0);
+                    state.value = state.value.splice(walletIndex, 1);
                 }
             })
             .addCase(walletNameUpdate, (state, action) => {
@@ -145,7 +145,7 @@ const slice = createSlice({
                         (data) => data.ID === action.payload.walletAccountID
                     );
 
-                    state.value[walletIndex].WalletAccounts.splice(walletAccountIndex, 0);
+                    state.value[walletIndex].WalletAccounts.splice(walletAccountIndex, 1);
                 }
             });
     },

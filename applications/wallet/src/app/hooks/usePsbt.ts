@@ -34,16 +34,21 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
 
     const [userKeys] = useUserKeys();
 
-    const createPsbt = useCallback(async () => {
-        if (network) {
-            try {
-                const psbt = await txBuilder.createPsbt(network);
-                setPsbt(psbt);
-            } catch (err) {
-                createNotification({ text: c('Wallet send').t`Could not create PSBT`, type: 'error' });
+    const createPsbt = useCallback(
+        async (silent = false) => {
+            if (network) {
+                try {
+                    const psbt = await txBuilder.createPsbt(network);
+                    setPsbt(psbt);
+                } catch (err) {
+                    if (!silent) {
+                        createNotification({ text: c('Wallet send').t`Could not create PSBT`, type: 'error' });
+                    }
+                }
             }
-        }
-    }, [txBuilder, network, createNotification]);
+        },
+        [txBuilder, network, createNotification]
+    );
 
     const signAndBroadcastPsbt = ({
         apiWalletData: wallet,
@@ -114,5 +119,5 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         setPsbt(undefined);
     }, []);
 
-    return { finalPsbt: psbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt };
+    return { psbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt };
 };

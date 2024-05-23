@@ -140,7 +140,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     }
 
     return (
-        <div className="flex flex-column">
+        <div className="flex flex-column justify-center">
             <EmailOrBitcoinAddressInput
                 disabled={loadingBitcoinAddressLookup}
                 placeholder={'andy.yen@proton.ch / bc1...'}
@@ -155,17 +155,17 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                 onRemoveRecipient={(recipient: Recipient) => handleRemoveRecipient(recipient)}
             />
 
-            <Button
-                disabled={!txBuilder.getRecipients().length}
-                color="norm"
-                shape="solid"
-                className="mt-6"
-                fullWidth
-                pill
-                onClick={() => {
-                    onRecipientsConfirm();
-                }}
-            >{c('Wallet send').t`Confirm`}</Button>
+            {txBuilder.getRecipients().length ? (
+                <Button
+                    color="norm"
+                    shape="solid"
+                    className="mt-6"
+                    fullWidth
+                    onClick={() => {
+                        onRecipientsConfirm();
+                    }}
+                >{c('Wallet send').t`Confirm`}</Button>
+            ) : null}
         </div>
     );
 };

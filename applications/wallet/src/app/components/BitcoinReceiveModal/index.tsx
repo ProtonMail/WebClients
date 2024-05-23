@@ -144,7 +144,6 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
 
                 <div className="flex flex-column items-center mt-6 w-full px-8">
                     <Button
-                        pill
                         fullWidth
                         shape="solid"
                         color="norm"

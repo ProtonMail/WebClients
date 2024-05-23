@@ -69,7 +69,7 @@ export const AmountInput = ({ txBuilder, updateTxBuilder, btcAddressMap, onBack,
     };
 
     return (
-        <div className="flex flex-column">
+        <div className="flex flex-column max-w-full">
             {useDetailledInput ? (
                 <>
                     <div className="mb-6">
@@ -202,7 +202,6 @@ export const AmountInput = ({ txBuilder, updateTxBuilder, btcAddressMap, onBack,
                 shape="solid"
                 className="mt-6"
                 fullWidth
-                pill
                 onClick={() => {
                     txBuilder.getRecipients().forEach((r, i) => {
                         if (!r[2]) {

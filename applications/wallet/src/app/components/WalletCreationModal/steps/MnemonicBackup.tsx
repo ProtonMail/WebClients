@@ -43,7 +43,7 @@ export const MnemonicBackup = ({ isLastStep, mnemonic, onContinue }: Props) => {
                 text={`Store your seed phrase securely; without it, ${BRAND_NAME} cannot recover your funds.`}
             />
 
-            <Button pill className="block w-4/5 mx-auto mt-6" shape="solid" color="norm" onClick={() => onContinue()}>
+            <Button className="block w-4/5 mx-auto mt-6" shape="solid" color="norm" onClick={() => onContinue()}>
                 {isLastStep ? c('Wallet setup').t`Done` : c('Wallet setup').t`Continue`}
             </Button>
         </div>

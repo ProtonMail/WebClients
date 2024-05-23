@@ -87,12 +87,12 @@ export const useAccountPreferences = (
                 createNotification({ text: c('Wallet Settings').t`Account was deleted` });
                 dispatch(walletAccountDeletion({ walletID: wallet.Wallet.ID, walletAccountID: walletAccount.ID }));
             } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Account name could not be deleted` });
+                createNotification({ type: 'error', text: c('Wallet Settings').t`Account could not be deleted` });
             }
         };
 
         void withLoadingLabelUpdate(promise());
-    }, []);
+    }, [api.wallet, createNotification, dispatch, wallet.Wallet.ID, walletAccount.ID, withLoadingLabelUpdate]);
 
     const addressesWithAvailability = useMemo(() => {
         const alreadyUsedAddresses = [wallet, ...otherWallets].flatMap(({ WalletAccounts }) =>

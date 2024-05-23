@@ -5,7 +5,6 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { AccountWithChainData } from '../../../../types';
 import { AdvancedOptionsModal } from './AdvancedOptionsModal';
-import { FeeSelectionModal } from './FeeSelectionModal';
 import { ManualCoinSelectionModal } from './ManualCoinSelectionModal';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
@@ -22,8 +21,6 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
         openAdvancedOptionsModal,
         ...otherAdvancedOptionHelpers
     } = useOnchainTransactionAdvancedOptions(txBuilder, updateTxBuilder);
-
-    const { feesSelectorHelpers, feesSelectionModal } = otherAdvancedOptionHelpers;
 
     return (
         <>
@@ -47,16 +44,6 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                 account={account}
                 selectedUtxos={txBuilder.getUtxosToSpend()}
                 onCoinSelected={handleManualCoinSelection}
-            />
-
-            <FeeSelectionModal
-                modalState={feesSelectionModal}
-                feeRate={feesSelectorHelpers.feeRate}
-                feesEstimations={feesSelectorHelpers.feesEstimations}
-                onFeeRateSelected={(feeRate) => {
-                    feesSelectorHelpers.handleFeesSelected(feeRate);
-                    feesSelectionModal.onClose();
-                }}
             />
         </>
     );

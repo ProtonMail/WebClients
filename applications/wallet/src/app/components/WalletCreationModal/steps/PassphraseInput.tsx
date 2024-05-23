@@ -34,7 +34,6 @@ export const PassphraseInput = ({ onContinue }: Props) => {
             />
 
             <Button
-                pill
                 className="block w-4/5 mx-auto mt-4 mb-2"
                 shape="solid"
                 color="norm"
