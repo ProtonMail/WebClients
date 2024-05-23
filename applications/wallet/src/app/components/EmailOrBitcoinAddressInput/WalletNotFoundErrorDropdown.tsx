@@ -6,7 +6,11 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { Button } from '../../atoms';
 import walletNotFoundImg from './wallet_not_found.svg';
 
-export const WalletNotFoundErrorDropdown = () => {
+interface Props {
+    email: String;
+}
+
+export const WalletNotFoundErrorDropdown = ({ email }: Props) => {
     const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -14,7 +18,7 @@ export const WalletNotFoundErrorDropdown = () => {
             <button
                 ref={anchorRef}
                 onClick={open}
-                className="ml-1 items-center flex-nowrap flex flex-row color-primary"
+                className="ml-1 items-center flex-nowrap flex flex-row color-primary no-shrink"
             >
                 <span className="block no-shrink">{c('Bitcoin send').t`No wallet found`}</span>
                 <div className="no-shrink ml-1 flex">
@@ -43,7 +47,7 @@ export const WalletNotFoundErrorDropdown = () => {
                         </div>
                         <div className="flex flex-column">
                             <span className="block text-lg">{c('Bitcoin send').t`No wallet found`}</span>
-                            <span className="block color-hint">ericnorbert@proton.me</span>
+                            <span className="block color-hint">{email}</span>
                         </div>
                     </div>
 
@@ -54,7 +58,7 @@ export const WalletNotFoundErrorDropdown = () => {
                             .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`}
                     </p>
 
-                    <Button color="norm" shape="solid" fullWidth pill>{c('Bitcoin send').t`Send invitation`}</Button>
+                    <Button color="norm" shape="solid" fullWidth>{c('Bitcoin send').t`Send invitation`}</Button>
                 </div>
             </Dropdown>
         </>

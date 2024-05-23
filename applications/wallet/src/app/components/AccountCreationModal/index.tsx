@@ -112,7 +112,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
             return;
         }
 
-        api.wallet
+        await api.wallet
             .createWalletAccount(Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
             .then(async (createdAccount) => {
                 createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
@@ -236,20 +236,21 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
             <div className="mt-4 flex flex-col">
                 <Button
                     disabled={loading}
-                    pill
                     fullWidth
                     className="mt-2"
                     shape="solid"
                     color="norm"
-                    onClick={() => withLoading(onAccountCreation())}
+                    onClick={() => {
+                        void withLoading(onAccountCreation());
+                    }}
                 >{c('Wallet Account').t`Add`}</Button>
                 <Button
                     disabled={loading}
-                    pill
                     fullWidth
                     shape="ghost"
                     color="weak"
                     onClick={() => modalProps.onClose?.()}
+                    className="mt-2"
                 >{c('Wallet Account').t`Cancel`}</Button>
             </div>
         </Modal>

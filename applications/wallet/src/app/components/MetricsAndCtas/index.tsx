@@ -112,10 +112,9 @@ export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props)
                 style={{ '--max-w-custom': '30rem' }}
             >
                 <Button
-                    pill
                     shape="solid"
                     color="norm"
-                    className="text-lg w-custom mx-1 py-3"
+                    className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
                     onClick={() => onClickSend()}
                     disabled={disabled}
@@ -124,10 +123,9 @@ export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props)
                 </Button>
 
                 <Button
-                    pill
                     shape="solid"
                     color="norm"
-                    className="text-lg w-custom mx-1 py-3"
+                    className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
                     onClick={() => onClickReceive()}
                     disabled={disabled}
@@ -136,10 +134,9 @@ export const MetricsAndCtas = ({ disabled, onClickSend, onClickReceive }: Props)
                 </Button>
 
                 <Button
-                    pill
                     shape="solid"
                     color="norm"
-                    className="text-lg w-custom mx-1 py-3"
+                    className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
                     disabled={disabled}
                 >

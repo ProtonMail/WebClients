@@ -28,7 +28,6 @@ export const TransactionNoteModal = ({ onUpdateLabel, data, ...modalProps }: Pro
                 shape="solid"
                 className="mt-6"
                 fullWidth
-                pill
                 disabled={label === baseLabel}
                 onClick={() => {
                     if (data?.transaction) {

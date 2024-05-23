@@ -75,7 +75,6 @@ export const MnemonicInput = ({ onContinue }: Props) => {
             <ImportantNotice text={c('Wallet setup').t`Enter your secret recovery phrase in its exact order`} />
 
             <Button
-                pill
                 shape="solid"
                 color="norm"
                 disabled={!value || !!error}
