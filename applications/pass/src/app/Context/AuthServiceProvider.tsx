@@ -38,6 +38,7 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
+import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -48,7 +49,6 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { useClientRef } from './ClientProvider';
 
-const STORAGE_PREFIX = 'ps-';
 const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
 const getStateKey = (state: string) => `f${state}`;
 
