@@ -7562,9 +7562,19 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "비밀번호 재설정을 취소했습니다"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "비밀번호 재설정 요청이 취소되었습니다 (${ user.Email }). 본인이 이 요청을 하지 않았다면, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7780,6 +7790,11 @@
         "온라인 개인정보 보호 지원"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "구독 요금제 보러가기"
@@ -7908,6 +7923,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "이제 참가자가 언제 미팅에 참석할 수 있는지 확인할 수 있습니다."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "구독을 취소하고 있습니다. 기다려 주세요"
       ]
     },
     "Storage": {
@@ -8319,6 +8339,9 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "You have successfully canceled your subscription.": [
+        "구독을 성공적으로 취소하셨습니다."
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
