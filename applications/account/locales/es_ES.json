@@ -499,6 +499,9 @@
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
+      "Forgot recovery method?": [
+        "¿Método de recuperación olvidado?"
+      ],
       "Generate": [
         "Generar"
       ],
@@ -6033,17 +6036,6 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -6925,6 +6917,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Si has iniciado sesión en otro lugar, es posible que puedas ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
@@ -7404,6 +7399,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
+      "please open a support ticket": [
+        "abre un tiquete de soporte."
+      ],
       "Please select the folders you would like to import:": [
         "Selecciona las carpetas que te gustaría importar:"
       ],
@@ -7812,6 +7810,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Este mensaje no llegará al equipo de soporte. Si tienes algún problema con nuestro servicio o necesitas más asistencia de nuestra parte ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "El enlace de esta promoción ha expirado."
@@ -8470,6 +8471,17 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10089,6 +10101,9 @@
       ],
       "Paypal without credit card": [
         "PayPal sin tarjeta de crédito"
+      ],
+      "perform a password reset from your active session": [
+        "restablecer la contraseña desde una sesión activa"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -15155,6 +15170,9 @@
       ],
       "For Windows": [
         "Para Windows"
+      ],
+      "Forgot recovery method": [
+        "Método de recuperación olvidado"
       ],
       "Forward and auto-reply": [
         "Reenviar y responder automáticamente"

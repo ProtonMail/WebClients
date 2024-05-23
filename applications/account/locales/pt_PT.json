@@ -383,7 +383,7 @@
         "Transferir ICS"
       ],
       "Download our CSV template": [
-        "Descarregue o nosso modelo CSV"
+        "Transfere o nosso modelo CSV"
       ],
       "Download recovery file": [
         "Transferir ficheiro de recuperação"
@@ -1070,7 +1070,7 @@
         "Enviar o logo"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -1504,6 +1504,11 @@
         "Erro ao encontrar a última versão"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicação para desktop do ${ MAIL_APP_NAME }"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema de aplicação"
@@ -1616,7 +1621,7 @@
     },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
-        "Descarregue um ficheiro ICS com todos os eventos do calendário selecionado."
+        "Transfere um ficheiro ICS com todos os eventos do calendário selecionado."
       ]
     },
     "Calendar import section description": {
@@ -3029,7 +3034,7 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Limpe automaticamente as mensagens com mais de 30 dias do lixo e do spam. Desfrute desta e de outras vantagens ao actualizar."
+        "Limpe automaticamente as mensagens com mais de 30 dias da lixeira e do spam. Desfrute desta e de outras vantagens ao actualizar."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
@@ -3168,6 +3173,15 @@
       "Bugs or quality issue": [
         "Erros ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não desejo partilhar o motivo."
+      ],
+      "I found a cheaper VPN": [
+        "Encontrei uma VPN mais barata."
+      ],
+      "I found a VPN with better features": [
+        "Encontrei uma VPN com melhores funcionalidades."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
@@ -3176,6 +3190,9 @@
       ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outra razão (comente)"
       ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
@@ -3230,6 +3247,11 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3301,6 +3323,14 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOCAL:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aceitou o seu convite para ${ eventTitle }."
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } recusou o seu convite para ${ eventTitle }."
       ]
     },
     "Email spam notification": {
@@ -3473,7 +3503,7 @@
         "O encaminhamento está ativo."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "O reencaminhamento para um endereço sem encriptação ponta-ponta irá desativar a encriptação ponta-a-ponta para o seu endereço ${ boldForwarderEmail }, mas a criptografia de acesso zero continuará ativa. ${ learnMoreLink }"
+        "O reencaminhamento para um endereço sem encriptação ponta-ponta irá desativar a encriptação ponta-a-ponta para o seu endereço ${ boldForwarderEmail }, mas a encriptação de acesso zero continuará ativa. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "O reencaminhamento para este endereço irá tornar-se ativo assim que o destinatário aceitar o reencaminhamento."
@@ -3611,6 +3641,12 @@
       ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcionalidades pagas ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3818,6 +3854,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Não foram encontrados e-mails para importar - a conta não tem uma caixa de entrada"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Nenhuma das chaves externas recuperadas para o utilizador é válida para o envio."
+      ],
       "No image selected": [
         "Nenhuma imagem selecionada"
       ],
@@ -3959,7 +3998,7 @@
         "Não é possível validar as chaves no seu ficheiro de recuperação. Contacte o apoio ao cliente."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Não é possível validar as chaves no seu ficheiro de recuperação. Para mais informações, carregue-as individualmente."
+        "Não é possível validar as chaves no seu ficheiro de recuperação. Para mais informações, envie-as individualmente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
@@ -4022,7 +4061,7 @@
         "O ficheiro enviado não é uma chave privada válida. Verifique e tente novamente."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Os ficheiros carregados não são chaves privadas válidas. Verifique e tente novamente."
+        "Os ficheiros enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
       "Username must begin with a letter or digit": [
         "O nome de utilizador deve começar com uma letra ou um algarismo"
@@ -4087,13 +4126,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "Ocorreu um erro ao enviar o seu ficheiro ${ formattedFilename }. Só são permitidos formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
@@ -4131,13 +4170,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf selecionado"
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf foi selecionado."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -4252,13 +4291,13 @@
         "Ocorreu um erro ao ler o ficheiro \"${ formattedFilename }\". O formato de ficheiro é incorreto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro \"${ formattedFilename }\". O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro «${ formattedFilename }». O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "Carregue um ficheiro CSV com ${ MAX_NUMBER_OF_USER_ROWS } contas de utilizador ou menos."
+        "Envie um ficheiro CSV com ${ MAX_NUMBER_OF_USER_ROWS } contas de utilizador ou menos."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "O seu ficheiro \"${ formattedFilename }\" está vazio."
@@ -4912,7 +4951,7 @@
         "Spam"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ]
     },
     "Filter modal operators": {
@@ -5050,12 +5089,12 @@
     },
     "Free trial dekstop": {
       "web app": [
-        "aplicativo web"
+        "aplicação web"
       ]
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "Back to sign in": [
         "Voltar para o inicio de sessão"
@@ -5428,7 +5467,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Contato ${ contactId }: "
+        "Contacto ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -5654,7 +5693,7 @@
         "Calendário"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Mail": [
         "Correio"
@@ -5676,17 +5715,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -5866,7 +5894,7 @@
         "Um utilizador é uma conta associada com um único nome de utilizador, caixa de correio e pessoa."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Aceda às suas palavras-passe e proteja as suas identidades online de forma integrada nos seus dispositivos. Descarregue e instale as aplicações e extensões ${ PASS_APP_NAME } relevantes."
+        "Aceda às suas palavras-passe e proteja as suas identidades online de forma integrada nos seus dispositivos. Transfere e instale as aplicações e extensões ${ PASS_APP_NAME } relevantes."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
@@ -6279,7 +6307,7 @@
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Descarregue o nosso modelo CSV, preencha os detalhes do utilizador e, em seguida, carregue o seu arquivo CSV completo para criar as contas para estes utilizadores."
+        "Transfere o nosso modelo CSV, preencha os detalhes do utilizador e, em seguida, envie o seu ficheiro CSV completo para criar as contas para estes utilizadores."
       ],
       "Download recovery file": [
         "Transferir ficheiro de recuperação"
@@ -6291,7 +6319,7 @@
         "Transfira as suas chaves PGP para utilizar com outros serviços compatíveis com PGP."
       ],
       "Drop file here to upload": [
-        "Solte os ficheiros aqui para os carregar"
+        "Solte os ficheiros aqui para os enviar"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -6396,7 +6424,7 @@
         "expira em ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "Falha na obtenção dos registos."
+        "Erro na obtenção dos registos."
       ],
       "Fill in user details": [
         "Preencher dados de utilizador"
@@ -7293,7 +7321,7 @@
         "Isto irá desativar a sua frase de recuperação atual. Não será possível utilizá-la para aceder à sua conta ou desencriptar os seus dados."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Isto descarregará um ficheiro que contém a sua chave privada. Proteja este ficheiro encriptando-o com uma palavra-passe."
+        "Isto transferirá um ficheiro que contém a sua chave privada. Proteja este ficheiro encriptando-o com uma palavra-passe."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isto permitirá que o PayPal seja utilizado para pagar a sua subscrição da ${ BRAND_NAME }. Será redirecionado para o PayPal num novo separador do navegador. Se utiliza algum bloqueador de pop-ups, desative-o para continuar."
@@ -7356,7 +7384,7 @@
         "Para continuar, selecione um método de recuperação de conta para podermos verificar o pedido."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Para proteger a sua conexão de internet, descarregue e instale a aplicação ${ VPN_APP_NAME } no seu dispositivo e ligar-se a um servidor."
+        "Para proteger a sua conexão de internet, Transfere e instale a aplicação ${ VPN_APP_NAME } no seu dispositivo e ligar-se a um servidor."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "para utilizar ${ toAppName } e todos os serviços ${ BRAND_NAME }"
@@ -7446,10 +7474,10 @@
         "Atualize para desbloquear"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Carregue o seu ficheiro CSV preenchido para criar contas"
+        "Envie o seu ficheiro CSV preenchido para criar contas"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O ficheiro enviado não é uma chave privada válida. Verifique e tente novamente."
@@ -7504,6 +7532,9 @@
       ],
       "Version history": [
         "Histórico das versões"
+      ],
+      "Version number successfully copied to clipboard": [
+        "O número de versão foi copiado para a área de transferência."
       ],
       "View, download, and manage your invoices.": [
         "Ver, transferir, e gerir as suas faturas."
@@ -7782,10 +7813,10 @@
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
         "A sua palavra-passe do ${ BRAND_NAME }"
@@ -7865,6 +7896,17 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8074,7 +8116,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixo"
+        "Ir para Lixeira"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -8122,7 +8164,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para Lixo"
+        "Mover para Lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -8506,7 +8548,7 @@
         "Confirmar a palavra-passe"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Conversation grouping": [
         "Agrupamento de conversas"
@@ -8662,7 +8704,7 @@
         "Notificação de eventos"
       ],
       "Exclude Spam/Trash from All mail": [
-        "Excluir Spam/Lixo de Todos os emails"
+        "Excluir Spam/Lixeira de Todos os emails"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiração (${ patternExpiration })"
@@ -8923,7 +8965,7 @@
         "A frase é composta por 12 palavras únicas numa ordem específica."
       ],
       "Please select files to upload": [
-        "Por favor, selecione os ficheiros a carregar"
+        "Selecione os ficheiros a enviar."
       ],
       "Please share any feedback to help us improve.": [
         "Por favor, partilhe qualquer comentário para nos ajudar a melhorar."
@@ -8963,6 +9005,9 @@
       ],
       "Repeat password": [
         "Repita a palavra-passe"
+      ],
+      "Reply (ACS) URL": [
+        "URL de resposta (ACS)"
       ],
       "Require 2FA for administrators": [
         "Exigir A2F para administradores"
@@ -9079,10 +9124,10 @@
         "Anular envio"
       ],
       "Upload 1 or more encryption keys": [
-        "Carrega 1 ou mais chaves de encriptação"
+        "Envie 1 ou mais chaves de encriptação"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Carrega 1 ou mais ficheiros de recuperação ou chaves de encriptação"
+        "Envie 1 ou mais ficheiros de recuperação, ou chaves de encriptação."
       ],
       "URL": [
         "URL"
@@ -9540,16 +9585,19 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "mailtrial2024: Info": {
@@ -9564,6 +9612,11 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -10057,10 +10110,10 @@
         "Segurança avançada de partilha"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixo"
+        "Eliminar automaticamente mensagens de spam e de lixeira"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -10634,7 +10687,7 @@
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A criptografia de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
+        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A encriptação de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
@@ -11215,7 +11268,7 @@
         "Crie outra conta em vez disso"
       ],
       "Download PDF ${ size }": [
-        "Descarregar PDF ${ size }"
+        "Transferir PDF ${ size }"
       ],
       "Keep this plan": [
         "Manter este plano"
@@ -11311,13 +11364,13 @@
         "Plano atual"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
-        "Descarregue e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
+        "Transfere e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
       ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
-        "Descarregue a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
+        "Transfere a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
       ],
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
-        "Descarregue a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
+        "Transfere a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
       ],
       "Encrypted password manager that also protects your identity": [
         "O gestor de palavras-passe encriptado que também protege a sua identidade"
@@ -11895,7 +11948,7 @@
     },
     "Select file": {
       "Upload CSV file": [
-        "Carregar um ficheiro CSV"
+        "Enviar um ficheiro CSV"
       ]
     },
     "Select files": {
@@ -11906,7 +11959,7 @@
         "Enviar"
       ],
       "Upload additional files": [
-        "Carregar ficheiros adicionais"
+        "Enviar ficheiros adicionais"
       ]
     },
     "Select invoice document": {
@@ -11984,8 +12037,14 @@
         "Esta permissão expira em ${ timeRemaining.inHours } hora",
         "Esta permissão expira em ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Pode reinicializar a sua palavra-passe"
@@ -11993,6 +12052,14 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
@@ -12161,7 +12228,7 @@
     },
     "session_recovery:settings:info": {
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Para melhorar a segurança da sua conta e proteger os seus dados, pode solicitar uma reposição de palavra-passe a partir das definições da sua conta no aplicativo web."
+        "Para melhorar a segurança da sua conta e proteger os seus dados, pode solicitar uma reposição de palavra-passe a partir das definições da sua conta na aplicação web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12231,7 +12298,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Falha na atualização de definições"
+        "Erro na atualização de definições"
       ]
     },
     "Settings/filters": {
@@ -12575,6 +12642,9 @@
       "${ app } storage": [
         "${ app } de armazenamento"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% cheio"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
       ],
@@ -12583,6 +12653,9 @@
       ],
       "Get more storage": [
         "Obter mais espaço de armazenamento"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar ficheiros, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
@@ -12595,6 +12668,9 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "O seu ${ storage } está cheio. ${ cta }"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
@@ -12817,10 +12893,13 @@
         "e mais 15 funcionalidades premium"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
       ],
       "Support our mission": [
         "Apoie a nossa missão"
@@ -12833,6 +12912,9 @@
       ],
       "We don't sell your data": [
         "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -13097,7 +13179,7 @@
         "Certificado prolongado até ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou descarregar esta configuração."
+        "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou transferir esta configuração."
       ],
       "Creating config file for ${ serverName }": [
         "Criação de ficheiro de configuração para ${ serverName }"
@@ -13477,7 +13559,7 @@
         "Limpar"
       ],
       "Clear out the junk": [
-        "Limpe o lixo"
+        "Limpe a lixeira"
       ],
       "Close": [
         "Fechar"
@@ -13665,10 +13747,10 @@
         "Transferir ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
-        "Descarregar o aplicativo para desktop"
+        "Transferir a aplicação para desktop"
       ],
       "Download the mobile apps": [
-        "Descarregar os aplicativos móveis"
+        "Transferir as aplicações móveis"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -13813,7 +13895,7 @@
         "Obtenha o ${ vpnPlus } para aceder a todos os servidores"
       ],
       "Get the apps": [
-        "Obter os aplicativos"
+        "Obter as aplicações"
       ],
       "Gift": [
         "Presente"
@@ -13973,7 +14055,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -13982,7 +14064,7 @@
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Falha na verificação PayPal"
+        "Erro na verificação PayPal"
       ],
       "Phone": [
         "Telefone"
@@ -14146,6 +14228,9 @@
       "Signed in to member account": [
         "Iniciou sessão na conta de membro"
       ],
+      "Single sign-on": [
+        "Início de sessão único"
+      ],
       "SMTP submission": [
         "Envio SMTP"
       ],
@@ -14222,7 +14307,7 @@
         "Atualizar o plano"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Carregar ficheiro CSV para criar múltiplas contas"
+        "Envie um ficheiro CSV para criar múltiplas contas."
       ],
       "Users": [
         "Utilizadores"
@@ -14234,7 +14319,7 @@
         "Verificação"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verify email address": [
         "Verifique o seu endereço de e-mail"
@@ -14277,6 +14362,9 @@
       ],
       "You have no resolved alerts": [
         "Não há alertas resolvidos."
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
@@ -14438,7 +14526,7 @@
         "Personalize a importação para reduzir o número de etiquetas"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Elimina as mensagens do lixo e spam após 30 dias. Ao ativar a eliminação automática, as mensagens que já se encontram no lixo/spam têm uma data de eliminação baseada na data em que foram movidas para lá."
+        "Elimina as mensagens da lixeira e spam após 30 dias. Ao ativar a eliminação automática, as mensagens que já se encontram na lixeira/spam têm uma data de eliminação baseada na data em que foram movidas para lá."
       ],
       "Device information such as operating system": [
         "Informação de dispositivo como sistema operativo"

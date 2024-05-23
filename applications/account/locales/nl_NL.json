@@ -6004,17 +6004,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -8423,6 +8412,17 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10858,6 +10858,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium functies"
+      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -10943,6 +10946,9 @@
       ],
       "Unlimited devices": [
         "Onbeperkt aantal apparaten"
+      ],
+      "Unlimited devices and aliases": [
+        "Onbeperkte apparaten en aliassen"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -12224,6 +12230,16 @@
       "Save your recovery kit to continue": [
         "Sla uw herstelkit op om verder te gaan"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Veilig delen met kluis ${ n }",
+        "Veilig delen met ${ n } kluizen"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Veilig delen met meerdere kluizen"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
+      ],
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
       ],
@@ -13046,9 +13062,19 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Wachtwoord reset geannuleerd"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Wachtwoord wijzigen voor ${ user.Email } geannuleerd. Als u deze aanvraag niet hebt gedaan, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13451,6 +13477,11 @@
         "Ondersteun online privacy"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -13568,6 +13599,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Step in filter modal": {
@@ -14171,6 +14207,9 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
