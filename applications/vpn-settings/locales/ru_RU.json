@@ -7133,6 +7133,53 @@
         "За"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Cancel subscription?": [
+        "Отменить подписку?"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Have a question?": [
+        "Появились вопросы?"
+      ],
+      "Keep ${ planName }": [
+        "Сохранить ${ planName }"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Resubscribe": [
+        "Возобновить подписку"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"

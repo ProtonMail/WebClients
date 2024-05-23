@@ -5375,6 +5375,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium χαρακτηριστικά"
+      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -5460,6 +5463,9 @@
       ],
       "Unlimited devices": [
         "Απεριόριστες συσκευές"
+      ],
+      "Unlimited devices and aliases": [
+        "Απεριόριστες συσκευές και ψευδώνυμα"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -6189,6 +6195,16 @@
       "Preparing your Recovery Kit": [
         "Προετοιμασία του Κιτ Αποκατάστασης"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      ],
+      "Secure vault sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης"
+      ],
       "Updating your account": [
         "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
       ],
@@ -6784,9 +6800,19 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7051,6 +7077,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -7168,6 +7199,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Storage": {
@@ -7377,6 +7413,90 @@
         "Για"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
+      ],
+      "10 email addresses": [
+        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
+      ],
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Cancel subscription?": [
+        "Ακύρωση συνδρομής;"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Custom schedule send and snooze times": [
+        "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
+      ],
+      "Have a question?": [
+        "Έχετε απορίες;"
+      ],
+      "Helping activists in Hong Kong": [
+        "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"
+      ],
+      "I still want to cancel": [
+        "Εξακολουθώ να θέλω να ακυρώσω"
+      ],
+      "Keep ${ planName }": [
+        "Διατήρηση ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Μάθετε περισσότερα για τον αντίκτυπό μας"
+      ],
+      "Our fight against censorship in Russia": [
+        "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
+      ],
+      "Read the story": [
+        "Διαβάστε την ιστορία"
+      ],
+      "Resubscribe": [
+        "Επανεγγραφή"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Εγγραφείτε ξανά για να επαναφέρετε την πρόσβαση στις δυνατότητες του ${ planName }."
+      ],
+      "Subscription canceled": [
+        "Η συνδρομή ακυρώθηκε"
+      ],
+      "Unblocking internet access in Iran": [
+        "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Watch the interview": [
+        "Δείτε τη συνέντευξη"
+      ],
+      "Yearly free storage bonuses": [
+        "Ετήσια δωρεάν μπόνους αποθήκευσης"
+      ],
+      "Your own custom email domain": [
+        "Ο δικός σας προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your own short @pm.me email alias": [
+        "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -7553,6 +7673,9 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"

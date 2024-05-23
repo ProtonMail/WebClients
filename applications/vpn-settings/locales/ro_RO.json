@@ -5442,6 +5442,9 @@
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funcții premium"
+      ],
       "Passkeys supported": [
         "Chei de acces suportate"
       ],
@@ -5529,6 +5532,9 @@
       ],
       "Unlimited devices": [
         "Dispozitive nelimitate"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispozitive și aliasuri nelimitate"
       ],
       "Unlimited filters": [
         "Filtre nelimitate"
@@ -6286,6 +6292,17 @@
       "Preparing your Recovery Kit": [
         "Se pregătește pachetul de recuperare"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Partajare sigură cu ${ n } seif",
+        "Partajare sigură cu ${ n } seifuri",
+        "Partajare sigură cu ${ n } de seifuri"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partajare sigură cu seifuri multiple"
+      ],
+      "Secure vault sharing": [
+        "Partajare sigură a seifurilor"
+      ],
       "Updating your account": [
         "Se actualizează contul"
       ],
@@ -6892,9 +6909,19 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetarea parolei a fost anulată."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitarea de resetare a parolei a fost anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7169,6 +7196,11 @@
         "Susțineți confidențialitatea online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -7287,6 +7319,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Storage": {
@@ -7510,6 +7547,91 @@
         "Pentru"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
+      ],
+      "${ dayDiff } day left": [
+        "A mai rămas ${ dayDiff } zi",
+        "Au mai rămas ${ dayDiff } zile",
+        "Au mai rămas ${ dayDiff } de zile"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } spațiu total"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Calendar sharing": [
+        "Partajare calendar"
+      ],
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Cancel subscription?": [
+        "Anulare abonament?"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
+      "Have a question?": [
+        "Aveți o întrebare?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ajurarea activiștilor din Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Doresc să anulez"
+      ],
+      "Keep ${ planName }": [
+        "Păstrare ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Aflați mai multe despre impactul nostru"
+      ],
+      "Our fight against censorship in Russia": [
+        "Lupta noastră împotriva cenzurii în Rusia"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Read the story": [
+        "Citiți articolul"
+      ],
+      "Resubscribe": [
+        "Reabonare"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Reabonați-vă pentru a restabili accesul la funcțiile ${ planName }."
+      ],
+      "Subscription canceled": [
+        "Abonament anulat"
+      ],
+      "Unblocking internet access in Iran": [
+        "Deblocarea accesului la internet în Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Watch the interview": [
+        "Priviți interviul"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonusuri de stocare gratuită anuală"
+      ],
+      "Your own custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Your own short @pm.me email alias": [
+        "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GiB spațiu de stocare"
@@ -7686,6 +7808,9 @@
       ],
       "Verification successful": [
         "Verificare reușită"
+      ],
+      "You have successfully canceled your subscription.": [
+        "V-ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
