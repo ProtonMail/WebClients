@@ -43,6 +43,26 @@
         "Θα σταματήσετε την προώθηση αλληλογραφίας."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -6004,17 +6024,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -8423,6 +8432,17 @@
       ],
       "Zoom meeting": [
         "Συνάντηση Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10858,6 +10878,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium χαρακτηριστικά"
+      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -10943,6 +10966,9 @@
       ],
       "Unlimited devices": [
         "Απεριόριστες συσκευές"
+      ],
+      "Unlimited devices and aliases": [
+        "Απεριόριστες συσκευές και ψευδώνυμα"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -12224,6 +12250,16 @@
       "Save your recovery kit to continue": [
         "Αποθηκεύστε το κιτ αποκατάστασης σας για να συνεχίσετε"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
+        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      ],
+      "Secure vault sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης"
+      ],
       "Setting up your organization": [
         "Ρύθμιση του οργανισμού σας"
       ],
@@ -13046,9 +13082,19 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13451,6 +13497,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -13568,6 +13619,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Step in filter modal": {
@@ -14171,6 +14227,9 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"

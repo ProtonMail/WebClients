@@ -6110,17 +6110,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7550,6 +7539,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ creditsRemaining }."
       ],
+      "please open a support ticket": [
+        "адкрыйце запыт для службы падтрымкі"
+      ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
       ],
@@ -7966,6 +7958,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
       ],
       "This promotion link has expired.": [
         "Спасылка гэтай рэкламнай акцыі пратэрмінавана."
@@ -8638,6 +8633,17 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {

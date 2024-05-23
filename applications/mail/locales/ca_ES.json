@@ -1156,6 +1156,10 @@
       "Trust": [
         "De confiança"
       ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -5576,6 +5580,9 @@
       "and": [
         "i"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Es cancel·larà qualsevol missatge planificat o posposat."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
@@ -6459,6 +6466,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En posposició fins demà a les ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "No es posposarà aquesta conversa."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -10464,6 +10474,11 @@
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "S'està cancel·lant la vostra subscripció. Si us plau, esperi."
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "Aquest missatge és d'una llista de correus."
@@ -10976,6 +10991,9 @@
       ],
       "Verification successful": [
         "Èxit de verificació"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Heu cancel·lat la vostra subscripció amb èxit."
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"

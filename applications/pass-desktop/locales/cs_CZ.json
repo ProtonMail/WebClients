@@ -36,7 +36,7 @@
         "Hromadné smazání položek z koše"
       ],
       "Bulk move items to another vault": [
-        "Hromadné přesunutí položek do jiného trezoru"
+        "Hromadný přesun položek do jiného trezoru"
       ],
       "Bulk move items to trash": [
         "Hromadný přesun položek do koše"
@@ -975,7 +975,7 @@
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "Aliasy s vlastními doménami nejsou sledovány, přidejte je prosím jako vlastní e-mail pro sledování."
+        "Aliasy s vlastními doménami nejsou sledovány, pro sledování je prosím přidejte jako vlastní e-mail."
       ],
       "All breaches for this address were resolved": [
         "Všechny úniky informací pro tuto adresu byly vyřešeny"
@@ -1410,7 +1410,7 @@
         "Všechny trezory byly úspěšně synchronizovány"
       ],
       "Suggested": [
-        "Návrhy"
+        "Doporučeno"
       ],
       "Switch to another vault or create an item in this vault": [
         "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
@@ -1554,13 +1554,13 @@
         "U těchto e-mailových adres budete informováni o únicích informací."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Na tuto e-mailovou adresu budete informováni o narušení bezpečnosti údajů."
+        "Budete upozorněni na úniky informací této e-mailové adresy."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
         "U těchto e-mailových adres již nebudete informováni o únicích informací."
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Na této e-mailové adrese již nebudete informováni o narušení bezpečnosti údajů."
+        "Nebudete již upozorněni na úniky informací této e-mailové adresy."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
@@ -1697,7 +1697,7 @@
         "Vytvořeno"
       ],
       "Created at": [
-        "Vytvořeno v"
+        "Vytvořeno"
       ],
       "Date": [
         "Datum"
@@ -1739,7 +1739,7 @@
         "Export"
       ],
       "Exporting policy": [
-        "Exportovat politiku"
+        "Politika exportu"
       ],
       "Field name": [
         "Název pole"
@@ -2224,7 +2224,7 @@
         "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } a zjištěn 1 další potenciální únik. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+        "Byl zjištěn potenciální únik ${ name } a 1 další. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"

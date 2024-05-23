@@ -384,6 +384,9 @@
       "Go to label": [
         "Gå till etikett"
       ],
+      "Go to my files": [
+        "Gå till mina filer"
+      ],
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
       ],
@@ -635,6 +638,9 @@
       ],
       "Resend code": [
         "Skicka koden igen"
+      ],
+      "Resend invite": [
+        "Skicka inbjudan igen"
       ],
       "Reset to default": [
         "Återställ till standard"
@@ -4413,6 +4419,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invite link copied": [
+        "Inbjudningslänk kopierad"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
       ],
@@ -4724,6 +4733,9 @@
       ],
       "Report link": [
         "Rapportera länk"
+      ],
+      "Request access, or switch to an account with access.": [
+        "Begär åtkomst eller byt till ett konto med åtkomst."
       ],
       "Restore": [
         "Återställ"
@@ -5224,6 +5236,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
+      ],
+      "You need access": [
+        "Du behöver åtkomst"
       ],
       "You will lose access to Plus features on this date.": [
         "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
@@ -7377,6 +7392,9 @@
       "Access for the member removed": [
         "Åtkomst för medlemmen borttaget"
       ],
+      "Access updated": [
+        "Åtkomst uppdaterad"
+      ],
       "Access updated and shared": [
         "Åtkomst uppdaterad och delad"
       ],
@@ -7441,8 +7459,8 @@
       "File removed": [
         "Fil borttagen"
       ],
-      "Invitation removed from the share": [
-        "Inbjudan borttagen från delningen"
+      "Invitation email was sent again": [
+        "E-postinbjudan skickades igen"
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
@@ -7694,6 +7712,11 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-postadressen hittades inte bland användar-id som definierats i sändningsnyckeln (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8692,6 +8715,9 @@
       ],
       "Recovery has started": [
         "Återställning har startat"
+      ],
+      "Secure link copied": [
+        "Säker länk kopierad"
       ],
       "The link to your file was successfully copied": [
         "Länken till din fil kopierades"

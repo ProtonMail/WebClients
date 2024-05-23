@@ -2377,6 +2377,9 @@
       "Availability unknown": [
         "Beschikbaarheid onbekend"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organiseer je dag beter, houdt je tijd bij en prioriteer taken. Stel je kalender in met aangepast kleuren."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -3747,6 +3750,9 @@
     "Header": {
       "Contacts": [
         "Contacten"
+      ],
+      "Custom recurrence": [
+        "Aangepaste frequentie"
       ],
       "Name": [
         "Naam"
@@ -6402,6 +6408,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium functies"
+      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -6477,6 +6486,9 @@
       ],
       "Unlimited devices": [
         "Onbeperkt aantal apparaten"
+      ],
+      "Unlimited devices and aliases": [
+        "Onbeperkte apparaten en aliassen"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -7150,6 +7162,9 @@
       "Create new group": [
         "Nieuwe groep maken"
       ],
+      "Custom": [
+        "Aangepast"
+      ],
       "Day": [
         "Dag",
         "Dagen"
@@ -7215,6 +7230,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Lijst deelnemers uitbreiden"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Veilig delen met kluis ${ n }",
+        "Veilig delen met ${ n } kluizen"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Veilig delen met meerdere kluizen"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
       ]
     },
     "Payment method option": {
@@ -7662,9 +7689,19 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Wachtwoord reset geannuleerd"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Wachtwoord wijzigen voor ${ user.Email } geannuleerd. Als u deze aanvraag niet hebt gedaan, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7889,6 +7926,11 @@
         "Ondersteun online privacy"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -8001,6 +8043,9 @@
       ]
     },
     "Spotlight": {
+      "Custom event colors": [
+        "Aangepaste kleuren voor afspraken"
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -8012,6 +8057,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "U kunt nu zien wanneer deelnemers vrij zijn om ana uw vergadering deel te nemen."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Storage": {
@@ -8432,6 +8482,9 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"

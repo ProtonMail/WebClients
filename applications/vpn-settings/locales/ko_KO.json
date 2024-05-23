@@ -203,6 +203,12 @@
       "Edit name": [
         "이름 편집"
       ],
+      "Edit organization identity": [
+        "조직 신원을 편집합니다"
+      ],
+      "Edit organization name": [
+        "조직 이름 편집하기"
+      ],
       "Edit password": [
         "비밀번호 변경"
       ],
@@ -238,6 +244,9 @@
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
+      ],
+      "Forgot recovery method?": [
+        "복구 방법을 잊으셨나요?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } 사용하기"
@@ -2499,6 +2508,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
       ],
@@ -3345,6 +3357,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "다른 어딘가에 로그인했었다면 ${ signedInPasswordResetLink } 할수도 있습니다."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
       ],
@@ -3591,6 +3606,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
       ],
+      "please open a support ticket": [
+        "지원 티켓을 만들어 주세요"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
       ],
@@ -3674,6 +3692,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "계정을 설정하기 위해 2단계 인증기기로 코드를 스캔하세요. ${ switchButton }"
+      ],
+      "SCIM integration disabled": [
+        "SCIM 통합 비활성화"
+      ],
+      "SCIM token active": [
+        "SCIM 토큰 활성화"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
@@ -3812,6 +3836,9 @@
       ],
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "이 메시지는 지원 팀으로 전해지지 않으므로, 저희의 서비스에 문제가 있거나 저희가 조치를 해야 한다면 ${ supportLink }."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
@@ -4458,6 +4485,9 @@
       "Current email": [
         "현재 이메일"
       ],
+      "Current organization identity": [
+        "지금의 조직 신원"
+      ],
       "Default language": [
         "기본 언어"
       ],
@@ -4569,6 +4599,9 @@
       "New mailbox password": [
         "새 메일함 비밀번호"
       ],
+      "New organization identity": [
+        "새로운 조직 신원"
+      ],
       "New organization password": [
         "새 조직 비밀번호"
       ],
@@ -4598,6 +4631,9 @@
       ],
       "Optional": [
         "선택 사항"
+      ],
+      "Organization identity": [
+        "조직 신원"
       ],
       "Organization name": [
         "조직 이름"
@@ -4830,6 +4866,9 @@
       "Forgot username?": [
         "아이디를 잊으셨나요?"
       ],
+      "Help": [
+        "지원"
+      ],
       "Help translate": [
         "번역 돕기"
       ],
@@ -4850,6 +4889,9 @@
       ],
       "Paypal without credit card": [
         "신용 카드 없는 PayPal"
+      ],
+      "perform a password reset from your active session": [
+        "활성 세션에서 비밀번호 재설정을 수행하세요"
       ],
       "Privacy policy": [
         "개인 정보 정책"
@@ -6260,8 +6302,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "관리자 권한 재설정을 위해 데이터 복구 방법을 사용하거나 타 관리자에게 연락하거나 조직 키를 재설정 하십시오."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "이 신원의 진위를 확인할 수 없었습니다"
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "이 전송자의 주소 키에 대한 보안을 검증하는데 실패했습니다. 가끔 전송자 정보를 업데이트하는데 딜레이가 있을 수 있습니다. 잠시 후 다시 시도하세요. 이 초대나 전송자의 유효성을 신뢰하지 않는다면, ${ BRAND_NAME } 고객 지원에 문의하십시오."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "이 신원의 진위를 확인했습니다"
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "당사에서 이 발신자와 초대장의 진위를 확인했습니다."
@@ -6757,9 +6805,19 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "비밀번호 재설정을 취소했습니다"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "비밀번호 재설정 요청이 취소되었습니다 (${ user.Email }). 본인이 이 요청을 하지 않았다면, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7014,6 +7072,11 @@
         "온라인 개인정보 보호 지원"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "구독 요금제 보러가기"
@@ -7130,6 +7193,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "구독을 취소하고 있습니다. 기다려 주세요"
       ]
     },
     "Storage": {
@@ -7325,6 +7393,203 @@
         "가격:"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
+      ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff }일 남음"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }과 버전 히스토리 기능"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME }과 모든 프리미엄 생산성 기능"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }과 제한 없는 Hide-my-email 별칭 기능"
+      ],
+      "${ planMaxSpace } total storage": [
+        "총 저장공간 ${ planMaxSpace }"
+      ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName }로 모든 앱과 프리미엄 기능에 접근할 수 있습니다. 프라이버시는 기본이므로 당신의 데이터와 신원이 안전하다는 것을 인지하고 계속할 수 있습니다."
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName }는 귀하의 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 돕습니다."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName }는 당신의 이메일과 첨부파일, 이벤트, 비밀번호 그리고 파일을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName }는 당신의 파일과 사진을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 프로그램"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME }과 ${ vpnCountries }개 국가의 모든 고속 서버"
+      ],
+      "10 email addresses": [
+        "이메일 주소 10개"
+      ],
+      "6 users": [
+        "사용자 6명"
+      ],
+      "Add any new files": [
+        "새로운 파일을 추가할 수 없게 됩니다"
+      ],
+      "Back up photos from your devices": [
+        "기기에서 사진을 백업할 수 없게 됩니다"
+      ],
+      "Calendar sharing": [
+        "일정 공유"
+      ],
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Cancel subscription?": [
+        "구독을 취소하시겠습니까?"
+      ],
+      "Close": [
+        "닫기"
+      ],
+      "Comprehensive privacy and security": [
+        "종합적인 프라이버시와 보안"
+      ],
+      "Custom schedule send and snooze times": [
+        "사용자 지정 스케줄과 방해금지 시간"
+      ],
+      "Direct contribution to our mission": [
+        "저희의 사명에 직접적인 기여"
+      ],
+      "Early access to new apps and features": [
+        "새 앱과 기능에 얼리 액세스"
+      ],
+      "Extra storage and bonuses": [
+        "추가 저장공간과 보너스"
+      ],
+      "Have a question?": [
+        "질문이 있나요?"
+      ],
+      "Helping activists in Hong Kong": [
+        "홍콩의 활동가 지원"
+      ],
+      "How our customer support team got our VPN app directly into people's hands. ": [
+        "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지. "
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 어떻게 맞섰는지."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "저희가 홍콩의 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
+      ],
+      "I still want to cancel": [
+        "그래도 취소하겠습니다"
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "${ planName } 구독 만료 후 무료 요금제의 한도를 초과하게 된다면,"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } 유지하기"
+      ],
+      "Learn more about our impact": [
+        "저희의 영향력에 대해 더 알아보기"
+      ],
+      "Manage your calendar": [
+        "캘린더를 관리할 수 없게 됩니다"
+      ],
+      "Online privacy, for your whole family": [
+        "당신의 가족, 모두를 위한 온라인 프라이버시."
+      ],
+      "Our fight against censorship in Russia": [
+        "러시아의 검열에 맞선 저희의 싸움"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "${ planName }는 더 이상 구매가 불가능하다는 것에 유의해 주십시오. 계정을 다운그레이드 한다면, 요금제의 모든 혜택을 잃고 다시 구독할 수도 없게 됩니다."
+      ],
+      "Premium productivity features": [
+        "프리미엄 생산성 기능"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ],
+      "Read the story": [
+        "이야기 읽어보기"
+      ],
+      "Receive new emails": [
+        "새 이메일을 받을 수 없게 됩니다"
+      ],
+      "Resubscribe": [
+        "다시 구독하기"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "${ planName } 기능 접근을 복구하려면 재구독"
+      ],
+      "Send emails with attachments": [
+        "첨부 파일이 담긴 이메일을 보낼 수 없게 됩니다"
+      ],
+      "Subscription canceled": [
+        "구독이 취소되었습니다"
+      ],
+      "Sync files on devices": [
+        "기기간 파일 동기화를 할 수 없게 됩니다"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "최고의 ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "이란의 인터넷 접속 차단 해제"
+      ],
+      "Unlimited folders, labels and filters": [
+        "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Version history": [
+        "버전 기록"
+      ],
+      "Watch the interview": [
+        "인터뷰 보기"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "${ planName }를 취소하면 포기하게 되는 것"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName }를 취소하시면 Mail 저장공간은 1GB, Drive 저장공간은 5GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName }를 취소하시면 Drive 저장공간은 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
+      ],
+      "Yearly free storage bonuses": [
+        "연간 무료 저장공간 보너스"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "귀하의 ${ planName }가 취소되었습니다."
+      ],
+      "Your own custom email domain": [
+        "사용자의 커스텀 이메일 도메인"
+      ],
+      "Your own short @pm.me email alias": [
+        "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -7501,6 +7766,9 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "You have successfully canceled your subscription.": [
+        "구독을 성공적으로 취소하셨습니다."
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
@@ -7877,6 +8145,9 @@
       "Edit invoice details": [
         "신용 청구서 세부 정보 편집"
       ],
+      "Edit organization identity": [
+        "조직 신원 편집하기"
+      ],
       "Edit servers": [
         "서버 편집"
       ],
@@ -7921,6 +8192,9 @@
       ],
       "Find email or username": [
         "이메일 주소 또는 사용자 이름 찾기"
+      ],
+      "Forgot recovery method": [
+        "복구 방법을 잊었습니다"
       ],
       "Gateways": [
         "게이트웨이"
@@ -8282,6 +8556,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "사용자의 시스템이 \"라이트 모드\"일 때 선택된 테마가 적용됩니다"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."

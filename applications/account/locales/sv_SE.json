@@ -6043,17 +6043,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -6926,6 +6915,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Om du är inloggad någon annanstans kan du ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
       ],
@@ -7408,6 +7400,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
+      "please open a support ticket": [
+        "öppna ett supportärende"
+      ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
       ],
@@ -7813,6 +7808,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Detta meddelande når inte supportteamet, om du har ett problem med vår tjänst eller behöver ytterligare åtgärder från vår sida ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "Denna kampanjlänk har löpt ut."
@@ -8462,6 +8460,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10075,6 +10084,9 @@
       ],
       "Paypal without credit card": [
         "Paypal utan kreditkort"
+      ],
+      "perform a password reset from your active session": [
+        "utför en lösenordsåterställning från din aktiva session"
       ],
       "Privacy policy": [
         "Integritetspolicy"
@@ -12554,6 +12566,11 @@
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Skapa en kalender för att behålla kontrollen över din planering samtidigt som du håller ditt data säkert."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-postadressen hittades inte bland användar-id som definierats i sändningsnyckeln (${ keyUserIds })"
       ]
     },
     "Placeholder": {

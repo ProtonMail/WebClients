@@ -5460,6 +5460,39 @@
         "Ár:"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } teljes tárhely"
+      ],
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Calendar sharing": [
+        "Naptár megosztás"
+      ],
+      "Cancel subscription": [
+        "Előfizetés lemondása"
+      ],
+      "Cancel subscription?": [
+        "Előfizetés lemondása?"
+      ],
+      "Keep ${ planName }": [
+        "Maradjon ${ planName }"
+      ],
+      "Priority support": [
+        "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ]
+    },
     "Subscription renewal state": {
       "Disable": [
         "Letiltás"

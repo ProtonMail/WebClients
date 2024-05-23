@@ -7356,6 +7356,50 @@
         "Za"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Še ${ dayDiff } dan",
+        "Še ${ dayDiff } dneva",
+        "Še ${ dayDiff } dni",
+        "Še ${ dayDiff } dni"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Program ${ MAIL_APP_NAME } za namizje"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } skupnega prostora shrambe"
+      ],
+      "10 email addresses": [
+        "10 e-poštnih naslovov"
+      ],
+      "Calendar sharing": [
+        "Deljenje koledarja"
+      ],
+      "Cancel subscription": [
+        "Prekliči naročnino"
+      ],
+      "Cancel subscription?": [
+        "Prekliči naročnino?"
+      ],
+      "Close": [
+        "Zapri"
+      ],
+      "Custom schedule send and snooze times": [
+        "Urnik po meri za pošiljanje in dremež"
+      ],
+      "Keep ${ planName }": [
+        "Ohrani ${ planName }."
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ],
+      "Resubscribe": [
+        "Ponovno se naročite"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"

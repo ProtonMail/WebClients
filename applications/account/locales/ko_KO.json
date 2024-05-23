@@ -433,6 +433,12 @@
       "Edit name": [
         "이름 편집"
       ],
+      "Edit organization identity": [
+        "조직 신원을 편집합니다"
+      ],
+      "Edit organization name": [
+        "조직 이름 편집하기"
+      ],
       "Edit password": [
         "비밀번호 변경"
       ],
@@ -492,6 +498,9 @@
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
+      ],
+      "Forgot recovery method?": [
+        "복구 방법을 잊으셨나요?"
       ],
       "Generate": [
         "생성"
@@ -4938,6 +4947,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
       ],
@@ -5987,17 +5999,6 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -6851,6 +6852,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "다른 어딘가에 로그인했었다면 ${ signedInPasswordResetLink } 할수도 있습니다."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
       ],
@@ -7328,6 +7332,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
       ],
+      "please open a support ticket": [
+        "지원 티켓을 만들어 주세요"
+      ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
       ],
@@ -7471,6 +7478,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "계정을 설정하기 위해 2단계 인증기기로 코드를 스캔하세요. ${ switchButton }"
+      ],
+      "SCIM integration disabled": [
+        "SCIM 통합 비활성화"
+      ],
+      "SCIM token active": [
+        "SCIM 토큰 활성화"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
@@ -7726,6 +7739,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "이 메시지는 지원 팀으로 전해지지 않으므로, 저희의 서비스에 문제가 있거나 저희가 조치를 해야 한다면 ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "이 프로모션 링크는 만료되었습니다."
@@ -8377,6 +8393,17 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9080,6 +9107,9 @@
       "Current email": [
         "현재 이메일"
       ],
+      "Current organization identity": [
+        "지금의 조직 신원"
+      ],
       "Daily email notifications": [
         "일일 이메일 알림"
       ],
@@ -9380,6 +9410,9 @@
       "New mailbox password": [
         "새 메일함 비밀번호"
       ],
+      "New organization identity": [
+        "새로운 조직 신원"
+      ],
       "New organization password": [
         "새 조직 비밀번호"
       ],
@@ -9427,6 +9460,9 @@
       ],
       "Or": [
         "또는"
+      ],
+      "Organization identity": [
+        "조직 신원"
       ],
       "Organization name": [
         "조직 이름"
@@ -9946,6 +9982,9 @@
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 받기"
       ],
+      "Help": [
+        "지원"
+      ],
       "Help translate": [
         "번역 돕기"
       ],
@@ -9981,6 +10020,9 @@
       ],
       "Paypal without credit card": [
         "신용 카드 없는 PayPal"
+      ],
+      "perform a password reset from your active session": [
+        "활성 세션에서 비밀번호 재설정을 수행하세요"
       ],
       "Privacy policy": [
         "개인 정보 정책"
@@ -12341,8 +12383,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "관리자 권한 재설정을 위해 데이터 복구 방법을 사용하거나 타 관리자에게 연락하거나 조직 키를 재설정 하십시오."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "이 신원의 진위를 확인할 수 없었습니다"
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "이 전송자의 주소 키에 대한 보안을 검증하는데 실패했습니다. 가끔 전송자 정보를 업데이트하는데 딜레이가 있을 수 있습니다. 잠시 후 다시 시도하세요. 이 초대나 전송자의 유효성을 신뢰하지 않는다면, ${ BRAND_NAME } 고객 지원에 문의하십시오."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "이 신원의 진위를 확인했습니다"
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "당사에서 이 발신자와 초대장의 진위를 확인했습니다."
@@ -13006,9 +13054,19 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "비밀번호 재설정을 취소했습니다"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "비밀번호 재설정 요청이 취소되었습니다 (${ user.Email }). 본인이 이 요청을 하지 않았다면, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13400,6 +13458,11 @@
         "온라인 개인정보 보호 지원"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "구독 요금제 보러가기"
@@ -13516,6 +13579,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "구독을 취소하고 있습니다. 기다려 주세요"
       ]
     },
     "Step in filter modal": {
@@ -14219,6 +14287,9 @@
       "Verification successful": [
         "인증 성공"
       ],
+      "You have successfully canceled your subscription.": [
+        "구독을 성공적으로 취소하셨습니다."
+      ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
       ]
@@ -14847,6 +14918,9 @@
       "Edit invoice details": [
         "신용 청구서 세부 정보 편집"
       ],
+      "Edit organization identity": [
+        "조직 신원 편집하기"
+      ],
       "Edit servers": [
         "서버 편집"
       ],
@@ -14945,6 +15019,9 @@
       ],
       "For Windows": [
         "Windows용"
+      ],
+      "Forgot recovery method": [
+        "복구 방법을 잊었습니다"
       ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"
@@ -15719,6 +15796,9 @@
       ],
       "This address has been disabled": [
         "이 주소는 비활성화되어 있습니다"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "이 기능은 이메일 전송을 지연시켜 설정된 시간내에 전송을 취소할 수 있도록 도와줍니다."

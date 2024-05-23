@@ -20,6 +20,26 @@
         "Redirecționare mesaje oprită"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a lua măsuri. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
@@ -897,6 +917,11 @@
     "Attendee role": {
       "Optional": [
         "Opțional"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Nouă!"
       ]
     },
     "bf2023: Action": {
@@ -2392,6 +2417,9 @@
       "Availability unknown": [
         "Disponibilitate necunoscută"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organizați-vă mai bine ziua, urmăriți timpul și prioritizați sarcinile. Utilizați culori personale pentru evenimentele din calendar."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -3783,6 +3811,9 @@
     "Header": {
       "Contacts": [
         "Contacte"
+      ],
+      "Custom recurrence": [
+        "Repetare personalizată"
       ],
       "Name": [
         "Nume"
@@ -6500,6 +6531,9 @@
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funcții premium"
+      ],
       "Passkeys supported": [
         "Chei de acces suportate"
       ],
@@ -6576,6 +6610,9 @@
       ],
       "Unlimited devices": [
         "Dispozitive nelimitate"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispozitive și aliasuri nelimitate"
       ],
       "Unlimited filters": [
         "Filtre nelimitate"
@@ -7274,6 +7311,9 @@
       "Create new group": [
         "Creare grup"
       ],
+      "Custom": [
+        "Personal"
+      ],
       "Day": [
         "zi",
         "zile",
@@ -7343,6 +7383,19 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Extindere listă participanți"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Partajare sigură cu ${ n } seif",
+        "Partajare sigură cu ${ n } seifuri",
+        "Partajare sigură cu ${ n } de seifuri"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partajare sigură cu seifuri multiple"
+      ],
+      "Secure vault sharing": [
+        "Partajare sigură a seifurilor"
       ]
     },
     "Payment method option": {
@@ -7803,9 +7856,19 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetarea parolei a fost anulată."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitarea de resetare a parolei a fost anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8039,6 +8102,11 @@
         "Susțineți confidențialitatea online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -8152,6 +8220,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Colorați calendarul prin coduri de culori pentru a vă organiza mai bine ziua, pentru a vă urmări timpul și multe altele."
+      ],
+      "Custom event colors": [
+        "Culori personale evenimente"
+      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
@@ -8163,6 +8237,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Acum puteți vedea când participanții sunt liberi pentru a participa la întâlniri."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Storage": {
@@ -8592,6 +8671,9 @@
       ],
       "Verification successful": [
         "Verificare reușită"
+      ],
+      "You have successfully canceled your subscription.": [
+        "V-ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
