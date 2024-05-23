@@ -58,6 +58,15 @@
 		background-color: var(--background-norm);
 	}
 
+	&-footer {
+		padding-block: 1em;
+		padding-inline: 1.5em 3em;
+		background-color: var(--background-weak);
+		border-block-start: 1px solid var(--border-weak);
+		border-end-start-radius: var(--border-radius-md);
+		border-end-end-radius: var(--border-radius-md);
+	}
+
 	// Pseudo-elements to make arrows
 	&::before {
 		content: '';

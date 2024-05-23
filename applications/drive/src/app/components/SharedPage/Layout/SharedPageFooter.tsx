@@ -18,7 +18,14 @@ const SharedPageFooter = ({ rootItem, items }: Props) => {
         return (
             <div className="fixed bottom-0 p-4 flex flex-wrap justify-center bg-weak w-full">
                 {isDownloadScanEnabled ? (
-                    <DownloadButton rootItem={rootItem} items={items} isScanAndDownload className="mr-4" color="weak" />
+                    <DownloadButton
+                        rootItem={rootItem}
+                        items={items}
+                        isScanAndDownload
+                        className="mr-4"
+                        color="weak"
+                        hideIcon
+                    />
                 ) : null}
                 <DownloadButton className="flex-1" rootItem={rootItem} items={items} hideIcon={isDownloadScanEnabled} />
             </div>
