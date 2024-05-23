@@ -1105,7 +1105,7 @@ export const FORKABLE_APPS = new Set(
 const PROTONPASS_EXTENSION_IDS = [
     'ghmbeldphafepmbegfdlkpapadhbakde' /* chromium production */,
     'hlaiofkbmjenhgeinjlmkafaipackfjh' /* chromium beta channel */,
-    'me.proton.pass.catalyst.safari-extension' /* safari extension */,
+    'me.proton.pass.catalyst.safari-extension (2SB5Z68H26)' /* safari extension */,
 ] as const;
 
 export const EXTENSIONS = {
