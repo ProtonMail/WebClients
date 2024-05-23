@@ -1136,6 +1136,10 @@
       "Trust": [
         "Vertrouwen"
       ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
+      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -5565,6 +5569,9 @@
       "and": [
         "en"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Eventuele geplande of uitgestelde berichten zullen geannuleerd worden."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden gewist. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden gewist en zijn terug te vinden in de map Alle berichten."
       ],
@@ -6451,6 +6458,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Gesnoozed tot morgen, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Dit gesprek snoozen wordt geannuleerd."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
@@ -8788,6 +8798,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium functies"
+      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -8863,6 +8876,9 @@
       ],
       "Unlimited devices": [
         "Onbeperkt aantal apparaten"
+      ],
+      "Unlimited devices and aliases": [
+        "Onbeperkte apparaten en aliassen"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -9490,6 +9506,18 @@
         "U"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Veilig delen met kluis ${ n }",
+        "Veilig delen met ${ n } kluizen"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Veilig delen met meerdere kluizen"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
@@ -10114,9 +10142,19 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Wachtwoord reset geannuleerd"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Wachtwoord wijzigen voor ${ user.Email } geannuleerd. Als u deze aanvraag niet hebt gedaan, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10339,6 +10377,11 @@
         "Ondersteun online privacy"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -10471,6 +10514,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Status": {
@@ -10940,6 +10988,9 @@
       "Message deleted": [
         "Bericht verwijderd"
       ],
+      "Message expiration canceled": [
+        "Vervallen van bericht geannuleerd"
+      ],
       "Message marked as legitimate": [
         "Bericht gemarkeerd als legitiem"
       ],
@@ -11016,6 +11067,9 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
