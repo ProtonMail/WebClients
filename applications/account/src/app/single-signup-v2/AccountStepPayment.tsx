@@ -64,10 +64,7 @@ interface Props {
     vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
-    onPay: (
-        payment: 'signup-token' | ExtendedTokenPayment | undefined,
-        type: 'pp' | 'btc' | 'cc' | undefined
-    ) => Promise<void>;
+    onPay: (payment: 'signup-token' | ExtendedTokenPayment, type: 'pp' | 'btc' | 'cc' | undefined) => Promise<void>;
     onValidate: () => boolean;
     isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
@@ -161,9 +158,14 @@ const AccountStepPayment = ({
         theme: publicTheme,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
+                const extendedTokenPayment: ExtendedTokenPayment = {
+                    paymentsVersion,
+                    paymentProcessorType,
+                };
+
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
                 if (isFreeSignup) {
-                    await onPay(undefined, undefined);
+                    await onPay(extendedTokenPayment, undefined);
                     return;
                 }
 
@@ -179,13 +181,9 @@ const AccountStepPayment = ({
                     ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
                     : undefined;
 
-                const withVersion: ExtendedTokenPayment = {
-                    ...legacyTokenPayment,
-                    paymentsVersion,
-                    paymentProcessorType,
-                };
+                Object.assign(extendedTokenPayment, legacyTokenPayment);
 
-                await onPay(withVersion, paymentType);
+                await onPay(extendedTokenPayment, paymentType);
             });
         },
         onMethodChanged: (newMethod) => {
