@@ -120,8 +120,10 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
         const hasPassphrase = !!passphrase;
 
         // TODO: add public key support here
-        const [[encryptedName, encryptedMnemonic, encryptedFirstAccountLabel], [walletKey, userKeyId]] =
-            await encryptWalletData([walletName, mnemonic.asString(), DEFAULT_ACCOUNT_LABEL], primaryUserKey);
+        const [
+            [encryptedName, encryptedMnemonic, encryptedFirstAccountLabel],
+            [walletKey, walletKeySignature, userKeyId],
+        ] = await encryptWalletData([walletName, mnemonic.asString(), DEFAULT_ACCOUNT_LABEL], primaryUserKey);
 
         const fingerprint = new WasmWallet(network, mnemonic.asString(), passphrase).getFingerprint();
 
@@ -137,6 +139,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
                 hasPassphrase,
                 userKeyId,
                 walletKey,
+                walletKeySignature,
                 encryptedMnemonic,
                 fingerprint,
                 undefined

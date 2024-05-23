@@ -5,12 +5,12 @@ import { WasmTxBuilder } from '@proton/andromeda';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useApi } from '@proton/components/hooks';
-import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { useWalletApiClients } from '@proton/wallet';
+import { useWalletApiClients, verifySignedData } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
@@ -93,14 +93,9 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     const publicKeys = await Promise.all(
                         addressKeys.map(async (addressKey) => {
                             const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
+                            const isVerified = await verifySignedData(btcAddress, btcAddressSignature, [pubkey]);
 
-                            const { verified } = await CryptoProxy.verifyMessage({
-                                armoredSignature: btcAddressSignature,
-                                textData: btcAddress,
-                                verificationKeys: [pubkey],
-                            });
-
-                            return verified === VERIFICATION_STATUS.SIGNED_AND_VALID ? pubkey : null;
+                            return isVerified ? pubkey : null;
                         })
                     );
 

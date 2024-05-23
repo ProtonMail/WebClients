@@ -15,78 +15,13 @@ import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
 import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData, mockUseWalletApiClients } from '../tests';
 import { getAddressKey, getUserKeys } from '../tests/utils/keys';
 import { useWalletTransactions } from './useWalletTransactions';
-
-const wallet: IWasmApiWalletData = {
-    Wallet: {
-        ID: '01',
-        Name: 'Test wallet',
-        IsImported: 0,
-        Priority: 0,
-        Type: 0,
-        HasPassphrase: 0,
-        Status: 0,
-        // encrypted with wallet key defined below
-        // category law logic swear involve banner pink room diesel fragile sunset remove whale lounge captain code hobby lesson material current moment funny vast fade
-        Mnemonic:
-            '4mJqR8O0XNsvkUpA+O9W+cMco/iS/IE5Gt7Bp1eqYyd4Y7Ty7iuIGJDaBMO9PkUrPW/KetHuJPN/Q/VMNqRTih9NXM1BkvAee2n+smwwNME3YmAqkhbPG8c5/c1k/X1ghOxdcfji0P/jhhyJvOwWCWTbZiZaOuN2VDdVtVaGSCNwwvV8Gb8KASS/b3e5i3h37n8dQXwu3b7cyvEpZQYrYzEkK71/GmuZBJYeexBscCNeOiGp5cZ+Oac=',
-        Fingerprint: '',
-        PublicKey: null,
-        Passphrase: '',
-    },
-    WalletAccounts: [
-        {
-            ID: '001',
-            Label: 'Test account',
-            WalletID: '01',
-            DerivationPath: "m/84'/1'/0'",
-            ScriptType: WasmScriptType.NativeSegwit,
-            FiatCurrency: 'USD',
-            // match address defined in getAddressKey utils
-            Addresses: [{ Email: 'pro@prootn.test', ID: '0000001' }],
-        },
-    ],
-    WalletKey: {
-        WalletID: '01',
-        UserKeyID: '',
-        // encrypted with key in tests/fixtures/keys.ts
-        // 195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248, 126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36
-        WalletKey: `-----BEGIN PGP MESSAGE-----
-
-wcBMA5fAXxAlQaycAQf/YrLl4EudmkXNDT7uQPAHTbySRIVJ9l57E1HmYABl
-YYTTloQwHqd8QYJCodgJx7qB5HQ+S9EgZBxBFlTyR+pmnmCcY6mkao0k6Zat
-IqYfleFvgnqoCP3srLGxp/sWZLSCXSf3yUiepNXerwsDHRmEBf7jGO49gGDn
-KnxajEEDEOA/RYcbwkO01wblauJIPw1Uf1y0+LvnVg68uxpMvycMHG8ydWSV
-dSxbJh0VWsaeXEAInI/SkGbUxX2BP8xzt8AyerLzAFrmmils1+15ck5pnmo6
-B186J5Xl8nYVxJg9vURDQTsXivsp7RGLfxfE3j86Q/xK4Dj22+mRewtLq5sJ
-EdLA4wHG3GnsrJhRZYus666haS2MDtJlYWefp2KE+2GQ7LNE0lhrxGP6C007
-OG5sMk2wJ2ensoeLQffWItOf73MmfctomweZHasj3FVyN254zV/iZteZn++9
-E9coMKv506xS9KUhR8r4ZbwwWttlEWgE/Twt6d6pV+PlK2+XyMYyQOaoOuIZ
-VA7Quz4aaa8KxtlTRxi/rkCy2HmO75dWBdJcCEMoK1XjIlvDQko+pLygeCF+
-r7RtRLHoDhEZYfos/k81TsAaP36vK9jkYKpUK+pvNklL7OmSK7FJVsSyDwrf
-FDWwY+Zw+X/j8fNCTusPqGDcMk97Gxg8Hm/Za6+FVKn+p2O7NK0DuUbxLsFo
-MloDsQGe01hbwa25HfxAVSuLDOxCLsFqNX3IJc2VJB3oYlek2mYUcFeLi5D/
-6ZM6uHS6mmtgFqe1zzqQ4PJYdrnBTgSKEGhMDxiB6ifqYQuDxmBQnuMXGs0U
-6plRJ9rLQeA/YeviDoMenLPn6e8V6VSoulmHpGGQVqQR2ZSq3qmYqY+T5r7E
-q6AjCb/dZa+rCJTp+37e/i4K
-=gDR6
------END PGP MESSAGE-----`,
-    },
-    WalletSettings: {
-        WalletID: '01',
-        HideAccounts: 0,
-        InvoiceDefaultDescription: null,
-        InvoiceExpirationTime: 0,
-        MaxChannelOpeningFee: 0,
-    },
-    IsNotDecryptable: false,
-};
 
 const networkTransactions: WasmTransactionDetails[] = [
     {
@@ -284,10 +219,13 @@ describe('useWalletTransactions', () => {
         WasmWalletClient['updateWalletTransactionHashedTxId']
     > = vi.fn();
 
+    let wallet: IWasmApiWalletData;
+
     beforeAll(async () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
         userKeys = await getUserKeys();
+
         addressKey = await getAddressKey();
         mockUseGetAddressKeys(vi.fn(async () => addressKey.keys));
     });
@@ -296,7 +234,89 @@ describe('useWalletTransactions', () => {
         await CryptoProxy.releaseEndpoint();
     });
 
-    beforeEach(() => {
+    beforeEach(async () => {
+        wallet = {
+            Wallet: {
+                ID: '01',
+                Name: 'Test wallet',
+                IsImported: 0,
+                Priority: 0,
+                Type: 0,
+                HasPassphrase: 0,
+                Status: 0,
+                // encrypted with wallet key defined below
+                // category law logic swear involve banner pink room diesel fragile sunset remove whale lounge captain code hobby lesson material current moment funny vast fade
+                Mnemonic:
+                    '4mJqR8O0XNsvkUpA+O9W+cMco/iS/IE5Gt7Bp1eqYyd4Y7Ty7iuIGJDaBMO9PkUrPW/KetHuJPN/Q/VMNqRTih9NXM1BkvAee2n+smwwNME3YmAqkhbPG8c5/c1k/X1ghOxdcfji0P/jhhyJvOwWCWTbZiZaOuN2VDdVtVaGSCNwwvV8Gb8KASS/b3e5i3h37n8dQXwu3b7cyvEpZQYrYzEkK71/GmuZBJYeexBscCNeOiGp5cZ+Oac=',
+                Fingerprint: '',
+                PublicKey: null,
+                Passphrase: '',
+            },
+            WalletAccounts: [
+                {
+                    ID: '001',
+                    Label: 'Test account',
+                    WalletID: '01',
+                    DerivationPath: "m/84'/1'/0'",
+                    ScriptType: WasmScriptType.NativeSegwit,
+                    FiatCurrency: 'USD',
+                    // match address defined in getAddressKey utils
+                    Addresses: [{ Email: 'pro@prootn.test', ID: '0000001' }],
+                },
+            ],
+            WalletKey: {
+                WalletID: '01',
+                UserKeyID: '',
+                DecryptedKey: await getSymmetricKey(
+                    new Uint8Array([
+                        195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248,
+                        126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36,
+                    ])
+                ),
+                // encrypted with key in tests/fixtures/keys.ts
+                // 195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248, 126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36
+                WalletKey: `-----BEGIN PGP MESSAGE-----
+        
+wcBMA5fAXxAlQaycAQf/YrLl4EudmkXNDT7uQPAHTbySRIVJ9l57E1HmYABl
+YYTTloQwHqd8QYJCodgJx7qB5HQ+S9EgZBxBFlTyR+pmnmCcY6mkao0k6Zat
+IqYfleFvgnqoCP3srLGxp/sWZLSCXSf3yUiepNXerwsDHRmEBf7jGO49gGDn
+KnxajEEDEOA/RYcbwkO01wblauJIPw1Uf1y0+LvnVg68uxpMvycMHG8ydWSV
+dSxbJh0VWsaeXEAInI/SkGbUxX2BP8xzt8AyerLzAFrmmils1+15ck5pnmo6
+B186J5Xl8nYVxJg9vURDQTsXivsp7RGLfxfE3j86Q/xK4Dj22+mRewtLq5sJ
+EdLA4wHG3GnsrJhRZYus666haS2MDtJlYWefp2KE+2GQ7LNE0lhrxGP6C007
+OG5sMk2wJ2ensoeLQffWItOf73MmfctomweZHasj3FVyN254zV/iZteZn++9
+E9coMKv506xS9KUhR8r4ZbwwWttlEWgE/Twt6d6pV+PlK2+XyMYyQOaoOuIZ
+VA7Quz4aaa8KxtlTRxi/rkCy2HmO75dWBdJcCEMoK1XjIlvDQko+pLygeCF+
+r7RtRLHoDhEZYfos/k81TsAaP36vK9jkYKpUK+pvNklL7OmSK7FJVsSyDwrf
+FDWwY+Zw+X/j8fNCTusPqGDcMk97Gxg8Hm/Za6+FVKn+p2O7NK0DuUbxLsFo
+MloDsQGe01hbwa25HfxAVSuLDOxCLsFqNX3IJc2VJB3oYlek2mYUcFeLi5D/
+6ZM6uHS6mmtgFqe1zzqQ4PJYdrnBTgSKEGhMDxiB6ifqYQuDxmBQnuMXGs0U
+6plRJ9rLQeA/YeviDoMenLPn6e8V6VSoulmHpGGQVqQR2ZSq3qmYqY+T5r7E
+q6AjCb/dZa+rCJTp+37e/i4K
+=gDR6
+-----END PGP MESSAGE-----`,
+                WalletKeySignature: `-----BEGIN PGP SIGNATURE-----
+        
+wsBzBAEBCgAnBYJmT0UACZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl
+QaycAAA0jwf/YL2z7no2LEdRX/iD+H0+1ywPa+NJm9EMonv/BzAnAZeuD/gv
+Dr+NA1RSHUzg+5VPL1snGcd87wZv8S24/0t4b1R/yFEfbtcYhdZDMQGrLTQX
+HDuzVN5xtaO5hy/gndPEgHPAGPzSsp/JOxU931MFW5rb2xNEjhZiw9dG52D3
+jtDL5OIJqkQ+5TrlFXIlNH0EwEEY77r/piiLQ/LJAMXaU99PC7Wo4pK0/3MB
+pLQyK14/AvZZM6XS45Y7LneKmOO8KQt4Yg4UA3NiuCgP377H/PbDK23GLndz
+ldtVjPS0EsoNGHM/B240ujLYQYshBuBFxpO4KdpS5t01ewIgNWQcvQ==
+=cnEC
+-----END PGP SIGNATURE-----`,
+            },
+            WalletSettings: {
+                WalletID: '01',
+                HideAccounts: 0,
+                InvoiceDefaultDescription: null,
+                InvoiceExpirationTime: 0,
+                MaxChannelOpeningFee: 0,
+            },
+            IsNotDecryptable: false,
+        };
+
         mockUseNotifications();
         mockUseBitcoinBlockchainContext({
             decryptedApiWalletsData: [wallet],

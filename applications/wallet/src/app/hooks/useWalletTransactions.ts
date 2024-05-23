@@ -22,7 +22,6 @@ import {
     WalletMap,
     decryptArmoredData,
     decryptWalletData,
-    decryptWalletKey,
     decryptWalletKeyForHmac,
     encryptArmoredData,
     encryptWalletDataWithWalletKey,
@@ -272,7 +271,7 @@ const fetchTransactions = async ({
     walletId: string;
     getTransactionsApiData: ReturnType<typeof useGetApiWalletTransactionData>;
     walletMap: WalletMap;
-    walletKey: string;
+    walletKey: CryptoKey;
     getWalletAccountPrimaryAddressKeys: (account: WasmApiWalletAccount) => Promise<PrivateKeyReference[]>;
 }) => {
     const hashedTxids = Object.keys(transactionDataByHashedTxId);
@@ -296,9 +295,7 @@ const fetchTransactions = async ({
             const txNetworkData = transactionDataByHashedTxId[HashedTransactionID]?.[0];
 
             if (txNetworkData) {
-                const [decryptedLabel] = await decryptWalletData([transactionApiData.Label], walletKey, userKeys).catch(
-                    () => []
-                );
+                const [decryptedLabel] = await decryptWalletData([transactionApiData.Label], walletKey).catch(() => []);
 
                 const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
 
@@ -372,7 +369,7 @@ export const useWalletTransactions = ({
             Wallet: { ID: walletId },
         } = wallet;
 
-        if (!WalletKey) {
+        if (!WalletKey?.DecryptedKey) {
             return;
         }
         const processUid = generateUID('use-wallet-transactions');
@@ -384,7 +381,7 @@ export const useWalletTransactions = ({
         };
 
         const initResult = (await withLoadingRecordInit(async () => {
-            const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, userKeys);
+            const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, WalletKey.WalletKeySignature, userKeys);
             const localTransactionDataByHashedTxId = await keyTxNetworkDataByHashedTxId(transactions, hmacKey);
             guardSetTransactionData(localTransactionDataByHashedTxId);
 
@@ -399,7 +396,7 @@ export const useWalletTransactions = ({
             walletId,
             getTransactionsApiData,
             walletMap,
-            walletKey: WalletKey.WalletKey,
+            walletKey: WalletKey.DecryptedKey,
             getWalletAccountPrimaryAddressKeys,
         });
 
@@ -465,12 +462,14 @@ export const useWalletTransactions = ({
             // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
             const account = WalletAccountID && walletMap[WalletID]?.accounts[WalletAccountID];
 
-            if (account && WalletAccountID && wallet?.WalletKey?.WalletKey && Label !== labelInput) {
+            if (account && WalletAccountID && wallet?.WalletKey?.DecryptedKey && Label !== labelInput) {
                 // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
 
                 try {
-                    const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
-                    const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], decryptedKey);
+                    const [encryptedLabel] = await encryptWalletDataWithWalletKey(
+                        [labelInput],
+                        wallet.WalletKey.DecryptedKey
+                    );
 
                     const { Data: updatedTx } = await clients.wallet.updateWalletTransactionLabel(
                         WalletID,
@@ -503,14 +502,7 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [
-            userKeys,
-            walletMap,
-            wallet?.WalletKey?.WalletKey,
-            clients,
-            getWalletAccountPrimaryAddressKeys,
-            createNotification,
-        ]
+        [userKeys, walletMap, wallet?.WalletKey, clients, getWalletAccountPrimaryAddressKeys, createNotification]
     );
 
     useEffect(() => {
