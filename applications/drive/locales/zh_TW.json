@@ -187,6 +187,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
       "Create": [
         "創建"
       ],
@@ -4941,6 +4944,9 @@
       "Version is restored": [
         "版本已還原"
       ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
+      ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
@@ -7145,9 +7151,6 @@
       "File removed": [
         "檔案已移除"
       ],
-      "Invitation removed from the share": [
-        "邀請函從共享移除"
-      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
@@ -7612,6 +7615,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "已有至少一次的資料外洩，可從中查找到您的資訊。 開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "Select files": {
@@ -8005,6 +8011,11 @@
         "現在您可輕易搜尋 Drive 檔案，同時保持您的資料安全。"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "取得更多儲存空間"
@@ -8317,6 +8328,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
