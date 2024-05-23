@@ -15,6 +15,8 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
@@ -85,55 +87,57 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     if (context.state.loggedIn) {
         return (
-            <>
-                <div className="mb-8">
-                    <div className="flex w-full justify-space-between items-start">
-                        <div className="flex items-start">
-                            <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
-                            <span>
-                                <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
-                                <span className="block text-sm text-ellipsis">{user?.Email}</span>
-                                <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
-                            </span>
-                        </div>
-                        <div className="flex items-end flex-column">
-                            {!isPaidPlan(passPlan) && (
-                                <>
-                                    <span className="block mb-1">
-                                        {planDisplayName}
-                                        <span className="color-weak text-italic text-sm">
-                                            {' '}
-                                            {trialDaysLeft &&
-                                                `(${c('Info').ngettext(
-                                                    msgid`${trialDaysLeft} day left`,
-                                                    `${trialDaysLeft} days left`,
-                                                    trialDaysLeft
-                                                )})`}
+            <PasswordUnlockProvider>
+                <PinUnlockProvider>
+                    <div className="mb-8">
+                        <div className="flex w-full justify-space-between items-start">
+                            <div className="flex items-start">
+                                <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
+                                <span>
+                                    <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
+                                    <span className="block text-sm text-ellipsis">{user?.Email}</span>
+                                    <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
+                                </span>
+                            </div>
+                            <div className="flex items-end flex-column">
+                                {!isPaidPlan(passPlan) && (
+                                    <>
+                                        <span className="block mb-1">
+                                            {planDisplayName}
+                                            <span className="color-weak text-italic text-sm">
+                                                {' '}
+                                                {trialDaysLeft &&
+                                                    `(${c('Info').ngettext(
+                                                        msgid`${trialDaysLeft} day left`,
+                                                        `${trialDaysLeft} days left`,
+                                                        trialDaysLeft
+                                                    )})`}
+                                            </span>
                                         </span>
-                                    </span>
-                                    <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
-                                </>
-                            )}
+                                        <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
+                                    </>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <Tabs
-                    className="w-full"
-                    contentClassName="p-0"
-                    navContainerClassName="mb-6"
-                    onChange={handleOnChange}
-                    tabs={tabs}
-                    value={activeTab}
-                />
+                    <Tabs
+                        className="w-full"
+                        contentClassName="p-0"
+                        navContainerClassName="mb-6"
+                        onChange={handleOnChange}
+                        tabs={tabs}
+                        value={activeTab}
+                    />
 
-                <div className="mt-auto">
-                    <hr />
-                    <span className="block text-sm color-weak text-center">
-                        {PASS_APP_NAME} v{APP_VERSION}
-                    </span>
-                </div>
-            </>
+                    <div className="mt-auto">
+                        <hr />
+                        <span className="block text-sm color-weak text-center">
+                            {PASS_APP_NAME} v{APP_VERSION}
+                        </span>
+                    </div>
+                </PinUnlockProvider>
+            </PasswordUnlockProvider>
         );
     }
 
