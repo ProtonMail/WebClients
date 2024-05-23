@@ -16,7 +16,7 @@ import { Button } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useBitcoinNetwork } from '../../store/hooks';
-import { isValidBitcoinAddress } from '../../utils';
+import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
@@ -49,7 +49,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     };
 
     const handleAddRecipients = async (recipientOrBitcoinAddresses: Recipient[]) => {
-        if (!network) {
+        if (isUndefined(network)) {
             return;
         }
 
@@ -135,7 +135,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
         removeRecipient(recipient);
     };
 
-    if (!network) {
+    if (isUndefined(network)) {
         return null;
     }
 

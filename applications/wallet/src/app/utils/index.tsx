@@ -5,3 +5,4 @@ export * from './transactions';
 export * from './accounts';
 export * from './theme';
 export * from './debug';
+export * from './type';
