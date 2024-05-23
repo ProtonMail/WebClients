@@ -19,17 +19,28 @@ interface Props extends DownloadButtonProps {
 
 const SpotlightContent = () => (
     <div>
-        <h5 className="text-semibold mb-2">{c('Info').t`File scanning in Drive`}</h5>
+        <h5 className="text-semibold mb-3 flex items-center">
+            <Icon name="info-circle" size={5} className="mr-2" />
+            {c('Info').t`File scanning in Drive`}
+        </h5>
         <div className="mb-6">
             {c('Info')
                 .t`To help protect you, ${DRIVE_APP_NAME} can scan and block malicious files. You should still only download files from people you trust.`}{' '}
-            <Href className="color-weak" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
+            <Href className="text-no-decoration" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
                 {c('Link').t`Learn more`}
             </Href>
         </div>
+    </div>
+);
+
+const SpotlightFooter = () => (
+    <div>
         <div className="flex flex-row items-center">
-            <Icon name="shield-2-check-filled" size={6} className="mr-1 color-success" />
-            <span>{c('Info').t`End-to-End Encrypted`}</span>
+            <Icon name="lock-check-filled" size={6} className="mr-2 color-disabled" />
+            <span className="color-disabled">{c('Info').t`End-to-End Encrypted`}.</span>
+            <Href className="color-disabled ml-1" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
+                {c('Link').t`Learn more`}
+            </Href>
         </div>
     </div>
 );
@@ -42,6 +53,7 @@ const InfoIcon = () => {
     return (
         <Spotlight
             content={<SpotlightContent />}
+            footer={<SpotlightFooter />}
             show={show}
             onClose={handleClose}
             originalPlacement="bottom-end"
@@ -72,6 +84,7 @@ export default function SharedPageHeader({ children, rootItem, items, className 
                                 isScanAndDownload
                                 className="mx-4"
                                 color="weak"
+                                hideIcon
                             />
                         </>
                     ) : null}

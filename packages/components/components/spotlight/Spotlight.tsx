@@ -46,6 +46,7 @@ export interface SpotlightProps {
     className?: string;
     innerClassName?: string;
     size?: 'large';
+    footer?: ReactNode;
 }
 
 const Spotlight = ({
@@ -62,6 +63,7 @@ const Spotlight = ({
     className,
     innerClassName,
     size,
+    footer,
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -148,6 +150,11 @@ const Spotlight = ({
                         {illustrationURL && <img className="shrink-0 mr-6" src={illustrationURL} alt="" />}
                         <div>{content}</div>
                     </div>
+                    {footer ? (
+                        <div className="spotlight-footer" data-testid="spotlight-footer">
+                            {footer}
+                        </div>
+                    ) : null}
 
                     {hasClose && (
                         <Button
