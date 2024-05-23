@@ -16,26 +16,28 @@ interface Props extends ModalOwnProps {
 export const FullscreenModal = ({ title, subline, children, key, className, ...rest }: PropsWithChildren<Props>) => {
     return (
         <ModalTwo {...rest} className={clsx(className, 'bg-weak')} key={key} size="full" fullscreen>
-            <ModalTwoHeader
-                title={title}
-                titleClassName="h2 mr-auto"
-                subline={subline && <p className="text-center mx-12">{subline}</p>}
-                closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
-            />
+            <>
+                <ModalTwoHeader
+                    title={title}
+                    titleClassName="h2 mr-auto"
+                    subline={subline && <p className="text-center mx-12">{subline}</p>}
+                    closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
+                />
 
-            {/* Content */}
-            <div
-                className={clsx(
-                    'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto'
-                )}
-            >
+                {/* Content */}
                 <div
-                    className="flex flex-column py-auto max-h-full w-full max-w-custom overflow-auto p-2 my-auto"
-                    style={{ '--max-w-custom': '31rem' }}
+                    className={clsx(
+                        'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto'
+                    )}
                 >
-                    {children}
+                    <div
+                        className="flex flex-column py-auto max-h-full w-full max-w-custom overflow-auto p-2 my-auto"
+                        style={{ '--max-w-custom': '31rem' }}
+                    >
+                        {children}
+                    </div>
                 </div>
-            </div>
+            </>
         </ModalTwo>
     );
 };

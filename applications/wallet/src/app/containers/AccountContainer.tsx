@@ -91,6 +91,8 @@ export const AccountContainer = () => {
 
                     {/* Wallet metrics and cta (send, buy, receive) */}
                     <MetricsAndCtas
+                        apiWalletData={wallet}
+                        apiAccount={walletAccount}
                         disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => setWalletReceiveModal(true)}
