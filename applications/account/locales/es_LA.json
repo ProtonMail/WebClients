@@ -500,7 +500,7 @@
         "¿Contraseña olvidada?"
       ],
       "Forgot recovery method?": [
-        "¿Olvidó el método de recuperación?"
+        "¿Método de recuperación olvidado?"
       ],
       "Generate": [
         "Generar"
@@ -6036,17 +6036,6 @@
         "Parte del contenido del calendario es incompatible y no será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -7410,6 +7399,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
+      "please open a support ticket": [
+        "abra un tiquete de soporte"
+      ],
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
       ],
@@ -7818,6 +7810,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
+      ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Este mensaje no llegará al equipo de soporte. Si tiene algún problema con nuestro servicio o necesita más asistencia de nuestra parte ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "El enlace de esta promoción ha expirado."
@@ -8476,6 +8471,17 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10097,7 +10103,7 @@
         "PayPal sin tarjeta de crédito"
       ],
       "perform a password reset from your active session": [
-        "realizar un restablecimiento de contraseña desde su sesión activa"
+        "restablecer la contraseña desde una sesión activa"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -15166,7 +15172,7 @@
         "Para Windows"
       ],
       "Forgot recovery method": [
-        "Olvidó el método de recuperación"
+        "Método de recuperación olvidado"
       ],
       "Forward and auto-reply": [
         "Reenvío y respuesta automática"
