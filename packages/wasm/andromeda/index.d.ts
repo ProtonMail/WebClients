@@ -16,14 +16,6 @@ export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount):
 export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
 export enum WasmKeychainKind {
 /**
 * External keychain, used for deriving recipient addresses.
@@ -36,11 +28,9 @@ export enum WasmKeychainKind {
 }
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
 }
 /**
 */
@@ -54,6 +44,30 @@ export enum WasmLanguage {
   Japanese = 6,
   Korean = 7,
   Spanish = 8,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -85,25 +99,11 @@ export enum WasmScriptType {
 }
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
@@ -231,6 +231,7 @@ export interface WasmApiWalletKey {
     WalletID: string;
     UserKeyID: string;
     WalletKey: string;
+    WalletKeySignature: string;
 }
 
 export interface WasmApiWalletSettings {
@@ -1204,12 +1205,13 @@ export class WasmWalletClient {
 * @param {boolean} has_passphrase
 * @param {string} user_key_id
 * @param {string} wallet_key
+* @param {string} wallet_key_signature
 * @param {string | undefined} [mnemonic]
 * @param {string | undefined} [fingerprint]
 * @param {string | undefined} [public_key]
 * @returns {Promise<WasmApiWalletData>}
 */
-  createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, mnemonic?: string, fingerprint?: string, public_key?: string): Promise<WasmApiWalletData>;
+  createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, wallet_key_signature: string, mnemonic?: string, fingerprint?: string, public_key?: string): Promise<WasmApiWalletData>;
 /**
 * @param {string} wallet_id
 * @param {string} name

@@ -4,8 +4,7 @@ import { compact } from 'lodash';
 
 import { WasmApiBitcoinAddressesCreationPayload } from '@proton/andromeda';
 import { useAddressesKeys } from '@proton/components/hooks';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
-import { IWasmApiWalletData, useWalletApiClients } from '@proton/wallet';
+import { IWasmApiWalletData, signData, useWalletApiClients, verifySignedData } from '@proton/wallet';
 
 import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
@@ -64,11 +63,10 @@ export const useBitcoinAddressPool = ({
                 const computeAddressDataFromIndex = async (index: number) => {
                     const { address } = await wasmAccount.account.getAddress(index);
 
-                    const signature = await CryptoProxy.signMessage({
-                        signingKeys: addressKeys.map((k) => k.privateKey),
-                        textData: address,
-                        detached: true,
-                    });
+                    const signature = await signData(
+                        address,
+                        addressKeys.map((k) => k.privateKey)
+                    );
 
                     return {
                         BitcoinAddressIndex: index,
@@ -110,13 +108,13 @@ export const useBitcoinAddressPool = ({
                             return addr;
                         }
 
-                        const { verified } = await CryptoProxy.verifyMessage({
-                            armoredSignature: addr.Data.BitcoinAddressSignature,
-                            textData: addr.Data.BitcoinAddress,
-                            verificationKeys: addressKeys.map((k) => k.publicKey),
-                        });
+                        const isVerified = await verifySignedData(
+                            addr.Data.BitcoinAddress,
+                            addr.Data.BitcoinAddressSignature,
+                            addressKeys.map((k) => k.publicKey)
+                        );
 
-                        return verified === VERIFICATION_STATUS.SIGNED_AND_VALID ? undefined : addr;
+                        return isVerified ? undefined : addr;
                     })
                 );
 

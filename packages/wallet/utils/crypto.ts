@@ -1,4 +1,4 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto/lib';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import {
     base64StringToUint8Array,
@@ -54,9 +54,9 @@ export const decryptArmoredData = async (armoredMessage: string, keys: PrivateKe
     return data;
 };
 
-export const encryptArmoredData = async (armoredData: string, keys: PrivateKeyReference[]) => {
+export const encryptArmoredData = async (textData: string, keys: PrivateKeyReference[]) => {
     const { message } = await CryptoProxy.encryptMessage({
-        textData: armoredData,
+        textData,
         encryptionKeys: keys,
         signingKeys: keys,
         format: 'armored',
@@ -65,21 +65,59 @@ export const encryptArmoredData = async (armoredData: string, keys: PrivateKeyRe
     return message;
 };
 
-export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
+export const signData = async (textData: string, keys: PrivateKeyReference[]) => {
+    const signature = await CryptoProxy.signMessage({
+        textData,
+        signingKeys: keys,
+        detached: true,
+        format: 'armored',
+    });
+
+    return signature;
+};
+
+export const verifySignedData = async (
+    textData: string,
+    signature: string,
+    keys: (PrivateKeyReference | PublicKeyReference)[]
+) => {
+    const { verified } = await CryptoProxy.verifyMessage({
+        textData,
+        armoredSignature: signature,
+        verificationKeys: keys,
+    });
+
+    return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+};
+
+const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredData(
         walletKey,
         keys.map((k) => k.privateKey)
     );
+
+    const isKeyVerified = await verifySignedData(
+        decryptedEntropy,
+        walletKeySignature,
+        keys.map((k) => k.publicKey)
+    );
+
+    if (!isKeyVerified) {
+        throw new Error('Key could not be verified');
+    }
+
+    return decryptedEntropy;
+};
+
+export const decryptWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
+    const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
 
     const binaryEntropy = stringToUint8Array(decryptedEntropy);
     return getSymmetricKey(binaryEntropy);
 };
 
-export const decryptWalletKeyForHmac = async (walletKey: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptArmoredData(
-        walletKey,
-        keys.map((k) => k.privateKey)
-    );
+export const decryptWalletKeyForHmac = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
+    const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
 
     const binaryEntropy = stringToUint8Array(decryptedEntropy);
 
@@ -118,21 +156,23 @@ export const encryptWalletDataWithWalletKey = async (dataToEncrypt: string[], ke
  *
  * @param dataToEncrypt an array containing the data to encrypt with the generated wallet key
  * @param userKey user key to use to encrypt generated wallet key
- * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key and the id of the user key used to encrypt the wallet key
+ * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key, its signature and the id of the user key used to encrypt the wallet key
  */
 export const encryptWalletData = async (
     dataToEncrypt: string[],
     userKey: DecryptedKey
-): Promise<[string[], [string, string]]> => {
+): Promise<[string[], [string, string, string]]> => {
     const entropy = generateEntropy(KEY_LENGTH);
     const key = await getSymmetricKey(entropy);
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
     const strEntropy = uint8ArrayToString(entropy);
+
+    const entropySignature = await signData(strEntropy, [userKey.privateKey]);
     const encryptedEntropy = await encryptArmoredData(strEntropy, [userKey.privateKey]);
 
-    return [encryptedData, [encryptedEntropy, userKey.ID]];
+    return [encryptedData, [encryptedEntropy, entropySignature, userKey.ID]];
 };
 
 /**
@@ -140,12 +180,9 @@ export const encryptWalletData = async (
  *
  * @param dataToDecrypt an array containing wallet's data to decrypt with provided walletKey
  * @param walletKey (a.k.a encrypted entropy) used to encrypt wallet's data
- * @param keys user keys, needed to decrypt entropy
  * @returns an array containing wallet's decrypted wallet
  */
-export const decryptWalletData = async (dataToDecrypt: (string | null)[], walletKey: string, keys: DecryptedKey[]) => {
-    const key = await decryptWalletKey(walletKey, keys);
-
+export const decryptWalletData = async (dataToDecrypt: (string | null)[], walletKey: CryptoKey) => {
     const decryptedData = await Promise.all(
         dataToDecrypt.map(async (data) => {
             if (!data) {
@@ -155,7 +192,7 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
             try {
                 const decodedEncryptedMnemonic = base64StringToUint8Array(data);
 
-                const decryptedBinaryMnemonic = await decryptData(key, decodedEncryptedMnemonic);
+                const decryptedBinaryMnemonic = await decryptData(walletKey, decodedEncryptedMnemonic);
                 return uint8ArrayToString(decryptedBinaryMnemonic);
             } catch (e) {
                 return null;

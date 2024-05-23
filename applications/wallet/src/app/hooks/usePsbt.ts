@@ -7,7 +7,7 @@ import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
-import { IWasmApiWalletData, decryptWalletKey, encryptWalletDataWithWalletKey } from '@proton/wallet';
+import { IWasmApiWalletData, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';
@@ -65,7 +65,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 account?.ID
             );
 
-            if (!psbt || !userKeys || !wasmAccount || isUndefined(network) || !wallet?.WalletKey) {
+            if (!psbt || !userKeys || !wasmAccount || isUndefined(network) || !wallet.WalletKey?.DecryptedKey) {
                 return;
             }
 
@@ -81,13 +81,10 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 format: 'armored',
             }).catch(() => ({ message: null }));
 
-            const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys).catch(() => {
-                throw new Error(c('Wallet Send').t`Could not decrypt wallet key`);
-            });
-
-            const [encryptedNoteToSelf] = await encryptWalletDataWithWalletKey([noteToSelf], decryptedKey).catch(() => [
-                null,
-            ]);
+            const [encryptedNoteToSelf] = await encryptWalletDataWithWalletKey(
+                [noteToSelf],
+                wallet.WalletKey.DecryptedKey
+            ).catch(() => [null]);
 
             const txId = await blockchainClient
                 .broadcastPsbt(
