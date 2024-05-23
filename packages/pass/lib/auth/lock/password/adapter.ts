@@ -51,11 +51,13 @@ export const passwordLockAdapterFactory = (
          * with SRP. Only then should we compute the offline components.
          * Repersists the session with the `offlineKD` encrypted in the session
          * blob. As such creating a password lock is online-only. */
-        create: async ({ secret, ttl }) => {
+        create: async ({ secret, ttl }, onBeforeCreate) => {
             logger.info(`[PasswordLock] creating password lock`);
 
             const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(c('Error').t`Wrong password`);
+
+            await onBeforeCreate?.();
 
             if (!authStore.hasOfflinePassword()) {
                 const { offlineConfig, offlineKD } = await getOfflineComponents(secret);

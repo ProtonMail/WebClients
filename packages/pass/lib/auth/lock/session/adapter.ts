@@ -42,7 +42,9 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
         /** Creates a session lock. Automatically updates the authentication
          * store and immediately persists the session on success. */
-        create: async ({ secret, ttl }) => {
+        create: async ({ secret, ttl }, onBeforeCreate) => {
+            await onBeforeCreate?.();
+
             logger.info(`[SessionLock] creating session lock`);
             const token = await createSessionLock(secret, ttl);
 
