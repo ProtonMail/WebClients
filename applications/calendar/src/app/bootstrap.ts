@@ -17,12 +17,10 @@ import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guest
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
-import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
@@ -30,6 +28,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { embeddedDrawerAppInfos } from './helpers/drawer';
 import locales from './locales';
 import { extendStore, setupStore } from './store/store';
 
@@ -38,12 +37,11 @@ const getAppContainer = () =>
         (result) => result.default
     );
 
+const { isIframe, isDrawerApp, parentApp } = embeddedDrawerAppInfos;
+
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
-    const isIframe = getIsIframe();
-    const parentApp = getAppFromPathnameSafe(pathname);
-    const isDrawerApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
 
     const api = isDrawerApp ? createDrawerApi({ parentApp, appVersion: config.APP_VERSION }) : createApi({ config });
     const silentApi = getSilentApi(api);
@@ -78,7 +76,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const appContainerPromise = getAppContainer();
 
         const sessionResult =
-            (isDrawerApp
+            (isDrawerApp && parentApp
                 ? await bootstrap.loadDrawerSession({
                       authentication,
                       api,

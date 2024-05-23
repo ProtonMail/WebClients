@@ -59,6 +59,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import unary from '@proton/utils/unary';
 
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
+import { embeddedDrawerAppInfos } from '../../helpers/drawer';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
@@ -287,11 +288,15 @@ const CalendarContainer = ({
     const utcDate = customUtcDate || utcDefaultDate;
 
     const defaultView = getDefaultView(calendarUserSettings);
-    const requestedView = customView || defaultView;
+
     const view = (() => {
-        if (SUPPORTED_VIEWS_IN_DRAWER.includes(requestedView)) {
-            return requestedView;
+        const requestedView = customView || defaultView;
+        const { view: drawerView, isDrawerApp } = embeddedDrawerAppInfos;
+
+        if (isDrawerApp) {
+            return drawerView;
         }
+
         if (isSmallViewport) {
             return requestedView === SEARCH ? SEARCH : WEEK;
         }
