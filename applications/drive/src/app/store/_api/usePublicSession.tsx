@@ -4,10 +4,11 @@ import { useApi } from '@proton/components';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
 
+import { getLastActivePersistedUserSessionUID } from '../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -51,6 +52,13 @@ function usePublicSessionProvider() {
         initHandshake: SRPHandshakeInfo
     ): Promise<{ AccessToken: string; UID: string }> => {
         const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = initHandshake;
+
+        /*
+            If user is logged-in, re-use the current session UID
+            This inform the backend of who is accessing the public session
+        */
+        const UID = getLastActivePersistedUserSessionUID();
+
         const response = await srpAuth({
             api,
             credentials: { password },
@@ -61,7 +69,10 @@ function usePublicSessionProvider() {
                 Salt: UrlPasswordSalt,
                 SRPSession,
             },
-            config: queryShareURLAuth(token),
+            config: {
+                ...(UID && { headers: getUIDHeaders(UID) }),
+                ...queryShareURLAuth(token),
+            },
         });
         return response.json();
     };
