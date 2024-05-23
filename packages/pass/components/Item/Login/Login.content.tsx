@@ -17,16 +17,19 @@ import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 import { PasskeyContentModal } from '../Passkey/Passkey.modal';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
     const { data: item, shareId, itemId } = revision;
     const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
+    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const {
         metadata: { note },
@@ -38,6 +41,8 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
     const passwordStrength = usePasswordStrength(password);
     const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
+    const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
+    const labelWithFeatureFlag = usernameSplitEnabled ? c('Label').t`Email` : c('Label').t`Username`;
 
     return (
         <>
@@ -58,8 +63,8 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
             <FieldsetCluster mode="read" as="div">
                 <ValueControl
                     clickToCopy
-                    icon={relatedAlias ? 'alias' : 'envelope'}
-                    label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
+                    icon={relatedAlias ? 'alias' : iconWithFeatureFlag}
+                    label={relatedAlias ? c('Label').t`Email (alias)` : labelWithFeatureFlag}
                     value={emailDisplay}
                 />
 

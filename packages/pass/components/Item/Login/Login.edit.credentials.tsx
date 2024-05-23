@@ -50,6 +50,9 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
 
     const { acknowledge } = useSpotlight();
 
+    const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
+    const labelWithFeatureFlag = usernameSplitEnabled ? c('Label').t`Email` : c('Label').t`Username`;
+
     const addUsernameButton = (
         <ButtonLike
             as="div"
@@ -96,15 +99,21 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 label={(() => {
                     if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
                     if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
-                    return c('Label').t`Email`;
+                    return labelWithFeatureFlag;
                 })()}
-                placeholder={c('Placeholder').t`Enter email`}
+                placeholder={
+                    usernameSplitEnabled ? c('Placeholder').t`Enter email` : c('Placeholder').t`Enter email or username`
+                }
                 component={TextField}
                 itemType="login"
                 icon={
                     <>
-                        <Icon name={aliasModal.usernameIsAlias ? 'alias' : 'envelope'} size={5} className="mt-2" />
-                        {!showUsername && (
+                        <Icon
+                            name={aliasModal.usernameIsAlias ? 'alias' : iconWithFeatureFlag}
+                            size={5}
+                            className="mt-2"
+                        />
+                        {usernameSplitEnabled && !showUsername && (
                             <Spotlight
                                 content={
                                     <>
