@@ -383,7 +383,10 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
         setDownloadedSize(progressInfo.progress);
         setTotalSize(progressInfo.total);
     }, [getDownloadsLinksProgresses, rootItem.linkId]);
-    const { state: expanded, toggle: toggleExpanded } = useToggle();
+
+    // Transfer manager can be minimized only when it is in progress.
+    // When user clicks on it, but it is always expanded again when its done
+    const { state: expanded, toggle: toggleExpanded } = useToggle(true);
 
     // Enrich link date with download progress. Downloads changes only when
     // status changes, not the progress, so if download is active, it needs
