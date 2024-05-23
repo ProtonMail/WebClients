@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import {
     Icon,
     SidebarListItem,
@@ -109,12 +110,18 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount }: WalletsSidebarLi
 };
 
 interface WalletsSidebarListProps {
+    loadingApiWalletsData: boolean;
     apiWalletsData?: IWasmApiWalletData[];
     onAddWallet: () => void;
     onAddWalletAccount: () => void;
 }
 
-export const WalletsSidebarList = ({ apiWalletsData, onAddWallet, onAddWalletAccount }: WalletsSidebarListProps) => {
+export const WalletsSidebarList = ({
+    loadingApiWalletsData,
+    apiWalletsData,
+    onAddWallet,
+    onAddWalletAccount,
+}: WalletsSidebarListProps) => {
     return (
         <SidebarListItem className="shrink overflow-auto">
             <div
@@ -125,24 +132,30 @@ export const WalletsSidebarList = ({ apiWalletsData, onAddWallet, onAddWalletAcc
                     {c('Wallet Sidebar').t`Wallets`}
                 </div>
 
-                <CoreButton shape="ghost" onClick={onAddWallet}>
+                <CoreButton shape="ghost" onClick={onAddWallet} disabled={loadingApiWalletsData}>
                     <Icon name="plus-circle" />
                 </CoreButton>
             </div>
 
-            <ul className="unstyled mt-4">
-                {apiWalletsData?.map((wallet, index) => {
-                    return (
-                        <SidebarListItem
-                            key={wallet.Wallet.ID}
-                            className={clsx('mt-1', getThemeByIndex(index))}
-                            style={{ padding: '0' }}
-                        >
-                            <WalletsSidebarListItem wallet={wallet} onAddWalletAccount={onAddWalletAccount} />
-                        </SidebarListItem>
-                    );
-                })}
-            </ul>
+            {loadingApiWalletsData ? (
+                <div className="flex">
+                    <CircleLoader className="color-primary mx-auto my-5" />
+                </div>
+            ) : (
+                <ul className="unstyled mt-4">
+                    {apiWalletsData?.map((wallet, index) => {
+                        return (
+                            <SidebarListItem
+                                key={wallet.Wallet.ID}
+                                className={clsx('mt-1', getThemeByIndex(index))}
+                                style={{ padding: '0' }}
+                            >
+                                <WalletsSidebarListItem wallet={wallet} onAddWalletAccount={onAddWalletAccount} />
+                            </SidebarListItem>
+                        );
+                    })}
+                </ul>
+            )}
         </SidebarListItem>
     );
 };

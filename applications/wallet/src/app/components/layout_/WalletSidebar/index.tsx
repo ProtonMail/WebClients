@@ -22,6 +22,7 @@ import './WalletSidebar.scss';
 
 interface Props {
     expanded?: boolean;
+    loadingApiWalletsData?: boolean;
     apiWalletsData?: IWasmApiWalletData[];
     onToggleExpand?: () => void;
     onAddWallet: () => void;
@@ -32,12 +33,14 @@ const { PROTONWALLET: PROTONWALLET_APP } = APPS;
 
 const WalletSidebar = ({
     expanded = false,
+    loadingApiWalletsData = false,
     apiWalletsData,
     onAddWallet,
     onAddWalletAccount,
     onToggleExpand,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <Sidebar
             app={PROTONWALLET_APP}
@@ -70,6 +73,7 @@ const WalletSidebar = ({
                             )}
 
                             <WalletsSidebarList
+                                loadingApiWalletsData={loadingApiWalletsData}
                                 apiWalletsData={apiWalletsData}
                                 onAddWalletAccount={onAddWalletAccount}
                                 onAddWallet={onAddWallet}

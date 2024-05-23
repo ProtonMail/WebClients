@@ -39,6 +39,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
             sidebar={
                 <WalletSidebar
                     expanded={expanded}
+                    loadingApiWalletsData={loadingApiWalletsData}
                     apiWalletsData={decryptedApiWalletsData}
                     onToggleExpand={toggleExpanded}
                     onAddWallet={() => {
