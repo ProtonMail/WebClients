@@ -101,7 +101,7 @@
         "Cancelar subscrição"
       ],
       "Cancel upload": [
-        "Cancelar envio"
+        "Cancelar o envio"
       ],
       "Change": [
         "Alterar"
@@ -183,6 +183,9 @@
       ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
+      ],
+      "Copy invite link": [
+        "Copiar o link de convite"
       ],
       "Copy link": [
         "Copiar ligação"
@@ -304,7 +307,7 @@
         "Definições de e-mail"
       ],
       "Empty trash": [
-        "Esvaziar lixo"
+        "Esvaziar lixeira"
       ],
       "enable desktop notifications": [
         "ativar as notificações"
@@ -359,6 +362,9 @@
       ],
       "Go to label": [
         "Ir para a etiqueta"
+      ],
+      "Go to my files": [
+        "Ir para os meus ficheiros"
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
@@ -484,10 +490,16 @@
         "Mover para a pasta"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "New": [
         "Novo"
+      ],
+      "New document": [
+        "Novo documento"
+      ],
+      "New folder": [
+        "Nova pasta"
       ],
       "New message": [
         "Nova mensagem"
@@ -509,6 +521,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Abrir no Docs"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -576,6 +591,9 @@
       "Remove gift code": [
         "Remover código de oferta"
       ],
+      "Remove me": [
+        "Remover-me"
+      ],
       "Rename": [
         "Renomear"
       ],
@@ -600,6 +618,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Resend invite": [
+        "Reenviar o convite"
+      ],
       "Reset to default": [
         "Reposição predefinida"
       ],
@@ -610,13 +631,13 @@
         "Reiniciar transferência"
       ],
       "Restart upload": [
-        "Reiniciar envio"
+        "Reiniciar o envio"
       ],
       "Restore": [
         "Restaurar"
       ],
       "Restore from trash": [
-        "Restaurar do lixo"
+        "Restaurar da lixeira"
       ],
       "Restore this version": [
         "Restaurar esta versão"
@@ -631,7 +652,7 @@
         "Retomar transferência"
       ],
       "Resume upload": [
-        "Retomar envio"
+        "Retomar o envio"
       ],
       "Retry": [
         "Repetir"
@@ -641,6 +662,15 @@
       ],
       "Save changes": [
         "Guardar as alterações"
+      ],
+      "Scan & Download": [
+        "Analisar e transferir"
+      ],
+      "Scan & Download (${ count })": [
+        "Analisar e transferir (${ count })"
+      ],
+      "Scan & Download all": [
+        "Analisar e transferir todos"
       ],
       "Search": [
         "Pesquisar"
@@ -790,19 +820,19 @@
         "Actualizar agora"
       ],
       "Upload anyway": [
-        "Carregar de qualquer forma"
+        "Enviar de qualquer forma"
       ],
       "Upload file": [
-        "Enviar ficheiro"
+        "Enviar o ficheiro"
       ],
       "Upload folder": [
-        "Enviar pasta"
+        "Enviar a pasta"
       ],
       "Upload photos": [
-        "Carregar fotos"
+        "Enviar fotos"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -843,6 +873,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contacto.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
+      ],
+      "Your 3 GB bonus": [
+        "O seu bónus de 3 GB"
       ],
       "Zoom in": [
         "Ampliar"
@@ -1018,6 +1051,11 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicação para desktop do ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2103,6 +2141,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Poupe tempo enviando e-mails ou convites a todos de uma só vez, uma funcionalidade premium entre muitas outras. Actualize hoje mesmo."
       ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Defina um método de recuperação para evitar a perda de acesso à sua conta."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
@@ -2133,6 +2174,15 @@
       "Bugs or quality issue": [
         "Erros ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não desejo partilhar o motivo."
+      ],
+      "I found a cheaper VPN": [
+        "Encontrei uma VPN mais barata."
+      ],
+      "I found a VPN with better features": [
+        "Encontrei uma VPN com melhores funcionalidades."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
@@ -2141,6 +2191,9 @@
       ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outra razão (comente)"
       ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
@@ -2182,6 +2235,11 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2230,6 +2288,14 @@
         "LOCAL:\n${ eventLocation }"
       ]
     },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aceitou o seu convite para ${ eventTitle }."
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } recusou o seu convite para ${ eventTitle }."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancelamento de um evento em ${ formattedStart }"
@@ -2256,6 +2322,12 @@
       ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcionalidades pagas ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -2370,7 +2442,7 @@
         "Erro ao desencriptar um computador"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "O ficheiro \"${ item.name }\" não pode ser carregado devido ao erro \"${ error }\"."
+        "O ficheiro \"${ item.name }\" não pode ser enviado devido ao erro \"${ error }\"."
       ],
       "File \"${ name }\" is already downloading": [
         "O ficheiro \"${ name }\" já está a ser transferido."
@@ -2590,7 +2662,7 @@
         "O pagamento mínimo que aceitamos é ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "A nova revisão do ficheiro original ainda não foi carregada. Tente novamente mais tarde."
+        "A nova revisão do ficheiro original ainda não foi enviada. Tente novamente mais tarde."
       ],
       "The original file has missing active revision": [
         "O ficheiro original tem uma revisão ativa em falta."
@@ -2602,7 +2674,7 @@
         "O ficheiro original tem uma chave de sessão em falta."
       ],
       "The original file is not uploaded yet, please try again later": [
-        "O ficheiro original ainda não foi carregado. Tente novamente mais tarde"
+        "O ficheiro original ainda não foi enviado. Tente novamente mais tarde"
       ],
       "The original folder not found": [
         "A pasta original não foi encontrada."
@@ -2666,7 +2738,7 @@
         "Tem de definir um nome"
       ],
       "Your browser does not support uploading folders": [
-        "O seu navegador não suporta o carregamento de pastas."
+        "O seu navegador não suporta o envio de pastas."
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
@@ -2677,13 +2749,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "Ocorreu um erro ao enviar o seu ficheiro ${ formattedFilename }. Só são permitidos formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
@@ -2721,13 +2793,13 @@
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf selecionado"
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf foi selecionado."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro selecionado."
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3208,7 +3280,7 @@
     },
     "Header": {
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Security Center": [
         "Centro de segurança"
@@ -3312,7 +3384,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Contato ${ contactId }: "
+        "Contacto ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -3514,8 +3586,8 @@
         "${ activeDownloadsCount } transferências em curso (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } transferência em curso (${ uploadProgress }%)",
-        "${ activeUploadsCount } transferências em curso (${ uploadProgress }%)"
+        "${ activeUploadsCount } envio em curso (${ uploadProgress }%)",
+        "${ activeUploadsCount } envios em curso (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
@@ -3591,8 +3663,8 @@
         "${ groupCounts } grupos encontrados"
       ],
       "${ nbFile } encrypted file": [
-        "${ nbFile } ficheiro cifrado",
-        "${ nbFile } ficheiros cifrados"
+        "${ nbFile } ficheiro encriptado",
+        "${ nbFile } ficheiros encriptados"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
@@ -3694,6 +3766,9 @@
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
       ],
+      "All encrypted files": [
+        "Todos os ficheiros encriptados"
+      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -3702,7 +3777,7 @@
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
-        "Tente também procurar no lixo."
+        "Tente também procurar na lixeira."
       ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
@@ -3738,16 +3813,16 @@
         "Tem certeza de que deseja descartar a importação?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
+        "Tem a certeza de que deseja esvaziar a lixeira e eliminar permanentemente todos os itens?"
       ],
       "Are you sure you want to permanently delete": [
         "Tem certeza de que deseja eliminar permanentemente"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Tem certeza de que deseja eliminar permanentemente \"${ itemName }\" do lixo?"
+        "Tem certeza de que deseja eliminar permanentemente \"${ itemName }\" da lixeira?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Tem a certeza de que deseja eliminar permanentemente os itens selecionados do lixo?"
+        "Tem a certeza de que deseja eliminar permanentemente os itens selecionados da lixeira?"
       ],
       "Attention required": [
         "Atenção Requerida"
@@ -3893,10 +3968,10 @@
         "Eliminar as unidades bloqueadas"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "A assinatura digital foi verificada. Este ficheiro foi carregado de forma segura por ${ emailAddress }."
+        "A assinatura digital foi verificada. Este ficheiro foi enviado de forma segura por ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "A assinatura digital foi verificada. Esta pasta foi carregada de forma segura por ${ emailAddress }."
+        "A assinatura digital foi verificada. Esta pasta foi enviada de forma segura por ${ emailAddress }."
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -3947,7 +4022,7 @@
         "A transferir"
       ],
       "Drop file here to upload": [
-        "Solte os ficheiros aqui para os carregar"
+        "Solte os ficheiros aqui para os enviar"
       ],
       "Drop files here": [
         "Largue os ficheiros aqui"
@@ -4046,6 +4121,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "O ficheiro não tem assinatura. Não é possível verificar quem carregou ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Análise de ficheiros em Drive"
+      ],
       "File will not be updated": [
         "O ficheiro não será atualizado."
       ],
@@ -4065,13 +4143,13 @@
         "A pasta não tem assinatura. Não é possível verificar quem carregou ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "A pasta não será enviada"
+        "A pasta não será enviada."
       ],
       "Folders you sync from your computer will appear here.": [
         "As pastas que sincronizar a partir do seu computador aparecerão aqui."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Para obter melhores resultados, evite atividades de streaming e de memória intensiva ou divida o carregamento em lotes mais pequenos."
+        "Para obter melhores resultados, evite atividades de streaming e de memória intensiva ou divida o envio em lotes menores."
       ],
       "from the version history?": [
         "do histórico de versões?"
@@ -4083,7 +4161,7 @@
         "Obtenha a aplicação de ‘desktop’ para sincronizar ficheiros a partir do seu computador."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Vá a \"Os meus ficheiros\" e envie alguns primeiro."
+        "Vá a «Os meus ficheiros» e envie alguns primeiro."
       ],
       "here": [
         "aqui"
@@ -4159,10 +4237,10 @@
         "Ligação à Internet reposta."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece que tentou recentemente carregar ${ uploadName }. Se o carregamento falhou, ${ replaceFile }. Se o carregamento ainda estiver em curso, a substituição do ficheiro cancelará o carregamento em curso."
+        "Parece que tentou recentemente enviar ${ uploadName }. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em curso, a substituição do ficheiro cancelará o envio em curso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Os itens no lixo permanecerão aqui até serem eliminados permanentemente."
+        "Os itens na lixeira permanecerão aqui até serem eliminados permanentemente."
       ],
       "It’s easy and secure": [
         "É fácil e seguro"
@@ -4279,13 +4357,13 @@
         "Nenhuma pasta sincronizada"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Nenhuma das chaves carregadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative \"Encriptar os e-mails\"."
+        "Nenhuma das chaves enviadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative «Encriptar os e-mails»."
       ],
       "Not a valid URL": [
         "Não é um URL válido"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nem todos os ficheiros foram transferidos. Tente carregar ou descarregar os ficheiros novamente."
+        "Nem todos os ficheiros foram transferidos. Tente enviar ou transferir os ficheiros novamente."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: os dados podem ainda estar disponíveis localmente em dispositivos onde tenha instalado ${ DRIVE_APP_NAME }."
@@ -4472,6 +4550,9 @@
       "Retry now": [
         "Tente novamente agora"
       ],
+      "Scan issue": [
+        "Problema de análise"
+      ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada neste navegador."
       ],
@@ -4488,7 +4569,7 @@
         "Selecione todos os itens para"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Selecione um ficheiro ou pasta carregado e crie uma ligação para o mesmo."
+        "Selecione um ficheiro ou pasta enviados e crie uma ligação para o mesmo."
       ],
       "Select item": [
         "Selecione o item"
@@ -4548,10 +4629,10 @@
         "Ignorado"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Alguns ficheiros não foram transferidos. Tente descarregar os ficheiros novamente."
+        "Alguns ficheiros não foram transferidos. Tente transferir os ficheiros novamente."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Alguns ficheiros não puderam ser carregados. Tente carregar os ficheiros novamente."
+        "Alguns ficheiros não puderam ser enviados. Tente enviar os ficheiros novamente."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns dos seus ficheiros já não estão acessíveis. Restaure o acesso aos ficheiros. ${ StartRecoveryButton }"
@@ -4651,10 +4732,10 @@
         "Isto substituirá a pasta existente pelo ficheiro."
       ],
       "This will upload a new version of the file": [
-        "Isto carregará uma nova versão do ficheiro."
+        "Isto enviará uma nova versão do ficheiro."
       ],
       "This will upload a new version of the folder": [
-        "Isto carregará uma nova versão da pasta."
+        "Isto enviará uma nova versão da pasta."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
@@ -4667,6 +4748,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Para ajudar a protegê-lo, ${ DRIVE_APP_NAME } pode analisar e bloquear ficheiros maliciosos. Ainda deve transferir ficheiros penas de pessoas em quem confia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
@@ -4708,10 +4792,10 @@
         "A transferência foi ignorada para a pasta \"${ folderName }\"."
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "Trash is empty": [
-        "A pasta de lixo está vazia."
+        "A pasta de lixeira está vazia."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
@@ -4747,7 +4831,7 @@
         "Enviado"
       ],
       "Uploading": [
-        "A carregar"
+        "A enviar"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
@@ -4773,6 +4857,9 @@
       "Version is restored": [
         "A versão foi restaurada."
       ],
+      "Version number successfully copied to clipboard": [
+        "O número de versão foi copiado para a área de transferência."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -4783,7 +4870,7 @@
         "Aviso"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
-        "Estamos a ter problemas técnicos. O carregamento de novas fotografias está temporariamente desativado."
+        "Estamos a ter problemas técnicos. O envio de novas fotografias está temporariamente desativado."
       ],
       "We couldn’t process your payment.": [
         "Não é possível realizar o pagamento."
@@ -4895,6 +4982,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Tem de ter um cartão de crédito ou uma conta bancária vinculados à sua conta PayPal. Se não o tem, clique no botão abaixo."
       ],
+      "You need access": [
+        "É necessário acesso"
+      ],
       "You will lose access to Plus features on this date.": [
         "Perderá o acesso a funcionalidades Plus nesta data."
       ],
@@ -4914,10 +5004,10 @@
         "Atingiu o número máximo de endereços no grupo de contacto."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -5189,7 +5279,7 @@
         "Confirmar a palavra-passe"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
@@ -5510,6 +5600,9 @@
       "Set recovery method": [
         "Definir um método de recuperação"
       ],
+      "Shared by": [
+        "Partilhado por"
+      ],
       "Shared on": [
         "Partilhado em"
       ],
@@ -5580,10 +5673,10 @@
         "Desbloquear mais tarde"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Enviar a imagem"
       ],
       "Upload your first file": [
-        "Carregue o seu primeiro ficheiro"
+        "Envie o seu primeiro ficheiro"
       ],
       "VAT": [
         "IVA"
@@ -5709,7 +5802,7 @@
         "mantenha-se mais seguro conectado"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -5780,16 +5873,19 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+        "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "mailtrial2024: Info": {
@@ -5798,6 +5894,11 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Message": {
@@ -5827,6 +5928,9 @@
       ],
       "AbiWord document": [
         "Documento AbiWord"
+      ],
+      "Android Package": [
+        "Pacote Android"
       ],
       "Archive document": [
         "Arquivo de documento"
@@ -6080,10 +6184,10 @@
         "Segurança avançada de partilha"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixo"
+        "Eliminar automaticamente mensagens de spam e de lixeira"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -6557,7 +6661,7 @@
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A criptografia de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
+        "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A encriptação de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
@@ -6661,31 +6765,31 @@
         "\"${ name }\" criado"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanentemente eliminado do lixo"
+        "\"${ name }\" permanentemente eliminado da lixeira"
       ],
       "\"${ name }\" failed to be created": [
         "Erro ao criar \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "Erro ao eliminar \"${ name }\" permanentemente do lixo"
+        "Erro ao eliminar \"${ name }\" permanentemente da lixeira"
       ],
       "\"${ name }\" failed to be moved": [
         "Erro ao mover \"${ name }\""
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "Erro ao mover \"${ name }\" para o lixo"
+        "Erro ao mover \"${ name }\" para a lixeira"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" do lixo"
+        "Erro ao restaurar \"${ name }\" da lixeira"
       ],
       "\"${ name }\" failed to be saved": [
         "Erro ao guardar \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" movido para o lixo"
+        "\"${ name }\" movido para a lixeira"
       ],
       "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado do lixo"
+        "\"${ name }\" restaurado da lixeira"
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
@@ -6704,32 +6808,32 @@
         "Erro ao desencriptar ${ count } itens"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } item permanentemente eliminado do lixo",
-        "${ numberOfItems } itens permanentemente eliminados do lixo"
+        "${ numberOfItems } item permanentemente eliminado da lixeira",
+        "${ numberOfItems } itens permanentemente eliminados da lixeira"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
-        "Erro ao eliminar ${ numberOfItems } itens permanentemente do lixo"
+        "Erro ao eliminar ${ numberOfItems } item permanentemente da lixeira",
+        "Erro ao eliminar ${ numberOfItems } itens permanentemente da lixeira"
       ],
       "${ numberOfItems } item failed to be moved": [
         "Erro ao mover ${ numberOfItems } item",
         "Erro ao mover ${ numberOfItems } itens"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "Erro ao mover ${ numberOfItems } item para o lixo",
-        "Erro ao mover ${ numberOfItems } itens para o lixo"
+        "Erro ao mover ${ numberOfItems } item para a lixeira",
+        "Erro ao mover ${ numberOfItems } itens para a lixeira"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "Erro ao restaurar ${ numberOfItems } ficheiro do lixo",
-        "Erro ao restaurar ${ numberOfItems } ficheiros do lixo"
+        "Erro ao restaurar ${ numberOfItems } ficheiro da lixeira",
+        "Erro ao restaurar ${ numberOfItems } ficheiros da lixeira"
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } item movido para o lixo",
-        "${ numberOfItems } itens movidos para o lixo"
+        "${ numberOfItems } item movido para a lixeira",
+        "${ numberOfItems } itens movidos para a lixeira"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } item restaurado do lixo",
-        "${ numberOfItems } itens restaurados do lixo"
+        "${ numberOfItems } item restaurado da lixeira",
+        "${ numberOfItems } itens restaurados da lixeira"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item movido com sucesso",
@@ -6750,7 +6854,7 @@
         "${ reason } foi ativado"
       ],
       "All items will soon be permanently deleted from trash": [
-        "Todos os itens serão permanentemente eliminados do lixo"
+        "Todos os itens serão permanentemente eliminados da lixeira"
       ],
       "Cannot load link": [
         "Não é possível carregar a ligação."
@@ -6780,7 +6884,7 @@
         "A pesquisa encriptada foi ativada."
       ],
       "Failed to download files: ${ err }": [
-        "Erro ao descarregar os ficheiros: ${ err }"
+        "Erro ao transferir os ficheiros: ${ err }"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
@@ -6789,14 +6893,14 @@
         "Não foi possível abrir o documento."
       ],
       "Failed to upload files: ${ err }": [
-        "Erro ao carregar ficheiros: ${ err }"
+        "Erro ao enviar ficheiros: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "O ficheiro ou pasta \"${ filename }\" e ${ count } outro já estão a ser carregados",
-        "O ficheiro ou pasta \"${ filename }\" e ${ count } outros já estão a ser carregados"
+        "O ficheiro ou pasta «${ filename }» e ${ count } outro já são enviados.",
+        "O ficheiro ou pasta «${ filename }» e ${ count } outros já são enviados."
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "O ficheiro ou pasta \"${ filename }\" já está a ser carregado."
+        "O ficheiro ou pasta «${ filename }» já está a enviar."
       ],
       "File or folder is missing a name": [
         "Ficheiro ou pasta sem nome"
@@ -6820,7 +6924,7 @@
         "Mover ${ n } itens"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        "Não há espaço suficiente para carregar ${ formattedTotal }."
+        "Não há espaço suficiente para enviar ${ formattedTotal }."
       ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta principal"
@@ -6841,7 +6945,7 @@
         "A ligação ao seu item foi eliminada."
       ],
       "Trash failed to be emptied": [
-        "Erro ao esvaziar o lixo"
+        "Erro ao esvaziar a lixeira"
       ],
       "Your old files will be deleted in 72 hours": [
         "Os seus ficheiros antigos serão eliminados em 72 horas."
@@ -6893,7 +6997,7 @@
         "Basta concluir os seguintes passos dentro de ${ expiresInDays } dias:"
       ],
       "Upload a file": [
-        "Carregar um ficheiro"
+        "Enviar um ficheiro"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "O seu cofre em linha de confiança para os seus documentos vitais e as suas memórias preciosas."
@@ -7019,6 +7123,9 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma forma de o contactar"
+      ],
+      "Choose password": [
+        "Escolher uma palavra-passe"
       ],
       "E.g., ": [
         "Ex., "
@@ -7274,12 +7381,26 @@
         "Esta permissão expira em ${ timeRemaining.inHours } hora",
         "Esta permissão expira em ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
@@ -7644,6 +7765,9 @@
       "${ app } storage": [
         "${ app } de armazenamento"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% cheio"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
       ],
@@ -7651,10 +7775,13 @@
         "contacte o seu administrador"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Para continuar a carregar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
+        "Para continuar a enviar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar ficheiros, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
@@ -7664,6 +7791,9 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "O seu ${ storage } está cheio. ${ cta }"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
@@ -7749,10 +7879,13 @@
         "e mais 15 funcionalidades premium"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
       ],
       "Support our mission": [
         "Apoie a nossa missão"
@@ -7765,6 +7898,9 @@
       ],
       "We don't sell your data": [
         "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -7834,8 +7970,8 @@
         "Código enviado para ${ methodTo }"
       ],
       "Contact deleted": [
-        "Contato eliminado",
-        "Contatos eliminados"
+        "Contacto eliminado",
+        "Contactos eliminados"
       ],
       "Contact group deleted": [
         "Grupo de contactos eliminado",
@@ -7845,7 +7981,7 @@
         "Contacto guardado"
       ],
       "Contacts deleted": [
-        "Contatos eliminados"
+        "Contactos eliminados"
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
@@ -8036,8 +8172,8 @@
         "${ numberOfFailedTransfer.total } transferências falharam"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } erro de carregamento",
-        "${ numberOfFailedTransfer.total } erros de carregamento"
+        "${ numberOfFailedTransfer.total } erro de envio",
+        "${ numberOfFailedTransfer.total } erros de envio"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -8134,7 +8270,7 @@
         "Grupo de contactos"
       ],
       "Contacts": [
-        "Contatos"
+        "Contactos"
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
@@ -8253,7 +8389,7 @@
         "Definições de e-mail"
       ],
       "Empty trash": [
-        "Esvaziar lixo"
+        "Esvaziar lixeira"
       ],
       "Enable 2FA": [
         "Ativar A2F"
@@ -8393,13 +8529,13 @@
         "Palavra-passe"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment verification": [
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Falha na verificação PayPal"
+        "Erro na verificação PayPal"
       ],
       "Performance might be affected": [
         "O desempenho pode ser afetado."
@@ -8488,6 +8624,9 @@
       "Settings": [
         "Definições"
       ],
+      "Share ${ name }": [
+        "Partilhar ${ name }"
+      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -8555,7 +8694,7 @@
         "Tamanho total"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "Type": [
         "Tipo"
@@ -8570,10 +8709,10 @@
         "Enviado por"
       ],
       "Uploading a large file or folder": [
-        "Transferência de um ficheiro ou pasta grande"
+        "Envio de um ficheiro ou pasta grande"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -8604,6 +8743,12 @@
       ],
       "You have no folders yet": [
         "Ainda não tem pastas"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+      ],
+      "Your 3 GB bonus": [
+        "O seu bónus de 3 GB"
       ],
       "Your account is protected": [
         "A sua conta está protegida"

@@ -6853,6 +6853,11 @@
         "Convida amistats a ${ BRAND_NAME }"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "S'està cancel·lant la vostra subscripció. Si us plau, esperi."
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Millora l'emmagatzematge"
@@ -7038,6 +7043,90 @@
         "Per"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } d'emmagatzematge total"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu electrònic"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ],
+      "Calendar sharing": [
+        "Compartició de calendari"
+      ],
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Cancel subscription?": [
+        "Voleu cancel·lar la subscripció?"
+      ],
+      "Close": [
+        "Tanca"
+      ],
+      "Custom schedule send and snooze times": [
+        "Personalització de l'hora d'enviament i del temps de posposició"
+      ],
+      "Early access to new apps and features": [
+        "Accés anticipat a noves aplicacions i característiques"
+      ],
+      "Have a question?": [
+        "Teniu una pregunta?"
+      ],
+      "Keep ${ planName }": [
+        "Segueix amb ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Descobriu més sobre el nostre impacte"
+      ],
+      "Manage your calendar": [
+        "Gestió dels vostres calendaris"
+      ],
+      "Online privacy, for your whole family": [
+        "Privacitat en línia per a tota la vostra família"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
+      "Read the story": [
+        "Llegiu la història"
+      ],
+      "Receive new emails": [
+        "Rebi nous correus electrònics"
+      ],
+      "Resubscribe": [
+        "Resubscriviu-vos"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Torneu-vos a subscriure per a restaurar l'accés a les característiques de ${ planName }."
+      ],
+      "Subscription canceled": [
+        "La subscripció s'ha cancel·lat."
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "El millor de ${ BRAND_NAME }"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Version history": [
+        "Historial de versions"
+      ],
+      "Watch the interview": [
+        "Mireu l'entrevista"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonificacions anuals d'emmagatzematge gratuïtes"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -7202,6 +7291,9 @@
       ],
       "Verification successful": [
         "Èxit de verificació"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Heu cancel·lat la vostra subscripció amb èxit."
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"

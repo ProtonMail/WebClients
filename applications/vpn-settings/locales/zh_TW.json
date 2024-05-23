@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "複製金鑰到剪貼簿"
       ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
       "Create": [
         "創建"
       ],
@@ -3909,6 +3912,9 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
+      ],
       "View, download, and manage your invoices.": [
         "檢視、下載與管理您的收據。"
       ],
@@ -6837,6 +6843,11 @@
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "升級儲存空間"
@@ -7021,6 +7032,83 @@
         "為"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 總儲存空間"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
+      "Cancel subscription?": [
+        "取消訂購授權?"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
+      "Have a question?": [
+        "有問題嗎？"
+      ],
+      "Helping activists in Hong Kong": [
+        "支持於香港的行動"
+      ],
+      "I still want to cancel": [
+        "我還想取消"
+      ],
+      "Keep ${ planName }": [
+        "保留 ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "了解更多我們的影響"
+      ],
+      "Our fight against censorship in Russia": [
+        "我們對抗俄羅斯審查"
+      ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Read the story": [
+        "已讀的訊息"
+      ],
+      "Resubscribe": [
+        "重新訂閱"
+      ],
+      "Subscription canceled": [
+        "訂閱已取消"
+      ],
+      "Unblocking internet access in Iran": [
+        "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders, labels and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Watch the interview": [
+        "瀏覽訪談"
+      ],
+      "Yearly free storage bonuses": [
+        "年度免費儲存加成"
+      ],
+      "Your own custom email domain": [
+        "您持有的自訂電子郵件網域名稱"
+      ],
+      "Your own short @pm.me email alias": [
+        "您自己短@pm.me電子郵件別名"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -7194,6 +7282,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

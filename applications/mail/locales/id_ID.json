@@ -1152,6 +1152,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -4390,7 +4393,7 @@
         "Mengerti"
       ],
       "Switch plans": [
-        "Ganti paket"
+        "Ubah paket"
       ],
       "View the invitation": [
         "Lihat undangan"
@@ -4435,7 +4438,7 @@
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Maaf, Anda tidak dapat mengganti paket saat ini."
+        "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
@@ -5492,6 +5495,9 @@
       "and": [
         "dan"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Seluruh pesan yang terjadwal atau ditunda akan dibatalkan."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
       ],
@@ -6364,6 +6370,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Tunda sampai besok, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Penundaan percakapan ini akan dibatalkan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
