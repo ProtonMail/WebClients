@@ -6657,24 +6657,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-types@workspace:packages/docs-types":
-  version: 0.0.0-use.local
-  resolution: "@proton/docs-types@workspace:packages/docs-types"
-  dependencies:
-    "@lexical/yjs": "npm:0.14.5"
-    "@proton/docs-proto": "workspace:packages/docs-proto"
-    "@proton/eslint-config-proton": "workspace:^"
-    "@standardnotes/utils": "npm:^1.17.12"
-    "@types/google-protobuf": "npm:^3.15.12"
-    eslint: "npm:^8.57.0"
-    google-protobuf: "npm:^3.21.2"
-    ts-jest: "npm:^29.1.2"
-    typescript: "npm:^5.4.3"
-    y-protocols: "npm:^1.0.6"
-    yjs: "npm:^13.6.14"
-  languageName: unknown
-  linkType: soft
-
 "@proton/drive-store@workspace:packages/drive-store":
   version: 0.0.0-use.local
   resolution: "@proton/drive-store@workspace:packages/drive-store"
@@ -26859,7 +26841,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lib0@npm:^0.2.85, lib0@npm:^0.2.86":
+"lib0@npm:^0.2.86":
   version: 0.2.94
   resolution: "lib0@npm:0.2.94"
   dependencies:
@@ -41503,17 +41485,6 @@ __metadata:
   version: 4.19.0
   resolution: "xterm@npm:4.19.0"
   checksum: 10c0/539f422321f3b3cc4ea5d228f576f79cfc70968a261605c9c9c2decddb6b15043530f9500bafc860d5734ad0e0d93c59af259d4883f3381506611f6523747b5b
-  languageName: node
-  linkType: hard
-
-"y-protocols@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "y-protocols@npm:1.0.6"
-  dependencies:
-    lib0: "npm:^0.2.85"
-  peerDependencies:
-    yjs: ^13.0.0
-  checksum: 10c0/fae7d63d4609e75eac8114320aa3581311993cd0c1b7ac03d13dc30c9a95d7b1680e4500786bb417c1fb3d11a69e1bed3e50d08e15febde9b8abf70f133eb917
   languageName: node
   linkType: hard
 
