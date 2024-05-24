@@ -1,0 +1,25 @@
+{
+  "name": "@proton/docs-proto",
+  "version": "0.0.6",
+  "description": "Docs RTS messaging types",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "eslint . --ext ts --quiet --cache",
+    "sync": "./scripts/sync.sh ."
+  },
+  "dependencies": {
+    "@standardnotes/domain-core": "^1.41.1"
+  },
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.12",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "google-protobuf": "^3.21.2",
+    "protoc-gen-ts": "^0.8.7",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.3"
+  }
+}
