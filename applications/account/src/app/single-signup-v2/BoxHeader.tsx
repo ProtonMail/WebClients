@@ -5,7 +5,7 @@ import StepLabel from './StepLabel';
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-center justify-space-between">
-            <div className="flex flex-column md:flex-row w-full md:w-auto md:items-center md:gap-4 gap-2 shrink-0">
+            <div className="flex flex-column md:flex-row w-full md:w-auto items-center md:items-start text-center md:text-start justify-center md:justify-start md:gap-4 gap-2 shrink-0">
                 {step !== undefined && (
                     <div>
                         <StepLabel step={step} />

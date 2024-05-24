@@ -66,7 +66,7 @@ export const getGenericFeatures = (isLargeViewport: boolean) => {
         },
         {
             key: 3,
-            left: <img width="24" alt="" src={swissFlag} />,
+            left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
             text: isLargeViewport
                 ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
                 : c('pass_signup_2023: Feature').t`Swiss based`,

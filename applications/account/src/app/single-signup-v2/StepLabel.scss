@@ -1,4 +1,13 @@
 .step-label-v2 {
-	color: var(--interaction-norm-contrast);
-	background-color: var(--interaction-norm-major-1);
+	z-index: 1;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: inherit;
+		background-color: var(--primary);
+		opacity: 0.3;
+	}
 }
