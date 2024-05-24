@@ -785,7 +785,7 @@ const Step1 = ({
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
-            left: <img width="24" alt="" src={swissFlag} />,
+            left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
             text: viewportWidth['>=large'] ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
         viewportWidth['>=large'] &&

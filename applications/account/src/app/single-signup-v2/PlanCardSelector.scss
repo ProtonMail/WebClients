@@ -47,7 +47,7 @@
 
 	&::before {
 		inset: -1px;
-		border: var(--interaction-norm-major-3) solid 2px;
+		border: var(--primary) solid 2px;
 		opacity: 0;
 		transition: var(--card-transition);
 	}
