@@ -641,7 +641,7 @@ const Step1 = ({
                                             <div className="inline-block mt-3 mb-2">
                                                 <CurrencySelector
                                                     mode="select-two"
-                                                    className="h-full ml-auto px-3 color-primary"
+                                                    className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
                                                     currency={options.currency}
                                                     onSelect={(currency) =>
                                                         withLoadingPaymentDetails(handleChangeCurrency(currency))
