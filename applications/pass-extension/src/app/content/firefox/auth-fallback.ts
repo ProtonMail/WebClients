@@ -1,7 +1,7 @@
 import { contentScriptMessage, sendMessage, successMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { APPS, EXTENSIONS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 export const authFallback = () => {
     window.addEventListener('message', async (message) => {
@@ -9,8 +9,7 @@ export const authFallback = () => {
             if (
                 message.data &&
                 message.data?.type !== undefined &&
-                (message.data?.extension === EXTENSIONS[APPS.PROTONEXTENSION].ID ||
-                    message.data?.extension === EXTENSIONS[APPS.PROTONPASSBROWSEREXTENSION].ID)
+                message.data?.app === APPS.PROTONPASSBROWSEREXTENSION
             ) {
                 switch (message.data.type) {
                     case WorkerMessageType.ACCOUNT_FORK:
