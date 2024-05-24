@@ -94,3 +94,9 @@ export enum AuthType {
     SRP,
     ExternalSSO,
 }
+
+export enum ExternalSSOFlow {
+    Sp,
+    Idp,
+    Redirect,
+}

@@ -703,10 +703,12 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                     <UnAuthenticated>
                                                         <ExternalSSOConsumer
                                                             loader={loader}
-                                                            onLogin={(token) =>
+                                                            onLogin={({ username, token, flow }) =>
                                                                 history.replace(SSO_PATHS.LOGIN, {
                                                                     authType: AuthType.ExternalSSO,
                                                                     externalSSOToken: token,
+                                                                    externalSSOFlow: flow,
+                                                                    username,
                                                                 })
                                                             }
                                                         />
