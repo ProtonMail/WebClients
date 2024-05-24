@@ -22,6 +22,7 @@ import {
     PaymentVerificatorV5,
     PlainPaymentMethodType,
     SavedPaymentMethod,
+    canUseChargebee,
     isExistingPaymentMethod,
 } from '../core';
 import { PaymentProcessorType } from './interface';
@@ -228,8 +229,6 @@ export const usePaymentFacade = (
         [amount, currency]
     );
 
-    const isChargebeeAllowed = isChargebeeEnabled() === ChargebeeEnabled.CHARGEBEE_ALLOWED;
-
     const paymentContext = usePaymentContext();
     const { paymentsApi } = usePaymentsApi(api);
 
@@ -258,7 +257,7 @@ export const usePaymentFacade = (
             amountAndCurrency,
             // If Chargebee is allowed and there is a saved internal payment method, then we are in migration mode.
             // It means that we should go with useSavedChargebeeMethod instead of useSavedMethod.
-            savedMethod: isChargebeeAllowed ? undefined : methods.savedInternalSelectedMethod,
+            savedMethod: canUseChargebee(isChargebeeEnabled()) ? undefined : methods.savedInternalSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
@@ -287,7 +286,7 @@ export const usePaymentFacade = (
             // the we prefer to use the saved internal payment method. There shouldn't be any saved external payment
             // method in this case, but we still keep it as a fallback.
             // If Chargebee is not allowed, then we use the saved external payment method.
-            savedMethod: isChargebeeAllowed
+            savedMethod: canUseChargebee(isChargebeeEnabled())
                 ? methods.savedInternalSelectedMethod ?? methods.savedExternalSelectedMethod
                 : methods.savedExternalSelectedMethod,
             onProcessPaymentToken,
@@ -498,7 +497,7 @@ export const usePaymentFacade = (
             if (
                 // If Chargebee is allowed and the saved method is internal (migration mode), then we use the
                 // saved Chargebee method processor.
-                isChargebeeAllowed ||
+                canUseChargebee(isChargebeeEnabled()) ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             ) {
