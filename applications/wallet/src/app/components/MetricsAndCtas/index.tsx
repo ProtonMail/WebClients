@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Price } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
+import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -14,7 +15,6 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useGetExchangeRate } from '../../store/hooks';
 import { satsToFiat } from '../../utils';
-import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 
 interface Props {
     apiWalletData: IWasmApiWalletData;
@@ -26,6 +26,8 @@ interface Props {
 
 export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSend, onClickReceive }: Props) => {
     const account = apiAccount ?? apiWalletData.WalletAccounts[0];
+    const localDisabled = !account || disabled;
+
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
 
     const [twentyFourHourChange, setTwentyFourHourChange] = useState<number>();
@@ -121,7 +123,7 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
                     className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
                     onClick={() => onClickSend()}
-                    disabled={disabled}
+                    disabled={localDisabled}
                 >
                     {c('Wallet dashboard').t`Send`}
                 </Button>
@@ -132,7 +134,7 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
                     className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
                     onClick={() => onClickReceive()}
-                    disabled={disabled}
+                    disabled={localDisabled}
                 >
                     {c('Wallet dashboard').t`Receive`}
                 </Button>
@@ -142,7 +144,7 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
                     color="norm"
                     className="text-lg w-custom mx-1"
                     style={{ '--w-custom': '7.5rem' }}
-                    disabled={disabled}
+                    disabled={localDisabled}
                 >
                     {c('Wallet dashboard').t`Buy`}
                 </Button>
