@@ -33,12 +33,14 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Drive`,
         [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
+        [APPS.PROTONDOCS]: c('Navigation').t`Documents`,
     };
     const backButtonCopyTitle = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to files`,
         [APPS.PROTONPASS]: c('Navigation').t`Back to vaults`,
+        [APPS.PROTONDOCS]: c('Navigation').t`Back to documents`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
@@ -91,6 +93,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                     {app === APPS.PROTONDRIVE && <SidebarListWrapper prefix={prefix} {...routes.drive} />}
                     {app === APPS.PROTONVPN_SETTINGS && <SidebarListWrapper prefix={prefix} {...routes.vpn} />}
                     {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
+                    {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
                 </SidebarList>
             </SidebarNav>

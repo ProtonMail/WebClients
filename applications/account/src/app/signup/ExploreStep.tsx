@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useConfig } from '@proton/components';
+import { useConfig, useFlag } from '@proton/components';
 import metrics from '@proton/metrics';
 import { APP_NAMES, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
@@ -22,6 +22,8 @@ interface Props {
 const ExploreStep = ({ onExplore, user, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
+    const docsEnabled = useFlag('DocsAppSwitcher');
+
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
             step: 'recovery',
@@ -37,7 +39,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user })}
+                    apps={getExploreApps({ subscribed, user, docsEnabled })}
                     onExplore={onExplore}
                 />
             </Content>

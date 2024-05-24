@@ -4,6 +4,7 @@ import { Address, Organization, Subscription, UserModel } from '@proton/shared/l
 
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
+import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
@@ -59,6 +60,7 @@ export const getRoutes = ({
         }),
         calendar: getCalendarAppRoutes({ app }),
         drive: getDriveAppRoutes({ app }),
+        docs: getDocsAppRoutes(),
         pass: getPassAppRoutes({ app }),
         organization: getOrganizationAppRoutes({
             app,
