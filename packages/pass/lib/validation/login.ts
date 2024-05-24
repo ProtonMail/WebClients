@@ -28,14 +28,22 @@ const validateEmail = (email: string) => {
     return {};
 };
 
-export const validateLoginForm = (values: LoginItemFormValues): FormikErrors<LoginItemFormValues> => {
+type ValidateLoginForm = {
+    values: LoginItemFormValues;
+    shouldValidateEmail?: boolean;
+};
+
+export const validateLoginForm = ({
+    values,
+    shouldValidateEmail = false,
+}: ValidateLoginForm): FormikErrors<LoginItemFormValues> => {
     const errors: FormikErrors<LoginItemFormValues> = validateItemErrors(values);
     const urlError = validateUrl(values);
     const urlsErrors = validateUrls(values);
     const totpUriErrors = validateTotpUri(values);
     const aliasErrors = values.withAlias && validateAliasForm(values);
     const extraFieldsErrors = validateExtraFields(values);
-    const itemUsernameErrors = validateEmail(values.itemEmail);
+    const itemUsernameErrors = shouldValidateEmail ? validateEmail(values.itemEmail) : {};
 
     return {
         ...errors,
