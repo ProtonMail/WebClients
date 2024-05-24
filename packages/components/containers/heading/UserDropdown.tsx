@@ -23,6 +23,7 @@ import {
     useAuthentication,
     useConfig,
     useFeature,
+    useFlag,
     useModalState,
     useNotifications,
     useOrganization,
@@ -207,6 +208,12 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
+    const inboxDesktopMultiAccountSupport = useFlag('InboxDesktopMultiAccountSupport');
+    const showSwitchAccountButton =
+        isElectronApp && authentication.mode === 'sso'
+            ? inboxDesktopMultiAccountSupport
+            : authentication.mode === 'sso';
+
     const handleScheduleCallClick = async () => {
         close();
 
@@ -350,7 +357,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
                     )}
 
-                    {authentication.mode === 'sso' && !isElectronApp ? (
+                    {showSwitchAccountButton ? (
                         <div className="px-4 pb-2">
                             <ButtonLike
                                 as="a"
