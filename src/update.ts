@@ -117,8 +117,7 @@ async function checkForValidUpdates() {
 }
 
 function getVersionURL(platform: DESKTOP_PLATFORMS) {
-    // FIXME return `https://proton.me/download/mail/${platform}/version.json`;
-    return `https://nexus.protontech.ch/repository/bridge-devel-builds/tmp/inda/${platform}/version.json`;
+    return `https://proton.me/download/mail/${platform}/version.json`;
 }
 
 function isANewerThanB(a: string, b: string) {
