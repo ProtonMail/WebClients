@@ -13,6 +13,7 @@ const list: { value: string; product: ProductParam }[] = [
     { value: 'calendar', product: APPS.PROTONCALENDAR },
     { value: 'drive', product: APPS.PROTONDRIVE },
     { value: 'pass', product: APPS.PROTONPASS },
+    { value: 'docs', product: APPS.PROTONDOCS },
     { value: 'generic', product: 'generic' },
     { value: 'business', product: 'business' },
 ];
@@ -36,9 +37,6 @@ export const getApp = ({
         const match = list.find(({ value }) => redirect.includes(value));
         if (match) {
             return match.product;
-        }
-        if (redirect.includes('docs')) {
-            return APPS.PROTONDOCS;
         }
     }
     if (plan) {
