@@ -3,7 +3,3 @@ export enum FORK_TYPE {
     // Used in VPN extension
     SIGNUP = '2',
 }
-
-export interface Extension {
-    ID: string;
-}

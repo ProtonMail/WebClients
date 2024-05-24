@@ -1,6 +1,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
+import type { ExtensionApp } from '../browser/extension';
 import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '../constants';
 import {
     isElectronMail,
@@ -86,6 +87,10 @@ export const getClientID = (appName: APP_NAMES): string => {
         return linuxClientID;
     }
     return clientID;
+};
+
+export const isExtension = (appName: APP_NAMES): appName is ExtensionApp => {
+    return EXTENSIONS[appName as keyof typeof EXTENSIONS] !== undefined;
 };
 
 export const getExtension = (appName: APP_NAMES) => {
