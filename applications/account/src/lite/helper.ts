@@ -7,43 +7,44 @@ export enum SupportedActions {
     SubscribeAccountLink = 'subscribe-account-link',
 }
 
-export const getApp = (appQueryParam: string | null, redirect: string | undefined): ProductParam => {
-    if (appQueryParam === 'generic' || appQueryParam === 'business') {
-        return appQueryParam;
-    }
-    if (appQueryParam === 'vpn') {
-        return APPS.PROTONVPN_SETTINGS;
-    }
-    if (appQueryParam === 'mail') {
-        return APPS.PROTONMAIL;
-    }
-    if (appQueryParam === 'drive') {
-        return APPS.PROTONDRIVE;
-    }
-    if (appQueryParam === 'pass') {
-        return APPS.PROTONPASS;
-    }
-    if (appQueryParam === 'calendar') {
-        return APPS.PROTONCALENDAR;
+const list: { value: string; product: ProductParam }[] = [
+    { value: 'vpn', product: APPS.PROTONVPN_SETTINGS },
+    { value: 'mail', product: APPS.PROTONMAIL },
+    { value: 'calendar', product: APPS.PROTONCALENDAR },
+    { value: 'drive', product: APPS.PROTONDRIVE },
+    { value: 'pass', product: APPS.PROTONPASS },
+    { value: 'generic', product: 'generic' },
+    { value: 'business', product: 'business' },
+];
+
+export const getApp = ({
+    app,
+    redirect,
+    plan,
+}: {
+    app?: string | null;
+    plan?: string | null;
+    redirect?: string | undefined;
+}): ProductParam => {
+    if (app) {
+        const match = list.find(({ value }) => value === app);
+        if (match) {
+            return match.product;
+        }
     }
     if (redirect) {
-        if (redirect.includes('vpn')) {
-            return APPS.PROTONVPN_SETTINGS;
-        }
-        if (redirect.includes('mail')) {
-            return APPS.PROTONMAIL;
-        }
-        if (redirect.includes('calendar')) {
-            return APPS.PROTONCALENDAR;
-        }
-        if (redirect.includes('drive')) {
-            return APPS.PROTONDRIVE;
-        }
-        if (redirect.includes('pass')) {
-            return APPS.PROTONPASS;
+        const match = list.find(({ value }) => redirect.includes(value));
+        if (match) {
+            return match.product;
         }
     }
-    return APPS.PROTONVPN_SETTINGS;
+    if (plan) {
+        const match = list.find(({ value }) => plan.includes(value));
+        if (match) {
+            return match.product;
+        }
+    }
+    return 'generic';
 };
 
 const getIsDarkLayout = (searchParams: URLSearchParams) => {

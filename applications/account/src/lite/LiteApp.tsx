@@ -78,7 +78,7 @@ const App = () => {
         }[client || ''] || {};
 
     const redirect = getRedirect(searchParams.get('redirect') || defaultValues.redirect || undefined);
-    const app = getApp(searchParams.get('app'), redirect);
+    const app = getApp({ app: searchParams.get('app'), plan: searchParams.get('plan'), redirect });
 
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);

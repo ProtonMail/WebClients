@@ -128,19 +128,19 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
                   | undefined);
 
     const { bgClassName, logo } = (() => {
-        if (plan === PLANS.VPN) {
+        if ([PLANS.VPN, PLANS.VPN2024].includes(plan as any)) {
             return { bgClassName: 'subscribe-account--vpn-bg', logo: <Logo appName={APPS.PROTONVPN_SETTINGS} /> };
         }
 
-        if (plan === PLANS.DRIVE || plan === PLANS.DRIVE_PRO) {
+        if ([PLANS.DRIVE, PLANS.DRIVE_PRO].includes(plan as any)) {
             return { bgClassName: 'subscribe-account--drive-bg', logo: <Logo appName={APPS.PROTONDRIVE} /> };
         }
 
-        if (plan === PLANS.PASS_PLUS) {
+        if ([PLANS.PASS_PLUS, PLANS.PASS_PRO, PLANS.PASS_BUSINESS].includes(plan as any)) {
             return { bgClassName: 'subscribe-account--pass-bg', logo: <Logo appName={APPS.PROTONPASS} /> };
         }
 
-        if (plan === PLANS.MAIL || plan === PLANS.MAIL_PRO) {
+        if ([PLANS.MAIL, PLANS.MAIL_PRO].includes(plan as any)) {
             return { bgClassName: 'subscribe-account--mail-bg', logo: <Logo appName={APPS.PROTONMAIL} /> };
         }
 
