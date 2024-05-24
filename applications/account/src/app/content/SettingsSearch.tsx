@@ -44,6 +44,8 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
             return APPS.PROTONMAIL;
         case 'drive':
             return APPS.PROTONDRIVE;
+        case 'docs':
+            return APPS.PROTONDOCS;
         case 'vpn':
             return APPS.PROTONVPN_SETTINGS;
         case 'pass':

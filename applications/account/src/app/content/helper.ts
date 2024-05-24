@@ -3,6 +3,7 @@ import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     getIsCalendarApp,
+    getIsDocsApp,
     getIsDriveApp,
     getIsMailApp,
     getIsPassApp,
@@ -25,6 +26,9 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         }
         if (getIsDriveApp(app)) {
             return { path: SSO_PATHS.DRIVE_SIGN_IN };
+        }
+        if (getIsDocsApp(app)) {
+            return { path: SSO_PATHS.DOCS_SIGN_IN };
         }
         if (getIsPassApp(app)) {
             return { path: SSO_PATHS.PASS_SIGN_IN };
@@ -70,6 +74,9 @@ export const getSignupUrl = (
         }
         if (getIsDriveApp(app)) {
             return { path: SSO_PATHS.DRIVE_SIGNUP, params };
+        }
+        if (getIsDocsApp(app)) {
+            return { path: SSO_PATHS.DOCS_SIGNUP, params };
         }
         if (getIsPassApp(app)) {
             return { path: SSO_PATHS.PASS_SIGNUP, params };

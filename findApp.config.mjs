@@ -33,6 +33,22 @@ export default {
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
+                name: 'docs-core',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'docs-types',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'docs-proto',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'docs-editor',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
                 name: 'crypto',
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },

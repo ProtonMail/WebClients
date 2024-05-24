@@ -55,6 +55,7 @@ enum DriveFeatureFlag {
     DriveWebOptimisticUploadEnabled = 'DriveWebOptimisticUploadEnabled',
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
+    DocsAppSwitcher = 'DocsAppSwitcher',
 }
 
 enum MailFeatureFlag {

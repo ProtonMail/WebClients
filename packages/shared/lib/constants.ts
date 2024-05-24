@@ -230,6 +230,7 @@ export enum PRODUCT_BIT {
     DRIVE = 2,
     VPN = 4,
     PASS = 8,
+    DOCS = 32,
 }
 
 export type APP_KEYS = keyof typeof APPS;
@@ -268,6 +269,8 @@ export const SSO_PATHS = {
     PASS_SIGNUP: '/pass/signup',
     PASS_SIGNUP_B2B: '/pass/signup/business',
     PASS_SIGN_IN: '/pass',
+    DOCS_SIGNUP: '/docs/signup',
+    DOCS_SIGN_IN: '/docs',
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
@@ -542,6 +545,7 @@ export enum APP_UPSELL_REF_PATH {
     PASS_UPSELL_REF_PATH = 'upsell_pass-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-',
     INBOX_DESKTOP_REF_PATH = 'upsell_inbox_desktop-',
+    DOCS_UPSELL_REF_PATH = 'upsell_docs-',
     ACCOUNT_UPSELL_REF_PATH = 'upsell_account-',
 }
 
@@ -610,6 +614,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     DRIVE = 'drive-dashboard',
     PASS = 'pass-dashboard',
     VPN = 'vpn-dashboard',
+    DOCS = 'docs-dashboard',
     FAMILY = 'family-dashboard',
     BUSINESS = 'business-dashboard',
 }
@@ -1090,6 +1095,7 @@ export const FORKABLE_APPS = new Set(
         APPS.PROTONDRIVE,
         APPS.PROTONCALENDAR,
         APPS.PROTONPASS,
+        APPS.PROTONDOCS,
         APPS.PROTONEXTENSION,
         APPS.PROTONPASSBROWSEREXTENSION,
         APPS.PROTONVPNBROWSEREXTENSION,
