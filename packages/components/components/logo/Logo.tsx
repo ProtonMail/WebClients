@@ -11,7 +11,7 @@ import VpnLogo from './VpnLogo';
 
 export type LogoVariant = 'with-wordmark' | 'glyph-only' | 'wordmark-only';
 
-const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS, PROTONPASS } = APPS;
+const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS, PROTONPASS, PROTONDOCS } = APPS;
 
 export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'> {
     appName: APP_NAMES;
@@ -39,6 +39,11 @@ const Logo = ({ appName, variant, ...rest }: LogoProps) => {
 
     if (appName === PROTONPASS) {
         return <PassLogo variant={variant} {...rest} />;
+    }
+
+    if (appName === PROTONDOCS) {
+        // TODO: logo for Proton Docs
+        return <DriveLogo variant={variant} {...rest} />;
     }
 
     return null;

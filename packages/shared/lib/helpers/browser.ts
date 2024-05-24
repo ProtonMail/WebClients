@@ -93,8 +93,8 @@ export const getActiveXObject = (name: string) => {
 };
 
 export const isIos = () =>
-    // @ts-expect-error window.MSStream cf. https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
-    (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) ||
+    // https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
+    (/iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream) ||
     ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(navigator.platform) ||
     // iPad on iOS 13 detection
     (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
