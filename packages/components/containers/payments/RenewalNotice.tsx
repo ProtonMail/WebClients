@@ -11,6 +11,7 @@ import { Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/in
 import Price from '../../components/price/Price';
 import Time from '../../components/time/Time';
 import { getMonths } from './SubscriptionsSection';
+import { getIsVPNPassPromotion } from './subscription/helpers';
 
 export type RenewalNoticeProps = {
     renewCycle: number;
@@ -82,7 +83,11 @@ export const getCheckoutRenewNoticeText = ({
     currency: Currency;
     coupon?: string;
 }) => {
-    if (planIDs[PLANS.VPN2024] || planIDs[PLANS.DRIVE]) {
+    if (
+        planIDs[PLANS.VPN2024] ||
+        planIDs[PLANS.DRIVE] ||
+        (planIDs[PLANS.VPN_PASS_BUNDLE] && getIsVPNPassPromotion(PLANS.VPN_PASS_BUNDLE, coupon))
+    ) {
         const result = getVPN2024Renew({ planIDs, plansMap, cycle })!;
         const renewCycle = result.renewalLength;
         const renewPrice = (

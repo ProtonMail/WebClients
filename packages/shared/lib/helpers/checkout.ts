@@ -1,6 +1,14 @@
 import { c, msgid } from 'ttag';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, MEMBER_ADDON_PREFIX, PLANS, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    CYCLE,
+    DEFAULT_CYCLE,
+    MEMBER_ADDON_PREFIX,
+    PLANS,
+    PLAN_TYPES,
+    VPN_PASS_PROMOTION_COUPONS
+} from '../constants';
 import {
     Plan,
     PlanIDs,
@@ -61,11 +69,13 @@ export interface AddonDescription {
 
 export interface SubscriptionCheckoutData {
     couponDiscount: number | undefined;
-    planName: PLANS | null;
+    planIDs: PlanIDs;
+    planName: PLANS;
     planTitle: string;
     usersTitle: string;
     users: number;
     addons: AddonDescription[];
+    coupon?: string;
     withDiscountPerCycle: number;
     withoutDiscountPerMonth: number;
     withDiscountPerMonth: number;
@@ -176,13 +186,15 @@ export const getCheckout = ({
     const amount = checkResult?.Amount || 0;
     const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
     const couponDiscount = Math.abs(checkResult?.CouponDiscount || 0);
+    const coupon = checkResult?.Coupon?.Code;
+    const isVpnPassPromotion = !!planIDs[PLANS.VPN_PASS_BUNDLE] && VPN_PASS_PROMOTION_COUPONS.includes(coupon as any);
 
     const withDiscountPerCycle = amount - couponDiscount;
     const withoutDiscountPerMonth = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const plan = plansMap[planName as keyof typeof plansMap];
 
-        const defaultMonthly = plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-        const monthly = getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
+        const defaultMonthly = isVpnPassPromotion ? 999 : plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
+        const monthly = isVpnPassPromotion ? 999 : getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
 
         // Offers might affect Pricing both ways, increase and decrease.
         // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
@@ -215,6 +227,8 @@ export const getCheckout = ({
 
     return {
         couponDiscount: checkResult?.CouponDiscount,
+        coupon,
+        planIDs,
         planName: usersAndAddons.planName,
         planTitle: usersAndAddons.planTitle,
         addons: usersAndAddons.addons,

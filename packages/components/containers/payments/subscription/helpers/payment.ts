@@ -6,6 +6,7 @@ import {
     DEFAULT_CURRENCY,
     FreeSubscription,
     PLANS,
+    VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import {
@@ -39,6 +40,10 @@ export const getCurrency = (
     plans: Plan[] | undefined
 ) => {
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
+};
+
+export const getIsVPNPassPromotion = (planName: string | undefined, coupon: string | undefined) => {
+    return VPN_PASS_PROMOTION_COUPONS.includes(coupon as any);
 };
 
 export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) => {

@@ -119,7 +119,9 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             couponDiscount: undefined,
+            coupon: undefined,
             planTitle: 'VPN',
+            planIDs: { [PLANS.VPN]: 1 },
             planName: PLANS.VPN,
             usersTitle: '1 user',
             users: 1,
@@ -169,9 +171,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: undefined,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
+            planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
             users: 1,
             addons: [],
@@ -222,9 +226,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: undefined,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
+            planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
             users: 1,
             addons: [],
@@ -259,7 +265,9 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: 'TEST',
             couponDiscount: -4776,
+            planIDs: { [PLANS.NEW_VISIONARY]: 1 },
             planTitle: 'VIS',
             planName: PLANS.NEW_VISIONARY,
             usersTitle: '6 users',
@@ -296,9 +304,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: 'TEST',
             couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN,
+            planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
             users: 1,
             addons: [],
@@ -334,9 +344,15 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: undefined,
             couponDiscount: 0,
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
+            planIDs: {
+                [PLANS.BUNDLE_PRO]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
+            },
             usersTitle: '3 users',
             users: 3,
             addons: [
@@ -387,9 +403,14 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: undefined,
             couponDiscount: 0,
             planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
+            planIDs: {
+                [PLANS.VPN_PRO]: 1,
+                [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
+            },
             usersTitle: '4 users',
             users: 4,
             addons: [],
@@ -430,7 +451,12 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: undefined,
             couponDiscount: 0,
+            planIDs: {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+            },
             planTitle: 'VPN Business',
             planName: PLANS.VPN_BUSINESS,
             usersTitle: '3 users',
@@ -474,8 +500,12 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            coupon: 'TEST',
             couponDiscount: -47976,
             planTitle: 'VIS',
+            planIDs: {
+                [PLANS.NEW_VISIONARY]: 1,
+            },
             planName: PLANS.NEW_VISIONARY,
             usersTitle: '6 users',
             users: 6,

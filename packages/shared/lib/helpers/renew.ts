@@ -12,7 +12,7 @@ export const getVPN2024Renew = ({
     planIDs: PlanIDs;
     plansMap: PlansMap;
 }) => {
-    if (!planIDs[PLANS.VPN2024] && !planIDs[PLANS.DRIVE]) {
+    if (!planIDs[PLANS.VPN2024] && !planIDs[PLANS.DRIVE] && !planIDs[PLANS.VPN_PASS_BUNDLE]) {
         return;
     }
     const nextCycle = planIDs[PLANS.VPN2024] ? getDowngradedVpn2024Cycle(cycle) : cycle;
