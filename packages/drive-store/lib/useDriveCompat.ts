@@ -2,25 +2,32 @@ import { PublicKeyReference } from '@proton/crypto/lib';
 
 import { useDriveCrypto } from '../store/_crypto';
 import { useOpenDocument } from '../store/_documents';
-import { DocumentKeys, DocumentManifest, DocumentNode, DocumentNodeMeta, useDocuments } from './_documents';
+import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData, useDocuments } from './_documents';
+import { DecryptedNode } from './_nodes/interface';
+import useNode from './_nodes/useNode';
 import { useMyFiles, useResolveShareId } from './_shares';
 import { NodeMeta } from './interface';
 
-interface DriveInterface {
+export interface DriveCompat {
+    /**
+     * Gets a node, either from cache or fetched.
+     */
+    getNode: (meta: NodeMeta) => Promise<DecryptedNode>;
+
+    /**
+     * Gets the contents of a node.
+     */
+    getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>;
+
     /**
      * Creates an empty document node (document shell).
      */
     createDocumentNode: (meta: NodeMeta, name: string) => Promise<DocumentNodeMeta>;
 
     /**
-     * Gets the content key for a given document node.
+     * Gets the keys for a given document node.
      */
     getDocumentKeys: (meta: NodeMeta) => Promise<DocumentKeys>;
-
-    /**
-     * Gets a document node, either from cache or fetched.
-     */
-    getDocumentNode: (meta: NodeMeta) => Promise<DocumentNode>;
 
     /**
      * Renames a document node.
@@ -40,6 +47,11 @@ interface DriveInterface {
     signDocumentManifest: (meta: NodeMeta, content: Uint8Array) => Promise<DocumentManifest>;
 
     /**
+     * Generates and signs arbitrary data for a document.
+     */
+    signDocumentData: (meta: NodeMeta, data: Uint8Array) => Promise<SignedData>;
+
+    /**
      * Opens a document in a new window.
      */
     openDocument: (meta: NodeMeta) => void;
@@ -57,17 +69,18 @@ interface DriveInterface {
     getMyFilesNodeMeta: () => Promise<NodeMeta>;
 }
 
-export const useDriveCompat = (): DriveInterface => {
+export const useDriveCompat = (): DriveCompat => {
     const { withResolve } = useResolveShareId();
 
     const {
         createDocumentNode,
         getDocumentKeys,
-        getDocumentNode,
         renameDocument,
         getDocumentUrl,
         signDocumentManifest,
+        signDocumentData,
     } = useDocuments();
+    const { getNode, getNodeContents } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
@@ -77,11 +90,13 @@ export const useDriveCompat = (): DriveInterface => {
     return {
         createDocumentNode: withResolve(createDocumentNode),
         getDocumentKeys: withResolve(getDocumentKeys),
-        getDocumentNode: withResolve(getDocumentNode),
+        getNode: withResolve(getNode),
+        getNodeContents: withResolve(getNodeContents),
         renameDocument: withResolve(renameDocument),
         getDocumentUrl,
         openDocument,
         signDocumentManifest: withResolve(signDocumentManifest),
+        signDocumentData: withResolve(signDocumentData),
         getMyFilesNodeMeta,
         getVerificationKey,
     };

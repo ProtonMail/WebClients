@@ -16,7 +16,7 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 
-import { TransferConflictStrategy } from '../../store';
+import { TransferConflictStrategy } from '../../store/_uploads/interface';
 
 export interface ConflictModalProps {
     name: string;
