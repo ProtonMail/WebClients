@@ -53,6 +53,9 @@ export const getIsCalendarApp = (toApp?: APP_NAMES) => {
 export const getIsDriveApp = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONDRIVE;
 };
+export const getIsDocsApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONDOCS;
+};
 
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);

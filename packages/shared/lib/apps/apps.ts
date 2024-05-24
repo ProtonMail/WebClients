@@ -11,15 +11,28 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (user?: User) => {
-    if (getIsSSOVPNOnlyAccount(user)) {
+export const getAvailableApps = (options: { docsEnabled: boolean, user?: User }) => {
+    if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
-    if (getIsPublicUserWithoutProtonAddress(user)) {
+    if (getIsPublicUserWithoutProtonAddress(options.user)) {
         return getPublicUserProtonAddressApps();
     }
     if (isElectronApp) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     }
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS];
+
+    const apps: APP_NAMES[] = [
+        APPS.PROTONMAIL,
+        APPS.PROTONCALENDAR,
+        APPS.PROTONDRIVE,
+        APPS.PROTONVPN_SETTINGS,
+        APPS.PROTONPASS,
+    ];
+
+    if (options.docsEnabled) {
+        apps.push(APPS.PROTONDOCS);
+    }
+
+    return apps;
 };

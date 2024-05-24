@@ -14,7 +14,7 @@ export interface CreateDocumentPayload {
 
 export interface CreateDocumentResult {
     Document: {
-        ID: string;
+        LinkID: string;
         RevisionID: string;
         VolumeID: string;
     };

@@ -79,5 +79,13 @@ export const serializeData = (data: any, input: string) => {
             body: serializeFormData(data),
         };
     }
+    if (input === 'protobuf') {
+        return {
+            body: data,
+            headers: {
+                'content-type': 'application/x-protobuf',
+            },
+        };
+    }
     return {};
 };

@@ -11,6 +11,7 @@ export const ALLOWED_APPS = [
     APPS.PROTONVPN_SETTINGS,
     APPS.PROTONDRIVE,
     APPS.PROTONPASS,
+    APPS.PROTONDOCS,
 ];
 
 export const getSlugFromApp = (app: APP_NAMES) => APPS_CONFIGURATION[app].settingsSlug;
