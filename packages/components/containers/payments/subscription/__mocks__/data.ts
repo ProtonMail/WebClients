@@ -480,7 +480,7 @@ export const passPlusUpsell = {
         {
             text: 'Unlimited hide-my-email aliases',
             tooltip:
-                'Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by Proton.',
+                'Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).',
             included: true,
             icon: 'eye-slash',
         },
