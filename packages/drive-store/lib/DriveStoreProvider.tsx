@@ -1,3 +1,4 @@
+import { DevicesProvider } from '../store/_devices';
 import { DownloadsProvider } from '../store/_downloads';
 import { DriveEventManagerProvider } from '../store/_events';
 import { LinksProvider } from '../store/_links';
@@ -11,9 +12,11 @@ export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) 
             <VolumesProvider>
                 <SharesProvider>
                     <LinksProvider>
-                        <DownloadsProvider>
-                            <UploadProvider>{children}</UploadProvider>
-                        </DownloadsProvider>
+                        <DevicesProvider>
+                            <DownloadsProvider>
+                                <UploadProvider>{children}</UploadProvider>
+                            </DownloadsProvider>
+                        </DevicesProvider>
                     </LinksProvider>
                 </SharesProvider>
             </VolumesProvider>
