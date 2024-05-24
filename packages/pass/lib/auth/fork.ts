@@ -45,6 +45,7 @@ export const requestFork = ({
     searchParams.append(ForkSearchParameters.App, app);
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Independent, '0');
+    searchParams.append('prompt', 'login'); /* force re-auth */
 
     if (payloadType === 'offline') searchParams.append(ForkSearchParameters.PayloadType, payloadType);
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
