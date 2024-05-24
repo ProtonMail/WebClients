@@ -1,5 +1,6 @@
 import { KeyboardEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { QRCode } from 'jsqr';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
@@ -12,6 +13,7 @@ import {
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
     useAutocompleteFilter,
+    useModalState,
 } from '@proton/components/components';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { MatchChunk } from '@proton/shared/lib/helpers/regex';
@@ -25,6 +27,7 @@ import clsx from '@proton/utils/clsx';
 import { CoreButton, Input, InputProps } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { isValidBitcoinAddress } from '../../utils';
+import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundErrorDropdown';
 import { RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
 
@@ -125,6 +128,8 @@ export const EmailOrBitcoinAddressInput = ({
     const [input, setInput] = useState('');
     const [emailError, setEmailError] = useState('');
 
+    const [qrCodeModal, setQrCodeModal] = useModalState();
+
     const recipientsWithBtcAddress = compact(Object.values(recipientEmailMap));
 
     const [recipientsByAddress] = useMemo(() => {
@@ -224,6 +229,14 @@ export const EmailOrBitcoinAddressInput = ({
         handleRecipientInputChange(newValue, true, safeAddRecipients, setInput);
     };
 
+    const handleAddRecipientFromScan = (qrcode: QRCode) => {
+        const value = qrcode.data.trimStart();
+        handleInputChange(value);
+        onChange?.(value);
+
+        qrCodeModal.onClose();
+    };
+
     const listContent = useMemo(() => {
         if (loading) {
             return (
@@ -311,49 +324,60 @@ export const EmailOrBitcoinAddressInput = ({
     }, [filteredOptions, handleSelect, input, loading, onRemoveRecipient, recipientsWithBtcAddress]);
 
     return (
-        <div className="flex flex-column flex-nowrap justify-center w-full grow">
-            <div className="mb-4 w-full shrink-0">
-                <Input
-                    {...rest}
-                    label={c('Bitcoin send').t`To`}
-                    placeholder={c('Bitcoin send').t`Email address or BTC address`}
-                    dense
-                    ref={inputRef}
-                    autoFocus
-                    value={input}
-                    disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || loading}
-                    data-protonpass-ignore
-                    onValue={(value: string) => {
-                        handleInputChange(value.trimStart());
-                        onChange?.(value);
-                    }}
-                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-                        setEmailError('');
-                        if (event.key === 'Enter') {
-                            handleAddRecipientFromInput(input);
-                            event.preventDefault();
+        <>
+            <div className="flex flex-column flex-nowrap justify-center w-full grow">
+                <div className="mb-4 w-full shrink-0">
+                    <Input
+                        {...rest}
+                        label={c('Bitcoin send').t`To`}
+                        placeholder={c('Bitcoin send').t`Email address or BTC address`}
+                        dense
+                        ref={inputRef}
+                        autoFocus
+                        value={input}
+                        disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || loading}
+                        data-protonpass-ignore
+                        onValue={(value: string) => {
+                            handleInputChange(value.trimStart());
+                            onChange?.(value);
+                        }}
+                        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                            setEmailError('');
+                            if (event.key === 'Enter') {
+                                handleAddRecipientFromInput(input);
+                                event.preventDefault();
+                            }
+                        }}
+                        hint={
+                            recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS &&
+                            c('Wallet send')
+                                .t`Max recipients per transaction limit reached (${MAX_RECIPIENTS_PER_TRANSACTIONS})`
                         }
-                    }}
-                    hint={
-                        recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS &&
-                        c('Wallet send')
-                            .t`Max recipients per transaction limit reached (${MAX_RECIPIENTS_PER_TRANSACTIONS})`
-                    }
-                    className={clsx([rest.className])}
-                    containerClassName="border"
-                    style={rest.style}
-                    error={emailError}
-                    suffix={
-                        <div>
-                            <Icon className="color-weak" name="magnifier" />
-                        </div>
-                    }
-                />
+                        className={clsx([rest.className])}
+                        containerClassName="border"
+                        style={rest.style}
+                        error={emailError}
+                        suffix={
+                            <CoreButton
+                                icon
+                                size="small"
+                                shape="ghost"
+                                onClick={() => {
+                                    setQrCodeModal(true);
+                                }}
+                            >
+                                <Icon className="color-weak" name="camera" />
+                            </CoreButton>
+                        }
+                    />
+                </div>
+
+                <div className="flex flex-column justify-center grow w-full">
+                    <div className="grow overflow-auto">{listContent}</div>
+                </div>
             </div>
 
-            <div className="flex flex-column justify-center grow w-full">
-                <div className="grow overflow-auto">{listContent}</div>
-            </div>
-        </div>
+            <QRCodeReaderModal onScan={handleAddRecipientFromScan} {...qrCodeModal} />
+        </>
     );
 };

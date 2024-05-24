@@ -1,20 +1,19 @@
 import { QRCode } from 'jsqr';
 
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { ModalOwnProps } from '@proton/components/components';
 
+import { Modal } from '../../atoms';
 import QRCodeReader from '../QRCodeReader';
 
-interface Props {
-    title: string;
-    isOpen: boolean;
-    onClose: () => void;
+interface Props extends ModalOwnProps {
+    title?: string;
     onScan: (qrcode: QRCode) => void;
 }
 
-export const QRCodeReaderModal = ({ title, isOpen, onClose, onScan }: Props) => {
+export const QRCodeReaderModal = ({ title, onScan, ...rest }: Props) => {
     return (
-        <ModalTwo title={title} open={isOpen} onClose={onClose} enableCloseWhenClickOutside>
+        <Modal title={title} {...rest} enableCloseWhenClickOutside>
             <QRCodeReader onScan={onScan} />
-        </ModalTwo>
+        </Modal>
     );
 };
