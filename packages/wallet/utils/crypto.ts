@@ -44,7 +44,7 @@ export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
 >;
 
-export const decryptArmoredData = async (armoredMessage: string, keys: PrivateKeyReference[]) => {
+export const decryptTextData = async (armoredMessage: string, keys: PrivateKeyReference[]) => {
     const { data } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys: keys,
@@ -54,45 +54,95 @@ export const decryptArmoredData = async (armoredMessage: string, keys: PrivateKe
     return data;
 };
 
-export const encryptArmoredData = async (textData: string, keys: PrivateKeyReference[]) => {
-    const { message } = await CryptoProxy.encryptMessage({
-        textData,
+type DecryptReturnType<T extends 'binary' | 'utf8'> = T extends 'binary' ? Uint8Array : string;
+
+export const decryptPgp = async <T extends 'binary' | 'utf8'>(
+    armoredMessage: string,
+    format: T,
+    keys: PrivateKeyReference[]
+): Promise<DecryptReturnType<T>> => {
+    const { data } = await CryptoProxy.decryptMessage({
+        armoredMessage,
+        decryptionKeys: keys,
+        verificationKeys: keys,
+        format,
+    });
+
+    return data as DecryptReturnType<T>;
+};
+
+const isString = (data: string | Uint8Array): data is string => typeof data === 'string';
+
+export const encryptPgp = async <T extends string | Uint8Array>(data: T, keys: PrivateKeyReference[]) => {
+    const common = {
         encryptionKeys: keys,
         signingKeys: keys,
         format: 'armored',
-    });
+    } as const;
+
+    let message: string;
+    if (isString(data)) {
+        message = await CryptoProxy.encryptMessage({
+            textData: data,
+            ...common,
+        }).then(({ message }) => message);
+    } else {
+        message = await CryptoProxy.encryptMessage({
+            binaryData: data as Uint8Array,
+            ...common,
+        }).then(({ message }) => message);
+    }
 
     return message;
 };
 
-export const signData = async (textData: string, keys: PrivateKeyReference[]) => {
-    const signature = await CryptoProxy.signMessage({
-        textData,
+export const signData = async <T extends string | Uint8Array>(data: T, keys: PrivateKeyReference[]) => {
+    const common = {
         signingKeys: keys,
         detached: true,
         format: 'armored',
-    });
+    } as const;
+
+    let signature;
+    if (isString(data)) {
+        signature = await CryptoProxy.signMessage({
+            textData: data,
+            ...common,
+        });
+    } else {
+        signature = await CryptoProxy.signMessage({
+            binaryData: data as Uint8Array,
+            ...common,
+        });
+    }
 
     return signature;
 };
 
-export const verifySignedData = async (
-    textData: string,
+export const verifySignedData = async <T extends string | Uint8Array>(
+    data: T,
     signature: string,
     keys: (PrivateKeyReference | PublicKeyReference)[]
 ) => {
-    const { verified } = await CryptoProxy.verifyMessage({
-        textData,
-        armoredSignature: signature,
-        verificationKeys: keys,
-    });
-
-    return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+    if (isString(data)) {
+        return CryptoProxy.verifyMessage({
+            textData: data,
+            armoredSignature: signature,
+            verificationKeys: keys,
+        }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
+    } else {
+        return CryptoProxy.verifyMessage({
+            binaryData: data as Uint8Array,
+            armoredSignature: signature,
+            verificationKeys: keys,
+        }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
+    }
 };
 
 const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptArmoredData(
+    const decryptedEntropy = await decryptPgp(
         walletKey,
+        'binary',
         keys.map((k) => k.privateKey)
     );
 
@@ -111,18 +161,14 @@ const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: st
 
 export const decryptWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
-
-    const binaryEntropy = stringToUint8Array(decryptedEntropy);
-    return getSymmetricKey(binaryEntropy);
+    return getSymmetricKey(decryptedEntropy);
 };
 
 export const decryptWalletKeyForHmac = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
 
-    const binaryEntropy = stringToUint8Array(decryptedEntropy);
-
     // https://github.com/vercel/edge-runtime/issues/813
-    const slicedKey = new Uint8Array(binaryEntropy.slice(0, KEY_LENGTH));
+    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH));
 
     return crypto.subtle.importKey('raw', slicedKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 };
@@ -167,10 +213,8 @@ export const encryptWalletData = async (
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
-    const strEntropy = uint8ArrayToString(entropy);
-
-    const entropySignature = await signData(strEntropy, [userKey.privateKey]);
-    const encryptedEntropy = await encryptArmoredData(strEntropy, [userKey.privateKey]);
+    const entropySignature = await signData(entropy, [userKey.privateKey]);
+    const encryptedEntropy = await encryptPgp(entropy, [userKey.privateKey]);
 
     return [encryptedData, [encryptedEntropy, entropySignature, userKey.ID]];
 };
