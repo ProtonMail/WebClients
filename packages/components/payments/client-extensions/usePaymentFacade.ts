@@ -282,14 +282,23 @@ export const usePaymentFacade = ({
             return false;
         }
 
-        const method = methods.selectedMethod?.type;
-        const savedMethod = methods.savedInternalSelectedMethod;
-
         const methodsWithTaxCountry: (string | undefined)[] = [
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         ];
+
+        const isNewAllowedMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
+
+        const isSavedInternalAllowedMethod =
+            !!methods.savedInternalSelectedMethod &&
+            methodsWithTaxCountry.includes(methods.savedInternalSelectedMethod.Type);
+
+        const isSavedExternalAllowedMethod =
+            !!methods.savedExternalSelectedMethod &&
+            methodsWithTaxCountry.includes(methods.savedExternalSelectedMethod.Type);
+
+        const isAllowedMethod = isNewAllowedMethod || isSavedInternalAllowedMethod || isSavedExternalAllowedMethod;
         const flowsWithTaxCountry: PaymentMethodFlows[] = [
             'signup',
             'signup-pass',
@@ -298,10 +307,7 @@ export const usePaymentFacade = ({
             'subscription',
         ];
 
-        const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
-        const isSavedAllowedMethod = !!savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
-
-        const showTaxCountry = (isNewAllowedMethod || isSavedAllowedMethod) && flowsWithTaxCountry.includes(flow);
+        const showTaxCountry = isAllowedMethod && flowsWithTaxCountry.includes(flow);
         return showTaxCountry;
     };
 
