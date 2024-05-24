@@ -204,8 +204,8 @@ export interface QueryInvoicesParams {
 /**
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
-export const queryInvoices = (params: QueryInvoicesParams) => ({
-    url: `payments/${paymentsVersion}/invoices`,
+export const queryInvoices = (params: QueryInvoicesParams, version?: PaymentsVersion) => ({
+    url: `payments/${version ?? paymentsVersion}/invoices`,
     method: 'get',
     params,
 });
