@@ -21,6 +21,7 @@ import {
     PaymentMethodType,
     PlainPaymentMethodType,
     SavedPaymentMethod,
+    canUseChargebee,
 } from '../core';
 import {
     OnMethodChangedHandler,
@@ -282,23 +283,26 @@ export const usePaymentFacade = ({
             return false;
         }
 
-        const methodsWithTaxCountry: (string | undefined)[] = [
+        const methodsWithTaxCountry: (PaymentMethodType | undefined)[] = [
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         ];
 
-        const isNewAllowedMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
+        const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
 
-        const isSavedInternalAllowedMethod =
-            !!methods.savedInternalSelectedMethod &&
-            methodsWithTaxCountry.includes(methods.savedInternalSelectedMethod.Type);
+        const isSavedExternalMethod = methodsWithTaxCountry.includes(methods.savedExternalSelectedMethod?.Type);
 
-        const isSavedExternalAllowedMethod =
-            !!methods.savedExternalSelectedMethod &&
-            methodsWithTaxCountry.includes(methods.savedExternalSelectedMethod.Type);
+        const migratableMethods: (PaymentMethodType | undefined)[] = [
+            PAYMENT_METHOD_TYPES.CARD,
+            PAYMENT_METHOD_TYPES.PAYPAL,
+        ];
 
-        const isAllowedMethod = isNewAllowedMethod || isSavedInternalAllowedMethod || isSavedExternalAllowedMethod;
+        const isSavedInternalMethod =
+            migratableMethods.includes(methods.savedInternalSelectedMethod?.Type) &&
+            canUseChargebee(isChargebeeEnabled());
+
+        const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
         const flowsWithTaxCountry: PaymentMethodFlows[] = [
             'signup',
             'signup-pass',
@@ -307,7 +311,7 @@ export const usePaymentFacade = ({
             'subscription',
         ];
 
-        const showTaxCountry = isAllowedMethod && flowsWithTaxCountry.includes(flow);
+        const showTaxCountry = isMethodTaxCountry && flowsWithTaxCountry.includes(flow);
         return showTaxCountry;
     };
 
