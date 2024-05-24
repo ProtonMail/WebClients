@@ -1,5 +1,5 @@
 import { createTokenV4 } from '@proton/shared/lib/api/payments';
-import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
@@ -166,7 +166,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
 
     private checkAmount() {
         const isInRange =
-            (this.amountAndCurrency.Amount >= MIN_PAYPAL_AMOUNT &&
+            (this.amountAndCurrency.Amount >= MIN_PAYPAL_AMOUNT_INHOUSE &&
                 this.amountAndCurrency.Amount <= MAX_CREDIT_AMOUNT) ||
             // 0 is allowed because in this case we don't need to fetch token
             this.amountAndCurrency.Amount === 0 ||
