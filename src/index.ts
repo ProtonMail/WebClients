@@ -22,6 +22,7 @@ import {
     isUpgradeURL,
     isUpsellURL,
     isAccountAuthorize,
+    isAccountSwitch,
 } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {
@@ -38,6 +39,7 @@ import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
+import { resetBadge } from "./ipc/notification";
 
 (async function () {
     // Log initialization
@@ -199,6 +201,10 @@ import { getTheme, updateNativeTheme } from "./utils/themes";
 
             if (!isHostAllowed(url)) {
                 return preventDefault(ev);
+            }
+
+            if (isAccountSwitch(url)) {
+                resetBadge();
             }
 
             // This is used to redirect users to the external browser for internal upgrade modals
