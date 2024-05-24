@@ -22,12 +22,10 @@ import {
     itemDeleteFailure,
     itemDeleteIntent,
     itemDeleteSuccess,
-    itemDeleteSync,
     itemEditDismiss,
     itemEditFailure,
     itemEditIntent,
     itemEditSuccess,
-    itemEditSync,
     itemMoveFailure,
     itemMoveIntent,
     itemMoveSuccess,
@@ -39,7 +37,9 @@ import {
     itemTrashIntent,
     itemTrashSuccess,
     itemUnpinSuccess,
-    itemUsedSync,
+    itemsDeleteSync,
+    itemsEditSync,
+    itemsUsedSync,
     resolveAddressMonitor,
     restoreTrashProgress,
     setItemFlags,
@@ -207,15 +207,15 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, data: item, revision: revision + 1 })(state);
         }
 
-        if (itemEditSuccess.match(action) || itemEditSync.match(action)) {
+        if (itemEditSuccess.match(action)) {
             const { shareId, item } = action.payload;
             const { itemId } = item;
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
 
-        if (itemUsedSync.match(action)) {
-            const { shareId, itemId, lastUseTime } = action.payload;
-            return updateItem({ shareId, itemId, lastUseTime })(state);
+        if (or(itemsEditSync.match, itemsUsedSync.match)(action)) {
+            const { items } = action.payload;
+            return updateItems(items)(state);
         }
 
         if (itemDeleteIntent.match(action)) {
@@ -223,9 +223,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return { ...state, [shareId]: objectDelete(state[shareId], item.itemId) };
         }
 
-        if (itemDeleteSync.match(action)) {
-            const { shareId, itemId } = action.payload;
-            return { ...state, [shareId]: objectDelete(state[shareId], itemId) };
+        if (itemsDeleteSync.match(action)) {
+            const { shareId } = action.payload;
+            const itemIds = new Set(action.payload.itemIds);
+
+            return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
         }
 
         /**

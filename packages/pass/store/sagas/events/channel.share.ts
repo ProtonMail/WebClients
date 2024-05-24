@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import type { Action } from 'redux';
-import { all, call, fork, put, select, take } from 'redux-saga/effects';
+import { all, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
@@ -8,9 +8,9 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import {
-    itemDeleteSync,
-    itemEditSync,
-    itemUsedSync,
+    itemsDeleteSync,
+    itemsEditSync,
+    itemsUsedSync,
     shareDeleteSync,
     shareEditSync,
     shareEvent,
@@ -21,8 +21,10 @@ import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import noop from '@proton/utils/noop';
 
 import { discardDrafts } from '../items/item-drafts';
 import { eventChannelFactory } from './channel.factory';
@@ -59,22 +61,32 @@ const onShareEvent = (shareId: string) =>
             if (share) yield put(shareEditSync({ id: share.shareId, share }));
         }
 
-        if (DeletedItemIDs.length > 0) yield discardDrafts(shareId, DeletedItemIDs);
+        if (DeletedItemIDs.length > 0) {
+            yield discardDrafts(shareId, DeletedItemIDs);
+            yield put(itemsDeleteSync(shareId, DeletedItemIDs));
+        }
 
-        yield all([
-            ...DeletedItemIDs.map((itemId) => put(itemDeleteSync({ itemId, shareId }))),
-            ...UpdatedItems.map((encryptedItem) =>
-                call(function* () {
-                    try {
-                        const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
-                        yield put(itemEditSync({ shareId: item.shareId, itemId: item.itemId, item }));
-                    } catch (_) {}
-                })
-            ),
-            ...(LastUseItems ?? []).map(({ ItemID, LastUseTime }) =>
-                put(itemUsedSync({ shareId, itemId: ItemID, lastUseTime: LastUseTime }))
-            ),
-        ]);
+        if (LastUseItems && LastUseItems.length > 0) {
+            yield put(
+                itemsUsedSync(
+                    LastUseItems.map(({ ItemID, LastUseTime }) => ({
+                        itemId: ItemID,
+                        shareId,
+                        lastUseTime: LastUseTime,
+                    }))
+                )
+            );
+        }
+
+        if (UpdatedItems.length > 0) {
+            const updatedItems = (
+                (yield Promise.all(
+                    UpdatedItems.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(noop))
+                )) as Maybe<ItemRevision>[]
+            ).filter(truthy);
+
+            yield put(itemsEditSync(updatedItems));
+        }
 
         const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
         if (itemsMutated) onItemsUpdated?.();
