@@ -21,13 +21,14 @@ import {
     useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import { AuthType } from '@proton/components/containers/login/interface';
+import { AuthType, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleExternalSSOLogin, handleLogin } from '@proton/components/containers/login/loginActions';
 import { useLoading } from '@proton/hooks';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { ProductParam, normalizeProduct } from '@proton/shared/lib/apps/product';
 import { AuthResponse, AuthVersion, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -60,18 +61,25 @@ interface Props {
         payload: ChallengeResult;
     }) => Promise<void>;
     signInText?: string;
-    externalSSO?: boolean;
-    externalSSOToken?: string;
+    externalSSO: {
+        enabled?: boolean;
+        ssoToken?: string;
+        flow?: ExternalSSOFlow;
+    };
     defaultUsername?: string;
     hasRemember?: boolean;
     paths: Paths;
+    toApp?: APP_NAMES;
+    productParam?: ProductParam;
     authType: AuthType;
     onChangeAuthType: (authType: AuthType) => void;
     loginFormRef: MutableRefObject<LoginFormRef | undefined>;
+    appName: APP_NAMES;
 }
 
 const LoginForm = ({
     api,
+    appName,
     modal,
     authType,
     onChangeAuthType,
@@ -79,8 +87,8 @@ const LoginForm = ({
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
+    productParam,
     externalSSO,
-    externalSSOToken,
     paths,
     loginFormRef,
 }: Props) => {
@@ -212,6 +220,14 @@ const LoginForm = ({
         });
     };
 
+    const triggerSSOLoginNotification = () => {
+        createNotification({
+            type: 'info',
+            text: c('Info')
+                .t`Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.`,
+        });
+    };
+
     const handleSubmitSRP = async () => {
         const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
 
@@ -230,12 +246,19 @@ const LoginForm = ({
             const { code } = getApiError(e);
 
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
+                if (appName !== APPS.PROTONACCOUNT) {
+                    const url = new URL('https://account.proton.me/sso/login');
+                    url.searchParams.set('username', username);
+                    url.searchParams.set('flow', 'redirect');
+                    const normalizedProductParam = normalizeProduct(productParam);
+                    if (normalizedProductParam) {
+                        url.searchParams.set('product', normalizedProductParam);
+                    }
+                    window.location.assign(url.toString());
+                    return;
+                }
                 onChangeAuthType(AuthType.ExternalSSO);
-                createNotification({
-                    type: 'info',
-                    text: c('Info')
-                        .t`Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.`,
-                });
+                triggerSSOLoginNotification();
                 return;
             } else if (code === API_CUSTOM_ERROR_CODES.INVALID_LOGIN) {
                 updateErrorMessage(e);
@@ -259,14 +282,25 @@ const LoginForm = ({
     };
 
     useEffect(() => {
-        if (submitting || loading || !externalSSOToken || onceRef.current) {
+        if (
+            externalSSO.ssoToken ||
+            authType !== AuthType.ExternalSSO ||
+            externalSSO.flow !== ExternalSSOFlow.Redirect
+        ) {
+            return;
+        }
+        triggerSSOLoginNotification();
+    }, []);
+
+    useEffect(() => {
+        if (submitting || loading || !externalSSO.ssoToken || authType !== AuthType.ExternalSSO || onceRef.current) {
             return;
         }
         onceRef.current = true;
         withSubmitting(
             handleSubmitExternalSSOToken({
                 uid: undefined,
-                token: externalSSOToken,
+                token: externalSSO.ssoToken,
                 payload: undefined,
             })
         ).catch(noop);
@@ -450,7 +484,7 @@ const LoginForm = ({
 
                     return (
                         <>
-                            {externalSSO && (
+                            {externalSSO.enabled && (
                                 <>
                                     <Button
                                         size="large"
