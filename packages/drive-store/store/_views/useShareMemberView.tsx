@@ -19,8 +19,13 @@ import {
 } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { inviteProtonUser, listInvitations, deleteInvitation, updateShareInvitationPermissions } =
-        useShareInvitation();
+    const {
+        inviteProtonUser,
+        resendInvitationEmail,
+        listInvitations,
+        deleteInvitation,
+        updateShareInvitationPermissions,
+    } = useShareInvitation();
     const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const { createNotification } = useNotifications();
@@ -182,7 +187,15 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
         await deleteInvitation(abortSignal, { shareId, invitationId });
         setInvitations((current) => current.filter((item) => item.invitationId !== invitationId));
-        createNotification({ type: 'info', text: c('Notification').t`Invitation removed from the share` });
+        createNotification({ type: 'info', text: c('Notification').t`Access updated` });
+    };
+
+    const resendInvitation = async (invitationId: string) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await resendInvitationEmail(abortSignal, { shareId, invitationId });
+        createNotification({ type: 'info', text: c('Notification').t`Invitation email was sent again` });
     };
 
     const updateInvitePermissions = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
@@ -207,6 +220,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         removeMember,
         addNewMember,
         addNewMembers,
+        resendInvitation,
         updateMemberPermissions,
         updateInvitePermissions,
     };
