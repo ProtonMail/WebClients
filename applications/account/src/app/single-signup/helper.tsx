@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { VpnLogo } from '@proton/components/components';
 import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
@@ -20,6 +20,12 @@ export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: 
 export const getOffText = (discount: string, billingCycle: string) => {
     // translator: full sentence is "Get 33% off with a 2-year subscription"
     return c('vpn_2step: discount').t`Get ${discount} off with a ${billingCycle} subscription`;
+};
+
+export const getPassText = () => {
+    // translator: full sentence is "Get a first year of Proton Pass Plus for free!"
+    const plan = `${PASS_APP_NAME} Plus`;
+    return c('vpn_2step: discount').t`Get a first year of ${plan} for free!`;
 };
 
 export const getBillingCycleText = (cycle: CYCLE) => {

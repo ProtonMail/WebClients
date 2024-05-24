@@ -8,10 +8,9 @@ interface Props {
     title: ReactNode;
     features: PlanCardFeatureDefinition[];
     bundle?: { title: string; features: PlanCardFeatureDefinition[] }[];
-    removeBundle?: ReactNode;
 }
 
-const RightPlanSummary = ({ logo, title, features, bundle, removeBundle }: Props) => {
+const RightPlanSummary = ({ logo, title, features, bundle }: Props) => {
     return (
         <div className="flex flex-column gap-4">
             <div>
@@ -28,18 +27,11 @@ const RightPlanSummary = ({ logo, title, features, bundle, removeBundle }: Props
                 className="mb-5 gap-1"
                 itemClassName="color-weak"
             />
-            {bundle?.map(({ title, features }, i, arr) => {
-                const last = i === arr.length - 1;
+            {bundle?.map(({ title, features }) => {
                 return (
                     <div key={title}>
                         <div className="color-weak mb-2">
-                            {last ? (
-                                <div className="flex items-center gap-2">
-                                    {title} {removeBundle}
-                                </div>
-                            ) : (
-                                title
-                            )}
+                            <span className="text-semibold">{title}</span>
                         </div>
                         <PlanCardFeatureList
                             odd={false}
