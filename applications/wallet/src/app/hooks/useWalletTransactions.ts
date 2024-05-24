@@ -20,10 +20,10 @@ import noop from '@proton/utils/noop';
 import {
     IWasmApiWalletData,
     WalletMap,
-    decryptArmoredData,
+    decryptTextData,
     decryptWalletData,
     decryptWalletKeyForHmac,
-    encryptArmoredData,
+    encryptPgp,
     encryptWalletDataWithWalletKey,
     hmac,
     useWalletApiClients,
@@ -67,7 +67,7 @@ const decryptTransactionData = async (
     userKey: PrivateKeyReference,
     addressKeys?: PrivateKeyReference[]
 ): Promise<DecryptedTransactionData> => {
-    const TransactionID = await decryptArmoredData(apiTransaction.TransactionID, [userKey, ...(addressKeys ?? [])]);
+    const TransactionID = await decryptTextData(apiTransaction.TransactionID, [userKey, ...(addressKeys ?? [])]);
 
     if (!addressKeys) {
         return {
@@ -77,9 +77,9 @@ const decryptTransactionData = async (
         };
     }
 
-    const Body = apiTransaction.Body && (await decryptArmoredData(apiTransaction.Body, addressKeys));
-    const Sender = apiTransaction.Sender && (await decryptArmoredData(apiTransaction.Sender, addressKeys));
-    const SerialisedToList = apiTransaction.ToList && (await decryptArmoredData(apiTransaction.ToList, addressKeys));
+    const Body = apiTransaction.Body && (await decryptTextData(apiTransaction.Body, addressKeys));
+    const Sender = apiTransaction.Sender && (await decryptTextData(apiTransaction.Sender, addressKeys));
+    const SerialisedToList = apiTransaction.ToList && (await decryptTextData(apiTransaction.ToList, addressKeys));
 
     const ToList = parsedRecipientList(SerialisedToList);
 
@@ -228,7 +228,7 @@ const createMissingTxData = async (
                 continue;
             }
 
-            const txid = await encryptArmoredData(networkData.txid, [userKey.privateKey]);
+            const txid = await encryptPgp(networkData.txid, [userKey.privateKey]);
 
             // TODO: this can only occur on encryption error: we need to better handle that
             if (!txid) {
