@@ -13,7 +13,13 @@ import {
 } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { AuthActionResponse, AuthCacheResult, AuthStep, AuthType } from '@proton/components/containers/login/interface';
+import {
+    AuthActionResponse,
+    AuthCacheResult,
+    AuthStep,
+    AuthType,
+    ExternalSSOFlow,
+} from '@proton/components/containers/login/interface';
 import {
     handleFido2,
     handleNextLogin,
@@ -94,11 +100,20 @@ const LoginContainer = ({
     render = defaultRender,
     testflight,
 }: Props) => {
-    const { state } = useLocation<{ username?: string; authType?: AuthType; externalSSOToken?: string } | undefined>();
+    const { state } = useLocation<
+        | {
+              username?: string;
+              authType?: AuthType;
+              externalSSOToken?: string;
+              externalSSOFlow?: ExternalSSOFlow;
+          }
+        | undefined
+    >();
     const { APP_NAME } = useConfig();
     const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
+    const searchParams = new URLSearchParams(location.search);
 
     useMetaTags(metaTags);
 
@@ -110,7 +125,7 @@ const LoginContainer = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
-    const previousUsernameRef = useRef(state?.username || defaultUsername || '');
+    const previousUsernameRef = useRef(state?.username || defaultUsername || searchParams.get('username') || '');
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
@@ -220,9 +235,14 @@ const LoginContainer = ({
                                     loginFormRef={loginFormRef}
                                     api={silentApi}
                                     modal={modal || isElectronPass}
-                                    externalSSO={APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp)}
-                                    externalSSOToken={state?.externalSSOToken}
+                                    appName={APP_NAME}
+                                    externalSSO={{
+                                        enabled: APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp),
+                                        ssoToken: state?.externalSSOToken,
+                                        flow: state?.externalSSOFlow,
+                                    }}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
+                                    productParam={productParam}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember && !isElectronPass}
