@@ -218,7 +218,7 @@ import { getTheme, updateNativeTheme } from "./utils/themes";
         contents.on("will-attach-webview", preventDefault);
 
         contents.on("will-navigate", (details) => {
-            Logger.info("will-navigate");
+            Logger.info("will-navigate", app.isPackaged ? "" : details.url);
 
             if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
                 return preventDefault(details);
