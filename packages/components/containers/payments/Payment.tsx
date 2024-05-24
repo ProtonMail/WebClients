@@ -11,6 +11,7 @@ import {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
+    canUseChargebee,
 } from '@proton/components/payments/core';
 import { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
@@ -195,8 +196,7 @@ export const PaymentsNoApi = ({
         savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
         // CARD must use the Chargebee iframe if we are in migration mode. The migration mode can be detected
         // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
-        (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD &&
-            isChargebeeEnabled() === ChargebeeEnabled.CHARGEBEE_ALLOWED);
+        (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
 
     return (
         <>

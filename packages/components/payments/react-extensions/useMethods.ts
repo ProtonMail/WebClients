@@ -15,6 +15,7 @@ import {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
+    canUseChargebee,
     initializePaymentMethods,
     isExistingPaymentMethod,
     isSavedPaymentMethodExternal,
@@ -80,8 +81,7 @@ const useInhouseToChargebeeSwitch = ({
     // We don't apply the switching logic for saved methods, because on-session upgrades
     // supposed to support selecting in-house saved methods. The method will be imported to Chargebee
     // on payment and then the method updated to CB one.
-    const isMigratableSavedMethod =
-        !!selectedMethod?.isSaved && isChargebeeEnabled() === ChargebeeEnabled.CHARGEBEE_ALLOWED;
+    const isMigratableSavedMethod = !!selectedMethod?.isSaved && canUseChargebee(isChargebeeEnabled());
 
     // An effect of switches between Chargebee and inhouse in case if inhouse or Chargebee is not available.
     useEffect(() => {
