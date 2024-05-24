@@ -260,6 +260,7 @@ export const PaymentsNoApi = ({
                     )}
                     {showPaypalView && (
                         <PayPalView
+                            method={method}
                             paypal={paypal}
                             paypalCredit={paypalCredit}
                             amount={amount}
