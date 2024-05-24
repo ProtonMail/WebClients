@@ -1,5 +1,12 @@
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { ADDON_NAMES, BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT, PLANS } from '@proton/shared/lib/constants';
+import {
+    ADDON_NAMES,
+    BLACK_FRIDAY,
+    MIN_BITCOIN_AMOUNT,
+    MIN_PAYPAL_AMOUNT_CHARGEBEE,
+    MIN_PAYPAL_AMOUNT_INHOUSE,
+    PLANS,
+} from '@proton/shared/lib/constants';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -246,7 +253,7 @@ export class PaymentMethods {
         const alreadyHasPayPal = this.paymentMethods.some(
             ({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL || Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         );
-        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT;
+        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT_INHOUSE;
         const isInvoice = this.flow === 'invoice';
 
         return (
@@ -265,7 +272,8 @@ export class PaymentMethods {
         const alreadyHasPayPal = this.paymentMethods.some(
             ({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL || Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         );
-        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT;
+
+        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT_CHARGEBEE;
         const isInvoice = this.flow === 'invoice';
 
         const paypalAvailable =
