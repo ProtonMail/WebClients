@@ -25,9 +25,9 @@ export const getSessionID = (url?: string) => {
 
 export const isCalendar = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
-        return urls.calendar === url.origin;
+        return configURL.calendar === url.origin;
     } catch (error) {
         return false;
     }
@@ -35,9 +35,9 @@ export const isCalendar = (urlString: string) => {
 
 export const isMail = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
-        return urls.mail === url.origin;
+        return configURL.mail === url.origin;
     } catch (error) {
         return false;
     }
@@ -45,10 +45,10 @@ export const isMail = (urlString: string) => {
 
 const isMailHome = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
 
-        if (urls.mail !== url.origin) {
+        if (configURL.mail !== url.origin) {
             return false;
         }
 
@@ -65,9 +65,9 @@ const isMailHome = (urlString: string) => {
 
 export const isAccount = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
-        return urls.account === url.origin;
+        return configURL.account === url.origin;
     } catch (error) {
         return false;
     }
@@ -75,10 +75,10 @@ export const isAccount = (urlString: string) => {
 
 export const isAccountAuthorize = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
 
-        if (urls.account !== url.origin) {
+        if (configURL.account !== url.origin) {
             return false;
         }
 
@@ -90,10 +90,10 @@ export const isAccountAuthorize = (urlString: string) => {
 
 export const isAccountSwitch = (urlString: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         const url = new URL(urlString);
 
-        if (urls.account !== url.origin) {
+        if (configURL.account !== url.origin) {
             return false;
         }
 
@@ -139,7 +139,7 @@ export const isUpsellURL = (host: string) => {
 
 export const isHostAllowed = (host: string) => {
     try {
-        const urls = getConfig().url;
+        const configURL = getConfig().url;
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {
             finalURL = "https://" + finalURL;
@@ -147,7 +147,7 @@ export const isHostAllowed = (host: string) => {
 
         const hostURl = new URL(finalURL);
 
-        return Object.values(urls)
+        return Object.values(configURL)
             .map((item) => new URL(item))
             .some((url) => {
                 return url.host === hostURl.host;
