@@ -37,6 +37,9 @@ export const getApp = ({
         if (match) {
             return match.product;
         }
+        if (redirect.includes('docs')) {
+            return APPS.PROTONDOCS;
+        }
     }
     if (plan) {
         const match = list.find(({ value }) => plan.includes(value));

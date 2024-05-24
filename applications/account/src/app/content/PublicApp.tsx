@@ -158,6 +158,7 @@ const SIGN_IN_ROUTES = [
     SSO_PATHS.PASS_SIGN_IN,
     SSO_PATHS.VPN_SIGN_IN,
     SSO_PATHS.DRIVE_SIGN_IN,
+    SSO_PATHS.DOCS_SIGN_IN,
 ];
 
 // All SSO paths except login
@@ -732,6 +733,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
+                                                        SSO_PATHS.DOCS_SIGNUP,
                                                     ]}
                                                 >
                                                     {(() => {
@@ -858,6 +860,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.MAIL_SIGN_IN,
                                                         SSO_PATHS.CALENDAR_SIGN_IN,
                                                         SSO_PATHS.DRIVE_SIGN_IN,
+                                                        SSO_PATHS.DOCS_SIGN_IN,
                                                         SSO_PATHS.VPN_SIGN_IN,
                                                         SSO_PATHS.PASS_SIGN_IN,
                                                     ]}
