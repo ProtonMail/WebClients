@@ -34,7 +34,13 @@ import { pushForkSession } from '@proton/shared/lib/api/auth';
 import createApi from '@proton/shared/lib/api/createApi';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api/organization';
-import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import {
+    getAppHref,
+    getClientID,
+    getExtension,
+    getInvoicesPathname,
+    isExtension,
+} from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getIsPassApp, getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -236,10 +242,10 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const handleProduceFork = async (data: ProduceForkData, session: AuthSession): Promise<OnLoginCallbackResult> => {
         if (data.type === SSOType.Proton) {
             const { forkParameters } = data.payload;
-            const extension = getExtension(forkParameters.app);
+            const { app } = forkParameters;
 
-            if (extension) {
-                const childClientID = getClientID(forkParameters.app);
+            if (isExtension(app)) {
+                const childClientID = getClientID(app);
                 const { Selector: selector } = await api<PushForkResponse>(
                     withUIDHeaders(
                         session.UID,
@@ -250,7 +256,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     )
                 );
                 const result = await produceExtensionFork({
-                    extension,
+                    app,
                     payload: {
                         selector,
                         session,
@@ -258,7 +264,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     },
                 });
 
-                const state: AuthExtensionState = { ...result, extension };
+                const state: AuthExtensionState = { ...result, app };
                 history.replace('/auth-ext', state);
                 return inputResult;
             }

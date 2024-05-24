@@ -108,9 +108,9 @@ const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo,
                             }
                         }
 
-                        await sendExtensionMessage<{ type: 'pass-onboarding' }>(
+                        await sendExtensionMessage(
                             { type: 'pass-onboarding' },
-                            { extensionId: model.extension.ID, maxTimeout: 1000 }
+                            { app: APPS.PROTONPASSBROWSEREXTENSION, maxTimeout: 1_000 }
                         ).catch(noop);
                     }}
                 />
