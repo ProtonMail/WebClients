@@ -1,5 +1,6 @@
 import { throwError } from '@proton/pass/utils/fp/throw';
 
+import { WASM_PROCEDURE_TIMEOUT } from './constants';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult, PassCoreService } from './types';
 
 /** Creates a `PassCoreService` instance which spawns the `PassRustCore`
@@ -16,7 +17,10 @@ export const createPassCoreWorkerService = (): PassCoreService => {
         const channel = new MessageChannel();
 
         return new Promise<PassCoreResult<T>>((resolve, reject) => {
-            const timer = setTimeout(() => reject(new Error('PassRustCore procedure timed out')), 1_000);
+            const timer = setTimeout(
+                () => reject(new Error('PassRustCore procedure timed out')),
+                WASM_PROCEDURE_TIMEOUT
+            );
 
             channel.port2.onmessage = (event: MessageEvent<PassCoreResult<T>>) => {
                 resolve(event.data);
