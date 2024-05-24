@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { usePaypal } from '@proton/components/payments/react-extensions/usePaypal';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { apiMock, mockVerifyPayment } from '@proton/testing';
@@ -72,6 +73,7 @@ it('should render', () => {
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
             showPaypalCredit={true}
+            method={PAYMENT_METHOD_TYPES.PAYPAL_CREDIT}
         />
     );
     expect(container).not.toBeEmptyDOMElement();
@@ -90,6 +92,7 @@ it('should render the message of paypal credit and "click here" button', () => {
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
             showPaypalCredit={true}
+            method={PAYMENT_METHOD_TYPES.PAYPAL_CREDIT}
         />
     );
 
@@ -112,6 +115,7 @@ it('should disable the "click here" button when triggers are disabled', () => {
             currency={amountAndCurrency.Currency}
             triggersDisabled={true}
             showPaypalCredit={true}
+            method={PAYMENT_METHOD_TYPES.PAYPAL_CREDIT}
         />
     );
 
@@ -131,6 +135,7 @@ it('should disable the "click here" button when paypal credit is in initial stat
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
             showPaypalCredit={true}
+            method={PAYMENT_METHOD_TYPES.PAYPAL_CREDIT}
         />
     );
 

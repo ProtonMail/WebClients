@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
-import { PaymentMethodFlows } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentMethodFlows, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
-import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import {
+    MAX_PAYPAL_AMOUNT,
+    MIN_PAYPAL_AMOUNT_CHARGEBEE,
+    MIN_PAYPAL_AMOUNT_INHOUSE,
+} from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Price } from '../../components';
@@ -20,6 +24,7 @@ interface Props {
     onClick?: () => void;
     triggersDisabled?: boolean;
     showPaypalCredit: boolean;
+    method: PlainPaymentMethodType;
 }
 
 const PayPalView = ({
@@ -32,11 +37,17 @@ const PayPalView = ({
     onClick,
     triggersDisabled,
     showPaypalCredit,
+    method,
 }: Props) => {
-    if (amount < MIN_PAYPAL_AMOUNT) {
+    const isChargebeePaypal = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    const minAmount = isChargebeePaypal ? MIN_PAYPAL_AMOUNT_CHARGEBEE : MIN_PAYPAL_AMOUNT_INHOUSE;
+
+    if (amount < minAmount) {
+        const minimumAmount = <Price currency={currency}>{minAmount}</Price>;
+
         return (
             <Alert className="mb-4" type="error">
-                {c('Error').t`Amount below minimum.`} {`(${(<Price currency={currency}>{MIN_PAYPAL_AMOUNT}</Price>)})`}
+                {c('Error').jt`Amount below minimum (${minimumAmount}).`}
             </Alert>
         );
     }

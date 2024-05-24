@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/shared/lib/constants';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES } from '../core';
@@ -293,17 +293,17 @@ it('should update desabled state when the amount changes', () => {
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: MIN_PAYPAL_AMOUNT - 1,
+        Amount: MIN_PAYPAL_AMOUNT_INHOUSE - 1,
     });
     expect(result.current.disabled).toBe(true);
 
     rerender({
-        Amount: MIN_PAYPAL_AMOUNT,
+        Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
     });
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: (MIN_PAYPAL_AMOUNT + MAX_CREDIT_AMOUNT) / 2,
+        Amount: (MIN_PAYPAL_AMOUNT_INHOUSE + MAX_CREDIT_AMOUNT) / 2,
     });
     expect(result.current.disabled).toBe(false);
 
