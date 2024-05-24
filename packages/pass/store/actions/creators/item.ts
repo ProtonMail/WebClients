@@ -127,8 +127,8 @@ export const itemEditSuccess = createOptimisticAction(
     ({ payload }) => getItemActionId(payload)
 );
 
-export const itemEditSync = createAction('item::edit::sync', (payload: { item: ItemRevision } & SelectedItem) =>
-    withCache({ payload })
+export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevision[]) =>
+    withCache({ payload: { items } })
 );
 
 export const itemMoveIntent = createOptimisticAction(
@@ -350,7 +350,9 @@ export const itemBulkDeleteSuccess = createAction(
     )
 );
 
-export const itemDeleteSync = createAction('item::delete::sync', (payload: SelectedItem) => withCache({ payload }));
+export const itemsDeleteSync = createAction('items::delete::sync', (shareId: string, itemIds: string[]) =>
+    withCache({ payload: { shareId, itemIds } })
+);
 
 export const itemRestoreIntent = createOptimisticAction(
     'item::restore::intent',
@@ -427,9 +429,8 @@ export const itemBulkRestoreSuccess = createAction(
 
 export const itemAutofilled = createAction('item::autofilled', (payload: SelectedItem) => ({ payload }));
 
-export const itemUsedSync = createAction(
-    'item::used::sync',
-    (payload: { shareId: string; itemId: string; lastUseTime: number }) => withCache({ payload })
+export const itemsUsedSync = createAction('items::used::sync', (items: (SelectedItem & { lastUseTime: number })[]) =>
+    withCache({ payload: { items } })
 );
 
 export const itemPinIntent = createAction('item::pin::intent', (payload: UniqueItem) =>
