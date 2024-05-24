@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useChargebeeUserStatusTracker } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useReportRoutingError } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { InvoiceDocument, getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
+import { InvoiceDocument, PaymentsVersion, getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import {
     Alert,
@@ -49,13 +50,16 @@ const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: Invo
         request: requestInvoices,
         error,
     } = useApiResult<InvoiceResponse>(
-        () =>
-            queryInvoices({
-                Page: page - 1,
-                PageSize: ELEMENTS_PER_PAGE,
-                Owner: owner,
-                Document,
-            }),
+        (paymentsVersion?: PaymentsVersion) =>
+            queryInvoices(
+                {
+                    Page: page - 1,
+                    PageSize: ELEMENTS_PER_PAGE,
+                    Owner: owner,
+                    Document,
+                },
+                paymentsVersion
+            ),
         [page],
         false,
         true
@@ -196,9 +200,15 @@ const InvoicesSection = () => {
 
     const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
-    useSubscribeEventManager(({ Invoices } = {}) => {
+    useSubscribeEventManager(({ Invoices, User } = {}) => {
         if (Invoices && Invoices.length > 0) {
-            void invoicesHook.requestInvoices();
+            // it helps with rare routing issue when user pays in one tab but then
+            // the invoices are queried in another tab with the old v4 version.
+            // Aparanently there is a concurrency isue between setting the global payments version and the invoices request.
+            const paymentsVersion: PaymentsVersion | undefined =
+                User?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? 'v5' : undefined;
+
+            void invoicesHook.requestInvoices(paymentsVersion);
             setDocument(InvoiceDocument.Invoice);
         }
     });
