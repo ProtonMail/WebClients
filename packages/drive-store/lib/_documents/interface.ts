@@ -1,10 +1,19 @@
-import { SessionKey } from '@proton/crypto';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
-import { DecryptedLink } from '../../store';
 import { NodeMeta } from '../interface';
 
 /**
- * Container for a document's manifest and signature.
+ * Container for general signed data.
+ */
+export type SignedData = {
+    data: Uint8Array;
+    hash: Uint8Array;
+    signature: string;
+    signatureAddress: string;
+};
+
+/**
+ * Container for signed manifest.
  */
 export type DocumentManifest = {
     manifest: Uint8Array;
@@ -17,29 +26,11 @@ export type DocumentManifest = {
  */
 export type DocumentKeys = {
     contentKey: SessionKey;
+    signingKey: PrivateKeyReference;
+    ownAddress: string;
 };
 
 /**
  * Metadata for a document node.
  */
-export type DocumentNodeMeta = NodeMeta & DocumentKeys;
-
-/**
- * Document node.
- */
-
-export type DocumentNode = {
-    nodeId: DecryptedLink['linkId'];
-    parentNodeId: DecryptedLink['parentLinkId'];
-    name: DecryptedLink['name'];
-    hash: DecryptedLink['hash'];
-    createTime: DecryptedLink['createTime'];
-
-    signatureAddress?: DecryptedLink['signatureAddress'];
-    nameSignatureAddress?: DecryptedLink['nameSignatureAddress'];
-
-    /**
-     * If present, this node's metadata could be corrupted / undecryptable in some way.
-     */
-    isCorruptedNode?: DecryptedLink['corruptedLink'];
-};
+export type DocumentNodeMeta = NodeMeta & { keys: DocumentKeys };

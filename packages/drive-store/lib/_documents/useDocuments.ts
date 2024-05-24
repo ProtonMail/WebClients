@@ -21,16 +21,21 @@ import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { LegacyNodeMeta, NodeMeta } from '../interface';
-import { DocumentKeys, DocumentManifest, DocumentNode, DocumentNodeMeta } from './interface';
-import { linkToDocumentNode } from './utils';
+import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData } from './interface';
 
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();
     const abortSignal = useAbortSignal([]);
-    const { getLinkPrivateKey, getLinkHashKey, getLinkSessionKey, getLink } = useLink();
+    const { getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
     const { getShareCreatorKeys } = useShare();
     const { renameLink } = useActions();
     const { getLocalID } = useAuthentication();
+
+    const getDocumentSigningKeys = async (shareId: string) => {
+        // getShareCreatorKeys gets the key from `share.addressId` which is always
+        // corresponding to the member of a share. This function will be renamed in a refactor.
+        return getShareCreatorKeys(abortSignal, shareId);
+    };
 
     const createDocumentNode = async (
         { shareId, linkId: parentLinkId }: LegacyNodeMeta,
@@ -39,7 +44,7 @@ export const useDocuments = () => {
         const [parentPrivateKey, parentHashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, parentLinkId),
             getLinkHashKey(abortSignal, shareId, parentLinkId),
-            getShareCreatorKeys(abortSignal, shareId),
+            getDocumentSigningKeys(shareId),
         ]);
 
         const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
@@ -115,30 +120,31 @@ export const useDocuments = () => {
         );
 
         return {
-            linkId: Document.ID,
+            linkId: Document.LinkID,
             volumeId: Document.VolumeID,
-            contentKey,
+            keys: {
+                contentKey,
+                signingKey: addressKey,
+                ownAddress: address.Email,
+            },
         };
     };
 
     const getDocumentKeys = async ({ shareId, linkId }: LegacyNodeMeta): Promise<DocumentKeys> => {
         const contentKey = await getLinkSessionKey(abortSignal, shareId, linkId);
+        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
 
-        if (!contentKey) {
-            throw new EnrichedError('Could not find document key', {
+        if (!contentKey || !addressKey || !address) {
+            throw new EnrichedError('Could not find document keys', {
                 tags: { shareId, linkId },
             });
         }
 
         return {
             contentKey,
+            signingKey: addressKey,
+            ownAddress: address.Email,
         };
-    };
-
-    const getDocumentNode = async ({ shareId, linkId }: LegacyNodeMeta): Promise<DocumentNode> => {
-        const link = await getLink(abortSignal, shareId, linkId);
-
-        return linkToDocumentNode(link);
     };
 
     const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
@@ -155,6 +161,20 @@ export const useDocuments = () => {
         return url;
     };
 
+    const signDocumentData = async ({ shareId }: LegacyNodeMeta, data: Uint8Array): Promise<SignedData> => {
+        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
+
+        const { BlockHash } = await generateContentHash(data);
+        const signature = await sign(data, addressKey);
+
+        return {
+            data,
+            hash: BlockHash,
+            signature,
+            signatureAddress: address.Email,
+        };
+    };
+
     /**
      * Content passed assumes documents are only one block.
      */
@@ -162,9 +182,7 @@ export const useDocuments = () => {
         { shareId }: LegacyNodeMeta,
         content: Uint8Array
     ): Promise<DocumentManifest> => {
-        // getShareCreatorKeys gets the key from `share.addressId` which is always
-        // corresponding to the member of a share. This function will be renamed in a refactor.
-        const { privateKey: addressKey, address } = await getShareCreatorKeys(abortSignal, shareId);
+        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
 
         const manifest = await generateContentHash(content);
         const manifestSignature = await sign(manifest.BlockHash, addressKey);
@@ -179,9 +197,9 @@ export const useDocuments = () => {
     return {
         createDocumentNode,
         getDocumentKeys,
-        getDocumentNode,
         renameDocument,
         getDocumentUrl,
         signDocumentManifest,
+        signDocumentData,
     };
 };
