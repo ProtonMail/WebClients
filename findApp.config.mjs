@@ -37,7 +37,7 @@ export default {
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
-                name: 'docs-types',
+                name: 'docs-shared',
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
