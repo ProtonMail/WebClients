@@ -11,6 +11,7 @@ import { partition } from '@proton/pass/utils/array/partition';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
+import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -65,20 +66,27 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                     vault: {
                         name: name,
                         shareId: null,
-                        items: itemsToImport.map(
-                            (item) =>
-                                ({
-                                    ...obfuscateItem({
-                                        ...item.data,
-                                        ...(item.data.type === 'alias'
-                                            ? { extraData: { aliasEmail: item.aliasEmail! } }
-                                            : {}),
-                                    }),
-                                    trashed: item.state === ItemState.Trashed,
-                                    createTime: item.createTime,
-                                    modifyTime: item.modifyTime,
-                                }) as ItemImportIntent
-                        ),
+                        items: itemsToImport.map((item) => {
+                            // Migrate username to itemEmail
+                            if (semver(parsedExport.version) < semver('1.18.0')) {
+                                if (item.data.type === 'login' && 'username' in item.data.content) {
+                                    item.data.content.itemEmail = item.data.content.username as string;
+                                    item.data.content.itemUsername = '';
+                                    delete item.data.content.username;
+                                }
+                            }
+                            return {
+                                ...obfuscateItem({
+                                    ...item.data,
+                                    ...(item.data.type === 'alias'
+                                        ? { extraData: { aliasEmail: item.aliasEmail! } }
+                                        : {}),
+                                }),
+                                trashed: item.state === ItemState.Trashed,
+                                createTime: item.createTime,
+                                modifyTime: item.modifyTime,
+                            } as ItemImportIntent;
+                        }),
                     },
                     ignored: ignoredAliases.map((item) => `[Alias] ${item.aliasEmail}`),
                 };
