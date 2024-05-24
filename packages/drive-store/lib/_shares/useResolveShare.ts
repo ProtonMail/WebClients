@@ -25,18 +25,18 @@ export const useResolveShareId = () => {
     const resolveShareId = async (nodeId: NodeMeta, force?: boolean): Promise<LegacyNodeMeta> => {
         const cached = cache.current.get(getCacheKey(nodeId));
         if (cached && !force) {
-            return { shareId: cached, linkId: nodeId.linkId };
+            return { shareId: cached, volumeId: nodeId.volumeId, linkId: nodeId.linkId };
         }
 
         try {
-            const { shareId } = await debouncedRequest<{ shareId: string }>({
+            const { ContextShareID: shareId } = await debouncedRequest<{ ContextShareID: string }>({
                 ...queryResolveContextShare(nodeId),
                 signal: abortSignal,
             });
 
             cache.current.set(getCacheKey(nodeId), shareId);
 
-            return { shareId, linkId: nodeId.linkId };
+            return { shareId, volumeId: nodeId.volumeId, linkId: nodeId.linkId };
         } catch (e) {
             throw new EnrichedError('Unable to resolve shareId from volumeId', {
                 tags: {
