@@ -6,7 +6,7 @@ import { getMailView, getMainWindow, updateView } from "../utils/view/viewManage
 import { ElectronNotification } from "./ipcConstants";
 
 export const handleIPCBadge = (count: number) => {
-    Logger.info("handleIPCBadge, update badge value", count);
+    Logger.info("Update badge value", count);
     if (isWindows) {
         return;
     }
@@ -19,6 +19,7 @@ export const handleIPCBadge = (count: number) => {
 };
 
 export const resetBadge = () => {
+    Logger.info("Reset badge value");
     app.setBadgeCount(0);
 };
 
