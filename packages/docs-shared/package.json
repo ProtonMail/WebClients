@@ -1,0 +1,24 @@
+{
+  "name": "@proton/docs-shared",
+  "version": "0.0.2",
+  "description": "Shared types and utilities for Proton Docs",
+  "main": "index.ts",
+  "scripts": {
+    "check-types": "tsc",
+    "lint": "eslint . --ext ts --quiet --cache"
+  },
+  "dependencies": {
+    "@lexical/yjs": "0.14.5",
+    "@proton/docs-proto": "workspace:packages/docs-proto",
+    "@standardnotes/utils": "^1.17.12",
+    "google-protobuf": "^3.21.2",
+    "yjs": "^13.6.14"
+  },
+  "devDependencies": {
+    "@proton/eslint-config-proton": "workspace:^",
+    "@types/google-protobuf": "^3.15.12",
+    "eslint": "^8.57.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.3"
+  }
+}
