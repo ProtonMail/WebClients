@@ -9,7 +9,7 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -18,6 +18,7 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { usePortal } from '@proton/pass/hooks/usePortal';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
@@ -36,6 +37,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const userVerified = useSelector(selectUserVerified);
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
     const reconciled = useRef(false);
+    const { ParentPortal, openPortal } = usePortal();
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const url = subdomain ?? domain;
@@ -146,6 +148,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             submitButton={needsUpgrade && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />}
             type="alias"
             valid={ready && form.isValid && userVerified && !needsUpgrade}
+            actions={ParentPortal}
         >
             {({ didEnter }) => (
                 <>
@@ -165,9 +168,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                {vaultTotalCount > 1 && (
-                                    <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-                                )}
+                                {vaultTotalCount > 1 &&
+                                    openPortal(
+                                        <Field component={VaultPickerField} name="shareId" className="h-full" dense />
+                                    )}
                                 <Field
                                     lengthLimiters
                                     name="name"

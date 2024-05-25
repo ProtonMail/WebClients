@@ -5,14 +5,14 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { BaseTitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { usePortal } from '@proton/pass/hooks/usePortal';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
@@ -25,6 +25,7 @@ const FORM_ID = 'new-note';
 export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: NoteFormValues = { name: '', note: '', shareId };
     const { vaultTotalCount } = useSelector(selectVaultLimits);
+    const { ParentPortal, openPortal } = usePortal();
 
     const form = useFormik<NoteFormValues>({
         initialValues,
@@ -55,15 +56,12 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
             valid={form.isValid}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
+            actions={ParentPortal}
         >
             {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        {vaultTotalCount > 1 && (
-                            <FieldsetCluster className="mb-4">
-                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-                            </FieldsetCluster>
-                        )}
+                        {vaultTotalCount > 1 && openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
 
                         <Field
                             dense
