@@ -1,4 +1,4 @@
-import { addMinutes, differenceInMinutes, getUnixTime, isToday } from 'date-fns';
+import { addMinutes, differenceInMinutes, fromUnixTime, getUnixTime, isToday } from 'date-fns';
 
 import { serverTime } from '@proton/crypto';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -60,4 +60,16 @@ export const getMinExpirationTime = (date: Date) => {
     const nextIntervals = Array.from(Array(3)).map((_, i) => addMinutes(nowForInterval, 30 * (i + 1)));
 
     return nextIntervals.find((interval) => interval > now && differenceInMinutes(interval, now) >= 15);
+};
+
+/**
+ * Returns the expiration date from the API if it exists
+ * @param expirationTime: Expiration Time returned by the API (Unix timestamp)
+ * @returns {Date | undefined}
+ */
+export const getExpiresIn = (expirationTime?: number) => {
+    if (!expirationTime) {
+        return undefined;
+    }
+    return fromUnixTime(expirationTime);
 };
