@@ -64,6 +64,7 @@ export const ItemCreatePanel = ({
                             actions={[
                                 <Button
                                     key="cancel-button"
+                                    className="shrink-0"
                                     icon
                                     pill
                                     shape="solid"
@@ -87,7 +88,7 @@ export const ItemCreatePanel = ({
                                             }
                                         >
                                             <Button
-                                                className="text-sm"
+                                                className="text-sm shrink-0"
                                                 pill
                                                 shape="solid"
                                                 color="norm"
