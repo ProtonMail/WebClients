@@ -10,7 +10,7 @@ import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextFi
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import {
     cardNumberHiddenValue,
     cardNumberMask,
@@ -22,6 +22,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { usePortal } from '@proton/pass/hooks/usePortal';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -35,6 +36,7 @@ const FORM_ID = 'new-creditCard';
 
 export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onSubmit, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
+    const { ParentPortal, openPortal } = usePortal();
 
     const initialValues: CreditCardItemFormValues = useMemo(() => {
         return {
@@ -87,6 +89,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             submitButton={isFreePlan && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_CC} />}
             type="creditCard"
             valid={form.isValid}
+            actions={ParentPortal}
         >
             {({ didEnter }) => (
                 <FormikProvider value={form}>
@@ -99,9 +102,8 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                         )}
 
                         <FieldsetCluster>
-                            {vaultTotalCount > 1 && (
-                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-                            )}
+                            {vaultTotalCount > 1 &&
+                                openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
                             <Field
                                 lengthLimiters
                                 name="name"
