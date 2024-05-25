@@ -1,3 +1,5 @@
+import { fromUnixTime } from 'date-fns';
+
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -353,6 +355,24 @@ describe('messageDraft', () => {
             expect(result.data?.Sender?.Address).toBe(address.Email);
             expect(result.data?.Sender?.Name).toBe(address.DisplayName);
         });
+
+        it("should preset expiration date it's set on the original message", () => {
+            // Expiration time is a Unix timestamp
+            const expirationTime = 1612137600;
+            const expirationDate = fromUnixTime(expirationTime);
+            const result = createNewDraft(
+                MESSAGE_ACTIONS.REPLY,
+                { data: { ...message, ExpirationTime: expirationTime } } as MessageStateWithData,
+                mailSettings,
+                userSettings,
+                addresses,
+                jest.fn()
+            );
+            const { expiresIn } = result.draftFlags || {};
+            expect(expiresIn).toBeDefined();
+            expect(expiresIn).toBeInstanceOf(Date);
+            expect(expiresIn).toEqual(expirationDate);
+        });
     });
 
     describe('getBlockquoteRecipientsString', () => {
@@ -396,8 +416,9 @@ describe('messageDraft', () => {
 
             const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.REPLY);
 
-            const expectedString = `On ${formatFullDate(new Date(0))}, ${referenceMessage.data?.Sender
-                .Name} &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br>`;
+            const expectedString = `On ${formatFullDate(new Date(0))}, ${
+                referenceMessage.data?.Sender.Name
+            } &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br>`;
 
             expect(messageBlockquotesInfos).toEqual(expectedString);
         });
