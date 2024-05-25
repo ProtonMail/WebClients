@@ -1,0 +1,16 @@
+@import '~@proton/styles/scss/lib/config';
+
+.pass-vault-picker {
+	&--legacy {
+		padding: 0 !important;
+	}
+
+	button.select-unstyled {
+		--button-default-background-color: rgb(var(--vault-item-color) / 0.16);
+		--button-hover-background-color: rgb(var(--vault-item-color) / 0.22);
+		--button-active-background-color: rgb(var(--vault-item-color) / 0.26);
+		--button-default-text-color: rgb(var(--vault-item-color)) !important;
+		--button-hover-text-color: rgb(var(--vault-item-color)) !important;
+		--button-active-text-color: rgb(var(--vault-item-color)) !important;
+	}
+}
