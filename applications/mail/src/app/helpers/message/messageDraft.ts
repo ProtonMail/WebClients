@@ -30,6 +30,7 @@ import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';
 import { getDate } from '../elements';
+import { getExpiresIn } from '../expiration';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
@@ -323,6 +324,12 @@ export const createNewDraft = (
     };
 
     const plainText = plain ? getPlainTextContent(content) : undefined;
+    let expiresIn: Date | undefined;
+
+    if (action === MESSAGE_ACTIONS.REPLY || action === MESSAGE_ACTIONS.REPLY_ALL) {
+        // Preset expiration time if it's set on the original message
+        expiresIn = getExpiresIn(referenceMessage?.data?.ExpirationTime);
+    }
 
     return {
         localID: generateUID(DRAFT_ID_PREFIX),
@@ -354,6 +361,7 @@ export const createNewDraft = (
             originalMessageFlags: referenceMessage?.data?.Flags,
             initialAttachments,
             isQuickReply,
+            expiresIn,
         },
         messageImages,
     };
