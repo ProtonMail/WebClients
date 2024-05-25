@@ -36,7 +36,7 @@
 		outline: none;
 	}
 
-	.field-two-container button svg {
+	.field-two-container button:not(.select, .select-unstyled) svg {
 		position: relative;
 		inset-block-end: var(--space-2);
 	}

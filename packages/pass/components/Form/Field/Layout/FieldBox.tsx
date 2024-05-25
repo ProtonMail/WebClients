@@ -22,6 +22,7 @@ export type FieldBoxProps = {
     children?: ReactNode | undefined;
     className?: string;
     icon?: IconName | ReactElement;
+    unstyled?: boolean;
     onClick?: MouseEventHandler;
 };
 
@@ -52,7 +53,7 @@ const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = 
 
     return (
         <div
-            className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)}
+            className={clsx('pass-field-box flex flex-nowrap items-start', !props.unstyled && 'px-4 py-3', className)}
             ref={ref}
             onClick={props.onClick}
         >
