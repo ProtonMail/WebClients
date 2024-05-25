@@ -1,30 +1,22 @@
 /* TODO: move this to shared components */
 import { type FC } from 'react';
-import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
+import { c } from 'ttag';
 
 import { Field } from '@proton/pass/components/Form/Field/Field';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import type { ShareItem } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
+import { selectAutosaveVault, selectWritableVaults } from '@proton/pass/store/selectors';
 import type { Maybe, ShareType } from '@proton/pass/types';
 
-import './VaultSetting.scss';
-
 type FormValues = { shareId: Maybe<string> };
+type Props = { onSubmit: (share: ShareItem<ShareType.Vault>) => void };
 
-type Props = {
-    label: string;
-    onSubmit: (share: ShareItem<ShareType.Vault>) => void;
-    optionsSelector: Selector<State, ShareItem<ShareType.Vault>[]>;
-    valueSelector: Selector<State, Maybe<ShareItem<ShareType.Vault>>>;
-};
-
-export const VaultSetting: FC<Props> = ({ label, onSubmit, optionsSelector, valueSelector }) => {
-    const vaults = useSelector(optionsSelector);
-    const shareId = useSelector(valueSelector)?.shareId;
+export const VaultSetting: FC<Props> = ({ onSubmit }) => {
+    const vaults = useSelector(selectWritableVaults);
+    const shareId = useSelector(selectAutosaveVault)?.shareId;
 
     const form = useFormik<FormValues>({
         initialValues: { shareId },
@@ -40,10 +32,11 @@ export const VaultSetting: FC<Props> = ({ label, onSubmit, optionsSelector, valu
             <FormikProvider value={form}>
                 <Form>
                     <Field
-                        name="shareId"
                         className="pass-vault--select-field pass-input-group--no-focus"
-                        component={VaultSelectField}
-                        label={label}
+                        component={VaultPickerField}
+                        label={<span className="block mb-1">{c('Label').t`Autosave vault`}</span>}
+                        legacy
+                        name="shareId"
                         onValue={() => form.handleSubmit()}
                     />
                 </Form>
