@@ -65,6 +65,7 @@ export const useBitcoinAddressPool = ({
 
                     const signature = await signData(
                         address,
+                        'wallet.bitcoin-address',
                         addressKeys.map((k) => k.privateKey)
                     );
 
@@ -111,6 +112,7 @@ export const useBitcoinAddressPool = ({
                         const isVerified = await verifySignedData(
                             addr.Data.BitcoinAddress,
                             addr.Data.BitcoinAddressSignature,
+                            'wallet.bitcoin-address',
                             addressKeys.map((k) => k.publicKey)
                         );
 
