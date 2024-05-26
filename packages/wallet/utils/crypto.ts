@@ -13,6 +13,13 @@ const IV_LENGTH = 12;
 const KEY_LENGTH = 32;
 const ALGORITHM = 'AES-GCM';
 
+export enum WalletSignatureContextEnum {
+    WALLET_KEY = 'wallet.key',
+    BITCOIN_ADDRESS = 'wallet.bitcoin-address',
+}
+
+export type WalletSignatureContext = `${WalletSignatureContextEnum}`;
+
 export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> => {
     // https://github.com/vercel/edge-runtime/issues/813
     const slicedKey = new Uint8Array(key.slice(0, KEY_LENGTH));
@@ -96,11 +103,16 @@ export const encryptPgp = async <T extends string | Uint8Array>(data: T, keys: P
     return message;
 };
 
-export const signData = async <T extends string | Uint8Array>(data: T, keys: PrivateKeyReference[]) => {
+export const signData = async <T extends string | Uint8Array>(
+    data: T,
+    context: WalletSignatureContext,
+    keys: PrivateKeyReference[]
+) => {
     const common = {
         signingKeys: keys,
         detached: true,
         format: 'armored',
+        context: { critical: true, value: context },
     } as const;
 
     let signature;
@@ -122,19 +134,24 @@ export const signData = async <T extends string | Uint8Array>(data: T, keys: Pri
 export const verifySignedData = async <T extends string | Uint8Array>(
     data: T,
     signature: string,
+    context: WalletSignatureContext,
     keys: (PrivateKeyReference | PublicKeyReference)[]
 ) => {
+    const common = {
+        armoredSignature: signature,
+        verificationKeys: keys,
+        context: { required: true, value: context },
+    } as const;
+
     if (isString(data)) {
         return CryptoProxy.verifyMessage({
             textData: data,
-            armoredSignature: signature,
-            verificationKeys: keys,
+            ...common,
         }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
     } else {
         return CryptoProxy.verifyMessage({
             binaryData: data as Uint8Array,
-            armoredSignature: signature,
-            verificationKeys: keys,
+            ...common,
         }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
     }
 };
@@ -149,6 +166,7 @@ const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: st
     const isKeyVerified = await verifySignedData(
         decryptedEntropy,
         walletKeySignature,
+        'wallet.key',
         keys.map((k) => k.publicKey)
     );
 
@@ -213,7 +231,7 @@ export const encryptWalletData = async (
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
-    const entropySignature = await signData(entropy, [userKey.privateKey]);
+    const entropySignature = await signData(entropy, 'wallet.key', [userKey.privateKey]);
     const encryptedEntropy = await encryptPgp(entropy, [userKey.privateKey]);
 
     return [encryptedData, [encryptedEntropy, entropySignature, userKey.ID]];

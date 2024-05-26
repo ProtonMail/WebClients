@@ -93,7 +93,12 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     const publicKeys = await Promise.all(
                         addressKeys.map(async (addressKey) => {
                             const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
-                            const isVerified = await verifySignedData(btcAddress, btcAddressSignature, [pubkey]);
+                            const isVerified = await verifySignedData(
+                                btcAddress,
+                                btcAddressSignature,
+                                'wallet.bitcoin-address',
+                                [pubkey]
+                            );
 
                             return isVerified ? pubkey : null;
                         })

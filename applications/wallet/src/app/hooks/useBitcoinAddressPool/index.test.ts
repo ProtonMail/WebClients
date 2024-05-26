@@ -41,7 +41,7 @@ const expectSignedBy = async (k: DecryptedKey, a?: string, w?: string) => {
     expect(a).toBeTruthy();
     expect(w).toBeTruthy();
 
-    const isVerified = await verifySignedData(a as string, w as string, [k.publicKey]);
+    const isVerified = await verifySignedData(a as string, w as string, 'wallet.bitcoin-address', [k.publicKey]);
     expect(isVerified).toBeTruthy();
 };
 
@@ -78,18 +78,37 @@ const wallet = {
         UserKeyID: '',
         // encrypted with key in tests/fixtures/keys.ts
         // 195, 144, 231, 166, 130, 1, 110, 215, 117, 236, 57, 29, 47, 122, 226, 13, 195, 81, 179, 248, 126, 86, 0, 117, 231, 51, 20, 99, 99, 102, 146, 36
-        WalletKey:
-            'wcBMA5fAXxAlQaycAQf/QUHd1dN32croM9sPR/rF53JFie2ZKEEw88Uj77VnUUhuzv1dgRTKNiUHaFNfd7m/r5xLOqEGiPQCPAt4MhHbgwilrxu52Jqq3xh2ErBIgYnRM+WNvAkzZK6PMVJhppx3ciiCMMkBkB3iaaunAtXssZzzdAPPC/+TNEyh1ugQKgKhx+Ov/ygoPSXwDS+DvwtOQX0O6OMCrvixhHMiYJg8EBSc6+DM06N28A9t4UsECqE/2VwLfYfcFMgXQVIhedvKbu2GD18S2K4d1t5ycDVXCoIvB45OjjovpLaLw205TiMmXX6TW5XJho/RaXnqPjkDC01PoTbMZbbN4OhelZ+wmtLA1gFnTJmSkkAhT/S62cm8eVJRLKMnRqMYDRGYKDZkBOk5XWkZiKl7/5MftfKV4WqdGu8htj3MiJkFEdLAo7ARzkzf1Mz6ab1lhI5j/uy1bYriNk1AjGPfsk0RMotad/Zb93F7YPRL3ol2h8kLMjPDtqtIDYG8HjavtS639tD2N0tLsnxekA/miwDAeMuAZDEPT9tuzkiMMfM8wyCtKpBVDOfM1DnH/9v+XTFit/EqBh9F/6x3KUtHikFffq7hrITZf2xCG9aFgR2UFNYi7r4i97lhsN6XkbItmAYzYEIrTDuvq8+ionBfiS5NDqkqq1LP8eJjwDb1b4mxvhLeVm2zELbNtuX5ClCU3qi5o++aRP1BTp+yFWDJOrONEu8zPpsw/JJWb0JjZ9F6nCZXs/D4ankiCfHjIt1ONC3u7JTmFeDBeL7PdYtwVMEkrFTEl4DOUmegW0k+VdWMLHNOTGr0NR1xJeC+rcJFN9neaAEakyutHrGnzSIn8wKNALzt/u4HF7NFTYuBEoUKjTZ49vMYKNrqzDTUX9Q=',
+        WalletKey: `-----BEGIN PGP MESSAGE-----
+
+wcBMA5fAXxAlQaycAQf+KlcXmGcpx6svCsc3Dm3pIg7y3XQjOrstbWROLfAJ
+ouuVU+BazOaBwxM6IGC8onqCemEGmtR/v6FXvtEp99fhDlCetUDYakQ1iicH
+tQbOTC5H0XofqxF0citKInGzN3Z0ZJ68PTVy/bPyeRxfxzJJ79FmWXk5kqQL
+0AS7SuqVNWddqwxAZjf7VOS1vL3CYCLtuWrcwDyd481MQUiJZ7uMaimmdaj5
+94qHDYbAtdMEefzW7NuRzSphxLDstjWUtDjbnz1RoANwoYtfIliAaecAZAnj
+0yrtFo1WbPjnND5oZrYTnIwQhI9v29heygewT0z/JjcgOYSK37OGyoe4IYpK
+NtLA9AFr28nDqtKV5g/Z9tGpbi3PWbLRD7Cv8tPS3bCpcHrEq1Tm1/svemi4
+YbBJvfrzmQGaoU8LAwGf3JFHmHRmQ0BHZln7LdC7BXzu/2yTqpmGWQAn7VFl
+HHhREjDr+lmz3ejHAynjYmsfny1NSiVBCDaa5pHvsh2REikE2Q3ldVg6f5WE
+7WuJN5o5TFhwzXgiYVqLdHYY0ALaxdC7Rq8aSMzz+TtAWLKXmDwTYQcqVAaU
++AqOB0FXdjkxeywxgsWQFPOHR1gAfd0YxdrBPzee2uRt/2SHvZTdz2WkePeT
+chvnqhTO42EBj0l3FADUKpI3p5b2n27/S6E+jmrPeg3e88YstuPyURmzG2i8
+x4/2csUAQfjj4cmwtjtaMLinQyA2sxj8N3uoA2oQcZXbMIcuXKqsgdnvzLtg
+RE2dhKU7vkcNcDieNo87CBuh7VhHHEnaPfL/pLqhFrk0yoMXSQh4eOiI2Fzc
+8EM9RfweY58Iq3StkFgaLnZhR8t2Nl9JdnAXKOpwKRs07E3TK0k7Ufdrzooq
++dh7QkWaXkaMMxs3AiS6RyEjiJyp6hL+G8E9BKyhlCnvyDk=
+=Rh/8
+-----END PGP MESSAGE-----`,
         WalletKeySignature: `-----BEGIN PGP SIGNATURE-----
 
-wsBzBAEBCgAnBYJmT0SQCZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl
-QaycAACuGAf9Ha67rkSNj2v6Wg3SCq2YGF2g1h57UK6TiARHXRtogIizJgfo
-eGH8Dc9tvY1qIEuHnNsdXpsqMfiew3adIC6nbreAm4nar6LNNYlLcYlitVNC
-EVo+V6Z61rCCYhr/MeauTtyNr5k+qPjhuu9QZK8yeBwBVbFS8DyqzyTIMQ7a
-xotvjVdbJvk9PfOFa9XCbVmO6vpXMB/B5fq8ZunLyB6xwU8cJ0NwM6GZYfzc
-lMEI2ft4eIleErp1RB2O8rfsS4GyozquaQzSuOOPMasJFQqaKyfqpXESfoA1
-nyr3eeFVNk3i/iBJmSuCGT+a6rfZAa7jI9NTQKC+1tpf5ZqYHFqGyA==
-=PsbX
+wsCYBAABCgBMBYJmUS+LCZCXwF8QJUGsnCSUgAAAAAARAApjb250ZXh0QHBy
+b3Rvbi5jaHdhbGxldC5rZXkWIQQ3HbUNIAEr3zCRK0GXwF8QJUGsnAAAw8YH
+/A6uRgXpQJnKwrXZHBvvelwlBXyrD+gsm9fcTZaPXXDeuO59dZDK4n0k7Ywg
+aOxhVGOnSA0R/LYhi23z/oYQcdpotVuqaR6rSympPgYSZ369fMnPbKDcN68o
+pLR/Rc+bVDHGQlKAunZlpoDiP4WTCtcoSVgRq0Vgu2kpRnw7x5ZuSxSdQHnH
+D7YwvjrKg0m4ukwZWqa5fjQXENEcKyZ7hbAfU54dCVyAlyTRqocRu16goFdH
+toZrtZQxKoIThEMXbeiwqB+2m3YIKcR4zPkuh5G7INzvWUBG7MSbVB4RcKL1
+zUszcwqfo8xsUcVcV2oHinjJ6rndMIQkP8hsnkk2FaY=
+=/XrJ
 -----END PGP SIGNATURE-----`,
     },
     WalletSettings: {
@@ -111,9 +130,19 @@ const addresses = [
                 WalletAccountID: '001',
                 Fetched: 0,
                 Used: 0,
-                BitcoinAddress: 'tb1pv36jv053lqqxkr3y605mh0x78vren6fh0d2l2w5wn4l77kyxfk7qsumq0n',
-                BitcoinAddressSignature:
-                    '-----BEGIN PGP SIGNATURE-----\n\nwsByBAEBCgAnBYJmOJ86CZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl\nQaycAADrdwf3RsltPlYkXBeH7RlGqZbrBFQrro6wyWWb1XEdL4gxyOLX4Ppz\n5HZmQDEfiTO8Ax9yuO/FQ0KuMfLhX8qskaqBsKjWaE2MCqYah2Nk7/OxYqaN\nHB737IsxyA1h39G+Z74ygl7V5k2OFnmYtDPRSABZohSDLUQFtf72HxVe6cM8\n4KnG25LVMDbPZSORH56dQs2MQNTM3ku9TjCyh7Yatn2deqd3joTSc9uKnqWY\nv96zOrbxldcmygjAExk49dFbGa7ed3DwmmlQTFwGdYcIpJNHggVStQcL03z8\nb/glgaHy1LRLLwggmED+jjombtVfVmPeITQhksRH/G1x9E+vGI8t\n=rAVZ\n-----END PGP SIGNATURE-----',
+                BitcoinAddress: 'tb1qa5fgf5ved0q2565jm9d30h2m0c43de8a62jky6',
+                BitcoinAddressSignature: `-----BEGIN PGP SIGNATURE-----
+
+wsCkBAEBCgBYBYJmUS+dCZCXwF8QJUGsnDCUgAAAAAARABZjb250ZXh0QHBy
+b3Rvbi5jaHdhbGxldC5iaXRjb2luLWFkZHJlc3MWIQQ3HbUNIAEr3zCRK0GX
+wF8QJUGsnAAABRYH+gO2IGw2j4+4I7kZGrFahGifrmFbSbKV1cKxz5tx9wtZ
+lznobfmNLPu7RAZp+5Eeln5PjvCqo9yzfqUb+dUcdeWidZSNB09l1O+oWUy1
+8AW+bDpYr+IIQYUZOCJi5pfrOQDOsNCmS2wgblcbV5C2+cagohnEu3eOGyrY
+E43goTqssZy0rC9nPBV1vKkvJEHoGn3fLp2Jjhan4k79KuSHpAeYwagifM2/
+eK2p7qfpnO9qYi+ksMVZCVk1jIIfvlbxtleGs+7+awEY2rNJv+oFrCz2dReV
+ymT4bxnpnAhjBdQ1PmNtGJ2aMT1g50n9gViY38LcbB2xUTU9XN4kBEqH/aY=
+=11Il
+-----END PGP SIGNATURE-----`,
                 BitcoinAddressIndex: 0,
             },
             free: noop,
@@ -125,9 +154,19 @@ const addresses = [
                 WalletAccountID: '001',
                 Fetched: 0,
                 Used: 0,
-                BitcoinAddress: 'tb1pv36jv053lqqxkr3y605mh0x78vren6fh0d2l2w5wn4l77kyxfk7qsumq0n',
-                BitcoinAddressSignature:
-                    '-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCgAnBYJmOJ+CCZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl\nQaycAAA0Rwf/aEj1YyP8fn8nT7qYs+JONe/KELFeHH67h+Ur/DWnX6RTsO8P\nN4yqNJJVGiiYhyIN91mM/OS2q9dCC7FS7c2FHfuI5IfxrxtT4Pjyf+WRwYjN\nFdvxzrbuFp4tEJiLDSki4VFtABa8tQePoupzZup1gJpy7nBIPLO3HAleM/H1\nSkry1IATr4/W/5EbFMi7Lyhkmopx783y1aRtDTYB9Pt+h0t9Ob1C8cS81YLT\n00myJCPhYIrMCtMmWWBHr7vrCgFYBb6yWyGRH01/z+B1jTvyRUrSasChSKzy\nKLtmWKzqTqBWSnehCi+Nrg13SGJK8s2xM6inMZt6X8a+iHjapkaaww==\n=5fSt\n-----END PGP SIGNATURE-----',
+                BitcoinAddress: 'tb1qexdkj2l0fe9nanuah8xt9cz32el8y0evx9xshm',
+                BitcoinAddressSignature: `-----BEGIN PGP SIGNATURE-----
+
+wsCkBAEBCgBYBYJmUS+2CZCXwF8QJUGsnDCUgAAAAAARABZjb250ZXh0QHBy
+b3Rvbi5jaHdhbGxldC5iaXRjb2luLWFkZHJlc3MWIQQ3HbUNIAEr3zCRK0GX
+wF8QJUGsnAAApVEIAJDUxMg9JmkrlA2sNfAA5gENBf+CUg0ntwIdXlAF4hUu
+9uCaNz4r2KC/0/XFxkzFxZYtEO5LnO3cdqjYxYjlnMnwrx3mC/3zBYSB9QII
+5qNAxjfiioSWJCEIfpjNT5ZW6AWf5njtCjMp4SP6ra6iL/ZtwyBRLSuMVVz4
+6mzo2x6EPKgdtBvikYq8PBEKHmYNTBl5WHqbiAF1UvecWSpgSaD8YHjJmbs8
+3lPv+cGl/S23mQhjONJ3qtEZ6AgToGQpGgRhHUp91/3C1d/6sIL/18uF9nZu
+HfXvVImkg5yT7o9MOwFAqcLjED0sSrcLdbc6nOizTl3TWuoJLpRkRlauYjc=
+=Xt1Z
+-----END PGP SIGNATURE-----`,
                 BitcoinAddressIndex: 1,
             },
             free: noop,
@@ -139,9 +178,19 @@ const addresses = [
                 WalletAccountID: '001',
                 Fetched: 0,
                 Used: 0,
-                BitcoinAddress: 'tb1qtysxx7zkmm5nwy0hv2mjxfrermsry2vjsygg0eqawwwp6gy4hl4s2tudtw',
-                BitcoinAddressSignature:
-                    '-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCgAnBYJmOJ4ACZCXwF8QJUGsnBYhBDcdtQ0gASvfMJErQZfAXxAl\nQaycAAAzIAf/ZaIfOCWUc625hVampdBCT88o5TwBsZ06B6gXLKbgKw3eDd9w\ndmrMthI4hVhtQPwJ93XVdADY3cNdL/XbvzPhTU6BOKxwC3uJySsYGQA2WI+2\n3fleU2RbHESeeeonVjeNZ3myz1CYqNJzjCW5lOvmNyuWN02jsoGGaLwFll51\nt6eteqTSbr12DQ68AEunxY4OEVQB5qOGtOvT5r0N78YhQpod9OoVbq6+4FjA\nBHLYjiQ1klJ6toklClmygHLIQ14MLmsYi7pS5UB1YUXvD4PLmf29QHJNs8XP\nwxNSc2LjSle0QCqE8psClTFy/ndh0AGVEMCnliY3EFfw8PrlIugaSQ==\n=C+ch\n-----END PGP SIGNATURE-----',
+                BitcoinAddress: 'tb1qsk32zvua335u0xmycf44pz774y3tuu54rt0tp2',
+                BitcoinAddressSignature: `-----BEGIN PGP SIGNATURE-----
+
+wsCkBAEBCgBYBYJmUS/LCZCXwF8QJUGsnDCUgAAAAAARABZjb250ZXh0QHBy
+b3Rvbi5jaHdhbGxldC5iaXRjb2luLWFkZHJlc3MWIQQ3HbUNIAEr3zCRK0GX
+wF8QJUGsnAAAjU8H/RgwjfBKVZvFMoDIhgeOPjTpMbJyHEci2U3XY00sX/Oj
+p1rDmc6COV5jqQ40mx4HVrbHMBzu+RcD1FEGQPPk2LPSpO3AGrkO0hFXR1Zm
+NqA3t+oNGvOGgmvZuAlCrRExBtHhBceRGvzUEv6X5C5NTkravulbX8/NBPjX
+R5KKtBbEq0u15YymagKO/pAzdiaC/xjUJWHB4UkhcFtAhVVZVq8kuxdtM601
+6s34t3aHpKR9rD/rfZw54X1EB/0qx5PT+7wjG11TThawoTvGKTRbZdf9h0CR
+4KbcIjgJ6A/JUJZXZ2WEwlfqP6zEqc8PqXJHEdL5MQ+O6sJ/oZ0U2fWCLG8=
+=Y6Pd
+-----END PGP SIGNATURE-----`,
                 BitcoinAddressIndex: 2,
             },
             free: noop,
