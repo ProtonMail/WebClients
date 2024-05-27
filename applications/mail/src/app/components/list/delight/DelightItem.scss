@@ -184,8 +184,12 @@ $item-container-height: rem(64);
 			}
 		}
 
+		// fix to avoid bad display
 		.item-checkbox-label {
-			margin-block-start: 0;
+			margin-block: 0 auto;
+			padding-block: 0;
+			margin-inline-start: 0;
+			padding-inline-start: 0;
 		}
 
 		.item-senders,
