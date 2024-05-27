@@ -1,5 +1,6 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { start } from './listener';
 import { rootReducer } from './rootReducer';
 import { type WalletThunkArguments, extraThunkArguments } from './thunk';
 
@@ -17,8 +18,15 @@ export const setupStore = () => {
             }).prepend(listenerMiddleware.middleware),
     });
 
+    const startListening = listenerMiddleware.startListening as AppStartListening;
+    start(startListening);
+
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
+        module.hot.accept('./listener', () => {
+            listenerMiddleware.clearListeners();
+            start(startListening);
+        });
     }
 
     return Object.assign(store, {

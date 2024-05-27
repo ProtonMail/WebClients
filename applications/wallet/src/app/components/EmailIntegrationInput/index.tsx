@@ -39,7 +39,14 @@ export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress
                     <Href className="color-weak text-sm">{c('Wallet preferences').t`Learn more`}</Href>
                 </div>
 
-                <Toggle checked={value.length > 0} />
+                <Toggle
+                    checked={value.length > 0}
+                    onClick={() => {
+                        if (value.length < 1) {
+                            open();
+                        }
+                    }}
+                />
             </div>
 
             <div className="my-3">
