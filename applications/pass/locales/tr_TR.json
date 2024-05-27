@@ -4,6 +4,26 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer potansiyel sızıntılar tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve 1 başka potansiyel sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potansiyel bir ${ name } sızıntısı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } adresinden olası bir sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } adresinden potansiyel bir sızıntı tespit edildi. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } öğesini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Ekle"
@@ -187,6 +207,9 @@
       ],
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
+      ],
+      "Get Pass Business": [
+        "Pass Business edinin"
       ],
       "Get Pass Plus": [
         "Pass Plus edinin"
@@ -523,6 +546,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlüklere erişin."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "${ PASS_SHORT_APP_NAME } izleyici ile kimlik bilgilerinizin ele geçirildiğinde anında uyarı alarak tehditlerin önünde kalın. Çevrim içi varlığınızı korumak için gelişmiş güvenlik özelliklerine ve ayrıntılı günlüklere erişin."

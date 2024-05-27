@@ -4,6 +4,17 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en ${ remainingCount } andere potentiële lekken gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Voeg toe"
@@ -187,6 +198,9 @@
       ],
       "Get mobile apps": [
         "Download mobiele apps"
+      ],
+      "Get Pass Business": [
+        "Kies Pass Business"
       ],
       "Get Pass Plus": [
         "Neem Pass Plus"
@@ -523,6 +537,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Met ${ PASS_SHORT_APP_NAME } Monitor, blijf bedreigingen voor door onmiddellijke waarschuwingen te krijgen als uw inloggegevens in gevaar komen. Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."

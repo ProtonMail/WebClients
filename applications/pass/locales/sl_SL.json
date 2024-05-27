@@ -4,6 +4,26 @@
     "language": "sl_SL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Dodaj"
@@ -187,6 +207,9 @@
       ],
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
+      ],
+      "Get Pass Business": [
+        "Pridobite Pass Business"
       ],
       "Get Pass Plus": [
         "Pridobite Pass Plus"
@@ -525,6 +548,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ta storitev ponuja 2FA. Omogočite ga za dodatno varnost računa."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svojo spletno prisotnost."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Z ${ PASS_SHORT_APP_NAME } nadzorom bodite korak pred grožnjami, tako da prejmete takojšnja opozorila, če so vaše poverilnice ogrožene. Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svoje spletne aktivnosti."
@@ -1457,7 +1483,7 @@
         "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Izberite, kam želite shraniti svoje uvožene trezorje. Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
+        "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
@@ -1590,6 +1616,9 @@
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Različica ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } vpis",
         "${ usageCount } vpisa",
@@ -1697,6 +1726,9 @@
       ],
       "Created": [
         "Ustvarjeno"
+      ],
+      "Created at": [
+        "Ustvarjeno ob"
       ],
       "Date": [
         "Datum"
@@ -2216,6 +2248,20 @@
       ],
       "Write your note": [
         "Napišite svojo opombo"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Success": {
