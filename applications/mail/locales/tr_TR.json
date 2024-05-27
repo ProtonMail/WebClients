@@ -12,6 +12,26 @@
         "Posta iletimi durduruldu"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer potansiyel sızıntılar tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve 1 başka potansiyel sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potansiyel bir ${ name } sızıntısı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } adresinden olası bir sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } adresinden potansiyel bir sızıntı tespit edildi. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } öğesini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -1456,23 +1476,6 @@
       ],
       "Sender verification passed": [
         "Gönderici doğrulandı"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "Yalnızca ${ price } ile **şifrelenmiş parola yönetimizi ekleyin**"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } ekle"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Sil: ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 aylık abone olarak **şifrelenmiş parola yöneticimizi** ayda tarifenize yalnızca ${ priceNoSuffix } ek ödeme ile edinin!"
       ]
     },
     "bf2023: Deal details": {
@@ -3622,9 +3625,6 @@
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
-      "Amount below minimum.": [
-        "Tutar en az miktarın altında."
-      ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
       ],
@@ -5569,6 +5569,9 @@
       "and": [
         "ve"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Zamanlanmış veya ertelenmiş tüm mesajlar iptal edilecektir."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
       ],
@@ -6455,6 +6458,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Yarın ${ formattedTime } saatine ertelendi"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Bu konuşmanın ertelenmesi iptal edilecektir."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
@@ -8792,6 +8798,9 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ücretli özellikler"
+      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -8867,6 +8876,9 @@
       ],
       "Unlimited devices": [
         "Sınırsız sayıda aygıt"
+      ],
+      "Unlimited devices and aliases": [
+        "Sınırsız cihazlar ve takma adlar"
       ],
       "Unlimited filters": [
         "Sınırsız sayıda süzgeç"
@@ -9230,9 +9242,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Çevrim içi kimliğinizi koruyan ve gelen kutunuza nelerin alınacağını denetlemenizi sağlayan benzersiz, anlık e-posta adresleri. SimpleLogin ile ${ BRAND_NAME } tarafından."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
@@ -9492,6 +9501,18 @@
     "Participant name": {
       "You": [
         "Siz"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } kasa ile güvenli paylaşım",
+        "${ n } kasalar ile güvenli paylaşım"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Çoklu kasalar ile güvenli paylaşım"
+      ],
+      "Secure vault sharing": [
+        "Güvenli kasa paylaşımı"
       ]
     },
     "Payment method option": {
@@ -10118,9 +10139,19 @@
         "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Şifre sıfırlama iptal edildi"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Parola sıfırlama işlemi iptal edilsin mi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Parola sıfırlama isteği iptal edildi (${ user.Email }). Bu isteği siz yapmadıysanız, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10343,6 +10374,11 @@
         "Çevrim içi gizliliği destekleyin"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Bu abonelik, iptal edilene kadar her 2 yılda bir aynı oranda otomatik olarak yenilenecektir."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
@@ -10475,6 +10511,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Aboneliğiniz iptal ediliyor, lütfen bekleyin"
       ]
     },
     "Status": {
@@ -10944,6 +10985,9 @@
       "Message deleted": [
         "İleti silindi"
       ],
+      "Message expiration canceled": [
+        "Mesajın sona erme süresi iptal edildi"
+      ],
       "Message marked as legitimate": [
         "İleti göründüğü gibi olarak işaretlendi"
       ],
@@ -11020,6 +11064,9 @@
       ],
       "Verification successful": [
         "Doğrulandı"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Aboneliğinizi başarıyla iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"

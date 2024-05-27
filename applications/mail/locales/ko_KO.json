@@ -1469,23 +1469,6 @@
         "발신자 검증 통과"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "단 ${ price }으로 **암호화된 비밀번호 관리자를 추가하세요**"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 추가"
-      ],
-      "Get the deal": [
-        "혜택 얻기"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 삭제"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "오직 ${ priceNoSuffix } 당 개월만 추가하여 15개월 동안 **암호화된 비밀번호 관리자**를 구독하세요!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "저장공간 ${ storageSize }"
@@ -3622,8 +3605,8 @@
       "Amount above the maximum.": [
         "최대 금액보다 많습니다."
       ],
-      "Amount below minimum.": [
-        "최소 금액보다 적습니다."
+      "Amount below minimum (${ minimumAmount }).": [
+        "최소 금액 (${ minimumAmount })미만입니다."
       ],
       "An error occurred while loading alias options": [
         "별칭 옵션 로드 중 오류가 발생했습니다."
@@ -5495,6 +5478,9 @@
       "and": [
         "그리고"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "예약하거나 방해 금지된 메시지가 취소됩니다."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted } 에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
       ],
@@ -6367,6 +6353,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "내일, ${ formattedTime }까지 방해금지됨"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "이 대화의 방해 금지 상태가 취소됩니다."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
@@ -8663,6 +8652,9 @@
       "Passkeys supported": [
         "패스키를 지원함"
       ],
+      "Password health": [
+        "비밀번호 건강도"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
@@ -8680,6 +8672,9 @@
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "귀하의 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
@@ -8791,6 +8786,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
       ]
     },
     "new_plans: feature info": {
@@ -9046,6 +9044,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "사용자의 가족을 유해 사이트로 부터 차단하고 사용자가 선호하는 콘텐츠를 고속 VPN 서버들로 스트리밍하세요."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "별칭(받은 편지함으로 이메일을 전달하는 무작위 생성 이메일 주소)로 귀하의 실제 이메일 주소가 공개되거나 유출되는 것을 막으십시오."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "한 차원 높은 계정 보안 보호와 전문적 지원을 제공합니다."
       ],
@@ -9096,9 +9097,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent와 같은 파일 공유 프로토콜 지원"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "온라인 신원을 보호하고 편지함에 있는 메일을 제어할 수 있는 독특한 하위 도메인 이메일 주소입니다. ${ BRAND_NAME }의 SimpleLogin에서 제공합니다."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
