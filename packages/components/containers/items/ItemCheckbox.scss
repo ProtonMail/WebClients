@@ -28,6 +28,12 @@
 	}
 
 	&-label {
+		// increase click area by default
+		margin-block: -1em;
+		padding-block: 1em;
+		margin-inline-start: -1em;
+		padding-inline-start: 1em;
+
 		.item-icon {
 			background-color: var(--item-checkbox-background-color);
 			color: var(--item-checkbox-icon-text-color);
