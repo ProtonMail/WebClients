@@ -6,19 +6,29 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 
 import { ModalProps, Prompt } from '../../components';
-import { getDeleteText } from '../general/helper';
 
 interface Props extends ModalProps, PropsWithChildren {
     onDeleteAddress: () => Promise<void>;
-    email?: string;
+    email: string;
+    type?: 'permanent';
 }
 
-const DeleteAddressPrompt = ({ email, onDeleteAddress, children, ...rest }: Props) => {
+const DeleteAddressPrompt = ({ title, email, onDeleteAddress, children, type, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
+
+    const address = (
+        <strong key="address" className="text-break">
+            {email}
+        </strong>
+    );
 
     return (
         <Prompt
-            title={email ? getDeleteText(email) : c('Title').t`Delete address permanently?`}
+            title={
+                type === 'permanent'
+                    ? c('Delete address prompt').t`Delete address permanently?`
+                    : c('Delete address prompt').t`Delete address?`
+            }
             open={rest.open}
             onClose={rest.onClose}
             buttons={[
@@ -28,10 +38,33 @@ const DeleteAddressPrompt = ({ email, onDeleteAddress, children, ...rest }: Prop
                     }}
                     loading={loading}
                     color="danger"
-                >{c('Action').t`Delete address`}</Button>,
+                >{c('Delete address prompt').t`Delete address`}</Button>,
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
+            {(() => {
+                if (type === 'permanent') {
+                    return (
+                        <>
+                            {c('Delete address prompt')
+                                .jt`Once deleted, this address ${address} can't be used again by anyone else.`}
+                            <br />
+                            <br />
+                            {c('Delete address prompt').t`You can only delete 1 address per year.`}
+                        </>
+                    );
+                }
+                return (
+                    <>
+                        {c('Delete address prompt')
+                            .jt`Please note that if you delete this address ${address}, you will no longer be able to send or receive emails using this address.`}
+                        <br />
+                        <br />
+                        {c('Delete address prompt').t`Are you sure you want to delete this address?`}
+                    </>
+                );
+            })()}
+            {type === 'permanent'}
             {children}
         </Prompt>
     );
