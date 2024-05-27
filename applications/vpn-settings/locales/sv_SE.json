@@ -721,6 +721,9 @@
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
       ],
+      "Create and collaborate on documents securely": [
+        "Skapa och samarbeta på dokument säkert"
+      ],
       "Keep your schedule private": [
         "Håll ditt schema privat"
       ],
@@ -735,15 +738,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Lägg till vår krypterade lösenordshanterare** för endast ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Lägg till ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Lägg till ${ plan } för ${ price } per månad"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -753,14 +747,8 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "Remove": [
-        "Ta bort"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Ta bort ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Prenumerera i 15 månader och få vår **krypterade lösenordshanterare** för endast ${ priceNoSuffix } extra per månad!"
+      "Save even more with a 12-month plan": [
+        "Spara ännu mer med ett 12-månaders paket"
       ]
     },
     "bf2023: Deal details": {
@@ -2068,14 +2056,17 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skriv > Kort domän (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
       "Amount above the maximum.": [
         "Belopp över det maximala."
       ],
-      "Amount below minimum.": [
-        "Belopp under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Belopp under minimum (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -2877,8 +2868,8 @@
       "Organization key fingerprint": [
         "Organisations nyckelfingeravtryck"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Spara stort med bästa erbjudande på ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Spara stort på det bästa erbjudandet för ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Välj ditt erbjudande"
@@ -3184,6 +3175,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiera och klistra in denna URL i fältet för entity-ID för din identitetsleverantör"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
@@ -5420,6 +5414,9 @@
       "Passkeys supported": [
         "Passkeys stöds"
       ],
+      "Password health": [
+        "Lösenordshälsa"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
@@ -5438,6 +5435,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
       ],
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
@@ -5847,6 +5847,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Skydda din familj från skadliga webbplatser och få åtkomst till våra höghastighets VPN-servrar för att streama ditt favoritinnehåll"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Skydda din riktiga e-postadress från att avslöjas eller läckas med alias (en slumpmässigt genererad e-postadress som vidarebefordrar e-post till din huvudsakliga inkorg)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Tillhandahåller den högsta nivån av kontosäkerhet och support från specialister"
       ],
@@ -5897,9 +5900,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Stöd för fildelningsprotokoll som BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unika, snabba e-postadresser som skyddar din onlineidentitet och låter dig kontrollera vad som hamnar i din inkorg. Från SimpleLogin av ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Använd dina egna anpassade e-postdomänadresser, t.ex. du@dittnamn.com"
@@ -8560,6 +8560,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiera och klistra in denna URL i fältet för entity-ID för din identitetsleverantör"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.example.com/sso/saml)"
       ],
@@ -8736,6 +8739,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Få ${ discount } rabatt med en ${ billingCycle } prenumeration"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Få ett första år med ${ plan } gratis!"
+      ],
       "monthly": [
         "månadsvis"
       ]
@@ -8757,8 +8763,20 @@
         "${ n } år",
         "${ n } år"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Inkluderar ${ plan } (gratis det första året!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Inkluderar ${ plan }, vår premium lösenordshanterare, gratis det första året!"
+      ],
+      "Just ${ price }": [
+        "Endast ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Prova ${ upsellPlanName } riskfritt"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Ditt ${ a } och ${ b }-paket"
       ],
       "Your ${ selected } plan": [
         "Ditt ${ selected }-paket"

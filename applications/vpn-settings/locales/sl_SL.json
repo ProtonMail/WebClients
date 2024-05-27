@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopiraj ključ v odložišče"
       ],
+      "Copy version number to clipboard": [
+        "Kopiraj številko različice v odložišče"
+      ],
       "Create": [
         "Ustvari"
       ],
@@ -694,15 +697,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Dodajte naš šifrirani upravljalnik gesel** za samo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Dodaj ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Dodajte ${ plan } za ${ price } na mesec"
-      ],
       "Cancel": [
         "Prekliči"
       ],
@@ -711,15 +705,6 @@
       ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
-      ],
-      "Remove": [
-        "Odstrani"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odstrani ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Naročite za 15 mesecev in pridobite naš **šifrirani upravljalnik gesel** za samo dodatnih ${ priceNoSuffix } na mesec!"
       ]
     },
     "bf2023: Deal details": {
@@ -2043,9 +2028,6 @@
       "Amount above the maximum.": [
         "Znesek nad največjim."
       ],
-      "Amount below minimum.": [
-        "Znesek pod najmanjšim."
-      ],
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
       ],
@@ -2837,9 +2819,6 @@
       ],
       "Organization key fingerprint": [
         "Prstni odtis organizacijskega ključa"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Prihranite z najboljšimi ponudbami ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Izberite ponudbo"
@@ -3985,6 +3964,9 @@
       ],
       "Version ${ version }": [
         "Različica ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Številka različice je bila uspešno kopirana v odložišče"
       ],
       "View, download, and manage your invoices.": [
         "Ogled, prenos in upravljanje vaših računov."
@@ -5841,7 +5823,7 @@
         "Hitro nastavite sporočila o odsotnosti."
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Hitro prenesite svoj sporočila, koledarje ali stike od katerega koli ponudnika."
+        "Hitro prenesite svoja sporočila, koledarje ali stike od katerega koli ponudnika."
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Za prijavo potrebujete kodo, poslano na mobilni telefon. To zagotavlja, da ostane račun varen, tudi če je geslo ogroženo."
@@ -5884,9 +5866,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora za protokole za skupno rabo datotek, kot je BitTorrent."
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Edinstveni, takojšnji e-poštni naslovi, ki ščitijo vašo spletno identiteto in vam omogočajo nadzor nad tem, kaj pristane v vaši mapi »Prejeto«. Od SimpleLogin ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
@@ -6713,9 +6692,19 @@
         "Vpišite vaše trenutno geslo in s tem ustavite postopek za ponastavitev gesla. Prišlo ne bo do nobenih drugih sprememb."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponastavitev gesla je preklicana."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Prekliči ponastavitev gesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Zahteva za ponastavitev gesla je preklicana (${ user.Email }). Če niste vložili te zahteve, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7000,6 +6989,11 @@
         "Podprite zasebnost na spletu"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -7119,6 +7113,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Preklic vaše naročnine, počakajte"
       ]
     },
     "Storage": {
@@ -7546,6 +7545,9 @@
       ],
       "Verification successful": [
         "Preverjanje uspešno"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Uspešno ste preklicali naročnino."
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"

@@ -721,6 +721,9 @@
       "Browse the web privately and block ads": [
         "Surf privat på nettet og blokker annonser"
       ],
+      "Create and collaborate on documents securely": [
+        "Opprett og samarbeid på dokumenter på en sikker måte"
+      ],
       "Keep your schedule private": [
         "Hold timeplanen privat"
       ],
@@ -735,15 +738,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Legg til vår krypterte passordbehandler** for bare ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Legg til ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Legg til ${ plan } for ${ price } per måned"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -753,14 +747,8 @@
       "Get the deal": [
         "Få avtalen"
       ],
-      "Remove": [
-        "Fjern"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Fjern ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Abonner i 15 måneder og få vår **krypterte passordbehandler** for bare ${ priceNoSuffix } ekstra per måned!"
+      "Save even more with a 12-month plan": [
+        "Spar enda mer med et 12-månedersabonnement"
       ]
     },
     "bf2023: Deal details": {
@@ -2077,8 +2065,8 @@
       "Amount above the maximum.": [
         "Beløp over maksimum."
       ],
-      "Amount below minimum.": [
-        "Beløp under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Beløp under minimum (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt, vennligst prøv igjen"
@@ -2875,8 +2863,8 @@
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Spar stort med de beste tilbudene på ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Spar stort på de beste ${ VPN_APP_NAME }-tilbudene"
       ],
       "Select your deal": [
         "Velg tilbudet ditt"
@@ -5441,6 +5429,9 @@
       "Passkeys supported": [
         "Tilgangsnøkler støttes"
       ],
+      "Password health": [
+        "Passordhelse"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
@@ -5459,6 +5450,9 @@
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmessige kontroller av kontosikkerheten din. Vi varsler deg hvis du har svake eller gjenbrukte passord som må oppdateres."
       ],
       "Require 2FA for organization": [
         "Krev 2FA for organisasjonen"
@@ -5582,6 +5576,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
       ]
     },
     "new_plans: feature info": {
@@ -5868,6 +5865,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskytt familien din mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-tjenere for å strømme favorittinnholdet ditt."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Beskytt den virkelige e-postadressen din mot å bli avslørt eller lekket med aliaser (en tilfeldig generert e-postadresse som videresender e-post til hovedinnboksen din)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Gir det høyeste nivået av kontosikkerhetsbeskyttelse og spesialiststøtte"
       ],
@@ -5918,9 +5918,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Støtte for fildelingsprotokoller som BitTorrent."
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unike, på-farten-e-postadresser som beskytter identiteten din på nettet og lar deg kontrollere hva som lander i innboksen din. Fra SimpleLogin av ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Bruk dine egendefinerte e-post-domeneadresser, f.eks., deg@dittnavn.no."
@@ -8821,6 +8818,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Få ${ discount } rabatt med et ${ billingCycle } abonnement"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Få et første år med ${ plan } gratis!"
+      ],
       "monthly": [
         "månedlig"
       ]
@@ -8842,8 +8842,20 @@
         "${ n } år",
         "${ n } år"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Inkluderer ${ plan } (gratis for det første året!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Inkluderer ${ plan }, vår premium passordbehandler, gratis det første året!"
+      ],
+      "Just ${ price }": [
+        "Bare ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Prøv ${ upsellPlanName } risikofritt"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Din ${ a } og ${ b } pakke"
       ],
       "Your ${ selected } plan": [
         "Planen du har valgt ${ selected }"

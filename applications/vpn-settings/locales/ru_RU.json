@@ -705,15 +705,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Добавьте менеджер зашифрованных паролей** всего за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Добавить приложение ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Добавить ${ plan } за ${ price } в месяц"
-      ],
       "Cancel": [
         "Отменить"
       ],
@@ -722,15 +713,6 @@
       ],
       "Get the deal": [
         "Купить"
-      ],
-      "Remove": [
-        "Удалить"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Удалить приложение ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Подпишитесь на 15 месяцев и пользуйтесь **менеджером зашифрованных паролей** всего за ${ priceNoSuffix } в месяц!"
       ]
     },
     "bf2023: Deal details": {
@@ -2021,9 +2003,6 @@
       ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
-      ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
       ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
@@ -3944,6 +3923,9 @@
       "Version ${ version }": [
         "Версия ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
+      ],
       "View, download, and manage your invoices.": [
         "Просматривайте, загружайте и управляйте своими счетами."
       ],
@@ -5779,9 +5761,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Уникальные, сгенерированные по запросу адреса электронной почты защищают ваши данные и позволяют вам решать, что попадет в ваш почтовый ящик. Благодаря SimpleLogin от ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"

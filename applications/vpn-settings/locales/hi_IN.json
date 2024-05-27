@@ -632,15 +632,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } जोड़ें"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "प्रति माह ${ price } के लिए ${ plan } जोड़ें"
-      ],
       "Cancel": [
         "रद्द करें"
       ],
@@ -649,15 +640,6 @@
       ],
       "Get the deal": [
         "डील लें"
-      ],
-      "Remove": [
-        "हटाएं"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } को निकालें"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
       ]
     },
     "bf2023: Deal details": {
@@ -1848,9 +1830,6 @@
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
       ],
-      "Amount below minimum.": [
-        "राशि न्यूनयम से कम है।"
-      ],
       "Checkout expired, please try again": [
         "चेकआउट की समय सीमा समाप्त हो गई है, कृपया पुनः प्रयास करें।"
       ],
@@ -2535,9 +2514,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
       ],
       "Select your deal": [
         "अपनी डील चुनें"
@@ -4640,6 +4616,9 @@
       "Organize items with multiple vaults": [
         "कई तिजोरी के साथ आइटम व्यवस्थित करें"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - प्रीमियम सुविधाएं"
+      ],
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
@@ -4722,6 +4701,9 @@
       ],
       "Unlimited devices": [
         "असीम डिवाइस"
+      ],
+      "Unlimited devices and aliases": [
+        "असीमित डिवाइस और उपनाम"
       ],
       "Unlimited filters": [
         "असीमित फिल्टर"
@@ -5049,9 +5031,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent जैसे फाइल शेयर करने वाले प्रोटोकॉल के लिए सपोर्ट"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "अद्वितीय, ऑन-द-फ्लाई ईमेल पते जो आपकी ऑनलाइन पहचान की रक्षा करते हैं और आपको यह नियंत्रित करने देते हैं कि आपके इनबॉक्स में क्या आएगा। ${ BRAND_NAME } द्वारा SimpleLogin से।"
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "अपना खुद के कस्टम ईमेल डोमेन पते इस्तेमाल करें, उदाहरण: aap@aapkanaam.in"
       ],
@@ -5277,6 +5256,16 @@
       ],
       "per month": [
         "हर महीने"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें",
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें"
+      ],
+      "Secure sharing with multiple vaults": [
+        "सुरक्षित साझाकरण - कई वॉल्ट्स के साथ"
+      ],
+      "Secure vault sharing": [
+        "सुरक्षित वॉल्ट साझाकरण"
       ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
@@ -5693,9 +5682,19 @@
         "पासवर्ड सहेजा गया"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "पासवर्ड रीसेट रद्द कर दिया गया"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "पासवर्ड रीसेट रद्द करें?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "पासवर्ड रीसेट अनुरोध रद्द कर दिया गया (${ user.Email })। यदि आपने यह अनुरोध नहीं किया है, तो ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5878,6 +5877,11 @@
       ],
       "Support online privacy": [
         "ऑनलाइन निजता को बढ़ावा दें"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
       ]
     },
     "specialoffer: Link": {

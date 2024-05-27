@@ -732,15 +732,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Додайте наш менеджер паролів** всього за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Додати ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Додати ${ plan } за ${ price } на місяць"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -749,15 +740,6 @@
       ],
       "Get the deal": [
         "Скористатися пропозицією"
-      ],
-      "Remove": [
-        "Вилучити"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Вилучити ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Передплатіть на 15 місяців та отримайте наш **менеджер паролів** всього за ${ priceNoSuffix } – додатково на місяць!"
       ]
     },
     "bf2023: Deal details": {
@@ -2072,9 +2054,6 @@
       "Amount above the maximum.": [
         "Сума перевищує обмеження."
       ],
-      "Amount below minimum.": [
-        "Сума менше допустимого обмеження."
-      ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
@@ -2878,9 +2857,6 @@
       ],
       "Organization key fingerprint": [
         "Відбиток ключа організації"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Заощаджуйте більше завдяки найкращим пропозиціям на ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Оберіть тарифний план"
@@ -5815,7 +5791,7 @@
         "Автоматично пересилайте електронні листи, надіслані на ваш обліковий запис ${ MAIL_APP_NAME }, на будь-яку іншу адресу електронної пошти."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших постачальників."
+        "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших провайдерів."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Обирайте власний час нагадування про електронний лист або час отримання вашого повідомлення"
@@ -5917,7 +5893,7 @@
         "Швидко налаштовуйте автоматичні відповіді"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Швидко перенесіть свої листи, календарі та контакти від будь-якого постачальника"
+        "Швидко перенесіть свої листи, календарі та контакти від будь-якого провайдера"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Необхідний код, надісланий на мобільний телефон для входу. Це гарантує безпеку облікового запису навіть у випадку спроби несанкціонованого доступу."
@@ -5960,9 +5936,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дають змогу контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -7797,6 +7770,9 @@
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ви успішно скасували передплату."
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
