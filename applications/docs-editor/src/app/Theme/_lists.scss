@@ -1,0 +1,150 @@
+.DocumentEditor {
+	--lexical-ordered-list-margin: 1rem;
+}
+
+@for $i from 1 through 5 {
+	.Lexical__ol#{$i} {
+		padding: 0;
+		margin: 0;
+		margin-block-end: 0.75rem;
+		margin-inline-start: var(--lexical-ordered-list-margin);
+		list-style-position: outside;
+		list-style-type: decimal;
+
+		&.Lexical__rtl {
+			margin-inline: 0 var(--lexical-ordered-list-margin);
+		}
+	}
+}
+
+.Lexical__ol2 {
+	list-style-type: upper-alpha;
+}
+
+.Lexical__ol3 {
+	list-style-type: lower-alpha;
+}
+
+.Lexical__ol4 {
+	list-style-type: upper-roman;
+}
+
+.Lexical__ol5 {
+	list-style-type: lower-roman;
+}
+
+.Lexical__ul {
+	padding: 0;
+	margin: 0;
+	margin-inline-start: 1rem;
+	margin-block-end: 0.75rem;
+	list-style-type: disc;
+	list-style-position: outside;
+
+	&.Lexical__rtl {
+		margin-inline: 0 1rem;
+	}
+}
+
+.Lexical__checkList {
+	margin-inline-start: 0;
+
+	.Lexical__nestedListItem & {
+		margin-inline-start: 1rem;
+	}
+}
+
+.Lexical__listItemChecked,
+.Lexical__listItemUnchecked {
+	position: relative;
+	padding-inline: calc(var(--font-size) + 0.5rem);
+	list-style-type: none;
+	outline: none;
+	vertical-align: middle;
+}
+
+.Lexical__listItemChecked {
+	text-decoration: line-through;
+	opacity: 0.85;
+}
+
+.Lexical__listItemUnchecked::before,
+.Lexical__listItemChecked::before {
+	content: '';
+
+	--size: 16px;
+
+	inline-size: var(--size);
+	block-size: var(--size);
+	inset-inline-start: 0;
+	inset-block-start: calc(var(--line-height, 1) * var(--font-size) / 2);
+	transform: translateY(-50%);
+	cursor: pointer;
+	background-size: cover;
+	position: absolute;
+}
+
+.Lexical__listItemUnchecked[dir='rtl']::before,
+.Lexical__listItemChecked[dir='rtl']::before {
+	inset-inline: auto 0;
+}
+
+.Lexical__listItemUnchecked:focus::before,
+.Lexical__listItemChecked:focus::before {
+	box-shadow: 0 0 0 2px #a6cdfe;
+	border-radius: 2px;
+}
+
+.Lexical__listItemUnchecked::before {
+	border: 1px solid #999;
+	border-radius: 2px;
+}
+
+.Lexical__listItemChecked::before {
+	border: 1px solid var(--primary);
+	border-radius: 2px;
+	background-color: var(--primary);
+	background-repeat: no-repeat;
+}
+
+.Lexical__listItemChecked::after {
+	content: '';
+	cursor: pointer;
+	border-color: var(--primary-contrast);
+	border-style: solid;
+	position: absolute;
+	display: block;
+	inline-size: 5px;
+	block-size: 11px;
+
+	--top: calc(var(--line-height, 1) * var(--font-size) / 2);
+
+	inset-block-start: calc(var(--top) - 1px);
+	inset-inline-start: 5px;
+	transform: translateY(-50%) rotate(45deg);
+	border-width: 0 2px 2px 0;
+}
+
+.Lexical__listItem {
+	margin-block: 0;
+	margin-inline: 0;
+	margin-block-end: 0.25rem;
+}
+
+.Lexical__nestedListItem {
+	list-style-type: none;
+
+	> ol,
+	> ul {
+		margin-block-end: 0;
+	}
+
+	&.Lexical__listItemUnchecked {
+		padding-inline-start: 0;
+	}
+}
+
+.Lexical__nestedListItem::before,
+.Lexical__nestedListItem::after {
+	display: none;
+}

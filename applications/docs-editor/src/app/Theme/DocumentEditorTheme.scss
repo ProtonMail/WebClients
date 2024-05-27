@@ -1,0 +1,143 @@
+@import 'lists';
+@import 'table';
+@import 'code';
+
+.DocumentEditor {
+	margin: auto;
+	max-inline-size: 700px;
+	max-inline-size: clamp(700px, 50vw, 800px);
+	min-block-size: 80vh;
+	padding: 2rem;
+	background: white;
+	color: black;
+
+	--font-size: 1em;
+	--line-height: 1.5;
+
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+
+	> *:not(:first-child),
+	> .Lexical__paragraph:not(:first-child) {
+		margin-block-start: 0.75rem;
+	}
+
+	img.focused {
+		outline: 2px solid var(--primary);
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+.Lexical__paragraph {
+	margin: 0;
+}
+
+.Lexical__quote {
+	margin: 0;
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+	border-inline-start: 4px solid var(--border-weak);
+}
+
+.Lexical__textBold {
+	font-weight: bold;
+}
+
+.Lexical__textItalic {
+	font-style: italic;
+}
+
+.Lexical__textUnderline {
+	text-decoration: underline;
+}
+
+.Lexical__textStrikethrough {
+	text-decoration: line-through;
+}
+
+.Lexical__textUnderlineStrikethrough {
+	text-decoration: underline line-through;
+}
+
+.Lexical__textSubscript {
+	font-size: 0.8em;
+	vertical-align: sub !important;
+}
+
+.Lexical__textSuperscript {
+	font-size: 0.8em;
+	vertical-align: super;
+}
+
+.Lexical__mark {
+	--base-bg: rgb(var(--primary-rgb) / 0.15);
+	--overlap-bg: rgb(var(--primary-rgb) / 0.3);
+	--selected-bg: rgb(var(--primary-rgb) / 0.4);
+
+	background: var(--base-bg);
+	font-weight: inherit;
+	color: inherit;
+}
+
+.Lexical__mark.selected {
+	background: var(--selected-bg);
+}
+
+.Lexical__markOverlap {
+	background: var(--overlap-bg);
+}
+
+.Lexical__commentThreadMark.resolved {
+	background: transparent;
+
+	.Lexical__mark:not(.resolved) + &.Lexical__markOverlap {
+		background: var(--base-bg);
+
+		&.selected {
+			background: var(--selected-bg);
+		}
+	}
+}
+
+.Lexical__link {
+	color: var(--primary);
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@for $i from 1 through 6 {
+	.Lexical__h#{$i} {
+		font-size: 1.75em - 0.125em * $i;
+		font-weight: bold;
+
+		&:not(:first-child) {
+			margin-block-start: 1.25rem;
+		}
+	}
+}
+
+.Lexical__cursorsContainer > span {
+	> :last-child {
+		inline-size: 2px !important;
+
+		> span {
+			display: block !important;
+			border-radius: 4px !important;
+			padding-block: 4px !important;
+			padding-inline: 6px !important;
+			font-size: 11px !important;
+			line-height: 14px !important;
+			font-weight: semibold !important;
+			font-family: inherit !important;
+			inset-block-start: -24px !important;
+			inset-inline-start: 0 !important;
+		}
+	}
+}
