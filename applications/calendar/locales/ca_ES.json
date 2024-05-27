@@ -300,7 +300,7 @@
         "Exportar contactes"
       ],
       "Forgot password?": [
-        "He oblidat la contrasenya?"
+        "Heu oblidat la contrasenya?"
       ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
@@ -476,10 +476,10 @@
       "Not now": [
         "Ara no"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -917,23 +917,6 @@
         "Nou"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Afegeix el nostre gestor de contrasenyes xifrat** per només ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Afegeix ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Esborra ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Subscriviu-vos durant 15 mesos i aconseguiu el nostre **gestor de contrasenyes xifrat** per només ${ priceNoSuffix } extra al mes!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
@@ -986,6 +969,9 @@
       ],
       "the first month": [
         "el primer mes"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
     "bf2023: Tooltip": {
@@ -2759,9 +2745,6 @@
       ],
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
-      ],
-      "Amount below minimum.": [
-        "Quantitat per sota del mínim."
       ],
       "An error occurred while loading alias options": [
         "S'ha produït un error en carregar les opcions de l'àlies"
@@ -6407,6 +6390,9 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - característiques prèmium"
+      ],
       "Passkeys supported": [
         "S'admeten claus de pas"
       ],
@@ -6482,6 +6468,9 @@
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositius i àlies il·limitats"
       ],
       "Unlimited filters": [
         "Filtres il·limitats"
@@ -6826,9 +6815,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Adreces de correu electrònic úniques i generades sobre la marxa que protegeixen la vostra identitat en línia i us permeten controlar què arriba a la vostra safata d'entrada. De SimpleLogin per a ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilitzeu les vostres pròpies adreces de domini de correu electrònic personalitzat, p. ex., vos@elvostrenom.com"
@@ -7208,6 +7194,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with multiple vaults": [
+        "Compartició segura amb diverses caixes fortes"
+      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ]
@@ -7664,6 +7653,11 @@
         "Voleu cancel·lar el restabliment de la contrasenya?"
       ]
     },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "S'ha cancel·lat la sol·licitud de restabliment de la contrasenya (${ user.Email }). Si no ha fet aquesta sol·licitud, ${ changePasswordLink }."
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "canvieu la vostra contrasenya"
@@ -7886,6 +7880,11 @@
         "Doneu suport a la privacitat en línia"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ves als plans de subscripció"
@@ -8016,7 +8015,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "S'està cancel·lant la vostra subscripció. Si us plau, esperi."
+        "S'està cancel·lant la seva subscripció. Si us plau, esperi."
       ]
     },
     "Storage": {

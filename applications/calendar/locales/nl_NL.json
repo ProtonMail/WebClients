@@ -20,6 +20,17 @@
         "E-mail doorsturen gestopt"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en ${ remainingCount } andere potentiële lekken gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -456,11 +467,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -895,23 +906,6 @@
     "Badge": {
       "New!": [
         "Nieuw"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Voeg onze versleutelde wachtwoordmanager toe** voor slechts ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } toevoeen"
-      ],
-      "Get the deal": [
-        "Kies deze deal"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } verwijderen"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Kies voor een abonnement van 15 maanden en krijg onze **versleutelde wachtwoordmanager** voor slechts ${ priceNoSuffix } extra per maand!"
       ]
     },
     "bf2023: Deal details": {
@@ -2378,7 +2372,7 @@
         "Beschikbaarheid onbekend"
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organiseer je dag beter, houdt je tijd bij en prioriteer taken. Stel je kalender in met aangepast kleuren."
+        "Organiseer uw dag beter, houd uw tijd bij en prioriteer taken. Stel uw agenda in met aangepast kleuren."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
@@ -2751,9 +2745,6 @@
       ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
-      ],
-      "Amount below minimum.": [
-        "Bedrag onder het minimum."
       ],
       "An error occurred while loading alias options": [
         "Er is een fout opgetreden tijdens het laden van de alias opties"
@@ -6851,9 +6842,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unieke, on-the-fly e-mailadressen die uw online-identiteit beschermen en u laten bepalen wat er in uw inbox terechtkomt. Van SimpleLogin door ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"

@@ -482,10 +482,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -929,23 +929,6 @@
     "Badge": {
       "New!": [
         "Новае!"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Дадайце наш менеджар пароляў з шыфраваннем** усяго за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Дадайце ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Выдаліць ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Падпішыцеся на 15 месяцаў і атрымайце наш **менеджар пароляў з шыфраваннем** усяго за ${ priceNoSuffix } дадатковай платы ў месяц!"
       ]
     },
     "bf2023: Deal details": {
@@ -2820,8 +2803,8 @@
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
       ],
-      "Amount below minimum.": [
-        "Сума ніжэй за мінімум."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Падчас загрузкі параметраў псеўданіма адбылася памылка"
@@ -6640,6 +6623,9 @@
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
+      "Password health": [
+        "Якасць пароля"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
@@ -7085,9 +7071,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальныя, імгненныя адрасы электроннай пошты, якія абараняюць вашу ідэнтычнасць у інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -9575,7 +9558,7 @@
         "Схаваць бакавую панэль"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
+        "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
       "Load image": [
         "Загрузіць відарыс"
