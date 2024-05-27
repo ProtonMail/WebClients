@@ -190,6 +190,9 @@
       "Copy link": [
         "Copiar ligação"
       ],
+      "Copy version number to clipboard": [
+        "Copiar o número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -622,7 +625,7 @@
         "Reenviar o convite"
       ],
       "Reset to default": [
-        "Reposição predefinida"
+        "Reposição padrão"
       ],
       "Restart all": [
         "Reiniciar tudo"
@@ -962,17 +965,6 @@
         "Evento não suportado"
       ]
     },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtenha a promoção"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
@@ -1020,6 +1012,10 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -2106,12 +2102,12 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilizar a predefinição global (${ defaultValueText })"
+        "Utilizar o padrão global (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilizar a predefinição global (${ globalDefaultText })"
+        "Utilizar o padrão global (${ globalDefaultText })"
       ]
     },
     "Delinquent modal title": {
@@ -2366,9 +2362,6 @@
       ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
-      ],
-      "Amount below minimum.": [
-        "Quantia abaixo do mínimo."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro ao carregar as opções do alias"
@@ -3701,6 +3694,10 @@
         "${ selectedFoldersCountLocalized } etiqueta selecionada",
         "${ selectedFoldersCountLocalized } etiquetas selecionadas"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ignorado",
+        "${ skippedCount } ignorados"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4236,6 +4233,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invite link copied": [
+        "O link do convite foi copiado."
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece que tentou recentemente enviar ${ uploadName }. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em curso, a substituição do ficheiro cancelará o envio em curso."
       ],
@@ -4575,7 +4575,7 @@
         "Selecione o item"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecione o formato de e-mail predefinido a utilizar para este endereço de e-mail."
+        "Selecione o formato de e-mail padrão a utilizar para este endereço de e-mail."
       ],
       "Select what you want to import.": [
         "Selecione o que deseja importar."
@@ -4826,6 +4826,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "upgrade your storage": [
+        "melhorar o seu armazenamento"
       ],
       "Uploaded": [
         "Enviado"
@@ -5567,6 +5570,9 @@
       "Public keys": [
         "Chaves públicas"
       ],
+      "Public link password": [
+        "Palavra-passe do link público"
+      ],
       "Region": [
         "Região"
       ],
@@ -5992,6 +5998,12 @@
       "RAR archive": [
         "Arquivo RAR"
       ],
+      "Small web format (SWF)": [
+        "Formato pequeno para a web (SWF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Arquivo em fita (TAR)"
+      ],
       "Text": [
         "Texto"
       ],
@@ -6312,6 +6324,9 @@
       ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
+      ],
+      "Password health": [
+        "Estado da palavras-passe"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
@@ -6681,9 +6696,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
@@ -6853,6 +6865,9 @@
       "${ reason } has been enabled": [
         "${ reason } foi ativado"
       ],
+      "Access updated": [
+        "O acesso foi atualizado."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão permanentemente eliminados da lixeira"
       ],
@@ -6891,6 +6906,9 @@
       ],
       "Failed to open document": [
         "Não foi possível abrir o documento."
+      ],
+      "Failed to remove the file": [
+        "Erro ao remover o ficheiro"
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao enviar ficheiros: ${ err }"
@@ -8012,6 +8030,9 @@
       ],
       "Recovery has started": [
         "A recuperação foi iniciada."
+      ],
+      "Secure link copied": [
+        "O link seguro foi copiado."
       ],
       "The link to your file was successfully copied": [
         "A ligação do seu ficheiro foi copiada."
