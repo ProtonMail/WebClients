@@ -8,6 +8,8 @@ import { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import {
     AddressesAutocompleteItem,
+    Dropdown,
+    DropdownSizeUnit,
     Icon,
     Marks,
     getContactsAutocompleteItems,
@@ -26,7 +28,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CoreButton, Input, InputProps } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
-import { isValidBitcoinAddress } from '../../utils';
+import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundErrorDropdown';
 import { RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
@@ -51,6 +53,7 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
 }
 
 interface EmailListItemProps {
+    index: number;
     chunks?: MatchChunk[];
     name?: string;
     address: string;
@@ -58,33 +61,53 @@ interface EmailListItemProps {
     leftNode?: ReactNode;
     rightNode?: ReactNode;
     error?: string;
+    loading?: boolean;
 }
 
-const EmailListItem = ({ chunks = [], name, address, onClick, leftNode, rightNode, error }: EmailListItemProps) => {
+const EmailListItem = ({
+    index,
+    chunks = [],
+    name,
+    address,
+    loading,
+    leftNode,
+    rightNode,
+    error,
+    onClick,
+}: EmailListItemProps) => {
     const inner = (
         <>
             {leftNode}
-            <div
-                className="ui-orange rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold no-shrink"
-                style={{
-                    '--h-custom': '2.5rem',
-                    '--w-custom': '2.5rem',
-                    background: 'var(--interaction-norm-minor-1)',
-                    color: 'var(--interaction-norm)',
-                }}
-            >
-                {getInitials(name || address)}
-            </div>
-            <div className="flex flex-column justify-center items-center mr-auto">
-                <span className={clsx('block w-full text-ellipsis text-left text-lg')}>
-                    {<Marks chunks={chunks}>{name || address}</Marks>}
-                </span>
-                {Boolean(name && address) && name !== address && (
-                    <span className={clsx('block w-full text-ellipsis text-left color-hint')}>
-                        {<Marks chunks={chunks}>{address}</Marks>}
-                    </span>
-                )}
-            </div>
+            {loading ? (
+                <CircleLoader className="color-primary" />
+            ) : (
+                <>
+                    <div
+                        className={clsx(
+                            'rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold no-shrink',
+                            getThemeByIndex(index)
+                        )}
+                        style={{
+                            '--h-custom': '2.5rem',
+                            '--w-custom': '2.5rem',
+                            background: 'var(--interaction-norm-minor-1)',
+                            color: 'var(--interaction-norm)',
+                        }}
+                    >
+                        {getInitials(name || address)}
+                    </div>
+                    <div className="flex flex-column justify-center items-center mr-auto">
+                        <span className={clsx('block w-full text-ellipsis text-left text-lg')}>
+                            {<Marks chunks={chunks}>{name || address}</Marks>}
+                        </span>
+                        {Boolean(name && address) && name !== address && (
+                            <span className={clsx('block w-full text-ellipsis text-left color-hint')}>
+                                {<Marks chunks={chunks}>{address}</Marks>}
+                            </span>
+                        )}
+                    </div>
+                </>
+            )}
             {error && <WalletNotFoundErrorDropdown email={address} />}
             {rightNode}
         </>
@@ -121,6 +144,7 @@ export const EmailOrBitcoinAddressInput = ({
     excludedEmails = [],
     network,
     loading,
+    disabled,
     ...rest
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -238,36 +262,6 @@ export const EmailOrBitcoinAddressInput = ({
     };
 
     const listContent = useMemo(() => {
-        if (loading) {
-            return (
-                <div className="my-10 flex justify-center items-center">
-                    <CircleLoader className="color-primary" />
-                </div>
-            );
-        }
-
-        if (input) {
-            return (
-                <>
-                    <span className="color-hint text-sm mb-1">{c('Wallet send').t`Results`}</span>
-                    <ul className="unstyled m-0 w-full">
-                        {filteredOptions.map(({ chunks, option }, index) => {
-                            return (
-                                <li key={`${option.key}-${index}`} title={option.label} className="flex">
-                                    <EmailListItem
-                                        chunks={chunks}
-                                        name={option.value.Name}
-                                        address={option.value.Email}
-                                        onClick={() => handleSelect(option)}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </>
-            );
-        }
-
         if (recipientsWithBtcAddress?.length) {
             return (
                 <ul className="unstyled m-0 w-full">
@@ -275,6 +269,7 @@ export const EmailOrBitcoinAddressInput = ({
                         return (
                             <li key={`${recipient.ContactID}-${index}`} title={recipient.Address} className="flex">
                                 <EmailListItem
+                                    index={index}
                                     address={recipient.Address}
                                     name={recipient.Name}
                                     error={btcAddress.error}
@@ -283,7 +278,7 @@ export const EmailOrBitcoinAddressInput = ({
                                             <CoreButton
                                                 shape="ghost"
                                                 color="weak"
-                                                className="mr-1"
+                                                className="mr-1 no-shrink"
                                                 size="small"
                                                 icon
                                                 onClick={() => onRemoveRecipient(recipient)}
@@ -321,7 +316,7 @@ export const EmailOrBitcoinAddressInput = ({
                 ) : null}
             </>
         );
-    }, [filteredOptions, handleSelect, input, loading, onRemoveRecipient, recipientsWithBtcAddress]);
+    }, [onRemoveRecipient, recipientsWithBtcAddress]);
 
     return (
         <>
@@ -335,7 +330,7 @@ export const EmailOrBitcoinAddressInput = ({
                         ref={inputRef}
                         autoFocus
                         value={input}
-                        disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || loading}
+                        disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || disabled}
                         data-protonpass-ignore
                         onValue={(value: string) => {
                             handleInputChange(value.trimStart());
@@ -372,8 +367,39 @@ export const EmailOrBitcoinAddressInput = ({
                     />
                 </div>
 
+                <Dropdown
+                    size={{
+                        width: DropdownSizeUnit.Anchor,
+                        maxHeight: DropdownSizeUnit.Viewport,
+                        maxWidth: DropdownSizeUnit.Viewport,
+                    }}
+                    isOpen={!!filteredOptions.length}
+                    anchorRef={inputRef}
+                >
+                    <ul className="unstyled m-0 w-full p-2">
+                        {filteredOptions.map(({ chunks, option }, index) => {
+                            return (
+                                <li key={`${option.key}-${index}`} title={option.label} className="flex">
+                                    <EmailListItem
+                                        index={index}
+                                        chunks={chunks}
+                                        name={option.value.Name}
+                                        address={option.value.Email}
+                                        onClick={() => handleSelect(option)}
+                                    />
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </Dropdown>
+
                 <div className="flex flex-column justify-center grow w-full">
-                    <div className="grow overflow-auto">{listContent}</div>
+                    <div className="grow max-w-full overflow-auto">{listContent}</div>
+                    {loading && (
+                        <div className="flex my-3 py-8">
+                            <CircleLoader className="color-primary mx-auto" />
+                        </div>
+                    )}
                 </div>
             </div>
 

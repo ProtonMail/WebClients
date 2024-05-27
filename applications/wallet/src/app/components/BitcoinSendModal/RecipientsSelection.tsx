@@ -140,9 +140,9 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     }
 
     return (
-        <div className="flex flex-column justify-center">
+        <div className="flex flex-column max-w-full justify-center">
             <EmailOrBitcoinAddressInput
-                disabled={loadingBitcoinAddressLookup}
+                disabled={Object.values(loadingBitcoinAddressLookup).some((v) => Boolean(v))}
                 placeholder={'andy.yen@proton.ch / bc1...'}
                 contactEmails={contactEmails}
                 contactEmailsMap={contactEmailsMap}

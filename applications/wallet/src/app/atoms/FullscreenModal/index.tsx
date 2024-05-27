@@ -27,11 +27,11 @@ export const FullscreenModal = ({ title, subline, children, key, className, ...r
                 {/* Content */}
                 <div
                     className={clsx(
-                        'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto'
+                        'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto py-16'
                     )}
                 >
                     <div
-                        className="flex flex-column py-auto max-h-full w-full max-w-custom overflow-auto p-2 my-auto"
+                        className="flex flex-column py-auto max-h-full w-full max-w-custom overflow-auto p-2 grow my-auto"
                         style={{ '--max-w-custom': '31rem' }}
                     >
                         {children}
