@@ -46,7 +46,7 @@ export const EmailIntegrationModal = ({ addresses, account, ...modalProps }: Pro
             );
 
             createNotification({ text: c('Wallet Settings').t`Email address has been added` });
-            dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+            dispatch(walletAccountUpdate(updatedAccount));
         } catch (e) {
             createNotification({ type: 'error', text: c('Wallet Settings').t`Could not add email address` });
         }
@@ -61,7 +61,7 @@ export const EmailIntegrationModal = ({ addresses, account, ...modalProps }: Pro
             );
 
             createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
-            dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+            dispatch(walletAccountUpdate(updatedAccount));
         } catch (e) {
             createNotification({ type: 'error', text: c('Wallet Settings').t`Could not remove email address` });
         }

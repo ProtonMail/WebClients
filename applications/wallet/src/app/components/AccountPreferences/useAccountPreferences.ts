@@ -54,7 +54,7 @@ export const useAccountPreferences = (
                 );
 
                 createNotification({ text: c('Wallet Settings').t`Account name changed` });
-                dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+                dispatch(walletAccountUpdate(updatedAccount));
             } catch (e) {
                 createNotification({ type: 'error', text: c('Wallet Settings').t`Account name could not be change` });
             }
@@ -107,7 +107,7 @@ export const useAccountPreferences = (
                 );
 
                 createNotification({ text: c('Wallet Settings').t`New fiat currency applied` });
-                dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+                dispatch(walletAccountUpdate(updatedAccount));
             } catch (e) {
                 createNotification({
                     type: 'error',
@@ -136,7 +136,7 @@ export const useAccountPreferences = (
             }
 
             createNotification({ text: c('Wallet Settings').t`Email addresses were added` });
-            dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+            dispatch(walletAccountUpdate(updatedAccount));
         };
 
         return withLoadingEmailUpdate(promise());
@@ -152,7 +152,7 @@ export const useAccountPreferences = (
                 );
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
-                dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
+                dispatch(walletAccountUpdate(updatedAccount));
             } catch (e) {
                 createNotification({ type: 'error', text: c('Wallet Settings').t`Could not remove email address` });
             }

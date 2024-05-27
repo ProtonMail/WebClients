@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ModalOwnProps } from '@proton/components/components';
+import warningSignSrc from '@proton/styles/assets/img/illustrations/warning-sign.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Modal } from '../../atoms';
@@ -13,42 +12,52 @@ interface Props extends ModalOwnProps {
 }
 
 export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
-    const { loadingDeletion, handleWalletDeletion } = useWalletDeletion(wallet);
+    const { loadingDeletion, handleWalletDeletion, openBackupModal } = useWalletDeletion({
+        wallet,
+        onDeletion: () => {
+            modalProps.onClose?.();
+        },
+    });
 
     return (
-        <Modal
-            title={c('Wallet preference').t`Your wallet deletion`}
-            enableCloseWhenClickOutside
-            size="large"
-            {...modalProps}
-        >
-            <Card className="flex flex-column my-2 border border-danger">
-                {loadingDeletion ? (
-                    <CircleLoader className="color-primary" />
-                ) : (
-                    <span className="block">{c('Wallet preference')
-                        .t`Are you sure you want to delete this wallet?`}</span>
-                )}
-
-                <div className="flex flex-row justify-end">
-                    <Button
-                        disabled={loadingDeletion}
-                        shape="ghost"
-                        color="danger"
-                        size="small"
-                        className="mr-2"
-                        onClick={() => handleWalletDeletion()}
-                    >{c('Wallet preference').t`Confirm deletion`}</Button>
-
-                    <Button
-                        disabled={loadingDeletion}
-                        shape="solid"
-                        color="norm"
-                        size="small"
-                        onClick={() => modalProps.onClose?.()}
-                    >{c('Wallet preference').t`Cancel`}</Button>
+        <Modal {...modalProps}>
+            <div className="flex flex-column mb-4">
+                <div className="flex mx-auto mb-6">
+                    <img src={warningSignSrc} alt={c('Wallet deletion').t`Warning:'`} />
                 </div>
-            </Card>
+                <h1 className="text-4xl text-bold mx-auto text-center">{c('Wallet deletion')
+                    .t`Confirm to delete '${wallet.Wallet.Name}'`}</h1>
+
+                <p className="color-weak text-center mx-12">
+                    <span className="block my-2">{c('Wallet setup')
+                        .t`Please backup your secret recovery phrase before you delete your wallet.`}</span>
+                    <span className="block my-2">{c('Wallet setup')
+                        .t`This mnemonic can help you restoring your wallet next time or on another compatible software.`}</span>
+                </p>
+            </div>
+
+            <div className="flex flex-column">
+                <Button
+                    fullWidth
+                    disabled={loadingDeletion}
+                    shape="solid"
+                    color="norm"
+                    onClick={() => {
+                        openBackupModal();
+                    }}
+                >{c('Wallet preference').t`Back up wallet first`}</Button>
+
+                <Button
+                    fullWidth
+                    disabled={loadingDeletion}
+                    shape="solid"
+                    color="weak"
+                    onClick={() => {
+                        handleWalletDeletion();
+                    }}
+                    className="mt-2 color-weak"
+                >{c('Wallet preference').t`Delete this wallet`}</Button>
+            </div>
         </Modal>
     );
 };
