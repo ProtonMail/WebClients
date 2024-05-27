@@ -37,7 +37,7 @@ export const viewCreationAppStartup = (session: Session) => {
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     setTimeout(() => {
-        loadMailView(mainWindow!);
+        showMailView(mainWindow!);
     }, delay);
 
     mainWindow.on("close", (ev) => {
@@ -131,8 +131,8 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
     return bounds;
 };
 
-const loadMailView = (window: BrowserWindow) => {
-    Logger.info("Loading mail view");
+const showMailView = (window: BrowserWindow) => {
+    Logger.info("Showing mail view");
     if (!browserViewMap.mail) {
         Logger.error("Mail view not created");
         return;
@@ -143,8 +143,8 @@ const loadMailView = (window: BrowserWindow) => {
     window.setBrowserView(browserViewMap.mail);
 };
 
-const loadCalendarView = (window: BrowserWindow) => {
-    Logger.info("Loading calendar view");
+const showCalendarView = (window: BrowserWindow) => {
+    Logger.info("Showing calendar view");
     if (!browserViewMap.calendar) {
         Logger.error("Calendar view not created");
         return;
@@ -155,10 +155,10 @@ const loadCalendarView = (window: BrowserWindow) => {
     window.setBrowserView(browserViewMap.calendar);
 };
 
-export const loadAccountView = (window: BrowserWindow) => {
-    Logger.info("Loading account view");
+export const showAccountView = (window: BrowserWindow) => {
+    Logger.info("Showing account view");
     if (!browserViewMap.account) {
-        Logger.info("Creating account view");
+        Logger.info("Account view not created, creating...");
         const config = getWindowConfig(window.webContents.session);
         browserViewMap.account = new BrowserView({ ...config });
     }
@@ -168,7 +168,7 @@ export const loadAccountView = (window: BrowserWindow) => {
     window.setBrowserView(browserViewMap.account);
 };
 
-export const updateView = (target: VIEW_TARGET) => {
+export const showView = (target: VIEW_TARGET) => {
     if (!mainWindow) {
         throw new Error("mainWindow is undefined");
     }
@@ -182,17 +182,17 @@ export const updateView = (target: VIEW_TARGET) => {
 
     switch (target) {
         case "mail":
-            loadMailView(mainWindow);
+            showMailView(mainWindow);
             mainWindow.title = "Proton Mail";
             currentViewID = "mail";
             break;
         case "calendar":
-            loadCalendarView(mainWindow);
+            showCalendarView(mainWindow);
             mainWindow.title = "Proton Calendar";
             currentViewID = "calendar";
             break;
         case "account":
-            loadAccountView(mainWindow);
+            showAccountView(mainWindow);
             mainWindow.title = "Proton";
             currentViewID = "account";
             break;
@@ -217,16 +217,16 @@ export const loadURL = async (viewID: ViewID, url: string) => {
     } else {
         if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
             Logger.info(`View ${viewID} already in given url`, loggedURL);
-            updateView(viewID);
+            showView(viewID);
         } else if (nextView) {
             Logger.info(`Loading URL in ${viewID}`, loggedURL);
             // Clear nextView before changing to it show it does not show a flash of content
             await nextView.webContents.loadURL("about:blank");
-            updateView(viewID);
+            showView(viewID);
             nextView.webContents.loadURL(url);
         } else {
             // View hasn't loaded yet, try to load it now
-            updateView(viewID);
+            showView(viewID);
             const loadedNextView = getCurrentView();
 
             if (loadedNextView) {

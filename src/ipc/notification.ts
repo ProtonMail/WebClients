@@ -2,7 +2,7 @@ import { Notification, app } from "electron";
 import Logger from "electron-log";
 import { isWindows } from "../utils/helpers";
 import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
-import { getMailView, getMainWindow, updateView } from "../utils/view/viewManagement";
+import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
 import { ElectronNotification } from "./ipcConstants";
 
 export const handleIPCBadge = (count: number) => {
@@ -29,7 +29,7 @@ export const showNotification = (payload: ElectronNotification) => {
 
     notification.on("click", () => {
         const mainWindow = getMainWindow();
-        updateView(app);
+        showView(app);
         if (labelID && elementID && app === "mail") {
             addHashToCurrentURL(getMailView(), `#elementID=${elementID}&labelID=${labelID}`);
         }

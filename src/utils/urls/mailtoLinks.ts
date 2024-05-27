@@ -1,5 +1,5 @@
 import Logger from "electron-log";
-import { getMailView, updateView } from "../view/viewManagement";
+import { getMailView, showView } from "../view/viewManagement";
 import { addHashToCurrentURL } from "./urlHelpers";
 
 export const handleMailToUrls = (url: string) => {
@@ -10,6 +10,6 @@ export const handleMailToUrls = (url: string) => {
     const mailView = getMailView();
     if (!mailView) return;
 
-    updateView("mail");
+    showView("mail");
     addHashToCurrentURL(mailView, `#mailto=${url}`);
 };
