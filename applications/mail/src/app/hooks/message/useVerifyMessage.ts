@@ -31,12 +31,29 @@ export const useVerifyMessage = (localID: string) => {
     };
 
     return useCallback(
-        async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: Uint8Array) => {
+        async (
+            decryptedRawContent: Uint8Array = new Uint8Array(),
+            signature?: Uint8Array,
+            decryptionErrors?: Error[]
+        ) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
             const getData = () => (getMessage(localID) as MessageStateWithDataFull).data;
 
             const errors: MessageErrors = {};
+
+            if (decryptionErrors && decryptionErrors?.length) {
+                dispatch(
+                    verificationComplete({
+                        ID: localID,
+                        verification: {
+                            verified: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                            verificationErrors: [new Error('message decryption failure')],
+                        },
+                    })
+                );
+                return;
+            }
 
             let verificationPreferences;
             let verification;
