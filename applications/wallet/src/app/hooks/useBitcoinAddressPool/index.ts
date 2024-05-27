@@ -31,7 +31,8 @@ export const useBitcoinAddressPool = ({
             const wallet = walletsChainData[walletId];
 
             // We cannot create address with the wasm wallet
-            if (!wallet) {
+            if (!wallet || !addresses) {
+                console.warn('Cannot fill bitcoin address pool: wallet or address keys are missing');
                 continue;
             }
 
@@ -44,9 +45,11 @@ export const useBitcoinAddressPool = ({
                 }
 
                 const addressKeys = compact(
-                    walletAccount.Addresses.flatMap(
-                        (addressA) => addresses?.find((addressB) => addressA.ID === addressB.address.ID)?.keys
-                    )
+                    walletAccount.Addresses.map((addressA) => {
+                        const address = addresses?.find((addressB) => addressA.ID === addressB.address.ID);
+                        const [primaryAddressKey] = address?.keys ?? [];
+                        return primaryAddressKey;
+                    })
                 );
 
                 const highestApiIndex = await getBitcoinAddressHighestIndex(walletId, walletAccountId);
