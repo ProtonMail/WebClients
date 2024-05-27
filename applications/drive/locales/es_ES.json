@@ -983,23 +983,6 @@
         "Evento no admitido"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Añade nuestro gestor cifrado de contraseñas** por solo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Añadir ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Aprovechar la oferta"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Eliminar ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "¡Suscríbete durante 15 meses y consigue nuestro **gestor cifrado de contraseñas** por solo ${ priceNoSuffix } más al mes!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
@@ -2502,8 +2485,8 @@
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
       ],
-      "Amount below minimum.": [
-        "Cantidad por debajo del mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ha ocurrido un error al cargar las opciones de alias."
@@ -6708,6 +6691,9 @@
       "Passkeys supported": [
         "Las claves de acceso están admitidas."
       ],
+      "Password health": [
+        "Estado de la contraseña"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -6726,6 +6712,9 @@
       "Protect ${ n } device at a time": [
         "Protege ${ n } dispositivo a la vez",
         "Protege ${ n } dispositivos a la vez"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -6839,6 +6828,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature info": {
@@ -7095,6 +7087,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protege tu familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir tu contenido favorito"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Protege con alias tu dirección de correo real para no ser divulgada o filtrada (una dirección de correo generada aleatoriamente que reenvía correos electrónicos a su bandeja de entrada principal)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Proporciona el nivel más alto de protección de tu cuenta y un soporte especializado."
       ],
@@ -7145,9 +7140,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas e instantáneas que protegen tu identidad en línea y te permiten controlar lo que llega a tu bandeja de entrada. Desde SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
