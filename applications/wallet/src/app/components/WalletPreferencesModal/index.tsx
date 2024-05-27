@@ -2,7 +2,6 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmMnemonic } from '@proton/andromeda';
 import {
     Collapsible,
     CollapsibleContent,
@@ -11,12 +10,11 @@ import {
     Icon,
     ModalOwnProps,
 } from '@proton/components/components';
-import warningSignSrc from '@proton/styles/assets/img/illustrations/warning-sign.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
-import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountPreferences } from '../AccountPreferences';
+import { WalletDeletionModal } from '../WalletDeletionModal';
 import { useWalletPreferences } from './useWalletPreferences';
 
 interface Props extends ModalOwnProps {
@@ -32,8 +30,6 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
         updateWalletName,
         walletDeletionConfirmationModal,
         openWalletDeletionConfirmationModal,
-        loadingDeletion,
-        handleWalletDeletion,
         openBackupModal,
     } = useWalletPreferences(wallet);
 
@@ -93,25 +89,16 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                             <div className="flex flex-column items-center">
                                 <Button
                                     fullWidth
-                                    disabled={loadingDeletion}
                                     shape="solid"
                                     color="norm"
                                     className="mt-6"
                                     onClick={() => {
-                                        if (wallet.Wallet.Mnemonic) {
-                                            openBackupModal({
-                                                schemeAndData: {
-                                                    scheme: WalletSetupScheme.WalletBackup,
-                                                    mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                                                },
-                                            });
-                                        }
+                                        openBackupModal();
                                     }}
                                 >{c('Wallet preference').t`Back up wallet`}</Button>
 
                                 <Button
                                     fullWidth
-                                    disabled={loadingDeletion}
                                     shape="solid"
                                     color="danger"
                                     onClick={() => openWalletDeletionConfirmationModal()}
@@ -123,50 +110,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                 </div>
             </Modal>
 
-            <Modal {...walletDeletionConfirmationModal}>
-                <div className="flex flex-column mb-4">
-                    <div className="flex mx-auto mb-6">
-                        <img src={warningSignSrc} alt={c('Wallet deletion').t`Warning:'`} />
-                    </div>
-                    <h3 className="text-4xl text-bold mx-auto text-center">{c('Wallet deletion')
-                        .t`Confirm to delete '${wallet.Wallet.Name}'`}</h3>
-
-                    <p className="color-weak text-center mx-12">
-                        <span className="block my-2">{c('Wallet setup')
-                            .t`Please backup your secret recovery phrase before you delete your wallet.`}</span>
-                        <span className="block my-2">{c('Wallet setup')
-                            .t`This mnemonic can help you restoring your wallet next time or on another compatible software.`}</span>
-                    </p>
-                </div>
-
-                <div className="flex flex-column">
-                    <Button
-                        fullWidth
-                        disabled={loadingDeletion}
-                        shape="solid"
-                        color="norm"
-                        onClick={() => {
-                            if (wallet.Wallet.Mnemonic) {
-                                openBackupModal({
-                                    schemeAndData: {
-                                        scheme: WalletSetupScheme.WalletBackup,
-                                        mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                                    },
-                                });
-                            }
-                        }}
-                    >{c('Wallet preference').t`Back up wallet first`}</Button>
-
-                    <Button
-                        fullWidth
-                        disabled={loadingDeletion}
-                        shape="solid"
-                        color="weak"
-                        onClick={() => handleWalletDeletion()}
-                        className="mt-2 color-weak"
-                    >{c('Wallet preference').t`Delete this wallet`}</Button>
-                </div>
-            </Modal>
+            <WalletDeletionModal wallet={wallet} {...walletDeletionConfirmationModal} />
         </>
     );
 };

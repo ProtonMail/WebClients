@@ -7,8 +7,10 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "true",
-        "test": "true",
-        "test:ci": "true"
+        "test": "TZ=UTC vitest",
+        "test:ci": "yarn test --coverage",
+        "test:ui": "yarn test --ui",
+        "test:watch": "yarn test --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -21,12 +23,15 @@
     "devDependencies": {
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.1",
+        "@vitest/coverage-v8": "^1.0.1",
+        "@vitest/ui": "^1.0.2",
         "eslint": "^8.56.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "react": "^18.3.1",
         "react-dom": "^18.2.0",
         "ts-jest": "^29.1.2",
-        "typescript": "^5.3.3"
+        "typescript": "^5.3.3",
+        "vitest": "^1.0.1"
     }
 }
