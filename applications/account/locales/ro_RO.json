@@ -1418,15 +1418,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Adăugați-vă managerul de parole criptate** pentru doar ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Adăugare ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Adăugați ${ plan } cu ${ price } pe lună"
-      ],
       "Become a Visionary": [
         "Alegeți Visionary"
       ],
@@ -1438,15 +1429,6 @@
       ],
       "Get the deal": [
         "Obțineți oferta"
-      ],
-      "Remove": [
-        "Eliminare"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Eliminare ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Abonați-vă pentru 15 luni și obțineți **managerul de parole criptate** pentru doar ${ priceNoSuffix } în plus pe lună!"
       ]
     },
     "bf2023: Deal details": {
@@ -3937,9 +3919,6 @@
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
       ],
-      "Amount below minimum.": [
-        "Sumă sub cea minimă acceptată."
-      ],
       "Authentication canceled.": [
         "Autentificare anulată."
       ],
@@ -5602,9 +5581,6 @@
       "Protection": [
         "Protecție"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Economisiți cu cea mai bună ofertă pentru ${ VPN_APP_NAME }"
-      ],
       "Select your deal": [
         "Selectați oferta"
       ],
@@ -6059,6 +6035,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info": {
@@ -8516,17 +8503,6 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11536,9 +11512,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Adrese de e-mail unice, generate automat, care vă protejează identitatea online și vă permit să controlați mesajele primite. De la SimpleLogin de la ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilizați propriile adrese de domeniu de e-mail, de exemplu, nume@adresapersonala.com"

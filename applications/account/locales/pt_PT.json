@@ -262,6 +262,9 @@
       "Copy link": [
         "Copiar ligação"
       ],
+      "Copy version number to clipboard": [
+        "Copiar o número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -800,7 +803,7 @@
         "Repor palavra-passe"
       ],
       "Reset to default": [
-        "Reposição predefinida"
+        "Reposição padrão"
       ],
       "Restore": [
         "Restaurar"
@@ -855,6 +858,9 @@
       ],
       "Search settings": [
         "Pesquisar definições"
+      ],
+      "See DNS TXT record": [
+        "Ver o registo DNS TXT"
       ],
       "See how": [
         "Ver como"
@@ -1379,9 +1385,6 @@
       ]
     },
     "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
       "Become a Visionary": [
         "Escolhe Visionary"
       ],
@@ -1393,12 +1396,6 @@
       ],
       "Get the deal": [
         "Obtenha a promoção"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
@@ -1461,6 +1458,10 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -3011,7 +3012,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "Parâmetros predefinidos de evento"
+        "Parâmetros padrão de evento"
       ]
     },
     "Default display name vcard": {
@@ -3674,9 +3675,6 @@
       "Amount above the maximum.": [
         "Quantia acima do máximo."
       ],
-      "Amount below minimum.": [
-        "Quantia abaixo do mínimo."
-      ],
       "Authentication canceled.": [
         "Autenticação cancelada."
       ],
@@ -3920,6 +3918,12 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
+      ],
+      "Please upload an xml file": [
+        "Envie um ficheiro XML"
+      ],
+      "Please upload only 1 file": [
+        "Envie apenas 1 ficheiro"
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -4942,7 +4946,7 @@
         "Caixa de entrada"
       ],
       "Inbox - Default": [
-        "Caixa de entrada predefinida"
+        "Caixa de entrada padrão"
       ],
       "Select a folder": [
         "Seleccionar uma pasta"
@@ -5717,12 +5721,23 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ boldName } will be set as default calendar.": [
-        "${ boldName } passará a ser o calendário predefinido."
+        "${ boldName } passará a ser o calendário padrão."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
@@ -7898,17 +7913,6 @@
         "Reunião no Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8599,19 +8603,19 @@
         "Dias da semana"
       ],
       "Default language": [
-        "Idioma predefinido"
+        "Idioma padrão"
       ],
       "Default language (${ defaultLanguage })": [
-        "Idioma predefinido (${ defaultLanguage })"
+        "Idioma padrão (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
-        "Esquema PGP predefinido"
+        "Esquema PGP padrão"
       ],
       "Default scrollbars": [
-        "Barras de deslocação predefinidas"
+        "Barras de deslocação padrão"
       ],
       "Default view": [
-        "Vista predefinida"
+        "Vista padrão"
       ],
       "Delete": [
         "Eliminar"
@@ -8654,6 +8658,9 @@
       ],
       "Duration": [
         "Duração"
+      ],
+      "e.g. example.com": [
+        "p.ex. exemplo.pt"
       ],
       "Email": [
         "E-mail"
@@ -9053,6 +9060,9 @@
       ],
       "Signature": [
         "Assinatura"
+      ],
+      "Single sign-on URL": [
+        "URL do início de sessão único"
       ],
       "SMTP port": [
         "Porta SMTP"
@@ -9932,6 +9942,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Documents": [
+        "Documentos"
+      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -10250,6 +10263,9 @@
       ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
+      ],
+      "Password health": [
+        "Estado da palavras-passe"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
@@ -10707,9 +10723,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
@@ -10808,10 +10821,10 @@
         "${ reason } foi ativado"
       ],
       "A disabled address cannot be default": [
-        "Um endereço desativado não pode ser um endereço predefinido."
+        "Um endereço desativado não pode ser um endereço padrão."
       ],
       "An external address cannot be default": [
-        "Um endereço externo não pode ser um endereço predefinido."
+        "Um endereço externo não pode ser um endereço padrão."
       ],
       "Invalid code": [
         "Código inválido"
@@ -10877,7 +10890,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "Os parâmetros predefinidos de evento foram atualizados."
+        "Os parâmetros padrão de evento foram atualizados."
       ]
     },
     "Notification time input": {
@@ -11165,7 +11178,7 @@
         "Pastas personalizadas"
       ],
       "Default folders": [
-        "Pastas predefinidas"
+        "Pastas padrão"
       ],
       "Move to...": [
         "Mover para..."
@@ -12878,6 +12891,9 @@
       "Sync files on devices": [
         "Sincronizar ficheiros nos dispositivos"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "O melhor da ${ BRAND_NAME }"
+      ],
       "Version history": [
         "Histórico das versões"
       ],
@@ -13006,7 +13022,7 @@
         "Créditos adicionados"
       ],
       "Default calendar updated": [
-        "O calendário predefinido foi atualizado."
+        "O calendário padrão foi atualizado."
       ],
       "Display name updated": [
         "O nome a mostrar foi atualizado."
@@ -14568,7 +14584,7 @@
         "Ver o número de mensagens não lidas no ícone do separador"
       ],
       "Set how your list of messages looks like by default.": [
-        "Definia a aparência predefinida da lista de mensagens."
+        "Definia a aparência padrão da lista de mensagens."
       ],
       "Set the default Composer popup size as small or full screen.": [
         "Predefina o tamanho da janela do compositor como pequeno ou médio."
@@ -14628,7 +14644,7 @@
         "Esta chave é utilizada por o ${ MAIL_APP_NAME } para encriptar os dados do seu contacto."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
-        "Utilize as barras de deslocação predefinidas do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
+        "Utilize as barras de deslocação padrão do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
@@ -14713,10 +14729,10 @@
         "Hoje é um bom dia para escrever um e-mail"
       ],
       "Update default font and size": [
-        "Actualizar o tipo e o tamanho de letra predefinidos"
+        "Actualizar o tipo e o tamanho de letra padrão"
       ],
       "Your default font will look like following:": [
-        "O tipo de letra predefinido terá o seguinte aspeto:"
+        "O tipo de letra padrão terá o seguinte aspeto:"
       ]
     },
     "Upgrade": {

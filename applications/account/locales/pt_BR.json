@@ -1409,15 +1409,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Adicione nosso gerenciador de senhas criptografadas** por apenas ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Adicione ${ plan } por ${ price } por mês"
-      ],
       "Become a Visionary": [
         "Torne-se um Visionary"
       ],
@@ -1429,15 +1420,6 @@
       ],
       "Get the deal": [
         "Obtenha a oferta"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Assine por 15 meses e obtenha nosso **gerenciador de senhas criptografadas** por apenas ${ priceNoSuffix } extra por mês!"
       ]
     },
     "bf2023: Deal details": {
@@ -3338,7 +3320,7 @@
         "Não consegui me conectar"
       ],
       "I only needed a VPN short-term": [
-        "Eu só precisei da VPN por um curto período"
+        "Eu só precisava da VPN por um curto período"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
@@ -3407,7 +3389,7 @@
     },
     "drivePlus2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+        "Renova por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "drivePlus2024: Info": {
@@ -3918,8 +3900,8 @@
       "Amount above the maximum.": [
         "Quantidade acima do máximo."
       ],
-      "Amount below minimum.": [
-        "Quantidade abaixo do mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Valor total abaixo do mínimo (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -5570,9 +5552,6 @@
       "Protection": [
         "Proteção"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Economize com as melhores ofertas no ${ VPN_APP_NAME }"
-      ],
       "Select your deal": [
         "Selecione sua oferta"
       ],
@@ -6028,6 +6007,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -8004,7 +7994,7 @@
         "Envie o seu arquivo CSV completo para criar contas"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Carregue o logo da organização para potenciar sua identidade de marca e criar uma experiência personalizada para seus usuários."
+        "Faça upload do logotipo da sua organização para impulsionar a identidade da sua marca e criar uma experiência personalizada para seus usuários"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Verifique e tente novamente."
@@ -8455,17 +8445,6 @@
         "Reunião no Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -8601,6 +8580,9 @@
       ],
       "Key successfully generated.": [
         "Chave gerada com sucesso."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Isso gerará uma nova chave, que será usado para criptografar futuros e-mails, entre outros dados."
       ]
     },
     "Key state badge": {
@@ -10565,6 +10547,9 @@
       "Back to calendar": [
         "Voltar ao calendário"
       ],
+      "Back to documents": [
+        "Voltar para os documentos"
+      ],
       "Back to files": [
         "Voltar ao arquivos"
       ],
@@ -10579,6 +10564,9 @@
       ],
       "Calendar": [
         "Calendário"
+      ],
+      "Documents": [
+        "Documentos"
       ],
       "Inbox": [
         "Caixa de entrada"
@@ -10904,6 +10892,9 @@
       ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
+      ],
+      "Password health": [
+        "Estado da senha"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -11433,9 +11424,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail exclusivos e sob demanda para proteger sua identidade on-line e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin pela ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
@@ -13627,7 +13615,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Cancelando a sua assinatura"
+        "Cancelando sua assinatura, aguarde"
       ]
     },
     "Step in filter modal": {
@@ -15574,10 +15562,10 @@
         "Configuração do WireGuard"
       ],
       "You have no open alerts": [
-        "Você não tem avisos abertos"
+        "Você não tem alertas abertos"
       ],
       "You have no resolved alerts": [
-        "Você não tem avisos resolvidos"
+        "Você não tem alertas resolvidos"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"

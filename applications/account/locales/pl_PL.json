@@ -1360,6 +1360,9 @@
       "Browse the web privately and block ads": [
         "Przeglądaj prywatnie Internet i blokuj reklamy"
       ],
+      "Create and collaborate on documents securely": [
+        "Bezpieczne tworzenie i edytowanie dokumentów"
+      ],
       "Keep your schedule private": [
         "Zachowaj prywatność swojego harmonogramu"
       ],
@@ -1430,15 +1433,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Dodaj nasz menedżer haseł szyfrowanych** za jedyne ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Dodaj ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Dodaj ${ plan } za ${ price } miesięcznie"
-      ],
       "Become a Visionary": [
         "Wybierz plan Visionary"
       ],
@@ -1450,15 +1444,6 @@
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
-      ],
-      "Remove": [
-        "Usuń"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Usuń ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Subskrybuj na 15 miesięcy i uzyskaj **menedżer haseł szyfrowanych** za jedyne ${ priceNoSuffix } dodatkowo miesięcznie!"
       ]
     },
     "bf2023: Deal details": {
@@ -3953,8 +3938,8 @@
       "Amount above the maximum.": [
         "Kwota powyżej maksimum."
       ],
-      "Amount below minimum.": [
-        "Kwota poniżej minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Kwota poniżej minimum (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Uwierzytelnianie zostało anulowane."
@@ -5637,9 +5622,6 @@
       "Protection": [
         "Ochrona"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Zaoszczędź dzięki najlepszym ofertom ${ VPN_APP_NAME }"
-      ],
       "Select your deal": [
         "Wybierz ofertę"
       ],
@@ -6102,6 +6084,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info": {
@@ -8617,17 +8610,6 @@
         "spotkanie na Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -10779,6 +10761,9 @@
       "Back to calendar": [
         "Powrót do kalendarza"
       ],
+      "Back to documents": [
+        "Powrót do dokumentów"
+      ],
       "Back to files": [
         "Powrót do plików"
       ],
@@ -10793,6 +10778,9 @@
       ],
       "Calendar": [
         "Kalendarz"
+      ],
+      "Documents": [
+        "Dokumenty"
       ],
       "Inbox": [
         "Poczta"
@@ -11149,6 +11137,9 @@
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
+      "Password health": [
+        "Jakość hasła"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
@@ -11169,6 +11160,9 @@
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzenia jednocześnie"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regularne sprawdzaj bezpieczeństwo konta. Zostaniesz powiadomiony o słabych i identycznych hasłach."
       ],
       "Require 2FA for organization": [
         "Wymagaj uwierzytelniania dwustopniowego w organizacji"
@@ -11298,6 +11292,9 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
       ]
     },
     "new_plans: feature info": {
@@ -11687,9 +11684,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Wsparcie protokołów udostępniania plików, takich jak BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unikalne adresy e-mail, które chronią Twoją tożsamość online i pozwalają Ci kontrolować, co trafia do Twojej skrzynki odbiorczej. Od SimpleLogin przez ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Korzystaj z adresów w niestandardowej domenie, np. ty@twojanazwa.pl"
@@ -16595,8 +16589,14 @@
         "${ n } lat",
         "${ n } roku"
       ],
+      "Just ${ price }": [
+        "Tylko ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Wypróbuj plan ${ upsellPlanName } bez ryzyka"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Twój pakiet ${ a } i ${ b }"
       ],
       "Your ${ selected } plan": [
         "Plan ${ selected }"
