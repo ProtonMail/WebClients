@@ -1,0 +1,54 @@
+.Lexical__table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-inline-size: 100%;
+	overflow-y: scroll;
+	table-layout: fixed;
+	margin: 0;
+}
+
+.Lexical__tableSelection *::selection {
+	background-color: transparent !important;
+}
+
+.Lexical__tableSelected {
+	outline: 2px solid rgb(60 132 244);
+}
+
+.Lexical__tableCell {
+	border: 1px solid var(--border-norm);
+	min-inline-size: 75px;
+	vertical-align: top;
+	text-align: start;
+	padding-block: 6px;
+	padding-inline: 8px;
+	position: relative;
+	cursor: default;
+	outline: none;
+}
+
+.Lexical__tableCellHeader {
+	background-color: var(--primary-minor-1);
+	border-color: var(--border-norm);
+	text-align: start;
+}
+
+.Lexical__tableCellSelected {
+	background-color: #c9dbf0;
+}
+
+.Lexical__tableCellPrimarySelected {
+	border: 2px solid rgb(60 132 244);
+	display: block;
+	block-size: calc(100% - 2px);
+	position: absolute;
+	inline-size: calc(100% - 2px);
+	inset-inline-start: -1px;
+	inset-block-start: -1px;
+	z-index: 2;
+}
+
+.Lexical__tableCellEditing {
+	box-shadow: 0 0 5px rgb(0 0 0 / 0.4);
+	border-radius: 3px;
+}

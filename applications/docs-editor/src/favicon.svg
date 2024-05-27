@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+    <path
+        fill="url(#a)"
+        fill-rule="evenodd"
+        d="M0 3v9a2 2 0 0 0 2 2h11V6a2 2 0 0 0-2-2H5.606a1.5 1.5 0 0 1-.832-.252L4.28 3.42A2.5 2.5 0 0 0 2.894 3H0Z"
+        clip-rule="evenodd"
+    />
+    <path
+        fill="url(#b)"
+        fill-rule="evenodd"
+        d="M0 3v9a2 2 0 0 0 2 2h11V6a2 2 0 0 0-2-2H5.606a1.5 1.5 0 0 1-.832-.252L4.28 3.42A2.5 2.5 0 0 0 2.894 3H0Z"
+        clip-rule="evenodd"
+    />
+    <path
+        fill="url(#c)"
+        fill-rule="evenodd"
+        d="M2 1a2 2 0 0 0-2 2h2.894a2.5 2.5 0 0 1 1.387.42l.493.328A1.5 1.5 0 0 0 5.606 4H11a2 2 0 0 1 2 2v8h1a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6.715a1.25 1.25 0 0 1-.62-.165l-.943-.539A2.25 2.25 0 0 0 4.035 1H2Z"
+        clip-rule="evenodd"
+    />
+    <defs>
+        <linearGradient id="a" x1="8.011" x2="9.207" y1="-5.58" y2="11.556" gradientUnits="userSpaceOnUse">
+            <stop offset=".989" stop-color="#6D4AFF" />
+        </linearGradient>
+        <linearGradient id="c" x1="-5.379" x2="14.219" y1="-1.167" y2="20.769" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6D4AFF" />
+            <stop offset=".359" stop-color="#AE8CFF" />
+            <stop offset="1" stop-color="#F8CCFF" />
+        </linearGradient>
+        <radialGradient
+            id="b"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(-10.14204 20.34623 -32.01015 -15.95619 13.13 -4.699)"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop offset=".556" stop-color="#FF62C0" stop-opacity="0" />
+            <stop offset=".994" stop-color="#FF62C0" />
+        </radialGradient>
+    </defs>
+</svg>
