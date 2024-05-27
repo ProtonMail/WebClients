@@ -203,6 +203,7 @@ module.exports = {
                                     ];
                                     break;
                                 case 'chrome':
+                                case 'safari':
                                     manifest.externally_connectable.matches = [
                                         'https://account.proton.me/*',
                                         'https://pass.proton.me/*',
