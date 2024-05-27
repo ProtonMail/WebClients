@@ -4,29 +4,37 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { Prompt, PromptProps } from '../../components';
 
-interface Props extends ModalProps {
+interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     email: string;
     onDisable: () => Promise<void>;
 }
 
 const DisableAddressModal = ({ email, onDisable, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
+    const address = (
+        <strong key="address" className="text-break">
+            {email}
+        </strong>
+    );
     return (
-        <ModalTwo {...rest}>
-            <ModalTwoHeader title={c('Title').t`Disable ${email}`} />
-            <ModalTwoContent>
-                <Alert className="mb-4" type="warning">{c('Warning')
-                    .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will also be disabled. Are you sure you want to disable this address?`}</Alert>
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" onClick={() => withLoading(onDisable().then(rest.onClose))} loading={loading}>{c(
-                    'Action'
-                ).t`Confirm`}</Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+        <Prompt
+            title={c('Disable address prompt').t`Disable address?`}
+            buttons={[
+                <Button color="danger" onClick={() => withLoading(onDisable().then(rest.onClose))} loading={loading}>
+                    {c('Disable address prompt').t`Disable address`}
+                </Button>,
+                <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
+            {c('Disable address prompt')
+                .jt`By disabling this address ${address}, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will be disabled.`}
+            <br />
+            <br />
+            {c('Disable address prompt').t`Are you sure you want to disable this address?`}
+        </Prompt>
     );
 };
 
