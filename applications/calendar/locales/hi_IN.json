@@ -20,6 +20,26 @@
         "मेल फॉरवर्ड रुक गया"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } और ${ remainingCount } अन्य संभावित लीक का पता चला। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } और संभावित रूप से एक अन्य डेटा लीक पाया गया। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "संभावित ${ name } लीक का पता चला। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "संभावित रूप से ${ name } से डेटा लीक हुआ है। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "संभावित रूप से ${ name } से डेटा लीक हुआ है। विवरण देखने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "आपकी जानकारी कम से कम एक डेटा लीक में मिली है। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
@@ -422,10 +442,10 @@
       "Not now": [
         "अभी नहीं"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -819,21 +839,9 @@
         "वैकल्पिक"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } जोड़ें"
-      ],
-      "Get the deal": [
-        "डील लें"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } को निकालें"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
+    "Badge": {
+      "New!": [
+        "नया!"
       ]
     },
     "bf2023: Deal details": {
@@ -2249,6 +2257,9 @@
       "Availability unknown": [
         "उपलब्धता अज्ञात"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "अपने दिन को व्यवस्थित करें, समय ट्रैक करें, कार्य प्राथमिकता दें। अनुकूलित कार्यक्रम रंग के साथ अपने कैलेंडर को रंग दें।"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "संपर्कों को डिक्रिप्ट किया जा रहा है… इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप निर्यात किए गए अपने सभी संपर्कों के साथ फ़ाइल डाउनलोड करने में सक्षम होंगे।"
       ],
@@ -2432,9 +2443,6 @@
       ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
-      ],
-      "Amount below minimum.": [
-        "राशि न्यूनयम से कम है।"
       ],
       "Answer failed to be sent": [
         "जवाब नहीं भेजा जा सका"
@@ -2726,7 +2734,7 @@
         "टैब बंद हो गया"
       ],
       "The address might be misspelled": [
-        "पता गलत लिखा जा सकता है"
+        "पता शायद गलत है"
       ],
       "The email addresses do not match": [
         "ईमेल पते मेल नहीं खाते"
@@ -3336,6 +3344,9 @@
     "Header": {
       "Contacts": [
         "संपर्क"
+      ],
+      "Custom recurrence": [
+        "अनुकूलित आवृत्ति"
       ],
       "Name": [
         "नाम"
@@ -5818,6 +5829,9 @@
       "Organize items with multiple vaults": [
         "कई तिजोरी के साथ आइटम व्यवस्थित करें"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - प्रीमियम सुविधाएं"
+      ],
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
@@ -5890,6 +5904,9 @@
       ],
       "Unlimited devices": [
         "असीम डिवाइस"
+      ],
+      "Unlimited devices and aliases": [
+        "असीमित डिवाइस और उपनाम"
       ],
       "Unlimited filters": [
         "असीमित फिल्टर"
@@ -6190,9 +6207,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent जैसे फाइल शेयर करने वाले प्रोटोकॉल के लिए सपोर्ट"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "अद्वितीय, ऑन-द-फ्लाई ईमेल पते जो आपकी ऑनलाइन पहचान की रक्षा करते हैं और आपको यह नियंत्रित करने देते हैं कि आपके इनबॉक्स में क्या आएगा। ${ BRAND_NAME } द्वारा SimpleLogin से।"
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "अपना खुद के कस्टम ईमेल डोमेन पते इस्तेमाल करें, उदाहरण: aap@aapkanaam.in"
       ],
@@ -6325,8 +6339,8 @@
         "${ value } दिन पहले"
       ],
       "${ value } day before at ${ time }": [
-        "${ time } पे ${ value } दिन बाद",
-        "${ time } पे ${ value } दिन बाद"
+        "${ time } पर ${ value } दिन पहले",
+        "${ time } पर ${ value } दिन पहले"
       ],
       "${ value } hour after": [
         "${ value } घंटे बाद",
@@ -6453,6 +6467,9 @@
       "Create new group": [
         "नया ग्रुप बनाएं"
       ],
+      "Custom": [
+        "अनुकूलित"
+      ],
       "Day": [
         "दिन",
         "दिन"
@@ -6518,6 +6535,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "प्रतिभागी लिस्ट फैलाएं"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें",
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें"
+      ],
+      "Secure sharing with multiple vaults": [
+        "सुरक्षित साझाकरण - कई वॉल्ट्स के साथ"
+      ],
+      "Secure vault sharing": [
+        "सुरक्षित वॉल्ट साझाकरण"
       ]
     },
     "Payment method option": {
@@ -6802,9 +6831,19 @@
         "पासवर्ड सहेजा गया"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "पासवर्ड रीसेट रद्द कर दिया गया"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "पासवर्ड रीसेट रद्द करें?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "पासवर्ड रीसेट अनुरोध रद्द कर दिया गया (${ user.Email })। यदि आपने यह अनुरोध नहीं किया है, तो ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6990,6 +7029,11 @@
         "ऑनलाइन निजता को बढ़ावा दें"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "सदस्यता प्लान में जाएं"
@@ -7084,6 +7128,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "अपने कैलेंडर को रंग दे कर अपने दिन को व्यवस्थित करें, समय ट्रैक करें, कार्य प्राथमिकता दें और भी बहुत कुछ।"
+      ],
+      "Custom event colors": [
+        "अनुकूलित कार्यक्रम रंग"
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } तक क्रेडिट लें।"
       ],

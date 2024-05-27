@@ -177,6 +177,9 @@
       "Copy link": [
         "Copiar ligação"
       ],
+      "Copy version number to clipboard": [
+        "Copiar o número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -455,11 +458,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -546,7 +549,7 @@
         "Reenviar código"
       ],
       "Reset to default": [
-        "Reposição predefinida"
+        "Reposição padrão"
       ],
       "Resume indexing": [
         "Retomar indexação"
@@ -746,6 +749,9 @@
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -893,17 +899,6 @@
         "Novo"
       ]
     },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtenha a promoção"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
@@ -951,6 +946,10 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -2297,12 +2296,12 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilizar a predefinição global (${ defaultValueText })"
+        "Utilizar o padrão global (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilizar a predefinição global (${ globalDefaultText })"
+        "Utilizar o padrão global (${ globalDefaultText })"
       ]
     },
     "Delete event button tooltip": {
@@ -2636,9 +2635,6 @@
       ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
-      ],
-      "Amount below minimum.": [
-        "Quantia abaixo do mínimo."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro ao carregar as opções do alias"
@@ -4577,7 +4573,7 @@
         "Selecione um provedor de serviços para iniciar"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecione o formato de e-mail predefinido a utilizar para este endereço de e-mail."
+        "Selecione o formato de e-mail padrão a utilizar para este endereço de e-mail."
       ],
       "Select what you want to import.": [
         "Selecione o que deseja importar."
@@ -5203,7 +5199,7 @@
         "Data e hora"
       ],
       "Default view": [
-        "Vista predefinida"
+        "Vista padrão"
       ],
       "Delete": [
         "Eliminar"
@@ -6231,6 +6227,9 @@
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
+      "Password health": [
+        "Estado da palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -6598,9 +6597,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
