@@ -240,7 +240,7 @@
         "Ajusta a la finestra"
       ],
       "Forgot password?": [
-        "He oblidat la contrasenya?"
+        "Heu oblidat la contrasenya?"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -723,15 +723,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Afegeix el nostre gestor de contrasenyes xifrat** per només ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Afegeix ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Afegeix ${ plan } per ${ price } al mes"
-      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -740,15 +731,6 @@
       ],
       "Get the deal": [
         "Obteniu l’oferta"
-      ],
-      "Remove": [
-        "Esborra"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Esborra ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Subscriviu-vos durant 15 mesos i aconseguiu el nostre **gestor de contrasenyes xifrat** per només ${ priceNoSuffix } extra al mes!"
       ]
     },
     "bf2023: Deal details": {
@@ -825,6 +807,9 @@
       ],
       "the first month": [
         "el primer mes"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
     "bf2023: Title": {
@@ -2047,9 +2032,6 @@
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
       ],
-      "Amount below minimum.": [
-        "Quantitat per sota del mínim."
-      ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
@@ -2808,9 +2790,6 @@
       ],
       "Organization key fingerprint": [
         "Clau d'identificació de la clau d'organització"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Estalvieu amb les millors ofertes en ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Seleccioneu la vostra oferta"
@@ -5164,6 +5143,9 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - característiques prèmium"
+      ],
       "Passkeys supported": [
         "S'admeten claus de pas"
       ],
@@ -5249,6 +5231,9 @@
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositius i àlies il·limitats"
       ],
       "Unlimited filters": [
         "Filtres il·limitats"
@@ -5624,9 +5609,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Adreces de correu electrònic úniques i generades sobre la marxa que protegeixen la vostra identitat en línia i us permeten controlar què arriba a la vostra safata d'entrada. De SimpleLogin per a ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilitzeu les vostres pròpies adreces de domini de correu electrònic personalitzat, p. ex., vos@elvostrenom.com"
       ],
@@ -5926,6 +5908,9 @@
       ],
       "Preparing your Recovery Kit": [
         "S'està preparant el vostre kit de recuperació"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartició segura amb diverses caixes fortes"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
@@ -6257,7 +6242,7 @@
         "Generar un nou token"
       ],
       "Generate token": [
-        "Generar un token"
+        "Genera un testimoni"
       ]
     },
     "scim: Info": {
@@ -6479,6 +6464,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Voleu cancel·lar el restabliment de la contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "S'ha cancel·lat la sol·licitud de restabliment de la contrasenya (${ user.Email }). Si no ha fet aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6734,6 +6724,11 @@
         "Doneu suport a la privacitat en línia"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ves als plans de subscripció"
@@ -6855,7 +6850,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "S'està cancel·lant la vostra subscripció. Si us plau, esperi."
+        "S'està cancel·lant la seva subscripció. Si us plau, esperi."
       ]
     },
     "Storage": {
@@ -8132,7 +8127,7 @@
     },
     "vpn_2step: billing": {
       "Billed monthly": [
-        "Facturat cada mesc"
+        "Facturat mensualment"
       ]
     },
     "vpn_2step: discount": {

@@ -721,6 +721,9 @@
       "Browse the web privately and block ads": [
         "Navega en la web de manera privada y bloquea anuncios"
       ],
+      "Create and collaborate on documents securely": [
+        "Crea y colabora en documentos de forma segura."
+      ],
       "Keep your schedule private": [
         "Mantén privada tu agenda"
       ],
@@ -735,15 +738,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Añade nuestro gestor cifrado de contraseñas** por solo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Añadir ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Añadir ${ plan } por ${ price } por mes"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -753,14 +747,8 @@
       "Get the deal": [
         "Aprovechar la oferta"
       ],
-      "Remove": [
-        "Eliminar"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Eliminar ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "¡Suscríbete durante 15 meses y consigue nuestro **gestor cifrado de contraseñas** por solo ${ priceNoSuffix } más al mes!"
+      "Save even more with a 12-month plan": [
+        "Ahorra aún más con un plan de 12 meses"
       ]
     },
     "bf2023: Deal details": {
@@ -2077,8 +2065,8 @@
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
       ],
-      "Amount below minimum.": [
-        "Cantidad por debajo del mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "La compra ha expirado. Inténtalo de nuevo."
@@ -2875,8 +2863,8 @@
       "Organization key fingerprint": [
         "Huella digital de la clave de la organización"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Ahorra mucho con las mejores ofertas en ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Ahorra en grande con las mejores ofertas de ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Elige tu oferta"
@@ -5435,6 +5423,9 @@
       "Passkeys supported": [
         "Las claves de acceso están admitidas."
       ],
+      "Password health": [
+        "Estado de la contraseña"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -5453,6 +5444,9 @@
       "Protect ${ n } device at a time": [
         "Protege ${ n } dispositivo a la vez",
         "Protege ${ n } dispositivos a la vez"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -5576,6 +5570,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature info": {
@@ -5862,6 +5859,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protege tu familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir tu contenido favorito"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Protege con alias tu dirección de correo real para no ser divulgada o filtrada (una dirección de correo generada aleatoriamente que reenvía correos electrónicos a su bandeja de entrada principal)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Proporciona el nivel más alto de protección de tu cuenta y un soporte especializado."
       ],
@@ -5912,9 +5912,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas e instantáneas que protegen tu identidad en línea y te permiten controlar lo que llega a tu bandeja de entrada. Desde SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
@@ -8797,6 +8794,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Obtén ${ discount } de descuento con una suscripción de ${ billingCycle }."
       ],
+      "Get a first year of ${ plan } for free!": [
+        "¡Obtén un primer año de ${ plan } gratis!"
+      ],
       "monthly": [
         "cada mes"
       ]
@@ -8818,8 +8818,20 @@
         "${ n } año",
         "${ n } años"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Incluye ${ plan } (¡gratis por el primer año!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Incluye ${ plan }, nuestro gestor de contraseñas premium, ¡gratis por el primer año!"
+      ],
+      "Just ${ price }": [
+        "Por solo ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Prueba ${ upsellPlanName } sin riesgos"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Tu paquete de ${ a } y ${ b }"
       ],
       "Your ${ selected } plan": [
         "Tu plan ${ selected }"

@@ -726,15 +726,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Lisää salattu salasananhallintamme** vain ${ price } lisähintaan"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Lisää ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Lisää ${ plan }, ${ price } kuukausihintaan"
-      ],
       "Cancel": [
         "Peruuta"
       ],
@@ -743,15 +734,6 @@
       ],
       "Get the deal": [
         "Hanki tarjous"
-      ],
-      "Remove": [
-        "Poista"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Poista ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Hanki 15 kuukauden tilaus, ja saat **salatun salasananhallintamme** vain ${ priceNoSuffix } lisähintaan kuukaudessa!"
       ]
     },
     "bf2023: Deal details": {
@@ -2068,9 +2050,6 @@
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
       ],
-      "Amount below minimum.": [
-        "Summa on vähimmäismäärää pienempi."
-      ],
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
@@ -2863,9 +2842,6 @@
       "Organization key fingerprint": [
         "Organisaation avaimen sormenjälki"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }:n huipputarjouksilla säästät selvää rahaa"
-      ],
       "Select your deal": [
         "Valitse tarjouksesi"
       ],
@@ -2986,7 +2962,7 @@
         "(${ serverPrice }/kuukausi)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME }a ja ${ CALENDAR_SHORT_APP_NAME }a."
+        "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
@@ -3425,7 +3401,7 @@
         "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
-        "Paranna tilisi turvallisuutta vahvistamalla sähköpostiosoitteesi."
+        "Paranna tilisi suojausta vahvistamalla sähköpostiosoitteesi."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Asenna maakohtainen määritystiedosto yhdistääksesi satunnaiseen palvelimeen valitsemassasi maassa."
@@ -3676,7 +3652,7 @@
         "Pyydä puhelinkeskustelua"
       ],
       "Resend verification email": [
-        "Lähetä vahvistussähköposti uudelleen"
+        "Lähetä vahvistusviesti uudelleen"
       ],
       "Restore": [
         "Palauta"
@@ -3706,7 +3682,7 @@
         "Määritä tilisi skannaamalla tämä koodi todennuslaitteellasi. ${ switchButton }."
       ],
       "Secure your ${ BRAND_NAME } Account": [
-        "Turvaa ${ BRAND_NAME }-tilisi"
+        "Suojaa ${ BRAND_NAME }-tilisi"
       ],
       "Securing your account": [
         "Suojataan tiliä"
@@ -3864,6 +3840,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tämä poistaa tilisi ja kaikki sen tiedot pysyvästi. Et voi aktivoida tiliä uudelleen."
+      ],
+      "This will remove any enabled 2FA methods.": [
+        "Tämä poistaa kaikki käytössä olevat kaksivaiheiset tunistautumistavat."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Tämä ottaa SSO:n pois käytöstä verkkotunnukselta ${ boldDomainName }."
@@ -4123,7 +4102,7 @@
         "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
-        "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
+        "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
@@ -5406,6 +5385,9 @@
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
+      ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
       ],
@@ -5611,7 +5593,7 @@
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Turvallinen pilvitallennuspalvelu tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
+        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
@@ -5864,9 +5846,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Yksilöllisiä, nopeasti luotavia sähköpostiosoitteita, jotka suojaavat verkkoidentiteettiäsi ja mahdollistavat postilaatikkoosi saapuvan sisällön hallinnan. Mahdollista ${ BRAND_NAME } SimpleLoginin avulla."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Käytä omaa verkkotunnustasi käyttäviä sähköpostiosoitteita, kuten nimesi@esimerkki.fi"
@@ -7018,7 +6997,7 @@
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } päivä",
-        "${ days } päivä"
+        "${ days } päivää"
       ],
       "${ hours } hour": [
         "${ hours } tunti",
@@ -7074,7 +7053,7 @@
         "Premium-ennakkokäyttö"
       ],
       "Secure cloud storage": [
-        "Turvallinen pilvitallennustila"
+        "Suojattu pilvitallennustila"
       ],
       "Secure streaming": [
         "Turvallinen suoratoisto"
