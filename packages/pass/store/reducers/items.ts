@@ -84,17 +84,26 @@ export const updateItems = (data: ItemRevisionUpdate[]) => (state: ItemsByShareI
     const updates = data.filter(({ shareId, itemId }) => Boolean(state[shareId]?.[itemId]));
     if (updates.length === 0) return state;
 
-    const byShareIdUpdate = updates.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>(
-        (acc, { shareId, itemId, ...update }) => {
+    return partialMerge(
+        state,
+        updates.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>((acc, { shareId, itemId, ...update }) => {
             acc[shareId] = acc[shareId] ?? {};
             acc[shareId][itemId] = update;
             return acc;
-        },
-        {}
+        }, {})
     );
-
-    return partialMerge(state, byShareIdUpdate);
 };
+
+export const addItems = (data: ItemRevision[]) => (state: ItemsByShareId) =>
+    fullMerge(
+        state,
+        data.reduce<IndexedByShareIdAndItemId<ItemRevision>>((acc, item) => {
+            const { shareId, itemId } = item;
+            acc[shareId] = acc[shareId] ?? {};
+            acc[shareId][itemId] = item;
+            return acc;
+        }, {})
+    );
 
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
@@ -213,7 +222,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
 
-        if (or(itemsEditSync.match, itemsUsedSync.match)(action)) {
+        if (itemsEditSync.match(action)) {
+            const { items } = action.payload;
+            return addItems(items)(state);
+        }
+
+        if (itemsUsedSync.match(action)) {
             const { items } = action.payload;
             return updateItems(items)(state);
         }
