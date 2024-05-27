@@ -2,7 +2,7 @@ import { IpcMainEvent, ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
-import { refreshHiddenViews, setTrialEnded, showView } from "../utils/view/viewManagement";
+import { reloadHiddenViews, setTrialEnded, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
@@ -71,12 +71,12 @@ export const handleIPCCalls = () => {
                 showNotification(payload);
                 break;
             case "updateLocale":
-                refreshHiddenViews();
+                reloadHiddenViews();
                 break;
             case "setTheme": {
                 if (!isEqualTheme(getTheme(), payload)) {
                     setTheme(payload);
-                    refreshHiddenViews();
+                    reloadHiddenViews();
                 }
                 break;
             }

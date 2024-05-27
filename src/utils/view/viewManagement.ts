@@ -243,7 +243,7 @@ export const loadURL = async (viewID: ViewID, url: string) => {
     }
 };
 
-export const refreshHiddenViews = () => {
+export const reloadHiddenViews = () => {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             view.webContents.reload();

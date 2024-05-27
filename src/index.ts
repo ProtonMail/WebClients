@@ -216,7 +216,6 @@ import { resetBadge } from "./ipc/notification";
             const calendarView = getCalendarView();
             const calendarSessionID = getSessionID(calendarView.webContents.getURL());
             if (isMail(url) && sessionID && !calendarSessionID) {
-                Logger.info("Refresh calendar session", sessionID);
                 reloadCalendarWithSession(sessionID);
             }
         });
