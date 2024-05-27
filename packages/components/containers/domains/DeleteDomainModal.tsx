@@ -5,9 +5,8 @@ import { useLoading } from '@proton/hooks';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Domain } from '@proton/shared/lib/interfaces';
 
-import { Alert, ErrorButton, Prompt, PromptProps } from '../../components';
+import { ErrorButton, Prompt, PromptProps } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
-import { getDeleteText } from '../general/helper';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;
@@ -26,23 +25,31 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
         createNotification({ text: c('Success message').t`Domain deleted` });
     };
 
+    const domainName = (
+        <strong key="domain" className="text-break">
+            {domain.DomainName}
+        </strong>
+    );
+
     return (
         <Prompt
-            title={getDeleteText(domain.DomainName)}
+            title={c('Delete domain prompt').t`Delete domain?`}
             buttons={[
                 <ErrorButton
                     onClick={() => {
                         withLoading(handleConfirmDelete());
                     }}
                     loading={loading}
-                >{c('Action').t`Delete`}</ErrorButton>,
+                >{c('Delete domain prompt').t`Delete`}</ErrorButton>,
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
         >
-            <Alert className="mb-4" type="info">{c('Info')
-                .t`Please note that if you delete this domain, all the addresses associated with it will be disabled.`}</Alert>
-            <Alert className="mb-4" type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+            {c('Delete domain prompt')
+                .jt`Please note that if you delete this domain ${domainName}, all the addresses associated with it will be disabled.`}
+            <br />
+            <br />
+            {c('Delete domain prompt').t`Are you sure you want to delete this domain?`}
         </Prompt>
     );
 };
