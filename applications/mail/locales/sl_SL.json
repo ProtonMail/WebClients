@@ -12,6 +12,26 @@
         "Posredovanje pošte ustavljeno"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
@@ -125,7 +145,7 @@
         "Nazaj"
       ],
       "Blind Carbon Copy": [
-        "Slepa kopija"
+        "Skrita kopija"
       ],
       "Block": [
         "Blokiraj"
@@ -261,6 +281,9 @@
       ],
       "Copy password to clipboard": [
         "Kopiraj geslo v odložišče"
+      ],
+      "Copy version number to clipboard": [
+        "Kopiraj številko različice v odložišče"
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
@@ -1471,23 +1494,6 @@
       ],
       "Sender verification passed": [
         "Preverjanje pošiljatelja je bilo uspešno"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Dodajte naš šifrirani upravljalnik gesel** za samo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Dodaj ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odstrani ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Naročite za 15 mesecev in pridobite naš **šifrirani upravljalnik gesel** za samo dodatnih ${ priceNoSuffix } na mesec!"
       ]
     },
     "bf2023: Deal details": {
@@ -3659,9 +3665,6 @@
       "Amount above the maximum.": [
         "Znesek nad največjim."
       ],
-      "Amount below minimum.": [
-        "Znesek pod najmanjšim."
-      ],
       "An error occurred while loading alias options": [
         "Pri nalaganju možnosti vzdevkov je prišlo do napake"
       ],
@@ -5754,6 +5757,9 @@
       "and": [
         "in"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Vsa načrtovana ali preložena sporočila bodo preklicana."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Izbrisane bodo tudi vse podmape. Vendar e-poštna sporočila, shranjena v tej mapi ${ nameDeleted }, ne bodo izbrisana in jih je mogoče najti v mapi Vsa pošta."
       ],
@@ -6316,7 +6322,7 @@
         "Združeno"
       ],
       "Message actions in progress. This may take a while.": [
-        "Sporočila v teku. To lahko traja nekaj časa."
+        "Delo s sporočili je v teku. To lahko traja nekaj časa."
       ],
       "Message download status:": [
         "Stanje prenosa sporočila:"
@@ -6669,6 +6675,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Dremež do jutri, ${ formattedTime }"
       ],
+      "Snoozing this conversation will be canceled.": [
+        "Dremež tega pogovora bo preklican."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Žal to sporočilo ne obstaja ali je že poteklo."
       ],
@@ -7007,6 +7016,9 @@
       ],
       "Version ${ appVersion }": [
         "Različica ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Številka različice je bila uspešno kopirana v odložišče"
       ],
       "Visa Secure logo": [
         "Visa Secure logotip"
@@ -7678,7 +7690,7 @@
         "Slabo"
       ],
       "BCC": [
-        "SKP"
+        "Skp"
       ],
       "Beta Access": [
         "Dostop beta"
@@ -9492,7 +9504,7 @@
         "Hitro nastavite sporočila o odsotnosti."
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Hitro prenesite svoj sporočila, koledarje ali stike od katerega koli ponudnika."
+        "Hitro prenesite svoja sporočila, koledarje ali stike od katerega koli ponudnika."
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Za prijavo potrebujete kodo, poslano na mobilni telefon. To zagotavlja, da ostane račun varen, tudi če je geslo ogroženo."
@@ -9535,9 +9547,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora za protokole za skupno rabo datotek, kot je BitTorrent."
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Edinstveni, takojšnji e-poštni naslovi, ki ščitijo vašo spletno identiteto in vam omogočajo nadzor nad tem, kaj pristane v vaši mapi »Prejeto«. Od SimpleLogin ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
@@ -10226,6 +10235,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
       ],
@@ -10234,6 +10252,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktiven** in varuje vaš račun."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select files": {
@@ -10454,9 +10475,19 @@
         "Vpišite vaše trenutno geslo in s tem ustavite postopek za ponastavitev gesla. Prišlo ne bo do nobenih drugih sprememb."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponastavitev gesla je preklicana."
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Prekliči ponastavitev gesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Zahteva za ponastavitev gesla je preklicana (${ user.Email }). Če niste vložili te zahteve, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10695,6 +10726,11 @@
         "Podprite zasebnost na spletu"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -10826,6 +10862,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Zdaj lahko načrtujete pošiljanje sporočil za kasneje."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Preklic vaše naročnine, počakajte"
       ]
     },
     "Status": {
@@ -11325,6 +11366,9 @@
       "Message deleted": [
         "Sporočilo izbrisano"
       ],
+      "Message expiration canceled": [
+        "Potek sporočila je preklican"
+      ],
       "Message marked as legitimate": [
         "Sporočilo označeno kot legitimno"
       ],
@@ -11405,6 +11449,9 @@
       ],
       "Verification successful": [
         "Preverjanje uspešno"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Uspešno ste preklicali naročnino."
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
@@ -11644,7 +11691,7 @@
         "Priponke"
       ],
       "BCC": [
-        "SKP"
+        "Skp"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"

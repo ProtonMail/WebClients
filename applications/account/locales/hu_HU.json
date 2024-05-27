@@ -1181,9 +1181,6 @@
       ]
     },
     "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } hozzáadása"
-      ],
       "Cancel": [
         "Mégsem"
       ],
@@ -1192,12 +1189,6 @@
       ],
       "Get the deal": [
         "Érdekel az ajánlat"
-      ],
-      "Remove": [
-        "Eltávolítás"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } eltávolítása"
       ]
     },
     "bf2023: Deal details": {
@@ -3218,9 +3209,6 @@
       "Amount above the maximum.": [
         "Túl magas összeg."
       ],
-      "Amount below minimum.": [
-        "Túl alacsony összeg."
-      ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
       ],
@@ -4995,6 +4983,14 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info": {
@@ -6862,14 +6858,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info - folder colouring feature": {
@@ -9877,6 +9865,10 @@
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Biztonságos megosztás ${ n } trezorral",
+        "Biztonságos megosztás ${ n } trezorokkal"
       ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"

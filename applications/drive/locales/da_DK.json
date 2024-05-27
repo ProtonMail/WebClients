@@ -983,23 +983,6 @@
         "Ikke-understøttet begivenhed"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Tilføj vores krypterede adgangskodeadministrator** for kun ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Tilføj ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Gør brug af tilbuddet"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Fjern ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Tegn et abonnement på 15 måneder og få vores **krypterede adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -2502,8 +2485,8 @@
       "Amount above the maximum.": [
         "Beløb over maksimum."
       ],
-      "Amount below minimum.": [
-        "Beløb under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Beløb under minimum (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Der opstod en fejl under indlæsning af alias-indstillinger"
@@ -6705,6 +6688,9 @@
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
       ],
+      "Password health": [
+        "Adgangskode-sundhed"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
@@ -6723,6 +6709,9 @@
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
@@ -6836,6 +6825,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
       ]
     },
     "new_plans: feature info": {
@@ -7092,6 +7084,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskyt din familie mod skadelige hjemmesider, og få adgang til vores højhastigheds-VPN-servere for at streame dit yndlingsindhold."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Beskyt din rigtige e-mailadresse mod afsløring eller lækage via aliasser (en tilfældigt genereret e-mailadresse, som videresender e-mails til din indbakke)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
@@ -7142,9 +7137,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unikke e-mailadresser, der oprettes løbende og beskytter din online identitet og lader dig kontrollere, hvad der lander i din indbakke. Fra SimpleLogin af ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"

@@ -453,10 +453,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -894,23 +894,6 @@
     "Badge": {
       "New!": [
         "Новый"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Добавьте менеджер зашифрованных паролей** всего за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Добавить приложение ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Купить"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Удалить приложение ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Подпишитесь на 15 месяцев и пользуйтесь **менеджером зашифрованных паролей** всего за ${ priceNoSuffix } в месяц!"
       ]
     },
     "bf2023: Deal details": {
@@ -2631,11 +2614,17 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias is not valid": [
+        "Псевдоним недействителен"
+      ],
       "Alias is required": [
         "Требуется псевдоним"
       ],
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
+      ],
+      "Aliases could not be loaded": [
+        "Псевдонимы не могут быть загружены"
       ],
       "Already a member of this calendar": [
         "Уже участник этого календаря"
@@ -2643,8 +2632,11 @@
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
+      "An error occurred while loading alias options": [
+        "При загрузке опций псевдонима произошла ошибка"
+      ],
+      "An error occurred while saving your alias": [
+        "При сохранении псевдонима произошла ошибка"
       ],
       "Answer failed to be sent": [
         "Не удалось отправить ответ"
@@ -2748,6 +2740,9 @@
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
       ],
+      "Forward address is required": [
+        "Требуется адрес для пересылки"
+      ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
       ],
@@ -2823,6 +2818,9 @@
       "Missing signature": [
         "Подпись отсутствует"
       ],
+      "Name is required": [
+        "Требуется имя"
+      ],
       "Name required": [
         "Требуется имя"
       ],
@@ -2834,6 +2832,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Ни один внешний ключ, полученный для пользователя, не подходит для отправки"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -4806,6 +4807,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
+      ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
@@ -6777,9 +6781,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Уникальные, сгенерированные по запросу адреса электронной почты защищают ваши данные и позволяют вам решать, что попадет в ваш почтовый ящик. Благодаря SimpleLogin от ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"

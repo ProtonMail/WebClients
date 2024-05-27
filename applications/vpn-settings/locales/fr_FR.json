@@ -459,7 +459,7 @@
         "Sélectionnez un pays"
       ],
       "select file": [
-        "sélectionner un fichier"
+        "sélectionnez un fichier."
       ],
       "Select file": [
         "Sélectionner un fichier"
@@ -721,6 +721,9 @@
       "Browse the web privately and block ads": [
         "Naviguez en privé sur le web tout en bloquant les publicités"
       ],
+      "Create and collaborate on documents securely": [
+        "Créez et modifiez des documents en mode collaboratif, en toute sécurité."
+      ],
       "Keep your schedule private": [
         "Protégez votre emploi du temps des regards indiscrets"
       ],
@@ -735,15 +738,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Ajoutez notre gestionnaire de mots de passe chiffré** pour seulement ${ price }."
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Ajouter ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Ajouter ${ plan } pour ${ price } par mois"
-      ],
       "Cancel": [
         "Annuler"
       ],
@@ -753,14 +747,8 @@
       "Get the deal": [
         "J'en profite"
       ],
-      "Remove": [
-        "Retirer"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Retirer ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Abonnez-vous pour 15 mois et profitez de notre **gestionnaire de mots de passe chiffré** pour seulement ${ priceNoSuffix } de plus par mois."
+      "Save even more with a 12-month plan": [
+        "Économisez davantage avec un abonnement de 12 mois"
       ]
     },
     "bf2023: Deal details": {
@@ -2024,7 +2012,7 @@
     },
     "drivePlus2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Obtenez ${ planName } pour seulement ${ planPrice }."
+        "Obtenez ${ planName } pour seulement ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -2077,8 +2065,8 @@
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
       ],
-      "Amount below minimum.": [
-        "Le montant est inférieur au minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Le montant est inférieur au minimum de (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
@@ -2216,7 +2204,7 @@
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Please upload a square file": [
-        "Veuillez importer un fichier de format carré."
+        "Veuillez importer une image carrée."
       ],
       "Please upload an xml file": [
         "Veuillez importer un fichier XML."
@@ -2246,10 +2234,10 @@
         "Les adresses e-mail ne correspondent pas."
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Ce fichier est trop grand. La dimension maximale est de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
+        "L'image est trop grande, la taille maximale peut être de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Ce fichier est trop petit. La dimension minimale est de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
+        "L'image est trop petite. La taille minimale doit être de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
@@ -2875,8 +2863,8 @@
       "Organization key fingerprint": [
         "Empreinte de la clé de l'organisation"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Faites de belles économies avec les meilleures offres pour ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Faites d'importantes économies tout en profitant des meilleures offres pour ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Choisissez votre offre"
@@ -3171,7 +3159,7 @@
         "Configurez l'authentification SAML pour votre organisation via un fournisseur d'identité (IdP). Cela permettra d'activer SAML pour l'ensemble de l'organisation."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configurez l'authentification SAML pour votre organisation, via un fournisseur d'identité comme Okta, Microsoft Azure ou Google Identity Platform. Cela activeras le SAML pour l'ensemble de l'organisation."
+        "Configurez l'authentification SAML pour votre organisation, via un fournisseur d'identité comme Okta, Microsoft Azure ou Google Identity Platform. Cela activera SAML pour l'ensemble de l'organisation."
       ],
       "Continue with ${ freeName }": [
         "Continuer avec ${ freeName }"
@@ -3214,7 +3202,7 @@
         "Abonnement actuel"
       ],
       "Custom branding": [
-        "Marque personnalisée"
+        "Personnalisation avec votre marque"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -3769,7 +3757,7 @@
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
-        "Les utilisateurs SSO (fournis par votre fournisseur d'identité) seront supprimés."
+        "Les utilisateurs SSO (fournis par votre fournisseur d'identité) seront supprimés"
       ],
       "Step ${ step }": [
         "Étape ${ step }",
@@ -4106,7 +4094,7 @@
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Lorsque vous annulez l'abonnement actuel que vous avez payé, le solde de votre abonnement sera restitué sous forme de crédits sur votre compte et vous passerez à 'abonnement ${ BRAND_NAME } ${ PLANS.FREE }."
+        "Quand vous annulez votre abonnement payant en cours, le solde de votre abonnement vous est restitué sous forme de crédits de compte et vous passez à l'abonnement ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -4153,7 +4141,7 @@
         "Vous êtes connecté au compte ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Vous utilisez plus d'espace de stockage par rapport à celui inclus dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à retirer ou supprimer des données pour pouvoir passer à un abonnement inférieur."
+        "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
@@ -5435,6 +5423,9 @@
       "Passkeys supported": [
         "Les clés d'accès sont prises en charge."
       ],
+      "Password health": [
+        "État du mot de passe"
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
@@ -5454,8 +5445,11 @@
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "La sécurité de votre compte est régulièrement vérifiée.Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
+      ],
       "Require 2FA for organization": [
-        "A2F requis pour organisation"
+        "A2F requise pour l'organisation"
       ],
       "Router support": [
         "Prise en charge des routeurs"
@@ -5576,6 +5570,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
     },
     "new_plans: feature info": {
@@ -5748,7 +5745,7 @@
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Accédez en toute simplicité à ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME } depuis votre bureau."
+        "Accédez en toute simplicité à ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME } directement depuis votre ordinateur."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
@@ -5772,7 +5769,7 @@
         "L'envoi en masse de messages promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Choisissez des heures personnalisées pour vous rappeler d'un message ou de son envoi."
+        "Personnalisez le moment du rappel ou de l'envoi d'un message."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien."
@@ -5818,7 +5815,7 @@
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
-        "Tout comme un dossier, un coffre-fort est façon pratique d'organiser vos éléments."
+        "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Sécurisez les ressources de votre entreprise sur internet et rendez-les accessibles uniquement par le biais de vos passerelles privées."
@@ -5861,6 +5858,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protégez votre famille des sites internet malveillants et accédez à nos serveurs VPN haut débit pour regarder vos contenus préférés en streaming."
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Protégez votre adresse e-mail en temps réel contre les fuites et divulgations avec des alias (une adresse e-mail générée aléatoirement qui renvoie vos messages vers votre boite de réception principale)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Assure le plus haut niveau de protection et une assistance spécialisée en matière de sécurité des comptes."
@@ -5908,13 +5908,10 @@
         "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }. Les administrateurs peuvent allouer un volume de stockage différent à chaque utilisateur de leur organisation."
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "Espace de stockage partagé entre utilisateurs entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } et ${ PASS_APP_NAME }"
+        "Espace de stockage partagé entre les utilisateurs sur ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } et ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Des adresses e-mail uniques, à la demande, qui protègent votre identité en ligne et vous permettent de mieux contrôler les messages qui arrivent dans votre boite de réception. SimpleLogin par ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilisez vos adresses e-mail personnalisées à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -6257,7 +6254,7 @@
         "Partage sécurisé avec plusieurs coffres-forts"
       ],
       "Secure vault sharing": [
-        "Partage sécurisé de coffre-forts"
+        "Partage sécurisé de coffre-fort"
       ],
       "Updating your account": [
         "Mise à jour de votre compte"
@@ -6681,10 +6678,10 @@
         "Ceci simplifie la gestion des utilisateurs entre les différents services. Ajoutez, modifiez et retirez des utilisateurs dans votre fournisseur d'identité et ces modifications s'appliqueront automatiquement à votre organisation ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "L'allocation automatique du SCIM sera désactivée jusqu'à la saisie du nouveau jeton dans les paramètres de votre fournisseur d'identité."
+        "Le provisionnement automatique SCIM sera désactivé jusqu'à ce que vous entriez le nouveau jeton SCIM dans les paramètres de votre fournisseur d'identité."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "Le jeton et l'URL de base du SCIM seront supprimés."
+        "L'URL de base et le jeton SCIM seront supprimés."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
@@ -6695,7 +6692,7 @@
         "URL de base SCIM"
       ],
       "SCIM base URL (or tenant URL)": [
-        "URL de base SCIM (ou URL locataire)"
+        "URL de base SCIM (ou URL du locataire)"
       ],
       "SCIM token": [
         "Jeton SCIM"
@@ -6709,7 +6706,7 @@
         "Voulez-vous générer un nouveau jeton SCIM ?"
       ],
       "SCIM automatic provisioning": [
-        "Allocation automatique du SCIM"
+        "Provisionnement automatique SCIM"
       ]
     },
     "scim: Tooltip": {
@@ -7350,10 +7347,10 @@
         "Vous n'aurez plus accès à votre espace de stockage supplémentaire, à vos adresses e-mail, alias, calendriers, ainsi que l'assistance prioritaire."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
-        "Vous n'aurez plus accès l'accès à la vitesse VPN la plus élevée, la protection pour 10 appareils, au streaming haute vitesse, au bloqueur de publicités et à la protection contre les logiciels malveillants et à l'assistance prioritaire."
+        "Vous n'aurez plus accès à la vitesse VPN la plus élevée, à la protection de 10 appareils, au streaming ultra-rapide, au bloqueur de publicités, à la protection contre les logiciels malveillants et à l'assistance prioritaire."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Vous n'aurez plus accès aux identifiants et notes de manière illimité, aux alias hide-my-email, à l'assistance prioritaire et vous serez limité à 20 coffres-forts."
+        "Vous n'aurez plus accès à un nombre illimité d'identifiants et de notes, à un nombre illimité d'alias « hide-my-email », à 20 coffres-forts, ainsi qu'à l'assistance prioritaire."
       ]
     },
     "Subscription": {
@@ -7688,13 +7685,13 @@
         "Application de bureau"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Contribuez à préserver la sécurité et la confidentialité d'internet pour tous. Passez à un abonnement payant."
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
       ],
       "No ads or tracking": [
         "Aucune publicité, aucun suivi"
       ],
       "Short @pm.me email address": [
-        "Adresses e-mail @pm.me courtes"
+        "Adresses e-mail courtes @pm.me"
       ],
       "Support our mission": [
         "Soutenez notre mission"
@@ -8763,7 +8760,7 @@
         "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."
+        "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
@@ -8797,6 +8794,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "-${ discount } avec un abonnement de ${ billingCycle }"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Profitez gratuitement de la première année de ${ plan } !"
+      ],
       "monthly": [
         "mensuel"
       ]
@@ -8818,8 +8818,20 @@
         "${ n } an",
         "${ n } ans"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Comprend ${ plan } (gratuit la première année)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Comprend ${ plan }, notre gestionnaire de mots de passe premium, et gratuit la première année !"
+      ],
+      "Just ${ price }": [
+        "Pour seulement ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Essayez ${ upsellPlanName }, satisfait ou remboursé"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Votre offre groupée${ a } et ${ b }"
       ],
       "Your ${ selected } plan": [
         "Votre abonnement ${ selected }"

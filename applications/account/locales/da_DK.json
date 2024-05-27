@@ -1354,6 +1354,9 @@
       "Browse the web privately and block ads": [
         "Surf privat på nettet og bloker reklamer"
       ],
+      "Create and collaborate on documents securely": [
+        "Opret og samarbejd sikkert med dokumenter"
+      ],
       "Keep your schedule private": [
         "Hold dit skema privat"
       ],
@@ -1424,15 +1427,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Tilføj vores krypterede adgangskodeadministrator** for kun ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Tilføj ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Tilføj ${ plan } for ${ price } pr. måned"
-      ],
       "Become a Visionary": [
         "Bliv Visionary"
       ],
@@ -1445,14 +1439,8 @@
       "Get the deal": [
         "Gør brug af tilbuddet"
       ],
-      "Remove": [
-        "Fjern"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Fjern ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Tegn et abonnement på 15 måneder og få vores **krypterede adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
+      "Save even more with a 12-month plan": [
+        "Spar endnu mere med et 12-måneders abonnement"
       ]
     },
     "bf2023: Deal details": {
@@ -3933,8 +3921,8 @@
       "Amount above the maximum.": [
         "Beløb over maksimum."
       ],
-      "Amount below minimum.": [
-        "Beløb under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Beløb under minimum (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -5585,8 +5573,8 @@
       "Protection": [
         "Beskyttelse"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Spar stort med de bedste tilbud på ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Spar stort på de bedste ${ VPN_APP_NAME }-tilbud"
       ],
       "Select your deal": [
         "Vælg dit tilbud"
@@ -6034,6 +6022,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info": {
@@ -8473,17 +8472,6 @@
         "Zoom-møde"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktiveret, arver undermapper farven på den overordnede mappe."
@@ -10604,6 +10592,9 @@
       "Back to calendar": [
         "Tilbage til kalender"
       ],
+      "Back to documents": [
+        "Retur til dokumenter"
+      ],
       "Back to files": [
         "Tilbage til filer"
       ],
@@ -10618,6 +10609,9 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "Documents": [
+        "Dokumenter"
       ],
       "Inbox": [
         "Indbakke"
@@ -10944,6 +10938,9 @@
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
       ],
+      "Password health": [
+        "Adgangskode-sundhed"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
@@ -10962,6 +10959,9 @@
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
@@ -11085,6 +11085,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
       ]
     },
     "new_plans: feature info": {
@@ -11422,6 +11425,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskyt din familie mod skadelige hjemmesider, og få adgang til vores højhastigheds-VPN-servere for at streame dit yndlingsindhold."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Beskyt din rigtige e-mailadresse mod afsløring eller lækage via aliasser (en tilfældigt genereret e-mailadresse, som videresender e-mails til din indbakke)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
@@ -11472,9 +11478,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unikke e-mailadresser, der oprettes løbende og beskytter din online identitet og lader dig kontrollere, hvad der lander i din indbakke. Fra SimpleLogin af ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
@@ -16227,6 +16230,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Spar ${ discount } med et ${ billingCycle }-abonnement"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Få det første år med ${ plan } gratis!"
+      ],
       "monthly": [
         "månedligt"
       ]
@@ -16248,8 +16254,20 @@
         "${ n } år",
         "${ n } år"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Inkluderer ${ plan } (gratis det første år!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Inkl. ${ plan }, vores bedste adgangskodehåndtering, gratis det første år!"
+      ],
+      "Just ${ price }": [
+        "Kun ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Prøv ${ upsellPlanName } risikofrit"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Din ${ a } og ${ b }-pakke"
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"

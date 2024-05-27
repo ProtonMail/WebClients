@@ -1476,23 +1476,6 @@
         "Перевірка відправника пройшла успішно"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Додайте наш менеджер паролів** всього за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Додати ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Вилучити ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Передплатіть на 15 місяців та отримайте наш **менеджер паролів** всього за ${ priceNoSuffix } – додатково на місяць!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } сховища"
@@ -3638,9 +3621,6 @@
       "Amount above the maximum.": [
         "Сума перевищує обмеження."
       ],
-      "Amount below minimum.": [
-        "Сума менше допустимого обмеження."
-      ],
       "An error occurred while loading alias options": [
         "Під час завантаження параметрів псевдоніма сталася помилка"
       ],
@@ -5236,7 +5216,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Залежно від вашого постачальника е-пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до ${ BRAND_NAME }."
+        "Залежно від вашого провайдера електронної пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
@@ -5684,6 +5664,9 @@
       ],
       "and": [
         "та"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Усі заплановані або відкладені повідомлення будуть скасовані."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Підтеки також будуть видалені. Однак листи, що зберігаються в теці ${ nameDeleted }, не видалятимуться і їх можна знайти в теці \"Уся пошта\"."
@@ -6593,6 +6576,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Відкладено до завтра, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Відкладення цієї розмови буде скасовано."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився."
@@ -8344,7 +8330,7 @@
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Підключення до вашого постачальника електронної пошти"
+        "З'єднання з вашим провайдером електронної пошти"
       ],
       "Creating new calendars": [
         "Створення нового календаря"
@@ -9282,7 +9268,7 @@
         "Автоматично пересилайте електронні листи, надіслані на ваш обліковий запис ${ MAIL_APP_NAME }, на будь-яку іншу адресу електронної пошти."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших постачальників."
+        "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших провайдерів."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Обирайте власний час нагадування про електронний лист або час отримання вашого повідомлення"
@@ -9384,7 +9370,7 @@
         "Швидко налаштовуйте автоматичні відповіді"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Швидко перенесіть свої листи, календарі та контакти від будь-якого постачальника"
+        "Швидко перенесіть свої листи, календарі та контакти від будь-якого провайдера"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Необхідний код, надісланий на мобільний телефон для входу. Це гарантує безпеку облікового запису навіть у випадку спроби несанкціонованого доступу."
@@ -9427,9 +9413,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дають змогу контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -11300,6 +11283,9 @@
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Ви успішно скасували передплату."
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"

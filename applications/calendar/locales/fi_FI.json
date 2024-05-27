@@ -476,10 +476,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -915,23 +915,6 @@
     "Badge": {
       "New!": [
         "Uutta!"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Lisää salattu salasananhallintamme** vain ${ price } lisähintaan"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Lisää ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Hanki tarjous"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Poista ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Hanki 15 kuukauden tilaus, ja saat **salatun salasananhallintamme** vain ${ priceNoSuffix } lisähintaan kuukaudessa!"
       ]
     },
     "bf2023: Deal details": {
@@ -2771,9 +2754,6 @@
       ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
-      ],
-      "Amount below minimum.": [
-        "Summa on vähimmäismäärää pienempi."
       ],
       "An error occurred while loading alias options": [
         "Alias-asetusten lataamisessa tapahtui virhe"
@@ -4805,7 +4785,7 @@
         "Tapahtumaketjun järjestäjälle ei ilmoiteta, että kieltäydyit kutsusta, koska et voi lähettää sähköposteja kutsutusta osoitteesta. Haluatko silti poistaa ketjun kaikki tapahtumat?"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
+        "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
@@ -5104,7 +5084,7 @@
         "Tiedostosi salataan ja tallennetaan"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Tietosi löytyivät ${ displayedDate }"
+        "Tietosi havaittiin ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -5783,7 +5763,7 @@
         "Pyydä kutsu"
       ],
       "stay safer online": [
-        "pysymään turvassa verkossa"
+        "suojautumaan verkossa paremmin"
       ],
       "What’s this?": [
         "Mikä tämä on?"
@@ -6453,6 +6433,9 @@
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
+      ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
       ],
@@ -6645,7 +6628,7 @@
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Turvallinen pilvitallennuspalvelu tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
+        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
@@ -6871,9 +6854,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Yksilöllisiä, nopeasti luotavia sähköpostiosoitteita, jotka suojaavat verkkoidentiteettiäsi ja mahdollistavat postilaatikkoosi saapuvan sisällön hallinnan. Mahdollista ${ BRAND_NAME } SimpleLoginin avulla."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Käytä omaa verkkotunnustasi käyttäviä sähköpostiosoitteita, kuten nimesi@esimerkki.fi"
@@ -7937,7 +7917,7 @@
         "Premium-ennakkokäyttö"
       ],
       "Secure cloud storage": [
-        "Turvallinen pilvitallennustila"
+        "Suojattu pilvitallennustila"
       ],
       "Secure streaming": [
         "Turvallinen suoratoisto"
@@ -8930,7 +8910,7 @@
         "Yöteema"
       ],
       "No breaches detected": [
-        "Tietomurtoja ei havaittu"
+        "Tietomurtoja ei ole havaittu"
       ],
       "Notes": [
         "Muistiinpanot"

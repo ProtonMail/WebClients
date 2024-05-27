@@ -1478,23 +1478,6 @@
         "Verifica del mittente avvenuta con successo"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Aggiungi il nostro gestore di password crittografato** per soli ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Aggiungi ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Rimuovi ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Abbonati per 15 mesi e ottieni il nostro **gestore di password crittografato** per soli ${ priceNoSuffix } in più al mese!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
@@ -3642,8 +3625,8 @@
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
       ],
-      "Amount below minimum.": [
-        "Importo inferiore al minimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Importo inferiore al minimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Si è verificato un errore nel caricamento delle opzioni dell'alias"
@@ -8827,6 +8810,9 @@
       "Passkeys supported": [
         "Passkey supportate"
       ],
+      "Password health": [
+        "Stato delle password"
+      ],
       "Password-protected Emails": [
         "Email protette da password"
       ],
@@ -8845,6 +8831,9 @@
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Controlli regolari della sicurezza del tuo account. Ti avvisiamo se hai password deboli o riutilizzate che devono essere aggiornate."
       ],
       "Require 2FA for organization": [
         "Richiedi 2FA per l'organizzazione"
@@ -8958,6 +8947,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
       ]
     },
     "new_plans: feature info": {
@@ -9219,6 +9211,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteggi la tua famiglia da siti web dannosi e accedi alla nostra VPN ad alta velocità per guardare i tuoi contenuti preferiti"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Proteggi il tuo vero indirizzo email dalla divulgazione o dalla fuga di dati con gli alias (un indirizzo email generato casualmente che inoltra le email alla tua casella di posta principale)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Fornisce il più alto livello di protezione della sicurezza dell'account e supporto specializzato"
       ],
@@ -9269,9 +9264,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin di ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa gli indirizzi del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
@@ -10546,7 +10538,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Annullamento dell'abbonamento, attendi"
+        "Annullamento dell'abbonamento in corso, attendere prego"
       ]
     },
     "Status": {
@@ -11097,7 +11089,7 @@
         "Verifica riuscita"
       ],
       "You have successfully canceled your subscription.": [
-        "Hai annullato l'abbonamento."
+        "Hai annullato l'abbonamento con successo."
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"

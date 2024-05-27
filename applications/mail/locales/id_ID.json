@@ -1469,23 +1469,6 @@
         "Verifikasi pengirim berhasil"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Tambahkan pengelola kata sandi terenkripsi kami** dengan harga ${ price } saja"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Tambah ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Hapus ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Berlangganan selama 15 bukan dan dapatkan **pengelola kata sandi terenkripsi** kami dengan harga ${ priceNoSuffix } tambahan per bulan!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "Ruang penyimpanan ${ storageSize }"
@@ -3622,8 +3605,8 @@
       "Amount above the maximum.": [
         "Jumlah melebihi nilai maksimum."
       ],
-      "Amount below minimum.": [
-        "Jumlah berada di bawah nilai minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Nominal di bawah nilai minimum (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
@@ -8669,6 +8652,9 @@
       "Passkeys supported": [
         "Passkey didukung"
       ],
+      "Password health": [
+        "Kesehatan kata sandi"
+      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
@@ -8797,6 +8783,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
     },
     "new_plans: feature info": {
@@ -9052,6 +9041,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Lindungi keluarga Anda dari situs web berbahaya dan akses berbagai tayangan streaming favorit Anda dengan server VPN berkecepatan tinggi kami"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Lindungi alamat email Anda agar tidak terungkap atau bocor dengan alias (alamat email acak yang meneruskan email ke kotak surat utama Anda)"
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Menyediakan perlindungan keamanan akun yang tertinggi dan layanan dukungan spesialis"
       ],
@@ -9102,9 +9094,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Membuat alamat email yang unik dan tersedia seketika, melindungi identitas online Anda dan memberi Anda kendali atas apa yang masuk ke kotak masuk Anda. SimpleLogin oleh ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -9367,6 +9356,12 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Berbagi aman dengan ${ n } brankas"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Berbagi aman dengan beberapa brankas"
+      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ]
@@ -10338,6 +10333,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Membatalkan langganan Anda, mohon menunggu"
       ]
     },
     "Status": {
@@ -11986,7 +11986,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
+        "Kami tidak dapat memverifikasi server email ini. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "You must select at least one mailbox": [
         "Anda harus memilih setidaknya satu kotak surat"

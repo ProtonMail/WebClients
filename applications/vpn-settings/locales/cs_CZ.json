@@ -203,6 +203,12 @@
       "Edit name": [
         "Upravit název"
       ],
+      "Edit organization identity": [
+        "Upravit identitu organizace"
+      ],
+      "Edit organization name": [
+        "Upravit název organizace"
+      ],
       "Edit password": [
         "Upravit heslo"
       ],
@@ -238,6 +244,9 @@
       ],
       "Forgot password?": [
         "Zapomenuté heslo?"
+      ],
+      "Forgot recovery method?": [
+        "Zapomněli jste metodu obnovení?"
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
@@ -718,6 +727,9 @@
       "Browse the web privately and block ads": [
         "Procházejte web soukromě a blokujte reklamu"
       ],
+      "Create and collaborate on documents securely": [
+        "Bezpečně vytvářejte dokumenty a spolupracujte na nich"
+      ],
       "Keep your schedule private": [
         "Udržujte svůj rozvrh v soukromí"
       ],
@@ -732,15 +744,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Přidejte našeho správce šifrovaných hesel** za pouhých ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Přidat ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Přidejte ${ plan } za ${ price } měsíčně"
-      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -750,14 +753,8 @@
       "Get the deal": [
         "Využít nabídku"
       ],
-      "Remove": [
-        "Odebrat"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odebrat ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Pořiďte si předplatné na 15 měsíců a za příplatek pouhých ${ priceNoSuffix } měsíčně získejte našeho **šifrovaného správce hesel**!"
+      "Save even more with a 12-month plan": [
+        "Ušetřete ještě více s 12měsíčním tarifem"
       ]
     },
     "bf2023: Deal details": {
@@ -2084,8 +2081,8 @@
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
-      "Amount below minimum.": [
-        "Hodnota je nižší než minimální částka."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Částka je nižší než minimální možná hodnota (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
@@ -2523,6 +2520,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
       ],
@@ -2896,9 +2896,6 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Ušetřete s nejlepšími nabídkami ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Vyberte svoji nabídku"
@@ -3771,6 +3768,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Integrace SCIM deaktivována"
+      ],
+      "SCIM token active": [
+        "Token SCIM aktivní"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpečte svůj účet ${ BRAND_NAME }"
       ],
@@ -3938,6 +3941,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet neubude možné znovu aktivovat."
+      ],
+      "This will remove any enabled 2FA methods.": [
+        "Toto odebere všechny povolené metody 2FA."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Tímto se zruší SSO pro ${ boldDomainName }."
@@ -4148,6 +4154,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Když zrušíte své stávající placené předplatné, zůstatek vašeho předplatného bude vrácen jako kredity na účet a tarif se sníží na ${ BRAND_NAME }. ${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -4584,6 +4593,9 @@
       "Current email": [
         "Stávající e-mail"
       ],
+      "Current organization identity": [
+        "Stávající identita organizace"
+      ],
       "Default language": [
         "Výchozí jazyk"
       ],
@@ -4695,6 +4707,9 @@
       "New mailbox password": [
         "Nové heslo k poštovní schránce"
       ],
+      "New organization identity": [
+        "Nová identita organizace"
+      ],
       "New organization password": [
         "Nové heslo organizace"
       ],
@@ -4724,6 +4739,9 @@
       ],
       "Optional": [
         "Volitelné"
+      ],
+      "Organization identity": [
+        "Identita organizace"
       ],
       "Organization name": [
         "Název organizace"
@@ -4950,8 +4968,14 @@
       "Create account": [
         "Vytvořit účet"
       ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
       "Forgot username?": [
         "Zapomněli jste uživatelské jméno?"
+      ],
+      "Help": [
+        "Nápověda"
       ],
       "Help translate": [
         "Pomoc s překladem"
@@ -5509,6 +5533,9 @@
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
+      "Password health": [
+        "Síla hesla"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -5529,6 +5556,9 @@
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
@@ -5658,6 +5688,9 @@
         "Sdílení trezoru (až ${ n } osoby)",
         "Sdílení trezoru (až ${ n } osob)",
         "Sdílení trezoru (až ${ n } osob)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
       ]
     },
     "new_plans: feature info": {
@@ -5946,6 +5979,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chraňte vaši rodinu před škodlivými webovými stránkami a mějte přístup k našim vysokorychlostním VPN serverům pro streamování vašeho oblíbeného obsahu"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Chraňte svou skutečnou e-mailovou adresu před prozrazením nebo únikem pomocí aliasů (náhodně vygenerovaná e-mailová adresa, která přeposílá e-maily do vaší hlavní doručené pošty)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Poskytuje nejvyšší úroveň zabezpečení účtu a odbornou podporu"
       ],
@@ -5996,9 +6032,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Jedinečné e-mailové adresy, které chrání vaši online identitu a umožňují vám kontrolovat, co vám přijde do schránky. Od SimpleLogin by ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
@@ -6362,6 +6395,12 @@
       "Preparing your Recovery Kit": [
         "Příprava sady pro obnovení"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Zabezpečené sdílení s ${ n } trezorem",
+        "Zabezpečené sdílení s ${ n } trezory",
+        "Zabezpečené sdílení s ${ n } trezory",
+        "Zabezpečené sdílení s ${ n } trezory"
+      ],
       "Secure sharing with multiple vaults": [
         "Zabezpečené sdílení s více trezory"
       ],
@@ -6455,8 +6494,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Pro obnovení oprávnění správce použijte metodu obnovení dat, kontaktujte jiného správce a nebo resetujte klíč organizace."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Pravost této identity se nám nepodařilo ověřit."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nepodařilo se nám ověřit bezpečnost klíče adresy tohoto odesílatele. Někdy dochází ke zpoždění při aktualizaci informací o odesílateli. Zkuste to později. Pokud nedůvěřujete platnosti této pozvánky nebo odesílatele, kontaktujte zákaznickou podporu ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Ověřili jsme pravost této identity."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Ověřili jsme pravost tohoto odesílatele a pozvánky."
@@ -6985,6 +7030,11 @@
         "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetování hesla zrušeno"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušit resetování hesla?"
@@ -7279,7 +7329,7 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        null
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
       ]
     },
     "specialoffer: Link": {
@@ -7647,20 +7697,50 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojem příjmů společnosti ${ BRAND_NAME } je předplatné od uživatelů. Díky vaší podpoře můžeme zůstat nezávislí, rozvíjet naše poslání vytvářet internet, kde je soukromí samozřejmostí a pokračovat v podpoře aktivistů a organizací bojujících za soukromí a svobodu."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
+      ],
       "${ dayDiff } day left": [
         "Zbývá ${ dayDiff } den",
         "Zbývají ${ dayDiff } dny",
         "Zbývá ${ dayDiff } dnů",
         "Zbývá ${ dayDiff } dnů"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } včetně historie verzí"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } a všechny prémiové funkce produktivity"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného prostoru"
       ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } s přístupem ke všem vysokorychlostním serverům v(e) ${ vpnCountries } zemích"
+      ],
       "10 email addresses": [
         "10 e-mailových adres"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "Add any new files": [
+        "Přidávat jakékoliv nové soubory"
+      ],
+      "Back up photos from your devices": [
+        "Zálohovat fotografie ze svých zařízení"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -7674,8 +7754,20 @@
       "Close": [
         "Zavřít"
       ],
+      "Comprehensive privacy and security": [
+        "Komplexní ochrana soukromí a zabezpečení"
+      ],
       "Custom schedule send and snooze times": [
         "Vlastní harmonogram odesílání a odložení"
+      ],
+      "Direct contribution to our mission": [
+        "Přímý příspěvek našemu poslání"
+      ],
+      "Early access to new apps and features": [
+        "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Extra storage and bonuses": [
+        "Úložný prostor a bonusy navíc"
       ],
       "Have a question?": [
         "Máte dotaz?"
@@ -7683,8 +7775,20 @@
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
       ],
+      "How our customer support team got our VPN app directly into people's hands. ": [
+        "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí. "
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Jak jsme podpořili místní aktivisty, když bylo v Hongkongu ohroženo soukromí a svoboda projevu."
+      ],
       "I still want to cancel": [
         "Přesto chci zrušit"
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
       ],
       "Keep ${ planName }": [
         "Ponechat ${ planName }"
@@ -7692,8 +7796,20 @@
       "Learn more about our impact": [
         "Zjistěte více o našem dopadu"
       ],
+      "Manage your calendar": [
+        "Spravovat své kalendáře"
+      ],
+      "Online privacy, for your whole family": [
+        "Online soukromí pro celou vaši rodinu"
+      ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzuře v Rusku"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Vezměte prosím na vědomí, že ${ planName } již není k dispozici k zakoupení. Pokud svůj účet snížíte, ztratíte všechny výhody tarifu a nebudete si ho moci znovu objednat."
+      ],
+      "Premium productivity features": [
+        "Prémiové funkce produktivity"
       ],
       "Priority support": [
         "Prioritní podpora"
@@ -7701,14 +7817,26 @@
       "Read the story": [
         "Přečíst příběh"
       ],
+      "Receive new emails": [
+        "Přijímat nové e-maily"
+      ],
       "Resubscribe": [
         "Obnovit předplatné"
       ],
       "Resubscribe to restore access to ${ planName } features.": [
         "Obnovte své předplatné pro přístup k funkcím ${ planName }."
       ],
+      "Send emails with attachments": [
+        "Odesílat e-maily s přílohami"
+      ],
       "Subscription canceled": [
         "Předplatné zrušeno"
+      ],
+      "Sync files on devices": [
+        "Synchronizovat soubory v zařízeních"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "To nejlepší z ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
         "Odblokování internetového přístupu v Íránu"
@@ -7716,11 +7844,20 @@
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
+      "Version history": [
+        "Historie verzí"
+      ],
       "Watch the interview": [
         "Shlédněte rozhovor"
       ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Zbývá vám ještě ${ expiryDate } předplatného ${ planName }. Kredity za zbývající čas připíšeme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "Váš ${ planName } byl zrušen."
       ],
       "Your own custom email domain": [
         "Vaše vlastní e-mailová doména"
@@ -8293,6 +8430,9 @@
       "Edit invoice details": [
         "Upravit fakturační údaje"
       ],
+      "Edit organization identity": [
+        "Upravit identitu organizace"
+      ],
       "Edit servers": [
         "Upravit servery"
       ],
@@ -8340,6 +8480,9 @@
       ],
       "Find email or username": [
         "Najít e-mail nebo uživatelské jméno"
+      ],
+      "Forgot recovery method": [
+        "Zapomenutá metoda obnovení"
       ],
       "Gateways": [
         "Brány"
@@ -8705,6 +8848,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Tato e-mailová adresa se zobrazí všem členům organizace při provádění operací správy účtu."
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
       ],
@@ -8868,6 +9014,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Získejte slevu ${ discount } s ${ billingCycle } předplatným"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Získejte první rok ${ plan } zdarma!"
+      ],
       "monthly": [
         "měsíčním"
       ]
@@ -8893,8 +9042,20 @@
         "${ n } let",
         "${ n } let"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Včetně ${ plan } (na první rok zdarma!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Včetně ${ plan }, našeho prémiového správce hesel, který je první rok zdarma!"
+      ],
+      "Just ${ price }": [
+        "Pouze ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Zkusit ${ upsellPlanName } bez rizika"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Váš balíček ${ a } a ${ b }"
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"

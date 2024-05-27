@@ -476,11 +476,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -915,23 +915,6 @@
     "Badge": {
       "New!": [
         "Nytt!"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Lägg till vår krypterade lösenordshanterare** för endast ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Lägg till ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Ta bort ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Prenumerera i 15 månader och få vår **krypterade lösenordshanterare** för endast ${ priceNoSuffix } extra per månad!"
       ]
     },
     "bf2023: Deal details": {
@@ -2771,8 +2754,8 @@
       "Amount above the maximum.": [
         "Belopp över det maximala."
       ],
-      "Amount below minimum.": [
-        "Belopp under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Belopp under minimum (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ett fel uppstod när alternativen för alias skulle laddas"
@@ -6445,6 +6428,9 @@
       "Passkeys supported": [
         "Passkeys stöds"
       ],
+      "Password health": [
+        "Lösenordshälsa"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
@@ -6463,6 +6449,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
       ],
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
@@ -6834,6 +6823,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Skydda din familj från skadliga webbplatser och få åtkomst till våra höghastighets VPN-servrar för att streama ditt favoritinnehåll"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Skydda din riktiga e-postadress från att avslöjas eller läckas med alias (en slumpmässigt genererad e-postadress som vidarebefordrar e-post till din huvudsakliga inkorg)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Tillhandahåller den högsta nivån av kontosäkerhet och support från specialister"
       ],
@@ -6884,9 +6876,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Stöd för fildelningsprotokoll som BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unika, snabba e-postadresser som skyddar din onlineidentitet och låter dig kontrollera vad som hamnar i din inkorg. Från SimpleLogin av ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Använd dina egna anpassade e-postdomänadresser, t.ex. du@dittnamn.com"
