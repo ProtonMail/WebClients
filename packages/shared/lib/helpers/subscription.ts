@@ -18,7 +18,6 @@ import {
 } from '../constants';
 import {
     Audience,
-    Cycle,
     External,
     Organization,
     Plan,
@@ -334,14 +333,6 @@ export const getValidAudience = (audience: string | undefined | null): Audience 
 
 export const getIsCustomCycle = (subscription?: Subscription) => {
     return customCycles.includes(subscription?.Cycle as any);
-};
-
-export const getDowngradedVpn2024Cycle = (cycle: Cycle): CYCLE => {
-    if (cycle === CYCLE.MONTHLY || cycle === CYCLE.THREE || cycle === CYCLE.YEARLY) {
-        return cycle;
-    }
-    // 15,24,30 all renew at yearly.
-    return CYCLE.YEARLY;
 };
 
 export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;

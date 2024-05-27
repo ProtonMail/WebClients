@@ -16,7 +16,6 @@ import {
     StyledPayPalButton,
     getBlackFridayRenewalNoticeText,
     getCheckoutRenewNoticeText,
-    getRenewalNoticeText,
 } from '@proton/components/containers';
 import {
     isBlackFridayPeriod as getIsBlackFridayPeriod,
@@ -968,15 +967,12 @@ const Step1 = ({
                           currency: options.currency,
                       })
                     : getCheckoutRenewNoticeText({
-                          coupon: options.checkResult.Coupon?.Code,
+                          coupon: options.checkResult.Coupon,
                           cycle: options.cycle,
                           plansMap: model.plansMap,
                           planIDs: options.planIDs,
                           checkout: actualCheckout,
                           currency: options.currency,
-                      }) ||
-                      getRenewalNoticeText({
-                          renewCycle: options.cycle,
                       })}
             </div>
         </div>
