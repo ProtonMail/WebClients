@@ -6,6 +6,7 @@ export const DESKTOP_FEATURES = {
     InAppPayments: true,
     ThemeSelection: true,
     EarlyAccess: true,
+    MultiAccount: true,
 } as const;
 
 export type VIEW_TARGET = "mail" | "calendar" | "account";
