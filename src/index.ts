@@ -1,4 +1,4 @@
-import { Notification, app, session, shell } from "electron";
+import { Notification, app, session } from "electron";
 import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
@@ -12,34 +12,14 @@ import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
-import {
-    getSessionID,
-    isAccoutLite,
-    isAccount,
-    isHostAllowed,
-    isCalendar,
-    isMail,
-    isUpgradeURL,
-    isUpsellURL,
-    isAccountAuthorize,
-    isAccountSwitch,
-} from "./utils/urls/urlTests";
+import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
-import {
-    getAccountView,
-    getCalendarView,
-    getCurrentView,
-    getMailView,
-    getMainWindow,
-    loadURL,
-    reloadCalendarWithSession,
-    viewCreationAppStartup,
-} from "./utils/view/viewManagement";
+import { getMailView, getMainWindow, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
-import { resetBadge } from "./ipc/notification";
+import { handleWebContents } from "./utils/view/webContents";
 
 (async function () {
     // Log initialization
@@ -192,116 +172,6 @@ import { resetBadge } from "./ipc/notification";
 
     // Security addition
     app.on("web-contents-created", (_ev, contents) => {
-        const preventDefault = (ev: Electron.Event) => {
-            ev.preventDefault();
-        };
-
-        contents.on("did-navigate-in-page", (ev, url) => {
-            Logger.info("did-navigate-in-page", app.isPackaged ? "" : url);
-
-            if (!isHostAllowed(url)) {
-                return preventDefault(ev);
-            }
-
-            if (isAccountSwitch(url)) {
-                resetBadge();
-            }
-
-            // This is used to redirect users to the external browser for internal upgrade modals
-            if (isAccount(url) && isUpgradeURL(url)) {
-                return;
-            }
-
-            const sessionID = getSessionID(url);
-            const calendarView = getCalendarView();
-            const calendarSessionID = getSessionID(calendarView.webContents.getURL());
-            if (isMail(url) && sessionID && !calendarSessionID) {
-                reloadCalendarWithSession(sessionID);
-            }
-        });
-
-        contents.on("will-attach-webview", preventDefault);
-
-        contents.on("will-navigate", (details) => {
-            Logger.info("will-navigate", app.isPackaged ? "" : details.url);
-
-            if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
-                return preventDefault(details);
-            }
-
-            // Only redirect to a different browser view if the navigation is happening in
-            // the visible web contents.
-            if (getCurrentView()!.webContents === contents) {
-                if (
-                    isAccount(details.url) &&
-                    !isAccountAuthorize(details.url) &&
-                    getCurrentView() !== getAccountView()
-                ) {
-                    loadURL("account", details.url);
-                    return preventDefault(details);
-                }
-
-                if (isCalendar(details.url) && getCurrentView() !== getCalendarView()) {
-                    loadURL("calendar", details.url);
-                    return preventDefault(details);
-                }
-
-                if (isMail(details.url) && getCurrentView() !== getMailView()) {
-                    loadURL("mail", details.url);
-                    return preventDefault(details);
-                }
-            }
-
-            return details;
-        });
-
-        contents.setWindowOpenHandler((details) => {
-            const { url } = details;
-            const loggedURL = app.isPackaged ? "" : url;
-
-            if (isCalendar(url)) {
-                Logger.info("Calendar link", loggedURL);
-                loadURL("calendar", url);
-                return { action: "deny" };
-            }
-
-            if (isMail(url)) {
-                Logger.info("Mail link", loggedURL);
-                loadURL("mail", url);
-                return { action: "deny" };
-            }
-
-            if (isAccount(url)) {
-                // Upsell links should be opened in browser to avoid 3D secure issues
-                if (isAccoutLite(url) || isUpsellURL(url)) {
-                    Logger.info("Account lite or upsell in browser", loggedURL);
-                    shell.openExternal(url);
-                } else {
-                    Logger.info("Account link", loggedURL);
-                    loadURL("account", url);
-                }
-
-                return { action: "deny" };
-            }
-
-            if (isHostAllowed(url)) {
-                Logger.info("Allowed host", loggedURL);
-                return { action: "allow" };
-            }
-
-            if (global.oauthProcess) {
-                Logger.info("OAuth link in app", loggedURL);
-                return { action: "allow" };
-            }
-
-            if (global.subscriptionProcess) {
-                Logger.info("Subscription link in modal", loggedURL);
-                return { action: "allow" };
-            }
-
-            Logger.info("Other link in browser", loggedURL);
-            shell.openExternal(url);
-            return { action: "deny" };
-        });
+        handleWebContents(contents);
     });
 })();
