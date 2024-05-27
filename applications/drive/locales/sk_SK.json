@@ -12,6 +12,26 @@
         "Preposielanie pošty zastavené"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -370,6 +390,9 @@
       "Go to label": [
         "Prejsť na štítok"
       ],
+      "Go to my files": [
+        "Prejsť do mojich súborov"
+      ],
       "Go to panel ${ index }": [
         "Prejsť na panel ${ index }"
       ],
@@ -499,6 +522,12 @@
       "New": [
         "Nový"
       ],
+      "New document": [
+        "Nový dokument"
+      ],
+      "New folder": [
+        "Nový priečinok"
+      ],
       "New message": [
         "Nová správa"
       ],
@@ -519,6 +548,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Otvoriť v Docs"
       ],
       "Open navigation": [
         "Otvoriť menu"
@@ -960,23 +992,6 @@
       ],
       "Unsupported event": [
         "Nepodporovaná udalosť"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Pridať nášho šifrovaného správcu hesiel** len za ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Pridať ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odstrániť ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Predplaťte si 15 mesiacov a získajte nášho **šifrovaného správcu hesiel** len za ${ priceNoSuffix } mesačne navyše!"
       ]
     },
     "bf2023: Deal details": {
@@ -2260,10 +2275,10 @@
         "Nechcem sa podeliť"
       ],
       "I found a cheaper VPN": [
-        "Mám nájdenú lacnejšiu VPN"
+        "Našiel som lacnejšiu VPN"
       ],
       "I found a VPN with better features": [
-        "Mám nájdenú VPN s lepšími funkciami"
+        "Našiel som VPN s lepšími funkciami"
       ],
       "I have not managed to connect": [
         "Nepodarilo sa mi pripojiť"
@@ -2327,7 +2342,7 @@
         "za prvý mesiac"
       ],
       "Limited-time offer": [
-        "Časovo limitovaná ponuka"
+        "Časovo obmedzená ponuka"
       ]
     },
     "drivePlus2024: Title": {
@@ -2491,9 +2506,6 @@
       "Amount above the maximum.": [
         "Hodnota je vyšša než maximálna čiastka."
       ],
-      "Amount below minimum.": [
-        "Hodnota je nižšia než minimálna čiastka."
-      ],
       "An error occurred while loading alias options": [
         "Došlo k chybe pri načítaní možností aliasu"
       ],
@@ -2568,6 +2580,9 @@
       ],
       "Error decrypting a computer": [
         "Chyba pri dešifrovaní počítača"
+      ],
+      "External accounts are not supported yet": [
+        "Externé účty zatiaľ nie sú podporované"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Súbor „${ item.name }“ nemôže byť nahratý kvôli chybe „${ error }“"
@@ -4833,6 +4848,9 @@
       "Report link": [
         "Nahlásiť odkaz"
       ],
+      "Request access, or switch to an account with access.": [
+        "Požiadajte o prístup alebo sa prepnite na účet s prístupom."
+      ],
       "Restore": [
         "Obnoviť"
       ],
@@ -4920,6 +4938,9 @@
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
+      "Shared with": [
+        "Zdieľané s"
+      ],
       "Shared with me": [
         "Zdieľané so mnou"
       ],
@@ -5003,6 +5024,9 @@
       ],
       "There is nothing to see here": [
         "Nie je tu nič k videniu"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Táto akcia odstráni prepojenie a zruší prístup pre všetkých používateľov."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
@@ -5336,6 +5360,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
+      ],
+      "You need access": [
+        "Potrebujete prístup"
       ],
       "You will lose access to Plus features on this date.": [
         "V tento deň stratíte prístup k funkciám Plus."
@@ -5942,6 +5969,12 @@
       ],
       "Public keys": [
         "Verejné kľúče"
+      ],
+      "Public link expiration date": [
+        "Dátum vypršania platnosti verejného odkazu"
+      ],
+      "Public link password": [
+        "Heslo verejného odkazu"
       ],
       "Region": [
         "Kraj"
@@ -6854,6 +6887,9 @@
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - prémiové funkcie"
+      ],
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
@@ -6931,6 +6967,9 @@
       ],
       "Unlimited devices": [
         "Neobmedzený počet zariadení"
+      ],
+      "Unlimited devices and aliases": [
+        "Neobmedzený počet zariadení a aliasov"
       ],
       "Unlimited filters": [
         "Neobmedzený počet filtrov"
@@ -7300,9 +7339,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolov na zdieľanie súborov, ako je BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unikátne emailové adresy, ktoré chránia vašu online identitu a umožňujú vám kontrolovať, čo sa dostane do vašej doručenej pošty. SimpleLogin od ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Použite svoje vlastné emailové adresy domény, napr. vy@vasemeno.sk"
       ],
@@ -7541,6 +7577,9 @@
       "Failed to move, please try again": [
         "Presun zlyhal, skúste znovu, prosím"
       ],
+      "Failed to open document": [
+        "Otovorenie dokumentu zlyhalo"
+      ],
       "Failed to remove the file": [
         "Odstránenie súboru zlyhalo"
       ],
@@ -7738,6 +7777,20 @@
     "Participant name": {
       "You": [
         "Vy"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Bezpečné zdieľanie s ${ n } trezorom",
+        "Bezpečné zdieľanie s ${ n } trezormi",
+        "Bezpečné zdieľanie s ${ n } trezormi",
+        "Bezpečné zdieľanie s ${ n } trezormi"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Bezpečné zdieľanie s viacerými trezormi"
+      ],
+      "Secure vault sharing": [
+        "Bezpečné zdieľanie trezoru"
       ]
     },
     "Payment method option": {
@@ -8192,9 +8245,19 @@
         "Zadaním aktuálneho hesla zrušíte proces obnovenia hesla. Žiadne ďalšie zmeny sa neuskutočnia."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetovanie hesla zrušené"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušiť obnovenie hesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8391,6 +8454,11 @@
         "Podporte online súkromie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Prejsť na plány predplatného"
@@ -8516,6 +8584,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Teraz môžete jednoducho vyhľadávať v Drive súboroch a zároveň udržiavať vaše dáta zabezpečené."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
     "Storage": {
@@ -8719,7 +8792,7 @@
         "Desktopová aplikácia"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný pre všetkých. Prejdite na platený tarif."
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
       ],
       "No ads or tracking": [
         "Žiadne reklamy alebo sledovanie"
@@ -8872,6 +8945,9 @@
       ],
       "Verification successful": [
         "Overenie prebehlo úspešne"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Úspešne ste zrušili svoje predplatné."
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
@@ -9056,7 +9132,7 @@
         "Aktívny"
       ],
       "Add a custom logo": [
-        "Pridajte vlastné logo"
+        "Pridať vlastné logo"
       ],
       "Add contact group name": [
         "Pridať názov skupiny kontaktov"
@@ -9343,6 +9419,9 @@
       "Item details": [
         "Podrobnosti položky"
       ],
+      "Last edited by": [
+        "Naposledy upravené používateľom"
+      ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
       ],
@@ -9546,6 +9625,9 @@
       ],
       "Stop sharing with everyone?": [
         "Ukončiť zdieľanie so všetkými?"
+      ],
+      "Stop sharing?": [
+        "Ukončiť zdieľanie?"
       ],
       "Stop transfers?": [
         "Zastaviť prenosy?"
