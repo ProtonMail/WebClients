@@ -1,4 +1,5 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
+import { Nullable } from './utils';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
 export type Cycle =
@@ -163,15 +164,18 @@ export enum SubscriptionMode {
     Upcoming = 2,
 }
 
+export type Coupon = Nullable<{
+    Code: string;
+    Description: string;
+    MaximumRedemptionsPerUser: number | null;
+}>;
+
 export interface SubscriptionCheckResponse {
     Amount: number;
     AmountDue: number;
     Proration?: number;
     CouponDiscount?: number;
-    Coupon: null | {
-        Code: string;
-        Description: string;
-    };
+    Coupon: Coupon;
     UnusedCredit?: number;
     Credit?: number;
     Currency: Currency;

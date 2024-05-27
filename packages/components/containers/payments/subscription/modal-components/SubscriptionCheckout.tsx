@@ -36,7 +36,7 @@ import {
 } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
-import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText, getRenewalNoticeText } from '../../RenewalNotice';
+import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { OnBillingAddressChange, WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../../helper';
@@ -261,13 +261,10 @@ const SubscriptionCheckout = ({
                           planIDs,
                           checkout,
                           currency,
-                          coupon: checkResult.Coupon?.Code,
-                      }) ||
-                      getRenewalNoticeText({
-                          renewCycle: cycle,
+                          subscription,
                           isCustomBilling,
                           isScheduledSubscription,
-                          subscription,
+                          coupon: checkResult.Coupon,
                       })
                     : undefined
             }
