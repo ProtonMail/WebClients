@@ -5,25 +5,21 @@ import { appendFileSync, copyFileSync, existsSync, openSync } from "node:fs";
 import { resolve } from "node:path";
 
 async function spawnUninstallProcess() {
-    const uninstallLogPath = resolve(app.getPath('temp'), 'proton-mail-uninstall.log');
-    const uninstallLogFileDescriptor = openSync(uninstallLogPath, 'a');
+    const uninstallLogPath = resolve(app.getPath("temp"), "proton-mail-uninstall.log");
+    const uninstallLogFileDescriptor = openSync(uninstallLogPath, "a");
 
     const log = (...data: unknown[]) => {
-        const prefix = existsSync(uninstallScriptTempPath) ? '\n' : '';
+        const prefix = existsSync(uninstallScriptTempPath) ? "\n" : "";
         const date = new Date().toISOString();
         const message = data
-            .join(' ')
-            .split('\n')
-            .filter(line => line.trim().length)
-            .map(chunk => `[${date}] ${chunk}`)
-            .join('\n');
+            .join(" ")
+            .split("\n")
+            .filter((line) => line.trim().length)
+            .map((chunk) => `[${date}] ${chunk}`)
+            .join("\n");
 
-        appendFileSync(
-            uninstallLogPath,
-            `${prefix}${message}`,
-            'utf8'
-        );
-    }
+        appendFileSync(uninstallLogPath, `${prefix}${message}`, "utf8");
+    };
 
     const uninstallScriptPath = resolve(process.resourcesPath, "uninstall.bat");
     const uninstallScriptTempPath = resolve(app.getPath("temp"), "proton-mail-uninstall.bat");
@@ -33,18 +29,18 @@ async function spawnUninstallProcess() {
 
     const args = [
         process.pid.toString(),
-        `"${resolve(app.getPath('home'), "AppData", "Local", "proton_mail")}"`,
-        `"${resolve(app.getPath('home'), "AppData", "Roaming", "Proton Mail")}"`,
+        `"${resolve(app.getPath("home"), "AppData", "Local", "proton_mail")}"`,
+        `"${resolve(app.getPath("home"), "AppData", "Roaming", "Proton Mail")}"`,
         `"${uninstallScriptTempPath}"`,
     ];
 
     log(`Spawing uninstall process: ${uninstallScriptTempPath} ${args.join(" ")}`);
     const uninstallProcess = spawn(uninstallScriptTempPath, args, {
-        cwd: app.getPath('temp'),
+        cwd: app.getPath("temp"),
         detached: true,
         shell: true,
         // Detach stdio from current process so we can run the process separately
-        stdio: ['ignore', uninstallLogFileDescriptor, uninstallLogFileDescriptor],
+        stdio: ["ignore", uninstallLogFileDescriptor, uninstallLogFileDescriptor],
         // Do not show shell window to users
         windowsHide: true,
         // Do not autoescape arguments
@@ -59,8 +55,8 @@ async function spawnUninstallProcess() {
     // WARN: We need to create an unresolved promise here so the execution is blocked
     // until the uninstall script kills electron. We want to do this instead of manually
     // exiting with `app.quit()` or `app.exit()` to avoid any side effect.
-    log('Uninstall process started');
-    await new Promise(() => { });
+    log("Uninstall process started");
+    await new Promise(() => {});
 }
 
 export async function handleSquirrelEvents() {
