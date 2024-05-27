@@ -1380,15 +1380,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**購買我們的密碼管理器** 僅需 ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "增加 ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "每月${ price }以添加${ plan }"
-      ],
       "Become a Visionary": [
         "成為 Visionary"
       ],
@@ -1400,15 +1391,6 @@
       ],
       "Get the deal": [
         "取得優惠"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "移除 ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "每月多 ${ priceNoSuffix }，就可以訂閱15個月的 **加密密碼管理器** 。"
       ]
     },
     "bf2023: Deal details": {
@@ -3277,6 +3259,9 @@
       "I found a VPN with better features": [
         "我找到VPN有更好的功能"
       ],
+      "I have not managed to connect": [
+        "我還沒打算進行連接"
+      ],
       "I only needed a VPN short-term": [
         "我只有短時間需要VPN"
       ],
@@ -3288,6 +3273,9 @@
       ],
       "Missing feature(s)": [
         "缺少功能"
+      ],
+      "Other reason (please comment)": [
+        "其它原因（如果可以，請告訴我們）"
       ],
       "Subscription is too expensive": [
         "訂購授權太貴了"
@@ -3829,9 +3817,6 @@
       ],
       "Amount above the maximum.": [
         "金額高於上限。"
-      ],
-      "Amount below minimum.": [
-        "金額低於下限。"
       ],
       "Authentication canceled.": [
         "驗證已取消。"
@@ -5451,9 +5436,6 @@
       "Protection": [
         "安全"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "於${ VPN_APP_NAME }存取鉅額優惠"
-      ],
       "Select your deal": [
         "請選擇您的優惠"
       ],
@@ -5892,6 +5874,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info": {
@@ -8195,17 +8188,6 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10583,6 +10565,9 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - 進階功能"
+      ],
       "Passkeys supported": [
         "支援密碼金鑰"
       ],
@@ -10666,6 +10651,9 @@
       ],
       "Unlimited devices": [
         "無限裝置數量"
+      ],
+      "Unlimited devices and aliases": [
+        "無限裝置和別名"
       ],
       "Unlimited filters": [
         "無限制篩選器"
@@ -11079,9 +11067,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "獨特的即時電子郵件位址可保護您的線上身份並讓您控管收件匣中的內容。來自 ${ BRAND_NAME } 的 SimpleLogin。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
@@ -11863,6 +11848,15 @@
       "Save your recovery kit to continue": [
         "儲存您的復原包並繼續"
       ],
+      "Secure sharing with ${ n } vault": [
+        "與${ n }安全共享保管庫"
+      ],
+      "Secure sharing with multiple vaults": [
+        "安全共享多重保管庫"
+      ],
+      "Secure vault sharing": [
+        "安全分享保管庫"
+      ],
       "Setting up your organization": [
         "設定您的組織"
       ],
@@ -12385,7 +12379,7 @@
     },
     "Security Center - Info": {
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "已有至少一次的資料外洩，可從中查找到您的資訊。 開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
+        "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "Select file": {
@@ -12526,6 +12520,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "已取消密碼重設"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13368,6 +13367,9 @@
       ],
       "Desktop app": [
         "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
       ],
       "No ads or tracking": [
         "無廣告或追蹤"
@@ -14847,6 +14849,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
+      ],
+      "You have no open alerts": [
+        "您無以開啟的警告"
       ],
       "You have no resolved alerts": [
         "您無以處理的警告"
