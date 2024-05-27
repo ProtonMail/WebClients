@@ -4,17 +4,14 @@ import { DropdownActionProps } from '@proton/components/components/dropdown/Drop
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
-import {
-    getCheckResultFromSubscription,
-    getCheckout,
-    getOptimisticCheckResult,
-} from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getVPN2024Renew } from '@proton/shared/lib/helpers/renew';
+import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import {
     getHas2023OfferCoupon,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
+    getPlanTitle,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -59,13 +56,7 @@ const SubscriptionsSection = () => {
     }
 
     const plansMap = toMap(plans, 'Name');
-
-    const currentPlanIDs = getPlanIDs(current);
-    const currentCheckout = getCheckout({
-        plansMap,
-        planIDs: currentPlanIDs,
-        checkResult: getCheckResultFromSubscription(current),
-    });
+    const planTitle = getPlanTitle(current);
 
     const { renewEnabled, subscriptionExpiresSoon } = subscriptionExpires(current);
 
@@ -116,8 +107,12 @@ const SubscriptionsSection = () => {
             };
         }
 
-        if (latestPlanIDs[PLANS.VPN2024] || latestPlanIDs[PLANS.DRIVE]) {
-            const result = getVPN2024Renew({ plansMap, planIDs: latestPlanIDs, cycle: latestSubscription.Cycle })!;
+        if (latestPlanIDs[PLANS.VPN2024]) {
+            const result = getOptimisticRenewCycleAndPrice({
+                plansMap,
+                planIDs: latestPlanIDs,
+                cycle: latestSubscription.Cycle,
+            })!;
             return {
                 renewPrice: (
                     <Price key="renewal-price" currency={latestSubscription.Currency}>
@@ -165,7 +160,7 @@ const SubscriptionsSection = () => {
                     <TableBody colSpan={4}>
                         <TableRow>
                             <TableCell label={c('Title subscription').t`Plan`}>
-                                <span data-testid="planNameId">{currentCheckout.planTitle}</span>
+                                <span data-testid="planNameId">{planTitle}</span>
                             </TableCell>
                             <TableCell data-testid="subscriptionStatusId">
                                 <Badge type={status.type}>{status.label}</Badge>
