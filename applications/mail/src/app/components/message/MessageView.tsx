@@ -290,7 +290,11 @@ const MessageView = (
             message.data &&
             message.verification === undefined
         ) {
-            void verify(message.decryption?.decryptedRawContent, message.decryption?.signature);
+            void verify(
+                message.decryption?.decryptedRawContent,
+                message.decryption?.signature,
+                message.errors?.decryption
+            );
         }
     }, [loading, expanded, message.messageDocument?.initialized, message.verification]);
 
