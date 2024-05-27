@@ -441,10 +441,10 @@
       "Not now": [
         "以后再说"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -871,23 +871,6 @@
     "Attendee role": {
       "Optional": [
         "非必填"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "仅需${ price }即可**拥有我们的加密密码管理器**"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "添加 ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "获取优惠"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "移除 ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "订阅 15 个月即可获得我们的**加密密码管理器**，每月只需额外支付${ priceNoSuffix }！"
       ]
     },
     "bf2023: Deal details": {
@@ -2657,9 +2640,6 @@
       ],
       "Amount above the maximum.": [
         "金额太大。"
-      ],
-      "Amount below minimum.": [
-        "金额太小。"
       ],
       "An error occurred while loading alias options": [
         "加载别名选项时发生错误"

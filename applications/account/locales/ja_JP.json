@@ -1374,15 +1374,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**暗号化パスワード マネージャーを追加** わずか ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を追加"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "月額 ${ plan } で ${ price } を追加"
-      ],
       "Become a Visionary": [
         "ビジョナリーになる"
       ],
@@ -1394,15 +1385,6 @@
       ],
       "Get the deal": [
         "割引をゲット"
-      ],
-      "Remove": [
-        "削除"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を削除"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 か月間購読すると、**暗号化パスワード マネージャー**を月額わずか ${ priceNoSuffix } の追加料金で入手できます。"
       ]
     },
     "bf2023: Deal details": {
@@ -3725,9 +3707,6 @@
       "Amount above the maximum.": [
         "金額が上限を超えています。"
       ],
-      "Amount below minimum.": [
-        "最少金額以下です。"
-      ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
       ],
@@ -5346,9 +5325,6 @@
       "Protection": [
         "保護"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } で最高のセールを利用して大幅に節約しましょう"
-      ],
       "Select your deal": [
         "取引を選択してください"
       ],
@@ -5787,6 +5763,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info": {
@@ -8108,17 +8095,6 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11003,9 +10979,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent などのファイル共有プロトコルに対応します"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "オンライン ID を保護し、受信トレイに何を送信するかを制御できる、独自のオンザフライ電子メール アドレス。 ${ BRAND_NAME } による SimpleLogin から。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使う"

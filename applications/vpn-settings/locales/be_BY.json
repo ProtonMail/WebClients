@@ -727,6 +727,9 @@
       "Browse the web privately and block ads": [
         "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
       ],
+      "Create and collaborate on documents securely": [
+        "Стварайце і бяспечна працуйце над дакументамі з іншымі"
+      ],
       "Keep your schedule private": [
         "Трымайце свой расклад у сакрэце"
       ],
@@ -741,15 +744,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Дадайце наш менеджар пароляў з шыфраваннем** усяго за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Дадайце ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Дадайце ${ plan } за ${ price } у месяц"
-      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -759,14 +753,8 @@
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
-      "Remove": [
-        "Выдаліць"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Выдаліць ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Падпішыцеся на 15 месяцаў і атрымайце наш **менеджар пароляў з шыфраваннем** усяго за ${ priceNoSuffix } дадатковай платы ў месяц!"
+      "Save even more with a 12-month plan": [
+        "Зэканомце яшчэ больш з пры аплаце за 12 месяцаў"
       ]
     },
     "bf2023: Deal details": {
@@ -2093,8 +2081,8 @@
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
       ],
-      "Amount below minimum.": [
-        "Сума ніжэй за мінімум."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
@@ -2909,8 +2897,8 @@
       "Organization key fingerprint": [
         "Адбітак ключа арганізацыі"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Эканомце больш з лепшай прапановай ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Зэканомце больш з лепшымі прапановамі ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Выберыце сваю прапанову"
@@ -5557,6 +5545,9 @@
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
+      "Password health": [
+        "Якасць пароля"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
@@ -6044,9 +6035,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальныя, імгненныя адрасы электроннай пошты, якія абараняюць вашу ідэнтычнасць у інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -8852,7 +8840,7 @@
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
+        "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
@@ -9035,6 +9023,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Атрымайце скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Атрымайце першы год ${ plan } бясплатна!"
+      ],
       "monthly": [
         "штомесяц"
       ]
@@ -9059,6 +9050,12 @@
         "${ n } гады",
         "${ n } гадоў",
         "${ n } гадоў"
+      ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Уключае ${ plan } (бясплатна на працягу першага года)"
+      ],
+      "Just ${ price }": [
+        "Усяго за ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Паспрабуйце ${ upsellPlanName } без рызыкі"

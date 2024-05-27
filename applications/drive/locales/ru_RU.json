@@ -956,23 +956,6 @@
         "Событие не поддерживается"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Добавьте менеджер зашифрованных паролей** всего за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Добавить приложение ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Купить"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Удалить приложение ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Подпишитесь на 15 месяцев и пользуйтесь **менеджером зашифрованных паролей** всего за ${ priceNoSuffix } в месяц!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -2340,11 +2323,17 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias is not valid": [
+        "Псевдоним недействителен"
+      ],
       "Alias is required": [
         "Требуется псевдоним"
       ],
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
+      ],
+      "Aliases could not be loaded": [
+        "Псевдонимы не могут быть загружены"
       ],
       "Already a member of this share": [
         "Уже участник этого общего ресурса"
@@ -2352,8 +2341,11 @@
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
+      "An error occurred while loading alias options": [
+        "При загрузке опций псевдонима произошла ошибка"
+      ],
+      "An error occurred while saving your alias": [
+        "При сохранении псевдонима произошла ошибка"
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -2442,6 +2434,9 @@
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
       ],
+      "Forward address is required": [
+        "Требуется адрес для пересылки"
+      ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
       ],
@@ -2501,6 +2496,9 @@
       ],
       "Missing signature": [
         "Подпись отсутствует"
+      ],
+      "Name is required": [
+        "Требуется имя"
       ],
       "No calendars found to import": [
         "Не найдено календарей для импорта"
@@ -5012,6 +5010,9 @@
       "Version is restored": [
         "Версия восстановлена"
       ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
+      ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
@@ -6993,9 +6994,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Уникальные, сгенерированные по запросу адреса электронной почты защищают ваши данные и позволяют вам решать, что попадет в ваш почтовый ящик. Благодаря SimpleLogin от ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"

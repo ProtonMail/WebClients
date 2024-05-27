@@ -12,6 +12,26 @@
         "Posta iletimi durduruldu"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer potansiyel sızıntılar tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve 1 başka potansiyel sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potansiyel bir ${ name } sızıntısı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } adresinden olası bir sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } adresinden potansiyel bir sızıntı tespit edildi. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } öğesini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -364,6 +384,9 @@
       "Go to label": [
         "Etikete git"
       ],
+      "Go to my files": [
+        "Dosyalarıma git"
+      ],
       "Go to panel ${ index }": [
         "${ index } panosuna git"
       ],
@@ -493,6 +516,12 @@
       "New": [
         "Yeni"
       ],
+      "New document": [
+        "Yeni belge"
+      ],
+      "New folder": [
+        "Yeni klasör"
+      ],
       "New message": [
         "Yeni ileti"
       ],
@@ -513,6 +542,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
+      ],
+      "Open in Docs": [
+        "Dokümanlarda Aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -946,23 +978,6 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "Yalnızca ${ price } ile **şifrelenmiş parola yönetimizi ekleyin**"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } ekle"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Sil: ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 aylık abone olarak **şifrelenmiş parola yöneticimizi** ayda tarifenize yalnızca ${ priceNoSuffix } ek ödeme ile edinin!"
       ]
     },
     "bf2023: Deal details": {
@@ -2467,9 +2482,6 @@
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
-      "Amount below minimum.": [
-        "Tutar en az miktarın altında."
-      ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
       ],
@@ -2540,6 +2552,9 @@
       ],
       "Error decrypting a computer": [
         "Bir bilgisayarın şifresi çözülürken sorun çıktı"
+      ],
+      "External accounts are not supported yet": [
+        "Harici hesaplar henüz desteklenmemektedir"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
@@ -4681,6 +4696,9 @@
       "Report link": [
         "Bağlantıyı bildir"
       ],
+      "Request access, or switch to an account with access.": [
+        "Erişim talep edin veya erişimi olan bir hesaba geçin."
+      ],
       "Restore": [
         "Geri yükle"
       ],
@@ -4766,6 +4784,9 @@
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
+      "Shared with": [
+        "İle paylaşıldı"
+      ],
       "Shared with me": [
         "Benimle paylaşılan"
       ],
@@ -4849,6 +4870,9 @@
       ],
       "There is nothing to see here": [
         "Burada görecek bir şey yok"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Bu eylem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecektir."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -5174,6 +5198,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
+      ],
+      "You need access": [
+        "Erişime ihtiyacınız var"
       ],
       "You will lose access to Plus features on this date.": [
         "Bu tarihte Plus özelliklerine erişiminizi kaybedeceksiniz."
@@ -5768,6 +5795,12 @@
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
+      ],
+      "Public link expiration date": [
+        "Genel bağlantı son kullanma tarihi"
+      ],
+      "Public link password": [
+        "Genel bağlantı şifresi"
       ],
       "Region": [
         "Bölge"
@@ -6640,6 +6673,9 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ücretli özellikler"
+      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -6715,6 +6751,9 @@
       ],
       "Unlimited devices": [
         "Sınırsız sayıda aygıt"
+      ],
+      "Unlimited devices and aliases": [
+        "Sınırsız cihazlar ve takma adlar"
       ],
       "Unlimited filters": [
         "Sınırsız sayıda süzgeç"
@@ -7078,9 +7117,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Çevrim içi kimliğinizi koruyan ve gelen kutunuza nelerin alınacağını denetlemenizi sağlayan benzersiz, anlık e-posta adresleri. SimpleLogin ile ${ BRAND_NAME } tarafından."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
@@ -7295,6 +7331,9 @@
       "Failed to move, please try again": [
         "Taşınamadı. Lütfen yeniden deneyin"
       ],
+      "Failed to open document": [
+        "Belge açılamadı"
+      ],
       "Failed to remove the file": [
         "Dosya kaldırılamadı"
       ],
@@ -7361,6 +7400,9 @@
       ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
+      ],
+      "You stopped sharing this item": [
+        "Bu öğeyi paylaşmayı durdurdunuz"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
@@ -7479,6 +7521,18 @@
     "Participant name": {
       "You": [
         "Siz"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } kasa ile güvenli paylaşım",
+        "${ n } kasalar ile güvenli paylaşım"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Çoklu kasalar ile güvenli paylaşım"
+      ],
+      "Secure vault sharing": [
+        "Güvenli kasa paylaşımı"
       ]
     },
     "Payment method option": {
@@ -7907,9 +7961,19 @@
         "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Şifre sıfırlama iptal edildi"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Parola sıfırlama işlemi iptal edilsin mi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Parola sıfırlama isteği iptal edildi (${ user.Email }). Bu isteği siz yapmadıysanız, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8090,6 +8154,11 @@
         "Çevrim içi gizliliği destekleyin"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Bu abonelik, iptal edilene kadar her 2 yılda bir aynı oranda otomatik olarak yenilenecektir."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
@@ -8213,6 +8282,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Aboneliğiniz iptal ediliyor, lütfen bekleyin"
       ]
     },
     "Storage": {
@@ -8549,6 +8623,9 @@
       ],
       "Verification successful": [
         "Doğrulandı"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Aboneliğinizi başarıyla iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
@@ -8990,6 +9067,9 @@
       "Item details": [
         "Öge bilgileri"
       ],
+      "Last edited by": [
+        "Son düzenleyen"
+      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
@@ -9193,6 +9273,9 @@
       ],
       "Stop sharing with everyone?": [
         "Herkes ile paylaşımdan kaldırılsın mı?"
+      ],
+      "Stop sharing?": [
+        "Paylaşmayı durdur?"
       ],
       "Stop transfers?": [
         "Aktarımlar durdurulsun mu?"

@@ -1019,7 +1019,7 @@
         "Authentification A2F intégrée"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Par défaut, les membres de l'équipe ne peuvent exporter que les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter de données."
+        "Par défaut, les membres de l'équipe peuvent uniquement exporter les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter des données."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
@@ -1205,7 +1205,7 @@
         "Dernière fuite de données le ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }"
+        "Découvrez comment ${ staySaferOnlineLink }."
       ],
       "Leaving vault...": [
         "Vous quittez le coffre-fort…"
@@ -2040,7 +2040,7 @@
         "En savoir plus"
       ],
       "stay safer online": [
-        "Protégez-vous en ligne"
+        "améliorer votre sécurité en ligne"
       ]
     },
     "lobby: Info": {
@@ -2078,7 +2078,7 @@
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "A2F requis pour organisation"
+        "A2F requise pour l'organisation"
       ],
       "SSO integration (coming soon)": [
         "Intégration de l'authentification unique SSO (bientôt disponible)"
@@ -2555,7 +2555,7 @@
         "Les invitations n'ont pu être envoyées aux adresses suivantes :"
       ],
       "Duplicate email addresses.": [
-        "Adresses e-mail en double."
+        "Adresses e-mail en double"
       ],
       "Email is required": [
         "Une adresse e-mail est nécessaire."

@@ -12,6 +12,26 @@
         "मेल फॉरवर्ड रुक गया"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } और ${ remainingCount } अन्य संभावित लीक का पता चला। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } और संभावित रूप से एक अन्य डेटा लीक पाया गया। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "संभावित ${ name } लीक का पता चला। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "संभावित रूप से ${ name } से डेटा लीक हुआ है। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "संभावित रूप से ${ name } से डेटा लीक हुआ है। विवरण देखने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "आपकी जानकारी कम से कम एक डेटा लीक में मिली है। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
@@ -1359,23 +1379,6 @@
       ],
       "Sender verification passed": [
         "भेजनेवाले का सत्यापन सफल"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } जोड़ें"
-      ],
-      "Get the deal": [
-        "डील लें"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } को निकालें"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
       ]
     },
     "bf2023: Deal details": {
@@ -3261,9 +3264,6 @@
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
       ],
-      "Amount below minimum.": [
-        "राशि न्यूनयम से कम है।"
-      ],
       "Attachments are limited to 25 MB": [
         "अनुलग्नक 25 एमबी तक सीमित हैं"
       ],
@@ -4211,7 +4211,7 @@
         "ले जाया गया संदेश छुपाएं"
       ],
       "Read": [
-        "पढ़ें"
+        "पढ़ा हुआ"
       ],
       "Show moved message": [
         "स्थानांतरित संदेश दिखाएं"
@@ -4227,7 +4227,7 @@
     },
     "Filter preview": {
       "read": [
-        "पढ़ें"
+        "पढ़ा हुआ"
       ],
       "starred": [
         "तारांकित किआ हुआ"
@@ -5658,7 +5658,7 @@
         "आज एन्क्रिप्ट किए क्लाउड स्टोरेज से अपने फाइल सुरक्षित करें मुफ्त में।"
       ],
       "Seems like you are all caught up for now": [
-        "लगता है जैसे आप सभी अभी के लिए पकड़े गए हैं"
+        "कुछ नया नहीं है"
       ],
       "Select a service provider to start": [
         "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
@@ -6558,7 +6558,7 @@
         "पता"
       ],
       "ALL": [
-        "सब"
+        "सभी"
       ],
       "All contacts": [
         "सारे संपर्क"
@@ -6957,7 +6957,7 @@
         "सार्वजनिक चाबियां"
       ],
       "Read": [
-        "पढ़ें"
+        "पढ़ा हुआ"
       ],
       "Recipient": [
         "प्राप्तकर्ता"
@@ -7849,6 +7849,9 @@
       "Organize items with multiple vaults": [
         "कई तिजोरी के साथ आइटम व्यवस्थित करें"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - प्रीमियम सुविधाएं"
+      ],
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
@@ -7921,6 +7924,9 @@
       ],
       "Unlimited devices": [
         "असीम डिवाइस"
+      ],
+      "Unlimited devices and aliases": [
+        "असीमित डिवाइस और उपनाम"
       ],
       "Unlimited filters": [
         "असीमित फिल्टर"
@@ -8221,9 +8227,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent जैसे फाइल शेयर करने वाले प्रोटोकॉल के लिए सपोर्ट"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "अद्वितीय, ऑन-द-फ्लाई ईमेल पते जो आपकी ऑनलाइन पहचान की रक्षा करते हैं और आपको यह नियंत्रित करने देते हैं कि आपके इनबॉक्स में क्या आएगा। ${ BRAND_NAME } द्वारा SimpleLogin से।"
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "अपना खुद के कस्टम ईमेल डोमेन पते इस्तेमाल करें, उदाहरण: aap@aapkanaam.in"
       ],
@@ -8389,6 +8392,18 @@
     "Participant name": {
       "You": [
         "आप"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें",
+        "${ n } वॉल्ट के साथ सुरक्षित रूप से साझा करें"
+      ],
+      "Secure sharing with multiple vaults": [
+        "सुरक्षित साझाकरण - कई वॉल्ट्स के साथ"
+      ],
+      "Secure vault sharing": [
+        "सुरक्षित वॉल्ट साझाकरण"
       ]
     },
     "Payment method option": {
@@ -8841,9 +8856,19 @@
         "पासवर्ड सहेजा गया"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "पासवर्ड रीसेट रद्द कर दिया गया"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "पासवर्ड रीसेट रद्द करें?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "पासवर्ड रीसेट अनुरोध रद्द कर दिया गया (${ user.Email })। यदि आपने यह अनुरोध नहीं किया है, तो ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -9017,6 +9042,11 @@
       ],
       "Support online privacy": [
         "ऑनलाइन निजता को बढ़ावा दें"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
       ]
     },
     "specialoffer: Link": {

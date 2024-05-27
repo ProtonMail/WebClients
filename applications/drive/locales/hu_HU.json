@@ -349,6 +349,9 @@
       "Go to label": [
         "Címkéhez ugrás"
       ],
+      "Go to my files": [
+        "Saját fájlok"
+      ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
@@ -881,17 +884,6 @@
       ],
       "Unsupported event": [
         "Nem támogatott esemény"
-      ]
-    },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } hozzáadása"
-      ],
-      "Get the deal": [
-        "Érdekel az ajánlat"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } eltávolítása"
       ]
     },
     "bf2023: Deal details": {
@@ -2165,9 +2157,6 @@
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
-      ],
-      "Amount below minimum.": [
-        "Túl alacsony összeg."
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -4186,6 +4175,9 @@
       "Report has been sent": [
         "A jelentés el lett küldve"
       ],
+      "Request access, or switch to an account with access.": [
+        "Igényelj hozzáférést vagy válts egy hozzáféréssel rendelkező fiókra"
+      ],
       "Restore": [
         "Helyreállítás"
       ],
@@ -4551,6 +4543,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
+      ],
+      "You need access": [
+        "Hozzáférés szükséges"
       ],
       "You will lose all unsaved changes.": [
         "A nem mentett módosítások el fognak veszni."
@@ -6281,6 +6276,12 @@
     "Participant name": {
       "You": [
         "Ön"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Biztonságos megosztás ${ n } trezorral",
+        "Biztonságos megosztás ${ n } trezorokkal"
       ]
     },
     "Payment method option": {

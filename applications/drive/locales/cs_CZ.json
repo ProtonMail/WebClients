@@ -12,6 +12,26 @@
         "Přeposílání e-mailů bylo zastaveno"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a ${ remainingCount } dalších. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a 1 další. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -370,6 +390,9 @@
       "Go to label": [
         "Přejít na štítek"
       ],
+      "Go to my files": [
+        "Přejít k mým souborům"
+      ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
@@ -499,6 +522,12 @@
       "New": [
         "Nový"
       ],
+      "New document": [
+        "Nový dokument"
+      ],
+      "New folder": [
+        "Nová složka"
+      ],
       "New message": [
         "Nová zpráva"
       ],
@@ -519,6 +548,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Otevřít v Docs"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -612,6 +644,9 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
+      ],
+      "Resend invite": [
+        "Znovu poslat pozvánku"
       ],
       "Reset to default": [
         "Obnovit výchozí nastavení"
@@ -960,23 +995,6 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Přidejte našeho správce šifrovaných hesel** za pouhých ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Přidat ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Využít nabídku"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odebrat ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Pořiďte si předplatné na 15 měsíců a za příplatek pouhých ${ priceNoSuffix } měsíčně získejte našeho **šifrovaného správce hesel**!"
       ]
     },
     "bf2023: Deal details": {
@@ -2491,8 +2509,8 @@
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
-      "Amount below minimum.": [
-        "Hodnota je nižší než minimální částka."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Částka je nižší než minimální možná hodnota (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Došlo k chybě při načítání možností aliasu"
@@ -4518,6 +4536,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "Invite link copied": [
+        "Odkaz na pozvánku zkopírován"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
@@ -4836,6 +4857,9 @@
       "Report link": [
         "Nahlásit odkaz"
       ],
+      "Request access, or switch to an account with access.": [
+        "Požádejte o přístup nebo přepněte na účet, který má přístup."
+      ],
       "Restore": [
         "Obnovit"
       ],
@@ -4922,6 +4946,9 @@
       ],
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
+      ],
+      "Shared with": [
+        "Sdíleno s"
       ],
       "Shared with me": [
         "Sdíleno se mnou"
@@ -5342,6 +5369,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musíte mít propojený s platební kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
+      ],
+      "You need access": [
+        "Potřebujete přístup"
       ],
       "You will lose access to Plus features on this date.": [
         "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
@@ -5953,7 +5983,7 @@
         "Vypršení platnosti veřejného odkazu"
       ],
       "Public link password": [
-        "Veřejné heslo na odkaz"
+        "Heslo veřejného odkazu"
       ],
       "Region": [
         "Kraj"
@@ -6872,6 +6902,9 @@
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
+      "Password health": [
+        "Síla hesla"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -6892,6 +6925,9 @@
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
@@ -7009,6 +7045,9 @@
         "Sdílení trezoru (až ${ n } osoby)",
         "Sdílení trezoru (až ${ n } osob)",
         "Sdílení trezoru (až ${ n } osob)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
       ]
     },
     "new_plans: feature info": {
@@ -7267,6 +7306,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chraňte vaši rodinu před škodlivými webovými stránkami a mějte přístup k našim vysokorychlostním VPN serverům pro streamování vašeho oblíbeného obsahu"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Chraňte svou skutečnou e-mailovou adresu před prozrazením nebo únikem pomocí aliasů (náhodně vygenerovaná e-mailová adresa, která přeposílá e-maily do vaší hlavní doručené pošty)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Poskytuje nejvyšší úroveň zabezpečení účtu a odbornou podporu"
       ],
@@ -7317,9 +7359,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Jedinečné e-mailové adresy, které chrání vaši online identitu a umožňují vám kontrolovat, co vám přijde do schránky. Od SimpleLogin by ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
@@ -7517,6 +7556,9 @@
       "Access for the member removed": [
         "Přístup pro člena odebrán"
       ],
+      "Access updated": [
+        "Přístup aktualizován"
+      ],
       "Access updated and shared": [
         "Přístup aktualizován a sdílen"
       ],
@@ -7559,6 +7601,9 @@
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
       ],
+      "Failed to open document": [
+        "Otevření dokumentu selhalo"
+      ],
       "Failed to remove the file": [
         "Odebrání souboru selhalo"
       ],
@@ -7579,6 +7624,9 @@
       ],
       "File removed": [
         "Soubor odebrán"
+      ],
+      "Invitation email was sent again": [
+        "E-mail s pozvánkou byl znovu odeslán"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -7635,7 +7683,7 @@
         "Koš se nepodařilo vyprázdnit"
       ],
       "You stopped sharing this item": [
-        "Zastavili jste sdílení této položky"
+        "Ukončili jste sdílení této položky"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
@@ -7759,6 +7807,12 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Zabezpečené sdílení s ${ n } trezorem",
+        "Zabezpečené sdílení s ${ n } trezory",
+        "Zabezpečené sdílení s ${ n } trezory",
+        "Zabezpečené sdílení s ${ n } trezory"
+      ],
       "Secure sharing with multiple vaults": [
         "Zabezpečené sdílení s více trezory"
       ],
@@ -8218,6 +8272,11 @@
         "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetování hesla zrušeno"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušit resetování hesla?"
@@ -8424,7 +8483,7 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        null
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
       ]
     },
     "specialoffer: Link": {
@@ -8904,6 +8963,9 @@
       ],
       "Recovery has started": [
         "Obnova právě probíhá"
+      ],
+      "Secure link copied": [
+        "Bezpečný odkaz zkopírován"
       ],
       "The link to your file was successfully copied": [
         "Odkaz na váš soubor byl úspěšně zkopírován"
@@ -9388,7 +9450,7 @@
         "Podrobnosti položky"
       ],
       "Last edited by": [
-        "Posledně upravil/a"
+        "Naposledy upravil(a)"
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
@@ -9595,7 +9657,7 @@
         "Přestat sdílet se všemi?"
       ],
       "Stop sharing?": [
-        "Přestat sdílet?"
+        "Ukončit sdílení?"
       ],
       "Stop transfers?": [
         "Zastavit přenosy?"

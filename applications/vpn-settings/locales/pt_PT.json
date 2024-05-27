@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copiar chave para a área de transferência"
       ],
+      "Copy version number to clipboard": [
+        "Copiar o número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -431,6 +434,9 @@
       "Search countries": [
         "Pesquisar países"
       ],
+      "See DNS TXT record": [
+        "Ver o registo DNS TXT"
+      ],
       "See how": [
         "Ver como"
       ],
@@ -705,9 +711,6 @@
       ]
     },
     "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -716,12 +719,6 @@
       ],
       "Get the deal": [
         "Obtenha a promoção"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
@@ -776,6 +773,10 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -1922,9 +1923,6 @@
       "Amount above the maximum.": [
         "Quantia acima do máximo."
       ],
-      "Amount below minimum.": [
-        "Quantia abaixo do mínimo."
-      ],
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
       ],
@@ -2047,6 +2045,12 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
+      ],
+      "Please upload an xml file": [
+        "Envie um ficheiro XML"
+      ],
+      "Please upload only 1 file": [
+        "Envie apenas 1 ficheiro"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -4166,7 +4170,7 @@
         "E-mail atual"
       ],
       "Default language": [
-        "Idioma predefinido"
+        "Idioma padrão"
       ],
       "Delete": [
         "Eliminar"
@@ -4185,6 +4189,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
+      ],
+      "e.g. example.com": [
+        "p.ex. exemplo.pt"
       ],
       "Email": [
         "E-mail"
@@ -4365,6 +4372,9 @@
       ],
       "Select your plan": [
         "Selecione o seu plano"
+      ],
+      "Single sign-on URL": [
+        "URL do início de sessão único"
       ],
       "Start date": [
         "Data inicial"
@@ -5005,6 +5015,9 @@
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
+      "Password health": [
+        "Estado da palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -5413,9 +5426,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
@@ -5499,10 +5509,10 @@
     },
     "Notification": {
       "A disabled address cannot be default": [
-        "Um endereço desativado não pode ser um endereço predefinido."
+        "Um endereço desativado não pode ser um endereço padrão."
       ],
       "An external address cannot be default": [
-        "Um endereço externo não pode ser um endereço predefinido."
+        "Um endereço externo não pode ser um endereço padrão."
       ],
       "Invalid code": [
         "Código inválido"
@@ -6750,6 +6760,9 @@
       ],
       "Sync files on devices": [
         "Sincronizar ficheiros nos dispositivos"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "O melhor da ${ BRAND_NAME }"
       ],
       "Version history": [
         "Histórico das versões"

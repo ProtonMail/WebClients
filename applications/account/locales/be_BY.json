@@ -1360,6 +1360,9 @@
       "Browse the web privately and block ads": [
         "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
       ],
+      "Create and collaborate on documents securely": [
+        "Стварайце і бяспечна працуйце над дакументамі з іншымі"
+      ],
       "Keep your schedule private": [
         "Трымайце свой расклад у сакрэце"
       ],
@@ -1430,15 +1433,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Дадайце наш менеджар пароляў з шыфраваннем** усяго за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Дадайце ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Дадайце ${ plan } за ${ price } у месяц"
-      ],
       "Become a Visionary": [
         "Атрымаць тарыфны план Visionary"
       ],
@@ -1451,14 +1445,8 @@
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
-      "Remove": [
-        "Выдаліць"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Выдаліць ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Падпішыцеся на 15 месяцаў і атрымайце наш **менеджар пароляў з шыфраваннем** усяго за ${ priceNoSuffix } дадатковай платы ў месяц!"
+      "Save even more with a 12-month plan": [
+        "Зэканомце яшчэ больш з пры аплаце за 12 месяцаў"
       ]
     },
     "bf2023: Deal details": {
@@ -3959,8 +3947,8 @@
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
       ],
-      "Amount below minimum.": [
-        "Сума ніжэй за мінімум."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Аўтэнтыфікацыя скасавана."
@@ -5643,8 +5631,8 @@
       "Protection": [
         "Абарона"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Эканомце больш з лепшай прапановай ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Зэканомце больш з лепшымі прапановамі ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Выберыце сваю прапанову"
@@ -6108,6 +6096,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info": {
@@ -7900,7 +7899,7 @@
         "Няправільны фармат вашага файла CSV."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Тэрмін дзеяння спасылкі для справаздачы пра тое, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінаваны. Звяжыцеся з нашай службай падтрымкі, каб вырашыць гэту праблему."
+        "Тэрмін дзеяння спасылкі для справаздачы пра тое, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінаваны. Звяжыцеся з нашай камандай падтрымкі, каб вырашыць гэту праблему."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
@@ -8633,17 +8632,6 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10800,6 +10788,9 @@
       "Back to calendar": [
         "Вярнуцца ў каляндар"
       ],
+      "Back to documents": [
+        "Вярнуцца ў дакументы"
+      ],
       "Back to files": [
         "Вярнуцца ў файлы"
       ],
@@ -10814,6 +10805,9 @@
       ],
       "Calendar": [
         "Каляндар"
+      ],
+      "Documents": [
+        "Дакументы"
       ],
       "Inbox": [
         "Уваходныя"
@@ -11169,6 +11163,9 @@
       ],
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
+      ],
+      "Password health": [
+        "Якасць пароля"
       ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
@@ -11708,9 +11705,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальныя, імгненныя адрасы электроннай пошты, якія абараняюць вашу ідэнтычнасць у інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -16248,7 +16242,7 @@
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
+        "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
@@ -16597,6 +16591,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Атрымайце скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Атрымайце першы год ${ plan } бясплатна!"
+      ],
       "monthly": [
         "штомесяц"
       ]
@@ -16621,6 +16618,12 @@
         "${ n } гады",
         "${ n } гадоў",
         "${ n } гадоў"
+      ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Уключае ${ plan } (бясплатна на працягу першага года)"
+      ],
+      "Just ${ price }": [
+        "Усяго за ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Паспрабуйце ${ upsellPlanName } без рызыкі"

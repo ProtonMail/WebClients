@@ -1354,6 +1354,9 @@
       "Browse the web privately and block ads": [
         "Navegue en la web de manera privada y bloquee anuncios"
       ],
+      "Create and collaborate on documents securely": [
+        "Cree y colabore en documentos de forma segura"
+      ],
       "Keep your schedule private": [
         "Mantenga privada el agenda"
       ],
@@ -1424,15 +1427,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Añada nuestro gestor cifrado de contraseñas** por solo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Añadir ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Añada ${ plan } por ${ price } al mes"
-      ],
       "Become a Visionary": [
         "Elija Visionary"
       ],
@@ -1445,14 +1439,8 @@
       "Get the deal": [
         "Obtener la oferta"
       ],
-      "Remove": [
-        "Borrar"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Borrar ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Suscríbase durante 15 meses y obtenga nuestro **gestor cifrado de contraseñas** por solo ${ priceNoSuffix } adicionales cada mes."
+      "Save even more with a 12-month plan": [
+        "Ahorre aún más con un plan de 12 meses"
       ]
     },
     "bf2023: Deal details": {
@@ -3933,8 +3921,8 @@
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
-      "Amount below minimum.": [
-        "Cantidad inferior al mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -5585,8 +5573,8 @@
       "Protection": [
         "Protección"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Ahorre con las mejores ofertas en ${ VPN_APP_NAME }"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Ahorre en grande con las mejores ofertas de ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Seleccione la oferta"
@@ -6034,6 +6022,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte del contenido del calendario es incompatible y no será importado."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info": {
@@ -8473,17 +8472,6 @@
         "reunión de Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Cuando está activada, las subcarpetas heredan el color de la carpeta principal."
@@ -10604,6 +10592,9 @@
       "Back to calendar": [
         "Volver al calendario"
       ],
+      "Back to documents": [
+        "Volver a documentos"
+      ],
       "Back to files": [
         "Volver a archivos"
       ],
@@ -10618,6 +10609,9 @@
       ],
       "Calendar": [
         "Calendario"
+      ],
+      "Documents": [
+        "Documentos"
       ],
       "Inbox": [
         "Buzón"
@@ -10944,6 +10938,9 @@
       "Passkeys supported": [
         "Claves de acceso admitidas"
       ],
+      "Password health": [
+        "Estado de la contraseña"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -10962,6 +10959,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -11085,6 +11085,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature info": {
@@ -11422,6 +11425,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteja su familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir su contenido favorito"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Proteja con alias su dirección de correo real para no ser divulgada o filtrada (una dirección de correo generada aleatoriamente que reenvía correos electrónicos a su bandeja de entrada principal)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Proporciona el nivel más alto de protección de tu cuenta y un soporte especializado."
       ],
@@ -11472,9 +11478,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas y sobre la marcha que protegen su identidad en línea y le permiten controlar lo que llega a el buzón. De SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
@@ -16227,6 +16230,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Obtenga ${ discount } de descuento con una suscripción de ${ billingCycle }"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "¡Obtenga un primer año de ${ plan } gratis!"
+      ],
       "monthly": [
         "cada mes"
       ]
@@ -16248,8 +16254,20 @@
         "${ n } año",
         "${ n } años"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Incluye ${ plan } (¡gratis por el primer año!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Incluye ${ plan }, nuestro gestor de contraseñas premium, ¡gratis por el primer año!"
+      ],
+      "Just ${ price }": [
+        "Por solo ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Pruebe ${ upsellPlanName } sin riesgos"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Su paquete de ${ a } y ${ b }"
       ],
       "Your ${ selected } plan": [
         "El plan ${ selected }"

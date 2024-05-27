@@ -4,6 +4,26 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a ${ remainingCount } dalších. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a 1 další. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Přidat"
@@ -187,6 +207,9 @@
       ],
       "Get mobile apps": [
         "Získat mobilní aplikace"
+      ],
+      "Get Pass Business": [
+        "Získat Pass Business"
       ],
       "Get Pass Plus": [
         "Získejte Pass Plus"
@@ -484,6 +507,9 @@
         "${ total } jiných přihlášení používá stejné heslo",
         "${ total } jiných přihlášení používá stejné heslo"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA přidává další úroveň zabezpečení k vašim přihlašovacím údajům. ${ PASS_APP_NAME } usnadňuje 2FA tím, že uchovává a automaticky vyplňuje kódy 2FA."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
       ],
@@ -496,6 +522,9 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Sledování Dark webu je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
       ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Buďte upozorněni, pokud dojde k úniku vašeho e-mailu, hesla nebo jiných osobních údajů."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
       ],
@@ -505,11 +534,32 @@
       "Set up 2FA for more security": [
         "Nastavte 2FA pro větší zabezpečení"
       ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Začněte sledovat úniky informací, jejichž součástí jsou účty používající vaši e-mailovou addresu a aliasy Hide-my-email."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
       ],
       "These items remain at risk": [
         "Tyto položky jsou nadále rizikové"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Tento účet je zranitelný, navštivte službu a změňte si heslo."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Tato služba nabízí 2FA. Povolte ho pro zvýšení zabezpečení účtu."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odemkněte pokročilé funkce zabezpečení a podrobné logy, abyste zabezpečili svou online přítomnost."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Pomocí ${ PASS_SHORT_APP_NAME } Monitoru můžete mít před hrozbami náskok díky okamžitým upozorněním při kompromitaci vašich přihlašovacích údajů. Odemkněte pokročilé bezpečnostní funkce a podrobné logy pro ochranu vaší přítomnosti na internetu."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Vaše e-mailové adresy unikly nejméně při 1 úniku informací."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Vaše soukromé informace jsou součástí úniku informací ze služby třetí strany."
       ]
     },
     "Error": {
@@ -2336,6 +2386,9 @@
       ],
       "Leave vault ?": [
         "Opustit trezor ?"
+      ],
+      "Loading breaches...": [
+        "Načítání úniků..."
       ],
       "Low disk space": [
         "Málo místa na disku"
