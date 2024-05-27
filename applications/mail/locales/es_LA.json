@@ -1478,23 +1478,6 @@
         "Verificación del remitente aprobada"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Añada nuestro gestor cifrado de contraseñas** por solo ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Añadir ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Borrar ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Suscríbase durante 15 meses y obtenga nuestro **gestor cifrado de contraseñas** por solo ${ priceNoSuffix } adicionales cada mes."
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
@@ -3642,8 +3625,8 @@
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
-      "Amount below minimum.": [
-        "Cantidad inferior al mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocurrió un error al cargar las opciones del alias"
@@ -8827,6 +8810,9 @@
       "Passkeys supported": [
         "Claves de acceso admitidas"
       ],
+      "Password health": [
+        "Estado de la contraseña"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -8845,6 +8831,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -8958,6 +8947,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature info": {
@@ -9214,6 +9206,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteja su familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir su contenido favorito"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Proteja con alias su dirección de correo real para no ser divulgada o filtrada (una dirección de correo generada aleatoriamente que reenvía correos electrónicos a su bandeja de entrada principal)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Proporciona el nivel más alto de protección de tu cuenta y un soporte especializado."
       ],
@@ -9264,9 +9259,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas y sobre la marcha que protegen su identidad en línea y le permiten controlar lo que llega a el buzón. De SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"

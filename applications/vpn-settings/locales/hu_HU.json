@@ -581,9 +581,6 @@
       ]
     },
     "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } hozzáadása"
-      ],
       "Cancel": [
         "Mégsem"
       ],
@@ -592,12 +589,6 @@
       ],
       "Get the deal": [
         "Érdekel az ajánlat"
-      ],
-      "Remove": [
-        "Eltávolítás"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } eltávolítása"
       ]
     },
     "bf2023: Deal details": {
@@ -1760,9 +1751,6 @@
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
-      ],
-      "Amount below minimum.": [
-        "Túl alacsony összeg."
       ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
@@ -4740,6 +4728,10 @@
       ],
       "per month": [
         "havonta"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Biztonságos megosztás ${ n } trezorral",
+        "Biztonságos megosztás ${ n } trezorokkal"
       ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"

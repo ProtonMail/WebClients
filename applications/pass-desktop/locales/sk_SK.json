@@ -4,6 +4,26 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Pridať"
@@ -187,6 +207,9 @@
       ],
       "Get mobile apps": [
         "Získať mobilné aplikácie"
+      ],
+      "Get Pass Business": [
+        "Získajte Pass Business"
       ],
       "Get Pass Plus": [
         "Získajte Pass Plus"
@@ -525,6 +548,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Pomocou ${ PASS_SHORT_APP_NAME } Monitor máte pred hrozbami náskok vďaka okamžitým upozorneniam, ak dôjde ku kompromitácii vašich prihlasovacích údajov. Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."

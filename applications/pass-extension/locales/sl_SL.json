@@ -215,6 +215,9 @@
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
       ],
+      "Get Pass Business": [
+        "Pridobite Pass Business"
+      ],
       "Get Pass Plus": [
         "Pridobite Pass Plus"
       ],
@@ -534,6 +537,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ta storitev ponuja 2FA. Omogočite ga za dodatno varnost računa."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svojo spletno prisotnost."
       ]
     },
     "Error": {
@@ -1464,7 +1470,7 @@
         "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Izberite, kam želite shraniti svoje uvožene trezorje. Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
+        "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
@@ -1569,7 +1575,7 @@
         "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
       ],
       "You're about to create": [
-        "Ustvarjali boste"
+        "Ustvarili boste"
       ],
       "You're invited to a vault.": [
         "Vabljeni ste v trezor."
@@ -1596,6 +1602,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } nadzor"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Različica ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 ura"
@@ -1713,6 +1722,9 @@
       ],
       "Created": [
         "Ustvarjeno"
+      ],
+      "Created at": [
+        "Ustvarjeno ob"
       ],
       "Device": [
         "Naprava"

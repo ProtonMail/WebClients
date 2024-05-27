@@ -20,6 +20,26 @@
         "Preposielanie pošty zastavené"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -462,11 +482,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -906,21 +926,9 @@
         "Voliteľné"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Pridať nášho šifrovaného správcu hesiel** len za ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Pridať ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Odstrániť ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Predplaťte si 15 mesiacov a získajte nášho **šifrovaného správcu hesiel** len za ${ priceNoSuffix } mesačne navyše!"
+    "Badge": {
+      "New!": [
+        "Nové!"
       ]
     },
     "bf2023: Deal details": {
@@ -2412,6 +2420,9 @@
       "Availability unknown": [
         "Dostupnosť je neznáma"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Zlepšite si organizáciu dňa, sledujte svoj čas a určujte priority úloh. Farebne odlíšte kalendár pomocou vlastných farieb udalostí."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
       ],
@@ -2514,10 +2525,10 @@
         "Nechcem sa podeliť"
       ],
       "I found a cheaper VPN": [
-        "Mám nájdenú lacnejšiu VPN"
+        "Našiel som lacnejšiu VPN"
       ],
       "I found a VPN with better features": [
-        "Mám nájdenú VPN s lepšími funkciami"
+        "Našiel som VPN s lepšími funkciami"
       ],
       "I have not managed to connect": [
         "Nepodarilo sa mi pripojiť"
@@ -2581,7 +2592,7 @@
         "za prvý mesiac"
       ],
       "Limited-time offer": [
-        "Časovo limitovaná ponuka"
+        "Časovo obmedzená ponuka"
       ]
     },
     "drivePlus2024: Title": {
@@ -2791,9 +2802,6 @@
       ],
       "Amount above the maximum.": [
         "Hodnota je vyšša než maximálna čiastka."
-      ],
-      "Amount below minimum.": [
-        "Hodnota je nižšia než minimálna čiastka."
       ],
       "An error occurred while loading alias options": [
         "Došlo k chybe pri načítaní možností aliasu"
@@ -3824,6 +3832,9 @@
     "Header": {
       "Contacts": [
         "Kontakty"
+      ],
+      "Custom recurrence": [
+        "Vlastné opakovanie"
       ],
       "Name": [
         "Meno"
@@ -6603,6 +6614,9 @@
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - prémiové funkcie"
+      ],
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
@@ -6680,6 +6694,9 @@
       ],
       "Unlimited devices": [
         "Neobmedzený počet zariadení"
+      ],
+      "Unlimited devices and aliases": [
+        "Neobmedzený počet zariadení a aliasov"
       ],
       "Unlimited filters": [
         "Neobmedzený počet filtrov"
@@ -7048,9 +7065,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolov na zdieľanie súborov, ako je BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unikátne emailové adresy, ktoré chránia vašu online identitu a umožňujú vám kontrolovať, čo sa dostane do vašej doručenej pošty. SimpleLogin od ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Použite svoje vlastné emailové adresy domény, napr. vy@vasemeno.sk"
@@ -7479,6 +7493,20 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Rozbaliť zoznam účastníkov"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Bezpečné zdieľanie s ${ n } trezorom",
+        "Bezpečné zdieľanie s ${ n } trezormi",
+        "Bezpečné zdieľanie s ${ n } trezormi",
+        "Bezpečné zdieľanie s ${ n } trezormi"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Bezpečné zdieľanie s viacerými trezormi"
+      ],
+      "Secure vault sharing": [
+        "Bezpečné zdieľanie trezoru"
       ]
     },
     "Payment method option": {
@@ -7952,9 +7980,19 @@
         "Zadaním aktuálneho hesla zrušíte proces obnovenia hesla. Žiadne ďalšie zmeny sa neuskutočnia."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Resetovanie hesla zrušené"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušiť obnovenie hesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8197,6 +8235,11 @@
         "Podporte online súkromie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Prejsť na plány predplatného"
@@ -8311,6 +8354,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Farebne rozlíšte svoj kalendár, aby ste si lepšie zorganizovali deň, sledovali čas a pod."
+      ],
+      "Custom event colors": [
+        "Vlastné farby udalostí"
+      ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
       ],
@@ -8322,6 +8371,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Teraz môžete zistiť, kedy sa účastníci môžu zúčastniť na vašom mítingu."
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
     "Storage": {
@@ -8529,7 +8583,7 @@
         "Desktopová aplikácia"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný pre všetkých. Prejdite na platený tarif."
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
       ],
       "No ads or tracking": [
         "Žiadne reklamy alebo sledovanie"
@@ -8761,6 +8815,9 @@
       "Verification successful": [
         "Overenie prebehlo úspešne"
       ],
+      "You have successfully canceled your subscription.": [
+        "Úspešne ste zrušili svoje predplatné."
+      ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
       ]
@@ -8925,7 +8982,7 @@
         "Zabezpečenie účtu"
       ],
       "Add a custom logo": [
-        "Pridajte vlastné logo"
+        "Pridať vlastné logo"
       ],
       "Add another notification to remind you of this event": [
         "Pridať ďalšiu notifikáciu na pripomenutie tejto udalosti"

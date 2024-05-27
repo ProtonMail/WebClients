@@ -735,15 +735,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Adicione nosso gerenciador de senhas criptografadas** por apenas ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Adicione ${ plan } por ${ price } por mês"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -752,15 +743,6 @@
       ],
       "Get the deal": [
         "Obtenha a oferta"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Assine por 15 meses e obtenha nosso **gerenciador de senhas criptografadas** por apenas ${ priceNoSuffix } extra por mês!"
       ]
     },
     "bf2023: Deal details": {
@@ -1961,7 +1943,7 @@
         "Não consegui me conectar"
       ],
       "I only needed a VPN short-term": [
-        "Eu só precisei da VPN por um curto período"
+        "Eu só precisava da VPN por um curto período"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
@@ -2011,7 +1993,7 @@
     },
     "drivePlus2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+        "Renova por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "drivePlus2024: Info": {
@@ -2077,8 +2059,8 @@
       "Amount above the maximum.": [
         "Quantidade acima do máximo."
       ],
-      "Amount below minimum.": [
-        "Quantidade abaixo do mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Valor total abaixo do mínimo (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
@@ -2874,9 +2856,6 @@
       ],
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
-      ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Economize com as melhores ofertas no ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Selecione sua oferta"
@@ -3995,7 +3974,7 @@
         "Envie o seu arquivo CSV completo para criar contas"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Carregue o logo da organização para potenciar sua identidade de marca e criar uma experiência personalizada para seus usuários."
+        "Faça upload do logotipo da sua organização para impulsionar a identidade da sua marca e criar uma experiência personalizada para seus usuários"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
@@ -5432,6 +5411,9 @@
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
+      "Password health": [
+        "Estado da senha"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
@@ -5909,9 +5891,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail exclusivos e sob demanda para proteger sua identidade on-line e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin pela ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
@@ -7222,7 +7201,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Cancelando a sua assinatura"
+        "Cancelando sua assinatura, aguarde"
       ]
     },
     "Storage": {

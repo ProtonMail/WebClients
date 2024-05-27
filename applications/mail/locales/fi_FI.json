@@ -1478,23 +1478,6 @@
         "Lähettäjän vahvistus onnistui"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Lisää salattu salasananhallintamme** vain ${ price } lisähintaan"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Lisää ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Hanki tarjous"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Poista ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Hanki 15 kuukauden tilaus, ja saat **salatun salasananhallintamme** vain ${ priceNoSuffix } lisähintaan kuukaudessa!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
@@ -3641,9 +3624,6 @@
       ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
-      ],
-      "Amount below minimum.": [
-        "Summa on vähimmäismäärää pienempi."
       ],
       "An error occurred while loading alias options": [
         "Alias-asetusten lataamisessa tapahtui virhe"
@@ -6546,7 +6526,7 @@
         "Viestin alkuperäinen lähettäjä ei enää kelpaa. Viesti lähetetään oletusosoitteesta ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
+        "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
       ],
       "The sender has requested a read receipt.": [
         "Lähettäjä on pyytänyt lukukuittausta."
@@ -7079,7 +7059,7 @@
         "Tiedostosi salataan ja tallennetaan"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Tietosi löytyivät ${ displayedDate }"
+        "Tietosi havaittiin ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -8148,7 +8128,7 @@
         "Tähdelliset"
       ],
       "stay safer online": [
-        "pysymään turvassa verkossa"
+        "suojautumaan verkossa paremmin"
       ],
       "Terms": [
         "Ehdot"
@@ -8843,6 +8823,9 @@
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
+      ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
       ],
@@ -9035,7 +9018,7 @@
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Turvallinen pilvitallennuspalvelu tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
+        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
@@ -9261,9 +9244,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Yksilöllisiä, nopeasti luotavia sähköpostiosoitteita, jotka suojaavat verkkoidentiteettiäsi ja mahdollistavat postilaatikkoosi saapuvan sisällön hallinnan. Mahdollista ${ BRAND_NAME } SimpleLoginin avulla."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Käytä omaa verkkotunnustasi käyttäviä sähköpostiosoitteita, kuten nimesi@esimerkki.fi"
@@ -9989,7 +9969,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Seuraavien osoitteiden käyttäjät ovat poistaneet käytöstä päästä päähän -salauksen tililtään, joten vastaavat salausasetukset on päivitetty sen mukaisesti:"
+        "Seuraavien osoitteiden käyttäjät ovat poistaneet päästä päähän -salauksen käytöstä tileiltään, joten vastaavat salausasetukset on päivitetty sen mukaisesti:"
       ]
     },
     "Send email with errors": {
@@ -10332,7 +10312,7 @@
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } päivä",
-        "${ days } päivä"
+        "${ days } päivää"
       ],
       "${ hours } hour": [
         "${ hours } tunti",
@@ -10388,7 +10368,7 @@
         "Premium-ennakkokäyttö"
       ],
       "Secure cloud storage": [
-        "Turvallinen pilvitallennustila"
+        "Suojattu pilvitallennustila"
       ],
       "Secure streaming": [
         "Turvallinen suoratoisto"
@@ -11710,7 +11690,7 @@
         "Liitettä ei löytynyt"
       ],
       "No breaches detected": [
-        "Tietomurtoja ei havaittu"
+        "Tietomurtoja ei ole havaittu"
       ],
       "No trackers found": [
         "Seurantoja ei löydetty"

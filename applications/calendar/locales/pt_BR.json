@@ -461,11 +461,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -900,23 +900,6 @@
     "Badge": {
       "New!": [
         "Novo!"
-      ]
-    },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Adicione nosso gerenciador de senhas criptografadas** por apenas ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Assine por 15 meses e obtenha nosso **gerenciador de senhas criptografadas** por apenas ${ priceNoSuffix } extra por mês!"
       ]
     },
     "bf2023: Deal details": {
@@ -2499,7 +2482,7 @@
         "Não consegui me conectar"
       ],
       "I only needed a VPN short-term": [
-        "Eu só precisei da VPN por um curto período"
+        "Eu só precisava da VPN por um curto período"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
@@ -2549,7 +2532,7 @@
     },
     "drivePlus2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+        "Renova por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "drivePlus2024: Info": {
@@ -2760,8 +2743,8 @@
       "Amount above the maximum.": [
         "Quantidade acima do máximo."
       ],
-      "Amount below minimum.": [
-        "Quantidade abaixo do mínimo."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Valor total abaixo do mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
@@ -6437,6 +6420,9 @@
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
+      "Password health": [
+        "Estado da senha"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
@@ -6879,9 +6865,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail exclusivos e sob demanda para proteger sua identidade on-line e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin pela ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
@@ -8098,7 +8081,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Cancelando a sua assinatura"
+        "Cancelando sua assinatura, aguarde"
       ]
     },
     "Storage": {

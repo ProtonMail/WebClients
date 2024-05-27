@@ -940,20 +940,11 @@
       ]
     },
     "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Dodaj ${ PASS_APP_NAME }"
-      ],
       "Cancel": [
         "Poništi"
       ],
       "Close": [
         "Zatvori"
-      ],
-      "Remove": [
-        "Ukloni"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Izbriši ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
@@ -2443,9 +2434,6 @@
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
-      ],
-      "Amount below minimum.": [
-        "Iznos ispod minimuma."
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."

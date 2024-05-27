@@ -1249,15 +1249,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "仅需${ price }即可**拥有我们的加密密码管理器**"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "添加 ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "添加${ plan }，每月${ price }"
-      ],
       "Become a Visionary": [
         "成为 Visionary"
       ],
@@ -1269,15 +1260,6 @@
       ],
       "Get the deal": [
         "获取优惠"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "移除 ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "订阅 15 个月即可获得我们的**加密密码管理器**，每月只需额外支付${ priceNoSuffix }！"
       ]
     },
     "bf2023: Deal details": {
@@ -3488,9 +3470,6 @@
       "Amount above the maximum.": [
         "金额太大。"
       ],
-      "Amount below minimum.": [
-        "金额太小。"
-      ],
       "Authentication canceled.": [
         "验证已取消。"
       ],
@@ -5301,6 +5280,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
       ]
     },
     "Info": {
@@ -7445,17 +7435,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {

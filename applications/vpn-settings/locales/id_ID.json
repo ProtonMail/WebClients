@@ -712,6 +712,9 @@
       "Browse the web privately and block ads": [
         "Jelajahi internet secara privat dan blokir iklan"
       ],
+      "Create and collaborate on documents securely": [
+        "Buat dan kolaborasikan dokumen secara aman"
+      ],
       "Keep your schedule private": [
         "Jaga jadwal Anda tetap privat"
       ],
@@ -726,15 +729,6 @@
       ]
     },
     "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Tambahkan pengelola kata sandi terenkripsi kami** dengan harga ${ price } saja"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Tambah ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Tambahkan ${ plan } seharga ${ price } per bulan"
-      ],
       "Cancel": [
         "Batal"
       ],
@@ -744,14 +738,8 @@
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
-      "Remove": [
-        "Hapus"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Hapus ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Berlangganan selama 15 bukan dan dapatkan **pengelola kata sandi terenkripsi** kami dengan harga ${ priceNoSuffix } tambahan per bulan!"
+      "Save even more with a 12-month plan": [
+        "Hemat lebih lagi dengan paket 12 bulan"
       ]
     },
     "bf2023: Deal details": {
@@ -2063,8 +2051,8 @@
       "Amount above the maximum.": [
         "Jumlah melebihi nilai maksimum."
       ],
-      "Amount below minimum.": [
-        "Jumlah berada di bawah nilai minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Nominal di bawah nilai minimum (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -2852,8 +2840,8 @@
       "Organization key fingerprint": [
         "Sidik jari kunci organisasi"
       ],
-      "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Hemat besar-besaran dengan penawaran ${ VPN_APP_NAME } terbaik"
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Dapatkan potongan harga besar-besaran untuk penawaran ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Pilih penawaran Anda"
@@ -5350,6 +5338,9 @@
       "Passkeys supported": [
         "Passkey didukung"
       ],
+      "Password health": [
+        "Kesehatan kata sandi"
+      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
@@ -5487,6 +5478,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
     },
     "new_plans: feature info": {
@@ -5772,6 +5766,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Lindungi keluarga Anda dari situs web berbahaya dan akses berbagai tayangan streaming favorit Anda dengan server VPN berkecepatan tinggi kami"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Lindungi alamat email Anda agar tidak terungkap atau bocor dengan alias (alamat email acak yang meneruskan email ke kotak surat utama Anda)"
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Menyediakan perlindungan keamanan akun yang tertinggi dan layanan dukungan spesialis"
       ],
@@ -5822,9 +5819,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Membuat alamat email yang unik dan tersedia seketika, melindungi identitas online Anda dan memberi Anda kendali atas apa yang masuk ke kotak masuk Anda. SimpleLogin oleh ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -6154,6 +6148,12 @@
       ],
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Berbagi aman dengan ${ n } brankas"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Berbagi aman dengan beberapa brankas"
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
@@ -7136,6 +7136,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Membatalkan langganan Anda, mohon menunggu"
       ]
     },
     "Storage": {
@@ -8622,6 +8627,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Dapatkan diskon ${ discount } dengan langganan ${ billingCycle }"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Dapatkan satu tahun pertama ${ plan } secara gratis!"
+      ],
       "monthly": [
         "bulanan"
       ]
@@ -8641,8 +8649,20 @@
       "${ n } year": [
         "${ n } tahun"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Meliputi ${ plan } (gratis untuk tahun pertama!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Meliputi ${ plan }, pengelola kata sandi premium kami, gratis untuk tahun pertama!"
+      ],
+      "Just ${ price }": [
+        "Hanya ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Coba ${ upsellPlanName } tanpa risiko"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Bundel ${ a } dan ${ b } Anda"
       ],
       "Your ${ selected } plan": [
         "Paket ${ selected } pilihan Anda"
