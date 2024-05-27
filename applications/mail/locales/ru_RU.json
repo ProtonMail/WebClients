@@ -1467,23 +1467,6 @@
         "Проверка отправителя пройдена"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Добавьте менеджер зашифрованных паролей** всего за ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Добавить приложение ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Купить"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Удалить приложение ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Подпишитесь на 15 месяцев и пользуйтесь **менеджером зашифрованных паролей** всего за ${ priceNoSuffix } в месяц!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -3503,17 +3486,26 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias is not valid": [
+        "Псевдоним недействителен"
+      ],
       "Alias is required": [
         "Требуется псевдоним"
       ],
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
       ],
+      "Aliases could not be loaded": [
+        "Псевдонимы не могут быть загружены"
+      ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
+      "An error occurred while loading alias options": [
+        "При загрузке опций псевдонима произошла ошибка"
+      ],
+      "An error occurred while saving your alias": [
+        "При сохранении псевдонима произошла ошибка"
       ],
       "Attachments are limited to 25 MB": [
         "Вложения ограничены 25 МБ"
@@ -3635,6 +3627,9 @@
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
       ],
+      "Forward address is required": [
+        "Требуется адрес для пересылки"
+      ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
       ],
@@ -3704,6 +3699,9 @@
       "Missing signature": [
         "Подпись отсутствует"
       ],
+      "Name is required": [
+        "Требуется имя"
+      ],
       "Network error: Please check your connection and try again.": [
         "Ошибка сети: пожалуйста, проверьте своё подключение и попробуйте снова."
       ],
@@ -3718,6 +3716,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Ни один внешний ключ, полученный для пользователя, не подходит для отправки"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -5541,6 +5542,9 @@
       "and": [
         "и"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Все запланированные или отложенные сообщения будут отменены."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
       ],
@@ -6447,6 +6451,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Отложено до завтра, ${ formattedTime }"
       ],
+      "Snoozing this conversation will be canceled.": [
+        "Откладывание этой цепочки будет отменено."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
       ],
@@ -6782,6 +6789,9 @@
       ],
       "Version ${ appVersion }": [
         "Версия ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -9247,9 +9257,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Уникальные, сгенерированные по запросу адреса электронной почты защищают ваши данные и позволяют вам решать, что попадет в ваш почтовый ящик. Благодаря SimpleLogin от ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"

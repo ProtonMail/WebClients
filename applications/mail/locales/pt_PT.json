@@ -265,6 +265,9 @@
       "Copy password to clipboard": [
         "Copiar palavra-passe para a área de transferência"
       ],
+      "Copy version number to clipboard": [
+        "Copiar o número da versão para a área de transferência"
+      ],
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
@@ -923,7 +926,7 @@
         "Redefinir o formulário de pesquisa"
       ],
       "Reset to default": [
-        "Reposição predefinida"
+        "Reposição padrão"
       ],
       "Restore": [
         "Restaurar"
@@ -1013,7 +1016,7 @@
         "Definir"
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
-        "Definir ${ MAIL_APP_NAME } como aplicação de e-mail predefinida"
+        "Definir ${ MAIL_APP_NAME } como aplicação de e-mail padrão"
       ],
       "Set as default": [
         "Predefinir"
@@ -1284,6 +1287,9 @@
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em 5 dias. ${ upgradeButton }"
       ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
       "Zoom in": [
         "Ampliar"
       ],
@@ -1454,17 +1460,6 @@
         "Verificação do remetente aprovada"
       ]
     },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtenha a promoção"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
@@ -1512,6 +1507,10 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -3143,12 +3142,12 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilizar a predefinição global (${ defaultValueText })"
+        "Utilizar o padrão global (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilizar a predefinição global (${ globalDefaultText })"
+        "Utilizar o padrão global (${ globalDefaultText })"
       ]
     },
     "Delinquent modal title": {
@@ -3504,9 +3503,6 @@
       ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
-      ],
-      "Amount below minimum.": [
-        "Quantia abaixo do mínimo."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro ao carregar as opções do alias"
@@ -3884,7 +3880,7 @@
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Ocorreu um problema com a pesquisa de conteúdos. Em vez disso, foi utilizada a pesquisa predefinida."
+        "Ocorreu um problema com a pesquisa de conteúdos. Em vez disso, foi utilizada a pesquisa padrão."
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
@@ -4495,7 +4491,7 @@
         "Caixa de entrada"
       ],
       "Inbox - Default": [
-        "Caixa de entrada predefinida"
+        "Caixa de entrada padrão"
       ],
       "Select a folder": [
         "Seleccionar uma pasta"
@@ -4826,7 +4822,7 @@
         "Pastas personalizadas"
       ],
       "Default folders": [
-        "Pastas predefinidas"
+        "Pastas padrão"
       ],
       "Labels": [
         "Etiquetas"
@@ -5644,7 +5640,7 @@
         "Servidores dedicados"
       ],
       "Default email application": [
-        "Aplicação de e-mail predefinida"
+        "Aplicação de e-mail padrão"
       ],
       "Disable message content search": [
         "Desativar pesquisa do conteúdo da mensagem"
@@ -6253,7 +6249,7 @@
         "Selecione um provedor de serviços para iniciar"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecione o formato de e-mail predefinido a utilizar para este endereço de e-mail."
+        "Selecione o formato de e-mail padrão a utilizar para este endereço de e-mail."
       ],
       "Select what you want to import.": [
         "Selecione o que deseja importar."
@@ -6274,7 +6270,7 @@
         "A enviar mensagem..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço predefinido ${ email }"
+        "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço padrão ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6311,6 +6307,9 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Adiado até amanhã, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "O adiamento desta conversa será cancelado."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe. Esta mensagem não existe ou já expirou."
@@ -8601,6 +8600,9 @@
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
+      "Password health": [
+        "Estado da palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -8969,9 +8971,6 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
-      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
@@ -9194,7 +9193,7 @@
         "Pastas personalizadas"
       ],
       "Default folders": [
-        "Pastas predefinidas"
+        "Pastas padrão"
       ],
       "Move to...": [
         "Mover para..."
@@ -10135,7 +10134,7 @@
         "Agendar o envio"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
-        "Agora carregamos imagens por predefinição e impedimos que os remetentes o rastreiem. Isto pode ser alterado em ${ settingsLink }."
+        "Agora carregamos imagens por padrão e impedimos que os remetentes o rastreiem. Isto pode ser alterado em ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Pode agora agendar as suas mensagens a serem enviadas mais tarde"
@@ -11621,10 +11620,10 @@
         "Hoje é um bom dia para escrever um e-mail"
       ],
       "Update default font and size": [
-        "Actualizar o tipo e o tamanho de letra predefinidos"
+        "Actualizar o tipo e o tamanho de letra padrão"
       ],
       "Your default font will look like following:": [
-        "O tipo de letra predefinido terá o seguinte aspeto:"
+        "O tipo de letra padrão terá o seguinte aspeto:"
       ]
     },
     "Validation": {
