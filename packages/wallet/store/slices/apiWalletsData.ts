@@ -63,16 +63,13 @@ export const walletDeletion = createAction('wallet deletion', (payload: { wallet
 export const walletNameUpdate = createAction('wallet name update', (payload: { walletID: string; name: string }) => ({
     payload,
 }));
-// TODO: handle wallet update
 
-export const walletAccountCreation = createAction(
-    'wallet account creation',
-    (payload: { walletID: string; account: WasmApiWalletAccount }) => ({ payload })
-);
-export const walletAccountUpdate = createAction(
-    'wallet account update',
-    (payload: { walletID: string; account: WasmApiWalletAccount }) => ({ payload })
-);
+export const walletAccountCreation = createAction('wallet account creation', (payload: WasmApiWalletAccount) => ({
+    payload,
+}));
+export const walletAccountUpdate = createAction('wallet account update', (payload: WasmApiWalletAccount) => ({
+    payload,
+}));
 export const walletAccountDeletion = createAction(
     'wallet account deletion',
     (payload: { walletID: string; walletAccountID: string }) => ({ payload })
@@ -108,7 +105,7 @@ const slice = createSlice({
             .addCase(walletDeletion, (state, action) => {
                 if (state.value) {
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
-                    state.value = state.value.splice(walletIndex, 1);
+                    state.value.splice(walletIndex, 1);
                 }
             })
             .addCase(walletNameUpdate, (state, action) => {
@@ -119,21 +116,20 @@ const slice = createSlice({
             })
             .addCase(walletAccountCreation, (state, action) => {
                 if (state.value) {
-                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
-
-                    state.value[walletIndex].WalletAccounts.push(action.payload.account);
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.WalletID);
+                    state.value[walletIndex].WalletAccounts.push(action.payload);
                 }
             })
             .addCase(walletAccountUpdate, (state, action) => {
                 if (state.value) {
-                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.WalletID);
                     const walletAtIndex = state.value[walletIndex];
 
                     const walletAccountIndex = walletAtIndex.WalletAccounts.findIndex(
-                        (data) => data.ID === action.payload.account.ID
+                        (data) => data.ID === action.payload.ID
                     );
 
-                    state.value[walletIndex].WalletAccounts[walletAccountIndex] = action.payload.account;
+                    state.value[walletIndex].WalletAccounts[walletAccountIndex] = action.payload;
                 }
             })
             .addCase(walletAccountDeletion, (state, action) => {

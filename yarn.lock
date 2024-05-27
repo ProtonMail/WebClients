@@ -7453,6 +7453,8 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
+    "@vitest/coverage-v8": "npm:^1.0.1"
+    "@vitest/ui": "npm:^1.0.2"
     eslint: "npm:^8.56.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -7461,6 +7463,7 @@ __metadata:
     react-redux: "npm:^9.1.0"
     ts-jest: "npm:^29.1.2"
     typescript: "npm:^5.3.3"
+    vitest: "npm:^1.0.1"
   languageName: unknown
   linkType: soft
 
