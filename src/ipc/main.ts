@@ -2,7 +2,7 @@ import { IpcMainEvent, ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
-import { reloadHiddenViews, setTrialEnded, showView } from "../utils/view/viewManagement";
+import { reloadHiddenViews, resetHiddenViews, setTrialEnded, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
@@ -39,6 +39,9 @@ export const handleIPCCalls = () => {
         switch (type) {
             case "updateNotification":
                 handleIPCBadge(payload);
+                break;
+            case "userLogin":
+                resetHiddenViews();
                 break;
             case "userLogout":
                 clearStorage(true, 500);

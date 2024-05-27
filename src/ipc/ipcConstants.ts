@@ -26,6 +26,7 @@ export type IPCGetInfoMessage = { type: "theme"; result: ThemeSetting };
 
 export type IPCClientUpdateMessage =
     | { type: "updateNotification"; payload: number }
+    | { type: "userLogin"; payload?: undefined }
     | { type: "userLogout"; payload?: undefined }
     | { type: "clearAppData"; payload?: undefined }
     | { type: "oauthPopupOpened"; payload: "oauthPopupStarted" | "oauthPopupFinished" }
