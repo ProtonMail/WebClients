@@ -1478,23 +1478,6 @@
         "Avsenderbekreftelse bestått"
       ]
     },
-    "bf2023: Action": {
-      "**Add our encrypted password manager** for only ${ price }": [
-        "**Legg til vår krypterte passordbehandler** for bare ${ price }"
-      ],
-      "Add ${ PASS_APP_NAME }": [
-        "Legg til ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Få avtalen"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Fjern ${ PASS_APP_NAME }"
-      ],
-      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Abonner i 15 måneder og få vår **krypterte passordbehandler** for bare ${ priceNoSuffix } ekstra per måned!"
-      ]
-    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
@@ -3642,8 +3625,8 @@
       "Amount above the maximum.": [
         "Beløp over maksimum."
       ],
-      "Amount below minimum.": [
-        "Beløp under minimum."
+      "Amount below minimum (${ minimumAmount }).": [
+        "Beløp under minimum (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Det oppstod en feil under lasting av aliasalternativer"
@@ -8824,6 +8807,9 @@
       "Passkeys supported": [
         "Tilgangsnøkler støttes"
       ],
+      "Password health": [
+        "Passordhelse"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
@@ -8842,6 +8828,9 @@
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmessige kontroller av kontosikkerheten din. Vi varsler deg hvis du har svake eller gjenbrukte passord som må oppdateres."
       ],
       "Require 2FA for organization": [
         "Krev 2FA for organisasjonen"
@@ -8955,6 +8944,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
       ]
     },
     "new_plans: feature info": {
@@ -9211,6 +9203,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskytt familien din mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-tjenere for å strømme favorittinnholdet ditt."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Beskytt den virkelige e-postadressen din mot å bli avslørt eller lekket med aliaser (en tilfeldig generert e-postadresse som videresender e-post til hovedinnboksen din)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Gir det høyeste nivået av kontosikkerhetsbeskyttelse og spesialiststøtte"
       ],
@@ -9261,9 +9256,6 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Støtte for fildelingsprotokoller som BitTorrent."
-      ],
-      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Unike, på-farten-e-postadresser som beskytter identiteten din på nettet og lar deg kontrollere hva som lander i innboksen din. Fra SimpleLogin av ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Bruk dine egendefinerte e-post-domeneadresser, f.eks., deg@dittnavn.no."
