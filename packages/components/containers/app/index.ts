@@ -11,6 +11,5 @@ export { default as StandardPrivateApp } from './StandardPrivateApp';
 export { default as StandardPublicApp } from './StandardPublicApp';
 export { default as SSOForkProducer } from './SSOForkProducer';
 export { default as EmptyViewContainer } from './EmptyViewContainer';
-export * from './helper';
 
 export * from './interface';
