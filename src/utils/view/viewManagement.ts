@@ -255,10 +255,8 @@ export const reloadHiddenViews = () => {
 export const resetHiddenViews = () => {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            const viewURL = config.url[viewID as ViewID];
-            const loggedURL = app.isPackaged ? "" : viewURL;
-            Logger.info("Resetting hidden view", viewID, loggedURL);
-            view.webContents.loadURL(viewURL);
+            Logger.info("Resetting hidden view", viewID);
+            view.webContents.loadURL("about:blank");
         }
     }
 };
