@@ -32,7 +32,7 @@ const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<stri
 const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
     isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 
-const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
+const entryToItem = (entry: KeePassEntry, importUsername?: boolean): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
     const item = entryString.reduce<KeePassItem>(
         (acc, { Key, Value }) => {
@@ -81,7 +81,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     return importLoginItem({
         name: item.name,
         note: item.note,
-        ...getEmailOrUsername(item.username),
+        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
         password: item.password,
         urls: [item.url],
         totp: formatOtpAuthUri(item),
@@ -89,19 +89,21 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     });
 };
 
-const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
+const groupToVault = (group: KeePassGroup, importUsername?: boolean): MaybeNull<ImportVault> => {
     const entry = get(group, 'Entry');
     if (!entry) return null;
 
     return {
         name: getImportedVaultName(group.Name),
         shareId: null,
-        items: Array.isArray(entry) ? entry.map(entryToItem) : [entryToItem(entry)],
+        items: Array.isArray(entry)
+            ? entry.map((entry) => entryToItem(entry, importUsername))
+            : [entryToItem(entry, importUsername)],
     };
 };
 
-const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportVault[] => {
-    const vault = groupToVault(group);
+const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = [], importUsername?: boolean): ImportVault[] => {
+    const vault = groupToVault(group, importUsername);
     if (vault) vaults.push(vault);
 
     const nestedGroup = get(group, 'Group');
@@ -110,14 +112,20 @@ const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportV
 
     return Array.isArray(nestedGroup)
         ? nestedGroup.reduce((acc, cur) => acc.concat(extractVaults(cur, [])), vaults)
-        : extractVaults(nestedGroup, vaults);
+        : extractVaults(nestedGroup, vaults, importUsername);
 };
 
-export const readKeePassData = (data: string): ImportPayload => {
+export const readKeePassData = ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): ImportPayload => {
     try {
         const x2js = new X2JS({ stripWhitespaces: false });
         const importXml: KeePassFile = x2js.xml2js(data);
-        const vaults = extractVaults(importXml.KeePassFile.Root as KeePassGroup);
+        const vaults = extractVaults(importXml.KeePassFile.Root as KeePassGroup, [], importUsername);
 
         return {
             vaults,

@@ -16,7 +16,13 @@ const FIREFOX_EXPECTED_HEADERS: (keyof FirefoxItem)[] = [
     'timePasswordChanged',
 ];
 
-export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
+export const readFirefoxData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -37,7 +43,7 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
                         .map(
                             (item): ItemImportIntent<'login'> =>
                                 importLoginItem({
-                                    ...getEmailOrUsername(item.username),
+                                    ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
                                     password: item.password,
                                     urls: [item.url],
                                     createTime: item.timeCreated ? msToEpoch(Number(item.timeCreated)) : undefined,
