@@ -248,11 +248,11 @@ const FeedbackDowngradeModal = ({
 
     return (
         <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} data-testid="help-improve" {...rest}>
-            <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve!`} />
+            <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve`} />
             <ModalContent>
                 <InputFieldTwo
                     as={SelectTwo}
-                    label={c('Label').t`What is the main reason you are canceling?`}
+                    label={c('Label').t`What is your main reason for canceling or downgrading?`}
                     placeholder={c('Placeholder').t`Select a reason`}
                     id="reason"
                     autoFocus
@@ -277,7 +277,7 @@ const FeedbackDowngradeModal = ({
                     rows={5}
                     label={c('Label').t`Do you have any suggestions for our team?`}
                     hint={c('Label').t`Optional`}
-                    placeholder={c('Placeholder').t`Feedback`}
+                    placeholder={c('Placeholder').t`Share what you think could make ${BRAND_NAME} better`}
                     value={model.Feedback}
                     onValue={(value: string) => setModel({ ...model, Feedback: value })}
                 />

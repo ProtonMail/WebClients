@@ -11,7 +11,12 @@ import {
     PlanConfigStorage,
     PlanConfigTestimonial,
 } from '../interface';
-import { getDefaultConfirmationModal, getDefaultGBStorageWarning, getDefaultTestimonial } from './commonConfig';
+import {
+    getDefaultConfirmationModal,
+    getDefaultGBStorageWarning,
+    getDefaultReminder,
+    getDefaultTestimonial,
+} from './commonConfig';
 
 export const getMailPlusConfig = (
     subscription: SubscriptionModel,
@@ -20,10 +25,7 @@ export const getMailPlusConfig = (
     const planName = PLAN_NAMES[PLANS.MAIL];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
 
-    const reminder = {
-        title: c('Subscription reminder').t`What you give up when you cancel ${planName}`,
-    };
-
+    const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const features: PlanConfigFeatures = {
@@ -78,6 +80,7 @@ export const getMailPlusConfig = (
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
+        planName,
         plan: PLANS.MAIL,
         reminder,
         testimonials,
@@ -85,7 +88,5 @@ export const getMailPlusConfig = (
         storage,
         confirmationModal,
         keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
-        keepPlanCTAIcon: 'brand-proton-mail-filled-plus',
-        redirectModal: c('Subscription reminder').t`Resubscribe to restore access to ${planName} features.`,
     };
 };

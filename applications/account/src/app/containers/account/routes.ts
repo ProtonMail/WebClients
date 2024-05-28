@@ -13,7 +13,12 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasVpnB2BPlan,
+    getHasVpnOrPassB2BPlan,
+    hasCancellablePlan,
+    hasNewCancellablePlan,
+} from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -32,6 +37,7 @@ export const getAccountAppRoutes = ({
     organization,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
+    isNewCancellationFlowExtended,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -44,6 +50,7 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
+    isNewCancellationFlowExtended: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -58,7 +65,10 @@ export const getAccountAppRoutes = ({
 
     const hasVPNOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
 
-    const cancellablePlan = hasCancellablePlan(subscription);
+    // This condition is temporary and required to control the launch of the feature. Will be merged with the condition below once the feature is fully launched.
+    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription);
+    const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
+
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const hasSplitStorage =
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
