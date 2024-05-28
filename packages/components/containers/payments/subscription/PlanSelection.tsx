@@ -28,6 +28,7 @@ import {
     PlanIDs,
     PlansMap,
     PriceType,
+    Renew,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
@@ -366,7 +367,13 @@ const PlanSelection = ({
                 }
                 recommended={isRecommended}
                 currency={currency}
-                disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
+                disabled={
+                    loading ||
+                    (isFree && !isSignupMode && isCurrentPlan) ||
+                    (plan.ID === PLANS.FREE &&
+                        !isFreeSubscription(subscription) &&
+                        subscription?.Renew === Renew.Disabled)
+                }
                 cycle={cycle}
                 key={plan.ID}
                 price={price}

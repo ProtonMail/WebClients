@@ -1,3 +1,4 @@
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
@@ -12,6 +13,7 @@ import {
     getPlan,
     hasCancellablePlan,
     hasMigrationDiscount,
+    hasNewCancellablePlan,
     hasNewVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
@@ -57,6 +59,10 @@ const SUBSCRIPTION_DOWNGRADED: CancelSubscriptionResult = {
     status: 'downgraded',
 };
 
+const SUBSCRIPTION_CANCELLED: CancelSubscriptionResult = {
+    status: 'cancelled',
+};
+
 interface Props {
     app: ProductParam;
 }
@@ -83,6 +89,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name');
+
+    const isCancellationExtended = useFlag('ExtendCancellationProcess');
 
     const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
         undefined,
@@ -181,10 +189,13 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         </>
     );
 
-    const cancelRenew = async () => {
-        const result = await showCancelSubscriptionModal();
-        if (result.status === 'kept') {
-            return SUBSCRIPTION_KEPT;
+    const cancelRenew = async (subscriptionReminderFlow?: boolean) => {
+        if (!subscriptionReminderFlow) {
+            const result = await showCancelSubscriptionModal();
+
+            if (result.status === 'kept') {
+                return SUBSCRIPTION_KEPT;
+            }
         }
 
         const feedback = await showFeedbackDowngradeModal();
@@ -211,7 +222,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             hideNotification(cancelNotificationId);
         }
 
-        return result;
+        return SUBSCRIPTION_CANCELLED;
     };
 
     const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -304,11 +315,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 return SUBSCRIPTION_KEPT;
             }
 
-            if (hasCancellablePlan(subscription)) {
+            if (hasCancellablePlan(subscription) || (isCancellationExtended && hasNewCancellablePlan(subscription))) {
                 if (subscription.Renew === Renew.Disabled) {
                     return SUBSCRIPTION_KEPT;
                 }
-                return cancelRenew();
+                return cancelRenew(subscriptionReminderFlow);
             }
             return handleUnsubscribe(subscriptionReminderFlow);
         },

@@ -1,5 +1,5 @@
-import { differenceInDays, format, fromUnixTime } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { format, fromUnixTime } from 'date-fns';
+import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import {
@@ -24,7 +24,12 @@ import {
     PlanConfigStorage,
     PlanConfigTestimonial,
 } from '../interface';
-import { getDefaultConfirmationModal, getDefaultTBStorageWarning, getDefaultTestimonial } from './commonConfig';
+import {
+    getDefaultConfirmationModal,
+    getDefaultReminder,
+    getDefaultTBStorageWarning,
+    getDefaultTestimonial,
+} from './commonConfig';
 
 export const getVisionaryConfig = (
     subscription: SubscriptionModel,
@@ -34,10 +39,7 @@ export const getVisionaryConfig = (
     const planName = PLAN_NAMES[PLANS.NEW_VISIONARY];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
 
-    const reminder = {
-        title: c('Subscription reminder').t`What you give up when you cancel ${planName}`,
-    };
-
+    const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const features: PlanConfigFeatures = {
@@ -88,14 +90,12 @@ export const getVisionaryConfig = (
     const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace);
 
     const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
-    const endSubDate = fromUnixTime(latestSubscription);
-    const dayDiff = differenceInDays(endSubDate, new Date());
+    const endDate = fromUnixTime(latestSubscription);
+    const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
     const expiryDate = (
-        <strong>
-            <time dateTime={format(endSubDate, 'yyyy-MM-dd')}>
-                {c('Subscription reminder').ngettext(msgid`${dayDiff} day left`, `${dayDiff} days left`, dayDiff)}
-            </time>
-        </strong>
+        <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
+            {formattedEndDate}
+        </time>
     );
 
     const learnMoreLink = (
@@ -110,8 +110,9 @@ export const getVisionaryConfig = (
     );
 
     const config = getDefaultConfirmationModal(subscription, planName);
+    //Your Proton Visionary subscription ends on June 6, 2024.  Learn more
     const description = c('Subscription reminder')
-        .jt`You still have ${expiryDate} left on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink} ${unavailablePlan}`;
+        .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you’ll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink} ${unavailablePlan}`;
 
     const confirmationModal: ConfirmationModal = {
         ...config,
@@ -119,6 +120,7 @@ export const getVisionaryConfig = (
     };
 
     return {
+        planName,
         plan: PLANS.NEW_VISIONARY,
         reminder,
         testimonials,
@@ -126,7 +128,5 @@ export const getVisionaryConfig = (
         storage,
         confirmationModal,
         keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
-        keepPlanCTAIcon: 'upgrade',
-        redirectModal: c('Subscription reminder').t`Your ${planName} has been canceled.`,
     };
 };
