@@ -342,6 +342,32 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(verificationMissingContext.errors![0]).to.match(/Unknown critical notation: context@proton/);
     });
 
+    it('verifyMessage - it verifies a message ten seconds in the future', async () => {
+        const now = new Date();
+        const tenSecondsInTheFuture = new Date(+now + 1000);
+
+        const privateKeyRef = await CryptoApiImplementation.generateKey({
+            userIDs: { name: 'name', email: 'email@test.com' },
+            date: now,
+        });
+
+        const data = 'Hello world!';
+        const armoredSignature = await CryptoApiImplementation.signMessage({
+            textData: data,
+            signingKeys: privateKeyRef,
+            date: tenSecondsInTheFuture,
+            detached: true,
+        });
+        const { data: signed, verified } = await CryptoApiImplementation.verifyMessage({
+            textData: data,
+            armoredSignature,
+            verificationKeys: privateKeyRef,
+        });
+
+        expect(signed).to.equal(data);
+        expect(await verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    });
+
     it('verifyCleartextMessage - output binary signature should be transferred', async () => {
         const armoredKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
