@@ -47,11 +47,18 @@ enum CalendarFeatureFlag {
 }
 
 enum DriveFeatureFlag {
+    // Photos
     DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
+    // Sharing
+    DriveSharingInvitations = 'DriveSharingInvitations',
+    DriveSharingDisabled = 'DriveSharingDisabled',
+    DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
     DriveSharingDevelopment = 'DriveSharingDevelopment',
+    // Download
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
+    // Upload
     DriveWebOptimisticUploadEnabled = 'DriveWebOptimisticUploadEnabled',
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',

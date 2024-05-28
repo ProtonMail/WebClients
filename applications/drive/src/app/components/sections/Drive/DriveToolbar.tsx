@@ -6,7 +6,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
+import { DecryptedLink, useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -45,7 +45,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -91,7 +91,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                     <>
                         {isAdmin && (
                             <>
-                                {driveSharing ? (
+                                {isSharingInviteAvailable ? (
                                     <ShareLinkButton selectedLinks={selectedItems} />
                                 ) : (
                                     <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
