@@ -107,29 +107,17 @@ export class SquashLock extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.lockId.length) {
-      writer.writeString(1, this.lockId)
-    }
-    if (this.lockExpiration != 0) {
-      writer.writeUint64(2, this.lockExpiration)
-    }
-    if (this.commitId.length) {
-      writer.writeString(3, this.commitId)
-    }
-    if (this.has_commit) {
-      writer.writeMessage(4, this.commit, () => this.commit.serialize(writer))
-    }
-    if (!w) {
-      return writer.getResultBuffer()
-    }
+    if (this.lockId.length) writer.writeString(1, this.lockId)
+    if (this.lockExpiration != 0) writer.writeUint64(2, this.lockExpiration)
+    if (this.commitId.length) writer.writeString(3, this.commitId)
+    if (this.has_commit) writer.writeMessage(4, this.commit, () => this.commit.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): SquashLock {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new SquashLock()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {
-        break
-      }
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.lockId = reader.readString()
@@ -312,38 +300,20 @@ export class SquashCommit extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.lockId.length) {
-      writer.writeString(1, this.lockId)
-    }
-    if (this.commitId.length) {
-      writer.writeString(2, this.commitId)
-    }
-    if (this.has_commit) {
-      writer.writeMessage(3, this.commit, () => this.commit.serialize(writer))
-    }
-    if (this.manifestSignature.length) {
-      writer.writeBytes(4, this.manifestSignature)
-    }
-    if (this.signatureAddress.length) {
-      writer.writeString(5, this.signatureAddress)
-    }
-    if (this.encSignature.length) {
-      writer.writeBytes(6, this.encSignature)
-    }
-    if (this.contentHash.length) {
-      writer.writeBytes(7, this.contentHash)
-    }
-    if (!w) {
-      return writer.getResultBuffer()
-    }
+    if (this.lockId.length) writer.writeString(1, this.lockId)
+    if (this.commitId.length) writer.writeString(2, this.commitId)
+    if (this.has_commit) writer.writeMessage(3, this.commit, () => this.commit.serialize(writer))
+    if (this.manifestSignature.length) writer.writeBytes(4, this.manifestSignature)
+    if (this.signatureAddress.length) writer.writeString(5, this.signatureAddress)
+    if (this.encSignature.length) writer.writeBytes(6, this.encSignature)
+    if (this.contentHash.length) writer.writeBytes(7, this.contentHash)
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): SquashCommit {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new SquashCommit()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {
-        break
-      }
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.lockId = reader.readString()

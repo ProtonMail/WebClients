@@ -25,9 +25,9 @@ export type DocumentManifest = {
  * Container for document keys.
  */
 export type DocumentKeys = {
-    contentKey: SessionKey;
-    signingKey: PrivateKeyReference;
-    ownAddress: string;
+    documentContentKey: SessionKey;
+    userAddressPrivateKey: PrivateKeyReference;
+    userOwnAddress: string;
 };
 
 /**
