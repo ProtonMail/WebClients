@@ -110,8 +110,10 @@ const getDefaultDenyUrls = (): SentryDenyUrls => {
         /static\.woopra\.com\/js\/woopra\.js/i,
         // Chrome extensions
         /extensions\//i,
-        /^chrome:\/\//i,
-        /^chrome-extension:\/\//i,
+        /chrome:\/\//i,
+        /chrome-extension:\/\//i,
+        /moz-extension:\/\//i,
+        /webkit-masked-url:\/\//i,
         // Other plugins
         /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
         /webappstoolbarba\.texthelp\.com\//i,
@@ -164,6 +166,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         '_avast_submit',
         'AbortError',
         /unleash/i,
+        /Unexpected EOF/i,
     ];
 };
 
