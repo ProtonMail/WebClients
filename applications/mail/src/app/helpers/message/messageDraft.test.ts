@@ -1,4 +1,4 @@
-import { fromUnixTime } from 'date-fns';
+import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
 
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
@@ -16,7 +16,9 @@ import {
 } from './messageDraft';
 
 const ID = 'ID';
-const Time = 0;
+const now = new Date();
+const receiveDate = addDays(now, -5);
+const Time = getUnixTime(receiveDate);
 const Subject = 'test';
 const addressID = 'addressID';
 const recipient1 = { Address: 'test1@proton.me' };
@@ -358,8 +360,8 @@ describe('messageDraft', () => {
 
         it("should preset expiration date it's set on the original message", () => {
             // Expiration time is a Unix timestamp
-            const expirationTime = 1612137600;
-            const expirationDate = fromUnixTime(expirationTime);
+            const expirationDate = addDays(now, 5);
+            const expirationTime = getUnixTime(expirationDate);
             const result = createNewDraft(
                 MESSAGE_ACTIONS.REPLY,
                 { data: { ...message, ExpirationTime: expirationTime } } as MessageStateWithData,
@@ -371,7 +373,11 @@ describe('messageDraft', () => {
             const { expiresIn } = result.draftFlags || {};
             expect(expiresIn).toBeDefined();
             expect(expiresIn).toBeInstanceOf(Date);
-            expect(expiresIn).toEqual(expirationDate);
+            const delta = differenceInDays(expirationDate, receiveDate);
+
+            if (expiresIn) {
+                expect(isSameDay(expiresIn, addDays(now, delta))).toBeTruthy();
+            }
         });
     });
 
