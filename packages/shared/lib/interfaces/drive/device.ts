@@ -27,6 +27,7 @@ export interface CreateDeviceVolume {
     Share: {
         Name: string;
         AddressID: string;
+        AddressKeyID: string;
         Key: string;
         Passphrase: string;
         PassphraseSignature: string;

@@ -1,5 +1,5 @@
 import { KeyPair } from '../interfaces';
 
-export const getPrimaryKey = (keys: KeyPair[] = []): KeyPair | undefined => {
+export const getPrimaryKey = <T extends KeyPair>(keys: T[] = []): T | undefined => {
     return keys[0];
 };
