@@ -4,9 +4,11 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useSharedWithMeView, useThumbnailsDownload } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, {
     BrowserItemId,
@@ -88,6 +90,8 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
+    const { openDocument } = useDocumentActions();
+    const isDocsEnabled = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
 
@@ -106,6 +110,15 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
                 return;
             }
             document.getSelection()?.removeAllRanges();
+
+            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
+                openDocument({
+                    linkId: id,
+                    shareId,
+                });
+                return;
+            }
+
             navigateToLink(item.rootShareId, item.id, item.isFile);
         },
         [navigateToLink, shareId, browserItems]
