@@ -6869,7 +6869,7 @@ __metadata:
     karma-webkit-launcher: "npm:^2.4.0"
     karma-webpack: "npm:^5.0.1"
     playwright: "npm:^1.44.0"
-    pmcrypto: "npm:@protontech/pmcrypto@^7.19.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^7.20.0"
     pmcrypto-v6-canary: "npm:@protontech/pmcrypto@^8.0.0-canary.2.patch.0"
     prettier: "npm:^3.2.5"
     ts-loader: "npm:^9.5.1"
@@ -31421,9 +31421,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^7.19.1":
-  version: 7.19.1
-  resolution: "@protontech/pmcrypto@npm:7.19.1"
+"pmcrypto@npm:@protontech/pmcrypto@^7.20.0":
+  version: 7.20.0
+  resolution: "@protontech/pmcrypto@npm:7.20.0"
   dependencies:
     "@openpgp/asmcrypto.js": "npm:^2.3.3-0"
     "@openpgp/noble-hashes": "npm:^1.3.2-2"
@@ -31431,7 +31431,7 @@ __metadata:
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.1"
     openpgp: "npm:@protontech/openpgp@~5.11.2-0"
-  checksum: 10c0/fd423862b487212a838471b84304e0abf415e459a8b9921014536b99fec0c9274cbd78b448fd075f935b7c7779196c3089e96cc601b818ca29675065a918d87f
+  checksum: 10c0/8769bff4d3ce1a478c0bbfd808efabc4031b0cb1888a5d2a53debc3e5e3342eb18594e5a87efa512effa3e38a8b82f5887838c89aa1f2446c9e29f09ebbc700a
   languageName: node
   linkType: hard
 
