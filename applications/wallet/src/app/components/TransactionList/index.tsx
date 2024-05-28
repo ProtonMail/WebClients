@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { add } from 'date-fns';
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount, WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
@@ -10,13 +11,14 @@ import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-excha
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, SimplePaginator } from '../../atoms';
+import { CoolDownButton } from '../../atoms/CoolDownButton';
 import { ITEMS_PER_PAGE } from '../../constants';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
-import { useBitcoinNetwork } from '../../store/hooks';
 import { getAccountTransactions, getWalletTransactions } from '../../utils';
 import { DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
@@ -36,13 +38,17 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
         apiAccount ?? apiWalletData.WalletAccounts[0]
     );
-    const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, isSyncing } = useBitcoinBlockchainContext();
+    const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
+        useBitcoinBlockchainContext();
     const { openDrawer } = useWalletDrawerContext();
     const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
 
-    const isSyncingWalletData = isSyncing(apiWalletData.Wallet.ID, apiAccount?.ID);
-
-    const [network] = useBitcoinNetwork();
+    const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
+    const isSyncingWalletData = syncingData?.syncing;
+    const cooldownStartTime = syncingData?.lastSyncing ? new Date(syncingData?.lastSyncing) : undefined;
+    const cooldownEndTime = cooldownStartTime
+        ? add(cooldownStartTime, { minutes: SYNCING_MINIMUM_COOLDOWN_MINUTES })
+        : undefined;
 
     const [userKeys] = useUserKeys();
 
@@ -94,15 +100,16 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     });
 
     const handleClickSync = useCallback(() => {
+        const isManual = true;
         if (apiAccount) {
-            return syncSingleWalletAccount(apiWalletData.Wallet.ID, apiAccount.ID);
+            return syncSingleWalletAccount(apiWalletData.Wallet.ID, apiAccount.ID, isManual);
         } else {
-            return syncSingleWallet(apiWalletData.Wallet.ID);
+            return syncSingleWallet(apiWalletData.Wallet.ID, isManual);
         }
     }, [apiAccount, apiWalletData.Wallet.ID, syncSingleWallet, syncSingleWalletAccount]);
 
     const transactionsTable = useMemo(() => {
-        if (transactionDetails?.length && network) {
+        if (transactionDetails?.length) {
             return (
                 <>
                     <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">
@@ -235,7 +242,6 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         );
     }, [
         transactionDetails,
-        network,
         displayedPageNumber,
         currentPage,
         handleNext,
@@ -256,17 +262,20 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 <h2 className="mr-4 text-semibold">{c('Wallet transactions').t`Transactions`}</h2>
 
                 <div className="flex flex-row">
-                    <CoreButton
+                    <CoolDownButton
+                        end={cooldownEndTime}
+                        start={cooldownStartTime}
                         icon
                         size="medium"
                         shape="ghost"
                         color="weak"
-                        className="ml-2 rounded-full bg-weak"
+                        className="ml-2"
+                        buttonClassName="rounded-full bg-weak"
                         disabled={isSyncingWalletData}
                         onClick={() => handleClickSync()}
                     >
                         <Icon name="arrows-rotate" size={5} alt={c('Wallet transactions list').t`Sync`} />
-                    </CoreButton>
+                    </CoolDownButton>
                     <CoreButton
                         icon
                         size="medium"

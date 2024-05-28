@@ -10,7 +10,6 @@ import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useWalletsChainData } from './useWalletsChainData';
 
 interface Props {
-    // children: (props: BitcoinBlockchainContextValue) => ReactNode;
     children: ReactNode;
 }
 
@@ -31,6 +30,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         syncSingleWallet,
         syncSingleWalletAccount,
         isSyncing,
+        getSyncingData,
     } = useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
@@ -63,6 +63,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
                 syncSingleWalletAccount,
 
                 isSyncing,
+                getSyncingData,
 
                 feesEstimation,
                 loadingFeesEstimation,
