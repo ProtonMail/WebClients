@@ -4,7 +4,6 @@ import { EVENTS, UnleashClient } from 'unleash-proxy-client';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { getSessionTrackingEnabled } from '@proton/components/containers/app/helper';
 import { createCustomFetch, getUnleashConfig } from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
 import type { Feature } from '@proton/features';
@@ -113,7 +112,7 @@ export const init = ({
     }
     setTtagLocales(locales);
     newVersionUpdater(config);
-    sentry({ config, UID: authentication.UID, sessionTracking: getSessionTrackingEnabled() });
+    sentry({ config, UID: authentication.UID });
     setVcalProdId(getProdId(config));
     removeLoaderClassName();
 };
