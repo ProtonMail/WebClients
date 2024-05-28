@@ -1,0 +1,22 @@
+.cooldown-circle-progress {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	border-radius: 50%;
+
+	/* to center the percentage value */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
+		conic-gradient(var(--interaction-norm-major-2) calc(var(--progress-value) * 1%), var(--interaction-weak-major-2) 0);
+	animation: css-progress 2s 1 forwards;
+
+	progress {
+		visibility: hidden;
+		inline-size: 0;
+		block-size: 0;
+	}
+}

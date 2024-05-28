@@ -24,11 +24,12 @@ export interface BitcoinBlockchainContextValue {
     walletsChainData: WalletChainDataByWalletId;
     accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
-    syncSingleWalletAccount: (walletId: string, accountId: string) => Promise<void>;
-    syncSingleWallet: (walletId: string) => Promise<void>;
-    syncManyWallets: (walletIds: string[]) => Promise<void>;
+    syncSingleWalletAccount: (walletId: string, accountId: string, isManual?: boolean) => Promise<void>;
+    syncSingleWallet: (walletId: string, isManual?: boolean) => Promise<void>;
+    syncManyWallets: (walletIds: string[], isManual?: boolean) => Promise<void>;
 
     isSyncing: (walletId: string, accountId?: string) => boolean;
+    getSyncingData: (walletId: string, accountId?: string) => SyncingMetadata | undefined;
 
     feesEstimation: Map<string, number>;
     loadingFeesEstimation: boolean;
@@ -50,6 +51,7 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     syncManyWallets: async () => {},
 
     isSyncing: () => false,
+    getSyncingData: () => undefined,
 
     feesEstimation: new Map(),
     loadingFeesEstimation: false,

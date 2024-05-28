@@ -7,6 +7,7 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { isUndefined } from '../../utils';
 
 interface Props {
     wallet: IWasmApiWalletData;
@@ -20,7 +21,7 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
     const [passphrase, setPassphrase] = useState('');
 
     const fingerPrint = useMemo(() => {
-        if (network && wallet.Wallet.Mnemonic) {
+        if (!isUndefined(network) && wallet.Wallet.Mnemonic) {
             try {
                 return new WasmWallet(network, wallet.Wallet.Mnemonic, passphrase).getFingerprint();
             } catch {

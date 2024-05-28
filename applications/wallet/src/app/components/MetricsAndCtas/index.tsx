@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Price } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
@@ -38,16 +39,22 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
     useEffect(() => {
         const yesterday = sub(new Date(Number(exchangeRate?.ExchangeRateTime) * SECOND), { days: 1 });
 
-        if (account?.FiatCurrency && exchangeRate?.ExchangeRate) {
-            void getExchangeRate(account?.FiatCurrency, yesterday).then((prevExchangeRate) => {
-                if (prevExchangeRate) {
-                    const absoluteChange = exchangeRate.ExchangeRate - prevExchangeRate?.ExchangeRate;
-                    const relativeChange = absoluteChange / prevExchangeRate.ExchangeRate;
-                    setTwentyFourHourChange(relativeChange * 100);
-                }
-            });
+        if (account?.FiatCurrency && exchangeRate?.ExchangeRate && !loadingExchangeRate) {
+            const fetch = async () => {
+                // This is needed because promiseCache directly returns promise if still pending
+                await wait(1);
+                await getExchangeRate(account?.FiatCurrency, yesterday).then((prevExchangeRate) => {
+                    if (prevExchangeRate) {
+                        const absoluteChange = exchangeRate.ExchangeRate - prevExchangeRate?.ExchangeRate;
+                        const relativeChange = absoluteChange / prevExchangeRate.ExchangeRate;
+                        setTwentyFourHourChange(relativeChange * 100);
+                    }
+                });
+            };
+
+            void fetch();
         }
-    }, [account?.FiatCurrency, exchangeRate, getExchangeRate]);
+    }, [account?.FiatCurrency, exchangeRate, getExchangeRate, loadingExchangeRate]);
 
     return (
         <div className="flex flex-row py-6 px-6 m-4 bg-weak rounded-xl items-center justify-space-between">

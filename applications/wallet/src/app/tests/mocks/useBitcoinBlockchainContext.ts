@@ -26,6 +26,7 @@ export const mockUseBitcoinBlockchainContext = (
         setPassphrase: vi.fn(),
 
         isSyncing: vi.fn(),
+        getSyncingData: vi.fn(),
 
         feesEstimation: getFeesEstimationMap(),
         loadingFeesEstimation: false,

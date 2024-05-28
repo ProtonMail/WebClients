@@ -56,16 +56,14 @@ const accounts = {
 };
 
 describe('useWalletsChainData', () => {
-    let mockedShouldSync: MockedFunction<WasmBlockchainClient['shouldSync']>;
     let mockedFullSync: MockedFunction<WasmBlockchainClient['fullSync']>;
 
     beforeEach(() => {
         mockUseBitcoinNetwork();
         mockUseNotifications();
 
-        mockedShouldSync = vi.fn().mockResolvedValue(true);
         mockedFullSync = vi.fn();
-        mockUseBlockchainClient({ shouldSync: mockedShouldSync, fullSync: mockedFullSync });
+        mockUseBlockchainClient({ fullSync: mockedFullSync });
         mockUseDebounceEffect();
 
         vitest.useFakeTimers({ shouldAdvanceTime: true });
@@ -79,29 +77,17 @@ describe('useWalletsChainData', () => {
         const { result } = renderHook(() => useWalletsChainData(apiWalletsData));
 
         // one for each account
-        await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
-        expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-        expect(mockedFullSync).toHaveBeenCalledTimes(5);
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+        await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
+        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
         expect(result.current.walletsChainData).toStrictEqual(accounts);
 
         // After 10 minutes, it should run a new sync loop
         vi.clearAllMocks();
         vitest.advanceTimersByTime(10 * MINUTE);
 
-        await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
-        expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-        expect(mockedFullSync).toHaveBeenCalledTimes(5);
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+        await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
+        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
         vi.clearAllMocks();
-
-        // Now it shouldn't run any sync anymore
-        mockedShouldSync.mockResolvedValue(false);
-        vitest.advanceTimersByTime(10 * MINUTE);
-
-        await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
-        expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-        expect(mockedFullSync).toHaveBeenCalledTimes(0);
     });
 
     describe('manual triggers', () => {
@@ -115,18 +101,14 @@ describe('useWalletsChainData', () => {
 
             await result.current.syncSingleWalletAccount('0', '8');
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(1));
-            expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-            expect(mockedFullSync).toHaveBeenCalledTimes(1);
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+            await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(1));
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
 
             // Now it shouldn't run any sync anymore
-            mockedShouldSync.mockResolvedValue(false);
             vi.clearAllMocks();
 
             await result.current.syncSingleWalletAccount('0', '8');
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(1));
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
 
@@ -135,18 +117,14 @@ describe('useWalletsChainData', () => {
 
             await result.current.syncSingleWallet('0');
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(2));
-            expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-            expect(mockedFullSync).toHaveBeenCalledTimes(2);
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+            await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(2));
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
 
             // Now it shouldn't run any sync anymore
-            mockedShouldSync.mockResolvedValue(false);
             vi.clearAllMocks();
 
             await result.current.syncSingleWallet('0');
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(2));
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
     });
@@ -156,25 +134,19 @@ describe('useWalletsChainData', () => {
             const { unmount } = renderHook(() => useWalletsChainData(apiWalletsData));
 
             // one for each account
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
-            expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-            expect(mockedFullSync).toHaveBeenCalledTimes(5);
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+            await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
 
             // After 10 minutes, it should run a new sync loop
             vi.clearAllMocks();
             vitest.advanceTimersByTime(10 * MINUTE);
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
-            expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-            expect(mockedFullSync).toHaveBeenCalledTimes(5);
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
+            await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
 
             vi.clearAllMocks();
             unmount();
             vitest.advanceTimersByTime(10 * MINUTE);
-
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(0));
         });
     });
 
@@ -182,11 +154,9 @@ describe('useWalletsChainData', () => {
         it('should not poll', async () => {
             renderHook(() => useWalletsChainData());
 
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(0));
+            expect(mockedFullSync).toHaveBeenCalledTimes(0);
 
             vitest.advanceTimersByTime(10 * MINUTE);
-
-            await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(0));
         });
     });
 });
