@@ -15,7 +15,7 @@ export class Event extends pb_1.Message {
           version?: number
           timestamp?: number
         } & {
-          authorId?: string
+          authorAddress?: string
         }),
   ) {
     super()
@@ -33,8 +33,8 @@ export class Event extends pb_1.Message {
       if ('timestamp' in data && data.timestamp != undefined) {
         this.timestamp = data.timestamp
       }
-      if ('authorId' in data && data.authorId != undefined) {
-        this.authorId = data.authorId
+      if ('authorAddress' in data && data.authorAddress != undefined) {
+        this.authorAddress = data.authorAddress
       }
     }
   }
@@ -62,21 +62,21 @@ export class Event extends pb_1.Message {
   set timestamp(value: number) {
     pb_1.Message.setField(this, 4, value)
   }
-  get authorId() {
+  get authorAddress() {
     return pb_1.Message.getFieldWithDefault(this, 5, '') as string
   }
-  set authorId(value: string) {
+  set authorAddress(value: string) {
     pb_1.Message.setOneofField(this, 5, this.#one_of_decls[0], value)
   }
-  get has_authorId() {
+  get has_authorAddress() {
     return pb_1.Message.getField(this, 5) != null
   }
-  get _authorId() {
+  get _authorAddress() {
     const cases: {
-      [index: number]: 'none' | 'authorId'
+      [index: number]: 'none' | 'authorAddress'
     } = {
       0: 'none',
-      5: 'authorId',
+      5: 'authorAddress',
     }
     return cases[pb_1.Message.computeOneofCase(this, [5])]
   }
@@ -85,7 +85,7 @@ export class Event extends pb_1.Message {
     content?: Uint8Array
     version?: number
     timestamp?: number
-    authorId?: string
+    authorAddress?: string
   }): Event {
     const message = new Event({})
     if (data.type != null) {
@@ -100,8 +100,8 @@ export class Event extends pb_1.Message {
     if (data.timestamp != null) {
       message.timestamp = data.timestamp
     }
-    if (data.authorId != null) {
-      message.authorId = data.authorId
+    if (data.authorAddress != null) {
+      message.authorAddress = data.authorAddress
     }
     return message
   }
@@ -111,7 +111,7 @@ export class Event extends pb_1.Message {
       content?: Uint8Array
       version?: number
       timestamp?: number
-      authorId?: string
+      authorAddress?: string
     } = {}
     if (this.type != null) {
       data.type = this.type
@@ -125,8 +125,8 @@ export class Event extends pb_1.Message {
     if (this.timestamp != null) {
       data.timestamp = this.timestamp
     }
-    if (this.authorId != null) {
-      data.authorId = this.authorId
+    if (this.authorAddress != null) {
+      data.authorAddress = this.authorAddress
     }
     return data
   }
@@ -138,7 +138,7 @@ export class Event extends pb_1.Message {
     if (this.content.length) writer.writeBytes(2, this.content)
     if (this.version != 0) writer.writeInt32(3, this.version)
     if (this.timestamp != 0) writer.writeUint64(4, this.timestamp)
-    if (this.has_authorId) writer.writeString(5, this.authorId)
+    if (this.has_authorAddress) writer.writeString(5, this.authorAddress)
     if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): Event {
@@ -160,7 +160,7 @@ export class Event extends pb_1.Message {
           message.timestamp = reader.readUint64()
           break
         case 5:
-          message.authorId = reader.readString()
+          message.authorAddress = reader.readString()
           break
         default:
           reader.skipField()

@@ -5,7 +5,7 @@ import { ClientEventVersion } from '../Version'
 export function CreateEvent(dto: {
   type: EventTypeEnum
   content: Uint8Array
-  authorId: string
+  authorAddress: string
   timestamp: number
   version: ClientEventVersion
 }): Event {
@@ -14,7 +14,7 @@ export function CreateEvent(dto: {
   }
 
   const event = new Event({
-    authorId: dto.authorId,
+    authorAddress: dto.authorAddress,
     content: dto.content,
     timestamp: dto.timestamp,
     type: dto.type,
