@@ -19,6 +19,7 @@ type Props = {
     valid: boolean;
     handleCancelClick: () => void;
     submitButton?: ReactNode;
+    actions?: ReactNode;
 } & Omit<DiscardableModalProps, 'onDiscard'>;
 
 function getItemTypeSubmitButtonLabel(type: ItemType) {
@@ -44,6 +45,7 @@ export const ItemCreatePanel = ({
     valid,
     children,
     handleCancelClick,
+    actions,
 }: Props) => {
     useSaveShortcut(() => {
         if (valid && !discardable) {
@@ -62,6 +64,7 @@ export const ItemCreatePanel = ({
                             actions={[
                                 <Button
                                     key="cancel-button"
+                                    className="shrink-0"
                                     icon
                                     pill
                                     shape="solid"
@@ -71,31 +74,33 @@ export const ItemCreatePanel = ({
                                 >
                                     <Icon name="cross" alt={c('Action').t`Cancel`} />
                                 </Button>,
-                                submitButton || (
-                                    <Tooltip
-                                        key="submit-button"
-                                        openDelay={500}
-                                        originalPlacement={'bottom'}
-                                        title={
-                                            <>
-                                                <Kbd shortcut={metaKey} /> + <Kbd shortcut="S" />
-                                            </>
-                                        }
-                                    >
-                                        <Button
-                                            className="text-sm"
+                                <div key="actions" className="flex flex-nowrap gap-2">
+                                    {actions}
+                                    {submitButton || (
+                                        <Tooltip
                                             key="submit-button"
-                                            pill
-                                            shape="solid"
-                                            color="norm"
-                                            type="submit"
-                                            form={formId}
-                                            disabled={!valid}
+                                            openDelay={500}
+                                            originalPlacement={'bottom'}
+                                            title={
+                                                <>
+                                                    <Kbd shortcut={metaKey} /> + <Kbd shortcut="S" />
+                                                </>
+                                            }
                                         >
-                                            {getItemTypeSubmitButtonLabel(type)}
-                                        </Button>
-                                    </Tooltip>
-                                ),
+                                            <Button
+                                                className="text-sm shrink-0"
+                                                pill
+                                                shape="solid"
+                                                color="norm"
+                                                type="submit"
+                                                form={formId}
+                                                disabled={!valid}
+                                            >
+                                                {getItemTypeSubmitButtonLabel(type)}
+                                            </Button>
+                                        </Tooltip>
+                                    )}
+                                </div>,
                             ]}
                         />
                     }

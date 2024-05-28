@@ -11,16 +11,17 @@ import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type SelectFieldProps = FieldProps &
     InputFieldProps<typeof SelectTwo> &
-    Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'>;
+    Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'> & { selectClassName?: string };
 
 export const SelectField: FC<SelectFieldProps> = ({
+    children,
     className,
     field,
     form,
-    meta,
-    children,
     icon,
     loading,
+    meta,
+    selectClassName,
     onValue,
     ...props
 }) => {
@@ -28,7 +29,7 @@ export const SelectField: FC<SelectFieldProps> = ({
     const fieldBoxRef = useRef<HTMLDivElement>(null);
 
     return (
-        <FieldBox className={clsx('items-center', className)} icon={icon} ref={fieldBoxRef}>
+        <FieldBox className={clsx('items-center', className)} icon={icon} ref={fieldBoxRef} unstyled={props.unstyled}>
             <InputFieldTwo<typeof SelectTwo>
                 as={SelectTwo}
                 assistContainerClassName="empty:hidden"
@@ -40,6 +41,7 @@ export const SelectField: FC<SelectFieldProps> = ({
                 unstyled
                 {...field}
                 {...props}
+                className={selectClassName}
                 onChange={undefined}
                 onValue={(value: unknown) => {
                     onValue?.(value);

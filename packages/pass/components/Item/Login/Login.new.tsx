@@ -16,7 +16,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '@proton/pass/components/Form/Field/UrlGroupField';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -27,6 +27,7 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { usePortal } from '@proton/pass/hooks/usePortal';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -56,6 +57,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
     const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
     const history = useHistory();
+    const { ParentPortal, openPortal } = usePortal();
 
     const searchParams = new URLSearchParams(search);
 
@@ -189,14 +191,15 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                 valid={form.isValid}
                 handleCancelClick={onCancel}
                 discardable={!form.dirty}
+                actions={ParentPortal}
             >
                 {({ didEnter }) => (
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                {vaultTotalCount > 1 && (
-                                    <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-                                )}
+                                {vaultTotalCount > 1 &&
+                                    openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
+
                                 <Field
                                     name="name"
                                     label={c('Label').t`Title`}
