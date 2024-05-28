@@ -2,7 +2,7 @@ import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 
 import SharedWithMeView from '../components/sections/SharedWithMe/SharedWithMeView';
 
-const SharedLinksContainer = ({ match }: RouteComponentProps) => {
+const SharedWithMeContainer = ({ match }: RouteComponentProps) => {
     return (
         <Switch>
             <Route path={match.url} exact component={SharedWithMeView} />
@@ -11,4 +11,4 @@ const SharedLinksContainer = ({ match }: RouteComponentProps) => {
     );
 };
 
-export default SharedLinksContainer;
+export default SharedWithMeContainer;

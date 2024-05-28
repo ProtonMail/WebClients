@@ -15,7 +15,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import { ShareInvitee } from '../../../../store';
+import { ShareInvitee, useDriveSharingFlags } from '../../../../store';
 import MemberPermissionsSelect from './MemberPermissionsSelect';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
@@ -43,6 +43,7 @@ export const DirectSharingAutocomplete = ({
 }: Props) => {
     const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
     const addressesInputText = c('Action').t`Add people or groups to share`;
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
 
     const [contactEmails] = useContactEmails();
     const [contactGroups] = useContactGroups();
@@ -87,6 +88,7 @@ export const DirectSharingAutocomplete = ({
                     as={AddressesInput}
                     ref={addressesAutocompleteRef}
                     id={inputId}
+                    disabled={isDirectSharingDisabled} // Kill switch that disable member management
                     onClick={() => {
                         document.getElementById(inputId)?.focus();
                     }}
@@ -95,6 +97,7 @@ export const DirectSharingAutocomplete = ({
                             hasAddOnBlur
                             id={inputId}
                             compact
+                            disabled={isDirectSharingDisabled} // Kill switch that disable member management
                             anchorRef={addressesAutocompleteRef}
                             contactEmails={contactEmails}
                             excludedEmails={existingEmails}

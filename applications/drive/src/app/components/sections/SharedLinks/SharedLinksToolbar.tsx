@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
+import { DecryptedLink, useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -27,7 +27,7 @@ interface Props {
 
 const SharedLinksToolbar = ({ shareId, items }: Props) => {
     const selectionControls = useSelection()!;
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -53,13 +53,13 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <RenameButton selectedLinks={selectedItems} />
                 <DetailsButton selectedLinks={selectedItems} />
                 {isOnlyOneItem && <Vr />}
-                {driveSharing ? (
+                {isSharingInviteAvailable ? (
                     <ShareLinkButton selectedLinks={selectedItems} />
                 ) : (
                     <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
                 )}
                 {/* //TODO: Add multiple share deletion support */}
-                {driveSharing ? (
+                {isSharingInviteAvailable ? (
                     <StopSharingButton selectedLinks={selectedItems} />
                 ) : (
                     <StopSharingButtonLEGACY selectedLinks={selectedItems} />

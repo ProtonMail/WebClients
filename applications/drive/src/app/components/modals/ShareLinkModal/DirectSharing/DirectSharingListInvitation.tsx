@@ -18,6 +18,8 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
+import { useDriveSharingFlags } from '../../../../store';
+
 interface Props {
     invitationId: string;
     volumeId: string;
@@ -72,6 +74,7 @@ export const DirectSharingListInvitation = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [isLoading, setIsLoading] = useState(false);
     const { createNotification } = useNotifications();
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
 
     const permissionsOptions: PermissionOption[] = [
         {
@@ -135,6 +138,7 @@ export const DirectSharingListInvitation = ({
                     shape="ghost"
                     size="small"
                     loading={isLoading}
+                    disabled={isDirectSharingDisabled} // Kill switch that disable member management
                 >
                     {dropdownLabel}
                 </DropdownButton>
