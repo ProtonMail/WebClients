@@ -5,7 +5,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
+import { DecryptedLink, useDriveSharingFlags } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -62,11 +62,11 @@ export function DriveItemContextMenu({
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
 
-    const ShareLinkButtonComponent = driveSharing ? ShareLinkButton : ShareLinkButtonLEGACY;
+    const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
 
     return (
         <>

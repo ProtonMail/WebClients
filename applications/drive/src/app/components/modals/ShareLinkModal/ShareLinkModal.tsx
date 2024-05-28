@@ -14,13 +14,7 @@ import {
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
-import {
-    ShareInvitee,
-    ShareMember,
-    useDriveSharingFeatureFlag,
-    useShareMemberView,
-    useShareURLView,
-} from '../../../store';
+import { ShareInvitee, ShareMember, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import ErrorState from './ErrorState';
@@ -222,6 +216,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 }
 
 export const useLinkSharingModal = () => {
-    const driveSharing = useDriveSharingFeatureFlag();
-    return useModalTwoStatic(driveSharing ? SharingModal : ShareLinkModalLEGACY);
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
+    return useModalTwoStatic(isSharingInviteAvailable ? SharingModal : ShareLinkModalLEGACY);
 };

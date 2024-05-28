@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,11 +10,12 @@ import {
     SidebarPrimaryButton,
     usePopperAnchor,
 } from '@proton/components';
+import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput } from '../../../../store';
+import { useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
@@ -31,6 +32,8 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
     const isDesktop = !getDevice()?.type;
 
     const { activeFolder } = useActiveShare();
+    const folderView = useFolderView(activeFolder);
+    const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
     const {
         inputRef: fileInput,
         handleClick: fileClick,
@@ -49,7 +52,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
         <>
             <SidebarPrimaryButton
                 ref={anchorRef}
-                disabled={disabled}
+                disabled={disabled || !isEditor}
                 className={clsx(className, 'flex justify-center items-center')}
                 onClick={toggle}
             >

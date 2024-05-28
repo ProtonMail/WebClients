@@ -23,11 +23,11 @@ import {
     useActivePing,
     useDefaultShare,
     useDriveEventManager,
-    useDriveSharingFeatureFlag,
     usePhotosFeatureFlag,
     useSearchControl,
 } from '../store';
-import { useShareActions } from '../store/_shares';
+// TODO: This should be removed after rollout phase
+import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
@@ -61,7 +61,8 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
     const [hasPhotosShare, setHasPhotosShare] = useState(false);
     const isPhotosEnabled = usePhotosFeatureFlag();
-    const isDriveSharingEnabled = useDriveSharingFeatureFlag();
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
+
     useActivePing();
 
     useEffect(() => {
@@ -120,7 +121,7 @@ const InitContainer = () => {
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/no-access" component={NoAccessContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
-                    {isDriveSharingEnabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
+                    {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
                     {(isPhotosEnabled || hasPhotosShare) && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
