@@ -5,13 +5,13 @@ import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 
 export function CreateDocumentUpdateMessage(dto: {
   content: Uint8Array
-  authorId: string
+  authorAddress: string
   timestamp: number
   version: DocumentUpdateVersion
 }): ClientMessageWithDocumentUpdates {
   const documentUpdate = CreateDocumentUpdate({
     content: dto.content,
-    authorId: dto.authorId,
+    authorAddress: dto.authorAddress,
     timestamp: dto.timestamp,
     version: dto.version,
   })
