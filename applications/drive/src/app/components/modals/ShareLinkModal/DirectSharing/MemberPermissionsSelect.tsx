@@ -13,6 +13,8 @@ import {
 } from '@proton/components/index';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
+import { useDriveSharingFlags } from '../../../../store';
+
 interface Props {
     selectedPermissions: number;
     onChange: (value: number) => Promise<void>;
@@ -55,6 +57,7 @@ const Option = ({
 const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Props) => {
     const [isLoading, setIsLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
     const permissionsOptions: PermissionOption[] = [
         {
             icon: 'eye',
@@ -86,6 +89,7 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
                 size="small"
                 loading={isLoading}
                 data-testid="address-input-permissions-dropdown"
+                disabled={isDirectSharingDisabled} // Kill switch that disable member management
             >
                 {permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label}
             </DropdownButton>

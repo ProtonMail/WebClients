@@ -17,6 +17,10 @@ const DEFAULT_SORT = {
 
 /**
  * useSharedWithMeView provides data for shared with me links view (file browser of shared links).
+ * @params {string} shareId
+ * @params {boolean} disabledByFF, This is used to prevent loading on InitContainer if the flag is enabled.
+ * Context is that we want to show the section if user have FF disabled for sharing by have item shared with him.
+ * TODO: This should be removed after full rollout
  */
 export default function useSharedWithMeView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
