@@ -178,7 +178,8 @@ export function useLockedVolumeInner({
         lockedVolumeId: string,
         lockedShareLinkPassphraseRaw: string,
         lockedDevices: LockedDeviceForRestore[],
-        lockedPhotos: LockedPhotosForRestore[]
+        lockedPhotos: LockedPhotosForRestore[],
+        addressKeyID: string
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -259,6 +260,7 @@ export function useLockedVolumeInner({
                 TargetVolumeID: parentVolumeID,
                 Devices: devicesPayload,
                 PhotoShares: photosPayload,
+                AddressKeyID: addressKeyID,
             })
         );
     };
@@ -270,7 +272,7 @@ export function useLockedVolumeInner({
             return;
         }
 
-        const [privateKey, hashKey, { privateKey: addressKey, address }] = await Promise.all([
+        const [privateKey, hashKey, { privateKey: addressKey, address, addressKeyID }] = await Promise.all([
             getLinkPrivateKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
             getLinkHashKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
             getOwnAddressAndPrimaryKeys(defaultShare.addressId),
@@ -289,7 +291,8 @@ export function useLockedVolumeInner({
                 lockedVolume.lockedVolumeId,
                 lockedVolume.defaultShare.linkDecryptedPassphrase,
                 lockedVolume.devices,
-                lockedVolume.photos
+                lockedVolume.photos,
+                addressKeyID
             );
             sharesState.removeShares([
                 lockedVolume.defaultShare.shareId,

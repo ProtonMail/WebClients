@@ -2,6 +2,7 @@ import { ShareURL } from './sharing';
 
 export interface CreateDriveVolume {
     AddressID: string;
+    AddressKeyID: string;
     VolumeName: string;
     ShareName: string;
     FolderName: string;
@@ -41,6 +42,7 @@ export interface RestoreDriveVolume {
         ShareKeyPacket: string;
         PassphraseSignature: string;
     }[];
+    AddressKeyID: string;
 }
 
 export interface ListDriveVolumeTrashPayload {
