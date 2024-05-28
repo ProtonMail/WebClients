@@ -12,6 +12,7 @@ import {
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
+import { Features, useMeasureFeaturePerformanceOnMount } from '../../../utils/telemetry';
 import { FileBrowserProps } from '../FileBrowser';
 import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
@@ -132,6 +133,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
     const { viewportWidth } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
     const selectionControls = useSelection();
+    const endMeasure = useMeasureFeaturePerformanceOnMount(Features.mountToFirstItemRendered);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef);
@@ -188,6 +190,12 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                         // has to be the same one to make it work. We can ignore it as far as
                         // we properly state types on all places to guarantee the types.
                         itemData={itemData}
+                        onItemsRendered={() => {
+                            // At least one item rendered
+                            if (itemData.items?.length) {
+                                endMeasure();
+                            }
+                        }}
                         onScroll={onScroll}
                         width={rect.width}
                         height={rect.height}

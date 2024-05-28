@@ -1,3 +1,6 @@
+import { useEffect, useMemo } from 'react';
+
+import { useApi } from '@proton/components/hooks';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
@@ -14,6 +17,7 @@ export enum ExperimentGroup {
 export enum Features {
     optimisticFileUploads = 'optimisticFileUploads',
     optimisticFolderUploads = 'optimisticFolderUploads',
+    mountToFirstItemRendered = 'mountToFirstItemRendered',
 }
 
 export const sendTelemetryFeaturePerformance = (
@@ -34,6 +38,31 @@ export const sendTelemetryFeaturePerformance = (
             featureName,
         },
     });
+};
+
+const measureAndReport = (
+    api: Api,
+    feature: Features,
+    group: ExperimentGroup,
+    measureName: string,
+    startMark: string,
+    endMark: string
+) => {
+    try {
+        const measure = performance.measure(measureName, startMark, endMark);
+        // it can be undefined on browsers below Safari below 14.1 and Firefox 103
+        if (measure) {
+            sendTelemetryFeaturePerformance(api, feature, measure.duration, group);
+        }
+    } catch (e) {
+        sendErrorReport(
+            new EnrichedError('Telemetry Performance Error', {
+                extra: {
+                    e,
+                },
+            })
+        );
+    }
 };
 
 /**
@@ -62,32 +91,73 @@ export const measureExperimentalPerformance = <T>(
     const result = applyTreatment ? treatmentFunction() : controlFunction();
 
     result.finally(() => {
-        try {
-            performance.mark(endMark);
-            const measure = performance.measure(measureName, startMark, endMark);
-            // it can be undefined on browsers below Safari below 14.1 and Firefox 103
-            if (measure) {
-                sendTelemetryFeaturePerformance(
-                    api,
-                    feature,
-                    measure.duration,
-                    applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
-                );
-            }
+        performance.mark(endMark);
 
-            performance.clearMarks(endMark);
-            performance.clearMeasures(measureName);
-        } catch (e) {
-            sendErrorReport(
-                new EnrichedError('Telemetry Error', {
-                    extra: {
-                        e,
-                    },
-                })
-            );
-        }
+        measureAndReport(
+            api,
+            feature,
+            applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control,
+            measureName,
+            startMark,
+            endMark
+        );
+
+        performance.clearMarks(endMark);
+        performance.clearMeasures(measureName);
         performance.clearMarks(startMark);
     });
 
     return result;
+};
+
+export const measureFeaturePerformance = (api: Api, feature: Features) => {
+    const startMark = `start-${feature}-${randomHexString4()}`;
+    const endMark = `end-${feature}-${randomHexString4()}`;
+    const measureName = `measure-${feature}-${randomHexString4()}`;
+
+    let started = false;
+    let ended = false;
+
+    const clear = () => {
+        performance.clearMarks(startMark);
+        performance.clearMarks(endMark);
+        performance.clearMeasures(measureName);
+        started = false;
+        ended = false;
+    };
+
+    return {
+        start: () => {
+            if (!started) {
+                started = true;
+                performance.mark(startMark);
+            }
+        },
+        end: () => {
+            if (!ended && started) {
+                ended = true;
+                performance.mark(endMark);
+                measureAndReport(api, feature, ExperimentGroup.control, measureName, startMark, endMark);
+                clear();
+            }
+        },
+        clear,
+    };
+};
+
+export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
+    const api = useApi();
+
+    // It will be a new measure object each time the api changes or the features changes.
+    // If it changes in between the previous measure has started and not ended yet the values will be cleared and ignored.
+    const measure = useMemo(() => measureFeaturePerformance(api, features), [api, features]);
+
+    useEffect(() => {
+        measure.start();
+        return () => {
+            measure.clear();
+        };
+    }, [measure]);
+
+    return measure.end;
 };
