@@ -239,6 +239,7 @@ export const PaymentsNoApi = ({
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
                         <>
                             <ChargebeeCreditCardWrapper {...sharedCbProps} themeCode={themeCode} />
+                            {!isSignup && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
