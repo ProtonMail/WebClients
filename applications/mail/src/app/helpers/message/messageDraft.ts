@@ -327,8 +327,8 @@ export const createNewDraft = (
     let expiresIn: Date | undefined;
 
     if (action === MESSAGE_ACTIONS.REPLY || action === MESSAGE_ACTIONS.REPLY_ALL) {
-        // Preset expiration time if it's set on the original message
-        expiresIn = getExpiresIn(referenceMessage?.data?.ExpirationTime);
+        // Preset expiration time if it's set on the original message (use the difference between the expiration time and the receive time)
+        expiresIn = getExpiresIn(referenceMessage?.data);
     }
 
     return {
