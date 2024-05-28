@@ -1,4 +1,5 @@
-import { DEFAULT_OFFSET, VERIFICATION_STATUS } from 'pmcrypto-v6-canary/lib/constants';
+import { VERIFICATION_STATUS } from 'pmcrypto-v6-canary/lib/constants';
+import { DEFAULT_KEY_GENERATION_OFFSET, DEFAULT_SIGNATURE_VERIFICATION_OFFSET } from 'pmcrypto/lib/constants';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
@@ -113,10 +114,11 @@ export const CryptoProxy: CryptoProxyInterface = {
 
     encryptMessage: async ({ date = serverTime(), ...opts }) =>
         assertNotNull(endpoint).encryptMessage({ ...opts, date }),
-    decryptMessage: async ({ date = serverTime(), ...opts }) =>
+    decryptMessage: async ({ date = new Date(+serverTime() + DEFAULT_SIGNATURE_VERIFICATION_OFFSET), ...opts }) =>
         assertNotNull(endpoint).decryptMessage({ ...opts, date }),
     signMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).signMessage({ ...opts, date }),
-    verifyMessage: async ({ date = serverTime(), ...opts }) => verifyMessageWithFallback({ ...opts, date }),
+    verifyMessage: async ({ date = new Date(+serverTime() + DEFAULT_SIGNATURE_VERIFICATION_OFFSET), ...opts }) =>
+        verifyMessageWithFallback({ ...opts, date }),
     verifyCleartextMessage: async ({ date = serverTime(), ...opts }) =>
         assertNotNull(endpoint).verifyCleartextMessage({ ...opts, date }),
     processMIME: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).processMIME({ ...opts, date }),
@@ -131,7 +133,7 @@ export const CryptoProxy: CryptoProxyInterface = {
 
     importPrivateKey: async (opts) => assertNotNull(endpoint).importPrivateKey(opts),
     importPublicKey: async (opts) => assertNotNull(endpoint).importPublicKey(opts),
-    generateKey: async ({ date = new Date(+serverTime() + DEFAULT_OFFSET), ...opts }) =>
+    generateKey: async ({ date = new Date(+serverTime() + DEFAULT_KEY_GENERATION_OFFSET), ...opts }) =>
         assertNotNull(endpoint).generateKey({ ...opts, date }),
     reformatKey: async ({ privateKey, date = privateKey.getCreationTime(), ...opts }) =>
         assertNotNull(endpoint).reformatKey({ ...opts, privateKey, date }),
