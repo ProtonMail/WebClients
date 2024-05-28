@@ -124,9 +124,10 @@ export const DirectSharingAutocomplete = ({
                 </InputField>
             </div>
             {!hideFormActions ? (
-                <div className="flex justify-space-between ">
+                <div className="flex justify-space-between mb-4">
                     <Button onClick={onCancel}>{c('Action').t`Cancel`}</Button>
                     <Button
+                        type="submit"
                         color="norm"
                         disabled={isSubmitDisabled}
                         loading={isAdding}
