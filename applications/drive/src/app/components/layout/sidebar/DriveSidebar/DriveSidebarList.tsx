@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { ShareWithKey, useDriveSharingFeatureFlag, usePhotos, usePhotosFeatureFlag } from '../../../../store';
+import { ShareWithKey, useDriveSharingFlags, usePhotos, usePhotosFeatureFlag } from '../../../../store';
+//TODO: This should be removed after full sharing rollout
+import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
 import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
@@ -19,7 +21,6 @@ interface Props {
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
     const isPhotosEnabled = usePhotosFeatureFlag();
-    const isDriveSharingEnabled = useDriveSharingFeatureFlag();
     const { hasPhotosShare } = usePhotos();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
@@ -28,6 +29,10 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
         setSidebarWidth(`${100 + extraWidth}%`);
     };
 
+    const { isSharingInviteAvailable, isDirectSharingDisabled } = useDriveSharingFlags();
+    // We prevent list shared with me items if kill switch enabled (isDirectSharingDisabled)
+    const { haveSharedWithMeItems } = useSharedWithMeWithoutFF(isSharingInviteAvailable || isDirectSharingDisabled);
+    const showSharedWithMeSection = (isSharingInviteAvailable || haveSharedWithMeItems) && !isDirectSharingDisabled;
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
             {userShares.map((userShare) => (
@@ -55,7 +60,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
             >
                 <span className="text-ellipsis" title={c('Link').t`Shared`}>{c('Link').t`Shared`}</span>
             </DriveSidebarListItem>
-            {isDriveSharingEnabled && (
+            {showSharedWithMeSection && (
                 <DriveSidebarListItem
                     to="/shared-with-me"
                     icon="users"

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useAppTitle } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useSharedWithMeView } from '../../../store';
+import { useDriveSharingFlags, useSharedWithMeView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import SharedWithMe from './SharedWithMe';
@@ -17,7 +17,12 @@ const SharedWithMeView = () => {
     useEffect(setDefaultRoot, []);
 
     const sharedWithMeView = useSharedWithMeView(activeShareId);
+    const hasSharedItems = !!sharedWithMeView.items.length;
 
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
+    if (!hasSharedItems && !isSharingInviteAvailable) {
+        return null;
+    }
     return (
         <FileBrowserStateProvider itemIds={sharedWithMeView.items.map(({ linkId }) => linkId)}>
             <ToolbarRow

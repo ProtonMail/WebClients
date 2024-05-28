@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { useDefaultShare, useDriveSharingFeatureFlag } from '../_shares';
+import { useDefaultShare, useDriveSharingFlags } from '../_shares';
 import { useLoadLinksShareInfo } from '../_shares/useLoadLinksShareInfo';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
@@ -23,19 +23,19 @@ export default function useSharedLinksView(shareId: string) {
     const { getDefaultShare } = useDefaultShare();
     const volumeId = useRef<string>();
     const [isLoading, withLoading] = useLoading(true);
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
     const linksListing = useLinksListing();
     const loadSharedLinks = useCallback(
         async (signal: AbortSignal) => {
             const defaultShare = await getDefaultShare(signal);
             volumeId.current = defaultShare.volumeId;
-            if (driveSharing) {
+            if (isSharingInviteAvailable) {
                 await linksListing.loadLinksSharedByMeLink(signal, defaultShare.volumeId);
             } else {
                 await linksListing.loadLinksSharedByLinkLEGACY(signal, defaultShare.volumeId);
             }
         },
-        [driveSharing]
+        [isSharingInviteAvailable]
     ); //TODO: No all deps params as too much work needed in linksListing
     const abortSignal = useAbortSignal([shareId, withLoading, loadSharedLinks]);
 
@@ -45,12 +45,12 @@ export default function useSharedLinksView(shareId: string) {
         shareId,
         links: cachedSharedLinks,
         sharedByMeListing: true,
-        driveSharingFF: driveSharing,
+        driveSharingFF: isSharingInviteAvailable,
     });
 
     const { layout } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(
-        driveSharing ? linksWithShareInfo : cachedSharedLinks,
+        isSharingInviteAvailable ? linksWithShareInfo : cachedSharedLinks,
         DEFAULT_SORT
     );
 

@@ -1,6 +1,6 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useActions, useDriveSharingFeatureFlag } from '../../../store';
+import { DecryptedLink, useActions, useDriveSharingFlags } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -44,10 +44,10 @@ export function SharedLinksItemContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
     const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
 
-    const ShareLinkButtonComponent = driveSharing ? ShareLinkButton : ShareLinkButtonLEGACY;
+    const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -74,10 +74,10 @@ export function SharedLinksItemContextMenu({
                     />
                 )}
                 {/* //TODO: Add multiple share deletion support */}
-                {isOnlyOneItem && driveSharing && (
+                {isOnlyOneItem && isSharingInviteAvailable && (
                     <StopSharingButton selectedLink={selectedLink} stopSharing={stopSharing} close={close} />
                 )}
-                {!driveSharing && (
+                {!isSharingInviteAvailable && (
                     <StopSharingButtonLEGACY
                         selectedLinks={selectedLinks}
                         stopSharingLinks={stopSharingLinks}

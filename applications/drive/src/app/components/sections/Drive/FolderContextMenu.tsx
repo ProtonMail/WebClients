@@ -6,7 +6,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useDriveSharingFeatureFlag, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
@@ -54,12 +54,12 @@ export function FolderContextMenu({
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const driveSharing = useDriveSharingFeatureFlag();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
-    const ShareFileButtonComponent = driveSharing ? ShareFileButton : ShareFileButtonLEGACY;
+    const ShareFileButtonComponent = isSharingInviteAvailable ? ShareFileButton : ShareFileButtonLEGACY;
 
     // All actions in this context menu needs editor permissions
     if (!isEditor) {
