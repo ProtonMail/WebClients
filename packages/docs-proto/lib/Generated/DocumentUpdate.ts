@@ -13,7 +13,7 @@ export class DocumentUpdate extends pb_1.Message {
           encryptedContent?: Uint8Array
           version?: number
           timestamp?: number
-          authorId?: string
+          authorAddress?: string
         },
   ) {
     super()
@@ -28,8 +28,8 @@ export class DocumentUpdate extends pb_1.Message {
       if ('timestamp' in data && data.timestamp != undefined) {
         this.timestamp = data.timestamp
       }
-      if ('authorId' in data && data.authorId != undefined) {
-        this.authorId = data.authorId
+      if ('authorAddress' in data && data.authorAddress != undefined) {
+        this.authorAddress = data.authorAddress
       }
     }
   }
@@ -51,17 +51,17 @@ export class DocumentUpdate extends pb_1.Message {
   set timestamp(value: number) {
     pb_1.Message.setField(this, 3, value)
   }
-  get authorId() {
+  get authorAddress() {
     return pb_1.Message.getFieldWithDefault(this, 4, '') as string
   }
-  set authorId(value: string) {
+  set authorAddress(value: string) {
     pb_1.Message.setField(this, 4, value)
   }
   static fromObject(data: {
     encryptedContent?: Uint8Array
     version?: number
     timestamp?: number
-    authorId?: string
+    authorAddress?: string
   }): DocumentUpdate {
     const message = new DocumentUpdate({})
     if (data.encryptedContent != null) {
@@ -73,8 +73,8 @@ export class DocumentUpdate extends pb_1.Message {
     if (data.timestamp != null) {
       message.timestamp = data.timestamp
     }
-    if (data.authorId != null) {
-      message.authorId = data.authorId
+    if (data.authorAddress != null) {
+      message.authorAddress = data.authorAddress
     }
     return message
   }
@@ -83,7 +83,7 @@ export class DocumentUpdate extends pb_1.Message {
       encryptedContent?: Uint8Array
       version?: number
       timestamp?: number
-      authorId?: string
+      authorAddress?: string
     } = {}
     if (this.encryptedContent != null) {
       data.encryptedContent = this.encryptedContent
@@ -94,8 +94,8 @@ export class DocumentUpdate extends pb_1.Message {
     if (this.timestamp != null) {
       data.timestamp = this.timestamp
     }
-    if (this.authorId != null) {
-      data.authorId = this.authorId
+    if (this.authorAddress != null) {
+      data.authorAddress = this.authorAddress
     }
     return data
   }
@@ -106,7 +106,7 @@ export class DocumentUpdate extends pb_1.Message {
     if (this.encryptedContent.length) writer.writeBytes(1, this.encryptedContent)
     if (this.version != 0) writer.writeInt32(2, this.version)
     if (this.timestamp != 0) writer.writeUint64(3, this.timestamp)
-    if (this.authorId.length) writer.writeString(4, this.authorId)
+    if (this.authorAddress.length) writer.writeString(4, this.authorAddress)
     if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): DocumentUpdate {
@@ -125,7 +125,7 @@ export class DocumentUpdate extends pb_1.Message {
           message.timestamp = reader.readUint64()
           break
         case 4:
-          message.authorId = reader.readString()
+          message.authorAddress = reader.readString()
           break
         default:
           reader.skipField()

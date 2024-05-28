@@ -6,7 +6,7 @@ import { CreateEvent } from './CreateEvent'
 export function CreateClientEventMessage(dto: {
   type: EventTypeEnum
   content: Uint8Array
-  authorId: string
+  authorAddress: string
   timestamp: number
   version: ClientEventVersion
 }): ClientMessageWithEvents {

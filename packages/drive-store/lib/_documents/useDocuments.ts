@@ -123,9 +123,9 @@ export const useDocuments = () => {
             linkId: Document.LinkID,
             volumeId: Document.VolumeID,
             keys: {
-                contentKey,
-                signingKey: addressKey,
-                ownAddress: address.Email,
+                documentContentKey: contentKey,
+                userAddressPrivateKey: addressKey,
+                userOwnAddress: address.Email,
             },
         };
     };
@@ -141,9 +141,9 @@ export const useDocuments = () => {
         }
 
         return {
-            contentKey,
-            signingKey: addressKey,
-            ownAddress: address.Email,
+            documentContentKey: contentKey,
+            userAddressPrivateKey: addressKey,
+            userOwnAddress: address.Email,
         };
     };
 

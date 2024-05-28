@@ -1,0 +1,53 @@
+{
+  "name": "@proton/docs-core",
+  "description": "Library for Proton Docs",
+  "main": "index.ts",
+  "scripts": {
+    "check-types": "tsc",
+    "lint": "eslint . --ext ts --quiet --cache",
+    "test": "jest",
+    "test:ci": "jest --coverage --runInBand --ci",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@lexical/yjs": "0.14.5",
+    "@proton/components": "workspace:packages/components",
+    "@proton/crypto": "workspace:packages/crypto",
+    "@proton/docs-proto": "workspace:packages/docs-proto",
+    "@proton/docs-shared": "workspace:packages/docs-shared",
+    "@proton/drive-store": "workspace:packages/drive-store",
+    "@proton/shared": "workspace:packages/shared",
+    "@proton/testing": "workspace:packages/testing",
+    "@standardnotes/domain-core": "^1.41.1",
+    "@standardnotes/utils": "^1.17.12",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/react-hooks": "^8.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^5.3.4",
+    "react-test-renderer": "^18.2.0",
+    "react-window": "^1.8.10",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.14"
+  },
+  "devDependencies": {
+    "@proton/eslint-config-proton": "workspace:^",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.5.12",
+    "@types/mime-types": "^2.1.4",
+    "@types/react-window": "^1.8.8",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "jest-when": "3.6.0",
+    "prettier": "^3.2.5",
+    "pretty-format": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.3"
+  }
+}
