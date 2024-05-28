@@ -45,7 +45,7 @@ export type DownloadBlocksCallbacks = Omit<
     checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => Promise<void>;
     scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
     checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
-    onProgress?: (bytes: number) => void;
+    onProgress?: (bytes: number, blockIndex?: number) => void;
 };
 
 /**
@@ -108,6 +108,11 @@ export default function initDownloadBlocks(
                 log(`Getting next blocks from index ${pagination.FromBlockIndex}`);
                 const result = await getBlocks(abortController.signal, pagination);
                 blocks = result.blocks;
+                if (blocks.length !== 0) {
+                    log(
+                        `${blocks.length} block(s) received (from ${blocks[0].Index} to ${blocks[blocks.length - 1].Index})`
+                    );
+                }
                 if (result.thumbnailHashes) {
                     thumbnailHashes = result.thumbnailHashes.map(base64StringToUint8Array);
                 }
@@ -214,7 +219,7 @@ export default function initDownloadBlocks(
                                 throw new TransferCancel({ message: `Transfer canceled` });
                             }
                             incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
-                            onProgress?.(value.length);
+                            onProgress?.(value.length, Index);
                         });
                         const rawContentStream = blockStream.pipeThrough(progressStream);
 
