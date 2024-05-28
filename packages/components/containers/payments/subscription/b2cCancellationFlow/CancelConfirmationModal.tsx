@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import {
     Icon,
-    IconName,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -18,13 +17,11 @@ import { ConfirmationModal } from './interface';
 
 interface Props extends ModalProps, ConfirmationModal {
     ctaText: string;
-    ctaKeepIcon: IconName;
     cancelSubscription: () => void;
 }
 
 const CancelConfirmationModal = ({
     ctaText,
-    ctaKeepIcon,
     description,
     warningPoints,
     warningTitle,
@@ -55,7 +52,7 @@ const CancelConfirmationModal = ({
                     color="norm"
                     className="flex flex-nowrap items-center justify-center"
                 >
-                    <Icon name={ctaKeepIcon} size={5} className="mr-1" />
+                    <Icon name="upgrade" size={5} className="mr-1" />
                     {ctaText}
                 </ButtonLike>
             </ModalTwoFooter>

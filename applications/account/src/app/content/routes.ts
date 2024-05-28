@@ -23,6 +23,7 @@ interface Arguments {
     recoveryNotification?: ThemeColor;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
+    isNewCancellationFlowExtended: boolean;
 }
 
 export const getRoutes = ({
@@ -37,6 +38,7 @@ export const getRoutes = ({
     recoveryNotification,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
+    isNewCancellationFlowExtended,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -51,6 +53,7 @@ export const getRoutes = ({
             organization,
             isBreachesAccountDashboardEnabled,
             showThemeSelection,
+            isNewCancellationFlowExtended,
         }),
         mail: getMailAppRoutes({
             app,
