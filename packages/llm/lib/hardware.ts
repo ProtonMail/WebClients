@@ -87,7 +87,7 @@ export const checkGpu = async (): Promise<GpuAssessmentResult> => {
     // Test if we can load webgpu
     try {
         const navigator = globalThis.navigator as any;
-        const adapter: GPUAdapter | undefined = await navigator.gpu.requestAdapter();
+        const adapter: GPUAdapter | undefined = await navigator.gpu?.requestAdapter();
         if (!adapter) {
             console.error('WebGPU is not available.');
             if (specs.userAgent.includes('Firefox')) {
