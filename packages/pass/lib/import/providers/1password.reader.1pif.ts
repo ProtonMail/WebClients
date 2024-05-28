@@ -5,7 +5,13 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { OnePassLegacyItem, OnePassLegacySectionField, OnePassLegacyURL } from './1password.1pif.types';
 import { OnePassLegacyItemType, OnePassLegacySectionFieldKey } from './1password.1pif.types';
@@ -81,13 +87,17 @@ const extractExtraFields = (item: OnePassLegacyItem) => {
         );
 };
 
-const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
+const processLoginItem = (item: OnePassLegacyItem, importUsername?: boolean): ItemImportIntent<'login'> => {
     const fields = item.secureContents.fields;
 
     return importLoginItem({
         name: item.title,
         note: item.secureContents?.notesPlain,
-        userIdentifier: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value,
+        ...(importUsername
+            ? getEmailOrUsername(
+                  fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
+              )
+            : { email: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value }),
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extractURLs(item),
         extraFields: extractExtraFields(item),
@@ -138,14 +148,20 @@ export const parse1PifData = (data: string): OnePassLegacyItem[] =>
         .filter((line) => !line.startsWith(ENTRY_SEPARATOR_1PIF) && Boolean(line))
         .map((rawItem) => JSON.parse(rawItem));
 
-export const read1Password1PifData = async (data: string): Promise<ImportPayload> => {
+export const read1Password1PifData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     try {
         const ignored: string[] = [];
         const items: ItemImportIntent[] = parse1PifData(data)
             .map((item) => {
                 switch (item.typeName) {
                     case OnePassLegacyItemType.LOGIN:
-                        return processLoginItem(item);
+                        return processLoginItem(item, importUsername);
                     case OnePassLegacyItemType.NOTE:
                         return processNoteItem(item);
                     case OnePassLegacyItemType.PASSWORD:

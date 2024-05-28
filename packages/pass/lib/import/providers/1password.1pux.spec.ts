@@ -14,11 +14,11 @@ describe('Import 1password 1pux', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.1pux');
-        payload = await read1Password1PuxData(sourceData);
+        payload = await read1Password1PuxData({ data: sourceData, importUsername: true });
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(read1Password1PuxData(new ArrayBuffer(1))).rejects.toThrow();
+        await expect(read1Password1PuxData({ data: new ArrayBuffer(1), importUsername: true })).rejects.toThrow();
     });
 
     test('result should contain the correct number of vaults', () => {
