@@ -15,13 +15,13 @@ export default function useVolume() {
         //
         // In this scenario, there are no other prefered keys.
 
-        const { address, privateKey } = await getPrimaryAddressKey();
+        const { address, privateKey, addressKeyID } = await getPrimaryAddressKey();
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
-
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({
                 AddressID: address.ID,
+                AddressKeyID: addressKeyID,
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
                 FolderHashKey,
