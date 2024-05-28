@@ -1,15 +1,18 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
+import { isBefore, sub } from 'date-fns';
 import { set } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmWallet } from '@proton/andromeda';
+import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
 import { useNotifications } from '@proton/components/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { IWasmApiWalletData } from '@proton/wallet';
 
+import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';
 import { useBitcoinNetwork } from '../../store/hooks';
@@ -86,8 +89,12 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     // We use refs coupled to the state to deps from the syncing loop
     const syncingMetatadaByAccountIdRef = useMirroredRef(syncingMetatadaByAccountId, {});
 
+    const getKey = (walletId: string, walletAccountID: string) => {
+        return `${walletId}-${walletAccountID}`;
+    };
+
     const addNewSyncing = useCallback((walletId: string, walletAccountID: string) => {
-        const key = `${walletId}-${walletAccountID}`;
+        const key = getKey(walletId, walletAccountID);
 
         setSyncingMetatadaByAccountId((prev) => ({
             ...prev,
@@ -100,32 +107,52 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     }, []);
 
     const removeSyncing = useCallback((walletId: string, walletAccountID: string) => {
-        setSyncingMetatadaByAccountId((prev) => set({ ...prev }, [`${walletId}-${walletAccountID}`, 'syncing'], false));
+        setSyncingMetatadaByAccountId((prev) =>
+            set({ ...prev }, [getKey(walletId, walletAccountID), 'syncing'], false)
+        );
     }, []);
 
+    const getSyncingData = useCallback(
+        (walletId: string, walletAccountID?: string) => {
+            if (!walletAccountID) {
+                return Object.entries(syncingMetatadaByAccountId).find(([key]) => key.startsWith(walletId))?.[1];
+            }
+
+            return syncingMetatadaByAccountId[getKey(walletId, walletAccountID)];
+        },
+        [syncingMetatadaByAccountId]
+    );
+
+    const isSyncing = useCallback(
+        (walletId: string, accountId?: string) => {
+            return Boolean(getSyncingData(walletId, accountId)?.syncing);
+        },
+        [getSyncingData]
+    );
+
     const syncSingleWalletAccount = useCallback(
-        async (walletId: string, accountId: string) => {
+        async (walletId: string, accountId: string, manual = false) => {
             const wallet = initWalletsChainData?.[walletId];
             const account = wallet?.accounts[accountId];
-            const isAlreadySyncing = syncingMetatadaByAccountIdRef.current[accountId]?.syncing;
+            const metadata = syncingMetatadaByAccountIdRef.current[getKey(walletId, accountId)];
 
-            if (wallet && account && !isAlreadySyncing) {
+            // We enforce a cooldown between each sync
+            const canSync =
+                !metadata ||
+                (!metadata.syncing &&
+                    isBefore(metadata.lastSyncing, sub(new Date(), { seconds: SYNCING_MINIMUM_COOLDOWN_MINUTES })));
+
+            if (wallet && account && canSync) {
                 try {
                     const wasmAccount = account.account;
 
-                    const shouldSync = await blockchainClient.shouldSync(wasmAccount);
-
-                    // TODO: maybe we should remove this in favor of a cooldown timer?
-                    if (!shouldSync) {
-                        return;
-                    }
-
                     addNewSyncing(walletId, accountId);
 
-                    if (await wasmAccount.hasSyncData()) {
+                    // If syncing is manual, we do a full sync
+                    if ((await wasmAccount.hasSyncData()) && !manual) {
                         await blockchainClient.partialSync(wasmAccount);
                     } else {
-                        await blockchainClient.fullSync(wasmAccount);
+                        await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + POOL_FILLING_THRESHOLD);
                     }
                 } catch (error) {
                     createNotification({ text: c('Wallet').t`An error occured`, type: 'error' });
@@ -141,11 +168,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     );
 
     const syncSingleWallet = useCallback(
-        async (walletId: string) => {
+        async (walletId: string, manual = false) => {
             const wallet = initWalletsChainData?.[walletId];
 
             for (const accountId of Object.keys(wallet?.accounts ?? [])) {
-                await syncSingleWalletAccount(walletId, accountId);
+                await syncSingleWalletAccount(walletId, accountId, manual);
             }
         },
 
@@ -153,9 +180,9 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     );
 
     const syncManyWallets = useCallback(
-        async (walletIds: string[]) => {
+        async (walletIds: string[], manual = false) => {
             for (const walletId of walletIds) {
-                await syncSingleWallet(walletId);
+                await syncSingleWallet(walletId, manual);
             }
         },
         [syncSingleWallet]
@@ -199,20 +226,6 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         );
     }, [walletsChainData]);
 
-    const isSyncing = useCallback(
-        (walletId: string, accountId?: string) => {
-            if (!accountId) {
-                return Object.entries(syncingMetatadaByAccountId).some(
-                    ([key, value]) => (key.startsWith(walletId) && value?.syncing) ?? false
-                );
-            }
-
-            const key = `${walletId}-${accountId}`;
-            return syncingMetatadaByAccountId[key]?.syncing ?? false;
-        },
-        [syncingMetatadaByAccountId]
-    );
-
     return {
         syncingMetatadaByAccountId,
         walletsChainData: walletsChainData ?? initWalletsChainData ?? {},
@@ -222,6 +235,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         syncSingleWallet,
         syncManyWallets,
 
+        getSyncingData,
         isSyncing,
     };
 };
