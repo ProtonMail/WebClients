@@ -4,7 +4,7 @@ import { serverTime } from '@proton/crypto';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
-import { MessageState } from '../store/messages/messagesTypes';
+import { MessageState, MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import { isAllowedAutoDeleteLabelID } from './autoDelete';
 
 export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, messageState?: MessageState) => {
@@ -63,13 +63,17 @@ export const getMinExpirationTime = (date: Date) => {
 };
 
 /**
- * Returns the expiration date from the API if it exists
- * @param expirationTime: Expiration Time returned by the API (Unix timestamp)
- * @returns {Date | undefined}
+ * Defines the expiration based on the difference between the expiration time and the receive time.
  */
-export const getExpiresIn = (expirationTime?: number) => {
-    if (!expirationTime) {
+export const getExpiresIn = (message?: Partial<MessageWithOptionalBody>): Date | undefined => {
+    if (!message?.ExpirationTime || !message?.Time) {
         return undefined;
     }
-    return fromUnixTime(expirationTime);
+
+    const currentDate = new Date();
+    const expirationDate = fromUnixTime(message.ExpirationTime);
+    const receiveDate = fromUnixTime(message.Time);
+    const deltaInMinutes = differenceInMinutes(expirationDate, receiveDate);
+
+    return addMinutes(currentDate, deltaInMinutes);
 };
