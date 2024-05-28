@@ -5,7 +5,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
-import { getDefaultConfirmationModal, getDefaultTestimonial } from './commonConfig';
+import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './commonConfig';
 
 export const getDrivePlusConfig = (
     subscription: SubscriptionModel,
@@ -14,10 +14,7 @@ export const getDrivePlusConfig = (
     const planName = PLAN_NAMES[PLANS.DRIVE];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
 
-    const reminder = {
-        title: c('Subscription reminder').t`What you give up when you cancel ${planName}`,
-    };
-
+    const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const confirmationModal: ConfirmationModal = {
@@ -46,19 +43,22 @@ export const getDrivePlusConfig = (
                 icon: 'clock',
                 text: c('Subscription reminder').t`Version history`,
             },
+            {
+                icon: 'life-ring',
+                text: c('Subscription reminder').t`Priority support`,
+            },
         ],
         extraWarning: c('Subscription reminder')
-            .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`,
+            .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`,
     };
 
     return {
+        planName,
         plan: PLANS.DRIVE,
         reminder,
         testimonials,
         features,
         confirmationModal,
         keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
-        keepPlanCTAIcon: 'upgrade',
-        redirectModal: c('Subscription reminder').t`Resubscribe to restore access to ${planName} features.`,
     };
 };

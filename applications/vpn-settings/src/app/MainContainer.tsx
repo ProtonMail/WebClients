@@ -64,6 +64,7 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     SsoPage,
+    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -97,7 +98,8 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const routes = getRoutes({ user, subscription, organization });
+    const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
+    const routes = getRoutes({ user, subscription, organization, isNewCancellationFlowExtended });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();

@@ -132,6 +132,7 @@ const MainContainer = () => {
 
     const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
+    const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false);
@@ -154,6 +155,7 @@ const MainContainer = () => {
         recoveryNotification: recoveryNotification?.color,
         isBreachesAccountDashboardEnabled,
         showThemeSelection,
+        isNewCancellationFlowExtended,
     });
 
     useEffect(() => {

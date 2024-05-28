@@ -20,7 +20,12 @@ import {
     PlanConfigStorage,
     PlanConfigTestimonial,
 } from '../interface';
-import { getDefaultConfirmationModal, getDefaultGBStorageWarning, getDefaultTestimonial } from './commonConfig';
+import {
+    getDefaultConfirmationModal,
+    getDefaultGBStorageWarning,
+    getDefaultReminder,
+    getDefaultTestimonial,
+} from './commonConfig';
 
 export const getBundleConfig = (
     subscription: SubscriptionModel,
@@ -30,10 +35,7 @@ export const getBundleConfig = (
     const planName = PLAN_NAMES[PLANS.BUNDLE];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
 
-    const reminder = {
-        title: c('Subscription reminder').t`What you give up when you cancel ${planName}`,
-    };
-
+    const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const features: PlanConfigFeatures = {
@@ -85,6 +87,7 @@ export const getBundleConfig = (
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
+        planName,
         plan: PLANS.BUNDLE,
         reminder,
         testimonials,
@@ -92,7 +95,5 @@ export const getBundleConfig = (
         storage,
         confirmationModal,
         keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
-        keepPlanCTAIcon: 'upgrade',
-        redirectModal: c('Subscription reminder').t`Resubscribe to restore access to ${planName} features.`,
     };
 };

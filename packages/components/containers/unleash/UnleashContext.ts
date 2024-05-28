@@ -39,6 +39,7 @@ enum AccountFlag {
     DisableLoginPageBugReport = 'DisableLoginPageBugReport',
     ShowNoRecoveryMethodFlow = 'ShowNoRecoveryMethodFlow',
     ForgotRecoveryMethodStep = 'ForgotRecoveryMethodStep',
+    ExtendCancellationProcess = 'ExtendCancellationProcess',
 }
 
 enum CalendarFeatureFlag {
