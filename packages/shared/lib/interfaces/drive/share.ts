@@ -14,6 +14,7 @@ export interface CreateDrivePhotosShare {
     Share: {
         Name: string;
         AddressID: string;
+        AddressKeyID: string;
         Key: string;
         Passphrase: string;
         PassphraseSignature: string;
