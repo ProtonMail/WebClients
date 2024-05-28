@@ -10,12 +10,7 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import {
-    selectAutosaveVault,
-    selectProxiedSettings,
-    selectRequestInFlight,
-    selectWritableVaults,
-} from '@proton/pass/store/selectors';
+import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -92,14 +87,7 @@ const getSettings =
                         onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
                     },
                 ],
-                extra: (
-                    <VaultSetting
-                        label={c('Label').t`Autosave vault`}
-                        optionsSelector={selectWritableVaults} //  FIXME: use VaultSelectMode
-                        valueSelector={selectAutosaveVault}
-                        onSubmit={({ shareId }) => onSettingsUpdate({ autosave: { shareId } })}
-                    />
-                ),
+                extra: <VaultSetting onSubmit={({ shareId }) => onSettingsUpdate({ autosave: { shareId } })} />,
             },
             {
                 label: c('Label').t`Autosuggest`,
