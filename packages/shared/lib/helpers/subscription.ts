@@ -697,6 +697,15 @@ export const hasCancellablePlan = (subscription: Subscription | undefined) => {
     return getHasConsumerVpnPlan(subscription) || hasPassPlus(subscription);
 };
 
+/**
+ * This method is the same as `hasCancellablePlan`, but it adds more plans that can be cancelled.
+ * This is separated because we want to control the release of this feature with a feature flag.
+ * It will be merged with the method above once the feature is released.
+ */
+export const hasNewCancellablePlan = (subscription: Subscription | undefined) => {
+    return [hasMail, hasBundle, hasFamily, hasNewVisionary, hasDrive].some((check) => check(subscription));
+};
+
 export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {
     return (
         subscription?.Cycle === CYCLE.TWO_YEARS ||

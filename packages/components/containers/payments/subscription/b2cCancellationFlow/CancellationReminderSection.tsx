@@ -54,13 +54,12 @@ export const CancellationReminderSection = ({ app }: Props) => {
         // We inform that the cancellation process was started to avoid redirection once finished
         setStartedCancellation(true);
 
-        const result = await cancelSubscription(true);
-        if (result.status !== 'downgraded') {
-            setStartedCancellation(false);
-            return;
+        const { status } = await cancelSubscription(true);
+        if (status === 'cancelled' || status === 'downgraded') {
+            setRedirectModalOpen(true);
         }
 
-        setRedirectModalOpen(true);
+        setStartedCancellation(false);
     };
 
     return (
@@ -80,7 +79,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                                 color="norm"
                                 className="flex flex-nowrap items-center justify-center"
                             >
-                                <Icon name={config.keepPlanCTAIcon} size={5} className="mr-1" />
+                                <Icon name="upgrade" size={5} className="mr-1" />
                                 {config.keepPlanCTA}
                             </ButtonLike>
                             <ButtonLike
@@ -104,14 +103,13 @@ export const CancellationReminderSection = ({ app }: Props) => {
             {cancelRenderModal && (
                 <CancelConfirmationModal
                     {...cancelModalProps}
-                    ctaKeepIcon={config.keepPlanCTAIcon}
                     ctaText={config.keepPlanCTA}
                     cancelSubscription={handleCancelSubscription}
                     {...config.confirmationModal}
                 />
             )}
             {redirectRenderModal && (
-                <CancelRedirectionModal {...redirectModalProps} text={config.redirectModal} plan={config.plan} />
+                <CancelRedirectionModal {...redirectModalProps} planName={config.planName} plan={config.plan} />
             )}
 
             {cancelSubscriptionModals}
