@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { TimeIntl, useActiveBreakpoint } from '../../';
@@ -54,6 +55,14 @@ const Header = ({
     const { viewportWidth } = useActiveBreakpoint();
     const isMobileHeaderPreview = viewportWidth['<=small'] && isMobile();
 
+    let headerSpacing = 'p-7';
+
+    if (isElectronMail && isElectronOnMac) {
+        headerSpacing = 'py-2 pr-2 ml-16 pl-6';
+    } else if (isMobileHeaderPreview) {
+        headerSpacing = 'py-7 px-2';
+    }
+
     const handleSave = () => {
         if (!onSave) {
             return;
@@ -70,12 +79,7 @@ const Header = ({
     };
 
     return (
-        <div
-            className={clsx(
-                'flex justify-space-between items-center relative',
-                isMobileHeaderPreview ? 'py-7 px-2' : 'p-7'
-            )}
-        >
+        <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
             <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />

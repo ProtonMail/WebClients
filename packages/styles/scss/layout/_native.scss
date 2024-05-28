@@ -41,7 +41,10 @@
 	}
 
 	.header,
-	.sign-layout-main-header {
+	.sidebar,
+	.loader-page.h-full,
+	.file-preview-header,
+	.sign-layout-bg {
 		-webkit-app-region: drag;
 		user-select: none;
 
@@ -58,7 +61,10 @@
 	&:has(.eventpopover),
 	&:has(#webpack-dev-server-client-overlay) {
 		.header,
-		.sign-layout-main-header {
+		.sidebar,
+		.loader-page.h-full,
+		.file-preview-header,
+		.sign-layout-bg {
 			-webkit-app-region: no-drag;
 			user-select: initial;
 		}
