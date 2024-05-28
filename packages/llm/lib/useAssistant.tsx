@@ -440,8 +440,10 @@ export const AssistantProvider = ({
     };
 
     useEffect(() => {
-        void handleCheckHardwareCompatibility();
-    }, []);
+        if (canShowAssistant) {
+            void handleCheckHardwareCompatibility();
+        }
+    }, [canShowAssistant]);
 
     useEffect(() => {
         if (
