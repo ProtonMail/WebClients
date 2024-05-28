@@ -1,0 +1,62 @@
+import { VERIFICATION_STATUS } from '@proton/crypto'
+import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { EncryptionService } from '../Services/Encryption/EncryptionService'
+import { DocumentKeys } from '@proton/drive-store'
+import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
+import { CommentResponseDto } from '../Api/Comments/Types'
+import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import { base64StringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
+import { Comment } from '../Models'
+import { ServerTime } from '@proton/docs-shared'
+
+export class DecryptComment implements UseCaseInterface<Comment> {
+  constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
+
+  async execute(dto: CommentResponseDto, markId: string, keys: DocumentKeys): Promise<Result<Comment>> {
+    const decrypted = await this.encryption.decryptData(
+      base64StringToUint8Array(dto.Content),
+      GetAssociatedEncryptionDataForComment({ authorAddress: dto.Author, markId }),
+      keys.documentContentKey,
+    )
+
+    if (decrypted.isFailed()) {
+      return Result.fail(decrypted.getError())
+    }
+
+    const verificationKey = await this.encryption.getVerificationKey(dto.Author)
+
+    if (verificationKey.isFailed()) {
+      return Result.fail(verificationKey.getError())
+    }
+
+    const verifyResult = await this.encryption.verifyData(
+      decrypted.getValue().content,
+      decrypted.getValue().signature,
+      GetAssociatedEncryptionDataForComment({ authorAddress: dto.Author, markId }),
+      verificationKey.getValue(),
+    )
+
+    if (verifyResult.isFailed()) {
+      return Result.fail(verifyResult.getError())
+    }
+
+    const verifyValue = verifyResult.getValue()
+
+    if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+      return Result.fail(`Comment content verification failed: ${verifyValue}`)
+    }
+
+    return Result.ok(
+      new Comment(
+        dto.CommentID,
+        new ServerTime(dto.CreateTime),
+        new ServerTime(dto.ModifyTime),
+        uint8ArrayToString(decrypted.getValue().content),
+        dto.ParentCommentID,
+        dto.Author,
+        [],
+        false,
+      ),
+    )
+  }
+}
