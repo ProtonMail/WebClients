@@ -42,6 +42,7 @@ export interface ConfirmationModal {
 }
 
 export interface PlanConfig {
+    planName: string;
     plan: PLANS;
     reminder: PlanConfigReminder;
     testimonials: PlanConfigTestimonial;
@@ -49,6 +50,4 @@ export interface PlanConfig {
     storage?: PlanConfigStorage;
     confirmationModal: ConfirmationModal;
     keepPlanCTA: string;
-    keepPlanCTAIcon: IconName;
-    redirectModal: string;
 }

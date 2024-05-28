@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasCancellablePlan, hasNewCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
@@ -11,11 +11,14 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
+    isNewCancellationFlowExtended: boolean;
 }
 
-export const getRoutes = ({ user, subscription, organization }: Arguments) => {
+export const getRoutes = ({ user, subscription, organization, isNewCancellationFlowExtended }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const cancellablePlan = hasCancellablePlan(subscription);
+
+    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription);
+    const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
