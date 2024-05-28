@@ -15,13 +15,13 @@ describe('Import KeePass xml', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/keepass.xml', 'utf8');
-        payload = readKeePassData(sourceData);
+        payload = readKeePassData({ data: sourceData, importUsername: true });
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        expect(() => readKeePassData('not-an-xml-file')).toThrow();
+        expect(() => readKeePassData({ data: 'not-an-xml-file', importUsername: true })).toThrow();
     });
 
     it('should extract vaults from groups', () => {

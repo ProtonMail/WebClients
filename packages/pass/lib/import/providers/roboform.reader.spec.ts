@@ -15,13 +15,13 @@ describe('Import Roboform csv', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/roboform.csv', 'utf8');
-        payload = await readRoboformData(sourceData);
+        payload = await readRoboformData({ data: sourceData, importUsername: true });
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readRoboformData('')).rejects.toThrow();
+        await expect(readRoboformData({ data: '', importUsername: true })).rejects.toThrow();
     });
 
     it('converts Roboform folders to vaults correctly', () => {

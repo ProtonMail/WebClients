@@ -15,11 +15,11 @@ describe('Import Chrome CSV', () => {
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readChromiumData('not-a-csv-file')).rejects.toThrow();
+        await expect(readChromiumData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
-        const payload = await readChromiumData(chromeExport);
+        const payload = await readChromiumData({ data: chromeExport, importUsername: true });
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -69,7 +69,7 @@ describe('Import Chrome CSV', () => {
     });
 
     it('correctly parse items if .csv has `notes` column', async () => {
-        const payload = await readChromiumData(chromeExportWindows);
+        const payload = await readChromiumData({ data: chromeExportWindows, importUsername: true });
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);

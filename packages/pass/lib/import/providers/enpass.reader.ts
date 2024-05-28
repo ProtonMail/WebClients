@@ -56,7 +56,8 @@ const mapToExtraField = ({ value, label, sensitive }: RemainingField): UnsafeIte
 });
 
 const processLoginItem = (
-    item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>
+    item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>,
+    importUsername?: boolean
 ): ItemImportIntent<'login'> => {
     const { extracted, remaining } = extractLoginFields(item.fields ?? []);
 
@@ -78,7 +79,7 @@ const processLoginItem = (
                 : []
         ),
         email: extracted.email,
-        username: extracted.username,
+        username: importUsername ? extracted.username : '',
         password: extracted.password,
         totp: extracted.totp,
         urls: extracted.url ? [extracted.url] : [],
@@ -94,7 +95,10 @@ const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportInten
         modifyTime: item.updated_at,
     });
 
-const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
+const processCreditCardItem = (
+    item: EnpassItem<EnpassCategory.CREDIT_CARD>,
+    importUsername?: boolean
+): ItemImportIntent[] => {
     const { extracted: extractedCCData, remaining } = extractCCFields(item.fields ?? []);
 
     const ccItem = importCreditCardItem({
@@ -119,7 +123,7 @@ const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): It
             fields: remaining,
         };
 
-        const loginItem = processLoginItem(enpassLoginItem);
+        const loginItem = processLoginItem(enpassLoginItem, importUsername);
         return [ccItem, loginItem];
     }
 
@@ -129,7 +133,7 @@ const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): It
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
-export const readEnpassData = (data: string): ImportPayload => {
+export const readEnpassData = ({ data, importUsername }: { data: string; importUsername?: boolean }): ImportPayload => {
     try {
         const result = JSON.parse(data);
         const valid = validateEnpassData(result);
@@ -148,11 +152,11 @@ export const readEnpassData = (data: string): ImportPayload => {
                         switch (item.category) {
                             case EnpassCategory.LOGIN:
                             case EnpassCategory.PASSWORD:
-                                return processLoginItem(item);
+                                return processLoginItem(item, importUsername);
                             case EnpassCategory.NOTE:
                                 return processNoteItem(item);
                             case EnpassCategory.CREDIT_CARD:
-                                return processCreditCardItem(item);
+                                return processCreditCardItem(item, importUsername);
                             default:
                                 ignored.push(`[${capitalize(item.category) ?? 'Other'}] ${item.title}`);
                                 return;

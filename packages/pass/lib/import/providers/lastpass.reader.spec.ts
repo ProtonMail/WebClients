@@ -16,14 +16,14 @@ describe('Import LastPass csv', () => {
     beforeAll(async () => {
         for (let sourceFile of sourceFiles) {
             const sourceData = await fs.promises.readFile(sourceFile, 'utf-8');
-            payloads[sourceFile] = await readLastPassData(sourceData);
+            payloads[sourceFile] = await readLastPassData({ data: sourceData, importUsername: true });
         }
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readLastPassData('not-a-csv-file')).rejects.toThrow();
+        await expect(readLastPassData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
     });
 
     it('converts LastPass folders to vaults correctly', () => {
