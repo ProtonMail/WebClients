@@ -82,7 +82,7 @@ export const DirectSharingAutocomplete = ({
 
     return (
         <>
-            <div className="flex justify-space-between items-center mb-1">
+            <div className="flex justify-space-between items-center mt-3 mb-1">
                 <InputField
                     as={AddressesInput}
                     ref={addressesAutocompleteRef}

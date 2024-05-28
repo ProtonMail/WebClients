@@ -7,6 +7,7 @@ import {
     ModalStateProps,
     ModalTwo,
     ModalTwoContent,
+    ModalTwoFooter,
     ModalTwoHeader,
     Tooltip,
     useModalTwoStatic,
@@ -117,7 +118,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         }
 
         return (
-            <div className="mb-4">
+            <ContactEmailsProvider>
                 <ModalTwoHeader
                     title={c('Title').t`Share ${name}`}
                     closeButtonProps={{ disabled: isClosedButtonDisabled }}
@@ -151,52 +152,51 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                               ]
                             : undefined
                     }
-                />
-                <ModalTwoContent>
-                    <ContactEmailsProvider>
-                        <DirectSharingAutocomplete
-                            onCancel={handleCancel}
-                            isAdding={isAdding}
-                            onSubmit={handleSubmit}
-                            existingEmails={existingEmails}
-                            invitees={invitees}
-                            onAdd={addInvitee}
-                            onRemove={removeInvitee}
-                            hideFormActions={!isInvitationWorkflow}
-                        />
-
-                        {!isInvitationWorkflow && (
-                            <>
-                                <h2 className="text-lg text-semibold">{c('Info').t`Shared with`}</h2>
-                                <DirectSharingListing
-                                    volumeId={volumeId}
-                                    linkId={linkId}
-                                    isLoading={isLoading}
-                                    members={members}
-                                    invitations={invitations}
-                                    onPermissionsChange={handlePermissionsChange}
-                                    onMemberRemove={handleMemberRemove}
-                                    onInvitationRemove={handleInvitationRemove}
-                                    onInvitationPermissionsChange={handleInvitationPermissionsChange}
-                                    onResendInvitationEmail={handleResendInvitationEmail}
-                                />
-                            </>
-                        )}
-                    </ContactEmailsProvider>
-
-                    {!isInvitationWorkflow ? (
+                    additionalContent={
                         <>
-                            <hr className="mb-4" />
+                            <DirectSharingAutocomplete
+                                onCancel={handleCancel}
+                                isAdding={isAdding}
+                                onSubmit={handleSubmit}
+                                existingEmails={existingEmails}
+                                invitees={invitees}
+                                onAdd={addInvitee}
+                                onRemove={removeInvitee}
+                                hideFormActions={!isInvitationWorkflow}
+                            />
+                            {!isInvitationWorkflow && (
+                                <h2 className="text-lg text-semibold">{c('Info').t`People with access`}</h2>
+                            )}
+                        </>
+                    }
+                />
+                {!isInvitationWorkflow && (
+                    <>
+                        <ModalTwoContent className="mb-5">
+                            <DirectSharingListing
+                                volumeId={volumeId}
+                                linkId={linkId}
+                                isLoading={isLoading}
+                                members={members}
+                                invitations={invitations}
+                                onPermissionsChange={handlePermissionsChange}
+                                onMemberRemove={handleMemberRemove}
+                                onInvitationRemove={handleInvitationRemove}
+                                onInvitationPermissionsChange={handleInvitationPermissionsChange}
+                            onResendInvitationEmail={handleResendInvitationEmail}/>
+                        </ModalTwoContent>
+                        <hr className="mb-0.5" />
+                        <ModalTwoFooter>
                             <PublicSharing
                                 createSharedLink={createSharedLink}
                                 isLoading={isShareWithAnyoneLoading}
                                 publicSharedLink={sharedLink}
                                 deleteSharedLink={deleteLink}
                             />
-                        </>
-                    ) : null}
-                </ModalTwoContent>
-            </div>
+                        </ModalTwoFooter>
+                    </>
+                )}
+            </ContactEmailsProvider>
         );
     };
 

@@ -34,9 +34,9 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
     };
 
     return (
-        <div ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
+        <div className="w-full" ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
             <div className="flex justify-space-between items-center mb-6">
-                <h2 className="text-lg text-semibold mr">{c('Info').t`Share with anyone`}</h2>
+                <h2 className="text-lg text-semibold mr">{c('Info').t`Create public link`}</h2>
                 <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
             </div>
             <div className={clsx('flex items-center justify-space-between mb-4', !publicSharedLink && 'opacity-30')}>
