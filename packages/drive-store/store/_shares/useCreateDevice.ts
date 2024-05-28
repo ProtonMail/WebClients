@@ -15,7 +15,10 @@ export function useCreateDevice() {
     const createDevice = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
         const abortController = new AbortController();
         const defaultShare = await getDefaultShare();
-        const { address, privateKey } = await getShareCreatorKeys(abortController.signal, defaultShare.shareId);
+        const { address, privateKey, addressKeyID } = await getShareCreatorKeys(
+            abortController.signal,
+            defaultShare.shareId
+        );
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
 
@@ -29,6 +32,7 @@ export function useCreateDevice() {
                 Share: {
                     Name: 'My device',
                     AddressID: address.ID,
+                    AddressKeyID: addressKeyID,
                     Key: bootstrap.ShareKey,
                     Passphrase: bootstrap.SharePassphrase,
                     PassphraseSignature: bootstrap.SharePassphraseSignature,
