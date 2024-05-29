@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Input, Rectangle, Session, app } from "electron";
+import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
 import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { resetBadge } from "../../ipc/notification";
@@ -297,4 +297,14 @@ export const getMainWindow = () => mainWindow!;
 
 export const getCurrentView = () => {
     return browserViewMap[currentViewID];
+};
+
+export const getWebContentsViewName = (webContents: WebContents) => {
+    for (const [viewID, view] of Object.entries(browserViewMap)) {
+        if (view?.webContents === webContents) {
+            return viewID;
+        }
+    }
+
+    return "unknown";
 };

@@ -17,18 +17,24 @@ import {
     getCalendarView,
     getCurrentView,
     getMailView,
+    getWebContentsViewName,
     loadURL,
     reloadCalendarWithSession,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 
 export function handleWebContents(contents: WebContents) {
+    const log = (eventName: string, ...args: unknown[]) => {
+        const viewName = getWebContentsViewName(contents);
+        return Logger.info(`${viewName}(${eventName})`, ...args);
+    };
+
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        Logger.info("did-navigate-in-page", app.isPackaged ? "" : url);
+        log("did-navigate-in-page", app.isPackaged ? "" : url);
 
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
@@ -54,7 +60,7 @@ export function handleWebContents(contents: WebContents) {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        Logger.info("will-navigate");
+        log("will-navigate");
 
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             return preventDefault(details);
@@ -87,13 +93,13 @@ export function handleWebContents(contents: WebContents) {
         const loggedURL = app.isPackaged ? "" : url;
 
         if (isCalendar(url)) {
-            Logger.info("Calendar link", loggedURL);
+            log("Calendar link", loggedURL);
             loadURL("calendar", url);
             return { action: "deny" };
         }
 
         if (isMail(url)) {
-            Logger.info("Mail link", loggedURL);
+            log("Mail link", loggedURL);
             loadURL("mail", url);
             return { action: "deny" };
         }
@@ -101,10 +107,10 @@ export function handleWebContents(contents: WebContents) {
         if (isAccount(url)) {
             // Upsell links should be opened in browser to avoid 3D secure issues
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                Logger.info("Account lite or upsell in browser", loggedURL);
+                log("Account lite or upsell in browser", loggedURL);
                 shell.openExternal(url);
             } else {
-                Logger.info("Account link", loggedURL);
+                log("Account link", loggedURL);
                 loadURL("account", url);
             }
 
@@ -112,21 +118,21 @@ export function handleWebContents(contents: WebContents) {
         }
 
         if (isHostAllowed(url)) {
-            Logger.info("Allowed host", loggedURL);
+            log("Allowed host", loggedURL);
             return { action: "allow" };
         }
 
         if (global.oauthProcess) {
-            Logger.info("OAuth link in app", loggedURL);
+            log("OAuth link in app", loggedURL);
             return { action: "allow" };
         }
 
         if (global.subscriptionProcess) {
-            Logger.info("Subscription link in modal", loggedURL);
+            log("Subscription link in modal", loggedURL);
             return { action: "allow" };
         }
 
-        Logger.info("Other link in browser", loggedURL);
+        log("Other link in browser", loggedURL);
         shell.openExternal(url);
         return { action: "deny" };
     });
