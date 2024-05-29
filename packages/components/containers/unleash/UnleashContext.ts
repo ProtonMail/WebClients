@@ -65,6 +65,9 @@ enum DriveFeatureFlag {
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
+    // Bookmarks
+    DriveShareURLBookmarks = 'DriveShareURLBookmarks',
+    DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
 }
 
 enum MailFeatureFlag {
