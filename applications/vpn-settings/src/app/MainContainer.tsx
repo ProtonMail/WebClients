@@ -80,7 +80,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 
-import TVContainer from './containers/TVContainer';
+import TVContainer, { tvPaths } from './containers/TVContainer';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';
 
@@ -208,7 +208,7 @@ const MainContainer: FunctionComponent = () => {
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
             {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
             <Switch>
-                <Route path="/tv">
+                <Route path={[tvPaths.android, tvPaths.apple]}>
                     <UnAuthenticated>
                         <TVContainer />
                     </UnAuthenticated>
