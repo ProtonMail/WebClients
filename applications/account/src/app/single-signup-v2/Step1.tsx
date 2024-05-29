@@ -82,7 +82,6 @@ import {
     SignupParameters2,
     UpsellTypes,
 } from './interface';
-import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 
@@ -160,12 +159,10 @@ const Step1 = ({
     activeSessions?: LocalSessionPersisted[];
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
-    const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
     const isChargebeeEnabled = useIsChargebeeEnabled();
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
-    const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -412,24 +409,6 @@ const Step1 = ({
                     }}
                 />
             )}
-            {renderUpsellDriveTrialModal && (
-                <DriveTrial2024UpsellModal
-                    {...upsellDriveTrialModal}
-                    currency={options.currency}
-                    onConfirm={async () => {
-                        await handleOptimistic({
-                            coupon: COUPON_CODES.TRYDRIVEPLUS2024,
-                            planIDs: { [PLANS.DRIVE]: 1 },
-                            cycle: CYCLE.MONTHLY,
-                        });
-                    }}
-                    onContinue={async () => {
-                        withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
-                            noop
-                        );
-                    }}
-                />
-            )}
             <div className="flex items-center flex-column">
                 <div
                     className={clsx(
@@ -480,22 +459,6 @@ const Step1 = ({
                     if (options.plan?.Name === PLANS.NEW_VISIONARY) {
                         const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
                         return wrap('hourglass', textLaunchOffer);
-                    }
-
-                    if (
-                        options.plan?.Name === PLANS.DRIVE &&
-                        options.checkResult.Coupon?.Code === COUPON_CODES.TRYDRIVEPLUS2024
-                    ) {
-                        const title = options.plan.Title;
-                        const price = (
-                            <strong key="price">
-                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth, '')}
-                            </strong>
-                        );
-                        return wrap(
-                            'hourglass',
-                            c('pass_signup_2023: Info').jt`Limited time offer: ${title} for ${price} for the 1st month`
-                        );
                     }
 
                     if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
@@ -810,13 +773,6 @@ const Step1 = ({
                                                                       mailTrialOfferEnabled
                                                                   ) {
                                                                       setUpsellMailTrialModal(true);
-                                                                      return;
-                                                                  }
-                                                                  if (
-                                                                      app === APPS.PROTONDRIVE &&
-                                                                      driveTrialOfferEnabled
-                                                                  ) {
-                                                                      setUpsellDriveTrialModal(true);
                                                                       return;
                                                                   }
                                                               }
