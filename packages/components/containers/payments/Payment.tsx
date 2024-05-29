@@ -12,12 +12,12 @@ import {
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
 } from '@proton/components/payments/core';
+import { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import { useLoading } from '@proton/hooks';
 import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
-import { Api, Currency } from '@proton/shared/lib/interfaces';
+import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
@@ -33,10 +33,8 @@ import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
-import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
 
 export interface Props {
-    api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
     amount?: number;
@@ -56,8 +54,6 @@ export interface Props {
     disabled?: boolean;
     cardFieldStatus: CardFieldStatus;
     paypalPrefetchToken?: boolean;
-    onBitcoinTokenValidated?: OnBitcoinTokenValidated;
-    onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
     isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
     triggersDisabled?: boolean;
@@ -81,6 +77,8 @@ export interface NoApiProps extends Props {
     onPaypalCreditClick?: () => void;
     paymentComponentLoaded: () => void;
     themeCode?: ThemeCode;
+    bitcoinInhouse: BitcoinHook;
+    bitcoinChargebee: BitcoinHook;
 }
 
 export const PaymentsNoApi = ({
@@ -100,16 +98,13 @@ export const PaymentsNoApi = ({
     creditCardTopRef,
     disabled,
     paypalPrefetchToken,
-    onBitcoinTokenValidated,
     lastUsedMethod,
     allMethods,
     isAuthenticated,
     loading,
     savedMethodInternal,
     savedMethodExternal,
-    api,
     onPaypalCreditClick,
-    onAwaitingBitcoinPayment,
     hideFirstLabel,
     triggersDisabled,
     hideSavedMethodsDetails,
@@ -120,21 +115,13 @@ export const PaymentsNoApi = ({
     hasSomeVpnPlan,
     paymentComponentLoaded,
     themeCode,
+    bitcoinInhouse,
+    bitcoinChargebee,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
-    const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
-
-    const showBitcoinMethod = method === PAYMENT_METHOD_TYPES.BITCOIN;
-
-    const bitcoinHook = useBitcoin({
-        api,
-        Amount: amount,
-        Currency: currency,
-        onTokenValidated: (data) => withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data)),
-        onAwaitingPayment: onAwaitingBitcoinPayment,
-        enablePolling: showBitcoinMethod,
-    });
+    const showBitcoinMethod =
+        method === PAYMENT_METHOD_TYPES.BITCOIN || method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
 
     useEffect(() => {
         paymentComponentLoaded();
@@ -254,7 +241,10 @@ export const PaymentsNoApi = ({
                             {isAuthenticated && (
                                 <>
                                     <BitcoinInfoMessage />
-                                    <Bitcoin processingToken={handlingBitcoinPayment} {...bitcoinHook} />
+                                    {method === PAYMENT_METHOD_TYPES.BITCOIN && <Bitcoin {...bitcoinInhouse} />}
+                                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && (
+                                        <Bitcoin {...bitcoinChargebee} />
+                                    )}
                                 </>
                             )}
                         </>

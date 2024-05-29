@@ -162,28 +162,32 @@ export type TelemetryMeasurementData =
       };
 
 export const getPaymentMethod = (method: string) => {
-    if (method === PAYMENT_METHOD_TYPES.CARD) {
+    if (method === PAYMENT_METHOD_TYPES.CARD || method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         return 'select_cc';
     }
-    if (method === PAYMENT_METHOD_TYPES.PAYPAL || method === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+    if (
+        method === PAYMENT_METHOD_TYPES.PAYPAL ||
+        method === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT ||
+        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+    ) {
         return 'select_pp';
     }
-    if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+    if (method === PAYMENT_METHOD_TYPES.BITCOIN || method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
         return 'select_btc';
     }
 };
 
 export const getPaymentMethodType = (method: PAYMENT_METHOD_TYPES | undefined): TelemetryPayType | undefined => {
-    if (method === PAYMENT_METHOD_TYPES.CARD) {
+    if (method === PAYMENT_METHOD_TYPES.CARD || method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         return 'pay_cc';
     }
-    if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
+    if (method === PAYMENT_METHOD_TYPES.PAYPAL || method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         return 'pay_pp';
     }
     if (method === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
         return 'pay_pp_no_cc';
     }
-    if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+    if (method === PAYMENT_METHOD_TYPES.BITCOIN || method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
         return 'pay_btc';
     }
 };
