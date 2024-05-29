@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -34,7 +34,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { getShare, getShareWithKey, getShareSessionKey, getShareCreatorKeys } = useShare();
     const [members, setMembers] = useState<ShareMember[]>([]);
     const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
-    const { createShare } = useShareActions();
+    const { createShare, deleteShare } = useShareActions();
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
 
@@ -75,6 +75,34 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         };
     }, [rootShareId, linkId, volumeId]);
 
+    const deleteShareIfEmpty = useCallback(
+        async ({
+            updatedMembers,
+            updatedInvitations,
+        }: {
+            updatedMembers?: ShareMember[];
+            updatedInvitations?: ShareInvitation[];
+        } = {}) => {
+            const membersCompare = updatedMembers || members;
+            const invitationCompare = updatedInvitations || invitations;
+            if (membersCompare.length || invitationCompare.length) {
+                return;
+            }
+
+            const abortController = new AbortController();
+            const link = await getLink(abortController.signal, rootShareId, linkId);
+            if (!link.shareId || link.shareUrl) {
+                return;
+            }
+            try {
+                deleteShare(link.shareId, { silence: true });
+            } catch (e) {
+                return;
+            }
+        },
+        [members, invitations, rootShareId]
+    );
+
     const getShareId = async (abortSignal: AbortSignal): Promise<string> => {
         const link = await getLink(abortSignal, rootShareId, linkId);
         // This should not happen - TS gymnastics
@@ -85,8 +113,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     };
 
     const updateStoredMembers = (memberId: string, member?: ShareMember | undefined) => {
-        setMembers((current) =>
-            current.reduce<ShareMember[]>((acc, item) => {
+        setMembers((current) => {
+            const updatedMembers = current.reduce<ShareMember[]>((acc, item) => {
                 if (item.memberId === memberId) {
                     if (!member) {
                         return acc;
@@ -94,8 +122,12 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                     return [...acc, member];
                 }
                 return [...acc, item];
-            }, [])
-        );
+            }, []);
+            if (updatedMembers) {
+                deleteShareIfEmpty({ updatedMembers });
+            }
+            return updatedMembers;
+        });
     };
 
     const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
@@ -186,7 +218,13 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         const shareId = await getShareId(abortSignal);
 
         await deleteInvitation(abortSignal, { shareId, invitationId });
-        setInvitations((current) => current.filter((item) => item.invitationId !== invitationId));
+        setInvitations((current) => {
+            const updatedInvitations = current.filter((item) => item.invitationId !== invitationId);
+            if (updatedInvitations.length === 0) {
+                deleteShareIfEmpty({ updatedInvitations });
+            }
+            return updatedInvitations;
+        });
         createNotification({ type: 'info', text: c('Notification').t`Access updated` });
     };
 
@@ -223,6 +261,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         resendInvitation,
         updateMemberPermissions,
         updateInvitePermissions,
+        deleteShareIfEmpty,
     };
 };
 

@@ -140,8 +140,11 @@ export default function useShareActions() {
         };
     };
 
-    const deleteShare = async (shareId: string, { force }: { force?: boolean } = { force: false }): Promise<void> => {
-        await preventLeave(debouncedRequest(queryDeleteShare(shareId, { Force: force ? 1 : 0 })));
+    const deleteShare = async (
+        shareId: string,
+        { force, silence }: { force?: boolean; silence?: boolean } = { force: false }
+    ): Promise<void> => {
+        await preventLeave(debouncedRequest(queryDeleteShare(shareId, { Force: force ? 1 : 0, silence })));
         await events.pollEvents.driveEvents();
     };
 
