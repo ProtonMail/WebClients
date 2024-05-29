@@ -1,6 +1,5 @@
 import { ThemeSetting } from "../utils/themes";
 import { Environment } from "../constants";
-import { TrialStatus } from "../store/trialStore";
 
 export const DESKTOP_FEATURES = {
     InAppPayments: true,
@@ -33,7 +32,7 @@ export type IPCClientUpdateMessage =
     | { type: "oauthPopupOpened"; payload: "oauthPopupStarted" | "oauthPopupFinished" }
     | { type: "subscriptionModalOpened"; payload: "subscriptionModalStarted" | "subscriptionModalFinished" }
     | { type: "openExternal"; payload: string }
-    | { type: "trialEnd"; payload: TrialStatus }
+    | { type: "trialEnd"; payload: undefined }
     | { type: "changeView"; payload: VIEW_TARGET }
     | { type: "showNotification"; payload: ElectronNotification }
     | { type: "updateLocale"; payload: string }

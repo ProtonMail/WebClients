@@ -7,14 +7,12 @@ import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
-import { hasTrialEnded } from "./store/trialStore";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
-import { getTrialEndURL } from "./utils/urls/trial";
 import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
-import { getMailView, getMainWindow, viewCreationAppStartup } from "./utils/view/viewManagement";
+import { getMainWindow, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
@@ -111,11 +109,6 @@ import { handleWebContents } from "./utils/view/webContents";
             });
 
             viewCreationAppStartup(secureSession);
-            const mailView = getMailView();
-            if (hasTrialEnded() && mailView) {
-                const url = getTrialEndURL();
-                mailView.webContents?.loadURL(url);
-            }
 
             // Check updates
             initializeUpdateChecks();

@@ -1,14 +1,12 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
 import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
-import { resetBadge } from "../../ipc/notification";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
-import { clearStorage, isLinux, isMac, isWindows } from "../helpers";
+import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
-import { getTrialEndURL } from "../urls/trial";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
@@ -261,6 +259,12 @@ export const resetHiddenViews = async () => {
     }
 };
 
+export const showEndOfTrial = async () => {
+    const trialEndURL = `${config.url.account}/trial-ended`;
+    await loadURL("account", trialEndURL);
+    await resetHiddenViews();
+};
+
 export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!browserViewMap.calendar) {
@@ -270,15 +274,6 @@ export const reloadCalendarWithSession = (session: string) => {
     }
 
     browserViewMap.calendar.webContents.loadURL(`${config.url.calendar}/u/${session}`);
-};
-
-export const setTrialEnded = () => {
-    const url = getTrialEndURL();
-    clearStorage(true);
-    resetBadge();
-
-    browserViewMap.mail?.webContents?.loadURL(url);
-    browserViewMap.calendar?.webContents?.loadURL(url);
 };
 
 export const getSpellCheckStatus = () => {

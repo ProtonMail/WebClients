@@ -1,8 +1,7 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
-import { saveTrialStatus } from "../store/trialStore";
 import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
-import { reloadHiddenViews, resetHiddenViews, setTrialEnded, showView } from "../utils/view/viewManagement";
+import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
@@ -44,7 +43,7 @@ export const handleIPCCalls = () => {
                 resetHiddenViews();
                 break;
             case "userLogout":
-                clearStorage(true, 500);
+                resetHiddenViews();
                 resetBadge();
                 break;
             case "clearAppData":
@@ -61,11 +60,8 @@ export const handleIPCCalls = () => {
                 shell.openExternal(payload);
                 break;
             case "trialEnd":
-                saveTrialStatus(payload);
-
-                if (payload === "trialEnded") {
-                    setTrialEnded();
-                }
+                resetBadge();
+                showEndOfTrial();
                 break;
             case "changeView":
                 showView(payload);
@@ -83,8 +79,8 @@ export const handleIPCCalls = () => {
                 }
                 break;
             }
-            case 'earlyAccess': {
-                setReleaseCategory(payload)
+            case "earlyAccess": {
+                setReleaseCategory(payload);
                 break;
             }
             default:
