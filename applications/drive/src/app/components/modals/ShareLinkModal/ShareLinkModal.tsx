@@ -61,6 +61,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         removeInvitation,
         resendInvitation,
         updateInvitePermissions,
+        deleteShareIfEmpty,
     } = useShareMemberView(rootShareId, linkId);
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
@@ -100,6 +101,11 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const handleResendInvitationEmail = async (invitationId: string) => {
         await resendInvitation(invitationId);
+    };
+
+    const handleDeleteLink = async () => {
+        await deleteLink();
+        deleteShareIfEmpty();
     };
 
     const renderModalState = () => {
@@ -185,7 +191,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 createSharedLink={createSharedLink}
                                 isLoading={isShareWithAnyoneLoading}
                                 publicSharedLink={sharedLink}
-                                deleteSharedLink={deleteLink}
+                                deleteSharedLink={handleDeleteLink}
                             />
                         </ModalTwoFooter>
                     </>
