@@ -73,7 +73,8 @@ export class PaymentMethods {
         private _amount: number,
         private _coupon: string,
         private _flow: PaymentMethodFlows,
-        private _selectedPlanName: PLANS | ADDON_NAMES | undefined
+        private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
+        public enableChargebeeB2B: boolean
     ) {
         this._statusExtended = extendStatus(paymentMethodStatus);
     }
@@ -244,9 +245,7 @@ export class PaymentMethods {
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSignup || isAddCard || isSubscription || isCredit;
 
-        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
-
-        return cardAvailable && isAllowedFlow && !isB2BPlan;
+        return cardAvailable && isAllowedFlow && !this.disableForB2B();
     }
 
     private isPaypalAvailable(): boolean {
@@ -287,9 +286,12 @@ export class PaymentMethods {
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSubscription || isSignup || isCredit;
 
-        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
+        return paypalAvailable && isAllowedFlow && !this.disableForB2B();
+    }
 
-        return paypalAvailable && isAllowedFlow && !isB2BPlan;
+    private disableForB2B(): boolean {
+        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
+        return isB2BPlan && !this.enableChargebeeB2B;
     }
 }
 
@@ -311,7 +313,8 @@ export async function initializePaymentMethods(
     flow: PaymentMethodFlows,
     chargebeeEnabled: ChargebeeEnabled,
     paymentsApi: PaymentsApi,
-    selectedPlanName: PLANS | ADDON_NAMES | undefined
+    selectedPlanName: PLANS | ADDON_NAMES | undefined,
+    enableChargebeeB2B: boolean
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -356,6 +359,7 @@ export async function initializePaymentMethods(
         amount,
         coupon,
         flow,
-        selectedPlanName
+        selectedPlanName,
+        enableChargebeeB2B
     );
 }
