@@ -1,5 +1,3 @@
-import JSBI from 'jsbi';
-
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
@@ -62,7 +60,7 @@ export const getSessionKey = async (
         binaryMessage: keyPackets,
         decryptionKeys: privateKeys,
         config: {
-            allowForwardedMessages: hasBitBigInt(JSBI.BigInt(messageFlags || 0), MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE),
+            allowForwardedMessages: hasBitBigInt(BigInt(messageFlags || 0), MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE),
         },
     };
 

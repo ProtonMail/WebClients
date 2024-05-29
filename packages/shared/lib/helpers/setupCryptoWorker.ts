@@ -1,15 +1,9 @@
 import { CryptoProxy } from '@proton/crypto';
 import { WorkerPoolInitOptions as CryptoWorkerOptions, CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
 
-import { hasModulesSupport, isIos11, isSafari11 } from './browser';
+import { hasModulesSupport } from './browser';
 
 let promise: undefined | Promise<void>;
-
-const isUnsupportedWorker = () => {
-    // In safari 11 there's an unknown problem.
-    // In iOS there's a bug that prevents the worker from functioning properly.
-    return isSafari11() || isIos11();
-};
 
 /**
  * Initialize worker pool and set it as CryptoProxy endpoint.
@@ -20,7 +14,7 @@ const init = async (options?: CryptoWorkerOptions) => {
     const isCompat = isWorker || !hasModulesSupport();
 
     // Compat browsers do not support the worker.
-    if (isCompat || isUnsupportedWorker()) {
+    if (isCompat) {
         // dynamic import needed to avoid loading openpgp into the main thread, unless we get here
         const { Api: CryptoApi } = await import(
             /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
