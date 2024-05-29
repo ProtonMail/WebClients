@@ -538,7 +538,7 @@ const CalendarContainerView = ({
         <DrawerAppHeader
             title={
                 <DrawerAppHeaderCustomTitle
-                    dropdownTitle={format(localDate, 'PP', { locale: dateLocale })}
+                    dropdownTitle={format(localDate, 'E PP', { locale: dateLocale })}
                     onToggleDropdown={() => setShowIframeMiniCalendar(!showIframeMiniCalendar)}
                     onCloseDropdown={() => setShowIframeMiniCalendar(false)}
                     buttonColor={isToday(localDate) ? 'norm' : undefined}
