@@ -3,9 +3,11 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, {
     BrowserItemId,
@@ -95,6 +97,8 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
+    const { openDocument } = useDocumentActions();
+    const isDocsEnabled = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedLinksView;
 
@@ -113,6 +117,15 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                 return;
             }
             document.getSelection()?.removeAllRanges();
+
+            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
+                openDocument({
+                    linkId: id,
+                    shareId,
+                });
+                return;
+            }
+
             navigateToLink(item.rootShareId, item.id, item.isFile);
         },
         [navigateToLink, shareId, browserItems]
