@@ -34,6 +34,7 @@ export interface Props {
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     enableChargebeeB2B: boolean;
+    bitcoinChargebeeEnabled: boolean;
 }
 
 interface Dependencies {
@@ -142,6 +143,7 @@ export const useMethods = (
         paymentsApi,
         selectedPlanName,
         enableChargebeeB2B,
+        bitcoinChargebeeEnabled,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -152,6 +154,7 @@ export const useMethods = (
         pendingFlow?: PaymentMethodFlows;
         pendingChargebee?: ChargebeeEnabled;
         pendingSelectedPlanName?: PLANS | ADDON_NAMES;
+        pendingBitcoinChargebeeEnabled?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -199,6 +202,7 @@ export const useMethods = (
                 coupon ?? '',
                 flow,
                 isChargebeeEnabled(),
+                bitcoinChargebeeEnabled,
                 paymentsApi,
                 selectedPlanName,
                 enableChargebeeB2B
@@ -210,8 +214,14 @@ export const useMethods = (
             // Same goes for coupon and flow.
             if (pendingDataRef.current) {
                 // Getting the saved values and clearing the pending right away, because this is a one-time thing
-                const { pendingAmount, pendingCoupon, pendingFlow, pendingChargebee, pendingSelectedPlanName } =
-                    pendingDataRef.current;
+                const {
+                    pendingAmount,
+                    pendingCoupon,
+                    pendingFlow,
+                    pendingChargebee,
+                    pendingSelectedPlanName,
+                    pendingBitcoinChargebeeEnabled,
+                } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
                 // Updating the coupon
@@ -233,6 +243,10 @@ export const useMethods = (
 
                 if (pendingSelectedPlanName) {
                     paymentMethodsRef.current.selectedPlanName = pendingSelectedPlanName;
+                }
+
+                if (pendingBitcoinChargebeeEnabled !== undefined) {
+                    paymentMethodsRef.current.bitcoinChargebeeEnabled = pendingBitcoinChargebeeEnabled;
                 }
             }
 
@@ -256,6 +270,7 @@ export const useMethods = (
                 pendingCoupon: coupon,
                 pendingFlow: flow,
                 pendingChargebee: isChargebeeEnabled(),
+                pendingBitcoinChargebeeEnabled: bitcoinChargebeeEnabled,
                 pendingSelectedPlanName: selectedPlanName,
             };
             return;
@@ -265,10 +280,11 @@ export const useMethods = (
         paymentMethodsRef.current.coupon = coupon ?? '';
         paymentMethodsRef.current.flow = flow;
         paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
+        paymentMethodsRef.current.bitcoinChargebeeEnabled = bitcoinChargebeeEnabled;
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
 
         updateMethods();
-    }, [amount, coupon, flow, isChargebeeEnabled(), selectedPlanName]);
+    }, [amount, coupon, flow, isChargebeeEnabled(), selectedPlanName, bitcoinChargebeeEnabled]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
 
@@ -308,7 +324,19 @@ export const useMethods = (
             return;
         }
 
-        const method = allMethods.find((method) => method.value === id);
+        const method = allMethods.find((method) => {
+            // that's a workaround for the case when user selects bitcoin in pass signup and clicks "continue"
+            // by default the page will select BITCOIN payment method, so we will select CHARGEBEE_BITCOIN instead
+            if (id === PAYMENT_METHOD_TYPES.BITCOIN || id === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+                return (
+                    method.type === PAYMENT_METHOD_TYPES.BITCOIN ||
+                    method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
+                );
+            }
+
+            return method.value === id;
+        });
+
         if (method) {
             if (selectedMethod?.value !== method.value) {
                 onMethodChanged?.(method);
