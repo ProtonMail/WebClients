@@ -108,10 +108,10 @@ const createBrowserWindow = (session: Session) => {
 const configureViews = () => {
     Logger.info("Configuring mail and calendar views");
     browserViewMap.mail!.setAutoResize({ width: true, height: true });
-    browserViewMap.mail!.webContents.loadURL(config.url.mail);
+    internalLoadURL("mail", config.url.mail);
 
     browserViewMap.calendar!.setAutoResize({ width: true, height: true });
-    browserViewMap.calendar!.webContents.loadURL(config.url.calendar);
+    internalLoadURL("calendar", config.url.calendar);
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
@@ -209,19 +209,18 @@ export const loadURL = async (viewID: ViewID, url: string) => {
         if (isSameURL(currentView.webContents.getURL(), url)) {
             Logger.info(`Current view ${viewID} already in given url`, loggedURL);
         } else {
-            Logger.info(`Loading URL in current view ${viewID}`, loggedURL);
-            await currentView.webContents.loadURL(url);
+            Logger.info("Loading URL in current view");
+            await internalLoadURL(viewID, url);
         }
     } else {
         if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
             Logger.info(`View ${viewID} already in given url`, loggedURL);
             showView(viewID);
         } else if (nextView) {
-            Logger.info(`Loading URL in ${viewID}`, loggedURL);
             // Clear nextView before changing to it show it does not show a flash of content
-            await nextView.webContents.loadURL("about:blank");
+            await internalLoadURL(viewID, "about:blank");
             showView(viewID);
-            await nextView.webContents.loadURL(url);
+            await internalLoadURL(viewID, url);
         } else {
             // View hasn't loaded yet, try to load it now
             showView(viewID);
@@ -231,8 +230,7 @@ export const loadURL = async (viewID: ViewID, url: string) => {
                 if (isSameURL(loadedNextView.webContents.getURL(), url)) {
                     Logger.info(`View ${viewID} already in given url`, loggedURL);
                 } else {
-                    Logger.info(`Loading URL in ${viewID}`, loggedURL);
-                    await loadedNextView.webContents.loadURL(url);
+                    await internalLoadURL(viewID, url);
                 }
             } else {
                 Logger.error(`Cant load URL in ${viewID}, view is not available`, loggedURL);
@@ -254,7 +252,7 @@ export const resetHiddenViews = async () => {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             Logger.info("Resetting hidden view", viewID);
-            await view.webContents.loadURL("about:blank");
+            await internalLoadURL(viewID as ViewID, "about:blank");
         }
     }
 };
@@ -265,7 +263,7 @@ export const showEndOfTrial = async () => {
     await resetHiddenViews();
 };
 
-export const reloadCalendarWithSession = (session: string) => {
+export const reloadCalendarWithSession = async (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!browserViewMap.calendar) {
         Logger.error("Calendar view not created");
@@ -273,7 +271,7 @@ export const reloadCalendarWithSession = (session: string) => {
         browserViewMap.calendar = new BrowserView({ ...config });
     }
 
-    browserViewMap.calendar.webContents.loadURL(`${config.url.calendar}/u/${session}`);
+    await internalLoadURL("calendar", `${config.url.calendar}/u/${session}`);
 };
 
 export const getSpellCheckStatus = () => {
@@ -303,3 +301,29 @@ export const getWebContentsViewName = (webContents: WebContents) => {
 
     return "unknown";
 };
+
+async function internalLoadURL(viewID: ViewID, url: string) {
+    const view = browserViewMap[viewID];
+    const loggedURL = app.isPackaged ? "" : url;
+    const logPrefix = `${viewID}(loadURL)`;
+
+    if (view) {
+        Logger.info(logPrefix, loggedURL);
+
+        try {
+            view.webContents.stop();
+            await view.webContents.loadURL(url);
+        } catch (error) {
+            // ERR_ABORTED is expected when we stop existing navigation to redirect views to other URLs,
+            // something that can easily happen during the auth process.
+            if (error && typeof error === "object" && "code" in error && error.code === "ERR_ABORTED") {
+                return;
+            }
+
+            Logger.error(logPrefix, error);
+            throw error;
+        }
+    } else {
+        Logger.error(logPrefix, "view is not available", loggedURL);
+    }
+}
