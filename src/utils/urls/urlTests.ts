@@ -55,8 +55,8 @@ const isMailHome = (urlString: string) => {
         return (
             url.pathname === "" ||
             url.pathname === "/" ||
-            /^\/u\/\d\/?$/.test(url.pathname) || // /u/0
-            /^\/u\/\d\/inbox\/?$/.test(url.pathname) // /u/0/inbox
+            /^\/u\/(\d+)\/?$/.test(url.pathname) || // /u/0
+            /^\/u\/(\d+)\/inbox\/?$/.test(url.pathname) // /u/0/inbox
         );
     } catch (error) {
         return false;
