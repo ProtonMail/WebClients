@@ -12,7 +12,7 @@ interface InAppPurchaseModalProps extends ModalProps {
     onClose: NonNullable<ModalProps['onClose']>;
 }
 
-function getSubscriptionManagerName(externalCode: External): string {
+export function getSubscriptionManagerName(externalCode: External): string {
     if (externalCode === External.Android) {
         return 'Google Play';
     } else if (externalCode === External.iOS) {
