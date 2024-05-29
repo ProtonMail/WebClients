@@ -1,3 +1,5 @@
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+
 import { PAYMENT_METHOD_TYPES } from './constants';
 import { TokenPaymentMethod, V5PaymentToken } from './interface';
 
@@ -26,4 +28,11 @@ export function v5PaymentTokenToLegacyPaymentToken(data: V5PaymentToken): TokenP
             },
         },
     };
+}
+
+export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
+    return (
+        chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED ||
+        chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED
+    );
 }

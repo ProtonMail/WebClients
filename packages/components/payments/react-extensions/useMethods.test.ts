@@ -210,40 +210,38 @@ it('should initialize payment methods (with chargebee)', async () => {
     expect(result.current.loading).toBe(false);
     expect(result.current.savedMethods).toEqual(paymentMethods);
 
-    // this was before introduction of the reverse kill-switch, see helper hook in useMethods
-    // Most likely, the new check is fine, because Chargebee forced users should not be able to see the in-house
-    // saved methods anyways. They shouldn't even request them, as they must go straight to v5/methods.
-    // expect(result.current.selectedMethod).toEqual({
-    //     isExpired: false,
-    //     isSaved: true,
-    //     paymentMethodId: '1',
-    //     type: PAYMENT_METHOD_TYPES.CARD,
-    //     value: '1',
-    // });
     expect(result.current.selectedMethod).toEqual({
-        isSaved: false,
-        type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
-        value: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+        isExpired: false,
+        isSaved: true,
+        paymentMethodId: '1',
+        type: PAYMENT_METHOD_TYPES.CARD,
+        value: '1',
     });
-
-    // this was before introduction of the reverse kill-switch, see helper hook in useMethods
-    // expect(result.current.savedInternalSelectedMethod).toEqual({
-    //     ID: '1',
-    //     Type: PAYMENT_METHOD_TYPES.CARD,
-    //     Order: 500,
-    //     Autopay: Autopay.ENABLE,
-    //     Details: {
-    //         Name: 'Arthur Morgan',
-    //         ExpMonth: '12',
-    //         ExpYear: '2030',
-    //         ZIP: '12345',
-    //         Country: 'US',
-    //         Last4: '1234',
-    //         Brand: 'Visa',
-    //     },
-    //     External: MethodStorage.INTERNAL,
+    // this was before on-session migration
+    // expect(result.current.selectedMethod).toEqual({
+    //     isSaved: false,
+    //     type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+    //     value: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
     // });
-    expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+
+    expect(result.current.savedInternalSelectedMethod).toEqual({
+        ID: '1',
+        Type: PAYMENT_METHOD_TYPES.CARD,
+        Order: 500,
+        Autopay: Autopay.ENABLE,
+        Details: {
+            Name: 'Arthur Morgan',
+            ExpMonth: '12',
+            ExpYear: '2030',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '1234',
+            Brand: 'Visa',
+        },
+        External: MethodStorage.INTERNAL,
+    });
+    // this was before on-session migration
+    // expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
 
     expect(result.current.status).toEqual(paymentMethodStatusExtended);
     expect(result.current.isNewPaypal).toBe(false);

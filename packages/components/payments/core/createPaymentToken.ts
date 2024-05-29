@@ -365,7 +365,11 @@ export const formatTokenV5 = (
 
 export const createPaymentTokenForExistingChargebeePayment = async (
     PaymentMethodID: ExistingPaymentMethod,
-    type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+    type:
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,
@@ -386,7 +390,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
     const paymentIntent = convertPaymentIntentData(paymentIntentBackend);
     let authorizedStatus: AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken;
 
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+    // CARD is allowed for v4-v5 migration
+    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD || type === PAYMENT_METHOD_TYPES.CARD) {
         const result = await submitSavedChargebeeCard(handles, events, {
             paymentIntent: paymentIntent as PaymentIntent,
         });
@@ -409,10 +414,19 @@ export const createPaymentTokenForExistingChargebeePayment = async (
 
     const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
 
+    let convertedType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    if (type === PAYMENT_METHOD_TYPES.CARD) {
+        convertedType = PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    } else if (type === PAYMENT_METHOD_TYPES.PAYPAL) {
+        convertedType = PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    } else {
+        convertedType = type;
+    }
+
     return {
         ...amountAndCurrency,
         ...authorizedStatus,
-        type,
+        type: convertedType,
         v: 5,
         PaymentToken,
         chargeable,

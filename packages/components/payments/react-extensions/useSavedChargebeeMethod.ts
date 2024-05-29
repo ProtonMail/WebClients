@@ -12,13 +12,14 @@ import {
     ExistingPaymentMethod,
     PaymentVerificatorV5,
     SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
 } from '../core';
 import { SavedChargebeePaymentProcessor } from '../core/payment-processors/savedChargebeePayment';
 import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethodExternal;
+    savedMethod?: SavedPaymentMethodExternal | SavedPaymentMethodInternal;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;

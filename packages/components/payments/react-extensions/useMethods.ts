@@ -15,6 +15,7 @@ import {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
+    canUseChargebee,
     initializePaymentMethods,
     isExistingPaymentMethod,
     isSavedPaymentMethodExternal,
@@ -69,12 +70,19 @@ const useInhouseToChargebeeSwitch = ({
     availableMethods,
     isMethodTypeEnabled,
     selectMethod,
+    isChargebeeEnabled,
 }: {
     selectedMethod: AvailablePaymentMethod | undefined;
     availableMethods: UsedAndNewMethods;
     isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
     selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
+    isChargebeeEnabled: () => ChargebeeEnabled;
 }) => {
+    // We don't apply the switching logic for saved methods, because on-session upgrades
+    // supposed to support selecting in-house saved methods. The method will be imported to Chargebee
+    // on payment and then the method updated to CB one.
+    const isMigratableSavedMethod = !!selectedMethod?.isSaved && canUseChargebee(isChargebeeEnabled());
+
     // An effect of switches between Chargebee and inhouse in case if inhouse or Chargebee is not available.
     useEffect(() => {
         // Kill switch for chargebee card. If the kill switch was activated, we need to make sure that the selected
@@ -99,7 +107,8 @@ const useInhouseToChargebeeSwitch = ({
             // Additional check to make sure that the chargebee card method is available.
             const chargebeeCardAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
 
-            const switchToChargebee = cardSelected && cardNotAvailable && chargebeeCardAvailable;
+            const switchToChargebee =
+                cardSelected && cardNotAvailable && chargebeeCardAvailable && !isMigratableSavedMethod;
             if (switchToChargebee) {
                 selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
             }
@@ -123,7 +132,8 @@ const useInhouseToChargebeeSwitch = ({
             // Additional check to make sure that the chargebee paypal method is available.
             const chargebeePaypalAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
 
-            const switchToChargebee = paypalSelected && paypalNotAvailable && chargebeePaypalAvailable;
+            const switchToChargebee =
+                paypalSelected && paypalNotAvailable && chargebeePaypalAvailable && !isMigratableSavedMethod;
             if (switchToChargebee) {
                 selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
             }
@@ -359,6 +369,7 @@ export const useMethods = (
         availableMethods,
         isMethodTypeEnabled,
         selectMethod,
+        isChargebeeEnabled,
     });
 
     const savedInternalSelectedMethod = getSavedInternalMethodByID(selectedMethod?.value);

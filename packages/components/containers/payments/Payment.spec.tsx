@@ -9,6 +9,7 @@ import {
     SavedPaymentMethodInternal,
 } from '@proton/components/payments/core';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing/index';
 
 import { PaymentsNoApi } from './Payment';
@@ -176,6 +177,7 @@ describe('Payment', () => {
                 bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
+                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
             />
         );
     });
@@ -207,6 +209,7 @@ describe('Payment', () => {
                 bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
+                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
             />
         );
 
@@ -242,6 +245,7 @@ describe('Payment', () => {
                 bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
+                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
             />
         );
 
@@ -313,6 +317,7 @@ describe('Payment', () => {
                 bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
+                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
             />
         );
 
@@ -379,6 +384,7 @@ describe('Payment', () => {
                 bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
+                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
             />
         );
 
