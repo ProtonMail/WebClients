@@ -25,7 +25,7 @@ interface Props {
 
 export const CancellationReminderSection = ({ app }: Props) => {
     const [{ paid }] = useVPNServersCount();
-    const { hasAccess, plan, redirectToDashboard, subscription, setStartedCancellation } = useB2CCancellationFlow();
+    const { hasAccess, redirectToDashboard, subscription, setStartedCancellation } = useB2CCancellationFlow();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
@@ -34,11 +34,11 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
 
     const [config, setConfig] = useState<ReturnType<typeof getReminderPageConfig> | null>(
-        getReminderPageConfig(subscription, plan)
+        getReminderPageConfig(subscription)
     );
 
     useEffect(() => {
-        const config = getReminderPageConfig(subscription, plan, paid.countries);
+        const config = getReminderPageConfig(subscription, paid.countries);
         setConfig(config);
     }, [hasAccess, paid]);
 

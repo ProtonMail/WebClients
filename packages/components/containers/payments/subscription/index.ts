@@ -11,4 +11,6 @@ export { default as YourStorageSection } from './YourStorageSection';
 export * from './b2cCancellationFlow';
 export { default as CancelB2bSubscriptionSection } from './cancelB2bSubscription/CancelB2bSubscriptionSection';
 export { CancelSubscriptionSection } from './cancelSubscription';
+export { default as CancellationReminderModal } from './cancellationReminder/CancellationReminderModal';
+export { shouldOpenReminderModal } from './cancellationReminder/cancellationReminderHelper';
 export * from './constants';
