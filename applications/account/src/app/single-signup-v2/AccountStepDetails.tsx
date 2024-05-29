@@ -17,7 +17,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
@@ -59,8 +58,7 @@ const first = <T,>(errors: T[]) => {
     return errors.find((x) => !!x);
 };
 
-const emailAsyncValidator = createAsyncValidator(validateEmailAvailability);
-const usernameAsyncValidator = createAsyncValidator(validateUsernameAvailability);
+const usernameAsyncValidator = createAsyncValidator();
 
 interface InputState {
     interactive: boolean;
@@ -418,16 +416,29 @@ const AccountStepDetails = ({
         return true;
     };
 
+    const addAvailabilityMonitoring = (result: AsyncValidationState) => {
+        if (result.state === AsyncValidationStateValue.Success || result.state === AsyncValidationStateValue.Fatal) {
+            const available = result.state === AsyncValidationStateValue.Fatal ? 'no' : 'yes';
+            measure({
+                event: TelemetryAccountSignupEvents.beAvailableExternal,
+                dimensions: { available },
+            });
+        }
+    };
+
     const handleEmailError = (email: string, asyncSet = setEmailAsyncValidationState) => {
         const emailError = getEmailError({
             email,
         });
-        emailAsyncValidator.trigger({
-            api,
+        usernameAsyncValidator.trigger({
+            validate: async (value, abortController) => {
+                const result = await validateEmailAvailability(value, api, abortController);
+                addAvailabilityMonitoring(result);
+                return result;
+            },
             error: !!emailError,
             value: email,
             set: asyncSet,
-            measure,
         });
     };
 
@@ -437,11 +448,14 @@ const AccountStepDetails = ({
             domain,
         });
         usernameAsyncValidator.trigger({
-            api,
+            validate: async (value, abortController) => {
+                const result = await validateUsernameAvailability(value, api, abortController);
+                addAvailabilityMonitoring(result);
+                return result;
+            },
             error: !!usernameError,
             value: joinUsernameDomain(username, domain),
             set: asyncSet,
-            measure,
         });
     };
 
@@ -563,14 +577,16 @@ const AccountStepDetails = ({
         }
     }, [defaultEmail, domains]);
 
-    const usernameError = states.username.interactive && states.username.focus ? errorDetails.username : undefined;
-    const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
-    const passwordError = states.password.interactive && states.password.focus ? errorDetails.password : undefined;
-    const passwordConfirmError =
-        states.passwordConfirm.interactive && states.passwordConfirm.focus ? errorDetails.passwordConfirm : undefined;
+    const getAssistVisible = (state: Partial<InputState>) => state.interactive && state.focus;
+    const usernameError = getAssistVisible(states.username) ? errorDetails.username : undefined;
+    const emailError = getAssistVisible(states.email) ? errorDetails.email : undefined;
+    const passwordError = getAssistVisible(states.password) ? errorDetails.password : undefined;
+    const passwordConfirmError = getAssistVisible(states.passwordConfirm) ? errorDetails.passwordConfirm : undefined;
+
     const inputsWrapper = 'flex flex-column';
     const hasSwitchSignupType = signupTypes.includes(SignupType.Email) && signupTypes.length > 1;
     const dense = !passwordFields && signupTypes.length <= 1;
+
     return (
         <>
             {loading && (
@@ -652,7 +668,10 @@ const AccountStepDetails = ({
                                                 />
                                             );
                                         }
-                                        if (emailAsyncValidationState.state === AsyncValidationStateValue.Loading) {
+                                        if (
+                                            emailAsyncValidationState.state === AsyncValidationStateValue.Loading &&
+                                            getAssistVisible(states.email)
+                                        ) {
                                             return <CircleLoader size="small" />;
                                         }
                                     })()}
@@ -700,27 +719,6 @@ const AccountStepDetails = ({
                                                 );
                                             };
                                             if (
-                                                [
-                                                    AsyncValidationStateValue.Error,
-                                                    AsyncValidationStateValue.Fatal,
-                                                ].includes(usernameAsyncValidationState.state) ||
-                                                usernameError
-                                            ) {
-                                                return wrap(
-                                                    <Tooltip
-                                                        /* Unfortunately doesn't work because it's in the challenge*/
-                                                        title={usernameAsyncValidationState.message || usernameError}
-                                                    >
-                                                        <Icon
-                                                            name="exclamation-circle"
-                                                            className="color-danger"
-                                                            size={4}
-                                                            data-testid="email-invalid"
-                                                        />
-                                                    </Tooltip>
-                                                );
-                                            }
-                                            if (
                                                 usernameAsyncValidationState.state === AsyncValidationStateValue.Success
                                             ) {
                                                 return wrap(
@@ -733,7 +731,9 @@ const AccountStepDetails = ({
                                                 );
                                             }
                                             if (
-                                                usernameAsyncValidationState.state === AsyncValidationStateValue.Loading
+                                                usernameAsyncValidationState.state ===
+                                                    AsyncValidationStateValue.Loading &&
+                                                getAssistVisible(states.username)
                                             ) {
                                                 return wrap(<CircleLoader size="small" />);
                                             }
