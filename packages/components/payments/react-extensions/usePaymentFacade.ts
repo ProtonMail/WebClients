@@ -25,6 +25,7 @@ import {
     isExistingPaymentMethod,
 } from '../core';
 import { PaymentProcessorType } from './interface';
+import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
 import { useChargebeeCard } from './useChargebeeCard';
 import { useChargebeePaypal } from './useChargebeePaypal';
@@ -168,6 +169,8 @@ export const usePaymentFacade = (
         onProcessPaymentToken,
         onProcessPaymentTokenFailed,
         enableChargebeeB2B,
+        billingAddress,
+        bitcoinChargebeeEnabled,
     }: {
         amount: number;
         currency: Currency;
@@ -194,6 +197,8 @@ export const usePaymentFacade = (
         onProcessPaymentToken: (paymentMethodType: PaymentProcessorType) => void;
         onProcessPaymentTokenFailed: (paymentMethodType: PaymentProcessorType) => void;
         enableChargebeeB2B: boolean;
+        billingAddress?: BillingAddress;
+        bitcoinChargebeeEnabled: boolean;
     },
     {
         api,
@@ -238,6 +243,7 @@ export const usePaymentFacade = (
             paymentsApi,
             selectedPlanName,
             enableChargebeeB2B,
+            bitcoinChargebeeEnabled,
         },
         {
             api,
@@ -433,6 +439,49 @@ export const usePaymentFacade = (
     );
 
     const paymentMethodValue: PaymentMethodType | undefined = methods.selectedMethod?.value;
+    const bitcoinInhouse = useBitcoin({
+        api,
+        Amount: amount,
+        Currency: currency,
+        enablePolling: paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN,
+        paymentsVersion: 'v4',
+        onTokenValidated: (params: ChargeablePaymentParameters) => {
+            return onChargeable(
+                getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
+                {
+                    chargeablePaymentParameters: params,
+                    source: PAYMENT_METHOD_TYPES.BITCOIN,
+                    sourceType: params.type,
+                    context: paymentContext.getOperationsData(),
+                    paymentsVersion: 'v4',
+                    paymentProcessorType: bitcoinInhouse.meta.type,
+                }
+            );
+        },
+    });
+
+    const bitcoinChargebee = useBitcoin({
+        api,
+        Amount: amount,
+        Currency: currency,
+        enablePolling: paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+        paymentsVersion: 'v5',
+        billingAddress,
+        onTokenValidated: (params: ChargeablePaymentParameters) => {
+            return onChargeable(
+                getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                {
+                    chargeablePaymentParameters: params,
+                    source: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                    sourceType: params.type,
+                    context: paymentContext.getOperationsData(),
+                    paymentsVersion: 'v5',
+                    paymentProcessorType: bitcoinChargebee.meta.type,
+                }
+            );
+        },
+    });
+
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
         if (isExistingPaymentMethod(paymentMethodValue)) {
@@ -465,6 +514,14 @@ export const usePaymentFacade = (
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
             return chargebeePaypal;
         }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
+            return bitcoinInhouse;
+        }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+            return bitcoinChargebee;
+        }
     }, [
         paymentMethodValue,
         paymentMethodType,
@@ -485,6 +542,8 @@ export const usePaymentFacade = (
         paypalCredit,
         chargebeeCard,
         chargebeePaypal,
+        bitcoinInhouse,
+        bitcoinChargebee,
         selectedProcessor,
         flow,
         amount,

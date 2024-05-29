@@ -147,14 +147,11 @@ describe('Payment', () => {
     });
 
     it('should render', () => {
-        apiMock.mockReturnValue({});
-
         const method = PAYMENT_METHOD_TYPES.CARD;
         const savedMethodInternal = paymentMethods.find(({ ID }) => method === ID) as SavedPaymentMethodInternal;
 
         render(
             <PaymentContext
-                api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
                 method={method}
@@ -175,6 +172,8 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                bitcoinInhouse={null as any}
+                bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
             />
@@ -182,11 +181,8 @@ describe('Payment', () => {
     });
 
     it('should render <Alert3DS> if the payment method is card', async () => {
-        apiMock.mockReturnValue({});
-
         let { container } = render(
             <PaymentContext
-                api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
                 method={PAYMENT_METHOD_TYPES.CARD}
@@ -207,6 +203,8 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                bitcoinInhouse={null as any}
+                bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
             />
@@ -218,11 +216,8 @@ describe('Payment', () => {
     });
 
     it('should not render <Alert3DS> if flow type is "signup"', async () => {
-        apiMock.mockReturnValue({});
-
         let { container } = render(
             <PaymentContext
-                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method={PAYMENT_METHOD_TYPES.CARD}
@@ -243,6 +238,8 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                bitcoinInhouse={null as any}
+                bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
             />
@@ -292,7 +289,6 @@ describe('Payment', () => {
 
         let { container } = render(
             <PaymentContext
-                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method="my-custom-method-123"
@@ -313,6 +309,8 @@ describe('Payment', () => {
                 iframeHandles={{} as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                bitcoinInhouse={null as any}
+                bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
             />
@@ -357,7 +355,6 @@ describe('Payment', () => {
 
         let { container } = render(
             <PaymentContext
-                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method="my-custom-method-123"
@@ -378,6 +375,8 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                bitcoinInhouse={null as any}
+                bitcoinChargebee={null as any}
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
             />

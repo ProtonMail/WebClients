@@ -79,6 +79,7 @@ export interface SignupModelV2 {
         installed: boolean;
     };
     vpnServersCountData: VPNServersCountData;
+    signupTokenMode?: boolean;
 }
 
 export type ActionResponse =

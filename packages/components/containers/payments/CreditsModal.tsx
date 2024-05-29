@@ -6,10 +6,10 @@ import { Button, ButtonLike, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { AmountAndCurrency, PAYMENT_METHOD_TYPES, TokenPaymentMethod } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { buyCredit, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
     APPS,
     DEFAULT_CREDITS_AMOUNT,
@@ -19,7 +19,6 @@ import {
     MIN_CREDIT_AMOUNT,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -38,7 +37,7 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useApi, useConfig, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import { useConfig, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
@@ -63,7 +62,6 @@ const CreditsModal = (props: ModalProps) => {
     const amountLoading = debouncedAmount !== amount;
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
-    const api = useApi();
     const pollEventsMultipleTimes = usePollEvents();
     const chargebeeContext = useChargebeeContext();
     const [subscription, loadingSubscription] = useSubscription();
@@ -90,9 +88,6 @@ const CreditsModal = (props: ModalProps) => {
         flow: 'credit',
     });
 
-    const [bitcoinValidated, setBitcoinValidated] = useState(false);
-    const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
-
     useEffect(() => {
         const currency = subscription?.Currency ?? user.Currency ?? DEFAULT_CURRENCY;
         setCurrency(currency);
@@ -102,24 +97,14 @@ const CreditsModal = (props: ModalProps) => {
         return <Loader />;
     }
 
-    const exitSuccess = async () => {
-        props.onClose?.();
-        createNotification({ text: c('Success').t`Credits added` });
-    };
-
-    const handleChargeableToken = async (tokenPaymentMethod: TokenPaymentMethod) => {
-        const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
-        await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
-        await call();
-    };
-
     const methodValue = paymentFacade.selectedMethodValue;
 
     const submit = (() => {
         const bitcoinAmountInRange = debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT;
         if (
             debouncedAmount < MIN_CREDIT_AMOUNT ||
-            (methodValue === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinAmountInRange)
+            ((methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
+                !bitcoinAmountInRange)
         ) {
             return null;
         }
@@ -160,14 +145,19 @@ const CreditsModal = (props: ModalProps) => {
         }
 
         const topUpText = c('Action').t`Top up`;
-        if (methodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
+        if (methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
             return (
                 <PrimaryButton
-                    loading={!bitcoinValidated && awaitingBitcoinPayment}
+                    loading={
+                        paymentFacade.bitcoinInhouse.bitcoinLoading || paymentFacade.bitcoinChargebee.bitcoinLoading
+                    }
                     disabled={true}
                     data-testid="top-up-button"
                 >
-                    {awaitingBitcoinPayment ? c('Info').t`Awaiting transaction` : topUpText}
+                    {paymentFacade.bitcoinInhouse.awaitingBitcoinPayment ||
+                    paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
+                        ? c('Info').t`Awaiting transaction`
+                        : topUpText}
                 </PrimaryButton>
             );
         }
@@ -257,12 +247,6 @@ const CreditsModal = (props: ModalProps) => {
                     {...paymentFacade}
                     onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                     noMaxWidth
-                    onBitcoinTokenValidated={async (data) => {
-                        setBitcoinValidated(true);
-                        await handleChargeableToken(data);
-                        void wait(2000).then(() => exitSuccess());
-                    }}
-                    onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                     triggersDisabled={amountLoading}
                     hasSomeVpnPlan={getHasSomeVpnPlan(subscription)}
                 />

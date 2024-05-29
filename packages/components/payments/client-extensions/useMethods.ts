@@ -89,7 +89,7 @@ export function convertMethod(
             text: c('Payment method option').t`PayPal`,
             ...method,
         };
-    } else if (method.type === PAYMENT_METHOD_TYPES.BITCOIN) {
+    } else if (method.type === PAYMENT_METHOD_TYPES.BITCOIN || method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
         return {
             icon: 'brand-bitcoin' as const,
             text: c('Payment method option').t`Bitcoin`,

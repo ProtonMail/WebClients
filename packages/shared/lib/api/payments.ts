@@ -314,21 +314,22 @@ export type CreateTokenData =
     | ((AmountAndCurrency | {}) & (WrappedPaypalPayment | WrappedCardPayment | ExistingPayment))
     | CreateBitcoinTokenData;
 
-export const createTokenV4 = (data: CreateTokenData) => ({
-    url: `payments/v4/tokens`,
+export const createToken = (data: CreateTokenData, version: PaymentsVersion) => ({
+    url: `payments/${version}/tokens`,
     method: 'post',
     data,
 });
 
-export const getTokenStatusV4 = (paymentToken: string) => ({
-    url: `payments/v4/tokens/${paymentToken}`,
+export const createTokenV4 = (data: CreateTokenData) => createToken(data, 'v4');
+export const createTokenV5 = (data: CreateTokenData) => createToken(data, 'v5');
+
+export const getTokenStatus = (paymentToken: string, version: PaymentsVersion) => ({
+    url: `payments/${version}/tokens/${paymentToken}`,
     method: 'get',
 });
 
-export const getTokenStatusV5 = (paymentToken: string) => ({
-    url: `payments/v5/tokens/${paymentToken}`,
-    method: 'get',
-});
+export const getTokenStatusV4 = (paymentToken: string) => getTokenStatus(paymentToken, 'v4');
+export const getTokenStatusV5 = (paymentToken: string) => getTokenStatus(paymentToken, 'v5');
 
 export const getLastCancelledSubscription = () => ({
     url: `payments/${paymentsVersion}/subscription/latest`,

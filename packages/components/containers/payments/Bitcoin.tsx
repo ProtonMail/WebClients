@@ -6,18 +6,26 @@ import { Button } from '@proton/atoms';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
+import { BitcoinHook } from '../../payments/react-extensions/useBitcoin';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
-import useBitcoin from './useBitcoin';
 
-export type Props = ReturnType<typeof useBitcoin> & {
-    processingToken?: boolean;
-};
+export type Props = BitcoinHook;
 
-const Bitcoin = ({ amount, currency, processingToken, paymentValidated, model, loading, error, request }: Props) => {
+const Bitcoin = ({
+    amount,
+    currency,
+    processingBitcoinToken,
+    bitcoinPaymentValidated,
+    model,
+    loading,
+    error,
+    request,
+    billingAddress,
+}: Props) => {
     useEffect(() => {
         void request();
-    }, [amount, currency]);
+    }, [amount, currency, billingAddress?.CountryCode, billingAddress?.State]);
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
@@ -58,10 +66,10 @@ const Bitcoin = ({ amount, currency, processingToken, paymentValidated, model, l
     }
 
     const qrCodeStatus: BitcoinQRCodeProps['status'] = (() => {
-        if (processingToken) {
+        if (processingBitcoinToken) {
             return 'pending';
         }
-        if (paymentValidated) {
+        if (bitcoinPaymentValidated) {
             return 'confirmed';
         }
         return 'initial';

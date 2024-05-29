@@ -1268,6 +1268,7 @@ const SingleSignupContainerV2 = ({
                                         // Set back original subscription data
                                         subscriptionData: cacheWithOriginalSubscription.subscriptionData,
                                         cache: cacheWithOriginalSubscription,
+                                        signupTokenMode: true,
                                     });
                                 } else {
                                     const result = await handleCreateUser({

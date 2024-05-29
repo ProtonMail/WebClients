@@ -16,7 +16,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import { subscribe as apiSubscribe, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -87,7 +87,6 @@ import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
-import { ValidatedBitcoinToken, isValidatedBitcoinToken } from '../useBitcoin';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
 import PlanCustomization from './PlanCustomization';
@@ -357,8 +356,6 @@ const SubscriptionContainer = ({
 
     const isPassB2bPlan = !!model.planIDs[PLANS.PASS_PRO] || !!model.planIDs[PLANS.PASS_BUSINESS];
     const defaultCycles = isPassB2bPlan ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
-    const [bitcoinValidated, setBitcoinValidated] = useState(false);
-    const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
     const application = useMemo(() => {
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
@@ -419,38 +416,8 @@ const SubscriptionContainer = ({
         });
     };
 
-    const processSubscription = async (operationsOrValidToken: Operations | ValidatedBitcoinToken) => {
-        const Codes = getCodesForSubscription();
-
-        if (isValidatedBitcoinToken(operationsOrValidToken)) {
-            await api(
-                apiSubscribe(
-                    {
-                        Codes,
-                        Plans: model.planIDs,
-                        Cycle: model.cycle,
-                        Currency: currency,
-                        Amount: amount,
-                        Payment: operationsOrValidToken.Payment,
-                        BillingAddress: model.taxBillingAddress,
-                    },
-                    app,
-                    'v4'
-                )
-            );
-        } else {
-            await operationsOrValidToken.subscribe({
-                Codes,
-                Plans: model.planIDs,
-                Cycle: model.cycle,
-                product: app,
-                taxBillingAddress: model.taxBillingAddress,
-            });
-        }
-    };
-
     const handleSubscribe = async (
-        operationsOrValidToken: Operations | ValidatedBitcoinToken,
+        operations: Operations,
         { operationsSubscriptionData, paymentProcessorType }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
@@ -485,7 +452,13 @@ const SubscriptionContainer = ({
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
-                await processSubscription(operationsOrValidToken);
+                await operations.subscribe({
+                    Codes: getCodesForSubscription(),
+                    Plans: model.planIDs,
+                    Cycle: model.cycle,
+                    product: app,
+                    taxBillingAddress: model.taxBillingAddress,
+                });
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
@@ -544,6 +517,7 @@ const SubscriptionContainer = ({
         amount,
         currency,
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
+        billingAddress: model.taxBillingAddress,
         onChargeable: (operations, { sourceType, paymentProcessorType }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
@@ -568,11 +542,6 @@ const SubscriptionContainer = ({
         },
         flow: 'subscription',
     });
-
-    const bitcoinLoading =
-        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN &&
-        !bitcoinValidated &&
-        awaitingBitcoinPayment;
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
         const isInitialCheck = !newModel.initialCheckComplete;
@@ -841,6 +810,83 @@ const SubscriptionContainer = ({
 
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
 
+    const subscriptionCheckoutSubmit = (
+        <>
+            <SubscriptionSubmitButton
+                currency={model.currency}
+                onDone={onSubscribed}
+                paypal={paymentFacade.paypal}
+                step={model.step}
+                loading={
+                    loading ||
+                    paymentFacade.bitcoinInhouse.bitcoinLoading ||
+                    paymentFacade.bitcoinChargebee.bitcoinLoading
+                }
+                paymentMethodValue={paymentFacade.selectedMethodValue}
+                checkResult={checkResult}
+                className="w-full"
+                disabled={isFreeUserWithFreePlanSelected}
+                chargebeePaypal={paymentFacade.chargebeePaypal}
+                iframeHandles={paymentFacade.iframeHandles}
+                noPaymentNeeded={model.noPaymentNeeded}
+                subscription={subscription}
+                hasPaymentMethod={hasPaymentMethod}
+            />
+            {paymentFacade.showInclusiveTax && (
+                <InclusiveVatText
+                    tax={checkResult?.Taxes?.[0]}
+                    currency={currency}
+                    className="text-sm color-weak text-center mt-1"
+                />
+            )}
+        </>
+    );
+
+    const gift = (
+        <>
+            {couponCode && (
+                <div className="flex items-center mb-1">
+                    <Icon name="gift" className="mr-2 mb-1" />
+                    <Tooltip title={couponDescription}>
+                        <code>{couponCode.toUpperCase()}</code>
+                    </Tooltip>
+                </div>
+            )}
+            {!getHas2023OfferCoupon(couponCode) && (
+                <PaymentGiftCode
+                    giftCodeRef={giftCodeRef}
+                    key={
+                        /* Reset the toggle state when a coupon code gets applied */
+                        couponCode
+                    }
+                    giftCode={model.gift}
+                    onApply={handleGift}
+                    loading={loadingGift}
+                />
+            )}
+        </>
+    );
+
+    const subscriptionCheckoutProps = {
+        freePlan,
+        subscription,
+        plansMap,
+        checkResult,
+        vpnServers,
+        gift,
+        submit: subscriptionCheckoutSubmit,
+        loading: loadingCheck,
+        currency: model.currency,
+        cycle: model.cycle,
+        planIDs: model.planIDs,
+        onChangeCurrency: handleChangeCurrency,
+        nextSubscriptionStart: subscription.PeriodEnd,
+        showTaxCountry: paymentFacade.showTaxCountry,
+        statusExtended: paymentFacade.statusExtended,
+        onBillingAddressChange: handleBillingAddressChange,
+        ...checkoutModifiers,
+    };
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -1027,19 +1073,6 @@ const SubscriptionContainer = ({
                                         {...paymentFacade}
                                         onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                                         noMaxWidth
-                                        onBitcoinTokenValidated={async (data) => {
-                                            setBitcoinValidated(true);
-                                            await handleSubscribe(data, {
-                                                operationsSubscriptionData: {
-                                                    Plans: model.planIDs,
-                                                    Cycle: model.cycle,
-                                                    product: app,
-                                                    taxBillingAddress: model.taxBillingAddress,
-                                                },
-                                                paymentProcessorType: 'bitcoin',
-                                            }).catch(noop);
-                                        }}
-                                        onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                         hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                         hasSomeVpnPlan={hasSomeVpnPlan}
                                     />
@@ -1058,76 +1091,7 @@ const SubscriptionContainer = ({
                                 className="subscriptionCheckout-container sticky top-0"
                                 data-testid="subscription-checkout"
                             >
-                                <SubscriptionCheckout
-                                    freePlan={freePlan}
-                                    submit={
-                                        <>
-                                            <SubscriptionSubmitButton
-                                                currency={model.currency}
-                                                onDone={onSubscribed}
-                                                paypal={paymentFacade.paypal}
-                                                step={model.step}
-                                                loading={loading || bitcoinLoading}
-                                                paymentMethodValue={paymentFacade.selectedMethodValue}
-                                                checkResult={checkResult}
-                                                className="w-full"
-                                                disabled={isFreeUserWithFreePlanSelected}
-                                                chargebeePaypal={paymentFacade.chargebeePaypal}
-                                                iframeHandles={paymentFacade.iframeHandles}
-                                                noPaymentNeeded={model.noPaymentNeeded}
-                                                subscription={subscription}
-                                                hasPaymentMethod={hasPaymentMethod}
-                                            />
-                                            {paymentFacade.showInclusiveTax && (
-                                                <InclusiveVatText
-                                                    tax={checkResult?.Taxes?.[0]}
-                                                    currency={currency}
-                                                    className="text-sm color-weak text-center mt-1"
-                                                />
-                                            )}
-                                        </>
-                                    }
-                                    plansMap={plansMap}
-                                    checkResult={checkResult}
-                                    vpnServers={vpnServers}
-                                    loading={loadingCheck}
-                                    currency={model.currency}
-                                    subscription={subscription}
-                                    cycle={model.cycle}
-                                    planIDs={model.planIDs}
-                                    gift={(() => {
-                                        return (
-                                            <>
-                                                {couponCode && (
-                                                    <div className="flex items-center mb-1">
-                                                        <Icon name="gift" className="mr-2 mb-1" />
-                                                        <Tooltip title={couponDescription}>
-                                                            <code>{couponCode.toUpperCase()}</code>
-                                                        </Tooltip>
-                                                    </div>
-                                                )}
-                                                {!getHas2023OfferCoupon(couponCode) && (
-                                                    <PaymentGiftCode
-                                                        giftCodeRef={giftCodeRef}
-                                                        key={
-                                                            /* Reset the toggle state when a coupon code gets applied */
-                                                            couponCode
-                                                        }
-                                                        giftCode={model.gift}
-                                                        onApply={handleGift}
-                                                        loading={loadingGift}
-                                                    />
-                                                )}
-                                            </>
-                                        );
-                                    })()}
-                                    onChangeCurrency={handleChangeCurrency}
-                                    nextSubscriptionStart={subscription.PeriodEnd}
-                                    showTaxCountry={paymentFacade.showTaxCountry}
-                                    onBillingAddressChange={handleBillingAddressChange}
-                                    statusExtended={paymentFacade.statusExtended}
-                                    {...checkoutModifiers}
-                                />
+                                <SubscriptionCheckout {...subscriptionCheckoutProps} />
                             </div>
                         </div>
                     </div>
@@ -1187,19 +1151,6 @@ const SubscriptionContainer = ({
                                     {...paymentFacade}
                                     onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                                     noMaxWidth
-                                    onBitcoinTokenValidated={async (data) => {
-                                        setBitcoinValidated(true);
-                                        await handleSubscribe(data, {
-                                            operationsSubscriptionData: {
-                                                Plans: model.planIDs,
-                                                Cycle: model.cycle,
-                                                product: app,
-                                                taxBillingAddress: model.taxBillingAddress,
-                                            },
-                                            paymentProcessorType: 'bitcoin',
-                                        }).catch(noop);
-                                    }}
-                                    onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     hideFirstLabel={true}
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
@@ -1220,75 +1171,10 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
-                                freePlan={freePlan}
-                                submit={
-                                    <>
-                                        <SubscriptionSubmitButton
-                                            currency={model.currency}
-                                            onDone={onSubscribed}
-                                            paypal={paymentFacade.paypal}
-                                            step={model.step}
-                                            loading={loading || bitcoinLoading}
-                                            paymentMethodValue={paymentFacade.selectedMethodValue}
-                                            checkResult={checkResult}
-                                            className="w-full"
-                                            disabled={isFreeUserWithFreePlanSelected}
-                                            chargebeePaypal={paymentFacade.chargebeePaypal}
-                                            iframeHandles={paymentFacade.iframeHandles}
-                                            noPaymentNeeded={model.noPaymentNeeded}
-                                            subscription={subscription}
-                                            hasPaymentMethod={hasPaymentMethod}
-                                        />
-                                        {paymentFacade.showInclusiveTax && (
-                                            <InclusiveVatText
-                                                tax={checkResult?.Taxes?.[0]}
-                                                currency={currency}
-                                                className="text-sm color-weak text-center mt-1"
-                                            />
-                                        )}
-                                    </>
-                                }
-                                subscription={subscription}
-                                plansMap={plansMap}
-                                checkResult={checkResult}
-                                vpnServers={vpnServers}
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                planIDs={model.planIDs}
-                                gift={
-                                    <>
-                                        {couponCode && (
-                                            <div className="flex items-center mb-1">
-                                                <Icon name="gift" className="mr-2 mb-1" />
-                                                <Tooltip title={couponDescription}>
-                                                    <code>{couponCode.toUpperCase()}</code>
-                                                </Tooltip>
-                                            </div>
-                                        )}
-                                        {!getHas2023OfferCoupon(couponCode) && (
-                                            <PaymentGiftCode
-                                                giftCodeRef={giftCodeRef}
-                                                key={
-                                                    /* Reset the toggle state when a coupon code gets applied */
-                                                    couponCode
-                                                }
-                                                giftCode={model.gift}
-                                                onApply={handleGift}
-                                                loading={loadingGift}
-                                            />
-                                        )}
-                                    </>
-                                }
-                                onChangeCurrency={handleChangeCurrency}
-                                nextSubscriptionStart={subscription.PeriodEnd}
+                                {...subscriptionCheckoutProps}
                                 showDiscount={false}
                                 enableDetailedAddons={true}
                                 showPlanDescription={false}
-                                showTaxCountry={paymentFacade.showTaxCountry}
-                                statusExtended={paymentFacade.statusExtended}
-                                onBillingAddressChange={handleBillingAddressChange}
-                                {...checkoutModifiers}
                             />
                         </div>
                     </div>

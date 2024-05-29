@@ -156,6 +156,7 @@ const AccountStepPayment = ({
         api: normalApi,
         chargebeeEnabled: model.session?.user.ChargebeeUser,
         theme: publicTheme,
+        billingAddress: model.subscriptionData.billingAddress,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
@@ -170,9 +171,11 @@ const AccountStepPayment = ({
                 }
 
                 const type = chargeablePaymentParameters.type;
-                let paymentType: 'cc' | 'pp';
+                let paymentType: 'cc' | 'pp' | 'btc';
                 if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
                     paymentType = 'pp';
+                } else if (type === PAYMENT_METHOD_TYPES.BITCOIN || type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+                    paymentType = 'btc';
                 } else {
                     paymentType = 'cc';
                 }
@@ -234,6 +237,10 @@ const AccountStepPayment = ({
 
             if (processor?.meta.type === 'paypal-credit') {
                 return 'pay_pp_no_cc';
+            }
+
+            if (processor?.meta.type === 'bitcoin') {
+                return 'pay_btc';
             }
 
             return 'pay_cc';
@@ -329,21 +336,6 @@ const AccountStepPayment = ({
                             {...paymentFacade}
                             defaultMethod={defaultMethod} // needed for Bitcoin signup
                             isAuthenticated={isAuthenticated} // needed for Bitcoin signup
-                            onBitcoinTokenValidated={(data) => {
-                                measurePaySubmit('pay_btc');
-                                return withLoadingSignup(
-                                    onPay(
-                                        {
-                                            ...data.Payment,
-                                            paymentsVersion: 'v4',
-                                            paymentProcessorType: 'bitcoin',
-                                        },
-                                        'btc'
-                                    )
-                                ).catch(() => {
-                                    measurePayError('pay_btc');
-                                });
-                            }}
                             disabled={loadingSignup || loadingPaymentDetails}
                             noMaxWidth
                             hideFirstLabel
@@ -399,7 +391,8 @@ const AccountStepPayment = ({
                         }
 
                         if (
-                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN &&
+                            (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
+                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
                             options.checkResult.AmountDue > 0
                         ) {
                             if (isAuthenticated) {
@@ -498,7 +491,15 @@ const AccountStepPayment = ({
                                 <WrappedTaxCountrySelector
                                     className="mb-2"
                                     onBillingAddressChange={onBillingAddressChange}
-                                    statusExtended={model.paymentMethodStatusExtended}
+                                    statusExtended={
+                                        // If we are in signup-token mode, then it means that user created an account by clicking "Continue with bitcoin"
+                                        // It also means that before user created the account, they might changed the billing address.
+                                        // The account creation re-renders the entire component and resets the user choice. So if we know that this billing address
+                                        // is rendered after the account creation, then we used the saved user choice from the model.
+                                        model.signupTokenMode
+                                            ? model.subscriptionData.billingAddress
+                                            : model.paymentMethodStatusExtended
+                                    }
                                 />
                             )}
                             <div className="flex flex-column gap-2">

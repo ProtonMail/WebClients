@@ -11,6 +11,7 @@ import noop from '@proton/utils/noop';
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import {
+    BillingAddress,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -88,6 +89,7 @@ type PaymentFacadeProps = {
     selectedPlanName?: PLANS | ADDON_NAMES;
     checkResult?: RequiredCheckResponse;
     theme?: ThemeLike;
+    billingAddress?: BillingAddress;
 };
 
 /**
@@ -112,7 +114,10 @@ export const usePaymentFacade = ({
     chargebeeEnabled: chargebeeEnabledOverride,
     checkResult,
     theme,
+    billingAddress,
 }: PaymentFacadeProps) => {
+    const bitcoinChargebeeEnabled = useFlag('ChargebeeBitcoinFrontend');
+
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -165,6 +170,8 @@ export const usePaymentFacade = ({
             forceEnableChargebee,
             selectedPlanName,
             onProcessPaymentToken: reportPaymentAttempt,
+            billingAddress,
+            bitcoinChargebeeEnabled,
             onProcessPaymentTokenFailed: (type) => {
                 reportPaymentFailure(type);
             },
@@ -193,7 +200,6 @@ export const usePaymentFacade = ({
     const methods = wrapMethods(hook.methods, flow);
 
     const userCanTrigger = {
-        [PAYMENT_METHOD_TYPES.BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CARD]: true,
         [PAYMENT_METHOD_TYPES.CASH]: false,
         [PAYMENT_METHOD_TYPES.PAYPAL]: true,
@@ -201,6 +207,8 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.TOKEN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: true,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
+        [PAYMENT_METHOD_TYPES.BITCOIN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
     };
 
     const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
@@ -280,6 +288,7 @@ export const usePaymentFacade = ({
         const methodsWithTaxCountry: (string | undefined)[] = [
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         ];
         const flowsWithTaxCountry: PaymentMethodFlows[] = [
             'signup',

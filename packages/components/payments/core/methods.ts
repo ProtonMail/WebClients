@@ -70,6 +70,7 @@ export class PaymentMethods {
         paymentMethodStatus: PaymentMethodStatus | PaymentMethodStatusExtended,
         public paymentMethods: SavedPaymentMethod[],
         public chargebeeEnabled: ChargebeeEnabled,
+        public bitcoinChargebeeEnabled: boolean,
         private _amount: number,
         private _coupon: string,
         private _flow: PaymentMethodFlows,
@@ -160,6 +161,10 @@ export class PaymentMethods {
                 type: PAYMENT_METHOD_TYPES.BITCOIN,
             },
             {
+                available: this.isChargebeeBitcoinAvailable(),
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            },
+            {
                 available: this.isCashAvailable(),
                 type: PAYMENT_METHOD_TYPES.CASH,
             },
@@ -187,6 +192,8 @@ export class PaymentMethods {
                 return this.isPaypalAvailable();
             case PAYMENT_METHOD_TYPES.BITCOIN:
                 return this.isBitcoinAvailable();
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+                return this.isChargebeeBitcoinAvailable();
             case PAYMENT_METHOD_TYPES.CASH:
                 return this.isCashAvailable();
             case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
@@ -217,8 +224,30 @@ export class PaymentMethods {
             !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED
+            this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED &&
+            !this.isChargebeeBitcoinAvailable()
         );
+    }
+
+    private isChargebeeBitcoinAvailable(): boolean {
+        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
+            return false;
+        }
+
+        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice', 'credit'];
+        const isEnabledFlow = !disabledFlows.includes(this.flow);
+
+        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
+
+        const bitcoinAvailable =
+            this.statusExtended.VendorStates.Bitcoin &&
+            this.bitcoinChargebeeEnabled &&
+            this.amount >= MIN_BITCOIN_AMOUNT &&
+            this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
+            isEnabledFlow &&
+            !isB2BPlan;
+
+        return bitcoinAvailable;
     }
 
     private isCardAvailable(): boolean {
@@ -239,7 +268,11 @@ export class PaymentMethods {
             return cardAvailable;
         }
 
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
+        const isSignup =
+            this.flow === 'signup' ||
+            this.flow === 'signup-pass' ||
+            this.flow === 'signup-pass-upgrade' ||
+            this.flow === 'signup-vpn';
         const isAddCard = this.flow === 'add-card' && !isProduction(window.location.host);
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
@@ -281,7 +314,11 @@ export class PaymentMethods {
             return paypalAvailable;
         }
 
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
+        const isSignup =
+            this.flow === 'signup' ||
+            this.flow === 'signup-pass' ||
+            this.flow === 'signup-vpn' ||
+            this.flow === 'signup-pass-upgrade';
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSubscription || isSignup || isCredit;
@@ -312,6 +349,7 @@ export async function initializePaymentMethods(
     coupon: string,
     flow: PaymentMethodFlows,
     chargebeeEnabled: ChargebeeEnabled,
+    bitcoinChargebeeEnabled: boolean,
     paymentsApi: PaymentsApi,
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
     enableChargebeeB2B: boolean
@@ -356,6 +394,7 @@ export async function initializePaymentMethods(
         paymentMethodStatus,
         mappedMethods,
         chargebeeEnabled,
+        bitcoinChargebeeEnabled,
         amount,
         coupon,
         flow,
