@@ -21,6 +21,7 @@ import {
     PaymentMethodType,
     PlainPaymentMethodType,
     SavedPaymentMethod,
+    canUseChargebee,
 } from '../core';
 import {
     OnMethodChangedHandler,
@@ -282,14 +283,26 @@ export const usePaymentFacade = ({
             return false;
         }
 
-        const method = methods.selectedMethod?.type;
-        const savedMethod = methods.savedInternalSelectedMethod;
-
-        const methodsWithTaxCountry: (string | undefined)[] = [
+        const methodsWithTaxCountry: (PaymentMethodType | undefined)[] = [
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         ];
+
+        const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
+
+        const isSavedExternalMethod = methodsWithTaxCountry.includes(methods.savedExternalSelectedMethod?.Type);
+
+        const migratableMethods: (PaymentMethodType | undefined)[] = [
+            PAYMENT_METHOD_TYPES.CARD,
+            PAYMENT_METHOD_TYPES.PAYPAL,
+        ];
+
+        const isSavedInternalMethod =
+            migratableMethods.includes(methods.savedInternalSelectedMethod?.Type) &&
+            canUseChargebee(isChargebeeEnabled());
+
+        const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
         const flowsWithTaxCountry: PaymentMethodFlows[] = [
             'signup',
             'signup-pass',
@@ -298,10 +311,7 @@ export const usePaymentFacade = ({
             'subscription',
         ];
 
-        const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
-        const isSavedAllowedMethod = !!savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
-
-        const showTaxCountry = (isNewAllowedMethod || isSavedAllowedMethod) && flowsWithTaxCountry.includes(flow);
+        const showTaxCountry = isMethodTaxCountry && flowsWithTaxCountry.includes(flow);
         return showTaxCountry;
     };
 
