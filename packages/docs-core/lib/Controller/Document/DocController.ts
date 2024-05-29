@@ -38,6 +38,7 @@ import {
   DocumentUpdateVersion,
   ClientEventVersion,
 } from '@proton/docs-proto'
+import { PROTON_DOC_FILE_EXTENSION } from '@proton/docs-shared'
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
@@ -399,9 +400,10 @@ export class DocController implements DocControllerInterface {
       throw new Error('Attempting to create new document before controller is initialized')
     }
 
-    const baseTitle = c('Title').t`Untitled document`
-
-    const newName = `${baseTitle} ${new Date().toLocaleString()}`
+    const date = new Date().toLocaleDateString()
+    // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
+    const baseTitle = c('Title').t`Untitled document ${date}`
+    const newName = `${baseTitle}.${PROTON_DOC_FILE_EXTENSION}`
 
     const result = await this._createNewDocument.execute(newName, this.lookup)
 
