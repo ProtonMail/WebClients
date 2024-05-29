@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -15,18 +16,24 @@ enum STEP {
     DEVICE_CONNECTED,
 }
 
+export const tvPaths = {
+    apple: '/appletv',
+    android: '/tv',
+};
+
 const TVContainer = () => {
     const [code, setCode] = useState('');
     const [step, setStep] = useState(STEP.ENTER_CODE);
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const location = useLocation();
     const [error, setError] = useState('');
-    const searchParams = new URLSearchParams(location.search);
-    const childClientIdParam = searchParams.get('childClientId');
-    const childClientId =
-        childClientIdParam && [VPN_TV_CLIENT_IDS.ANDROID, VPN_TV_CLIENT_IDS.APPLE].includes(childClientIdParam)
-            ? childClientIdParam
-            : VPN_TV_CLIENT_IDS.ANDROID;
+    const childClientId = (() => {
+        if (location.pathname === tvPaths.apple) {
+            return VPN_TV_CLIENT_IDS.APPLE;
+        }
+        return VPN_TV_CLIENT_IDS.ANDROID;
+    })();
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
