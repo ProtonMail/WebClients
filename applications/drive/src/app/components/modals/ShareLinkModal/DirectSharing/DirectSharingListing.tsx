@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { Avatar, CircleLoader } from '@proton/atoms';
 import { useContactEmails, useUser } from '@proton/components/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { ShareInvitation, ShareMember } from '../../../../store';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
@@ -23,24 +24,35 @@ interface Props {
     onResendInvitationEmail: (invitationId: string) => Promise<void>;
 }
 
-const MemberItem = ({
-    member,
-    onPermissionsChange,
-    onMemberRemove,
-}: {
-    member: ShareMember;
-    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
-    onMemberRemove: (member: ShareMember) => void;
-}) => {
-    const [contactEmails] = useContactEmails();
-    const { email, memberId, permissions } = member;
+const getContactNameAndEmail = (email: string, contactEmails?: ContactEmail[]) => {
+    const canonicalizedEmail = canonicalizeEmailByGuess(email);
     const { Name: contactName, Email: contactEmail } = contactEmails?.find(
-        (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
+        (contactEmail) => canonicalizeEmailByGuess(contactEmail.Email) === canonicalizedEmail
     ) || {
         Name: '',
         Email: email,
     };
 
+    return {
+        contactName,
+        contactEmail,
+    };
+};
+
+const MemberItem = ({
+    member,
+    contactName,
+    contactEmail,
+    onPermissionsChange,
+    onMemberRemove,
+}: {
+    member: ShareMember;
+    contactName?: string;
+    contactEmail: string;
+    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
+    onMemberRemove: (member: ShareMember) => void;
+}) => {
+    const { memberId, permissions } = member;
     const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => onPermissionsChange(member, value);
 
     const handleMemberRemove = () => {
@@ -83,23 +95,8 @@ export const DirectSharingListing = ({
     onInvitationPermissionsChange,
     onResendInvitationEmail,
 }: Props) => {
-    const [contactEmails] = useContactEmails();
-
     const [user] = useUser();
-
-    const getContactNameAndEmail = (email: string) => {
-        const { Name: contactName, Email: contactEmail } = contactEmails?.find(
-            (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
-        ) || {
-            Name: '',
-            Email: email,
-        };
-
-        return {
-            contactName,
-            contactEmail,
-        };
-    };
+    const [contactEmails] = useContactEmails();
 
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
@@ -123,7 +120,10 @@ export const DirectSharingListing = ({
 
             {volumeId &&
                 invitations.map((invitation) => {
-                    const { contactName, contactEmail } = getContactNameAndEmail(invitation.inviteeEmail);
+                    const { contactName, contactEmail } = getContactNameAndEmail(
+                        invitation.inviteeEmail,
+                        contactEmails
+                    );
                     return (
                         <DirectSharingListInvitation
                             key={invitation.invitationId}
@@ -140,14 +140,19 @@ export const DirectSharingListing = ({
                     );
                 })}
 
-            {members.map((member) => (
-                <MemberItem
-                    key={member.memberId}
-                    member={member}
-                    onPermissionsChange={onPermissionsChange}
-                    onMemberRemove={onMemberRemove}
-                />
-            ))}
+            {members.map((member) => {
+                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
+                return (
+                    <MemberItem
+                        key={member.memberId}
+                        member={member}
+                        contactName={contactName}
+                        contactEmail={contactEmail}
+                        onPermissionsChange={onPermissionsChange}
+                        onMemberRemove={onMemberRemove}
+                    />
+                );
+            })}
         </>
     );
 };
