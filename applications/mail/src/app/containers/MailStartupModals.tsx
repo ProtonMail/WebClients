@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { EasySwitchProvider } from '@proton/activation';
 import {
+    CancellationReminderModal,
     FeatureCode,
     InboxDesktopFreeTrialOnboardingModal,
     LightLabellingFeatureModal,
@@ -15,6 +16,10 @@ import {
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
+import {
+    ReminderFlag,
+    shouldOpenReminderModal,
+} from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
@@ -25,12 +30,18 @@ interface Props {
 }
 
 const MailStartupModals = ({ onboardingOpen }: Props) => {
+    const [subscription, subscriptionLoading] = useSubscription();
+
     // Onboarding modal
     const [user] = useUser();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
+    // Cancellation reminder modals
+    const { feature } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
+    const [reminderModal, setReminderModal, renderReminderModal] = useModalState();
+    const openReminderModal = shouldOpenReminderModal(subscriptionLoading, subscription, feature);
+
     // Referral modal
-    const [subscription] = useSubscription();
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
@@ -53,7 +64,9 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
             setModalOpen(true);
         };
 
-        if (onboardingOpen) {
+        if (openReminderModal) {
+            openModal(setReminderModal);
+        } else if (onboardingOpen) {
             openModal(setOnboardingModal);
         } else if (shouldOpenReferralModal.open) {
             onceRef.current = true;
@@ -69,10 +82,12 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
         handleRebrandingFeedbackModalDisplay,
         showLightLabellingFeatureModal,
         onboardingOpen,
+        openReminderModal,
     ]);
 
     return (
         <>
+            {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
             {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
             {renderOnboardingModal && (
                 <EasySwitchProvider>
@@ -87,9 +102,7 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
                     />
                 </EasySwitchProvider>
             )}
-            {renderLightLabellingFeatureModal && (
-                <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />
-            )}
+            {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
             )}
