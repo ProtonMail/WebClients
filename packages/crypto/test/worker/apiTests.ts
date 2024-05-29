@@ -1441,9 +1441,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         });
 
         it('compatibility - rejects importing a public key using the new curve25519 format', async () => {
-            const expectedError = v6Canary
-                ? /The key algorithm is currently not supported/ // TODO error message to be updated next pmcrypto release
-                : /The key algorithm ed25519 is currently not supported/;
+            const expectedError = /The key algorithm ed25519 is currently not supported/;
             // import should work without compatibility checks
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v4KeyNewCurve25519Format,

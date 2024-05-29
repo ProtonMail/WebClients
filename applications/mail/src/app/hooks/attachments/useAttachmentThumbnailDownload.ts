@@ -1,8 +1,7 @@
-import JSBI from 'jsbi';
-
 import { useModalTwo } from '@proton/components/components';
 import { useApi, useGetVerificationPreferences } from '@proton/components/hooks';
 import { WorkerDecryptionResult } from '@proton/crypto';
+import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -76,7 +75,7 @@ export const useAttachmentThumbnailDownload = () => {
 
                 const messageKeys = await getMessageKeys({ AddressID });
 
-                const messageFlagsForAutoForwarding = JSBI.toNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
+                const messageFlagsForAutoForwarding = bigIntToNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
                 const sessionKey = await getSessionKey(
                     { KeyPackets },
                     messageKeys.privateKeys,

@@ -23,10 +23,6 @@ module.exports = (config) => {
                     buffer: false,
                     stream: false,
                 },
-                // Mock JSBI to avoid using BigInt
-                alias: {
-                    jsbi: 'jsbi/dist/jsbi-cjs.js',
-                },
             },
             module: {
                 rules: [
