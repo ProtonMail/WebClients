@@ -1,5 +1,6 @@
 import { PLANS } from '@proton/shared/lib/constants';
-import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { getBundleConfig } from './config/bundle';
 import { getDrivePlusConfig } from './config/drivePlus';
@@ -10,9 +11,9 @@ import { PlanConfig } from './interface';
 
 export const getReminderPageConfig = (
     subscription?: SubscriptionModel,
-    planName?: SubscriptionPlan & { Name: PLANS },
     vpnCountries?: number | null
 ): PlanConfig | null => {
+    const planName = getPlan(subscription);
     if (!planName || !subscription) {
         return null;
     }

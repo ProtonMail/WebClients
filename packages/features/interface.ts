@@ -33,6 +33,7 @@ export enum FeatureCode {
     AlmostAllMail = 'AlmostAllMail',
     AutoAddHolidaysCalendars = 'AutoAddHolidaysCalendars',
     AutoDelete = 'AutoDelete',
+    AutoDowngradeReminder = 'AutoDowngradeReminder',
     BlackFridayPromoShown = 'BlackFridayPromoShown',
     BlockSenderInToolbar = 'BlockSenderInToolbar',
     BundlePromoShown = 'BundlePromoShown',
