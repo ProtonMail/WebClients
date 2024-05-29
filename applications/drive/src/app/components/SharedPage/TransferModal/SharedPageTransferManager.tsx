@@ -5,11 +5,10 @@ import { c, msgid } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { useToggle } from '@proton/components';
 import { FileIcon, Icon, Tooltip } from '@proton/components/components';
+import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useActiveBreakpoint } from '@proton/components/hooks';
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink, useDownload } from '../../../store';
@@ -348,7 +347,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     const [totalSize, setTotalSize] = useState<number>(0);
     const [nbFile, setNbFile] = useState<number>(0);
 
-    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    const isProtonUser = isProtonUserFromCookie();
     const { downloads, getDownloadsLinksProgresses, restartDownloads, clearDownloads } = useDownload();
 
     const isDownloadAll = downloads[0]?.links[0].linkId === rootItem.linkId && !rootItem.isFile;

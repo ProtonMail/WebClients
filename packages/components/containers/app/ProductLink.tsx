@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
 
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
+import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -64,7 +63,7 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
     }
 
     // This does not allow to get any user information but allow us to know if the user was already logged in Proton
-    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    const isProtonUser = isProtonUserFromCookie();
     if (!isProtonUser) {
         return (
             <a
