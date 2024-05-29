@@ -131,7 +131,9 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
             | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
             | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            | PAYMENT_METHOD_TYPES.BITCOIN
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
         chargeable: true;
     };
 
@@ -376,7 +378,10 @@ export type NonAuthorizedV5PaymentToken = {
 };
 
 export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
-    type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    type:
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
 };
 
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
