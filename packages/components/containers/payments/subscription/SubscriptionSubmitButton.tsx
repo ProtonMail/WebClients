@@ -124,7 +124,10 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
+    if (
+        paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN ||
+        paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
+    ) {
         return (
             <PrimaryButton className={className} disabled={true} loading={loading}>
                 {c('Info').t`Awaiting transaction`}

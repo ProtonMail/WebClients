@@ -2,13 +2,11 @@ import { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { useAuthentication } from '../../hooks';
-import { Props as PaymentProps, PaymentsNoApi } from './Payment';
+import { PaymentsNoApi } from './Payment';
 
 export type Props = ReturnType<typeof usePaymentFacade> & {
     onPaypalCreditClick?: () => void;
     noMaxWidth?: boolean;
-    onBitcoinTokenValidated?: PaymentProps['onBitcoinTokenValidated'];
-    onAwaitingBitcoinPayment?: PaymentProps['onAwaitingBitcoinPayment'];
     triggersDisabled?: boolean;
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;
@@ -21,7 +19,6 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
 
 const PaymentWrapper = ({
     card,
-    api,
     flow,
     methods,
     amount,
@@ -30,8 +27,6 @@ const PaymentWrapper = ({
     paypalCredit,
     noMaxWidth,
     onPaypalCreditClick,
-    onBitcoinTokenValidated,
-    onAwaitingBitcoinPayment,
     triggersDisabled,
     hideFirstLabel,
     hideSavedMethodsDetails,
@@ -44,13 +39,14 @@ const PaymentWrapper = ({
     hasSomeVpnPlan,
     paymentComponentLoaded,
     themeCode,
+    bitcoinInhouse,
+    bitcoinChargebee,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
 
     return (
         <PaymentsNoApi
-            api={api}
             type={flow}
             method={methods.selectedMethod?.value}
             amount={amount}
@@ -69,8 +65,6 @@ const PaymentWrapper = ({
             isAuthenticated={isAuthenticated}
             noMaxWidth={noMaxWidth}
             onPaypalCreditClick={onPaypalCreditClick}
-            onBitcoinTokenValidated={onBitcoinTokenValidated}
-            onAwaitingBitcoinPayment={onAwaitingBitcoinPayment}
             triggersDisabled={triggersDisabled}
             hideFirstLabel={hideFirstLabel}
             cardFieldStatus={card.fieldsStatus}
@@ -83,6 +77,8 @@ const PaymentWrapper = ({
             hasSomeVpnPlan={hasSomeVpnPlan}
             paymentComponentLoaded={paymentComponentLoaded}
             themeCode={themeCode}
+            bitcoinInhouse={bitcoinInhouse}
+            bitcoinChargebee={bitcoinChargebee}
         />
     );
 };

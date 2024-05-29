@@ -1,18 +1,20 @@
+import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { AmountAndCurrency, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
-import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
+import { PaymentsVersion, createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing/index';
 
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';
 
 const onTokenValidated = jest.fn();
-const onAwaitingPayment = jest.fn();
 
 beforeEach(() => {
     jest.clearAllMocks();
 });
+
+const paymentsVersion: PaymentsVersion = 'v4';
 
 it('should render', () => {
     const amountAndCurrency: AmountAndCurrency = {
@@ -24,8 +26,8 @@ it('should render', () => {
         useBitcoin({
             api: apiMock,
             onTokenValidated,
-            onAwaitingPayment,
             enablePolling: true,
+            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -43,8 +45,8 @@ it('should request the token', async () => {
         useBitcoin({
             api: apiMock,
             onTokenValidated,
-            onAwaitingPayment,
             enablePolling: true,
+            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -66,8 +68,8 @@ it('should not request the token automatically', () => {
             useBitcoin({
                 api: apiMock,
                 onTokenValidated,
-                onAwaitingPayment,
                 enablePolling: true,
+                paymentsVersion,
                 ...amountAndCurrency,
             }),
         {
@@ -99,8 +101,8 @@ it('should not request the token if the amount is too low', async () => {
         useBitcoin({
             api: apiMock,
             onTokenValidated,
-            onAwaitingPayment,
             enablePolling: true,
+            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -120,8 +122,8 @@ it('should not request the token if the amount is too high', async () => {
         useBitcoin({
             api: apiMock,
             onTokenValidated,
-            onAwaitingPayment,
             enablePolling: true,
+            paymentsVersion,
             ...amountAndCurrency,
         })
     );
@@ -163,8 +165,8 @@ describe('', () => {
             useBitcoin({
                 api: apiMock,
                 onTokenValidated,
-                onAwaitingPayment,
                 enablePolling: true,
+                paymentsVersion,
                 ...amountAndCurrency,
             })
         );
@@ -207,8 +209,8 @@ describe('', () => {
                 useBitcoin({
                     api: apiMock,
                     onTokenValidated,
-                    onAwaitingPayment,
                     enablePolling,
+                    paymentsVersion,
                     ...amountAndCurrency,
                 }),
             {
@@ -278,8 +280,8 @@ describe('', () => {
                 useBitcoin({
                     api: apiMock,
                     onTokenValidated,
-                    onAwaitingPayment,
                     enablePolling,
+                    paymentsVersion,
                     ...amountAndCurrency,
                 }),
             {
@@ -307,5 +309,75 @@ describe('', () => {
         resolveToken();
         // because of the rejection last time, the next call should never happen, the script must exit from the loop
         expect(apiMock).toHaveBeenCalledTimes(3);
+    });
+
+    it('should have awaitingBitcoinPayment === true when the token is created', async () => {
+        addApiMock(createTokenV4({} as any).url, () => ({
+            Code: 1000,
+            Token: 'Token-12345',
+            Status: 0,
+            Data: {
+                CoinAddress: 'some-btc-address',
+                CoinAmount: 0.000789,
+                CoinType: 6,
+                CoinAddressReused: false,
+            },
+        }));
+
+        const { result } = renderHook(() =>
+            useBitcoin({
+                api: apiMock,
+                onTokenValidated,
+                enablePolling: true,
+                Amount: 1000,
+                Currency: 'USD',
+                paymentsVersion,
+            })
+        );
+
+        expect(result.current.awaitingBitcoinPayment).toBe(false);
+
+        await act(() => result.current.request());
+        jest.runAllTicks();
+
+        expect(result.current.awaitingBitcoinPayment).toBe(true);
+    });
+
+    it('should set awaitingBitcoinPayment to false when the token is validated', async () => {
+        addApiMock(createTokenV4({} as any).url, () => ({
+            Code: 1000,
+            Token: 'Token-12345',
+            Status: 0,
+            Data: {
+                CoinAddress: 'some-btc-address',
+                CoinAmount: 0.000789,
+                CoinType: 6,
+                CoinAddressReused: false,
+            },
+        }));
+
+        const { result } = renderHook(() =>
+            useBitcoin({
+                api: apiMock,
+                onTokenValidated,
+                enablePolling: true,
+                Amount: 1000,
+                Currency: 'USD',
+                paymentsVersion,
+            })
+        );
+
+        await act(() => result.current.request());
+        expect(result.current.awaitingBitcoinPayment).toBe(true);
+
+        addApiMock(getTokenStatusV4('Token-12345').url, () => ({
+            Code: 1000,
+            Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+        }));
+
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        await flushPromises();
+
+        expect(result.current.awaitingBitcoinPayment).toBe(false);
     });
 });

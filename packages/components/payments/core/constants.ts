@@ -11,6 +11,7 @@ export enum PAYMENT_METHOD_TYPES {
     PAYPAL = 'paypal',
     PAYPAL_CREDIT = 'paypal-credit',
     BITCOIN = 'bitcoin',
+    CHARGEBEE_BITCOIN = 'chargebee-bitcoin',
     CASH = 'cash',
     TOKEN = 'token',
     CHARGEBEE_CARD = 'chargebee-card',
