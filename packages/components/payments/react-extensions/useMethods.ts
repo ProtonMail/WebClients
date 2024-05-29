@@ -33,6 +33,7 @@ export interface Props {
     isChargebeeEnabled: () => ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
+    enableChargebeeB2B: boolean;
 }
 
 interface Dependencies {
@@ -140,6 +141,7 @@ export const useMethods = (
         isChargebeeEnabled,
         paymentsApi,
         selectedPlanName,
+        enableChargebeeB2B,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -198,7 +200,8 @@ export const useMethods = (
                 flow,
                 isChargebeeEnabled(),
                 paymentsApi,
-                selectedPlanName
+                selectedPlanName,
+                enableChargebeeB2B
             );
 
             // Initialization might take some time, so we need to check if there is any pending data

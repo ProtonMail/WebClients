@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import { useFlag } from '@unleash/proxy-client-react';
+
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, APPS, PLANS } from '@proton/shared/lib/constants';
 import { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
@@ -121,6 +123,8 @@ export const usePaymentFacade = ({
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
 
+    const enableChargebeeB2B = useFlag('ChargebeeFreeToPaidB2B');
+
     const iframeHandles = useCbIframe();
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
@@ -172,6 +176,7 @@ export const usePaymentFacade = ({
                     throw error;
                 }
             },
+            enableChargebeeB2B,
         },
         {
             api,

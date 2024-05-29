@@ -167,6 +167,7 @@ export const usePaymentFacade = (
         selectedPlanName,
         onProcessPaymentToken,
         onProcessPaymentTokenFailed,
+        enableChargebeeB2B,
     }: {
         amount: number;
         currency: Currency;
@@ -192,6 +193,7 @@ export const usePaymentFacade = (
         selectedPlanName: PLANS | ADDON_NAMES | undefined;
         onProcessPaymentToken: (paymentMethodType: PaymentProcessorType) => void;
         onProcessPaymentTokenFailed: (paymentMethodType: PaymentProcessorType) => void;
+        enableChargebeeB2B: boolean;
     },
     {
         api,
@@ -235,6 +237,7 @@ export const usePaymentFacade = (
             isChargebeeEnabled,
             paymentsApi,
             selectedPlanName,
+            enableChargebeeB2B,
         },
         {
             api,

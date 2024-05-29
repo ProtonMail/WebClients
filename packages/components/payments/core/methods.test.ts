@@ -34,7 +34,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
@@ -50,7 +51,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
@@ -65,7 +67,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -79,7 +82,8 @@ describe('getNewMethods()', () => {
             50,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -105,7 +109,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -119,7 +124,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -133,7 +139,8 @@ describe('getNewMethods()', () => {
             500,
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -142,7 +149,16 @@ describe('getNewMethods()', () => {
     it.each(['signup'] as PaymentMethodFlows[])(
         'should not include Bitcoin when Bitcoin is not available due to flow %s',
         (flow) => {
-            const methods = new PaymentMethods(status, [], ChargebeeEnabled.INHOUSE_FORCED, 500, '', flow, undefined);
+            const methods = new PaymentMethods(
+                status,
+                [],
+                ChargebeeEnabled.INHOUSE_FORCED,
+                500,
+                '',
+                flow,
+                undefined,
+                true
+            );
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
         }
@@ -156,7 +172,8 @@ describe('getNewMethods()', () => {
             50,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -170,7 +187,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
@@ -184,7 +202,8 @@ describe('getNewMethods()', () => {
             500,
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -193,7 +212,16 @@ describe('getNewMethods()', () => {
     it.each(['signup', 'signup-pass', 'signup-pass-upgrade'] as PaymentMethodFlows[])(
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
-            const methods = new PaymentMethods(status, [], ChargebeeEnabled.INHOUSE_FORCED, 500, '', flow, undefined);
+            const methods = new PaymentMethods(
+                status,
+                [],
+                ChargebeeEnabled.INHOUSE_FORCED,
+                500,
+                '',
+                flow,
+                undefined,
+                true
+            );
 
             expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
         }
@@ -207,7 +235,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -226,7 +255,8 @@ describe('getNewMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -292,7 +322,8 @@ describe('getUsedMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -357,7 +388,8 @@ describe('getAvailablePaymentMethods()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         const availableMethods = methods.getAvailablePaymentMethods();
@@ -428,7 +460,8 @@ describe('getLastUsedMethod()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         const lastUsedMethod = methods.getLastUsedMethod();
@@ -514,7 +547,8 @@ describe('getSavedMethodById()', () => {
             500,
             '',
             'subscription',
-            undefined
+            undefined,
+            true
         );
 
         const savedMethod = methods.getSavedMethodById('2');
@@ -616,7 +650,8 @@ describe('initializePaymentMethods()', () => {
             {
                 statusExtendedAutomatic: () => paymentMethodStatus,
             } as any as PaymentsApi,
-            undefined
+            undefined,
+            true
         );
 
         expect(methods).toBeDefined();
@@ -658,7 +693,8 @@ describe('initializePaymentMethods()', () => {
             {
                 statusExtendedAutomatic: () => paymentMethodStatus,
             } as any as PaymentsApi,
-            undefined
+            undefined,
+            true
         );
 
         expect(methods).toBeDefined();
