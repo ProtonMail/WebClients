@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import {
+    CancellationReminderModal,
     FeatureCode,
     LightLabellingFeatureModal,
     RebrandingFeedbackModal,
@@ -11,13 +12,22 @@ import {
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
+import {
+    ReminderFlag,
+    shouldOpenReminderModal,
+} from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 const DriveStartupModals = () => {
     // Referral modal
-    const [subscription] = useSubscription();
+    const [subscription, subscriptionLoading] = useSubscription();
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
+
+    // Cancellation reminder modals
+    const { feature } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
+    const [reminderModal, setReminderModal, renderReminderModal] = useModalState();
+    const openReminderModal = shouldOpenReminderModal(subscriptionLoading, subscription, feature);
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
@@ -37,7 +47,9 @@ const DriveStartupModals = () => {
             setModalOpen(true);
         };
 
-        if (shouldOpenReferralModal.open) {
+        if (openReminderModal) {
+            openModal(setReminderModal);
+        } else if (shouldOpenReferralModal.open) {
             onceRef.current = true;
             document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
         } else if (showLightLabellingFeatureModal) {
@@ -46,13 +58,17 @@ const DriveStartupModals = () => {
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, showLightLabellingFeatureModal, handleRebrandingFeedbackModalDisplay]);
+    }, [
+        shouldOpenReferralModal.open,
+        showLightLabellingFeatureModal,
+        handleRebrandingFeedbackModalDisplay,
+        openReminderModal,
+    ]);
 
     return (
         <>
-            {renderLightLabellingFeatureModal && (
-                <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />
-            )}
+            {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
+            {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
             )}
