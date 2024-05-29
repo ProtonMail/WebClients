@@ -18,11 +18,12 @@ interface AlertProps {
     children?: ReactNode;
     className?: string;
     'data-testid'?: string;
+    style?: React.CSSProperties;
 }
 
-const Alert = ({ type = 'info', children, className, 'data-testid': dataTestId }: AlertProps) => {
+const Alert = ({ type = 'info', children, className, 'data-testid': dataTestId, ...rest }: AlertProps) => {
     return (
-        <div className={clsx(classesMap[type], className)} data-testid={dataTestId}>
+        <div className={clsx(classesMap[type], className)} data-testid={dataTestId} {...rest}>
             {children}
         </div>
     );
