@@ -1,15 +1,12 @@
 import { c } from 'ttag';
 
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api } from '@proton/shared/lib/interfaces';
 import debounce from '@proton/utils/debounce';
-
-import { BaseMeasure } from './interface';
-import { AvailableExternalEvents } from './measure';
+import noop from '@proton/utils/noop';
 
 export enum AsyncValidationStateValue {
     Idle,
@@ -19,7 +16,19 @@ export enum AsyncValidationStateValue {
     Fatal,
 }
 
-export const validateUsernameAvailability = async (username: string, api: Api, abortController: AbortController) => {
+export interface AsyncValidationState {
+    state: AsyncValidationStateValue;
+    value: string;
+    message: string;
+}
+
+type AsyncValidator = (value: string, abortController: AbortController) => Promise<AsyncValidationState>;
+
+export const validateUsernameAvailability = async (
+    username: string,
+    api: Api,
+    abortController: AbortController
+): Promise<AsyncValidationState> => {
     try {
         await api({
             ...mergeHeaders(queryCheckUsernameAvailability(username, true), getOwnershipVerificationHeaders('lax')),
@@ -36,11 +45,9 @@ export const validateUsernameAvailability = async (username: string, api: Api, a
                 API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
             ].includes(code)
         ) {
-            // eslint-disable-next-line @typescript-eslint/no-throw-literal
-            throw { state: AsyncValidationStateValue.Fatal, message, value: username };
+            return { state: AsyncValidationStateValue.Fatal, message, value: username };
         }
-        // eslint-disable-next-line @typescript-eslint/no-throw-literal
-        throw {
+        return {
             state: AsyncValidationStateValue.Error,
             message: message || c('Error').t`Try again later`,
             value: username,
@@ -48,7 +55,11 @@ export const validateUsernameAvailability = async (username: string, api: Api, a
     }
 };
 
-export const validateEmailAvailability = async (email: string, api: Api, abortController: AbortController) => {
+export const validateEmailAvailability = async (
+    email: string,
+    api: Api,
+    abortController: AbortController
+): Promise<AsyncValidationState> => {
     try {
         await api({
             ...mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')),
@@ -65,11 +76,9 @@ export const validateEmailAvailability = async (email: string, api: Api, abortCo
                 API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
             ].includes(code)
         ) {
-            // eslint-disable-next-line @typescript-eslint/no-throw-literal
-            throw { state: AsyncValidationStateValue.Fatal, message, value: email };
+            return { state: AsyncValidationStateValue.Fatal, message, value: email };
         }
-        // eslint-disable-next-line @typescript-eslint/no-throw-literal
-        throw {
+        return {
             state: AsyncValidationStateValue.Error,
             message: message || c('Error').t`Try again later`,
             value: email,
@@ -77,90 +86,54 @@ export const validateEmailAvailability = async (email: string, api: Api, abortCo
     }
 };
 
-export interface AsyncValidationState {
-    state: AsyncValidationStateValue;
-    value: string;
-    message: string;
-}
-
-export const createAsyncValidator = (validate: typeof validateEmailAvailability) => {
+export const createAsyncValidator = () => {
     let lastValue = '';
     let abortController: AbortController;
     type Setter = (data: AsyncValidationState) => void;
 
     const cache: { [key: string]: AsyncValidationState } = {};
 
-    const validator = debounce(
-        ({
-            value,
-            api,
-            set,
-            measure,
-        }: {
-            value: string;
-            api: Api;
-            set: Setter;
-            measure: BaseMeasure<AvailableExternalEvents>;
-        }) => {
-            abortController?.abort();
+    const validator = debounce(({ validate, value, set }: { validate: AsyncValidator; value: string; set: Setter }) => {
+        abortController?.abort();
 
-            if (lastValue !== value) {
-                return;
-            }
+        if (lastValue !== value) {
+            return;
+        }
 
-            const cachedValue = cache[value];
-            if (cachedValue) {
-                set(cachedValue);
-                return;
-            }
+        const cachedValue = cache[value];
+        if (cachedValue) {
+            set(cachedValue);
+            return;
+        }
 
-            abortController = new AbortController();
+        abortController = new AbortController();
 
-            validate(value, api, abortController)
-                .then((result) => {
+        validate(value, abortController)
+            .then((result) => {
+                if (
+                    result.state === AsyncValidationStateValue.Success ||
+                    result.state === AsyncValidationStateValue.Fatal
+                ) {
                     cache[value] = result;
-                    if (lastValue === value) {
-                        set(result);
+                }
 
-                        measure({
-                            event: TelemetryAccountSignupEvents.beAvailableExternal,
-                            dimensions: { available: 'yes' },
-                        });
-                    }
-                })
-                .catch((result: { state: AsyncValidationStateValue; value: string; message: string }) => {
-                    if (result?.state === undefined) {
-                        return;
-                    }
-                    // Only cache actual fatal errors
-                    if (result.state === AsyncValidationStateValue.Fatal) {
-                        cache[value] = result;
-
-                        measure({
-                            event: TelemetryAccountSignupEvents.beAvailableExternal,
-                            dimensions: { available: 'no' },
-                        });
-                    }
-                    if (lastValue === value) {
-                        set(result);
-                    }
-                });
-        },
-        300
-    );
+                if (lastValue === value) {
+                    set(result);
+                }
+            })
+            .catch(noop);
+    }, 300);
     return {
         trigger: ({
-            api,
             value,
+            validate,
             error,
             set,
-            measure,
         }: {
             error: boolean;
             value: string;
-            api: Api;
+            validate: AsyncValidator;
             set: Setter;
-            measure: BaseMeasure<AvailableExternalEvents>;
         }) => {
             lastValue = value;
 
@@ -172,7 +145,7 @@ export const createAsyncValidator = (validate: typeof validateEmailAvailability)
             }
 
             set({ state: AsyncValidationStateValue.Loading, value, message: '' });
-            validator({ value, api, set, measure });
+            validator({ validate, value, set });
         },
     };
 };
