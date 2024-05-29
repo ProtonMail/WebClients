@@ -34,7 +34,11 @@ const SubscriptionThanks = ({ paymentMethodType, onClose, loading, showDownloads
                     <img src={isVPN ? vpnThanksSvg : mailThanksSvg} alt="Thanks" />
                 </h1>
                 {paymentMethodType &&
-                [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(paymentMethodType as any) ? (
+                [
+                    PAYMENT_METHOD_TYPES.CASH,
+                    PAYMENT_METHOD_TYPES.BITCOIN,
+                    PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                ].includes(paymentMethodType as any) ? (
                     <p className="text-center mb-4">{c('Info')
                         .t`Your account will be updated once the payment is cleared.`}</p>
                 ) : (

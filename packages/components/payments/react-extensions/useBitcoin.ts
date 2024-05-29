@@ -2,18 +2,21 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { CreateBitcoinTokenData, createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
+import { CreateBitcoinTokenData, PaymentsVersion, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import {
     AmountAndCurrency,
+    BillingAddress,
+    ChargeablePaymentParameters,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     TokenPaymentMethod,
     isTokenPaymentMethod,
-} from '../../payments/core';
+} from '../core';
+import { PaymentProcessorHook } from './interface';
 
 export const BITCOIN_POLLING_INTERVAL = 60000;
 
@@ -29,12 +32,14 @@ const useCheckStatus = ({
     onTokenValidated,
     onTokenInvalid,
     enablePolling,
+    paymentsVersion,
 }: {
     api: Api;
     token: string | null;
     onTokenValidated: (token: string) => void;
     onTokenInvalid: () => void;
     enablePolling: boolean;
+    paymentsVersion: PaymentsVersion;
 }) => {
     const [paymentValidated, setPaymentValidated] = useState(false);
     const awaitingPayment = token !== null && !paymentValidated;
@@ -44,7 +49,7 @@ const useCheckStatus = ({
 
         const validate = async (token: string): Promise<TokenValidationStatus> => {
             try {
-                const { Status } = await api<any>(getTokenStatusV4(token));
+                const { Status } = await api<any>(getTokenStatus(token, paymentsVersion));
                 if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
                     return 'chargeable';
                 }
@@ -92,7 +97,7 @@ const useCheckStatus = ({
     }, [token, enablePolling]);
 
     return {
-        paymentValidated,
+        bitcoinPaymentValidated: paymentValidated,
         awaitingPayment,
     };
 };
@@ -103,6 +108,8 @@ export interface BitcoinTokenModel {
     token: string | null;
     amount: number;
     currency: string | null;
+    countryCode: string | null;
+    state: string | null;
 }
 
 export interface ValidatedBitcoinToken extends TokenPaymentMethod {
@@ -118,62 +125,96 @@ export function isValidatedBitcoinToken(paymentMethod: any): paymentMethod is Va
     );
 }
 
-export type OnBitcoinTokenValidated = (data: ValidatedBitcoinToken) => void;
-export type OnBitcoinAwaitingPayment = (awaitingBitcoinPayment: boolean) => void;
+export type OnBitcoinTokenValidated = (data: ChargeablePaymentParameters) => Promise<any>;
 
 export type UseBitcoinParams = {
     api: Api;
     onTokenValidated: OnBitcoinTokenValidated;
-    onAwaitingPayment?: OnBitcoinAwaitingPayment;
     enablePolling: boolean;
+    paymentsVersion: PaymentsVersion;
+    billingAddress?: BillingAddress;
 } & AmountAndCurrency;
+
+export interface BitcoinHook extends PaymentProcessorHook {
+    model: BitcoinTokenModel;
+    loading: boolean;
+    request: () => Promise<void>;
+    error: boolean;
+    amount: number;
+    currency: string;
+    awaitingBitcoinPayment: boolean;
+    bitcoinLoading: boolean;
+    processingBitcoinToken: boolean;
+    bitcoinPaymentValidated: boolean;
+    billingAddress?: BillingAddress;
+}
 
 const useBitcoin = ({
     api,
     onTokenValidated,
-    onAwaitingPayment,
     enablePolling,
-    Amount: amount,
-    Currency: currency,
-}: UseBitcoinParams) => {
+    Amount,
+    Currency,
+    paymentsVersion,
+    billingAddress,
+}: UseBitcoinParams): BitcoinHook => {
+    const countryCode = billingAddress?.CountryCode ?? null;
+    const state = billingAddress?.State ?? null;
+
     const silentApi = getSilentApi(api);
 
     const [error, setError] = useState(false);
-    const INITIAL_STATE: BitcoinTokenModel = { amountBitcoin: 0, address: '', token: null, amount: 0, currency: null };
+    const INITIAL_STATE: BitcoinTokenModel = {
+        amountBitcoin: 0,
+        address: '',
+        token: null,
+        amount: 0,
+        currency: null,
+        countryCode: null,
+        state: null,
+    };
     const [model, setModel] = useState(INITIAL_STATE);
     const [loading, withLoading] = useLoading();
+    const [processingBitcoinToken, withProcessingBitcoinToken] = useLoading();
+
+    const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
     const checkStatus = useCheckStatus({
+        paymentsVersion,
         api: silentApi,
         token: model.token,
-        onTokenValidated: (token) =>
-            onTokenValidated({
-                Payment: {
-                    Type: PAYMENT_METHOD_TYPES.TOKEN,
-                    Details: {
-                        Token: token,
-                    },
-                },
-                cryptoAmount: model.amountBitcoin,
-                cryptoAddress: model.address,
-            }),
+        onTokenValidated: (token) => {
+            const params: ChargeablePaymentParameters = {
+                Amount,
+                Currency,
+                type: paymentsVersion === 'v4' ? PAYMENT_METHOD_TYPES.BITCOIN : PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                chargeable: true,
+                v: 5,
+                PaymentToken: token,
+            };
+
+            return withProcessingBitcoinToken(onTokenValidated(params));
+        },
         onTokenInvalid: () => {
             setError(true);
             setModel(INITIAL_STATE);
-            onAwaitingPayment?.(false);
+            setAwaitingBitcoinPayment(false);
         },
         enablePolling,
     });
 
+    const bitcoinLoading = enablePolling && !checkStatus.bitcoinPaymentValidated && checkStatus.awaitingPayment;
+
     useEffect(() => {
-        onAwaitingPayment?.(checkStatus.awaitingPayment && !loading);
+        const awaitingPayment = checkStatus.awaitingPayment && !loading;
+        setAwaitingBitcoinPayment(awaitingPayment);
     }, [checkStatus.awaitingPayment, loading]);
 
     const fetchAsToken = async () => {
         try {
             const data: CreateBitcoinTokenData = {
-                Amount: amount,
-                Currency: currency,
+                Amount,
+                Currency,
                 Payment: {
                     Type: 'cryptocurrency',
                     Details: {
@@ -181,13 +222,17 @@ const useBitcoin = ({
                     },
                 },
             };
-            const { Token, Data } = await silentApi<any>(createTokenV4(data));
+
+            const { Token, Data } = await silentApi<any>(createToken(data, paymentsVersion));
+
             setModel({
                 amountBitcoin: Data.CoinAmount,
                 address: Data.CoinAddress,
                 token: Token,
-                amount: amount,
-                currency: currency,
+                amount: Amount,
+                currency: Currency,
+                countryCode,
+                state,
             });
         } catch (error) {
             setModel(INITIAL_STATE);
@@ -196,8 +241,15 @@ const useBitcoin = ({
     };
 
     const request = async () => {
-        const isCorrectAmount = amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT;
-        const alreadyHasToken = model.amount === amount && model.currency === currency && !!model.token;
+        const isCorrectAmount = Amount >= MIN_BITCOIN_AMOUNT && Amount <= MAX_BITCOIN_AMOUNT;
+
+        const alreadyHasToken =
+            model.amount === Amount &&
+            model.currency === Currency &&
+            model.countryCode === countryCode &&
+            model.state === state &&
+            !!model.token;
+
         if (!isCorrectAmount || alreadyHasToken) {
             return;
         }
@@ -210,14 +262,31 @@ const useBitcoin = ({
         }
     };
 
+    const holders = {
+        fetchPaymentToken: async () => {},
+        verifyPaymentToken: async () => {},
+        processPaymentToken: async () => {},
+        fetchingToken: false,
+        verifyingToken: false,
+        processingToken: processingBitcoinToken,
+    };
+
     return {
         model,
         loading,
         request,
         error,
-        amount,
-        currency,
+        amount: Amount,
+        currency: Currency,
+        awaitingBitcoinPayment,
+        bitcoinLoading,
+        processingBitcoinToken,
         ...checkStatus,
+        meta: {
+            type: paymentsVersion === 'v4' ? 'bitcoin' : 'chargebee-bitcoin',
+        },
+        ...holders,
+        billingAddress,
     };
 };
 
