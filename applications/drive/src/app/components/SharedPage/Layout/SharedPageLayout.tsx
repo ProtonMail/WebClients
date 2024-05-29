@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Header, MainLogo, UnAuthenticated, UnAuthenticatedAppsDropdown, useConfig } from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
+import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import './Layout.scss';
@@ -24,7 +23,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     const { APP_NAME } = useConfig();
 
     // This does not allow to get any user information but allow us to know if the user was already logged in Proton
-    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    const isProtonUser = isProtonUserFromCookie();
 
     const containerClassname = clsx([
         'shared-page-layout-bg flex flex-nowrap flex-column h-full overflow-auto relative',

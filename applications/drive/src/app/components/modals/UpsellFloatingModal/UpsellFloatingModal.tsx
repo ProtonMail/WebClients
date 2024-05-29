@@ -6,13 +6,12 @@ import { Button, ButtonLike } from '@proton/atoms/Button';
 import { DriveLogo, Icon, ModalProps, Tooltip, useModalTwoStatic } from '@proton/components/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
+import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useActiveBreakpoint } from '@proton/components/hooks';
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import { useDownload } from '../../../store';
@@ -123,7 +122,7 @@ export const useUpsellFloatingModal = () => {
     const { viewportWidth } = useActiveBreakpoint();
 
     // If user is proton user or on mobile we disable upsell modal
-    const hideModal = viewportWidth['<=small'] || !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    const hideModal = viewportWidth['<=small'] || isProtonUserFromCookie();
 
     useEffect(() => {
         if (hideModal) {
