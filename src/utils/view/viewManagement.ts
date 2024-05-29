@@ -176,8 +176,6 @@ export const showView = (target: VIEW_TARGET) => {
         return;
     }
 
-    Logger.info(`Switching to ${target} view`);
-
     switch (target) {
         case "mail":
             showMailView(mainWindow);
