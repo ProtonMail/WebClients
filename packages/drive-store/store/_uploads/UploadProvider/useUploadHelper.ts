@@ -1,4 +1,4 @@
-import { sha1 } from '@openpgp/noble-hashes/sha1';
+import { sha1 } from '@noble/hashes/sha1';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';

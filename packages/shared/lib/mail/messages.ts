@@ -1,4 +1,3 @@
-import JSBI from 'jsbi';
 import { c } from 'ttag';
 
 import identity from '@proton/utils/identity';
@@ -59,8 +58,8 @@ export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
  * Check if a message has a flag in the flags bitmap
  */
 export const hasFlag = (flag: number) => (message?: Partial<Message>) => hasBit(message?.Flags, flag);
-export const hasBigFlag = (flag: JSBI) => (message?: Partial<Message>) =>
-    hasBitBigInt(JSBI.BigInt(message?.Flags || 0), flag);
+export const hasBigFlag = (flag: bigint) => (message?: Partial<Message>) =>
+    hasBitBigInt(BigInt(message?.Flags || 0), flag);
 export const setFlag = (flag: number) => (message?: Partial<Message>) => setBit(message?.Flags, flag);
 export const clearFlag = (flag: number) => (message?: Partial<Message>) => clearBit(message?.Flags, flag);
 export const toggleFlag = (flag: number) => (message?: Partial<Message>) => toggleBit(message?.Flags, flag);

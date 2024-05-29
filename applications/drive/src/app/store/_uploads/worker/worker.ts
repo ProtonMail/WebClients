@@ -1,4 +1,4 @@
-import { sha1 } from '@openpgp/noble-hashes/sha1';
+import { sha1 } from '@noble/hashes/sha1';
 import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
