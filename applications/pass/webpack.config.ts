@@ -4,7 +4,26 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
 
-const CRITICAL_OFFLINE_ASSETS = ['index.html', 'index.js', 'index.css', 'runtime.js', 'pre.js', 'unsupported.js'];
+const CRITICAL_OFFLINE_ASSETS = [
+    /** main assets */
+    'index.css',
+    'index.html',
+    'index.js',
+
+    /* runtime */
+    'pre.js',
+    'runtime.js',
+    'unsupported.js',
+
+    /* workers */
+    'core.worker.js',
+    'crypto-worker.js',
+
+    /* wasm */
+    'wasm',
+    'vendors-node_modules_protontech_pass-rust-core_proton_pass_web_js.chunk.js',
+    'vendors-node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
+];
 
 const result = (env: any): webpack.Configuration => {
     const config = getConfig(env);
@@ -37,7 +56,11 @@ const result = (env: any): webpack.Configuration => {
         config.plugins.push(
             new WebpackManifestPlugin({
                 fileName: 'assets/offline.json',
-                filter: (file) => CRITICAL_OFFLINE_ASSETS.includes(file.name),
+                filter: (file) => {
+                    /** exclude sourcemaps */
+                    if (file.name.includes('.map')) return false;
+                    return CRITICAL_OFFLINE_ASSETS.some((asset) => file.name.includes(asset));
+                },
             })
         );
     }
