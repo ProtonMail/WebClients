@@ -212,7 +212,7 @@ export const loadURL = async (viewID: ViewID, url: string) => {
             Logger.info(`Current view ${viewID} already in given url`, loggedURL);
         } else {
             Logger.info(`Loading URL in current view ${viewID}`, loggedURL);
-            currentView.webContents.loadURL(url);
+            await currentView.webContents.loadURL(url);
         }
     } else {
         if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
@@ -223,7 +223,7 @@ export const loadURL = async (viewID: ViewID, url: string) => {
             // Clear nextView before changing to it show it does not show a flash of content
             await nextView.webContents.loadURL("about:blank");
             showView(viewID);
-            nextView.webContents.loadURL(url);
+            await nextView.webContents.loadURL(url);
         } else {
             // View hasn't loaded yet, try to load it now
             showView(viewID);
@@ -234,7 +234,7 @@ export const loadURL = async (viewID: ViewID, url: string) => {
                     Logger.info(`View ${viewID} already in given url`, loggedURL);
                 } else {
                     Logger.info(`Loading URL in ${viewID}`, loggedURL);
-                    loadedNextView.webContents.loadURL(url);
+                    await loadedNextView.webContents.loadURL(url);
                 }
             } else {
                 Logger.error(`Cant load URL in ${viewID}, view is not available`, loggedURL);
@@ -252,11 +252,11 @@ export const reloadHiddenViews = () => {
     }
 };
 
-export const resetHiddenViews = () => {
+export const resetHiddenViews = async () => {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             Logger.info("Resetting hidden view", viewID);
-            view.webContents.loadURL("about:blank");
+            await view.webContents.loadURL("about:blank");
         }
     }
 };
