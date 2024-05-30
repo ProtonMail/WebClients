@@ -36,7 +36,7 @@
 }
 
 .wallet-button.button-solid-weak {
-	--button-default-background-color: var(--interaction-weak-major-1);
+	--button-default-background-color: var(--interaction-weak-minor-1);
 	--button-hover-background-color: var(--interaction-weak-major-2);
 	--button-active-background-color: var(--interaction-weak-major-3);
 }
@@ -63,12 +63,17 @@
 	--button-active-text-color: var(--text-invert) !important;
 }
 
+// Shadow
+
+.wallet-button.shadow {
+	box-shadow: 0 20px 30px 0 var(--interaction-weak-major-2);
+}
+
 // Sizes
 
 .wallet-button.button-large {
 	padding-block: 1rem;
 	padding-inline: 2.5rem;
-	box-shadow: 0 20px 30px 0 var(--interaction-weak-major-2);
 }
 
 .wallet-button.button-medium {

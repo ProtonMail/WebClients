@@ -2,14 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmMnemonic } from '@proton/andromeda';
 import { Icon } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { useWalletSetupModalContext } from '../WalletSetupModalContext';
 
 interface ChecklistItemProps {
@@ -84,10 +82,7 @@ export const WalletDiscoverContent = ({ wallet }: Props) => {
                         onClick={() => {
                             if (wallet.Wallet.Mnemonic) {
                                 open({
-                                    schemeAndData: {
-                                        scheme: WalletSetupScheme.WalletBackup,
-                                        mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                                    },
+                                    wallet,
                                     onClose: () => {
                                         setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
                                     },

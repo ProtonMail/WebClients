@@ -1,4 +1,4 @@
-import { Key, useCallback, useEffect, useMemo, useState } from 'react';
+import { Key, useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
@@ -75,7 +75,13 @@ export const useModalStateWithData = <T extends unknown>(
 ): ModalStateWithDataReturnTuple<T> => {
     const [modalData, setModalData] = useState<T>();
 
-    const [modalCoreProps, handleSetOpen, render] = useModalState(options);
+    const [modalCoreProps, handleSetOpen, render] = useModalState({
+        ...options,
+        onExit: () => {
+            options?.onExit?.();
+            setModalData(undefined);
+        },
+    });
 
     const openModal = useCallback(
         (data: T) => {
@@ -84,12 +90,6 @@ export const useModalStateWithData = <T extends unknown>(
         },
         [handleSetOpen]
     );
-
-    useEffect(() => {
-        if (!modalCoreProps.open) {
-            setModalData(undefined);
-        }
-    }, [modalCoreProps.open]);
 
     const modalProps = useMemo(() => ({ ...modalCoreProps, data: modalData }), [modalData, modalCoreProps]);
 

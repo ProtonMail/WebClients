@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import { useBalance } from './useBalance';
@@ -39,6 +40,10 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
         apiAccount ?? apiWalletData.WalletAccounts[0]
     );
 
+    const { getSyncingData } = useBitcoinBlockchainContext();
+
+    const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
+
     const balanceRef = useRef<HTMLDivElement>(null);
     const { state: showBalance, toggle: toggleShowBalance } = useToggle(true);
 
@@ -59,7 +64,12 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     {apiAccount ? apiAccount.Label : c('Wallet dashboard').t`All accounts`}
                 </div>
                 <div className="flex flex-row flex-nowrap items-center my-1">
-                    <div className={clsx('text-semibold', loadingExchangeRate && 'skeleton-loader')}>
+                    <div
+                        className={clsx(
+                            'text-semibold',
+                            (loadingExchangeRate || syncingData?.syncing) && 'skeleton-loader'
+                        )}
+                    >
                         <Price
                             currency={exchangeRate?.FiatCurrency}
                             className="h1 text-semibold"
@@ -74,7 +84,9 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         <Icon name={showBalance ? 'eye-slash' : 'eye'} size={6} onClick={() => toggleShowBalance()} />
                     </CoreButton>
                 </div>
-                <div className="text-lg color-hint">{satsToBitcoin(totalBalance)} BTC</div>
+                <div className={clsx('text-lg color-hint', syncingData?.syncing && 'skeleton-loader')}>
+                    {satsToBitcoin(totalBalance)} BTC
+                </div>
             </div>
             <div
                 className="h-custom grow max-w-custom grow ml-12"

@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext, useState } from 'react';
 
 import { useDecryptedApiWalletsData } from '@proton/wallet';
 
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
+    const [key, setKey] = useState(0);
     const [network] = useBitcoinNetwork();
     const {
         decryptedApiWalletsData,
@@ -21,6 +22,10 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         loading: loadingApiWalletsData,
         setPassphrase,
     } = useDecryptedApiWalletsData();
+
+    const onSyncingFinished = () => {
+        setKey((prev) => prev + 1);
+    };
 
     const {
         walletsChainData,
@@ -31,7 +36,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         syncSingleWalletAccount,
         isSyncing,
         getSyncingData,
-    } = useWalletsChainData(decryptedApiWalletsData);
+    } = useWalletsChainData(decryptedApiWalletsData, onSyncingFinished);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
@@ -47,6 +52,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
 
     return (
         <BitcoinBlockchainContext.Provider
+            key={key}
             value={{
                 network,
 

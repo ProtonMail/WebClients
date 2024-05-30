@@ -1,12 +1,10 @@
 import { c } from 'ttag';
 
-import { WasmMnemonic } from '@proton/andromeda';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData, useWalletApiClients, walletDeletion } from '@proton/wallet';
 
 import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { useWalletDispatch } from '../../store/hooks';
 
 export const useWalletDeletion = ({ wallet, onDeletion }: { wallet: IWasmApiWalletData; onDeletion: () => void }) => {
@@ -19,12 +17,7 @@ export const useWalletDeletion = ({ wallet, onDeletion }: { wallet: IWasmApiWall
 
     const openBackupModal = () => {
         if (wallet.Wallet.Mnemonic) {
-            open({
-                schemeAndData: {
-                    scheme: WalletSetupScheme.WalletBackup,
-                    mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                },
-            });
+            open({ wallet });
         }
     };
 

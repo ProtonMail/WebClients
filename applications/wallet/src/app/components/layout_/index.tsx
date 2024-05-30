@@ -6,9 +6,8 @@ import { PrivateAppContainer, PrivateMainArea, useModalState, useToggle } from '
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountCreationModal } from '../AccountCreationModal';
-import { WalletAutoCreationNoticeModal } from '../WalletAutoCreationNoticeModal';
+import { WalletCreationModal } from '../WalletCreationModal';
 import WalletHeader from './WalletHeader';
 import WalletSidebar from './WalletSidebar';
 
@@ -63,12 +62,8 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                 )}
             </PrivateMainArea>
 
-            <WalletAutoCreationNoticeModal
-                open={hasNoWalletSetupYet && !walletAccountSetupModal.open}
-                handleClickImport={() => {
-                    open({ schemeAndData: { scheme: WalletSetupScheme.WalletImport } });
-                }}
-            />
+            {/* We want to open wallet creation modal whenever there is no wallet setup on for the user */}
+            <WalletCreationModal open={hasNoWalletSetupYet && !walletAccountSetupModal.open} isFirstCreation />
 
             {wallet && <AccountCreationModal apiWalletData={wallet} {...walletAccountSetupModal} />}
         </PrivateAppContainer>

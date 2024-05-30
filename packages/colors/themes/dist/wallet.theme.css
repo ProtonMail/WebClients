@@ -54,7 +54,6 @@
   --background-weak: #ffffff;
   --background-strong: #e6e8ec;
   --background-invert: #191927;
-  --interaction-norm-minor-1: #8b8df9;
   --interaction-norm-minor-2: #f1f2ff;
   --interaction-norm-minor-1: #e4e5ff;
   --interaction-norm: #767dff;
@@ -63,13 +62,12 @@
   --interaction-norm-major-3: #5358b3;
   --interaction-norm-contrast: #ffffff;
   --interaction-norm-contrast: #191927;
-  --interaction-weak-minor-1: #e6e8ec;
-  --interaction-weak-minor-2: #ffffff;
-  --interaction-weak-minor-1: #ffffff;
-  --interaction-weak: #ffffff;
-  --interaction-weak-major-1: #f2f2f2;
-  --interaction-weak-major-2: #e6e6e6;
-  --interaction-weak-major-3: #d9d9d9;
+  --interaction-weak-minor-2: #f6f6f6;
+  --interaction-weak-minor-1: #f1f1f1;
+  --interaction-weak: #e2e2e2;
+  --interaction-weak-major-1: #d7d7d7;
+  --interaction-weak-major-2: #cbcbcb;
+  --interaction-weak-major-3: #c0c0c0;
   --interaction-weak-contrast: #000000;
   --interaction-weak-contrast: #191927;
   --interaction-norm-hover: var(--interaction-norm-major-1);
