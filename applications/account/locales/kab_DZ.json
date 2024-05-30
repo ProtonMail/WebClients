@@ -2728,19 +2728,9 @@
         "Tuɣalin ɣer usaǧǧaw-nniḍen"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ɛawen-aɣ ad nennarni!"
-      ]
-    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Taɣellist lqayen i beṭṭu"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Tallalt yezwaren"
       ]
     },
     "Duration": {
@@ -2957,6 +2947,9 @@
       ],
       "Amount above the maximum.": [
         "Azal nnig n ufellay."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Azal ddaw n wadday (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -4785,14 +4778,8 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Yal win yesεan aseɣwen-a ur yettizmir ara ad yemtawi neɣ ad yawi ileqman i d-iteddun n uwitay-inek·inem. Ma yella tebɣiḍ ad asen-tmuddeḍ anekcum i tikkelt-nniḍen, ilaq ad ternuḍ aseɣwen amaynut-nniḍen."
       ],
-      "Are you sure you want to delete this address?": [
-        "Tebɣiḍ ad tekkseḍ tansa-agi?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "D tidet tebɣiḍ ad tekkseḍ awitay-a?"
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Triḍ ad tekseḍ taɣult-a?"
       ],
       "Are you sure you want to delete this filter?": [
         "Tebɣiḍ ad tekkseḍ imsizdeg-agi?"
@@ -5370,12 +5357,6 @@
       ],
       "Please fill out this field.": [
         "Ttxil-k ččar urti-a."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Ttxil-k·m ẓer belli ma tekkseḍ tansa-a, ur tettuɣaleḍ ara ad tizmireḍ ad tazneḍ neɣ ad d-tremseḍ imaylen s useqdec n tansa-a."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Ttxil ger tamawt dakken ma tekkseḍ taɣult-a, akk tansiwin i icuddenvur-s ad ttwasensent."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ttxil ger tamawt dakken s uttekki $vef tqeffalt n usentem, amiḍan-ik.im ad yesεu ${ creditsRemaining } ismad i d-yeqqimen."
@@ -7024,9 +7005,6 @@
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Acu n sebba tagejdant k-yeǧǧan tekkseḍ amiḍan-ik?"
       ],
       "What is the main reason you are deleting your account?": [
         "Acu n sebba tagejdant i k/m-yeǧǧan tkesseḍ amiḍan-inek/m?"
@@ -9308,10 +9286,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } n uḥraz asemday"
       ],
@@ -10019,9 +9993,6 @@
       ],
       "Delete version history?": [
         "Kkes azray n lqem?"
-      ],
-      "Disable ${ email }": [
-        "Sens ${ email }"
       ],
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
@@ -10947,9 +10918,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "S usexsi n yiɣmisen, ad tsefḍeḍ daɣen akk amazrayèik.im n yiɣmisen. Tebɣiḍ s tidet ad tsexsiḍ iɣmisen?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "S usensi n tansa-a, ur tettuɣaleḍ ara ad tizmireḍ ad tazneḍ neɣ ad d-tremseḍ imaylin s useqdec-ines, yerna meṛṛa ifarisen i icudden ɣer ${ BRAND_NAME } ad ttusensen. D tidet tebɣiḍ ad tsenseḍ tansa-a?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ma yella tesfesxeḍ taktert-agi, ur tettizmireḍ ara ad tt-tkemmeleḍ. ${ BRAND_NAME } iseklas akk inerniyen deg umiḍan-ik·im. Ad tsefsxeḍ akken yebɣu yili?"

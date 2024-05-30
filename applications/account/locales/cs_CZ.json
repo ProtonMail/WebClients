@@ -334,9 +334,6 @@
       "Delete": [
         "Smazat"
       ],
-      "Delete address": [
-        "Smazat adresu"
-      ],
       "Delete and confirm": [
         "Smazat a potvrdit"
       ],
@@ -3185,8 +3182,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Po smazání této adresy ji nebude moci použít nikdo jiný."
+      "Are you sure you want to delete this address?": [
+        "Opravdu chcete smazat tuto adresu?"
+      ],
+      "Delete address": [
+        "Smazat adresu"
+      ],
+      "Delete address permanently?": [
+        "Trvale smazat adresu?"
+      ],
+      "Delete address?": [
+        "Smazat adresu?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Po smazání této adresy ${ address } ji nebude moci použít nikdo jiný."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu ${ address }, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
       ],
       "You can only delete 1 address per year.": [
         "Můžete smazat pouze 1 adresu ročně."
@@ -3206,6 +3218,20 @@
       ],
       "You will no longer have access to this calendar.": [
         "K tomuto kalendáři již nebudete mít přístup."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Opravdu chcete smazat tuto doménu?"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete domain?": [
+        "Smazat doménu?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Vezměte prosím na vědomí, že pokud smažete tuto doménu ${ domainName }, všechny přidružené adresy budou zakázány."
       ]
     },
     "Delinquent modal title": {
@@ -3311,6 +3337,17 @@
         "Tuto záložku můžete bezpečně zavřít."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Opravdu chcete deaktivovat tuto adresu?"
+      ],
+      "Disable address": [
+        "Deaktivovat adresu"
+      ],
+      "Disable address?": [
+        "Deaktivovat adresu?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Ověřeno"
@@ -3395,8 +3432,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Pomozte nám se zlepšit!"
+      "Help us improve": [
+        "Pomozte nám se zlepšit"
       ]
     },
     "Download link": {
@@ -3416,40 +3453,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Získejte nabídku"
-      ],
-      "Special Offer": [
-        "Speciální nabídka"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Rozšířená historie verzí"
-      ],
-      "Priority support": [
-        "Prioritní podpora"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "za první měsíc"
-      ],
-      "Limited-time offer": [
-        "Časově omezená nabídka"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6497,9 +6500,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Kdokoli s tímto odkazem nebude schopen synchronizovat nebo získat budoucí aktualizace vašeho kalendáře. Pokud k němu chcete umožnit přístup, budete muset vytvořit nový odkaz."
       ],
-      "Are you sure you want to delete this address?": [
-        "Opravdu chcete smazat tuto adresu?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Jste si jisti, že chcete tento kalendář smazat?"
       ],
@@ -6511,9 +6511,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Jste si jisti, že chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Opravdu chcete smazat tuto doménu?"
       ],
       "Are you sure you want to delete this filter?": [
         "Opravdu chcete smazat tento filtr?"
@@ -7187,6 +7184,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Používám @ProtonMail a myslím si, že by se vám mohl líbit. Je to zabezpečená e-mailová služba, která chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte zdarma 1 měsíc prémiových funkcí: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
@@ -7520,12 +7520,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte tuto doménu, všechny přidružené adresy budou zakázány."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
       ],
@@ -7796,11 +7790,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Předplatné se automaticky obnovuje každých 12 měsíců."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Předplatné se automaticky obnovuje každých 24 měsíců."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Předplatné je automaticky obnoveno každých ${ cycle } měsíců."
       ],
       "Subscription auto-renews every month.": [
         "Předplatné se automaticky obnovuje každý měsíc."
@@ -7963,9 +7954,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto ověření může trvat až jednu hodinu. Můžete nyní bez obav pokračovat dalšími kroky."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Toto smaže všechny předchozí verze vašich souborů, které jsou starší než ${ rententionLabel }."
@@ -9956,9 +9944,6 @@
       "What happened?": [
         "Co se stalo?"
       ],
-      "What is the main reason you are canceling?": [
-        "Jaký je hlavní důvod vašeho zrušení?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Jaký je hlavní důvod, proč mažete svůj účet?"
       ],
@@ -10452,9 +10437,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Omezená nabídka, vyprší 2. dubna 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše předplatné bude automaticky obnoveno ${ renewTime } za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Title": {
@@ -12549,9 +12531,6 @@
       "Launching ${ PASS_APP_NAME }": [
         "Spuštění ${ PASS_APP_NAME }"
       ],
-      "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "Časově omezená nabídka: ${ title } za ${ price } na 1. měsíc"
-      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Časově omezená nabídka: Získejte ${ title } za ${ price } na uživatele měsíčně!"
       ],
@@ -12794,6 +12773,15 @@
       ],
       "Processing payment": [
         "Zpracovávání platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ price }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -14313,12 +14301,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
       ],
-      "${ dayDiff } day left": [
-        "Zbývá ${ dayDiff } den",
-        "Zbývají ${ dayDiff } dny",
-        "Zbývá ${ dayDiff } dnů",
-        "Zbývá ${ dayDiff } dnů"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } včetně historie verzí"
       ],
@@ -14388,9 +14370,6 @@
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí. "
-      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
       ],
@@ -14433,12 +14412,6 @@
       "Receive new emails": [
         "Přijímat nové e-maily"
       ],
-      "Resubscribe": [
-        "Obnovit předplatné"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Obnovte své předplatné pro přístup k funkcím ${ planName }."
-      ],
       "Send emails with attachments": [
         "Odesílat e-maily s přílohami"
       ],
@@ -14465,9 +14438,6 @@
       ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Zbývá vám ještě ${ expiryDate } předplatného ${ planName }. Kredity za zbývající čas připíšeme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your ${ planName } has been canceled.": [
         "Váš ${ planName } byl zrušen."
@@ -15308,9 +15278,6 @@
       "Delete account": [
         "Smazat účet"
       ],
-      "Delete address permanently?": [
-        "Trvale smazat adresu?"
-      ],
       "Delete calendar": [
         "Smazat kalendář"
       ],
@@ -15346,9 +15313,6 @@
       ],
       "Details": [
         "Podrobnosti"
-      ],
-      "Disable ${ email }": [
-        "Zakázat ${ email }"
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
@@ -16533,15 +16497,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Předplatné se automaticky obnoví každý měsíc. Vaše další datum účtování je za 1 měsíc."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
       ],
@@ -16681,9 +16636,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Deaktivací záznamů aktivity také vyčistíte celou historii záznamů. Jste si jistí, že chcete deaktivovat záznamy?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Deaktivováním této adresy již nebudete moci odesílat ani přijímat e-maily pomocí této adresy a všechny propojené produkty ${ BRAND_NAME } budou také deaktivovány. Opravdu chcete deaktivovat tuto adresu?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Pokud zrušíte tento import, nebudete jej moci obnovit. ${ BRAND_NAME } uložil veškerý průběh na vašem účtu. Přesto zrušit?"
