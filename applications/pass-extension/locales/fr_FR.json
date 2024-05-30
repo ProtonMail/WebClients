@@ -39,7 +39,7 @@
         "Précédent"
       ],
       "Bulk delete items from trash": [
-        "Supprimer un groupe d'éléments de la corbeille"
+        "Supprimer plusieurs éléments de la corbeille"
       ],
       "Bulk move items to another vault": [
         "Déplacer le groupe d'éléments vers un autre coffre-fort"
@@ -471,7 +471,7 @@
         "Afficher l'historique de l'élément"
       ],
       "View older history": [
-        "Afficher l'historique le plus ancien"
+        "Afficher l'historique plus ancien"
       ],
       "Write us on Reddit": [
         "Écrivez-nous sur Reddit"
@@ -1255,7 +1255,7 @@
         "Le mode hors ligne n'a pas pu être activé pour le moment."
       ],
       "Offline support successfully disabled": [
-        "La prise en charge du mode hors ligne est désactivée."
+        "L'accès hors ligne est désactivé."
       ],
       "Open the Extensions menu": [
         "Ouvrez le menu des extensions"
@@ -1409,7 +1409,7 @@
         "La liste déroulante de remplissage automatique s'ouvrira automatiquement quand vous cliquez sur un champ ou que vous le sélectionnez."
       ],
       "The export will only contain vaults that you own.": [
-        "L'exportation ne contiendra que les coffres-forts que vous possédez"
+        "L'exportation contiendra uniquement les coffres-forts dont vous êtes propriétaire."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Le fichier exporté sera chiffré en utilisant PGP et nécessite une phrase secrète forte."
@@ -1895,7 +1895,7 @@
         "Demander l'enregistrement automatique"
       ],
       "Prompt for auto-save when generating passwords": [
-        "Inviter à enregistrer automatiquement les mots de passe générés"
+        "Inviter à enregistrer automatiquement les mots de passe quand ils sont générés"
       ],
       "Rate us": [
         "Évaluez-nous"
@@ -2007,9 +2007,6 @@
       ],
       "Username (new alias)": [
         "Nom d’utilisateur (nouvel alias)"
-      ],
-      "Vault": [
-        "Coffre-fort"
       ],
       "Vault ID": [
         "ID du coffre-fort"
@@ -2366,7 +2363,7 @@
         "Coffre-fort partagé avec vous"
       ],
       "Weak password": [
-        "Le mot de passe est faible."
+        "Mot de passe faible"
       ],
       "Welcome to your new password manager!": [
         "Bienvenue dans votre nouveau gestionnaire de mots de passe !"

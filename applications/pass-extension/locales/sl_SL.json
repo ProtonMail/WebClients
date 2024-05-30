@@ -1040,6 +1040,9 @@
       "Autosaved on ${ payload.domain }": [
         "Samodejno shranjeno na ${ payload.domain }"
       ],
+      "Built in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Člani ekipe lahko privzeto izvozijo le trezorje, katerih lastniki so. Če je ta možnost vklopljena, ne bodo mogli izvoziti nobenih podatkov."
       ],
@@ -2046,9 +2049,6 @@
       ],
       "Username (new alias)": [
         "Uporabniško ime (nov vzdevek)"
-      ],
-      "Vault": [
-        "Trezor"
       ],
       "Vault ID": [
         "ID trezorja"
