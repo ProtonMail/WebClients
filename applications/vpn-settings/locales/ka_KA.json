@@ -137,9 +137,6 @@
       "Delete": [
         "წაშლა"
       ],
-      "Delete address": [
-        "მისამართის წაშლა"
-      ],
       "Delete Gateway": [
         "რაუტერის წაშლა"
       ],
@@ -1906,8 +1903,17 @@
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
       ],
+      "I do not wish to share": [
+        "არ მინდა, გავაზიარო"
+      ],
+      "I found a cheaper VPN": [
+        "ვიპოვე უფრო იაფი VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
+      ],
+      "It doesn't do what I need": [
+        "ის არ აკეთებს იმას, რაც მჭირდება"
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
@@ -1920,34 +1926,9 @@
       ],
       "Temporary need, may come back in the future": [
         "დროებითი საჭიროება შეიძლება, დაბრუნდეს მომავალში"
-      ]
-    },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "დაგვეხმარეთ გავუმჯობესდეთ!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "გაფართოებული ვერსიის ისტორია"
       ],
-      "Priority support": [
-        "პრიორიტეტული მხარდაჭერა"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "პირველი თვისთვის"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
+      "The VPN is too slow": [
+        "VPN ძალიან ნელია"
       ]
     },
     "Email verification": {
@@ -1999,6 +1980,9 @@
       ],
       "Amount above the maximum.": [
         "თანხა დასაშვებზე მაღალია."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "თანხა მინიმუმზე ნაკლებია (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
@@ -2994,9 +2978,6 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "Are you sure you want to delete this address?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ მისამართის წაშლა?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ 2FA-ის გამორთვა?"
       ],
@@ -3514,9 +3495,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "შეიყვანეთ 12-სიტყვიანი აღსადგენი ფრაზა."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "გაითვალისწინეთ, რომ თუ ამ მისამართს წაშლით, მისი სახელით ელფოსტების გაგზავნას და მიღებას ვეღარ შეძლებთ."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
@@ -3665,12 +3643,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "გამოწერა ყოველ 12 თვეში განახლდება."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "გამოწერა ყოველ 24 თვეში განახლდება."
-      ],
       "Subscription auto-renews every month.": [
         "გამოწერა ყოველთვე განახლდება."
       ],
@@ -3751,9 +3723,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "ამ გადამოწმებას ერთ საათამდე, შეიძლება, დასჭირდეს. შეგიძლიათ, შემდეგ ნაბიჯზე უსაფრთხოდ გადახვიდეთ."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "ეს გააუქმებს თქვენს მიმდინარე ფასიან გამოწერას და ყველა ერთგულების ნიშნად გადმოცემულ უპირატესობას დაკარგავთ."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "მოგცემთ ${ BRAND_NAME }-ის გამოწერის გადასახდელად PayPal-ის გამოყენების საშუალებას. მოხდება თქვენი გადამისამართება PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
@@ -4639,9 +4608,6 @@
       "What happened?": [
         "რა მოხდა?"
       ],
-      "What is the main reason you are canceling?": [
-        "რა არის მთავარი მიზეზი, რატომაც აუქმებთ?"
-      ],
       "What is the main reason you are deleting your account?": [
         "რა წარმოადგენს ანგარიშის წაშლის მთავარ მიზეზს?"
       ],
@@ -4890,9 +4856,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "თქვენი გამოწერა ავტომატურად განახლდება ${ renewTime }-ზე ${ renewablePrice }-ზე, გააუქმეთ ნებისმიერ დროს"
       ]
     },
     "mailtrial2024: Title": {
@@ -5264,6 +5227,9 @@
       ],
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
+      ],
+      "Passkeys supported": [
+        "საკვანძო გასაღებები მხარდაჭერილია"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -5864,9 +5830,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "ავტომატური (${ value })"
-      ],
       "Country configs": [
         "ქვეყნების მორგება"
       ],
@@ -6044,6 +6007,9 @@
       "Preparing your Recovery Kit": [
         "თქვენი აღგენის ნაკრების მომზადება"
       ],
+      "Secure vault sharing": [
+        "დაცული საცავის გაზიარება"
+      ],
       "Updating your account": [
         "თქვენი ანგარიშის განახლება"
       ],
@@ -6170,6 +6136,9 @@
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -6577,6 +6546,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "პაროლის ჩამოყრა გაუქმდა"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7173,10 +7147,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "დარჩენილია ${ dayDiff } დღე",
-        "დარჩენილია ${ dayDiff } დღე"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -7219,9 +7189,6 @@
       "Read the story": [
         "ისტორიის წაკითხვა"
       ],
-      "Resubscribe": [
-        "თავიდან გამოწერა"
-      ],
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
       ],
@@ -7230,6 +7197,32 @@
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
       ]
     },
     "Subscription renewal state": {
@@ -7690,14 +7683,8 @@
       "Delete": [
         "წაშლა"
       ],
-      "Delete ${ value }": [
-        "${ value }-ის წაშლა"
-      ],
       "Delete account": [
         "ანგარიშის წაშლა"
-      ],
-      "Delete address permanently?": [
-        "წავშალო მისამართი სამუდამოდ?"
       ],
       "Delete organization logo?": [
         "წავშალო ორგანიზაციის ლოგო?"
@@ -7711,9 +7698,6 @@
       ],
       "Device connected!": [
         "მოწყობილობა მიერთებულია!"
-      ],
-      "Disable ${ email }": [
-        "${ email }-ის გამორთვა"
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
@@ -8252,15 +8236,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "გამოწერა ავტომატურად განახლდება ყოველ 1 თვეში. შემდეგი გადახდის თარიღი 1 თვეშია."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],
@@ -8347,9 +8322,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის წაშლის შემთხვევაში თქვენს ანგარიშს ვეღარ აღადგენთ."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "ამ მისამართის გათიშვით თქვენ აღარ შეგეძლებათ ელფოსტის გაგზავნა და მიღება. ასევე გაითიშება მასზე მიბმული ${ BRAND_NAME }-ის ყველა პროდუქტი. დარწმუნებული ბრძანდებით, რომ გნებავთ, გათიშოთ ეს მისამართი?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
