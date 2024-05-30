@@ -2,6 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { useFlag } from '@proton/components/containers';
 import { useApi } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
@@ -10,7 +11,11 @@ import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry'
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AccountSecurityCard from './AccountSecurityCard';
 import AccountSecuritySuccess from './AccountSecuritySuccess';
-import { selectAccountSecurityElements, selectHasAccountSecurityCardToDisplay } from './slice/accountSecuritySlice';
+import {
+    selectAccountSecurityElements,
+    selectAccountSecurityIssuesCount,
+    selectHasAccountSecurityCardToDisplay,
+} from './slice/accountSecuritySlice';
 
 const AccountSecurity = () => {
     const api = useApi();
@@ -18,10 +23,17 @@ const AccountSecurity = () => {
         baseUseSelector(selectAccountSecurityElements);
     const hasCardsToDisplay = baseUseSelector(selectHasAccountSecurityCardToDisplay);
     const dismissed2FACardFeature = useFeature(FeatureCode.AccountSecurityDismissed2FACard);
+    const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
+    const accountIssuesCountNonDissmissable = baseUseSelector(selectAccountSecurityIssuesCount);
 
     return (
         <div className="w-full">
-            <h3 className="text-rg text-bold mt-1 mb-2">{c('Title').t`Account security`}</h3>
+            <h3 className="text-rg text-bold mt-1 mb-2">
+                {c('Title').t`Account security`}
+                {canDisplayBreachNotifications && (
+                    <>{accountIssuesCountNonDissmissable ? ` (${accountIssuesCountNonDissmissable})` : ''}</>
+                )}
+            </h3>
 
             {!hasCardsToDisplay ? (
                 <AccountSecuritySuccess twoFactorAuthSet={twoFactorAuthSet} />

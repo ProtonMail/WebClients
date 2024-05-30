@@ -2,6 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
 import { securityCenterReducer } from '@proton/components/components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
+import { breachesCountReducer } from '@proton/components/components/drawer/views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
 import { sharedReducers } from '@proton/redux-shared-store';
 
@@ -33,4 +34,5 @@ export const rootReducer = combineReducers({
     ...messagesReducer,
     ...snoozeReducer,
     ...securityCenterReducer,
+    ...breachesCountReducer,
 });
