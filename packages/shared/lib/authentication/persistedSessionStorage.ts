@@ -13,9 +13,9 @@ import {
     PersistedSessionWithLocalID,
 } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
+import { getValidatedLocalID } from './fork/validation';
 import { OfflineKey } from './offlineKey';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
-import { getValidatedLocalID } from './sessionForkValidation';
 
 // We have business logic relying on this constant, please change with caution!
 export const STORAGE_PREFIX = 'ps-';

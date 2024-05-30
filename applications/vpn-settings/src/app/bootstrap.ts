@@ -20,6 +20,7 @@ export const bootstrapApp = async ({
     signal?: AbortSignal;
 }) => {
     const pathname = window.location.pathname;
+    const searchParams = new URLSearchParams(window.location.search);
     const { config, api, authentication, history } = extraThunkArguments;
     const silentApi = getSilentApi(api);
 
@@ -27,7 +28,7 @@ export const bootstrapApp = async ({
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
-        const session = await bootstrap.loadSession({ authentication, api, pathname });
+        const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
 
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 

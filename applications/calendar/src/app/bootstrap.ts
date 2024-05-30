@@ -39,6 +39,7 @@ const getAppContainer = () =>
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
+    const searchParams = new URLSearchParams(window.location.search);
     const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(pathname);
     const isDrawerApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
@@ -69,7 +70,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                       parentApp,
                       pathname,
                   })
-                : undefined) || (await bootstrap.loadSession({ authentication, api, pathname }));
+                : undefined) || (await bootstrap.loadSession({ authentication, api, pathname, searchParams }));
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
