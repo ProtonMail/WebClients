@@ -9,7 +9,6 @@ import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/
 import { ShareInvitee } from '../../../../store';
 import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
-import { endsWithProtonInternalDomain } from './helpers/endsWithProtonInternalDomain';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.
@@ -59,14 +58,6 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     acc.badInvitees.set(address, {
                         ...newRecipient,
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
-                    });
-                    return acc;
-                }
-
-                if (!endsWithProtonInternalDomain(address)) {
-                    acc.badInvitees.set(address, {
-                        ...newRecipient,
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.NOT_INTERNAL_ACCOUNT),
                     });
                     return acc;
                 }
