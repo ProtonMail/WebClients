@@ -5,6 +5,21 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos detectados. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e 1 outro potencial vazamento detectados. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Um potencial vazamento de ${ name } foi detectado. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Um potencial vazamento de ${ name } foi detectado. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial vazamento de ${ name } foi detectado. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
       ]
@@ -744,7 +759,7 @@
         "Os códigos PIN não correspondem"
       ],
       "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Por favor, atualize para ter acesso antecipado a ${ PASS_APP_NAME } aplicativo de área de trabalho"
+        "Faça upgrade para ter acesso antecipado para o aplicativo para computador do ${ PASS_APP_NAME }"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -1992,9 +2007,6 @@
       "Username (new alias)": [
         "Nome de usuário (novo alias)"
       ],
-      "Vault": [
-        "Cofre"
-      ],
       "Vault ID": [
         "ID do cofre"
       ],
@@ -2358,7 +2370,7 @@
         "Nenhuma A2Fs inativas."
       ],
       "No insecure passwords": [
-        "Senhas não seguras"
+        "Sem senhas não seguras"
       ],
       "No items selected": [
         "Nenhum item selecionado"
