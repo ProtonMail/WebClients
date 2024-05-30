@@ -2,6 +2,7 @@ import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmTxBuilder } from '@proton/andromeda';
+import { useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useApi } from '@proton/components/hooks';
@@ -19,6 +20,8 @@ import { useBitcoinNetwork } from '../../store/hooks';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
+import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
 
 interface Props {
     recipientHelpers: ReturnType<typeof useEmailAndBtcAddressesMaps>;
@@ -33,6 +36,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
     const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
+    const [walletNotFoundModal, setWalletNotFoundModal] = useModalStateWithData<{ email: string }>();
     const [network] = useBitcoinNetwork();
     const walletApi = useWalletApiClients();
     const api = useApi();
@@ -76,7 +80,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     if (!btcAddressSignature) {
                         addInvalidRecipient(
                             recipientOrBitcoinAddress,
-                            c('Wallet send').t`No address set on this BitcoinAddress`
+                            c('Wallet send').t`No signature set on this BitcoinAddress`
                         );
                         continue;
                     }
@@ -114,6 +118,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                         safeAddRecipient(recipientOrBitcoinAddress, btcAddress, firstAddressKey);
                     }
                 } catch {
+                    setWalletNotFoundModal({ email: recipientOrBitcoinAddress.Address });
                     addInvalidRecipient(
                         recipientOrBitcoinAddress,
                         c('Wallet send').t`Could not find address linked to this email`
@@ -140,32 +145,41 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     }
 
     return (
-        <div className="flex flex-column max-w-full justify-center">
-            <EmailOrBitcoinAddressInput
-                disabled={Object.values(loadingBitcoinAddressLookup).some((v) => Boolean(v))}
-                placeholder={'andy.yen@proton.ch / bc1...'}
-                contactEmails={contactEmails}
-                contactEmailsMap={contactEmailsMap}
-                recipientEmailMap={recipientEmailMap}
-                network={network}
-                loading={loadingBitcoinAddressLookup}
-                onAddRecipients={(recipients: Recipient[]) => {
-                    void withLoadingBitcoinAddressLookup(handleAddRecipients(recipients));
-                }}
-                onRemoveRecipient={(recipient: Recipient) => handleRemoveRecipient(recipient)}
-            />
-
-            {txBuilder.getRecipients().length ? (
-                <Button
-                    color="norm"
-                    shape="solid"
-                    className="mt-6"
-                    fullWidth
-                    onClick={() => {
-                        onRecipientsConfirm();
+        <>
+            <div className="flex flex-column max-w-full justify-center">
+                <EmailOrBitcoinAddressInput
+                    disabled={Object.values(loadingBitcoinAddressLookup).some((v) => Boolean(v))}
+                    placeholder={'andy.yen@proton.ch / bc1...'}
+                    contactEmails={contactEmails}
+                    contactEmailsMap={contactEmailsMap}
+                    recipientEmailMap={recipientEmailMap}
+                    network={network}
+                    loading={loadingBitcoinAddressLookup}
+                    fetchedEmailListItemRightNode={({ email, error }) =>
+                        error ? <WalletNotFoundErrorDropdown email={email} /> : null
+                    }
+                    onAddRecipients={(recipients: Recipient[]) => {
+                        void withLoadingBitcoinAddressLookup(handleAddRecipients(recipients));
                     }}
-                >{c('Wallet send').t`Confirm`}</Button>
-            ) : null}
-        </div>
+                    onRemoveRecipient={(recipient: Recipient) => handleRemoveRecipient(recipient)}
+                />
+
+                {txBuilder.getRecipients().length ? (
+                    <Button
+                        color="norm"
+                        shape="solid"
+                        className="mt-6"
+                        fullWidth
+                        onClick={() => {
+                            onRecipientsConfirm();
+                        }}
+                    >{c('Wallet send').t`Confirm`}</Button>
+                ) : null}
+            </div>
+
+            {walletNotFoundModal.data && (
+                <WalletNotFoundErrorModal email={walletNotFoundModal.data.email} {...walletNotFoundModal} />
+            )}
+        </>
     );
 };
