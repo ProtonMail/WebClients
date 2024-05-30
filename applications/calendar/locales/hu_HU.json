@@ -435,10 +435,10 @@
       "Not now": [
         "Most nem"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1175,6 +1175,11 @@
       "${ more } more": [
         "${ more } további",
         "${ more } további"
+      ]
+    },
+    "Cancellation reminder": {
+      "Your subscription is ending soon": [
+        "Előfizetése hamarosan lejár"
       ]
     },
     "Checkout row": {
@@ -2326,32 +2331,6 @@
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Segítsen fejlődni!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Ajánlat elfogadása"
-      ],
-      "Special Offer": [
-        "Különleges ajánlat"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "az első hónapban"
-      ],
-      "Limited-time offer": [
-        "Korlátozott időre szóló ajánlat"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Naptár hozzáadása"
@@ -2449,6 +2428,9 @@
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Az összeg a minimum alatt (${ minimumAmount })."
       ],
       "Answer failed to be sent": [
         "A válasz elküldése nem sikerült"
@@ -5115,9 +5097,6 @@
       "What happened?": [
         "Mi történt?"
       ],
-      "What is the main reason you are canceling?": [
-        "Mi lemondásának a fő oka?"
-      ],
       "Wonderful": [
         "Csodás"
       ],
@@ -6479,9 +6458,6 @@
       "E.g., ": [
         "Pl., "
       ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
       "Filter groups": [
         "Csoportok szűrése"
       ],
@@ -7135,6 +7111,29 @@
     "Subscription price": {
       "For": [
         "Ár:"
+      ]
+    },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } teljes tárhely"
+      ],
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Calendar sharing": [
+        "Naptár megosztás"
+      ],
+      "Keep ${ planName }": [
+        "Maradjon ${ planName }"
+      ],
+      "Priority support": [
+        "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
       ]
     },
     "Subscription renewal state": {
@@ -8053,11 +8052,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } országban",
         "${ numberOfServers } ${ numberOfCountries } országban"
-      ]
-    },
-    "vpn_2024: renew": {
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Az előfizetés 3 havonta automatikusan megújul. A következő számlázási időpont 3 hónap múlva lesz."
       ]
     },
     "vpn_2step: feature": {
