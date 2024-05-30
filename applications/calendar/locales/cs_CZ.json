@@ -482,11 +482,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -1334,6 +1334,11 @@
         "${ more } další",
         "${ more } dalších",
         "${ more } dalších"
+      ]
+    },
+    "Cancellation reminder": {
+      "Your subscription is ending soon": [
+        "Vaše předplatné brzy skončí"
       ]
     },
     "Checkout row": {
@@ -2562,42 +2567,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Pomozte nám se zlepšit!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Získejte nabídku"
-      ],
-      "Special Offer": [
-        "Speciální nabídka"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Rozšířená historie verzí"
-      ],
-      "Priority support": [
-        "Prioritní podpora"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "za první měsíc"
-      ],
-      "Limited-time offer": [
-        "Časově omezená nabídka"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Získejte ${ planName } pouze za ${ planPrice }"
+      "Help us improve": [
+        "Pomozte nám se zlepšit"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4657,6 +4628,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
@@ -4885,11 +4859,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Předplatné se automaticky obnovuje každých 12 měsíců."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Předplatné se automaticky obnovuje každých 24 měsíců."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Předplatné je automaticky obnoveno každých ${ cycle } měsíců."
       ],
       "Subscription auto-renews every month.": [
         "Předplatné se automaticky obnovuje každý měsíc."
@@ -5817,9 +5788,6 @@
       "What happened?": [
         "Co se stalo?"
       ],
-      "What is the main reason you are canceling?": [
-        "Jaký je hlavní důvod vašeho zrušení?"
-      ],
       "Wonderful": [
         "Úžasné"
       ],
@@ -6067,9 +6035,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Omezená nabídka, vyprší 2. dubna 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše předplatné bude automaticky obnoveno ${ renewTime } za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Title": {
@@ -7530,6 +7495,9 @@
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -7544,6 +7512,15 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ price }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -7623,9 +7600,6 @@
       ],
       "E.g., ": [
         "Např., "
-      ],
-      "Feedback": [
-        "Zpětná vazba"
       ],
       "Filter groups": [
         "Filtrovat skupiny"
@@ -8579,6 +8553,140 @@
     "Subscription price": {
       "For": [
         "Pro"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Jediným zdrojem příjmů společnosti ${ BRAND_NAME } je předplatné od uživatelů. Díky vaší podpoře můžeme zůstat nezávislí, rozvíjet naše poslání vytvářet internet, kde je soukromí samozřejmostí a pokračovat v podpoře aktivistů a organizací bojujících za soukromí a svobodu."
+      ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } včetně historie verzí"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } a všechny prémiové funkce produktivity"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } úložného prostoru"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } s přístupem ke všem vysokorychlostním serverům v(e) ${ vpnCountries } zemích"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "Add any new files": [
+        "Přidávat jakékoliv nové soubory"
+      ],
+      "Back up photos from your devices": [
+        "Zálohovat fotografie ze svých zařízení"
+      ],
+      "Calendar sharing": [
+        "Sdílení kalendáře"
+      ],
+      "Comprehensive privacy and security": [
+        "Komplexní ochrana soukromí a zabezpečení"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastní harmonogram odesílání a odložení"
+      ],
+      "Direct contribution to our mission": [
+        "Přímý příspěvek našemu poslání"
+      ],
+      "Early access to new apps and features": [
+        "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Extra storage and bonuses": [
+        "Úložný prostor a bonusy navíc"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pomoc aktivistům v Hong Kongu"
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Jak jsme podpořili místní aktivisty, když bylo v Hongkongu ohroženo soukromí a svoboda projevu."
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
+      ],
+      "Keep ${ planName }": [
+        "Ponechat ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Zjistěte více o našem dopadu"
+      ],
+      "Manage your calendar": [
+        "Spravovat své kalendáře"
+      ],
+      "Online privacy, for your whole family": [
+        "Online soukromí pro celou vaši rodinu"
+      ],
+      "Our fight against censorship in Russia": [
+        "Náš boj proti cenzuře v Rusku"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Vezměte prosím na vědomí, že ${ planName } již není k dispozici k zakoupení. Pokud svůj účet snížíte, ztratíte všechny výhody tarifu a nebudete si ho moci znovu objednat."
+      ],
+      "Premium productivity features": [
+        "Prémiové funkce produktivity"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ],
+      "Read the story": [
+        "Přečíst příběh"
+      ],
+      "Receive new emails": [
+        "Přijímat nové e-maily"
+      ],
+      "Send emails with attachments": [
+        "Odesílat e-maily s přílohami"
+      ],
+      "Sync files on devices": [
+        "Synchronizovat soubory v zařízeních"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "To nejlepší z ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "Odblokování internetového přístupu v Íránu"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Version history": [
+        "Historie verzí"
+      ],
+      "Watch the interview": [
+        "Shlédněte rozhovor"
+      ],
+      "Yearly free storage bonuses": [
+        "Roční bonusy bezplatného úložiště"
+      ],
+      "Your own custom email domain": [
+        "Vaše vlastní e-mailová doména"
+      ],
+      "Your own short @pm.me email alias": [
+        "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
     "subscription reminder": {
@@ -9670,15 +9778,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Předplatné se automaticky obnoví každý měsíc. Vaše další datum účtování je za 1 měsíc."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
       ],
