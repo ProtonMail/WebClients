@@ -12,13 +12,20 @@ interface Props {
     sharedByMeListing?: boolean;
     links: DecryptedLink[];
     driveSharingFF?: boolean; // TODO: This is used to disable it under FF, remove this props when FF is removed
+    areLinksLoading: boolean;
 }
 
 /**
  * useLoadLinksShareInfo allow to enriched standard Decrypted links with sharing info like sharedOn, sharedBy and permissions
  *
  **/
-export const useLoadLinksShareInfo = ({ shareId, links, sharedByMeListing = false, driveSharingFF = true }: Props) => {
+export const useLoadLinksShareInfo = ({
+    shareId,
+    links,
+    areLinksLoading,
+    sharedByMeListing = false,
+    driveSharingFF = true,
+}: Props) => {
     // If it's not new direct sharing, we shouldn't load share info, loading should be set to 'false' by default.
     const [isLoading, withLoading] = useLoading(driveSharingFF);
     const abortSignal = useAbortSignal([shareId, withLoading]);
@@ -27,46 +34,33 @@ export const useLoadLinksShareInfo = ({ shareId, links, sharedByMeListing = fals
 
     const loadLinksShareInfo = useCallback(
         async (signal: AbortSignal) => {
-            if (links.length < linksWithShareInfo.size) {
-                const mapKeys = Array.from(linksWithShareInfo.keys());
-                const newLinksIds = links.map((link) => link.linkId);
-                const removedKeys = mapKeys.filter((key) => !newLinksIds.includes(key));
-                setLinksWithShareInfo((prevMap) => {
-                    const newMap = new Map(prevMap);
-                    removedKeys.forEach((key) => {
-                        newMap.delete(key);
+            const newState = new Map();
+            for (const link of links) {
+                if (linksWithShareInfo.has(link.linkId)) {
+                    newState.set(link.linkId, linksWithShareInfo.get(link.linkId));
+                } else {
+                    const linkShareId = link.sharingDetails?.shareId;
+                    const directSharingInfo = linkShareId ? await getDirectSharingInfo(signal, linkShareId) : {};
+                    newState.set(link.linkId, {
+                        ...link,
+                        ...directSharingInfo,
                     });
-                    return newMap;
-                });
+                }
             }
-            return Promise.all(
-                links.map(async (link) => {
-                    const shareId = link.sharingDetails?.shareId;
-                    if (!shareId) {
-                        return;
-                    }
-                    const directSharingInfo = await getDirectSharingInfo(signal, shareId);
-                    if (!directSharingInfo) {
-                        setLinksWithShareInfo((prevMap) => {
-                            return new Map(prevMap).set(link.linkId, link);
-                        });
-                    } else {
-                        setLinksWithShareInfo((prevMap) => {
-                            return new Map(prevMap).set(link.linkId, { ...link, ...directSharingInfo });
-                        });
-                    }
-                })
-            );
+            setLinksWithShareInfo(newState);
         },
         [links] //TODO: No all deps params as too much work needed in getDirectSharingInfo and all useShare functions
     );
 
     useEffect(() => {
-        if (!driveSharingFF) {
+        // Not nice: we block loading extra info until all the basic stuff is loaded first to avoid performance issues.
+        // We must redo it a lot, probably with refactor or if users will have too many shared items quickly.
+        // The view should show cached items in meantime.
+        if (!driveSharingFF || areLinksLoading) {
             return;
         }
         void withLoading(loadLinksShareInfo(abortSignal).catch(sendErrorReport));
-    }, [abortSignal, withLoading, loadLinksShareInfo, driveSharingFF]);
+    }, [loadLinksShareInfo, areLinksLoading]);
 
     return {
         isLoading,

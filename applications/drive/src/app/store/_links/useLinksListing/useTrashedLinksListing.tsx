@@ -65,10 +65,13 @@ export function useTrashedLinksListing() {
         transformedResponse: {
             [shareId: string]: { linkIds: string[]; parentIds: string[] };
         },
+        fetchMeta: FetchTrashMeta,
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
+            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds, {
+                fetchMeta,
+            });
         }
     };
 
@@ -88,7 +91,7 @@ export function useTrashedLinksListing() {
         volumesState.setVolumeShareIds(volumeId, volumeShareIds);
 
         const transformedResponse = transformTrashResponseToLinkMap(response);
-        await loadTrashedLinksMeta(signal, transformedResponse, loadLinksMeta);
+        await loadTrashedLinksMeta(signal, transformedResponse, trashFetchMeta, loadLinksMeta);
 
         trashFetchMeta.lastPage++;
         trashFetchMeta.isEverythingFetched = !hasNextPage;
