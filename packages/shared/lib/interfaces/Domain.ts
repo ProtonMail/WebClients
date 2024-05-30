@@ -43,6 +43,7 @@ export enum DKIM_STATE {
     DKIM_STATE_DEFAULT = 0,
     DKIM_STATE_ERROR = 3,
     DKIM_STATE_GOOD = 4,
+    DKIM_STATE_DELEGATED = 5,
     DKIM_STATE_WARNING = 6,
 }
 
@@ -51,6 +52,7 @@ export enum DMARC_STATE {
     DMARC_STATE_ONE = 1, // 1 is found entries but format wrong
     DMARC_STATE_MULT = 2, // 2 is multiple dmarc records, no good
     DMARC_STATE_GOOD = 3, // 3 is good!
+    DMARC_STATE_RELAXED = 4, // 4 also good, but additionally indicates relaxed DKIM
 }
 
 export interface Domain {
