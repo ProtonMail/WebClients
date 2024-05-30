@@ -1,13 +1,13 @@
-import { ReactNode, useMemo } from 'react';
+import { ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { PrivateAppContainer, PrivateMainArea, useModalState, useToggle } from '@proton/components';
+import { PrivateAppContainer, PrivateMainArea, useToggle } from '@proton/components';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { AccountCreationModal } from '../AccountCreationModal';
-import { WalletCreationModal } from '../WalletCreationModal';
+import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
+import { getThemeForWallet } from '../../utils';
 import WalletHeader from './WalletHeader';
 import WalletSidebar from './WalletSidebar';
 
@@ -17,20 +17,11 @@ interface Props {
 
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { walletId } = useParams<{ walletId?: string }>();
-
-    const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
-    const [walletAccountSetupModal, setWalletAccountSetupModal] = useModalState();
+    const { decryptedApiWalletsData = [], loadingApiWalletsData } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
 
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-
-    const wallet = useMemo(
-        () => decryptedApiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
-    );
-
-    const hasNoWalletSetupYet = Boolean(decryptedApiWalletsData && !decryptedApiWalletsData.length);
 
     return (
         <PrivateAppContainer
@@ -42,9 +33,18 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                     apiWalletsData={decryptedApiWalletsData}
                     onToggleExpand={toggleExpanded}
                     onAddWallet={() => {
-                        open({});
+                        open({
+                            theme: getThemeForWallet(decryptedApiWalletsData, walletId),
+                            kind: WalletSetupModalKind.WalletCreation,
+                        });
                     }}
-                    onAddWalletAccount={() => setWalletAccountSetupModal(true)}
+                    onAddWalletAccount={(apiWalletData: IWasmApiWalletData) => {
+                        open({
+                            theme: getThemeForWallet(decryptedApiWalletsData, walletId),
+                            kind: WalletSetupModalKind.WalletAccountCreation,
+                            apiWalletData,
+                        });
+                    }}
                 />
             }
         >
@@ -61,11 +61,6 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                     </div>
                 )}
             </PrivateMainArea>
-
-            {/* We want to open wallet creation modal whenever there is no wallet setup on for the user */}
-            <WalletCreationModal open={hasNoWalletSetupYet && !walletAccountSetupModal.open} isFirstCreation />
-
-            {wallet && <AccountCreationModal apiWalletData={wallet} {...walletAccountSetupModal} />}
         </PrivateAppContainer>
     );
 };

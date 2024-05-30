@@ -17,15 +17,17 @@ import {
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
-import { getThemeByIndex } from '../../utils';
+import { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
 
-interface Props extends ModalOwnProps {
-    index?: number;
+export interface WalletCreationModalOwnProps {
+    theme?: SubTheme;
     isFirstCreation?: boolean;
 }
 
-export const WalletCreationModal = ({ index = 0, isFirstCreation, ...modalProps }: Props) => {
+type Props = ModalOwnProps & WalletCreationModalOwnProps;
+
+export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: Props) => {
     const [walletImportModal, setWalletImportModal] = useModalState();
 
     const onSetupFinish = () => {
@@ -57,7 +59,7 @@ export const WalletCreationModal = ({ index = 0, isFirstCreation, ...modalProps 
             <Modal
                 title={c('Wallet setup').t`Wallet setup`}
                 subline={c('Wallet setup').t`Choose your local fiat currency to see the value of your transactions.`}
-                className={getThemeByIndex(index)}
+                className={theme}
                 hasClose={!isFirstCreation}
                 {...modalProps}
             >
@@ -157,7 +159,12 @@ export const WalletCreationModal = ({ index = 0, isFirstCreation, ...modalProps 
                 </div>
             </Modal>
 
-            <WalletImportModal isFirstCreation={isFirstCreation} {...walletImportModal} onFinish={onSetupFinish} />
+            <WalletImportModal
+                theme={theme}
+                isFirstCreation={isFirstCreation}
+                {...walletImportModal}
+                onFinish={onSetupFinish}
+            />
         </>
     );
 };

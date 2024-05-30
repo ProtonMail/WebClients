@@ -17,7 +17,7 @@ import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
-import { getThemeByIndex } from '../utils';
+import { getThemeForWallet } from '../utils';
 
 export const WalletContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
@@ -56,7 +56,7 @@ export const WalletContainer = () => {
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
-    const theme = getThemeByIndex(walletIndex as number);
+    const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
 
     // TODO: add account selector instead of that
     const firstAccount = wallet.WalletAccounts[0];

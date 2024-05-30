@@ -113,7 +113,7 @@ interface WalletsSidebarListProps {
     loadingApiWalletsData: boolean;
     apiWalletsData?: IWasmApiWalletData[];
     onAddWallet: () => void;
-    onAddWalletAccount: () => void;
+    onAddWalletAccount: (apiWalletData: IWasmApiWalletData) => void;
 }
 
 export const WalletsSidebarList = ({
@@ -150,7 +150,12 @@ export const WalletsSidebarList = ({
                                 className={clsx('mt-1', getThemeByIndex(index))}
                                 style={{ padding: '0' }}
                             >
-                                <WalletsSidebarListItem wallet={wallet} onAddWalletAccount={onAddWalletAccount} />
+                                <WalletsSidebarListItem
+                                    wallet={wallet}
+                                    onAddWalletAccount={() => {
+                                        onAddWalletAccount(wallet);
+                                    }}
+                                />
                             </SidebarListItem>
                         );
                     })}
