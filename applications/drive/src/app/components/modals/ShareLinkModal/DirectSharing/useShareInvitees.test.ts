@@ -98,20 +98,20 @@ describe('useShareInvitees', () => {
                 {
                     ...inviteeInternal2,
                     isExternal: true,
-                    error: new Error('Not a Proton account'),
+                    error: new Error('Sharing with people outside of Proton will be available soon'),
                     isLoading: false,
                 },
                 {
                     ...inviteeExternalProton,
                     isExternal: true,
                     isLoading: false,
-                    error: new Error('Not a Proton account'),
+                    error: new Error('Sharing with people outside of Proton will be available soon'),
                 },
                 {
                     ...inviteeExternalNonProton,
                     isExternal: true,
                     isLoading: false,
-                    error: new Error('Not a Proton account'),
+                    error: new Error('Sharing with people outside of Proton will be available soon'),
                 },
             ]);
             verifyAllWhenMocksCalled();
