@@ -140,9 +140,6 @@
       "Delete": [
         "Poista"
       ],
-      "Delete address": [
-        "Poista osoite"
-      ],
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
@@ -1892,9 +1889,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
-      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vuoden sisällä vain yhden osoitteen."
       ]
@@ -1961,45 +1955,6 @@
         "VPN on liian hidas"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Auta meitä parantamaan!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "Special Offer": [
-        "Erikoistarjous"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Laajennettu versiohistoria"
-      ],
-      "Priority support": [
-        "Ensisijainen tuki"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "ensimmäisen kuukauden ajan"
-      ],
-      "Limited-time offer": [
-        "Tarjous voimassa rajoitetun ajan"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
@@ -2049,6 +2004,9 @@
       ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
@@ -3059,9 +3017,6 @@
       "Amount due": [
         "Veloitettava summa"
       ],
-      "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa osoitteen?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Haluatko varmasti poistaa kaksivaiheisen tunnistautumisen käytöstä?"
       ],
@@ -3424,6 +3379,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "JCB logo": [
+        "JCB-logo"
+      ],
       "Keys created": [
         "Avaimet luotiin"
       ],
@@ -3591,9 +3549,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Huomioithan, ettet voi osoitteen poiston jälkeen lähettää tai vastaanottaa viestejä sitä käyttäen."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
@@ -3742,12 +3697,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Tilaus uudistuu automaattisesti 12 kuukauden välein."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Tilaus uudistuu automaattisesti 24 kuukauden välein."
-      ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
       ],
@@ -3828,9 +3777,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Tämä vahvistus voi kestää jopa tunnin. Voit jatkaa turvallisesti seuraaviin vaiheisiin."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
@@ -4731,9 +4677,6 @@
       "What happened?": [
         "Mitä tapahtui?"
       ],
-      "What is the main reason you are canceling?": [
-        "Mikä on suurin syy tilauksen perumiseen?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
       ],
@@ -4985,9 +4928,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Tilauksesi uudistuu automaattisesti ${ renewTime } hintaan ${ renewablePrice }, peruuta koska tahansa"
       ]
     },
     "mailtrial2024: Title": {
@@ -5365,6 +5305,9 @@
       ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
+      ],
+      "Password health": [
+        "Salasanaterveys"
       ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
@@ -5971,9 +5914,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Automaattinen (${ value })"
-      ],
       "Country configs": [
         "Maakohtaiset määritykset"
       ],
@@ -6316,6 +6256,9 @@
       ],
       "Processing payment": [
         "Käsitellään maksua"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -7402,10 +7345,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } päivä jäljellä",
-        "${ dayDiff } päivää jäljellä"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -7453,12 +7392,6 @@
       ],
       "Read the story": [
         "Lue juttu"
-      ],
-      "Resubscribe": [
-        "Tilaa uudelleen"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi tilaamalla uudelleen."
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"
@@ -7984,14 +7917,8 @@
       "Delete": [
         "Poista"
       ],
-      "Delete ${ value }": [
-        "Poista ${ value }"
-      ],
       "Delete account": [
         "Poista tili"
-      ],
-      "Delete address permanently?": [
-        "Poistetaanko osoite pysyvästi?"
       ],
       "Delete organization logo?": [
         "Poistetaanko organisaation logo?"
@@ -8005,9 +7932,6 @@
       ],
       "Device connected!": [
         "Laite on yhdistetty!"
-      ],
-      "Disable ${ email }": [
-        "Poista ${ email } käytöstä"
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
@@ -8555,15 +8479,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Tilaus uudistuu automaattisesti kuukauden välein ja seuraava laskutuspäivä on kuukauden kuluttua."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
       ],
@@ -8650,9 +8565,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Jos poistat osoitteen käytöstä, et voi enää käyttää sitä viestien lähetykseen ja vastaanottoon, ja kaikki siihen liitetyt ${ BRAND_NAME }-tuotteet poistetaan käytöstä. Haluatko varmasti poistaa osoitteen käytöstä?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Huomioithan, että valitsemalla tämän maksutavan tiliäsi ei voida päivittää välittömästi. Päivitämme tilisi, kun maksu on käsitelty."

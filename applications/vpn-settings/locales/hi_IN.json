@@ -131,9 +131,6 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete address": [
-        "पता मिटा दें"
-      ],
       "Delete logo": [
         "चिन्ह मिटाएं"
       ],
@@ -1753,9 +1750,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "एक बार हटा दिए जाने के बाद, इस पते का उपयोग किसी अन्य व्यक्ति द्वारा दोबारा नहीं किया जा सकेगा।"
-      ],
       "You can only delete 1 address per year.": [
         "आप प्रति वर्ष केवल 1 पता ही हटा सकते हैं।"
       ]
@@ -1798,16 +1792,6 @@
         "अस्थाई जरूरत, भविष्य में वापस आ सकती है"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "हमें सुधरने में मदद करें!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "प्राथमिक सहायता"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "सत्यापन ईमेल ${ address } पर भेजा गया"
@@ -1829,6 +1813,9 @@
       ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "न्यूनतम से कम राशि (${ minimumAmount })।"
       ],
       "Checkout expired, please try again": [
         "चेकआउट की समय सीमा समाप्त हो गई है, कृपया पुनः प्रयास करें।"
@@ -2702,9 +2689,6 @@
       "Amount due": [
         "देय राशि"
       ],
-      "Are you sure you want to delete this address?": [
-        "क्या आप वाकई इस पते को हटाना चाहते हैं?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "क्या आप वाकई दो-कारक प्रमाणीकरण को अक्षम करना चाहते हैं?"
       ],
@@ -3112,9 +3096,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "कृपया अपने खाते से संबद्ध 12-शब्द पुनर्प्राप्ति वाक्यांश दर्ज करें।"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "कृपया ध्यान दें कि यदि आप इस पते को हटाते हैं, तो आप इस पते का उपयोग करके ईमेल भेज या प्राप्त नहीं कर पाएंगे।"
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "कृपया ध्यान दें कि पुष्टी बटन को दबाने पर आपके खाते में ${ creditsRemaining } क्रेडिट शेष रहेंगे।"
       ],
@@ -3245,12 +3226,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "सदस्यता स्वचालित रूप से हर 12 महीने में नवीनीकृत होती है।"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "सदस्यता स्वचालित रूप से हर 24 महीने में नवीनीकृत होती है।"
-      ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
       ],
@@ -3316,9 +3291,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉपअप ब्लॉकर इस्तेमाल करते है, तो जारी रखने के लिए कृपया उसे अक्षम कर दे।"
@@ -4112,9 +4084,6 @@
       ],
       "What happened?": [
         "क्या हुआ?"
-      ],
-      "What is the main reason you are canceling?": [
-        "कौनसी मुख्य वजह से आप रद्द कर रहे हैं?"
       ],
       "What is the main reason you are deleting your account?": [
         "आपका खाता हटाने का मुख्य कारण क्या है?"
@@ -5111,9 +5080,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "स्वचालित (${ value })"
-      ],
       "Country configs": [
         "देश विन्यास"
       ],
@@ -5362,6 +5328,9 @@
     "Payments": {
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "Payments.Error": {
@@ -6129,10 +6098,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } दिन बाकी",
-        "${ dayDiff } दिन बाकी"
-      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -6168,9 +6133,6 @@
       ],
       "Read the story": [
         "कहानी पढ़ें"
-      ],
-      "Resubscribe": [
-        "पुन: सदस्यता लें"
       ],
       "Subscription canceled": [
         "सदस्यता रद्द की गई"
@@ -6604,14 +6566,8 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete ${ value }": [
-        "${ value } मिटाएं"
-      ],
       "Delete account": [
         "खाता हटा दो"
-      ],
-      "Delete address permanently?": [
-        "पता स्थायी रूप से हटाएं?"
       ],
       "Delete organization logo?": [
         "संगठन-चिन्ह हटाएं?"
@@ -6625,9 +6581,6 @@
       ],
       "Device connected!": [
         "डिवाइस जुड़ गया।"
-      ],
-      "Disable ${ email }": [
-        "${ email } अक्षम करें"
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
@@ -7068,9 +7021,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
@@ -7104,9 +7054,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अपने खाते को पुनर्प्राप्त नहीं कर पाएंगे।"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "इस पते को अक्षम करके, आप इस पते का इस्तेमाल करके ईमेल भेज या ले नहीं पाएंगे और सभी लिंक किए गए ${ BRAND_NAME } प्रोडक्ट भी अक्षम हो जाएंगे। क्या आप पक्का इस पते को अक्षम करना चाहते है?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "कृपया ध्यान दें कि इस भुगतान विधि को चुनकर, आपके खाते को तुरंत अपग्रेड नहीं किया जा सकता है। भुगतान क्लियर होते ही हम आपके खाते को अपडेट कर देंगे।"
