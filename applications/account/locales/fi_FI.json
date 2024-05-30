@@ -334,9 +334,6 @@
       "Delete": [
         "Poista"
       ],
-      "Delete address": [
-        "Poista osoite"
-      ],
       "Delete and confirm": [
         "Poista ja vahvista"
       ],
@@ -3144,9 +3141,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
-      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vuoden sisällä vain yhden osoitteen."
       ]
@@ -3353,11 +3347,6 @@
         "VPN on liian hidas"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Auta meitä parantamaan!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb Debianille/Ubuntulle"
@@ -3375,40 +3364,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Turvallinen pilvitallennustila ja tietojasi suojaava tiedostojen jakaminen"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "Special Offer": [
-        "Erikoistarjous"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Laajennettu versiohistoria"
-      ],
-      "Priority support": [
-        "Ensisijainen tuki"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "ensimmäisen kuukauden ajan"
-      ],
-      "Limited-time offer": [
-        "Tarjous voimassa rajoitetun ajan"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3905,6 +3860,9 @@
       ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Todennus peruttiin."
@@ -6354,9 +6312,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Kukaan ei voi enää synkronoida tai nähdä tämän kalenterin uusia päivityksiä tämän linkin välityksellä. Jos haluat myöntää heille käyttöoikeuden uudestaan, sinun on luotava uusi linkki."
       ],
-      "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa osoitteen?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Haluatko varmasti poistaa tämän kalenterin?"
       ],
@@ -6368,9 +6323,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Haluatko varmasti poistaa kalenterin? Voit lisätä yleiset vapaapäivät myöhemmin uudelleen."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Haluatko varmasti poistaa verkkotunnuksen?"
       ],
       "Are you sure you want to delete this filter?": [
         "Haluatko varmasti poistaa tämän suodattimen?"
@@ -7032,6 +6984,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Olen käyttänyt @ProtonMailia ja ajattelin, että saatat pitää siitä. Se on turvallinen sähköpostipalvelu, joka suojaa yksityisyyttäsi. Rekisteröidy suosituslinkilläni ja saat kuukauden premium-ominaisuudet ilmaiseksi: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "JCB-logo"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
       ],
@@ -7359,12 +7314,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Pidä se turvassa, koska tarvitset sitä päästäksesi tilillesi ja purkaaksesi tietojesi salauksen, jos joudut joskus nollaamaan salasanasi."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Huomioithan, ettet voi osoitteen poiston jälkeen lähettää tai vastaanottaa viestejä sitä käyttäen."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Huomioithan, että verkkotunnuksen poisto poistaa myös kaikki sitä käyttävät osoitteet käytöstä."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Huomioithan, että suodattimen ${ nameDeleted } poisto lopettaa myös kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
       ],
@@ -7627,12 +7576,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Tilaus uudistuu automaattisesti 12 kuukauden välein."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Tilaus uudistuu automaattisesti 24 kuukauden välein."
-      ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
       ],
@@ -7788,9 +7731,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Tämä vahvistus voi kestää jopa tunnin. Voit jatkaa turvallisesti seuraaviin vaiheisiin."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Tämä poistaa tiedostojesi kaikki aiemmat versiot, jotka ovat vanhempia kuin ${ rententionLabel }."
@@ -9740,9 +9680,6 @@
       "What happened?": [
         "Mitä tapahtui?"
       ],
-      "What is the main reason you are canceling?": [
-        "Mikä on suurin syy tilauksen perumiseen?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
       ],
@@ -10224,9 +10161,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Tilauksesi uudistuu automaattisesti ${ renewTime } hintaan ${ renewablePrice }, peruuta koska tahansa"
       ]
     },
     "mailtrial2024: Title": {
@@ -10874,6 +10808,9 @@
       ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
+      ],
+      "Password health": [
+        "Salasanaterveys"
       ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
@@ -12443,6 +12380,9 @@
       "Processing payment": [
         "Käsitellään maksua"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
+      ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
       ]
@@ -13884,10 +13824,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } päivä jäljellä",
-        "${ dayDiff } päivää jäljellä"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -13935,12 +13871,6 @@
       ],
       "Read the story": [
         "Lue juttu"
-      ],
-      "Resubscribe": [
-        "Tilaa uudelleen"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi tilaamalla uudelleen."
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"
@@ -14779,9 +14709,6 @@
       "Delete account": [
         "Poista tili"
       ],
-      "Delete address permanently?": [
-        "Poistetaanko osoite pysyvästi?"
-      ],
       "Delete calendar": [
         "Poista kalenteri"
       ],
@@ -14815,9 +14742,6 @@
       ],
       "Details": [
         "Lisätiedot"
-      ],
-      "Disable ${ email }": [
-        "Poista ${ email } käytöstä"
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
@@ -15970,15 +15894,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Tilaus uudistuu automaattisesti kuukauden välein ja seuraava laskutuspäivä on kuukauden kuluttua."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
       ],
@@ -16074,9 +15989,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Lokikirjauksen käytöstäpoiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Jos poistat osoitteen käytöstä, et voi enää käyttää sitä viestien lähetykseen ja vastaanottoon, ja kaikki siihen liitetyt ${ BRAND_NAME }-tuotteet poistetaan käytöstä. Haluatko varmasti poistaa osoitteen käytöstä?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jos perut tuonnin, et voi jatkaa sitä. ${ BRAND_NAME } tallensi tilanteen tilillesi. Perutaanko tuonti silti?"

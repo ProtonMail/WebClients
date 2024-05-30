@@ -325,9 +325,6 @@
       "Delete": [
         "Verwijderen"
       ],
-      "Delete address": [
-        "Verwijder adres"
-      ],
       "Delete and confirm": [
         "Verwijder en bevestig"
       ],
@@ -3135,9 +3132,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Eens verwijderd, kan dit adres niet meer door iemand anders gebruikt worden."
-      ],
       "You can only delete 1 address per year.": [
         "U kunt slechts 1 adres per jaar verwijderen."
       ]
@@ -3344,11 +3338,6 @@
         "De VPN is te traag"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Help ons verbeteren!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb voor Debian / Ubuntu"
@@ -3366,40 +3355,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Beveiligde cloudopslag en bestandsdeling die uw gegevens beschermt."
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Pak deze deal"
-      ],
-      "Special Offer": [
-        "Speciale aanbieding"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Uitgebreide versiegeschiedenis bekijken"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "voor de eerste maand"
-      ],
-      "Limited-time offer": [
-        "Tijdelijke aanbieding"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Neem ${ planName } voor slechts ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3896,6 +3851,9 @@
       ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Bedrag onder minimum (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -6345,9 +6303,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Iedereen met deze koppeling zal niet meer kunnen synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen terug toegang wilt geven, moet u een nieuwe link aanmaken."
       ],
-      "Are you sure you want to delete this address?": [
-        "Weet u zeker dat u dit adres wil verwijderen?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Weet u zeker dat u deze agenda wilt verwijderen?"
       ],
@@ -6359,9 +6314,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Weet u zeker dat u deze agenda wilt verwijderen? U kunt de wettelijke feestdagenagenda later opnieuw toevoegen."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Weet u zeker dat u dit domein wilt verwijderen?"
       ],
       "Are you sure you want to delete this filter?": [
         "Weet u zeker dat u deze filter wil verwijderen?"
@@ -7347,12 +7299,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Houd er rekening mee dat als u dit domein verwijdert, alle adressen die eraan gekoppeld zijn uitgeschakeld zullen worden."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Let op, wanneer u dit filter wist ${ nameDeleted } zullen alle geautomatiseerde acties van dit filter niet langer uitgevoerd worden."
       ],
@@ -7615,12 +7561,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonnement vernieuwt automatisch elke 12 maanden."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonnement vernieuwd automatisch elke 24 maanden."
-      ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
       ],
@@ -7776,9 +7716,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Deze verificatie kan tot één uur duren. U kunt veilig doorgaan tot de volgende stappen."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dit zal alle vorige versies van uw bestanden die ouder zijn dan ${ rententionLabel } verwijderen."
@@ -9722,9 +9659,6 @@
       "What happened?": [
         "Wat is er gebeurd?"
       ],
-      "What is the main reason you are canceling?": [
-        "Wat is de belangrijkste reden dat u wilt annuleren?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
@@ -10200,9 +10134,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Beperkte aanbieding, loopt af op 2 april 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Uw abonnement wordt automatisch verlengd op ${ renewTime } tegen ${ renewablePrice }, annuleer op elk moment."
       ]
     },
     "mailtrial2024: Title": {
@@ -12410,6 +12341,9 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } per maand. U kunt opzeggen wanneer u wilt."
+      ],
       "Timeout exceeded": [
         "Time-out overschreden"
       ]
@@ -13851,10 +13785,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag over",
-        "${ dayDiff } dagen over"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
@@ -13902,12 +13832,6 @@
       ],
       "Read the story": [
         "Lees het verhaal"
-      ],
-      "Resubscribe": [
-        "Opnieuw aanmelden"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Schrijf u opnieuw in om terug toegang te krijgen tot de ${ planName } functionaliteiten."
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
@@ -14746,9 +14670,6 @@
       "Delete account": [
         "Account verwijderen"
       ],
-      "Delete address permanently?": [
-        "Adres definitief verwijderen?"
-      ],
       "Delete calendar": [
         "Agenda verwijderen"
       ],
@@ -14782,9 +14703,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Disable ${ email }": [
-        "Schakel ${ email } uit"
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
@@ -15940,15 +15858,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonnement wordt elke maand automatisch verlengd. Uw volgende facturatiedatum is over 1 maand."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonnement wordt elke 3 maanden automatisch verlengd. Uw volgende facturatiedatum is over 3 maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
       ],
@@ -16044,9 +15953,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Door de logboeken uit te schakelen, verwijdert u ook de gehele logboekgeschiedenis. Weet u zeker dat u de logboeken wilt uitschakelen?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Door het uitschakelen van dit adres u kunt niet langer e-mails verzenden of ontvangen met dit adres en alle gekoppelde ${ BRAND_NAME } producten worden ook uitgeschakeld. Weet u zeker dat u dit adres wilt uitschakelen?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"
