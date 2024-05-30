@@ -3407,48 +3407,9 @@
         "Viteza pe VPN e prea mică"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ajutaţi-ne să ne îmbunătățim!"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Descărcare toate"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Obțineți oferta"
-      ],
-      "Special Offer": [
-        "Ofertă specială"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Istoric extins versiuni"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Reînnoire cu ${ renewablePrice }, anulați oricând"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "pentru prima lună"
-      ],
-      "Limited-time offer": [
-        "Ofertă limitată"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Luați ${ planName } cu doar ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3644,6 +3605,9 @@
       ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Suma este sub minimul acceptat (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
@@ -6140,6 +6104,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "JCB logo": [
+        "Logo JCB"
+      ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Alăturați-vă programului ${ PROTON_SENTINEL_NAME } pentru cel mai înalt nivel de securitate și asistență pentru cont."
       ],
@@ -6588,11 +6555,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonamentul se autoreînnoiește la fiecare 12 luni."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonamentul se autoreînnoiește la fiecare 24 de luni."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonamentul se autoreînnoiește la fiecare ${ cycle } luni."
       ],
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
@@ -8022,9 +7986,6 @@
       "What happened?": [
         "Ce s-a întâmplat?"
       ],
-      "What is the main reason you are canceling?": [
-        "Care este principalul motiv pentru care anulați?"
-      ],
       "With attachment": [
         "Cu atașamente"
       ],
@@ -8443,9 +8404,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Ofertă limitată, expiră la 2 aprilie 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Abonamentul se va reînnoi automat peste ${ renewTime } cu ${ renewablePrice }. Puteți anula oricând."
       ]
     },
     "mailtrial2024: Title": {
@@ -8959,6 +8917,9 @@
       "Passkeys supported": [
         "Chei de acces suportate"
       ],
+      "Password health": [
+        "Stare parole"
+      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
@@ -8978,6 +8939,9 @@
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
       ],
       "Require 2FA for organization": [
         "Este necesară A2F pentru organizație"
@@ -9093,6 +9057,9 @@
         "Partajare seif (maxim ${ n } persoană)",
         "Partajare seif (maxim ${ n } persoane)",
         "Partajare seif (maxim ${ n } de persoane)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
       ]
     },
     "new_plans: feature info": {
@@ -9349,6 +9316,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protejați-vă familia de site-urile web dăunătoare și accesați serverele noastre VPN de mare viteză pentru a vă transmite conținutul preferat"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Protejați-vă adresa de e-mail reală împotriva dezvăluirii sau compromiterii cu ajutorul aliasurilor (o adresă de e-mail generată aleatoriu care trimite mesajele primite către adresa de e-mail principală)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Oferă cel mai înalt nivel de protecție a securității contului și asistență specializată."
@@ -9697,6 +9667,15 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Apoi va fi reînnoit automat cu ${ price } timp de ${ months } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ price } în fiecare lună. Puteți anula oricând."
+      ],
       "Timeout exceeded": [
         "Limită de timp depășită"
       ]
@@ -9763,9 +9742,6 @@
       ],
       "End date": [
         "Data sfârșit"
-      ],
-      "Feedback": [
-        "Feedback"
       ],
       "Filter folders": [
         "Filtrare foldere"
@@ -10906,6 +10882,62 @@
     "Subscription price": {
       "For": [
         "Pentru"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } spațiu total"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Calendar sharing": [
+        "Partajare calendar"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ajurarea activiștilor din Hong Kong"
+      ],
+      "Keep ${ planName }": [
+        "Păstrare ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Aflați mai multe despre impactul nostru"
+      ],
+      "Our fight against censorship in Russia": [
+        "Lupta noastră împotriva cenzurii în Rusia"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Read the story": [
+        "Citiți articolul"
+      ],
+      "Unblocking internet access in Iran": [
+        "Deblocarea accesului la internet în Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Watch the interview": [
+        "Priviți interviul"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonusuri de stocare gratuită anuală"
+      ],
+      "Your own custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Your own short @pm.me email alias": [
+        "Propriul alias de e-mail scurt @pm.me"
       ]
     },
     "subscription reminder": {
@@ -12352,15 +12384,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonamentul se reînnoiește automat în fiecare lună. Următoarea dată de facturare este peste o lună."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonamentul se reînnoiește automat la fiecare 3 luni. Următoarea dată de facturare este peste 3 luni."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
       ],

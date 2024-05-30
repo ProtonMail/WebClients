@@ -358,6 +358,9 @@
       "Download ${ attachmentName }": [
         "${ attachmentName }-ის გადმოწერა"
       ],
+      "Download Desktop App": [
+        "გადმოწერეთ კომპიუტერის აპი"
+      ],
       "Download now": [
         "ახლა გადმოწერა"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "წინა გვერდზე გადასვლა"
       ],
+      "Go to settings": [
+        "მორგებაზე გადასვლა"
+      ],
       "Go to SimpleLogin": [
         "SimpleLogin-ზე გადასვლა"
       ],
@@ -583,6 +589,9 @@
       ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
+      ],
+      "Later": [
+        "მოგვიანებით"
       ],
       "Later this week": [
         "მოგვიანებით ამ კვირაში"
@@ -3316,8 +3325,17 @@
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
       ],
+      "I do not wish to share": [
+        "არ მინდა, გავაზიარო"
+      ],
+      "I found a cheaper VPN": [
+        "ვიპოვე უფრო იაფი VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
+      ],
+      "It doesn't do what I need": [
+        "ის არ აკეთებს იმას, რაც მჭირდება"
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
@@ -3330,39 +3348,14 @@
       ],
       "Temporary need, may come back in the future": [
         "დროებითი საჭიროება შეიძლება, დაბრუნდეს მომავალში"
-      ]
-    },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "დაგვეხმარეთ გავუმჯობესდეთ!"
+      ],
+      "The VPN is too slow": [
+        "VPN ძალიან ნელია"
       ]
     },
     "Download attachments": {
       "Download all": [
         "ყველას გადმოწერა"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "გაფართოებული ვერსიის ისტორია"
-      ],
-      "Priority support": [
-        "პრიორიტეტული მხარდაჭერა"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "პირველი თვისთვის"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3557,6 +3550,9 @@
       ],
       "Amount above the maximum.": [
         "თანხა დასაშვებზე მაღალია."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "თანხა მინიმუმზე ნაკლებია (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
@@ -6401,12 +6397,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "გამოწერა ყოველ 12 თვეში განახლდება."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "გამოწერა ყოველ 24 თვეში განახლდება."
-      ],
       "Subscription auto-renews every month.": [
         "გამოწერა ყოველთვე განახლდება."
       ],
@@ -7799,9 +7789,6 @@
       "What happened?": [
         "რა მოხდა?"
       ],
-      "What is the main reason you are canceling?": [
-        "რა არის მთავარი მიზეზი, რატომაც აუქმებთ?"
-      ],
       "With attachment": [
         "მიმაგრებებით"
       ],
@@ -8215,9 +8202,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "თქვენი გამოწერა ავტომატურად განახლდება ${ renewTime }-ზე ${ renewablePrice }-ზე, გააუქმეთ ნებისმიერ დროს"
       ]
     },
     "mailtrial2024: Title": {
@@ -8706,6 +8690,9 @@
       ],
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
+      ],
+      "Passkeys supported": [
+        "საკვანძო გასაღებები მხარდაჭერილია"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -9403,6 +9390,11 @@
         "თქვენ"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "დაცული საცავის გაზიარება"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
@@ -9423,6 +9415,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -9490,9 +9485,6 @@
       ],
       "End date": [
         "დასასრულის დრო"
-      ],
-      "Feedback": [
-        "უკუკავშირი"
       ],
       "Filter folders": [
         "საქაღალდეების გაფილტვრა"
@@ -10010,6 +10002,11 @@
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "პაროლის ჩამოყრა გაუქმდა"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -10562,6 +10559,67 @@
         "ფასი"
       ]
     },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "${ planMaxSpace } total storage": [
+        "ჯამში საცავი ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 ელფოსტის მისამართი"
+      ],
+      "Calendar sharing": [
+        "კალენდრის გაზიარება"
+      ],
+      "Custom schedule send and snooze times": [
+        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
+      ],
+      "Keep ${ planName }": [
+        "${ planName }-ის დატოვება"
+      ],
+      "Learn more about our impact": [
+        "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ],
+      "Read the story": [
+        "ისტორიის წაკითხვა"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Watch the interview": [
+        "ინტერვიუს ყურება"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -10793,6 +10851,9 @@
       ],
       "Message deleted": [
         "შეტყობინება წაშლილია"
+      ],
+      "Message expiration canceled": [
+        "შეტყობინების ვადა გაუქმდა"
       ],
       "Message marked as legitimate": [
         "შეტყობინება მოინიშნა, როგორც სანდო"
@@ -11046,6 +11107,9 @@
       ],
       "Action all messages": [
         "გადატარება ყველა შეტყობნებაზე"
+      ],
+      "Add a custom logo": [
+        "დაამატეთ სასურველი ლოგო"
       ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
@@ -11904,15 +11968,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "გამოწერა ავტომატურად განახლდება ყოველ 1 თვეში. შემდეგი გადახდის თარიღი 1 თვეშია."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],

@@ -259,6 +259,9 @@
       "Copy password to clipboard": [
         "将密码复制至剪贴板"
       ],
+      "Copy version number to clipboard": [
+        "复制版本号"
+      ],
       "Create a new contact group": [
         "创建联系人群组"
       ],
@@ -354,6 +357,9 @@
       ],
       "Download ${ attachmentName }": [
         "下载 ${ attachmentName }"
+      ],
+      "Download Desktop App": [
+        "下载桌面应用"
       ],
       "Download now": [
         "立即下载"
@@ -475,6 +481,9 @@
       "Go to previous page": [
         "上一页"
       ],
+      "Go to settings": [
+        "前往设置"
+      ],
       "Go to SimpleLogin": [
         "前往 SimpleLogin"
       ],
@@ -579,6 +588,9 @@
       ],
       "label emails as": [
         "给邮件加标签"
+      ],
+      "Later": [
+        "稍后"
       ],
       "Later this week": [
         "本周稍后"
@@ -3298,37 +3310,9 @@
         "临时需要退订，以后可能会重新开通"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "帮助我们做得更好！"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "全部下载"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "更长的版本历史"
-      ],
-      "Priority support": [
-        "优先支持"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "续费价为 ${ renewablePrice }，可随时退订"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "首月"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3514,6 +3498,9 @@
       ],
       "Amount above the maximum.": [
         "金额太大。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "金额 (${ minimumAmount }) 过小。"
       ],
       "An error occurred while loading alias options": [
         "加载别名选项时发生错误"
@@ -5373,6 +5360,9 @@
       "and": [
         "并"
       ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "任何预定或未激活的消息都将被取消。"
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "任何子文件夹也将被删除。然而，存储在此文件夹 ${ nameDeleted } 中的电子邮件将不会被删除，并且可以在所有邮件文件夹中找到。"
       ],
@@ -5453,6 +5443,9 @@
       ],
       "Body: ": [
         "正文： "
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
@@ -5837,6 +5830,9 @@
       ],
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "学习如何 ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "了解详情"
@@ -6237,6 +6233,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "通知已推迟至明天 ${ formattedTime }"
       ],
+      "Snoozing this conversation will be canceled.": [
+        "此对话将被取消。"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
@@ -6254,12 +6253,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
-      ],
-      "Subscription auto-renews every 12 months.": [
-        "订阅将每12个月自动续期。"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "订阅将每24个月自动续期。"
       ],
       "Subscription auto-renews every month.": [
         "订阅将每月自动续期。"
@@ -6564,6 +6557,9 @@
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
+      "Version number successfully copied to clipboard": [
+        "版本号已成功复制"
+      ],
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
@@ -6797,6 +6793,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "您的文件将被加密保存。"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的信息在 ${ displayedDate } 找到"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -7617,9 +7616,6 @@
       "What happened?": [
         "发生了什么？"
       ],
-      "What is the main reason you are canceling?": [
-        "您退订的主要原因是什么？"
-      ],
       "With attachment": [
         "含有附件"
       ],
@@ -7850,6 +7846,9 @@
       ],
       "Starred": [
         "星标邮件"
+      ],
+      "stay safer online": [
+        "安全上网"
       ],
       "Terms": [
         "服务条款"
@@ -9120,6 +9119,9 @@
     "Payments": {
       "Billing Country": [
         "计费国家"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
       ]
     },
     "Payments.Error": {
@@ -9175,9 +9177,6 @@
       ],
       "End date": [
         "结束日期"
-      ],
-      "Feedback": [
-        "意见反馈"
       ],
       "Filter folders": [
         "搜索文件夹"
@@ -10154,9 +10153,41 @@
         "支付"
       ]
     },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 总存储空间"
+      ],
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "Calendar sharing": [
+        "日历共享"
+      ],
+      "Custom schedule send and snooze times": [
+        "自由调整定时发送和延迟通知时间"
+      ],
+      "Keep ${ planName }": [
+        "保持计划 ${ planName }"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ]
+    },
     "subscription reminder": {
+      "Desktop app": [
+        "桌面应用"
+      ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
       ]
     },
     "Subscription renewal state": {
@@ -10334,6 +10365,9 @@
       "Labels applied.": [
         "标签已添加。"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "最后修改的别名存储在您最早的库中"
+      ],
       "Mail list unsubscribed": [
         "邮件订阅已取消订阅"
       ],
@@ -10345,6 +10379,9 @@
       ],
       "Message deleted": [
         "邮件已删除"
+      ],
+      "Message expiration canceled": [
+        "消息过期已取消"
       ],
       "Message marked as legitimate": [
         "邮件已标为非垃圾邮件"
@@ -10420,6 +10457,9 @@
       ],
       "Verification successful": [
         "验证成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已成功取消订阅"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
@@ -10588,6 +10628,9 @@
       ],
       "Action all messages": [
         "作用于所有消息"
+      ],
+      "Add a custom logo": [
+        "自定义徽标"
       ],
       "Add contact group name": [
         "添加联系人群组名称"
@@ -11429,9 +11472,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ renewPrice } 的价格自动续订，您可随时取消。"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
