@@ -2255,45 +2255,6 @@
         "此VPN太慢了"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "協助我們改善！"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Special Offer": [
-        "特別優惠"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "展開版本紀錄"
-      ],
-      "Priority support": [
-        "優先支援"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "更新價 ${ renewablePrice }，任何時間都可取消"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "首月"
-      ],
-      "Limited-time offer": [
-        "限時優惠"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "只需 ${ planPrice } 即可取得 ${ planName }"
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -2449,6 +2410,9 @@
       ],
       "Amount above the maximum.": [
         "金額高於上限。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "金額不得低於 (${ minimumAmount })。"
       ],
       "An error occurred while loading alias options": [
         "載入別名選項時發生錯誤"
@@ -3880,6 +3844,9 @@
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
@@ -3966,6 +3933,9 @@
       ],
       "Create links and share your files with others.": [
         "創建連結並與其他人分享您的檔案。"
+      ],
+      "Create public link": [
+        "創建公用連結"
       ],
       "Create your first folder and start moving your files.": [
         "創建您的第一個資料夾，並開始移動您的檔案。"
@@ -4669,17 +4639,11 @@
       "Share via link settings": [
         "請用連結設定共享"
       ],
-      "Share with anyone": [
-        "與任何人分享"
-      ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的可供分享連結"
       ],
       "Shared link not found": [
         "找不到分享的連結"
-      ],
-      "Shared with": [
-        "與分享"
       ],
       "Shared with me": [
         "與我分享"
@@ -4720,11 +4684,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "每12個月自動續訂。"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "每24個月自動續訂。"
+      "Subscription auto-renews every ${ cycle } months.": [
+        "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
         "每月自動續訂"
@@ -5809,9 +5770,6 @@
       "What happened?": [
         "發生了甚麼問題？"
       ],
-      "What is the main reason you are canceling?": [
-        "您要取消的主要理由是甚麼？"
-      ],
       "Wonderful": [
         "太棒了"
       ],
@@ -6537,6 +6495,9 @@
       "Passkeys supported": [
         "支援密碼金鑰"
       ],
+      "Password health": [
+        "密碼穩固性"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -6554,6 +6515,9 @@
       ],
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
@@ -6665,6 +6629,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管共享(每人至多${ n })"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
       ]
     },
     "new_plans: feature info": {
@@ -7362,6 +7329,9 @@
       "MM/YY": [
         "MM/YY"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
+      ],
       "Timeout exceeded": [
         "已經逾時"
       ]
@@ -7437,9 +7407,6 @@
       ],
       "Enter your email address": [
         "請輸入您的電郵位址"
-      ],
-      "Feedback": [
-        "意見回饋"
       ],
       "Filter groups": [
         "篩選群組"
@@ -7637,6 +7604,12 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "取得通知當您的密碼或其他資料在第三方服務中洩漏。 ${ learnMoreLink }"
       ],
@@ -8206,6 +8179,59 @@
     "Subscription price": {
       "For": [
         "為"
+      ]
+    },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 總儲存空間"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
+      "Helping activists in Hong Kong": [
+        "支持於香港的行動"
+      ],
+      "Keep ${ planName }": [
+        "保留 ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "了解更多我們的影響"
+      ],
+      "Our fight against censorship in Russia": [
+        "我們對抗俄羅斯審查"
+      ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Read the story": [
+        "已讀的訊息"
+      ],
+      "Unblocking internet access in Iran": [
+        "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders, labels and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Watch the interview": [
+        "瀏覽訪談"
+      ],
+      "Yearly free storage bonuses": [
+        "年度免費儲存加成"
+      ],
+      "Your own custom email domain": [
+        "您持有的自訂電子郵件網域名稱"
+      ],
+      "Your own short @pm.me email alias": [
+        "您自己短@pm.me電子郵件別名"
       ]
     },
     "subscription reminder": {
@@ -9239,9 +9265,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的訂閱將每 ${ cycle }月自動更新。"
       ]

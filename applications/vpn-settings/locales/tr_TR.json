@@ -140,9 +140,6 @@
       "Delete": [
         "Sil"
       ],
-      "Delete address": [
-        "Adresi sil"
-      ],
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
@@ -711,6 +708,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
+      ],
+      "Create and collaborate on documents securely": [
+        "Güvenle belgeler oluşturup üzerinde birlikte çalışın"
       ],
       "Keep your schedule private": [
         "Zaman planınızı gizli tutun"
@@ -1892,9 +1892,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Bu adres silindikten sonra başka hiç kimse tarafından yeniden kullanılamaz."
-      ],
       "You can only delete 1 address per year.": [
         "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
       ]
@@ -1961,45 +1958,6 @@
         "VPN çok yavaş çalışıyor"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Kendimizi geliştirmemize yardımcı olun!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Special Offer": [
-        "Özel teklif"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "ilk ay için"
-      ],
-      "Limited-time offer": [
-        "Sınırlı süreli teklif"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
@@ -2049,6 +2007,9 @@
       ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Tutar en az miktarın altında (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -3059,9 +3020,6 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "Are you sure you want to delete this address?": [
-        "Bu adresi silmek istediğinize emin misiniz?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "İki adımlı doğrulamayı kapatmak istediğinize emin misiniz?"
       ],
@@ -3588,9 +3546,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Lütfen bu adresi silerseniz, bu adresi kullanarak e-posta gönderip alamayacağınızı unutmayın."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
@@ -3739,12 +3694,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonelik 12 ayda bir otomatik olarak yenilenir."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonelik 24 ayda bir otomatik olarak yenilenir."
-      ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
       ],
@@ -3825,9 +3774,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Bu doğrulama bir saat kadar sürebilir. Güvenle sonraki adımlara geçebilirsiniz."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
@@ -4725,9 +4671,6 @@
       "What happened?": [
         "Ne oldu?"
       ],
-      "What is the main reason you are canceling?": [
-        "İptal etmenizin ana nedeni nedir?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"
       ],
@@ -4976,9 +4919,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Aboneliğiniz ${ renewTime } tarihinde ${ renewablePrice } fiyatından otomatik olarak yenilenecek. İstediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Title": {
@@ -5441,7 +5381,7 @@
         "Sınırsız sayıda aygıt"
       ],
       "Unlimited devices and aliases": [
-        "Sınırsız cihazlar ve takma adlar"
+        "Sınırsız aygıt ve takma ad"
       ],
       "Unlimited filters": [
         "Sınırsız sayıda süzgeç"
@@ -5959,9 +5899,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Otomatik (${ value })"
-      ],
       "Country configs": [
         "Ülke yapılandırmaları"
       ],
@@ -6170,10 +6107,10 @@
       ],
       "Secure sharing with ${ n } vault": [
         "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasalar ile güvenli paylaşım"
+        "${ n } kasa ile güvenli paylaşım"
       ],
       "Secure sharing with multiple vaults": [
-        "Çoklu kasalar ile güvenli paylaşım"
+        "Çok sayıda kasa ile güvenli paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
@@ -6304,6 +6241,9 @@
       ],
       "Processing payment": [
         "Ödeme işleniyor"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -6775,7 +6715,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "Şifre sıfırlama iptal edildi"
+        "Parola sıfırlama isteği iptal edildi"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7052,7 +6992,7 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Bu abonelik, iptal edilene kadar her 2 yılda bir aynı oranda otomatik olarak yenilenecektir."
+        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ]
     },
     "specialoffer: Link": {
@@ -7176,7 +7116,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Aboneliğiniz iptal ediliyor, lütfen bekleyin"
+        "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
     "Storage": {
@@ -7390,10 +7330,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } gün kaldı",
-        "${ dayDiff } gün kaldı"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
@@ -7444,12 +7380,6 @@
       ],
       "Read the story": [
         "Öykümüzü okuyun"
-      ],
-      "Resubscribe": [
-        "Yeniden abone ol"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "${ planName } özelliklerine yeniden erişebilmek için yeniden abone olun."
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
@@ -7651,7 +7581,7 @@
         "Doğrulandı"
       ],
       "You have successfully canceled your subscription.": [
-        "Aboneliğinizi başarıyla iptal ettiniz."
+        "Aboneliğinizi iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
@@ -7975,14 +7905,8 @@
       "Delete": [
         "Sil"
       ],
-      "Delete ${ value }": [
-        "${ value } sil"
-      ],
       "Delete account": [
         "Hesabı sil"
-      ],
-      "Delete address permanently?": [
-        "Adres kalıcı olarak silinsin mi?"
       ],
       "Delete organization logo?": [
         "Kuruluş logosu silinsin mi?"
@@ -7996,9 +7920,6 @@
       ],
       "Device connected!": [
         "Aygıt bağlandı!"
-      ],
-      "Disable ${ email }": [
-        "${ email } adresini kullanımdan kaldır"
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
@@ -8546,15 +8467,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonelik her ay otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 1 ay sonra."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
@@ -8641,9 +8553,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Bu adresi kullanım dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanım dışı kalır. Bu adresi kullanım dışı bırakmak istediğinize emin misiniz?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."

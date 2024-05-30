@@ -3242,37 +3242,9 @@
         "一時的な理由で、将来的に再度使用する予定"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "改善にご協力してください!"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "すべてダウンロード"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "拡張バージョン履歴"
-      ],
-      "Priority support": [
-        "優先サポート"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "最初の 1 か月"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Email body for description (description part)": {
@@ -3397,6 +3369,9 @@
       ],
       "Amount above the maximum.": [
         "金額が上限を超えています。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "最低金額 (${ minimumAmount }) を下回っています。"
       ],
       "Attachments are limited to 25 MB": [
         "添付ファイルの上限は 25 MB です"
@@ -6072,12 +6047,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "サブスクリプションは 12 か月ごとに自動更新されます。"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "サブスクリプションは 24 か月ごとに自動更新されます。"
-      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -7422,9 +7391,6 @@
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
-      "What is the main reason you are canceling?": [
-        "キャンセルの主な理由は何ですか?"
-      ],
       "With attachment": [
         "添付ファイルあり"
       ],
@@ -7792,9 +7758,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "2024 年 4 月 2 日までの期間限定オファー"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "サブスクリプションは ${ renewTime } に ${ renewablePrice } で自動更新され、いつでもキャンセルできます"
       ]
     },
     "mailtrial2024: Title": {
@@ -8262,6 +8225,9 @@
       ],
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
+      ],
+      "Password health": [
+        "パスワードの健全性"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -8949,6 +8915,9 @@
       "MM/YY": [
         "MM/YY (月/年)"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ]
@@ -9015,9 +8984,6 @@
       ],
       "End date": [
         "終了日"
-      ],
-      "Feedback": [
-        "ご意見"
       ],
       "Filter folders": [
         "フォルダーとラベルを検索"
@@ -9979,6 +9945,62 @@
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ planMaxSpace } total storage": [
+        "合計 ${ planMaxSpace } のストレージ"
+      ],
+      "10 email addresses": [
+        "10個のメールアドレス"
+      ],
+      "Calendar sharing": [
+        "カレンダーの共有"
+      ],
+      "Custom schedule send and snooze times": [
+        "カスタムスケジュールの送信時間とスヌーズ時間"
+      ],
+      "Helping activists in Hong Kong": [
+        "香港の活動家を支援"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } を使い続ける"
+      ],
+      "Learn more about our impact": [
+        "私たちの影響について詳しく知る"
+      ],
+      "Our fight against censorship in Russia": [
+        "ロシアにおける検閲との闘い"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ],
+      "Read the story": [
+        "ストーリーを読む"
+      ],
+      "Unblocking internet access in Iran": [
+        "イランでのインターネットアクセスのブロックを解除"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Watch the interview": [
+        "インタビューを見る"
+      ],
+      "Yearly free storage bonuses": [
+        "年間無料ストレージボーナス"
+      ],
+      "Your own custom email domain": [
+        "独自のカスタムメールドメイン"
+      ],
+      "Your own short @pm.me email alias": [
+        "独自の短い @pm.me メール エイリアス"
       ]
     },
     "subscription reminder": {
@@ -11261,15 +11283,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "サブスクリプションは 1 か月ごとに自動更新されます。次回の請求日は 1 か月後です。"
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "サブスクリプションは 3 か月ごとに自動更新されます。次回の請求日は 3 か月後です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],

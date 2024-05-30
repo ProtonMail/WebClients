@@ -1492,7 +1492,7 @@
         "Desactiva la compartició fora de l'organització"
       ],
       "Display": [
-        "Visualització"
+        "Mostra"
       ],
       "Domain": [
         "Domini"
@@ -1794,9 +1794,6 @@
       "Username (new alias)": [
         "Nom d'usuari (àlies nou)"
       ],
-      "Vault": [
-        "Caixa forta"
-      ],
       "Vault ID": [
         "ID de la caixa forta"
       ],
@@ -1990,16 +1987,16 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } i 1 altra possible filtració detectada. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activi ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "La seva informació s'ha trobat en almenys una fuita de dades. Activi ${ DARK_WEB_MONITORING_NAME } per veure'n els detalls. ${ link }"
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
     "Success": {
@@ -2166,7 +2163,7 @@
         "El nostre regal de benvinguda per a vostè."
       ],
       "Passkey": [
-        "Contrasenya"
+        "Clau d'accés"
       ],
       "Password": [
         "Contrasenya"

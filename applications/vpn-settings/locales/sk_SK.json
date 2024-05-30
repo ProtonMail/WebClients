@@ -140,9 +140,6 @@
       "Delete": [
         "Odstrániť"
       ],
-      "Delete address": [
-        "Vymazať adresu"
-      ],
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
@@ -717,6 +714,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Prezerajte web v súkromí a blokujte reklamy"
+      ],
+      "Create and collaborate on documents securely": [
+        "Bezpečne vytvárajte dokumenty a spolupracujte pri ich tvorbe"
       ],
       "Keep your schedule private": [
         "Uchovajte si svoj program v súkromí"
@@ -1908,9 +1908,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Po vymazaní túto adresu už nikto iný nebude môcť použiť."
-      ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
       ]
@@ -1977,45 +1974,6 @@
         "VPN je príliš pomalá"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Pomôžte nám zlepšiť sa!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
-      "Special Offer": [
-        "Špeciálna ponuka"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Rozšírená história verzií"
-      ],
-      "Priority support": [
-        "Prioritná podpora"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "za prvý mesiac"
-      ],
-      "Limited-time offer": [
-        "Časovo obmedzená ponuka"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Získať ${ planName } len za ${ planPrice }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Overovací email bol odoslaný na ${ address }"
@@ -2065,6 +2023,9 @@
       ],
       "Amount above the maximum.": [
         "Hodnota je vyšša než maximálna čiastka."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Suma nižšia ako minimum (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
@@ -3117,9 +3078,6 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "Are you sure you want to delete this address?": [
-        "Naozaj chcete vymazať túto adresu?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Naozaj chcete vypnúť dvojfázové overovanie?"
       ],
@@ -3486,6 +3444,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Keys created": [
         "Kľúče vytvorené"
       ],
@@ -3654,9 +3615,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadajte 12-slovnú frázu na obnovenie spojenú s vaším účtom, prosím."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Berte prosím na vedomie, že ak odstránite túto adresu, nebudete už môcť odosielať, ani prijímať emaily pomocou tejto adresy."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ creditsRemaining }."
       ],
@@ -3807,11 +3765,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Predplatné sa obnovuje automaticky každých 12 mesiacov."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Predplatné sa obnovuje automaticky každých 24 mesiacov."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov."
       ],
       "Subscription auto-renews every month.": [
         "Predplatné sa obnovuje automaticky každý mesiac."
@@ -3899,9 +3854,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto overenie môže trvať až jednu hodinu. Môžete bezpečne pokračovať k ďalším krokom."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
@@ -4815,9 +4767,6 @@
       "What happened?": [
         "Čo sa stalo?"
       ],
-      "What is the main reason you are canceling?": [
-        "Aký je hlavný dôvod zrušenia?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Aký je hlavný dôvod, prečo mažete svoj účet?"
       ],
@@ -5068,9 +5017,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Časovo obmedzená ponuka, končí 2. apríla 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
       ]
     },
     "mailtrial2024: Title": {
@@ -5479,6 +5425,9 @@
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
+      "Password health": [
+        "Zdravie hesla"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -5499,6 +5448,9 @@
         "Chráňte súčasne ${ n } zariadenia",
         "Chráňte súčasne ${ n } zariadení",
         "Chráňte súčasne ${ n } zariadení"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
@@ -5628,6 +5580,9 @@
         "Zdieľanie trezora (s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
       ]
     },
     "new_plans: feature info": {
@@ -5916,6 +5871,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chráňte svoju rodinu pred škodlivými webovými stránkami a získajte prístup k našim vysokorýchlostným serverom VPN, aby ste mohli streamovať svoj obľúbený obsah"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Chráňte svoju skutočnú emailovú adresu pred prezradením alebo únikom pomocou aliasov (náhodne vygenerovaná emailová adresa, ktorá preposiela emaily do vašej hlavnej schránky)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Poskytuje najvyššiu úroveň zabezpečenia účtu a odbornú podporu"
       ],
@@ -6093,9 +6051,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Automaticky (${ value })"
-      ],
       "Country configs": [
         "Konfigurácia krajiny"
       ],
@@ -6446,6 +6401,15 @@
       ],
       "Processing payment": [
         "Spracováva sa platba"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -6949,7 +6913,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
+        "Žiadosť o obnovenie hesla bola zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7604,12 +7568,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
       ],
-      "${ dayDiff } day left": [
-        "Zostáva ${ dayDiff } deň",
-        "Zostávajú ${ dayDiff } dni",
-        "Zostáva ${ dayDiff } dní",
-        "Zostáva ${ dayDiff } dní"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
@@ -7657,12 +7615,6 @@
       ],
       "Read the story": [
         "Prečítať príbeh"
-      ],
-      "Resubscribe": [
-        "Obnoviť predplatné"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Opätovným predplatením obnovíte prístup k funkciám ${ planName }."
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
@@ -8190,14 +8142,8 @@
       "Delete": [
         "Vymazať"
       ],
-      "Delete ${ value }": [
-        "Vymazať ${ value }"
-      ],
       "Delete account": [
         "Zmazať účet"
-      ],
-      "Delete address permanently?": [
-        "Vymazať adresu natrvalo?"
       ],
       "Delete organization logo?": [
         "Vymazať logo organizácie?"
@@ -8213,9 +8159,6 @@
       ],
       "Device connected!": [
         "Zariadenie pripojené!"
-      ],
-      "Disable ${ email }": [
-        "Deaktivovať ${ email }"
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
@@ -8779,15 +8722,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Predplatné sa automaticky obnovuje každý 1 mesiac. Ďalší dátum fakturácie je o 1 mesiac."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."
       ],
@@ -8880,9 +8814,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Vymazaním tohto telefónneho čísla už nebudete môcť obnovit svoj účet."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Zakázaním tejto adresy už nebudete môcť odosielať ani prijímať emaily pomocou tejto adresy a všetky prepojené produkty ${ BRAND_NAME } budú tiež zakázané. Naozaj chcete zakázať túto adresu?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."

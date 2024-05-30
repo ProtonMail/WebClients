@@ -140,9 +140,6 @@
       "Delete": [
         "Excluir"
       ],
-      "Delete address": [
-        "Excluir endereço"
-      ],
       "Delete Gateway": [
         "Excluir gateway"
       ],
@@ -721,6 +718,9 @@
       "Browse the web privately and block ads": [
         "Navegue na web de maneira privada e bloqueie anúncios"
       ],
+      "Create and collaborate on documents securely": [
+        "Crie e colabore em documentos com segurança"
+      ],
       "Keep your schedule private": [
         "Mantenha privada sua agenda"
       ],
@@ -743,6 +743,9 @@
       ],
       "Get the deal": [
         "Obtenha a oferta"
+      ],
+      "Save even more with a 12-month plan": [
+        "Economize mais com o plano de 12 meses"
       ]
     },
     "bf2023: Deal details": {
@@ -1901,8 +1904,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Uma vez excluído, este endereço não pode ser usado novamente por qualquer outra pessoa."
+      "Are you sure you want to delete this address?": [
+        "Tem a certeza de que quer apagar esta endereço?"
+      ],
+      "Delete address": [
+        "Excluir endereço"
+      ],
+      "Delete address permanently?": [
+        "Excluir endereço permanentemente?"
+      ],
+      "Delete address?": [
+        "Excluir endereço?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Uma vez excluído, este endereço ${ address } não pode ser usado novamente por qualquer outra pessoa."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Observe que se você excluir este endereço ${ address }, você não poderá mais enviar ou receber e-mails usando este endereço."
       ],
       "You can only delete 1 address per year.": [
         "Você somente pode excluir 1 endereço por ano."
@@ -1924,6 +1942,17 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Você tem certeza de que deseja desativar este endereço?"
+      ],
+      "Disable address": [
+        "Desativar endereço"
+      ],
+      "Disable address?": [
+        "Desativar endereço?"
       ]
     },
     "Downgrade account reason": {
@@ -1971,42 +2000,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ajude-nos a melhorar!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Histórico de versão estendido"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renova por ${ renewablePrice }, cancele a qualquer momento"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "pelo primeiro mês"
-      ],
-      "Limited-time offer": [
-        "Oferta por tempo limitado"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Obtenha ${ planName } por apenas ${ planPrice }"
+      "Help us improve": [
+        "Ajude-nos a melhorar"
       ]
     },
     "Email verification": {
@@ -2857,6 +2852,9 @@
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
       ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Economize muito nas melhores ofertas do ${ VPN_APP_NAME }"
+      ],
       "Select your deal": [
         "Selecione sua oferta"
       ],
@@ -3079,9 +3077,6 @@
       ],
       "Amount due": [
         "Valor a pagar"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Você tem certeza que deseja excluir este endereço?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Você tem certeza de que deseja desativar a autenticação de dois fatores?"
@@ -3445,6 +3440,9 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "JCB logo": [
+        "Logotipo JCB"
+      ],
       "Keys created": [
         "Chave criada"
       ],
@@ -3615,11 +3613,11 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Observe que se você excluir este endereço, você não poderá mais enviar ou receber e-mails usando este endereço."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+      ],
+      "please open a support ticket": [
+        "abra um ticket de suporte"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -3772,11 +3770,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "A assinatura é renovada automaticamente a cada 12 meses."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "A assinatura é renovada automaticamente a cada 24 meses."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "A assinatura é renovada automaticamente a cada ${ cycle }."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -3853,14 +3848,14 @@
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Essa verificação pode levar até uma hora. Você pode prosseguir com segurança para as próximas etapas."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esta ação cancelará seu atual plano pago e você perderá todas as vantagens e benefícios acumulados"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
@@ -4773,9 +4768,6 @@
       "What happened?": [
         "O que aconteceu?"
       ],
-      "What is the main reason you are canceling?": [
-        "Qual é o principal motivo pelo qual você está cancelando?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Qual é a principal razão pela qual você está excluindo sua conta?"
       ],
@@ -5030,9 +5022,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Sua assinatura irá se autor renovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -5433,6 +5422,9 @@
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Checagens regulares da segurança da sua conta. O alertaremos se você tiver senhas fracas ou reutilizadas que precisem ser atualizadas."
+      ],
       "Require 2FA for organization": [
         "Requer A2F para a organização"
       ],
@@ -5555,6 +5547,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertá-lo imediatamente se encontrarmos alguma coisa."
       ]
     },
     "new_plans: feature info": {
@@ -5841,6 +5836,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteja sua família de sites perigosos e acesse nossos servidores VPN de alta velocidade para assistir seus conteúdos favoritos"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Proteja seu endereço de e-mail verdadeiro de ser revelado ou vazado usando aliases (um endereço de e-mail gerado aleatoriamente, que redireciona e-mails para a sua caixa de entrada principal)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Fornece o mais alto nível de proteção segurança de conta e suporte especializado"
       ],
@@ -6016,9 +6014,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Automático (${ value })"
-      ],
       "Country configs": [
         "Configurações do país"
       ],
@@ -6113,6 +6108,9 @@
       "Avoid overly compressed images.": [
         "Evite imagens muitos comprimidas."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Certifique-se de que seu logotipo tenha espaço de preenchimento ao redor."
+      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Opte por uma imagem PNG de 128x128 píxeis para maior claridade."
       ],
@@ -6138,6 +6136,9 @@
       ],
       "Square image of at least 128 pixels": [
         "Imagem quadrada de pelo menos 128 pixels"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando iniciado sessão nos nossos aplicativos web."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6325,6 +6326,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilize um método de recuperação de dados, entre em contato com outro administrador ou redefina a chave da organização para restaurar os privilégios de administrador."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Não foi possível verificar a autenticidade desta identidade."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Não foi possível verificar a segurança da chave do endereço deste remetente. Às vezes, há um atraso na atualização das informações do remetente. Tente novamente mais tarde. Se você não confia na validade deste convite ou remetente, entre em contato com o Suporte ao Cliente ${ BRAND_NAME }."
       ],
@@ -6367,6 +6371,12 @@
       ],
       "Processing payment": [
         "Processando pagamento"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months }. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ price } todo mês. Você pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
@@ -6628,6 +6638,9 @@
       ],
       "Enter token into your identity provider": [
         "Insira o token em seu provedor de identidade"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Insira o URL e o token em seu provedor de identidade"
       ],
       "For security reasons, the token is hidden": [
         "Por motivos de segurança, o token está oculto."
@@ -7415,10 +7428,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dia restante",
-        "${ dayDiff } dias restantes"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
@@ -7439,6 +7448,9 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus de armazenamento anualmente."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
@@ -7491,9 +7503,6 @@
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas. "
-      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Como reagimos quando a ${ BRAND_NAME } foi alvo de uma campanha agressiva de censura."
       ],
@@ -7535,9 +7544,6 @@
       ],
       "Receive new emails": [
         "Receba novos e-mais"
-      ],
-      "Resubscribe": [
-        "Reinscrever-se"
       ],
       "Send emails with attachments": [
         "Envie e-mails com anexos"
@@ -8081,14 +8087,8 @@
       "Delete": [
         "Excluir"
       ],
-      "Delete ${ value }": [
-        "Excluir ${ value }"
-      ],
       "Delete account": [
         "Excluir conta"
-      ],
-      "Delete address permanently?": [
-        "Excluir endereço permanentemente?"
       ],
       "Delete organization logo?": [
         "Excluir logotipo da organização?"
@@ -8102,9 +8102,6 @@
       ],
       "Device connected!": [
         "Dispositivo conectado!"
-      ],
-      "Disable ${ email }": [
-        "Desativar ${ email }"
       ],
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
@@ -8553,6 +8550,12 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
       ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Esse endereço de e-mail será mostrado a todos os membros da organização ao realizar operações de gerenciamento de contas."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando iniciado sessão nos nossos aplicativos web."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "Geralmente, um URL que contém o nome do provedor de identidade dentro"
       ],
@@ -8655,15 +8658,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "A assinatura é renovada automaticamente a cada 1 mês. Sua próxima data de faturamento será em 1 mês."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
       ],
@@ -8699,6 +8693,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Economize ${ discount } com uma assinatura de ${ billingCycle }."
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Obtenha o primeiro ano do ${ plan } gratuitamente!"
+      ],
       "monthly": [
         "mensal"
       ]
@@ -8720,8 +8717,20 @@
         "${ n } ano",
         "${ n } anos"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Inclui ${ plan } (grátis no primeiro ano!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Inclui o ${ plan }, nosso gerenciador de senhas premium, grátis pelo primeiro ano!"
+      ],
+      "Just ${ price }": [
+        "Apenas ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Experimente ${ upsellPlanName } sem riscos"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Seu pacote de ${ a } e ${ b }"
       ],
       "Your ${ selected } plan": [
         "Seu plano ${ selected }"
@@ -8755,9 +8764,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Ao desativar este endereço, você não poderá mais enviar ou receber e-mails usando este endereço e todos os produtos da ${ BRAND_NAME } vinculados também serão desativados. Você tem certeza que deseja desativar este endereço?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."

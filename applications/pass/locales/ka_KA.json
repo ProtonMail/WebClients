@@ -158,6 +158,9 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web-ის მონიტორინგის ჩართვა"
+      ],
       "Exclude from monitoring": [
         "მონიტორინგიდან ამოღება"
       ],
@@ -184,6 +187,9 @@
       ],
       "Get mobile apps": [
         "მობილური აპების დაყენება"
+      ],
+      "Get Pass Business": [
+        "მიიღეთ Pass Business"
       ],
       "Get Pass Plus": [
         "მიიღეთ Pass Plus"
@@ -332,6 +338,9 @@
       "Restore item": [
         "ელემენტის აღდგენა"
       ],
+      "Resume monitoring": [
+        "მონიტორინგის გაგრძელება"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -391,6 +400,9 @@
       ],
       "Trash": [
         "ნაგვის ყუთში"
+      ],
+      "Try again.": [
+        "კიდევ სცადეთ."
       ],
       "Unpin item": [
         "ელემენტის მოხსნა"
@@ -466,6 +478,9 @@
       ]
     },
     "Description": {
+      "Change your passwords": [
+        "შეცვალეთ თქვენი პაროლები"
+      ],
       "Create unique passwords": [
         "უნიკალური პაროლების შექმნა"
       ],
@@ -931,6 +946,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "იშლება \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "კოდი არ მიგიღიათ?"
+      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
@@ -1350,6 +1368,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
       ],
+      "Verification code sent.": [
+        "გადამოწმების კოდი გაიგზავნა."
+      ],
       "Viewer": [
         "მთვალიერებელი"
       ],
@@ -1408,6 +1429,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } სიტყვა",
         "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } შესვლის დეტალი",
+        "${ usageCount } შესვლის დეტალი"
       ],
       "1 hour": [
         "1 სთ"
@@ -1510,6 +1535,9 @@
       ],
       "Created": [
         "შექმნილია"
+      ],
+      "Created at": [
+        "შექმნის დრო"
       ],
       "Date": [
         "თარიღი"
@@ -1829,9 +1857,6 @@
       "Username (new alias)": [
         "მომხმარებლის სახელი (ახალი ფსევდონიმი)"
       ],
-      "Vault": [
-        "საცავი"
-      ],
       "Vault ID": [
         "საცავის ID"
       ],
@@ -2039,6 +2064,9 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } მისამართი"
       ],
+      "Account protection": [
+        "ანგარიშის დაცვა"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
@@ -2126,6 +2154,9 @@
       "Import your data": [
         "შემოიტანეთ თქვენი მონაცემები"
       ],
+      "Inactive 2FA": [
+        "არააქტიური 2FA"
+      ],
       "Install extension": [
         "გაფართოების დაყენება"
       ],
@@ -2137,6 +2168,9 @@
       ],
       "Leave vault ?": [
         "გავიდე საცავიდან?"
+      ],
+      "Loading breaches...": [
+        "გაჟონვების ჩატვირთვა..."
       ],
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
@@ -2162,8 +2196,20 @@
       "Move items?": [
         "გადავიტანო ელემენტები?"
       ],
+      "No excluded items": [
+        "ამოღებული ელემენტების გარეშე"
+      ],
+      "No inactive 2FAs": [
+        "არააქტიური 2FA-ები გარეშე"
+      ],
+      "No insecure passwords": [
+        "დაუცველი პაროლების გარეშე"
+      ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"
+      ],
+      "No reused passwords": [
+        "განმეორებით გამოყენებული პაროლების გარეშე"
       ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
@@ -2192,11 +2238,17 @@
       "Recommended actions": [
         "რეკომენდებული ქმედებები"
       ],
+      "Remove email address?": [
+        "წავშალო ლფოსტის მისამართი?"
+      ],
       "Resolved breaches": [
         "ამოხსნილი გაჟონვები"
       ],
       "Restore this version?": [
         "ამ ვერსიის აღდგენა?"
+      ],
+      "Resume monitoring?": [
+        "გავაგრძელო მონიტორნგი?"
       ],
       "Reused ${ count } time": [
         "გამოყენებულია ${ count }-ხელ",
@@ -2329,6 +2381,9 @@
       "Duplicate email addresses.": [
         "დუბლირებული ელფოსტის მისამართები."
       ],
+      "Email is required": [
+        "ელფოსტის მისამართი აუცილებელია"
+      ],
       "Empty note": [
         "ცარიელი შენიშვნა"
       ],
@@ -2337,6 +2392,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
+      ],
+      "Failed to load breaches.": [
+        "გაჟონვების ჩატვირთვა ჩავარდა."
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"

@@ -334,9 +334,6 @@
       "Delete": [
         "삭제"
       ],
-      "Delete address": [
-        "주소 삭제"
-      ],
       "Delete and confirm": [
         "삭제 및 확인"
       ],
@@ -3146,8 +3143,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
+      "Delete address permanently?": [
+        "주소를 영구적으로 삭제하시겠습니까?"
       ],
       "You can only delete 1 address per year.": [
         "매년 1개의 주소만 삭제할 수 있습니다."
@@ -3355,11 +3352,6 @@
         "VPN이 너무 느려서"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "저희를 도와주세요!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         "Debian / Ubuntu용 .deb"
@@ -3377,40 +3369,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "특가 받기"
-      ],
-      "Special Offer": [
-        "특별 할인"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "연장된 버전 기록"
-      ],
-      "Priority support": [
-        "우선 지원"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "${ renewablePrice }에 갱신되며 언제나 취소할 수 있습니다."
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "첫 한달간"
-      ],
-      "Limited-time offer": [
-        "기간 한정 할인"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "${ planName }를 ${ planPrice }만으로 만나다"
       ]
     },
     "Duration": {
@@ -6317,9 +6275,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "이 링크를 가진 사용자는 일정관리를 동기화하거나 이후 업데이트를 받을 수 없습니다. 액세스 권한을 부여하려면 다시 새 링크를 만들어야 합니다."
       ],
-      "Are you sure you want to delete this address?": [
-        "정말 이 주소를 삭제하시겠습니까?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "이 캘린더를 정말로 제거하시겠어요?"
       ],
@@ -6331,9 +6286,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "이 캘린더를 정말 삭제하시겠습니까? 공유일 캘린더를 다시 추가하실 수 있습니다."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "이 도메인을 정말 삭제하시겠습니까?"
       ],
       "Are you sure you want to delete this filter?": [
         "정말 이 필터를 삭제할까요?"
@@ -6992,6 +6944,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "저는 @ProtonMail 을 사용해왔고 귀하가 좋아할 거라고 생각합니다. Proton Mail은 당신의 사생활을 보호하는 안전한 이메일 서비스입니다. 1개월의 프리미엄 기능을 무료로 사용하려면 이 링크에 접속하세요: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "JCB 로고"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
       ],
@@ -7236,7 +7191,7 @@
         "전용 서버를 게이트웨이로 구성하고 어떤 구성원이 접근할 수 있는지 결정하세요."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "조직에 다른 관리자가 있으니 당신은 새 비밀번호를 그들에게 전달해야 합니다."
+        "조직에 다른 관리자가 있습니다. 새 비밀번호를 다른 관리자에게 전달해야 합니다."
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
@@ -7318,12 +7273,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "안전한 곳에 보관하세요. 사용자 계정에 접근하거나 패스워드 리셋을 위해 데이터를 복호화할 때 필요합니다."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "만약 이 주소를 삭제하면, 이 주소를 사용하여 이메일을 주고 받을 수 없음을 유의하세요."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "이 도메인을 삭제할 경우 도메인과 연결된 모든 주소도 비활성화됩니다."
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제시 트리거되는 모든 자동화된 작업이 중단됩니다."
@@ -7503,7 +7452,7 @@
         "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 안전하게 전송되었습니다."
+        "안전한 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 보냈습니다."
       ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
@@ -7595,11 +7544,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "구독이 12개월 마다 갱신됩니다."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "구독이 24개월 마다 갱신됩니다."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "구독이 ${ cycle }개월 마다 갱신됩니다."
       ],
       "Subscription auto-renews every month.": [
         "구독이 매달 갱신됩니다."
@@ -7756,9 +7702,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "이 인증은 최대 한 시간 소요될 수 있습니다. 다음 단계를 계속 진행해도 안전합니다."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
@@ -9710,9 +9653,6 @@
       "What happened?": [
         "무슨 일인가요?"
       ],
-      "What is the main reason you are canceling?": [
-        "구독을 취소하는 가장 주된 이유가 무엇인가요?"
-      ],
       "What is the main reason you are deleting your account?": [
         "계정을 지우시는 사유가 무엇인가요?"
       ],
@@ -10194,9 +10134,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "2024년 04월 02일에 만료되는 기간 한정 특가입니다."
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "구독이 ${ renewTime }에 ${ renewablePrice }으로 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ]
     },
     "mailtrial2024: Title": {
@@ -10853,7 +10790,7 @@
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "귀하의 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
+        "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
@@ -11314,7 +11251,7 @@
         "사용자의 가족을 유해 사이트로 부터 차단하고 사용자가 선호하는 콘텐츠를 고속 VPN 서버들로 스트리밍하세요."
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "별칭(받은 편지함으로 이메일을 전달하는 무작위 생성 이메일 주소)로 귀하의 실제 이메일 주소가 공개되거나 유출되는 것을 막으십시오."
+        "별칭(받은 편지함으로 이메일을 전달하는 무작위 생성 이메일 주소)로 사용자의 실제 이메일 주소가 공개되거나 유출되는 것을 막으세요."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "한 차원 높은 계정 보안 보호와 전문적 지원을 제공합니다."
@@ -12189,9 +12126,6 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
       ],
-      "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "기간 한정 할인: ${ title }를 첫 한달 간 ${ price }에"
-      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "기간 한정 세일: ${ title }을(를) 월간 사용자 당 ${ price }으로 누리세요!"
       ],
@@ -12431,6 +12365,15 @@
       ],
       "Processing payment": [
         "결제 처리 중"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 이후 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ price }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -13839,9 +13782,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff }일 남음"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }과 버전 히스토리 기능"
       ],
@@ -13926,9 +13866,6 @@
       "Helping activists in Hong Kong": [
         "홍콩의 활동가 지원"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지. "
-      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 어떻게 맞섰는지."
       ],
@@ -13971,12 +13908,6 @@
       "Receive new emails": [
         "새 이메일을 받을 수 없게 됩니다"
       ],
-      "Resubscribe": [
-        "다시 구독하기"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "${ planName } 기능 접근을 복구하려면 재구독"
-      ],
       "Send emails with attachments": [
         "첨부 파일이 담긴 이메일을 보낼 수 없게 됩니다"
       ],
@@ -14004,20 +13935,8 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName }를 취소하면 포기하게 되는 것"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName }를 취소하시면 Mail 저장공간은 1GB, Drive 저장공간은 5GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName }를 취소하시면 Drive 저장공간은 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
-      ],
       "Yearly free storage bonuses": [
         "연간 무료 저장공간 보너스"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "귀하의 ${ planName }가 취소되었습니다."
@@ -14834,9 +14753,6 @@
       "Delete account": [
         "계정 삭제"
       ],
-      "Delete address permanently?": [
-        "주소를 영구적으로 삭제합니까?"
-      ],
       "Delete calendar": [
         "캘린더 삭제"
       ],
@@ -14869,9 +14785,6 @@
       ],
       "Details": [
         "세부 사항"
-      ],
-      "Disable ${ email }": [
-        "${ email } 비활성화"
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
@@ -16026,15 +15939,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "구독은 1개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 1개월입니다."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ],
@@ -16162,9 +16066,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "로그를 비활성화하면, 전체적인 로그 기록 또한 모두 삭제됩니다. 정말 로그를 삭제하시겠어요?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "이 주소를 비활성화시, 해당 주소로 이메일을 수신하거나 발신할 수 없으며, ${ BRAND_NAME } 제품들 또한 비활성화 될 것입니다. 이 주소를 정말 비활성화 하시겠습니까?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "이 가져오기 작업을 취소하면 재개할 수 없습니다. 모든 진행 사항은 ${ BRAND_NAME } 계정에 저장되었습니다. 정말 취소하시겠습니까?"

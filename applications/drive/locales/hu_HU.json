@@ -1040,6 +1040,11 @@
         "Folytatás ezzel: ${ planTitle }"
       ]
     },
+    "Cancellation reminder": {
+      "Your subscription is ending soon": [
+        "Előfizetése hamarosan lejár"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } felhasználó",
@@ -2079,32 +2084,6 @@
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Segítsen fejlődni!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Ajánlat elfogadása"
-      ],
-      "Special Offer": [
-        "Különleges ajánlat"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "az első hónapban"
-      ],
-      "Limited-time offer": [
-        "Korlátozott időre szóló ajánlat"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Esemény törlése ekkor: ${ formattedStart }"
@@ -2157,6 +2136,9 @@
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Az összeg a minimum alatt (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -3663,6 +3645,9 @@
       "Create links and share your files with others.": [
         "Ossza meg a fájljait másokkal, hivatkozások létrehozásával."
       ],
+      "Create public link": [
+        "Nyilvános hivatkozás létrehozása"
+      ],
       "Create your first folder and start moving your files.": [
         "Hozza létre első mappáját és helyezze el benne a fájljait."
       ],
@@ -4225,9 +4210,6 @@
       ],
       "Share files with links": [
         "Fájlok megosztása hivatkozással"
-      ],
-      "Share with anyone": [
-        "Megosztás bárkivel"
       ],
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
@@ -5184,9 +5166,6 @@
       ],
       "What happened?": [
         "Mi történt?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Mi lemondásának a fő oka?"
       ],
       "Wonderful": [
         "Csodás"
@@ -6343,9 +6322,6 @@
       "Enter your email address": [
         "Adja meg e-mail címét"
       ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
       "Filter groups": [
         "Csoportok szűrése"
       ],
@@ -6932,6 +6908,29 @@
     "Subscription price": {
       "For": [
         "Ár:"
+      ]
+    },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } teljes tárhely"
+      ],
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Calendar sharing": [
+        "Naptár megosztás"
+      ],
+      "Keep ${ planName }": [
+        "Maradjon ${ planName }"
+      ],
+      "Priority support": [
+        "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
       ]
     },
     "Subscription renewal state": {
@@ -7845,11 +7844,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } országban",
         "${ numberOfServers } ${ numberOfCountries } országban"
-      ]
-    },
-    "vpn_2024: renew": {
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Az előfizetés 3 havonta automatikusan megújul. A következő számlázási időpont 3 hónap múlva lesz."
       ]
     },
     "vpn_2step: feature": {
