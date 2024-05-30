@@ -14,7 +14,13 @@ const deleteURLStore = () => {
     store.delete("HardcodedUrls");
 };
 
+// Delete the trialEnd store as it is not needed anymore
+const deleteTrialEndStore = () => {
+    store.delete("trialEnd");
+};
+
 export const performStoreMigrations = () => {
     deleteWindowStore(); // Introduced in v0.9.4
     deleteURLStore(); // Introduced in v1.0.0
+    deleteTrialEndStore(); // Introduced in v1.0.0
 };
