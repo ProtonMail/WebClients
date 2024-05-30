@@ -363,7 +363,7 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
             const transactions: WasmTransactionDetails[] = [];
             const { result } = renderHook(() => useWalletTransactions({ transactions, wallet, userKeys }));
 
-            expect(result.current.transactionDetails).toHaveLength(0);
+            expect(result.current.transactionDetails).toBeNull();
         });
     });
 
@@ -740,7 +740,7 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
 
                 // map init
                 await waitFor(() => expect(result.current.loadingRecordInit).toBeFalsy());
-                expect(result.current.transactionDetails.length).toStrictEqual(3);
+                expect(result.current.transactionDetails?.length).toStrictEqual(3);
 
                 // map completion
                 await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -748,7 +748,7 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
                 // after updating the other tx
                 expect(mockedUpdateWalletTransactionHashedTxId).toHaveBeenCalledTimes(1);
                 // other tx is not added to map
-                expect(result.current.transactionDetails.length).toStrictEqual(3);
+                expect(result.current.transactionDetails?.length).toStrictEqual(3);
             });
         });
     });
