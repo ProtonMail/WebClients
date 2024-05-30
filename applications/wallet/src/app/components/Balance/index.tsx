@@ -67,7 +67,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     <div
                         className={clsx(
                             'text-semibold',
-                            (loadingExchangeRate || syncingData?.syncing) && 'skeleton-loader'
+                            (loadingExchangeRate || (syncingData?.syncing && !totalBalance)) && 'skeleton-loader'
                         )}
                     >
                         <Price
@@ -84,7 +84,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         <Icon name={showBalance ? 'eye-slash' : 'eye'} size={6} onClick={() => toggleShowBalance()} />
                     </CoreButton>
                 </div>
-                <div className={clsx('text-lg color-hint', syncingData?.syncing && 'skeleton-loader')}>
+                <div className={clsx('text-lg color-hint', syncingData?.syncing && !totalBalance && 'skeleton-loader')}>
                     {satsToBitcoin(totalBalance)} BTC
                 </div>
             </div>

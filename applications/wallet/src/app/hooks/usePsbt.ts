@@ -107,7 +107,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
             setBroadcastedTxId(txId);
 
             setTimeout(() => {
-                void syncSingleWalletAccount(wallet.Wallet.ID, account.ID);
+                void syncSingleWalletAccount({ walletId: wallet.Wallet.ID, accountId: account.ID });
             }, 1 * SECOND);
         });
     };

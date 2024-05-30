@@ -338,7 +338,7 @@ export const useWalletTransactions = ({
 
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
-    const [transactionDataByHashedTxId, setTransactionDataByHashedTxId] = useState<TransactionDataByHashedTxId>({});
+    const [transactionDataByHashedTxId, setTransactionDataByHashedTxId] = useState<TransactionDataByHashedTxId>();
     const { accountIDByDerivationPathByWalletID, walletMap } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
 
@@ -376,7 +376,9 @@ export const useWalletTransactions = ({
         currentProcessUid.current = processUid;
 
         // guard thats check that process is still current one, else do nothing
-        const guardSetTransactionData = (value: SetStateAction<Partial<Record<string, TransactionDataTuple>>>) => {
+        const guardSetTransactionData = (
+            value: SetStateAction<Partial<Record<string, TransactionDataTuple>> | undefined>
+        ) => {
             (currentProcessUid.current === processUid ? () => setTransactionDataByHashedTxId(value) : noop)();
         };
 
@@ -513,10 +515,14 @@ export const useWalletTransactions = ({
         void bootstrap();
     }, [withLoadingApiData, fetchOrSetWalletTransactions]);
 
-    const transactionDetails: TransactionData[] = useMemo(() => {
-        return Object.entries(transactionDataByHashedTxId) // typeguard: since record is partial, we first need to filter out keys with no value
-            .filter((entry): entry is [string, TransactionDataTuple] => isTruthy(entry[1]))
-            .map(([, [networkData, apiData]]) => ({ networkData, apiData }));
+    const transactionDetails: TransactionData[] | null = useMemo(() => {
+        if (transactionDataByHashedTxId) {
+            return Object.entries(transactionDataByHashedTxId) // typeguard: since record is partial, we first need to filter out keys with no value
+                .filter((entry): entry is [string, TransactionDataTuple] => isTruthy(entry[1]))
+                .map(([, [networkData, apiData]]) => ({ networkData, apiData }));
+        } else {
+            return null;
+        }
     }, [transactionDataByHashedTxId]);
 
     return {

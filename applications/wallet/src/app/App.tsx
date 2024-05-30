@@ -115,20 +115,20 @@ const App = () => {
                                     <Router history={extraThunkArguments.history}>
                                         <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                             <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                <BitcoinBlockchainContextProvider>
-                                                    <WalletSetupModalContextProvider>
-                                                        <WalletDrawerContextProvider>
-                                                            <StandardPrivateApp
-                                                                hasReadableMemberKeyActivation
-                                                                hasMemberKeyMigration
-                                                                hasPrivateMemberKeyGeneration
-                                                                loader={loader}
-                                                            >
+                                                <StandardPrivateApp
+                                                    hasReadableMemberKeyActivation
+                                                    hasMemberKeyMigration
+                                                    hasPrivateMemberKeyGeneration
+                                                    loader={loader}
+                                                >
+                                                    <BitcoinBlockchainContextProvider>
+                                                        <WalletSetupModalContextProvider>
+                                                            <WalletDrawerContextProvider>
                                                                 <state.MainContainer />
-                                                            </StandardPrivateApp>
-                                                        </WalletDrawerContextProvider>
-                                                    </WalletSetupModalContextProvider>
-                                                </BitcoinBlockchainContextProvider>
+                                                            </WalletDrawerContextProvider>
+                                                        </WalletSetupModalContextProvider>
+                                                    </BitcoinBlockchainContextProvider>
+                                                </StandardPrivateApp>
                                             </ErrorBoundary>
                                         </EventManagerProvider>
                                     </Router>

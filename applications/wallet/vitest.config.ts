@@ -13,6 +13,7 @@ export default defineConfig({
         },
         reporters: ['basic'],
         setupFiles: './vitest.setup.ts',
+        maxWorkers: 1,
     },
     resolve: {
         alias: {

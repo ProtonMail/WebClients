@@ -11,3 +11,11 @@ export const mockUseBitcoinNetwork = (
 
     return spy;
 };
+
+export const mockUseGetBitcoinNetwork = (mockedValue?: WasmNetwork) => {
+    const spy = vi.spyOn(useBitcoinNetworkModule, 'useGetBitcoinNetwork');
+
+    spy.mockImplementation(() => async () => mockedValue ?? WasmNetwork.Testnet);
+
+    return spy;
+};

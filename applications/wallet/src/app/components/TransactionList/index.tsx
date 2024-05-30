@@ -71,7 +71,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     }, [apiWalletData?.Wallet.ID, apiAccount?.ID, handleGoFirst]);
 
     useEffect(() => {
-        if (apiWalletData?.Wallet.ID && !isSyncingWalletData) {
+        if (apiWalletData?.Wallet.ID) {
             if (apiAccount?.ID) {
                 void getAccountTransactions(
                     walletsChainData,
@@ -79,14 +79,18 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                     apiAccount.ID,
                     { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
                     sortOrder
-                ).then((txs) => setTransactions(txs));
+                ).then((txs) => {
+                    setTransactions(txs);
+                });
             } else {
                 void getWalletTransactions(
                     walletsChainData,
                     apiWalletData.Wallet.ID,
                     { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
                     sortOrder
-                ).then((txs) => setTransactions(txs));
+                ).then((txs) => {
+                    setTransactions(txs);
+                });
             }
         } else {
             setTransactions([]);
@@ -102,9 +106,13 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     const handleClickSync = useCallback(() => {
         const isManual = true;
         if (apiAccount) {
-            return syncSingleWalletAccount(apiWalletData.Wallet.ID, apiAccount.ID, isManual);
+            return syncSingleWalletAccount({
+                walletId: apiWalletData.Wallet.ID,
+                accountId: apiAccount.ID,
+                manual: isManual,
+            });
         } else {
-            return syncSingleWallet(apiWalletData.Wallet.ID, isManual);
+            return syncSingleWallet({ walletId: apiWalletData.Wallet.ID, manual: isManual });
         }
     }, [apiAccount, apiWalletData.Wallet.ID, syncSingleWallet, syncSingleWalletAccount]);
 
@@ -114,21 +122,6 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 <>
                     <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">
                         <div className="relative flex flex-column mx-4 bg-weak rounded-xl">
-                            {/* Syncing overlay */}
-                            {isSyncingWalletData && (
-                                <div
-                                    className="absolute top-0 left-0 w-full h-full flex rounded-xl"
-                                    style={{ background: '#2a2a2a44' }}
-                                >
-                                    <div className="flex flex-row justify-center items-center m-auto">
-                                        <div className="flex mr-1">
-                                            <CircleLoader className="color-primary m-auto" />
-                                        </div>
-                                        <div>{c('Wallet transactions').t`Syncing transactions`}</div>
-                                    </div>
-                                </div>
-                            )}
-
                             <DataList
                                 onClickRow={(tx) => handleClickRow(tx)}
                                 canClickRow={(tx) => !!tx}
@@ -199,7 +192,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
             );
         }
 
-        if (isSyncingWalletData) {
+        if (isSyncingWalletData || !transactionDetails) {
             return (
                 <div className="flex flex-row items-center color-primary m-auto">
                     <CircleLoader size="small" />
@@ -243,6 +236,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         );
     }, [
         transactionDetails,
+        isSyncingWalletData,
         displayedPageNumber,
         currentPage,
         handleNext,
@@ -254,7 +248,6 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         setNoteModalState,
         loadingExchangeRate,
         exchangeRate,
-        isSyncingWalletData,
     ]);
 
     return (
