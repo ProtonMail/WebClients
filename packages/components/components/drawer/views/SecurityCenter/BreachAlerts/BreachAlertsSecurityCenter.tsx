@@ -4,18 +4,23 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { GenericError } from '@proton/components';
+import { useFlag } from '@proton/components';
 import { Icon, Loader, Toggle, useModalStateObject, useUpsellConfig } from '@proton/components/components';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
 import {
     BREACH_API_ERROR,
     getEnabledString,
     getStyle,
+    isResolved,
+    isUnread,
     toCamelCase,
 } from '@proton/components/containers/credentialLeak/helpers';
 import { BREACH_STATE, FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseDispatch } from '@proton/redux-shared-store/sharedContext';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
@@ -33,8 +38,12 @@ import noop from '@proton/utils/noop';
 import { DrawerAppSection } from '../../shared';
 import BreachCard from './BreachCard';
 import FreeUserBreachToggle from './FreeUserBreachToggle';
-
-const BREACHES_LIMIT = 3;
+import {
+    selectShouldBreachAlertsRefresh,
+    selectUnreadBreachesCount,
+    setUnreadBreachesCount,
+} from './slice/breachNotificationsSlice';
+import { decreaseUnreadBreachCount } from './slice/breachNotificationsSlice';
 
 const BreachAlertsSecurityCenter = () => {
     const handleError = useErrorHandler();
@@ -42,6 +51,8 @@ const BreachAlertsSecurityCenter = () => {
     const [userSettings] = useUserSettings();
     const { isPaid } = user;
     const { breaches: allBreaches, actions } = useBreaches();
+    const dispatch = baseUseDispatch();
+    const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
 
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -55,35 +66,56 @@ const BreachAlertsSecurityCenter = () => {
     const [upsellCount, setUpsellCount] = useState<number | null>(null);
     const breachAlertModal = useModalStateObject();
 
-    // can delete with update to API, double check
-    const breaches = allBreaches.filter((b) => b.resolvedState !== BREACH_STATE.RESOLVED).slice(0, BREACHES_LIMIT);
+    const shouldRefreshFlag = baseUseSelector(selectShouldBreachAlertsRefresh);
+    const unreadBreachesCount = baseUseSelector(selectUnreadBreachesCount);
+
+    const breaches = [...allBreaches]
+        .filter((b) => !isResolved(b.resolvedState))
+        .sort((a, b) => {
+            if (a.resolvedState !== b.resolvedState) {
+                return isUnread(a.resolvedState) ? -1 : 1;
+            } else {
+                return 0;
+            }
+        });
+
     const count = breaches.length;
 
-    useEffect(() => {
-        const fetchLeakData = async () => {
-            try {
-                const { Breaches, Samples, IsEligible, Count } = await api(getBreaches(true));
+    const fetchLeakData = async () => {
+        try {
+            const { Breaches, Samples, IsEligible, Count } = await api(getBreaches(true));
 
-                if (IsEligible) {
-                    const fetchedData = toCamelCase(Breaches);
-                    actions.load(fetchedData);
-                } else {
-                    const fetchedSample = toCamelCase(Samples);
-                    setSample(fetchedSample[0]);
-                    setUpsellCount(Count);
+            if (IsEligible) {
+                const fetchedData = toCamelCase(Breaches);
+                actions.load(fetchedData);
+
+                if (canDisplayBreachNotifications && hasAlertsEnabled) {
+                    const unreadCount = fetchedData.filter((breach: FetchedBreaches) =>
+                        isUnread(breach.resolvedState)
+                    ).length;
+                    if (unreadCount !== unreadBreachesCount) {
+                        dispatch(setUnreadBreachesCount(unreadCount));
+                    }
                 }
-            } catch (e) {
-                const { message, code } = getApiError(e);
-                if (code === BREACH_API_ERROR.GENERIC) {
-                    setError({ message: message });
-                    return;
-                } else {
-                    handleError(e);
-                }
+            } else {
+                const fetchedSample = toCamelCase(Samples);
+                setSample(fetchedSample[0]);
+                setUpsellCount(Count);
             }
-        };
+        } catch (e) {
+            const { message, code } = getApiError(e);
+            if (code === BREACH_API_ERROR.GENERIC) {
+                setError({ message: message });
+                return;
+            } else {
+                handleError(e);
+            }
+        }
+    };
+
+    useEffect(() => {
         withLoading(fetchLeakData()).catch(noop);
-    }, [hasAlertsEnabled]);
+    }, [hasAlertsEnabled, shouldRefreshFlag, canDisplayBreachNotifications]);
 
     const enableBreachAlerts = async () => {
         try {
@@ -94,6 +126,7 @@ const BreachAlertsSecurityCenter = () => {
             handleError(e);
         }
     };
+
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
@@ -102,7 +135,7 @@ const BreachAlertsSecurityCenter = () => {
     const { onUpgrade } = useUpsellConfig({
         upsellRef,
         onSubscribed: () => {
-            enableBreachAlerts();
+            void enableBreachAlerts();
             return;
         },
     });
@@ -202,7 +235,12 @@ const BreachAlertsSecurityCenter = () => {
 
                     return (
                         <>
-                            <h3 className="text-rg text-bold mt-1 mb-2">{DARK_WEB_MONITORING_NAME}</h3>
+                            <h3 className="text-rg text-bold mt-1 mb-2">
+                                {DARK_WEB_MONITORING_NAME}
+                                {canDisplayBreachNotifications && (
+                                    <>{unreadBreachesCount ? ` (${unreadBreachesCount})` : ''}</>
+                                )}
+                            </h3>
                             {count === 0 ? (
                                 <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
                                     <Icon
@@ -223,14 +261,16 @@ const BreachAlertsSecurityCenter = () => {
                                                 password={breach.passwordLastChars}
                                                 key={breach.id}
                                                 onClick={() => {
-                                                    if (breach.resolvedState === BREACH_STATE.UNREAD) {
+                                                    if (isUnread(breach.resolvedState)) {
                                                         markAsOpened(breach);
+                                                        dispatch(decreaseUnreadBreachCount());
                                                     }
                                                     setSelectedBreachID(breach.id);
                                                     openBreachModal();
                                                 }}
                                                 style={getStyle(breach.severity)}
                                                 severity={breach.severity}
+                                                unread={isUnread(breach.resolvedState)}
                                             />
                                         );
                                     })}
