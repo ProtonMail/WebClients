@@ -1476,16 +1476,6 @@
         "نیاز موقت، ممکن است در آینده بازگردد"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "به پیشرفت ما کمک کنید!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "اولویت پشتیبانی"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "ایمیل تایید به ${ address } فرستاده شد"
@@ -1497,6 +1487,9 @@
       ],
       "Amount above the maximum.": [
         "مبلغ بالاتر از حداکثر است."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "مبلغ کمتر از حداقل است (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید"
@@ -1942,9 +1935,6 @@
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
       ],
-      "Are you sure you want to delete this address?": [
-        "آیا مطمئن هستید که می‌خواهید این نشانی را حذف کنید؟"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
       ],
@@ -2175,9 +2165,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "لطفا توجه کنید که اگر شما این نشانی را پاک کنید، دیگر قادر به ارسال یا دریافت رایانامه توسط این نشانی نمی‌باشید."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "لطفا توجه کنید که با فشار دکمه تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
@@ -2838,9 +2825,6 @@
       ],
       "What happened?": [
         "چه اتفاقی افتاد؟"
-      ],
-      "What is the main reason you are canceling?": [
-        "دلیل اصلی انصراف شما چیست؟"
       ],
       "What is the main reason you are deleting your account?": [
         "دلیل اصلی حذف حساب شما چیست؟"
@@ -3521,9 +3505,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "خودکار (${ value })"
-      ],
       "Country configs": [
         "پیکربندی کشور"
       ],
@@ -4245,17 +4226,11 @@
       "Delete": [
         "حذف"
       ],
-      "Delete ${ value }": [
-        "حذف ${ value }"
-      ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
       "Device connected!": [
         "دستگاه متصل شد!"
-      ],
-      "Disable ${ email }": [
-        "غیرفعال کردن ${ email }"
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
