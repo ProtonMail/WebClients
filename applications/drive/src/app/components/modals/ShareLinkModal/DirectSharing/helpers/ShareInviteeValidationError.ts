@@ -18,7 +18,7 @@ const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
         return c('Error').t`The address might be misspelled`;
     }
     if (type === NOT_PROTON_ACCOUNT) {
-        return c('Error').t`Not a ${BRAND_NAME} account`;
+        return c('Error').t`Sharing with people outside of ${BRAND_NAME} will be available soon`;
     }
     if (type === DOES_NOT_EXIST) {
         return c('Error').t`Account does not exist`;
