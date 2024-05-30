@@ -10,6 +10,7 @@ import breachIconWarningBig from '@proton/styles/assets/img/breach-alert/shield-
 import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-small.svg';
 
 import { SampleBreach } from '.';
+import { BREACH_STATE } from './models';
 
 export const enum SEVERITY_LEVELS {
     HIGH = 0.67,
@@ -19,6 +20,14 @@ export const enum SEVERITY_LEVELS {
 export const enum BREACH_API_ERROR {
     GENERIC = 2902,
 }
+
+export const isUnread = (state: BREACH_STATE): boolean => {
+    return state === BREACH_STATE.UNREAD;
+};
+
+export const isResolved = (state: BREACH_STATE): boolean => {
+    return state === BREACH_STATE.RESOLVED;
+};
 
 export const getBreachIcon = (severity: number, options: { big?: boolean; resolved?: boolean } = {}) => {
     const { resolved = false, big = false } = options;

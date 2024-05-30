@@ -106,3 +106,18 @@ export const selectHasAccountSecurityCardToDisplay = createSelector(
         return securityCardsToDisplay.some((value) => !value);
     }
 );
+
+/**
+ * Returns the count of nondismissible issues in the account security section
+ * Use case: notification count on security center button
+ */
+export const selectAccountSecurityIssuesCount = createSelector(
+    [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
+    (elements, loading, canDisplayAccountSecurity) => {
+        if (loading || !canDisplayAccountSecurity) {
+            return 0;
+        }
+
+        return [elements.accountRecoverySet, elements.dataRecoverySet].filter((value) => !value).length;
+    }
+);

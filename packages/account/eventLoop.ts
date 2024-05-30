@@ -6,6 +6,7 @@ import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollectio
 import type {
     Address,
     ApiEnvironmentConfig,
+    BreachAlertUpdateEvent,
     Domain,
     IncomingAddressForwarding,
     LabelCount,
@@ -58,6 +59,7 @@ export interface EventLoop {
     UsedDriveSpace?: User['UsedDriveSpace'];
     ProductUsedSpace?: User['ProductUsedSpace'];
     Refresh?: number;
+    BreachAlerts?: BreachAlertUpdateEvent[];
 }
 
 export const serverEvent = createAction('server event', (payload: EventLoop) => ({ payload }));

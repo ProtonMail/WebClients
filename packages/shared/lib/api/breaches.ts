@@ -9,3 +9,8 @@ export const updateBreachState = (data: { ID: string; State: number }) => ({
     method: 'put',
     data,
 });
+
+export const getUnreadBreachesCount = () => ({
+    url: 'account/v4/breaches/unread/count',
+    method: 'get',
+});
