@@ -19,7 +19,7 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
-import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
+import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { SessionLockStatus } from '../api';

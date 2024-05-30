@@ -35,6 +35,7 @@ const getAppContainer = () =>
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
+    const searchParams = new URLSearchParams(window.location.search);
     const api = createApi({ config });
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
@@ -56,7 +57,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
-        const session = await bootstrap.loadSession({ authentication, api, pathname });
+        const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });

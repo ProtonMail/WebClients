@@ -1,8 +1,8 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 
-import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
+import { getDecryptedBlob, getEncryptedBlob } from '../sessionBlobCryptoHelper';
 
-type ForkEncryptedBlob =
+export type ForkEncryptedBlob =
     | {
           type: 'default';
           keyPassword: string;

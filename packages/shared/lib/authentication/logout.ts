@@ -3,13 +3,14 @@ import noop from '@proton/utils/noop';
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getAppHref } from '../apps/helper';
 import { getSlugFromApp } from '../apps/slugHelper';
-import { PersistedSession } from '../authentication/SessionInterface';
-import { stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
-import { requestFork } from '../authentication/sessionForking';
 import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
 import { replaceUrl } from '../helpers/browser';
 import { decodeBase64URL, encodeBase64URL } from '../helpers/encoding';
+import { PersistedSession } from './SessionInterface';
 import { AuthenticationStore } from './createAuthenticationStore';
+import { requestFork } from './fork/consume';
+import { ExtraSessionForkData } from './interface';
+import { stripLocalBasenameFromPathname } from './pathnameHelper';
 import { getPersistedSession, removePersistedSession } from './persistedSessionStorage';
 
 const clearRecoveryParam = 'clear-recovery';
@@ -122,18 +123,18 @@ export const handleLogout = async ({
     authentication,
     type,
     clearDeviceRecoveryData,
-    localID: maybeLocalID,
     reason = 'signout',
+    extra,
 }: {
     appName: APP_NAMES;
     type: 'full' | 'local';
     authentication: AuthenticationStore;
     clearDeviceRecoveryData?: boolean;
-    localID?: number;
     reason?: 'signout' | 'session-expired';
+    extra?: ExtraSessionForkData;
 }) => {
     const UID = authentication.UID;
-    const localID = maybeLocalID ?? authentication.localID;
+    const localID = extra?.localID ?? authentication.localID;
     const mode = authentication.mode;
 
     const persistedSessions: PersistedSession[] = [];
@@ -155,18 +156,18 @@ export const handleLogout = async ({
     if (appName === APPS.PROTONACCOUNT || appName === APPS.PROTONVPN_SETTINGS || mode !== 'sso' || type === 'full') {
         replaceUrl(getLogoutURL({ type, appName, reason, mode, persistedSessions, clearDeviceRecoveryData }));
     } else {
-        requestFork({ fromApp: appName, localID, reason });
+        requestFork({ fromApp: appName, localID, reason, extra });
     }
 };
 
 export const handleInvalidSession = ({
     appName,
     authentication,
-    localID,
+    extra,
 }: {
     appName: APP_NAMES;
     authentication: AuthenticationStore;
-    localID?: number;
+    extra?: ExtraSessionForkData;
 }) => {
     // A session that is invalid should just do a local deletion on its own subdomain, to check if the session still exists on account.
     handleLogout({
@@ -175,6 +176,6 @@ export const handleInvalidSession = ({
         authentication,
         type: 'local',
         clearDeviceRecoveryData: false,
-        localID,
+        extra,
     });
 };

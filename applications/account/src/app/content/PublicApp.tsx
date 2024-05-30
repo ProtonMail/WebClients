@@ -41,23 +41,32 @@ import {
     getInvoicesPathname,
     isExtension,
 } from '@proton/shared/lib/apps/helper';
-import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getIsPassApp, getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
-import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
-    GetActiveSessionsResult,
-    LocalSessionPersisted,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
+    ForkType,
     getCanUserReAuth,
     getShouldReAuth,
     produceExtensionFork,
     produceFork,
+    produceForkConsumption,
     produceOAuthFork,
-} from '@proton/shared/lib/authentication/sessionForking';
-import { APPS, CLIENT_TYPES, PLANS, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
+} from '@proton/shared/lib/authentication/fork';
+import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import {
+    GetActiveSessionType,
+    GetActiveSessionsResult,
+    LocalSessionPersisted,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    APPS,
+    APP_NAMES,
+    CLIENT_TYPES,
+    PLANS,
+    SETUP_ADDRESS_PATH,
+    SSO_PATHS,
+    UNPAID_STATE,
+} from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -269,11 +278,12 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 return inputResult;
             }
 
-            await produceFork({
+            const produceForkPayload = await produceFork({
                 api,
                 session,
                 forkParameters,
             });
+            produceForkConsumption(produceForkPayload, searchParameters);
             return completeResult;
         }
 
@@ -468,7 +478,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const handleActiveSessionsFork = async (
         newForkState: ProduceForkData,
-        { session, sessions }: GetActiveSessionsResult
+        { session, sessions, type }: GetActiveSessionsResult
     ): Promise<OnLoginCallbackResult> => {
         ignoreAutoRef.current = true;
 
@@ -477,7 +487,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
         if (newForkState.type === SSOType.Proton) {
             const forkParameters = newForkState.payload.forkParameters;
-            const autoSignIn = session && (sessions.length === 1 || forkParameters.localID !== undefined);
+            const autoSignIn = type === GetActiveSessionType.AutoPick;
 
             if (autoSignIn && getShouldReAuth(forkParameters, session)) {
                 const reAuthState: ReAuthState = { session, reAuthType: forkParameters.promptType };
@@ -496,7 +506,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 );
             }
 
-            if (forkParameters.forkType === FORK_TYPE.SIGNUP) {
+            if (forkParameters.forkType === ForkType.SIGNUP) {
                 const paths = getPaths(
                     location.localePrefix,
                     newForkState,
@@ -520,6 +530,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const handleActiveSessions = async ({
         session,
         sessions,
+        type,
     }: GetActiveSessionsResult): Promise<OnLoginCallbackResult> => {
         // Ignore the automatic login
         if (ignoreAutoRef.current || DISABLE_AUTO_SIGN_IN_ROUTES.includes(location.pathname)) {
@@ -531,12 +542,12 @@ const BasePublicApp = ({ onLogin }: Props) => {
             }
             return inputResult;
         }
+        if (type === GetActiveSessionType.AutoPick) {
+            return handleLogin(session);
+        }
         if (!sessions.length) {
             setActiveSessions(sessions);
             return inputResult;
-        }
-        if (session && sessions.length === 1) {
-            return handleLogin(session);
         }
         setActiveSessions(sessions);
         history.replace(SSO_PATHS.SWITCH);

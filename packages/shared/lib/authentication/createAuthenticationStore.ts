@@ -134,9 +134,9 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
     let initialAuthData: AuthData =
         initialAuth === false ? defaultAuthData : getInitialState(mode, initialUID, getLocalID());
     let basename = initialAuthData.basename;
-
     // Ensure the store is up-to-date
     setUID(initialAuthData?.UID);
+    setLocalID(initialAuthData?.localID);
 
     const login = ({
         UID: newUID,

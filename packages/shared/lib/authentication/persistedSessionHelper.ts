@@ -1,3 +1,4 @@
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -47,7 +48,7 @@ export const logRemoval = (e: any = {}, UID: string, context: string) => {
     });
 };
 
-export const resumeSession = async (api: Api, localID: number): Promise<ResumedSessionResult> => {
+export const resumeSession = async ({ api, localID }: { api: Api; localID: number }): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
@@ -255,8 +256,105 @@ export const getActiveLocalSession = async (api: Api) => {
     return [...maybeActiveSessions, ...nonExistingSessions];
 };
 
-export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
-export const getActiveSessions = async (api: Api, localID?: number): Promise<GetActiveSessionsResult> => {
+export enum GetActiveSessionType {
+    Switch,
+    AutoPick,
+}
+
+export type GetActiveSessionsResult =
+    | {
+          session?: ResumedSessionResult;
+          sessions: LocalSessionPersisted[];
+          type: GetActiveSessionType.Switch;
+      }
+    | {
+          session: ResumedSessionResult;
+          sessions: LocalSessionPersisted[];
+          type: GetActiveSessionType.AutoPick;
+      };
+
+const pickSessionByEmail = async ({
+    api,
+    email,
+    session,
+    sessions,
+}: {
+    api: Api;
+    email: string;
+    session?: ResumedSessionResult;
+    sessions: LocalSessionPersisted[];
+}) => {
+    const lowerCaseEmail = email.toLowerCase();
+
+    // TODO: Extend this to match against all emails by persisting all addresses
+    const matchingSession = sessions.find((session) => session.remote.PrimaryEmail?.toLowerCase() === lowerCaseEmail);
+
+    if (!matchingSession) {
+        // If there's no matching session and there's just 1 session available, let's fetch all
+        // addresses of the single user to see if any one of them might be a match.
+        // TODO: Remove this when persisting all addresses
+        if (session && sessions.length <= 1) {
+            const uidApi = getUIDApi(session.UID, api);
+            // Ignore if it fails, worse case the user will have to pick the account.
+            const addresses = await getAllAddresses(uidApi).catch(noop);
+            const userHasMatchingAddress = addresses?.some((address) => address.Email.toLowerCase() === lowerCaseEmail);
+            if (userHasMatchingAddress) {
+                return session;
+            }
+        }
+        return;
+    }
+
+    if (matchingSession.persisted.localID === session?.LocalID) {
+        return session;
+    }
+
+    return resumeSession({ api, localID: matchingSession.remote.LocalID }).catch(noop);
+};
+
+export const maybePickSessionByEmail = async ({
+    api,
+    localID,
+    email,
+    result,
+}: {
+    api: Api;
+    localID?: number;
+    email?: string;
+    result: GetActiveSessionsResult;
+}): Promise<GetActiveSessionsResult> => {
+    const { session, sessions } = result;
+
+    // The email selector is used in case there's no localID or if the requested localID did not exist
+    if (email && (localID === undefined || localID !== session?.LocalID)) {
+        // Ignore if it fails, worse case the user will have to pick the account.
+        const maybeMatchingResumedSession = await pickSessionByEmail({
+            api,
+            email,
+            session,
+            sessions,
+        });
+
+        if (maybeMatchingResumedSession) {
+            return { session: maybeMatchingResumedSession, sessions, type: GetActiveSessionType.AutoPick };
+        }
+
+        // If a matching email could not be found, fallback to switch since it's unsure which account the user should use
+        return { session, sessions, type: GetActiveSessionType.Switch };
+    }
+
+    return result;
+};
+
+export const getActiveSessions = async ({
+    api,
+    localID,
+    email,
+}: {
+    api: Api;
+    localID?: number;
+    email?: string;
+}): Promise<GetActiveSessionsResult> => {
     let persistedSessions = getPersistedSessions();
 
     if (localID !== undefined) {
@@ -269,9 +367,17 @@ export const getActiveSessions = async (api: Api, localID?: number): Promise<Get
 
     for (const persistedSession of persistedSessions) {
         try {
-            const session = await resumeSession(api, persistedSession.localID);
+            const session = await resumeSession({ api, localID: persistedSession.localID });
             const sessions = await getActiveLocalSession(getUIDApi(session.UID, api));
-            return { session, sessions };
+
+            const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessions.length === 1;
+
+            const type =
+                session && (hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.LocalID)
+                    ? GetActiveSessionType.AutoPick
+                    : GetActiveSessionType.Switch;
+
+            return await maybePickSessionByEmail({ api, localID, email, result: { session, sessions, type } });
         } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                 // Session expired, try another session
@@ -281,9 +387,11 @@ export const getActiveSessions = async (api: Api, localID?: number): Promise<Get
             throw e;
         }
     }
+
     return {
         session: undefined,
         sessions: [],
+        type: GetActiveSessionType.Switch,
     };
 };
 
@@ -297,7 +405,7 @@ export const maybeResumeSessionByUser = async (
         return;
     }
     try {
-        return await resumeSession(api, maybePersistedSession.localID);
+        return await resumeSession({ api, localID: maybePersistedSession.localID });
     } catch (e: any) {
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;

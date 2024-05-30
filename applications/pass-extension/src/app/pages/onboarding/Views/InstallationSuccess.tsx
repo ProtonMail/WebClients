@@ -11,7 +11,7 @@ import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import './InstallationSuccess.scss';
@@ -191,7 +191,7 @@ export const InstallationSuccess: FC = () => {
                                             pill
                                             shape="outline"
                                             color="weak"
-                                            onClick={() => login(FORK_TYPE.SIGNUP)}
+                                            onClick={() => login(ForkType.SIGNUP)}
                                             aria-label={c('Action').t`Create an account`}
                                         >
                                             <span className="flex justify-center px-4">

@@ -1,9 +1,10 @@
-import { APPS, APPS_CONFIGURATION, APP_NAMES, FORKABLE_APPS } from '../constants';
-import { decodeBase64URL, stringToUint8Array } from '../helpers/encoding';
-import { FORK_TYPE } from './ForkInterface';
+import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../../constants';
+import { validateEmailAddress } from '../../helpers/email';
+import { decodeBase64URL, stringToUint8Array } from '../../helpers/encoding';
+import {ExtraSessionForkSearchParameters, ForkType, ForkableApps, ForkSearchParameters} from './constants';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
-    if (FORKABLE_APPS.has(app as any)) {
+    if (ForkableApps.has(app as any)) {
         return app as APP_NAMES;
     }
     if (
@@ -39,6 +40,11 @@ export const getValidatedLocalID = (localID = '') => {
     }
 };
 
+export const getLocalIDForkSearchParameter = (searchParams: URLSearchParams) => {
+    const localID = searchParams.get(ForkSearchParameters.LocalID) || '';
+    return getValidatedLocalID(localID);
+}
+
 export const getValidatedRawKey = (str: string) => {
     try {
         return stringToUint8Array(decodeBase64URL(str));
@@ -47,7 +53,14 @@ export const getValidatedRawKey = (str: string) => {
     }
 };
 export const getValidatedForkType = (str: string) => {
-    if (Object.values(FORK_TYPE).includes(str as FORK_TYPE)) {
-        return str as FORK_TYPE;
+    if (Object.values(ForkType).includes(str as ForkType)) {
+        return str as ForkType;
+    }
+};
+
+export const getEmailSessionForkSearchParameter = (searchParams: URLSearchParams) => {
+    const email = searchParams.get(ExtraSessionForkSearchParameters.Email) || '';
+    if (validateEmailAddress(email)) {
+        return email.toLowerCase();
     }
 };
