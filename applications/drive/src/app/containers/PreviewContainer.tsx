@@ -47,7 +47,10 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { saveFile } = useActions();
 
     const isEditEnabled = useIsEditEnabled();
-    const referer = new URLSearchParams(useLocation().search).get('r');
+
+    const urlParams = new URLSearchParams(useLocation().search);
+    const isShareAction = urlParams.has('share');
+    const referer = urlParams.get('r');
     const useNavigation =
         !referer?.startsWith('/shared-with-me') &&
         !referer?.startsWith('/shared-urls') &&
@@ -67,6 +70,13 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     } = useFileView(shareId, linkId, useNavigation);
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+
+    // Open sharing modal through URL parameter - needed for Proton Docs
+    useEffect(() => {
+        if (isShareAction) {
+            showLinkSharingModal({ shareId, linkId });
+        }
+    }, []);
 
     // If the link is not type of file, probably user modified the URL.
     useEffect(() => {

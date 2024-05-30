@@ -161,6 +161,12 @@ export const useDocuments = () => {
         return url;
     };
 
+    const openDocumentSharingModal = ({ shareId, linkId }: LegacyNodeMeta): void => {
+        const href = getAppHref(`/${shareId}/file/${linkId}?share`, APPS.PROTONDRIVE, getLocalID());
+
+        window.open(href);
+    };
+
     const signDocumentData = async ({ shareId }: LegacyNodeMeta, data: Uint8Array): Promise<SignedData> => {
         const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
 
@@ -201,5 +207,6 @@ export const useDocuments = () => {
         getDocumentUrl,
         signDocumentManifest,
         signDocumentData,
+        openDocumentSharingModal,
     };
 };

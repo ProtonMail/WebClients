@@ -40,6 +40,11 @@ export interface DriveCompat {
     getDocumentUrl: (meta: NodeMeta) => URL;
 
     /**
+     * Opens a document's sharing modal. Right now, it will open a new tab inside Drive.
+     */
+    openDocumentSharingModal: (meta: NodeMeta) => Promise<void>;
+
+    /**
      * Generates and signs the manifest for a given document.
      *
      * Assumes document is only one-block, passed in the `content` argument.
@@ -79,6 +84,7 @@ export const useDriveCompat = (): DriveCompat => {
         getDocumentUrl,
         signDocumentManifest,
         signDocumentData,
+        openDocumentSharingModal,
     } = useDocuments();
     const { getNode, getNodeContents } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
@@ -97,6 +103,7 @@ export const useDriveCompat = (): DriveCompat => {
         openDocument,
         signDocumentManifest: withResolve(signDocumentManifest),
         signDocumentData: withResolve(signDocumentData),
+        openDocumentSharingModal: withResolve(openDocumentSharingModal),
         getMyFilesNodeMeta,
         getVerificationKey,
     };
