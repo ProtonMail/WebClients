@@ -392,6 +392,9 @@
       "Upgrade your plan": [
         "Nadogradite vaš plan"
       ],
+      "Upload": [
+        "Učitaj"
+      ],
       "Use ${ label } theme": [
         "Koristi ${ label } temu"
       ],
@@ -1497,11 +1500,6 @@
         "Neplaćena faktura"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -1513,6 +1511,9 @@
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Iznos ispod minimuma (${ minimumAmount })."
       ],
       "Code wrong or not valid anymore": [
         "Kôd je pogrešan ili više ne vrijedi"
@@ -1531,6 +1532,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
+      ],
+      "Impossible to create the gateway": [
+        "Nije moguće stvoriti pristupnik"
       ],
       "Incorrect login credentials. Please try again.": [
         "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
@@ -1978,9 +1982,6 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "Are you sure you want to delete this address?": [
-        "Jeste li sigurni da želite ukloniti ovu adresu?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
       ],
@@ -1995,6 +1996,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
@@ -2013,6 +2017,9 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
+      ],
+      "Create your first Gateway": [
+        "Stvorite svoj prvi pristupnik"
       ],
       "Creating your account": [
         "Izrada vašeg računa"
@@ -2172,9 +2179,6 @@
       ],
       "per month": [
         "mjesečno"
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
@@ -2598,6 +2602,9 @@
       "Key": [
         "Ključ"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
@@ -2780,6 +2787,9 @@
       ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
+      ],
+      "Help": [
+        "Pomoć"
       ],
       "Help translate": [
         "Pomozite prevesti"
@@ -3068,9 +3078,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Automatski (${ value })"
-      ],
       "Country configs": [
         "Postavke države"
       ],
@@ -3142,6 +3149,11 @@
     "Payment method option": {
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
+      ]
+    },
+    "Payments": {
+      "MM/YY": [
+        "MM/GG"
       ]
     },
     "Payments.Error": {
@@ -3260,6 +3272,11 @@
         "Korisnik"
       ]
     },
+    "Select invoice document": {
+      "Invoice": [
+        "Račun"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "Nema rezultata"
@@ -3271,6 +3288,9 @@
       ],
       "pending": [
         "na čekanju"
+      ],
+      "to be created": [
+        "bit će stvoren"
       ]
     },
     "session_recovery:available:action": {
@@ -3579,6 +3599,9 @@
       "10 email addresses": [
         "10 adrese e-pošte"
       ],
+      "Close": [
+        "Zatvori"
+      ],
       "Priority support": [
         "Prioritetna podrška"
       ]
@@ -3840,6 +3863,9 @@
       "Change role": [
         "Promjeni ulogu"
       ],
+      "Close": [
+        "Zatvori"
+      ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"
       ],
@@ -3851,6 +3877,12 @@
       ],
       "Contact us": [
         "Kontaktirajte nas"
+      ],
+      "Create a new Gateway": [
+        "Stvori novi pristupnik"
+      ],
+      "Create a new gateway": [
+        "Stvori novi pristupnik"
       ],
       "Create Gateway": [
         "Stvori pristupnik"
@@ -3870,9 +3902,6 @@
       "Delete": [
         "Izbriši"
       ],
-      "Delete ${ value }": [
-        "Izbriši ${ value }"
-      ],
       "Delete account": [
         "Ukloni račun"
       ],
@@ -3881,9 +3910,6 @@
       ],
       "Device connected!": [
         "Uređaj je povezan!"
-      ],
-      "Disable ${ email }": [
-        "Onemogući ${ email }"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
@@ -4144,7 +4170,7 @@
     },
     "Title subscription": {
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "Plan": [
         "Plan"

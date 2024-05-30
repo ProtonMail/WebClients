@@ -20,13 +20,13 @@
         "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností. ${ link }"
+        "Bol zistený potenciálny únik z položky ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
@@ -3426,48 +3426,9 @@
         "VPN je príliš pomalá"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Pomôžte nám zlepšiť sa!"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Stiahnuť všetko"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
-      "Special Offer": [
-        "Špeciálna ponuka"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Rozšírená história verzií"
-      ],
-      "Priority support": [
-        "Prioritná podpora"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "za prvý mesiac"
-      ],
-      "Limited-time offer": [
-        "Časovo obmedzená ponuka"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3664,6 +3625,9 @@
       ],
       "Amount above the maximum.": [
         "Hodnota je vyšša než maximálna čiastka."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Suma nižšia ako minimum (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Došlo k chybe pri načítaní možností aliasu"
@@ -6246,6 +6210,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Pripojte sa k programu ${ PROTON_SENTINEL_NAME } a získajte najvyššiu úroveň zabezpečenia účtu a podpory."
       ],
@@ -6696,11 +6663,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Predplatné sa obnovuje automaticky každých 12 mesiacov."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Predplatné sa obnovuje automaticky každých 24 mesiacov."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov."
       ],
       "Subscription auto-renews every month.": [
         "Predplatné sa obnovuje automaticky každý mesiac."
@@ -8154,9 +8118,6 @@
       "What happened?": [
         "Čo sa stalo?"
       ],
-      "What is the main reason you are canceling?": [
-        "Aký je hlavný dôvod zrušenia?"
-      ],
       "With attachment": [
         "S prílohou"
       ],
@@ -8580,9 +8541,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Časovo obmedzená ponuka, končí 2. apríla 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
       ]
     },
     "mailtrial2024: Title": {
@@ -9114,6 +9072,9 @@
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
+      "Password health": [
+        "Zdravie hesla"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -9134,6 +9095,9 @@
         "Chráňte súčasne ${ n } zariadenia",
         "Chráňte súčasne ${ n } zariadení",
         "Chráňte súčasne ${ n } zariadení"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
@@ -9251,6 +9215,9 @@
         "Zdieľanie trezora (s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
       ]
     },
     "new_plans: feature info": {
@@ -9508,6 +9475,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chráňte svoju rodinu pred škodlivými webovými stránkami a získajte prístup k našim vysokorýchlostným serverom VPN, aby ste mohli streamovať svoj obľúbený obsah"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Chráňte svoju skutočnú emailovú adresu pred prezradením alebo únikom pomocou aliasov (náhodne vygenerovaná emailová adresa, ktorá preposiela emaily do vašej hlavnej schránky)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Poskytuje najvyššiu úroveň zabezpečenia účtu a odbornú podporu"
@@ -9858,6 +9828,15 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
+      ],
       "Timeout exceeded": [
         "Prekročený časový limit"
       ]
@@ -9924,9 +9903,6 @@
       ],
       "End date": [
         "Dátum ukončenia"
-      ],
-      "Feedback": [
-        "Spätná väzba"
       ],
       "Filter folders": [
         "Filtrovať priečinky"
@@ -10513,7 +10489,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
+        "Žiadosť o obnovenie hesla bola zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -11102,6 +11078,62 @@
     "Subscription price": {
       "For": [
         "Pre"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Desktopová aplikácia ${ MAIL_APP_NAME } "
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } úložného priestoru"
+      ],
+      "10 email addresses": [
+        "10 emailových adries"
+      ],
+      "Calendar sharing": [
+        "Zdieľanie kalendára"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastné časy odoslania a odloženia"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pomáhame aktivistom v Hongkongu"
+      ],
+      "Keep ${ planName }": [
+        "Ponechať ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Zistite viac o našom vplyve"
+      ],
+      "Our fight against censorship in Russia": [
+        "Náš boj proti cenzúre v Rusku"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ],
+      "Read the story": [
+        "Prečítať príbeh"
+      ],
+      "Unblocking internet access in Iran": [
+        "Odblokovanie prístupu na internet v Iráne"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Watch the interview": [
+        "Pozrite si rozhovor"
+      ],
+      "Yearly free storage bonuses": [
+        "Každoročné bonusy na kapacitu úložiska"
+      ],
+      "Your own custom email domain": [
+        "Vaša vlastná emailová doména"
+      ],
+      "Your own short @pm.me email alias": [
+        "Váš vlastný skrátený emailový alias @pm.me"
       ]
     },
     "subscription reminder": {
@@ -12597,15 +12629,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Predplatné sa automaticky obnovuje každý 1 mesiac. Ďalší dátum fakturácie je o 1 mesiac."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."
       ],

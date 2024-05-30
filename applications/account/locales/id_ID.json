@@ -334,9 +334,6 @@
       "Delete": [
         "Hapus"
       ],
-      "Delete address": [
-        "Hapus alamat"
-      ],
       "Delete and confirm": [
         "Hapus dan konfirmasi"
       ],
@@ -432,6 +429,12 @@
       ],
       "Edit name": [
         "Sunting nama"
+      ],
+      "Edit organization identity": [
+        "Edit identitas organisasi"
+      ],
+      "Edit organization name": [
+        "Edit nama organisasi"
       ],
       "Edit password": [
         "Sunting kata sandi"
@@ -3140,8 +3143,14 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Setelah dihapus, alamat ini tidak akan lagi dapat digunakan oleh siapa pun juga."
+      "Are you sure you want to delete this address?": [
+        "Apakah Anda yakin untuk menghapus alamat ini?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Setelah dihapus, alamat ${ address } ini tidak akan lagi dapat digunakan oleh siapa pun juga."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Mohon diperhatikan bahwa apabila Anda menghapus alamat ${ address } ini, Anda tidak lagi akan dapat mengirim atau menerima email menggunakan alamat ini."
       ],
       "You can only delete 1 address per year.": [
         "Anda hanya dapat menghapus 1 alamat per tahun."
@@ -3266,6 +3275,20 @@
         "Anda kini dapat menutup tab ini."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Apakah Anda yakin untuk menonaktifkan alamat ini?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Dengan menonaktifkan alamat ${ address } ini, Anda tidak akan lagi dapat mengirim atau menerima email menggunakan alamat ini dan seluruh produk ${ BRAND_NAME } yang tertaut akan ikut dinonaktifkan."
+      ],
+      "Disable address": [
+        "Nonaktifkan alamat"
+      ],
+      "Disable address?": [
+        "Nonaktifkan alamat?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Terverifikasi"
@@ -3350,8 +3373,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Bantu kami untuk berkembang!"
+      "Help us improve": [
+        "Bantu kami menjadi lebih baik"
       ]
     },
     "Download link": {
@@ -3371,40 +3394,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Layanan penyimpanan cloud dan file-sharing aman yang melindungi data Anda"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ],
-      "Special Offer": [
-        "Penawaran Spesial"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Riwayat versi yang terperinci"
-      ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "untuk bulan pertama"
-      ],
-      "Limited-time offer": [
-        "Penawaran waktu terbatas"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Dapatkan ${ planName } hanya dengan harga ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6311,9 +6300,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Siapa pun dengan tautan ini tidak akan lagi dapat menyinkronkan atau memperoleh pembaruan seputar kalender Anda ke depannya. Apabila Anda ingin kembali memberikan mereka akses, Anda harus membuat tautan baru."
       ],
-      "Are you sure you want to delete this address?": [
-        "Apakah Anda yakin untuk menghapus alamat ini?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Apakah Anda yakin ingin menghapus kalender ini?"
       ],
@@ -6325,9 +6311,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Apakah Anda yakin untuk menghapus kalender ini? Anda dapat menambahkan ulang kalender liburan di lain waktu."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Apakah Anda yakin untuk menghapus domain ini?"
       ],
       "Are you sure you want to delete this filter?": [
         "Apakah Anda yakin untuk menghapus filter ini?"
@@ -6986,6 +6969,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Saya telah menggunakan @ProtonMail dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan saya dan nikmati berbagai fitur premium selama 1 bulan secara gratis: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Logo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
@@ -7310,12 +7296,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Mohon diperhatikan bahwa apabila Anda menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email menggunakan alamat ini."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Harap dicatat bahwa dengan menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Mohon diperhatikan bahwa apabila Anda menghapus filter ${ nameDeleted }, kami tidak lagi akan memproses segala tindakan otomatis yang dipicu oleh filter tersebut."
       ],
@@ -7580,11 +7560,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Langganan akan diperbarui secara otomatis setiap 12 bulan."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Langganan akan diperbarui secara otomatis setiap 24 bulan."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Langganan diperbarui secara otomatis setiap ${ cycle } bulan."
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
@@ -7741,9 +7718,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Proses verifikasi ini dapat berlangsung hingga satu jam. Anda dapat melanjutkan ke langkah selanjutnya secara aman."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dengan ini, seluruh versi berkas Anda yang lebih lawas dari ${ rententionLabel } akan dihapus."
@@ -9428,6 +9402,9 @@
       "Or": [
         "Atau"
       ],
+      "Organization identity": [
+        "Identitas organisasi"
+      ],
       "Organization name": [
         "Nama organisasi"
       ],
@@ -9683,11 +9660,11 @@
       "What happened?": [
         "Apa yang terjadi?"
       ],
-      "What is the main reason you are canceling?": [
-        "Apa alasan utama Anda membatalkan langganan?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Apa alasan utama Anda menghapus akun?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Apa alasan utamamu dalam membatalkan atau menurunkan paket?"
       ],
       "Why would you like to cancel?": [
         "Mengapa Anda ingin membatalkan?"
@@ -9943,6 +9920,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Dapatkan ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        null
+      ],
       "Help translate": [
         "Bantu terjemahkan"
       ],
@@ -10164,9 +10144,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Penawaran terbatas, berlaku hingga 2 April 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Langganan Anda akan diperbarui secara otomatis pada ${ renewTime } dengan harga ${ renewablePrice }. Anda dapat membatalkan langganan ini kapan saja."
       ]
     },
     "mailtrial2024: Title": {
@@ -10815,6 +10792,9 @@
       ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
@@ -12129,9 +12109,6 @@
       "Launching ${ PASS_APP_NAME }": [
         "Meluncurkan ${ PASS_APP_NAME }"
       ],
-      "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "Penawaran terbatas: ${ title } dengan harga ${ price } untuk bulan pertama"
-      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Penawaran terbatas: Dapatkan ${ title } dengan harga ${ price } per pengguna per bulannya!"
       ],
@@ -12372,6 +12349,15 @@
       "Processing payment": [
         "Memproses pembayaran"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku valid untuk bulan pertama. Setelahnya, langganan Anda akan diperbarui secara otomatis pada harga ${ price } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
       ]
@@ -12525,6 +12511,9 @@
       ],
       "Select state": [
         "Pilih negara bagian"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
       ],
       "Text": [
         "Teks"
@@ -13779,9 +13768,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } yang meliputi pembagian kalender"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } hari tersisa"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } yang meliputi riwayat versi"
       ],
@@ -13854,9 +13840,6 @@
       "Helping activists in Hong Kong": [
         "Membantu para aktivis di Hong Kong"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Bagaimana tim layanan dukungan kami menghadirkan aplikasi VPN kami secara langsung ke tangan masyarakat. "
-      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Bagaimana kami melawan balik ketika ${ BRAND_NAME } ditargetkan dalam kampanye penyensoran yang agresif."
       ],
@@ -13899,12 +13882,6 @@
       "Receive new emails": [
         "Menerima email baru"
       ],
-      "Resubscribe": [
-        "Langgan ulang"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Langgan ulang untuk memulihkan akses ke berbagai fitur ${ planName }."
-      ],
       "Send emails with attachments": [
         "Mengirimkan email dengan lampiran"
       ],
@@ -13929,20 +13906,8 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
       "Yearly free storage bonuses": [
         "Bonus ruang penyimpanan gratis tahunan"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Anda masih memiliki ${ expiryDate } tersisa pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "${ planName } Anda telah dibatalkan."
@@ -14762,9 +14727,6 @@
       "Delete account": [
         "Hapus akun"
       ],
-      "Delete address permanently?": [
-        "Hapus alamat secara permanen?"
-      ],
       "Delete calendar": [
         "Hapus kalender"
       ],
@@ -14797,9 +14759,6 @@
       ],
       "Details": [
         "Rincian"
-      ],
-      "Disable ${ email }": [
-        "Nonaktifkan ${ email }"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
@@ -14848,6 +14807,9 @@
       ],
       "Edit invoice details": [
         "Sunting rincian faktur"
+      ],
+      "Edit organization identity": [
+        "Edit identitas organisasi"
       ],
       "Edit servers": [
         "Sunting server"
@@ -15948,15 +15910,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Paket langganan diperbarui secara otomatis setiap 1 bulan. Anda akan menerima tagihan berikutnya dalam 1 bulan ke depan."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Paket langganan diperbarui secara otomatis setiap 3 bulan. Anda akan menerima tagihan berikutnya dalam 3 bulan ke depan."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Harga diskon khusus ${ priceWithDiscount } berlaku valid untuk bulan pertama. Setelahnya, langganan Anda akan diperbarui secara otomatis pada harga ${ renewPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ],
@@ -16064,9 +16017,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Dengan menonaktifkan log, seluruh riwayat log Anda akan terhapus. Apakah Anda yakin untuk menonaktifkan log?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Dengan menonaktifkan alamat ini, Anda tidak akan lagi dapat mengirim atau menerima email menggunakan alamat ini, dan seluruh produk ${ BRAND_NAME } yang tertaut juga akan dinonaktifkan. Apakah Anda yakin ingin menonaktifkan alamat ini?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Apabila Anda membatalkan impor ini, Anda tidak akan dapat melanjutkannya kembali. ${ BRAND_NAME } menyimpan seluruh proses yang telah berlangsung pada akun Anda. Tetap batalkan?"

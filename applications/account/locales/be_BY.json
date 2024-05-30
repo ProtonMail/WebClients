@@ -334,9 +334,6 @@
       "Delete": [
         "Выдаліць"
       ],
-      "Delete address": [
-        "Выдаліць адрас"
-      ],
       "Delete and confirm": [
         "Выдаліць і пацвердзіць"
       ],
@@ -1446,7 +1443,7 @@
         "Скарыстацца прапановай"
       ],
       "Save even more with a 12-month plan": [
-        "Зэканомце яшчэ больш з пры аплаце за 12 месяцаў"
+        "Зэканомце яшчэ больш пры аплаце за 12 месяцаў"
       ]
     },
     "bf2023: Deal details": {
@@ -3185,8 +3182,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Іншы карыстальнік больш не зможа выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      "Are you sure you want to delete this address?": [
+        "Вы сапраўды хочаце выдаліць гэты адрас?"
+      ],
+      "Delete address": [
+        "Выдаліць адрас"
+      ],
+      "Delete address permanently?": [
+        "Выдаліць адрас незваротна?"
+      ],
+      "Delete address?": [
+        "Выдаліць адрас?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Адрас з назвай ${ address } паўторна ніхто больш не зможа выкарыстаць, калі вы яго выдаліце."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Звярніце ўвагу, што калі вы выдаліце ​​адрас ${ address }, то больш не зможаце адпраўляць або атрымліваць лісты з яго дапамогай."
       ],
       "You can only delete 1 address per year.": [
         "Вы можаце выдаліць толькі адзін адрас у год."
@@ -3206,6 +3218,20 @@
       ],
       "You will no longer have access to this calendar.": [
         "У вас больш не будзе доступу да гэтага календара."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Вы сапраўды хочаце выдаліць гэты дамен?"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete domain?": [
+        "Выдаліць дамен?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Звярніце ўвагу, што калі вы выдаліце дамен з назвай ${ domainName }, то ўсе адрасы звязаныя з ім будуць адключаны."
       ]
     },
     "Delinquent modal title": {
@@ -3311,6 +3337,20 @@
         "Вы можаце бяспечна закрыць гэту ўкладку."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Вы сапраўды хочаце адключыць гэты адрас?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Адключэнне адраса з назвай ${ address } прывядзе да таго, што вы больш не зможаце адпраўляць або атрымліваць лісты з яго дапамогай, а ўсе спасылкі прадуктаў ${ BRAND_NAME } будуць адключаны."
+      ],
+      "Disable address": [
+        "Адключыць адрас"
+      ],
+      "Disable address?": [
+        "Адключыць адрас?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Праверана"
@@ -3395,8 +3435,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Дапамажыце нам палепшыць наш сэрвіс!"
+      "Help us improve": [
+        "Дапамажыце нам палепшыць наш сэрвіс"
       ]
     },
     "Download link": {
@@ -3416,40 +3456,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Бяспечнае воблачнае сховішча і абагульванне файлаў для абароны вашых даных"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Special Offer": [
-        "Спецыяльная прапанова"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Пашыраная гісторыя версій"
-      ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Падаўжаецца за ${ renewablePrice }. Скасаваць можна ў любы час"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "за першы месяц"
-      ],
-      "Limited-time offer": [
-        "Часовая прапанова"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Атрымайце тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6500,9 +6506,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Любыя карыстальнікі з гэтай спасылкай не змогуць сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
       ],
-      "Are you sure you want to delete this address?": [
-        "Вы сапраўды хочаце выдаліць гэты адрас?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Вы сапраўды хочаце выдаліць гэты каляндар?"
       ],
@@ -6514,9 +6517,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Вы сапраўды хочаце выдаліць гэты каляндар? Вы зможаце дадаць каляндар са святамі пазней."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Вы сапраўды хочаце выдаліць гэты дамен?"
       ],
       "Are you sure you want to delete this filter?": [
         "Вы сапраўды хочаце выдаліць гэты фільтр?"
@@ -7193,6 +7193,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Я выкарыстоўваю @ProtonMail і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па маёй рэферальнай спасылцы і атрымайце 1 месяц бясплатных прэміяльных магчымасцяў: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Лагатып JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
       ],
@@ -7526,12 +7529,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Захоўвайце яго ў бяспечным месцы. Ён вам спатрэбіцца для доступу да вашага ўліковага запісу і расшыфроўкі вашых даных у выпадку скідання пароля."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Звярніце ўвагу, што калі вы выдаліце ​​гэты адрас, вы больш не зможаце адпраўляць або атрымліваць лісты з гэтага адраса."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Звярніце ўвагу, што калі вы выдаліце ​​гэты дамен, то ўсе адрасы звязаныя з ім будуць адключаны."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
       ],
@@ -7805,11 +7802,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 12 месяцаў."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 24 месяцы."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы."
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
@@ -7975,9 +7969,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Гэта выдаліць усе папярэднія версіі вашых файлаў, якія старэйшыя за ${ rententionLabel }."
@@ -8335,6 +8326,9 @@
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў і вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } ${ PLANS.FREE }, калі вы скасуеце сваю бягучую платную падпіску."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -9965,11 +9959,11 @@
       "What happened?": [
         "Што здарылася?"
       ],
-      "What is the main reason you are canceling?": [
-        "Якая асноўная прычына скасавання?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Якая асноўная прычына выдалення вашага ўліковага запісу?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Why would you like to cancel?": [
         "Чаму вы вырашылі скасаваць?"
@@ -10467,9 +10461,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Прапанова абмежавана па часе (міне 2 красавіка 2024 года)"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewTime } за ${ renewablePrice }. Скасаваць можна ў любы час"
       ]
     },
     "mailtrial2024: Title": {
@@ -11188,6 +11179,9 @@
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
       ],
@@ -11316,6 +11310,9 @@
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
     },
     "new_plans: feature info": {
@@ -11654,6 +11651,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -12534,9 +12534,6 @@
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
       ],
-      "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "Прапанова абмежаваная па часе: ${ title } вам абыдзецца ў ${ price } за першы месяц"
-      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Прапанова абмежаваная па часе. Атрымайце ${ title } па цане ${ price } у месяц за карыстальніка!"
       ],
@@ -12780,6 +12777,15 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ]
@@ -12933,6 +12939,9 @@
       ],
       "Select state": [
         "Выбраць штат"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Text": [
         "Тэкст"
@@ -14298,12 +14307,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
-      "${ dayDiff } day left": [
-        "Застаўся ${ dayDiff } дзень",
-        "Засталося ${ dayDiff } дні",
-        "Засталося ${ dayDiff } дзён",
-        "Засталося ${ dayDiff } дзён"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
@@ -14352,6 +14355,12 @@
       "Add any new files": [
         "Дадаваць любыя новыя файлы"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней. "
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
@@ -14388,8 +14397,8 @@
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Як наша каманда падтрымкі кліентаў забяспечвала непасрэдны доступ да праграмы VPN кожнаму карыстальніку. "
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Як наша каманда падтрымкі кліентаў забяспечвала непасрэдны доступ да праграмы VPN кожнаму карыстальніку."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Як мы супраціўляліся, калі ${ BRAND_NAME } стаў мішэнню кампаніі агрэсіўнай цэнзуры."
@@ -14427,17 +14436,17 @@
       "Priority support": [
         "Прыярытэтная падтрымка"
       ],
+      "Reactivate": [
+        "Актываваць паўторна"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Паўторна актывуйце для аднаўлення доступу да функцый тарыфнага плана ${ planName }."
+      ],
       "Read the story": [
         "Прачытайце гісторыю"
       ],
       "Receive new emails": [
         "Атрымліваць новыя лісты"
-      ],
-      "Resubscribe": [
-        "Аднавіць падпіску"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Паўторна падпішыцеся для аднаўлення доступу да функцый тарыфнага плана ${ planName }."
       ],
       "Send emails with attachments": [
         "Адпраўляць лісты з далучэннямі"
@@ -14466,23 +14475,17 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
-      ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
       ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
-      ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Ваш уласны карыстальніцкі дамен электроннай пошты"
@@ -15320,9 +15323,6 @@
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
-      "Delete address permanently?": [
-        "Выдаліць адрас незваротна?"
-      ],
       "Delete calendar": [
         "Выдаліць каляндар"
       ],
@@ -15358,9 +15358,6 @@
       ],
       "Details": [
         "Падрабязнасці"
-      ],
-      "Disable ${ email }": [
-        "Адключыць ${ email }"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
@@ -16545,15 +16542,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 1 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 1 месяц."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 3 месяцы. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
@@ -16622,11 +16610,17 @@
       "Includes ${ plan } (free for the first year!)": [
         "Уключае ${ plan } (бясплатна на працягу першага года)"
       ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Тарыфны план ${ plan } уключае прэміяльны менеджар пароляў, якім вы зможаце карыстацца бясплатна на працягу першага года!"
+      ],
       "Just ${ price }": [
         "Усяго за ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Паспрабуйце ${ upsellPlanName } без рызыкі"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Ваш камплект ${ a } і ${ b }"
       ],
       "Your ${ selected } plan": [
         "Ваш тарыфны план ${ selected }"
@@ -16664,9 +16658,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Адключыўшы журналы, вы таксама ачысціце ўсю сваю гісторыю журналаў. Вы сапраўды хочаце адключыць журналы?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Адключыўшы гэты адрас электроннай пошты, вы больш не зможаце адпраўляць і атрымліваць лісты з дапамогай гэтага адраса, а таксама будуць адключаны ўсе прадукты ${ BRAND_NAME }, якія звязаны з ім. Вы сапраўды хочаце адключыць гэты адрас?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Калі вы скасуеце гэта імпартаванне, вы не зможаце яго ўзнавіць. ${ BRAND_NAME } захаваў увесь ход выканання ў вашым уліковым запісе. Усё роўна скасаваць?"

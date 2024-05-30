@@ -137,9 +137,6 @@
       "Delete": [
         "削除"
       ],
-      "Delete address": [
-        "アドレスの削除"
-      ],
       "Delete Gateway": [
         "ゲートウェイ削除"
       ],
@@ -1840,9 +1837,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "このアドレスを削除すると、他の人が再度使用することはできません。"
-      ],
       "You can only delete 1 address per year.": [
         "削除できるアドレスは 1 年に 1 つだけです。"
       ]
@@ -1885,34 +1879,6 @@
         "一時的な理由で、将来的に再度使用する予定"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "改善にご協力してください!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "拡張バージョン履歴"
-      ],
-      "Priority support": [
-        "優先サポート"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "最初の 1 か月"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "${ planName } を ${ planPrice } で入手"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "確認メールが ${ address } に送信されました"
@@ -1949,6 +1915,9 @@
       ],
       "Amount above the maximum.": [
         "金額が上限を超えています。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "最低金額 (${ minimumAmount }) を下回っています。"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -2932,9 +2901,6 @@
       "Amount due": [
         "支払額"
       ],
-      "Are you sure you want to delete this address?": [
-        "本当にこのアドレスを削除してよいですか。"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "2 要素認証を無効にしてよろしいですか？"
       ],
@@ -3454,9 +3420,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "アドレスを削除すると、このアドレスでメールを送受信できなくなります。"
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
       ],
@@ -3604,12 +3567,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "サブスクリプションは 12 か月ごとに自動更新されます。"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "サブスクリプションは 24 か月ごとに自動更新されます。"
-      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -3687,9 +3644,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "この検証には最大 1 時間かかる場合があります。安全に次のステップに進むことができます。"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
@@ -4567,9 +4521,6 @@
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
-      "What is the main reason you are canceling?": [
-        "キャンセルの主な理由は何ですか?"
-      ],
       "What is the main reason you are deleting your account?": [
         "アカウントを削除する主な理由は何ですか?"
       ],
@@ -4790,9 +4741,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "2024 年 4 月 2 日までの期間限定オファー"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "サブスクリプションは ${ renewTime } に ${ renewablePrice } で自動更新され、いつでもキャンセルできます"
       ]
     },
     "mailtrial2024: Title": {
@@ -5146,6 +5094,9 @@
       ],
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
+      ],
+      "Password health": [
+        "パスワードの健全性"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -5735,9 +5686,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "自動 (${ value })"
-      ],
       "Country configs": [
         "各国の設定ファイル"
       ],
@@ -6064,6 +6012,9 @@
       ],
       "Processing payment": [
         "支払いの処理中"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
@@ -7037,9 +6988,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
       ],
-      "${ dayDiff } day left": [
-        "残り ${ dayDiff } 日"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
@@ -7087,12 +7035,6 @@
       ],
       "Read the story": [
         "ストーリーを読む"
-      ],
-      "Resubscribe": [
-        "再講読"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "再購読して ${ planName } 機能へのアクセスを復元します。"
       ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"
@@ -7584,14 +7526,8 @@
       "Delete": [
         "削除"
       ],
-      "Delete ${ value }": [
-        "${ value } を削除しますか"
-      ],
       "Delete account": [
         "アカウントの削除"
-      ],
-      "Delete address permanently?": [
-        "アドレスを完全に削除しますか?"
       ],
       "Delete organization logo?": [
         "組織のロゴを削除しますか?"
@@ -7604,9 +7540,6 @@
       ],
       "Device connected!": [
         "デバイスが接続されました！"
-      ],
-      "Disable ${ email }": [
-        "${ email } を無効化"
       ],
       "Disable two-factor authentication": [
         "2 段階認証を無効化"
@@ -8143,15 +8076,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "サブスクリプションは 1 か月ごとに自動更新されます。次回の請求日は 1 か月後です。"
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "サブスクリプションは 3 か月ごとに自動更新されます。次回の請求日は 3 か月後です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],
@@ -8235,9 +8159,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "このアドレスを無効にすることで、このアドレスを使ったメールの送受信ができなくなり、リンクされているすべての ${ BRAND_NAME } 製品も無効となります。本当にこのアドレスを無効にしますか？"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

@@ -327,6 +327,9 @@
       "Increase": [
         "Povećaj"
       ],
+      "Later": [
+        "Kasnije"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -356,6 +359,9 @@
       ],
       "Merge contacts": [
         "Spoji kontakte"
+      ],
+      "Minimize": [
+        "Minimiziraj"
       ],
       "Minimize transfers": [
         "Smanji transfere"
@@ -1819,11 +1825,6 @@
         "Pronađena su sljedeća polja u CSV datoteci koju ste prenijeli. Označite one koje želite uvesti."
       ]
     },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Otkazani događaj ${ formattedStart }"
@@ -1853,6 +1854,9 @@
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Iznos ispod minimuma (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
@@ -2418,7 +2422,7 @@
         "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -2898,6 +2902,9 @@
       "Owner": [
         "Vlasnik"
       ],
+      "password": [
+        "lozinka"
+      ],
       "Paused": [
         "Pauzirano"
       ],
@@ -3024,11 +3031,17 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Učitavanje stotina datoteka odjednom može utjecati na performanse."
       ],
+      "username": [
+        "korisničko ime"
+      ],
       "Users": [
         "Korisnici"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
+      ],
+      "Warning": [
+        "Upozorenje"
       ],
       "We use 3-D Secure to protect your payments": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure"
@@ -3289,6 +3302,9 @@
       "Download anyway": [
         "Preuzmi svejedno"
       ],
+      "Editor": [
+        "Urednik"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -3514,6 +3530,9 @@
       "Verification code": [
         "Kôd za provjeru"
       ],
+      "Viewer": [
+        "Čitanje"
+      ],
       "What happened?": [
         "Što se dogodilo?"
       ],
@@ -3621,6 +3640,14 @@
       ],
       "Plain text": [
         "Običan tekst"
+      ]
+    },
+    "Mimetype": {
+      "Image": [
+        "Slika"
+      ],
+      "Text": [
+        "Tekst"
       ]
     },
     "New Label form": {
@@ -3922,6 +3949,11 @@
         "Nova kreditna/debitna kartica"
       ]
     },
+    "Payments": {
+      "MM/YY": [
+        "MM/GG"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Netočan broj kartice"
@@ -3952,9 +3984,6 @@
       ],
       "Enter a new folder name": [
         "Unesite novi naziv mape"
-      ],
-      "Feedback": [
-        "Povratne informacije"
       ],
       "Filter groups": [
         "Filtrirajte grupe"
@@ -4318,6 +4347,14 @@
     "Subscription price": {
       "For": [
         "Za"
+      ]
+    },
+    "Subscription reminder": {
+      "10 email addresses": [
+        "10 adrese e-pošte"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
       ]
     },
     "Subscription renewal state": {
@@ -4918,7 +4955,7 @@
     },
     "Title subscription": {
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "Plan": [
         "Plan"

@@ -2979,19 +2979,9 @@
         "Tuɣalin ɣer usaǧǧaw-nniḍen"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ɛawen-aɣ ad nennarni!"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Sider kullec"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Tallalt yezwaren"
       ]
     },
     "Email reminder banner": {
@@ -3058,6 +3048,9 @@
       ],
       "Amount above the maximum.": [
         "Azal nnig n ufellay."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Azal ddaw n wadday (${ minimumAmount })."
       ],
       "Attachments are limited to 25 MB": [
         "Ifuyla yeddan ɣur-sen talast n 25 MAṬ"
@@ -6439,9 +6432,6 @@
       "What happened?": [
         "D acu akka ay yeḍran?"
       ],
-      "What is the main reason you are canceling?": [
-        "Acu n sebba tagejdant k-yeǧǧan tekkseḍ amiḍan-ik?"
-      ],
       "With attachment": [
         "S ufaylu yeddan"
       ],
@@ -7499,9 +7489,6 @@
       "End date": [
         "Azemz n tagara"
       ],
-      "Feedback": [
-        "Awennit"
-      ],
       "Filter folders": [
         "Sizdeg ikaramen"
       ],
@@ -8163,6 +8150,20 @@
     "Subscription price": {
       "For": [
         "I"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } n uḥraz asemday"
+      ],
+      "10 email addresses": [
+        "10 n tansiwin imayl"
+      ],
+      "Calendar sharing": [
+        "Beṭṭu n uwitay"
+      ],
+      "Priority support": [
+        "Tallalt yezwaren"
       ]
     },
     "Subscription renewal state": {

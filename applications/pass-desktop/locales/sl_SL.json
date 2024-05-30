@@ -523,7 +523,7 @@
         "Spremljanje Dark Web je na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Prejmite obvestilo, če je pricurljal vaš e-poštni naslov, geslo ali drugi osebni podatki."
+        "Prejmite obvestilo, če so bili e-poštni naslov, geslo ali drugi osebni podatki razkriti."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
@@ -535,7 +535,7 @@
         "Nastavite 2FA za večjo varnost"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Začnite nadzorovati kršitve podatkov, povezane z računi, ustvarjenimi z vašim e-poštnim naslovom in vašimi vzdevki hide-my-email."
+        "Začnite nadzorovati kršitve varstva podatkov, povezane z računi, ustvarjenimi z vašim e-poštnim naslovom in vašimi vzdevki hide-my-email."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Temni splet je skriti del interneta, kjer je mogoče kupiti in prodati ukradene osebne podatke, kot je identiteta."
@@ -556,10 +556,10 @@
         "Z ${ PASS_SHORT_APP_NAME } nadzorom bodite korak pred grožnjami, tako da prejmete takojšnja opozorila, če so vaše poverilnice ogrožene. Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svoje spletne aktivnosti."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "Vaši e-poštni naslovi so pricurljali zaradi vsaj 1 kršitve podatkov"
+        "Vaši e-poštni naslovi so bili razkriti zaradi vsaj 1 kršitve podatkov"
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
-        "Vaši osebni podatki so pricurljali zaradi kršitve podatkov storitve tretje osebe"
+        "Vaši osebni podatki so bili razkriti zaradi kršitve varstva podatkov storitve tretje osebe"
       ]
     },
     "Error": {
@@ -1031,7 +1031,7 @@
         "Vse kršitve za ta naslov so bile odpravljene"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Vse trenutne kršitve bodo označene kot odpravljene. V primeru prihodnjih kršitev podatkov boste obveščeni."
+        "Vse trenutne kršitve bodo označene kot odpravljene. V primeru prihodnjih kršitev boste obveščeni."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Vsi premeti iz »${ payload.content.name }« so bili premaknjeni."
@@ -1065,6 +1065,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Prenesite svoja obstoječa gesla v ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Člani ekipe lahko privzeto izvozijo le trezorje, katerih lastniki so. Če je ta možnost vklopljena, ne bodo mogli izvoziti nobenih podatkov."
@@ -1598,16 +1601,16 @@
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "O kršitvah podatkov za te e-poštne naslove boste obveščeni."
+        "O kršitvah varstva podatkov za te e-poštne naslove boste obveščeni."
       ],
       "You will be notified of data breaches for this email address.": [
-        "O kršitvah podatkov za ta e-poštni naslov boste obveščeni."
+        "O kršitvah varstva podatkov za ta e-poštni naslov boste obveščeni."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Ne boste več obveščeni o kršitvah podatkov za ta e-poštni naslov."
+        "Ne boste več obveščeni o kršitvah varstva podatkov za ta e-poštni naslov."
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Ne boste več obveščeni o kršitvah podatkov za ta e-poštni naslov."
+        "Ne boste več obveščeni o kršitvah varstva podatkov za ta e-poštni naslov."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
@@ -2064,9 +2067,6 @@
       "Username (new alias)": [
         "Uporabniško ime (nov vzdevek)"
       ],
-      "Vault": [
-        "Trezor"
-      ],
       "Vault ID": [
         "ID trezorja"
       ],
@@ -2452,7 +2452,7 @@
         "Geslo"
       ],
       "Password Health": [
-        "Močno geslo"
+        "Kakovost gesla"
       ],
       "Pause monitoring?": [
         "Začasno ustavi spremljanje?"
@@ -2549,6 +2549,9 @@
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"
+      ],
+      "What is the dark web?": [
+        "Kaj je temni splet (Dark Web)?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Zakaj ${ PASS_APP_NAME }?"
@@ -2705,7 +2708,7 @@
         "Predpona vzdevka ne sme biti daljša od 40 znakov"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Ta e-poštni naslov ne bo več nadzorovan zaradi kršitev podatkov."
+        "Ta e-poštni naslov ne bo več nadzorovan zaradi kršitev varstva podatkov."
       ],
       "Title is required": [
         "Naslov je obvezen"

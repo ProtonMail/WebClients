@@ -43,6 +43,26 @@
         "Ви зупините пересилання пошти."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
@@ -313,9 +333,6 @@
       ],
       "Delete": [
         "Видалити"
-      ],
-      "Delete address": [
-        "Видалити адресу"
       ],
       "Delete and confirm": [
         "Видалити й підтвердити"
@@ -774,7 +791,7 @@
         "Повідомити про проблему"
       ],
       "Request a call": [
-        "Запросити дзвінок"
+        "Запит телефонного виклику"
       ],
       "Request a feature": [
         "Запит нової функції"
@@ -1331,6 +1348,9 @@
       "Browse the web privately and block ads": [
         "Переглядайте інтернет приватно та блокуйте рекламу"
       ],
+      "Create and collaborate on documents securely": [
+        "Безпечно створювати та співпрацювати з документами"
+      ],
       "Keep your schedule private": [
         "Збережіть приватність свого розкладу"
       ],
@@ -1686,10 +1706,10 @@
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
-        "Продовжити за допомогою ${ planTitle }"
+        "Продовжуйте користуватися ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Подовжити підписку"
+        "Поновіть свою передплату"
       ],
       "Copy": [
         "Копіювати"
@@ -3126,9 +3146,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Після видалення цю адресу більше не зможе використати ніхто інший."
-      ],
       "You can only delete 1 address per year.": [
         "Ви можете видаляти лише 1 адресу на рік."
       ]
@@ -3335,11 +3352,6 @@
         "VPN занадто повільний"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Допоможіть нам вдосконалитися!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb для Debian / Ubuntu"
@@ -3357,40 +3369,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Безпечне хмарне сховище та обмін файлами із захистом ваших даних"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
-      "Special Offer": [
-        "Спеціальна пропозиція"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Розширена історія версій"
-      ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Подовження за ${ renewablePrice }, можна скасувати будь-коли"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "за перший місяць"
-      ],
-      "Limited-time offer": [
-        "Тимчасова пропозиція"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Отримайте ${ planName } всього за ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3888,6 +3866,9 @@
       "Amount above the maximum.": [
         "Сума перевищує обмеження."
       ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Сума нижче найменшої (${ minimumAmount })."
+      ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
       ],
@@ -4165,10 +4146,10 @@
         "Порт обов'язковий"
       ],
       "Primary address key is not decrypted": [
-        "Основний ключ адреси не розшифрований"
+        "Ключ основної адреси не розшифрований"
       ],
       "Primary address key is not decrypted.": [
-        "Основний ключ адреси не розшифрований."
+        "Ключ основної адреси не розшифрований."
       ],
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
@@ -6426,9 +6407,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Ніхто за цим посиланням не зможе синхронізувати чи отримувати майбутні оновлення для вашого календаря. Якщо ви захочете знову надати їм доступ, необхідно створити нове посилання."
       ],
-      "Are you sure you want to delete this address?": [
-        "Ви дійсно хочете видалити цю адресу?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Ви дійсно хочете видалити цей календар?"
       ],
@@ -6440,9 +6418,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Ви впевнені, що хочете видалити цей календар? Згодом ви зможете додати календар свят знову."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Ви впевнені, що хочете видалити цей домен?"
       ],
       "Are you sure you want to delete this filter?": [
         "Ви дійсно хочете видалити цей фільтр?"
@@ -7116,6 +7091,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Я користуюся службою @ProtonMail і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за моїм запрошувальним посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Логотип JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
       ],
@@ -7192,7 +7170,7 @@
         "Завантажується ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Завантаження календаря, зачекайте, будь ласка. Ви будете переадресовані на платформу планування Calendly на новій вкладці."
+        "Будь ласка, зачекайте доки завантажується календар. Вас буде переспрямовано на нашу платформу планування Calendly в новій вкладці."
       ],
       "Loading preview": [
         "Завантаження попереднього перегляду"
@@ -7363,7 +7341,7 @@
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Інші користувачі вашої організації будуть бачити зайняті слоти. Деталі заходу не будуть поширені."
+        "Інші користувачі вашої організації бачитимуть вашу зайнятість. Подробиці подій не поширюються."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
@@ -7445,12 +7423,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Зверніть увагу, якщо ви видалите цю адресу, ви більше не зможете надсилати чи отримувати листи з цією адресою."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Зверніть увагу, що якщо ви видалите цей домен, усі пов'язані з ним адреси будуть вимкнені."
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Зверніть увагу, що, якщо ви видалите цей фільтр ${ nameDeleted }, ми припинимо обробку всіх автоматизованих дій, які він запускає."
@@ -7713,11 +7685,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Передплата автоматично поновлюється щороку."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Передплата автоматично поновлюється кожні 24 місяці."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Підписка автоматично поновлюється кожні ${ cycle } місяців."
       ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
@@ -7777,7 +7746,7 @@
         "Термін дії посилання для підтвердження електронною поштою завершився. Увійдіть, щоб повторно надіслати посилання."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Інформацію було викрито стороннім сервісом. Ваша інформація облікового запису ${ BRAND_NAME } залишається в безпеці та зашифрованою. ${ learnMoreLink }"
+        "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Ця адреса доступна:"
@@ -7880,9 +7849,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Перевірка може тривати до однієї години. Тим часом ви можете перейти до наступних кроків."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Це призведе до видалення всіх попередніх версій ваших файлів, що зберігаються понад ${ rententionLabel }"
@@ -8371,10 +8337,10 @@
         "Вам доступно ${ availableCount } виділених серверів."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "У вас є пробна підписка ${ planTitle }. Якщо ви бажаєте продовжити підписку після пробного періоду, будь ласка, додайте спосіб оплати."
+        "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "У вас є пробна підписка ${ planTitle }. Зараз не потрібна оплата. Ваша підписка буде автоматично подовжена в кінці пробного періоду."
+        "У вас є пробний період передплати ${ planTitle }. Наразі оплата не вимагається. Передплату буде автоматично поновлено після завершення пробного періоду."
       ],
       "You have no calendars to export.": [
         "У вас немає календарів, які можна експортувати."
@@ -8491,7 +8457,7 @@
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
       "Your information was found on ${ displayedDate }": [
-        "Інформацію про вас було знайдено на ${ displayedDate }"
+        "Вашу інформацію було знайдено на ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -9852,9 +9818,6 @@
       "What happened?": [
         "Що сталося?"
       ],
-      "What is the main reason you are canceling?": [
-        "Яка основна причина скасування?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Яка основна причина видалення вашого облікового запису?"
       ],
@@ -10158,7 +10121,7 @@
         "Увійти"
       ],
       "stay safer online": [
-        "залишатися в безпечному режимі"
+        "бути в безпеці онлайн"
       ],
       "switch account": [
         "перемкнути обліковий запис"
@@ -10342,9 +10305,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Термін дії обмеженої пропозиції закінчується 2 квітня 2024 року"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Ваша передплата автоматично поновиться ${ renewTime } за ціною ${ renewablePrice }. Ви можете скасувати коли завгодно."
       ]
     },
     "mailtrial2024: Title": {
@@ -11015,8 +10975,14 @@
       "Organize items with multiple vaults": [
         "Упорядкування елементів за допомогою різних сховищ"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor – преміальні функції"
+      ],
       "Passkeys supported": [
         "Підтримуються ключі доступу"
+      ],
+      "Password health": [
+        "Стан паролю"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
@@ -11038,6 +11004,9 @@
         "Захист ${ n } пристроїв",
         "Захист ${ n } пристроїв",
         "Захист ${ n } пристроїв"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Регулярна перевірка безпеки вашого облікового запису. Ми попередимо вас, якщо у вас слабкі або повторно використані паролі, які потрібно оновити."
       ],
       "Require 2FA for organization": [
         "Вимагати двоетапну автентифікацію для організації"
@@ -11105,6 +11074,9 @@
       "Unlimited devices": [
         "Необмежена кількість пристроїв"
       ],
+      "Unlimited devices and aliases": [
+        "Необмежена кількість пристроїв та псевдонімів"
+      ],
       "Unlimited filters": [
         "Необмежена кількість фільтрів"
       ],
@@ -11158,6 +11130,9 @@
         "Спільне використання сховища (до ${ n } осіб)",
         "Спільне використання сховища (до ${ n } осіб)",
         "Спільне використання сховища (до ${ n } осіб)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Ми скануємо темну мережу, щоб перевірити, чи не було витоку ваших ${ BRAND_NAME } адрес або псевдонімів, і негайно сповіщаємо вас, якщо щось знайдемо."
       ]
     },
     "new_plans: feature info": {
@@ -11496,6 +11471,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Захистіть свою родину від небезпечних вебсайтів та отримайте доступ до наших швидкісних VPN-серверів, щоб переглядати улюблені матеріали"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Захистіть свою справжню адресу електронної пошти від розголошення або витоку за допомогою псевдонімів (випадково згенерованих адрес, які пересилають листи на вашу основну поштову скриньку)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забезпечує найвищий рівень захисту облікового запису та підтримку спеціалістів"
@@ -12400,6 +12378,18 @@
       "Save your recovery kit to continue": [
         "Збережіть комплект для відновлення, щоб продовжити"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Безпечний спільний доступ до ${ n } сховища",
+        "Безпечний спільний доступ до ${ n } сховищ",
+        "Безпечний спільний доступ до ${ n } сховищ",
+        "Безпечний спільний доступ до ${ n } сховищ"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Безпечний спільний доступ з кількома сховищами"
+      ],
+      "Secure vault sharing": [
+        "Безпечний спільний доступ до сховища"
+      ],
       "Setting up your organization": [
         "Налаштування вашої організації"
       ],
@@ -12585,6 +12575,15 @@
       ],
       "Processing payment": [
         "Обробка платежу"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ months }. Купон дійсний для поновлення ${ couponRedemptions }. Після цього він буде автоматично подовжений за ціною ${ price } на ${ months } місяців."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ months }. Після цього його буде автоматично продовжено за ${ price } на ${ months }."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Спеціальна знижена ціна ${ priceWithDiscount } діє протягом першого місяця. Після цього автоматично поновлюватиметься за ціною ${ price } щомісяця. Ви можете скасувати коли завгодно."
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
@@ -13226,9 +13225,19 @@
         "Введіть поточний пароль, щоб скасувати скидання пароля. Жодні інші зміни не набудуть чинності."
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Скидання пароля скасовано"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не подавали цей запит, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13641,6 +13650,11 @@
         "Підтримка онлайн-приватності"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Ця передплата автоматично поновлюватиметься кожні 2 роки за тією ж ціною, доки ви її не скасуєте."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти до тарифних планів"
@@ -13760,6 +13774,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Скасування вашої підписки, будь ласка, зачекайте"
       ]
     },
     "Step in filter modal": {
@@ -14051,12 +14070,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Єдиним джерелом доходу ${ BRAND_NAME } є передплата користувачів. Ваша підтримка дає нам змогу бути незалежними, поширювати нашу місію, щоб зробити приватність в Інтернеті стандартом, а також сприяти активістам і організаціям, які відстоюють приватність і свободу."
       ],
-      "${ dayDiff } day left": [
-        "Залишився ${ dayDiff } день",
-        "Залишилось ${ dayDiff } дні",
-        "Залишилось ${ dayDiff } днів",
-        "Залишилось ${ dayDiff } дні"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
@@ -14104,12 +14117,6 @@
       ],
       "Read the story": [
         "Прочитати історію"
-      ],
-      "Resubscribe": [
-        "Відновити передплату"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Поновіть передплату, щоб відновити доступ до функцій ${ planName }."
       ],
       "Subscription canceled": [
         "Передплату скасовано"
@@ -14962,9 +14969,6 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
-      "Delete address permanently?": [
-        "Видалити адресу остаточно?"
-      ],
       "Delete calendar": [
         "Видалити календар"
       ],
@@ -15000,9 +15004,6 @@
       ],
       "Details": [
         "Подробиці"
-      ],
-      "Disable ${ email }": [
-        "Вимкнути ${ email }"
       ],
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
@@ -15680,7 +15681,7 @@
         "Ваші зміни ще не синхронізовані"
       ],
       "Your exposed information": [
-        "Ваша відкрита інформація"
+        "Ваша викрита інформація"
       ],
       "Your plan": [
         "Ваш тарифний план"
@@ -16175,17 +16176,14 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Передплата автоматично поновлюється щомісяця. Дата наступного платежу – через 1 місяць."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Передплата автоматично поновлюється кожні 3 місяці. Дата наступного платежу – через 3 місяці."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ priceWithDiscount } діє протягом першого місяця. Після цього автоматично поновлюватиметься за ціною ${ renewPrice } щомісяця. Ви можете скасувати коли завгодно."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Потім рахунок виставлятиметься кожні 12 місяців за ціною ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяці.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць."
       ]
     },
     "vpn_2step: billing": {
@@ -16279,9 +16277,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Вимкнувши журнали, ви також очистите всю історію записів. Ви дійсно хочете вимкнути журнали?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Вимкнувши цю адресу, ви більше не зможете надсилати чи отримувати пошту з її використанням, а всі пов'язані продукти ${ BRAND_NAME } будуть деактивовані. Ви дійсно хочете вимкнути цю адресу?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"

@@ -476,11 +476,11 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -2521,45 +2521,6 @@
         "Das VPN ist zu langsam"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Hilf uns, besser zu werden!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Sichere dir das Angebot"
-      ],
-      "Special Offer": [
-        "Sonderangebot"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Erweiterter Versionsverlauf"
-      ],
-      "Priority support": [
-        "Priorisierter Support"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "im ersten Monat"
-      ],
-      "Limited-time offer": [
-        "Zeitlich begrenztes Angebot"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Hol dir ${ planName } für nur ${ planPrice }"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Kalender hinzufügen"
@@ -2754,6 +2715,9 @@
       ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Mindestbetrag unterschritten (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
@@ -4510,6 +4474,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "JCB logo": [
+        "JCB-Logo"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
@@ -4735,12 +4702,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
-      ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonnement wird automatisch alle 12 Monate verlängert."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonnement wird automatisch alle 24 Monate verlängert."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
@@ -5654,9 +5615,6 @@
       "What happened?": [
         "Problembeschreibung"
       ],
-      "What is the main reason you are canceling?": [
-        "Was ist der Hauptgrund für die Kündigung?"
-      ],
       "Wonderful": [
         "Wunderbar"
       ],
@@ -5894,9 +5852,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Befristetes Angebot, gültig bis zum 2. April 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Dein Abonnement verlängert sich am ${ renewTime } automatisch zum Preis von ${ renewablePrice }, du kannst es jederzeit beenden"
       ]
     },
     "mailtrial2024: Title": {
@@ -7262,6 +7217,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ price } verlängert. Du kannst jederzeit kündigen."
+      ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ]
@@ -7340,9 +7298,6 @@
       ],
       "E.g., ": [
         "Z. B. "
-      ],
-      "Feedback": [
-        "Feedback"
       ],
       "Filter groups": [
         "Gruppen filtern"
@@ -8238,6 +8193,122 @@
     "Subscription price": {
       "For": [
         "Für"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Die einzige Einnahmequelle von ${ BRAND_NAME } sind Nutzerabonnements. Deine Unterstützung ermöglicht es uns, unabhängig zu bleiben, unsere Mission voranzutreiben, den Datenschutz im Internet zum Standard zu machen, und weiterhin Aktivisten und Organisationen zu unterstützen, die für Datenschutz und Freiheit kämpfen."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } Speicherplatz insgesamt"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "Mit ${ planName } kannst du sicherstellen, dass alle deine Familienmitglieder - und deren Daten - geschützt sind, wann immer sie online sind."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine E-Mails, Anhänge, Termine, Passwörter und Dateien. Du hast auch Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine Dateien und Fotos. Du hast auch Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-Programm"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Add any new files": [
+        "Füge neue Dateien hinzu"
+      ],
+      "Back up photos from your devices": [
+        "Sichere Fotos von deinen Geräten"
+      ],
+      "Calendar sharing": [
+        "Kalenderfreigabe"
+      ],
+      "Custom schedule send and snooze times": [
+        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
+      ],
+      "Direct contribution to our mission": [
+        "Direkter Beitrag zu unserer Mission"
+      ],
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Extra storage and bonuses": [
+        "Zusätzlicher Speicherplatz und Boni"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hilfe für Aktivisten in Hongkong"
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Wie wir uns gewehrt haben, als ${ BRAND_NAME } zur Zielscheibe einer aggressiven Zensurkampagne wurde."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit in Hongkong bedroht waren."
+      ],
+      "Keep ${ planName }": [
+        "${ planName } behalten"
+      ],
+      "Learn more about our impact": [
+        "Erfahre mehr über unsere Wirkung"
+      ],
+      "Manage your calendar": [
+        "Verwalte deinen Kalender"
+      ],
+      "Online privacy, for your whole family": [
+        "Online-Privatsphäre für deine ganze Familie"
+      ],
+      "Our fight against censorship in Russia": [
+        "Unser Kampf gegen die Zensur in Russland"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ],
+      "Read the story": [
+        "Artikel lesen"
+      ],
+      "Receive new emails": [
+        "Neue E-Mails empfangen"
+      ],
+      "Send emails with attachments": [
+        "Versende E-Mails mit Anhängen"
+      ],
+      "Sync files on devices": [
+        "Synchronisiere Dateien mit Geräten"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "Das beste von ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "Entsperrung des Internetzugangs im Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Version history": [
+        "Versionsverlauf"
+      ],
+      "Watch the interview": [
+        "Schau dir das Interview an"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "Bei der Kündigung von ${ planName } verlierst du folgende Vorteile"
+      ],
+      "Yearly free storage bonuses": [
+        "Jährliche Boni für kostenlosen Speicherplatz"
+      ],
+      "Your own custom email domain": [
+        "Deine eigene E-Mail-Domain"
+      ],
+      "Your own short @pm.me email alias": [
+        "Dein eigener kurzer @pm.me-E-Mail-Alias"
       ]
     },
     "subscription reminder": {
@@ -9289,15 +9360,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Das Abonnement erneuert sich automatisch jeden Monat. Dein nächstes Abrechnungsdatum ist in einem Monat."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
       ],

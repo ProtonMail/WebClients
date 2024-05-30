@@ -458,11 +458,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -2432,40 +2432,6 @@
         "A VPN está demasiada lenta."
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ajude-nos a melhorar"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Aproveite a promoção"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Histórico de versão estendido"
-      ],
-      "Priority support": [
-        "Apoio ao cliente prioritário"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "pelo primeiro mês"
-      ],
-      "Limited-time offer": [
-        "Oferta por tempo limitado"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Obtenha ${ planName } para só ${ planPrice }"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Adicionar um calendário"
@@ -2635,6 +2601,9 @@
       ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Quantia abaixo do mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro ao carregar as opções do alias"
@@ -4130,6 +4099,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulsione a identidade da sua organização e crie uma experiência on-line mais consistente para os seus utilizadores."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
@@ -4382,6 +4354,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "JCB logo": [
+        "Logotipo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
       ],
@@ -4599,11 +4574,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Renovações automáticas de subscrição a cada 12 meses."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Renovações automáticas de subscrição a cada 24 meses."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "Renovações automáticas de subscrição todos os meses."
@@ -4817,6 +4789,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Pode verificar o progresso ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Entretanto, pode fechar o separador ou o navegador."
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
@@ -5504,9 +5479,6 @@
       ],
       "What happened?": [
         "O que é que aconteceu?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Qual é a principal razão do cancelamento?"
       ],
       "Wonderful": [
         "Maravilhoso"
@@ -7057,9 +7029,6 @@
       "E.g., ": [
         "Ex., "
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Filter groups": [
         "Filtrar grupos"
       ],
@@ -7848,6 +7817,68 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para desktop do ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } de armazenamento total"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "6 users": [
+        "6 utilizadores"
+      ],
+      "Add any new files": [
+        "Adicionar qualquer novo ficheiro"
+      ],
+      "Calendar sharing": [
+        "Partilha de calendário"
+      ],
+      "Extra storage and bonuses": [
+        "Armazenamento adicional e bónus"
+      ],
+      "Keep ${ planName }": [
+        "Manter ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Saiba mais sobre o nosso impacto"
+      ],
+      "Manage your calendar": [
+        "Gerencie o seu calendário"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
+      "Read the story": [
+        "Leia a história"
+      ],
+      "Receive new emails": [
+        "Receber novos e-mails"
+      ],
+      "Sync files on devices": [
+        "Sincronizar ficheiros nos dispositivos"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Version history": [
+        "Histórico das versões"
+      ],
+      "Watch the interview": [
+        "Assistir à entrevista"
+      ],
+      "Yearly free storage bonuses": [
+        "Bónus de armazenamento gratuito anual"
       ]
     },
     "subscription reminder": {

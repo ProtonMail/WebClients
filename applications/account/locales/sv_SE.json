@@ -334,9 +334,6 @@
       "Delete": [
         "Ta bort"
       ],
-      "Delete address": [
-        "Ta bort adress"
-      ],
       "Delete and confirm": [
         "Ta bort och bekräfta"
       ],
@@ -3158,8 +3155,20 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "När den har tagits bort kan denna adress inte användas igen av någon annan."
+      "Are you sure you want to delete this address?": [
+        "Är du säker på att du vill ta bort denna adress?"
+      ],
+      "Delete address": [
+        "Ta bort adress"
+      ],
+      "Delete address permanently?": [
+        "Ta bort adress permanent?"
+      ],
+      "Delete address?": [
+        "Ta bort adress?"
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Observera att om du tar bort denna adress ${ address }, kommer du inte längre att kunna skicka eller ta emot e-post med denna adress."
       ],
       "You can only delete 1 address per year.": [
         "Du kan bara ta bort 1 adress per år."
@@ -3179,6 +3188,20 @@
       ],
       "You will no longer have access to this calendar.": [
         "Du kommer inte längre att ha åtkomst till denna kalender."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Är du säker på att du vill ta bort denna domän?"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete domain?": [
+        "Ta bort domän?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Observera att om du tar bort denna domän ${ domainName }, kommer alla adresser som är associerade med den att inaktiveras."
       ]
     },
     "Delinquent modal title": {
@@ -3284,6 +3307,17 @@
         "Du kan stänga denna flik säkert."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Är du säker du vill inaktivera denna adress?"
+      ],
+      "Disable address": [
+        "Inaktivera adress"
+      ],
+      "Disable address?": [
+        "Inaktivera adress?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verifierad"
@@ -3368,8 +3402,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Hjälp oss att förbättra!"
+      "Help us improve": [
+        "Hjälp oss att förbättra"
       ]
     },
     "Download link": {
@@ -3389,40 +3423,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Säker molnlagring och fildelning som skyddar din data"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Special Offer": [
-        "Specialerbjudande"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Utökad versionshistorik"
-      ],
-      "Priority support": [
-        "Prioriterad support"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Förnyas med ${ renewablePrice }, avbryt när som helst"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "för första månaden"
-      ],
-      "Limited-time offer": [
-        "Tidsbegränsat erbjudande"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6388,9 +6388,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Alla med denna länk kommer inte att kunna synkronisera eller få framtida uppdateringar för din kalender. Om du vill ge dem åtkomst igen måste du skapa en ny länk."
       ],
-      "Are you sure you want to delete this address?": [
-        "Är du säker på att du vill ta bort denna adress?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Är du säker på att du vill ta bort denna kalender?"
       ],
@@ -6402,9 +6399,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Är du säker på att du vill ta bort denna kalender? Du kan lägga tillbaka helgdagskalendern senare."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Är du säker på att du vill ta bort denna domän?"
       ],
       "Are you sure you want to delete this filter?": [
         "Är du säker du vill ta bort detta filter?"
@@ -7066,6 +7060,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Jag har använt @ProtonMail och tänkte att du kanske skulle gilla det. Det är en säker e-posttjänst som skyddar din integritet. Registrera dig med min hänvisningslänk för att få 1 månad med premiumfunktioner gratis: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "JCB-logga"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
       ],
@@ -7396,12 +7393,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Förvara det säkert. Du behöver det för att komma åt ditt konto och dekryptera dina data i händelse av lösenordsåterställning."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Observera att om du tar bort denna adress kommer du inte längre att kunna skicka eller ta emot e-post med denna adress."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Observera att om du tar bort denna domän kommer alla adresser som är associerade med den att inaktiveras."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observera att om du tar bort detta ${ nameDeleted }-filter stoppas alla automatiserade åtgärder det utlöser."
       ],
@@ -7673,11 +7664,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Prenumeration förnyas automatiskt var 12:e månad."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Prenumeration förnyas automatiskt var 24:e månad."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Prenumeration förnyas automatiskt var ${ cycle }:e månad."
       ],
       "Subscription auto-renews every month.": [
         "Prenumeration förnyas automatiskt varje månad."
@@ -7834,9 +7822,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
@@ -9783,11 +9768,11 @@
       "What happened?": [
         "Vad hände?"
       ],
-      "What is the main reason you are canceling?": [
-        "Vad är huvudorsaken till att du avbryter?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Vad är den främsta anledningen till att du tar bort ditt konto?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
@@ -10270,9 +10255,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Tidsbegränsat erbjudande, löper ut 2 april 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Din prenumeration kommer förnyas automatiskt den ${ renewTime } med ${ renewablePrice }, avbryt när som helst"
       ]
     },
     "mailtrial2024: Title": {
@@ -12537,6 +12519,12 @@
       "Processing payment": [
         "Bearbetar betalning"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt den första månaden. Sedan kommer det förnyas automatiskt med ${ price } varje månad. Du kan avbryta när som helst."
+      ],
       "Timeout exceeded": [
         "Timeout överskriden"
       ]
@@ -12690,6 +12678,9 @@
       ],
       "Select state": [
         "Välj delstat"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Text": [
         "Text"
@@ -13944,10 +13935,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkluderar kalenderdelning"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag kvar",
-        "${ dayDiff } dagar kvar"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkluderar versionshistorik"
       ],
@@ -14023,8 +14010,8 @@
       "Helping activists in Hong Kong": [
         "Hjälper aktivister i Hongkong"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer. "
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Hur vi slog tillbaka när ${ BRAND_NAME } var måltavla för en aggressiv censurkampanj."
@@ -14059,17 +14046,17 @@
       "Priority support": [
         "Prioriterad support"
       ],
+      "Reactivate": [
+        "Återaktivera"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Återaktivera för att återställa åtkomst till ${ planName }-funktioner."
+      ],
       "Read the story": [
         "Läs berättelsen"
       ],
       "Receive new emails": [
         "Ta emot ny e-post"
-      ],
-      "Resubscribe": [
-        "Prenumerera igen"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Prenumerera igen för att återställa åtkomst till ${ planName }-funktioner."
       ],
       "Send emails with attachments": [
         "Skicka e-post med bilagor"
@@ -14097,12 +14084,6 @@
       ],
       "What you give up when you cancel ${ planName }": [
         "Vad du förlorar när du avbryter ${ planName }"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
       ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
@@ -14932,9 +14913,6 @@
       "Delete account": [
         "Ta bort konto"
       ],
-      "Delete address permanently?": [
-        "Ta bort adress permanent?"
-      ],
       "Delete calendar": [
         "Ta bort kalender"
       ],
@@ -14968,9 +14946,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Disable ${ email }": [
-        "Inaktivera ${ email }"
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
@@ -16141,15 +16116,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Prenumeration förnyas automatiskt varje månad. Ditt nästa faktureringsdatum är om 1 månad."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Prenumeration förnyas automatiskt var 3:e månad. Ditt nästa faktureringsdatum är om 3 månader."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ renewPrice } varje månad. Du kan avbryta när som helst."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du kommer sedan att faktureras var 12:e månad med ${ renewPrice }."
       ],
@@ -16283,9 +16249,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Genom att inaktivera loggarna kommer du också att rensa hela din logghistorik. Är du säker på att du vill inaktivera loggarna?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Genom att inaktivera denna adress kommer du inte längre att kunna skicka eller ta emot e-post med denna adress och alla länkade ${ BRAND_NAME }-produkter kommer också att inaktiveras. Är du säker på att du vill inaktivera denna adress?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"
