@@ -703,7 +703,17 @@ export const hasCancellablePlan = (subscription: Subscription | undefined) => {
  * It will be merged with the method above once the feature is released.
  */
 export const hasNewCancellablePlan = (subscription: Subscription | undefined) => {
-    return [hasMail, hasBundle, hasFamily, hasNewVisionary, hasDrive].some((check) => check(subscription));
+    return [
+        hasMail,
+        hasBundle,
+        hasFamily,
+        hasNewVisionary,
+        hasDrive,
+        hasMailPro,
+        hasDrivePro,
+        hasEnterprise,
+        hasBundlePro,
+    ].some((check) => check(subscription));
 };
 
 export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {
