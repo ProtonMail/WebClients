@@ -30,7 +30,6 @@ import { CoreButton, Input, InputProps } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
-import { WalletNotFoundErrorDropdown } from './WalletNotFoundErrorDropdown';
 import { RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
 
 import './EmailOrBitcoinAddressInput.scss';
@@ -50,6 +49,7 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     excludedEmails?: string[];
     loading?: boolean;
     network: WasmNetwork;
+    fetchedEmailListItemRightNode: ({ email, error }: { email: string; error?: string }) => JSX.Element | null;
 }
 
 interface EmailListItemProps {
@@ -60,7 +60,6 @@ interface EmailListItemProps {
     onClick?: () => void;
     leftNode?: ReactNode;
     rightNode?: ReactNode;
-    error?: string;
     loading?: boolean;
 }
 
@@ -72,7 +71,6 @@ const EmailListItem = ({
     loading,
     leftNode,
     rightNode,
-    error,
     onClick,
 }: EmailListItemProps) => {
     const inner = (
@@ -108,7 +106,6 @@ const EmailListItem = ({
                     </div>
                 </>
             )}
-            {error && <WalletNotFoundErrorDropdown email={address} />}
             {rightNode}
         </>
     );
@@ -145,6 +142,7 @@ export const EmailOrBitcoinAddressInput = ({
     network,
     loading,
     disabled,
+    fetchedEmailListItemRightNode,
     ...rest
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -272,7 +270,10 @@ export const EmailOrBitcoinAddressInput = ({
                                     index={index}
                                     address={recipient.Address}
                                     name={recipient.Name}
-                                    error={btcAddress.error}
+                                    rightNode={fetchedEmailListItemRightNode({
+                                        email: recipient.Address,
+                                        error: btcAddress.error,
+                                    })}
                                     leftNode={
                                         onRemoveRecipient && (
                                             <CoreButton
@@ -316,7 +317,7 @@ export const EmailOrBitcoinAddressInput = ({
                 ) : null}
             </>
         );
-    }, [onRemoveRecipient, recipientsWithBtcAddress]);
+    }, [fetchedEmailListItemRightNode, onRemoveRecipient, recipientsWithBtcAddress]);
 
     return (
         <>
@@ -375,6 +376,9 @@ export const EmailOrBitcoinAddressInput = ({
                     }}
                     isOpen={!!filteredOptions.length}
                     anchorRef={inputRef}
+                    onFocus={() => {
+                        inputRef.current?.focus();
+                    }}
                 >
                     <ul className="unstyled m-0 w-full p-2">
                         {filteredOptions.map(({ chunks, option }, index) => {
