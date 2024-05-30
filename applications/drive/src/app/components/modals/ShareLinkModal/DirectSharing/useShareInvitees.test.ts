@@ -88,9 +88,9 @@ describe('useShareInvitees', () => {
             // @ts-ignore
             expect(result.all[1].invitees).toEqual([
                 { ...inviteeInternal, isLoading: true },
-                { ...inviteeInternal2, publicKey: undefined, isLoading: true },
-                { ...inviteeExternalProton, error: new Error('External accounts are not supported yet') },
-                { ...inviteeExternalNonProton, error: new Error('External accounts are not supported yet') },
+                { ...inviteeInternal2, isLoading: true },
+                { ...inviteeExternalProton, isLoading: true },
+                { ...inviteeExternalNonProton, isLoading: true },
             ]);
 
             expect(result.current.invitees).toEqual([
@@ -103,11 +103,15 @@ describe('useShareInvitees', () => {
                 },
                 {
                     ...inviteeExternalProton,
-                    error: new Error('External accounts are not supported yet'),
+                    isExternal: true,
+                    isLoading: false,
+                    error: new Error('Not a Proton account'),
                 },
                 {
                     ...inviteeExternalNonProton,
-                    error: new Error('External accounts are not supported yet'),
+                    isExternal: true,
+                    isLoading: false,
+                    error: new Error('Not a Proton account'),
                 },
             ]);
             verifyAllWhenMocksCalled();
