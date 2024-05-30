@@ -482,6 +482,9 @@
       "label emails as": [
         "označi e-poštu kao"
       ],
+      "Later": [
+        "Kasnije"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -2646,11 +2649,6 @@
         "Preuzmi sve"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Otkazani događaj ${ formattedStart }"
@@ -2685,6 +2683,9 @@
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Iznos ispod minimuma (${ minimumAmount })."
       ],
       "Attachments are limited to 25 MB": [
         "Privitci su ograničeni na 25 MB."
@@ -3532,7 +3533,7 @@
         "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -3803,6 +3804,9 @@
       "Align right": [
         "Poravnaj desno"
       ],
+      "All messages stored in this folder will be permanently deleted.": [
+        "Sve poruke u ovoj mapi bit će trajno izbrisane."
+      ],
       "All your calendars are disabled.": [
         "Svi vaši kalendari su onemogućeni."
       ],
@@ -3817,6 +3821,9 @@
       ],
       "and": [
         "i"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Sve pod mape će također biti izbrisane. Ali poruke spremljene u mapi ${ nameDeleted } neće biti izbrisane i mogu se pronaći u mapi Sva pošta."
       ],
       "Are you sure you want to delete this label?": [
         "Jeste li sigurni da želite izbrisati ovu oznaku?"
@@ -4174,6 +4181,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
+      "password": [
+        "lozinka"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
@@ -4398,6 +4408,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "username": [
+        "korisničko ime"
+      ],
       "Users": [
         "Korisnici"
       ],
@@ -4406,6 +4419,9 @@
       ],
       "Version ${ appVersion }": [
         "Verzija ${ appVersion }"
+      ],
+      "Warning": [
+        "Upozorenje"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ispričavamo se. To je možda bila pogreška s naše strane. Možete li potvrditi da ovu e-poštu želite označiti kao legitimnu?"
@@ -5899,6 +5915,11 @@
         "Nova kreditna/debitna kartica"
       ]
     },
+    "Payments": {
+      "MM/YY": [
+        "MM/GG"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Netočan broj kartice"
@@ -5931,10 +5952,7 @@
         "Adresa e-pošte"
       ],
       "End date": [
-        "Krajnji datum"
-      ],
-      "Feedback": [
-        "Povratne informacije"
+        "Datum završetka"
       ],
       "Filter folders": [
         "Filtriraj mape"
@@ -6524,6 +6542,14 @@
     "Subscription price": {
       "For": [
         "Za"
+      ]
+    },
+    "Subscription reminder": {
+      "10 email addresses": [
+        "10 adrese e-pošte"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
       ]
     },
     "Subscription renewal state": {
@@ -7344,7 +7370,7 @@
     },
     "Title subscription": {
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "Plan": [
         "Plan"

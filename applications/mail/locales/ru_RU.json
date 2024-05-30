@@ -3333,48 +3333,9 @@
         "Временная нехватка средств, могу вернуться в будущем"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Помогите нам совершенствоваться!"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Скачать все"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Получить сделку"
-      ],
-      "Special Offer": [
-        "Специальное предложение"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Подробная история версий"
-      ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "за первый месяц"
-      ],
-      "Limited-time offer": [
-        "Ограниченное по времени предложение"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Email reminder banner": {
@@ -3500,6 +3461,9 @@
       ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Сумма ниже допустимого минимума (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "При загрузке опций псевдонима произошла ошибка"
@@ -6028,6 +5992,9 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "JCB logo": [
+        "Логотип JCB"
+      ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Присоединяйтесь к программе ${ PROTON_SENTINEL_NAME }, чтобы получить высочайший уровень безопасности аккаунта и поддержки."
       ],
@@ -6472,11 +6439,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Подписка автоматически продлевается каждые 12 месяцев."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Subscription auto-renews every 24 months."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически продлевается каждый месяц."
@@ -7903,9 +7867,6 @@
       "What happened?": [
         "Что случилось?"
       ],
-      "What is the main reason you are canceling?": [
-        "Какова основная причина отмены?"
-      ],
       "With attachment": [
         "С вложением"
       ],
@@ -8302,9 +8263,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Срок действия ограниченного предложения истекает 2 апреля 2024 г."
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Ваша подписка будет автоматически продлеваться в ${ renewTime } по ${ renewablePrice }, вы можете это отменить ее в любое время"
       ]
     },
     "mailtrial2024: Title": {
@@ -9519,6 +9477,15 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Затем она будет автоматически продлена по цене ${ price } на ${ months }. Вы можете отменить подписку в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ price } каждый месяц. Отменить подписку можно в любой момент."
+      ],
       "Timeout exceeded": [
         "Превышено время ожидания"
       ]
@@ -9576,9 +9543,6 @@
       ],
       "End date": [
         "Дата окончания"
-      ],
-      "Feedback": [
-        "Обратная связь"
       ],
       "Filter folders": [
         "Фильтровать папки"
@@ -10578,6 +10542,32 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Keep ${ planName }": [
+        "Сохранить ${ planName }"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
       ]
     },
     "subscription reminder": {
@@ -12061,15 +12051,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Подписка автоматически продлевается каждый месяц. Следующая дата выставления счета - через месяц."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Подписка автоматически продлевается каждые 3 месяца. Следующая дата выставления счета наступит через 3 месяца."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
