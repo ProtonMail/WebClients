@@ -17,6 +17,7 @@ enum CommonFeatureFlag {
     ABTestSubscriptionReminder = 'ABTestSubscriptionReminder',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
+    BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
 }
 
 enum AccountFlag {

@@ -1,7 +1,8 @@
-import { ReactNode, useLayoutEffect } from 'react';
+import { ReactNode, useEffect, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useFlag } from '@proton/components';
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
 import DrawerSettingsView from '@proton/components/components/drawer/views/DrawerSettingsView';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components/containers';
@@ -9,10 +10,12 @@ import { CustomAction } from '@proton/components/containers/contacts/widget/type
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { useDrawer } from '../../hooks';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
+import { useGetBreachesCounts } from './views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 import './DrawerApp.scss';
@@ -40,6 +43,8 @@ interface Props {
 const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions, onContainerClick }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
+    const getBreachesCount = useGetBreachesCounts();
+    const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
 
     const isDisplayedOnMobile =
         appInView === DRAWER_NATIVE_APPS.CONTACTS || appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER;
@@ -52,6 +57,12 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
             document.body.classList.remove('drawer-is-open');
         };
     }, [appInView]);
+
+    useEffect(() => {
+        if (canDisplayBreachNotifications) {
+            getBreachesCount().catch(noop);
+        }
+    }, [getBreachesCount, canDisplayBreachNotifications]);
 
     return (
         <>
