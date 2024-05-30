@@ -322,9 +322,6 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete address": [
-        "पता मिटा दें"
-      ],
       "Delete and confirm": [
         "मिटाएं और पक्का करें"
       ],
@@ -2978,9 +2975,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "एक बार हटा दिए जाने के बाद, इस पते का उपयोग किसी अन्य व्यक्ति द्वारा दोबारा नहीं किया जा सकेगा।"
-      ],
       "You can only delete 1 address per year.": [
         "आप प्रति वर्ष केवल 1 पता ही हटा सकते हैं।"
       ]
@@ -3137,11 +3131,6 @@
         "अस्थाई जरूरत, भविष्य में वापस आ सकती है"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "हमें सुधरने में मदद करें!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         "Debian / Ubuntu के लिए .deb"
@@ -3153,11 +3142,6 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "एडवांस शेयर करते हुए सुरक्षा"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "प्राथमिक सहायता"
       ]
     },
     "Duration": {
@@ -3470,6 +3454,9 @@
       ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "न्यूनतम से कम राशि (${ minimumAmount })।"
       ],
       "Authentication canceled.": [
         "प्रमाणीकरण रद्द किया गया।"
@@ -5720,9 +5707,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "इस लिंक के साथ कोई भी व्यक्ति आपके कैलेंडर के लिए सिंक या भविष्य के अपडेट लेने में सक्षम नहीं होगा। अगर आप उन्हें फिर से एक्सेस देना चाहते हैं, तो आपको एक नया लिंक बनाना होगा।"
       ],
-      "Are you sure you want to delete this address?": [
-        "क्या आप वाकई इस पते को हटाना चाहते हैं?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "क्या आप वाकई इस कैलेंडर को मिटाना चाहते हैं?"
       ],
@@ -5734,9 +5718,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "क्या आप निश्चित हैं कि आप इस कैलेंडर को हटाना चाहते हैं? आप बाद में अवकाश कैलेंडर को फिर से जोड़ सकते हैं।"
-      ],
-      "Are you sure you want to delete this domain?": [
-        "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
       ],
       "Are you sure you want to delete this filter?": [
         "क्या आप वाकई इस फ़िल्टर को हटाना चाहते हैं?"
@@ -6591,12 +6572,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "कृपया इसे सुरक्षित रखें। पासवर्ड रीसेट होने की स्थिति में आपको अपने खाते तक पहुंचने और अपने डेटा को डिक्रिप्ट करने के लिए इसकी आवश्यकता होगी।"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "कृपया ध्यान दें कि यदि आप इस पते को हटाते हैं, तो आप इस पते का उपयोग करके ईमेल भेज या प्राप्त नहीं कर पाएंगे।"
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "कृपया ध्यान दें कि यदि आप इस डोमेन को हटाते हैं, तो इससे जुड़े सभी पते अक्षम हो जाएंगे।"
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "कृपया ध्यान दें कि अगर आप इस फ़िल्टर ${ nameDeleted } को हटा देते हैं, तो हम उसके द्वारा उत्पन्न सभी स्वचालित क्रियाएँ प्रोसेस करना बंद कर देंगे।"
       ],
@@ -6838,12 +6813,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "सदस्यता स्वचालित रूप से हर 12 महीने में नवीनीकृत होती है।"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "सदस्यता स्वचालित रूप से हर 24 महीने में नवीनीकृत होती है।"
-      ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
       ],
@@ -6984,9 +6953,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "इससे ${ rententionLabel } से पुराने आपके फ़ाइलों के सभी पिछले संस्करण हटा दिए जाएंगे।"
@@ -8808,9 +8774,6 @@
       ],
       "What happened?": [
         "क्या हुआ?"
-      ],
-      "What is the main reason you are canceling?": [
-        "कौनसी मुख्य वजह से आप रद्द कर रहे हैं?"
       ],
       "What is the main reason you are deleting your account?": [
         "आपका खाता हटाने का मुख्य कारण क्या है?"
@@ -10933,6 +10896,9 @@
     "Payments": {
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "Payments.Error": {
@@ -12039,10 +12005,6 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } दिन बाकी",
-        "${ dayDiff } दिन बाकी"
-      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -12078,9 +12040,6 @@
       ],
       "Read the story": [
         "कहानी पढ़ें"
-      ],
-      "Resubscribe": [
-        "पुन: सदस्यता लें"
       ],
       "Subscription canceled": [
         "सदस्यता रद्द की गई"
@@ -12818,9 +12777,6 @@
       "Delete account": [
         "खाता हटा दो"
       ],
-      "Delete address permanently?": [
-        "पता स्थायी रूप से हटाएं?"
-      ],
       "Delete calendar": [
         "कैलेंडर मिटाएं"
       ],
@@ -12848,9 +12804,6 @@
       ],
       "Details": [
         "विवरण"
-      ],
-      "Disable ${ email }": [
-        "${ email } अक्षम करें"
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
@@ -13881,9 +13834,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
@@ -13926,9 +13876,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "लॉग को अक्षम करने से, आप अपने संपूर्ण लॉग इतिहास को भी साफ़ कर देंगे। क्या आप वाकई लॉग को अक्षम करना चाहते हैं?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "इस पते को अक्षम करके, आप इस पते का इस्तेमाल करके ईमेल भेज या ले नहीं पाएंगे और सभी लिंक किए गए ${ BRAND_NAME } प्रोडक्ट भी अक्षम हो जाएंगे। क्या आप पक्का इस पते को अक्षम करना चाहते है?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "अगर आप इस आयात को रद्द करते हैं, तो आप इसे जारी नहीं रख पाएंगे। ${ BRAND_NAME } ने आपके खाते में सारी प्रगति सेव कर ली है। फिर भी रद्द करें?"

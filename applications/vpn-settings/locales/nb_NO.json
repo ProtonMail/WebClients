@@ -140,9 +140,6 @@
       "Delete": [
         "Slett"
       ],
-      "Delete address": [
-        "Slett adresse"
-      ],
       "Delete Gateway": [
         "Slett mellomtjener"
       ],
@@ -1907,8 +1904,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Når den er slettet, kan ikke denne adressen brukes igjen av noen andre."
+      "Are you sure you want to delete this address?": [
+        "Er du sikker på at du vil slette denne adressen?"
+      ],
+      "Delete address": [
+        "Slett adresse"
+      ],
+      "Delete address permanently?": [
+        "Slette adressen permanent?"
+      ],
+      "Delete address?": [
+        "Slett adresse?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Når den er slettet, kan ikke denne adressen, ${ address }, brukes igjen av noen andre."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Vennligst ha i minnet at hvis du sletter denne adressen, ${ address }, vil du ikke lenger være i stand til å sende eller motta e-poster ved hjelp av denne adressen."
       ],
       "You can only delete 1 address per year.": [
         "Du kan bare slette 1 adresse per år."
@@ -1930,6 +1942,20 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Er du sikker på at du vil deaktivere denne adressen?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ved å deaktivere adressen, ${ address }, vil du ikke lenger kunne sende eller motta e-post ved hjelp av denne adressen, og alle koblede ${ BRAND_NAME }-produkter vil bli deaktivert."
+      ],
+      "Disable address": [
+        "Deaktiver adresse"
+      ],
+      "Disable address?": [
+        "Deaktivere adresse?"
       ]
     },
     "Downgrade account reason": {
@@ -1977,42 +2003,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Hjelp oss å bli bedre!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Få avtalen"
-      ],
-      "Special Offer": [
-        "Spesialtilbud"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Utvidet versjonshistorikk"
-      ],
-      "Priority support": [
-        "Prioritert brukerstøtte"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Fornyes til ${ renewablePrice }, avbryt når som helst"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "for den første måneden"
-      ],
-      "Limited-time offer": [
-        "Tidsbegrenset tilbud"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Få ${ planName } for kun ${ planPrice }"
+      "Help us improve": [
+        "Hjelp oss å bli bedre"
       ]
     },
     "Email verification": {
@@ -3083,9 +3075,6 @@
       "Amount due": [
         "Skyldig beløp"
       ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på at du vil slette denne adressen?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Er du sikker på at du vil deaktivere tofaktorautentisering?"
       ],
@@ -3451,6 +3440,9 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
+      "JCB logo": [
+        "JCB-logo"
+      ],
       "Keys created": [
         "Nøkler opprettet"
       ],
@@ -3621,9 +3613,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vennligst angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Vennligst ha i minnet at hvis du sletter denne adressen, vil du ikke lenger være i stand til å sende eller motta e-poster ved hjelp av denne adressen."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ creditsRemaining } kreditter igjen."
       ],
@@ -3781,11 +3770,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonnementet fornyes automatisk hver 12. måned."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonnementet fornyes automatisk hver 24. måned."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonnementet fornyes automatisk hver ${ cycle } måned."
       ],
       "Subscription auto-renews every month.": [
         "Abonnementet fornyes automatisk hver måned."
@@ -3870,9 +3856,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denne verifiseringen kan ta opptil én time. Du kan trygt fortsette til de neste trinnene."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Dette vil avbryte ditt gjeldende betalte abonnement og du vil miste eventuelle lojalitetsfordeler du har akkumulert."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
@@ -4098,6 +4081,9 @@
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Når du avbryter det gjeldende betalte abonnementet, returneres saldoen på abonnementet som kontokreditt, og du blir nedgradert til ${ BRAND_NAME } ${ PLANS.FREE }-planen."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-plan."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
@@ -4788,11 +4774,11 @@
       "What happened?": [
         "Hva skjedde?"
       ],
-      "What is the main reason you are canceling?": [
-        "Hva er hovedårsaken til at du sier opp?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Hva er hovedårsaken til at du sletter kontoen din?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du å avbryte?"
@@ -5048,9 +5034,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Begrenset tidstilbud, utløper 2. april 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Abonnementet ditt fornyes automatisk ${ renewTime } til ${ renewablePrice }, avbryt når som helst."
       ]
     },
     "mailtrial2024: Title": {
@@ -6046,9 +6029,6 @@
       "Android": [
         "Android"
       ],
-      "Automatic (${ value })": [
-        "Automatisk (${ value })"
-      ],
       "Country configs": [
         "Landkonfigurasjoner"
       ],
@@ -6416,6 +6396,15 @@
       "Processing payment": [
         "Behandler betaling"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Da vil den automatisk bli fornyet til ${ price } for ${ months }. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ price } hver måned. Du kan avbryte når som helst."
+      ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
       ]
@@ -6520,6 +6509,9 @@
       ],
       "Select state": [
         "Velg stat"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ]
     },
     "plan customizer, ips": {
@@ -7504,10 +7496,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkludert kalenderdeling"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag igjen",
-        "${ dayDiff } dager igjen"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkludert versjonshistorikk"
       ],
@@ -7556,6 +7544,12 @@
       "Add any new files": [
         "Legge til eventuelle nye filer"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Disk-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser. "
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
+      ],
       "Back up photos from your devices": [
         "Sikkerhetskopiere bilder fra enhetene dine"
       ],
@@ -7592,8 +7586,8 @@
       "Helping activists in Hong Kong": [
         "Hjelper aktivister i Hong Kong"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Hvordan kundestøtteteamet vårt fikk VPN-appen vår direkte i folks hender. "
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Hvordan kundestøtteteamet vårt fikk VPN-appen vår direkte i folks hender."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Hvordan vi kjempet tilbake da ${ BRAND_NAME } ble målrettet i en aggressiv sensurkampanje."
@@ -7631,17 +7625,17 @@
       "Priority support": [
         "Prioritert brukerstøtte"
       ],
+      "Reactivate": [
+        "Aktiver på nytt"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Aktiver på nytt for å gjenopprette tilgangen til ${ planName }-funksjoner."
+      ],
       "Read the story": [
         "Les historien"
       ],
       "Receive new emails": [
         "Motta nye e-poster"
-      ],
-      "Resubscribe": [
-        "Abonner på nytt"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Abonner på nytt for å gjenopprette tilgangen til ${ planName }-funksjoner."
       ],
       "Send emails with attachments": [
         "Sende e-poster med vedlegg"
@@ -7670,23 +7664,17 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du avbestiller ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
-      ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
       ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-planen. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ${ unavailablePlan }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du har fortsatt ${ expiryDate } på ${ planName }-planen. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink }."
-      ],
       "Your ${ planName } has been canceled.": [
         "${ planName } er kansellert."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Abonnementet på ${ planName } avsluttes den ${ expiryDate }. Etter det vil du være på ${ BRAND_NAME } Free-plan. Hvis bruken din overskrider grensene for gratisabonnementer, kan du oppleve begrenset tilgang til produktfunksjoner og dataene dine. ${ learnMoreLink }."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Abonnementet på ${ planName } avsluttes den ${ expiryDate }. Etter det vil du være på ${ BRAND_NAME } Free-plan. Hvis bruken din overskrider grensene for gratisabonnementer, kan du oppleve begrenset tilgang til produktfunksjoner og dataene dine. ${ learnMoreLink } ${ unavailablePlan }."
       ],
       "Your own custom email domain": [
         "Ditt eget tilpasset e-postdomene"
@@ -8194,14 +8182,8 @@
       "Delete": [
         "Slett"
       ],
-      "Delete ${ value }": [
-        "Slett ${ value }"
-      ],
       "Delete account": [
         "Slett konto"
-      ],
-      "Delete address permanently?": [
-        "Slette adressen permanent?"
       ],
       "Delete organization logo?": [
         "Slette organisasjonens logo?"
@@ -8215,9 +8197,6 @@
       ],
       "Device connected!": [
         "Enhet tilkoblet!"
-      ],
-      "Disable ${ email }": [
-        "Deaktiver ${ email }"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -8774,15 +8753,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonnementet fornyes automatisk hver måned. Neste faktureringsdato er om 1 måned."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonnementet fornyes automatisk hver 3. måned. Neste faktureringsdato er om 3 måneder."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."
       ],
@@ -8907,9 +8877,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Ved å deaktivere denne adressen vil du ikke lenger kunne sende eller motta e-post ved hjelp av denne adressen, og alle koblede ${ BRAND_NAME }-produkter vil også bli deaktivert. Er du sikker du ønsker å deaktivere denne adressen?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."

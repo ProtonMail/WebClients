@@ -409,6 +409,9 @@
       "label emails as": [
         "označi e-poštu kao"
       ],
+      "Later": [
+        "Kasnije"
+      ],
       "Leave": [
         "Napusti"
       ],
@@ -741,6 +744,9 @@
       ],
       "Upgrade your plan": [
         "Nadogradite vaš plan"
+      ],
+      "Upload": [
+        "Učitaj"
       ],
       "Upload picture": [
         "Učitaj sliku"
@@ -2228,6 +2234,11 @@
         "Nepoznato"
       ]
     },
+    "Delete domain prompt": {
+      "Delete": [
+        "Izbriši"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
@@ -2257,11 +2268,6 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
       ]
     },
     "Duration": {
@@ -2435,6 +2441,9 @@
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Iznos ispod minimuma (${ minimumAmount })."
+      ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
       ],
@@ -2482,6 +2491,9 @@
       ],
       "Folder name cannot be empty.": [
         "Naziv mape ne može biti prazan."
+      ],
+      "Impossible to create the gateway": [
+        "Nije moguće stvoriti pristupnik"
       ],
       "Incorrect login credentials. Please try again.": [
         "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
@@ -3421,7 +3433,7 @@
         "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -3702,14 +3714,11 @@
       "and": [
         "i"
       ],
-      "Are you sure you want to delete this address?": [
-        "Jeste li sigurni da želite ukloniti ovu adresu?"
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Sve pod mape će također biti izbrisane. Ali poruke spremljene u mapi ${ nameDeleted } neće biti izbrisane i mogu se pronaći u mapi Sva pošta."
       ],
       "Are you sure you want to delete this calendar?": [
         "Jeste li sigurni da želite ukloniti ovaj kalendar?"
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Jeste li sigurni da želite ukloniti ovu domenu?"
       ],
       "Are you sure you want to delete this filter?": [
         "Jeste li sigurni da želite izbrisati ovaj filtar?"
@@ -3762,6 +3771,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
@@ -3791,6 +3803,9 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
+      ],
+      "Create your first Gateway": [
+        "Stvorite svoj prvi pristupnik"
       ],
       "Creating your account": [
         "Izrada vašeg računa"
@@ -4079,6 +4094,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
+      "password": [
+        "lozinka"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
@@ -4090,12 +4108,6 @@
       ],
       "Phone number": [
         "Broj telefona"
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Imajte na umu da ako izbrišete ovu domenu sve adrese povezane s njom biti će onemogućene."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
@@ -4278,6 +4290,9 @@
       ],
       "URL link": [
         "URL poveznica"
+      ],
+      "username": [
+        "korisničko ime"
       ],
       "Users": [
         "Korisnici"
@@ -4855,6 +4870,9 @@
       "Auto-unsubscribe": [
         "Automatska odjava"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Block": [
         "Blokiraj"
       ],
@@ -5018,10 +5036,13 @@
         "E-pošta"
       ],
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "End day of month": [
         "Zadnji dan u mjesecu"
+      ],
+      "End time": [
+        "Vrijeme završetka"
       ],
       "End weekday": [
         "Kraj vikenda"
@@ -5115,6 +5136,9 @@
       ],
       "Last month only": [
         "Samo posljednji mjesec"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mail Server (IMAP)": [
         "Poslužitelj e-pošte (IMAP)"
@@ -5529,6 +5553,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Nabavite ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        "Pomoć"
+      ],
       "Help translate": [
         "Pomozite prevesti"
       ],
@@ -5801,6 +5828,9 @@
       ],
       "Calendar": [
         "Kalendar"
+      ],
+      "Documents": [
+        "Dokumenti"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -6406,6 +6436,11 @@
         "Nova kreditna/debitna kartica"
       ]
     },
+    "Payments": {
+      "MM/YY": [
+        "MM/GG"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Netočan broj kartice"
@@ -6622,6 +6657,11 @@
         "Učitaj"
       ]
     },
+    "Select invoice document": {
+      "Invoice": [
+        "Račun"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "Nema rezultata"
@@ -6633,6 +6673,9 @@
       ],
       "pending": [
         "na čekanju"
+      ],
+      "to be created": [
+        "bit će stvoren"
       ]
     },
     "session_recovery:available:action": {
@@ -7026,6 +7069,9 @@
     "Subscription reminder": {
       "10 email addresses": [
         "10 adrese e-pošte"
+      ],
+      "Close": [
+        "Zatvori"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -7448,6 +7494,9 @@
       "Clear": [
         "Očisti"
       ],
+      "Close": [
+        "Zatvori"
+      ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"
       ],
@@ -7459,6 +7508,12 @@
       ],
       "Contact us": [
         "Kontaktirajte nas"
+      ],
+      "Create a new Gateway": [
+        "Stvori novi pristupnik"
+      ],
+      "Create a new gateway": [
+        "Stvori novi pristupnik"
       ],
       "Create Gateway": [
         "Stvori pristupnik"
@@ -7507,9 +7562,6 @@
       ],
       "Delete user?": [
         "Izbriši korisnika?"
-      ],
-      "Disable ${ email }": [
-        "Onemogući ${ email }"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
@@ -7607,6 +7659,12 @@
       "Folders and labels": [
         "Mape i oznake"
       ],
+      "For Linux": [
+        "Za Linux"
+      ],
+      "For macOS": [
+        "Za macOS"
+      ],
       "Forward and auto-reply": [
         "Prosljeđivanje e-pošte i automatski odgovori"
       ],
@@ -7696,6 +7754,9 @@
       ],
       "No recovery method": [
         "Nema načina za oporavak"
+      ],
+      "Open": [
+        "Otvori"
       ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
@@ -7997,7 +8058,7 @@
     },
     "Title subscription": {
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "Plan": [
         "Plan"

@@ -140,9 +140,6 @@
       "Delete": [
         "Выдаліць"
       ],
-      "Delete address": [
-        "Выдаліць адрас"
-      ],
       "Delete Gateway": [
         "Выдаліць шлюз"
       ],
@@ -754,7 +751,7 @@
         "Скарыстацца прапановай"
       ],
       "Save even more with a 12-month plan": [
-        "Зэканомце яшчэ больш з пры аплаце за 12 месяцаў"
+        "Зэканомце яшчэ больш пры аплаце за 12 месяцаў"
       ]
     },
     "bf2023: Deal details": {
@@ -1923,8 +1920,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Іншы карыстальнік больш не зможа выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      "Are you sure you want to delete this address?": [
+        "Вы сапраўды хочаце выдаліць гэты адрас?"
+      ],
+      "Delete address": [
+        "Выдаліць адрас"
+      ],
+      "Delete address permanently?": [
+        "Выдаліць адрас незваротна?"
+      ],
+      "Delete address?": [
+        "Выдаліць адрас?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Адрас з назвай ${ address } паўторна ніхто больш не зможа выкарыстаць, калі вы яго выдаліце."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Звярніце ўвагу, што калі вы выдаліце ​​адрас ${ address }, то больш не зможаце адпраўляць або атрымліваць лісты з яго дапамогай."
       ],
       "You can only delete 1 address per year.": [
         "Вы можаце выдаліць толькі адзін адрас у год."
@@ -1946,6 +1958,20 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Вы сапраўды хочаце адключыць гэты адрас?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Адключэнне адраса з назвай ${ address } прывядзе да таго, што вы больш не зможаце адпраўляць або атрымліваць лісты з яго дапамогай, а ўсе спасылкі прадуктаў ${ BRAND_NAME } будуць адключаны."
+      ],
+      "Disable address": [
+        "Адключыць адрас"
+      ],
+      "Disable address?": [
+        "Адключыць адрас?"
       ]
     },
     "Downgrade account reason": {
@@ -1993,42 +2019,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Дапамажыце нам палепшыць наш сэрвіс!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Special Offer": [
-        "Спецыяльная прапанова"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Пашыраная гісторыя версій"
-      ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Падаўжаецца за ${ renewablePrice }. Скасаваць можна ў любы час"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "за першы месяц"
-      ],
-      "Limited-time offer": [
-        "Часовая прапанова"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Атрымайце тарыфны план ${ planName } усяго за ${ planPrice }"
+      "Help us improve": [
+        "Дапамажыце нам палепшыць наш сэрвіс"
       ]
     },
     "Email verification": {
@@ -3141,9 +3133,6 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "Are you sure you want to delete this address?": [
-        "Вы сапраўды хочаце выдаліць гэты адрас?"
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Вы сапраўды хочаце адключыць двухфактарную аўтэнтыфікацыю?"
       ],
@@ -3513,6 +3502,9 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "JCB logo": [
+        "Лагатып JCB"
+      ],
       "Keys created": [
         "Ключы створаны"
       ],
@@ -3684,9 +3676,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Звярніце ўвагу, што калі вы выдаліце ​​гэты адрас, вы больш не зможаце адпраўляць або атрымліваць лісты з гэтага адраса."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ creditsRemaining }."
       ],
@@ -3846,11 +3835,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 12 месяцаў."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 24 месяцы."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы."
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
@@ -3941,9 +3927,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -4169,6 +4152,9 @@
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў і вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } ${ PLANS.FREE }, калі вы скасуеце сваю бягучую платную падпіску."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -4872,11 +4858,11 @@
       "What happened?": [
         "Што здарылася?"
       ],
-      "What is the main reason you are canceling?": [
-        "Якая асноўная прычына скасавання?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Якая асноўная прычына выдалення вашага ўліковага запісу?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Why would you like to cancel?": [
         "Чаму вы вырашылі скасаваць?"
@@ -5134,9 +5120,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Прапанова абмежавана па часе (міне 2 красавіка 2024 года)"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewTime } за ${ renewablePrice }. Скасаваць можна ў любы час"
       ]
     },
     "mailtrial2024: Title": {
@@ -5569,6 +5552,9 @@
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
       ],
@@ -5697,6 +5683,9 @@
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
     },
     "new_plans: feature info": {
@@ -5985,6 +5974,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
       ],
@@ -6162,9 +6154,6 @@
       ]
     },
     "Option": {
-      "Automatic (${ value })": [
-        "Аўтаматычна (${ value })"
-      ],
       "Country configs": [
         "Канфігурацыі краіны"
       ],
@@ -6522,6 +6511,15 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ]
@@ -6626,6 +6624,9 @@
       ],
       "Select state": [
         "Выбраць штат"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ]
     },
     "plan customizer, ips": {
@@ -7682,12 +7683,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
-      "${ dayDiff } day left": [
-        "Застаўся ${ dayDiff } дзень",
-        "Засталося ${ dayDiff } дні",
-        "Засталося ${ dayDiff } дзён",
-        "Засталося ${ dayDiff } дзён"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
@@ -7736,6 +7731,12 @@
       "Add any new files": [
         "Дадаваць любыя новыя файлы"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней. "
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
@@ -7772,8 +7773,8 @@
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Як наша каманда падтрымкі кліентаў забяспечвала непасрэдны доступ да праграмы VPN кожнаму карыстальніку. "
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Як наша каманда падтрымкі кліентаў забяспечвала непасрэдны доступ да праграмы VPN кожнаму карыстальніку."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Як мы супраціўляліся, калі ${ BRAND_NAME } стаў мішэнню кампаніі агрэсіўнай цэнзуры."
@@ -7811,17 +7812,17 @@
       "Priority support": [
         "Прыярытэтная падтрымка"
       ],
+      "Reactivate": [
+        "Актываваць паўторна"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Паўторна актывуйце для аднаўлення доступу да функцый тарыфнага плана ${ planName }."
+      ],
       "Read the story": [
         "Прачытайце гісторыю"
       ],
       "Receive new emails": [
         "Атрымліваць новыя лісты"
-      ],
-      "Resubscribe": [
-        "Аднавіць падпіску"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Паўторна падпішыцеся для аднаўлення доступу да функцый тарыфнага плана ${ planName }."
       ],
       "Send emails with attachments": [
         "Адпраўляць лісты з далучэннямі"
@@ -7850,23 +7851,17 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
-      ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
       ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
-      ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Ваш уласны карыстальніцкі дамен электроннай пошты"
@@ -8379,14 +8374,8 @@
       "Delete": [
         "Выдаліць"
       ],
-      "Delete ${ value }": [
-        "Выдаліць ${ value }"
-      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
-      ],
-      "Delete address permanently?": [
-        "Выдаліць адрас незваротна?"
       ],
       "Delete organization logo?": [
         "Выдаліць лагатып арганізацыі?"
@@ -8402,9 +8391,6 @@
       ],
       "Device connected!": [
         "Прылада падключана!"
-      ],
-      "Disable ${ email }": [
-        "Адключыць ${ email }"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
@@ -8977,15 +8963,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 1 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 1 месяц."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 3 месяцы. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
@@ -9054,11 +9031,17 @@
       "Includes ${ plan } (free for the first year!)": [
         "Уключае ${ plan } (бясплатна на працягу першага года)"
       ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Тарыфны план ${ plan } уключае прэміяльны менеджар пароляў, якім вы зможаце карыстацца бясплатна на працягу першага года!"
+      ],
       "Just ${ price }": [
         "Усяго за ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Паспрабуйце ${ upsellPlanName } без рызыкі"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Ваш камплект ${ a } і ${ b }"
       ],
       "Your ${ selected } plan": [
         "Ваш тарыфны план ${ selected }"
@@ -9087,9 +9070,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Адключыўшы гэты адрас электроннай пошты, вы больш не зможаце адпраўляць і атрымліваць лісты з дапамогай гэтага адраса, а таксама будуць адключаны ўсе прадукты ${ BRAND_NAME }, якія звязаны з ім. Вы сапраўды хочаце адключыць гэты адрас?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."

@@ -334,9 +334,6 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete address": [
-        "Elimina indirizzo"
-      ],
       "Delete and confirm": [
         "Elimina e conferma"
       ],
@@ -3159,8 +3156,23 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by anyone else.": [
-        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente da nessun altro."
+      "Are you sure you want to delete this address?": [
+        "Sei sicuro di voler eliminare questo indirizzo?"
+      ],
+      "Delete address": [
+        "Elimina indirizzo"
+      ],
+      "Delete address permanently?": [
+        "Vuoi eliminare l'indirizzo in modo permanente?"
+      ],
+      "Delete address?": [
+        "Vuoi eliminare l'indirizzo?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Una volta eliminato, questo indirizzo ${ address } non potrà essere utilizzato nuovamente da nessun altro."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Tieni presente che se elimini l'indirizzo ${ address }, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo."
       ],
       "You can only delete 1 address per year.": [
         "Puoi eliminare solo 1 indirizzo all'anno."
@@ -3180,6 +3192,20 @@
       ],
       "You will no longer have access to this calendar.": [
         "Non avrai più accesso a questo calendario."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Sei sicuro di voler eliminare questo dominio?"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete domain?": [
+        "Vuoi eliminare il dominio?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Tieni presente che se elimini questo dominio ${ domainName }, tutti gli indirizzi ad esso associati verranno disabilitati."
       ]
     },
     "Delinquent modal title": {
@@ -3285,6 +3311,20 @@
         "Puoi chiudere questa scheda."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Sei sicuro di voler disabilitare questo indirizzo?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Disabilitando l'indirizzo ${ address }, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } collegati verranno disabilitati."
+      ],
+      "Disable address": [
+        "Disabilita indirizzo"
+      ],
+      "Disable address?": [
+        "Vuoi disabilitare l'indirizzo?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificato"
@@ -3369,8 +3409,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Aiutaci a migliorare!"
+      "Help us improve": [
+        "Aiutaci a migliorare"
       ]
     },
     "Download link": {
@@ -3390,40 +3430,6 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Archiviazione su cloud crittografata e condivisione dei file che protegge i tuoi dati"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Ottieni l'offerta"
-      ],
-      "Special Offer": [
-        "Offerta speciale"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Cronologia estesa della versione"
-      ],
-      "Priority support": [
-        "Supporto prioritario"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "per il primo mese"
-      ],
-      "Limited-time offer": [
-        "Offerta a tempo limitato"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Ottieni ${ planName } a soli ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6378,9 +6384,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Chiunque abbia questo link non potrà più sincronizzare o ottenere aggiornamenti futuri per il tuo calendario. Se vuoi concedergli nuovamente l'accesso, dovrai creare un nuovo link."
       ],
-      "Are you sure you want to delete this address?": [
-        "Sei sicuro di voler eliminare questo indirizzo?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Sei sicuro di voler eliminare questo calendario?"
       ],
@@ -6392,9 +6395,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Sei sicuro di voler eliminare questo calendario? Potrai aggiungere nuovamente il calendario delle festività più tardi."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Sei sicuro di voler eliminare questo dominio?"
       ],
       "Are you sure you want to delete this filter?": [
         "Sei sicuro di voler eliminare questo filtro?"
@@ -7059,6 +7059,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Sto usando @ProtonMail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Registrati con il mio link di riferimento per ottenere 1 mese di funzionalità premium gratuitamente: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Logo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
       ],
@@ -7389,12 +7392,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Tienila al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Nota che se elimini questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Se si elimina questo dominio, tutti gli indirizzi associati ad esso saranno disabilitati."
-      ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Nota che se elimini il filtro ${ nameDeleted } interromperemo l'elaborazione di tutte le azioni automatiche associate a esso."
       ],
@@ -7666,11 +7663,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "L'abbonamento si rinnova automaticamente ogni 12 mesi."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "L'abbonamento si rinnova automaticamente ogni 24 mesi."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "L'abbonamento si rinnova automaticamente ogni ${ cycle } mesi."
       ],
       "Subscription auto-renews every month.": [
         "L'abbonamento si rinnova automaticamente ogni mese."
@@ -7830,9 +7824,6 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Questa verifica può richiedere fino a un'ora. Puoi tranquillamente continuare con i passaggi successivi."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Questo eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
@@ -8190,6 +8181,9 @@
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quando annulli il tuo piano di abbonamento a pagamento attualmente attivo, il saldo rimanente verrà restituito come crediti sull'account e verrà effettuato il downgrade al piano ${ BRAND_NAME } ${ PLANS.FREE }."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
@@ -9797,11 +9791,11 @@
       "What happened?": [
         "Cos'è successo?"
       ],
-      "What is the main reason you are canceling?": [
-        "Qual è il motivo principale per cui stai disdicendo?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Qual è il motivo principale per cui stai cancellando il tuo account?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Qual è il tuo motivo principale per annullare o fare il downgrade?"
       ],
       "Why would you like to cancel?": [
         "Perché vorresti annullare?"
@@ -10287,9 +10281,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Offerta a tempo limitato, scade il 2 aprile 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Il tuo abbonamento si rinnoverà automaticamente il giorno ${ renewTime } a ${ renewablePrice } potrai annullarlo in qualsiasi momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -12319,9 +12310,6 @@
       "Launching ${ PASS_APP_NAME }": [
         "Lanciando ${ PASS_APP_NAME }"
       ],
-      "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "Offerta a tempo limitato: ${ title } a ${ price } per il primo mese"
-      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Offerta a tempo limitato: ${ title } a ${ price } per utente al mese!"
       ],
@@ -12563,6 +12551,15 @@
       "Processing payment": [
         "Elaborazione pagamento"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ price } al mese. Puoi annullare in qualsiasi momento."
+      ],
       "Timeout exceeded": [
         "Limite di tempo superato"
       ]
@@ -12716,6 +12713,9 @@
       ],
       "Select state": [
         "Seleziona Stato"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Condividere cosa pensi potrebbe migliorare ${ BRAND_NAME }"
       ],
       "Text": [
         "Testo"
@@ -14007,10 +14007,6 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inclusa la condivisione del calendario"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } giorno rimasto",
-        "${ dayDiff } giorni rimasti"
-      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inclusa la cronologia delle versioni"
       ],
@@ -14059,6 +14055,12 @@
       "Add any new files": [
         "Aggiungere nuovi file"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+        "Una volta scaduto il tuo abbonamento a ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione per Drive. Perderai anche eventuali bonus di archiviazione precedentemente assegnati. "
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Una volta scaduto il tuo abbonamento a ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 5 GB di spazio di archiviazione per Drive e fino a 1 GB di spazio di archiviazione per Mail. Perderai anche eventuali bonus di archiviazione precedentemente assegnati."
+      ],
       "Back up photos from your devices": [
         "Eseguire il backup delle foto dai tuoi dispositivi"
       ],
@@ -14095,8 +14097,8 @@
       "Helping activists in Hong Kong": [
         "L'aiuto agli attivisti a Hong Kong"
       ],
-      "How our customer support team got our VPN app directly into people's hands. ": [
-        "Come il nostro team di assistenza clienti ha consegnato la nostra app VPN direttamente nelle mani delle persone. "
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Come il nostro team di assistenza clienti ha consegnato la nostra app VPN direttamente nelle mani delle persone."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Come abbiamo reagito quando ${ BRAND_NAME } è stato preso di mira in un'aggressiva campagna di censura."
@@ -14134,17 +14136,17 @@
       "Priority support": [
         "Supporto prioritario"
       ],
+      "Reactivate": [
+        "Riattiva"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Riattiva per ripristinare l'accesso alle funzionalità di ${ planName }."
+      ],
       "Read the story": [
         "Leggi la storia"
       ],
       "Receive new emails": [
         "Ricevere nuove email"
-      ],
-      "Resubscribe": [
-        "Riabbonati"
-      ],
-      "Resubscribe to restore access to ${ planName } features.": [
-        "Riabbonati per ottenere nuovamente l'accesso alle funzionalità di ${ planName }."
       ],
       "Send emails with attachments": [
         "Inviare email con allegati"
@@ -14173,23 +14175,17 @@
       "What you give up when you cancel ${ planName }": [
         "A cosa rinunci quando annulli ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione su Drive. Perderai anche gli eventuali bonus di archiviazione precedentemente assegnati."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 5 GB di spazio di archiviazione su Drive e fino a 1 GB di spazio di archiviazione per Mail. Perderai anche gli eventuali bonus di archiviazione precedentemente assegnati."
-      ],
       "Yearly free storage bonuses": [
         "Bonus annuali gratuiti per lo spazio di archiviazione"
       ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Hai ancora ${ expiryDate } sul tuo abbonamento ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Hai ancora ${ expiryDate } sul tuo abbonamento ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare. ${ learnMoreLink }"
-      ],
       "Your ${ planName } has been canceled.": [
         "${ planName } è stato cancellato."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Il tuo abbonamento a ${ planName } termina il ${ expiryDate }. Successivamente, utilizzerai il piano ${ BRAND_NAME } Free. Se il tuo utilizzo supera i limiti del piano gratuito, potresti riscontrare un accesso limitato alle funzionalità del prodotto e ai tuoi dati. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Il tuo abbonamento a ${ planName } termina il ${ expiryDate }. Successivamente, utilizzerai il piano ${ BRAND_NAME } Free. Se il tuo utilizzo supera i limiti del piano gratuito, potresti riscontrare un accesso limitato alle funzionalità del prodotto e ai tuoi dati. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Il tuo dominio email personalizzato"
@@ -15013,9 +15009,6 @@
       "Delete account": [
         "Elimina account"
       ],
-      "Delete address permanently?": [
-        "Vuoi eliminare l'indirizzo in modo permanente?"
-      ],
       "Delete calendar": [
         "Elimina calendario"
       ],
@@ -15049,9 +15042,6 @@
       ],
       "Details": [
         "Dettagli"
-      ],
-      "Disable ${ email }": [
-        "Disattiva ${ email }"
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
@@ -16216,15 +16206,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "L'abbonamento si rinnova automaticamente ogni mese. La tua prossima data di fatturazione è tra 1 mese."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "L'abbonamento si rinnova automaticamente ogni 3 mesi. La tua prossima data di fatturazione è tra 3 mesi."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
       ],
@@ -16343,9 +16324,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Disabilitando i log, ne cancellerai anche l'intera cronologia. Sei sicuro di voler disabilitare i log?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Disabilitando questo indirizzo, non potrai più inviare o ricevere email con esso e tutti i prodotti ${ BRAND_NAME } collegati verranno disabilitati. Sei sicuro di voler disabilitare questo indirizzo?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se annulli questa importazione, non potrai riprenderla. ${ BRAND_NAME } ha salvato tutti i progressi nel tuo account. Vuoi comunque annullare?"

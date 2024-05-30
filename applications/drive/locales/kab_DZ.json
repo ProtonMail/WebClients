@@ -1978,16 +1978,6 @@
         "Tuɣalin ɣer usaǧǧaw-nniḍen"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ɛawen-aɣ ad nennarni!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Tallalt yezwaren"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Asefsex n uneḍru di ${ formattedStart }"
@@ -2032,6 +2022,9 @@
       ],
       "Amount above the maximum.": [
         "Azal nnig n ufellay."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Azal ddaw n wadday (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -3302,6 +3295,9 @@
       "Create links and share your files with others.": [
         "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
       ],
+      "Create public link": [
+        "Rnu aseɣwen azayaz"
+      ],
       "Create your first folder and start moving your files.": [
         "Snulfu-d akaram-inek/m amezwaru sakin bdu asenkez n ifuyla."
       ],
@@ -3741,9 +3737,6 @@
       ],
       "Share files with links": [
         "Bḍu ifuyla s yisɣewnen"
-      ],
-      "Share with anyone": [
-        "Bḍu d walbaɛḍ"
       ],
       "Shared link not found": [
         "Aseɣwen yettwabḍan ulac-it"
@@ -4563,9 +4556,6 @@
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Acu n sebba tagejdant k-yeǧǧan tekkseḍ amiḍan-ik?"
       ],
       "Wonderful": [
         "Igerrez"
@@ -5429,9 +5419,6 @@
       "Enter your email address": [
         "Sekcem tansa-inek·inem n yimayl"
       ],
-      "Feedback": [
-        "Awennit"
-      ],
       "Filter groups": [
         "Sti igrawen"
       ],
@@ -5832,6 +5819,20 @@
     "Subscription price": {
       "For": [
         "I"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } n uḥraz asemday"
+      ],
+      "10 email addresses": [
+        "10 n tansiwin imayl"
+      ],
+      "Calendar sharing": [
+        "Beṭṭu n uwitay"
+      ],
+      "Priority support": [
+        "Tallalt yezwaren"
       ]
     },
     "Subscription renewal state": {

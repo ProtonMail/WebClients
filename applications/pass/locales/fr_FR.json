@@ -53,7 +53,7 @@
         "Précédent"
       ],
       "Bulk delete items from trash": [
-        "Supprimer un groupe d'éléments de la corbeille"
+        "Supprimer plusieurs éléments de la corbeille"
       ],
       "Bulk move items to another vault": [
         "Déplacer le groupe d'éléments vers un autre coffre-fort"
@@ -455,7 +455,7 @@
         "Afficher l'historique de l'élément"
       ],
       "View older history": [
-        "Afficher l'historique le plus ancien"
+        "Afficher l'historique plus ancien"
       ],
       "Write us on Reddit": [
         "Écrivez-nous sur Reddit"
@@ -1138,7 +1138,7 @@
         "Installez ${ PASS_APP_NAME } pour ${ browser.title } et profitez de la fonctionnalité de remplissage automatique de vos identifiants."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Installez ${ PASS_APP_NAME } pour ${ browser.title } pour remplir automatiquement vos identifiants."
+        "Installez ${ PASS_APP_NAME } pour ${ browser.title } afin de remplir automatiquement et rapidement vos identifiants. "
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -1277,7 +1277,7 @@
         "Le mode hors ligne n'a pas pu être activé pour le moment."
       ],
       "Offline support successfully disabled": [
-        "La prise en charge du mode hors ligne est désactivée."
+        "L'accès hors ligne est désactivé."
       ],
       "Organization settings successfully updated": [
         "Les paramètres d'organisation ont été mis à jour."
@@ -1314,7 +1314,7 @@
         "Vérifiez le dossier indésirables/spam ou essayez de renvoyer le code."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
-        "Veuillez confirmer votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
+        "Confirmez votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
@@ -1419,7 +1419,7 @@
         "Nous vous remercions. Le bug a été signalé."
       ],
       "The export will only contain vaults that you own.": [
-        "L'exportation ne contiendra que les coffres-forts que vous possédez"
+        "L'exportation contiendra uniquement les coffres-forts dont vous êtes propriétaire."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Le fichier exporté sera chiffré en utilisant PGP et nécessite une phrase secrète forte."
@@ -2007,9 +2007,6 @@
       "Username (new alias)": [
         "Nom d’utilisateur (nouvel alias)"
       ],
-      "Vault": [
-        "Coffre-fort"
-      ],
       "Vault ID": [
         "ID du coffre-fort"
       ],
@@ -2241,7 +2238,7 @@
         "Mise à jour du verrouillage automatique"
       ],
       "Breach detected": [
-        "Une fuite de données a été détectée."
+        "Fuite de données détectée"
       ],
       "Breaches": [
         "Fuites de données"
@@ -2367,7 +2364,7 @@
         "Déplacer les éléments ?"
       ],
       "No excluded items": [
-        "Il n'existe aucun élément exclu."
+        "Aucun élément exclu"
       ],
       "No inactive 2FAs": [
         "Aucune A2F active"
@@ -2479,7 +2476,7 @@
         "Vous voulez en savoir plus ?"
       ],
       "Weak password": [
-        "Le mot de passe est faible."
+        "Mot de passe faible"
       ],
       "Weak passwords": [
         "Mots de passe faibles"

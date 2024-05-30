@@ -319,9 +319,6 @@
       "Delete": [
         "Eliminar"
       ],
-      "Delete address": [
-        "Eliminar o endereço"
-      ],
       "Delete and confirm": [
         "Confirmar e eliminar"
       ],
@@ -763,6 +760,9 @@
       "Remove gift code": [
         "Remover código de oferta"
       ],
+      "Remove single sign-on": [
+        "Remover o início de sessão único"
+      ],
       "Remove this label": [
         "Remover esta etiqueta"
       ],
@@ -881,7 +881,7 @@
         "Selecionar país"
       ],
       "select file": [
-        "seleccionar ficheiro"
+        "selecionar ficheiro"
       ],
       "Select file": [
         "Selecionar um ficheiro"
@@ -1688,6 +1688,12 @@
       ],
       "Share with anyone": [
         "Partilhar com o qualquer pessoa"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Mostrar ${ remainingItems } mais",
+        "Mostrar ${ remainingItems } mais"
       ]
     },
     "Calendar share permission label": {
@@ -3020,12 +3026,31 @@
         "Desconhecido"
       ]
     },
+    "Delete address prompt": {
+      "Delete address": [
+        "Eliminar o endereço"
+      ],
+      "Delete address permanently?": [
+        "Eliminar o endereço permanentemente?"
+      ],
+      "Delete address?": [
+        "Eliminar o endereço?"
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Todos os eventos deste calendário serão eliminados."
       ],
       "You will no longer have access to this calendar.": [
         "Deixará de ter acesso a este calendário."
+      ]
+    },
+    "Delete domain prompt": {
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete domain?": [
+        "Eliminar o domínio?"
       ]
     },
     "Delinquent modal title": {
@@ -3131,6 +3156,14 @@
         "Pode fechar este separador com segurança."
       ]
     },
+    "Disable address prompt": {
+      "Disable address": [
+        "Desativar o endereço"
+      ],
+      "Disable address?": [
+        "Desativar o endereço?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificado"
@@ -3208,11 +3241,6 @@
         "A VPN está demasiada lenta."
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Ajude-nos a melhorar"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb para Debian/Ubuntu"
@@ -3224,35 +3252,6 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de partilha"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Aproveite a promoção"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Histórico de versão estendido"
-      ],
-      "Priority support": [
-        "Apoio ao cliente prioritário"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "pelo primeiro mês"
-      ],
-      "Limited-time offer": [
-        "Oferta por tempo limitado"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Obtenha ${ planName } para só ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3674,6 +3673,9 @@
       ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Quantia abaixo do mínimo (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -6050,9 +6052,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Ninguém com esta ligação conseguirá sincronizar ou obter atualizações do seu calendário. Se desejar conceder novo acesso, terá de criar uma ligação."
       ],
-      "Are you sure you want to delete this address?": [
-        "Tem a certeza de que pretende eliminar este endereço?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Tem a certeza de que deseja eliminar este calendário?"
       ],
@@ -6064,9 +6063,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Tem certeza que deseja eliminar este calendário? Pode adicionar calendário de feriados mais tarde."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Tem certeza de que deseja eliminar este domínio?"
       ],
       "Are you sure you want to delete this filter?": [
         "Tem a certeza de que deseja eliminar este filtro?"
@@ -6157,6 +6153,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Bloquear os remetentes de verem se e quando abriu a mensagem"
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulsione a identidade da sua organização e crie uma experiência on-line mais consistente para os seus utilizadores."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
@@ -6632,6 +6631,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Tenho utilizado o @ProtonMail e pensei que poderia gostar dele. É um serviço de e-mail seguro que protege a sua privacidade. Inscreva-se com a minha ligação de referência para obter 1 mês de funcionalidades premium gratuitamente: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Logotipo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
       ],
@@ -6926,12 +6928,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reposição de uma palavra-passe."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Note que se eliminar este endereço, já não será capaz de enviar ou receber correio usando este endereço."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Note que se eliminar este domínio. Todos os endereços a ele associados serão desativados."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
@@ -7179,11 +7175,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "Renovações automáticas de subscrição a cada 12 meses."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Renovações automáticas de subscrição a cada 24 meses."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "Renovações automáticas de subscrição todos os meses."
@@ -7322,9 +7315,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esta ação cancelará a sua subscrição paga atual e perderá quaisquer benefícios de fidelidade que tenha acumulado."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Isto eliminará todas as versões anteriores dos seus ficheiros com mais de ${ rententionLabel }."
@@ -7706,6 +7696,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Pode verificar o progresso ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Entretanto, pode fechar o separador ou o navegador."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
       ],
@@ -8039,6 +8032,9 @@
     "Key generation": {
       "Generate key": [
         "Gerar a chave"
+      ],
+      "Key successfully generated.": [
+        "A chave foi gerada."
       ]
     },
     "Key state badge": {
@@ -8995,6 +8991,9 @@
       "Protection mode": [
         "Modo de proteção"
       ],
+      "Public certificate (X.509)": [
+        "Certificado público (X.509)"
+      ],
       "Read": [
         "Lido"
       ],
@@ -9174,9 +9173,6 @@
       ],
       "What happened?": [
         "O que é que aconteceu?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Qual é a principal razão do cancelamento?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual o principal motivo pelo qual está a eliminar a conta?"
@@ -9926,6 +9922,9 @@
       ],
       "Back to calendar": [
         "Voltar ao calendário"
+      ],
+      "Back to documents": [
+        "Voltar aos documentos"
       ],
       "Back to files": [
         "Voltar aos ficheiros"
@@ -10831,6 +10830,9 @@
       ],
       "IP Address copied to clipboard": [
         "Endereço IP copiado para a área de transferência"
+      ],
+      "Key copied to the clipboard": [
+        "A chave foi copiada para a área de transferência."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Chave com impressão digital ${ fp } eliminada."
@@ -11979,6 +11981,9 @@
       "Credit note": [
         "Nota de crédito"
       ],
+      "Currency conversion": [
+        "Conversão de moeda"
+      ],
       "Invoice": [
         "Factura"
       ]
@@ -12824,10 +12829,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "${ dayDiff } dia restante",
-        "${ dayDiff } dias restantes"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
@@ -12870,6 +12871,9 @@
       "Keep ${ planName }": [
         "Manter ${ planName }"
       ],
+      "Learn more about our impact": [
+        "Saiba mais sobre o nosso impacto"
+      ],
       "Manage your calendar": [
         "Gerencie o seu calendário"
       ],
@@ -12882,9 +12886,6 @@
       "Receive new emails": [
         "Receber novos e-mails"
       ],
-      "Resubscribe": [
-        "Renovar a subscrição"
-      ],
       "Subscription canceled": [
         "A subscrição foi cancelada."
       ],
@@ -12894,11 +12895,17 @@
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
       ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
       "Version history": [
         "Histórico das versões"
       ],
       "Watch the interview": [
         "Assistir à entrevista"
+      ],
+      "Yearly free storage bonuses": [
+        "Bónus de armazenamento gratuito anual"
       ]
     },
     "subscription reminder": {
@@ -13701,9 +13708,6 @@
       "Delete account": [
         "Eliminar conta"
       ],
-      "Delete address permanently?": [
-        "Eliminar o endereço permanentemente?"
-      ],
       "Delete calendar": [
         "Eliminar um calendário"
       ],
@@ -13737,9 +13741,6 @@
       ],
       "Details": [
         "Detalhes"
-      ],
-      "Disable ${ email }": [
-        "Desativar ${ email }"
       ],
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
@@ -13830,6 +13831,9 @@
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
+      ],
+      "Enter SAML metadata": [
+        "Introduzir os metadados SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Insira os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
@@ -14124,6 +14128,9 @@
       "Remove domain": [
         "Remover o domínio"
       ],
+      "Remove single sign-on": [
+        "Remover o início de sessão único"
+      ],
       "Remove user?": [
         "Remover utilizador?"
       ],
@@ -14153,6 +14160,9 @@
       ],
       "Revoke certificate": [
         "Revogar o certificado"
+      ],
+      "SAML authentication": [
+        "Autenticação SAML"
       ],
       "Save time with email filters": [
         "Economize tempo com filtros de e-mail"
@@ -14927,9 +14937,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Ao desativar os registos limpa também todo o seu histórico. Tem a certeza de que deseja desativar os registos?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Ao desativar este endereço já não poderá enviar ou receber emails utilizando este endereço e todos os produtos ${ BRAND_NAME } associados serão igualmente desativados. Tem a certeza de que deseja eliminar o endereço?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se cancelar a importação, não poderá retomá-la. O ${ BRAND_NAME } guardou todo o progresso na sua conta. Cancelar mesmo assim?"

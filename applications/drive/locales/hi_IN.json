@@ -2093,16 +2093,6 @@
         "अस्थाई जरूरत, भविष्य में वापस आ सकती है"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "हमें सुधरने में मदद करें!"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "प्राथमिक सहायता"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } पर किसी ईवेंट को रद्द करना"
@@ -2152,6 +2142,9 @@
       ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "न्यूनतम से कम राशि (${ minimumAmount })।"
       ],
       "Authentication canceled.": [
         "प्रमाणीकरण रद्द किया गया।"
@@ -3612,6 +3605,9 @@
       "Create links and share your files with others.": [
         "लिंक बनाएं और अपनी फाइलों को दूसरों के साथ साझा करें।"
       ],
+      "Create public link": [
+        "सार्वजनिक लिंक बनाएं"
+      ],
       "Create your first folder and start moving your files.": [
         "अपना पहला फोल्डर बनाएं और अपनी फाइलों को मूव करना शुरू करें।"
       ],
@@ -4263,9 +4259,6 @@
       "Share files with links": [
         "लिंक के माध्यम से फ़ाइलें साझा करें"
       ],
-      "Share with anyone": [
-        "किसी से भी शेयर करें"
-      ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } के लिए शेयर लिंक"
       ],
@@ -4304,12 +4297,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
-      ],
-      "Subscription auto-renews every 12 months.": [
-        "सदस्यता स्वचालित रूप से हर 12 महीने में नवीनीकृत होती है।"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "सदस्यता स्वचालित रूप से हर 24 महीने में नवीनीकृत होती है।"
       ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
@@ -5299,9 +5286,6 @@
       ],
       "What happened?": [
         "क्या हुआ?"
-      ],
-      "What is the main reason you are canceling?": [
-        "कौनसी मुख्य वजह से आप रद्द कर रहे हैं?"
       ],
       "Wonderful": [
         "आश्चर्यजनक"
@@ -6668,6 +6652,11 @@
         "नया क्रेडिट/डेबिट कार्ड"
       ]
     },
+    "Payments": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "अमान्य कार्ड नंबर"
@@ -6715,9 +6704,6 @@
       ],
       "Enter your email address": [
         "अपना ईमेल पता दर्ज करें"
-      ],
-      "Feedback": [
-        "सुझाव"
       ],
       "Filter groups": [
         "फ़िल्टर समूह"
@@ -7280,6 +7266,38 @@
     "Subscription price": {
       "For": [
         "के लिए"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
+      ],
+      "${ planMaxSpace } total storage": [
+        "कुल स्टोरेज ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 ईमेल पते"
+      ],
+      "Calendar sharing": [
+        "कैलेंडर शेयर"
+      ],
+      "Helping activists in Hong Kong": [
+        "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } रखे"
+      ],
+      "Learn more about our impact": [
+        "हमारे प्रभाव के बारे में अधिक जानें"
+      ],
+      "Our fight against censorship in Russia": [
+        "रूस में सेंसरशिप के खिलाफ हमारी लड़ाई"
+      ],
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ],
+      "Read the story": [
+        "कहानी पढ़ें"
       ]
     },
     "Subscription renewal state": {
@@ -8218,9 +8236,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"

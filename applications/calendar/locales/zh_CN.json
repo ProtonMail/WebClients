@@ -171,6 +171,9 @@
       "Copy link": [
         "复制链接"
       ],
+      "Copy version number to clipboard": [
+        "复制版本号"
+      ],
       "Create": [
         "创建"
       ],
@@ -294,6 +297,9 @@
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
       ],
+      "Go to settings": [
+        "前往设置"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -359,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "保留 Plus 订阅"
+      ],
+      "Later": [
+        "稍后"
       ],
       "Let's talk": [
         "让我们聊聊"
@@ -441,10 +450,10 @@
       "Not now": [
         "以后再说"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2314,6 +2323,12 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "双重验证能为您再增添一道安全防线，将试图盗取账户者拒之门外。"
       ],
+      "Availability unknown": [
+        "可用性未知"
+      ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "更好地组织你的一天，追踪你的时间，优先处理任务。使用自定义活动颜色对日历进行颜色标识。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
       ],
@@ -2334,6 +2349,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
+      ],
+      "Loading availability": [
+        "加载可用性"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
@@ -2423,34 +2441,6 @@
       ],
       "Temporary need, may come back in the future": [
         "临时需要退订，以后可能会重新开通"
-      ]
-    },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "帮助我们做得更好！"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "更长的版本历史"
-      ],
-      "Priority support": [
-        "优先支持"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "续费价为 ${ renewablePrice }，可随时退订"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "首月"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2640,6 +2630,9 @@
       ],
       "Amount above the maximum.": [
         "金额太大。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "金额 (${ minimumAmount }) 过小。"
       ],
       "An error occurred while loading alias options": [
         "加载别名选项时发生错误"
@@ -4034,6 +4027,9 @@
       "An invitation will be sent to added participants.": [
         "邀请函将发送至所有已添加的参与者"
       ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "邀请函将发给所有参与者。您想更新哪个活动?"
+      ],
       "An invitation will be sent to the event participants.": [
         "邀请函将发送至所有的活动参与者"
       ],
@@ -4066,6 +4062,9 @@
       ],
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
@@ -4171,6 +4170,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
+      ],
+      "Display events for calendar ${ Name }": [
+        "显示日历事件 ${ Name }"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "没有跳转？请先关闭弹出窗口屏蔽插件。"
@@ -4333,6 +4335,9 @@
       ],
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "学习如何 ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "了解详情"
@@ -4535,12 +4540,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
-      "Subscription auto-renews every 12 months.": [
-        "订阅将每12个月自动续期。"
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "订阅将每24个月自动续期。"
-      ],
       "Subscription auto-renews every month.": [
         "订阅将每月自动续期。"
       ],
@@ -4657,6 +4656,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
+      ],
+      "Version number successfully copied to clipboard": [
+        "版本号已成功复制"
       ],
       "Visa Secure logo": [
         "Visa Secure 图标"
@@ -4862,6 +4864,9 @@
       "Your files will be encrypted and then saved": [
         "您的文件将被加密保存。"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "您的信息在 ${ displayedDate } 找到"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
       ],
@@ -5001,6 +5006,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
+      ],
+      "Access to my events": [
+        "访问我的活动"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -5362,6 +5370,9 @@
       "Select your plan": [
         "选择您的套餐"
       ],
+      "Show others when I'm busy": [
+        "显示忙碌"
+      ],
       "Show week numbers": [
         "显示周数"
       ],
@@ -5415,9 +5426,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "What is the main reason you are canceling?": [
-        "您退订的主要原因是什么？"
       ],
       "Wonderful": [
         "非常好"
@@ -5520,6 +5528,9 @@
       ],
       "Request an invite": [
         "申请注册"
+      ],
+      "stay safer online": [
+        "安全上网"
       ],
       "What’s this?": [
         "这是什么？"
@@ -6868,6 +6879,9 @@
     "Payments": {
       "Billing Country": [
         "计费国家"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
       ]
     },
     "Payments.Error": {
@@ -6935,9 +6949,6 @@
       ],
       "E.g., ": [
         "例如："
-      ],
-      "Feedback": [
-        "意见反馈"
       ],
       "Filter groups": [
         "查找群组"
@@ -7703,9 +7714,41 @@
         "支付"
       ]
     },
+    "Subscription reminder": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 总存储空间"
+      ],
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "Calendar sharing": [
+        "日历共享"
+      ],
+      "Custom schedule send and snooze times": [
+        "自由调整定时发送和延迟通知时间"
+      ],
+      "Keep ${ planName }": [
+        "保持计划 ${ planName }"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ]
+    },
     "subscription reminder": {
+      "Desktop app": [
+        "桌面应用"
+      ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
       ]
     },
     "Subscription renewal state": {
@@ -7850,6 +7893,9 @@
       "Invitation sent and participants added to all events": [
         "邀请已发送，活动参与者已被加入所有日程中"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "最后修改的别名存储在您最早的库中"
+      ],
       "Participants notified and all events updated": [
         "已向参与者发送通知，所有日程已更新"
       ],
@@ -7885,6 +7931,9 @@
       ],
       "Verification successful": [
         "验证成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已成功取消订阅"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
@@ -8027,6 +8076,9 @@
       ],
       "Account security": [
         "账户安全"
+      ],
+      "Add a custom logo": [
+        "自定义徽标"
       ],
       "Add another notification to remind you of this event": [
         "添加另一个提醒您此日程的通知"
@@ -8658,9 +8710,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ renewPrice } 的价格自动续订，您可随时取消。"
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
