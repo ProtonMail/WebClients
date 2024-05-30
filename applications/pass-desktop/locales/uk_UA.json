@@ -4,6 +4,26 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Додати"
@@ -1434,7 +1454,7 @@
         "Експортований файл буде зашифровано за допомогою PGP і вимагатиме надійної парольної фрази."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Інформацію було викрито стороннім сервісом. Ваша інформація облікового запису ${ BRAND_NAME } залишається в безпеці та зашифрованою. ${ learnMoreLink }"
+        "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не вдалося імпортувати цей ${ result.ignored.length } елемент:",
@@ -1575,7 +1595,7 @@
         "Ваші файли буде зашифровано, а потім збережено"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Інформацію про вас було знайдено на ${ displayedDate }"
+        "Вашу інформацію було знайдено на ${ displayedDate }"
       ]
     },
     "Label": {
@@ -2014,9 +2034,6 @@
       "Username (new alias)": [
         "Ім'я користувача (новий псевдонім)"
       ],
-      "Vault": [
-        "Сховище"
-      ],
       "Vault ID": [
         "ID сховища"
       ],
@@ -2047,7 +2064,7 @@
         "Докладніше"
       ],
       "stay safer online": [
-        "залишатися в безпечному режимі"
+        "бути в безпеці онлайн"
       ]
     },
     "lobby: Info": {
@@ -2507,7 +2524,7 @@
         "Чому ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
-        "Ваша відкрита інформація"
+        "Ваша викрита інформація"
       ],
       "Your vault is empty": [
         "Ваше сховище порожнє"
