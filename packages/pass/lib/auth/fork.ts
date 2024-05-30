@@ -6,12 +6,12 @@ import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/sha
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
+import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
+import { ForkSearchParameters, type ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/sessionForkBlob';
-import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/sessionForkValidation';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -24,7 +24,7 @@ export type RequestForkOptions = {
     app: APP_NAMES;
     host?: string;
     localID?: number;
-    forkType?: FORK_TYPE;
+    forkType?: ForkType;
     payloadType?: 'offline';
     payloadVersion?: AuthSessionVersion;
 };

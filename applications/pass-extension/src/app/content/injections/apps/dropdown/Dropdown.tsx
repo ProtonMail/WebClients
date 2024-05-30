@@ -18,7 +18,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -111,7 +111,7 @@ export const Dropdown: FC = () => {
                             <ListItem
                                 onClick={async () => {
                                     close();
-                                    await accountFork(FORK_TYPE.SWITCH);
+                                    await accountFork(ForkType.SWITCH);
                                 }}
                                 subTitle={c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
                                 icon={PassIconStatus.DISABLED}

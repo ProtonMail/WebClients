@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import { requestFork } from '@proton/pass/lib/auth/fork';
 import browser from '@proton/pass/lib/globals/browser';
-import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import type { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -14,7 +14,7 @@ import { usePermissionsGranted } from './usePermissionsGranted';
 /* depending on where we execute this : we may or may not
  * have access to the tabs API - Firefox content-scripts have
  * very limited support for the tabs API */
-export const useRequestFork = () => async (forkType?: FORK_TYPE, replace?: boolean) => {
+export const useRequestFork = () => async (forkType?: ForkType, replace?: boolean) => {
     const { url } = requestFork({ host: SSO_URL, forkType, app: APPS.PROTONPASSBROWSEREXTENSION });
 
     if (replace) return window.location.replace(url);
@@ -30,7 +30,7 @@ export const useRequestForkWithPermissions = (options?: { autoClose?: boolean; r
     const accountFork = useRequestFork();
     const permissionsGranted = usePermissionsGranted();
 
-    return async (forkType?: FORK_TYPE) => {
+    return async (forkType?: ForkType) => {
         if (permissionsGranted || (await promptForPermissions())) {
             return accountFork(forkType, options?.replace).finally(async () => {
                 if (options?.autoClose) window.close();
