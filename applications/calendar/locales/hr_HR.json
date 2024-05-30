@@ -279,6 +279,9 @@
       "Join calendar": [
         "Pridružite se kalendaru"
       ],
+      "Later": [
+        "Kasnije"
+      ],
       "Load": [
         "Učitaj"
       ],
@@ -357,10 +360,10 @@
       "Not now": [
         "Ne sada"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -671,6 +674,11 @@
     "Attendee role": {
       "Optional": [
         "Neobavezno"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Novo"
       ]
     },
     "bf2023: Deal details": {
@@ -1939,11 +1947,6 @@
         "Ne pitaj ponovno"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Dodaj kalendar"
@@ -2007,6 +2010,9 @@
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Iznos ispod minimuma (${ minimumAmount })."
       ],
       "Answer failed to be sent": [
         "Slanje odgovora nije uspjelo"
@@ -2668,7 +2674,7 @@
         "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -3116,6 +3122,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Ponavljanja koja je organizator prethodno ažurirao bit će zadržana."
       ],
+      "password": [
+        "lozinka"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
@@ -3224,11 +3233,17 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
       ],
+      "username": [
+        "korisničko ime"
+      ],
       "Users": [
         "Korisnici"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
+      ],
+      "Warning": [
+        "Upozorenje"
       ],
       "We use 3-D Secure to protect your payments": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure"
@@ -4426,6 +4441,9 @@
       "Create new group": [
         "Stvori novu grupu"
       ],
+      "Custom": [
+        "Prilagođeno"
+      ],
       "Day": [
         "Dan",
         "Dana",
@@ -4489,6 +4507,11 @@
         "Nova kreditna/debitna kartica"
       ]
     },
+    "Payments": {
+      "MM/YY": [
+        "MM/GG"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Netočan broj kartice"
@@ -4534,9 +4557,6 @@
       ],
       "E.g., ": [
         "Npr. "
-      ],
-      "Feedback": [
-        "Povratne informacije"
       ],
       "Filter groups": [
         "Filtrirajte grupe"
@@ -4918,6 +4938,14 @@
     "Subscription price": {
       "For": [
         "Za"
+      ]
+    },
+    "Subscription reminder": {
+      "10 email addresses": [
+        "10 adrese e-pošte"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
       ]
     },
     "Subscription renewal state": {
@@ -5454,6 +5482,9 @@
       "Request new code": [
         "Zatraži novi kôd"
       ],
+      "Save": [
+        "Spremi"
+      ],
       "Save changes": [
         "Spremi promjene"
       ],
@@ -5564,7 +5595,7 @@
     },
     "Title subscription": {
       "End date": [
-        "Krajnji datum"
+        "Datum završetka"
       ],
       "Plan": [
         "Plan"
