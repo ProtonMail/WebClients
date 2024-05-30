@@ -166,7 +166,6 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             throw new Error('User is not a proton user');
         }
 
-        const share = await getShare(abortSignal, linkShareId);
         return inviteProtonUser(abortSignal, {
             share: {
                 shareId: linkShareId,
@@ -177,7 +176,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 publicKey: invitee.publicKey,
             },
             inviter: {
-                inviterEmail: share.creator,
+                inviterEmail: primaryAddressKey.address.Email,
                 addressKey: primaryAddressKey.privateKey,
             },
             permissions,
