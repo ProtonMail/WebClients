@@ -17,6 +17,7 @@ interface Props {
         iconAltText: string;
     };
     severity: number;
+    unread: boolean;
 }
 
 const getCopy = (email?: string, password?: string | null) => {
@@ -31,7 +32,7 @@ const getCopy = (email?: string, password?: string | null) => {
     }
 };
 
-const BreachCard = ({ name, email, password, onClick, style, severity }: Props) => {
+const BreachCard = ({ name, email, password, onClick, style, severity, unread }: Props) => {
     const { colorClass, iconAltText } = style;
 
     const textInfo = getCopy(email, password);
@@ -49,7 +50,7 @@ const BreachCard = ({ name, email, password, onClick, style, severity }: Props) 
                         <img src={breachIcon} className="m-auto w-full h-full" alt={iconAltText} />
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
-                        <span className="block">{name}</span>
+                        <span className={clsx('block', unread && 'text-bold')}>{name}</span>
                         <span className="block text-sm color-weak py-0.5">{textInfo}</span>
                         {email && (
                             <span className={clsx('block text-ellipsis m-0 text-sm', colorClass)} title={email}>

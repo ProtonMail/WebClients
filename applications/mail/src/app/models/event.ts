@@ -29,6 +29,7 @@ export interface Event {
     Addresses?: AddressEvent[];
     Checklist?: ChecklistEvent[];
     IncomingDefaults?: IncomingDefaultEvent[];
+    BreachAlerts?: EventType[];
 }
 
 export interface ConversationEvent extends EventType {
