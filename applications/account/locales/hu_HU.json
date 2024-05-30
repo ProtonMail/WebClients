@@ -278,9 +278,6 @@
       "Delete": [
         "Törlés"
       ],
-      "Delete address": [
-        "Cím törlése"
-      ],
       "Delete and confirm": [
         "Törlés és megerősítés"
       ],
@@ -2935,11 +2932,6 @@
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Segítsen fejlődni!"
-      ]
-    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb Debian / Ubuntu"
@@ -2951,27 +2943,6 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Fejlett megosztási biztonság"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Ajánlat elfogadása"
-      ],
-      "Special Offer": [
-        "Különleges ajánlat"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "az első hónapban"
-      ],
-      "Limited-time offer": [
-        "Korlátozott időre szóló ajánlat"
       ]
     },
     "Duration": {
@@ -3208,6 +3179,9 @@
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Az összeg a minimum alatt (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -5286,9 +5260,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "A hivatkozást ismerők nem fognak hozzáférni a naptár szinkronizálásához vagy további frissítéseihez. Ha ismét elérést szeretne biztosítani, új hivatkozást kell majd készítenie."
       ],
-      "Are you sure you want to delete this address?": [
-        "Biztosan törli ezt a címet?"
-      ],
       "Are you sure you want to delete this calendar?": [
         "Biztos, hogy törölni szeretné ezt a naptárat?"
       ],
@@ -5300,9 +5271,6 @@
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Biztos vagy benne, hogy törölni szeretnéd ezt a naptárt? Később visszaadhatsz munkaszüneti naptárat."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Biztosan törölni szeretné ezt a domain nevet?"
       ],
       "Are you sure you want to delete this filter?": [
         "Biztosan törölni akarja ezt a szűrőt?"
@@ -6031,12 +5999,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Amennyiben törli ezt a címet, a továbbiakban nem fogadhat és nem küldhet leveleket ezzel a címmel."
-      ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Ha törli ezt a domain nevet, minden ehhez kapcsolódó cím kikapcsolásra kerül."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
       ],
@@ -6358,9 +6320,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Ezzel megszakítja jelenlegi előfizetését, és elveszíti az eddigi felhalmozott hűségbónuszokat."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Ez törölni fogja az összes ${ rententionLabel } -nál korábbi verzióját a fájljaidnak."
@@ -8045,9 +8004,6 @@
       ],
       "What happened?": [
         "Mi történt?"
-      ],
-      "What is the main reason you are canceling?": [
-        "Mi lemondásának a fő oka?"
       ],
       "What is the main reason you are deleting your account?": [
         "Miért törli a fiókját?"
@@ -10890,10 +10846,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "${ dayDiff } nap van hátra",
-        "${ dayDiff } nap van hátra"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
@@ -11586,9 +11538,6 @@
       "Delete account": [
         "Fiók törlése"
       ],
-      "Delete address permanently?": [
-        "Véglegesen törli a címet?"
-      ],
       "Delete calendar": [
         "Naptár törlése"
       ],
@@ -11607,9 +11556,6 @@
       ],
       "Delete version history?": [
         "Változatelőzmények törlése?"
-      ],
-      "Disable ${ email }": [
-        "${ email } letiltása"
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
@@ -12537,11 +12483,6 @@
         "${ numberOfServers } ${ numberOfCountries } országban"
       ]
     },
-    "vpn_2024: renew": {
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Az előfizetés 3 havonta automatikusan megújul. A következő számlázási időpont 3 hónap múlva lesz."
-      ]
-    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Havonta számlázva"
@@ -12600,9 +12541,6 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "A naplózás letiltásával törli a naplózási előzményeket is. Biztos benne, hogy le akarja tiltani a naplózást?"
-      ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Ha letiltja ezt a címet, akkor már nem lesz képes e-maileket küldeni vagy fogadni és minden ehhez kapcsolt ${ BRAND_NAME } szolgáltatás kikapcsolódik. Biztos benne, hogy le szeretné tiltani ezt a címet?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A ${ BRAND_NAME } már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"
