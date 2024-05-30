@@ -1,13 +1,27 @@
-import { ComponentProps, createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 
 import { noop } from 'lodash';
 
-import { WalletCreationModal } from '../../components';
-import { WalletBackupModal } from '../../components/WalletBackupModal';
+import { WalletCreationModalOwnProps } from '../../components';
+import { WalletAccountCreationModalOwnProps } from '../../components/WalletAccountCreationModal';
+import { WalletBackupModalOwnProps } from '../../components/WalletBackupModal';
 
-export type ModalData = ComponentProps<typeof WalletCreationModal> | ComponentProps<typeof WalletBackupModal>;
+export enum WalletSetupModalKind {
+    WalletCreation = 'WalletCreation',
+    WalletAccountCreation = 'WalletAccountCreation',
+    WalletBackup = 'WalletBackup',
+}
+
+type WalletCreationModalData = { kind: WalletSetupModalKind.WalletCreation } & WalletCreationModalOwnProps;
+type WalletBackupModalData = { kind: WalletSetupModalKind.WalletBackup } & WalletBackupModalOwnProps;
+type WalletAccountCreationModalData = {
+    kind: WalletSetupModalKind.WalletAccountCreation;
+} & WalletAccountCreationModalOwnProps;
+
+export type ModalData = WalletCreationModalData | WalletBackupModalData | WalletAccountCreationModalData;
+
 export interface WalletSetupModalContextValue {
-    open: (data: ModalData) => void;
+    open: (data: ModalData, options?: { onClose?: () => void }) => void;
     close: () => void;
 }
 

@@ -62,17 +62,15 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     return [modalProps, handleSetOpen, render] as const;
 };
 
-export type ModalPropsWithData<T extends unknown> = ModalStateProps & { data?: T };
+export type ModalPropsWithData<T> = ModalStateProps & { data?: T };
 
-type ModalStateWithDataReturnTuple<T extends unknown> = [
+type ModalStateWithDataReturnTuple<T> = [
     modalProps: ModalPropsWithData<T>,
     openModal: (data: T) => void,
     renderModal: boolean,
 ];
 
-export const useModalStateWithData = <T extends unknown>(
-    options?: ModalStateOptions
-): ModalStateWithDataReturnTuple<T> => {
+export const useModalStateWithData = <T>(options?: ModalStateOptions): ModalStateWithDataReturnTuple<T> => {
     const [modalData, setModalData] = useState<T>();
 
     const [modalCoreProps, handleSetOpen, render] = useModalState({

@@ -8,7 +8,9 @@ import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { useWalletSetupModalContext } from '../WalletSetupModalContext';
+import { getThemeForWallet } from '../../utils';
+import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
+import { WalletSetupModalKind, useWalletSetupModalContext } from '../WalletSetupModalContext';
 
 interface ChecklistItemProps {
     done?: boolean;
@@ -59,6 +61,7 @@ interface Props {
 
 export const WalletDiscoverContent = ({ wallet }: Props) => {
     const [checkedItem, setCheckedItem] = useState(1);
+    const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
 
@@ -81,12 +84,18 @@ export const WalletDiscoverContent = ({ wallet }: Props) => {
                         text={c('Wallet discover').t`Backup your wallet's mnemonic`}
                         onClick={() => {
                             if (wallet.Wallet.Mnemonic) {
-                                open({
-                                    wallet,
-                                    onClose: () => {
-                                        setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
+                                open(
+                                    {
+                                        theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                                        kind: WalletSetupModalKind.WalletBackup,
+                                        apiWalletData: wallet,
                                     },
-                                });
+                                    {
+                                        onClose: () => {
+                                            setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
+                                        },
+                                    }
+                                );
                             }
                         }}
                     />

@@ -12,8 +12,10 @@ import {
     walletNameUpdate,
 } from '@proton/wallet';
 
-import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
+import { useBitcoinBlockchainContext } from '../../contexts';
+import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
+import { getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
@@ -27,9 +29,17 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const dispatch = useWalletDispatch();
     const [userKeys] = useUserKeys();
 
+    const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
+
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
-        open({ wallet });
+        if (wallet.Wallet.Mnemonic) {
+            open({
+                theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                apiWalletData: wallet,
+                kind: WalletSetupModalKind.WalletBackup,
+            });
+        }
     };
 
     const updateWalletName = useCallback(() => {

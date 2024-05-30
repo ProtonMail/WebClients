@@ -11,12 +11,12 @@ import {
     useActiveBreakpoint,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { APP_NAME } from '../../../config';
 import { OtherSidebarListItems } from './OtherSidebarListItems';
 import { WalletsSidebarList } from './WalletsSidebarList';
-import protonWalletLogo from './proton-wallet-logo.svg';
 
 import './WalletSidebar.scss';
 
@@ -26,7 +26,7 @@ interface Props {
     apiWalletsData?: IWasmApiWalletData[];
     onToggleExpand?: () => void;
     onAddWallet: () => void;
-    onAddWalletAccount: () => void;
+    onAddWalletAccount: (apiWalletData: IWasmApiWalletData) => void;
 }
 
 const { PROTONWALLET: PROTONWALLET_APP } = APPS;
