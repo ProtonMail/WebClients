@@ -32,7 +32,7 @@ export const SidebarDeviceItem = ({
                 to={`/${device.shareId}/folder/${device.linkId}`}
                 icon="tv"
                 shareId={device.shareId}
-                isActive={isActive}
+                isActive={() => isActive}
                 style={generateSidebarItemStyle(1)}
             >
                 <span className="text-ellipsis" title={device.name} data-testid="sidebar-device-name">

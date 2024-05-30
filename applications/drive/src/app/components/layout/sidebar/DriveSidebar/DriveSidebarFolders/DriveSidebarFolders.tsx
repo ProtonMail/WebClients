@@ -5,13 +5,12 @@ import DriveSidebarFoldersRoot from './DriveSidebarFoldersRoot';
 import DriveSidebarSubfolders from './DriveSidebarSubfolders';
 
 interface Props {
-    path: string;
     shareId: string;
     linkId: string;
     setSidebarLevel: (level: number) => void;
 }
 
-export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarLevel }: Props) {
+export default function DriveSidebarFolders({ shareId, linkId, setSidebarLevel }: Props) {
     const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(shareId, { rootLinkId: linkId });
 
     useEffect(() => {
@@ -21,7 +20,6 @@ export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarL
     return (
         <>
             <DriveSidebarFoldersRoot
-                path={path}
                 shareId={shareId}
                 linkId={linkId}
                 rootFolder={rootFolder}

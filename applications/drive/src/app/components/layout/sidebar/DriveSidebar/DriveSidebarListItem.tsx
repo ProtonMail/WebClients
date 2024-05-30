@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { MouseEventHandler } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import {
     IconName,
@@ -17,7 +18,7 @@ import { useVolumesState } from '../../../../store/_volumes';
 interface Props {
     children: React.ReactNode;
     icon: IconName;
-    isActive: boolean;
+    isActive: React.ComponentProps<NavLink>['isActive'];
     shareId?: string;
     to: string;
     rightIcon?: React.ReactNode;
@@ -59,7 +60,7 @@ const DriveSidebarListItem = ({
 
     return (
         <SidebarListItem onClick={onClick}>
-            <SidebarListItemLink to={to} isActive={() => isActive}>
+            <SidebarListItemLink to={to} isActive={isActive}>
                 <div className="flex flex-nowrap" style={style}>
                     <SidebarListItemContent
                         onDoubleClick={handleDoubleClick}
