@@ -24,9 +24,9 @@ export interface BitcoinBlockchainContextValue {
     walletsChainData: WalletChainDataByWalletId;
     accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
-    syncSingleWalletAccount: (walletId: string, accountId: string, isManual?: boolean) => Promise<void>;
-    syncSingleWallet: (walletId: string, isManual?: boolean) => Promise<void>;
-    syncManyWallets: (walletIds: string[], isManual?: boolean) => Promise<void>;
+    syncSingleWalletAccount: (args: { walletId: string; accountId: string; manual?: boolean }) => void;
+    syncSingleWallet: (args: { walletId: string; manual?: boolean }) => void;
+    syncManyWallets: (args: { walletIds: string[]; manual?: boolean }) => void;
 
     isSyncing: (walletId: string, accountId?: string) => boolean;
     getSyncingData: (walletId: string, accountId?: string) => SyncingMetadata | undefined;

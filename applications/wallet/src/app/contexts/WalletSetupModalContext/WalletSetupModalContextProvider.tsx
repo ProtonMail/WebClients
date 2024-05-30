@@ -69,6 +69,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
     return (
         <WalletSetupModalContext.Provider value={{ close, open }}>
             {children}
+
             {(() => {
                 if (decryptedApiWalletsData && !decryptedApiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user

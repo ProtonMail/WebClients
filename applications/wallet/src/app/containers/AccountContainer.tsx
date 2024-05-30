@@ -106,7 +106,7 @@ export const AccountContainer = () => {
                         onClose={history.goBack}
                         onConfirmPassphrase={(passphrase) => {
                             setPassphrase(wallet.Wallet.ID, passphrase);
-                            void syncSingleWallet(wallet.Wallet.ID);
+                            void syncSingleWallet({ walletId: wallet.Wallet.ID });
                         }}
                     />
 

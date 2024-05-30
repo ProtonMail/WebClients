@@ -12,6 +12,7 @@ export const mockUseDecryptedWallets = (
         decryptedApiWalletsData: mockedValue?.decryptedApiWalletsData ?? apiWalletsData,
         loading: mockedValue?.loading ?? false,
         setPassphrase: mockedValue?.setPassphrase ?? vi.fn(),
+        getDecryptedApiWalletsData: vi.fn(async () => mockedValue?.decryptedApiWalletsData ?? apiWalletsData),
     });
 
     return spy;

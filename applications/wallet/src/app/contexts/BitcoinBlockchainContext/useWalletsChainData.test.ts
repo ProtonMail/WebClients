@@ -8,7 +8,7 @@ import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { mockUseBlockchainClient } from '../../tests';
 import { apiWalletsData } from '../../tests/fixtures/api';
-import { mockUseBitcoinNetwork } from '../../tests/mocks/useBitcoinNetwork';
+import { mockUseGetBitcoinNetwork } from '../../tests/mocks/useBitcoinNetwork';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';
 
@@ -19,11 +19,13 @@ const accounts = {
             '8': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
+                key: 'wallet-sync-1',
                 scriptType: 3,
             },
             '9': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/86'/0'/0'",
+                key: 'wallet-sync-2',
                 scriptType: 4,
             },
         },
@@ -34,11 +36,13 @@ const accounts = {
             '10': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/49'/0'/0'",
+                key: 'wallet-sync-3',
                 scriptType: 2,
             },
             '11': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
+                key: 'wallet-sync-4',
                 scriptType: 3,
             },
         },
@@ -49,6 +53,7 @@ const accounts = {
             '12': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
+                key: 'wallet-sync-5',
                 scriptType: 3,
             },
         },
@@ -59,11 +64,11 @@ describe('useWalletsChainData', () => {
     let mockedFullSync: MockedFunction<WasmBlockchainClient['fullSync']>;
 
     beforeEach(() => {
-        mockUseBitcoinNetwork();
+        mockUseGetBitcoinNetwork();
         mockUseNotifications();
 
         mockedFullSync = vi.fn();
-        mockUseBlockchainClient({ fullSync: mockedFullSync });
+        mockUseBlockchainClient({ fullSync: mockedFullSync, shouldSync: vi.fn().mockResolvedValue(true) });
         mockUseDebounceEffect();
 
         vitest.useFakeTimers({ shouldAdvanceTime: true });
@@ -74,7 +79,7 @@ describe('useWalletsChainData', () => {
     });
 
     it('should sync accounts every 10 minutes, when needed', async () => {
-        const { result } = renderHook(() => useWalletsChainData(apiWalletsData));
+        const { result } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
 
         // one for each account
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
@@ -97,9 +102,13 @@ describe('useWalletsChainData', () => {
         });
 
         it('should return helpers to trigger manually sync for single account, when needed', async () => {
-            const { result } = renderHook(() => useWalletsChainData(apiWalletsData));
+            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+            await waitForNextUpdate();
+            // we advance timer to bypass cooldown
+            vitest.advanceTimersByTime(2 * MINUTE);
+            mockedFullSync.mockClear();
 
-            await result.current.syncSingleWalletAccount('0', '8');
+            await result.current.syncSingleWalletAccount({ walletId: '0', accountId: '8' });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(1));
             expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
@@ -107,15 +116,19 @@ describe('useWalletsChainData', () => {
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
 
-            await result.current.syncSingleWalletAccount('0', '8');
+            await result.current.syncSingleWalletAccount({ walletId: '0', accountId: '8' });
 
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
 
         it('should return helpers to trigger manually sync for single wallet, when needed', async () => {
-            const { result } = renderHook(() => useWalletsChainData(apiWalletsData));
+            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+            await waitForNextUpdate();
+            // we advance timer to bypass cooldown
+            vitest.advanceTimersByTime(2 * MINUTE);
+            mockedFullSync.mockClear();
 
-            await result.current.syncSingleWallet('0');
+            await result.current.syncSingleWallet({ walletId: '0', manual: true });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(2));
             expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
@@ -123,7 +136,7 @@ describe('useWalletsChainData', () => {
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
 
-            await result.current.syncSingleWallet('0');
+            await result.current.syncSingleWallet({ walletId: '0' });
 
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
@@ -131,7 +144,7 @@ describe('useWalletsChainData', () => {
 
     describe('when hook gets unmounted', () => {
         it('should stop polling on hook unmount', async () => {
-            const { unmount } = renderHook(() => useWalletsChainData(apiWalletsData));
+            const { unmount } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
 
             // one for each account
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
@@ -146,16 +159,6 @@ describe('useWalletsChainData', () => {
 
             vi.clearAllMocks();
             unmount();
-            vitest.advanceTimersByTime(10 * MINUTE);
-        });
-    });
-
-    describe('when network or wallets are not provided', () => {
-        it('should not poll', async () => {
-            renderHook(() => useWalletsChainData());
-
-            expect(mockedFullSync).toHaveBeenCalledTimes(0);
-
             vitest.advanceTimersByTime(10 * MINUTE);
         });
     });
