@@ -24,12 +24,10 @@
     --background-strong: #e6e8ec;
     --background-invert: #191927;
 
-    --interaction-norm-minor-1: #8b8df9;
     --interaction-norm: #767dff;
     --interaction-norm-contrast: #191927;
 
-    --interaction-weak-minor-1: #e6e8ec;
-    --interaction-weak: #ffffff;
+    --interaction-weak: #e2e2e2;
     --interaction-weak-contrast: #191927;
 
     --interaction-norm-hover: var(--interaction-norm-major-1);

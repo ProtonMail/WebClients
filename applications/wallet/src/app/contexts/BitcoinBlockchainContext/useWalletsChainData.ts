@@ -31,7 +31,7 @@ const POLLING_UID_PREFIX = 'polling';
 /**
  * Returns chain data given API wallets
  */
-export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
+export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[], onSyncingFinished?: () => void) => {
     const blockchainClient = useBlockchainClient();
     const pollingIdRef = useRef<string>();
 
@@ -158,6 +158,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                     createNotification({ text: c('Wallet').t`An error occured`, type: 'error' });
                 } finally {
                     removeSyncing(walletId, accountId);
+                    onSyncingFinished?.();
                 }
             }
         },
@@ -208,7 +209,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             };
         },
         [poll],
-        3000
+        1000
     );
 
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
