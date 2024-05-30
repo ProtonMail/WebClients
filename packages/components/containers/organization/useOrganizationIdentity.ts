@@ -9,7 +9,6 @@ import noop from '@proton/utils/noop';
 import type { IconName } from '../../components/icon/Icon';
 import { useApi, useOrganizationKey } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
-import useFlag from '../unleash/useFlag';
 
 export interface OrganizationIdentityState {
     state: 'loading' | 'complete';
@@ -49,11 +48,10 @@ const useOrganizationIdentity = () => {
     const [state, setState] = useState(defaultState);
     const signature = organizationKey?.Key.FingerprintSignature || '';
     const signatureAddress = organizationKey?.Key.FingerprintSignatureAddress || '';
-    const enabled = useFlag('OrganizationIdentity');
     const api = useApi();
 
     useEffect(() => {
-        if (!organizationKey?.privateKey || !signature || !signatureAddress || !enabled) {
+        if (!organizationKey?.privateKey || !signature || !signatureAddress) {
             setState(defaultState);
             return;
         }
@@ -71,12 +69,11 @@ const useOrganizationIdentity = () => {
             });
         };
         run();
-    }, [organizationKey?.privateKey, signature, signatureAddress, enabled]);
+    }, [organizationKey?.privateKey, signature, signatureAddress]);
 
     return {
         state,
         signatureAddress,
-        enabled,
     };
 };
 
