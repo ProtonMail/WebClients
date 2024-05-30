@@ -2,7 +2,6 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmMnemonic } from '@proton/andromeda';
 import { useModalState } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -14,7 +13,6 @@ import {
 } from '@proton/wallet';
 
 import { useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { useWalletDispatch } from '../../store/hooks';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
@@ -31,14 +29,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
 
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
-        if (wallet.Wallet.Mnemonic) {
-            open({
-                schemeAndData: {
-                    scheme: WalletSetupScheme.WalletBackup,
-                    mnemonic: WasmMnemonic.fromString(wallet.Wallet.Mnemonic),
-                },
-            });
-        }
+        open({ wallet });
     };
 
     const updateWalletName = useCallback(() => {

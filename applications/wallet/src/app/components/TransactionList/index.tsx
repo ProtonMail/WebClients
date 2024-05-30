@@ -227,6 +227,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                         color="norm"
                         className="text-lg w-custom mx-1"
                         style={{ '--w-custom': '7.5rem' }}
+                        shadow
                     >
                         {c('Wallet transaction').t`Receive`}
                     </Button>

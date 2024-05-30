@@ -1,97 +1,163 @@
-import { useMemo } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    ModalOwnProps,
+    PasswordInputTwo,
+    useModalState,
+} from '@proton/components/components';
 
-import { Modal } from '../../atoms';
-import { useWalletSetup } from '../../hooks/useWalletSetup';
-import { SchemeAndData, WalletSetupScheme, WalletSetupStep } from '../../hooks/useWalletSetup/type';
-import { MnemonicBackup, MnemonicInput, PassphraseInput, SetupModeSelect } from './steps';
-import { MnemonicBackupOnboarding } from './steps/MnemonicBackupOnboarding';
-import { WalletSettings } from './steps/WalletSettings';
+import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
+import { useWalletCreation } from '../../hooks/useWalletCreation';
+import { getThemeByIndex } from '../../utils';
+import { WalletImportModal } from '../WalletImportModal';
 
 interface Props extends ModalOwnProps {
-    schemeAndData?: SchemeAndData;
+    index?: number;
+    isFirstCreation?: boolean;
 }
 
-export const WalletCreationModal = ({ schemeAndData, ...modalProps }: Props) => {
+export const WalletCreationModal = ({ index = 0, isFirstCreation, ...modalProps }: Props) => {
+    const [walletImportModal, setWalletImportModal] = useModalState();
+
+    const onSetupFinish = () => {
+        modalProps.onClose?.();
+    };
+
     const {
-        mnemonic,
-        step,
-        isLastStep,
-        onSetupSchemeChange,
-        onNextStep,
-        onPassphraseInput,
+        walletName,
+        handleWalletNameChange,
+        handleMnemonicChange,
+        passphrase,
+        handlePassphraseChange,
+        loadingCurrencies,
+        currencies,
+        selectedCurrency,
+        setSelectedCurrency,
+        loadingWalletSubmit,
         onWalletSubmit,
-        onMnemonicInput,
-    } = useWalletSetup({
-        schemeAndData,
-        onSetupFinish: () => {
-            modalProps.onClose?.();
-        },
+    } = useWalletCreation({
+        onSetupFinish,
     });
 
-    const [content, title, subline] = useMemo(() => {
-        if (!step) {
-            return [<SetupModeSelect onModeSelection={(mode) => onSetupSchemeChange(mode)} />];
-        }
-
-        switch (step) {
-            case WalletSetupStep.Intro:
-                return [
-                    <MnemonicBackupOnboarding onViewMnemonic={onNextStep} />,
-                    c('Wallet setup').t`Your keys, your coins.`,
-                ];
-
-            case WalletSetupStep.MnemonicInput:
-                return [
-                    <MnemonicInput onContinue={onMnemonicInput} />,
-                    c('Wallet setup').t`Import Wallet`,
-                    c('Wallet setup').t`Import or restore an existing wallet`,
-                ];
-            case WalletSetupStep.MnemonicBackup:
-                const m = schemeAndData && 'mnemonic' in schemeAndData ? schemeAndData.mnemonic : mnemonic;
-                return [
-                    m ? <MnemonicBackup isLastStep={isLastStep} mnemonic={m} onContinue={onNextStep} /> : null,
-                    c('Wallet setup').t`Wallet seed phrase`,
-                    c('Wallet setup')
-                        .t`Use this secret recovery phrase to recover your wallet if you lose access to your account.`,
-                ];
-            case WalletSetupStep.PassphraseInput:
-                return [
-                    <PassphraseInput onContinue={onPassphraseInput} />,
-                    c('Wallet setup').t`Your passphrase`,
-                    c('Wallet setup')
-                        .t`Enhance your wallet's security with a passphrase. Please note that it will not be stored in your ${BRAND_NAME} account.`,
-                ];
-            case WalletSetupStep.Settings:
-            default:
-                return [
-                    <WalletSettings
-                        isImported={schemeAndData?.scheme === WalletSetupScheme.WalletImport}
-                        onContinue={onWalletSubmit}
-                    />,
-                    c('Wallet setup').t`Almost done`,
-                    c('Wallet setup').t`Give a name to your wallet and set your preferred currency`,
-                ];
-        }
-    }, [
-        step,
-        isLastStep,
-        mnemonic,
-        onMnemonicInput,
-        onNextStep,
-        onPassphraseInput,
-        onSetupSchemeChange,
-        onWalletSubmit,
-        schemeAndData,
-    ]);
+    useEffect(() => {
+        handleMnemonicChange(new WasmMnemonic(WasmWordCount.Words12).asString());
+    }, [handleMnemonicChange]);
 
     return (
-        <Modal title={title} subline={subline} enableCloseWhenClickOutside {...modalProps}>
-            {content}
-        </Modal>
+        <>
+            <Modal
+                title={c('Wallet setup').t`Wallet setup`}
+                subline={c('Wallet setup').t`Choose your local fiat currency to see the value of your transactions.`}
+                className={getThemeByIndex(index)}
+                hasClose={!isFirstCreation}
+                {...modalProps}
+            >
+                <div className="flex flex-column">
+                    {!isFirstCreation && (
+                        <div className="mb-4">
+                            <Input
+                                label={c('Wallet setup').t`Wallet name`}
+                                id="wallet-name-input"
+                                placeholder={c('Wallet setup').t`Give a name to this wallet`}
+                                value={walletName}
+                                disabled={loadingWalletSubmit}
+                                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                                    handleWalletNameChange(event.target.value);
+                                }}
+                            />
+                        </div>
+                    )}
+
+                    <div className="mb-4">
+                        <Select
+                            disabled={loadingCurrencies || loadingWalletSubmit}
+                            label="Local currency"
+                            value={selectedCurrency}
+                            onChange={(event) => {
+                                setSelectedCurrency(event.value);
+                            }}
+                            options={
+                                currencies?.map((currency) => ({
+                                    label: currency.Symbol.toString(),
+                                    value: currency.Symbol,
+                                    id: currency.Symbol.toString(),
+                                })) ?? []
+                            }
+                        />
+                    </div>
+                </div>
+
+                {!isFirstCreation && (
+                    <Collapsible className="mb-4">
+                        <CollapsibleHeader
+                            className="mb-4"
+                            suffix={
+                                <CollapsibleHeaderIconButton>
+                                    <Icon name="chevron-down" />
+                                </CollapsibleHeaderIconButton>
+                            }
+                        >{c('Wallet setup').t`Add a passphrase (optional)`}</CollapsibleHeader>
+                        <CollapsibleContent>
+                            <Input
+                                autoFocus
+                                id="passphrase"
+                                as={PasswordInputTwo}
+                                value={passphrase}
+                                disabled={loadingWalletSubmit}
+                                onValue={handlePassphraseChange}
+                                label={c('Wallet setup').t`Passphrase`}
+                                placeholder={c('Placeholder').t`Leave empty if you don't want to add passphrase`}
+                            />
+
+                            <CoreButtonLike
+                                className="my-3"
+                                as={Href}
+                                target="_blank"
+                                shape="underline"
+                                color="norm"
+                            >{c('Wallet setup').t`What's a wallet passphrase`}</CoreButtonLike>
+                        </CollapsibleContent>
+                    </Collapsible>
+                )}
+
+                <div className="w-full flex flex-column mt-4">
+                    <div className="flex">
+                        <Button
+                            fullWidth
+                            className="block mb-2"
+                            size="large"
+                            shape="solid"
+                            color="norm"
+                            disabled={loadingWalletSubmit}
+                            onClick={() => {
+                                void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation });
+                            }}
+                        >{c('Wallet setup').t`Create a new wallet`}</Button>
+                        <Button
+                            fullWidth
+                            className="block text-semibold"
+                            size="large"
+                            shape="solid"
+                            color="weak"
+                            disabled={loadingWalletSubmit}
+                            onClick={() => {
+                                setWalletImportModal(true);
+                            }}
+                        >{c('Wallet setup').t`Import wallet`}</Button>
+                    </div>
+                </div>
+            </Modal>
+
+            <WalletImportModal isFirstCreation={isFirstCreation} {...walletImportModal} onFinish={onSetupFinish} />
+        </>
     );
 };
