@@ -14,22 +14,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } ve ${ remainingCount } diğer potansiyel sızıntılar tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+        "${ name } ve ${ remainingCount } diğer olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } ve 1 başka potansiyel sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+        "${ name } ve 1 başka olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Potansiyel bir ${ name } sızıntısı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } adresinden olası bir sızıntı tespit edildi. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } adresinden potansiyel bir sızıntı tespit edildi. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } öğesini açın. ${ link }"
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görüntülemek ve harekete geçmek için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
       ]
     },
     "Action": {
@@ -544,7 +544,7 @@
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
       "Open in Docs": [
-        "Dokümanlarda Aç"
+        "Belgelerde aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -2287,45 +2287,6 @@
         "VPN çok yavaş çalışıyor"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Kendimizi geliştirmemize yardımcı olun!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Special Offer": [
-        "Özel teklif"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "ilk ay için"
-      ],
-      "Limited-time offer": [
-        "Sınırlı süreli teklif"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "AÇIKLAMA:\n${ eventDescription }"
@@ -2482,6 +2443,9 @@
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Tutar en az miktarın altında (${ minimumAmount })."
+      ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
       ],
@@ -2554,7 +2518,7 @@
         "Bir bilgisayarın şifresi çözülürken sorun çıktı"
       ],
       "External accounts are not supported yet": [
-        "Harici hesaplar henüz desteklenmemektedir"
+        "Dış hesaplar henüz desteklenmiyor"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
@@ -4063,6 +4027,9 @@
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
       ],
+      "Create public link": [
+        "Herkese açık bağlantı ekle"
+      ],
       "Create your first folder and start moving your files.": [
         "İlk klasörünüzü ekleyin ve dosyalarınızı taşımaya başlayın."
       ],
@@ -4697,7 +4664,7 @@
         "Bağlantıyı bildir"
       ],
       "Request access, or switch to an account with access.": [
-        "Erişim talep edin veya erişimi olan bir hesaba geçin."
+        "Erişim isteğinde bulunun ya da erişimi olan bir hesaba geçin."
       ],
       "Restore": [
         "Geri yükle"
@@ -4775,17 +4742,11 @@
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
       ],
-      "Share with anyone": [
-        "Herkes ile paylaş"
-      ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } için paylaşılabilir bağlantı"
       ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
-      ],
-      "Shared with": [
-        "İle paylaşıldı"
       ],
       "Shared with me": [
         "Benimle paylaşılan"
@@ -4825,12 +4786,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
-      ],
-      "Subscription auto-renews every 12 months.": [
-        "Abonelik 12 ayda bir otomatik olarak yenilenir."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Abonelik 24 ayda bir otomatik olarak yenilenir."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
@@ -4872,7 +4827,7 @@
         "Burada görecek bir şey yok"
       ],
       "This action will delete the link and revoke access for all users.": [
-        "Bu eylem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecektir."
+        "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -5200,7 +5155,7 @@
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
       ],
       "You need access": [
-        "Erişime ihtiyacınız var"
+        "Erişiminiz olması gerekli"
       ],
       "You will lose access to Plus features on this date.": [
         "Bu tarihte Plus özelliklerine erişiminizi kaybedeceksiniz."
@@ -5797,10 +5752,10 @@
         "Herkese açık anahtarlar"
       ],
       "Public link expiration date": [
-        "Genel bağlantı son kullanma tarihi"
+        "Herkese açık bağlantının geçerlilik sonu tarihi"
       ],
       "Public link password": [
-        "Genel bağlantı şifresi"
+        "Herkese açık bağlantı parolası"
       ],
       "Region": [
         "Bölge"
@@ -5927,9 +5882,6 @@
       ],
       "What happened?": [
         "Ne oldu?"
-      ],
-      "What is the main reason you are canceling?": [
-        "İptal etmenizin ana nedeni nedir?"
       ],
       "Wonderful": [
         "Çok iyi"
@@ -6161,9 +6113,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Aboneliğiniz ${ renewTime } tarihinde ${ renewablePrice } fiyatından otomatik olarak yenilenecek. İstediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Title": {
@@ -6753,7 +6702,7 @@
         "Sınırsız sayıda aygıt"
       ],
       "Unlimited devices and aliases": [
-        "Sınırsız cihazlar ve takma adlar"
+        "Sınırsız aygıt ve takma ad"
       ],
       "Unlimited filters": [
         "Sınırsız sayıda süzgeç"
@@ -7402,7 +7351,7 @@
         "Çöp kutusu boşaltılamadı"
       ],
       "You stopped sharing this item": [
-        "Bu öğeyi paylaşmayı durdurdunuz"
+        "Bu ögeyi paylaşmayı durdurdunuz"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
@@ -7526,10 +7475,10 @@
     "pass_signup_2023: Info": {
       "Secure sharing with ${ n } vault": [
         "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasalar ile güvenli paylaşım"
+        "${ n } kasa ile güvenli paylaşım"
       ],
       "Secure sharing with multiple vaults": [
-        "Çoklu kasalar ile güvenli paylaşım"
+        "Çok sayıda kasa ile güvenli paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
@@ -7555,6 +7504,9 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -7631,9 +7583,6 @@
       ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
-      ],
-      "Feedback": [
-        "Geri bildirim"
       ],
       "Filter groups": [
         "Grupları süz"
@@ -7963,7 +7912,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "Şifre sıfırlama iptal edildi"
+        "Parola sıfırlama isteği iptal edildi"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -8156,7 +8105,7 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Bu abonelik, iptal edilene kadar her 2 yılda bir aynı oranda otomatik olarak yenilenecektir."
+        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ]
     },
     "specialoffer: Link": {
@@ -8286,7 +8235,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Aboneliğiniz iptal ediliyor, lütfen bekleyin"
+        "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
     "Storage": {
@@ -8461,6 +8410,65 @@
         "Toplam"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } toplam depolama alanı"
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hong Kong aktivistlerine yardımlarımız"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } tarifesinde kal"
+      ],
+      "Learn more about our impact": [
+        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Our fight against censorship in Russia": [
+        "Rusya'da sansüre karşı mücadelemiz"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Read the story": [
+        "Öykümüzü okuyun"
+      ],
+      "Unblocking internet access in Iran": [
+        "İran İnternet erişimi engelini kaldırmak"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Watch the interview": [
+        "Röportajı izleyin"
+      ],
+      "Yearly free storage bonuses": [
+        "Yıllık ücretsiz depolama alanı hediyeleri"
+      ],
+      "Your own custom email domain": [
+        "Kendi özel e-posta etki alanınız"
+      ],
+      "Your own short @pm.me email alias": [
+        "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8625,7 +8633,7 @@
         "Doğrulandı"
       ],
       "You have successfully canceled your subscription.": [
-        "Aboneliğinizi başarıyla iptal ettiniz."
+        "Aboneliğinizi iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
@@ -9518,15 +9526,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonelik her ay otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 1 ay sonra."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],

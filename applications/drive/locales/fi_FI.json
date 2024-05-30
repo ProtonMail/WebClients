@@ -639,6 +639,9 @@
       "Resend code": [
         "Lähetä koodi uudelleen"
       ],
+      "Resend invite": [
+        "Lähetä kutsu uudelleen"
+      ],
       "Reset to default": [
         "Palauta oletukset"
       ],
@@ -2287,45 +2290,6 @@
         "VPN on liian hidas"
       ]
     },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "Auta meitä parantamaan!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "Special Offer": [
-        "Erikoistarjous"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Laajennettu versiohistoria"
-      ],
-      "Priority support": [
-        "Ensisijainen tuki"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "ensimmäisen kuukauden ajan"
-      ],
-      "Limited-time offer": [
-        "Tarjous voimassa rajoitetun ajan"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -2481,6 +2445,9 @@
       ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Alias-asetusten lataamisessa tapahtui virhe"
@@ -4063,6 +4030,9 @@
       "Create links and share your files with others.": [
         "Luo linkkejä ja jaa tiedostojasi muille."
       ],
+      "Create public link": [
+        "Luo julkinen linkki"
+      ],
       "Create your first folder and start moving your files.": [
         "Luo ensimmäinen kansiosi ja aloita tiedostojen siirto."
       ],
@@ -4384,6 +4354,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invite link copied": [
+        "Kutsulinkki on kopioitu"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
@@ -4395,6 +4368,9 @@
       ],
       "It’s easy and secure": [
         "Se on helppoa ja turvallista"
+      ],
+      "JCB logo": [
+        "JCB-logo"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -4775,17 +4751,11 @@
       "Share via link settings": [
         "Linkkijaon asetukset"
       ],
-      "Share with anyone": [
-        "Jaa kenelle tahansa"
-      ],
       "Shareable link for ${ boldNameText }": [
         "Jaettava linkki kohteeseen ${ boldNameText }"
       ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
-      ],
-      "Shared with": [
-        "Jaettu"
       ],
       "Shared with me": [
         "Jaettu minulle"
@@ -4825,12 +4795,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
-      ],
-      "Subscription auto-renews every 12 months.": [
-        "Tilaus uudistuu automaattisesti 12 kuukauden välein."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "Tilaus uudistuu automaattisesti 24 kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5928,9 +5892,6 @@
       "What happened?": [
         "Mitä tapahtui?"
       ],
-      "What is the main reason you are canceling?": [
-        "Mikä on suurin syy tilauksen perumiseen?"
-      ],
       "Wonderful": [
         "Erinomainen"
       ],
@@ -6161,9 +6122,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Tilauksesi uudistuu automaattisesti ${ renewTime } hintaan ${ renewablePrice }, peruuta koska tahansa"
       ]
     },
     "mailtrial2024: Title": {
@@ -6678,6 +6636,9 @@
       ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
+      ],
+      "Password health": [
+        "Salasanaterveys"
       ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
@@ -7356,6 +7317,9 @@
       "File removed": [
         "Tiedosto poistettiin"
       ],
+      "Invitation email was sent again": [
+        "Kutsusähköposti lähetettiin uudelleen"
+      ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
@@ -7559,6 +7523,9 @@
       "MM/YY": [
         "KK/VV"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
+      ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
       ]
@@ -7634,9 +7601,6 @@
       ],
       "Enter your email address": [
         "Syötä sähköpostiosoitteesi"
-      ],
-      "Feedback": [
-        "Palautteesi"
       ],
       "Filter groups": [
         "Suodata ryhmiä"
@@ -8464,6 +8428,62 @@
         "Hintaan"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Yhteensä ${ planMaxSpace } tallennustilaa"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
+      "Calendar sharing": [
+        "Kalenterien jakaminen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Mukautetut lähetys- ja torkutusajat"
+      ],
+      "Helping activists in Hong Kong": [
+        "Aktivistien auttaminen Hongkongissa"
+      ],
+      "Keep ${ planName }": [
+        "Pidä ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Lue lisää vaikutuksestamme"
+      ],
+      "Our fight against censorship in Russia": [
+        "Taistelumme Venäjän sensuuria vastaan"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ],
+      "Read the story": [
+        "Lue juttu"
+      ],
+      "Unblocking internet access in Iran": [
+        "Internet-yhteyksien vapauttaminen Iranissa"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Watch the interview": [
+        "Katso haastattelu"
+      ],
+      "Yearly free storage bonuses": [
+        "Vuotuiset ilmaiset tallennustilakorotukset"
+      ],
+      "Your own custom email domain": [
+        "Oma sähköpostiverkkotunnuksesi"
+      ],
+      "Your own short @pm.me email alias": [
+        "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -8617,6 +8637,9 @@
       ],
       "Recovery has started": [
         "Palautus on aloitettu"
+      ],
+      "Secure link copied": [
+        "Turvallinen linkki on kopioitu"
       ],
       "The link to your file was successfully copied": [
         "Tiedoston linkki on kopioitu"
@@ -9521,15 +9544,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Tilaus uudistuu automaattisesti kuukauden välein ja seuraava laskutuspäivä on kuukauden kuluttua."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
       ],

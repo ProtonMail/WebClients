@@ -1198,6 +1198,11 @@
         "Continuar con tu suscripción"
       ]
     },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuario",
@@ -2291,42 +2296,8 @@
       ]
     },
     "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        "¡Ayúdanos a mejorar!"
-      ]
-    },
-    "drivePlus2024: Action": {
-      "Get the deal": [
-        "Aprovéchate de la oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Historial de versiones extendido"
-      ],
-      "Priority support": [
-        "Soporte prioritario"
-      ]
-    },
-    "drivePlus2024: Footer": {
-      "Renews at ${ renewablePrice }, cancel anytime": [
-        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
-      ]
-    },
-    "drivePlus2024: Info": {
-      "for the first month": [
-        "por el primer mes"
-      ],
-      "Limited-time offer": [
-        "Oferta por tiempo limitado"
-      ]
-    },
-    "drivePlus2024: Title": {
-      "Get ${ planName } for only ${ planPrice }": [
-        "Obtén ${ planName } por solo ${ planPrice }"
+      "Help us improve": [
+        "Ayúdanos a mejorar"
       ]
     },
     "Email body for description (description part)": {
@@ -4069,6 +4040,9 @@
       "Create links and share your files with others.": [
         "Crea enlaces y comparte tus archivos con otros."
       ],
+      "Create public link": [
+        "Crear enlace público"
+      ],
       "Create your first folder and start moving your files.": [
         "Crea tu primera carpeta y comienza a mover tus archivos."
       ],
@@ -4405,6 +4379,9 @@
       "It’s easy and secure": [
         "Es fácil y seguro"
       ],
+      "JCB logo": [
+        "Logo de JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
       ],
@@ -4583,6 +4560,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
+      ],
+      "People with access": [
+        "Personas con acceso"
       ],
       "Permanently delete all files in your locked drive": [
         "Eliminar permanentemente todos los archivos en tu unidad bloqueada"
@@ -4784,17 +4764,11 @@
       "Share via link settings": [
         "Ajustes de uso compartido con un enlace"
       ],
-      "Share with anyone": [
-        "Compartir con cualquiera"
-      ],
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
       ],
       "Shared link not found": [
         "Enlace compartido no encontrado"
-      ],
-      "Shared with": [
-        "Compartido con"
       ],
       "Shared with me": [
         "Compartido conmigo"
@@ -4835,11 +4809,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
-      "Subscription auto-renews every 12 months.": [
-        "La suscripción se renueva automáticamente cada 12 meses."
-      ],
-      "Subscription auto-renews every 24 months.": [
-        "La suscripción se renueva automáticamente cada 24 meses."
+      "Subscription auto-renews every ${ cycle } months.": [
+        "La suscripción se renueva automáticamente cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
@@ -5940,8 +5911,8 @@
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
-      "What is the main reason you are canceling?": [
-        "¿Cuál es la razón principal por la que estás cancelando?"
+      "What is your main reason for canceling or downgrading?": [
+        "¿Cuál es tu motivo principal por el que cancelas o bajas de plan?"
       ],
       "Wonderful": [
         "Maravilloso"
@@ -6173,9 +6144,6 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tiempo limitado, expira el 2 de abril de 2024"
-      ],
-      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Tu suscripción se renovará automáticamente en ${ renewTime } por ${ renewablePrice }. Puedes cancelar en cualquier momento."
       ]
     },
     "mailtrial2024: Title": {
@@ -6248,7 +6216,7 @@
         "Datos binarios"
       ],
       "Bourne shell script": [
-        "Script Bourne shell"
+        "Script de Bourne shell"
       ],
       "BZip archive": [
         "Archivo BZip"
@@ -7586,6 +7554,15 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. Después se renovará automáticamente al precio de ${ price } cada ${ months }. Puedes cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puedes cancelarla en cualquier momento."
+      ],
       "Timeout exceeded": [
         "Se ha superado el tiempo de espera."
       ]
@@ -7662,9 +7639,6 @@
       "Enter your email address": [
         "Introduce tu dirección de correo electrónico."
       ],
-      "Feedback": [
-        "Comentarios"
-      ],
       "Filter groups": [
         "Filtrar grupos"
       ],
@@ -7718,6 +7692,9 @@
       ],
       "Set date": [
         "Establecer una fecha"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
@@ -8489,6 +8466,173 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Los ingresos de ${ BRAND_NAME } solo provienen de las suscripciones de sus usuarios. Tu ayuda nos permite mantenernos independientes, avanzar en nuestra misión de hacer que la privacidad en línea sea lo primero y seguir apoyando a activistas y organizaciones que luchan por la privacidad y la libertad."
+      ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } incluyendo compartir calendarios"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } incluyendo historial de versiones"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } y todas las funciones premium de productividad"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "App de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluyendo alias de hide-my-email ilimitados"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } de almacenamiento total"
+      ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName }te da acceso a todas las aplicaciones y funciones premium. La privacidad está integrada para que puedas seguir adelante sabiendo que tus datos y tu identidad están seguros."
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } va más allá de lo básico para ayudarte a tener más productividad, organización y control de tu buzón, identidad y más."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } te ayuda a asegurarte de que cada miembro de tu familia, y tus datos, estén protegidos siempre que están en línea."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } ofrece ${ planMaxSpace } de almacenamiento para tus correos, adjuntos, eventos, contraseñas y archivos. También es elegible para bonificaciones de almacenamiento anuales."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } ofrece ${ planMaxSpace } de almacenamiento para tus archivos y fotos. También es elegible para bonificaciones de almacenamiento anuales."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } con acceso a todos los servidores de gran velocidad en ${ vpnCountries } países"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "Add any new files": [
+        "Añadir archivos nuevos"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+        "Después de que expire la suscripción a ${ planName }, se le pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. También perderás cualquier bonificación de almacenamiento recibida anteriormente. "
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Después de que expire la suscripción a ${ planName }, se te pasará a ${ BRAND_NAME } Free el cual ofrece hasta 5 GB de almacenamiento en Drive y hasta 1 GB en Mail. También perderás cualquier bonificación de almacenamiento recibida anteriormente."
+      ],
+      "Back up photos from your devices": [
+        "Respaldar fotos desde dispositivos"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
+      ],
+      "Comprehensive privacy and security": [
+        "Privacidad y seguridad integrales"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Direct contribution to our mission": [
+        "Contribución directa a nuestra misión"
+      ],
+      "Early access to new apps and features": [
+        "Acceso anticipado a funciones y aplicaciones nuevas"
+      ],
+      "Extra storage and bonuses": [
+        "Almacenamiento adicional y bonificaciones"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ayude a activistas en Hong Kong"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Cómo nuestro equipo de atención al cliente ha llevado nuestra aplicación VPN directamente a la mano de la gente."
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Cómo contraatacamos cuando ${ BRAND_NAME } fue el blanco de una agresiva campaña de censura."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Cómo apoyamos a activistas locales cuando la privacidad y la libertad de expresión fueron amenazadas en Hong Kong."
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Si excedes los límites del plan gratuito cuando la suscripción de ${ planName } expire, no podrás:"
+      ],
+      "Keep ${ planName }": [
+        "Seguir con ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Más información acerca de nuestro impacto"
+      ],
+      "Manage your calendar": [
+        "Gestionar los calendarios"
+      ],
+      "Online privacy, for your whole family": [
+        "Privacidad en línea para toda la familia"
+      ],
+      "Our fight against censorship in Russia": [
+        "Nuestra lucha contra la censura en Rusia"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Toma en cuenta que ${ planName } ya no está disponible para tu compra. Si bajas de plan, tu cuenta perderá todos los beneficios del plan y no podrás volver a suscribirte a este plan."
+      ],
+      "Premium productivity features": [
+        "Funciones premium de productividad"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ],
+      "Read the story": [
+        "Lee la historia"
+      ],
+      "Receive new emails": [
+        "Recibir correos electrónicos nuevos"
+      ],
+      "Send emails with attachments": [
+        "Enviar correos electrónicos con adjuntos"
+      ],
+      "Sync files on devices": [
+        "Sincronizar archivos en dispositivos"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "Lo mejor de ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloqueo del acceso a internet en Irán"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Version history": [
+        "Historial de versiones"
+      ],
+      "Watch the interview": [
+        "Ve la entrevista"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "A qué renuncias cuando cancelas ${ planName }"
+      ],
+      "Yearly free storage bonuses": [
+        "Bono de almacenamiento gratuito al año"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "La suscripción a ${ planName } finaliza en ${ expiryDate }, después pasarás al plan ${ BRAND_NAME } Free. Si tu uso excede los límites del plan gratuito, podrías experimentar acceso restringido a tus datos y funciones de productos. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "La suscripción a ${ planName } finaliza en ${ expiryDate }, después pasará al plan ${ BRAND_NAME } Free. Si tu uso excede los límites del plan gratuito, podrías experimentar acceso restringido a tus datos y funciones de productos. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "Your own custom email domain": [
+        "Tu propio dominio de correo electrónico personalizado"
+      ],
+      "Your own short @pm.me email alias": [
+        "Tu alias de correo electrónico @pm.me"
       ]
     },
     "subscription reminder": {
@@ -9551,15 +9695,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "La suscripción se renueva automáticamente cada mes. Tu próxima fecha de facturación es en un mes."
-      ],
-      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "La suscripción se renueva automáticamente cada 3 meses. Tu próxima fecha de facturación es en 3 meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puedes cancelarla en cualquier momento."
-      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."
       ],
