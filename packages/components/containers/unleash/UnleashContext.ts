@@ -20,7 +20,6 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
-    OrganizationIdentity = 'OrganizationIdentity',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',

@@ -95,9 +95,6 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             if (!organizationKey?.privateKey) {
                 return;
             }
-            if (!listenerApi.extra.unleashClient.isEnabled('OrganizationIdentity')) {
-                return;
-            }
 
             listenerApi.unsubscribe();
 
