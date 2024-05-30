@@ -44,6 +44,7 @@ import {
     useGetAddresses,
     useModals,
     useNotifications,
+    useOrganizationKey,
     useSubscription,
     useUser,
 } from '../../hooks';
@@ -75,6 +76,7 @@ interface Props {
 const OrganizationSection = ({ app, organization }: Props) => {
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
+    const [organizationKey] = useOrganizationKey();
     const [user] = useUser();
     const getAddresses = useGetAddresses();
     const api = useApi();
@@ -248,7 +250,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
     const organizationName = organization.Name;
     const inputLabel = isPartOfFamily ? c('familyOffer_2023:Label').t`Family name` : c('Label').t`Organization name`;
-    const showOrganizationIdentity = !isPartOfFamily && organizationIdentity.enabled;
+    const showOrganizationIdentity = Boolean(organizationKey?.privateKey);
 
     return (
         <SettingsSection>
