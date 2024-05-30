@@ -22,7 +22,16 @@ import { handleWebContents } from "./utils/view/webContents";
 (async function () {
     // Log initialization
     Logger.initialize({ preload: true });
-    Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux, "version:", app.getVersion());
+    Logger.info(
+        "App start is mac:",
+        isMac,
+        "is windows:",
+        isWindows,
+        "isLinux:",
+        isLinux,
+        "version:",
+        app.getVersion(),
+    );
 
     Logger.info(
         "Desktop features:",
