@@ -16,15 +16,15 @@ import {
 
 import { Button, CoreButtonLike, Input, Modal } from '../../atoms';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
-import { getThemeByIndex } from '../../utils';
+import { SubTheme } from '../../utils';
 
 interface Props extends ModalOwnProps {
-    index?: number;
+    theme?: SubTheme;
     isFirstCreation?: boolean;
     onFinish: () => void;
 }
 
-export const WalletImportModal = ({ index = 0, isFirstCreation, onFinish, ...modalProps }: Props) => {
+export const WalletImportModal = ({ theme, isFirstCreation, onFinish, ...modalProps }: Props) => {
     const {
         walletName,
         handleWalletNameChange,
@@ -43,7 +43,7 @@ export const WalletImportModal = ({ index = 0, isFirstCreation, onFinish, ...mod
     });
 
     return (
-        <Modal title={c('Wallet setup').t`Import wallet`} className={getThemeByIndex(index)} {...modalProps}>
+        <Modal title={c('Wallet setup').t`Import wallet`} className={theme} {...modalProps}>
             <div className="flex flex-column">
                 <div className="mb-4">
                     <Input

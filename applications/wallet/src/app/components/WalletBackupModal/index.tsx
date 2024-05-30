@@ -11,16 +11,20 @@ import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, ButtonLike, Modal } from '../../atoms';
+import { SubTheme } from '../../utils';
 import { ImportantNotice } from './ImportantNotice';
 
-interface Props extends ModalOwnProps {
-    wallet: IWasmApiWalletData;
+export interface WalletBackupModalOwnProps {
+    apiWalletData: IWasmApiWalletData;
+    theme?: SubTheme;
 }
 
-export const WalletBackupModal = ({ wallet, ...modalProps }: Props) => {
+type Props = ModalOwnProps & WalletBackupModalOwnProps;
+
+export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
     const [viewMnemonic, setViewMnemonic] = useState(false);
 
-    const mnemonicWords = wallet.Wallet.Mnemonic?.split(' ');
+    const mnemonicWords = apiWalletData.Wallet.Mnemonic?.split(' ');
 
     return (
         <Modal
@@ -31,6 +35,7 @@ export const WalletBackupModal = ({ wallet, ...modalProps }: Props) => {
                           .t`Use this secret recovery phrase to recover your wallet if you lose access to your account.`
                     : undefined
             }
+            className={theme}
             {...modalProps}
         >
             {viewMnemonic ? (

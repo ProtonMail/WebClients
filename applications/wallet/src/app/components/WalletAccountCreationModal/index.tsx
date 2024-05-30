@@ -17,12 +17,15 @@ import {
 import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { getLabelByScriptType, isUndefined } from '../../utils';
+import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
 import { getDefaultWalletAccountName } from '../../utils/wallet';
 
-interface Props extends ModalOwnProps {
+export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;
+    theme?: SubTheme;
 }
+
+type Props = ModalOwnProps & WalletAccountCreationModalOwnProps;
 
 const DEFAULT_INDEX = 0;
 const baseIndexOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'custom'];
@@ -41,7 +44,7 @@ const purposeByScriptType: Record<WasmScriptType, number> = {
     [WasmScriptType.Taproot]: 86,
 };
 
-export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) => {
+export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
     // TODO use different default if 0 is already added
     const [label, setLabel] = useState(getDefaultWalletAccountName(apiWalletData.WalletAccounts));
 
@@ -125,6 +128,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
             title={c('Wallet Account').t`Add account`}
             subline={`Accounts in an on-chain Bitcoin wallet help distinguish various purposes, enhancing privacy and organization. \nYou can add accounts you want to monitor transactions and balances to see them in the ${WALLET_APP_NAME}.`}
             enableCloseWhenClickOutside
+            className={theme}
             {...modalProps}
         >
             <div className="flex flex-row">

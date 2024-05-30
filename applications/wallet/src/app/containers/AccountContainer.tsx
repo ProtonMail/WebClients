@@ -16,7 +16,7 @@ import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { useBitcoinBlockchainContext } from '../contexts';
-import { getThemeByIndex } from '../utils';
+import { getThemeForWallet } from '../utils';
 
 export const AccountContainer = () => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
@@ -50,7 +50,7 @@ export const AccountContainer = () => {
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
-    const theme = getThemeByIndex(walletIndex as number);
+    const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
 
     const walletAccount = wallet.WalletAccounts.find(({ ID }) => ID === accountId);
 
