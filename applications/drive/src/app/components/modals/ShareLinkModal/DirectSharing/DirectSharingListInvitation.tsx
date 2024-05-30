@@ -92,11 +92,13 @@ export const DirectSharingListInvitation = ({
     const dropdownLabel = permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label;
 
     const copyShareInviteLinkUrl = useCallback(() => {
-        textToClipboard(`${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}`);
+        textToClipboard(
+            `${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}&email=${contactEmail}`
+        );
         createNotification({
             text: c('Info').t`Invite link copied`,
         });
-    }, [volumeId, linkId, invitationId]);
+    }, [volumeId, linkId, invitationId, contactEmail]);
 
     const handleInviteRemove = useCallback(() => {
         onInvitationRemove(invitationId);
