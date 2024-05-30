@@ -1648,9 +1648,6 @@
       "Username (new alias)": [
         "使用者名稱(新別名)"
       ],
-      "Vault": [
-        "保管庫"
-      ],
       "Vault ID": [
         "保管庫 ID"
       ],
@@ -1845,6 +1842,12 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
