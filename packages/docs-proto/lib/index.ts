@@ -19,3 +19,4 @@ export * from './ConnectionCloseReason/ConnectionCloseReason'
 export * from './ConnectionCloseReason/ConnectionCloseReasonProps'
 
 export * from './Version'
+export * from './Heartbeat'

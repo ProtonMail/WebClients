@@ -1,6 +1,5 @@
 import { Awareness, outdatedTimeout, removeAwarenessStates } from 'y-protocols/awareness'
 import { UserState } from '@lexical/yjs'
-import * as time from 'lib0/time'
 
 export type DocsUserState = UserState & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,7 +14,7 @@ export class DocsAwareness extends Awareness {
   }
 
   renewLocalClock(): void {
-    const now = time.getUnixTime()
+    const now = Date.now()
     if (!this.getLocalState()) {
       return
     }
@@ -30,7 +29,7 @@ export class DocsAwareness extends Awareness {
 
   refreshPresenceState(outdatedThreshold: number = outdatedTimeout): void {
     this.renewLocalClock()
-    const now = time.getUnixTime()
+    const now = Date.now()
     const statesToRemove: number[] = []
     this.meta.forEach((meta, clientID) => {
       const isNotThisClient = clientID !== this.clientID

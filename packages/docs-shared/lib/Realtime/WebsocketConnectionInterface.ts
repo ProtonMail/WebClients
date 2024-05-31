@@ -1,8 +1,7 @@
-import { Broadcaster } from './Broadcaster'
-import { RealtimeUrlAndToken } from './RealtimeUrlAndToken'
-import { Result } from '@standardnotes/domain-core'
+import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
 
-export interface WebsocketConnectionInterface extends Broadcaster {
-  connect(getUrlAndToken: () => Promise<Result<RealtimeUrlAndToken>>): Promise<void>
+export interface WebsocketConnectionInterface {
+  connect(): Promise<void>
   destroy(): void
+  broadcastMessage(message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents, source: string): Promise<void>
 }

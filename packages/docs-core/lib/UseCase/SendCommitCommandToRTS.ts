@@ -1,5 +1,5 @@
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
-import { Broadcaster } from '@proton/docs-shared'
+import { WebsocketConnectionInterface } from '@proton/docs-shared'
 import { EventTypeEnum, CreateClientEventMessage, ClientEventVersion } from '@proton/docs-proto'
 import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 
@@ -8,18 +8,18 @@ import { Result, UseCaseInterface } from '@standardnotes/domain-core'
  * (rather than waiting for the next scheduled commit cycle)
  */
 export class DebugSendCommitCommandToRTS implements UseCaseInterface<boolean> {
-  async execute(broadcaster: Broadcaster, authorAddress: string): Promise<Result<boolean>> {
+  async execute(connection: WebsocketConnectionInterface, authorAddress: string): Promise<Result<boolean>> {
     const content = new Uint8Array(stringToUint8Array(JSON.stringify({ authorAddress })))
 
     const message = CreateClientEventMessage({
-      type: EventTypeEnum.DebugRequestCommit,
+      type: EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit,
       content: content,
       authorAddress: authorAddress,
       version: ClientEventVersion.V1,
       timestamp: Date.now(),
     })
 
-    void broadcaster.broadcastMessage(message, broadcaster, 'CommitDocumentUseCase')
+    void connection.broadcastMessage(message, 'CommitDocumentUseCase')
 
     return Result.ok(true)
   }

@@ -55,6 +55,7 @@ export class DecryptMessage implements UseCaseInterface<DecryptedMessage> {
       signature: decrypted.getValue().signature,
       aad: GetAssociatedEncryptionDataForRealtimeMessage(dto.message),
       authorAddress: dto.message.authorAddress,
+      timestamp: dto.message.timestamp,
     })
 
     return Result.ok(message)

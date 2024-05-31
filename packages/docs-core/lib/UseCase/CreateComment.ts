@@ -4,7 +4,6 @@ import { Comment } from '../Models'
 import { CommentInterface, ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
-import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CommentsApi } from '../Api/Comments/CommentsApi'
 
@@ -15,7 +14,6 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
   constructor(
     private api: CommentsApi,
     private encryptComment: EncryptComment,
-    private decryptComment: DecryptComment,
   ) {}
 
   async execute(dto: {
@@ -65,14 +63,18 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       return Result.fail(result.getError())
     }
 
-    const response = result.getValue()
+    const { Comment: commentFromResponse } = result.getValue()
 
-    const commentFromResponse = await this.decryptComment.execute(response.Comment, thread.markID, dto.keys)
-    if (commentFromResponse.isFailed()) {
-      return Result.fail(commentFromResponse.getError())
-    }
-
-    const comment = commentFromResponse.getValue()
+    const comment = new Comment(
+      commentFromResponse.CommentID,
+      new ServerTime(commentFromResponse.CreateTime),
+      new ServerTime(commentFromResponse.ModifyTime),
+      dto.text,
+      commentFromResponse.ParentCommentID,
+      commentFromResponse.Author,
+      [],
+      false,
+    )
     dto.commentsState.replacePlaceholderComment(localComment.id, comment)
 
     return Result.ok(comment)

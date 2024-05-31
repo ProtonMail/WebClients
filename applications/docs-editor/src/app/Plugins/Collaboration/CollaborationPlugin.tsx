@@ -16,6 +16,7 @@ type Props = {
     yjsDocMap: Map<string, Doc>,
   ) => Provider
   shouldBootstrap: boolean
+  onCollabReady: () => void
   username?: string
   cursorColor?: string
   cursorsContainerRef?: CursorsContainerRef
@@ -29,6 +30,7 @@ export function CollaborationPlugin({
   id,
   providerFactory,
   shouldBootstrap,
+  onCollabReady,
   username,
   cursorColor,
   cursorsContainerRef,
@@ -64,6 +66,7 @@ export function CollaborationPlugin({
     name,
     color,
     shouldBootstrap,
+    onCollabReady,
     cursorsContainerRef,
     initialEditorState,
     excludedProperties,

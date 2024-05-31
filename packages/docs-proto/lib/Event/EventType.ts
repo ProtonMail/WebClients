@@ -17,25 +17,8 @@ export class EventType extends ValueObject<EventTypeProps> {
     return new EventType({ type })
   }
 
-  isUnknownPresenceChange(): boolean {
-    return this.props.type === EventType.TYPES.PresenceChangeUnknown
-  }
-
-  isEnterDocument(): boolean {
-    return this.props.type === EventType.TYPES.PresenceChangeEnteredDocument
-  }
-
-  isPresenceChange(): boolean {
-    return [
-      EventTypeEnum.PresenceChangeUnknown,
-      EventTypeEnum.PresenceChangeBlurredDocument,
-      EventTypeEnum.PresenceChangeEnteredDocument,
-      EventTypeEnum.PresenceChangeExitedDocument,
-    ].includes(this.props.type)
-  }
-
   isCommitRequest(): boolean {
-    return this.props.type === EventType.TYPES.DebugRequestCommit
+    return this.props.type === EventType.TYPES.ClientIsDebugRequestingServerToPerformCommit
   }
 
   get name(): string {
@@ -47,7 +30,7 @@ export class EventType extends ValueObject<EventTypeProps> {
     return keys[index]
   }
 
-  get value(): number {
+  get value(): EventTypeEnum {
     return this.props.type
   }
 }

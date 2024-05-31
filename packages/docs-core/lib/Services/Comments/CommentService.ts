@@ -3,16 +3,13 @@ import {
   CommentsMessageType,
   CommentServiceInterface,
   CommentThreadInterface,
-  WebsocketConnectionEvent,
   CommentInterface,
   InternalEventHandlerInterface,
   InternalEventInterface,
   InternalEventBusInterface,
-  Broadcaster,
   CommentsEvent,
   CommentMarkNodeChangeData,
 } from '@proton/docs-shared'
-import { EventType } from '@proton/docs-proto'
 import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { LoggerInterface } from '@standardnotes/utils'
@@ -24,23 +21,26 @@ import { CreateThread } from '../../UseCase/CreateThread'
 import { CreateComment } from '../../UseCase/CreateComment'
 import { LoadThreads } from '../../UseCase/LoadThreads'
 import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
+import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
+import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from '../../Controller/Document/DocControllerEvent'
 
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
 
   public readonly liveComments: LiveComments = new LiveComments(
-    this.broadcaster,
+    this.websocketService,
+    this.document,
     this.userDisplayName,
     this.keys.userOwnAddress,
     this.eventBus,
   )
 
   constructor(
-    private readonly lookup: NodeMeta,
+    private readonly document: NodeMeta,
     private readonly keys: DocumentKeys,
+    private readonly websocketService: WebsocketServiceInterface,
     public userDisplayName: string,
     private api: CommentsApi,
-    private broadcaster: Broadcaster,
     private _encryptComment: EncryptComment,
     private _createThread: CreateThread,
     private _createComment: CreateComment,
@@ -50,12 +50,12 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     private logger: LoggerInterface,
   ) {
     this.localCommentsState = new LocalCommentsState(eventBus)
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.SocketClientRelayEventReceived)
+    eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
   }
 
   public initialize(): void {
     void this._loadThreads.execute({
-      lookup: this.lookup,
+      lookup: this.document,
       keys: this.keys,
       commentsState: this.localCommentsState,
     })
@@ -63,7 +63,8 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
 
   private broadcastCommentMessage(type: CommentsMessageType, dto: AnyCommentMessageData): void {
     const message = CreateRealtimeCommentMessage(type, dto, this.keys.userOwnAddress)
-    void this.broadcaster.broadcastMessage(message, this.broadcaster, 'CommentsController')
+
+    void this.websocketService.sendMessageToDocument(this.document, message, 'CommentsController')
   }
 
   public getTypersExcludingSelf(threadId: string): string[] {
@@ -83,16 +84,13 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async handleEvent(event: InternalEventInterface): Promise<void> {
-    const payload = event.payload as { type: EventType; data: unknown }
-
-    if (
-      event.type !== WebsocketConnectionEvent.SocketClientRelayEventReceived ||
-      payload.type.value !== EventType.TYPES.Comments
-    ) {
+    if (event.type !== DocControllerEvent.RealtimeCommentMessageReceived) {
       return
     }
 
-    this._handleRealtimeEvent.execute(this.localCommentsState, this.liveComments, payload.data as Uint8Array)
+    const { message } = event.payload as RealtimeCommentMessageReceivedPayload
+
+    this._handleRealtimeEvent.execute(this.localCommentsState, this.liveComments, message)
   }
 
   getAllThreads(): CommentThreadInterface[] {
@@ -103,7 +101,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     const threadResult = await this._createThread.execute({
       text: commentContent,
       keys: this.keys,
-      lookup: this.lookup,
+      lookup: this.document,
       userDisplayName: this.userDisplayName,
       commentsState: this.localCommentsState,
     })
@@ -125,7 +123,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
       text: content,
       threadID,
       keys: this.keys,
-      lookup: this.lookup,
+      lookup: this.document,
       userDisplayName: this.userDisplayName,
       commentsState: this.localCommentsState,
     })
@@ -151,8 +149,8 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     const encryptedContent = (await this._encryptComment.execute(content, thread.markID, this.keys)).getValue()
 
     const result = await this.api.editComment(
-      this.lookup.volumeId,
-      this.lookup.linkId,
+      this.document.volumeId,
+      this.document.linkId,
       threadID,
       commentID,
       encryptedContent,
@@ -169,7 +167,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async deleteThread(id: string): Promise<boolean> {
-    const response = await this.api.deleteThread(this.lookup.volumeId, this.lookup.linkId, id)
+    const response = await this.api.deleteThread(this.document.volumeId, this.document.linkId, id)
     if (response.isFailed()) {
       return false
     }
@@ -182,7 +180,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async deleteComment(threadID: string, commentID: string): Promise<boolean> {
-    const response = await this.api.deleteComment(this.lookup.volumeId, this.lookup.linkId, threadID, commentID)
+    const response = await this.api.deleteComment(this.document.volumeId, this.document.linkId, threadID, commentID)
     if (response.isFailed()) {
       return false
     }
@@ -195,7 +193,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async resolveThread(threadId: string): Promise<boolean> {
-    const response = await this.api.resolveThread(this.lookup.volumeId, this.lookup.linkId, threadId)
+    const response = await this.api.resolveThread(this.document.volumeId, this.document.linkId, threadId)
     if (response.isFailed()) {
       return false
     }
@@ -218,7 +216,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async unresolveThread(threadId: string): Promise<boolean> {
-    const response = await this.api.unresolveThread(this.lookup.volumeId, this.lookup.linkId, threadId)
+    const response = await this.api.unresolveThread(this.document.volumeId, this.document.linkId, threadId)
     if (response.isFailed()) {
       return false
     }
