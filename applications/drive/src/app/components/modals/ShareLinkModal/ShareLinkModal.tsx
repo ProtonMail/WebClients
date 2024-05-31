@@ -55,6 +55,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         existingEmails,
         isLoading,
         isAdding,
+        isShared,
         addNewMembers,
         removeMember,
         updateMemberPermissions,
@@ -67,8 +68,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
-    const isShareActive = !!sharedLink || !!members.length || !!invitations.length;
-    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShareActive;
+    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
     const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
     const isInvitationWorkflow = !!invitees.length;
@@ -183,7 +183,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 onMemberRemove={handleMemberRemove}
                                 onInvitationRemove={handleInvitationRemove}
                                 onInvitationPermissionsChange={handleInvitationPermissionsChange}
-                            onResendInvitationEmail={handleResendInvitationEmail}/>
+                                onResendInvitationEmail={handleResendInvitationEmail}
+                            />
                         </ModalTwoContent>
                         <hr className="mb-0.5" />
                         <ModalTwoFooter>
