@@ -16,7 +16,7 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
 import { ShareInvitee, useDriveSharingFlags } from '../../../../store';
-import MemberPermissionsSelect from './MemberPermissionsSelect';
+import { MemberDropdownMenu } from './MemberDropdownMenu';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
@@ -117,9 +117,10 @@ export const DirectSharingAutocomplete = ({
                     items={items}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 >
-                    <MemberPermissionsSelect
+                    <MemberDropdownMenu
                         selectedPermissions={selectedPermissions}
-                        onChange={handleSetPermissions}
+                        onChangePermissions={handleSetPermissions}
+                        autocompleteOptions
                     />
                 </InputField>
             </div>

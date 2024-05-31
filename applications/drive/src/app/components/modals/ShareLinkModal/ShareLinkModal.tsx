@@ -52,6 +52,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         volumeId,
         members,
         invitations,
+        externalInvitations,
         existingEmails,
         isLoading,
         isAdding,
@@ -62,6 +63,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         removeInvitation,
         resendInvitation,
         updateInvitePermissions,
+        removeExternalInvitation,
+        updateExternalInvitePermissions,
         deleteShareIfEmpty,
     } = useShareMemberView(rootShareId, linkId);
 
@@ -85,18 +88,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
         await updateMemberPermissions({ ...member, permissions });
-    };
-
-    const handleInvitationPermissionsChange = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
-        await updateInvitePermissions(invitationId, permissions);
-    };
-
-    const handleMemberRemove = async (member: ShareMember) => {
-        await removeMember(member);
-    };
-
-    const handleInvitationRemove = async (invitationId: string) => {
-        await removeInvitation(invitationId);
     };
 
     const handleResendInvitationEmail = async (invitationId: string) => {
@@ -179,10 +170,13 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 isLoading={isLoading}
                                 members={members}
                                 invitations={invitations}
-                                onPermissionsChange={handlePermissionsChange}
-                                onMemberRemove={handleMemberRemove}
-                                onInvitationRemove={handleInvitationRemove}
-                                onInvitationPermissionsChange={handleInvitationPermissionsChange}
+                                externalInvitations={externalInvitations}
+                                    onPermissionsChange={handlePermissionsChange}
+                                    onMemberRemove={removeMember}
+                                onInvitationRemove={removeInvitation}
+                                onInvitationPermissionsChange={updateInvitePermissions}
+                                    onExternalInvitationRemove={removeExternalInvitation}
+                                    onExternalInvitationPermissionsChange={updateExternalInvitePermissions}
                                 onResendInvitationEmail={handleResendInvitationEmail}
                             />
                         </ModalTwoContent>
