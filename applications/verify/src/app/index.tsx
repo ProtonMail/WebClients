@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 
 import '@proton/polyfill';
 
+import './0';
 import App from './App';
 import './style';
 
