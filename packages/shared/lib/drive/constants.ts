@@ -182,6 +182,12 @@ export enum SHARE_MEMBER_STATE {
     REJECTED = 2,
     DELETED = 3,
 }
+
+export enum SHARE_EXTERNAL_INVITATION_STATE {
+    PENDING = 1,
+    USER_REGISTERED = 2,
+}
+
 export const DS_STORE = '.DS_Store';
 
 // Delete once sharing between members is fully implemented.
@@ -198,4 +204,5 @@ export const ACTIVE_PING_INTERVAL = 6 * HOURS_IN_MS;
 export enum DRIVE_SIGNATURE_CONTEXT {
     SHARE_MEMBER_INVITER = 'drive.share-member.inviter',
     SHARE_MEMBER_MEMBER = 'drive.share-member.member',
+    SHARE_MEMBER_EXTERNAL_INVITATION = 'drive.share-member.external-invitation',
 }
