@@ -66,6 +66,7 @@ import { EditorEditableChangeEvent } from '@proton/docs-shared'
 import { ToolbarButton } from './ToolbarButton'
 import { ToolbarSeparator } from './ToolbarSeparator'
 import { TableOption } from './TableOption'
+import { c } from 'ttag'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -378,7 +379,7 @@ export default function DocumentEditorToolbar() {
     <div className="flex items-center gap-1.5 overflow-auto border-b border-[--border-weak] bg-[--background-norm] px-3 py-1.5 [grid-column:1_/_3] [grid-row:1] [scrollbar-width:thin]">
       <div className="mx-auto flex max-w-max items-center gap-1.5">
         <ToolbarButton
-          label="Undo"
+          label={c('Action').t`Undo`}
           onClick={() => {
             activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
           }}
@@ -387,7 +388,7 @@ export default function DocumentEditorToolbar() {
           <UndoIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Redo"
+          label={c('Action').t`Redo`}
           onClick={() => {
             if (!isEditable) {
               return
@@ -419,7 +420,7 @@ export default function DocumentEditorToolbar() {
         </SimpleDropdown>
         <ToolbarSeparator />
         <ToolbarButton
-          label="Decrease font size"
+          label={c('Action').t`Decrease font size`}
           disabled={!isEditable}
           onClick={() => {
             const currentFontSize = parseInt(fontSize)
@@ -455,7 +456,7 @@ export default function DocumentEditorToolbar() {
           }}
         />
         <ToolbarButton
-          label="Increase font size"
+          label={c('Action').t`Increase font size`}
           disabled={!isEditable}
           onClick={() => {
             const currentFontSize = parseInt(fontSize)
@@ -467,7 +468,7 @@ export default function DocumentEditorToolbar() {
         </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton
-          label="Bold"
+          label={c('Action').t`Bold`}
           disabled={!isEditable}
           active={isBold}
           onClick={() => {
@@ -477,7 +478,7 @@ export default function DocumentEditorToolbar() {
           <BoldIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Italic"
+          label={c('Action').t`Italic`}
           disabled={!isEditable}
           active={isItalic}
           onClick={() => {
@@ -487,7 +488,7 @@ export default function DocumentEditorToolbar() {
           <ItalicIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Underline"
+          label={c('Action').t`Underline`}
           disabled={!isEditable}
           active={isUnderline}
           onClick={() => {
@@ -497,18 +498,18 @@ export default function DocumentEditorToolbar() {
           <UnderlineIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Link"
+          label={c('Action').t`Link`}
           disabled={!isEditable}
           active={isLink}
           onClick={() => {
             if (!isLink) {
-              const link = prompt('Enter the URL')
+              const link = prompt(c('Action').t`Enter the URL`)
               if (!link) {
                 return
               }
               activeEditor.dispatchCommand(TOGGLE_LINK_COMMAND, link)
             } else {
-              const confirmed = confirm('Do you want to remove the link?')
+              const confirmed = confirm(c('Action').t`Do you want to remove the link?`)
               if (!confirmed) {
                 return
               }
@@ -520,7 +521,7 @@ export default function DocumentEditorToolbar() {
         </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton
-          label="Left align"
+          label={c('Action').t`Left align`}
           disabled={!isEditable}
           active={elementFormat === 'left'}
           onClick={() => {
@@ -530,7 +531,7 @@ export default function DocumentEditorToolbar() {
           <AlignLeftIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Center align"
+          label={c('Action').t`Center align`}
           disabled={!isEditable}
           active={elementFormat === 'center'}
           onClick={() => {
@@ -540,7 +541,7 @@ export default function DocumentEditorToolbar() {
           <AlignCenterIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Right align"
+          label={c('Action').t`Right align`}
           disabled={!isEditable}
           active={elementFormat === 'right'}
           onClick={() => {
@@ -550,7 +551,7 @@ export default function DocumentEditorToolbar() {
           <AlignRightIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Justify align"
+          label={c('Action').t`Justify align`}
           disabled={!isEditable}
           active={elementFormat === 'justify'}
           onClick={() => {
@@ -561,7 +562,7 @@ export default function DocumentEditorToolbar() {
         </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton
-          label="Indent"
+          label={c('Action').t`Indent`}
           disabled={!isEditable}
           onClick={() => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
@@ -570,7 +571,7 @@ export default function DocumentEditorToolbar() {
           <IndentIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Outdent"
+          label={c('Action').t`Outdent`}
           disabled={!isEditable}
           onClick={() => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
@@ -598,7 +599,7 @@ export default function DocumentEditorToolbar() {
           }}
         />
         <ToolbarButton
-          label="Insert image"
+          label={c('Action').t`Insert image`}
           disabled={!isEditable}
           onClick={() => {
             imageInputRef.current?.click()
@@ -609,7 +610,7 @@ export default function DocumentEditorToolbar() {
         <TableOption editor={activeEditor} disabled={!isEditable} />
         <ToolbarSeparator />
         <ToolbarButton
-          label="Add comment"
+          label={c('Action').t`Add comment`}
           disabled={!isEditable}
           onClick={() => {
             activeEditor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
@@ -618,7 +619,7 @@ export default function DocumentEditorToolbar() {
           <AddCommentIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarButton
-          label="Show all comments"
+          label={c('Action').t`Show all comments`}
           disabled={!isEditable}
           onClick={() => {
             activeEditor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
@@ -627,7 +628,7 @@ export default function DocumentEditorToolbar() {
           <CommentsIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarSeparator />
-        <ToolbarButton label="Clear formatting" disabled={!isEditable} onClick={clearFormatting}>
+        <ToolbarButton label={c('Action').t`Clear formatting`} disabled={!isEditable} onClick={clearFormatting}>
           <Icon name="eraser" className="h-4 w-4 fill-current" />
         </ToolbarButton>
       </div>
@@ -651,7 +652,7 @@ export default function DocumentEditorToolbar() {
             }}
           >
             <Icon name="pencil" size={4.5} />
-            Editing
+            {c('Info').t`Editing`}
           </DropdownMenuButton>
           <DropdownMenuButton
             className="flex items-center gap-2 text-left text-sm"
@@ -665,7 +666,7 @@ export default function DocumentEditorToolbar() {
             }}
           >
             <Icon name="eye" size={4.5} />
-            Viewing
+            {c('Info').t`Viewing`}
           </DropdownMenuButton>
         </DropdownMenu>
       </SimpleDropdown>

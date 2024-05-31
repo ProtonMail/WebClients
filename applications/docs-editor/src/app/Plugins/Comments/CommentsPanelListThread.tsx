@@ -14,6 +14,7 @@ import {
 import { Icon } from '@proton/components'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
+import { c, msgid } from 'ttag'
 
 export function CommentsPanelListThread({
   editor,
@@ -99,6 +100,12 @@ export function CommentsPanelListThread({
 
   const isResolved = thread.state === CommentThreadState.Resolved
 
+  const firstTyper = typers[0]
+  const allTypersExceptLast = typers.slice(0, -1).join(', ')
+  const lastTyper = typers[typers.length - 1]
+  // translator: list of names (eg: "Tom, John and Henry")
+  const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
     <li
@@ -114,7 +121,10 @@ export function CommentsPanelListThread({
       {isResolved && (
         <div className="flex items-center gap-2 rounded rounded-b-none bg-[--primary-minor-1] px-2.5 py-1.5 text-sm">
           <Icon name="checkmark-circle" />
-          Resolved
+          {
+            // translator: Signify the comments thread is resolved by a user
+            c('Info').t`Resolved`
+          }
         </div>
       )}
       {quote && (
@@ -141,7 +151,7 @@ export function CommentsPanelListThread({
       {!thread.isPlaceholder && !isDeleting && !isResolved && (
         <div className="my-3 px-3.5">
           <CommentsComposer
-            placeholder="Reply..."
+            placeholder={c('Placeholder').t`Reply...`}
             onSubmit={(content) => {
               controller.createComment(content, thread.id).catch(console.error)
             }}
@@ -167,15 +177,17 @@ export function CommentsPanelListThread({
               controller.unresolveThread(thread.id).catch(console.error)
             }}
           >
-            Re-open thread
+            {c('Action').t`Re-open thread`}
           </button>
         </div>
       )}
       {typers.length > 0 && (
         <div className="px-3.5 py-1.5 text-xs text-[--text-weak]">
-          {typers.length === 1
-            ? `${typers[0]} is typing...`
-            : `${typers.slice(0, -1).join(', ')} and ${typers[typers.length - 1]} are typing...`}
+          {c('Info').ngettext(
+            msgid`${usersTranslation} is typing...`,
+            `${usersTranslation} are typing...`,
+            typers.length,
+          )}
         </div>
       )}
     </li>

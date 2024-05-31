@@ -19,6 +19,7 @@ import { Icons } from '@proton/components'
 import { InternalEventBus } from '@proton/docs-shared'
 import { InternalEventBusProvider } from './InternalEventBusProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
+import { c } from 'ttag'
 
 type Props = {}
 
@@ -200,7 +201,7 @@ export function App({}: Props) {
     return (
       <div className="flex h-full w-full flex-col items-center justify-center gap-4">
         <CircleLoader size="large" />
-        Waiting for editor initialization...
+        {c('Info').t`Waiting for editor initialization...`}
       </div>
     )
   }
