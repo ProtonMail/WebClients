@@ -1,5 +1,4 @@
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { InviteProtonUserPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
@@ -95,15 +94,6 @@ export const queryAcceptShareInvite = (
         AddressID,
         AddressKeyID,
         SessionKeySignature,
-    },
-});
-
-/* v2 */
-export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonUserPayload) => ({
-    method: 'post',
-    url: `drive/v2/shares/${shareID}/invitations`,
-    data: {
-        Invitation: invitation,
     },
 });
 
