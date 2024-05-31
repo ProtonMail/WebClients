@@ -23,14 +23,14 @@
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "client-zip": "^2.4.5",
-        "exifreader": "^4.23.1",
+        "exifreader": "^4.23.2",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "react-test-renderer": "^18.3.1",
         "react-window": "^1.8.10",
-        "ttag": "^1.8.6",
+        "ttag": "^1.8.7",
         "web-streams-polyfill": "^3.3.3"
     },
     "devDependencies": {
@@ -47,7 +47,7 @@
         "jest-junit": "^16.0.0",
         "jest-when": "3.6.0",
         "prettier": "^3.2.5",
-        "ts-jest": "^29.1.2",
+        "ts-jest": "^29.1.4",
         "typescript": "^5.4.5"
     }
 }
