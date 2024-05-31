@@ -457,7 +457,18 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   public async renameDocument(newName: string): Promise<Result<void>> {
     try {
-      await this.driveCompat.renameDocument(this.nodeMeta, newName)
+      if (!this.decryptedNode) {
+        return Result.fail('Decrypted node not loaded when renaming document')
+      }
+
+      const name = await this.driveCompat.findAvailableNodeName(
+        {
+          volumeId: this.decryptedNode.volumeId,
+          linkId: this.decryptedNode.parentNodeId,
+        },
+        newName,
+      )
+      await this.driveCompat.renameDocument(this.nodeMeta, name)
       return Result.ok()
     } catch (e) {
       return Result.fail(getErrorString(e) ?? 'Failed to rename document')
