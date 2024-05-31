@@ -37,6 +37,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { createShare, deleteShare } = useShareActions();
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
+    const [isShared, setIsShared] = useState<boolean>();
 
     const existingEmails = useMemo(() => {
         const membersEmail = members.map((member) => member.email);
@@ -54,6 +55,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             if (!link.shareId) {
                 return;
             }
+            setIsShared(link.isShared);
             const share = await getShare(abortController.signal, link.shareId);
 
             await listInvitations(abortController.signal, share.shareId).then((invites: ShareInvitation[]) => {
@@ -251,6 +253,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         members,
         invitations,
         existingEmails,
+        isShared,
         isLoading,
         isAdding,
         removeInvitation,
