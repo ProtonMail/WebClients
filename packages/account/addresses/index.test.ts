@@ -3,7 +3,6 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { serverEvent } from '../eventLoop';
-import { getModelState } from '../test';
 import { addressesReducer, addressesThunk, selectAddresses } from './index';
 
 describe('addresses', () => {
@@ -15,10 +14,10 @@ describe('addresses', () => {
         } as unknown as ProtonThunkArguments;
         const { store } = getTestStore({ reducer: { ...addressesReducer }, extraThunkArguments });
         await store.dispatch(addressesThunk());
-        expect(selectAddresses(store.getState())).toEqual(getModelState([{ ID: '1' }]));
+        expect(selectAddresses(store.getState())).toMatchObject({ value: [{ ID: '1' }] });
         store.dispatch(
             serverEvent({ Addresses: [{ ID: '2', Address: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
         );
-        expect(selectAddresses(store.getState())).toEqual(getModelState([{ ID: '1' }, { ID: '2' }]));
+        expect(selectAddresses(store.getState())).toMatchObject({ value: [{ ID: '1' }, { ID: '2' }] });
     });
 });

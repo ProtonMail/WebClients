@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, serverEvent } from '@proton/account';
+import { ModelState, serverEvent, getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryContactEmails } from '@proton/shared/lib/api/contacts';
@@ -53,10 +53,7 @@ const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${
     previous: previousSelector(selectContactEmails),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

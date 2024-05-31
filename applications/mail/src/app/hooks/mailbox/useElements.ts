@@ -143,11 +143,13 @@ export const useElements: UseElements = ({
     const getMessageCounts = useGetMessageCounts();
 
     // Remove from cache expired elements
-    useExpirationCheck(Object.values(elementsMap), (element) => {
-        dispatch(removeExpired(element));
-
-        getConversationCounts({ forceFetch: true });
-        getMessageCounts({ forceFetch: true });
+    useExpirationCheck(Object.values(elementsMap), (elements) => {
+        if (!elements.length) {
+            return;
+        }
+        elements.forEach((element) => dispatch(removeExpired(element)));
+        getConversationCounts({ cache: 'no-cache' });
+        getMessageCounts({ cache: 'no-cache' });
     });
 
     useEffect(() => {

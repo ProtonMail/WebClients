@@ -2,18 +2,18 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseCache } from '@proton/redux-utilities';
+import { createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
-import { HOUR } from '@proton/shared/lib/constants';
-import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'plans';
+const name = 'plans' as const;
 
 export interface PlansState {
-    [name]: ModelState<{ plans: Plan[]; freePlan: FreePlanDefault }> & { meta: { fetchedAt: number } };
+    [name]: ModelState<{ plans: Plan[]; freePlan: FreePlanDefault }>;
 }
 
 type SliceState = PlansState[typeof name];
@@ -21,11 +21,8 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectPlans = (state: PlansState) => state.plans;
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-    meta: { fetchedAt: 0 },
-};
+const initialState = getInitialModelState<Model>();
+
 const slice = createSlice({
     name,
     initialState,
@@ -36,25 +33,22 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<Model>) => {
             state.value = action.payload;
             state.error = undefined;
-            state.meta = { fetchedAt: Date.now() + getMinuteJitter() };
+            state.meta.fetchedAt = getFetchedAt();
         },
         rejected: (state, action) => {
             state.error = action.payload;
-            state.value = undefined;
-            state.meta = { fetchedAt: Date.now() + getMinuteJitter() };
+            state.meta.fetchedAt = getFetchedAt();
         },
     },
 });
 
 const promiseCache = createPromiseCache<Model>();
+const previous = previousSelector(selectPlans);
 
 const thunk = (): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const { value, meta } = selectPlans(getState());
-            if (value !== undefined && Date.now() - meta.fetchedAt < HOUR * 6) {
-                return Promise.resolve(value);
-            }
+            return previous({ dispatch, getState, extraArgument });
         };
         const cb = async () => {
             try {

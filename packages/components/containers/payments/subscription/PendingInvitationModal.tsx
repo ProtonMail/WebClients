@@ -52,7 +52,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
             // Force refresh the organization since it's not present in the event manager
-            getOrganization({ forceFetch: true }).catch(noop);
+            getOrganization({ cache: 'no-cache' }).catch(noop);
             goToSettings('/account-password', APPS.PROTONACCOUNT);
         }
     };

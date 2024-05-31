@@ -109,7 +109,7 @@ export const ModelThunkDispatcher = ({ children }: { children: ReactNode }) => {
 export const createHooks = <State, Extra, Returned, ThunkArg = void>(
     thunk: (arg?: ThunkArg) => ThunkAction<Promise<Returned>, State, Extra, Action>,
     selector: (state: State) => ReducerValue<Returned>,
-    options: { periodic: boolean } = { periodic: false }
+    options: { periodic: boolean } = { periodic: true }
 ) => {
     const useGet = (): ((arg?: ThunkArg) => Promise<Returned>) => {
         const dispatch = useDispatch<ThunkDispatch<State, Extra, Action>>();

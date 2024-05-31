@@ -1,11 +1,16 @@
-import { SerializedError } from '@reduxjs/toolkit';
+import type { SerializedError } from '@reduxjs/toolkit';
 
 export type ReducerValue<Returned> = {
     value: Returned | undefined;
     error: SerializedError | undefined;
+    meta: {
+        fetchedAt: number;
+    };
 };
 
+export type CacheType = 'no-cache' | 'stale';
+
 export type ThunkOptions<T> = {
-    forceFetch?: boolean;
+    cache?: CacheType;
     thunkArg?: T;
 };

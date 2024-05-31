@@ -1,10 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
+import type { CacheType } from '@proton/redux-utilities';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
-import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
+import { getFetchedAt, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 import type { Api } from '@proton/shared/lib/interfaces';
 import unique from '@proton/utils/unique';
 
@@ -69,8 +70,14 @@ export const featuresReducer = createSlice({
     },
 });
 
-export const isValidFeature = (featureState: FeatureState | undefined): featureState is FeatureState => {
-    if (featureState?.value !== undefined && Date.now() - featureState.meta.fetchedAt < HOUR * 2) {
+export const isValidFeature = (
+    featureState: FeatureState | undefined,
+    cache?: CacheType
+): featureState is FeatureState => {
+    if (cache === 'no-cache') {
+        return false;
+    }
+    if (featureState?.value !== undefined && (cache === 'stale' || isNotStale(featureState.meta.fetchedAt, HOUR * 2))) {
         return true;
     }
     return false;
@@ -81,7 +88,10 @@ type ThunkResult<Key extends FeatureCode> = { [key in Key]: Feature };
 const defaultFeature = {} as Feature;
 
 export const fetchFeatures = <T extends FeatureCode>(
-    codes: T[]
+    codes: T[],
+    options?: {
+        cache: CacheType;
+    }
 ): ThunkAction<
     Promise<ThunkResult<T>>,
     FeaturesReducerState,
@@ -95,14 +105,14 @@ export const fetchFeatures = <T extends FeatureCode>(
             if (codePromiseCache[code] !== undefined) {
                 return false;
             }
-            return !isValidFeature(featuresState[code]);
+            return !isValidFeature(featuresState[code], options?.cache);
         });
 
         if (codesToFetch.length) {
             const promise = getSilentApi(extraArgument.api)<{
                 Features: Feature[];
             }>(getFeatures(codesToFetch)).then(({ Features }) => {
-                const fetchedAt = Date.now() + getMinuteJitter();
+                const fetchedAt = getFetchedAt();
                 const result = Features.reduce<FeaturesState>(
                     (acc, Feature) => {
                         acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt } };
@@ -168,7 +178,7 @@ export const updateFeature = (
             dispatch(
                 featuresReducer.actions['update/fulfilled']({
                     code,
-                    feature: { value: Feature, meta: { fetchedAt: Date.now() } },
+                    feature: { value: Feature, meta: { fetchedAt: getFetchedAt() } },
                 })
             );
             return value;

@@ -8,9 +8,10 @@ import {
 } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseCache } from '@proton/redux-utilities';
+import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getSubscription } from '@proton/shared/lib/api/payments';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { Subscription, SubscriptionModel, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
@@ -20,21 +21,21 @@ import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 
-const name = 'subscription';
+const name = 'subscription' as const;
 
 enum ValueType {
     dummy,
     complete,
 }
 
-interface State extends UserState {
-    [name]: ModelState<SubscriptionModel> & { meta?: { type: ValueType } };
+export interface SubscriptionState extends UserState {
+    [name]: ModelState<SubscriptionModel> & { meta: { type: ValueType } };
 }
 
-type SliceState = State[typeof name];
+type SliceState = SubscriptionState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectSubscription = (state: State) => state[name];
+export const selectSubscription = (state: SubscriptionState) => state[name];
 
 const freeSubscription = FREE_SUBSCRIPTION as unknown as SubscriptionModel;
 
@@ -45,6 +46,10 @@ const canFetch = (user: User) => {
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
+    meta: {
+        type: ValueType.dummy,
+        fetchedAt: 0,
+    },
 };
 const slice = createSlice({
     name,
@@ -56,12 +61,12 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<{ value: Model; type: ValueType }>) => {
             state.value = action.payload.value;
             state.error = undefined;
-            state.meta = { type: action.payload.type };
+            state.meta.type = action.payload.type;
+            state.meta.fetchedAt = getFetchedAt();
         },
         rejected: (state, action) => {
             state.error = action.payload;
-            state.value = undefined;
-            state.meta = { type: ValueType.complete };
+            state.meta.fetchedAt = getFetchedAt();
         },
     },
     extraReducers: (builder) => {
@@ -93,7 +98,7 @@ const slice = createSlice({
                     eventsSubscription.UpcomingSubscription || undefined
                 );
                 state.error = undefined;
-                state.meta = { type: ValueType.complete };
+                state.meta.type = ValueType.complete;
             } else {
                 const isFreeSubscription = original(state)?.meta?.type === ValueType.dummy;
 
@@ -101,14 +106,14 @@ const slice = createSlice({
                 if (!isFreeSubscription && action.payload.User && !canFetch(action.payload.User)) {
                     state.value = freeSubscription;
                     state.error = undefined;
-                    state.meta = { type: ValueType.dummy };
+                    state.meta.type = ValueType.dummy;
                 }
 
                 // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
                 if (isFreeSubscription && action.payload.User && canFetch(action.payload.User)) {
                     state.value = undefined;
                     state.error = undefined;
-                    state.meta = { type: ValueType.complete };
+                    state.meta.type = ValueType.complete;
                 }
             }
         });
@@ -116,15 +121,14 @@ const slice = createSlice({
 });
 
 const promiseCache = createPromiseCache<Model>();
+const previous = previousSelector(selectSubscription);
+
 const modelThunk = (options?: {
-    forceFetch?: boolean;
-}): ThunkAction<Promise<Model>, State, ProtonThunkArguments, UnknownAction> => {
+    cache?: CacheType;
+}): ThunkAction<Promise<Model>, SubscriptionState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectSubscription(getState());
-            if (oldValue?.value !== undefined && !options?.forceFetch) {
-                return Promise.resolve(oldValue.value);
-            }
+            return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());

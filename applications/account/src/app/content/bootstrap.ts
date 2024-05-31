@@ -67,11 +67,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: user }));
         }
 
+        const cacheOptions = {
+            cache: 'stale',
+        } as const;
+
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
-                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
+                dispatch(userThunk(cacheOptions)),
+                dispatch(userSettingsThunk(cacheOptions)),
+                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope], cacheOptions)),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -90,7 +94,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         if (persistedState?.state?.userSettings?.value) {
             // Force fetch user settings in background in case it is persisted because entities like referral program have tricky
             // eligibility conditions which don't properly propagate through the event loop. E.g. unleash feature flags which are enabled or disabled.
-            dispatch(userSettingsThunk({ forceFetch: true })).catch(noop);
+            dispatch(userSettingsThunk({ cache: 'no-cache' })).catch(noop);
         }
 
         await unleashPromise;
@@ -116,7 +120,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 eventManager.call();
                 // If we're resuming a session, we'd like to call the ev to get up-to-speed.
                 // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
-            }, 550);
+            }, 350);
         }
 
         bootstrap.onAbort(signal, () => {

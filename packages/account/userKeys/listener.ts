@@ -26,7 +26,7 @@ export const userKeysListener = (startListening: SharedStartListening<UserKeysSt
             return false;
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userKeysThunk({ forceFetch: true }));
+            await listenerApi.dispatch(userKeysThunk({ cache: 'no-cache' }));
         },
     });
 

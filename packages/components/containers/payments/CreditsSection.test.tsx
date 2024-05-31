@@ -3,7 +3,7 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import { userDefault } from '@proton/components/hooks/helpers/test';
 import { PLANS } from '@proton/shared/lib/constants';
 import { BillingPlatform, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
-import { applyHOCs, withApi, withCache } from '@proton/testing/index';
+import { applyHOCs, getSubscriptionState, withApi, withCache } from '@proton/testing';
 
 import CreditsSection from './CreditsSection';
 
@@ -110,7 +110,7 @@ it('should render', () => {
     const { container } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(container).not.toBeEmptyDOMElement();
@@ -120,7 +120,7 @@ it('should display the number of available credits', () => {
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('119.88');
@@ -131,7 +131,7 @@ it('should render 0 credits if the amount of credits is the same as upcoming sub
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('0');
@@ -143,7 +143,7 @@ it('should render positive amount of credits if there are more credits than upco
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('10');
@@ -155,7 +155,7 @@ it('should render 0 if the number of available credits is less than price of upc
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('0');
@@ -170,7 +170,7 @@ it('should render credits as-is if subscription is managed by Chargebee', () => 
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription),
+            subscription: getSubscriptionState(subscription),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('129.88');
@@ -180,7 +180,7 @@ it('should display loader if subscription is not available', () => {
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(null as any),
+            subscription: getSubscriptionState(null as any),
         },
     });
     expect(getByTestId('circle-loader')).toBeInTheDocument();
@@ -192,7 +192,7 @@ it('should take into account discount', () => {
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
         preloadedState: {
             user: getModelState(user),
-            subscription: getModelState(subscription as any),
+            subscription: getSubscriptionState(subscription as any),
         },
     });
     expect(getByTestId('avalaible-credits')).toHaveTextContent('19.88');

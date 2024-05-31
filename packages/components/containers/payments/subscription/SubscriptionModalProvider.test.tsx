@@ -5,6 +5,7 @@ import { getModelState } from '@proton/account/test';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience, External } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
+import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import {
     mockOrganizationApi,
@@ -219,7 +220,9 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
         </SubscriptionModalProvider>,
         {
             preloadedState: {
-                subscription: getModelState(format(subscription.Subscription, subscription.UpcomingSubscription)),
+                subscription: getSubscriptionState(
+                    format(subscription.Subscription, subscription.UpcomingSubscription)
+                ),
             },
         }
     );
