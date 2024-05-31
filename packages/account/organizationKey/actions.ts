@@ -840,7 +840,7 @@ export const acceptOrganizationKeyInvite = ({
                 })
             );
             // Warning: Force a refetch of the org key because it's not present in the event manager.
-            await dispatch(organizationKeyThunk({ forceFetch: true }));
+            await dispatch(organizationKeyThunk({ cache: 'no-cache' }));
         }
     };
 };

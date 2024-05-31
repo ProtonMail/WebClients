@@ -83,16 +83,23 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: session.payload.User }));
         }
 
+        const cacheOptions = {
+            cache: 'stale',
+        } as const;
+
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
+                dispatch(userThunk(cacheOptions)),
+                dispatch(userSettingsThunk(cacheOptions)),
                 dispatch(
-                    fetchFeatures([
-                        FeatureCode.EarlyAccessScope,
-                        FeatureCode.CalendarFetchMetadataOnly,
-                        FeatureCode.AutoAddHolidaysCalendars,
-                    ])
+                    fetchFeatures(
+                        [
+                            FeatureCode.EarlyAccessScope,
+                            FeatureCode.CalendarFetchMetadataOnly,
+                            FeatureCode.AutoAddHolidaysCalendars,
+                        ],
+                        cacheOptions
+                    )
                 ),
             ]);
 
@@ -108,15 +115,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadPreload = () => {
             return Promise.all([
-                dispatch(addressesThunk()),
-                dispatch(calendarsThunk()),
-                dispatch(calendarSettingsThunk()),
+                dispatch(addressesThunk(cacheOptions)),
+                dispatch(calendarsThunk(cacheOptions)),
+                dispatch(calendarSettingsThunk(cacheOptions)),
             ]);
         };
 
         const loadPreloadButIgnored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
-            dispatch(holidaysDirectoryThunk()).catch(noop);
+            dispatch(holidaysDirectoryThunk(cacheOptions)).catch(noop);
         };
 
         const userPromise = loadUser();

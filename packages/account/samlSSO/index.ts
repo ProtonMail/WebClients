@@ -8,6 +8,7 @@ import { Organization, SSO, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import { OrganizationState, organizationThunk } from '../organization';
 import { UserState, userThunk } from '../user';
@@ -84,10 +85,7 @@ const modelThunk = createAsyncModelThunk<Model, SamlState, ProtonThunkArguments>
     previous: previousSelector(selectSamlSSO),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

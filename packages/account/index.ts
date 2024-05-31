@@ -35,3 +35,4 @@ export * from './vpn/serversCount';
 export * from './vpn/hooks';
 export * from './allowAddressDeletion';
 export * from './persist/listener';
+export * from './initialModelState';

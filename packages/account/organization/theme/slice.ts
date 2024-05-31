@@ -7,7 +7,7 @@ export interface OrganizationTheme {
     access: boolean;
 }
 
-const name = 'organizationTheme';
+const name = 'organizationTheme' as const;
 
 const defaultState: OrganizationTheme = {
     logoURL: '',

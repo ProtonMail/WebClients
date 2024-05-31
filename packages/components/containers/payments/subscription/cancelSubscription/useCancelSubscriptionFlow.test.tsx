@@ -11,6 +11,7 @@ import { Renew, SubscriptionModel, UserModel } from '@proton/shared/lib/interfac
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { PLANS_MAP, subscriptionMock } from '@proton/testing/data';
 import { apiMock } from '@proton/testing/lib/api';
+import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
@@ -69,9 +70,9 @@ describe('cancel subscription', () => {
     it('should return subscription kept if free subscription', async () => {
         const { hookRef } = setup({
             preloadedState: {
-                subscription: getModelState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
+                subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
                 user: getModelState(user),
-                organization: getModelState(organization),
+                organization: getOrganizationState(organization),
             },
         });
 
@@ -86,9 +87,9 @@ describe('cancel subscription', () => {
             result: { getByTestId },
         } = setup({
             preloadedState: {
-                subscription: getModelState(vpnSubscription),
+                subscription: getSubscriptionState(vpnSubscription),
                 user: getModelState(user),
-                organization: getModelState(organization),
+                organization: getOrganizationState(organization),
             },
         });
 
@@ -108,9 +109,9 @@ describe('cancel subscription', () => {
             result: { getByTestId },
         } = setup({
             preloadedState: {
-                subscription: getModelState(vpnSubscription),
+                subscription: getSubscriptionState(vpnSubscription),
                 user: getModelState(user),
-                organization: getModelState(organization),
+                organization: getOrganizationState(organization),
             },
         });
 
@@ -145,9 +146,9 @@ describe('cancel subscription', () => {
                 result: { getByTestId, container, getByText },
             } = setup({
                 preloadedState: {
-                    subscription: getModelState(subscription),
+                    subscription: getSubscriptionState(subscription),
                     user: getModelState(user),
-                    organization: getModelState(organization),
+                    organization: getOrganizationState(organization),
                 },
             });
 
@@ -189,9 +190,9 @@ describe('downgrade subscription', () => {
             result: { getByTestId, container, getByText },
         } = setup({
             preloadedState: {
-                subscription: getModelState(mailSubscription),
+                subscription: getSubscriptionState(mailSubscription),
                 user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
-                organization: getModelState(organization),
+                organization: getOrganizationState(organization),
                 plans: {
                     ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
                     meta: { fetchedAt: Date.now() },

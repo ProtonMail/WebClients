@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import type { AddressesState, ModelState } from '@proton/account';
+import { AddressesState, ModelState, getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryCalendars } from '@proton/shared/lib/api/calendars';
@@ -30,10 +30,7 @@ const modelThunk = createAsyncModelThunk<Model, CalendarsState, ProtonThunkArgum
     previous: previousSelector(selectCalendars),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

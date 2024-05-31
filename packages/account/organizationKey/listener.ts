@@ -31,11 +31,7 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
             );
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(
-                organizationKeyThunk({
-                    forceFetch: true,
-                })
-            );
+            await listenerApi.dispatch(organizationKeyThunk({ cache: 'no-cache' }));
         },
     });
 

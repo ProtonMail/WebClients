@@ -9,9 +9,10 @@ import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'addresses';
+const name = 'addresses' as const;
 
 export interface AddressesState {
     [name]: ModelState<Address[]>;
@@ -29,10 +30,8 @@ const modelThunk = createAsyncModelThunk<Model, AddressesState, ProtonThunkArgum
     previous: previousSelector(selectAddresses),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
+
 const slice = createSlice({
     name,
     initialState,

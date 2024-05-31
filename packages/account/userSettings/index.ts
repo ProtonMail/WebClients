@@ -8,9 +8,10 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'userSettings';
+const name = 'userSettings' as const;
 
 export interface UserSettingsState {
     [name]: ModelState<UserSettings>;
@@ -30,10 +31,7 @@ const modelThunk = createAsyncModelThunk<Model, UserSettingsState, ProtonThunkAr
     previous: previousSelector(selectUserSettings),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
