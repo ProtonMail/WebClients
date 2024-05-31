@@ -6,7 +6,7 @@ import { useApi, useNotifications } from '@proton/components/hooks';
 import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { ShareInvitee } from '../../../../store';
+import { ShareInvitee, useDriveSharingFlags } from '../../../../store';
 import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 
@@ -23,6 +23,8 @@ export const useShareInvitees = (existingEmails: string[]) => {
     const api = useApi();
     const [inviteesMap, setInviteesMap] = useState<Map<string, ShareInvitee>>(new Map());
     const invitees = [...inviteesMap.values()];
+    const { isSharingExternalInviteDisabled, isSharingExternalInviteAvailable } = useDriveSharingFlags();
+    const disabledExternalInvite = isSharingExternalInviteDisabled || !isSharingExternalInviteAvailable;
 
     const { createNotification } = useNotifications();
 
@@ -95,8 +97,13 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     const copy = new Map(map);
                     copy.set(email, {
                         ...filteredInvitee,
-                        // TODO: Remove this when non-proton accounts are supported
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.NOT_PROTON_ACCOUNT),
+                        error: disabledExternalInvite
+                            ? new ShareInviteeValdidationError(
+                                  isSharingExternalInviteDisabled
+                                      ? VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_DISABLED
+                                      : VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_NOT_AVAILABLE
+                              )
+                            : undefined,
                         isExternal: true,
                         isLoading: false,
                     });

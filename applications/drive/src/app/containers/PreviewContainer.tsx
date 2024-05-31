@@ -33,7 +33,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { shareId, linkId } = match.params;
     const {
         navigateToLink,
-        navigateToSharedURLs,
+        navigateToSharedByMe,
         navigateToSharedWithMe,
         navigateToTrash,
         navigateToRoot,
@@ -112,7 +112,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             return;
         }
         if (referer?.startsWith('/shared-urls')) {
-            navigateToSharedURLs();
+            navigateToSharedByMe();
             return;
         }
         if (referer?.startsWith('/trash')) {
