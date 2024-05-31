@@ -25,7 +25,7 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
                 <p className="mt-0 mb-8 color-hint text-center">{content}</p>
 
                 <Button className="my-8 mx-auto w-4/5" size="large" shape="solid" color="norm">{c('Wallet Upgrade')
-                    .t`Upgrade`}</Button>
+                    .t`Upgrade now`}</Button>
             </div>
         </Modal>
     );

@@ -3,7 +3,6 @@ import { ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
 import {
     Collapsible,
     CollapsibleContent,
@@ -15,10 +14,11 @@ import {
     useModalState,
 } from '@proton/components/components';
 
-import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
+import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
+import { WalletInformationalModal } from '../WalletInformationalModal';
 
 export interface WalletCreationModalOwnProps {
     theme?: SubTheme;
@@ -28,6 +28,7 @@ export interface WalletCreationModalOwnProps {
 type Props = ModalOwnProps & WalletCreationModalOwnProps;
 
 export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: Props) => {
+    const [walletInfoModal, setWalletInfoModal] = useModalState();
     const [walletImportModal, setWalletImportModal] = useModalState();
 
     const onSetupFinish = () => {
@@ -120,13 +121,14 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                                 placeholder={c('Placeholder').t`Leave empty if you don't want to add passphrase`}
                             />
 
-                            <CoreButtonLike
+                            <CoreButton
                                 className="my-3"
-                                as={Href}
-                                target="_blank"
                                 shape="underline"
                                 color="norm"
-                            >{c('Wallet setup').t`What's a wallet passphrase`}</CoreButtonLike>
+                                onClick={() => {
+                                    setWalletInfoModal(true);
+                                }}
+                            >{c('Wallet setup').t`What's a wallet passphrase`}</CoreButton>
                         </CollapsibleContent>
                     </Collapsible>
                 )}
@@ -165,6 +167,8 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                 {...walletImportModal}
                 onFinish={onSetupFinish}
             />
+
+            <WalletInformationalModal kind="wallet-passphrase-introduction" {...walletInfoModal} />
         </>
     );
 };
