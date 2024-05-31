@@ -10,8 +10,10 @@ import {
     AutomaticSubscriptionModal,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
+    CatchAllSection,
     CreditsSection,
     DeleteSection,
+    DomainsSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     FreeUserLiveChatModal,
@@ -274,6 +276,14 @@ const MainContainer: FunctionComponent = () => {
                             {!getIsSectionAvailable(routes.setup) && getIsSectionAvailable(routes.users) && (
                                 <Route path={routes.setup.to}>
                                     <Redirect to={routes.users.to} />
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.domains) && (
+                                <Route path={routes.domains.to}>
+                                    <PrivateMainSettingsArea config={routes.domains}>
+                                        <DomainsSection onceRef={onceRef} />
+                                        <CatchAllSection />
+                                    </PrivateMainSettingsArea>
                                 </Route>
                             )}
                             {getIsSectionAvailable(routes.orgKeys) && (
