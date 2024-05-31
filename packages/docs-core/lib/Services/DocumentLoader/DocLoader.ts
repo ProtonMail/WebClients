@@ -1,4 +1,3 @@
-import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { LoggerInterface } from '@standardnotes/utils'
 import { UserService } from '../User/UserService'
 import { DocController } from '../../Controller/Document/DocController'
@@ -9,10 +8,8 @@ import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
-import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { LoadDocument } from '../../UseCase/LoadDocument'
-import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
 import { DebugCreateInitialCommit } from '../../UseCase/CreateInitialCommit'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { DriveCompat, NodeMeta } from '@proton/drive-store'
@@ -24,6 +21,7 @@ import { DocLoaderInterface } from './DocLoaderInterface'
 import { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 import { CommentService } from '../Comments/CommentService'
+import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -38,13 +36,12 @@ export class DocLoader implements DocLoaderInterface {
 
   constructor(
     private userService: UserService,
+    private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
     private commentsApi: CommentsApi,
     private squashDoc: SquashDocument,
     private createInitialCommit: DebugCreateInitialCommit,
-    private sendCommitCommandToRTS: DebugSendCommitCommandToRTS,
     private loadDocument: LoadDocument,
-    private encryptMessage: EncryptMessage,
     private decryptMessage: DecryptMessage,
     private encryptComment: EncryptComment,
     private createComment: CreateComment,
@@ -53,7 +50,6 @@ export class DocLoader implements DocLoaderInterface {
     private handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent,
     private duplicateDocument: DuplicateDocument,
     private createNewDocument: CreateNewDocument,
-    private createRealtimeValetToken: GetRealtimeUrlAndToken,
     private getDocumentMeta: GetDocumentMeta,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -70,14 +66,12 @@ export class DocLoader implements DocLoaderInterface {
       this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
-      this.sendCommitCommandToRTS,
       this.loadDocument,
-      this.encryptMessage,
       this.decryptMessage,
       this.duplicateDocument,
       this.createNewDocument,
-      this.createRealtimeValetToken,
       this.getDocumentMeta,
+      this.websocketSerivce,
       this.eventBus,
       this.logger,
     )
@@ -91,16 +85,16 @@ export class DocLoader implements DocLoaderInterface {
       return
     }
 
-    const { keys, connection } = result.getValue()
+    const { keys } = result.getValue()
 
     const username = this.userService.user.Email || this.userService.getUserId()
 
     this.commentsController = new CommentService(
       lookup,
       keys,
+      this.websocketSerivce,
       username,
       this.commentsApi,
-      connection,
       this.encryptComment,
       this.createThread,
       this.createComment,

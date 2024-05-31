@@ -23,10 +23,12 @@ const UpdateOriginsToIgnore = [DocUpdateOrigin.DocState, DocUpdateOrigin.Initial
 export class DocState extends Observable<string> implements DocStateInterface {
   public readonly doc: Doc
   public readonly awareness: DocsAwareness
+  public canBeEditable = false
+
   private resyncInterval: ReturnType<typeof setInterval> | null = null
   private readonly logger: LoggerInterface
-
-  public canBeEditable = false
+  private isEditorReady = false
+  private messageQueue: RtsMessagePayload[] = []
 
   constructor(private readonly callbacks: DocStateCallbacks) {
     super()
@@ -77,13 +79,38 @@ export class DocState extends Observable<string> implements DocStateInterface {
     )
   }
 
+  private flushMessagesQueue(): void {
+    const queueLength = this.messageQueue.length
+
+    for (let i = 0; i < queueLength; i++) {
+      const message = this.messageQueue.shift()
+      if (!message) {
+        return
+      }
+
+      this.receiveMessage(message)
+    }
+  }
+
+  public onEditorReady(): void {
+    this.isEditorReady = true
+
+    this.flushMessagesQueue()
+  }
+
   public receiveMessage(message: RtsMessagePayload): void {
+    if (!this.isEditorReady) {
+      this.messageQueue.push(message)
+      return
+    }
+
     if (message.type.wrapper === 'du') {
       this.handleRawSyncMessage(message.content, message.origin)
     } else if (message.type.wrapper === 'events') {
       if (
         [
-          EventTypeEnum.PresenceChangeUnknown,
+          EventTypeEnum.ClientHasDetectedAPresenceChange,
+          EventTypeEnum.ClientIsBroadcastingItsPresenceState,
           EventTypeEnum.PresenceChangeBlurredDocument,
           EventTypeEnum.PresenceChangeEnteredDocument,
           EventTypeEnum.PresenceChangeExitedDocument,
@@ -154,7 +181,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
     const messageType = update.removed.includes(this.doc.clientID)
       ? EventTypeEnum.PresenceChangeExitedDocument
-      : EventTypeEnum.PresenceChangeUnknown
+      : EventTypeEnum.ClientHasDetectedAPresenceChange
 
     const changedClients = update.added.concat(update.updated).concat(update.removed)
     const message = this.createChangedClientsAwarenessMessage(changedClients, messageType)
@@ -190,19 +217,17 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   broadcastPresenceState() {
+    this.awareness.refreshPresenceState(0)
+
     const message = this.createChangedClientsAwarenessMessage(
       Array.from(this.awareness.getStates().keys()),
-      EventTypeEnum.PresenceChangeUnknown,
+      EventTypeEnum.ClientIsBroadcastingItsPresenceState,
     )
+
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
       'Awareness - On RequestPresenceState',
     )
-  }
-
-  refreshPresenceState() {
-    this.awareness.refreshPresenceState(0)
-    this.broadcastPresenceState()
   }
 }

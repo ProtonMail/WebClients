@@ -1,0 +1,1 @@
+export const SERVER_HEARTBEAT_INTERVAL = 30_000

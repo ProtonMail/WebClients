@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useId, useMemo, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
 import {
@@ -11,7 +11,6 @@ import {
   LiveCommentsEvent,
   RtsMessagePayload,
   WebsocketConnectionEvent,
-  WebsocketConnectionStatus,
   YDocMap,
 } from '@proton/docs-shared'
 import { Doc as YDoc } from 'yjs'
@@ -20,8 +19,11 @@ import { InternalEventBus } from '@proton/docs-shared'
 import { InternalEventBusProvider } from './InternalEventBusProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { c } from 'ttag'
+import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 
-type Props = {}
+type Props = {
+  isViewOnly: boolean
+}
 
 type InitialConfig = {
   initialData?: {
@@ -32,12 +34,21 @@ type InitialConfig = {
   username: string
 }
 
-export function App({}: Props) {
-  const [initialConfig, setInitialConfig] = useState<InitialConfig | null>(null)
+export function App({ isViewOnly = false }: Props) {
+  const viewOnlyDocumentId = useId()
+
+  const [initialConfig, setInitialConfig] = useState<InitialConfig | null>(
+    isViewOnly
+      ? {
+          documentId: viewOnlyDocumentId,
+          username: '',
+        }
+      : null,
+  )
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
-  const stylesheetRef = useRef<HTMLStyleElement | null>(null)
   const [eventBus] = useState(() => new InternalEventBus())
+  const [editorHidden, setEditorHidden] = useState(true)
 
   const docMap = useMemo(() => {
     const map: YDocMap = new Map<string, YDoc>()
@@ -63,17 +74,27 @@ export function App({}: Props) {
 
     setDocState(newDocState)
 
+    if (isViewOnly) {
+      docMap.set(viewOnlyDocumentId, newDocState.getDoc())
+    }
+
     const requestHandler: ClientRequiresEditorMethods = {
       async receiveMessage(message: RtsMessagePayload) {
         void newDocState.receiveMessage(message)
       },
 
+      async showEditor() {
+        setEditorHidden(false)
+      },
+
       async receiveThemeChanges(styles: string) {
-        if (!stylesheetRef.current) {
+        const themeStylesheet = document.getElementById(THEME_ID)
+
+        if (!themeStylesheet) {
           return
         }
 
-        stylesheetRef.current.innerHTML = styles
+        themeStylesheet.innerHTML = styles
       },
 
       async getClientId() {
@@ -116,6 +137,7 @@ export function App({}: Props) {
           },
         })
       },
+
       async handleRemoveCommentMarkNode(markID: string) {
         eventBus.publish<CommentMarkNodeChangeData>({
           type: CommentsEvent.RemoveMarkNode,
@@ -124,6 +146,7 @@ export function App({}: Props) {
           },
         })
       },
+
       async handleResolveCommentMarkNode(markID: string) {
         eventBus.publish<CommentMarkNodeChangeData>({
           type: CommentsEvent.ResolveMarkNode,
@@ -132,6 +155,7 @@ export function App({}: Props) {
           },
         })
       },
+
       async handleUnresolveCommentMarkNode(markID: string) {
         eventBus.publish<CommentMarkNodeChangeData>({
           type: CommentsEvent.UnresolveMarkNode,
@@ -142,14 +166,8 @@ export function App({}: Props) {
       },
 
       async handleWSConnectionStatusChange(status) {
-        eventBus.publish({
-          type: WebsocketConnectionEvent.StatusChanged,
-          payload: {
-            status,
-          },
-        })
         switch (status) {
-          case WebsocketConnectionStatus.Connected:
+          case WebsocketConnectionEvent.Connected:
             newDocState.canBeEditable = true
             eventBus.publish({
               type: EditorEditableChangeEvent,
@@ -188,14 +206,10 @@ export function App({}: Props) {
       async broadcastPresenceState() {
         newDocState.broadcastPresenceState()
       },
-
-      async refreshPresenceState() {
-        newDocState.refreshPresenceState()
-      },
     }
 
     bridge.setRequestHandler(requestHandler)
-  }, [bridge, docMap, docState, eventBus])
+  }, [bridge, docMap, docState, eventBus, isViewOnly, viewOnlyDocumentId])
 
   if (!initialConfig || !docState) {
     return (
@@ -213,13 +227,18 @@ export function App({}: Props) {
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
           docState={docState}
+          hidden={editorHidden}
           documentId={initialConfig.documentId}
           injectWithNewContent={initialConfig.initialData}
           username={initialConfig.username}
+          isViewOnly={isViewOnly}
+          onEditorReady={() => {
+            void bridge.getClientInvoker().onEditorReady()
+            docState.onEditorReady()
+          }}
         />
       </InternalEventBusProvider>
       <Icons />
-      <style ref={stylesheetRef}></style>
     </div>
   )
 }

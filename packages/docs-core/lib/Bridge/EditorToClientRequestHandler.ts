@@ -70,4 +70,13 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
     return this.docOrchestrator.handleAwarenessStateUpdate(states)
   }
+
+  async openLink(url: string): Promise<void> {
+    const link = document.createElement('a')
+    link.href = url
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+    link.click()
+    link.remove()
+  }
 }

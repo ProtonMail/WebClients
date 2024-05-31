@@ -55,6 +55,9 @@ module.exports = ({
                       }),
                   (warningLogs || errorLogs) &&
                       new ForkTsCheckerWebpackPlugin({
+                          typescript: {
+                              memoryLimit: 4096,
+                          },
                           async: true,
                           formatter: 'basic',
                           issue: {

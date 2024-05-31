@@ -31,6 +31,7 @@ import { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeComment
 import { CreateComment } from '../../UseCase/CreateComment'
 import { CreateThread } from '../../UseCase/CreateThread'
 import { LoadThreads } from '../../UseCase/LoadThreads'
+import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 
 export class AppDependencies extends DependencyContainer {
   constructor(api: Api, user: UserModel, driveCompat: DriveCompat) {
@@ -163,13 +164,12 @@ export class AppDependencies extends DependencyContainer {
     this.bind(App_TYPES.DocLoader, () => {
       return new DocLoader(
         this.get<UserService>(App_TYPES.UserService),
+        this.get<WebsocketService>(App_TYPES.WebsocketService),
         driveCompat,
         this.get<CommentsApi>(App_TYPES.CommentsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
         this.get<DebugCreateInitialCommit>(App_TYPES.CreateInitialCommit),
-        this.get<DebugSendCommitCommandToRTS>(App_TYPES.SendCommitCommandToRTS),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
-        this.get<EncryptMessage>(App_TYPES.EncryptMessage),
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<EncryptComment>(App_TYPES.EncryptComment),
         this.get<CreateComment>(App_TYPES.CreateComment),
@@ -178,10 +178,19 @@ export class AppDependencies extends DependencyContainer {
         this.get<HandleRealtimeCommentsEvent>(App_TYPES.HandleRealtimeCommentsEvent),
         this.get<DuplicateDocument>(App_TYPES.DuplicateDocument),
         this.get<CreateNewDocument>(App_TYPES.CreateNewDocument),
-        this.get<GetRealtimeUrlAndToken>(App_TYPES.CreateRealtimeValetToken),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
+      )
+    })
+
+    this.bind(App_TYPES.WebsocketService, () => {
+      return new WebsocketService(
+        this.get<GetRealtimeUrlAndToken>(App_TYPES.CreateRealtimeValetToken),
+        this.get<EncryptMessage>(App_TYPES.EncryptMessage),
+        this.get<DebugSendCommitCommandToRTS>(App_TYPES.SendCommitCommandToRTS),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+        this.get<InternalEventBusInterface>(App_TYPES.EventBus),
       )
     })
 
@@ -197,7 +206,6 @@ export class AppDependencies extends DependencyContainer {
       return new CreateComment(
         this.get<CommentsApi>(App_TYPES.CommentsApi),
         this.get<EncryptComment>(App_TYPES.EncryptComment),
-        this.get<DecryptComment>(App_TYPES.DecryptComment),
       )
     })
 

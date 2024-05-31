@@ -21,6 +21,7 @@ module.exports = {
         allow: ['warn', 'error', 'trace'],
       },
     ],
+    "no-fallthrough": "error",
     'max-classes-per-file': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',

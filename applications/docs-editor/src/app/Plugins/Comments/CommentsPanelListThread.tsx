@@ -128,7 +128,7 @@ export function CommentsPanelListThread({
         </div>
       )}
       {quote && (
-        <blockquote className="mx-3 my-3 line-clamp-2 border-l border-[--primary] px-2.5 py-0.5 text-xs font-medium before:content-none after:content-none">
+        <blockquote className="mx-3 my-3 line-clamp-2 border-l border-[--signal-warning] px-2.5 py-0.5 text-xs font-medium before:content-none after:content-none">
           {quote}
         </blockquote>
       )}
@@ -165,7 +165,6 @@ export function CommentsPanelListThread({
             onBlur={() => {
               void controller.stoppedTypingInThread(thread.id)
             }}
-            controller={controller}
           />
         </div>
       )}
