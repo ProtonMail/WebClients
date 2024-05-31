@@ -4,6 +4,7 @@ import { $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { c } from 'ttag'
 
 export function CommentInputBox({
   editor,
@@ -106,7 +107,7 @@ export function CommentInputBox({
       <CommentsComposer
         autoFocus
         hideCancelButton
-        placeholder="Add a comment..."
+        placeholder={c('Placeholder').t`Add a comment...`}
         onSubmit={(content) => {
           controller.createThread(content).catch(console.error)
           selectionRef.current = null
