@@ -21,6 +21,7 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
+    PersistedState = 'PersistedState',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',
