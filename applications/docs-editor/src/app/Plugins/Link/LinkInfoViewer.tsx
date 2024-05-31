@@ -4,31 +4,26 @@ import { COMMAND_PRIORITY_LOW, LexicalEditor, SELECTION_CHANGE_COMMAND } from 'l
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import clsx from '@proton/utils/clsx'
-import { Icon, Tooltip, usePopper } from '@proton/components'
+import { Icon, Tooltip } from '@proton/components'
 import { Button } from '@proton/atoms'
 import { createPortal } from 'react-dom'
+import { c } from 'ttag'
+import useLexicalEditable from '@lexical/react/useLexicalEditable'
 
 type Props = {
   linkNode: LinkNode
   editor: LexicalEditor
   setIsEditingLink: (isEditingLink: boolean) => void
+  openLink: (url: string) => void
 }
 
-export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
-  const [linkNodePosition, setLinkNodePosition] = useState<{
+export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }: Props) {
+  const isEditorEditable = useLexicalEditable()
+
+  const [position, setPosition] = useState<{
     top: number
     left: number
-  } | null>(null)
-
-  const { position, floating } = usePopper({
-    isOpen: true,
-    originalPlacement: 'bottom-start',
-    offset: 6,
-    reference: {
-      mode: 'position',
-      value: linkNodePosition ? { top: linkNodePosition.top, left: linkNodePosition.left } : null,
-    },
-  })
+  }>()
 
   const [linkUrl, isAutoLink] = useMemo(() => {
     let linkUrl = ''
@@ -48,6 +43,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
   const updatePosition = useCallback(() => {
     const nativeSelection = window.getSelection()
     const rootElement = editor.getRootElement()
+    const rootParent = rootElement?.parentElement
 
     if (nativeSelection !== null && rootElement !== null) {
       if (rootElement.contains(nativeSelection.anchorNode)) {
@@ -55,18 +51,14 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
       }
     }
 
-    if (!rootElement) {
-      return
-    }
-
-    if (!linkNodeDOM) {
+    if (!rootElement || !rootParent || !linkNodeDOM) {
       return
     }
 
     const linkNodeRect = linkNodeDOM.getBoundingClientRect()
 
-    setLinkNodePosition({
-      top: linkNodeRect.top + linkNodeRect.height,
+    setPosition({
+      top: linkNodeRect.bottom + rootParent.scrollTop - rootParent.getBoundingClientRect().top + 10,
       left: linkNodeRect.left,
     })
   }, [editor, linkNodeDOM])
@@ -89,20 +81,19 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
     )
   }, [editor, updatePosition])
 
-  if (!linkUrl) {
+  const containerElement = editor.getRootElement()?.parentElement
+
+  if (!position || !linkUrl) {
     return null
   }
 
-  const containerElement = editor.getRootElement()?.parentElement
-
   return createPortal(
     <div
-      className="absolute left-0 top-0 rounded bg-[--background-norm] px-2.5 py-1.5"
+      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-2.5 py-1.5"
       style={{
         top: position.top,
         left: position.left,
       }}
-      ref={floating}
     >
       <div className="flex items-center gap-1.5">
         <a
@@ -113,11 +104,15 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
           href={linkUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(event) => {
+            event.preventDefault()
+            openLink(linkUrl)
+          }}
         >
           <Icon name="arrow-out-square" className="ml-1 flex-shrink-0" />
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
         </a>
-        <Tooltip title="Copy link">
+        <Tooltip title={c('Action').t`Copy link`}>
           <Button
             icon
             size="small"
@@ -129,9 +124,21 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink }: Props) {
             <Icon name="link" />
           </Button>
         </Tooltip>
-        {!isAutoLink && (
+        {!isAutoLink && isEditorEditable && (
           <>
-            <Tooltip title="Remove link">
+            <Tooltip title={c('Action').t`Edit link`}>
+              <Button
+                icon
+                size="small"
+                shape="ghost"
+                onClick={() => {
+                  setIsEditingLink(true)
+                }}
+              >
+                <Icon name="pencil" />
+              </Button>
+            </Tooltip>
+            <Tooltip title={c('Action').t`Remove link`}>
               <Button
                 icon
                 size="small"

@@ -1,6 +1,7 @@
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import useDefaultShare from './useDefaultShare';
+import { useDriveSharingFlags } from './useDriveSharingFlag';
 import useShare from './useShare';
 import { getSharedWithMeMembership } from './utils';
 
@@ -18,6 +19,7 @@ interface Props {
 export const useDirectSharingInfo = ({ sharedByMeListing = false }: Props = {}) => {
     const { getDefaultShare } = useDefaultShare();
     const { getShare, getShareWithKey } = useShare();
+    const { isReadOnlyMode } = useDriveSharingFlags();
 
     const isSharedWithMe = async (abortSignal: AbortSignal, shareId: string) => {
         const [defaultShare, share] = await Promise.all([getDefaultShare(abortSignal), getShare(abortSignal, shareId)]);
@@ -32,6 +34,10 @@ export const useDirectSharingInfo = ({ sharedByMeListing = false }: Props = {}) 
         // that's why we don't use membership for permissions of normal share.
         if (!sharedWithMe && !sharedByMeListing) {
             return SHARE_MEMBER_PERMISSIONS.OWNER;
+        }
+        // Kill switch to disable all editing/modifications actions
+        if (isReadOnlyMode) {
+            return SHARE_MEMBER_PERMISSIONS.READ;
         }
         const share = await getShareWithKey(abortSignal, shareId);
         const membership = getSharedWithMeMembership(share.shareId, share.memberships);

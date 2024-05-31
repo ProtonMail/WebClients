@@ -37,16 +37,16 @@ export const getPrimaryAddressKeyAsync = async (
 ) => {
     const activeAddress = await getPrimaryAddress();
     const addressKeys = await getAddressKeys(activeAddress.ID);
-    const { privateKey, publicKey: maybePublicKey } = getPrimaryKey(addressKeys) || {};
+    const { privateKey, publicKey: maybePublicKey, ID: addressKeyID } = getPrimaryKey(addressKeys) || {};
 
-    if (!privateKey) {
+    if (!privateKey || !addressKeyID) {
         // Should never happen
         throw new Error('Primary private key is not available');
     }
 
     const publicKey = maybePublicKey || (await toPublicKeyReference(privateKey));
 
-    return { privateKey, publicKey, address: activeAddress };
+    return { addressKeyID, privateKey, publicKey, address: activeAddress };
 };
 
 const getOwnAddressWithEmail = async (email: string, getAddresses: () => Promise<Address[]>) => {
@@ -80,9 +80,9 @@ export const getOwnAddressAndPrimaryKeysAsync = async (
     getAddressKeys: GetAddressKeys
 ) => {
     const { address, addressKeys } = await getOwnAddressAndKeys(addressId, getAddresses, getAddressKeys);
-    const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
+    const { privateKey, publicKey, ID: addressKeyID } = getPrimaryKey(addressKeys) || {};
 
-    if (!privateKey) {
+    if (!privateKey || !addressKeyID) {
         // Should never happen
         throw new Error('Primary private key is not available');
     }
@@ -91,7 +91,7 @@ export const getOwnAddressAndPrimaryKeysAsync = async (
         throw new Error('Address is not available');
     }
 
-    return { address, privateKey, publicKey: publicKey || (await toPublicKeyReference(privateKey)) };
+    return { addressKeyID, address, privateKey, publicKey: publicKey || (await toPublicKeyReference(privateKey)) };
 };
 
 const getOwnAddressAndKeysWithEmail = async (

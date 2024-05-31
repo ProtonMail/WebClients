@@ -7,6 +7,7 @@ export const App_TYPES = {
   UserService: Symbol.for('UserService'),
   Logger: Symbol.for('Logger'),
   EventBus: Symbol.for('EventBus'),
+  WebsocketService: Symbol.for('WebsocketService'),
   RealtimeEncryptionService: Symbol.for('RealtimeEncryptionService'),
   CommentsEncryptionService: Symbol.for('CommentsEncryptionService'),
 

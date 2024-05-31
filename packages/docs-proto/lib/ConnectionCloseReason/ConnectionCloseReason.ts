@@ -26,6 +26,8 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     TIMEOUT: 3004,
     DOCUMENT_TIMEOUT: 3005,
     LEFT: 3006,
+    TRAFFIC_ABUSE_MAX_BANDWIDTH: 3007,
+    TRAFFIC_ABUSE_MAX_DU_SIZE: 3008,
   }
 
   static messages: Record<number, string> = {
@@ -51,6 +53,8 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.TIMEOUT]: 'Connection timed out',
     [ConnectionCloseReason.CODES.DOCUMENT_TIMEOUT]: 'Document timed out',
     [ConnectionCloseReason.CODES.LEFT]: 'User left the room',
+    [ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_BANDWIDTH]: 'Traffic abuse: max bandwidth exceeded',
+    [ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE]: 'Traffic abuse: max DU size exceeded',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {

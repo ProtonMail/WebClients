@@ -49,6 +49,10 @@
 .Lexical__checkList {
 	margin-inline-start: 0;
 
+	[role='checkbox']:focus {
+		outline: none;
+	}
+
 	.Lexical__nestedListItem & {
 		margin-inline-start: 1rem;
 	}

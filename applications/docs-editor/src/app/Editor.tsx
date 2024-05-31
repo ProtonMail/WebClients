@@ -6,7 +6,7 @@ import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin'
 import { TablePlugin } from '@lexical/react/LexicalTablePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
-import { useEffect, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Provider } from '@lexical/yjs'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import {
@@ -18,7 +18,7 @@ import {
 } from '@proton/docs-shared'
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
-import { MarkdownTransformers } from './MarkdownTransformers'
+import { MarkdownTransformers } from './Tools/MarkdownTransformers'
 import CodeHighlightPlugin from './Plugins/CodeHighlightPlugin'
 import CommentPlugin from './Plugins/Comments/CommentPluginContainer'
 import { MergeSiblingListsPlugin } from './Plugins/MergeSiblingListsPlugin'
@@ -31,6 +31,8 @@ import { EditorReadonlyPlugin } from './Plugins/EditorReadonlyPlugin'
 import TableActionMenuPlugin from './Plugins/TableActionMenuPlugin'
 import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
+import { CircleLoader } from '@proton/atoms/CircleLoader'
+import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 
 const TypingBotEnabled = false
 
@@ -40,10 +42,23 @@ type Props = {
   username: string
   docState: DocStateInterface
   clientInvoker: EditorRequiresClientMethods
+  isViewOnly: boolean
+  hidden: boolean
+  onEditorReady: () => void
   injectWithNewContent?: FileToDocPendingConversion
 }
 
-export function Editor({ clientInvoker, injectWithNewContent, docState, documentId, username, docMap }: Props) {
+export function Editor({
+  clientInvoker,
+  injectWithNewContent,
+  docState,
+  documentId,
+  username,
+  docMap,
+  isViewOnly,
+  hidden,
+  onEditorReady,
+}: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
       return new LexicalDocProvider(docState)
@@ -52,9 +67,12 @@ export function Editor({ clientInvoker, injectWithNewContent, docState, document
     return baseProvider
   }, [docState])
 
-  useEffect(() => {
-    void clientInvoker.onEditorReady()
-  }, [clientInvoker])
+  const openLink = useCallback(
+    (url: string) => {
+      clientInvoker.openLink(url).catch(console.error)
+    },
+    [clientInvoker],
+  )
 
   return (
     <CollaborationContext.Provider
@@ -66,8 +84,13 @@ export function Editor({ clientInvoker, injectWithNewContent, docState, document
         isCollabActive: false,
       }}
     >
+      {hidden && (
+        <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4">
+          <CircleLoader size="large" />
+        </div>
+      )}
       <LexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
-        <Toolbar />
+        {!isViewOnly && <Toolbar />}
         <RichTextPlugin
           contentEditable={
             <div className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]">
@@ -85,14 +108,20 @@ export function Editor({ clientInvoker, injectWithNewContent, docState, document
         <TableActionMenuPlugin />
         <TableCellResizerPlugin />
         <LinkPlugin />
-        <LinkInfoPlugin />
+        {!isViewOnly && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
-        <CollaborationPlugin id={documentId} providerFactory={yjsWebsockProvider!} shouldBootstrap={ShouldBootstrap} />
+        <CollaborationPlugin
+          id={documentId}
+          providerFactory={yjsWebsockProvider!}
+          shouldBootstrap={ShouldBootstrap}
+          onCollabReady={onEditorReady}
+        />
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
         <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
-        <EditorReadonlyPlugin docState={docState} />
+        {!isViewOnly && <EditorReadonlyPlugin docState={docState} />}
+        <ReadonlyLinkFixPlugin openLink={openLink} />
       </LexicalComposer>
     </CollaborationContext.Provider>
   )

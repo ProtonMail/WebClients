@@ -1,0 +1,37 @@
+@import '~@proton/styles/scss/proton-docs';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-rgb: 109 74 255;
+}
+
+*:focus,
+*:focus-visible {
+  outline-color: var(--primary-major-3);
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+body {
+  font-size: unset;
+}
+
+.content-container > .content.flex.flex-column {
+  background: var(--background-weak);
+}
+
+.main-area-border {
+  border-top: 0;
+}

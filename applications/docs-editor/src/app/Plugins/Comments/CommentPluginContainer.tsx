@@ -14,6 +14,7 @@ import { CommentMarkNodeChangeData, CommentThreadInterface, CommentsEvent } from
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
+import useLexicalEditable from '@lexical/react/useLexicalEditable'
 
 export default function CommentPlugin({
   controller,
@@ -24,12 +25,8 @@ export default function CommentPlugin({
 }): JSX.Element {
   const eventBus = useInternalEventBus()
   const [editor] = useLexicalComposerContext()
+  const isEditorEditable = useLexicalEditable()
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
-
-  const [isEditorEditable, setIsEditorEditable] = useState(() => editor.isEditable())
-  useEffect(() => {
-    return editor.registerEditableListener(setIsEditorEditable)
-  }, [editor])
 
   useEffect(() => {
     controller.getAllThreads().then(setThreads).catch(console.error)
@@ -42,6 +39,12 @@ export default function CommentPlugin({
   const [activeIDs, setActiveIDs] = useState<string[]>([])
   const [showCommentInput, setShowCommentInput] = useState(false)
   const [showComments, setShowComments] = useState(false)
+
+  useEffect(() => {
+    if (!isEditorEditable) {
+      setShowCommentInput(false)
+    }
+  }, [isEditorEditable])
 
   const cancelAddComment = useCallback(() => {
     editor.update(() => {
@@ -324,8 +327,6 @@ export default function CommentPlugin({
             cancelAddComment={cancelAddComment}
             controller={controller}
             setShowCommentInput={setShowCommentInput}
-            createMarkNode={createMarkNodeForCurrentSelection}
-            removeMarkNode={removeMarkNode}
           />,
           containerElement || document.body,
         )}

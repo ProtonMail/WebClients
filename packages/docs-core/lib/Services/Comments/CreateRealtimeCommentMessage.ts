@@ -13,7 +13,7 @@ export function CreateRealtimeCommentMessage<T extends AnyCommentMessageData>(
   authorAddress: string,
 ): ClientMessageWithEvents {
   return CreateClientEventMessage({
-    type: EventTypeEnum.Comments,
+    type: EventTypeEnum.ClientHasSentACommentMessage,
     content: stringToUint8Array(
       JSON.stringify({
         type,
