@@ -14,6 +14,7 @@ import { CommentInterface, CommentThreadInterface, CommentThreadState } from '@p
 import { Button } from '@proton/atoms'
 import { CommentsComposer } from './CommentsComposer'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { c } from 'ttag'
 
 export function CommentsPanelListComment({
   comment,
@@ -44,9 +45,9 @@ export function CommentsPanelListComment({
 
   const deleteThread = async () => {
     showConfirmModal({
-      title: 'Delete thread',
-      submitText: 'Delete',
-      message: 'Are you sure you want to delete this thread?',
+      title: c('Title').t`Delete thread`,
+      submitText: c('Action').t`Delete`,
+      message: c('Info').t`Are you sure you want to delete this thread?`,
       onSubmit: async () => {
         setIsDeleting(true)
         setIsDeletingThread(true)
@@ -68,9 +69,9 @@ export function CommentsPanelListComment({
 
   const deleteComment = () => {
     showConfirmModal({
-      title: 'Delete comment',
-      submitText: 'Delete',
-      message: 'Are you sure you want to delete this comment?',
+      title: c('Title').t`Delete comment`,
+      submitText: c('Action').t`Delete`,
+      message: c('Info').t`Are you sure you want to delete this comment?`,
       onSubmit: async () => {
         setIsDeleting(true)
         controller
@@ -134,7 +135,7 @@ export function CommentsPanelListComment({
                         setIsEditing(true)
                       }}
                     >
-                      Edit comment
+                      {c('Action').t`Edit comment`}
                     </DropdownMenuButton>
                   )}
                   {isFirstComment && !isThreadActive && (
@@ -144,14 +145,14 @@ export function CommentsPanelListComment({
                         controller.unresolveThread(thread.id).catch(console.error)
                       }}
                     >
-                      Re-open
+                      {c('Action').t`Re-open`}
                     </DropdownMenuButton>
                   )}
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={isFirstComment ? deleteThread : deleteComment}
                   >
-                    {isFirstComment ? 'Delete thread' : 'Delete comment'}
+                    {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
                   </DropdownMenuButton>
                 </DropdownMenu>
               </SimpleDropdown>
@@ -162,7 +163,7 @@ export function CommentsPanelListComment({
           <CommentsComposer
             autoFocus
             initialContent={comment.content}
-            placeholder="Edit comment..."
+            placeholder={c('Placeholder').t`Edit comment...`}
             onSubmit={(content) => {
               controller.editComment(thread.id, comment.id, content).catch(console.error)
               setIsEditing(false)

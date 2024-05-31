@@ -8,7 +8,7 @@ import {
   $isRangeSelection,
   $isTextNode,
 } from 'lexical'
-
+import { c, msgid } from 'ttag'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import useLexicalEditable from '@lexical/react/useLexicalEditable'
 import {
@@ -356,9 +356,13 @@ function TableActionMenu({ tableCellNode: _tableCellNode, cellMerge }: TableCell
   let mergeCellButton: null | JSX.Element = null
   if (cellMerge) {
     if (canMergeCells) {
-      mergeCellButton = <DropdownMenuButton onClick={mergeTableCellsAtSelection}>Merge cells</DropdownMenuButton>
+      mergeCellButton = (
+        <DropdownMenuButton onClick={mergeTableCellsAtSelection}>{c('Action').t`Merge cells`}</DropdownMenuButton>
+      )
     } else if (canUnmergeCell) {
-      mergeCellButton = <DropdownMenuButton onClick={unmergeTableCellsAtSelection}>Unmerge cells</DropdownMenuButton>
+      mergeCellButton = (
+        <DropdownMenuButton onClick={unmergeTableCellsAtSelection}>{c('Action').t`Unmerge cells`}</DropdownMenuButton>
+      )
     }
   }
 
@@ -371,29 +375,29 @@ function TableActionMenu({ tableCellNode: _tableCellNode, cellMerge }: TableCell
       {mergeCellButton}
       {!!mergeCellButton && <hr />}
       <DropdownMenuButton onClick={() => insertTableRowAtSelection(false)}>
-        Insert {selectionCounts.rows === 1 ? 'row' : `${selectionCounts.rows} rows`} above
+        {c('Action').ngettext(msgid`Insert row above`, `Insert rows above`, selectionCounts.rows)}
       </DropdownMenuButton>
       <DropdownMenuButton onClick={() => insertTableRowAtSelection(true)}>
-        Insert {selectionCounts.rows === 1 ? 'row' : `${selectionCounts.rows} rows`} below
+        {c('Action').ngettext(msgid`Insert row below`, `Insert rows below`, selectionCounts.rows)}
       </DropdownMenuButton>
       <hr />
       <DropdownMenuButton onClick={() => insertTableColumnAtSelection(false)}>
-        Insert {selectionCounts.columns === 1 ? 'column' : `${selectionCounts.columns} columns`} left
+        {c('Action').ngettext(msgid`Insert column left`, `Insert columns left`, selectionCounts.columns)}
       </DropdownMenuButton>
       <DropdownMenuButton onClick={() => insertTableColumnAtSelection(true)}>
-        Insert {selectionCounts.columns === 1 ? 'column' : `${selectionCounts.columns} columns`} right
+        {c('Action').ngettext(msgid`Insert column right`, `Insert columns right`, selectionCounts.columns)}
       </DropdownMenuButton>
       <hr />
-      <DropdownMenuButton onClick={deleteTableColumnAtSelection}>Delete column</DropdownMenuButton>
-      <DropdownMenuButton onClick={deleteTableRowAtSelection}>Delete row</DropdownMenuButton>
-      <DropdownMenuButton onClick={deleteTableAtSelection}>Delete table</DropdownMenuButton>
+      <DropdownMenuButton onClick={deleteTableColumnAtSelection}>{c('Action').t`Delete column`}</DropdownMenuButton>
+      <DropdownMenuButton onClick={deleteTableRowAtSelection}>{c('Action').t`Delete row`}</DropdownMenuButton>
+      <DropdownMenuButton onClick={deleteTableAtSelection}>{c('Action').t`Delete table`}</DropdownMenuButton>
       <hr />
       <DropdownMenuButton
         onClick={() => {
           toggleTableRowIsHeader(isCurrentCellRowHeader ? TableCellHeaderStates.NO_STATUS : TableCellHeaderStates.ROW)
         }}
       >
-        {isCurrentCellRowHeader ? 'Remove' : 'Add'} row header
+        {isCurrentCellRowHeader ? c('Action').t`Remove row header` : c('Action').t`Add row header`}
       </DropdownMenuButton>
       <DropdownMenuButton
         onClick={() => {
@@ -402,7 +406,7 @@ function TableActionMenu({ tableCellNode: _tableCellNode, cellMerge }: TableCell
           )
         }}
       >
-        {isCurrentCellColumnHeader ? 'Remove' : 'Add'} column header
+        {isCurrentCellColumnHeader ? c('Action').t`Remove column header` : c('Action').t`Add column header`}
       </DropdownMenuButton>
     </DropdownMenu>
   )
