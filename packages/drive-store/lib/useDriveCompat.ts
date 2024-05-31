@@ -20,9 +20,18 @@ export interface DriveCompat {
     getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>;
 
     /**
-     * Creates an empty document node (document shell).
+     * Finds an available name for a new node.
+     *
+     * @param parentMeta The parent node where the new node will be located.
      */
-    createDocumentNode: (meta: NodeMeta, name: string) => Promise<DocumentNodeMeta>;
+    findAvailableNodeName: (parentMeta: NodeMeta, desiredName: string) => Promise<string>;
+
+    /**
+     * Creates an empty document node (document shell).
+     *
+     * @param parentMeta The parent node where the new node will be located.
+     */
+    createDocumentNode: (parentMeta: NodeMeta, name: string) => Promise<DocumentNodeMeta>;
 
     /**
      * Gets the keys for a given document node.
@@ -86,7 +95,7 @@ export const useDriveCompat = (): DriveCompat => {
         signDocumentData,
         openDocumentSharingModal,
     } = useDocuments();
-    const { getNode, getNodeContents } = useNode();
+    const { getNode, getNodeContents, findAvailableNodeName } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
@@ -98,6 +107,7 @@ export const useDriveCompat = (): DriveCompat => {
         getDocumentKeys: withResolve(getDocumentKeys),
         getNode: withResolve(getNode),
         getNodeContents: withResolve(getNodeContents),
+        findAvailableNodeName: withResolve(findAvailableNodeName),
         renameDocument: withResolve(renameDocument),
         getDocumentUrl,
         openDocument,

@@ -12,8 +12,9 @@ export class CreateNewDocument implements UseCaseInterface<DocumentNodeMeta> {
     private getDocumentMeta: GetDocumentMeta,
   ) {}
 
-  async execute(name: string, parent: NodeMeta): Promise<Result<DocumentNodeMeta>> {
+  async execute(desiredName: string, parent: NodeMeta): Promise<Result<DocumentNodeMeta>> {
     try {
+      const name = await this.driveCompat.findAvailableNodeName(parent, desiredName)
       const shellResult = await this.driveCompat.createDocumentNode(parent, name)
 
       const createResult = await this.getDocumentMeta.execute({
