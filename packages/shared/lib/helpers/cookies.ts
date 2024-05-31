@@ -34,7 +34,7 @@ export const setCookie = ({
     expirationDate: maybeExpirationDate,
     path,
     cookieDomain,
-    samesite,
+    samesite = CookieSameSiteAttribute.Lax,
     secure = true,
 }: SetCookieArguments) => {
     const cookieValue = maybeCookieValue === undefined ? '' : maybeCookieValue;
