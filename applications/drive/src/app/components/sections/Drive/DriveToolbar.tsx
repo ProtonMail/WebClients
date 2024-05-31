@@ -18,6 +18,7 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
+import ShareButtonLEGACY from '../ToolbarButtons/_legacy/ShareButtonLEGACY';
 import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import useIsEditEnabled from '../useIsEditEnabled';
@@ -56,6 +57,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     );
 
     const shouldShowShareButton = !isLinkReadOnly || items.length > 0;
+    const ShareButtonComponent = isSharingInviteAvailable ? ShareButton : ShareButtonLEGACY;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -75,7 +77,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         </>
                     ) : null}
 
-                    {isAdmin && shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {isAdmin && shouldShowShareButton && <ShareButtonComponent shareId={shareId} />}
                 </>
             );
         }

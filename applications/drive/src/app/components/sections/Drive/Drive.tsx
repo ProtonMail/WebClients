@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
@@ -17,6 +18,7 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import useOpenPreview from '../../useOpenPreview';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
@@ -42,6 +44,9 @@ export interface DriveItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
+    isShared: boolean;
+    isAdmin: boolean;
+    showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
 }
 
 interface Props {
@@ -87,8 +92,11 @@ function Drive({ activeFolder, folderView }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const isDocsEnabled = useDriveDocsFeatureFlag();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
+
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -96,7 +104,13 @@ function Drive({ activeFolder, folderView }: Props) {
     );
 
     const openPreview = useOpenPreview();
-    const browserItems: DriveItem[] = items.map((item) => ({ ...item, id: item.linkId }));
+    const browserItems: DriveItem[] = items.map((item) => ({
+        ...item,
+        id: item.linkId,
+        // TODO: Improve this, we should not pass showLinkSharingModal here
+        showLinkSharingModal: item.isShared ? showLinkSharingModal : undefined,
+        isAdmin,
+    }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */
@@ -218,6 +232,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 onViewContextMenu={browserContextMenu.handleContextMenu}
                 getDragMoveControls={folderView.isActiveLinkReadOnly ? undefined : getDragMoveControls}
             />
+            {linkSharingModal}
         </>
     );
 }
