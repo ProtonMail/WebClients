@@ -7,10 +7,12 @@ import {
 import { Result } from '@standardnotes/domain-core'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
+import { NativeVersionHistory } from '../../VersionHistory'
 
 export interface DocControllerInterface {
   username: string
 
+  getVersionHistory(): NativeVersionHistory | undefined
   addChangeObserver(observer: DocChangeObserver): () => void
   createInitialCommit(): Promise<void>
   createNewDocument(): Promise<void>

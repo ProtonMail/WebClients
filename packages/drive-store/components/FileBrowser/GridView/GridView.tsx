@@ -4,6 +4,7 @@ import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { Loader, Table, useElementRect, useRightToLeft } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { Features, useMeasureFeaturePerformanceOnMount } from '../../../utils/telemetry';
 import { FileBrowserProps } from '../FileBrowser';
 import { FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
@@ -91,6 +92,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef);
     const totalItems = items.length + (loading ? 1 : 0);
+    const endMeasure = useMeasureFeaturePerformanceOnMount(Features.mountToFirstItemRendered);
 
     const width = rect?.width ?? 0;
 
@@ -153,6 +155,12 @@ function GridView<T extends FileBrowserBaseItem, T1>({
                         style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}
                         direction={isRTL ? 'rtl' : 'ltr'}
                         itemData={itemData}
+                        onItemsRendered={() => {
+                            // At least one item rendered
+                            if (itemData.items?.length) {
+                                endMeasure();
+                            }
+                        }}
                         columnWidth={cellWidth}
                         rowHeight={cellHeight}
                         className="pb-custom"

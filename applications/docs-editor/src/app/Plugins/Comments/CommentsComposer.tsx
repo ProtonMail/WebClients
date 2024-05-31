@@ -3,12 +3,10 @@
 import { useRef, useState } from 'react'
 import { CommentEditor, CommentEditorHandle } from './CommentEditor'
 import { Icon } from '@proton/components'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 export function CommentsComposer({
   autoFocus,
   initialContent,
-  controller,
   placeholder,
   onSubmit,
   onTextContentChange,
@@ -16,7 +14,6 @@ export function CommentsComposer({
   onCancel,
   hideCancelButton = !onCancel,
 }: {
-  controller: EditorRequiresClientMethods
   onSubmit: (content: string) => void
   placeholder: string
   autoFocus?: boolean
@@ -58,11 +55,18 @@ export function CommentsComposer({
       <CommentEditor
         autoFocus={autoFocus}
         className="min-w-0 flex-grow border border-[transparent] px-0.5 py-1 text-sm caret-[--primary]"
-        onKeyDown={(event) => {
-          if (event.ctrlKey && event.key === 'Enter' && canSubmit) {
+        onEnter={(event) => {
+          if (!event) {
+            return false
+          }
+          if (event.ctrlKey && canSubmit) {
             event.preventDefault()
             submitComment()
+            return true
           }
+          return false
+        }}
+        onKeyDown={(event) => {
           if (event.key === 'Escape' && onCancel) {
             onCancel?.()
           }

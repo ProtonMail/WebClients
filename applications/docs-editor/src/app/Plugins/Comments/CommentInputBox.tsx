@@ -10,15 +10,11 @@ export function CommentInputBox({
   editor,
   controller,
   cancelAddComment,
-  createMarkNode,
-  removeMarkNode,
 }: {
   editor: LexicalEditor
   controller: EditorRequiresClientMethods
   setShowCommentInput: (show: boolean) => void
   cancelAddComment: () => void
-  createMarkNode: (id: string) => void
-  removeMarkNode: (id: string) => void
 }) {
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
@@ -113,7 +109,6 @@ export function CommentInputBox({
           selectionRef.current = null
         }}
         onCancel={cancelAddComment}
-        controller={controller}
       />
     </div>
   )

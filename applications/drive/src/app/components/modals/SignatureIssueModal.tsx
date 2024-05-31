@@ -16,8 +16,8 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 
-import { SignatureIssues } from '../../store';
-import { TransferSignatureIssueStrategy } from '../../store';
+import { TransferSignatureIssueStrategy } from '../../store/_downloads/interface';
+import type { SignatureIssues } from '../../store/_links/interface';
 import { SignatureAlertBody } from '../SignatureAlert';
 
 interface ConflictModalProps {

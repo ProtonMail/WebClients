@@ -6,7 +6,7 @@ import {
   PendingMessage,
   EditorBridgeMessageType,
   ConvertibleDataType,
-  WebsocketConnectionStatus,
+  WebsocketConnectionEventStatusChange,
   RtsMessagePayload,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@standardnotes/utils'
@@ -22,6 +22,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
   async getClientId(): Promise<number> {
     return this.invokeEditorMethod('getClientId', [])
+  }
+
+  async showEditor(): Promise<void> {
+    return this.invokeEditorMethod('showEditor', [])
   }
 
   async performOpeningCeremony(): Promise<void> {
@@ -68,16 +72,12 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('handleUnresolveCommentMarkNode', [markID])
   }
 
-  async handleWSConnectionStatusChange(status: WebsocketConnectionStatus): Promise<void> {
+  async handleWSConnectionStatusChange(status: WebsocketConnectionEventStatusChange): Promise<void> {
     return this.invokeEditorMethod('handleWSConnectionStatusChange', [status])
   }
 
   async broadcastPresenceState(): Promise<void> {
     return this.invokeEditorMethod('broadcastPresenceState', [])
-  }
-
-  async refreshPresenceState(): Promise<void> {
-    return this.invokeEditorMethod('refreshPresenceState', [])
   }
 
   async initializeEditor(

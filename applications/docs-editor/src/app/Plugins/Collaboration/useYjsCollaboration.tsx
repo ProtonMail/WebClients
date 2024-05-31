@@ -39,6 +39,7 @@ export function useYjsCollaboration(
   name: string,
   color: string,
   shouldBootstrap: boolean,
+  onCollabReady: () => void,
   cursorsContainerRef?: CursorsContainerRef,
   initialEditorState?: InitialEditorStateType,
   excludedProperties?: ExcludedProperties,
@@ -100,6 +101,8 @@ export function useYjsCollaboration(
     )
     window.addEventListener('resize', onWindowResize)
 
+    onCollabReady()
+
     return () => {
       awareness.off('update', onAwarenessUpdate)
       root.getSharedType().unobserveDeep(onYjsTreeChanges)
@@ -107,7 +110,19 @@ export function useYjsCollaboration(
       removeListener()
       window.removeEventListener('resize', onWindowResize)
     }
-  }, [binding, color, docMap, editor, id, initialEditorState, name, provider, shouldBootstrap, awarenessData])
+  }, [
+    binding,
+    color,
+    docMap,
+    editor,
+    id,
+    initialEditorState,
+    name,
+    provider,
+    shouldBootstrap,
+    awarenessData,
+    onCollabReady,
+  ])
 
   const cursorsContainer = useMemo(() => {
     let rootElementContainer: HTMLElement | null = null

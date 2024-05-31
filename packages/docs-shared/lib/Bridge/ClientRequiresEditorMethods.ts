@@ -1,6 +1,6 @@
 import { ConvertibleDataType } from '../ConvertibleDataType'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
-import { WebsocketConnectionStatus } from '../Realtime/WebsocketConnectionEvent'
+import { WebsocketConnectionEventStatusChange } from '../Realtime/WebsocketConnectionEvent'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -9,6 +9,7 @@ export interface ClientRequiresEditorMethods {
   getDocumentState(): Promise<Uint8Array>
   getClientId(): Promise<number>
   receiveThemeChanges(theme: string): Promise<void>
+  showEditor(): Promise<void>
   initializeEditor(
     documentId: string,
     username: string,
@@ -21,7 +22,6 @@ export interface ClientRequiresEditorMethods {
   handleRemoveCommentMarkNode(markID: string): Promise<void>
   handleResolveCommentMarkNode(markID: string): Promise<void>
   handleUnresolveCommentMarkNode(markID: string): Promise<void>
-  handleWSConnectionStatusChange(status: WebsocketConnectionStatus): Promise<void>
+  handleWSConnectionStatusChange(status: WebsocketConnectionEventStatusChange): Promise<void>
   broadcastPresenceState(): Promise<void>
-  refreshPresenceState(): Promise<void>
 }

@@ -7,7 +7,6 @@ import {
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
   ListNode,
-  REMOVE_LIST_COMMAND,
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
@@ -59,7 +58,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { Button } from '@proton/atoms'
 import { INSERT_IMAGE_COMMAND } from '../Plugins/Image/ImagePlugin'
-import { $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
+import { $isLinkNode } from '@lexical/link'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
 import { useInternalEventBus } from '../InternalEventBusProvider'
 import { EditorEditableChangeEvent } from '@proton/docs-shared'
@@ -67,6 +66,10 @@ import { ToolbarButton } from './ToolbarButton'
 import { ToolbarSeparator } from './ToolbarSeparator'
 import { TableOption } from './TableOption'
 import { c } from 'ttag'
+import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
+import CheckListIcon from '../Icons/CheckListIcon'
+import clsx from '@proton/utils/clsx'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -75,10 +78,7 @@ export default function DocumentEditorToolbar() {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
-  const [isEditable, setIsEditable] = useState(editor.isEditable())
-  useEffect(() => {
-    return editor.registerEditableListener(setIsEditable)
-  }, [editor])
+  const isEditable = useLexicalEditable()
 
   const [canUndo, setCanUndo] = useState(false)
   const [canRedo, setCanRedo] = useState(false)
@@ -120,7 +120,7 @@ export default function DocumentEditorToolbar() {
     if (blockType !== 'bullet') {
       editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
+      formatParagraph()
     }
   }
 
@@ -128,7 +128,7 @@ export default function DocumentEditorToolbar() {
     if (blockType !== 'check') {
       editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
+      formatParagraph()
     }
   }
 
@@ -136,7 +136,7 @@ export default function DocumentEditorToolbar() {
     if (blockType !== 'number') {
       editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
+      formatParagraph()
     }
   }
 
@@ -349,21 +349,6 @@ export default function DocumentEditorToolbar() {
       onClick: () => formatHeading('h3'),
     },
     {
-      type: 'bullet',
-      name: blockTypeToBlockName.bullet,
-      onClick: formatBulletList,
-    },
-    {
-      type: 'check',
-      name: blockTypeToBlockName.check,
-      onClick: formatCheckList,
-    },
-    {
-      type: 'number',
-      name: blockTypeToBlockName.number,
-      onClick: formatNumberedList,
-    },
-    {
       type: 'quote',
       name: blockTypeToBlockName.quote,
       onClick: formatQuote,
@@ -372,6 +357,39 @@ export default function DocumentEditorToolbar() {
       type: 'code',
       name: blockTypeToBlockName.code,
       onClick: formatCode,
+    },
+  ]
+
+  const checkListTypes = [
+    {
+      type: 'check',
+      name: (
+        <>
+          <CheckListIcon className="h-4 w-4 fill-current" />
+          {blockTypeToBlockName.check}
+        </>
+      ),
+      onClick: formatCheckList,
+    },
+    {
+      type: 'bullet',
+      name: (
+        <>
+          <Icon name="list-bullets" />
+          {blockTypeToBlockName.bullet}
+        </>
+      ),
+      onClick: formatBulletList,
+    },
+    {
+      type: 'number',
+      name: (
+        <>
+          <Icon name="list-numbers" />
+          {blockTypeToBlockName.number}
+        </>
+      ),
+      onClick: formatNumberedList,
     },
   ]
 
@@ -412,7 +430,7 @@ export default function DocumentEditorToolbar() {
         >
           <DropdownMenu>
             {blockTypes.map(({ type, name, onClick }) => (
-              <DropdownMenuButton key={type} className="text-left" onClick={onClick}>
+              <DropdownMenuButton key={type} className="text-left" onClick={onClick} disabled={!isEditable}>
                 {name}
               </DropdownMenuButton>
             ))}
@@ -507,13 +525,13 @@ export default function DocumentEditorToolbar() {
               if (!link) {
                 return
               }
-              activeEditor.dispatchCommand(TOGGLE_LINK_COMMAND, link)
+              activeEditor.dispatchCommand(EDIT_LINK_COMMAND, link)
             } else {
               const confirmed = confirm(c('Action').t`Do you want to remove the link?`)
               if (!confirmed) {
                 return
               }
-              activeEditor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
+              activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
             }
           }}
         >
@@ -580,6 +598,36 @@ export default function DocumentEditorToolbar() {
           <OutdentIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarSeparator />
+        <SimpleDropdown
+          as={ToolbarButton}
+          active={checkListTypes.some(({ type }) => type === blockType)}
+          shape="ghost"
+          type="button"
+          className="text-[--text-norm]"
+          content={
+            <>
+              <CheckListIcon className="h-4 w-4 fill-current" />
+            </>
+          }
+          disabled={!isEditable}
+        >
+          <DropdownMenu>
+            {checkListTypes.map(({ type, name, onClick }) => (
+              <DropdownMenuButton
+                key={type}
+                className={clsx(
+                  'flex items-center gap-2 text-left text-sm',
+                  type === blockType && 'bg-[--primary-minor-2] font-bold',
+                )}
+                onClick={onClick}
+                disabled={!isEditable}
+              >
+                {name}
+              </DropdownMenuButton>
+            ))}
+          </DropdownMenu>
+        </SimpleDropdown>
+        <ToolbarSeparator />
         <input
           ref={imageInputRef}
           className="absolute left-0 top-0 h-px w-px opacity-0"
@@ -587,6 +635,10 @@ export default function DocumentEditorToolbar() {
           accept="image/*"
           onChange={async (event: React.ChangeEvent<HTMLInputElement>) => {
             if (!event.target.files || event.target.files.length !== 1) {
+              return
+            }
+
+            if (!isEditable) {
               return
             }
 
