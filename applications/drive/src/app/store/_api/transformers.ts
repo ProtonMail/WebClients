@@ -3,7 +3,7 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
-import { ShareInvitationPayload } from '@proton/shared/lib/interfaces/drive/invitation';
+import { ShareExternalInvitationPayload, ShareInvitationPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -16,7 +16,14 @@ import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareMember, ShareURLLEGACY, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
-import type { Share, ShareInvitation, ShareMembership, ShareURL, ShareWithKey } from '../_shares';
+import type {
+    Share,
+    ShareExternalInvitation,
+    ShareInvitation,
+    ShareMembership,
+    ShareURL,
+    ShareWithKey,
+} from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
@@ -289,5 +296,19 @@ export const shareInvitationPayloadToShareInvitation = (shareInvitation: ShareIn
         keyPacketSignature: shareInvitation.KeyPacketSignature,
         createTime: shareInvitation.CreateTime,
         state: shareInvitation.State,
+    };
+};
+
+export const shareExternalInvitationPayloadToShareExternalInvitation = (
+    shareExternalInvitation: ShareExternalInvitationPayload
+): ShareExternalInvitation => {
+    return {
+        externalInvitationId: shareExternalInvitation.ExternalInvitationID,
+        inviterEmail: shareExternalInvitation.InviterEmail,
+        inviteeEmail: shareExternalInvitation.InviteeEmail,
+        permissions: shareExternalInvitation.Permissions,
+        createTime: shareExternalInvitation.CreateTime,
+        state: shareExternalInvitation.State,
+        externalInvitationSignature: shareExternalInvitation.ExternalInvitationSignature,
     };
 };

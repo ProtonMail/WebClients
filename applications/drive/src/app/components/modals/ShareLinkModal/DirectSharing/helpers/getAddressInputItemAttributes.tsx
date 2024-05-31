@@ -8,7 +8,7 @@ import { ShareInvitee } from '../../../../../store';
  * Generates attributes for an address input item based on the loading state, error state, and email.
  * This function is meant to be use with the adress autocomplete input.
  */
-export const getAddressInputItemAttributes = ({ isLoading, error, email }: ShareInvitee) => {
+export const getAddressInputItemAttributes = ({ isLoading, error, email, isExternal }: ShareInvitee) => {
     if (isLoading) {
         return {
             icon: <Loader className="icon-16p pl-2 m-auto flex shrink-0" />,
@@ -28,6 +28,9 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email }: Share
             iconTooltip: error.message,
             labelTooltip: email,
         };
+    }
+    if (isExternal) {
+        return null;
     }
     return {
         icon: (

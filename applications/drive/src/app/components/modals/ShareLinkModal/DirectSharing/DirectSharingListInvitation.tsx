@@ -1,24 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    IconName,
-    usePopperAnchor,
-} from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
-import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { useNotifications } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
+import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import { useDriveSharingFlags } from '../../../../store';
+import { MemberDropdownMenu } from './MemberDropdownMenu';
 
 interface Props {
     invitationId: string;
@@ -26,39 +17,12 @@ interface Props {
     linkId: string;
     contactEmail: string;
     contactName?: string;
+    externalInvitationState?: SHARE_EXTERNAL_INVITATION_STATE;
     selectedPermissions: SHARE_MEMBER_PERMISSIONS;
-    onInvitationRemove: (invitationId: string) => void;
+    onInvitationRemove: (invitationId: string) => Promise<void>;
     onInvitationPermissionsChange: (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
-    onResendInvitationEmail: (invitationId: string) => Promise<void>;
+    onResendInvitationEmail?: (invitationId: string) => Promise<void>;
 }
-
-interface PermissionOption {
-    icon: IconName;
-    label: string;
-    value: number;
-}
-
-const MenuItem = ({
-    label,
-    iconName,
-    isSelected,
-    onClick,
-}: {
-    label: string;
-    iconName: IconName;
-    isSelected?: boolean;
-    onClick: () => void;
-}) => {
-    return (
-        <DropdownMenuButton onClick={onClick} className="text-left flex justify-space-between items-center">
-            <span className="flex items-center mr-14">
-                <Icon name={iconName} className="mr-2" />
-                {label}
-            </span>
-            {isSelected ? <Icon name="checkmark" /> : null}
-        </DropdownMenuButton>
-    );
-};
 
 export const DirectSharingListInvitation = ({
     invitationId,
@@ -67,29 +31,14 @@ export const DirectSharingListInvitation = ({
     contactEmail,
     contactName,
     selectedPermissions,
+    externalInvitationState,
     onInvitationRemove,
     onInvitationPermissionsChange,
     onResendInvitationEmail,
 }: Props) => {
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, withIsLoading] = useLoading(false);
     const { createNotification } = useNotifications();
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
-
-    const permissionsOptions: PermissionOption[] = [
-        {
-            icon: 'eye',
-            label: c('Label').t`Viewer`,
-            value: MEMBER_PERMISSIONS.VIEWER,
-        },
-        {
-            icon: 'pencil',
-            label: c('Label').t`Editor`,
-            value: MEMBER_PERMISSIONS.EDITOR,
-        },
-    ];
-
-    const dropdownLabel = permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label;
+    const isExternalInvitation = !!externalInvitationState;
 
     const copyShareInviteLinkUrl = useCallback(() => {
         textToClipboard(
@@ -100,23 +49,12 @@ export const DirectSharingListInvitation = ({
         });
     }, [volumeId, linkId, invitationId, contactEmail]);
 
-    const handleInviteRemove = useCallback(() => {
-        onInvitationRemove(invitationId);
-    }, []);
+    const handleInviteRemove = () => withIsLoading(onInvitationRemove(invitationId));
 
-    const handleInvitationPermissionsChange = (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
-        setIsLoading(true);
-        onInvitationPermissionsChange(invitationId, permissions).finally(() => {
-            setIsLoading(false);
-        });
-    };
+    const handleInvitationPermissionsChange = (permissions: SHARE_MEMBER_PERMISSIONS) =>
+        withIsLoading(onInvitationPermissionsChange(invitationId, permissions));
 
-    const handleResendInvitationEmail = () => {
-        setIsLoading(true);
-        onResendInvitationEmail(invitationId).finally(() => {
-            setIsLoading(false);
-        });
-    };
+    const handleResendInvitationEmail = () => withIsLoading(onResendInvitationEmail?.(invitationId));
 
     return (
         <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
@@ -129,62 +67,15 @@ export const DirectSharingListInvitation = ({
                     {contactName ? <span className="color-weak">{contactEmail}</span> : null}
                 </p>
             </div>
-
-            <div>
-                <DropdownButton
-                    className="self-center"
-                    ref={anchorRef}
-                    isOpen={isOpen}
-                    onClick={toggle}
-                    hasCaret
-                    shape="ghost"
-                    size="small"
-                    loading={isLoading}
-                    disabled={isDirectSharingDisabled} // Kill switch that disable member management
-                >
-                    {dropdownLabel}
-                </DropdownButton>
-                <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                    <DropdownMenu className=" divide-y">
-                        {/* Those divs was added to support render of divider in the list */}
-                        <div>
-                            <MenuItem
-                                iconName={permissionsOptions[0].icon}
-                                label={permissionsOptions[0].label}
-                                isSelected={permissionsOptions[0].value === selectedPermissions}
-                                onClick={() =>
-                                    handleInvitationPermissionsChange(invitationId, permissionsOptions[0].value)
-                                }
-                            />
-                            <MenuItem
-                                iconName={permissionsOptions[1].icon}
-                                label={permissionsOptions[1].label}
-                                isSelected={permissionsOptions[1].value === selectedPermissions}
-                                onClick={() =>
-                                    handleInvitationPermissionsChange(invitationId, permissionsOptions[1].value)
-                                }
-                            />
-                        </div>
-                        <div>
-                            <MenuItem
-                                iconName="paper-plane-horizontal"
-                                label={c('Action').t`Resend invite`}
-                                onClick={handleResendInvitationEmail}
-                            />
-                            <MenuItem
-                                iconName="link"
-                                label={c('Action').t`Copy invite link`}
-                                onClick={copyShareInviteLinkUrl}
-                            />
-                            <MenuItem
-                                iconName="cross-big"
-                                label={c('Action').t`Remove access`}
-                                onClick={handleInviteRemove}
-                            />
-                        </div>
-                    </DropdownMenu>
-                </Dropdown>
-            </div>
+            <MemberDropdownMenu
+                isLoading={isLoading}
+                externalInvitationState={externalInvitationState}
+                onChangePermissions={handleInvitationPermissionsChange}
+                selectedPermissions={selectedPermissions}
+                onCopyShareInviteLink={isExternalInvitation ? undefined : copyShareInviteLinkUrl} // TODO: Add support copy invite link for external invtations
+                onRemoveAccess={handleInviteRemove}
+                onResendInvitationEmail={onResendInvitationEmail ? handleResendInvitationEmail : undefined}
+            />
         </div>
     );
 };

@@ -2,25 +2,32 @@ import { c } from 'ttag';
 
 import { Avatar, CircleLoader } from '@proton/atoms';
 import { useContactEmails, useUser } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { ShareInvitation, ShareMember } from '../../../../store';
+import { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
-import MemberPermissionsSelect from './MemberPermissionsSelect';
+import { MemberDropdownMenu } from './MemberDropdownMenu';
 
 interface Props {
     volumeId?: string;
     linkId: string;
     members: ShareMember[];
     invitations: ShareInvitation[];
+    externalInvitations: ShareExternalInvitation[];
     isLoading: boolean;
     onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onInvitationPermissionsChange: (invitationId: string, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
-    onMemberRemove: (member: ShareMember) => void;
-    onInvitationRemove: (invitationId: string) => void;
+    onExternalInvitationPermissionsChange: (
+        externalInvitationId: string,
+        permission: SHARE_MEMBER_PERMISSIONS
+    ) => Promise<void>;
+    onMemberRemove: (member: ShareMember) => Promise<void>;
+    onInvitationRemove: (invitationId: string) => Promise<void>;
+    onExternalInvitationRemove: (externalInvitationId: string) => Promise<void>;
     onResendInvitationEmail: (invitationId: string) => Promise<void>;
 }
 
@@ -50,14 +57,14 @@ const MemberItem = ({
     contactName?: string;
     contactEmail: string;
     onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
-    onMemberRemove: (member: ShareMember) => void;
+    onMemberRemove: (member: ShareMember) => Promise<void>;
 }) => {
+    const [isLoading, withIsLoading] = useLoading(false);
     const { memberId, permissions } = member;
-    const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => onPermissionsChange(member, value);
+    const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) =>
+        withIsLoading(onPermissionsChange(member, value));
 
-    const handleMemberRemove = () => {
-        onMemberRemove(member);
-    };
+    const handleMemberRemove = () => withIsLoading(onMemberRemove(member));
 
     return (
         <div
@@ -74,10 +81,11 @@ const MemberItem = ({
                     {contactName && <span className="color-weak">{contactEmail}</span>}
                 </p>
             </div>
-            <MemberPermissionsSelect
+            <MemberDropdownMenu
+                isLoading={isLoading}
                 selectedPermissions={permissions}
-                onChange={handlePermissionChange}
-                onRemove={handleMemberRemove}
+                onChangePermissions={handlePermissionChange}
+                onRemoveAccess={handleMemberRemove}
             />
         </div>
     );
@@ -88,11 +96,14 @@ export const DirectSharingListing = ({
     linkId,
     members,
     invitations,
+    externalInvitations,
     isLoading,
     onPermissionsChange,
     onMemberRemove,
     onInvitationRemove,
     onInvitationPermissionsChange,
+    onExternalInvitationRemove,
+    onExternalInvitationPermissionsChange,
     onResendInvitationEmail,
 }: Props) => {
     const [user] = useUser();
@@ -118,6 +129,24 @@ export const DirectSharingListing = ({
                 <div className="mr-8">{c('Info').t`Owner`}</div>
             </div>
 
+            {volumeId &&
+                externalInvitations.map((externalInvitation) => {
+                    const { contactName, contactEmail } = getContactNameAndEmail(externalInvitation.inviteeEmail);
+                    return (
+                        <DirectSharingListInvitation
+                            key={externalInvitation.externalInvitationId}
+                            invitationId={externalInvitation.externalInvitationId}
+                            volumeId={volumeId}
+                            linkId={linkId}
+                            contactName={contactName}
+                            contactEmail={contactEmail}
+                            selectedPermissions={externalInvitation.permissions}
+                            onInvitationRemove={onExternalInvitationRemove}
+                            onInvitationPermissionsChange={onExternalInvitationPermissionsChange}
+                            externalInvitationState={externalInvitation.state}
+                        />
+                    );
+                })}
             {volumeId &&
                 invitations.map((invitation) => {
                     const { contactName, contactEmail } = getContactNameAndEmail(
