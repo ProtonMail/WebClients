@@ -69,6 +69,11 @@
 			user-select: initial;
 		}
 	}
+
+	dialog {
+		-webkit-app-region: no-drag;
+		user-select: initial;
+	}
 }
 
 .is-electron-light {
