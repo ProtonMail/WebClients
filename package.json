@@ -40,12 +40,12 @@
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "@types/jest-when": "^3.5.5",
         "husky": "^9.0.11",
-        "lint-staged": "^15.2.2",
+        "lint-staged": "^15.2.5",
         "prettier": "^3.2.5",
         "sort-package-json": "^2.10.0"
     },
     "packageManager": "yarn@4.2.2",
     "engines": {
-        "node": ">= 20.13.1"
+        "node": ">= 20.14.0"
     }
 }

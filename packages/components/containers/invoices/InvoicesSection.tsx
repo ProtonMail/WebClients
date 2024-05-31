@@ -3,9 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useChargebeeUserStatusTracker } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { useReportRoutingError } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { InvoiceDocument, PaymentsVersion, getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
+import { InvoiceDocument, PaymentsVersion, getInvoice } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -22,9 +20,9 @@ import {
     TableRow,
     Time,
     useModalState,
-    usePaginationAsync,
 } from '../../components';
-import { useApi, useApiResult, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
+import { useApi, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
+import { useChargebeeUserStatusTracker } from '../../payments/client-extensions/useChargebeeContext';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import InvoiceActions from './InvoiceActions';
@@ -33,54 +31,8 @@ import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
 import InvoicesPreview, { InvoicesPreviewControls } from './InvoicesPreview';
-import { Invoice, InvoiceResponse } from './interface';
-
-const ELEMENTS_PER_PAGE = 10;
-
-const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: InvoiceDocument }) => {
-    const pagination = usePaginationAsync(1);
-    const { page } = pagination;
-
-    const {
-        result = {
-            Invoices: [] as Invoice[],
-            Total: 0,
-        },
-        loading,
-        request: requestInvoices,
-        error,
-    } = useApiResult<InvoiceResponse>(
-        (paymentsVersion?: PaymentsVersion) =>
-            queryInvoices(
-                {
-                    Page: page - 1,
-                    PageSize: ELEMENTS_PER_PAGE,
-                    Owner: owner,
-                    Document,
-                },
-                paymentsVersion
-            ),
-        [page],
-        false,
-        true
-    );
-
-    const reportRoutingError = useReportRoutingError();
-    useEffect(() => {
-        reportRoutingError(error, {
-            flow: 'invoices',
-        });
-    }, [error]);
-
-    return {
-        ...pagination,
-        invoices: result.Invoices,
-        total: result.Total,
-        loading,
-        requestInvoices,
-        error,
-    };
-};
+import { Invoice } from './interface';
+import useInvoices, { ELEMENTS_PER_PAGE } from './useInvoices';
 
 type InvoicesHook = ReturnType<typeof useInvoices>;
 
