@@ -59,11 +59,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: session.payload.User }));
         }
 
+        const cacheOptions = {
+            cache: 'stale',
+        } as const;
+
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
-                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
+                dispatch(userThunk(cacheOptions)),
+                dispatch(userSettingsThunk(cacheOptions)),
+                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope], cacheOptions)),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -77,7 +81,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const loadPreload = () => {
-            return Promise.all([api<UserSettingsResponse>(queryUserSettings()), dispatch(addressesThunk())]);
+            return Promise.all([
+                api<UserSettingsResponse>(queryUserSettings()),
+                dispatch(addressesThunk(cacheOptions)),
+            ]);
         };
 
         const userPromise = loadUser();

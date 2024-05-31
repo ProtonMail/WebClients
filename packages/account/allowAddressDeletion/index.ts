@@ -3,22 +3,17 @@ import { createAction, createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getAllowAddressDeletion } from '@proton/shared/lib/api/addresses';
-import { Api } from '@proton/shared/lib/interfaces';
 
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'allowAddressDeletion';
+const name = 'allowAddressDeletion' as const;
 
 export interface AllowAddressDeletionState {
     [name]: ModelState<boolean>;
 }
 
-type SliceState = AllowAddressDeletionState[typeof name];
-
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<boolean>();
 
 export const selectAllowAddressDeletion = (state: AllowAddressDeletionState) => state[name];
 
@@ -46,10 +41,6 @@ const slice = createSlice({
         });
     },
 });
-
-export interface Params {
-    api: Api;
-}
 
 export const allowAddressDeletionReducer = { [name]: slice.reducer };
 export const allowAddressDeletionThunk = modelThunk.thunk;

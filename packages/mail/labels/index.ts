@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, serverEvent } from '@proton/account';
+import { ModelState, serverEvent, getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
@@ -37,10 +37,7 @@ const modelThunk = createAsyncModelThunk<Model, CategoriesState, ProtonThunkArgu
     previous: previousSelector(selectCategories),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

@@ -63,7 +63,7 @@ export const useOpenEvent = () => {
                     ...updateMember(calendarID, memberID, { Display: 1 }),
                     silence: true,
                 }).catch(() => {});
-                await getCalendars({ forceFetch: true });
+                await getCalendars({ cache: 'no-cache' });
             }
             try {
                 const result = await api<{ Event: CalendarEvent }>({

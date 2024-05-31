@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { ModelState } from 'packages/account';
 
-import { serverEvent } from '@proton/account';
+import { ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getUnreadBreachesCount } from '@proton/shared/lib/api/breaches';
@@ -34,10 +33,7 @@ const modelThunk = createAsyncModelThunk<Model, UserBreachesState, ProtonThunkAr
     previous: previousSelector(selectBreachesCount),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,

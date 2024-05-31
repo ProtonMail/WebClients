@@ -36,7 +36,7 @@ describe('domains', () => {
     it('should not fetch domains for a free user', async () => {
         const { store } = setup({ user: { Role: USER_ROLES.FREE_ROLE } as unknown as UserModel });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getState([], 0));
+        expect(selectDomains(store.getState())).toMatchObject(getState([], 0));
     });
 
     it('should fetch domains for a paid user', async () => {
@@ -47,11 +47,11 @@ describe('domains', () => {
             } as unknown as UserModel,
         });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }], 1));
+        expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }], 1));
         store.dispatch(
             serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
         );
-        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }, { ID: '2' }], 1));
+        expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }, { ID: '2' }], 1));
     });
 
     it('should clear domains for a downgraded user', async () => {
@@ -62,12 +62,12 @@ describe('domains', () => {
             } as unknown as UserModel,
         });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }], 1));
+        expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }], 1));
         store.dispatch(
             serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
         );
-        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }, { ID: '2' }], 1));
+        expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }, { ID: '2' }], 1));
         store.dispatch(serverEvent({ User: { Subscribed: 0 } as any }));
-        expect(selectDomains(store.getState())).toEqual(getState([], 0));
+        expect(selectDomains(store.getState())).toMatchObject(getState([], 0));
     });
 });

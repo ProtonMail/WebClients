@@ -7,6 +7,7 @@ import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 
 import { serverEvent } from '../eventLoop';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
 const name = 'paymentMethods' as const;
@@ -33,10 +34,7 @@ const modelThunk = createAsyncModelThunk<Model, PaymentMethodsState, ProtonThunk
     previous: previousSelector(selectPaymentMethods),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
