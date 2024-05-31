@@ -2,11 +2,13 @@ import {
     addressesThunk,
     initEvent,
     serverEvent,
+    startLogoutListener,
     userSettingsThunk,
     userThunk,
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -26,7 +28,7 @@ import noop from '@proton/utils/noop';
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
 import locales from './locales';
-import { extendStore, setupStore } from './store/store';
+import { type MailState, extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
@@ -50,6 +52,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(api);
     }
+    startLogoutListener();
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
@@ -57,9 +60,23 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
+        const user = session.payload?.User;
         extendStore({ config, api, authentication, unleashClient, history });
-        const store = setupStore();
+
+        await unleashPromise;
+        let persistedState = await getDecryptedPersistedState<Partial<MailState>>({
+            authentication,
+            user,
+        });
+
+        const persistedStateEnabled = unleashClient.isEnabled('PersistedState');
+        if (persistedState?.state && !persistedStateEnabled) {
+            persistedState = undefined;
+        }
+
+        const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled });
         const dispatch = store.dispatch;
 
         if (session.payload?.User) {
@@ -115,14 +132,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const evPromise = bootstrap.eventManager({
+            eventID: persistedState?.eventID,
             api: silentApi,
             query: (eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 }),
         });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
         loadPreloadButIgnored();
 
-        await unleashPromise;
-        // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
             appContainerPromise,
@@ -141,6 +156,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
+
+        if (persistedState?.eventID) {
+            setTimeout(() => {
+                eventManager.call();
+                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
+                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
+            }, 350);
+        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();
