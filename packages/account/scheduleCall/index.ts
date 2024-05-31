@@ -5,9 +5,10 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { scheduleCall } from '@proton/shared/lib/api/support';
 import type { ScheduleCall } from '@proton/shared/lib/interfaces';
 
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'scheduleCall';
+const name = 'scheduleCall' as const;
 
 export interface ScheduleCallState {
     [name]: ModelState<ScheduleCall>;
@@ -25,10 +26,7 @@ const modelThunk = createAsyncModelThunk<Model, ScheduleCallState, ProtonThunkAr
     previous: previousSelector(selectScheduleCall),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

@@ -14,7 +14,7 @@
 //             return hasChange;
 //         },
 //         effect: async (action, listenerApi) => {
-//             await listenerApi.dispatch(breachReportsThunk({ forceFetch: true }));
+//             await listenerApi.dispatch(breachReportsThunk({ cache: 'no-cache }));
 //         },
 //     });
 // };

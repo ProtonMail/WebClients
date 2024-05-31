@@ -9,6 +9,7 @@ import type { PendingInvitation } from '@proton/shared/lib/interfaces';
 import { Api, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import { OrganizationState, selectOrganization } from '../organization';
 
@@ -17,7 +18,7 @@ const fetchPendingUserInvitations = (api: Api) =>
         return UserInvitations;
     });
 
-const name = 'userInvitations';
+const name = 'userInvitations' as const;
 
 export interface UserInvitationsState extends OrganizationState {
     [name]: ModelState<PendingInvitation[]>;
@@ -35,10 +36,7 @@ const modelThunk = createAsyncModelThunk<Model, UserInvitationsState, ProtonThun
     previous: previousSelector(selectUserInvitations),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
@@ -72,7 +70,7 @@ export const userInvitationsListener = (startListening: SharedStartListening<Use
             return false;
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userInvitationsThunk({ forceFetch: true }));
+            await listenerApi.dispatch(userInvitationsThunk({ cache: 'no-cache' }));
         },
     });
 };

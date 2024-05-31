@@ -32,15 +32,14 @@ import {
     ApiEnvironmentConfig,
     CachedOrganizationKey,
     DecryptedKey,
-    OrganizationWithSettings,
     ProtonConfig,
-    SubscriptionModel,
     UserModel,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState, registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
+import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 import { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
@@ -174,8 +173,8 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
                 PMSignature: PM_SIGNATURE.ENABLED,
                 DelaySendSeconds: DELAY_IN_SECONDS.NONE,
             }),
-            subscription: getModelState({} as SubscriptionModel),
-            organization: getModelState({} as OrganizationWithSettings),
+            subscription: getSubscriptionState(),
+            organization: getOrganizationState(),
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
             contacts: getModelState([]),

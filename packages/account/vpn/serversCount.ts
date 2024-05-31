@@ -1,18 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createAsyncModelThunk } from '@proton/redux-utilities';
-import { DAY } from '@proton/shared/lib/constants';
-import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
-const name = 'vpnServersCount';
+const name = 'vpnServersCount' as const;
 
 export interface VPNServersCountState {
-    [name]: ModelState<VPNServersCountData> & { meta: { fetchedAt: number } };
+    [name]: ModelState<VPNServersCountData>;
 }
 
 type SliceState = VPNServersCountState[typeof name];
@@ -24,40 +23,16 @@ const modelThunk = createAsyncModelThunk<Model, VPNServersCountState, ProtonThun
     miss: async ({ extraArgument }) => {
         return getVPNServersCountData(extraArgument.api);
     },
-    previous: (extra) => {
-        const state = selectVpnServersCount(extra.getState());
-        const { value, meta } = state;
-        if (value !== undefined && Date.now() - meta.fetchedAt < 1 * DAY) {
-            return value;
-        }
-        return undefined;
-    },
+    previous: previousSelector(selectVpnServersCount),
 });
 
-const initialState: SliceState = {
-    value: defaultVPNServersCountData,
-    error: undefined,
-    meta: { fetchedAt: 0 },
-};
+const initialState = getInitialModelState<Model>(defaultVPNServersCountData);
 const slice = createSlice({
     name,
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        return builder
-            .addCase(modelThunk.pending, (state) => {
-                state.error = undefined;
-            })
-            .addCase(modelThunk.fulfilled, (state, action) => {
-                state.value = action.payload;
-                state.error = undefined;
-                state.meta.fetchedAt = Date.now() + getMinuteJitter();
-            })
-            .addCase(modelThunk.rejected, (state, action) => {
-                state.error = action.payload;
-                state.value = undefined;
-                state.meta.fetchedAt = Date.now() + getMinuteJitter();
-            });
+        handleAsyncModel(builder, modelThunk);
     },
 });
 

@@ -8,6 +8,7 @@ import type { Member, User } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import { UserState, userThunk } from '../user';
 
@@ -37,11 +38,8 @@ const modelThunk = createAsyncModelThunk<Model | undefined, MemberState, ProtonT
     previous: previousSelector(selectMember),
 });
 
-const initialState: SliceState = {
-    /** Set to empty obj if user is not within an org */
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
+
 const slice = createSlice({
     name,
     initialState,

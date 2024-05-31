@@ -66,7 +66,7 @@ export const process = async ({
     }
 
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
-    await getCalendars({ forceFetch: true });
+    await getCalendars({ cache: 'no-cache' });
 
     return hasSharedCalendars;
 };

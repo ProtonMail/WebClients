@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ModelState, UserSettingsState } from '@proton/account';
+import { ModelState, UserSettingsState, getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getDirectoryCalendars } from '@proton/shared/lib/api/calendars';
@@ -32,10 +32,7 @@ const modelThunk = createAsyncModelThunk<Model, HolidaysDirectoryState, ProtonTh
     previous: previousSelector(selectHolidaysDirectory),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

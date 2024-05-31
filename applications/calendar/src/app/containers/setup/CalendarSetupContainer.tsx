@@ -99,7 +99,7 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
             }
 
             await call();
-            await Promise.all([getCalendars({ forceFetch: true }), getCalendarUserSettings({ forceFetch: true })]);
+            await Promise.all([getCalendars({ cache: 'no-cache' }), getCalendarUserSettings({ cache: 'no-cache' })]);
         };
         run()
             .then(() => {

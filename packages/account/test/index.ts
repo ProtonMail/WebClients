@@ -4,5 +4,8 @@ export const getModelState = <T>(value: T | undefined, error = undefined): Model
     return {
         value,
         error,
+        meta: {
+            fetchedAt: Date.now(),
+        },
     };
 };

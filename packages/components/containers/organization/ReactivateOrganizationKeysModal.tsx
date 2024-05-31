@@ -97,7 +97,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
             await api(activateOrganizationKey(armoredPrivateKey));
             await call();
             // Warning: Force a refetch of the org key because it's not present in the event manager.
-            await getOrganizationKey({ forceFetch: true });
+            await getOrganizationKey({ cache: 'no-cache' });
 
             createNotification({ text: success });
             onClose?.();

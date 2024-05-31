@@ -2,9 +2,10 @@ import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original
 import { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseCache } from '@proton/redux-utilities';
+import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { queryDomains } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
@@ -21,7 +22,7 @@ enum ValueType {
 }
 
 interface State extends UserState {
-    [name]: ModelState<Domain[]> & { meta?: { type: ValueType } };
+    [name]: ModelState<Domain[]> & { meta: { type: ValueType } };
 }
 
 type SliceState = State[typeof name];
@@ -37,6 +38,10 @@ const freeDomains: Domain[] = [];
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
+    meta: {
+        fetchedAt: 0,
+        type: ValueType.dummy,
+    },
 };
 const slice = createSlice({
     name,
@@ -48,12 +53,12 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<{ value: Model; type: ValueType }>) => {
             state.value = action.payload.value;
             state.error = undefined;
-            state.meta = { type: action.payload.type };
+            state.meta.type = action.payload.type;
+            state.meta.fetchedAt = getFetchedAt();
         },
         rejected: (state, action) => {
             state.error = action.payload;
-            state.value = undefined;
-            state.meta = { type: ValueType.complete };
+            state.meta.fetchedAt = getFetchedAt();
         },
     },
     extraReducers: (builder) => {
@@ -69,19 +74,19 @@ const slice = createSlice({
                     itemKey: 'Domain',
                 });
                 state.error = undefined;
-                state.meta = { type: ValueType.complete };
+                state.meta.type = ValueType.complete;
             } else {
                 if (!isFreeDomains && action.payload.User && !canFetch(action.payload.User)) {
                     // Do not get any domain update when user becomes unsubscribed.
                     state.value = freeDomains;
                     state.error = undefined;
-                    state.meta = { type: ValueType.dummy };
+                    state.meta.type = ValueType.dummy;
                 }
 
                 if (isFreeDomains && action.payload.User && canFetch(action.payload.User)) {
                     state.value = undefined;
                     state.error = undefined;
-                    state.meta = { type: ValueType.complete };
+                    state.meta.type = ValueType.complete;
                 }
             }
         });
@@ -90,15 +95,14 @@ const slice = createSlice({
 
 const promiseCache = createPromiseCache<Model>();
 
+const previous = previousSelector(selectDomains);
+
 const modelThunk = (options?: {
-    forceFetch?: boolean;
+    cache?: CacheType;
 }): ThunkAction<Promise<Model>, State, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectDomains(getState());
-            if (oldValue?.value !== undefined && !options?.forceFetch) {
-                return Promise.resolve(oldValue.value);
-            }
+            return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());

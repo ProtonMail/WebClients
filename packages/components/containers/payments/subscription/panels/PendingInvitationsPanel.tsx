@@ -23,7 +23,7 @@ const PendingInvitationPanel = ({ invites }: Props) => {
 
     useEffect(() => {
         // Force refresh the invitations when user navigates back to the dashboard
-        getUserInvitations({ forceFetch: true }).catch(noop);
+        getUserInvitations({ cache: 'no-cache' }).catch(noop);
     }, []);
 
     const handleInvitationClick = (invitation: PendingInvitation) => {
