@@ -33,6 +33,8 @@ export interface SearchItem extends FileBrowserBaseItem {
     trashed: number | null;
     parentLinkId: string;
     rootShareId: string;
+    isShared: boolean;
+    isAdmin: boolean;
 }
 
 interface Props {
@@ -82,7 +84,8 @@ export const Search = ({ shareId, searchView }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: SearchItem[] = items.map((item) => ({ ...item, id: item.linkId }));
+    // We consider that search is limited to items you own for now
+    const browserItems: SearchItem[] = items.map((item) => ({ ...item, id: item.linkId, isAdmin: true }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */
