@@ -22,6 +22,9 @@ export function TableOption({ editor, disabled }: { editor: LexicalEditor; disab
           className="flex flex-col gap-2 px-3 py-2 text-sm"
           onSubmit={(event) => {
             event.preventDefault()
+            if (!editor.isEditable()) {
+              return
+            }
             const form = event.currentTarget
             const rows = Math.min(Math.max(parseInt(form.rows.value), 0), 10).toString()
             const columns = Math.min(Math.max(parseInt(form.columns.value), 0), 10).toString()

@@ -3,8 +3,15 @@ import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
-import { FocusEventHandler, KeyboardEventHandler, forwardRef, useImperativeHandle, useRef } from 'react'
-import { $nodesOfType, CLEAR_EDITOR_COMMAND, LexicalEditor, ParagraphNode } from 'lexical'
+import { FocusEventHandler, KeyboardEventHandler, forwardRef, useEffect, useImperativeHandle, useState } from 'react'
+import {
+  $nodesOfType,
+  CLEAR_EDITOR_COMMAND,
+  LexicalEditor,
+  ParagraphNode,
+  KEY_ENTER_COMMAND,
+  COMMAND_PRIORITY_CRITICAL,
+} from 'lexical'
 import { $rootTextContent } from '@lexical/text'
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
@@ -18,6 +25,7 @@ type Props = {
   onTextContentChange: (textContent: string) => void
   autoFocus?: boolean
   className?: string
+  onEnter: (event: KeyboardEvent | null) => boolean
   onKeyDown?: KeyboardEventHandler
   onBlur?: FocusEventHandler
   placeholder?: JSX.Element
@@ -31,19 +39,25 @@ export type CommentEditorHandle = {
 
 // eslint-disable-next-line react/display-name
 export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
-  ({ initialContent, className, autoFocus, onTextContentChange, onKeyDown, onBlur, placeholder }, ref) => {
-    const internalRef = useRef<LexicalEditor>(null)
+  ({ initialContent, className, autoFocus, onTextContentChange, onKeyDown, onEnter, onBlur, placeholder }, ref) => {
+    const [editor, setEditor] = useState<LexicalEditor | null>(null)
+
+    useEffect(() => {
+      if (!editor) {
+        return
+      }
+
+      return editor.registerCommand(KEY_ENTER_COMMAND, onEnter, COMMAND_PRIORITY_CRITICAL)
+    }, [editor, onEnter])
 
     useImperativeHandle(ref, () => ({
       focus: () => {
-        const editor = internalRef.current
         if (!editor) {
           throw new Error('Editor is not initialized')
         }
         editor.focus()
       },
       getStringifiedJSON: () => {
-        const editor = internalRef.current
         if (!editor) {
           throw new Error('Editor is not initialized')
         }
@@ -61,7 +75,6 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         return JSON.stringify(editor.getEditorState())
       },
       clearEditor: () => {
-        const editor = internalRef.current
         if (!editor) {
           throw new Error('Editor is not initialized')
         }
@@ -100,7 +113,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
             })
           }}
         />
-        <EditorRefPlugin editorRef={internalRef} />
+        <EditorRefPlugin editorRef={setEditor} />
         {autoFocus && <AutoFocusPlugin />}
         <HistoryPlugin />
         <ClearEditorPlugin />

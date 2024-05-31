@@ -1,5 +1,3 @@
-import * as time from 'lib0/time'
-
 import { EncryptMessage } from '../UseCase/EncryptMessage'
 import { LoggerInterface } from '@standardnotes/utils'
 import {
@@ -9,54 +7,54 @@ import {
   DocumentUpdate,
   Event,
   ConnectionCloseReason,
+  SERVER_HEARTBEAT_INTERVAL,
 } from '@proton/docs-proto'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
-import { WebsocketConnectionInterface, Broadcaster } from '@proton/docs-shared'
+import { WebsocketConnectionInterface } from '@proton/docs-shared'
 import { DocumentKeys } from '@proton/drive-store'
-import { ExponentialBackoff } from '../Util/ExponentialBackoff'
+import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 
 const DebugDisableSockets = false
-
-/** If a message is not received within this many ms, the websocket connection is closed. */
-const DisconnectWebsocketAfterInactivityTimeout = 300_000
 
 const DebugConnection = {
   enabled: false,
   url: 'ws://localhost:4000/websockets',
 }
 
-export class WebsocketConnection implements WebsocketConnectionInterface, Broadcaster {
-  private connected: boolean = false
-
-  private ws?: WebSocket
-  private wsLastMessageReceived = 0
-  private checkInterval: NodeJS.Timeout
-
-  private exponentialBackoff = new ExponentialBackoff()
+export class WebsocketConnection implements WebsocketConnectionInterface {
+  private socket?: WebSocket
+  private state: WebsocketStateInterface = new WebsocketState()
+  private pingTimeout: NodeJS.Timeout | undefined = undefined
 
   constructor(
     private keys: DocumentKeys,
     private callbacks: WebsocketCallbacks,
     private _encryptMessage: EncryptMessage,
     private logger: LoggerInterface,
-  ) {
-    this.checkInterval = setInterval(() => {
-      if (
-        this.connected &&
-        DisconnectWebsocketAfterInactivityTimeout < time.getUnixTime() - this.wsLastMessageReceived
-      ) {
-        this.ws?.close()
-      }
-    }, DisconnectWebsocketAfterInactivityTimeout / 10)
+  ) {}
+
+  /**
+   * In some cases, a client may lose their connection to the websocket without even realizing it.
+   * The heartbeat explicitely closes the connection if we do not receive any message from the server,
+   * including a "ping" message.
+   * https://github.com/websockets/ws?tab=readme-ov-file#how-to-detect-and-close-broken-connections
+   * */
+  private heartbeat(): void {
+    clearTimeout(this.pingTimeout)
+
+    this.pingTimeout = setTimeout(() => {
+      this.logger.info('Closing connection due to heartbeat timeout')
+      this.socket?.close()
+    }, SERVER_HEARTBEAT_INTERVAL + 2_500)
   }
 
   destroy(): void {
-    clearInterval(this.checkInterval)
+    clearInterval(this.pingTimeout)
     this.disconnect()
   }
 
   disconnect(): void {
-    this.ws?.close()
+    this.socket?.close()
   }
 
   buildUrl(params: { serverUrl: string; token: string; commitId: string | undefined }): string {
@@ -73,17 +71,24 @@ export class WebsocketConnection implements WebsocketConnectionInterface, Broadc
       return
     }
 
-    if (this.connected || this.ws) {
+    if (this.state.isConnected || this.socket) {
       return
     }
+
+    console.warn('Calling connect on socket')
 
     const urlAndTokenResult = await this.callbacks.getUrlAndToken()
     if (urlAndTokenResult.isFailed()) {
       this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
-      this.exponentialBackoff.incrementAttempts()
-      const reconnectDelay = this.exponentialBackoff.getBackoffWithJitter()
+
+      this.state.didFailToFetchToken()
+
+      const reconnectDelay = this.state.getBackoff()
+
       this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
+
       setTimeout(() => this.connect(), reconnectDelay)
+
       return
     }
 
@@ -91,15 +96,27 @@ export class WebsocketConnection implements WebsocketConnectionInterface, Broadc
     const commitId = this.callbacks.getLatestCommitId()
     const url = this.buildUrl({ serverUrl, token, commitId })
 
-    const websocket = new WebSocket(url) as WebSocket
+    const websocket = new WebSocket(url)
     websocket.binaryType = 'arraybuffer'
-    this.ws = websocket
-    this.callbacks.onConnectionConnecting()
-    this.connected = false
+
+    this.socket = websocket
+
+    this.callbacks.onConnecting()
+
+    websocket.onopen = () => {
+      this.logger.info('Websocket connection opened')
+
+      this.heartbeat()
+
+      this.state.didOpen()
+
+      this.callbacks.onOpen()
+    }
 
     websocket.onmessage = async (event) => {
-      this.wsLastMessageReceived = time.getUnixTime()
-      this.callbacks.onConnectionMessage(new Uint8Array(event.data))
+      this.heartbeat()
+
+      this.callbacks.onMessage(new Uint8Array(event.data))
     }
 
     websocket.onerror = (event) => {
@@ -108,37 +125,39 @@ export class WebsocketConnection implements WebsocketConnectionInterface, Broadc
 
     websocket.onclose = (event) => {
       this.logger.debug('Websocket closed:', event.reason)
-      this.ws = undefined
+
+      this.socket = undefined
+
       const reason = ConnectionCloseReason.create({
         code: event.code,
         message: event.reason,
       })
-      if (this.connected) {
-        this.connected = false
-        this.callbacks.onConnectionClose(reason)
+
+      if (this.state.isConnected) {
+        this.callbacks.onClose(reason)
+      } else {
+        this.callbacks.onFailToConnect(reason)
       }
-      this.exponentialBackoff.incrementAttempts()
-      const reconnectDelay = this.exponentialBackoff.getBackoffWithJitter()
+
+      this.state.didClose()
+
+      const reconnectDelay = this.state.getBackoff()
+
       this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
       if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED) {
         setTimeout(() => this.connect(), reconnectDelay)
       }
     }
-
-    websocket.onopen = () => {
-      this.logger.info('Websocket connection opened')
-      this.wsLastMessageReceived = time.getUnixTime()
-      this.connected = true
-      this.exponentialBackoff.resetAttempts()
-      this.callbacks.onConnectionOpen()
-    }
   }
 
   async broadcastMessage(
     message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    originator: any,
     source: string,
   ): Promise<void> {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
+      return
+    }
+
     const messageWrapper = new ClientMessage()
 
     if (message instanceof ClientMessageWithEvents) {
@@ -157,13 +176,9 @@ export class WebsocketConnection implements WebsocketConnectionInterface, Broadc
       messageWrapper.eventsMessage = message
     }
 
-    const ws = this.ws
-
     this.logger.debug('Broadcasting message from source:', source, messageWrapper)
 
-    if (this.connected && ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(messageWrapper.serializeBinary())
-    }
+    this.socket.send(messageWrapper.serializeBinary())
   }
 
   private async encryptMessage(message: DocumentUpdate | Event): Promise<ArrayBuffer> {
