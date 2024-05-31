@@ -6,7 +6,6 @@ import { ListDriveSharedByMeLinksPayload } from '@proton/shared/lib/interfaces/d
 import { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { useDebouncedRequest } from '../../_api';
-import useVolumesState from '../../_volumes/useVolumesState';
 import { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
 import { FetchLoadLinksMeta } from './interface';
@@ -27,7 +26,11 @@ type SharedLinksFetchState = {
 export function useSharedLinksListing() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
-    const volumesState = useVolumesState();
+
+    // Do not use useVolumeState as that is including all share IDs available
+    // on the volume, including standard shares. For heavy sharing users it then
+    // iterates over too many shares for no reason.
+    const contextShareIds = useRef<Set<string>>(new Set());
 
     const { loadFullListing, loadFullListingWithAnchor, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const sharedLinksFetchState = useRef<SharedLinksFetchState>({});
@@ -70,10 +73,13 @@ export function useSharedLinksListing() {
         transformedResponse: {
             [shareId: string]: string[];
         },
+        fetchMeta: FetchSharedLinksMeta,
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId]);
+            await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId], {
+                fetchMeta,
+            });
         }
     };
 
@@ -89,11 +95,12 @@ export function useSharedLinksListing() {
         }
 
         const { response, hasNextPage } = await queryVolumeSharedLinksPage(volumeId, sharedLinksFetchMeta.lastPage);
-        const volumeShareIds = response.ShareURLContexts.map((share) => share.ContextShareID);
-        volumesState.setVolumeShareIds(volumeId, volumeShareIds);
+        response.ShareURLContexts.map((share) => {
+            contextShareIds.current.add(share.ContextShareID);
+        });
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
-        await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
+        await loadSharedLinksMeta(signal, transformedResponse, sharedLinksFetchMeta, loadLinksMeta);
 
         sharedLinksFetchMeta.lastPage++;
         sharedLinksFetchMeta.isEverythingFetched = !hasNextPage;
@@ -107,15 +114,27 @@ export function useSharedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
     ): Promise<{ AnchorID: string; More: boolean }> => {
+        let sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
+
+        if (sharedLinksFetchMeta.isEverythingFetched) {
+            return {
+                AnchorID: '',
+                More: false,
+            };
+        }
+
         const response = await debouncedRequest<ListDriveSharedByMeLinksPayload>(
             querySharedByMeLinks(volumeId, { AnchorID })
         );
 
-        const volumeShareIds = response.Links.map((link) => link.ContextShareID);
-        volumesState.setVolumeShareIds(volumeId, volumeShareIds);
+        response.Links.map((link) => {
+            contextShareIds.current.add(link.ContextShareID);
+        });
 
         const transformedResponse = transformSharedByMeLinksResponseToLinkMap(response);
-        await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
+        await loadSharedLinksMeta(signal, transformedResponse, sharedLinksFetchMeta, loadLinksMeta);
+
+        sharedLinksFetchMeta.isEverythingFetched = !response.More;
 
         return {
             AnchorID: response.AnchorID,
@@ -157,8 +176,7 @@ export function useSharedLinksListing() {
                     isDecrypting: false,
                 };
             }
-            const associatedShareIds = volumesState.getVolumeShareIds(volumeId);
-            const result = associatedShareIds.map((shareId) => {
+            const result = Array.from(contextShareIds.current).map((shareId) => {
                 return getDecryptedLinksAndDecryptRest(
                     abortSignal,
                     shareId,
