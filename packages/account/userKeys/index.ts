@@ -8,6 +8,7 @@ import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { signoutAction } from '../authenticationService';
 import { inactiveKeysActions } from '../inactiveKeys';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import { UserState, userThunk } from '../user';
 
@@ -43,10 +44,7 @@ const modelThunk = createAsyncModelThunk<Model, UserKeysState, ProtonThunkArgume
     previous: previousSelector(selectUserKeys),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

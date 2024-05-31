@@ -100,12 +100,18 @@ const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as jest.Mock
 
 const getKey = (id: number) => ({ ID: id.toString(), privateKey: id, publicKey: id }) as unknown as DecryptedAddressKey;
 
+const addressKeyValue = (value: any) => {
+    return {
+        value,
+    };
+};
+
 describe('address keys keys listener', () => {
     it('should clear address keys when changed', async () => {
         const firstKeys = [getKey(1)];
         const initialState = {
-            '1': getModelState(firstKeys),
-            '2': getModelState([getKey(3)]),
+            '1': addressKeyValue(firstKeys),
+            '2': addressKeyValue([getKey(3)]),
         };
         const { store } = setup({
             addressKeys: initialState,
@@ -128,7 +134,7 @@ describe('address keys keys listener', () => {
 
     it('should recompute address keys when addresses changed', async () => {
         const initialState = {
-            '1': getModelState([getKey(1)]),
+            '1': addressKeyValue([getKey(1)]),
         };
         const { store } = setup({
             addresses: getModelState([getAddress({ ID: '1', Keys: [getTestAddressKey('1', 'a')] })]),

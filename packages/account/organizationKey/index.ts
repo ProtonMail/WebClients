@@ -8,6 +8,7 @@ import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
 
 import type { AddressKeysState } from '../addressKeys';
 import type { AddressesState } from '../addresses';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import type { MembersState } from '../members';
 import { type OrganizationState, organizationThunk } from '../organization';
@@ -27,7 +28,7 @@ export interface OrganizationKeyState
 }
 
 type SliceState = OrganizationKeyState[typeof name];
-type Model = SliceState['value'];
+type Model = NonNullable<SliceState['value']>;
 
 export const selectOrganizationKey = (state: OrganizationKeyState) => state.organizationKey;
 
@@ -48,10 +49,8 @@ const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThun
     previous: previousSelector(selectOrganizationKey),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
+
 const slice = createSlice({
     name,
     initialState,

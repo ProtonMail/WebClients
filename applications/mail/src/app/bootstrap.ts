@@ -66,19 +66,26 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: session.payload.User }));
         }
 
+        const cacheOptions = {
+            cache: 'stale',
+        } as const;
+
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
+                dispatch(userThunk(cacheOptions)),
+                dispatch(userSettingsThunk(cacheOptions)),
                 dispatch(
-                    fetchFeatures([
-                        FeatureCode.EarlyAccessScope,
-                        FeatureCode.CleanUTMTrackers,
-                        FeatureCode.ESAutomaticBackgroundIndexing,
-                        FeatureCode.MailActionsChunkSize,
-                        FeatureCode.SLIntegration,
-                        FeatureCode.AccountSecurityDismissed2FACard,
-                    ])
+                    fetchFeatures(
+                        [
+                            FeatureCode.EarlyAccessScope,
+                            FeatureCode.CleanUTMTrackers,
+                            FeatureCode.ESAutomaticBackgroundIndexing,
+                            FeatureCode.MailActionsChunkSize,
+                            FeatureCode.SLIntegration,
+                            FeatureCode.AccountSecurityDismissed2FACard,
+                        ],
+                        cacheOptions
+                    )
                 ),
             ]);
 
@@ -94,10 +101,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadPreload = () => {
             return Promise.all([
-                dispatch(addressesThunk()),
-                dispatch(mailSettingsThunk()),
-                dispatch(contactEmailsThunk()),
-                dispatch(categoriesThunk()),
+                dispatch(addressesThunk(cacheOptions)),
+                dispatch(mailSettingsThunk(cacheOptions)),
+                dispatch(contactEmailsThunk(cacheOptions)),
+                dispatch(categoriesThunk(cacheOptions)),
             ]);
         };
 

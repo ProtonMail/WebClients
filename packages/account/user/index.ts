@@ -3,11 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getUser } from '@proton/shared/lib/api/user';
+import { DAY } from '@proton/shared/lib/constants';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
 const name = 'user' as const;
@@ -27,13 +30,10 @@ const modelThunk = createAsyncModelThunk<Model, UserState, ProtonThunkArguments>
             return formatUser(User);
         });
     },
-    previous: previousSelector(selectUser),
+    previous: previousSelector(selectUser, 14 * DAY), // Longer expiration since this is set on init
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
@@ -44,6 +44,7 @@ const slice = createSlice({
             .addCase(initEvent, (state, action) => {
                 if (action.payload.User) {
                     state.value = formatUser(action.payload.User);
+                    state.meta.fetchedAt = getFetchedAt();
                 }
             })
             .addCase(serverEvent, (state, action) => {

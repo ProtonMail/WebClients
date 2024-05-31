@@ -10,6 +10,9 @@ import { createHooks } from './hooks';
 interface ModelState<T> {
     value: T | undefined;
     error: any;
+    meta: {
+        fetchedAt: number;
+    };
 }
 
 describe('hooks', () => {
@@ -25,12 +28,16 @@ describe('hooks', () => {
         const initialState: ModelState<T> = {
             value: undefined,
             error: undefined,
+            meta: {
+                fetchedAt: 0,
+            },
         };
 
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
             previous: (store) => {
-                return selectState(store.getState()).value;
+                const value = selectState(store.getState()).value;
+                return value ? Promise.resolve(value) : undefined;
             },
         });
 

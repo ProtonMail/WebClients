@@ -61,7 +61,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const MaxDomains = organization?.MaxDomains || 0;
 
     const handleRefresh = async () => {
-        await getCustomDomains({ forceFetch: true });
+        await getCustomDomains({ cache: 'no-cache' });
     };
 
     const reviewText = c('Action').t`Review`;
