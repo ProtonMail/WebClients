@@ -5,13 +5,14 @@ import { SimpleDropdown } from '@proton/components'
 import { Button, Input } from '@proton/atoms'
 import { LexicalEditor } from 'lexical'
 import { INSERT_TABLE_COMMAND } from '@lexical/table'
+import { c } from 'ttag'
 
 export function TableOption({ editor, disabled }: { editor: LexicalEditor; disabled: boolean }) {
   return (
     <>
       <SimpleDropdown
         as={ToolbarButton}
-        label="Insert table"
+        label={c('Title').t`Insert table`}
         disabled={disabled}
         content={<TableIcon className="h-4 w-4 fill-current" />}
         hasCaret={false}
@@ -28,15 +29,15 @@ export function TableOption({ editor, disabled }: { editor: LexicalEditor; disab
           }}
         >
           <label className="flex items-center justify-between gap-3">
-            Rows:
+            {c('Info').t`Rows`}
             <Input type="number" name="rows" className="max-w-[10ch]" defaultValue={2} />
           </label>
           <label className="flex items-center justify-between gap-3">
-            Columns:
+            {c('Info').t`Columns`}
             <Input type="number" name="columns" className="max-w-[10ch]" defaultValue={3} />
           </label>
           <div>
-            <Button type="submit">Insert table</Button>
+            <Button type="submit">{c('Action').t`Insert table`}</Button>
           </div>
         </form>
       </SimpleDropdown>
