@@ -6,6 +6,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useDriveSharingFlags } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
@@ -15,6 +16,7 @@ import { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import { TrashItem } from '../Trash/Trash';
 import CopyLinkIcon from './CopyLinkIcon';
+import ShareIcon from './ShareIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
@@ -154,20 +156,32 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
 
 export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
     const { activeShareId } = useActiveShare();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     return (
         <TableCell
             className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex items-center"
             data-testid="column-share-options"
         >
-            {item.shareUrl ? (
-                <CopyLinkIcon
-                    shareId={activeShareId}
-                    linkId={item.id}
-                    isExpired={Boolean(item.shareUrl?.isExpired)}
-                    trashed={item.trashed}
-                />
-            ) : null}
+            {isSharingInviteAvailable
+                ? item.isShared &&
+                  item.showLinkSharingModal && (
+                      <ShareIcon
+                          shareId={activeShareId}
+                          linkId={item.id}
+                          trashed={item.trashed}
+                          showLinkSharingModal={item.showLinkSharingModal}
+                          isAdmin={item.isAdmin}
+                      />
+                  )
+                : item.shareUrl && (
+                      <CopyLinkIcon
+                          shareId={activeShareId}
+                          linkId={item.id}
+                          isExpired={Boolean(item.shareUrl?.isExpired)}
+                          trashed={item.trashed}
+                      />
+                  )}
         </TableCell>
     );
 };
