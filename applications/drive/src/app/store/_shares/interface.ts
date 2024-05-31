@@ -1,5 +1,9 @@
 import { PublicKeyReference, SessionKey } from '@proton/crypto';
-import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
+import {
+    SHARE_EXTERNAL_INVITATION_STATE,
+    SHARE_MEMBER_PERMISSIONS,
+    SHARE_MEMBER_STATE,
+} from '@proton/shared/lib/drive/constants';
 
 type WithSRPPayload<T extends any> = T & {
     srpModulusID: string;
@@ -161,6 +165,16 @@ export interface ShareInvitation {
     keyPacketSignature: string;
     createTime: number;
     state: SHARE_MEMBER_STATE;
+}
+
+export interface ShareExternalInvitation {
+    externalInvitationId: string;
+    inviterEmail: string;
+    inviteeEmail: string;
+    createTime: number;
+    permissions: SHARE_MEMBER_PERMISSIONS;
+    state: SHARE_EXTERNAL_INVITATION_STATE;
+    externalInvitationSignature: string;
 }
 
 export interface ShareInvitee {

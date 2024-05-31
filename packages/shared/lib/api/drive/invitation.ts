@@ -1,5 +1,5 @@
 import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
-import { InviteProtonUserPayload } from '../../interfaces/drive/invitation';
+import { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
 
 export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonUserPayload) => ({
     method: 'post',
@@ -59,13 +59,52 @@ export const queryShareInvitationDetails = (
     },
 });
 
-export const queryUpdateShareInvitationPermissions = (
+export const queryUpdateInvitationPermissions = (
     shareId: string,
     invitationId: string,
     Permissions: SHARE_MEMBER_PERMISSIONS
 ) => ({
     method: 'put',
     url: `drive/v2/shares/${shareId}/invitations/${invitationId}`,
+    data: {
+        Permissions,
+    },
+});
+
+/** External invitations **/
+export const queryInviteExternalUser = (
+    shareID: string,
+    { InviterAddressID, InviteeEmail, Permissions, ExternalInvitationSignature }: InviteExternalUserPayload
+) => ({
+    method: 'post',
+    url: `drive/v2/shares/${shareID}/external-invitations`,
+    data: {
+        ExternalInvitation: {
+            InviterAddressID,
+            InviteeEmail,
+            Permissions,
+            ExternalInvitationSignature,
+        },
+    },
+});
+
+export const queryExternalInvitationList = (shareID: string) => ({
+    method: 'get',
+    url: `drive/v2/shares/${shareID}/external-invitations`,
+});
+
+export const queryDeleteExternalInvitation = (shareID: string, externalInvitationId: string) => ({
+    method: 'delete',
+    url: `drive/v2/shares/${shareID}/external-invitations/${externalInvitationId}`,
+});
+
+export const queryUpdateExternalInvitationPermissions = (
+    shareId: string,
+    externalInvitationId: string,
+    Permissions: SHARE_MEMBER_PERMISSIONS
+) => ({
+    method: 'put',
+    url: `drive/v2/shares/${shareId}/external-invitations/${externalInvitationId}`,
     data: {
         Permissions,
     },

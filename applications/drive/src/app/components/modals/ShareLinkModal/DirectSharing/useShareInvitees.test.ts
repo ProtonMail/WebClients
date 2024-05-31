@@ -50,6 +50,12 @@ const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
 jest.mock('../../../../utils/getPublicKeysForEmail');
 const mockedGetPrimaryPublicKey = jest.mocked(getPrimaryPublicKeyForEmail);
 
+jest.mock('../../../../store/_shares/useDriveSharingFlags', () => ({
+    useDriveSharingFlags: jest
+        .fn()
+        .mockReturnValue({ isSharingExternalInviteDisabled: false, isSharingExternalInviteAvailable: true }),
+}));
+
 const primaryPublicKey = 'primaryPublicKey';
 const publicKey = {
     _idx: 1868513808,
@@ -70,7 +76,6 @@ describe('useShareInvitees', () => {
     });
 
     describe('add', () => {
-        // TODO: We currently don't support non-proton account, update test after support
         it('should be able to add proton/non-proton invitee', async () => {
             const { result } = renderHook(() => useShareInvitees([]));
             when(mockedGetPrimaryPublicKey)
@@ -98,20 +103,20 @@ describe('useShareInvitees', () => {
                 {
                     ...inviteeInternal2,
                     isExternal: true,
-                    error: new Error('Sharing with people outside of Proton will be available soon'),
+                    error: undefined,
                     isLoading: false,
                 },
                 {
                     ...inviteeExternalProton,
+                    error: undefined,
                     isExternal: true,
                     isLoading: false,
-                    error: new Error('Sharing with people outside of Proton will be available soon'),
                 },
                 {
                     ...inviteeExternalNonProton,
+                    error: undefined,
                     isExternal: true,
                     isLoading: false,
-                    error: new Error('Sharing with people outside of Proton will be available soon'),
                 },
             ]);
             verifyAllWhenMocksCalled();

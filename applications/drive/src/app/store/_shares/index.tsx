@@ -13,7 +13,7 @@ export { default as useShareActions } from './useShareActions';
 export { default as useShareUrl } from './useShareUrl';
 export { default as useVolume } from './useVolume';
 export { default as useLockedVolume } from './useLockedVolume';
-export { useDriveSharingFlags } from './useDriveSharingFlag';
+export { useDriveSharingFlags } from './useDriveSharingFlags';
 
 export function SharesProvider({ children }: { children: React.ReactNode }) {
     return (
