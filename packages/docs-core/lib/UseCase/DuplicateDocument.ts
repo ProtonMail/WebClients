@@ -16,10 +16,14 @@ export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {
   async execute(newName: string, lookup: NodeMeta, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
     try {
       const node = await this.driveCompat.getNode(lookup)
-      const shellResult = await this.driveCompat.createDocumentNode(
-        { volumeId: lookup.volumeId, linkId: node.parentNodeId },
-        newName,
-      )
+
+      const parentMeta = {
+        volumeId: lookup.volumeId,
+        linkId: node.parentNodeId,
+      }
+
+      const name = await this.driveCompat.findAvailableNodeName(parentMeta, newName)
+      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,
