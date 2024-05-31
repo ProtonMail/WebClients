@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { getCanWrite } from '@proton/shared/lib/drive/permissions';
+import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
@@ -69,7 +69,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         navigation,
     } = useFileView(shareId, linkId, useNavigation);
 
-    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     // Open sharing modal through URL parameter - needed for Proton Docs
     useEffect(() => {
@@ -193,7 +193,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 onSave={isEditEnabled ? handleSaveFile : undefined}
                 onDetails={() => showDetailsModal({ shareId, linkId })}
                 onShare={
-                    !isEditor || isLinkLoading || !!link?.trashed
+                    !isAdmin || isLinkLoading || !!link?.trashed
                         ? undefined
                         : () => showLinkSharingModal({ shareId, linkId })
                 }
