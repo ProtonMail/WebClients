@@ -23,12 +23,16 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     contents: Uint8Array
   }): Promise<Result<FileToDocConversionResult>> {
     try {
-      const newDocName = `${node.name}.${PROTON_DOC_FILE_EXTENSION}`
+      const parentMeta = {
+        volumeId: node.volumeId,
+        linkId: node.parentNodeId,
+      }
 
-      const shellResult = await this.driveCompat.createDocumentNode(
-        { volumeId: node.volumeId, linkId: node.parentNodeId },
-        newDocName,
+      const newDocName = await this.driveCompat.findAvailableNodeName(
+        parentMeta,
+        `${node.name}.${PROTON_DOC_FILE_EXTENSION}`,
       )
+      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,

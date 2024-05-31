@@ -1,8 +1,10 @@
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useDownload } from '../../store/_downloads';
-import { useLink } from '../../store/_links';
+import { useLink, validateLinkName } from '../../store/_links';
+import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper';
 import { useAbortSignal } from '../../store/_views/utils';
+import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
 import { LegacyNodeMeta } from '../interface';
 import { DecryptedNode } from './interface';
@@ -11,6 +13,7 @@ import { decryptedLinkToNode } from './utils';
 export const useNode = () => {
     const { getLink } = useLink();
     const { downloadStream } = useDownload();
+    const { findAvailableName } = useUploadHelper();
     const abortSignal = useAbortSignal([]);
 
     const getNode = async ({ shareId, linkId, volumeId }: LegacyNodeMeta): Promise<DecryptedNode> => {
@@ -48,9 +51,22 @@ export const useNode = () => {
         };
     };
 
+    const findAvailableNodeName = async ({ shareId, linkId: parentLinkId }: LegacyNodeMeta, filename: string) => {
+        const error = validateLinkName(filename);
+
+        if (error) {
+            throw new ValidationError(error);
+        }
+
+        const name = await findAvailableName(abortSignal, { shareId, parentLinkId, filename });
+
+        return name.filename;
+    };
+
     return {
         getNode,
         getNodeContents,
+        findAvailableNodeName,
     };
 };
 
