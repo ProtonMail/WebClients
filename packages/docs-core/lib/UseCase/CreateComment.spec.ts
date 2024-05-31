@@ -4,7 +4,6 @@ import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
-import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CommentsApi } from '../Api/Comments/CommentsApi'
 import { CreateComment } from './CreateComment'
@@ -20,10 +19,6 @@ jest.mock('@proton/docs-shared', () => ({
 }))
 
 const mockEncryptComment = {
-  execute: jest.fn(),
-}
-
-const mockDecryptComment = {
   execute: jest.fn(),
 }
 
@@ -54,7 +49,6 @@ describe('CreateComment', () => {
     createComment = new CreateComment(
       mockCommentsApi as unknown as CommentsApi,
       mockEncryptComment as unknown as EncryptComment,
-      mockDecryptComment as unknown as DecryptComment,
     )
     ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')
     ;(ServerTime.now as jest.Mock).mockReturnValue(new Date())
@@ -64,7 +58,6 @@ describe('CreateComment', () => {
     mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' })
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
     mockCommentsApi.addCommentToThread.mockResolvedValue(Result.ok({ Comment: 'encrypted-response-comment' }))
-    mockDecryptComment.execute.mockResolvedValue(Result.ok({ id: 'uuid', text: 'decrypted comment' }))
 
     await createComment.execute(dto)
 
@@ -78,7 +71,6 @@ describe('CreateComment', () => {
       'encrypted-comment',
       null,
     )
-    expect(mockDecryptComment.execute).toHaveBeenCalledWith('encrypted-response-comment', 'mark-id', {})
     expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalledWith('uuid', {
       id: 'uuid',
       text: 'decrypted comment',

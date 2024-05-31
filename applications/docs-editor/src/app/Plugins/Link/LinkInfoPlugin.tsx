@@ -4,15 +4,19 @@ import {
   $isRangeSelection,
   $isTextNode,
   COMMAND_PRIORITY_CRITICAL,
+  COMMAND_PRIORITY_EDITOR,
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
   TextNode,
+  createCommand,
 } from 'lexical'
 import { useCallback, useEffect, useState } from 'react'
 import { getSelectedNode } from '../../Utils/getSelectedNode'
 import { LinkInfoViewer } from './LinkInfoViewer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { mergeRegister } from '@lexical/utils'
+import { LinkInfoEditor } from './LinkInfoEditor'
+import useLexicalEditable from '@lexical/react/useLexicalEditable'
 
 export const $isLinkTextNode = (
   node: ReturnType<typeof getSelectedNode>,
@@ -28,12 +32,21 @@ export const $isLinkTextNode = (
   )
 }
 
-export function LinkInfoPlugin() {
+export const EDIT_LINK_COMMAND = createCommand('EDIT_LINK_COMMAND')
+
+export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }) {
   const [editor] = useLexicalComposerContext()
+  const isEditable = useLexicalEditable()
 
   const [linkNode, setLinkNode] = useState<LinkNode | null>(null)
-  const [, setLinkTextNode] = useState<TextNode | null>(null)
+  const [linkTextNode, setLinkTextNode] = useState<TextNode | null>(null)
   const [isEditingLink, setIsEditingLink] = useState(false)
+
+  useEffect(() => {
+    if (!isEditable) {
+      setIsEditingLink(false)
+    }
+  }, [isEditable])
 
   const getLinkInfo = useCallback(() => {
     const selection = $getSelection()
@@ -60,6 +73,8 @@ export function LinkInfoPlugin() {
     } else {
       setLinkTextNode(null)
     }
+
+    setIsEditingLink(false)
   }, [])
 
   useEffect(() => {
@@ -75,15 +90,32 @@ export function LinkInfoPlugin() {
       editor.registerUpdateListener(() => {
         editor.getEditorState().read(getLinkInfo)
       }),
+      editor.registerCommand(
+        EDIT_LINK_COMMAND,
+        () => {
+          setIsEditingLink(true)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
     )
   }, [editor, getLinkInfo])
 
   if (isEditingLink) {
-    return null
+    return (
+      <LinkInfoEditor
+        editor={editor}
+        linkNode={linkNode}
+        linkTextNode={linkTextNode}
+        setIsEditingLink={setIsEditingLink}
+      />
+    )
   }
 
   if (linkNode) {
-    return <LinkInfoViewer linkNode={linkNode} editor={editor} setIsEditingLink={setIsEditingLink} />
+    return (
+      <LinkInfoViewer editor={editor} openLink={openLink} linkNode={linkNode} setIsEditingLink={setIsEditingLink} />
+    )
   }
 
   return null

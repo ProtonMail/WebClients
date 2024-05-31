@@ -22,4 +22,6 @@ export interface EditorRequiresClientMethods {
   deleteThread(id: string): Promise<boolean>
 
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
+
+  openLink(url: string): Promise<void>
 }

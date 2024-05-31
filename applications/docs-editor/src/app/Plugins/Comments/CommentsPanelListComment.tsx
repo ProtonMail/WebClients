@@ -180,7 +180,6 @@ export function CommentsPanelListComment({
               void controller.stoppedTypingInThread(thread.id)
             }}
             onCancel={() => setIsEditing(false)}
-            controller={controller}
           />
         ) : (
           <CommentViewer key={comment.content} content={comment.content} className="leading-relaxed" />

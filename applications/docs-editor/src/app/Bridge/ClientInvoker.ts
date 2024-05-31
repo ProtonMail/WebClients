@@ -81,6 +81,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('handleAwarenessStateUpdate', [states])
   }
 
+  async openLink(url: string): Promise<void> {
+    return this.invokeClientMethod('openLink', [url])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {

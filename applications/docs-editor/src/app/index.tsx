@@ -5,4 +5,8 @@ import '@proton/polyfill'
 import { App } from './App'
 import './style'
 
-ReactDOM.render(<App />, document.querySelector('.app-root'))
+const searchParams = new URLSearchParams(window.location.search)
+
+const isViewOnly = searchParams.get('viewOnly') === 'true'
+
+ReactDOM.render(<App isViewOnly={isViewOnly} />, document.querySelector('.app-root'))

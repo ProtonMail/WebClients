@@ -3,7 +3,7 @@ import { $generateNodesFromDOM } from '@lexical/html'
 import { $createParagraphNode, $getRoot, $insertNodes, LexicalNode } from 'lexical'
 import { $importNodesFromDocx } from '../Utils/DocxConversion/GenerateNodesFromDocx'
 import { $convertFromMarkdownString } from '../Utils/MarkdownImport'
-import { MarkdownTransformers } from '../MarkdownTransformers'
+import { MarkdownTransformers } from './MarkdownTransformers'
 import { ConvertibleDataType } from '@proton/docs-shared'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 

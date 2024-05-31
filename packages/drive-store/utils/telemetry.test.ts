@@ -6,12 +6,12 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
-import { ExperimentGroup, Features, measureExperimentalPerformance } from './telemetry';
+import { ExperimentGroup, Features, measureExperimentalPerformance, measureFeaturePerformance } from './telemetry';
 
 jest.mock('@proton/shared/lib/api/telemetry');
 jest.mock('@proton/components/hooks/useApi');
 
-describe('measureExperimentalPerformance', () => {
+describe('Performance Telemetry', () => {
     beforeEach(() => {
         setMetricsEnabled(true);
         jest.useFakeTimers();
@@ -25,7 +25,7 @@ describe('measureExperimentalPerformance', () => {
         jest.resetAllMocks();
     });
 
-    it('executes the control function when flag is false', async () => {
+    it('measureExperimentalPerformance: executes the control function when flag is false', async () => {
         const feature = Features.optimisticFileUploads;
         const flag = false;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
@@ -52,7 +52,7 @@ describe('measureExperimentalPerformance', () => {
         });
     });
 
-    it('executes the treatment function when flag is true', async () => {
+    it('measureExperimentalPerformance: executes the treatment function when flag is true', async () => {
         const feature = Features.optimisticFileUploads;
         const flag = true;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
@@ -75,6 +75,28 @@ describe('measureExperimentalPerformance', () => {
             Dimensions: {
                 experimentGroup: ExperimentGroup.treatment,
                 featureName: feature,
+            },
+        });
+    });
+
+    it('measureFeaturePerformance: measure duration between a start and end', () => {
+        const measure = measureFeaturePerformance(useApi(), Features.mountToFirstItemRendered);
+        measure.start();
+        measure.end();
+        expect(performance.mark).toHaveBeenCalledTimes(2);
+        expect(performance.measure).toHaveBeenCalledTimes(1);
+        expect(performance.clearMarks).toHaveBeenCalledTimes(2);
+        expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryData).toHaveBeenCalledWith({
+            MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
+            Event: TelemetryDriveWebFeature.performance,
+            Values: {
+                milliseconds: 100,
+            },
+            Dimensions: {
+                experimentGroup: ExperimentGroup.control,
+                featureName: Features.mountToFirstItemRendered,
             },
         });
     });
