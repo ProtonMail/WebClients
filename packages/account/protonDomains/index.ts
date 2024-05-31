@@ -5,9 +5,10 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { queryAvailableDomains, queryPremiumDomains } from '@proton/shared/lib/api/domains';
 import { Api } from '@proton/shared/lib/interfaces';
 
+import { getInitialModelState } from '../initialModelState';
 import { ModelState } from '../interface';
 
-const name = 'protonDomains';
+const name = 'protonDomains' as const;
 
 export interface ProtonDomainsState {
     [name]: ModelState<{ premiumDomains: string[]; protonDomains: string[] }>;
@@ -35,10 +36,7 @@ const modelThunk = createAsyncModelThunk<Model, ProtonDomainsState, ProtonThunkA
     previous: previousSelector(selectProtonDomains),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

@@ -4,12 +4,14 @@ import noop from '@proton/utils/noop';
 
 const storeName = 'entry' as const;
 const dbName = 'store' as const;
+const dbVersion = 2;
 
 interface StoredEncryptedCache {
     state: ArrayBuffer;
     eventID: string;
     date: Date;
     appVersion: string;
+    version: number;
 }
 
 export interface StoreDB extends DBSchema {
@@ -55,6 +57,7 @@ export const writeStore = async (userID: string, cache: EncryptedCache): Promise
                 appVersion: cache.appVersion,
                 eventID: cache.eventID,
                 date: new Date(),
+                version: dbVersion,
             },
             userID
         ),
@@ -80,14 +83,15 @@ export const readStore = async (userID: string): Promise<EncryptedCache | undefi
             if (!value) {
                 return undefined;
             }
-            const { state, appVersion, eventID } = value;
-            if (!state) {
+            const { state, appVersion, eventID, version = 0 } = value;
+            if (!state || version !== dbVersion) {
                 return undefined;
             }
             return {
                 state,
                 appVersion,
                 eventID,
+                version,
             };
         }),
         tx.done.then(noop),

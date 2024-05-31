@@ -15,7 +15,7 @@ export const startHolidaysDirectoryListener = (startListening: SharedStartListen
             return Boolean(currentUserSettings?.Locale && currentUserSettings.Locale !== nextUserSettings?.Locale);
         },
         effect: async (action, listenerApi) => {
-            listenerApi.dispatch(holidaysDirectoryThunk({ forceFetch: true }));
+            listenerApi.dispatch(holidaysDirectoryThunk({ cache: 'no-cache' }));
         },
     });
 };

@@ -2,10 +2,11 @@ import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original
 import { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseCache } from '@proton/redux-utilities';
+import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import {
     type Organization,
@@ -20,7 +21,7 @@ import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 
-const name = 'organization';
+const name = 'organization' as const;
 
 enum ValueType {
     dummy,
@@ -28,7 +29,7 @@ enum ValueType {
 }
 
 export interface OrganizationState extends UserState {
-    [name]: ModelState<OrganizationWithSettings> & { meta?: { type: ValueType } };
+    [name]: ModelState<OrganizationWithSettings> & { meta: { type: ValueType } };
 }
 
 type SliceState = OrganizationState[typeof name];
@@ -51,6 +52,10 @@ const freeOrganization = { Settings: {} } as unknown as OrganizationWithSettings
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
+    meta: {
+        fetchedAt: 0,
+        type: ValueType.dummy,
+    },
 };
 const slice = createSlice({
     name,
@@ -62,12 +67,12 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<{ value: Model; type: ValueType }>) => {
             state.value = action.payload.value;
             state.error = undefined;
-            state.meta = { type: action.payload.type };
+            state.meta.type = action.payload.type;
+            state.meta.fetchedAt = getFetchedAt();
         },
         rejected: (state, action) => {
             state.error = action.payload;
-            state.value = undefined;
-            state.meta = { type: ValueType.complete };
+            state.meta.fetchedAt = getFetchedAt();
         },
     },
     extraReducers: (builder) => {
@@ -83,21 +88,21 @@ const slice = createSlice({
                         : undefined),
                 });
                 state.error = undefined;
-                state.meta = { type: ValueType.complete };
+                state.meta.type = ValueType.complete;
             } else {
-                const isFreeOrganization = original(state)?.value === freeOrganization;
+                const isFreeOrganization = original(state)?.meta.type === ValueType.dummy;
 
                 if (!isFreeOrganization && action.payload.User && !canFetch(action.payload.User)) {
                     // Do not get any organization update when user becomes unsubscribed.
                     state.value = freeOrganization;
                     state.error = undefined;
-                    state.meta = { type: ValueType.dummy };
+                    state.meta.type = ValueType.dummy;
                 }
 
                 if (isFreeOrganization && action.payload.User && canFetch(action.payload.User)) {
                     state.value = undefined;
                     state.error = undefined;
-                    state.meta = { type: ValueType.complete };
+                    state.meta.type = ValueType.complete;
                 }
             }
         });
@@ -105,15 +110,14 @@ const slice = createSlice({
 });
 
 const promiseCache = createPromiseCache<Model>();
+const previous = previousSelector(selectOrganization);
+
 const modelThunk = (options?: {
-    forceFetch?: boolean;
+    cache?: CacheType;
 }): ThunkAction<Promise<Model>, OrganizationState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectOrganization(getState());
-            if (oldValue?.value !== undefined && !options?.forceFetch) {
-                return Promise.resolve(oldValue.value);
-            }
+            return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());

@@ -8,21 +8,20 @@ import {
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseMapCache } from '@proton/redux-utilities';
+import { CacheType, createPromiseMapCache } from '@proton/redux-utilities';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import { inactiveKeysActions } from '../inactiveKeys';
-import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 
-const name = 'addressKeys';
+const name = 'addressKeys' as const;
 
 export interface AddressKeysState extends UserState, AddressesState, UserKeysState {
-    [name]: { [id: string]: ModelState<DecryptedAddressKey[]> };
+    [name]: { [id: string]: { value: DecryptedAddressKey[] | undefined; error: any } };
 }
 
 type SliceState = AddressKeysState[typeof name];
@@ -55,15 +54,15 @@ const promiseCache = createPromiseMapCache<DecryptedAddressKey[]>();
 
 export const addressKeysThunk = ({
     addressID,
-    forceFetch,
+    cache,
 }: {
     addressID: string;
-    forceFetch?: boolean;
+    cache?: CacheType;
 }): ThunkAction<Promise<DecryptedAddressKey[]>, AddressKeysState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
             const oldValue = selectAddressKeys(getState())?.[addressID || '']?.value;
-            if (oldValue !== undefined && !forceFetch) {
+            if (oldValue !== undefined && cache !== 'no-cache') {
                 return Promise.resolve(oldValue);
             }
         };

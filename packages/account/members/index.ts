@@ -1,8 +1,9 @@
 import { PayloadAction, ThunkAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createPromiseCache } from '@proton/redux-utilities';
+import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
+import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -42,7 +43,7 @@ const freeMembers: EnhancedMember[] = [];
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
-    meta: { type: ValueType.complete },
+    meta: { type: ValueType.complete, fetchedAt: 0 },
 };
 const slice = createSlice({
     name,
@@ -54,12 +55,12 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<{ value: Model; type: ValueType }>) => {
             state.value = action.payload.value;
             state.error = undefined;
-            state.meta = { type: action.payload.type };
+            state.meta.type = action.payload.type;
+            state.meta.fetchedAt = getFetchedAt();
         },
         rejected: (state, action) => {
             state.error = action.payload;
-            state.value = undefined;
-            state.meta = { type: ValueType.complete };
+            state.meta.fetchedAt = getFetchedAt();
         },
         memberFetchFulfilled: (state, action: PayloadAction<{ member: Member; addresses: Address[] }>) => {
             const member = getMemberFromState(state, action.payload.member);
@@ -115,13 +116,13 @@ const slice = createSlice({
                     // Do not get any members update when user becomes unsubscribed.
                     state.value = freeMembers;
                     state.error = undefined;
-                    state.meta = { type: ValueType.dummy };
+                    state.meta.type = ValueType.dummy;
                 }
 
                 if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
                     state.value = undefined;
                     state.error = undefined;
-                    state.meta = { type: ValueType.complete };
+                    state.meta.type = ValueType.complete;
                 }
             }
         });
@@ -129,16 +130,14 @@ const slice = createSlice({
 });
 
 const promiseCache = createPromiseCache<Model>();
+const previous = previousSelector(selectMembers);
 
 const modelThunk = (options?: {
-    forceFetch?: boolean;
+    cache?: CacheType;
 }): ThunkAction<Promise<Model>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectMembers(getState());
-            if (oldValue?.value !== undefined && !options?.forceFetch) {
-                return Promise.resolve(oldValue.value);
-            }
+            return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
