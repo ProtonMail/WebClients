@@ -45,7 +45,7 @@ export type DownloadBlocksCallbacks = Omit<
     checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => Promise<void>;
     scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
     checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
-    onProgress?: (bytes: number, blockIndex?: number) => void;
+    onProgress?: (bytes: number, blockIndexes: number[]) => void;
 };
 
 /**
@@ -145,10 +145,12 @@ export default function initDownloadBlocks(
 
         const revertProgress = () => {
             if (onProgress) {
-                // Revert progress of blacks that weren't finished
+                // Revert progress of blocks that weren't finished
+                const revertedBlockIndexes: number[] = [];
                 buffers.forEach((buffer, Index) => {
                     if (!buffer.done) {
                         buffers.delete(Index);
+                        revertedBlockIndexes.push(Index);
                     }
                 });
 
@@ -157,7 +159,7 @@ export default function initDownloadBlocks(
                     progressToRevert += progress;
                 });
                 incompleteProgress.clear();
-                onProgress(-progressToRevert);
+                onProgress(-progressToRevert, revertedBlockIndexes);
             }
         };
 
@@ -219,7 +221,7 @@ export default function initDownloadBlocks(
                                 throw new TransferCancel({ message: `Transfer canceled` });
                             }
                             incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
-                            onProgress?.(value.length, Index);
+                            onProgress?.(value.length, [Index]);
                         });
                         const rawContentStream = blockStream.pipeThrough(progressStream);
 
