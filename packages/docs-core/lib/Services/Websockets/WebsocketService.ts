@@ -39,7 +39,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   createConnection(
     document: NodeMeta,
     keys: DocumentKeys,
-    options: { commitId?: string; isStressTestor?: boolean },
+    options: { commitId: () => string | undefined; isStressTestor?: boolean },
   ): WebsocketConnectionInterface {
     this.logger.debug(`Creating connection for document ${document.linkId} isStressTestor: ${options.isStressTestor}`)
 
@@ -106,14 +106,14 @@ export class WebsocketService implements WebsocketServiceInterface {
         if (options.isStressTestor && this.stressTestorCache.lastToken) {
           return Result.ok(this.stressTestorCache.lastToken)
         }
-        const result = await this._createRealtimeValetToken.execute(document, options.commitId)
+        const result = await this._createRealtimeValetToken.execute(document, options.commitId())
         if (!result.isFailed()) {
           this.stressTestorCache.lastToken = result.getValue()
         }
         return result
       },
 
-      getLatestCommitId: () => options.commitId,
+      getLatestCommitId: options.commitId,
     }
 
     const connection = new WebsocketConnection(keys, callbacks, this._encryptMessage, this.logger)
@@ -156,6 +156,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     for (let i = 0; i < count; i++) {
       const connection = this.createConnection(this.stressTestorCache.lastDocument!, this.stressTestorCache.lastKeys!, {
+        commitId: () => undefined,
         isStressTestor: true,
       })
 
