@@ -35,7 +35,7 @@ export const ConnectionStatus = () => {
     )
   }, [application.eventBus])
 
-  const disconnectReasonMessage = disconnectReason ? `: ${disconnectReason?.props.message}` : ''
+  const disconnectReasonMessage = disconnectReason ? disconnectReason?.props.message : ''
 
   let content = null
   if (status === WebsocketConnectionEvent.Connecting) {
@@ -69,7 +69,7 @@ export const ConnectionStatus = () => {
     status === WebsocketConnectionEvent.FailedToConnect || status === WebsocketConnectionEvent.Disconnected
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex select-none items-center gap-4">
       <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]">
         {content}
       </div>

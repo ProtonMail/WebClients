@@ -151,6 +151,7 @@ export function CommentsPanelListThread({
       {!thread.isPlaceholder && !isDeleting && !isResolved && (
         <div className="my-3 px-3.5">
           <CommentsComposer
+            className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
             onSubmit={(content) => {
               controller.createComment(content, thread.id).catch(console.error)

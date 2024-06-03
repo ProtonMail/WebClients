@@ -5,33 +5,45 @@
 @tailwind utilities;
 
 :root {
-  --primary-rgb: 109 74 255;
+	--primary-rgb: 109 74 255;
 }
 
 *:focus,
 *:focus-visible {
-  outline-color: var(--primary-major-3);
+	outline-color: var(--primary-major-3);
 }
 
 input[type='number'] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
 
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
 body {
-  font-size: unset;
+	font-size: unset;
 }
 
 .content-container > .content.flex.flex-column {
-  background: var(--background-weak);
+	background: var(--background-weak);
 }
 
 .main-area-border {
-  border-top: 0;
+	border-top: 0;
+}
+
+.drawer-sidebar-button {
+	width: rem(36);
+	height: rem(36);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.user-dropdown-button .user-dropdown-text {
+	display: none;
 }
