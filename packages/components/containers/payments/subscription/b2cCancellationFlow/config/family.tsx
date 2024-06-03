@@ -30,7 +30,8 @@ import {
 export const getFamilyConfig = (
     subscription: SubscriptionModel,
     plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number
+    vpnCountries: number,
+    newCancellationPolicy?: boolean
 ): PlanConfig => {
     const planName = PLAN_NAMES[PLANS.FAMILY];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -83,8 +84,12 @@ export const getFamilyConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
+    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
+        subscription,
+        planName,
+        newCancellationPolicy
+    );
 
     return {
         planName,
