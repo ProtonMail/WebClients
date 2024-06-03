@@ -8,21 +8,17 @@ import {
   useAppTitle,
   usePopperAnchor,
 } from '@proton/components'
-import { useApplication } from '../../Containers/ApplicationProvider'
 import { useCallback, useEffect, useState } from 'react'
 import { DocControllerInterface } from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
 
-const DocumentTitleDropdown = () => {
-  const application = useApplication()
+const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
   const [title, setTitle] = useState<string>('Loading document title...')
-  const [controller, setController] = useState<DocControllerInterface | null>(null)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
   useAppTitle(title)
 
   const onRename = useCallback(() => {
-    const controller = application.docLoader.getDocController()
     if (!controller) {
       throw new Error('Primary controller not found')
     }
@@ -37,7 +33,7 @@ const DocumentTitleDropdown = () => {
       })
       setTitle(newName)
     }
-  }, [application.docLoader])
+  }, [controller])
 
   const onDuplicate = useCallback(() => {
     void controller?.duplicateDocument()
@@ -46,15 +42,6 @@ const DocumentTitleDropdown = () => {
   const onNewDocument = useCallback(() => {
     void controller?.createNewDocument()
   }, [controller])
-
-  useEffect(() => {
-    return application.docLoader.addStatusObserver({
-      onSuccess: () => {
-        setController(application.docLoader.getDocController())
-      },
-      onError: console.error,
-    })
-  }, [application.docLoader])
 
   useEffect(() => {
     if (!controller) {
@@ -115,16 +102,14 @@ const DocumentTitleDropdown = () => {
             New Document
           </DropdownMenuButton>
 
-          <hr className="my-1 min-h-px" />
-
-          <DropdownMenuButton
+          {/* <DropdownMenuButton
             className="flex items-center text-left"
             // onClick={startDownload}
             // @TODO DRVDOC-316
           >
-            <Icon name="arrow-up-from-square" className="color-weak mr-2" />
-            Share
-          </DropdownMenuButton>
+            <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+            Download
+          </DropdownMenuButton> */}
         </DropdownMenu>
       </Dropdown>
       {historyModal}

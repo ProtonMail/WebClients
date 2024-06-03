@@ -124,7 +124,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     websocket.onclose = (event) => {
-      this.logger.debug('Websocket closed:', event.reason)
+      this.logger.debug('Websocket closed:', event.code, event.reason)
 
       this.socket = undefined
 

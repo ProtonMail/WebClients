@@ -36,20 +36,18 @@ export function CommentInputBox({
         const focus = selection.focus
         const range = createDOMRange(editor, anchor.getNode(), anchor.offset, focus.getNode(), focus.offset)
         const boxElem = boxRef.current
-        const parentContainer = editor.getRootElement()?.parentElement
+        const rootElement = editor.getRootElement()
+        const parentContainer = rootElement?.parentElement
         if (range !== null && boxElem !== null && parentContainer) {
           const parentScrollTop = parentContainer.scrollTop
 
+          const editorRect = rootElement!.getBoundingClientRect()
           const parentRect = parentContainer.getBoundingClientRect()
 
-          const { left, bottom, width } = range.getBoundingClientRect()
+          const { top } = range.getBoundingClientRect()
           const selectionRects = createRectsFromDOMRange(editor, range)
-          let correctedLeft = selectionRects.length === 1 ? left + width / 2 - 125 : left - 125
-          if (correctedLeft < 10) {
-            correctedLeft = 10
-          }
-          boxElem.style.left = `${correctedLeft}px`
-          boxElem.style.top = `${bottom + 10 + parentScrollTop - parentRect.top}px`
+          boxElem.style.left = `${editorRect.right + 10}px`
+          boxElem.style.top = `${top + parentScrollTop - parentRect.top}px`
 
           const selectionRectsLength = selectionRects.length
           const { container } = selectionState
@@ -99,7 +97,10 @@ export function CommentInputBox({
   }, [updateLocation])
 
   return (
-    <div className="absolute left-0 top-0 z-10 w-[250px] rounded bg-[--background-norm] text-sm" ref={boxRef}>
+    <div
+      className="bg-norm border-norm absolute left-0 top-0 z-10 w-[250px] rounded border text-sm shadow-lg"
+      ref={boxRef}
+    >
       <CommentsComposer
         autoFocus
         hideCancelButton

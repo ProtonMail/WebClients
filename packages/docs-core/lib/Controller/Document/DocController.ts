@@ -475,6 +475,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
+  public async openDocumentSharingModal(): Promise<void> {
+    await this.driveCompat.openDocumentSharingModal(this.nodeMeta)
+  }
+
   private async handleRealtimeServerEvent(events: Event[], keys: DocumentKeys) {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
@@ -592,6 +596,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         states,
       },
     })
+  }
+
+  showCommentsPanel() {
+    if (!this.editorInvoker) {
+      return
+    }
+    void this.editorInvoker.showCommentsPanel()
   }
 
   deinit() {}
