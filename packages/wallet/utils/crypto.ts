@@ -24,7 +24,9 @@ export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> => {
     // https://github.com/vercel/edge-runtime/issues/813
     const slicedKey = new Uint8Array(key.slice(0, KEY_LENGTH));
 
-    return crypto.subtle.importKey('raw', slicedKey, ALGORITHM, false, ['decrypt', 'encrypt']);
+    const x = crypto.subtle.importKey('raw', slicedKey, ALGORITHM, false, ['decrypt', 'encrypt']);
+    slicedKey.fill(0);
+    return x;
 };
 
 //  Taken from pass
@@ -80,10 +82,14 @@ export const decryptPgp = async <T extends 'binary' | 'utf8'>(
 
 const isString = (data: string | Uint8Array): data is string => typeof data === 'string';
 
-export const encryptPgp = async <T extends string | Uint8Array>(data: T, keys: PrivateKeyReference[]) => {
+export const encryptPgp = async <T extends string | Uint8Array>(
+    data: T,
+    keys: PublicKeyReference[],
+    signingKeys?: PrivateKeyReference[]
+) => {
     const common = {
         encryptionKeys: keys,
-        signingKeys: keys,
+        signingKeys,
         format: 'armored',
     } as const;
 
@@ -232,7 +238,7 @@ export const encryptWalletData = async (
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
     const entropySignature = await signData(entropy, 'wallet.key', [userKey.privateKey]);
-    const encryptedEntropy = await encryptPgp(entropy, [userKey.privateKey]);
+    const encryptedEntropy = await encryptPgp(entropy, [userKey.publicKey]);
 
     return [encryptedData, [encryptedEntropy, entropySignature, userKey.ID]];
 };

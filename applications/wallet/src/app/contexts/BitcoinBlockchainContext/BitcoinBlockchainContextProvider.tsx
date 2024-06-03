@@ -1,7 +1,5 @@
 import { ReactNode, useContext } from 'react';
 
-import { noop } from 'lodash';
-
 import { useDecryptedApiWalletsData } from '@proton/wallet';
 
 import { BitcoinBlockchainContext } from '.';
@@ -22,7 +20,6 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         walletMap,
         loading: loadingApiWalletsData,
         setPassphrase,
-        getDecryptedApiWalletsData,
     } = useDecryptedApiWalletsData();
 
     const {
@@ -34,7 +31,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         syncSingleWalletAccount,
         isSyncing,
         getSyncingData,
-    } = useWalletsChainData(getDecryptedApiWalletsData, noop);
+    } = useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
