@@ -9,6 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
+import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -71,6 +72,7 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     useEffect(handleFocus, []);
     useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
     useEffect(() => setSearch((value) => filters.search || value), [filters.search]);
+    useSearchShortcut(handleFocus);
 
     return (
         <Input
