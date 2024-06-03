@@ -191,7 +191,8 @@ export function useLinksListingProvider() {
 
     const loadLinksMeta: FetchLoadLinksMeta = async (abortSignal, query, shareId, linkIds, options = {}) => {
         const shareState = getShareFetchState(shareId);
-        let fetchMeta = shareState.links[query];
+        // Shared links use own state for fetch meta.
+        let fetchMeta = options.fetchMeta || shareState.links[query];
         if (!fetchMeta) {
             fetchMeta = {};
             state.current[shareId].links[query] = fetchMeta;

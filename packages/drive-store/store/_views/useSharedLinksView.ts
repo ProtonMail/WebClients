@@ -7,7 +7,6 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
 import { useDefaultShare, useDriveSharingFlags } from '../_shares';
-import { useLoadLinksShareInfo } from '../_shares/useLoadLinksShareInfo';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -41,18 +40,9 @@ export default function useSharedLinksView(shareId: string) {
 
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedByLink(abortSignal, volumeId.current);
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
-    const { linksWithShareInfo, isLoading: isShareInfoLoading } = useLoadLinksShareInfo({
-        shareId,
-        links: cachedSharedLinks,
-        sharedByMeListing: true,
-        driveSharingFF: isSharingInviteAvailable,
-    });
 
     const { layout } = useUserSettings();
-    const { sortedList, sortParams, setSorting } = useSortingWithDefault(
-        isSharingInviteAvailable ? linksWithShareInfo : cachedSharedLinks,
-        DEFAULT_SORT
-    );
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedSharedLinks, DEFAULT_SORT);
 
     useEffect(() => {
         const ac = new AbortController();
@@ -60,13 +50,13 @@ export default function useSharedLinksView(shareId: string) {
         return () => {
             ac.abort();
         };
-    }, [shareId, loadSharedLinks, withLoading]);
+    }, []);
 
     return {
         layout,
         items: sortedList,
         sortParams,
         setSorting,
-        isLoading: isLoading || isDecrypting || isShareInfoLoading,
+        isLoading: isLoading || isDecrypting,
     };
 }
