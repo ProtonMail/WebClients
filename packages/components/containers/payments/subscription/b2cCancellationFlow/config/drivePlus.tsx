@@ -9,7 +9,8 @@ import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial 
 
 export const getDrivePlusConfig = (
     subscription: SubscriptionModel,
-    plan: SubscriptionPlan & { Name: PLANS }
+    plan: SubscriptionPlan & { Name: PLANS },
+    newCancellationPolicy?: boolean
 ): PlanConfig => {
     const planName = PLAN_NAMES[PLANS.DRIVE];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -18,13 +19,19 @@ export const getDrivePlusConfig = (
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const confirmationModal: ConfirmationModal = {
-        ...getDefaultConfirmationModal(subscription, planName),
+        ...getDefaultConfirmationModal(subscription, planName, newCancellationPolicy),
         warningPoints: [
             c('Subscription reminder').t`Sync files on devices`,
             c('Subscription reminder').t`Add any new files`,
             c('Subscription reminder').t`Back up photos from your devices`,
         ],
     };
+
+    const extraWarning = newCancellationPolicy
+        ? c('Subscription reminder')
+              .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`
+        : c('Subscription reminder')
+              .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`;
 
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Extra storage and bonuses`,
@@ -48,8 +55,7 @@ export const getDrivePlusConfig = (
                 text: c('Subscription reminder').t`Priority support`,
             },
         ],
-        extraWarning: c('Subscription reminder')
-            .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`,
+        extraWarning,
     };
 
     return {
