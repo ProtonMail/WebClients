@@ -9,6 +9,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { useDriveEventManager } from '..';
 import { useLink } from '../_links';
 import {
+    ShareExternalInvitation,
     ShareInvitation,
     ShareInvitee,
     ShareMember,
@@ -21,10 +22,14 @@ import {
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const {
         inviteProtonUser,
+        inviteExternalUser,
         resendInvitationEmail,
         listInvitations,
+        listExternalInvitations,
         deleteInvitation,
-        updateShareInvitationPermissions,
+        deleteExternalInvitation,
+        updateInvitationPermissions,
+        updateExternalInvitationPermissions,
     } = useShareInvitation();
     const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
@@ -34,15 +39,20 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { getShare, getShareWithKey, getShareSessionKey, getShareCreatorKeys } = useShare();
     const [members, setMembers] = useState<ShareMember[]>([]);
     const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
+    const [externalInvitations, setExternalInvitations] = useState<ShareExternalInvitation[]>([]);
     const { createShare, deleteShare } = useShareActions();
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
+    const [isShared, setIsShared] = useState<boolean>();
 
     const existingEmails = useMemo(() => {
         const membersEmail = members.map((member) => member.email);
         const invitationsEmail = invitations.map((invitation) => invitation.inviteeEmail);
-        return [...membersEmail, ...invitationsEmail];
-    }, [members, invitations]);
+        const externalInvitationsEmail = externalInvitations.map(
+            (externalInvitation) => externalInvitation.inviteeEmail
+        );
+        return [...membersEmail, ...invitationsEmail, ...externalInvitationsEmail];
+    }, [members, invitations, externalInvitations]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -54,6 +64,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             if (!link.shareId) {
                 return;
             }
+            setIsShared(link.isShared);
             const share = await getShare(abortController.signal, link.shareId);
 
             await listInvitations(abortController.signal, share.shareId).then((invites: ShareInvitation[]) => {
@@ -61,6 +72,14 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                     setInvitations(invites);
                 }
             });
+
+            await listExternalInvitations(abortController.signal, share.shareId).then(
+                (externalInvites: ShareExternalInvitation[]) => {
+                    if (externalInvites) {
+                        setExternalInvitations(externalInvites);
+                    }
+                }
+            );
 
             await getShareMembers(abortController.signal, { shareId: share.shareId }).then((members) => {
                 if (members) {
@@ -140,7 +159,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             const linkPrivateKey = await getLinkPrivateKey(abortSignal, rootShareId, linkId);
 
             const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
-            return { shareId: link.shareId, sessionKey };
+            return { shareId: link.shareId, sessionKey, addressId: share.addressId };
         }
 
         const createShareResult = await createShare(abortSignal, rootShareId, share.volumeId, linkId);
@@ -151,10 +170,21 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         return createShareResult;
     };
 
-    const addNewMember = async (invitee: ShareInvitee, permissions: SHARE_MEMBER_PERMISSIONS) => {
+    const addNewMember = async (
+        invitee: ShareInvitee,
+        permissions: SHARE_MEMBER_PERMISSIONS
+    ): Promise<{
+        externalInvitation?: ShareExternalInvitation;
+        invitation?: ShareInvitation;
+        code: number;
+    }> => {
         const abortSignal = new AbortController().signal;
 
-        const { shareId: linkShareId, sessionKey } = await getShareIdWithSessionkey(abortSignal, rootShareId, linkId);
+        const {
+            shareId: linkShareId,
+            sessionKey,
+            addressId,
+        } = await getShareIdWithSessionkey(abortSignal, rootShareId, linkId);
         const primaryAddressKey = await getShareCreatorKeys(abortSignal, rootShareId);
 
         if (!primaryAddressKey) {
@@ -162,8 +192,17 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         }
 
         if (!invitee.publicKey) {
-            // TODO: Do logic for external user
-            throw new Error('User is not a proton user');
+            return inviteExternalUser(abortSignal, {
+                shareId: linkShareId,
+                linkId,
+                inviteeEmail: invitee.email,
+                inviter: {
+                    inviterEmail: primaryAddressKey.address.Email,
+                    addressKey: primaryAddressKey.privateKey,
+                    addressId,
+                },
+                permissions,
+            });
         }
 
         return inviteProtonUser(abortSignal, {
@@ -186,10 +225,21 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const addNewMembers = async (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => {
         await withAdding(async () => {
             const newInvitations: ShareInvitation[] = [];
+            const newExternalInvitations: ShareExternalInvitation[] = [];
             for (let invitee of invitees) {
-                await addNewMember(invitee, permissions).then((invitation) => newInvitations.push(invitation));
+                await addNewMember(invitee, permissions).then(({ invitation, externalInvitation }) => {
+                    if (invitation) {
+                        newInvitations.push(invitation);
+                    } else if (externalInvitation) {
+                        newExternalInvitations.push(externalInvitation);
+                    }
+                });
             }
             setInvitations((oldInvitations: ShareInvitation[]) => [...oldInvitations, ...newInvitations]);
+            setExternalInvitations((oldExternalInvitations: ShareExternalInvitation[]) => [
+                ...oldExternalInvitations,
+                ...newExternalInvitations,
+            ]);
             createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
         });
     };
@@ -235,13 +285,40 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         createNotification({ type: 'info', text: c('Notification').t`Invitation email was sent again` });
     };
 
+    const removeExternalInvitation = async (externalInvitationId: string) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await deleteExternalInvitation(abortSignal, { shareId, externalInvitationId });
+        setExternalInvitations((current) =>
+            current.filter((item) => item.externalInvitationId !== externalInvitationId)
+        );
+        createNotification({ type: 'info', text: c('Notification').t`External invitation removed from the share` });
+    };
+
     const updateInvitePermissions = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
         const abortSignal = new AbortController().signal;
         const shareId = await getShareId(abortSignal);
 
-        await updateShareInvitationPermissions(abortSignal, { shareId, invitationId, permissions });
+        await updateInvitationPermissions(abortSignal, { shareId, invitationId, permissions });
         setInvitations((current) =>
             current.map((item) => (item.invitationId === invitationId ? { ...item, permissions } : item))
+        );
+        createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+    };
+
+    const updateExternalInvitePermissions = async (
+        externalInvitationId: string,
+        permissions: SHARE_MEMBER_PERMISSIONS
+    ) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await updateExternalInvitationPermissions(abortSignal, { shareId, externalInvitationId, permissions });
+        setExternalInvitations((current) =>
+            current.map((item) =>
+                item.externalInvitationId === externalInvitationId ? { ...item, permissions } : item
+            )
         );
         createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
     };
@@ -250,16 +327,20 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         volumeId,
         members,
         invitations,
+        externalInvitations,
         existingEmails,
+        isShared,
         isLoading,
         isAdding,
         removeInvitation,
+        removeExternalInvitation,
         removeMember,
         addNewMember,
         addNewMembers,
         resendInvitation,
         updateMemberPermissions,
         updateInvitePermissions,
+        updateExternalInvitePermissions,
         deleteShareIfEmpty,
     };
 };
