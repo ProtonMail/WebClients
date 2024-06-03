@@ -37,6 +37,7 @@ import {
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
+import { getTheme, updateNativeTheme } from "./utils/themes";
 
 (async function () {
     // Log initialization
@@ -102,8 +103,14 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
         });
 
         app.whenReady().then(() => {
-            if (getSettings().overrideError) {
+            const settings = getSettings();
+
+            if (settings.overrideError) {
                 urlOverrideError();
+            }
+
+            if (settings.theme) {
+                updateNativeTheme(getTheme());
             }
 
             const secureSession = session.fromPartition(PARTITION, {

@@ -65,12 +65,23 @@ export function getTheme() {
     return theme;
 }
 
-export function setTheme(theme: ThemeSetting) {
+export function updateNativeTheme(theme: ThemeSetting) {
     if (theme.Mode === ThemeModeSetting.Auto) {
         nativeTheme.themeSource = "system";
+        const usedTheme = nativeTheme.shouldUseDarkColors ? theme.DarkTheme : theme.LightTheme;
+
+        if (usedTheme === ThemeTypes.Snow) {
+            nativeTheme.themeSource = "light";
+        } else {
+            nativeTheme.themeSource = "dark";
+        }
     } else {
         nativeTheme.themeSource = SERIALIZED_THEME_MODE[theme.Mode];
     }
+}
+
+export function setTheme(theme: ThemeSetting) {
+    updateNativeTheme(theme);
 
     const lightTheme = theme.LightTheme in ThemeTypes ? theme.LightTheme : DEFAULT_THEME.LightTheme;
     const darkTheme = theme.DarkTheme in ThemeTypes ? theme.DarkTheme : DEFAULT_THEME.DarkTheme;
