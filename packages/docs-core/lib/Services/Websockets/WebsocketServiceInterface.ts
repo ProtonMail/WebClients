@@ -6,7 +6,7 @@ export interface WebsocketServiceInterface {
   createConnection(
     nodeMeta: NodeMeta,
     keys: DocumentKeys,
-    options: { commitId?: string; isStressTestor?: boolean },
+    options: { commitId: () => string | undefined; isStressTestor?: boolean },
   ): WebsocketConnectionInterface
 
   sendMessageToDocument(

@@ -218,7 +218,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.logger.info(`Loaded document with last commit id ${decryptedCommit?.commitId}`)
 
-    const connection = this.websocketService.createConnection(this.nodeMeta, keys, { commitId: this.commitId })
+    const connection = this.websocketService.createConnection(this.nodeMeta, keys, { commitId: () => this.commitId })
 
     connection.connect().catch(this.logger.error)
 
