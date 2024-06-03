@@ -92,7 +92,7 @@ export const WalletTransactionDataDrawer = ({ apiAccount, apiWalletData, transac
                         <hr className="my-4" />
 
                         <AmountDataListItem
-                            amount={(transaction.networkData.fee ?? 0) + transaction.networkData.sent}
+                            amount={(transaction.networkData.fee ?? 0) + value}
                             label={c('Wallet transaction').t`Total (sent amount + fee)`}
                             exchangeRate={exchangeRate}
                         />

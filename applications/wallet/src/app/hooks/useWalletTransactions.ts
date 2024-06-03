@@ -228,7 +228,7 @@ const createMissingTxData = async (
                 continue;
             }
 
-            const txid = await encryptPgp(networkData.txid, [userKey.privateKey]);
+            const txid = await encryptPgp(networkData.txid, [userKey.publicKey]);
 
             // TODO: this can only occur on encryption error: we need to better handle that
             if (!txid) {
@@ -427,6 +427,7 @@ export const useWalletTransactions = ({
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
         } else {
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
+
             // Else we create missing tx in api
             await createMissingTxData(
                 clients,

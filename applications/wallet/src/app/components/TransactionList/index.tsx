@@ -17,7 +17,6 @@ import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
 import { getAccountTransactions, getWalletTransactions } from '../../utils';
 import { DataList } from '../DataList';
@@ -35,9 +34,6 @@ interface Props {
 }
 
 export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
-    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
-        apiAccount ?? apiWalletData.WalletAccounts[0]
-    );
     const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
         useBitcoinBlockchainContext();
     const { openDrawer } = useWalletDrawerContext();
@@ -165,10 +161,10 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                                         style: { '--w-custom': '8rem' },
                                         data: (row) => (
                                             <AmountDataListItem
-                                                loadingLabel={loadingExchangeRate}
+                                                loadingLabel={loadingApiData}
                                                 loading={loadingRecordInit}
                                                 tx={row}
-                                                exchangeRate={exchangeRate}
+                                                exchangeRate={row.apiData?.ExchangeRate ?? undefined}
                                             />
                                         ),
                                     },
@@ -246,8 +242,6 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         loadingRecordInit,
         loadingApiData,
         setNoteModalState,
-        loadingExchangeRate,
-        exchangeRate,
     ]);
 
     return (

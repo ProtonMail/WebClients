@@ -27,7 +27,7 @@ export interface UseBitcoinReceiveHelper {
     showAmountInput: () => void;
 }
 
-export const useBitcoinReceive = (account: WasmApiWalletAccount): UseBitcoinReceiveHelper => {
+export const useBitcoinReceive = (isOpen: boolean, account: WasmApiWalletAccount): UseBitcoinReceiveHelper => {
     const [paymentLink, setPaymentLink] = useState<WasmPaymentLink>();
     const [loadingPaymentLink, withLoadingPaymentLink] = useLoading();
 
@@ -57,9 +57,13 @@ export const useBitcoinReceive = (account: WasmApiWalletAccount): UseBitcoinRece
     }, [account.ID, account.WalletID, getBitcoinAddressHighestIndex, walletsChainData, withLoadingPaymentLink]);
 
     useEffect(() => {
+        if (!isOpen) {
+            return;
+        }
+
         const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, account.WalletID, account.ID);
 
-        const generatedPaymentLink = async () => {
+        const generatePaymentLink = async () => {
             const paymentAmount = amount ? BigInt(amount) : undefined;
 
             const generatedPaymentLink = await wasmAccount?.account.getBitcoinUri(index, paymentAmount);
@@ -69,8 +73,8 @@ export const useBitcoinReceive = (account: WasmApiWalletAccount): UseBitcoinRece
             }
         };
 
-        void withLoadingPaymentLink(generatedPaymentLink());
-    }, [amount, account, walletsChainData, withLoadingPaymentLink, index]);
+        void withLoadingPaymentLink(generatePaymentLink());
+    }, [isOpen, amount, account, walletsChainData, withLoadingPaymentLink, index]);
 
     const incrementIndex = () => {
         setIndex((prev) => prev + 1);

@@ -28,6 +28,8 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
     const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
     const [exchangeRate] = useWalletAccountExchangeRate(account);
 
+    const isModalOpen = modalProps.open ?? false;
+
     const {
         shouldShowAmountInput,
         loadingPaymentLink,
@@ -39,7 +41,7 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
 
         showAmountInput,
         handleChangeAmount,
-    } = useBitcoinReceive(account);
+    } = useBitcoinReceive(isModalOpen, account);
 
     useEffect(() => {
         if (exchangeRate) {

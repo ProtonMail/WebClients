@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
-import { IWasmApiWalletData, encryptWalletDataWithWalletKey } from '@proton/wallet';
+import { IWasmApiWalletData, encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';
@@ -17,9 +17,10 @@ interface BroadcastData
     extends Required<
         Pick<{ apiWalletData?: IWasmApiWalletData; apiAccount?: WasmApiWalletAccount }, 'apiAccount' | 'apiWalletData'>
     > {
-    noteToSelf: string;
-    message: string;
+    noteToSelf?: string;
+    message?: string;
     exchangeRateId: string;
+    signingKeys: PrivateKeyReference[];
     encryptionKeys: PublicKeyReference[];
 }
 
@@ -34,21 +35,16 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
 
     const [userKeys] = useUserKeys();
 
-    const createPsbt = useCallback(
-        async (silent = false) => {
-            if (network) {
-                try {
-                    const psbt = await txBuilder.createPsbt(network);
-                    setPsbt(psbt);
-                } catch (err) {
-                    if (!silent) {
-                        createNotification({ text: c('Wallet send').t`Could not create PSBT`, type: 'error' });
-                    }
-                }
+    const createPsbt = useCallback(async () => {
+        if (!isUndefined(network)) {
+            try {
+                const psbt = await txBuilder.createPsbt(network);
+                setPsbt(psbt);
+            } catch (err) {
+                createNotification({ text: c('Wallet send').t`Could not create PSBT`, type: 'error' });
             }
-        },
-        [txBuilder, network, createNotification]
-    );
+        }
+    }, [txBuilder, network, createNotification]);
 
     const signAndBroadcastPsbt = ({
         apiWalletData: wallet,
@@ -56,6 +52,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         exchangeRateId,
         noteToSelf,
         message,
+        signingKeys,
         encryptionKeys,
     }: BroadcastData) => {
         return withLoadingBroadcast(async () => {
@@ -73,18 +70,13 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 throw new Error(c('Wallet Send').t`Could not sign transaction`);
             });
 
-            const signingKeys = userKeys.map((k) => k.privateKey);
-            const { message: encryptedData } = await CryptoProxy.encryptMessage({
-                textData: message,
-                encryptionKeys,
-                signingKeys,
-                format: 'armored',
-            }).catch(() => ({ message: null }));
+            const encryptedData = message
+                ? await encryptPgp(message, encryptionKeys, signingKeys).catch(() => null)
+                : null;
 
-            const [encryptedNoteToSelf] = await encryptWalletDataWithWalletKey(
-                [noteToSelf],
-                wallet.WalletKey.DecryptedKey
-            ).catch(() => [null]);
+            const [encryptedNoteToSelf] = noteToSelf
+                ? await encryptWalletDataWithWalletKey([noteToSelf], wallet.WalletKey.DecryptedKey).catch(() => [null])
+                : [null];
 
             const txId = await blockchainClient
                 .broadcastPsbt(

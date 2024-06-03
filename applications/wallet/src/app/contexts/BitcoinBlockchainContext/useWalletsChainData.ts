@@ -33,10 +33,7 @@ const getKey = (walletId: string, walletAccountID: string) => {
 /**
  * Returns chain data given API wallets
  */
-export const useWalletsChainData = (
-    getDecryptedApiWalletsData: () => Promise<IWasmApiWalletData[]>,
-    onSyncingFinished?: () => void
-) => {
+export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const blockchainClient = useBlockchainClient();
 
     const pollingIdRef = useRef<string>();
@@ -49,11 +46,10 @@ export const useWalletsChainData = (
 
     const walletsChainDataRef = useRef<WalletChainDataByWalletId>();
 
-    const getWalletsChainDataInit = useCallback(async () => {
+    const getWalletsChainDataInit = useCallback(async (apiWalletsData?: IWasmApiWalletData[]) => {
         const network = await getNetwork();
-        const apiWalletsData = await getDecryptedApiWalletsData();
 
-        const walletsChainData = apiWalletsData.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
+        const walletsChainData = apiWalletsData?.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
             const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
 
             // TODO: support watch-only wallets
@@ -152,12 +148,18 @@ export const useWalletsChainData = (
                 } finally {
                     removeSyncing(walletId, accountId);
                     incrementSyncKey(walletId, accountId);
-                    onSyncingFinished?.();
                 }
             }
         },
 
-        [addNewSyncing, createNotification, removeSyncing, syncingMetatadaByAccountIdRef, blockchainClient]
+        [
+            addNewSyncing,
+            createNotification,
+            removeSyncing,
+            incrementSyncKey,
+            syncingMetatadaByAccountIdRef,
+            blockchainClient,
+        ]
     );
 
     const syncSingleWallet = useCallback(
@@ -185,31 +187,34 @@ export const useWalletsChainData = (
         [syncSingleWallet]
     );
 
-    const startPolling = useCallback(async () => {
-        const pollingId = generateUID(POLLING_UID_PREFIX);
-        pollingIdRef.current = pollingId;
+    const startPolling = useCallback(
+        async (apiWalletsData?: IWasmApiWalletData[]) => {
+            const pollingId = generateUID(POLLING_UID_PREFIX);
+            pollingIdRef.current = pollingId;
 
-        const init = await getWalletsChainDataInit();
-        setWalletsChainData(init);
-        walletsChainDataRef.current = init;
+            const init = await getWalletsChainDataInit(apiWalletsData);
+            setWalletsChainData(init);
+            walletsChainDataRef.current = init;
 
-        // This ensure that if another poll is start (via calling this fn), previous one will be stoped: uuid won't match anymore
-        while (pollingIdRef.current == pollingId && init) {
-            await syncManyWallets({
-                walletIds: Object.keys(init),
-            });
+            // This ensure that if another poll is start (via calling this fn), previous one will be stoped: uuid won't match anymore
+            while (pollingIdRef.current == pollingId && init) {
+                await syncManyWallets({
+                    walletIds: Object.keys(init),
+                });
 
-            await wait(10 * MINUTE);
-        }
-    }, [getWalletsChainDataInit, syncManyWallets]);
+                await wait(10 * MINUTE);
+            }
+        },
+        [getWalletsChainDataInit, syncManyWallets]
+    );
 
     useEffect(() => {
-        void startPolling();
+        void startPolling(apiWalletsData);
 
         return () => {
             pollingIdRef.current = undefined;
         };
-    }, [startPolling]);
+    }, [startPolling, apiWalletsData]);
 
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
     const accountIDByDerivationPathByWalletID = useMemo(() => {
