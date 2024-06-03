@@ -40,12 +40,16 @@ export default function useSharedWithMeView(shareId: string) {
     const { isLoading: isShareInfoLoading, linksWithShareInfo } = useLoadLinksShareInfo({
         shareId,
         links: cachedSharedLinks,
+        areLinksLoading: isDecrypting || isLoading,
     });
-    const { sortedList, sortParams, setSorting } = useSortingWithDefault(linksWithShareInfo, DEFAULT_SORT);
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(
+        isShareInfoLoading ? cachedSharedLinks : linksWithShareInfo,
+        DEFAULT_SORT
+    );
 
     useEffect(() => {
         void withLoading(loadSharedWithMeLinks(abortSignal).catch(sendErrorReport));
-    }, [shareId, withLoading, loadSharedWithMeLinks, abortSignal]);
+    }, []);
 
     return {
         layout,
