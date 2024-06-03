@@ -1,4 +1,3 @@
-import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
@@ -25,6 +24,7 @@ import {
     PlanConfigTestimonial,
 } from '../interface';
 import {
+    ExpirationTime,
     getDefaultConfirmationModal,
     getDefaultReminder,
     getDefaultTBStorageWarning,
@@ -90,15 +90,7 @@ export const getVisionaryConfig = (
 
     const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
 
-    const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
-    const endDate = fromUnixTime(latestSubscription);
-    const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
-    const expiryDate = (
-        <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
-            {formattedEndDate}
-        </time>
-    );
-
+    const expiryDate = <ExpirationTime subscription={subscription} newCancellationPolicy={newCancellationPolicy} />;
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
             {c('Link').t`Learn more`}
