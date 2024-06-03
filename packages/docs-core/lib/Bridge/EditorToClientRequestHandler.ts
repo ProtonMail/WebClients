@@ -6,6 +6,8 @@ import {
 } from '@proton/docs-shared'
 import { UserState } from '@lexical/yjs'
 import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
+import { ErrorInfo } from 'react'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
@@ -78,5 +80,16 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     link.rel = 'noopener noreferrer'
     link.click()
     link.remove()
+  }
+
+  async reportError(error: Error, errorInfo?: ErrorInfo): Promise<void> {
+    traceError(error, {
+      tags: {
+        'editor-to-client': true,
+      },
+      extra: {
+        errorInfo,
+      },
+    })
   }
 }
