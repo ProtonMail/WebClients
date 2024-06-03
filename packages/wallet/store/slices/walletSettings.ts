@@ -1,6 +1,6 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, serverEvent } from '@proton/account';
+import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import { WasmUserSettings as WalletSettings, WasmBitcoinUnit } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
@@ -32,10 +32,7 @@ const modelThunk = createAsyncModelThunk<Model, State, WalletThunkArguments>(`${
 export const setBitcoinUnitEvent = createAction('setBitcoinUnit', (payload: WasmBitcoinUnit) => ({ payload }));
 export const setTwoFaThresholdEvent = createAction('setTwoFaThreshold', (payload: number) => ({ payload }));
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,

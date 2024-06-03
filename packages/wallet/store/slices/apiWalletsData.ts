@@ -1,6 +1,6 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-import { ModelState } from '@proton/account';
+import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
@@ -51,11 +51,7 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
     }
 );
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
-
+const initialState = getInitialModelState<Model>();
 const eventLoopEvent = createAction('server event', (payload: WalletEventLoop) => ({ payload }));
 
 export const walletCreation = createAction('wallet creation', (payload: IWasmApiWalletData) => ({ payload }));

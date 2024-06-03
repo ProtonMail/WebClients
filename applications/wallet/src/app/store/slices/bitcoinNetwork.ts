@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState } from '@proton/account';
+import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmNetwork } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
@@ -27,10 +27,7 @@ const modelThunk = createAsyncModelThunk<Model, BitcoinNetworkState, WalletThunk
     previous: previousSelector(selectBitcoinNetwork),
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,

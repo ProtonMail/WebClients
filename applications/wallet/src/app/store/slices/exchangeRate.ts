@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState } from '@proton/account';
+import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { WalletThunkArguments } from '../thunk';
@@ -73,17 +73,14 @@ const modelThunk = createAsyncModelThunk<
         const [key] = getKeyAndTs(fiat, date);
 
         if (state[key]) {
-            return state;
+            return getValidModel({ value: state });
         }
 
         return undefined;
     },
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,
