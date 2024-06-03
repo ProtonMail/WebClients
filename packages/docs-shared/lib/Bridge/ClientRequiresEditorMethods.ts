@@ -10,6 +10,7 @@ export interface ClientRequiresEditorMethods {
   getClientId(): Promise<number>
   receiveThemeChanges(theme: string): Promise<void>
   showEditor(): Promise<void>
+  showCommentsPanel(): Promise<void>
   initializeEditor(
     documentId: string,
     username: string,

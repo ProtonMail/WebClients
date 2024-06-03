@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useState } from 'react'
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
 import {
@@ -23,6 +23,8 @@ import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
+import { LexicalEditor } from 'lexical'
+import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 
 type Props = {
   isViewOnly: boolean
@@ -56,6 +58,11 @@ export function App({ isViewOnly = false }: Props) {
   useEffectOnce(() => {
     setTtagLocales(locales)
   })
+  
+  const editorRef = useRef<LexicalEditor | null>(null)
+  const setEditorRef = useCallback((instance: LexicalEditor | null) => {
+    editorRef.current = instance
+  }, [])
 
   const docMap = useMemo(() => {
     const map: YDocMap = new Map<string, YDoc>()
@@ -99,6 +106,14 @@ export function App({ isViewOnly = false }: Props) {
 
       async showEditor() {
         setEditorHidden(false)
+      },
+
+      async showCommentsPanel() {
+        const editor = editorRef.current
+        if (!editor) {
+          return
+        }
+        editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
       },
 
       async receiveThemeChanges(styles: string) {
@@ -250,6 +265,7 @@ export function App({ isViewOnly = false }: Props) {
             void bridge.getClientInvoker().onEditorReady()
             docState.onEditorReady()
           }}
+          setEditorRef={setEditorRef}
         />
       </InternalEventBusProvider>
       <Icons />

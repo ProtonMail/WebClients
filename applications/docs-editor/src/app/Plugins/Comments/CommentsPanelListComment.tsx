@@ -163,6 +163,7 @@ export function CommentsPanelListComment({
           <CommentsComposer
             autoFocus
             initialContent={comment.content}
+            className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Edit comment...`}
             onSubmit={(content) => {
               controller.editComment(thread.id, comment.id, content).catch(console.error)
