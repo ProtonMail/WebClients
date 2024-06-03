@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -121,6 +121,14 @@ export default function useShareURLView(shareId: string, linkId: string) {
         };
     }, [shareId, linkId, ShareID]);
 
+    const updateLinkState = useCallback(
+        async (abortSignal: AbortSignal) => {
+            const link = await getLink(abortSignal, shareId, linkId);
+            setLink(link);
+        },
+        [shareId, linkId]
+    );
+
     const createSharedLink = () => {
         void withCreating(async () => {
             const abortController = new AbortController();
@@ -139,8 +147,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
                         if (sharedLink) {
                             setSharedLink(sharedLink);
-                            const link = await getLink(abortController.signal, shareId, linkId);
-                            setLink(link);
+                            await updateLinkState(abortController.signal);
                         }
                     }
                 })
@@ -210,8 +217,9 @@ export default function useShareURLView(shareId: string, linkId: string) {
             return;
         }
 
-        return withDeleting(async () => {
-            return deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
+        await withDeleting(async () => {
+            const abortController = new AbortController();
+            await deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
                 .then(() => {
                     setShareUrlInfo(undefined);
                     setSharedLink('');
@@ -227,6 +235,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         text: c('Notification').t`The link to your item failed to be deleted`,
                     });
                 });
+            await updateLinkState(abortController.signal);
         });
     };
 
@@ -237,7 +246,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
             if (!loadedLink?.sharingDetails) {
                 return;
             }
-            return deleteShare(loadedLink.sharingDetails.shareId, { force: true })
+            await deleteShare(loadedLink.sharingDetails.shareId, { force: true })
                 .then(() => {
                     createNotification({
                         text: c('Notification').t`You stopped sharing this item`,
@@ -249,6 +258,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         text: c('Notification').t`Stopping to share this item has failed`,
                     });
                 });
+            await updateLinkState(abortController.signal);
         });
     };
 
