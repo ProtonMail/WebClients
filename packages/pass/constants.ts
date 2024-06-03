@@ -35,6 +35,10 @@ export const PASS_BLOG_MONITORING_URL = 'https://proton.me/support/dark-web-moni
 export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde';
 export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
 export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass-plus';
+export const PASS_LINUX_VERSION_URL = 'https://proton.me/download/PassDesktop/linux/x64/version.json';
+export const PASS_LINUX_DOWNLOAD_URL = 'https://proton.me/support/set-up-proton-pass-linux';
+export const PASS_DESKTOP_CHANGELOG_URL =
+    'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
