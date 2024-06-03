@@ -14,6 +14,7 @@ import { extractFileExtension } from '@proton/pass/lib/import/reader';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isIos } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { ImportProviderItem } from './ImportProviderItem';
@@ -142,9 +143,14 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                 />
                             ) : (
                                 <FileInput
-                                    accept={PROVIDER_INFO_MAP[form.values.provider].fileExtension
-                                        .replace(/(\w+)/g, '.$1')
-                                        .replace(/\s/g, '')}
+                                    // on iOS the "accept" attribute does not support the file extension
+                                    {...(!isIos()
+                                        ? {
+                                              accept: PROVIDER_INFO_MAP[form.values.provider].fileExtension
+                                                  .replace(/(\w+)/g, '.$1')
+                                                  .replace(/\s/g, ''),
+                                          }
+                                        : {})}
                                     onChange={dropzone.onAttach}
                                     disabled={busy}
                                     shape="solid"
