@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { uniqBy } from 'lodash';
 
-import { ModelState } from '@proton/account';
+import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiWalletTransactionData } from '@proton/andromeda';
-import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -51,17 +51,14 @@ const modelThunk = createAsyncModelThunk<
         const hashedTxIds = extra.options.thunkArg[2];
         const cachedTxIds = state?.filter((tx) => hashedTxIds?.includes(tx.Data.HashedTransactionID ?? ''));
         if (hashedTxIds?.length === cachedTxIds?.length) {
-            return state;
+            return getValidModel({ value: state });
         }
 
         return undefined;
     },
 });
 
-const initialState: SliceState = {
-    value: undefined,
-    error: undefined,
-};
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name: apiWalletTransactionDataSliceName,
