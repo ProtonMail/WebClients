@@ -1,3 +1,4 @@
+import { type ErrorInfo } from 'react'
 import { UserState } from '@lexical/yjs'
 import { CommentInterface } from '../CommentInterface'
 import { CommentThreadInterface } from '../CommentThreadInterface'
@@ -24,4 +25,6 @@ export interface EditorRequiresClientMethods {
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
 
   openLink(url: string): Promise<void>
+
+  reportError(error: Error, errorInfo?: ErrorInfo): Promise<void>
 }

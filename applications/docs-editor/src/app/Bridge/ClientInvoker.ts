@@ -11,6 +11,7 @@ import {
   RtsMessagePayload,
 } from '@proton/docs-shared'
 import { UserState } from '@lexical/yjs'
+import { GenerateUUID } from '@proton/docs-core'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -85,6 +86,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('openLink', [url])
   }
 
+  async reportError(error: Error): Promise<void> {
+    return this.invokeClientMethod('reportError', [error])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {
@@ -97,7 +102,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     functionName: K,
     args: ParamsExcludingFunctions<Parameters<EditorRequiresClientMethods[K]>>,
   ): Promise<Awaited<ReturnType<EditorRequiresClientMethods[K]>>> {
-    const messageId = `${Math.random()}`
+    const messageId = GenerateUUID()
 
     const message: EditorToClientInvokationMessage<K> = {
       type: EditorBridgeMessageType.EditorToClientInvokation,
