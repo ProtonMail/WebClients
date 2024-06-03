@@ -38,16 +38,10 @@ export const getApp = ({
             return match.product;
         }
     }
-    if (appQueryParam === 'wallet') {
-        return APPS.PROTONWALLET;
-    }
     if (redirect) {
         const match = list.find(({ value }) => redirect.includes(value));
         if (match) {
             return match.product;
-        }
-        if (redirect.includes('wallet')) {
-            return APPS.PROTONWALLET;
         }
     }
     if (plan) {
