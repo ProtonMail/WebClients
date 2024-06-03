@@ -21,7 +21,7 @@ const BrowserImages: Record<SupportedExtensionClient, string> = {
     [Clients.Firefox]: firefox,
 };
 
-export const TopBar: FC = () => {
+export const ExtensionInstallBar: FC = () => {
     const { onLink } = usePassCore();
     const { installed, supportedBrowser } = usePassExtensionLink();
     const browser = supportedBrowser ? clients[supportedBrowser] : null;
