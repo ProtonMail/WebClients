@@ -20,6 +20,9 @@ import { InternalEventBusProvider } from './InternalEventBusProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { c } from 'ttag'
 import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
+import locales from './locales'
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 
 type Props = {
   isViewOnly: boolean
@@ -50,6 +53,10 @@ export function App({ isViewOnly = false }: Props) {
   const [eventBus] = useState(() => new InternalEventBus())
   const [editorHidden, setEditorHidden] = useState(true)
 
+  useEffectOnce(() => {
+    setTtagLocales(locales)
+  })
+
   const docMap = useMemo(() => {
     const map: YDocMap = new Map<string, YDoc>()
     return map
@@ -65,10 +72,17 @@ export function App({ isViewOnly = false }: Props) {
         bridge
           .getClientInvoker()
           .editorRequestsPropagationOfUpdate(message, originator, debugSource)
-          .catch(console.error)
+          .catch((e: Error) => {
+            bridge.getClientInvoker().reportError(e)
+          })
       },
       handleAwarenessStateUpdate: (states) => {
-        bridge.getClientInvoker().handleAwarenessStateUpdate(states).catch(console.error)
+        bridge
+          .getClientInvoker()
+          .handleAwarenessStateUpdate(states)
+          .catch((e: Error) => {
+            bridge.getClientInvoker().reportError(e)
+          })
       },
     })
 

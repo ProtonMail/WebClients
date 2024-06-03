@@ -10,6 +10,7 @@ import {
   RtsMessagePayload,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@standardnotes/utils'
+import { GenerateUUID } from '../Util/GenerateUuid'
 
 /** Allows the client to invoke methods on the editor */
 export class EditorInvoker implements ClientRequiresEditorMethods {
@@ -101,7 +102,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     functionName: K,
     args: ParamsExcludingFunctions<Parameters<ClientRequiresEditorMethods[K]>>,
   ): Promise<ReturnType<ClientRequiresEditorMethods[K]>> {
-    const messageId = `${Math.random()}`
+    const messageId = GenerateUUID()
 
     const message: ClientToEditorInvokationMessage<K> = {
       type: EditorBridgeMessageType.ClientToEditorInvokation,
