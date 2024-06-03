@@ -30,8 +30,9 @@ import { clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
+import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
 import { Header } from './Header/Header';
-import { TopBar } from './Header/TopBar';
+import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
 import { Onboarding } from './Onboarding/Onboarding';
 import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
@@ -63,7 +64,8 @@ const MainSwitch: FC = () => {
 
     return (
         <div className="content-container flex flex-1 shrink-0 flex-column">
-            <TopBar />
+            {BUILD_TARGET === 'linux' && <LinuxUpdateBar />}
+            {BUILD_TARGET === 'web' && <ExtensionInstallBar />}
             <div className="flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
                 <Sidebar expanded={expanded} onToggle={toggle}>
                     <Menu onToggle={toggle} />
