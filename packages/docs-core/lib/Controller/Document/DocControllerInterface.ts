@@ -26,8 +26,10 @@ export interface DocControllerInterface {
   initialize(): Promise<Result<DocLoadSuccessResult>>
   onEditorReady(): void
   renameDocument(newName: string): Promise<Result<void>>
+  openDocumentSharingModal(): Promise<void>
   setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   squashDocument(): void
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   acceptFailedVerificationCommit(commitId: string): Promise<void>
+  showCommentsPanel(): void
 }

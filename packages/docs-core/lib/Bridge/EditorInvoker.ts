@@ -81,6 +81,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('broadcastPresenceState', [])
   }
 
+  async showCommentsPanel(): Promise<void> {
+    return this.invokeEditorMethod('showCommentsPanel', [])
+  }
+
   async initializeEditor(
     documentId: string,
     username: string,

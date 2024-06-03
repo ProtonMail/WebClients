@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { CommentEditor, CommentEditorHandle } from './CommentEditor'
 import { Icon } from '@proton/components'
+import clsx from '@proton/utils/clsx'
 
 export function CommentsComposer({
   autoFocus,
@@ -13,6 +14,7 @@ export function CommentsComposer({
   onBlur,
   onCancel,
   hideCancelButton = !onCancel,
+  className,
 }: {
   onSubmit: (content: string) => void
   placeholder: string
@@ -22,8 +24,10 @@ export function CommentsComposer({
   onBlur?: () => void
   onCancel?: () => void
   hideCancelButton?: boolean
+  className?: string
 }) {
   const [canSubmit, setCanSubmit] = useState(false)
+  const [hasNewLines, setHasNewLines] = useState(false)
   const composerRef = useRef<HTMLDivElement>(null)
   const commentEditorRef = useRef<CommentEditorHandle>(null)
 
@@ -45,7 +49,11 @@ export function CommentsComposer({
   return (
     <div
       ref={composerRef}
-      className="relative flex flex-wrap items-center justify-between gap-1 rounded border border-[--border-weak] px-1.5 py-1 text-sm ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
+      className={clsx(
+        'relative flex flex-wrap gap-1 rounded px-1.5 py-1 text-sm',
+        hasNewLines ? 'flex-column' : 'items-center justify-between',
+        className,
+      )}
       onClick={(event) => {
         if (event.target === composerRef.current) {
           commentEditorRef.current?.focus()
@@ -74,6 +82,7 @@ export function CommentsComposer({
         onTextContentChange={(textContent) => {
           setCanSubmit(textContent.length > 0)
           onTextContentChange?.(textContent)
+          setHasNewLines(textContent.search(/\n/) > 0)
         }}
         onBlur={onBlur}
         placeholder={<div className="pointer-events-none absolute left-2.5 top-2 opacity-50">{placeholder}</div>}

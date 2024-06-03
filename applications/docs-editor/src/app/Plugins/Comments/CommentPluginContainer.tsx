@@ -35,8 +35,10 @@ export default function CommentPlugin({
   const markNodeMap = useMemo<Map<string, Set<NodeKey>>>(() => {
     return new Map()
   }, [])
+
   const [activeAnchorKey, setActiveAnchorKey] = useState<NodeKey | null>()
   const [activeIDs, setActiveIDs] = useState<string[]>([])
+
   const [showCommentInput, setShowCommentInput] = useState(false)
   const [showComments, setShowComments] = useState(false)
 
@@ -176,6 +178,7 @@ export default function CommentPlugin({
             domSelection.removeAllRanges()
           }
           setShowCommentInput(true)
+          setShowComments(false)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -184,6 +187,7 @@ export default function CommentPlugin({
         SHOW_ALL_COMMENTS_COMMAND,
         () => {
           setShowComments((show) => !show)
+          setShowCommentInput(false)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
