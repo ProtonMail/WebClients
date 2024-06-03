@@ -38,7 +38,7 @@ function useNavigate() {
         pushToHistory(`/no-access`);
     }, [history]);
 
-    const navigateToSharedURLs = useCallback(() => {
+    const navigateToSharedByMe = useCallback(() => {
         pushToHistory(`/shared-urls`);
     }, [history]);
 
@@ -79,7 +79,7 @@ function useNavigate() {
         navigateToLink,
         navigateToRoot,
         navigateToNoAccess,
-        navigateToSharedURLs,
+        navigateToSharedByMe,
         navigateToTrash,
         navigateToSearch,
         addListener,
