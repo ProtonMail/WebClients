@@ -143,8 +143,8 @@ export default function initDownloadLinkFile(
             checkFileHash: options?.virusScan ? checkFileHash : undefined,
             transformBlockStream,
             checkManifestSignature,
-            onProgress: (bytes: number, blockIndex) => {
-                log(`progress: download ${bytes} bytes ${blockIndex ? `block: ${blockIndex}` : ''}`);
+            onProgress: (bytes: number, blockIndexes) => {
+                log(`progress: download ${bytes} bytes ${blockIndexes ? `block: ${blockIndexes.join(', ')}` : ''}`);
                 callbacks.onProgress?.([link.linkId], bytes);
             },
             onFinish: () => {
@@ -158,6 +158,7 @@ export default function initDownloadLinkFile(
         ...controls,
         start: () => {
             const linkSizes = Object.fromEntries([[link.linkId, link.size]]);
+            log(`starting ${link.linkId}, size: ${link.size}`);
             callbacks.onInit?.(link.size, linkSizes);
             return controls.start();
         },
