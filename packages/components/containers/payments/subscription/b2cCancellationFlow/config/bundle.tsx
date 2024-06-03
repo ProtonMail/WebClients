@@ -30,7 +30,8 @@ import {
 export const getBundleConfig = (
     subscription: SubscriptionModel,
     plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number
+    vpnCountries: number,
+    newCancellationPolicy?: boolean
 ): PlanConfig => {
     const planName = PLAN_NAMES[PLANS.BUNDLE];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -83,8 +84,12 @@ export const getBundleConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
+        subscription,
+        planName,
+        newCancellationPolicy
+    );
 
     return {
         planName,
