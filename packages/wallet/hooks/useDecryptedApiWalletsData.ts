@@ -5,7 +5,7 @@ import { compact } from 'lodash';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData, useGetApiWalletsData } from '@proton/wallet';
+import { IWasmApiWalletData, useApiWalletsData, useGetApiWalletsData } from '@proton/wallet';
 
 import { decryptWalletData, decryptWalletKey } from '../utils/crypto';
 import { buildMapFromWallets } from '../utils/wallet';
@@ -16,14 +16,15 @@ export type WalletMap = Partial<
 
 export const useDecryptedApiWalletsData = () => {
     const getApiWalletsData = useGetApiWalletsData();
+    const [apiWalletsData] = useApiWalletsData();
     const getUserKeys = useGetUserKeys();
     const [loadingApiWalletsData, withLoadingApiWalletsData] = useLoading();
 
     const [decryptedApiWalletsData, setDecryptedApiWalletsData] = useState<IWasmApiWalletData[]>();
 
-    const getDecryptedApiWalletsData = useCallback(async () => {
+    const getDecryptedApiWalletsData = useCallback(async (walletsData?: IWasmApiWalletData[]) => {
         const userKeys = await getUserKeys();
-        const apiWalletsData = await getApiWalletsData();
+        const apiWalletsData = walletsData ?? (await getApiWalletsData());
 
         const apiWallets = await Promise.all(
             apiWalletsData.map(async (apiWalletData) => {
@@ -92,8 +93,8 @@ export const useDecryptedApiWalletsData = () => {
     }, []);
 
     useEffect(() => {
-        void withLoadingApiWalletsData(getDecryptedApiWalletsData());
-    }, [getDecryptedApiWalletsData]);
+        void withLoadingApiWalletsData(getDecryptedApiWalletsData(apiWalletsData));
+    }, [getDecryptedApiWalletsData, apiWalletsData]);
 
     const setPassphrase = useCallback((walletId: string, Passphrase: string) => {
         setDecryptedApiWalletsData((prev) => {

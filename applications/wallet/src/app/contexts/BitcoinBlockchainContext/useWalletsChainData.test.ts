@@ -79,7 +79,7 @@ describe('useWalletsChainData', () => {
     });
 
     it('should sync accounts every 10 minutes, when needed', async () => {
-        const { result } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+        const { result } = renderHook(() => useWalletsChainData(apiWalletsData));
 
         // one for each account
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
@@ -102,7 +102,7 @@ describe('useWalletsChainData', () => {
         });
 
         it('should return helpers to trigger manually sync for single account, when needed', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData));
             await waitForNextUpdate();
             // we advance timer to bypass cooldown
             vitest.advanceTimersByTime(2 * MINUTE);
@@ -122,7 +122,7 @@ describe('useWalletsChainData', () => {
         });
 
         it('should return helpers to trigger manually sync for single wallet, when needed', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData));
             await waitForNextUpdate();
             // we advance timer to bypass cooldown
             vitest.advanceTimersByTime(2 * MINUTE);
@@ -144,7 +144,7 @@ describe('useWalletsChainData', () => {
 
     describe('when hook gets unmounted', () => {
         it('should stop polling on hook unmount', async () => {
-            const { unmount } = renderHook(() => useWalletsChainData(async () => apiWalletsData));
+            const { unmount } = renderHook(() => useWalletsChainData(apiWalletsData));
 
             // one for each account
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));

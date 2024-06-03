@@ -5,10 +5,7 @@ import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { Icon } from '@proton/components/components';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
-import { useApi, useNotifications } from '@proton/components/hooks';
-import { CryptoProxy } from '@proton/crypto/lib';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
+import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, CoreInput } from '../../../atoms';
@@ -49,16 +46,15 @@ export const TransactionReview = ({
     const [exchangeRate] = useWalletAccountExchangeRate(account);
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
-    const api = useApi();
 
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
+    const getAddressKeys = useGetAddressKeys();
 
     const [message, setMessage] = useState('');
     const [noteToSelf, setNoteToSelf] = useState('');
 
     const { createPsbt, psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder });
     useEffect(() => {
-        void createPsbt(true);
+        void createPsbt();
     }, [createPsbt, txBuilder]);
 
     const totalFees = Number(psbt?.total_fees ?? 0);
@@ -78,28 +74,24 @@ export const TransactionReview = ({
         }
 
         try {
-            const accountAddressesKeys = await Promise.all(
-                account.Addresses.map(async ({ Email }) => {
-                    const keys = await getAndVerifyApiKeys({
-                        api,
-                        email: Email,
-                        internalKeysOnly: true,
-                        verifyOutboundPublicKeys,
-                    });
-
-                    const [primaryKey] = keys.addressKeys;
-
-                    return CryptoProxy.importPublicKey({ armoredKey: primaryKey.armoredKey });
+            const accountPrimaryAddressesKeys = await Promise.all(
+                account.Addresses.map(async ({ ID }) => {
+                    const [primaryAddressKey] = await getAddressKeys(ID);
+                    return primaryAddressKey;
                 })
             );
+
+            const signingKeys = accountPrimaryAddressesKeys.map((k) => k.privateKey);
+            const senderEncryptionKeys = accountPrimaryAddressesKeys.map((k) => k.publicKey);
 
             await signAndBroadcastPsbt({
                 apiAccount: account,
                 apiWalletData: wallet,
                 exchangeRateId: exchangeRate?.ID,
-                noteToSelf,
-                message,
-                encryptionKeys: [...accountAddressesKeys, ...compact(recipients.map((r) => r.addressKey))],
+                noteToSelf: noteToSelf || undefined,
+                message: message || undefined,
+                signingKeys,
+                encryptionKeys: [...senderEncryptionKeys, ...compact(recipients.map((r) => r.addressKey))],
             });
 
             onSent();

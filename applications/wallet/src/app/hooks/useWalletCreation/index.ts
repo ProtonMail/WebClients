@@ -31,6 +31,8 @@ const wordCountToNumber: Record<WasmWordCount, number> = {
     [WasmWordCount.Words24]: 24,
 };
 
+const FIRST_ACCOUNT_INDEX = 0;
+
 const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: string } => {
     const words = value?.trim().split(' ') ?? [];
 
@@ -152,7 +154,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 const derivationPath = WasmDerivationPath.fromParts(
                     purposeByScriptType[DEFAULT_SCRIPT_TYPE],
                     network,
-                    0
+                    FIRST_ACCOUNT_INDEX
                 );
 
                 // Typeguard
