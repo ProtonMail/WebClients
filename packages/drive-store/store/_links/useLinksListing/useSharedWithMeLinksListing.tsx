@@ -15,10 +15,6 @@ interface FetchSharedLinksMeta extends FetchMeta {
     lastSorting: SortParams;
 }
 
-type SharedLinksFetchState = {
-    [volumeId: string]: FetchSharedLinksMeta;
-};
-
 /**
  * Custom hook for managing and fetching shared with me links.
  */
@@ -41,20 +37,10 @@ export function useSharedWithMeLinksListing() {
     const getShareIdsState = (): string[] => Array.from(shareIdsState.current || new Set());
 
     const { loadFullListingWithAnchor, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
-    const sharedLinksFetchState = useRef<SharedLinksFetchState>({});
-
-    const getSharedLinksFetchState = useCallback((volumeId: string) => {
-        if (sharedLinksFetchState.current[volumeId]) {
-            return sharedLinksFetchState.current[volumeId];
-        }
-
-        sharedLinksFetchState.current[volumeId] = {
-            lastPage: 0,
-            lastSorting: DEFAULT_SORTING,
-        };
-
-        return sharedLinksFetchState.current[volumeId];
-    }, []);
+    const fetchMeta = useRef<FetchSharedLinksMeta>({
+        lastPage: 0,
+        lastSorting: DEFAULT_SORTING,
+    });
 
     const loadSharedLinksMeta = async (
         signal: AbortSignal,
@@ -64,7 +50,9 @@ export function useSharedWithMeLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            await loadLinksMeta(signal, 'sharedWithMyLink', shareId, transformedResponse[shareId]);
+            await loadLinksMeta(signal, 'sharedWithMeLink', shareId, transformedResponse[shareId], {
+                fetchMeta: fetchMeta.current,
+            });
         }
     };
 
@@ -73,6 +61,13 @@ export function useSharedWithMeLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
     ): Promise<{ AnchorID: string; More: boolean }> => {
+        if (fetchMeta.current.isEverythingFetched) {
+            return {
+                AnchorID: '',
+                More: false,
+            };
+        }
+
         const response = await debouncedRequest<ListDriveSharedWithMeLinksPayload>(
             querySharedWithMeLinks({ AnchorID })
         );
@@ -84,6 +79,8 @@ export function useSharedWithMeLinksListing() {
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
         await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
+
+        fetchMeta.current.isEverythingFetched = !response.More;
 
         return {
             AnchorID: response.AnchorID,
@@ -110,7 +107,7 @@ export function useSharedWithMeLinksListing() {
                     abortSignal,
                     shareId,
                     linksState.getSharedWithMeByLink(shareId),
-                    getSharedLinksFetchState('sharedWithMe')
+                    fetchMeta.current
                 );
             });
 

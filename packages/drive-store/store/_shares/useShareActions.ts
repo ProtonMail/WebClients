@@ -136,6 +136,7 @@ export default function useShareActions() {
 
         return {
             shareId: Share.ID,
+            addressId: address.ID,
             sessionKey: shareSessionKey,
         };
     };

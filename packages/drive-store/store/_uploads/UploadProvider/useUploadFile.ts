@@ -10,6 +10,7 @@ import {
     queryUpdateFileRevision,
     queryVerificationData,
 } from '@proton/shared/lib/api/drive/files';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     CreateFileResult,
@@ -150,11 +151,15 @@ export default function useUploadFile() {
                     uploadFailed();
 
                     // See RFC Feature flag handling for more info
-                    if (err.status === 424 && err.data?.Code === 2032 && isForPhotos) {
+                    if (err.status === 424 && err.data?.Code === API_CUSTOM_ERROR_CODES.FEATURE_DISABLED) {
                         const error = new Error(
-                            c('Error').t`Photos upload is temporarily disabled. Please try again later`
+                            isForPhotos
+                                ? c('Error').t`Photos upload is temporarily disabled. Please try again later`
+                                : c('Error').t`Upload for this folder is temporarily disabled`
                         );
-                        error.name = 'PhotosUploadDisabled';
+                        if (isForPhotos) {
+                            error.name = 'PhotosUploadDisabled';
+                        }
                         throw error;
                     }
                     throw err;

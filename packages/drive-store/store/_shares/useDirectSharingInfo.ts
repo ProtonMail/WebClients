@@ -1,7 +1,7 @@
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import useDefaultShare from './useDefaultShare';
-import { useDriveSharingFlags } from './useDriveSharingFlag';
+import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
 import { getSharedWithMeMembership } from './utils';
 
