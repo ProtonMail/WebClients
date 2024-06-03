@@ -36,6 +36,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         deleteLink,
         stopSharing,
         sharedLink,
+        hasSharedLink,
         errorMessage,
         loadingMessage,
         confirmationMessage,
@@ -71,7 +72,9 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
-    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
+    // It's important in this order. As if it's hasSharedLink is true, isShared is true as well (even if cache not updated)
+    const isSharedAvailable = hasSharedLink || isShared;
+    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isSharedAvailable;
     const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
     const isInvitationWorkflow = !!invitees.length;
@@ -96,7 +99,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const handleDeleteLink = async () => {
         await deleteLink();
-        deleteShareIfEmpty();
+        await deleteShareIfEmpty();
     };
 
     const renderModalState = () => {
@@ -171,12 +174,12 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 members={members}
                                 invitations={invitations}
                                 externalInvitations={externalInvitations}
-                                    onPermissionsChange={handlePermissionsChange}
-                                    onMemberRemove={removeMember}
+                                onPermissionsChange={handlePermissionsChange}
+                                onMemberRemove={removeMember}
                                 onInvitationRemove={removeInvitation}
                                 onInvitationPermissionsChange={updateInvitePermissions}
-                                    onExternalInvitationRemove={removeExternalInvitation}
-                                    onExternalInvitationPermissionsChange={updateExternalInvitePermissions}
+                                onExternalInvitationRemove={removeExternalInvitation}
+                                onExternalInvitationPermissionsChange={updateExternalInvitePermissions}
                                 onResendInvitationEmail={handleResendInvitationEmail}
                             />
                         </ModalTwoContent>
