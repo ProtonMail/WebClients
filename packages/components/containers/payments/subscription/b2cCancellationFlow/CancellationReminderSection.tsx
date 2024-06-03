@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
@@ -25,6 +26,7 @@ interface Props {
 
 export const CancellationReminderSection = ({ app }: Props) => {
     const [{ paid }] = useVPNServersCount();
+    const newCancellationPolicy = useFlag('ExtendCancellationProcess');
     const { hasAccess, redirectToDashboard, subscription, setStartedCancellation } = useB2CCancellationFlow();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
@@ -34,11 +36,11 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
 
     const [config, setConfig] = useState<ReturnType<typeof getReminderPageConfig> | null>(
-        getReminderPageConfig(subscription)
+        getReminderPageConfig({ subscription, newCancellationPolicy })
     );
 
     useEffect(() => {
-        const config = getReminderPageConfig(subscription, paid.countries);
+        const config = getReminderPageConfig({ subscription, vpnCountries: paid.countries, newCancellationPolicy });
         setConfig(config);
     }, [hasAccess, paid]);
 
