@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react'
 import { Icon } from '@proton/components/components'
 import { DocControllerInterface } from '@proton/docs-core'
 import { useApplication } from '../Containers/ApplicationProvider'
+import { useLocalState } from '@proton/components/hooks'
+
+export const useDebug = () => {
+  const [debug] = useLocalState(false, 'proton-docs-debug')
+  return Boolean(debug)
+}
 
 const DebugMenu = ({ docController }: { docController: DocControllerInterface }) => {
   const application = useApplication()
@@ -71,7 +77,7 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   return (
     <div
       id="debug-menu"
-      className="fixed bottom-2 left-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 "
+      className="fixed bottom-2 left-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1"
     >
       <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
         <div>Debug menu</div>
