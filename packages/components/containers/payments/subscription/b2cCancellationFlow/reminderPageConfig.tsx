@@ -9,10 +9,15 @@ import { getMailPlusConfig } from './config/mailPlus';
 import { getVisionaryConfig } from './config/visionary';
 import { PlanConfig } from './interface';
 
-export const getReminderPageConfig = (
-    subscription?: SubscriptionModel,
-    vpnCountries?: number | null
-): PlanConfig | null => {
+export const getReminderPageConfig = ({
+    subscription,
+    vpnCountries,
+    newCancellationPolicy,
+}: {
+    subscription?: SubscriptionModel;
+    vpnCountries?: number | null;
+    newCancellationPolicy?: boolean;
+}): PlanConfig | null => {
     const planName = getPlan(subscription);
     if (!planName || !subscription) {
         return null;
@@ -21,23 +26,23 @@ export const getReminderPageConfig = (
     const vpnCountriesCount = vpnCountries || 90;
 
     if (planName.Name === PLANS.MAIL) {
-        return getMailPlusConfig(subscription, planName);
+        return getMailPlusConfig(subscription, planName, newCancellationPolicy);
     }
 
     if (planName.Name === PLANS.BUNDLE) {
-        return getBundleConfig(subscription, planName, vpnCountriesCount);
+        return getBundleConfig(subscription, planName, vpnCountriesCount, newCancellationPolicy);
     }
 
     if (planName.Name === PLANS.FAMILY) {
-        return getFamilyConfig(subscription, planName, vpnCountriesCount);
+        return getFamilyConfig(subscription, planName, vpnCountriesCount, newCancellationPolicy);
     }
 
     if (planName.Name === PLANS.NEW_VISIONARY) {
-        return getVisionaryConfig(subscription, planName, vpnCountriesCount);
+        return getVisionaryConfig(subscription, planName, vpnCountriesCount, newCancellationPolicy);
     }
 
     if (planName.Name === PLANS.DRIVE) {
-        return getDrivePlusConfig(subscription, planName);
+        return getDrivePlusConfig(subscription, planName, newCancellationPolicy);
     }
 
     return null;
