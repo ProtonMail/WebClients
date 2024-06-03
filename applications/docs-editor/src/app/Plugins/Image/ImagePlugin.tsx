@@ -18,7 +18,7 @@ import { downSize } from '@proton/shared/lib/helpers/image'
 
 type InsertImagePayload = File | Blob
 
-const ONE_MEGA_BYTE = 1024 * 1024
+const FIVE_HUNDRED_KILO_BYTES = 500 * 1024
 
 export const INSERT_IMAGE_COMMAND: LexicalCommand<InsertImagePayload> = createCommand('INSERT_IMAGE_COMMAND')
 
@@ -49,12 +49,12 @@ export default function ImagesPlugin(): JSX.Element | null {
         async function handleDownsizingAndInsert() {
           const base64 = await toBase64(payload)
 
-          if (payload.size <= ONE_MEGA_BYTE) {
+          if (payload.size <= FIVE_HUNDRED_KILO_BYTES) {
             createAndInsertImageNode(base64)
             return
           }
 
-          const downsizedImage = await downSize(base64, ONE_MEGA_BYTE, payload.type)
+          const downsizedImage = await downSize(base64, FIVE_HUNDRED_KILO_BYTES, payload.type)
           createAndInsertImageNode(downsizedImage)
         }
 

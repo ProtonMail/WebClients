@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $createCodeNode, $isCodeNode } from '@lexical/code'
 import {
@@ -41,14 +41,12 @@ import {
 import { getSelectedNode } from '../Utils/getSelectedNode'
 import { blockTypeToBlockName } from '../BlockTypeToBlockName'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components'
-import AddCommentIcon from '../Icons/AddCommentIcon'
 import AlignLeftIcon from '../Icons/AlignLeftIcon'
 import AlignCenterIcon from '../Icons/AlignCenterIcon'
 import AlignJustifyIcon from '../Icons/AlignJustifyIcon'
 import AlignRightIcon from '../Icons/AlignRightIcon'
 import OutdentIcon from '../Icons/OutdentIcon'
 import IndentIcon from '../Icons/IndentIcon'
-import CommentsIcon from '../Icons/CommentsIcon'
 import BoldIcon from '../Icons/BoldIcon'
 import ItalicIcon from '../Icons/ItalicIcon'
 import UnderlineIcon from '../Icons/UnderlineIcon'
@@ -59,7 +57,6 @@ import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { Button } from '@proton/atoms'
 import { INSERT_IMAGE_COMMAND } from '../Plugins/Image/ImagePlugin'
 import { $isLinkNode } from '@lexical/link'
-import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
 import { useInternalEventBus } from '../InternalEventBusProvider'
 import { EditorEditableChangeEvent } from '@proton/docs-shared'
 import { ToolbarButton } from './ToolbarButton'
@@ -70,6 +67,8 @@ import useLexicalEditable from '@lexical/react/useLexicalEditable'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import CheckListIcon from '../Icons/CheckListIcon'
 import clsx from '@proton/utils/clsx'
+import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
+import { DefaultFont, FontOptions } from '../Shared/Fonts'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -97,6 +96,12 @@ export default function DocumentEditorToolbar() {
   useEffect(() => {
     setInputFontSize(fontSize.slice(0, -2))
   }, [fontSize])
+
+  const [fontFamily, setFontFamily] = useState(DefaultFont.id)
+  const fontFamilyLabel = useMemo(
+    () => FontOptions.find((font) => font.id === fontFamily)?.label || DefaultFont.label,
+    [fontFamily],
+  )
 
   const imageInputRef = useRef<HTMLInputElement>(null)
 
@@ -221,6 +226,14 @@ export default function DocumentEditorToolbar() {
 
       const defaultFontSizeValue = elementDOM ? `${getHTMLElementFontSize(elementDOM)}px` : defaultFontSize
       setFontSize($getSelectionStyleValueForProperty(selection, 'font-size', defaultFontSizeValue))
+
+      const fontFamilyValue = $getSelectionStyleValueForProperty(selection, 'font-family', 'Arial')
+      const fontFamilyId = getFontFaceIdFromValue(fontFamilyValue)
+      if (fontFamilyId) {
+        setFontFamily(fontFamilyId)
+      } else {
+        setFontFamily('Arial')
+      }
 
       setElementFormat($isElementNode(node) ? node.getFormatType() : parent?.getFormatType() || 'left')
     }
@@ -393,6 +406,24 @@ export default function DocumentEditorToolbar() {
     },
   ]
 
+  const setFontFamilyForSelection = useCallback(
+    (id: string) => {
+      const value = getFontFaceValueFromId(id)
+      if (!value) {
+        return
+      }
+      activeEditor.update(() => {
+        const selection = $getSelection()
+        if (selection !== null) {
+          $patchStyleText(selection, {
+            'font-family': value,
+          })
+        }
+      })
+    },
+    [activeEditor],
+  )
+
   return (
     <div className="flex items-center gap-1.5 overflow-auto border-b border-[--border-weak] bg-[--background-norm] px-3 py-1.5 [grid-column:1_/_3] [grid-row:1] [scrollbar-width:thin]">
       <div className="mx-auto flex max-w-max items-center gap-1.5">
@@ -432,6 +463,34 @@ export default function DocumentEditorToolbar() {
             {blockTypes.map(({ type, name, onClick }) => (
               <DropdownMenuButton key={type} className="text-left" onClick={onClick} disabled={!isEditable}>
                 {name}
+              </DropdownMenuButton>
+            ))}
+          </DropdownMenu>
+        </SimpleDropdown>
+        <SimpleDropdown
+          as={Button}
+          shape="ghost"
+          size="small"
+          type="button"
+          color="norm"
+          className="text-[--text-norm]"
+          content={<>{fontFamilyLabel}</>}
+          disabled={!isEditable}
+        >
+          <DropdownMenu>
+            {FontOptions.map(({ id, label, value }) => (
+              <DropdownMenuButton
+                key={id}
+                className="text-left"
+                style={{
+                  fontFamily: value,
+                }}
+                onClick={() => {
+                  setFontFamilyForSelection(id)
+                }}
+                disabled={!isEditable}
+              >
+                {label}
               </DropdownMenuButton>
             ))}
           </DropdownMenu>
@@ -660,25 +719,6 @@ export default function DocumentEditorToolbar() {
           <Icon name="image" className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <TableOption editor={activeEditor} disabled={!isEditable} />
-        <ToolbarSeparator />
-        <ToolbarButton
-          label={c('Action').t`Add comment`}
-          disabled={!isEditable}
-          onClick={() => {
-            activeEditor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
-          }}
-        >
-          <AddCommentIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Show all comments`}
-          disabled={!isEditable}
-          onClick={() => {
-            activeEditor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
-          }}
-        >
-          <CommentsIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton label={c('Action').t`Clear formatting`} disabled={!isEditable} onClick={clearFormatting}>
           <Icon name="eraser" className="h-4 w-4 fill-current" />

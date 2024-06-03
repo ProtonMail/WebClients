@@ -33,6 +33,9 @@ import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
+import { DefaultFont } from './Shared/Fonts'
+import { LexicalEditor } from 'lexical'
+import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 
 const TypingBotEnabled = false
 
@@ -45,6 +48,7 @@ type Props = {
   isViewOnly: boolean
   hidden: boolean
   onEditorReady: () => void
+  setEditorRef: (instance: LexicalEditor | null) => void
   injectWithNewContent?: FileToDocPendingConversion
 }
 
@@ -58,6 +62,7 @@ export function Editor({
   isViewOnly,
   hidden,
   onEditorReady,
+  setEditorRef,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -93,7 +98,12 @@ export function Editor({
         {!isViewOnly && <Toolbar />}
         <RichTextPlugin
           contentEditable={
-            <div className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]">
+            <div
+              className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]"
+              style={{
+                fontFamily: DefaultFont.value,
+              }}
+            >
               <ContentEditable className="DocumentEditor" />
             </div>
           }
@@ -122,6 +132,7 @@ export function Editor({
         <ImagesPlugin />
         {!isViewOnly && <EditorReadonlyPlugin docState={docState} />}
         <ReadonlyLinkFixPlugin openLink={openLink} />
+        <EditorRefPlugin editorRef={setEditorRef} />
       </LexicalComposer>
     </CollaborationContext.Provider>
   )
