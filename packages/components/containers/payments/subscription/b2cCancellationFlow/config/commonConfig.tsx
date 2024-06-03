@@ -1,5 +1,5 @@
-import { format, fromUnixTime } from 'date-fns';
-import { c } from 'ttag';
+import { differenceInDays, format, fromUnixTime } from 'date-fns';
+import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -47,15 +47,42 @@ export const getDefaultTestimonial = (): PlanConfigTestimonial => {
     };
 };
 
-export const getDefaultConfirmationModal = (subscription: SubscriptionModel, planName: string): ConfirmationModal => {
+const ExpirationTime = ({
+    subscription,
+    newCancellationPolicy,
+}: {
+    subscription: SubscriptionModel;
+    newCancellationPolicy?: boolean;
+}) => {
     const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
-    const endDate = fromUnixTime(latestSubscription);
-    const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
-    const expiryDate = (
-        <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
-            {formattedEndDate}
-        </time>
-    );
+
+    if (newCancellationPolicy) {
+        const endDate = fromUnixTime(latestSubscription);
+        const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
+        return (
+            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
+                {formattedEndDate}
+            </time>
+        );
+    } else {
+        const endSubDate = fromUnixTime(latestSubscription);
+        const dayDiff = differenceInDays(endSubDate, new Date());
+        return (
+            <strong>
+                <time dateTime={format(endSubDate, 'yyyy-MM-dd')}>
+                    {c('Subscription reminder').ngettext(msgid`${dayDiff} day left`, `${dayDiff} days left`, dayDiff)}
+                </time>
+            </strong>
+        );
+    }
+};
+
+export const getDefaultConfirmationModal = (
+    subscription: SubscriptionModel,
+    planName: string,
+    newCancellationPolicy?: boolean
+): ConfirmationModal => {
+    const expiryDate = <ExpirationTime subscription={subscription} newCancellationPolicy={newCancellationPolicy} />;
 
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
@@ -63,9 +90,14 @@ export const getDefaultConfirmationModal = (subscription: SubscriptionModel, pla
         </Href>
     );
 
+    const description = newCancellationPolicy
+        ? c('Subscription reminder')
+              .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`
+        : c('Subscription reminder')
+              .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`;
+
     return {
-        description: c('Subscription reminder')
-            .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`,
+        description,
         warningTitle: c('Subscription reminder')
             .t`If you exceed the free plan limits when your ${planName} subscription expires, you will not be able to:`,
         warningPoints: [
@@ -79,23 +111,33 @@ export const getDefaultConfirmationModal = (subscription: SubscriptionModel, pla
     };
 };
 
-export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string) => {
+export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, newCancellationPolicy?: boolean) => {
+    const warning = newCancellationPolicy
+        ? c('Subscription reminder')
+              .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`
+        : c('Subscription reminder')
+              .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`;
+
     return {
+        warning,
         title: c('Subscription reminder').t`Extra storage and bonuses`,
         description: c('Subscription reminder')
             .t`${planName} offers ${planMaxSpace} storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.`,
-        warning: c('Subscription reminder')
-            .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. `,
     };
 };
 
-export const getDefaultTBStorageWarning = (planName: string, planMaxSpace: string) => {
+export const getDefaultTBStorageWarning = (planName: string, planMaxSpace: string, newCancellationPolicy?: boolean) => {
+    const warning = newCancellationPolicy
+        ? c('Subscription reminder')
+              .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`
+        : c('Subscription reminder')
+              .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`;
+
     return {
+        warning,
         title: c('Subscription reminder').t`Extra storage and bonuses`,
         description: c('Subscription reminder')
             .t`${planName} offers ${planMaxSpace} storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.`,
-        warning: c('Subscription reminder')
-            .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. `,
     };
 };
 

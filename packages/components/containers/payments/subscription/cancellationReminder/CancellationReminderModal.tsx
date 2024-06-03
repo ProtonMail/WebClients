@@ -1,3 +1,4 @@
+import { useFlag } from '@unleash/proxy-client-react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -22,9 +23,10 @@ import { ReminderFlag, markRemindersAsSeen } from './cancellationReminderHelper'
 
 const CancellationReminderModal = (props: ModalProps) => {
     const [subscription, subscriptionLoading] = useSubscription();
+    const newCancellationPolicy = useFlag('ExtendCancellationProcess');
     const { feature, update } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
 
-    const config = getReminderPageConfig(subscription);
+    const config = getReminderPageConfig({ subscription, newCancellationPolicy });
 
     const markAsSeen = () => {
         if (!feature?.Value || Array.isArray(feature.Value)) {

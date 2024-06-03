@@ -20,7 +20,8 @@ import {
 
 export const getMailPlusConfig = (
     subscription: SubscriptionModel,
-    plan: SubscriptionPlan & { Name: PLANS }
+    plan: SubscriptionPlan & { Name: PLANS },
+    newCancellationPolicy?: boolean
 ): PlanConfig => {
     const planName = PLAN_NAMES[PLANS.MAIL];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -76,8 +77,12 @@ export const getMailPlusConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
+        subscription,
+        planName,
+        newCancellationPolicy
+    );
 
     return {
         planName,

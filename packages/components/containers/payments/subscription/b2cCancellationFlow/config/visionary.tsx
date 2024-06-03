@@ -34,7 +34,8 @@ import {
 export const getVisionaryConfig = (
     subscription: SubscriptionModel,
     plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number
+    vpnCountries: number,
+    newCancellationPolicy?: boolean
 ): PlanConfig => {
     const planName = PLAN_NAMES[PLANS.NEW_VISIONARY];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -87,7 +88,7 @@ export const getVisionaryConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace);
+    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
 
     const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
     const endDate = fromUnixTime(latestSubscription);
@@ -109,10 +110,13 @@ export const getVisionaryConfig = (
             .t`Please note that ${planName} is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.`}</p>
     );
 
-    const config = getDefaultConfirmationModal(subscription, planName);
+    const config = getDefaultConfirmationModal(subscription, planName, newCancellationPolicy);
     //Your Proton Visionary subscription ends on June 6, 2024.  Learn more
-    const description = c('Subscription reminder')
-        .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you’ll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink} ${unavailablePlan}`;
+    const description = newCancellationPolicy
+        ? c('Subscription reminder')
+              .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you’ll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink} ${unavailablePlan}`
+        : c('Subscription reminder')
+              .jt`You still have ${expiryDate} left on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink} ${unavailablePlan}`;
 
     const confirmationModal: ConfirmationModal = {
         ...config,
