@@ -1,9 +1,12 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useRef, useState } from 'react';
 
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
+import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { AppState } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { ping } from '@proton/shared/lib/api/tests';
 import noop from '@proton/utils/noop';
 
 interface ClientContextValue {
@@ -69,7 +72,9 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
                 };
             }, [state])}
         >
-            {children}
+            <ConnectivityProvider subscribe={api.subscribe} onPing={() => api(ping())}>
+                {children}
+            </ConnectivityProvider>
         </ClientContext.Provider>
     );
 };
