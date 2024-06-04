@@ -69,6 +69,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private lastCommitIdReceivedFromRts?: string
   private initialSyncTimer: NodeJS.Timeout | null = null
   private initialConnectionTimer: NodeJS.Timeout | null = null
+  private editorReady = false
 
   public readonly username: string
   public initialized = false
@@ -295,6 +296,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
+
+    if (this.editorReady) {
+      this.logger.warn('Received duplicate onEditorReady event')
+      return
+    }
+
+    this.editorReady = true
 
     this.logger.info('Editor ready')
 

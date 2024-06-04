@@ -46,6 +46,7 @@ export function useYjsCollaboration(
   awarenessData?: object,
 ): [JSX.Element, Binding] {
   const [doc] = useState(() => docMap.get(id))
+  const didPostReadyEvent = React.useRef(false)
 
   const binding = useMemo(
     () => createBinding(editor, provider, id, doc, docMap, excludedProperties),
@@ -101,7 +102,10 @@ export function useYjsCollaboration(
     )
     window.addEventListener('resize', onWindowResize)
 
-    onCollabReady()
+    if (!didPostReadyEvent.current) {
+      onCollabReady()
+      didPostReadyEvent.current = true
+    }
 
     return () => {
       awareness.off('update', onAwarenessUpdate)
