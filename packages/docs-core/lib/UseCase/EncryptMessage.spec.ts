@@ -18,7 +18,8 @@ describe('EncryptMessage', () => {
 
   beforeEach(() => {
     encryptionService = {
-      signAndEncryptData: jest.fn(),
+      signAndEncryptData: jest.fn().mockResolvedValue(Result.ok(new Uint8Array())),
+      decryptData: jest.fn().mockResolvedValue(Result.ok(new Uint8Array())),
     } as unknown as jest.Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
 
     encryptMessage = new EncryptMessage(encryptionService)
@@ -42,7 +43,7 @@ describe('EncryptMessage', () => {
 
   it('should return encrypted data on success', async () => {
     const encryptedData = new Uint8Array([4, 5, 6])
-    encryptionService.signAndEncryptData.mockResolvedValue(Result.ok(encryptedData))
+    encryptionService.signAndEncryptData = jest.fn().mockResolvedValue(Result.ok(encryptedData))
 
     const result = await encryptMessage.execute(update, metadata, keys)
 
@@ -57,5 +58,30 @@ describe('EncryptMessage', () => {
 
     expect(result.isFailed()).toBe(true)
     expect(result.getError()).toBe('error')
+  })
+
+  it('should attempt decryption after encryption', async () => {
+    encryptMessage.canDecryptMessageToDetectBitflips = jest.fn().mockResolvedValue(true)
+
+    await encryptMessage.execute(update, metadata, keys)
+
+    expect(encryptMessage.canDecryptMessageToDetectBitflips).toHaveBeenCalledTimes(1)
+  })
+
+  it('should attempt encryption again if first attempt fails', async () => {
+    const encryptAndValidateSpy = jest.spyOn(encryptMessage, 'encryptAndValidate')
+    encryptMessage.canDecryptMessageToDetectBitflips = jest.fn().mockResolvedValue(false)
+
+    await encryptMessage.execute(update, metadata, keys)
+
+    expect(encryptAndValidateSpy).toHaveBeenCalledTimes(2)
+  })
+
+  it('should fail if cannot decrypt own message', async () => {
+    encryptMessage.canDecryptMessageToDetectBitflips = jest.fn().mockResolvedValue(false)
+
+    const result = await encryptMessage.execute(update, metadata, keys)
+
+    expect(result.isFailed()).toBe(true)
   })
 })
