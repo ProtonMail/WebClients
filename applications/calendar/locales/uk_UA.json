@@ -6653,6 +6653,12 @@
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
       ],
+      "Up to ${ n } user": [
+        "До ${ n } користувача",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
@@ -8467,6 +8473,12 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Єдиним джерелом доходу ${ BRAND_NAME } є передплата користувачів. Ваша підтримка дає нам змогу бути незалежними, поширювати нашу місію, щоб зробити приватність в Інтернеті стандартом, а також сприяти активістам і організаціям, які відстоюють приватність і свободу."
+      ],
+      "${ dayDiff } day left": [
+        "Залишився ${ dayDiff } день",
+        "Залишилось ${ dayDiff } дні",
+        "Залишилось ${ dayDiff } днів",
+        "Залишилось ${ dayDiff } днів"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
