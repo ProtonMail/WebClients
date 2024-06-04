@@ -28,7 +28,7 @@ type Props = {
 };
 
 export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
-    const { matchNewItemPrefix } = useNavigation();
+    const { matchItemList } = useNavigation();
     const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
 
@@ -41,7 +41,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
 
     const listRef = useRef<HTMLUListElement>(null);
     useNewItemShortcut(() => {
-        if (isOpen || matchNewItemPrefix) return;
+        if (isOpen || !matchItemList) return;
         open();
         setTimeout(() => listRef.current?.querySelector('button')?.focus(), 50);
     });
