@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Odporučiť priateľa"
       ],
+      "Refresh status": [
+        "Obnoviť stav"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Návrat na prihlásenie"
       ],
+      "Review": [
+        "Skontrolovať"
+      ],
       "Revoke": [
         "Zrušiť"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Poslať pripomenutie"
+      ],
+      "Set catch-all": [
+        "Nastavenie doménového koša"
       ],
       "Set new password": [
         "Nastaviť nové heslo"
@@ -729,6 +738,17 @@
       ],
       "Secure your communications": [
         "Zabezpečte si vašu komunikáciu"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Zakázané"
+      ],
+      "Enabled": [
+        "Povolené"
+      ],
+      "Missing keys": [
+        "Chýbajúce kľúče"
       ]
     },
     "bf2023: Action": {
@@ -1930,6 +1950,16 @@
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Overené"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Subdomény 'www' sa obvykle nepoužívajú pre email. Naozaj chcete použiť túto doménu?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby alebo problém s kvalitou"
@@ -2237,8 +2267,17 @@
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Overenie sa nepodarilo, skúste to prosím za hodinu znovu."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Zastavili sme podpisovanie DKIM kvôli problémom s vašou konfiguráciou DNS. Ak chcete pokračovať v podpisovaní, postupujte podľa pokynov nižšie."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Nesprávny overovací kód. Uistite sa prosím, že ste skopírovali overovací kód správne a akciu zopakujte. Než sa zmeny prejavia, môže to trvať až 24 hodín."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
@@ -2863,11 +2902,31 @@
       "Address": [
         "Adresa"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Status": [
         "Stav"
       ],
       "Username": [
         "Používateľské meno"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Názov servera"
+      ],
+      "Priority": [
+        "Priorita"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Value / Data": [
+        "Hodnota / Dáta"
+      ],
+      "Value / Data / Points to": [
+        "Hodnota / Dáta / Ukazuje na"
       ]
     },
     "Headline": {
@@ -2919,6 +2978,9 @@
         "${ n } adries",
         "${ n } adries"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
+      ],
       "${ number } city": [
         "${ number } mesto",
         "${ number } mestá",
@@ -2939,6 +3001,12 @@
         "${ provisioningCounter } servery sa stále nastavujú. Zvyčajne to trvá okolo ${ provisioningDuration }.",
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }.",
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: žiada platformy príjemcov, aby neautorizované emaily označili ako spam alebo ich umiestnili do karantény."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: žiada platformy príjemcov o odmietnutie neautorizovaných emailov."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } ďalšia",
@@ -3120,6 +3188,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Než budete môcť prijímať emaily na adresy svojej vlastnej domény v službe ${ MAIL_APP_NAME }, je potrebné pridať nasledujúce dva MX záznamy do DNS konzoly (nachádza sa na platforme, kde ste zakúpili vlastnú doménu). Príklad a niekoľko užitočných tipov nájdete ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Pred zahájením odosielania a prijímania emailov z vašich nových adries je potrebné pre ne vytvoriť šifrovacie kľúče."
       ],
@@ -3213,6 +3284,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Odstraňovanie ${ deletedServerCount } servera brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány",
@@ -3221,6 +3295,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM umožňuje ${ BRAND_NAME } kryptograficky podpisovať vaše emaily a zabrániť útočníkom v manipulácii s vašimi emailami. Uistite sa, že ste v konzole DNS (umiestnenej na platforme, kde ste zakúpili vlastnú doménu) pridali nasledujúce tri záznamy CNAME."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontroluje, či záznamy SPF a DKIM odosielateľa pochádzajú z vašej domény. To môže zabrániť útočníkom v použití záznamov SPF a DKIM inej domény na vydávanie sa za vašu doménu. Parameter \"p=\" (policy) v tomto zázname udáva, ako majú platformy príjemcu zaobchádzať s neautorizovanými emailami. Pre väčšinu domén odporúčame použiť zásadu „p=quarantine“. Uistite sa, že ste v konzole DNS (umiestnenej na platforme, kde ste zakúpili vlastnú doménu) pridali nasledujúci TXT záznam."
       ],
       "DNS TXT record": [
         "DNS TXT záznam"
@@ -3236,6 +3316,12 @@
       ],
       "Domain ownership verified.": [
         "Vlastníctvo domény je overené."
+      ],
+      "domain used": [
+        "využitá doména",
+        "využité domény",
+        "využitých domén",
+        "využitých domén"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odoslali sme kód na ${ destination }."
@@ -3266,6 +3352,9 @@
       ],
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Každá doména môže mať iba jeden SPF (TXT) záznam. Ak chcete zachovať existujúci SPF (TXT) záznam, môžete k existujúcemu záznamu pridať ${ spf } (vložte ho za ${ spfValue })."
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -3330,6 +3419,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Zadajte frázu na obnovenie a zmeňte si heslo."
       ],
+      "Example: ${ spfExample }": [
+        "Príklad: ${ spfExample }"
+      ],
       "Expired": [
         "Platnosť vypršala"
       ],
@@ -3344,6 +3436,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Pre členov organizácií používajúcich jednotné prihlásenie (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
       "Free forever": [
         "Navždy zadarmo"
@@ -3381,6 +3476,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Ak máte vlastnú doménu s ${ MAIL_APP_NAME }, môžete nastaviť emailovú adresu doménového koša na prijímanie správ odoslaných na vašu doménu okrem neplatných emailových adries (napr. z dôvodu preklepov)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ak máte darčekový kód, zadajte ho nižšie, aby ste mohli uplatniť zľavu."
       ],
@@ -3407,6 +3505,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "DÔLEŽITÉ: Ak vaša DNS konzola neumožňuje, aby hodnoty CNAME končili bodkou, môžete poslednú bodku v hodnotách CNAME odstrániť."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Dôležité: Uistite sa, že máte uložené kódy pre obnovenie. V opačnom prípade sa už nikdy nebudete môcť prihlásiť, ak stratíte zariadenie určené pre 2FA."
@@ -3482,6 +3583,12 @@
       ],
       "Loading...": [
         "Načítavanie..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Veľké emailové služby môžu odmietnuť alebo filtrovať vaše e-maily ako spam, ak chýba alebo nie je správne nastavený SPF/DKIM/DMARC."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Veľké emailové služby môžu odmietnuť alebo filtrovať vaše emaily ako spam, ak chýba alebo nie je správne nastavený SPF/DKIM/DMARC."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
@@ -3740,6 +3847,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF upresňuje, kto smie odosielať emaily pre vašu doménu. Uistite sa, že ste do DNS konzoly (umiestnenej na platforme, kde ste zakúpili vlastnú doménu) pridali nasledujúci TXT záznam."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Používatelia SSO (poskytovaní poskytovateľom identít) budú vymazaní"
@@ -4266,6 +4376,17 @@
         "Prosím kontaktujte nás na ${ email } pre viac informácií, ako uhradiť platobnú transakciu v hotovosti."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Pridajte novú adresu pre existujúcich používateľov vašej organizácie."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Pridajte nového používateľa do vašej organizácie a vytvorte mu adresu."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Z bezpečnostných dôvodov potrebujeme overiť, či ste vlastníkom domény ${ domainName }. Pridajte prosím nasledujúci TXT záznam do DNS konzoly (umiestnenej na platforme, kde ste zakúpili vlastnú doménu). Príklad a niekoľko užitočných tipov nájdete ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
@@ -4530,6 +4651,9 @@
       "Do you have any suggestions for our team?": [
         "Máte nejaké návrhy pre náš tým?"
       ],
+      "Domain name": [
+        "Názov domény"
+      ],
       "e.g. example.com": [
         "napr. priklad.sk"
       ],
@@ -4680,6 +4804,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fráza sa skladá z 12 jedinečných slov v určitom poradí"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Pridajte prosím všetky 3 nasledujúce CNAME záznamy. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Pridajte prosím nasledujúce dva MX záznamy. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Pridajte prosím nasledujúci TXT záznam. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
+      ],
       "Please share any feedback to help us improve.": [
         "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
       ],
@@ -4785,6 +4918,16 @@
         "Telefónne číslo pre obnovenie"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Pridajte doménu, ktorú vlastníte, do svojho účtu ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Pridajte prosím nasledujúci TXT záznam. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrátor"
@@ -4831,6 +4974,17 @@
         "Denné emailové notifikácie"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adresy"
+      ],
+      "Domain": [
+        "Doména"
+      ],
+      "Verify": [
+        "Overiť"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Predvolené"
@@ -4874,6 +5028,9 @@
       ],
       "Help translate": [
         "Pomôžte s prekladom"
+      ],
+      "here": [
+        "tu"
       ],
       "How to pay with Bitcoin?": [
         "Ako platiť Bitcoinom?"
@@ -5051,6 +5208,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Prepojte vašu vlastnú doménu s ${ BRAND_NAME }, aby ste vytvorili vlastné emailové adresy (napr. vy@vasafirma.com). Náš sprievodca vás prevedie celým postupom."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
       ]
@@ -5945,6 +6105,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Vrátane ${ plus }, ${ bundle } a ${ BRAND_NAME } pre firmy."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Zahrnuté s viacerými používateľmi ${ BRAND_NAME } pre firemné plány."
       ]
@@ -6515,6 +6678,9 @@
       ],
       "Select state": [
         "Vybrať stav"
+      ],
+      "yourdomain.com": [
+        "vasadomena.com"
       ]
     },
     "plan customizer, ips": {
@@ -7568,6 +7734,12 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
       ],
+      "${ dayDiff } day left": [
+        "Zostáva ${ dayDiff } deň",
+        "Zostávajú ${ dayDiff } dni",
+        "Zostáva ${ dayDiff } dní",
+        "Zostáva ${ dayDiff } dní"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
@@ -7731,6 +7903,9 @@
       "Bug reported": [
         "Chyba nahlásená"
       ],
+      "Catch-all address updated": [
+        "Adresa doménového koša aktualizovaná"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
       ],
@@ -7742,6 +7917,12 @@
       ],
       "Display name updated": [
         "Zobrazované meno aktualizované"
+      ],
+      "DMARC value copied to clipboard": [
+        "Hodnota DMARC skopírovaná do schránky"
+      ],
+      "Domain verified": [
+        "Doména overená"
       ],
       "Email address copied to clipboard": [
         "Emailová adresa skopírovaná do schránky"
@@ -7803,6 +7984,9 @@
       "Preference saved": [
         "Nastavenie uložené"
       ],
+      "SPF value copied to clipboard": [
+        "Hodnota SPF záznamu skopírovaná do schránky"
+      ],
       "User created": [
         "Používateľ vytvorený"
       ],
@@ -7811,6 +7995,12 @@
       ],
       "Username copied to clipboard": [
         "Používateľské meno bolo skopírované do schránky"
+      ],
+      "Value copied to clipboard": [
+        "Hodnota skopírovaná do schránky"
+      ],
+      "Verification code copied to clipboard": [
+        "Overovací kód skopírovaný do schránky"
       ],
       "Verification successful": [
         "Overenie prebehlo úspešne"
@@ -7884,6 +8074,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresy"
       ]
     },
     "Tab subscription modal": {
@@ -7992,6 +8187,9 @@
       "Add credits": [
         "Pridať kredit"
       ],
+      "Add domain": [
+        "Pridať doménu"
+      ],
       "Add new user": [
         "Pridať nového používateľa"
       ],
@@ -8042,6 +8240,9 @@
       ],
       "Card verification": [
         "Overenie karty"
+      ],
+      "Catch-All address": [
+        "Adresa doménového koša"
       ],
       "Catch-all address": [
         "Adresa doménového koša"
@@ -8183,6 +8384,9 @@
       ],
       "Edit display name": [
         "Upraviť zobrazované meno"
+      ],
+      "Edit domain": [
+        "Úprava domény"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -8537,6 +8741,17 @@
         "${ MAIL_APP_NAME } faktúra"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresa"
+      ],
+      "Catch-All": [
+        "Doménový kôš"
+      ],
+      "Status": [
+        "Stav"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adresy"
@@ -8613,6 +8828,15 @@
       ],
       "Verified email address": [
         "Overená emailová adresa"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Zistili sme problém s vašou konfiguráciou DNS. Uistite sa prosím, že sa vaše záznamy zhodujú s nižšie uvedenými inštrukciami. Ak problém pretrváva, budeme musieť DKIM vypnúť."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Zastavili sme podpisovanie DKIM kvôli problémom s vašou konfiguráciou DNS. Ak chcete pokračovať v podpisovaní, postupujte podľa pokynov nižšie."
+      ],
+      "Your DKIM signing is working.": [
+        "Vaše DKIM podpisovanie je funkčné."
       ]
     },
     "tooltip": {
@@ -8827,11 +9051,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužiaľ nie sme momentálne dostupní. Ak chcete popísať svoj problém, vyplňte nižšie uvedený formulár. Budeme sa ním zaoberať a kontaktovať vás, až budeme opäť online."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Zistili sme problém s vašou konfiguráciou DNS. Uistite sa prosím, že sa vaše záznamy zhodujú s nižšie uvedenými inštrukciami. Ak problém pretrváva, budeme musieť DKIM vypnúť."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Pred pridaním emailovej adresy k nesúkromnému členovi musíte ${ activateLink } kľúč organizácie."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Po úspešnom overení prosím neodstraňujte tento TXT záznam, je potrebný pre potvrdenie, že stále používate svoju doménu."
       ]
     }
   }

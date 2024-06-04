@@ -221,6 +221,9 @@
       "Refer a friend": [
         "معرفی به یک دوست"
       ],
+      "Refresh status": [
+        "وضعیت بازخوانی"
+      ],
       "Refresh the page": [
         "بازخوانی صفحه"
       ],
@@ -266,6 +269,9 @@
       "Return to sign in": [
         "بازگشت به فرم ورود"
       ],
+      "Review": [
+        "نقد"
+      ],
       "Revoke": [
         "لغو کردن"
       ],
@@ -295,6 +301,9 @@
       ],
       "Send my username": [
         "نام کاربری من را ارسال کنید"
+      ],
+      "Set catch-all": [
+        "تنظیم همه‌گیر"
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
@@ -462,6 +471,17 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "این کار ارتباط تمام روتر ها و سرویس گیرندگانی که از این گواهی استفاده میکنند را قطع میکند."
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "غیرفعال"
+      ],
+      "Enabled": [
+        "فعال"
+      ],
+      "Missing keys": [
+        "کلیدهای گمشده"
       ]
     },
     "bf2023: Deal details": {
@@ -1459,6 +1479,16 @@
         "صورت‌حساب‌ واگذاشته"
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "تایید شده"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "زیر دامنه‌های \"www\" معمولا برای رایانامه استفاده نمی‌شوند. آیا مطمئن هستید که می‌خواهید از این مقدار دامنه استفاده کنید؟"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "اشکالات یا مشکل کیفی"
@@ -1635,8 +1665,17 @@
       "Username must end with a letter or digit": [
         "نام کاربری میبایست با یک حرف یا رقم پایان پذیرد"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "تاییدیه ناموفق بود، لطفا یک ساعت دیگر امتحان کنید."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "ما به دلیل مشکل در پیکربندی DNS شما، امضای DKIM را متوقف کردیم. لطفا برای از سرگیری امضا دستورالعمل‌های زیر را دنبال کنید."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "عبارت بازیابی اشتباه است. دوباره امتحان کنید یا از شیوه دیگری برای بازیابی استفاده کنید."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "کد تایید اشتباه است. لطفا اطمینان حاصل کنید که کد تایید را به‌درستی روگرفت کرده و دوباره امتحان کنید. ممکن است 24 ساعت طول بکشد تا تغییرات اعمال شود."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "شما از همه نشانی‌ها در طرح خود استفاده کرده‌اید. لطفا برای افزودن نشانی جدید طرح خود را ارتقا دهید."
@@ -1837,11 +1876,31 @@
       "Address": [
         "نشانی"
       ],
+      "Domain": [
+        "دامنه"
+      ],
       "Status": [
         "وضعیت"
       ],
       "Username": [
         "نام کاربری"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "نام میزبان"
+      ],
+      "Priority": [
+        "اولويت"
+      ],
+      "Type": [
+        "نوع"
+      ],
+      "Value / Data": [
+        "ارزش / داده"
+      ],
+      "Value / Data / Points to": [
+        "مقدار / داده / اشاره می‌کند به"
       ]
     },
     "Human verification method": {
@@ -1983,11 +2042,18 @@
       "Custom email domains": [
         "دامنه های ایمیل سفارشی"
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "سایر سوابق MX را حذف کنید یا مطمئن شوید که اولویت ${ MAIL_APP_NAME } کمترین عدد است."
+      ],
       "Discover ProtectBuy logo": [
         "لوگوی Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "این گذرواژه را فراموش نکنید اگر آن را فراموش کنید، نمی‌توانید سازمان خود را مدیریت کنید."
+      ],
+      "domain used": [
+        "دامنه استفاده شد",
+        "دامنه استفاده شد"
       ],
       "Done! We sent a code to ${ destination }.": [
         "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
@@ -2069,6 +2135,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "اگر رایانامه در صندوق ورودی نمی‌بینید، لطفا پوشه هرزنامه را بررسی کنید."
+      ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "اگر یک دامنه سفارشی دارید میتوانید با ${ MAIL_APP_NAME } یک آدرس ایمیل دریافت‌کنندهٔ همه برای دریافت پیام های ارسال شده به دامنه شما اما به آدرس ایمیل اشتباهی (بطور مثال بدلیل اشتباه تایپی) تنظیم کنید."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "اگر کد هدیه دارید، آن را در زیر وارد کنید تا تخفیف شما اعمال شود."
@@ -2460,6 +2529,11 @@
         "لطفا برای راهنمایی در مورد نحوه پرداخت نقدی از طریق ${ email } با ما تماس بگیرید."
       ]
     },
+    "Info for domain modal": {
+      "Add a new user to your organization and create an address for it.": [
+        "یک کاربر جدید به سازمان خود افزوده و یک نشانی برای آن ایجاد کنید."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "شما می‌توانید یک روش پرداخت اضافه کنید تا اشتراک‌تان به طور خودکار تمدید شود. سایر روش‌های پرداخت نیز موجود است."
@@ -2664,6 +2738,9 @@
       "Do you have any suggestions for our team?": [
         "آیا برای تیم ما پیشنهادی دارید؟"
       ],
+      "Domain name": [
+        "نام دامنه"
+      ],
       "Email": [
         "رایانامه"
       ],
@@ -2841,6 +2918,11 @@
         "شماره تلفن بازیابی"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "دامنه‌ای را که متعلق به شماست به حساب ${ MAIL_APP_NAME } خود اضافه کنید."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "مدیر"
@@ -2858,6 +2940,17 @@
       ],
       "Daily email notifications": [
         "اعلان‌های رایانامه‌ای روزانه"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "نشانی‌ها"
+      ],
+      "Domain": [
+        "دامنه"
+      ],
+      "Verify": [
+        "تایید"
       ]
     },
     "Label on payment method": {
@@ -2970,6 +3063,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "دامنه سفارشی خود را به ${ BRAND_NAME } متصل کنید تا آدرس ایمیل سفارشی خود را تنظیم کنید (برای مثال you@yourcompany.com). ویزارد ما شما را در حین فرآیند راهنمایی خواهد کرد."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "مهلت دورهٔ آزمایشی رایگان شما به پایان رسیده‌است. دسترسی به حساب شما به‌زودی غیرفعال خواهد شد. ${ action }"
       ]
@@ -3477,6 +3573,11 @@
         "میتوانید بیش از یک مدیر داشته باشید. تمام مدیران میتوانند کاربران را اضافه و مدیریت کنند اما تنها مدیر اصلی بر روی صورتحساب کنترل دارند."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "مشمول با ${ plus }، ${ bundle } و ${ BRAND_NAME } برای مشاغل."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "به ویژگی‌های پیشرفته VPN دسترسی پیدا کنید"
@@ -3931,6 +4032,9 @@
       "Bug reported": [
         "اشکال گزارش شد"
       ],
+      "Catch-all address updated": [
+        "نشانی همه‌گیر بروز شد"
+      ],
       "Code sent to ${ methodTo }": [
         "کد به ${ methodTo } ارسال شد"
       ],
@@ -3942,6 +4046,12 @@
       ],
       "Display name updated": [
         "نام نمایشی بروز شد"
+      ],
+      "DMARC value copied to clipboard": [
+        "مقدار DMARC در کلیپ‌بورد کپی شد"
+      ],
+      "Domain verified": [
+        "دامنه تایید شد"
       ],
       "Email address copied to clipboard": [
         "رایانشانی به حافظه موقت روگرفت شد"
@@ -3997,6 +4107,9 @@
       "Preference saved": [
         "تنظیمات ذخیره شد"
       ],
+      "SPF value copied to clipboard": [
+        "مقدار SPF در کلیپ‌بورد کپی شد"
+      ],
       "User created": [
         "کاربر ایجاد شد"
       ],
@@ -4005,6 +4118,12 @@
       ],
       "Username copied to clipboard": [
         "یوزرنیم در کلیپ بورد کپی شد."
+      ],
+      "Value copied to clipboard": [
+        "مقدار به حافظه موقت روگرفت شد"
+      ],
+      "Verification code copied to clipboard": [
+        "کد تأیید در کلیپ بورد کپی شد"
       ],
       "Verification successful": [
         "تایید با موفقیت بود"
@@ -4058,6 +4177,11 @@
     "Suffix for price": {
       "per month": [
         "در ماه"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "نشانی‌ها"
       ]
     },
     "Tab subscription modal": {
@@ -4142,6 +4266,9 @@
       "Add credits": [
         "افزودن اعتبار"
       ],
+      "Add domain": [
+        "افزودن دامنه"
+      ],
       "Add PayPal payment method": [
         "افزودن روش پرداخت با PayPal"
       ],
@@ -4165,6 +4292,9 @@
       ],
       "Card verification": [
         "تایید کارت"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Catch-all address": [
         "نشانی دریافت-همه"
@@ -4255,6 +4385,9 @@
       ],
       "Edit display name": [
         "ویرایش نام نمایشی"
+      ],
+      "Edit domain": [
+        "ویرایش دامنه"
       ],
       "Edit email address": [
         "ویرایش رایانشانی"
@@ -4459,6 +4592,17 @@
         "صورتحساب ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "نشانی"
+      ],
+      "Catch-All": [
+        "همه‌گیر"
+      ],
+      "Status": [
+        "وضعیت"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "نشانی‌ها"
@@ -4476,6 +4620,15 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "ما مشکلی در پیکربندی DNS شما پیدا کردیم. لطفا اطمینان حاصل کنید که سوابق شما با دستورالعمل‌های زیر مطابقت دارد. اگر مشکل همچنان ادامه داشته باشد، باید سیستم DKIM را خاموش کنیم."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "ما به دلیل مشکل در پیکربندی DNS شما، امضای DKIM را متوقف کردیم. لطفا برای از سرگیری امضا دستورالعمل‌های زیر را دنبال کنید."
+      ],
+      "Your DKIM signing is working.": [
+        "امضای DKIM شما کار می‌کند."
       ]
     },
     "Tor out of date": {
@@ -4568,8 +4721,16 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "متاسفانه درحال حاضر آنلاین نیستیم. اطفا فرم ذیل را برای توضیح مشل خود پر کنید، ما آنرا بررسی کردن و هنگامی که آنلاین شدیم با شما تماس خواهیم گرفت."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "ما مشکلی در پیکربندی DNS شما پیدا کردیم. لطفا اطمینان حاصل کنید که سوابق شما با دستورالعمل‌های زیر مطابقت دارد. اگر مشکل همچنان ادامه داشته باشد، باید سیستم DKIM را خاموش کنیم."
+      ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "دورهٔ آزمایشی رایگان شما در ${ textDate } به پایان می‌رسد. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "پس از تایید موفقیت آمیز، این سابقه TXT را حذف نکنید زیرا برای تایید ادامه مالکیت دامنه لازم است."
       ]
     }
   }

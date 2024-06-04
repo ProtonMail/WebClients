@@ -239,6 +239,9 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "Forgot recovery method?": [
+        "Oblideu el mètode de recuperació?"
+      ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
@@ -356,6 +359,9 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
+      "Refresh status": [
+        "Refresca l'estat"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -413,6 +419,9 @@
       "Return to sign in": [
         "Tornar a l'inici de sessió"
       ],
+      "Review": [
+        "Revisa"
+      ],
       "Revoke": [
         "Revoca"
       ],
@@ -466,6 +475,9 @@
       ],
       "Send reminder": [
         "Envia un recordatori"
+      ],
+      "Set catch-all": [
+        "Configura l'adreça d'arreplega"
       ],
       "Set new password": [
         "Estableix una nova contrasenya"
@@ -706,6 +718,9 @@
       "Browse the web privately and block ads": [
         "Navegueu pel web de manera privada i bloquegeu els anuncis"
       ],
+      "Create and collaborate on documents securely": [
+        "Creï i col·labori en documents de manera segura"
+      ],
       "Keep your schedule private": [
         "Manteniu la vostra agenda privada"
       ],
@@ -717,6 +732,17 @@
       ],
       "Secure your communications": [
         "Protegiu les vostres comunicacions"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Desactivat"
+      ],
+      "Enabled": [
+        "Activat"
+      ],
+      "Missing keys": [
+        "Falten claus"
       ]
     },
     "bf2023: Action": {
@@ -1892,6 +1918,14 @@
         "Heu assolit el límit d'eliminació d'adreces per a aquest usuari."
       ]
     },
+    "Delete domain prompt": {
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete domain?": [
+        "Voleu eliminar el domini?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -1908,6 +1942,16 @@
       ],
       "Disable address?": [
         "Voleu desactivar l'adreça?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verificat"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Els subdominis \"www\" normalment no s'utilitzen per enviar missatges de correu electrònic. Està segur que vol utilitzar aquest valor de domini?"
       ]
     },
     "Downgrade account reason": {
@@ -1939,7 +1983,7 @@
         "Característiques que falten"
       ],
       "Other reason (please comment)": [
-        "Un altre motiu (comenteu)"
+        "Una altra raó (comenteu)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -2010,7 +2054,7 @@
         "Quantitat per sobre del màxim."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Import inferior al mínim (${ minimumAmount })."
+        "L'import és inferior al mínim (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -2192,8 +2236,17 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "No s'ha pogut realitzar la verificació. Intenteu-ho de nou d'aquí a una hora."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Codi de verificació erroni. Assegureu-vos que heu copiat el codi de verificació correctament i intenteu-ho de nou. Els canvis poden trigar fins a 24 hores a produir-se."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
@@ -2797,11 +2850,31 @@
       "Address": [
         "Adreça"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Status": [
         "Estat"
       ],
       "Username": [
         "Nom d'usuari"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Nom del servidor"
+      ],
+      "Priority": [
+        "Prioritat"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Value / Data": [
+        "Valor / Dades"
+      ],
+      "Value / Data / Points to": [
+        "Valor / Dades / Punts a"
       ]
     },
     "Headline": {
@@ -2843,6 +2916,9 @@
         "${ n } adreça",
         "${ n } adreces"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: no posar en quarantena ni rebutjar correus electrònics no autoritzats. Normalment, la gent només utilitza aquesta política per solucionar problemes o fer proves."
+      ],
       "${ number } city": [
         "${ number } ciutat",
         "${ number } ciutats"
@@ -2853,6 +2929,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: demanar a les plataformes destinatàries que marquin els correus electrònics no autoritzats com a correu brossa o els posin en quarantena."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: demanar a les plataformes destinatàries que rebutgin els correus electrònics no autoritzats."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } més",
@@ -3000,6 +3082,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Abans de poder rebre correus electrònics per a les vostres adreces de domini personalitzat a ${ MAIL_APP_NAME }, heu d'afegir els dos registres MX següents a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat). Podeu trobar un exemple i alguns consells útils ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
       ],
@@ -3069,8 +3154,17 @@
       "dedicated servers": [
         "servidors dedicats"
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM permet a ${ BRAND_NAME } signar criptogràficament els vostres correus electrònics i evitar que els atacants modifiquin el vostre correu electrònic. Assegureu-vos d'afegir els següents tres registres CNAME a la vostra consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del vostre domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel vostre. La \"p=\" (política) d'aquest registre indica com voleu que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Assegureu-vos d'afegir el següent registre TXT a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat)."
       ],
       "DNS TXT record": [
         "Registre DNS TXT"
@@ -3083,6 +3177,10 @@
       ],
       "Domain ownership verified.": [
         "S'ha verificat la propietat del domini."
+      ],
+      "domain used": [
+        "domini utilitzat",
+        "dominis utilitzats"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Fet! Hem enviat un codi a ${ destination }."
@@ -3165,6 +3263,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduïu el vostre número de telèfon de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
+      "Example: ${ spfExample }": [
+        "Exemple: ${ spfExample }"
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -3179,6 +3280,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Per a membres d'organitzacions que utilitzen un inici de sessió únic (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -3210,6 +3314,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Si teniu un domini personalitzat amb ${ MAIL_APP_NAME }, podeu configurar una adreça d'arreplega per a rebre els missatges enviats al vostre domini, però a una adreça de correu no vàlida (p. ex., a causa d'errors tipogràfics)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si teniu un codi regal, introduïu-lo a sota per aplicar el vostre descompte."
       ],
@@ -3236,6 +3343,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANT: Si la vostra consola DNS no permet que els valors de CNAME acabin amb un punt, podeu esborrar el darrer punt dels valors de CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
@@ -3308,6 +3418,9 @@
       ],
       "Loading...": [
         "S'està carregant..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Els principals serveis de correu electrònic poden rebutjar o filtrar els vostres correus electrònics al correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
@@ -3772,7 +3885,7 @@
         "Versió ${ version }"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat al porta-retalls"
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -3997,6 +4110,11 @@
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      ]
+    },
+    "Info for domain modal": {
+      "Add a new user to your organization and create an address for it.": [
+        "Afegiu un usuari nou a la vostra organització i creeu-ne una adreça."
       ]
     },
     "Info for payment methods": {
@@ -4254,6 +4372,9 @@
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
       ],
+      "Domain name": [
+        "Nom de domini"
+      ],
       "e.g. example.com": [
         "p. ex. exemple.com"
       ],
@@ -4401,6 +4522,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "La frase consta de 12 paraules úniques en un ordre específic"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Afegiu els 3 registres CNAME següents. Nota: els registres DNS poden trigar diverses hores a actualitzar-se."
+      ],
       "Please share any feedback to help us improve.": [
         "Compartiu qualsevol comentari per a ajudar-nos a millorar."
       ],
@@ -4506,6 +4630,11 @@
         "Número de telèfon de recuperació"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Afegeixi un domini propi al seu compte de ${ MAIL_APP_NAME }."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -4550,6 +4679,17 @@
       ],
       "Daily email notifications": [
         "Notificacions diàries per correu electrònic"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adreces"
+      ],
+      "Domain": [
+        "Domini"
+      ],
+      "Verify": [
+        "Verifica"
       ]
     },
     "Label on payment method": {
@@ -4601,6 +4741,9 @@
       ],
       "Help translate": [
         "Ajudeu a traduir"
+      ],
+      "here": [
+        "aquí"
       ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
@@ -4776,6 +4919,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
       ]
@@ -5143,7 +5289,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Comprovacions periòdiques de la seguretat del seu compte. L'avisem si té contrasenyes febles o reutilitzades que cal actualitzar."
+        "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -5269,7 +5415,7 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escanegem la web fosca per comprovar si les seves adreces o àlies de ${ BRAND_NAME } s'han filtrat i l'avisem immediatament si trobem alguna cosa."
+        "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
     "new_plans: feature info": {
@@ -5612,6 +5758,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inclòs en ${ plus }, ${ bundle } i ${ BRAND_NAME } per a empreses."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Inclòs amb diversos usuaris en els plans ${ BRAND_NAME } per a empreses"
       ]
@@ -6097,6 +6246,9 @@
       ],
       "Select state": [
         "Seleccioneu l'estat"
+      ],
+      "yourdomain.com": [
+        "elteudomini.com"
       ]
     },
     "plan customizer, ips": {
@@ -7032,6 +7184,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
@@ -7195,6 +7351,9 @@
       "Bug reported": [
         "Error notificat"
       ],
+      "Catch-all address updated": [
+        "S'ha actualitzat l'adreça d'arreplega"
+      ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
       ],
@@ -7206,6 +7365,12 @@
       ],
       "Display name updated": [
         "S'ha actualitzat el nom a mostrar"
+      ],
+      "DMARC value copied to clipboard": [
+        "Valor DMARC copiat al portaretalls"
+      ],
+      "Domain verified": [
+        "Domini verificat"
       ],
       "Email address copied to clipboard": [
         "Correu electronic copiat al porta-retalls"
@@ -7267,6 +7432,9 @@
       "Preference saved": [
         "S'ha desat la preferència."
       ],
+      "SPF value copied to clipboard": [
+        "Valor SPF copiat al portaretalls"
+      ],
       "User created": [
         "S'ha creat l'usuari"
       ],
@@ -7275,6 +7443,12 @@
       ],
       "Username copied to clipboard": [
         "S'ha copiat el nom d'usuari al porta-retalls."
+      ],
+      "Value copied to clipboard": [
+        "Valor copiat al portaretalls"
+      ],
+      "Verification code copied to clipboard": [
+        "Codi de verificació copiat al porta-retalls"
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -7348,6 +7522,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adreces"
       ]
     },
     "Tab subscription modal": {
@@ -7456,6 +7635,9 @@
       "Add credits": [
         "Afegir crèdits"
       ],
+      "Add domain": [
+        "Afegir domini"
+      ],
       "Add new user": [
         "Afegeix un usuari"
       ],
@@ -7506,6 +7688,9 @@
       ],
       "Card verification": [
         "Verificació de la targeta"
+      ],
+      "Catch-All address": [
+        "Adreça d'arreplega"
       ],
       "Catch-all address": [
         "Adreça d'arreplega"
@@ -7637,6 +7822,9 @@
       ],
       "Edit display name": [
         "Edita el nom per a mostrar"
+      ],
+      "Edit domain": [
+        "Edita el domini"
       ],
       "Edit email address": [
         "Edita l'adreça de correu electrònic"
@@ -7962,6 +8150,17 @@
         "Factura de ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adreça"
+      ],
+      "Catch-All": [
+        "Adreça d'arreplega"
+      ],
+      "Status": [
+        "Estat"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adreces"
@@ -8017,6 +8216,15 @@
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
+      "Your DKIM signing is working.": [
+        "La vostra signatura DKIM està funcionant."
       ]
     },
     "Tor out of date": {
@@ -8194,11 +8402,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Heu de ${ activateLink } la clau de l'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Després de la verificació, no esborreu aquest registre TXT, ja que cal confirmar que continueu posseint el domini."
       ]
     }
   }
