@@ -474,6 +474,9 @@
       "Manage link": [
         "Gerenciar link"
       ],
+      "Manage share": [
+        "Gerenciar compartilhamentos"
+      ],
       "Mark as resolved": [
         "Marcar como resolvido"
       ],
@@ -1196,6 +1199,11 @@
       ],
       "Continue your subscription": [
         "Continuar sua assinatura"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Reativar assinatura"
       ]
     },
     "Checkout row": {
@@ -2627,9 +2635,6 @@
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Não é uma conta da ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -5693,6 +5698,12 @@
       "Main": [
         "Principal"
       ],
+      "Make editor": [
+        "Tornar editor"
+      ],
+      "Make viewer": [
+        "Tornar visualizador"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -5797,9 +5808,6 @@
       ],
       "Region": [
         "Estado"
-      ],
-      "Remove access": [
-        "Remover o acesso"
       ],
       "Replace existing file": [
         "Substituir pasta existente"
@@ -6934,6 +6942,11 @@
         "Mudar de plano?"
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
@@ -7324,6 +7337,9 @@
       "Encrypted search activated": [
         "Pesquisa criptografada ativada"
       ],
+      "External invitation removed from the share": [
+        "Convite externo removido dos compartilhados"
+      ],
       "Failed to accept share invitation": [
         "Falha ao aceitar convite de compartilhamento"
       ],
@@ -7381,9 +7397,6 @@
       ],
       "Share invitation accepted successfully": [
         "Convite de compartilhamento aceito com sucesso"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "O ID do convite de compartilhamento não foi encontrado. Por favor, verifique o link"
       ],
       "Stopping to share this item has failed": [
         "Falha ao parar de compartilhar este item"
@@ -7541,11 +7554,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -8297,6 +8316,14 @@
         "Cancelando sua assinatura, aguarde"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Aceitado"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Obter mais armazenamento"
@@ -8473,6 +8500,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
@@ -8535,6 +8566,9 @@
       ],
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Como reagimos quando a ${ BRAND_NAME } foi alvo de uma campanha agressiva de censura."

@@ -474,6 +474,9 @@
       "Manage link": [
         "Håndter link"
       ],
+      "Manage share": [
+        "Håndter deling"
+      ],
       "Mark as resolved": [
         "Markér som løst"
       ],
@@ -2539,6 +2542,15 @@
       "External accounts are not supported yet": [
         "Eksterne konti understøttes ikke endnu"
       ],
+      "External invitations are not available yet.": [
+        "Eksterne invitationer er ikke mulige endnu."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Eksterne invitationer er midlertidigt deaktiveret."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Eksterne invitationer er midlertidigt deaktiveret. Prøv igen senere."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
@@ -2635,9 +2647,6 @@
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Ikke en ${ BRAND_NAME }-konto"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
@@ -2754,6 +2763,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Invitationen kan ikke færdiggøres endnu. Prøv igen senere."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Invitationen eksisterer ikke længere"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -2819,6 +2834,9 @@
       ],
       "Unknown payment token status": [
         "Ukendt betalingstokens status"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Overførsel til denne mappe er midlertidigt deaktiveret"
       ],
       "Username must begin with a letter or digit": [
         "Brugernavn skal begynde med et bogstav eller ciffer"
@@ -5686,6 +5704,12 @@
       "Main": [
         "Hjem"
       ],
+      "Make editor": [
+        "Gør til redaktør"
+      ],
+      "Make viewer": [
+        "Gør til seer"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -5790,9 +5814,6 @@
       ],
       "Region": [
         "Område"
-      ],
-      "Remove access": [
-        "Fjern adgang"
       ],
       "Replace existing file": [
         "Erstat eksisterende fil"
@@ -7293,6 +7314,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
       ],
+      "An invitation has been sent": [
+        "En invitation er blevet sendt"
+      ],
       "Cannot load link": [
         "Link kunne ikke indlæses"
       ],
@@ -7320,8 +7344,14 @@
       "Encrypted search activated": [
         "Krypteret søgning aktiveret"
       ],
+      "External invitation removed from the share": [
+        "Ekstern invitation er fjernet fra delingen"
+      ],
       "Failed to accept share invitation": [
         "Kunne ikke acceptere invitation til at dele"
+      ],
+      "Failed to convert external invitation": [
+        "Ekstern invitation kunne ikke konverteres"
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
@@ -7377,9 +7407,6 @@
       ],
       "Share invitation accepted successfully": [
         "Del-invitation accepteret"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Delings-invitation-ID blev ikke fundet. Tjek linket"
       ],
       "Stopping to share this item has failed": [
         "Det lykkedes ikke at stoppe med at dele dette element"
@@ -8299,6 +8326,14 @@
         "Opsiger dit abonnement, vent venligst"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Accepteret"
+      ],
+      "Pending": [
+        "Afventer"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Få mere lagerplads"
@@ -8478,6 +8513,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } herunder kalenderdeling"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag tilbage",
+        "${ dayDiff } dage tilbage"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inklusive versionshistorik"
       ],
@@ -8526,8 +8565,8 @@
       "Add any new files": [
         "Tilføje nye filer"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Når dit abonnement på ${ planName } udløber, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Du mister også alle tidligere tildelte lagerbonusser. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Når dit ${ planName }-abonnement udløber, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Når dit abonnement på ${ planName } udløber, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 5 GB Drive-lagerplads og op til 1 GB Mail-lagerplads. Du mister også alle tidligere tildelte lagerbonusser."
@@ -8622,8 +8661,20 @@
       "What you give up when you cancel ${ planName }": [
         "Dette frasiger du dig, når du opsiger ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du opsiger ${ planName }, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du opsiger ${ planName }, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 5 GB Drive-lagerplads og op til 1 GB Mail-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
+      ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagerbonusser"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "På dit ${ planName }-abonnement gælder udløbsdato ${ expiryDate }stadig. Vi indsætter pengene for den resterende tid på din ${ BRAND_NAME }-konto. Sørg for at overholde grænserne for den gratis pakke før opsigelsen. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "På dit ${ planName }-abonnement gælder udløbsdato ${ expiryDate }stadig. Vi indsætter pengene for den resterende tid på din ${ BRAND_NAME }-konto. Sørg for at overholde grænserne for den gratis pakke før opsigelsen. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Dit abonnement på ${ planName } udløber den ${ expiryDate }. Efter det vil du være på ${ BRAND_NAME } Free-abonnement. Hvis forbruget overskrider Free-abonnementets grænser, kan adgangen til produktfunktioner og data blive begrænset. ${ learnMoreLink }"
@@ -9642,6 +9693,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Vi har sendt dem en invitation til at tilgå emnet."
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
