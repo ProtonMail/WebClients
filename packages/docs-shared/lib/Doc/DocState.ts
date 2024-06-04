@@ -6,12 +6,12 @@ import * as syncProtocol from 'y-protocols/sync'
 import * as Y from 'yjs'
 import * as awarenessProtocol from 'y-protocols/awareness'
 import { DocsAwareness } from './DocsAwareness'
-import { Logger, LoggerInterface } from '@standardnotes/utils'
 import { DocStateInterface } from './DocStateInterface'
 import { DocStateCallbacks } from './DocStateCallbacks'
 import { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 
 export enum DocUpdateOrigin {
   DocState = 'DocState',
@@ -26,7 +26,6 @@ export class DocState extends Observable<string> implements DocStateInterface {
   public canBeEditable = false
 
   private resyncInterval: ReturnType<typeof setInterval> | null = null
-  private readonly logger: LoggerInterface
   private isEditorReady = false
   private messageQueue: RtsMessagePayload[] = []
 
@@ -37,18 +36,16 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.doc.on('update', this.handleDocBeingUpdatedByLexical)
 
     this.awareness = new DocsAwareness(this.doc)
-    this.awareness.on('update', this.handleAwarenessBeingUpdatedByLexical)
-    this.awareness.on('change', this.handleAwarenessChangeByUnknownSource)
-
-    this.logger = new Logger('DocState')
+    this.awareness.on('update', this.handleAwarenessUpdateOrChange)
+    this.awareness.on('change', this.handleAwarenessUpdateOrChange)
 
     window.addEventListener('unload', this.handleWindowUnloadEvent)
   }
 
   destroy(): void {
     this.doc.off('update', this.handleDocBeingUpdatedByLexical)
-    this.awareness.off('update', this.handleAwarenessBeingUpdatedByLexical)
-    this.awareness.off('change', this.handleAwarenessChangeByUnknownSource)
+    this.awareness.off('update', this.handleAwarenessUpdateOrChange)
+    this.awareness.off('change', this.handleAwarenessUpdateOrChange)
     window.removeEventListener('unload', this.handleWindowUnloadEvent)
     if (this.resyncInterval) {
       clearInterval(this.resyncInterval)
@@ -64,6 +61,13 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   public performOpeningCeremony(): void {
+    const message: RtsMessagePayload = {
+      type: { wrapper: 'events', eventType: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState },
+      content: stringToUint8Array(JSON.stringify(true)),
+    }
+
+    void this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness - On WS Open')
+
     this.broadcastInitialAwarenessState()
   }
 
@@ -107,15 +111,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     if (message.type.wrapper === 'du') {
       this.handleRawSyncMessage(message.content, message.origin)
     } else if (message.type.wrapper === 'events') {
-      if (
-        [
-          EventTypeEnum.ClientHasDetectedAPresenceChange,
-          EventTypeEnum.ClientIsBroadcastingItsPresenceState,
-          EventTypeEnum.PresenceChangeBlurredDocument,
-          EventTypeEnum.PresenceChangeEnteredDocument,
-          EventTypeEnum.PresenceChangeExitedDocument,
-        ].includes(message.type.eventType)
-      ) {
+      if (message.type.eventType === EventTypeEnum.ClientIsBroadcastingItsPresenceState) {
         awarenessProtocol.applyAwarenessUpdate(this.awareness, message.content, this)
       } else {
         throw new Error(`Unable to handle message type: ${message.type}`)
@@ -130,10 +126,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   private broadcastInitialAwarenessState(): void {
-    const message = this.createChangedClientsAwarenessMessage(
+    const message = this.createAwarenessUpdateMessage(
       Array.from(this.awareness.getStates().keys()),
-      EventTypeEnum.PresenceChangeEnteredDocument,
+      EventTypeEnum.ClientIsBroadcastingItsPresenceState,
     )
+
     void this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness - On WS Open')
   }
 
@@ -142,20 +139,19 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.awareness.setLocalState(null)
   }
 
-  private handleAwarenessChangeByUnknownSource = () => {
-    const values = Array.from(this.awareness.getStates().values())
-    this.logger.debug('Awareness on change | States:', values)
-
-    for (const state of values) {
-      const statePreviousClientId = state.awarenessData.previousClientId
-      const isClientConnected = this.awareness.states.has(statePreviousClientId)
-      if (statePreviousClientId && !isClientConnected) {
-        this.logger.debug('Removing awareness state for client:', parseInt(statePreviousClientId))
-        awarenessProtocol.removeAwarenessStates(this.awareness, [parseInt(statePreviousClientId)], this)
-      }
-    }
-
+  /**
+   * Based on the yjs source code, an `update` event is triggered regardless of whether during an event the result
+   * resulted in a change, and a `change` event is triggered only when the result of the event resulted in a change.
+   */
+  private handleAwarenessUpdateOrChange = () => {
     this.callbacks.handleAwarenessStateUpdate(Array.from(this.awareness.getStates().values()))
+
+    const message = this.createAwarenessUpdateMessage(
+      this.awareness.getClientIds(),
+      EventTypeEnum.ClientIsBroadcastingItsPresenceState,
+    )
+
+    this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness Update Handler')
   }
 
   private handleDocBeingUpdatedByLexical = (update: Uint8Array, origin: any) => {
@@ -171,33 +167,14 @@ export class DocState extends Observable<string> implements DocStateInterface {
     )
   }
 
-  private handleAwarenessBeingUpdatedByLexical = (
-    update: { added: number[]; updated: number[]; removed: number[] },
-    origin: any,
-  ) => {
-    if (origin === this) {
-      return
-    }
-
-    const messageType = update.removed.includes(this.doc.clientID)
-      ? EventTypeEnum.PresenceChangeExitedDocument
-      : EventTypeEnum.ClientHasDetectedAPresenceChange
-
-    const changedClients = update.added.concat(update.updated).concat(update.removed)
-    const message = this.createChangedClientsAwarenessMessage(changedClients, messageType)
-
-    this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness Update Handler')
-    this.callbacks.handleAwarenessStateUpdate(Array.from(this.awareness.getStates().values()))
-  }
-
-  private createChangedClientsAwarenessMessage(
-    changedClients: number[],
+  private createAwarenessUpdateMessage(
+    clients: number[],
     messageType: EventTypeEnum,
     states?: Map<number, any>,
   ): RtsMessagePayload {
     return {
       type: { wrapper: 'events', eventType: messageType },
-      content: awarenessProtocol.encodeAwarenessUpdate(this.awareness, changedClients, states),
+      content: awarenessProtocol.encodeAwarenessUpdate(this.awareness, clients, states),
     }
   }
 
@@ -219,7 +196,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   broadcastPresenceState() {
     this.awareness.refreshPresenceState(0)
 
-    const message = this.createChangedClientsAwarenessMessage(
+    const message = this.createAwarenessUpdateMessage(
       Array.from(this.awareness.getStates().keys()),
       EventTypeEnum.ClientIsBroadcastingItsPresenceState,
     )
@@ -227,7 +204,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      'Awareness - On RequestPresenceState',
+      'DocState | broadcastPresenceState',
     )
   }
 }
