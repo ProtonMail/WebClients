@@ -188,6 +188,9 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Copy version number to clipboard": [
+        "ვერსიის ნომრის კოპირება ბუფერში"
+      ],
       "Create": [
         "შექმნა"
       ],
@@ -615,6 +618,9 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
+      ],
+      "Resend invite": [
+        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
@@ -2230,6 +2236,15 @@
       "I found a cheaper VPN": [
         "ვიპოვე უფრო იაფი VPN"
       ],
+      "I found a VPN with better features": [
+        "მე უკეთესი ფუნქციების მქონე VPN ვიპოვე"
+      ],
+      "I have not managed to connect": [
+        "მე ვერ მიევუერთდი"
+      ],
+      "I only needed a VPN short-term": [
+        "მე VPN, მხოლოდ, ცოტა ხნით მჭირდება"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
       ],
@@ -2238,6 +2253,9 @@
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
+      ],
+      "Other reason (please comment)": [
+        "სხვა მიზეზი (დაწერეთ კომენტარებში)"
       ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
@@ -2482,6 +2500,9 @@
       "Error decrypting a computer": [
         "კომპიუტერის გაშიფვრის შეცდომა"
       ],
+      "External accounts are not supported yet": [
+        "გარე ანგარიშები ჯერ მხარდაჭერილი არაა"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
       ],
@@ -2578,9 +2599,6 @@
       ],
       "No valid address found": [
         "სწორი მისამართები ნაპოვნი არაა"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "არა-${ BRAND_NAME }-ის ანგარიში"
       ],
       "Not a valid number": [
         "არასწორი ნომერი"
@@ -4310,6 +4328,9 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "Invite link copied": [
+        "მოსაწვევის ბმული დაკოპირდა"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "როგორ ჩანს, ახლახან ${ uploadName }-ის ატვირთვა სცადეთ. თუ ატვირთვა წარუმატებლად დასრულდა, გთხოვთ ${ replaceFile }. თუ ატვირთვა ჯერ კიდევ მიმდინარეობს, მისი ჩანაცვლება პროცესს გააუქმებს."
       ],
@@ -4321,6 +4342,9 @@
       ],
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
+      ],
+      "JCB logo": [
+        "JCB ლოგო"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -4494,6 +4518,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
+      ],
+      "People with access": [
+        "ხალხი, რომელსაც აქვს წვდომა"
       ],
       "Permanently delete all files in your locked drive": [
         "თქვენს დაბლოკილ დისკზე ყველა ფაილის სამუდამოდ წაშლა"
@@ -4769,6 +4796,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
+      ],
+      "There is nothing to see here": [
+        "აქ არაფერია სანახავი"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -5097,6 +5127,9 @@
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
+      ],
+      "You will not be able to join again after.": [
+        "თავიდან ვერ შეუერთდებით."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
@@ -5680,14 +5713,14 @@
       "Public keys": [
         "საჯარო გასაღებები"
       ],
+      "Public link expiration date": [
+        "საჯარო ბმულის ვადის ამოწურვის თარიღი"
+      ],
       "Public link password": [
         "საჯარო ბმულის პაროლი"
       ],
       "Region": [
         "რაიონი"
-      ],
-      "Remove access": [
-        "წვდომის გაუქმება"
       ],
       "Replace existing file": [
         "არსებული ფაილის ჩანაცვლება"
@@ -6548,8 +6581,14 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ფასიანი ფუნქციები"
+      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
+      ],
+      "Password health": [
+        "პაროლის სიძლიერე"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -6623,6 +6662,9 @@
       ],
       "Unlimited devices": [
         "მოწყობილობების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited devices and aliases": [
+        "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
       ],
       "Unlimited filters": [
         "ფილტრების ულიმიტო რაოდენობა"
@@ -7155,6 +7197,12 @@
       "${ reason } has been enabled": [
         "${ reason } ჩაირთო"
       ],
+      "Access for the member removed": [
+        "წვდომა ამ წევრისთვის წაიშალა"
+      ],
+      "Access updated": [
+        "წვდომა განახლდა"
+      ],
       "Access updated and shared": [
         "წვდომა განახლებული და გაზიარებულია"
       ],
@@ -7219,6 +7267,9 @@
       "File removed": [
         "ფაილი წაიშალა"
       ],
+      "Invitation email was sent again": [
+        "მოსაწვევი ელფოსტა კიდევ გამოგეგზავნათ"
+      ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
@@ -7243,8 +7294,8 @@
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
       ],
-      "Share invitation ID was not found. Please check the link": [
-        "ზიარის მოსაწვევის ID ვერ ვიპოვე. გადაამოწმეთ ბმული"
+      "Stopping to share this item has failed": [
+        "ამ ელემენტის გაზიარების გაჩერება ცავარდა"
       ],
       "Subfolder failed to be loaded": [
         "ქვესაქაღალდის ჩატვირთვის შეცდომა"
@@ -7263,6 +7314,9 @@
       ],
       "Trash failed to be emptied": [
         "ნაგვის ყუთის გასუფთავების შეცდომა"
+      ],
+      "You stopped sharing this item": [
+        "თქვენ შეწყვიტეთ ამ ელემენტის გაზიარება"
       ],
       "Your old files will be deleted in 72 hours": [
         "თქვენი ძველი ფაილები 72 საათში წაიშლება"
@@ -7384,6 +7438,13 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "უსაფრთხო გაზიარება ${ n } საცავთან",
+        "უსაფრთხო გაზიარება ${ n } საცავთან"
+      ],
+      "Secure sharing with multiple vaults": [
+        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ]
@@ -8112,6 +8173,11 @@
         "შეგიძლიათ იოლად და უსაფრთხოდ მოძებნოთ ფაილები დრაივზე."
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "მიიღეთ მეტი საცავი"
@@ -8285,6 +8351,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -8300,11 +8370,17 @@
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Helping activists in Hong Kong": [
+        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
       "Keep ${ planName }": [
         "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Our fight against censorship in Russia": [
+        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -8312,16 +8388,37 @@
       "Read the story": [
         "ისტორიის წაკითხვა"
       ],
+      "Unblocking internet access in Iran": [
+        "ინტერნეტთან წვდომის განბლოკვა ირანში"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ],
+      "Yearly free storage bonuses": [
+        "წლიური უფასო საცავის ბონუსები"
+      ],
+      "Your own custom email domain": [
+        "თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Your own short @pm.me email alias": [
+        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -8343,6 +8440,9 @@
       ],
       "We don't sell your data": [
         "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -8457,6 +8557,9 @@
       ],
       "Recovery has started": [
         "აღდგენა დაიწყო"
+      ],
+      "Secure link copied": [
+        "დაცული ბმული დაკოპირდა"
       ],
       "The link to your file was successfully copied": [
         "თქვენი ფაილის ბმული წარმატებით დაკოპირდა"
@@ -8662,6 +8765,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "მართლა გნებავთ, მიატოვოთ ეს ზიარი?"
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"

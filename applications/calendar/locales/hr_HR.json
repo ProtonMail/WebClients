@@ -65,6 +65,9 @@
       "Cancel": [
         "Poništi"
       ],
+      "Cancel subscription": [
+        "Otkaži pretplatu"
+      ],
       "Chat with us": [
         "Razgovarajte s nama"
       ],
@@ -278,6 +281,9 @@
       ],
       "Join calendar": [
         "Pridružite se kalendaru"
+      ],
+      "Keep my Plus subscription": [
+        "Zadrži Plus pretplatu"
       ],
       "Later": [
         "Kasnije"
@@ -709,6 +715,9 @@
         "${ n } mjesec",
         "${ n } mjeseca",
         "${ n } mjeseci"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Automatski se obnavlja za ${ renewPrice }, na${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2480,6 +2489,11 @@
         "(bez naslova)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB prostora za pohranu"
+      ]
+    },
     "familyOffer_2023:Action": {
       "Got it": [
         "Shvaćam"
@@ -4206,6 +4220,9 @@
       ],
       "Unlimited messages per day": [
         "Neograničen broj poruka dnevno"
+      ],
+      "Up to 3 TB of storage": [
+        "Do 3 TB prostora za pohranu"
       ]
     },
     "new_plans: heading": {
@@ -4216,6 +4233,9 @@
     "new_plans: info": {
       "Popular": [
         "Popularno"
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Zaštitite privatnost svoje obitelji sa svim ${ BRAND_NAME } uslugama zajedno."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sigurna e-pošta s naprednim značajkama za svakodnevnu komunikaciju."
@@ -4933,6 +4953,9 @@
     "Subscription change warning": {
       "Got it": [
         "Razumijem"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
     "Subscription price": {
@@ -4946,6 +4969,11 @@
       ],
       "Priority support": [
         "Prioritetna podrška"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
       ]
     },
     "Subscription renewal state": {
@@ -5279,6 +5307,9 @@
       ],
       "Calendar alarm": [
         "Alarm kalendara"
+      ],
+      "Cancel subscription?": [
+        "Otkazati pretplatu?"
       ],
       "Card verification": [
         "Potvrda kartice"

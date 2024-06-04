@@ -5388,14 +5388,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -7528,6 +7520,14 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -10875,9 +10875,6 @@
       "We have verified the authenticity of this sender and invitation.": [
         "हमने इस प्रेषक और निमंत्रण की प्रामाणिकता की पुष्टि की है।"
       ],
-      "You have been made administrator of the organization **${ organizationName }** by": [
-        "आपको **${ organizationName }** संगठन का प्रशासक बना दिया गया है"
-      ],
       "You must privatize all users before generating a new organization key": [
         "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
@@ -12004,6 +12001,10 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
       ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"

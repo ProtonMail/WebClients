@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
+      "Refresh status": [
+        "Status aktualisieren"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Zurück zur Anmeldung"
       ],
+      "Review": [
+        "Überprüfen"
+      ],
       "Revoke": [
         "Widerrufen"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Erinnerung senden"
+      ],
+      "Set catch-all": [
+        "Catch-All festlegen"
       ],
       "Set new password": [
         "Neues Passwort festlegen"
@@ -718,6 +727,9 @@
       "Browse the web privately and block ads": [
         "Surfe privat im Internet und blockiere Werbung"
       ],
+      "Create and collaborate on documents securely": [
+        "Sichere Erstellung und gemeinsame Bearbeitung von Dokumenten"
+      ],
       "Keep your schedule private": [
         "Halte deinen Terminplan privat"
       ],
@@ -731,6 +743,17 @@
         "Sichere deine Kommunikation"
       ]
     },
+    "Badge for domain": {
+      "Disabled": [
+        "Deaktiviert"
+      ],
+      "Enabled": [
+        "Aktiviert"
+      ],
+      "Missing keys": [
+        "Fehlende Schlüssel"
+      ]
+    },
     "bf2023: Action": {
       "Cancel": [
         "Abbrechen"
@@ -740,6 +763,9 @@
       ],
       "Get the deal": [
         "Angebot nutzen"
+      ],
+      "Save even more with a 12-month plan": [
+        "Spare noch mehr mit einem 12-Monats-Abonnement"
       ]
     },
     "bf2023: Deal details": {
@@ -1898,6 +1924,9 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Möchtest du diese Adresse wirklich löschen?"
+      ],
       "Delete address": [
         "Adresse löschen"
       ],
@@ -1906,6 +1935,12 @@
       ],
       "Delete address?": [
         "Adresse löschen?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Einmal gelöscht, kann die Adresse ${ address } von niemandem mehr verwendet werden."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Wenn du die E-Mail-Adresse ${ address } löschst, kannst du keine E-Mails mehr über diese Adresse senden oder empfangen."
       ],
       "You can only delete 1 address per year.": [
         "Du kannst jährlich nur eine Adresse löschen."
@@ -1919,6 +1954,20 @@
         "Du hast das Limit für das Löschen von Adressen für diesen Benutzer erreicht."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Möchtest du diese Domain wirklich löschen?"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete domain?": [
+        "Domain löschen?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Bitte beachte, dass beim Löschen der Domain ${ domainName } alle damit verbundenen Adressen deaktiviert werden."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Überfällige Rechnung"
@@ -1927,6 +1976,30 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Möchtest du diese Adresse wirklich deaktivieren?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Wenn du die E-Mail-Adresse ${ address } deaktivierst, kannst du keine E-Mails mehr über diese Adresse senden oder empfangen. Gleichzeitig werden dabei auch alle verknüpften ${ BRAND_NAME }-Produkte deaktiviert."
+      ],
+      "Disable address": [
+        "Adresse deaktivieren"
+      ],
+      "Disable address?": [
+        "Adresse deaktivieren?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Bestätigt"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "„www“-Subdomains werden üblicherweise nicht für E-Mail-Adressen verwendet. Möchtest du diese Art von Domain wirklich verwenden?"
       ]
     },
     "Downgrade account reason": {
@@ -1971,6 +2044,11 @@
       ],
       "The VPN is too slow": [
         "Das VPN ist zu langsam"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Hilf uns, besser zu werden"
       ]
     },
     "Email verification": {
@@ -2236,8 +2314,17 @@
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Ungültiger Bestätigungscode. Bitte stelle sicher, dass du den Bestätigungscode korrekt kopiert hast und versuche es erneut. Es kann bis zu 24 Stunden dauern, bis Änderungen wirksam werden."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
@@ -2821,6 +2908,9 @@
       "Organization key fingerprint": [
         "Fingerabdruck des Organisationsschlüssels"
       ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Spare mit den besten ${ VPN_APP_NAME }-Angeboten"
+      ],
       "Select your deal": [
         "Wähle dein Angebot"
       ],
@@ -2847,11 +2937,31 @@
       "Address": [
         "Adresse"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Status": [
         "Status"
       ],
       "Username": [
         "Benutzername"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Hostname"
+      ],
+      "Priority": [
+        "Vorrang"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Value / Data": [
+        "Wert/Daten"
+      ],
+      "Value / Data / Points to": [
+        "Wert/Daten/Zeigt auf"
       ]
     },
     "Headline": {
@@ -2901,6 +3011,9 @@
         "${ n } Adresse",
         "${ n } Adressen"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: Keine Quarantäne oder Ablehnung nicht autorisierter E-Mails. Normalerweise wird diese Richtlinie nur zum Troubleshooting oder Testen verwendet."
+      ],
       "${ number } city": [
         "${ number } Stadt",
         "${ number } Städte"
@@ -2915,6 +3028,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails als Spam zu markieren oder sie zu isolieren."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails abzulehnen."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } weitere",
@@ -3080,6 +3199,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Bevor du E-Mails für deine individuellen Domain-Adressen bei ${ MAIL_APP_NAME } empfangen kannst, musst du die folgenden beiden MX-Einträge in deiner DNS-Konsole hinzufügen (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast). Ein Beispiel und nützliche Tipps findest du unter ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
@@ -3171,12 +3293,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM ermöglicht es ${ BRAND_NAME } deine Mails kryptografisch zu signieren und schützt vor Manipulation durch Angreifer. Stelle sicher, dass du die folgenden drei CNAME-Einträge in deiner DNS-Konsole hinzufügst (findet sich auf der Plattform, wo du die individuelle Domain gekauft hast)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC prüft, ob die SPF- und DKIM-Einträge des Absenders von deiner Domain stammen. Dadurch wird verhindert, dass Angreifer eine andere Domain für SPF und DKIM verwenden, um sich als deine Domain auszugeben. Das \"p=\" (Richtlinie) in diesem Eintrag gibt an, wie die Empfängerplattformen mit nicht autorisierten E-Mails umgehen sollen. Wir empfehlen die Verwendung der \"p=quarantine\"-Richtlinie für die meisten Domains. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
       ],
       "DNS TXT record": [
         "DNS TXT-Eintrag"
@@ -3192,6 +3323,10 @@
       ],
       "Domain ownership verified.": [
         "Inhaberschaft der Domain bestätigt."
+      ],
+      "domain used": [
+        "Domain verwendet",
+        "Domains verwendet"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Fertig! Es wurde ein Code an „${ destination }“ gesendet."
@@ -3222,6 +3357,9 @@
       ],
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Jede Domain kann nur einen SPF (TXT)-Eintrag haben. Wenn du den bestehenden SPF (TXT)-Eintrag behalten möchtest, kannst du ${ spf } zu deinem aktuellen Eintrag hinzufügen (platziere es nach ${ spfValue })."
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -3286,6 +3424,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Gib jetzt deine Wiederherstellungsphrase ein, um dein Passwort zu ändern."
       ],
+      "Example: ${ spfExample }": [
+        "Beispiel: ${ spfExample }"
+      ],
       "Expired": [
         "Abgelaufen"
       ],
@@ -3300,6 +3441,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Für Mitglieder von Organisationen, die Single Sign-on (SAML SSO) verwenden."
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
       "Free forever": [
         "Für immer kostenlos"
@@ -3340,6 +3484,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Wenn du eine eigene Domain mit ${ MAIL_APP_NAME } nutzt, kannst du eine Catch-All-E-Mail-Adresse festlegen, um Nachrichten zu empfangen, die an deine Domain, aber an eine ungültige E-Mail-Adresse (z.B. aufgrund von Tippfehlern) gesendet werden."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Wenn du einen Geschenkgutschein hast, gib den Code unten ein, um deinen Rabatt einzulösen."
       ],
@@ -3362,10 +3509,13 @@
         "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffnen Sie einen ${ boldLiveChat } für Chat-Support."
+        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffne einen ${ boldLiveChat } für Chat-Support."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "WICHTIG: Falls deine DNS-Konsole nicht zulässt CNAME-Einträge mit einem Punkt abzuschließen, kannst du den letzten Punkt in den CNAME-Einträgen entfernen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
@@ -3441,6 +3591,12 @@
       ],
       "Loading...": [
         "Wird geladen..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Große E-Mail-Dienste können deine E-Mails zurückweisen oder als Spam filtern, wenn SPF/DKIM/DMARC fehlen oder nicht richtig eingerichtet sind."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Große E-Mail-Anbieter können deine E-Mails als Spam ablehnen oder filtern, wenn SPF/DKIM/DMARC-Einträge fehlen oder nicht richtig eingerichtet sind."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
@@ -3708,6 +3864,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO-Benutzer (bereitgestellt von deinem Identitätsanbieter) werden gelöscht."
       ],
@@ -3729,6 +3888,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonnement wird automatisch alle ${ cycle } Monate verlängert."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
@@ -4039,6 +4201,9 @@
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Wenn du dein aktuell bezahltes Abonnement kündigst, wird der Restbetrag deines Abonnements als Kontoguthaben zurückerstattet und du wirst auf das ${ BRAND_NAME } ${ PLANS.FREE }-Abonnement herabgestuft."
       ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
@@ -4117,10 +4282,10 @@
         "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Du hast ein Probeabonnement ${ planTitle }. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
+        "Du hast ein ${ planTitle }-Probeabonnement. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Du hast ein Probeabonnement ${ planTitle }. Zu diesem Zeitpunkt ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+        "Du hast ein ${ planTitle }-Probeabonnement. Derzeit ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
       ],
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
@@ -4219,6 +4384,17 @@
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Bitte kontaktiere uns unter ${ email } für Anweisungen, wie du unsere Rechnung mit Bargeld begleichen kannst."
+      ]
+    },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Füge für die bestehenden Benutzer deiner Organisation eine neue E-Mail-Adresse hinzu."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Füge einen neuen Benutzer deiner Organisation hinzu und erstelle für ihn eine E-Mail-Adresse."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Aus Sicherheitsgründen müssen wir überprüfen, dass du der Eigentümer von ${ domainName } bist. Füge bitte den folgenden TXT-Eintrag in deiner DNS-Konsole hinzu (befindet sich auf der Plattform, auf der du die individuelle Domain erworben hast). Ein Beispiel und nützliche Tipps findest du unter ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -4482,6 +4658,9 @@
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
       ],
+      "Domain name": [
+        "Domainname"
+      ],
       "e.g. example.com": [
         "z. B. beispiel.de"
       ],
@@ -4638,6 +4817,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Die Phrase besteht aus 12 einzigartigen Wörtern in einer bestimmten Reihenfolge."
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Bitte füge alle 3 folgenden CNAME-Einträge hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Bitte füge die folgenden beiden MX-Einträge hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
+      ],
       "Please share any feedback to help us improve.": [
         "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
       ],
@@ -4728,6 +4916,9 @@
       "What is the main reason you are deleting your account?": [
         "Was ist der Hauptgrund für die Löschung deines Kontos?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Was ist dein Hauptgrund für die Kündigung oder das Downgrade?"
+      ],
       "Why would you like to cancel?": [
         "Warum möchtest du stornieren?"
       ],
@@ -4741,6 +4932,16 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer für die Wiederherstellung"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Füge deine eigene Domain zu deinem ${ MAIL_APP_NAME }-Konto hinzu."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
       ]
     },
     "Label for new member": {
@@ -4787,6 +4988,17 @@
       ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adressen"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Verify": [
+        "Bestätigen"
       ]
     },
     "Label on payment method": {
@@ -4838,6 +5050,9 @@
       ],
       "Help translate": [
         "Beim Übersetzen helfen"
+      ],
+      "here": [
+        "hier"
       ],
       "How to pay with Bitcoin?": [
         "Wie bezahlt man mit Bitcoin?"
@@ -5016,6 +5231,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Verbinde deine eigene Domain mit ${ BRAND_NAME }, um eigene E-Mail-Adressen einzurichten (z. B. du@deinefirma.de). Unser Assistent wird dich durch den Prozess führen."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
       ]
@@ -5360,6 +5578,9 @@
       "Passkeys supported": [
         "Passkeys unterstützt"
       ],
+      "Password health": [
+        "Passwortsicherheit"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -5378,6 +5599,9 @@
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
@@ -5501,6 +5725,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
       ]
     },
     "new_plans: feature info": {
@@ -5787,6 +6014,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Schütze deine Familie vor schädlichen Websites und greife auf unsere Hochgeschwindigkeits-VPN-Server zu, um deine Lieblingsinhalte zu streamen."
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Schütze deine echte E-Mail-Adresse vor der Veröffentlichung und Verbreitung durch Datenlecks, indem du E-Mail-Aliasse (eine zufällig generierte E-Mail-Adresse, die E-Mails direkt an dein Postfach weiterleitet) verwendest."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Bietet ein Höchstmaß an Kontosicherheit und Support durch Experten."
       ],
@@ -5858,6 +6088,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Enthalten in ${ plus }, ${ bundle } und ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Enthalten in allen ${ BRAND_NAME } for Business-Abonnements."
       ]
@@ -6082,7 +6315,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
-        "Gehe zu deinem Tresor, um deine Passwörter, Aliasnamen und mehr zu verwalten."
+        "Gehe zu deinem Tresor, um deine Passwörter, Aliasse und mehr zu verwalten."
       ],
       "Set up your organization": [
         "Organisation einrichten"
@@ -6124,10 +6357,10 @@
         "/Monat/Benutzer"
       ],
       "/month /user, billed annually": [
-        "/Monat /Benutzer, jährlich abgerechnet"
+        "/Monat/Benutzer, jährlich abgerechnet"
       ],
       "/month /user, billed biennially": [
-        "/Monat /Benutzer, zweijährlich abgerechnet"
+        "/Monat/Benutzer, zweijährlich abgerechnet"
       ],
       "Creating your account": [
         "Dein Konto wird erstellt"
@@ -6192,13 +6425,13 @@
     },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
+        "**Alle deine vorhandenen Daten** (E-Mails, Termine, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deiner **Wiederherstellungsphrase** oder deinem **alten Passwort** entsperrt werden."
+        "**Alle deine vorhandenen Daten** (E-Mails, Termine, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deiner **Wiederherstellungsphrase** oder deinem **alten Passwort** entsperrt werden."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Jegliche **Zwei-Faktor-Authentifizierungsmethode (2FA)** für Ihr Konto wird deaktiviert."
+        "Jegliche **Zwei-Faktor-Authentifizierungsmethoden (2FA)** deines Kontos werden deaktiviert."
       ]
     },
     "passwordless": {
@@ -6269,7 +6502,7 @@
         "Wir konnten die Echtheit dieser Identität nicht verifizieren."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Wir konnten die Sicherheit des Adressschlüssels dieses Absenders nicht überprüfen. Manchmal kommt es zu einer Verzögerung bei der Aktualisierung der Absenderinformationen. Versuche es später noch einmal. Wenn du der Gültigkeit dieser Einladung oder dieses Absenders nicht traust, wende dich an ${ BRAND_NAME } Kundenbetreuung."
+        "Wir konnten die Sicherheit des Adressschlüssels dieses Absenders nicht überprüfen. Manchmal kommt es zu einer Verzögerung bei der Aktualisierung der Absenderinformationen. Versuche es später noch einmal. Wenn du der Gültigkeit dieser Einladung oder dieses Absenders nicht traust, wende dich an den ${ BRAND_NAME }-Kundensupport."
       ],
       "We have verified the authenticity of this identity.": [
         "Wir haben die Echtheit dieser Identität verifiziert."
@@ -6310,6 +6543,12 @@
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ price } verlängert. Du kannst jederzeit kündigen."
@@ -6418,6 +6657,12 @@
       ],
       "Select state": [
         "Bundesland wählen"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
+      ],
+      "yourdomain.com": [
+        "ihredomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -7399,11 +7644,36 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Die einzige Einnahmequelle von ${ BRAND_NAME } sind Nutzerabonnements. Deine Unterstützung ermöglicht es uns, unabhängig zu bleiben, unsere Mission voranzutreiben, den Datenschutz im Internet zum Standard zu machen, und weiterhin Aktivisten und Organisationen zu unterstützen, die für Datenschutz und Freiheit kämpfen."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } einschließlich Kalenderfreigabe"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } verbleibender Tag",
+        "${ dayDiff } verbleibende Tage"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } einschließlich Versionsverlauf"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } und alle Premium-Produktivitätsfunktionen"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } einschließlich unbegrenzter hide-my-email-Aliasse"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
+      ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Mit ${ planName } hast du Zugriff auf alle Apps und Premium-Funktionen. Der Datenschutz ist bereits integriert, sodass du in dem Wissen, dass deine Daten und deine Identität sicher sind, einfach loslegen kannst."
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } geht über die Grundlagen hinaus und hilft dir, produktiver und organisierter zu sein und die Kontrolle über deinen Posteingang, deine E-Mail-Identität und vieles mehr zu behalten."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "Mit ${ planName } kannst du sicherstellen, dass alle deine Familienmitglieder - und deren Daten - geschützt sind, wann immer sie online sind."
@@ -7417,6 +7687,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }-Programm"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } mit Zugriff auf alle Hochgeschwindigkeitsserver in ${ vpnCountries } Ländern"
+      ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
       ],
@@ -7425,6 +7698,9 @@
       ],
       "Add any new files": [
         "Füge neue Dateien hinzu"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
       ],
       "Back up photos from your devices": [
         "Sichere Fotos von deinen Geräten"
@@ -7440,6 +7716,9 @@
       ],
       "Close": [
         "Schließen"
+      ],
+      "Comprehensive privacy and security": [
+        "Umfassender Datenschutz und Sicherheit"
       ],
       "Custom schedule send and snooze times": [
         "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
@@ -7459,6 +7738,9 @@
       "Helping activists in Hong Kong": [
         "Hilfe für Aktivisten in Hongkong"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Wie unser Kundensupport-Team es geschafft hat, einen direkten Zugang zu unserer VPN-App für alle zu ermöglichen."
+      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Wie wir uns gewehrt haben, als ${ BRAND_NAME } zur Zielscheibe einer aggressiven Zensurkampagne wurde."
       ],
@@ -7467,6 +7749,9 @@
       ],
       "I still want to cancel": [
         "Ich möchte trotzdem kündigen"
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Wenn du die Grenzen des kostenlosen Abonnements überschreitest, wenn dein ${ planName }-Abonnement ausläuft, kannst du Folgendes nicht mehr tun:"
       ],
       "Keep ${ planName }": [
         "${ planName } behalten"
@@ -7483,8 +7768,20 @@
       "Our fight against censorship in Russia": [
         "Unser Kampf gegen die Zensur in Russland"
       ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Bitte beachte, dass ${ planName } nicht mehr zum Kauf verfügbar ist. Wenn du dein Konto downgradest, verlierst du alle Vorteile des Abonnements und kannst es nicht erneut abschließen."
+      ],
+      "Premium productivity features": [
+        "Premium-Produktivitätsfunktionen"
+      ],
       "Priority support": [
         "Priorisierter Support"
+      ],
+      "Reactivate": [
+        "Reaktivieren"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Reaktivieren, um den Zugang zu den Funktionen von ${ planName } wiederherzustellen."
       ],
       "Read the story": [
         "Artikel lesen"
@@ -7502,10 +7799,10 @@
         "Synchronisiere Dateien mit Geräten"
       ],
       "The best of ${ BRAND_NAME }": [
-        "Das beste von ${ BRAND_NAME }"
+        "Das Beste von ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
-        "Entsperrung des Internetzugangs im Iran"
+        "Entsperren des Internetzugangs im Iran"
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -7521,6 +7818,15 @@
       ],
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "Dein ${ planName } wurde gekündigt."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Dein ${ planName }-Abonnement endet am ${ expiryDate }. Danach gilt für dich das ${ BRAND_NAME } Free-Abonnement. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Dein ${ planName }-Abonnement endet am ${ expiryDate }. Danach gilt für dich das ${ BRAND_NAME } Free-Abonnement. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Deine eigene E-Mail-Domain"
@@ -7622,6 +7928,9 @@
       "Bug reported": [
         "Fehler gemeldet"
       ],
+      "Catch-all address updated": [
+        "Catch-all-Weiterleitungsadresse aktualisiert"
+      ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
       ],
@@ -7633,6 +7942,12 @@
       ],
       "Display name updated": [
         "Anzeigename aktualisiert"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-Wert wurde in die Zwischenablage kopiert"
+      ],
+      "Domain verified": [
+        "Domain verifiziert"
       ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
@@ -7694,6 +8009,9 @@
       "Preference saved": [
         "Einstellung gespeichert"
       ],
+      "SPF value copied to clipboard": [
+        "SPF-Wert wurde in die Zwischenablage kopiert"
+      ],
       "User created": [
         "Benutzer erstellt"
       ],
@@ -7702,6 +8020,12 @@
       ],
       "Username copied to clipboard": [
         "Benutzername in die Zwischenablage kopiert"
+      ],
+      "Value copied to clipboard": [
+        "Wert wurde in die Zwischenablage kopiert"
+      ],
+      "Verification code copied to clipboard": [
+        "Bestätigungscode in die Zwischenablage kopiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -7775,6 +8099,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adressen"
       ]
     },
     "Tab subscription modal": {
@@ -7883,6 +8212,9 @@
       "Add credits": [
         "Guthaben hinzufügen"
       ],
+      "Add domain": [
+        "Domain hinzufügen"
+      ],
       "Add new user": [
         "Neuen Benutzer hinzufügen"
       ],
@@ -7933,6 +8265,9 @@
       ],
       "Card verification": [
         "Kartenprüfung"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
@@ -8070,6 +8405,9 @@
       ],
       "Edit display name": [
         "Anzeigename bearbeiten"
+      ],
+      "Edit domain": [
+        "Domain bearbeiten"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -8426,6 +8764,17 @@
         "${ MAIL_APP_NAME }-Rechnung"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresse"
+      ],
+      "Catch-All": [
+        "Catch-all-Weiterl."
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adressen"
@@ -8505,6 +8854,15 @@
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+      ],
+      "Your DKIM signing is working.": [
+        "Deine DKIM-Signatur funktioniert."
       ]
     },
     "tooltip": {
@@ -8637,6 +8995,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Hol dir ${ discount } Rabatt mit einem ${ billingCycle }-Abonnement"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Hol dir das erste Jahr von ${ plan } kostenlos!"
+      ],
       "monthly": [
         "monatlich"
       ]
@@ -8658,8 +9019,20 @@
         "${ n } Jahr",
         "${ n } Jahre"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Beinhaltet ${ plan } (kostenlos im ersten Jahr)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Beinhaltet ${ plan }, unseren Premium-Passwortmanager, kostenlos im ersten Jahr!"
+      ],
+      "Just ${ price }": [
+        "Nur ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "${ upsellPlanName } risikofrei ausprobieren"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Dein ${ a } und ${ b } Bundle"
       ],
       "Your ${ selected } plan": [
         "Dein ${ selected }-Abonnement"
@@ -8701,11 +9074,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du musst den Organisationsschlüssel ${ activateLink } bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse hinzufügst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
       ]
     }
   }

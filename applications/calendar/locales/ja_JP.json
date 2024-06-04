@@ -294,6 +294,9 @@
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
       ],
+      "Go to settings": [
+        "設定を開く"
+      ],
       "Got it": [
         "はい"
       ],
@@ -4177,6 +4180,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "JCB logo": [
+        "JCB ロゴ"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
       ],
@@ -5954,6 +5960,12 @@
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - プレミアム機能"
+      ],
+      "Passkeys supported": [
+        "パスキーに対応しています"
+      ],
       "Password health": [
         "パスワードの健全性"
       ],
@@ -7441,6 +7453,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "カレンダーに色を付けて、予定を整理しましょう。"
+      ],
+      "Custom event colors": [
+        "独自の予定の色"
+      ],
       "Get up to ${ credits } in credits.": [
         "最大${ credits }分のクレジットを獲得できます"
       ],
@@ -7591,6 +7609,9 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
+      ],
+      "${ dayDiff } day left": [
+        "残り ${ dayDiff } 日"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"

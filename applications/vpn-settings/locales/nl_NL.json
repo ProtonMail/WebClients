@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Refresh status": [
+        "Status vernieuwen"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Terug naar inloggen"
       ],
+      "Review": [
+        "Bekijken"
+      ],
       "Revoke": [
         "Intrekken"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Herinnering versturen"
+      ],
+      "Set catch-all": [
+        "Stel catch-all in"
       ],
       "Set new password": [
         "Nieuw wachtwoord instellen"
@@ -720,6 +729,17 @@
       ],
       "Secure your communications": [
         "Beveilig uw communicatie"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Enabled": [
+        "Geactiveerd"
+      ],
+      "Missing keys": [
+        "Ontbrekende sleutels"
       ]
     },
     "bf2023: Action": {
@@ -1911,6 +1931,16 @@
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Geverifieerd"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www'-subdomeinen worden normaal gesproken niet gebruikt voor e-mailadressen. Weet u zeker dat u van deze domeinnaam gebruik wilt maken?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
@@ -2218,8 +2248,17 @@
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verificatie mislukt, probeer het over een uur opnieuw."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -2826,11 +2865,31 @@
       "Address": [
         "Adres"
       ],
+      "Domain": [
+        "Domein"
+      ],
       "Status": [
         "Status"
       ],
       "Username": [
         "Gebruikersnaam"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Hostnaam"
+      ],
+      "Priority": [
+        "Prioriteit"
+      ],
+      "Type": [
+        "Soort"
+      ],
+      "Value / Data": [
+        "Waarde / Data"
+      ],
+      "Value / Data / Points to": [
+        "Waarde / Data / Verwijst naar"
       ]
     },
     "Headline": {
@@ -2880,6 +2939,9 @@
         "${ n } adres",
         "${ n } adressen"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
+      ],
       "${ number } city": [
         "${ number } stad",
         "${ number } steden"
@@ -2894,6 +2956,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
         "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: de geadresseerde platforms vragen de ongeoorloofde e-mails als spam te markeren of ze in quarantaine te plaatsen."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: de geadresseerde platformen vragen de ongeautoriseerde e-mails te verwerpen."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } meer",
@@ -3059,6 +3127,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Voordat u e-mails voor uw eigen domeinnaam in ${ MAIL_APP_NAME } kunt ontvangen, u moet de volgende twee MX-records toevoegen in uw DNS-console (gesitueerd op het platform waar u het eigen domein heeft gekocht). U kunt een voorbeeld en enkele nuttige tips vinden ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
@@ -3150,12 +3221,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } gatewayserver wordt verwijderd",
         "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM staat ${ BRAND_NAME } toe om uw e-mails te versleutelen en voorkomt dat aanvallers uw e-mails manipuleren. Zorg ervoor dat u de volgende drie CNAME-records in uw DNS-console toevoegt (gesitueerd op het platform waar u het aangepaste domein heeft gekocht)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC controleert of de SPF- en DKIM-records van de afzender afkomstig zijn van uw domein. Dit kan voorkomen dat aanvallers een ander domein SPF en DKIM gebruiken om uw domein na te volgen. De \"p=\" (beleid) in deze record geeft aan hoe u wilt dat de geadresseerde platforms onbevoegde e-mails behandelen. We raden het \"p=quarantaine\"-beleid voor de meeste domeinen aan. Zorg ervoor dat u het volgende TXT-record in uw DNS-console toevoegt (op het platform waar u het aangepaste domein heeft aangeschaft)."
       ],
       "DNS TXT record": [
         "DNS TXT-record"
@@ -3171,6 +3251,10 @@
       ],
       "Domain ownership verified.": [
         "Domein eigendom geverifieerd."
+      ],
+      "domain used": [
+        "domein gebruikt",
+        "domeinen gebruikt"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
@@ -3201,6 +3285,9 @@
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -3265,6 +3352,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Vul uw herstelzin in om het wachtwoord nu te wijzigen."
       ],
+      "Example: ${ spfExample }": [
+        "Voorbeeld: ${ spfExample }"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -3279,6 +3369,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Voor leden van organisaties die een enkel bord gebruiken (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
       "Free forever": [
         "Altijd gratis"
@@ -3316,6 +3409,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Als u een eigen domein heeft met ${ MAIL_APP_NAME }, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verzonden, maar op een ongeldig e-mailadres (bijv. door typo's)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Als u een geschenkcode heeft, voer deze hieronder in om uw korting toe te passen."
       ],
@@ -3342,6 +3438,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "BELANGRIJK: Als uw DNS-console CNAME waarden niet toestaat te eindigen met een punt, kunt u de laatste stip in de CNAME waarden verwijderen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
@@ -3379,6 +3478,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Keys created": [
         "Sleutels aangemaakt"
       ],
@@ -3414,6 +3516,12 @@
       ],
       "Loading...": [
         "Laden..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Belangrijke e-maildiensten kunnen uw e-mails weigeren of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet correct wordt ingesteld."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Belangrijke e-maildiensten kunnen uw e-mails afwijzen of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet goed wordt ingesteld."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
@@ -3669,6 +3777,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF verduidelijkt wie toegestaan is om e-mail te sturen voor uw domein. Zorg ervoor dat u het volgende TXT-record in uw DNS-console toevoegt (op het platform waar u het aangepaste domein heeft aangeschaft)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO-gebruikers (verstrekt door uw Identity Provider) worden verwijderd"
       ],
@@ -3690,6 +3801,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
@@ -4173,6 +4287,17 @@
         "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Voeg een nieuw adres toe voor een bestaande gebruiker van uw organisatie."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Voeg een nieuwe gebruiker toe aan uw organisatie en maak er een adres voor aan."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Om veiligheidsredenen moeten wij verifiëren dat u de eigenaar bent van ${ domainName }. Voeg het volgende TXT-record toe in uw DNS-console (te vinden op het platform waar u het aangepaste domein heeft gekocht). U vindt een voorbeeld en enkele handige tips ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
@@ -4431,6 +4556,9 @@
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
       ],
+      "Domain name": [
+        "Domeinnaam"
+      ],
       "e.g. example.com": [
         "bv. voorbeeld.com"
       ],
@@ -4581,6 +4709,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Voeg alle 3 van de volgende CNAME records toe. Let op: DNS-records kunnen enkele uren duren om te updaten."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Voeg de volgende twee MX-records toe. Let op: Het kan enkele uren duren voordat DNS-records zijn bijgewerkt."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
+      ],
       "Please share any feedback to help us improve.": [
         "Deel uw feedback en help ons te verbeteren."
       ],
@@ -4686,6 +4823,16 @@
         "Herstel-telefoonnummer"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Voeg een domein toe waarvan u de eigenaar bent aan uw ${ MAIL_APP_NAME } account."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Beheerder"
@@ -4732,6 +4879,17 @@
         "Dagelijkse e-mailmeldingen"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adressen"
+      ],
+      "Domain": [
+        "Domein"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Standaard"
@@ -4775,6 +4933,9 @@
       ],
       "Help translate": [
         "Help met vertalen"
+      ],
+      "here": [
+        "hier"
       ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
@@ -4950,6 +5111,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
       ]
@@ -5313,6 +5477,9 @@
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmatige controle van je accountbeveiliging. We waarschuwen je als je zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
+      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
@@ -5435,6 +5602,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Kluis delen (tot ${ n } persoon)",
         "Kluis delen (tot ${ n } personen)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "We scannen het duistere web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
       ]
     },
     "new_plans: feature info": {
@@ -5792,6 +5962,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inbegrepen bij ${ plus }, ${ bundle } en ${ BRAND_NAME } voor Bedrijven."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Inbegrepen bij verschillende gebruikers ${ BRAND_NAME } voor Bedrijven-abonnementen."
       ]
@@ -6239,6 +6412,9 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } voor ${ months } maanden. U kunt opzeggen wanneer u wilt."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } per maand. U kunt opzeggen wanneer u wilt."
       ],
@@ -6346,6 +6522,9 @@
       ],
       "Select state": [
         "Selecteer provincie"
+      ],
+      "yourdomain.com": [
+        "uwdomein.com"
       ]
     },
     "plan customizer, ips": {
@@ -7327,6 +7506,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag over",
+        "${ dayDiff } dagen over"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
@@ -7490,6 +7673,9 @@
       "Bug reported": [
         "Bug gemeld"
       ],
+      "Catch-all address updated": [
+        "Catch-all adres bijgewerkt"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -7501,6 +7687,12 @@
       ],
       "Display name updated": [
         "Weergavenaam bijgewerkt"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-waarde gekopieerd naar klembord"
+      ],
+      "Domain verified": [
+        "Domeinnaam geverifieerd"
       ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
@@ -7562,6 +7754,9 @@
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
+      "SPF value copied to clipboard": [
+        "SPF-waarde gekopieerd naar klembord"
+      ],
       "User created": [
         "Gebruiker aangemaakt"
       ],
@@ -7570,6 +7765,12 @@
       ],
       "Username copied to clipboard": [
         "De Gebruikersnaam is naar het klembord gekopieerd"
+      ],
+      "Value copied to clipboard": [
+        "Waarde gekopieerd naar klembord"
+      ],
+      "Verification code copied to clipboard": [
+        "Verificatiecode gekopieerd naar klembord"
       ],
       "Verification successful": [
         "Verificatie gelukt"
@@ -7643,6 +7844,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adressen"
       ]
     },
     "Tab subscription modal": {
@@ -7751,6 +7957,9 @@
       "Add credits": [
         "Tegoed toevoegen"
       ],
+      "Add domain": [
+        "Domein toevoegen"
+      ],
       "Add new user": [
         "Voeg nieuwe gebruiker toe"
       ],
@@ -7801,6 +8010,9 @@
       ],
       "Card verification": [
         "Kaartverificatie"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Catch-all address": [
         "Catch-all adres"
@@ -7938,6 +8150,9 @@
       ],
       "Edit display name": [
         "Wijzig weergavenaam"
+      ],
+      "Edit domain": [
+        "Domein bewerken"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -8288,6 +8503,17 @@
         "${ MAIL_APP_NAME } factuur"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adres"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adressen"
@@ -8364,6 +8590,15 @@
       ],
       "Verified email address": [
         "Geverifieerd e-mailadres"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We hebben gestopt met het ondertekenen met DKIM, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
+      ],
+      "Your DKIM signing is working.": [
+        "Ondertekenen met DKIM werkt."
       ]
     },
     "tooltip": {
@@ -8560,11 +8795,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "U moet ${ activateLink } de organisatiesleutel hebben voordat u een e-mailadres toevoegt aan een niet-privé lid."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
       ]
     }
   }

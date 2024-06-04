@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Kerro kaverille"
       ],
+      "Refresh status": [
+        "Päivitä tila"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Palaa kirjautumiseen"
       ],
+      "Review": [
+        "Tarkasta"
+      ],
       "Revoke": [
         "Mitätöi"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Lähetä muistutus"
+      ],
+      "Set catch-all": [
+        "Aseta nappaa kaikki"
       ],
       "Set new password": [
         "Aseta uusi salasana"
@@ -720,6 +729,17 @@
       ],
       "Secure your communications": [
         "Suojaa viestintäsi"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Ei käytössä"
+      ],
+      "Enabled": [
+        "Käytössä"
+      ],
+      "Missing keys": [
+        "Avaimia puuttuu"
       ]
     },
     "bf2023: Action": {
@@ -1911,6 +1931,16 @@
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Vahvistettu"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "\"www\"-aliverkkotunnuksia ei yleensä käytetä sähköpostiosoitteissa. Haluatko varmasti käyttää tätä verkkotunnuksen arvoa?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
@@ -1953,6 +1983,11 @@
       ],
       "The VPN is too slow": [
         "VPN on liian hidas"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Auta meitä parantamaan"
       ]
     },
     "Email verification": {
@@ -2218,8 +2253,17 @@
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Vahvistus ei onnistunut. Yritä tunnin kuluttua uudelleen."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DKIM-allekirjoitus keskeytettiin DNS-asetuksissasi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Virheellinen vahvistuskoodi. Varmista, että kopioit vahvistuskoodin oikein ja yritä uudelleen. Muutosten voimaantulo saattaa kestää jopa 24 tuntia."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Olet kuluttanut tilaukseesi sisältyvän osoitekiintiön. Lisää uusia osoitteita päivittämällä tilauksesi."
@@ -2571,7 +2615,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Lisää todennuslaite"
+        "Liitä todennuslaite"
       ],
       "Delete key": [
         "Poista todennuslaite"
@@ -2654,7 +2698,7 @@
         "Rekisteröi todennuslaitteesi"
       ],
       "Registered security keys": [
-        "Rekisteröidyt todennuslaitteet"
+        "Liitetyt todennuslaitteet"
       ],
       "Security key registered": [
         "Todennuslaite rekisteröitiin"
@@ -2826,11 +2870,31 @@
       "Address": [
         "Osoite"
       ],
+      "Domain": [
+        "Verkkotunnus"
+      ],
       "Status": [
         "Tila"
       ],
       "Username": [
         "Käyttäjätunnus"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Isäntänimi"
+      ],
+      "Priority": [
+        "Painotus"
+      ],
+      "Type": [
+        "Tyyppi"
+      ],
+      "Value / Data": [
+        "Arvo/Tieto"
+      ],
+      "Value / Data / Points to": [
+        "Arvo/Tieto/Kohde"
       ]
     },
     "Headline": {
@@ -2880,6 +2944,9 @@
         "${ n } osoite",
         "${ n } osoitetta"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: älä merkitse roskapostiksi tai hylkää luvattomia sähköposteja. Tätä politiikkaa käytetään yleensä vianhakuun ja testaamiseen."
+      ],
       "${ number } city": [
         "${ number } kaupungissa",
         "${ number } kaupungissa"
@@ -2894,6 +2961,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: pyytää vastaanottavia järjestelmiä merkitsemään luvattomat sähköpostit roskapostiksi tai siirtämään ne karanteeniin."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: pyytää vastaanottavia järjestelmiä hylkäämään luvattomat sähköpostit."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } lisää",
@@ -3059,6 +3132,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Ennen kuin voit vastaanottaa sähköpostia räätälöityyn verkkotunnuksesi ${ MAIL_APP_NAME }, sinun täytyy lisätä seuraavat kaksi MX-tietuetta DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
@@ -3150,12 +3226,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM mahdollistaa ${ BRAND_NAME }in allekirjoittaa sähköpostisi kryptografisesti ja estää hyökkääjiä muuttamasta sähköpostejasi. Huomaa lisätä seuraavat kolme CNAME tietuetta DNS hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC tarkastaa, että lähettäjän SPF ja DKIM tietueet kuuluvat verkkotunnuksellesi. Tämä voi estää hyökkääjiä käyttämästä muiden verkkotunnusten SPF ja DKIM tietoja verkkotunnuksesi muuttamiseksi. Tietueen \"p=\" (politiikka) kertoo, miten haluat vastaanottavan järjestelmän käsittelevän luvatta lähetettyjä sähköposteja. Suosittelemme käyttämään \"p=quarantine\" -politiikkaa useimmille verkkotunnuksille. Huomaa lisätä seuraava TXT tietue DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
       ],
       "DNS TXT record": [
         "DNS TXT -tietue"
@@ -3171,6 +3256,10 @@
       ],
       "Domain ownership verified.": [
         "Verkkotunnuksen omistajuus on vahvistettu."
+      ],
+      "domain used": [
+        "verkkotunnus käytetty",
+        "verkkotunnusta käytetty"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
@@ -3201,6 +3290,9 @@
       ],
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
       ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
@@ -3265,6 +3357,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Syötä palautuslausekkeesi vaihtaaksesi salasanasi."
       ],
+      "Example: ${ spfExample }": [
+        "Esimerkki: ${ spfExample }"
+      ],
       "Expired": [
         "Voimassaolo päättynyt"
       ],
@@ -3279,6 +3374,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Kertakirjautumista (SAML SSO) käyttävien organisaatioiden jäsenille"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
@@ -3307,6 +3405,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Jos olet kirjautuneena jossakin muualla, voi ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
       ],
@@ -3315,6 +3416,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
+      ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Jos käytät omaa verkkotunnustasi ${ MAIL_APP_NAME }in kanssa, voit määrittää Nappaa kaikki -sähköpostiosoitteen, joka vastaanottaa kaikki verkkotunnukseesi virheellisellä osoitteella lähetetyt sähköpostit (esim. väärin kirjoitetut osoitteet)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
@@ -3342,6 +3446,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "TÄRKEÄÄ: Mikäli DNS-hallintasi ei anna CNAME-tietueen päättyä pisteeseen, voit poistaa viimeisen pisteen CNAME tiedoista."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
@@ -3417,6 +3524,12 @@
       ],
       "Loading...": [
         "Ladataan..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Monet sähköpostipalvelut saattavat hylätä tai suodattaa viestisi roskapostiin, mikäli SPF-/DKIM-/MARC-tietueet puuttuvat tai niitä ei ole määritetty oikein."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Varmista, että ${ addARecoveryMethod }, jotta pääset tilillesi takaisin, mikäli unohdat salasanasi."
@@ -3675,6 +3788,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Määritä toimialue, joka saa todentaa SAML SSO:lla."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF määrittää verkkotunnuksesi hyväksytyt lähettäjät. Varmista, että lisäät seuraavan TXT-tietueen DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Identiteetinhallintasi SSO-käyttäjät poistetaan"
       ],
@@ -3696,6 +3812,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -4182,6 +4301,17 @@
         "Pyydä ohjeet käteismaksua varten sähköpostitse osoitteesta ${ email }."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Lisää uusi osoite organisaatiosi olemassaolevalle käyttäjälle."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Lisää organisaatioosi uusi käyttäjä ja luo hänelle uusi osoite."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Turvallisuussyistä johtuen meidän tulee varmistaa, että olet verkkotunnuksen ${ domainName } haltija. Lisää seuraava TXT-tietue DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Voit lisätä maksutavan, jolla tilauksesi uudistetaan automaattisesti. Myös muut maksutavat ovat käytettävissä."
@@ -4440,6 +4570,9 @@
       "Do you have any suggestions for our team?": [
         "Onko sinulla ehdotuksia tiimillemme?"
       ],
+      "Domain name": [
+        "Verkkotunnus"
+      ],
       "e.g. example.com": [
         "esim. esimerkki.fi"
       ],
@@ -4590,6 +4723,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lisää seuraavat kolme CNAME -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lisää seuraavat kaksi MX -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lisää seuraava TXT -tietue. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
       "Please share any feedback to help us improve.": [
         "Kerro mielipiteesi ja auta meitä parantamaan."
       ],
@@ -4603,10 +4745,10 @@
         "Julkinen sertifikaatti (X.509)"
       ],
       "Recovery email address": [
-        "Palautusosoite"
+        "Palautussähköpostin osoite"
       ],
       "Recovery phone number": [
-        "Palautusnumero"
+        "Palautuspuhelimen numero"
       ],
       "Recovery phrase": [
         "Palautuslauseke"
@@ -4680,6 +4822,9 @@
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
+      ],
       "Why would you like to cancel?": [
         "Miksi haluat perua tilauksen?"
       ],
@@ -4693,6 +4838,16 @@
     "label": {
       "Recovery phone number": [
         "Palautusnumero"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Lisää omistamasi verkkotunnus ${ MAIL_APP_NAME } -tilillesi."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lisää seuraava TXT -tietue. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
       ]
     },
     "Label for new member": {
@@ -4739,6 +4894,17 @@
       ],
       "Daily email notifications": [
         "Päivittäiset sähköposti-ilmoitukset"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Osoitteet"
+      ],
+      "Domain": [
+        "Verkkotunnus"
+      ],
+      "Verify": [
+        "Vahvista"
       ]
     },
     "Label on payment method": {
@@ -4788,6 +4954,9 @@
       "Help translate": [
         "Osallistu käännökseen"
       ],
+      "here": [
+        "täältä"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
       ],
@@ -4805,6 +4974,9 @@
       ],
       "Paypal without credit card": [
         "PayPal ilman maksukorttia"
+      ],
+      "perform a password reset from your active session": [
+        "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
       "Privacy policy": [
         "Tietosuojakäytäntö"
@@ -4962,6 +5134,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Määritä omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi) yhdistämällä oma verkkotunnuksesi ${ BRAND_NAME }iin. Ohjattu toiminto opastaa määrityksessä."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
       ]
@@ -5453,6 +5628,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
       ]
     },
     "new_plans: feature info": {
@@ -5739,6 +5917,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka ohjaa sähköpostit pääpostilaatikkoosi)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
       ],
@@ -5752,7 +5933,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
+        "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -5810,6 +5991,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Sisältyy ${ plus }-, ${ bundle }- ja ${ BRAND_NAME } for Business -tilauksiin."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Sisältyy kaikkiin useita käyttäjiä sisältäviin ${ BRAND_NAME } for Business -tilauksiin."
       ]
@@ -5868,7 +6052,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen tunnistautuminen"
+        "2FA-pakotus"
       ]
     },
     "Notification": {
@@ -6257,6 +6441,12 @@
       "Processing payment": [
         "Käsitellään maksua"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
@@ -6364,6 +6554,12 @@
       ],
       "Select state": [
         "Valitse osavaltio"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
+      ],
+      "yourdomain.com": [
+        "verkkotunnuksesi.fi"
       ]
     },
     "plan customizer, ips": {
@@ -6780,8 +6976,8 @@
         "Salasanan nollaus on käytettävissä ${ boldDate } alkaen. Tämä antaa sinulle aikaa perua kaikki valheelliset pyynnöt."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
@@ -7345,6 +7541,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -7508,6 +7708,9 @@
       "Bug reported": [
         "Vikailmoitus lähetettiin"
       ],
+      "Catch-all address updated": [
+        "Nappaa kaikki -osoite päivitettiin"
+      ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
       ],
@@ -7519,6 +7722,12 @@
       ],
       "Display name updated": [
         "Näyttönimi vaihdettiin"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-arvo kopioitiin leikepöydälle"
+      ],
+      "Domain verified": [
+        "Verkkotunnus vahvistettiin"
       ],
       "Email address copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
@@ -7580,6 +7789,9 @@
       "Preference saved": [
         "Asetus tallennettiin"
       ],
+      "SPF value copied to clipboard": [
+        "SFF-arvo kopioitiin leikepöydälle"
+      ],
       "User created": [
         "Käyttäjä luotiin"
       ],
@@ -7588,6 +7800,12 @@
       ],
       "Username copied to clipboard": [
         "Käyttäjätunnus kopioitiin leikepöydälle"
+      ],
+      "Value copied to clipboard": [
+        "Arvo kopioitiin leikepöydälle"
+      ],
+      "Verification code copied to clipboard": [
+        "Vahvistuskoodi kopioitiin leikepöydälle"
       ],
       "Verification successful": [
         "Vahvistus onnistui"
@@ -7661,6 +7879,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. versiohistorian ja salatun tiedostojen jakamisen."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Osoitteet"
       ]
     },
     "Tab subscription modal": {
@@ -7769,6 +7992,9 @@
       "Add credits": [
         "Lisää krediittejä"
       ],
+      "Add domain": [
+        "Lisää verkkotunnus"
+      ],
       "Add new user": [
         "Lisää uusi käyttäjä"
       ],
@@ -7819,6 +8045,9 @@
       ],
       "Card verification": [
         "Kortin vahvistus"
+      ],
+      "Catch-All address": [
+        "Nappaa kaikki -osoite"
       ],
       "Catch-all address": [
         "Nappaa kaikki -osoite"
@@ -7956,6 +8185,9 @@
       ],
       "Edit display name": [
         "Muokkaa näyttönimeä"
+      ],
+      "Edit domain": [
+        "Muokkaa verkkotunnusta"
       ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
@@ -8306,6 +8538,17 @@
         "${ MAIL_APP_NAME } -lasku"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Osoite"
+      ],
+      "Catch-All": [
+        "Nappaa kaikki"
+      ],
+      "Status": [
+        "Tila"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Osoitteet"
@@ -8339,7 +8582,7 @@
         "Ylläpitäjät voivat tehdä muutoksia tilaukseesi, hallita käyttäjätilejä ja salasanoja sekä myöntää ylläpito-oikeudet muille käyttäjille."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
+        "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
@@ -8382,6 +8625,15 @@
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DKIM-allekirjoitus keskeytettiin DNS-asetuksissasi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
+      ],
+      "Your DKIM signing is working.": [
+        "DKIM-allekirjoituksesi toimii."
       ]
     },
     "tooltip": {
@@ -8578,11 +8830,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Sinun on ${ activateLink } organisaation avain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
       ]
     }
   }

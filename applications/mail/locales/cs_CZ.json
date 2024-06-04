@@ -1989,6 +1989,12 @@
       ]
     },
     "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "Chcete-li tyto funkce zachovat, aktivujte je znovu do ${ formattedEndDate }:"
+      ],
+      "Reactivate subscription": [
+        "Znovu aktivovat předplatné"
+      ],
       "Your subscription is ending soon": [
         "Vaše předplatné brzy skončí"
       ]
@@ -8128,6 +8134,9 @@
       "What happened?": [
         "Co se stalo?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Jaký je váš hlavní důvod pro zrušení nebo snížení hodnocení?"
+      ],
       "With attachment": [
         "S přílohami"
       ],
@@ -9989,6 +9998,9 @@
       "Select state": [
         "Vyberte stav"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Podělte se o to, co si myslíte, že by mohlo ${ BRAND_NAME } zlepšit"
+      ],
       "Start date": [
         "Datum zahájení"
       ],
@@ -11097,6 +11109,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
       ],
+      "${ dayDiff } day left": [
+        "Zbývá ${ dayDiff } den",
+        "Zbývají ${ dayDiff } dny",
+        "Zbývá ${ dayDiff } dnů",
+        "Zbývá ${ dayDiff } dnů"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } včetně historie verzí"
       ],
@@ -11129,6 +11147,9 @@
       ],
       "Add any new files": [
         "Přidávat jakékoliv nové soubory"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Po vypršení platnosti vašeho předplatného ${ planName } budete snížení na ${ BRAND_NAME } Free, který nabízí pouze až 1 GB Mail úložiště a až 5 GB Drive úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
       "Back up photos from your devices": [
         "Zálohovat fotografie ze svých zařízení"
@@ -11214,8 +11235,20 @@
       "Watch the interview": [
         "Shlédněte rozhovor"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Když zrušíte ${ planName }, budete sníženi na ${ BRAND_NAME } Free, který nabízí pouze až 1 GB Mail úložiště a až 5 GB Drive úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Když zrušíte ${ planName }, budete sníženi na ${ BRAND_NAME } Free, který nabízí pouze až 5 GB Drive úložiště na disku a až 1 GB Mail úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "V rámci předplatného ${ planName } vám stále zbývá ${ expiryDate }. Přidáme vám kredity za zbývající dobu k vašemu účtu ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Stále máte předplatné ${ expiryDate } na váš plán ${ planName }. Přidáme vám kredity za zbývající dobu k vašemu účtu ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Vaše vlastní e-mailová doména"
@@ -11232,7 +11265,7 @@
         "a 15 dalších prémiových funkcí"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailu ${ strongText }"
+        "Automatické přesměrování e-mailů ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Upozornění na úniky informací ${ strongArgument }"
@@ -11256,7 +11289,7 @@
         "Navýšit"
       ],
       "Upgrade your productivity": [
-        "Zlepšete svou produktivitu"
+        "Zvyšte svou produktivitu"
       ],
       "We don't sell your data": [
         "Vaše údaje neprodáváme"

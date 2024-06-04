@@ -257,6 +257,9 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Copy version number to clipboard": [
+        "ვერსიის ნომრის კოპირება ბუფერში"
+      ],
       "Create": [
         "შექმნა"
       ],
@@ -1316,8 +1319,17 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "იმუშავეთ ინტერნეტში კონფიენციალურად და დაბლოკეთ რეკლამა"
+      ],
       "Keep your schedule private": [
         "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
+      ],
+      "Protect your passwords and identity": [
+        "დაიცავით თქვენი პაროლები და იდენტიფიკაცია"
+      ],
+      "Safeguard your files and photos": [
+        "დაიცავით თქვენი ფაილები და სურათები"
       ],
       "Secure your communications": [
         "დაიცავით თქვენი კომუნიკაცია"
@@ -3278,6 +3290,15 @@
       "I found a cheaper VPN": [
         "ვიპოვე უფრო იაფი VPN"
       ],
+      "I found a VPN with better features": [
+        "მე უკეთესი ფუნქციების მქონე VPN ვიპოვე"
+      ],
+      "I have not managed to connect": [
+        "მე ვერ მიევუერთდი"
+      ],
+      "I only needed a VPN short-term": [
+        "მე VPN, მხოლოდ, ცოტა ხნით მჭირდება"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
       ],
@@ -3286,6 +3307,9 @@
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
+      ],
+      "Other reason (please comment)": [
+        "სხვა მიზეზი (დაწერეთ კომენტარებში)"
       ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
@@ -5899,17 +5923,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6385,6 +6398,9 @@
       "Check the status of imports and forwarding.": [
         "შემოტანისა და გადაგზავნის მდგომარეობის შემოწმება."
       ],
+      "Choose an app to get started": [
+        "აირჩიეთ აპი დასაწყებად"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -6466,7 +6482,7 @@
         "ხელით"
       ],
       "Custom branding": [
-        "მომხმარებლის ბრენდინგი"
+        "მორგებული ბრენდინგი"
       ],
       "Custom daily": [
         "ხელით, ყოველდღე"
@@ -6900,6 +6916,9 @@
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "მე ვიყენებდი @ProtonMail-ს და ვიფიქრე, თქვენც მოგეწონებოდათ. უფასო, დაცული ელფოსტის სერვისი, რომელიც იცავს თქვენს პირად სივრცეს. ერთთვიანი, პრემიუმ-კლასის, უფასო ანგარიშის მისაღები ბმული: ${ referrerLink }"
+      ],
+      "JCB logo": [
+        "JCB ლოგო"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -8231,6 +8250,17 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10642,8 +10672,14 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ფასიანი ფუნქციები"
+      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
+      ],
+      "Password health": [
+        "პაროლის სიძლიერე"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -10727,6 +10763,9 @@
       ],
       "Unlimited devices": [
         "მოწყობილობების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited devices and aliases": [
+        "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
       ],
       "Unlimited filters": [
         "ფილტრების ულიმიტო რაოდენობა"
@@ -11274,6 +11313,12 @@
       "An external address cannot be default": [
         "გარე მისამართი ნაგულისხმები ვერ იქნება"
       ],
+      "Dark Web Monitoring has been disabled": [
+        "ბმელი ვების მონიტორინგი გამორთულია"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "ბმელი ვების მონიტორინგი ჩართულია"
+      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -11676,12 +11721,29 @@
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "ძალიან შეკუმშული გამოსახულებების თავიდან აცილება."
+      ],
+      "Tips on choosing a good logo": [
+        "კარგი ლოგოს არჩევის მინიშნებები"
+      ],
+      "Use a solid background color.": [
+        "მყარი ფონის ფერის გამოყენება."
+      ]
+    },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "დააგდეთ გამოსახულების ფაილი აქ, ასატვირთად, ან"
+      ],
       "File in PNG or JPEG format": [
         "ფაილი PNG ან JPEG ფორმატში"
       ],
       "File not larger than 30 KB": [
         "ფაილი 30 კბ-ზე პატარაა"
+      ],
+      "Square image of at least 128 pixels": [
+        "ოთხკუთხედი გამოსახულება 128 პიქსელით მაინც"
       ]
     },
     "OS compatibility": {
@@ -11969,6 +12031,13 @@
       ],
       "Save your recovery kit to continue": [
         "გასაგრძელებლად შეინახეთ თქვენი აღდგენის ნაკრები"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "უსაფრთხო გაზიარება ${ n } საცავთან",
+        "უსაფრთხო გაზიარება ${ n } საცავთან"
+      ],
+      "Secure sharing with multiple vaults": [
+        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
@@ -12551,9 +12620,23 @@
         "კოდის გენერაცია"
       ]
     },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
+      ],
+      "For security reasons, the token is hidden": [
+        "უსაფრთხოების მიზნით კოდი დამალულია"
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-ის საბაზისო URL და კოდი წაიშლება."
+      ]
+    },
     "scim: Label": {
       "SCIM base URL": [
         "SCIM-ის საბაზისო URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-ის საბაზისო URL (ან კლიენტის URL)"
       ],
       "SCIM token": [
         "SCIM კოდი"
@@ -13253,6 +13336,11 @@
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "ქმედებები"
@@ -13511,6 +13599,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -13538,6 +13630,9 @@
       "Have a question?": [
         "კითხვები გაქვთ?"
       ],
+      "Helping activists in Hong Kong": [
+        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
@@ -13546,6 +13641,9 @@
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Our fight against censorship in Russia": [
+        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -13556,16 +13654,37 @@
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
       ],
+      "Unblocking internet access in Iran": [
+        "ინტერნეტთან წვდომის განბლოკვა ირანში"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ],
+      "Yearly free storage bonuses": [
+        "წლიური უფასო საცავის ბონუსები"
+      ],
+      "Your own custom email domain": [
+        "თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Your own short @pm.me email alias": [
+        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -13587,6 +13706,9 @@
       ],
       "We don't sell your data": [
         "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -14996,6 +15118,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "ერთზე მეტი ანგარიშის შესასქმნელად CSV ფაილი ატვირთეთ"
+      ],
+      "Upload your organization’s logo": [
+        "ატვირთეთ თქვენი ორგანიზაციის ლოგო"
       ],
       "Users": [
         "მომხმარებლები"

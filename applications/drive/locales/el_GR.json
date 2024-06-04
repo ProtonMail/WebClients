@@ -639,6 +639,9 @@
       "Resend code": [
         "Επαναποστολή κωδικού"
       ],
+      "Resend invite": [
+        "Επανάληψη αποστολής πρόσκλησης"
+      ],
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
       ],
@@ -2617,9 +2620,6 @@
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
-      "Not a ${ BRAND_NAME } account": [
-        "Δεν είναι ${ BRAND_NAME } λογαριασμός"
-      ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
@@ -4351,6 +4351,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "Invite link copied": [
+        "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
@@ -4362,6 +4365,9 @@
       ],
       "It’s easy and secure": [
         "Είναι εύκολο και ασφαλές"
+      ],
+      "JCB logo": [
+        "Λογότυπο JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
@@ -4541,6 +4547,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "People with access": [
+        "Άτομα με πρόσβαση"
       ],
       "Permanently delete all files in your locked drive": [
         "Οριστική διαγραφή όλων των αρχείων στην κλειδωμένη αρχειοθήκη σας"
@@ -4786,6 +4795,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Subscription auto-renews every month.": [
         "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
@@ -5760,9 +5772,6 @@
       "Region": [
         "Περιοχή"
       ],
-      "Remove access": [
-        "Αφαίρεση πρόσβασης"
-      ],
       "Replace existing file": [
         "Αντικατάσταση υπάρχοντος αρχείου"
       ],
@@ -6628,6 +6637,9 @@
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
+      "Password health": [
+        "Υγεία κωδικού πρόσβασης"
+      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
@@ -6646,6 +6658,9 @@
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Τακτικοί έλεγχοι της ασφάλειας του λογαριασμού σας. Σας ειδοποιούμε εάν έχετε αδύναμους ή επαναχρησιμοποιημένους κωδικούς πρόσβασης που πρέπει να ενημερωθούν."
       ],
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
@@ -6759,6 +6774,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
     },
     "new_plans: feature info": {
@@ -7015,6 +7033,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Προστατέψτε την οικογένειά σας από επιβλαβείς ιστότοπους και αποκτήστε πρόσβαση στους διακομιστές VPN υψηλής ταχύτητας για να μεταδώσετε το αγαπημένο σας περιεχόμενο"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Προστατέψτε την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας από αποκάλυψη ή διαρροή με ψευδώνυμα (μια τυχαία διεύθυνση ηλεκτρονικού ταχυδρομείου που προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στα κύρια εισερχόμενά σας)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Παρέχει το υψηλότερο επίπεδο προστασίας ασφάλειας λογαριασμού και εξειδικευμένη υποστήριξη"
       ],
@@ -7238,6 +7259,9 @@
       "Access for the member removed": [
         "Η πρόσβαση για το μέλος καταργήθηκε"
       ],
+      "Access updated": [
+        "Η διεύθυνση ενημερώθηκε"
+      ],
       "Access updated and shared": [
         "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
       ],
@@ -7302,6 +7326,9 @@
       "File removed": [
         "Το αρχείο αφαιρέθηκε"
       ],
+      "Invitation email was sent again": [
+        "Το μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης στάλθηκε ξανά"
+      ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
@@ -7325,9 +7352,6 @@
       ],
       "Share invitation accepted successfully": [
         "Η κοινοποίηση πρόσκλησης έγινε αποδεκτή με επιτυχία"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Το αναγνωριστικό πρόσκλησης κοινής χρήσης δε βρέθηκε. Παρακαλούμε ελέγξτε τον σύνδεσμο"
       ],
       "Stopping to share this item has failed": [
         "Η διακοπή της κοινής χρήσης αυτού του στοιχείου απέτυχε"
@@ -7504,6 +7528,12 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ price } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -8414,6 +8444,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
@@ -8619,6 +8653,9 @@
       ],
       "Recovery has started": [
         "Η ανάκτηση έχει ξεκινήσει"
+      ],
+      "Secure link copied": [
+        "Ο ασφαλής σύνδεσμος αντιγράφηκε"
       ],
       "The link to your file was successfully copied": [
         "Ο σύνδεσμος προς το αρχείο σας αντιγράφηκε επιτυχώς"
