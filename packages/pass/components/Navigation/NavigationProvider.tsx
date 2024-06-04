@@ -10,7 +10,7 @@ import {
     decodeFiltersFromSearch,
     encodeFilters,
     getItemRoute,
-    getNewItemRoutePrefix,
+    getLocalPath,
     getOnboardingRoute,
     getTrashRoute,
 } from './routing';
@@ -32,8 +32,8 @@ export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationSta
 export type NavigationContextValue = {
     /** Parsed search parameter filters. */
     filters: ItemFilters;
-    /** Flag indicating whether we are currently creating any new item  */
-    matchNewItemPrefix: boolean;
+    /** Flag indicating whether we are currently on an item list page  */
+    matchItemList: boolean;
     /** Flag indicating whether we are currently on the onboarding route */
     matchOnboarding: boolean;
     /** Flag indicating whether we are currently on a trash route */
@@ -65,10 +65,13 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const matchOnboarding = useRouteMatch(getOnboardingRoute()) !== null;
-    const matchNewItemPrefix = useRouteMatch(getNewItemRoutePrefix()) !== null;
 
     const itemRoute = getItemRoute(':shareId', ':itemId', { trashed: matchTrash });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
+
+    const matchRootExact = useRouteMatch({ exact: true, path: getLocalPath() });
+    const matchItemExact = useRouteMatch({ exact: true, path: itemRoute });
+    const matchItemList = matchRootExact !== null || matchItemExact !== null;
 
     const navigate = (pathname: string, options: NavigateOptions = { mode: 'push' }) => {
         const search = new URLSearchParams(history.location.search);
@@ -119,7 +122,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigation = useMemo<NavigationContextValue>(
         () => ({
             filters,
-            matchNewItemPrefix,
+            matchItemList,
             matchOnboarding,
             matchTrash,
             selectedItem,
@@ -129,7 +132,13 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
             preserveSearch: (path) => path + history.location.search,
             getCurrentLocation: () => history.createHref(history.location),
         }),
-        [location.search /* indirectly matches filter changes */, matchOnboarding, matchTrash, selectedItem]
+        [
+            location.search /* indirectly matches filter changes */,
+            matchOnboarding,
+            matchTrash,
+            matchRootExact,
+            selectedItem,
+        ]
     );
 
     return <NavigationContext.Provider value={navigation}>{children}</NavigationContext.Provider>;
