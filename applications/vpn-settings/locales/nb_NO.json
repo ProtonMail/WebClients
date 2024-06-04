@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Verv en venn"
       ],
+      "Refresh status": [
+        "Oppdater status"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Gå tilbake til pålogging"
       ],
+      "Review": [
+        "Gjennomgå"
+      ],
       "Revoke": [
         "Tilbakekall"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Send påminnelse"
+      ],
+      "Set catch-all": [
+        "Angi catch-all"
       ],
       "Set new password": [
         "Angi nytt passord"
@@ -732,6 +741,17 @@
       ],
       "Secure your communications": [
         "Sikre kommunikasjonen din"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Deaktivert"
+      ],
+      "Enabled": [
+        "Aktivert"
+      ],
+      "Missing keys": [
+        "Mangler nøkler"
       ]
     },
     "bf2023: Action": {
@@ -1934,6 +1954,20 @@
         "Du har nådd grensen for sletting av adresser for denne brukeren."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Er du sikker på at du vil slette dette domenet?"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Delete domain?": [
+        "Slette domenet?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Vennligst vær oppmerksom på dersom du sletter dette domenet, ${ domainName }, vil alle adresser forbundet med det bli deaktivert."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalt faktura"
@@ -1956,6 +1990,16 @@
       ],
       "Disable address?": [
         "Deaktivere adresse?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verifisert"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' underdomener brukes vanligvis ikke til e-post. Er du sikker på at du ønsker å bruke denne domeneverdien?"
       ]
     },
     "Downgrade account reason": {
@@ -2270,8 +2314,17 @@
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verifisering lyktes ikke, vennligst prøv igjen om en time."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Feil verifiseringskode. Vennligst sørg for at du kopierte verifiseringskoden riktig og prøv igjen. Det kan ta opptil 24 timer før endringene trer i kraft."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brukt alle adressene i planen din. Vennligst oppgrader planen din for å legge til en ny adresse."
@@ -2884,11 +2937,31 @@
       "Address": [
         "Adresse"
       ],
+      "Domain": [
+        "Domene"
+      ],
       "Status": [
         "Status"
       ],
       "Username": [
         "Brukernavn"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Vertsnavn"
+      ],
+      "Priority": [
+        "Prioritet"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Value / Data": [
+        "Verdi / Data"
+      ],
+      "Value / Data / Points to": [
+        "Verdi / Data / Peker til"
       ]
     },
     "Headline": {
@@ -2938,6 +3011,9 @@
         "${ n } adresse",
         "${ n } adresser"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
+      ],
       "${ number } city": [
         "${ number } by",
         "${ number } byer"
@@ -2952,6 +3028,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } tjener er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
         "${ provisioningCounter } tjenere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: be mottakerplattformene om å avvise de uautoriserte e-postene."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } til",
@@ -3117,6 +3199,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Før du kan motta e-postmeldinger for de egendefinerte domeneadressene dine på ${ MAIL_APP_NAME }, må du legge til følgende to MX-poster i DNS-konsollen (som du finner på plattformen der du kjøpte det egendefinerte domenet). Du kan finne et eksempel og noen nyttige tips ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Før du kan starte med å sende og motta e-poster fra dine nye adresser må du opprette krypteringsnøkler for dem."
       ],
@@ -3208,12 +3293,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } mellomtjener",
         "Sletter ${ deletedServerCount } mellomtjenere"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM lar ${ BRAND_NAME } kryptografisk signere e-postene dine og forhindre angripere i å manipulere e-posten din. Pass på at du legger til følgende tre CNAME-poster i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontrollerer om avsenderens SPF- og DKIM-poster kommer fra domenet ditt. Dette kan hindre angripere i å bruke SPF og DKIM fra et annet domene til å utgi seg for å være domenet ditt. \"p =\" (policy) i denne posten indikerer hvordan du vil at mottakerplattformene skal håndtere uautoriserte e-postmeldinger. Vi anbefaler at du bruker \"p=karantene\"-policyen for de fleste domener. Pass på at du legger til følgende TXT-post i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
       ],
       "DNS TXT record": [
         "DNS TXT-post"
@@ -3229,6 +3323,10 @@
       ],
       "Domain ownership verified.": [
         "Domeneeierskap er verifisert."
+      ],
+      "domain used": [
+        "domene brukt",
+        "domener brukt"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
@@ -3259,6 +3357,9 @@
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bli brukt en gang"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Hvert domene kan bare ha én SPF-post (TXT). Hvis du vil beholde den eksisterende SPF-posten (TXT), kan du legge til ${ spf } i gjeldende post (plasser den etter ${ spfValue })."
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -3323,6 +3424,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Skriv inn gjenopprettingsfrasen for å endre passordet ditt nå."
       ],
+      "Example: ${ spfExample }": [
+        "Eksempel: ${ spfExample }"
+      ],
       "Expired": [
         "Utløpt"
       ],
@@ -3337,6 +3441,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "For medlemmer av organisasjoner som bruker enkel pålogging (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
       "Free forever": [
         "Gratis for alltid"
@@ -3377,6 +3484,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Hvis du har et egendefinert domene med ${ MAIL_APP_NAME }, kan du sette opp en catch-all-e-postadresse for å motta meldinger sendt til ditt domene, men til en ugyldig e-postadresse (f.eks. på grunn av skrivefeil)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skriv den inn nedenfor for å legge til rabatten din."
       ],
@@ -3403,6 +3513,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktig: Vennligst sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
@@ -3478,6 +3591,12 @@
       ],
       "Loading...": [
         "Laster..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
@@ -3748,6 +3867,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klargjør hvem som har tillatelse til å sende e-post for domenet ditt. Pass på at du legger til følgende TXT-post i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO-brukere (levert av identitetsleverandøren din) blir slettet"
       ],
@@ -3856,6 +3978,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denne verifiseringen kan ta opptil én time. Du kan trygt fortsette til de neste trinnene."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dette vil avbryte ditt gjeldende betalte abonnement og du vil miste eventuelle lojalitetsfordeler du har akkumulert."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
@@ -4267,6 +4392,17 @@
         "Vennligst kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Legg til en ny adresse for eksisterende brukere av organisasjonen."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Legg til en ny bruker til din organisasjon og opprett en adresse for den."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Av sikkerhetsgrunner må vi bekrefte at du er eieren av ${ domainName }. Legg til følgende TXT-post i DNS-konsollen (som du finner på plattformen der du kjøpte det egendefinerte domenet). Du kan finne et eksempel og noen nyttige tips ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan legge til en betalingsmåte for å få abonnementet fornyet automatisk. Andre betalingsmåter er også tilgjengelige."
@@ -4528,6 +4664,9 @@
       "Do you have any suggestions for our team?": [
         "Har du noen forslag til teamet vårt?"
       ],
+      "Domain name": [
+        "Domenenavn"
+      ],
       "e.g. example.com": [
         "f.eks. eksempel.com"
       ],
@@ -4684,6 +4823,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Frase består av 12 unike ord i en spesifikk rekkefølge"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til de 3 følgende CNAME-postene. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende to MX-poster. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
       "Please share any feedback to help us improve.": [
         "Vennligst del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
       ],
@@ -4795,6 +4943,16 @@
         "Gjenopprettingstelefonnummer"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Legg til et domene som du eier til din ${ MAIL_APP_NAME }-konto."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -4839,6 +4997,17 @@
       ],
       "Daily email notifications": [
         "Daglige e-postvarslinger"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adresser"
+      ],
+      "Domain": [
+        "Domene"
+      ],
+      "Verify": [
+        "Verifiser"
       ]
     },
     "Label on payment method": {
@@ -4890,6 +5059,9 @@
       ],
       "Help translate": [
         "Hjelp med å oversette"
+      ],
+      "here": [
+        "her"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -5068,6 +5240,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
       ]
@@ -5922,6 +6097,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inkludert med ${ plus }, ${ bundle } og ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Inkludert med flere brukere ${ BRAND_NAME } for Businessplaner."
       ]
@@ -6512,6 +6690,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
+      ],
+      "yourdomain.com": [
+        "dittdomene.no"
       ]
     },
     "plan customizer, ips": {
@@ -7496,6 +7677,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkludert kalenderdeling"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag igjen",
+        "${ dayDiff } dager igjen"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkludert versjonshistorikk"
       ],
@@ -7544,8 +7729,8 @@
       "Add any new files": [
         "Legge til eventuelle nye filer"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Disk-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
@@ -7664,8 +7849,20 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du avbestiller ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
+      ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ${ unavailablePlan }."
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ."
       ],
       "Your ${ planName } has been canceled.": [
         "${ planName } er kansellert."
@@ -7776,6 +7973,9 @@
       "Bug reported": [
         "Feil rapportert"
       ],
+      "Catch-all address updated": [
+        "Catch-all-adresse oppdatert"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -7787,6 +7987,12 @@
       ],
       "Display name updated": [
         "Visningsnavn oppdatert"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-verdi kopiert til utklippstavlen"
+      ],
+      "Domain verified": [
+        "Domene bekreftet"
       ],
       "Email address copied to clipboard": [
         "E-post kopiert til utklippstavlen"
@@ -7848,6 +8054,9 @@
       "Preference saved": [
         "Preferanse lagret"
       ],
+      "SPF value copied to clipboard": [
+        "SPF-verdi kopiert til utklippstavlen"
+      ],
       "User created": [
         "Bruker opprettet"
       ],
@@ -7856,6 +8065,12 @@
       ],
       "Username copied to clipboard": [
         "Brukernavn kopiert til utklippstavlen"
+      ],
+      "Value copied to clipboard": [
+        "Verdi kopiert til utklippstavlen"
+      ],
+      "Verification code copied to clipboard": [
+        "Verifiseringskode kopiert til utklippstavlen"
       ],
       "Verification successful": [
         "Vellykket verifisering"
@@ -7929,6 +8144,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresser"
       ]
     },
     "Tab subscription modal": {
@@ -8034,6 +8254,9 @@
       "Add credits": [
         "Legg til kreditter"
       ],
+      "Add domain": [
+        "Legg til domene"
+      ],
       "Add new user": [
         "Legg til ny bruker"
       ],
@@ -8084,6 +8307,9 @@
       ],
       "Card verification": [
         "Verifisering av kort"
+      ],
+      "Catch-All address": [
+        "Catch-all-adresse"
       ],
       "Catch-all address": [
         "Catch-all-adresse"
@@ -8221,6 +8447,9 @@
       ],
       "Edit display name": [
         "Rediger visningsnavn"
+      ],
+      "Edit domain": [
+        "Rediger domene"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -8577,6 +8806,17 @@
         "${ MAIL_APP_NAME }-faktura"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresse"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adresser"
@@ -8656,6 +8896,15 @@
       ],
       "Verified email address": [
         "Bekreftet e-postadresse"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
+      ],
+      "Your DKIM signing is working.": [
+        "Din DKIM-signering virker."
       ]
     },
     "tooltip": {
@@ -8890,11 +9139,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du må ${ activateLink } organisasjonsnøkkelen før du kan legge til en e-postadresse til et ikke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Etter vellykket verifisering, ikke fjern denne TXT-posten da den trengs for å bekrefte at du fortsetter å eie domenet."
       ]
     }
   }

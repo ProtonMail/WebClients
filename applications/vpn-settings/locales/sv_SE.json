@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
+      "Refresh status": [
+        "Uppdatera status"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Tillbaka till inloggning"
       ],
+      "Review": [
+        "Granska"
+      ],
       "Revoke": [
         "Återkalla"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Skicka påminnelse"
+      ],
+      "Set catch-all": [
+        "Ställ in \"Catch-all\""
       ],
       "Set new password": [
         "Ställ in nytt lösenord"
@@ -732,6 +741,17 @@
       ],
       "Secure your communications": [
         "Säkra din kommunikation"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Inaktiverad"
+      ],
+      "Enabled": [
+        "Aktiverad"
+      ],
+      "Missing keys": [
+        "Nycklar saknas"
       ]
     },
     "bf2023: Action": {
@@ -1931,6 +1951,20 @@
         "Du har nått gränsen för borttagning av adresser för denna användare."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Är du säker på att du vill ta bort denna domän?"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete domain?": [
+        "Ta bort domän?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Observera att om du tar bort denna domän ${ domainName }, kommer alla adresser som är associerade med den att inaktiveras."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Försenad faktura"
@@ -1950,6 +1984,16 @@
       ],
       "Disable address?": [
         "Inaktivera adress?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verifierad"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' som underdomän används vanligtvis inte för e-post. Är du säker på att du vill använda detta domänvärde?"
       ]
     },
     "Downgrade account reason": {
@@ -2264,8 +2308,17 @@
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verifieringen lyckades inte, försök igen om en timme."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
@@ -2883,11 +2936,31 @@
       "Address": [
         "Adress"
       ],
+      "Domain": [
+        "Domän"
+      ],
       "Status": [
         "Status"
       ],
       "Username": [
         "Användarnamn"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Värdnamn"
+      ],
+      "Priority": [
+        "Prioritet"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Value / Data": [
+        "Värde/Data"
+      ],
+      "Value / Data / Points to": [
+        "Värde/Data/Pekar till"
       ]
     },
     "Headline": {
@@ -2938,6 +3011,9 @@
         "${ n } adress",
         "${ n } adresser"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: sätt inte i karantän eller avvisa ej oauktoriserade e-postmeddelanden. Vanligtvis använder människor bara denna policy för felsökning eller testning."
+      ],
       "${ number } city": [
         "${ number } ort",
         "${ number } orter"
@@ -2952,6 +3028,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }.",
         "${ provisioningCounter } servrar håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: ber mottagarplattformarna att markera de oauktoriserade e-postmeddelandena som skräppost eller sätta dem i karantän."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: ber mottagarplattformarna att avvisa de oauktoriserade e-postmeddelandena."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } till",
@@ -3117,6 +3199,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Innan du kan ta emot e-postmeddelanden för dina anpassade domänadresser på ${ MAIL_APP_NAME } måste du lägga till följande två MX-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen). Du kan hitta ett exempel och några användbara tips ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
@@ -3208,12 +3293,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Tar bort ${ deletedServerCount } gatewayserver",
         "Tar bort ${ deletedServerCount } gatewayservrar"
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM tillåter ${ BRAND_NAME } att kryptografiskt signera din e-post och förhindra angripare från att manipulera din e-post. Se till att du lägger till följande tre CNAME-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontrollerar om avsändarens SPF- och DKIM-poster kommer från din domän. Detta kan förhindra angripare från att använda en annan domäns SPF och DKIM för att imitera din domän. ”p=” (policy) i denna post indikerar hur du vill att mottagarplattformarna ska hantera obehöriga e-postmeddelanden. Vi rekommenderar att använda policyn ”p=quarantine” för de flesta domäner. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
       "DNS TXT record": [
         "DNS TXT-post"
@@ -3229,6 +3323,10 @@
       ],
       "Domain ownership verified.": [
         "Domänens äganderätt verifierad."
+      ],
+      "domain used": [
+        "domän används",
+        "domäner används"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klart! Vi skickade en kod till ${ destination }."
@@ -3259,6 +3357,9 @@
       ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Varje domän kan endast ha en SPF (TXT)-post. Om du vill behålla den befintliga SPF-posten (TXT) kan du lägga till ${ spf } till din nuvarande post (lägg den efter ${ spfValue })."
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -3323,6 +3424,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Ange din återställningsfras för att ändra ditt lösenord nu."
       ],
+      "Example: ${ spfExample }": [
+        "Exempel: ${ spfExample }"
+      ],
       "Expired": [
         "Löpt ut"
       ],
@@ -3337,6 +3441,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "För medlemmar i organisationer som använder enkel inloggning (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
       "Free forever": [
         "Gratis för alltid"
@@ -3374,6 +3481,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Om du har en anpassad domän med ${ MAIL_APP_NAME } kan du ställa in en catch-all e-postadress för att ta emot meddelanden skickade till din domän men till en ogiltig e-postadress (t.ex. på grund av stavfel)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
       ],
@@ -3400,6 +3510,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "VIKTIGT: Om din DNS-konsol inte tillåter att CNAME-värden slutar med en punkt kan du ta bort den sista punkten i CNAME-värdena."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktigt: Se till att du sparar återställningskoderna. Annars kan du permanent förlora åtkomst till ditt konto om du förlorar din tvåfaktorsautentiseringsenhet."
@@ -3475,6 +3588,12 @@
       ],
       "Loading...": [
         "Laddar..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
@@ -3744,6 +3863,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Ange den domän som tillåts autentisera med SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klargör vem som får skicka e-post för din domän. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO-användare (som tillhandahålls av din identitetsleverantör) kommer att tas bort"
@@ -4255,6 +4377,17 @@
         "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Lägg till en ny adress för befintliga användare i din organisation."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Lägg till en ny användare till din organisation och skapa en adress för den."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Av säkerhetsskäl måste vi verifiera att du är ägare till ${ domainName }. Lägg till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen). Du kan hitta ett exempel och några användbara tips ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan lägga till en betalningsmetod så att din prenumeration förnyas automatiskt. Andra betalningsmetoder är också tillgängliga."
@@ -4513,6 +4646,9 @@
       "Do you have any suggestions for our team?": [
         "Har du några förslag till vårt team?"
       ],
+      "Domain name": [
+        "Domännamn"
+      ],
       "e.g. example.com": [
         "t.ex. example.com"
       ],
@@ -4666,6 +4802,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fras består av 12 unika ord i en specifik ordning"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lägg till alla tre av följande CNAME-poster. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lägg till följande två MX-poster. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ],
       "Please share any feedback to help us improve.": [
         "Dela gärna feedback för att hjälpa oss att förbättra."
       ],
@@ -4774,6 +4919,16 @@
         "Telefonnummer för återställning"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Lägg till en domän som du äger till ditt ${ MAIL_APP_NAME }-konto."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -4818,6 +4973,17 @@
       ],
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adresser"
+      ],
+      "Domain": [
+        "Domän"
+      ],
+      "Verify": [
+        "Verifiera"
       ]
     },
     "Label on payment method": {
@@ -4869,6 +5035,9 @@
       ],
       "Help translate": [
         "Hjälp till att översätta"
+      ],
+      "here": [
+        "här"
       ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
@@ -5044,6 +5213,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex., du@yourcompany.com). Vår guide kommer att guida dig genom processen."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
       ]
@@ -5895,6 +6067,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
@@ -6104,6 +6279,12 @@
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Undvik alltför komprimerade bilder."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Se till att din logga har utrymme runt sig."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Välj en PNG-bild som är 128x128 pixlar för tydlighet."
       ],
       "Tips on choosing a good logo": [
         "Tips på att välja en bra logga"
@@ -6479,6 +6660,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
+      ],
+      "yourdomain.com": [
+        "dindomän.com"
       ]
     },
     "plan customizer, ips": {
@@ -6656,6 +6840,9 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "SCIM bas URL"
+      ],
       "SCIM token": [
         "SCIM-token"
       ]
@@ -7426,6 +7613,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkluderar kalenderdelning"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag kvar",
+        "${ dayDiff } dagar kvar"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkluderar versionshistorik"
       ],
@@ -7679,6 +7870,9 @@
       "Bug reported": [
         "Fel rapporterat"
       ],
+      "Catch-all address updated": [
+        "Catch-all-adress uppdaterad"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"
       ],
@@ -7690,6 +7884,12 @@
       ],
       "Display name updated": [
         "Visningsnamn uppdaterat"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-värde kopierat till urklipp"
+      ],
+      "Domain verified": [
+        "Domän verifierad"
       ],
       "Email address copied to clipboard": [
         "E-postadress kopierad till urklipp"
@@ -7751,6 +7951,9 @@
       "Preference saved": [
         "Preferens sparad"
       ],
+      "SPF value copied to clipboard": [
+        "SPF-värde kopierat till urklipp"
+      ],
       "User created": [
         "Användare skapad"
       ],
@@ -7759,6 +7962,12 @@
       ],
       "Username copied to clipboard": [
         "Användarnamn kopierat till urklipp"
+      ],
+      "Value copied to clipboard": [
+        "Värde kopierat till urklipp"
+      ],
+      "Verification code copied to clipboard": [
+        "Verifieringskod kopierat till urklipp"
       ],
       "Verification successful": [
         "Verifiering lyckades"
@@ -7832,6 +8041,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresser"
       ]
     },
     "Tab subscription modal": {
@@ -7940,6 +8154,9 @@
       "Add credits": [
         "Lägg till krediter"
       ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
       "Add new user": [
         "Lägg till ny användare"
       ],
@@ -7990,6 +8207,9 @@
       ],
       "Card verification": [
         "Kortverifiering"
+      ],
+      "Catch-All address": [
+        "Catch all-adress"
       ],
       "Catch-all address": [
         "Catch all-adress"
@@ -8127,6 +8347,9 @@
       ],
       "Edit display name": [
         "Redigera visningsnamn"
+      ],
+      "Edit domain": [
+        "Redigera domän"
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -8483,6 +8706,17 @@
         "${ MAIL_APP_NAME }-faktura"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adress"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adresser"
@@ -8559,6 +8793,15 @@
       ],
       "Verified email address": [
         "Verifierad e-postadress"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Vi upptäckte ett problem med din DNS-konfiguration. Se till att dina poster matchar instruktionerna nedan. Om problemet kvarstår måste vi stänga av DKIM-signering."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
+      ],
+      "Your DKIM signing is working.": [
+        "Din DKIM-signering fungerar."
       ]
     },
     "tooltip": {
@@ -8793,11 +9036,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Tyvärr är vi inte online just nu. Fyll i formuläret nedan för att beskriva ditt problem så undersöker vi det och hör av oss när vi är online igen."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Vi upptäckte ett problem med din DNS-konfiguration. Se till att dina poster matchar instruktionerna nedan. Om problemet kvarstår måste vi stänga av DKIM-signering."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du måste ${ activateLink } organisationsnyckeln innan du lägger till en e-postadress till en icke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ]
     }
   }

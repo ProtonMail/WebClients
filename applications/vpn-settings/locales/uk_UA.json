@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Запросити друга"
       ],
+      "Refresh status": [
+        "Оновити стан"
+      ],
       "Refresh the page": [
         "Оновити сторінку"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Повернутися до входу"
       ],
+      "Review": [
+        "Огляд"
+      ],
       "Revoke": [
         "Відкликати"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Надіслати нагадування"
+      ],
+      "Set catch-all": [
+        "Встановити catch-all"
       ],
       "Set new password": [
         "Встановити новий пароль"
@@ -716,7 +725,7 @@
         "Переглядайте інтернет приватно та блокуйте рекламу"
       ],
       "Create and collaborate on documents securely": [
-        "Безпечно створювати та співпрацювати з документами"
+        "Безпечно створюйте документи й співпрацюйте"
       ],
       "Keep your schedule private": [
         "Збережіть приватність свого розкладу"
@@ -729,6 +738,17 @@
       ],
       "Secure your communications": [
         "Захистіть свої комунікації"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Вимкнено"
+      ],
+      "Enabled": [
+        "Увімкнено"
+      ],
+      "Missing keys": [
+        "Відсутні ключі"
       ]
     },
     "bf2023: Action": {
@@ -1918,6 +1938,16 @@
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Перевірено"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Піддомени 'www' зазвичай не використовуються для електронної пошти. Ви впевнені, що хочете використати це значення для домену?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
@@ -2225,8 +2255,17 @@
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Перевірка пройшла невдало. Будь ласка, повторіть спробу за годину."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Ми зупинили підписання DKIM через проблеми з конфігурацією вашого DNS. Будь ласка, дотримуйтесь наведених нижче інструкцій, щоб відновити підпис."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Неправильний код перевірки. Переконайтеся, що ви правильно скопіювали код і спробуйте знову. Застосування змін може тривати до 24 годин."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -2845,11 +2884,31 @@
       "Address": [
         "Адреса"
       ],
+      "Domain": [
+        "Домен"
+      ],
       "Status": [
         "Стан"
       ],
       "Username": [
         "Ім'я користувача"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Ім'я вузла"
+      ],
+      "Priority": [
+        "Пріоритет"
+      ],
+      "Type": [
+        "Тип"
+      ],
+      "Value / Data": [
+        "Значення / Дані"
+      ],
+      "Value / Data / Points to": [
+        "Значення / Дані / Вказувати на"
       ]
     },
     "Headline": {
@@ -2901,6 +2960,9 @@
         "${ n } адрес",
         "${ n } адрес"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: не відправляти на карантин і не відхиляти несанкціоновані листи. Зазвичай ця політика використовується лише для усунення несправностей або тестування."
+      ],
       "${ number } city": [
         "${ number } місто",
         "${ number } міста",
@@ -2921,6 +2983,12 @@
         "${ provisioningCounter } сервери все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: прохання до платформи одержувача позначати несанкціоновані листи як спам або відправити їх на карантин."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: прохання до платформи отримувача відхилити несанкціоновані листи."
       ],
       "${ remainingAddresses.length } more": [
         "ще ${ remainingAddresses.length }",
@@ -3102,6 +3170,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Для можливості отримання листів на адреси вашого власного домену в ${ MAIL_APP_NAME } вам потрібно додати такі два MX-записи у DNS-консолі (розташованій на платформі, на якій ви придбали власний домен). Ви можете знайти приклад і кілька корисних порад ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
@@ -3195,6 +3266,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Видалення ${ deletedServerCount } шлюзового сервера",
         "Видалення ${ deletedServerCount } шлюзових серверів",
@@ -3203,6 +3277,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM дозволяє ${ BRAND_NAME } криптографічно підписувати ваші електронні листи й запобігати підробці вашої е-пошти зловмисниками. Обов'язково додайте зазначені три записи CNAME у консолі DNS (розташованій на платформі, де ви придбали власний домен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC перевіряє, чи записи SPF і DKIM відправника походять з вашого домену. Це може запобігти використанню зловмисниками SPF і DKIM іншого домену, щоб видати себе за ваш домен. \"p=\" (політика) в цьому записі вказує, як ви хочете, щоб платформи одержувачів обробляли несанкціоновані листи. Ми рекомендуємо використовувати політику \"p=quarantine\" для більшості доменів. Обов'язково додайте зазначений TXT-запис у консоль DNS (розташовану на платформі, на якій ви придбали власний домен)."
       ],
       "DNS TXT record": [
         "Запис DNS TXT"
@@ -3218,6 +3298,12 @@
       ],
       "Domain ownership verified.": [
         "Володіння доменом засвідчено."
+      ],
+      "domain used": [
+        "домен використовується",
+        "домени використовуються",
+        "доменів використовуються",
+        "доменів використовуються"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
@@ -3248,6 +3334,9 @@
       ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Кожен домен може мати лише один запис SPF (TXT). Якщо ви хочете зберегти наявний запис SPF (TXT), додайте ${ spf } до свого поточного запису (розмістіть його після ${ spfValue })."
       ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
@@ -3312,6 +3401,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Введіть фразу відновлення, щоб змінити пароль."
       ],
+      "Example: ${ spfExample }": [
+        "Наприклад: ${ spfExample }"
+      ],
       "Expired": [
         "Протерміновано"
       ],
@@ -3326,6 +3418,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для учасників організацій, що використовують єдиний вхід (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Користувачам, які переходять на ${ MAIL_APP_NAME } з інших сервісів електронної пошти, необхідно вибрати вкладку ${ boldAddresses } і додати всі активні адреси електронної пошти, перш ніж змінювати MX запис. Зробивши це, ви забезпечите безперебійний перехід."
       ],
       "Free forever": [
         "Безплатно назавжди"
@@ -3363,6 +3458,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Якщо у вас є власний домен з ${ MAIL_APP_NAME }, ви можете налаштувати електронну адресу catch-all для отримання повідомлень, надісланих на ваш домен, але з неправильною адресою (наприклад, через помилки)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Якщо у вас є подарунковий код, введіть його внизу, щоб застосувати свою знижку."
       ],
@@ -3389,6 +3487,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Якщо у вас виникли проблеми, ми вам допоможемо. ${ boldPhoneCall } або ${ boldZoomMeeting } з нашим фахівцем служби підтримки."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖЛИВО: якщо ваша консоль DNS не допускає, щоб значення CNAME закінчувалися крапкою, ви можете видалити останню крапку в значеннях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
@@ -3464,6 +3565,12 @@
       ],
       "Loading...": [
         "Завантаження..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Більшість сервісів електронної пошти можуть відхиляти або фільтрувати ваші листи як спам, якщо записи SPF/DKIM/DMARC відсутні або налаштовані неправильно."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
@@ -3722,6 +3829,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF уточнює, кому дозволяється надсилати листи з використанням вашого домену. Обов'язково додайте зазначений запис TXT у своїй консолі DNS (на платформі, де ви придбали власний домен)."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Користувачі SSO (надані вашим провайдером ідентифікації) будуть видалені"
@@ -4248,6 +4358,17 @@
         "Будь ласка, зв'яжіться з нами через ${ email } для отримання інструкцій про те, як сплатити готівкою."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Додайте нову адресу для наявних користувачів вашої організації."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Додайте нового користувача до вашої організації та створіть для нього адресу."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "З міркувань безпеки ми повинні переконатися, що ви є власником ${ domainName }. Будь ласка, додайте зазначений TXT-запис у вашій консолі DNS (на платформі, де ви придбали власний домен). Ви можете знайти зразок і кілька корисних порад ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Ви можете додати спосіб оплати, щоб автоматично продовжувати передплату. Також доступні інші способи оплати."
@@ -4512,6 +4633,9 @@
       "Do you have any suggestions for our team?": [
         "У вас є пропозиції для нашої команди?"
       ],
+      "Domain name": [
+        "Ім'я домену"
+      ],
       "e.g. example.com": [
         "наприклад, example.com"
       ],
@@ -4662,6 +4786,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складається з 12 унікальних слів у певному порядку"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Додайте всі 3 зазначені записи CNAME. Зауважте, що оновлення записів DNS може тривати кілька годин."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Додайте два зазначені записи MX. Зауважте, що оновлення записів DNS може тривати кілька годин."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Додайте зазначений запис TXT. Зауважте, що оновлення записів DNS може тривати кілька годин."
+      ],
       "Please share any feedback to help us improve.": [
         "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
       ],
@@ -4767,6 +4900,16 @@
         "Номер телефону для відновлення"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Додати домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Будь ласка, додайте зазначений TXT-запис. Примітка: оновлення записів DNS може тривати кілька годин."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Адміністратор"
@@ -4813,6 +4956,17 @@
         "Щоденні сповіщення електронною поштою"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "Адреси"
+      ],
+      "Domain": [
+        "Домен"
+      ],
+      "Verify": [
+        "Перевірити"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Типово"
@@ -4856,6 +5010,9 @@
       ],
       "Help translate": [
         "Допоможіть з перекладом"
+      ],
+      "here": [
+        "тут"
       ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
@@ -5033,6 +5190,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Під'єднайте власний домен до ${ BRAND_NAME }, щоб налаштувати власні адреси електронної пошти (наприклад, you@yourcompany.com). Наш автоматичний помічник допоможе вам усе налаштувати."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
       ]
@@ -5536,6 +5696,12 @@
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
       ],
+      "Up to ${ n } user": [
+        "До ${ n } користувача",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
@@ -5921,6 +6087,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Включено до ${ plus }, ${ bundle } та ${ BRAND_NAME } для бізнесу."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Включено до тарифних планів ${ BRAND_NAME } for Business із декількома користувачами."
       ]
@@ -6491,6 +6660,9 @@
       ],
       "Select state": [
         "Оберіть країну"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -7514,6 +7686,12 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Єдиним джерелом доходу ${ BRAND_NAME } є передплата користувачів. Ваша підтримка дає нам змогу бути незалежними, поширювати нашу місію, щоб зробити приватність в Інтернеті стандартом, а також сприяти активістам і організаціям, які відстоюють приватність і свободу."
       ],
+      "${ dayDiff } day left": [
+        "Залишився ${ dayDiff } день",
+        "Залишилось ${ dayDiff } дні",
+        "Залишилось ${ dayDiff } днів",
+        "Залишилось ${ dayDiff } днів"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
@@ -7677,6 +7855,9 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
+      "Catch-all address updated": [
+        "Catch-all адресу оновлено"
+      ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
       ],
@@ -7688,6 +7869,12 @@
       ],
       "Display name updated": [
         "Ім'я оновлено"
+      ],
+      "DMARC value copied to clipboard": [
+        "Значення DMARC скопійовано в буфер обміну"
+      ],
+      "Domain verified": [
+        "Домен перевірено"
       ],
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
@@ -7749,6 +7936,9 @@
       "Preference saved": [
         "Налаштування збережено"
       ],
+      "SPF value copied to clipboard": [
+        "Значення SPF скопійовано в буфер обміну"
+      ],
       "User created": [
         "Користувача створено"
       ],
@@ -7757,6 +7947,12 @@
       ],
       "Username copied to clipboard": [
         "Ім'я користувача скопійовано до буфера обміну"
+      ],
+      "Value copied to clipboard": [
+        "Значення скопійовано в буфер обміну"
+      ],
+      "Verification code copied to clipboard": [
+        "Код перевірки скопійовано в буфер обміну"
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
@@ -7830,6 +8026,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Адреси"
       ]
     },
     "Tab subscription modal": {
@@ -7938,6 +8139,9 @@
       "Add credits": [
         "Поповнити рахунок"
       ],
+      "Add domain": [
+        "Додати домен"
+      ],
       "Add new user": [
         "Додати нового користувача"
       ],
@@ -7988,6 +8192,9 @@
       ],
       "Card verification": [
         "Перевірка картки"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Catch-all address": [
         "Catch-all адреси"
@@ -8129,6 +8336,9 @@
       ],
       "Edit display name": [
         "Редагувати ім'я"
+      ],
+      "Edit domain": [
+        "Редагувати домен"
       ],
       "Edit email address": [
         "Змінити адресу е-пошти"
@@ -8483,6 +8693,17 @@
         "Рахунок-фактура ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Адреса"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Status": [
+        "Стан"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Адреси"
@@ -8559,6 +8780,15 @@
       ],
       "Verified email address": [
         "Підтверджена адреса електронної пошти"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Ми зупинили підписання DKIM через проблеми з конфігурацією вашого DNS. Будь ласка, дотримуйтесь наведених нижче інструкцій, щоб відновити підпис."
+      ],
+      "Your DKIM signing is working.": [
+        "Підписування DKIM працює."
       ]
     },
     "tooltip": {
@@ -8773,11 +9003,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Ви повинні ${ activateLink } ключ організації перед додаванням адреси електронної пошти для не приватного учасника."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Після успішної перевірки не вилучайте цей TXT запис, оскільки він потрібен для підтвердження вашої власності домену."
       ]
     }
   }

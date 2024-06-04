@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Indicar um amigo"
       ],
+      "Refresh status": [
+        "Atualizar status"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Voltar ao inicio de sessão"
       ],
+      "Review": [
+        "Revisão"
+      ],
       "Revoke": [
         "Revogar"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Enviar lembrete"
+      ],
+      "Set catch-all": [
+        "Definir catch-all"
       ],
       "Set new password": [
         "Definir nova senha"
@@ -732,6 +741,17 @@
       ],
       "Secure your communications": [
         "Proteja suas comunicações"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Desativado"
+      ],
+      "Enabled": [
+        "Ativado"
+      ],
+      "Missing keys": [
+        "Chaves ausentes"
       ]
     },
     "bf2023: Action": {
@@ -1934,6 +1954,20 @@
         "Você atingiu o limite de exclusões de endereço para este usuário."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Você tem certeza de que deseja excluir este domínio?"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Delete domain?": [
+        "Excluir domínio?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Observe que se você excluir este domínio ${ domainName }, todos os endereços associados serão desativados."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura vencida"
@@ -1953,6 +1987,16 @@
       ],
       "Disable address?": [
         "Desativar endereço?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verificado"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Os subdomínios 'www' normalmente não são usados no e-mail. Você tem certeza de que deseja usar este nome de domínio?"
       ]
     },
     "Downgrade account reason": {
@@ -2267,8 +2311,17 @@
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "A verificação não obteve êxito. Tente novamente dentro de uma hora."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Suspendemos a assinatura do DKIM devido a problemas com a configuração de seu DNS. Siga as instruções abaixo para retomar a assinatura."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Código de verificação incorreto. Certifique-se de copiar corretamente o código de verificação e tentar novamente. Pode levar até 24 horas para que as mudanças entrem em vigor."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço."
@@ -2881,11 +2934,31 @@
       "Address": [
         "Endereço"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Status": [
         "Status"
       ],
       "Username": [
         "Nome de usuário"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Nome do servidor"
+      ],
+      "Priority": [
+        "Prioridade"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Value / Data": [
+        "Valor / Dados"
+      ],
+      "Value / Data / Points to": [
+        "Valor / dados / pontos para"
       ]
     },
     "Headline": {
@@ -2941,6 +3014,9 @@
         "${ n } endereço",
         "${ n } endereços"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
+      ],
       "${ number } city": [
         "${ number } cidade",
         "${ number } cidades"
@@ -2955,6 +3031,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } a mais",
@@ -3120,6 +3202,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Antes de poder receber e-mails para seus endereços de domínio personalizados em ${ MAIL_APP_NAME }, você precisa adicionar os dois registros MX a seguir em seu console DNS (localizado na plataforma onde você comprou o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis em ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
       ],
@@ -3211,12 +3296,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "O DKIM permite que ${ BRAND_NAME } assine criptograficamente seus e-mails e evite que invasores adulterem seu e-mail. Certifique-se de adicionar os três registros CNAME a seguir em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "O DMARC verifica se os registros SPF e DKIM do remetente são originários do seu domínio. Isso pode impedir que invasores usem SPF e DKIM de outro domínio para se passar por seu domínio. O \"p=\" (política) neste registro indica como você deseja que as plataformas de destinatários lidem com e-mails não autorizados. Recomendamos usar a política \"p=quarentena\" para a maioria dos domínios. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
       ],
       "DNS TXT record": [
         "Registro DNS TXT"
@@ -3232,6 +3326,10 @@
       ],
       "Domain ownership verified.": [
         "Propriedade do domínio verificada."
+      ],
+      "domain used": [
+        "domínio usado",
+        "domínios usados"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Pronto! Enviamos um código para ${ destination }."
@@ -3262,6 +3360,9 @@
       ],
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Cada domínio só pode ter um registro SPF (TXT). Se quiser manter o registro SPF (TXT) existente, você pode adicionar ${ spf } ao seu registro atual (coloque-o depois de ${ spfValue })."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -3326,6 +3427,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Digite sua frase de recuperação para alterar sua senha agora."
       ],
+      "Example: ${ spfExample }": [
+        "Exemplo: ${ spfExample }"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -3340,6 +3444,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Para membros da organização usando o login único (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
       ],
       "Free forever": [
         "Grátis para sempre"
@@ -3377,6 +3484,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um e-mail catch-all que receberá mensagens enviadas para o seu domínio, mas com um endereço de e-mail inválido (por exemplo, devido a erros de digitação)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se você tem um vale-presente, insira-o abaixo para aplicar o desconto."
       ],
@@ -3403,6 +3513,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou uma ${ boldZoomMeeting } com um de nossos especialistas de suporte."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANTE: Se o seu console DNS não permitir que os valores CNAME terminem com um ponto, você poderá remover o último ponto dos valores CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
@@ -3478,6 +3591,12 @@
       ],
       "Loading...": [
         "Carregando..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Os principais serviços de e-mail podem rejeitar ou filtrar seus e-mails para spam se o SPF/DKIM/DMARC estiver faltando ou não estiver configurado corretamente."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Os principais serviços de e-mail podem rejeitar ou filtrar seus e-mails para spam se o SPF/DKIM/DMARC estiver faltando ou não estiver configurado corretamente."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
@@ -3747,6 +3866,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF esclarece quem tem permissão para enviar e-mails para o seu domínio. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Usuários SSO (fornecido pelo seu Provedor de Identidade) serão excluídos"
@@ -4264,6 +4386,17 @@
         "Entre em contato conosco pelo ${ email } para obter instruções de como efetuar o pagamento em dinheiro."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Adicione um novo endereço para os usuários existentes da sua organização."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Adicionar um novo usuário à sua organização e criar um endereço para ele."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Por motivos de segurança, precisamos verificar se você é o proprietário de ${ domainName }. Adicione o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis em ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Você pode adicionar um método de pagamento para renovar sua assinatura automaticamente. Outros métodos de pagamento também estão disponíveis."
@@ -4525,6 +4658,9 @@
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
       ],
+      "Domain name": [
+        "Nome do domínio"
+      ],
       "e.g. example.com": [
         "por exemplo exemplo.com"
       ],
@@ -4681,6 +4817,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "A frase consiste de 12 palavras únicas em uma ordem específica"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Adicione todos os três registros CNAME a seguir. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Adicione os dois registros MX a seguir. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
       "Please share any feedback to help us improve.": [
         "Compartilhe qualquer feedback para nos ajudar a melhorar."
       ],
@@ -4786,6 +4931,16 @@
         "Telefone de recuperação"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Adicione um domínio que você possui na sua conta ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -4830,6 +4985,17 @@
       ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Endereços"
+      ],
+      "Domain": [
+        "Domínio"
+      ],
+      "Verify": [
+        "Verificar"
       ]
     },
     "Label on payment method": {
@@ -4881,6 +5047,9 @@
       ],
       "Help translate": [
         "Ajude a traduzir"
+      ],
+      "here": [
+        "aqui"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -5056,6 +5225,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Conecte seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@sua-empresa.com). Nosso assistente guiará você no processo."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
       ]
@@ -5704,6 +5876,9 @@
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
       ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
       "Your account's usage": [
         "Uso da sua conta"
       ]
@@ -5910,6 +6085,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Incluso com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Incluído com vários usuários da ${ BRAND_NAME } for Business."
       ]
@@ -6349,11 +6527,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -6482,6 +6666,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "yourdomain.com": [
+        "seudominio.com"
       ]
     },
     "plan customizer, ips": {
@@ -6642,11 +6829,32 @@
       "Enter URL and token into your identity provider": [
         "Insira o URL e o token em seu provedor de identidade"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Por razões de segurança, o token SCIM será ocultado após salvar as alterações e você não poderá vê-lo novamente."
+      ],
       "For security reasons, the token is hidden": [
         "Por motivos de segurança, o token está oculto."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Vá até seu provedor de identidade, copie e cole os dados abaixo e conclua a configuração do SCIM para ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Vá até o seu provedor de identidade, copie e cole o token abaixo e reabilite o SCIM para ${ VPN_APP_NAME }."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Certifique-se de copiar o token SCIM acima agora."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "O aprovisionamento automático do SCIM será desabilitado até que você entre com um novo token SCIM nas configurações do seu provedor de identidade."
+      ],
       "The SCIM base URL and token will be deleted.": [
         "O URL base e o token do SCIM serão excluídos."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Para reabilitar a sincronização com seu provedor de identidade, é necessário completar a integração com o SCIM novamente."
       ]
     },
     "scim: Label": {
@@ -7428,6 +7636,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
@@ -7503,6 +7715,9 @@
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas."
+      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Como reagimos quando a ${ BRAND_NAME } foi alvo de uma campanha agressiva de censura."
       ],
@@ -7538,6 +7753,12 @@
       ],
       "Priority support": [
         "Suporte prioritário"
+      ],
+      "Reactivate": [
+        "Reativar"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Ative novamente para restaurar o acesso aos recursos do ${ planName }"
       ],
       "Read the story": [
         "Leia a história"
@@ -7678,6 +7899,9 @@
       "Bug reported": [
         "Relatório de erros enviado"
       ],
+      "Catch-all address updated": [
+        "Endereço catch-all atualizado"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -7689,6 +7913,12 @@
       ],
       "Display name updated": [
         "Nome de exibição atualizado"
+      ],
+      "DMARC value copied to clipboard": [
+        "Valor DMARC copiado para a área de transferência"
+      ],
+      "Domain verified": [
+        "Domínio verificado"
       ],
       "Email address copied to clipboard": [
         "Endereço de e-mail copiado para a área de transferência"
@@ -7750,6 +7980,9 @@
       "Preference saved": [
         "Preferência salva"
       ],
+      "SPF value copied to clipboard": [
+        "Valor SPF copiado para a área de transferência"
+      ],
       "User created": [
         "Usuário criado"
       ],
@@ -7758,6 +7991,12 @@
       ],
       "Username copied to clipboard": [
         "O nome de usuário foi copiado para a área de transferência."
+      ],
+      "Value copied to clipboard": [
+        "Valor copiado para a área de transferência"
+      ],
+      "Verification code copied to clipboard": [
+        "Código de verificação copiado para a área de transferência"
       ],
       "Verification successful": [
         "Verificado com sucesso"
@@ -7831,6 +8070,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Endereços"
       ]
     },
     "Tab subscription modal": {
@@ -7939,6 +8183,9 @@
       "Add credits": [
         "Adicionar créditos"
       ],
+      "Add domain": [
+        "Adicionar domínio"
+      ],
       "Add new user": [
         "Adicionar novo usuário"
       ],
@@ -7989,6 +8236,9 @@
       ],
       "Card verification": [
         "Verificação do cartão"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Catch-all address": [
         "Endereço catch-all"
@@ -8126,6 +8376,9 @@
       ],
       "Edit display name": [
         "Editar nome de exibição"
+      ],
+      "Edit domain": [
+        "Editar domínio"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -8482,6 +8735,17 @@
         "Fatura de ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Endereço"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Endereços"
@@ -8561,6 +8825,15 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Detectamos um problema com a configuração do seu DNS. Certifique-se de que seus registros concordem com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Suspendemos a assinatura do DKIM devido a problemas com a configuração de seu DNS. Siga as instruções abaixo para retomar a assinatura."
+      ],
+      "Your DKIM signing is working.": [
+        "A sua assinatura DKIM está funcionando."
       ]
     },
     "tooltip": {
@@ -8777,11 +9050,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Detectamos um problema com a configuração do seu DNS. Certifique-se de que seus registros concordem com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Você deve ter ${ activateLink } a chave da organização antes de adicionar um endereço de e-mail a um membro não privado."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
       ]
     }
   }

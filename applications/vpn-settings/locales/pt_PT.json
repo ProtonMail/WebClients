@@ -356,6 +356,9 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
+      "Refresh status": [
+        "Atualizar estado"
+      ],
       "Refresh the page": [
         "Actualizar a página"
       ],
@@ -413,6 +416,9 @@
       "Return to sign in": [
         "Voltar ao início de sessão"
       ],
+      "Review": [
+        "Rever"
+      ],
       "Revoke": [
         "Revogar"
       ],
@@ -466,6 +472,9 @@
       ],
       "Send reminder": [
         "Enviar um lembrete"
+      ],
+      "Set catch-all": [
+        "Definir Catch-all"
       ],
       "Set new password": [
         "Definir uma nova palavra-passe"
@@ -546,7 +555,7 @@
         "Atualize o seu plano"
       ],
       "Upload": [
-        "Carregar"
+        "Enviar"
       ],
       "Upload logo": [
         "Enviar o logo"
@@ -708,6 +717,17 @@
     "app-switcher": {
       "Secure your communications": [
         "Proteja as suas comunicações"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Desativado"
+      ],
+      "Enabled": [
+        "Ativado"
+      ],
+      "Missing keys": [
+        "Chaves em falta"
       ]
     },
     "bf2023: Action": {
@@ -1818,6 +1838,14 @@
         "Eliminar o endereço?"
       ]
     },
+    "Delete domain prompt": {
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete domain?": [
+        "Eliminar o domínio?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura em dívida"
@@ -1834,6 +1862,16 @@
       ],
       "Disable address?": [
         "Desativar o endereço?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verificado"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Os sub-domínios \"www\" não são utilizados normalmente para e-mail. Tem a certeza de que deseja utilizar este valor de domínio?"
       ]
     },
     "Downgrade account reason": {
@@ -1872,6 +1910,11 @@
       ],
       "The VPN is too slow": [
         "A VPN está demasiada lenta."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajude-nos a melhorar"
       ]
     },
     "Email verification": {
@@ -2082,6 +2125,9 @@
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
       ],
+      "Unable to upload file": [
+        "Não é possível enviar o ficheiro."
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -2094,8 +2140,17 @@
       "Username must end with a letter or digit": [
         "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "A verificação não funcionou. Tente novamente dentro de uma hora."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Código de verificação errado. Verifique se copiou o código de verificação corretamente e tente de novo. Pode levar até 24 horas para que as alterações surtam efeito."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Usou todos os endereços do seu plano. Subscreva um plano superior para adicionar um endereço."
@@ -2702,11 +2757,31 @@
       "Address": [
         "Endereço"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Status": [
         "Estado"
       ],
       "Username": [
         "Utilizador"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Nome de anfitrião"
+      ],
+      "Priority": [
+        "Prioridade"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Value / Data": [
+        "Valor/Dados"
+      ],
+      "Value / Data / Points to": [
+        "Valor/Dados/Aponta para"
       ]
     },
     "Headline": {
@@ -2984,6 +3059,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "A apagar ${ deletedServerCount } servidor gateway",
         "A apagar ${ deletedServerCount } servidores gateway"
@@ -2996,6 +3074,10 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
+      ],
+      "domain used": [
+        "domínio utilizado",
+        "domínios utilizados"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Já está! Enviámos um código para ${ destination }."
@@ -3078,6 +3160,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduza o seu telefone de recuperação e receberá o seu nome de utilizador ou endereço de e-mail."
       ],
+      "Example: ${ spfExample }": [
+        "Exemplo: ${ spfExample }"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -3119,6 +3204,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+      ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Se tiver um domínio personalizado com o ${ MAIL_APP_NAME }, pode definir um endereço de e-mail catch-all para receber mensagens enviadas para o seu domínio, mas para um endereço de e-mail inválido (por exemplo, por causa de erros de digitação)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, introduza-o abaixo para aplicar o desconto."
@@ -3193,7 +3281,7 @@
         "Ligação copiada para a área de transferência"
       ],
       "Live chat": [
-        "Live chat"
+        "Chat ao vivo"
       ],
       "Loading": [
         "A carregar"
@@ -3914,6 +4002,11 @@
         "Contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
       ]
     },
+    "Info for domain modal": {
+      "Add a new user to your organization and create an address for it.": [
+        "Adicionar um novo utilizador à sua organização e criar um endereço para ele."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Pode adicionar um método de pagamento para renovar a assinatura automaticamente. Também estão disponíveis outros métodos de pagamento."
@@ -4169,6 +4262,9 @@
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
       ],
+      "Domain name": [
+        "Nome do domínio"
+      ],
       "e.g. example.com": [
         "p.ex. exemplo.pt"
       ],
@@ -4418,6 +4514,11 @@
         "Número de telefone de recuperação"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Adicione um domínio que possui na sua conta ${ MAIL_APP_NAME }."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -4462,6 +4563,17 @@
       ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Endereços"
+      ],
+      "Domain": [
+        "Domínio"
+      ],
+      "Verify": [
+        "Verificar"
       ]
     },
     "Label on payment method": {
@@ -4513,6 +4625,9 @@
       ],
       "Help translate": [
         "Ajude a traduzir"
+      ],
+      "here": [
+        "aqui"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -4659,6 +4774,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Ligue o seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@asua-empresa.com). O nosso assistente irá guiá-lo ao longo do processo."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
       ]
@@ -4910,7 +5028,7 @@
         "Servidores e IP dedicados"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -5187,7 +5305,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -5425,6 +5543,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Incluído com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Incluído com vários utilizadores ${ BRAND_NAME } para planos Business."
       ]
@@ -5552,7 +5673,7 @@
         "Sem permissão"
       ],
       "Organization only": [
-        "Apenas organização"
+        "Apenas a organização"
       ],
       "Receive from all": [
         "Receber de todos"
@@ -5567,7 +5688,7 @@
         "Selecione quem pode aceder..."
       ],
       "Send to all": [
-        "Enviar à todos"
+        "Enviar a todos"
       ],
       "Setup incomplete": [
         "A configuração está incompleta."
@@ -5774,13 +5895,13 @@
         "Sem permissão"
       ],
       "Organization only": [
-        "Apenas organização"
+        "Apenas a organização"
       ],
       "Receive from all": [
         "Receber de todos"
       ],
       "Send to all": [
-        "Enviar à todos"
+        "Enviar a todos"
       ],
       "Setup incomplete": [
         "A configuração está incompleta."
@@ -5840,6 +5961,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "yourdomain.com": [
+        "oseudomínio.com"
       ]
     },
     "plan customizer, ips": {
@@ -6676,6 +6800,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
@@ -6726,6 +6854,9 @@
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ],
+      "Reactivate": [
+        "Reativar"
       ],
       "Read the story": [
         "Leia a história"
@@ -6836,6 +6967,9 @@
       "Bug reported": [
         "Erro reportado"
       ],
+      "Catch-all address updated": [
+        "Endereço Catch-all atualizado"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -6847,6 +6981,12 @@
       ],
       "Display name updated": [
         "O nome a mostrar foi atualizado."
+      ],
+      "DMARC value copied to clipboard": [
+        "Valor DMARC copiado para a área de transferência"
+      ],
+      "Domain verified": [
+        "Domínio verificado"
       ],
       "Email address copied to clipboard": [
         "Endereço copiado para a área de transferência"
@@ -6908,6 +7048,9 @@
       "Preference saved": [
         "Preferência guardada"
       ],
+      "SPF value copied to clipboard": [
+        "Valor SPF copiado para a área de transferência"
+      ],
       "User created": [
         "Utilizador criado"
       ],
@@ -6916,6 +7059,12 @@
       ],
       "Username copied to clipboard": [
         "O nome de utilizador foi copiado para a área de transferência."
+      ],
+      "Value copied to clipboard": [
+        "O valor foi copiado para a área de transferência."
+      ],
+      "Verification code copied to clipboard": [
+        "Código de verificação copiado para a área de transferência"
       ],
       "Verification successful": [
         "A verificação é terminada."
@@ -6986,6 +7135,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Endereços"
       ]
     },
     "Tab subscription modal": {
@@ -7094,6 +7248,9 @@
       "Add credits": [
         "Adicionar créditos"
       ],
+      "Add domain": [
+        "Adicionar domínio"
+      ],
       "Add new user": [
         "Adicionar um novo utilizador"
       ],
@@ -7144,6 +7301,9 @@
       ],
       "Card verification": [
         "Verificação do cartão"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Catch-all address": [
         "Endereço Catch-All"
@@ -7281,6 +7441,9 @@
       ],
       "Edit display name": [
         "Editar o nome a mostrar"
+      ],
+      "Edit domain": [
+        "Editar domínio"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -7621,6 +7784,17 @@
         "Fatura ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Endereço"
+      ],
+      "Catch-All": [
+        "Catch-All"
+      ],
+      "Status": [
+        "Estado"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Endereços"
@@ -7676,6 +7850,15 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
+      ],
+      "Your DKIM signing is working.": [
+        "A sua assinatura DKIM está a funcionar."
       ]
     },
     "Tooltip for news": {
@@ -7810,6 +7993,9 @@
         "${ n } ano",
         "${ n } anos"
       ],
+      "Just ${ price }": [
+        "Apenas ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Experimente ${ upsellPlanName } sem riscos"
       ],
@@ -7858,8 +8044,16 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos online de momento. Por favor, preencha o formulário abaixo para descrever o seu problema e nós iremos analisá-lo e entraremos em contacto quando estivermos novamente online."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+      ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "O seu teste gratuito termina em ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Após uma verificação bem sucedida, não remova o registo TXT, uma vez que ele é necessário para confirmar que continua a deter o domínio."
       ]
     }
   }

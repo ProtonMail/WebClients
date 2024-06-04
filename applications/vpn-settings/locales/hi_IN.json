@@ -317,6 +317,9 @@
       "Refer a friend": [
         "दोस्त को रैफर करें"
       ],
+      "Refresh status": [
+        "रीफ्रेश स्थिति"
+      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
       ],
@@ -368,6 +371,9 @@
       "Return to sign in": [
         "साइन इन पर लौटें"
       ],
+      "Review": [
+        "समीक्षा"
+      ],
       "Revoke": [
         "निरस्त करें"
       ],
@@ -409,6 +415,9 @@
       ],
       "Send reminder": [
         "अनुस्मारक भेजें"
+      ],
+      "Set catch-all": [
+        "कैच-ऑल सेट करें"
       ],
       "Set new password": [
         "नया पासवर्ड रखें"
@@ -626,6 +635,17 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "ये इस प्रमाण का इस्तेमाल करने वाले सारे राऊटर और क्लाइंट का कनेक्शन तोड़ देगा।"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "डिसेबल्ड"
+      ],
+      "Enabled": [
+        "सक्षम"
+      ],
+      "Missing keys": [
+        "खोई हुई चाबियां"
       ]
     },
     "bf2023: Action": {
@@ -1772,6 +1792,16 @@
         "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "सत्यापित"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' उप-डोमेन आमतौर पर ईमेल के लिए उपयोग नहीं किए जाते हैं। क्या आप वाकई इस डोमेन मान का उपयोग करना चाहते हैं?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "बग या गुणवत्ता समस्या"
@@ -2003,8 +2033,17 @@
       "Username must end with a letter or digit": [
         "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "सत्यापन सफल नहीं हुआ, कृपया एक घंटे में पुनः प्रयास करें।"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "आपके DNS कॉन्फ़िगरेशन की समस्याओं के कारण हमने DKIM हस्ताक्षर करना बंद कर दिया है। कृपया हस्ताक्षर शुरू करने के लिए नीचे दिए गए निर्देशों का पालन करें।"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "गलत पुनर्प्राप्ति वाक्यांश। पुन: प्रयास करें या किसी अन्य पुनर्प्राप्ति विधि का उपयोग करें।"
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "गलत सत्यापन कोड। कृपया सुनिश्चित करें कि आपने सत्यापन कोड को सही तरीके से कॉपी किया है और पुनः प्रयास करें। परिवर्तनों को प्रभावी होने में 24 घंटे तक का समय लग सकता है।"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
@@ -2528,11 +2567,31 @@
       "Address": [
         "पता"
       ],
+      "Domain": [
+        "डोमेन"
+      ],
       "Status": [
         "स्थिति"
       ],
       "Username": [
         "यूज़रनेम"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "होस्ट का नाम"
+      ],
+      "Priority": [
+        "प्राथमिकता"
+      ],
+      "Type": [
+        "टाइप"
+      ],
+      "Value / Data": [
+        "मान / डेटा"
+      ],
+      "Value / Data / Points to": [
+        "मान / डेटा / अंक को"
       ]
     },
     "Headline": {
@@ -2574,6 +2633,9 @@
         "${ n } पता",
         "${ n } पते"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none } अनधिकृत ईमेल को क्वारंटीन या अस्वीकार न करें। आमतौर पर, लोग केवल समस्या निवारण या परीक्षण के लिए इस नीति का उपयोग करते हैं।"
+      ],
       "${ number } city": [
         "${ number } शहर",
         "${ number } शहर"
@@ -2584,6 +2646,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: प्राप्तकर्ता प्लेटफ़ॉर्मों से अनधिकृत ईमेल को स्पैम के रूप में चिह्नित करने या उन्हें क्वारंटीन करने के लिए कहा जा रहा है।"
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: प्राप्तकर्ता प्लेटफ़ॉर्म से अनधिकृत ईमेल को अस्वीकार करने के लिए कहा जा रहा है।"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } और",
@@ -2725,6 +2793,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "नए सत्यापन कोड का अनुरोध करने से पहले, अपना स्पैम फ़ोल्डर जांचें और जांचें कि ${ strong } सही पता है।"
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME } पर अपने कस्टम डोमेन पर ईमेल प्राप्त करने से पहले, आपको अपने DNS कंसोल (उस प्लेटफ़ॉर्म पर स्थित जहां आपने कस्टम डोमेन खरीदा है) में निम्नलिखित दो MX रिकॉर्ड जोड़ने की आवश्यकता है। आप एक उदाहरण और कुछ उपयोगी सुझाव ${ kbLink } पर पा सकते हैं।"
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "इससे पहले कि आप अपने नए पते से ईमेल भेजना और प्राप्त करना शुरू कर सकें, आपको उनके लिए एन्क्रिप्शन कुंजी बनाने की आवश्यकता है।"
       ],
@@ -2788,11 +2859,24 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
+      ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM ${ BRAND_NAME } को आपके ईमेल पर क्रिप्टोग्राफ़िक रूप से साइन करने की अनुमति देता है और हमलावरों को आपके ईमेल से छेड़छाड़ करने से रोकता है। सुनिश्चित करें कि आप अपने DNS कंसोल (उस प्लेटफ़ॉर्म पर स्थित जहां आपने कस्टम डोमेन खरीदा है) में निम्नलिखित तीन CNAME रिकॉर्ड जोड़ें।"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC यह जांचता है कि भेजने वाले के SPF और DKIM रिकॉर्ड आपके डोमेन से हैं या नहीं। यह हमलावरों को दूसरे डोमेन के SPF \nऔर DKIM का उपयोग करके आपके डोमेन का अवतार बनाने से रोक सकता है। इस रिकॉर्ड में \"p=\" (policy) दर्शाता है कि आप कैसे चाहते हैं कि प्राप्तकर्ता प्लेटफ़ॉर्म अनधिकृत ईमेल को संभालें। हम सर्वाधिक डोमेन के लिए \"p=quarantine\" नीति का उपयोग करने की अनुशंसा करते हैं। सुनिश्चित करें कि आप अपने DNS कंसोल (उस प्लेटफ़ॉर्म पर स्थित जहां आपने कस्टम डोमेन खरीदा है) में निम्नलिखित TXT रिकॉर्ड को जोड़ें।"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
+      ],
+      "domain used": [
+        "डोमेन का उपयोग किया",
+        "डोमेन का उपयोग किया"
       ],
       "Done! We sent a code to ${ destination }.": [
         "किया हुआ! हमने ${ destination } पर एक कोड भेजा है।"
@@ -2814,6 +2898,9 @@
       ],
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "प्रत्येक डोमेन के पास केवल एक SPF (TXT) रिकॉर्ड हो सकता है। यदि आप वर्तमान SPF (TXT) रिकॉर्ड को रखना चाहते हैं, तो आप अपने वर्तमान रिकॉर्ड में ${ spf } जोड़ सकते हैं (इसे ${ spfValue } के बाद डालें)।"
       ],
       "Edit email address": [
         "ईमेल पता संपादित करें"
@@ -2866,6 +2953,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
+      "Example: ${ spfExample }": [
+        "उदाहरण: ${ spfExample }"
+      ],
       "Expired": [
         "समय सीमा समाप्त"
       ],
@@ -2880,6 +2970,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "सिंगल साइन-ऑन (SAML SSO) का उपयोग करने वाले संगठनों के सदस्यों के लिए"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "उन उपयोगकर्ताओं के लिए जो किसी अन्य ईमेल सेवा से ${ MAIL_APP_NAME } पर स्विच कर रहे हैं, ${ boldAddresses } टैब का चयन करें और MX रिकॉर्ड को बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें ताकि एक सहज परिवर्तन सुनिश्चित हो।"
       ],
       "Free forever": [
         "हमेशा मुफ्त"
@@ -2908,6 +3001,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "अगर आपके पास ${ MAIL_APP_NAME } का कस्टम डोमेन है, तो सब-पकड़े ईमेल पता सेट कर सकते है सारे संदेशो को लेने के लिए जो आपके डामेन पे अमान्य ईमेल पतो पे आए (उदा. लिखने में गलती की वजह से)।"
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "यदि आपके पास कोई उपहार कोड है, तो अपनी छूट लागू करने के लिए उसे नीचे दर्ज करें।"
       ],
@@ -2934,6 +3030,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "अगर आपको कोई समस्या है, हम यहाँ हैं आपकी सहायता के लिए। ${ boldPhoneCall } या ${ boldZoomMeeting } हमारे सहायता विशेषज्ञों के साथ।"
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "महत्वपूर्ण: यदि आपका DNS कंसोल CNAME संख्या को बिंदु से समाप्त करने की अनुमति नहीं देता है, तो आप CNAME संख्या में अंतिम बिंदु को हटा सकते हैं।"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "महत्वपूर्ण: कृपया सुनिश्चित करें कि आपने पुनर्प्राप्ति कोड सहेजे हैं। यदि आप अपना दो-कारक प्रमाणीकरण उपकरण खो देते हैं, तो आप स्थायी रूप से अपने खाते तक पहुंच खो सकते हैं।"
@@ -2997,6 +3096,12 @@
       ],
       "Loading...": [
         "लोड हो रहा..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "यदि SPF/DKIM/DMARC अनुपस्थित हैं या ठीक से सेट नहीं किए गए हैं, तो प्रमुख ईमेल सेवाएं आपके ईमेल को अस्वीकार या स्पैम में फ़िल्टर कर सकती हैं।"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "अगर SPF/DKIM/DMARC अनुपस्थित हैं या सही ढंग से सेटअप नहीं हैं, तो प्रमुख ईमेल सेवाएं आपके ईमेल को अस्वीकार या स्पैम में फ़िल्टर कर सकती हैं।"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "ध्यान रखें की आप ${ addARecoveryMethod } कर लें ताकि अगर आप पासवर्ड भूल जाए तो आप अपने खाते पे वापिस जा सके।"
@@ -3206,6 +3311,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF स्पष्ट करता है कि आपके डोमेन के लिए किसे ईमेल भेजने की अनुमति है। सुनिश्चित करें कि आप निम्नलिखित TXT रेकॉर्ड को अपने DNS कंसोल में जोड़ें (जो प्लेटफ़ॉर्म पर स्थित है जहां आपने कस्टम डोमेन खरीदा है)।"
       ],
       "Step ${ step }": [
         "कदम ${ step }",
@@ -3643,6 +3751,11 @@
         "कृपया हमें नकद के साथ भुगतान करने के निर्देशों के लिए ${ email } पर संपर्क करें।"
       ]
     },
+    "Info for domain modal": {
+      "Add a new user to your organization and create an address for it.": [
+        "अपने संगठन में एक नया उपयोगकर्ता जोड़ें और इसके लिए एक पता बनाएँ।"
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "अपनी सदस्यता को स्वचालित रूप से नवीनीकृत करने के लिए आप भुगतान विधि जोड़ सकते हैं। अन्य भुगतान विधियां भी उपलब्ध हैं।"
@@ -3881,6 +3994,9 @@
       "Do you have any suggestions for our team?": [
         "क्या आपके पास हमारी टीम के लिए कोई सुझाव है?"
       ],
+      "Domain name": [
+        "डोमेन नाम"
+      ],
       "Email": [
         "ईमेल"
       ],
@@ -4013,6 +4129,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "वाक्यांश में एक विशिष्ट क्रम में 12 अद्वितीय शब्द होते हैं"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "कृपया निम्नलिखित सभी 3 CNAME रिकॉर्ड जोड़ें। नोट: DNS रिकॉर्ड को अपडेट होने में कई घंटे लग सकते हैं।"
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "कृपया निम्नलिखित दो MX रिकॉर्ड जोड़ें। नोट: DNS रिकॉर्ड को अपडेट होने में कई घंटे लग सकते हैं।"
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें। नोट: DNS रिकॉर्ड को अपडेट होने में कई घंटे लग सकते हैं।"
+      ],
       "Please share any feedback to help us improve.": [
         "हमें बेहतर बनाने में मदद करने के लिए कोई भी सुझाव साझा करें।"
       ],
@@ -4103,6 +4228,11 @@
         "पुनर्प्राप्ति फ़ोन नंबर"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "आपके पास अपने ${ MAIL_APP_NAME } खाते से खरीदा जो डोमेन है वो जोड़ें।"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "व्यवस्थापक"
@@ -4135,6 +4265,17 @@
       ],
       "Daily email notifications": [
         "दैनिक ईमेल सूचनाएं"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "पतों"
+      ],
+      "Domain": [
+        "डोमेन"
+      ],
+      "Verify": [
+        "सत्यापित करें"
       ]
     },
     "Label on payment method": {
@@ -4180,6 +4321,9 @@
       ],
       "Help translate": [
         "अनुवाद में मदद करें"
+      ],
+      "here": [
+        "यहाँ"
       ],
       "How to pay with Bitcoin?": [
         "बिटकॉइन से भुगतान कैसे करें?"
@@ -4279,6 +4423,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "अपने कस्टम डोमेन को ${ BRAND_NAME } से कनेक्ट करें कस्टम ईमेल पते (उदहारण, you@yourcompany.com) को सेट करने के लिए। हमारा विजार्ड आपकी इस प्रक्रिया में सहायता देगा।"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "आपका नि: शुल्क परीक्षण समाप्त हो गया है। आपके खाते तक पहुंच जल्द ही अक्षम कर दी जाएगी। ${ action }"
       ]
@@ -5020,6 +5167,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "${ plus }, ${ bundle }, और ${ BRAND_NAME } बिज़नेस के लिए के साथ शामिल"
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "एकाधिक उपयोगकर्ताओं के साथ शामिल ${ BRAND_NAME } Business योजना।"
       ]
@@ -5307,9 +5457,6 @@
       "We have verified the authenticity of this sender and invitation.": [
         "हमने इस प्रेषक और निमंत्रण की प्रामाणिकता की पुष्टि की है।"
       ],
-      "You have been made administrator of the organization **${ organizationName }** by": [
-        "आपको **${ organizationName }** संगठन का प्रशासक बना दिया गया है"
-      ],
       "You must privatize all users before generating a new organization key": [
         "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
@@ -5409,6 +5556,9 @@
       ],
       "Select a reason": [
         "कोई कारण चुनें"
+      ],
+      "yourdomain.com": [
+        "aapkadomain.in"
       ]
     },
     "plan customizer, ips": {
@@ -6098,6 +6248,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -6187,6 +6341,9 @@
       "Bug reported": [
         "बग की सूचना दी"
       ],
+      "Catch-all address updated": [
+        "कैच-सभी पता अपडेट किया गया"
+      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } को कोड भेजा गया"
       ],
@@ -6198,6 +6355,12 @@
       ],
       "Display name updated": [
         "डिस्पले नाम अपडेट किया"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC मान को क्लिपबोर्ड पर कॉपी किया गया"
+      ],
+      "Domain verified": [
+        "डोमेन सत्यापित"
       ],
       "Email address copied to clipboard": [
         "ईमेल पता क्लिपबोर्ड पर कॉपी किया गया"
@@ -6259,6 +6422,9 @@
       "Preference saved": [
         "वरीयता बचाई गई"
       ],
+      "SPF value copied to clipboard": [
+        "क्लिपबोर्ड पर कॉपी किया गया SPF मान"
+      ],
       "User created": [
         "उपयोगकर्ता बनाया गया"
       ],
@@ -6267,6 +6433,12 @@
       ],
       "Username copied to clipboard": [
         "यूज़रनेम नाम क्लिपबोर्ड पर कॉपी किया गया"
+      ],
+      "Value copied to clipboard": [
+        "क्लिपबोर्ड पर कॉपी किया गया मान"
+      ],
+      "Verification code copied to clipboard": [
+        "सत्यापन कोड क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Verification successful": [
         "सत्यापन सफल रहा"
@@ -6334,6 +6506,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "पतों"
       ]
     },
     "Tab subscription modal": {
@@ -6439,6 +6616,9 @@
       "Add credits": [
         "क्रेडिट जोड़ें"
       ],
+      "Add domain": [
+        "डोमेन जोड़ें"
+      ],
       "Add new user": [
         "नया उपयोगकर्ता जोड़ें"
       ],
@@ -6483,6 +6663,9 @@
       ],
       "Card verification": [
         "कार्ड सत्यापन"
+      ],
+      "Catch-All address": [
+        "कैच-ऑल एड्रेस"
       ],
       "Catch-all address": [
         "कैच-ऑल एड्रेस"
@@ -6605,6 +6788,9 @@
       ],
       "Edit display name": [
         "डिस्प्ले नाम बदले"
+      ],
+      "Edit domain": [
+        "डोमेन संपादित करें"
       ],
       "Edit email address": [
         "ईमेल पता संपादित करें"
@@ -6901,6 +7087,17 @@
         "${ MAIL_APP_NAME } चालान"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "पता"
+      ],
+      "Catch-All": [
+        "कैच-ऑल"
+      ],
+      "Status": [
+        "स्थिति"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "पतों"
@@ -6950,6 +7147,15 @@
       ],
       "Verified email address": [
         "सत्यापित ईमेल पता"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "हमने आपके DNS कॉन्फ़िगरेशन के साथ समस्याओं के कारण DKIM हस्ताक्षर करना बंद कर दिया है। कृपया हस्ताक्षर शुरू करने के लिए नीचे दिए गए निर्देशों का पालन करें"
+      ],
+      "Your DKIM signing is working.": [
+        "आपका DKIM हस्ताक्षर काम कर रहा है।"
       ]
     },
     "Tor out of date": {
@@ -7067,11 +7273,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "दुर्भाग्य से, हम इस समय ऑनलाइन नहीं हैं। अपनी समस्या का वर्णन करने के लिए कृपया नीचे दिया गया फ़ॉर्म भरें, और जब हम वापस ऑनलाइन होंगे तो हम इस पर गौर करेंगे और संपर्क में रहेंगे।"
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "गैर-निजी सदस्य के ईमेल पते को जोड़ने से पहले, आपको संगठन कुंजी ${ activateLink } करनी होगी।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "सफल सत्यापन के बाद, इस TXT रिकॉर्ड को न हटाएं क्योंकि यह पुष्टि करने के लिए आवश्यक है कि आप डोमेन के मालिक हैं।"
       ]
     }
   }

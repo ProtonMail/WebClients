@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
+      "Refresh status": [
+        "Абнавіць статус"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Вярнуцца да ўваходу"
       ],
+      "Review": [
+        "Прагледзець"
+      ],
       "Revoke": [
         "Адклікаць"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Адправіць напамін"
+      ],
+      "Set catch-all": [
+        "Задаць адрас для ўсёй пошты дамена"
       ],
       "Set new password": [
         "Задаць новы пароль"
@@ -738,6 +747,17 @@
       ],
       "Secure your communications": [
         "Абараняйце свае зносіны"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Адключана"
+      ],
+      "Enabled": [
+        "Уключана"
+      ],
+      "Missing keys": [
+        "Адсутнічаюць ключы"
       ]
     },
     "bf2023: Action": {
@@ -1950,6 +1970,20 @@
         "Вы дасягнулі абмежавання па колькасці адрасоў, якія можна выдаліць для гэтага карыстальніка."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Вы сапраўды хочаце выдаліць гэты дамен?"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete domain?": [
+        "Выдаліць дамен?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Звярніце ўвагу, што калі вы выдаліце дамен з назвай ${ domainName }, то ўсе адрасы звязаныя з ім будуць адключаны."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Пратэрмінаваны рахунак"
@@ -1972,6 +2006,16 @@
       ],
       "Disable address?": [
         "Адключыць адрас?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Праверана"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Паддамены, якія змяшчаюць 'www', звычайна не выкарыстоўваюцца для электроннай пошты. Вы сапраўды хочаце скарыстацца гэтым даменам?"
       ]
     },
     "Downgrade account reason": {
@@ -2286,8 +2330,17 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Не атрымалася праверыць. Паспрабуйце яшчэ раз праз гадзіну."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Мы прыпынілі падпісанне DKIM па прычыне праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Няправільны праверачны код. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы дасягнулі максімальнай колькасці адрасоў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новы адрас."
@@ -2918,11 +2971,31 @@
       "Address": [
         "Адрас"
       ],
+      "Domain": [
+        "Дамен"
+      ],
       "Status": [
         "Статус"
       ],
       "Username": [
         "Імя карыстальніка"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Імя вузла"
+      ],
+      "Priority": [
+        "Прыярытэт"
+      ],
+      "Type": [
+        "Тып"
+      ],
+      "Value / Data": [
+        "Значэнне / Даныя"
+      ],
+      "Value / Data / Points to": [
+        "Значэнне / Даныя / Паказвае на"
       ]
     },
     "Headline": {
@@ -2974,6 +3047,9 @@
         "${ n } адрасоў",
         "${ n } адрасы"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: не пераводзіць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+      ],
       "${ number } city": [
         "${ number } горад",
         "${ number } гарады",
@@ -2994,6 +3070,12 @@
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: просіць платформы атрымальніка адхіляць неаўтарызаваныя электронныя лісты."
       ],
       "${ remainingAddresses.length } more": [
         "яшчэ ${ remainingAddresses.length }",
@@ -3175,6 +3257,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Каб вы маглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам спатрэбіцца дадаць наступныя два запісы MX у кансоль DNS (якія размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен). У нашай базе ведаў вы зможаце знайсці прыклад і некаторыя карысныя парады ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
       ],
@@ -3268,6 +3353,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Выдаленне ${ deletedServerCount } сервера шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
@@ -3276,6 +3364,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашы электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Пераканайцеся, што вы дадалі наступныя тры запісы CNAME у вашу кансоль DNS (яны размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўніка ад вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена для выдачы яго за ваш. \"p=\" (policy) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (які размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "DNS TXT record": [
         "Запіс DNS TXT"
@@ -3291,6 +3385,12 @@
       ],
       "Domain ownership verified.": [
         "Уладальнік дамена правераны."
+      ],
+      "domain used": [
+        "дамен выкарыстоўваецца",
+        "дамены выкарыстоўваюцца",
+        "даменаў выкарыстоўваецца",
+        "дамены выкарыстоўваюцца"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
@@ -3321,6 +3421,9 @@
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Кожны дамен можа мець толькі адзін запіс SPF (TXT). Калі вы хочаце захаваць існуючы запіс SPF (TXT), вы можаце дадаць ${ spf } да вашага бягучага запісу (пастаўце яго пасля ${ spfValue })."
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -3385,6 +3488,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Увядзіце фразу аднаўлення, каб змяніць пароль."
       ],
+      "Example: ${ spfExample }": [
+        "Прыклад: ${ spfExample }"
+      ],
       "Expired": [
         "Пратэрмінавана"
       ],
@@ -3399,6 +3505,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Для забеспячэння плаўнага пераходу карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншых служб электроннай пошты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
@@ -3439,6 +3548,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Калі вы маеце карыстальніцкі дамен у ${ MAIL_APP_NAME }, вы можаце задаць агульны адрас электроннай пошты для атрымання ўсіх паведамленняў, якія будуць адпраўляцца не толькі на ваш дамен, але і на памылковы адрас (напрыклад, які змяшчае памылкі)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
       ],
@@ -3465,6 +3577,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖНА: калі ваша кансоль DNS не дазваляе значэнням CNAME ставіць кропку апошнім сімвалам, вы можаце выдаліць апошні сімвал кропкі ў значэннях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
@@ -3540,6 +3655,12 @@
       ],
       "Loading...": [
         "Загрузка..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або наладжаны не адпаведным чынам."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або не наладжаны адпаведным чынам."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
@@ -3811,6 +3932,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Карыстальнікі SSO (забяспечаныя вашым пастаўшчыком пасведчанняў) будуць выдалены"
       ],
@@ -3927,6 +4051,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -4348,6 +4475,17 @@
         "Напішыце нам на электронную пошту ${ email } для атрымання інструкцый па аплаце наяўнымі."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Дадаць новы адрас для існуючых карыстальнікаў вашай арганізацыі."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
@@ -4615,6 +4753,9 @@
       "Do you have any suggestions for our team?": [
         "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
+      "Domain name": [
+        "Даменнае імя"
+      ],
       "e.g. example.com": [
         "напрыклад, example.com"
       ],
@@ -4771,6 +4912,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складаецца з 12 унікальных слоў у вызначаным парадку"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Дадайце ўсе 3 наступныя запісы CNAME. Звярніце ўвагу, што запісы DNS могуць абнаўляцца на працягу некалькіх гадзін."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Дадайце наступныя два запісы MX. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Дадайце наступны запіс TXT. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
+      ],
       "Please share any feedback to help us improve.": [
         "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
       ],
@@ -4879,6 +5029,16 @@
         "Нумар тэлефона для аднаўлення"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Дадайце ўласны дамен да вашага ўліковага запісу ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Дадайце наступны запіс TXT. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Адміністратар"
@@ -4923,6 +5083,17 @@
       ],
       "Daily email notifications": [
         "Штодзённыя апавяшчэнні па электроннай пошце"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Адрасы"
+      ],
+      "Domain": [
+        "Дамен"
+      ],
+      "Verify": [
+        "Праверка"
       ]
     },
     "Label on payment method": {
@@ -4974,6 +5145,9 @@
       ],
       "Help translate": [
         "Дапамагчы з перакладам"
+      ],
+      "here": [
+        "тут"
       ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
@@ -5154,6 +5328,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд мінуў. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
       ]
@@ -6048,6 +6225,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Тарыфныя планы ${ BRAND_NAME } for Business уключаюць падтрымку некалькіх карыстальнікаў."
       ]
@@ -6627,6 +6807,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -7683,6 +7866,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
+      "${ dayDiff } day left": [
+        "Застаўся ${ dayDiff } дзень",
+        "Засталося ${ dayDiff } дні",
+        "Засталося ${ dayDiff } дзён",
+        "Засталося ${ dayDiff } дзён"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
@@ -7731,8 +7920,8 @@
       "Add any new files": [
         "Дадаваць любыя новыя файлы"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
@@ -7851,8 +8040,20 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
+      ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
@@ -7961,7 +8162,10 @@
         "Прывілеі адміністратара адноўлены"
       ],
       "Bug reported": [
-        "Справаздача пра памылку адпраўлена"
+        "Справаздача аб памылцы адпраўлена"
+      ],
+      "Catch-all address updated": [
+        "Адрас для ўсёй пошты дамена абноўлены"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -7974,6 +8178,12 @@
       ],
       "Display name updated": [
         "Бачнае імя абноўлена"
+      ],
+      "DMARC value copied to clipboard": [
+        "Значэнне DMARC скапіявана ў буфер абмену"
+      ],
+      "Domain verified": [
+        "Дамен правераны"
       ],
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
@@ -8035,6 +8245,9 @@
       "Preference saved": [
         "Параметр захаваны"
       ],
+      "SPF value copied to clipboard": [
+        "Значэнне SPF скапіявана ў буфер абмену"
+      ],
       "User created": [
         "Карыстальнік створаны"
       ],
@@ -8043,6 +8256,12 @@
       ],
       "Username copied to clipboard": [
         "Імя карыстальніка скапіявана ў буфер абмену"
+      ],
+      "Value copied to clipboard": [
+        "Значэнне скапіявана ў буфер абмену"
+      ],
+      "Verification code copied to clipboard": [
+        "Праверачны код скапіяваны ў буфер абмену"
       ],
       "Verification successful": [
         "Паспяхова праверана"
@@ -8116,6 +8335,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Адрасы"
       ]
     },
     "Tab subscription modal": {
@@ -8224,6 +8448,9 @@
       "Add credits": [
         "Дадаць крэдыты"
       ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
       "Add new user": [
         "Дадаць новага карыстальніка"
       ],
@@ -8274,6 +8501,9 @@
       ],
       "Card verification": [
         "Праверка карткі"
+      ],
+      "Catch-All address": [
+        "Адрас для ўсёй пошты дамена"
       ],
       "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
@@ -8415,6 +8645,9 @@
       ],
       "Edit display name": [
         "Рэдагаваць бачнае імя"
+      ],
+      "Edit domain": [
+        "Рэдагаваць дамен"
       ],
       "Edit email address": [
         "Змяніць адрас электроннай пошты"
@@ -8775,6 +9008,17 @@
         "Рахунак ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Адрас"
+      ],
+      "Catch-All": [
+        "Уся пошта дамена"
+      ],
+      "Status": [
+        "Статус"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Адрасы"
@@ -8854,6 +9098,15 @@
       ],
       "Verified email address": [
         "Адрас электроннай пошты правераны"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Мы прыпынілі падпісанне DKIM па прычыне праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
+      ],
+      "Your DKIM signing is working.": [
+        "Ваш подпіс DKIM працуе."
       ]
     },
     "tooltip": {
@@ -9083,11 +9336,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, мы знаходзімся па-за межамі сеткі ў гэты момант. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Вы павінны ${ activateLink } ключ арганізацыі перад даданнем адраса электроннай пошты для непрыватнага ўдзельніка."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд міне ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
       ]
     }
   }

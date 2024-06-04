@@ -362,6 +362,9 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Refresh status": [
+        "상태 새로고침"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "로그인으로 돌아가기"
       ],
+      "Review": [
+        "검토"
+      ],
       "Revoke": [
         "취소"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "전송 알리미"
+      ],
+      "Set catch-all": [
+        "Catch-all 설정"
       ],
       "Set new password": [
         "새 비밀번호 설정"
@@ -729,6 +738,17 @@
       ],
       "Secure your communications": [
         "안전하게 소통하세요."
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "비활성화됨"
+      ],
+      "Enabled": [
+        "활성화됨"
+      ],
+      "Missing keys": [
+        "사라진 키"
       ]
     },
     "bf2023: Action": {
@@ -1896,8 +1916,23 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "이 주소를 삭제하시려는 것이 맞습니까?"
+      ],
+      "Delete address": [
+        "주소 삭제"
+      ],
       "Delete address permanently?": [
         "주소를 영구적으로 삭제하시겠습니까?"
+      ],
+      "Delete address?": [
+        "주소를 삭제하시겠습니까?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "한 번 삭제하면 누구도 이 ${ address } 주소를 다시는 사용할 수 없습니다."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "이 ${ address } 주소를 삭제하신다면, 더 이상 이 주소를 통해 이메일을 보내거나 받을 수 없게 된다는 것에 유의해 주십시오."
       ],
       "You can only delete 1 address per year.": [
         "매년 1개의 주소만 삭제할 수 있습니다."
@@ -1919,6 +1954,27 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
+      ]
+    },
+    "Disable address prompt": {
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "이 ${ address } 주소를 비활성화하는 것으로 더 이상 이 주소를 통해 이메일을 보내거나 받을 수 없게 되고, 연결된 모든 ${ BRAND_NAME } 제품이 비활성화됩니다."
+      ],
+      "Disable address": [
+        "주소 비활성화"
+      ],
+      "Disable address?": [
+        "주소를 비활성화합니까?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "인증됨"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' 하위 도메인은 일반적으로 이메일에 사용되지 않습니다. 이 도메인 값을 사용하시겠습니까?"
       ]
     },
     "Downgrade account reason": {
@@ -1963,6 +2019,11 @@
       ],
       "The VPN is too slow": [
         "VPN이 너무 느려서"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "개선을 도와주세요"
       ]
     },
     "Email verification": {
@@ -2228,8 +2289,17 @@
       "Username must end with a letter or digit": [
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "인증이 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "잘못된 인증 코드입니다. 제대로 인증 코드를 복사했는지 확인하고 다시 시도해보세요. 변경할 때까지 24시간이 걸릴 수도 있습니다."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "현재 요금제에서 가능한 모든 주소를 사용했습니다. 새 주소를 추가하려면 요금제를 업그레이드해 주세요."
@@ -2833,11 +2903,31 @@
       "Address": [
         "주소"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Status": [
         "상태"
       ],
       "Username": [
         "사용자 이름"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "호스트 이름"
+      ],
+      "Priority": [
+        "우선 사항"
+      ],
+      "Type": [
+        "유형"
+      ],
+      "Value / Data": [
+        "값 / 데이터"
+      ],
+      "Value / Data / Points to": [
+        "값 / 데이터 / 목적지"
       ]
     },
     "Headline": {
@@ -2886,6 +2976,9 @@
       "${ n } address": [
         "${ n } 주소"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: 무단 이메일을 격리하거나 거부하지 마세요. 보통, 이 정책을 문제 해결이나 테스트에만 사용합니다."
+      ],
       "${ number } city": [
         "${ number } 도시"
       ],
@@ -2897,6 +2990,12 @@
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } 서버는 아직 설정 중입니다. ${ provisioningDuration } 정도 소요됩니다."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: 수신자 플랫폼에 승인되지 않은 이메일을 스팸으로 표시하거나 분리하도록 요청합니다."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: 수신자 플랫폼에 승인되지 않은 이메일을 거부하도록 요청합니다."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 더"
@@ -3054,6 +3153,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME }에서 사용자 지정 도메인 주소에 대한 이메일을 받기 전에, DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 두 개의 MX 레코드를 추가해야 합니다. 예시와 몇 가지 유용한 팁을 찾을 수 있습니다 ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "새 주소에서 이메일을 주고 받기 전에 암호화 키를 만들어야 합니다."
       ],
@@ -3144,11 +3246,20 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "${ MAIL_APP_NAME }이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM은 ${ BRAND_NAME }이 이메일에 암호화로 서명하고 공격자가 이메일을 조작하는 것을 방지할 수 있습니다. 다음 세 개의 CNAME 레코드 값을 DNS 콘솔에 추가하십시오. (커스템 도매인을 구매한 플랫폼에 위치해 있습니다.)"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC는 발신자의 SPF와 DKIM 레코드가 사용자의 도메인에서 소속되었는지 확인합니다. 이로서 공격자가 다른 도메인의 SPF와 DKIM을 사용하여 도메인을 사칭하는 것을 방지할 수 있습니다. 이 기록의 \"p=\"(정책)는 수신자 플랫폼이 승인되지 않은 이메일을 처리하는 방법을 나타냅니다. 대부분의 도메인에 대해 \"p=quarantine\" 정책을 사용하는 것이 좋습니다. 다음 TXT 레코드를 사용자의 DNS 콘솔에 입력하십시오. (커스텀 도메인을 구매한 곳에 위치해 있음.)"
       ],
       "DNS TXT record": [
         "DNS TXT 레코드"
@@ -3164,6 +3275,9 @@
       ],
       "Domain ownership verified.": [
         "도메인 소유권이 인증되었습니다."
+      ],
+      "domain used": [
+        "사용된 도메인"
       ],
       "Done! We sent a code to ${ destination }.": [
         "완료! ${ destination } 로 코드를 전송했습니다."
@@ -3194,6 +3308,9 @@
       ],
       "Each code can only be used once": [
         "각각의 코드는 한 번만 사용 가능합니다"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "각 도메인은 하나의 SPF (TXT) 레코드만 저장할 수 있습니다. 만약 SPF (TXT) 레코드를 계속 저장하고자 한다면, 현재 레코드에 ${ spf }을(를) 추가하실 수 있습니다. (나중에 ${ spfValue } 저장하세요.)"
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -3258,6 +3375,9 @@
       "Enter your recovery phrase to change your password now.": [
         "비밀번호 변경을 즉시 하려면 복구 구문을 입력하십시오."
       ],
+      "Example: ${ spfExample }": [
+        "예시: ${ spfExample }"
+      ],
       "Expired": [
         "만료됨"
       ],
@@ -3272,6 +3392,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
       ],
       "Free forever": [
         "영구적으로 무료"
@@ -3312,6 +3435,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "${ MAIL_APP_NAME }에 사용자 지정 도메인이 있다면, 해당 도메인으로 전송되었지만 잘못된 이메일 주소(예: 오타 때문에)로 전송된 메시지를 수신하도록 catch-all을 설정할 수 있습니다."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "기프트 코드가 있을 경우 아래에 입력해 할인을 적용하세요."
       ],
@@ -3338,6 +3464,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
@@ -3413,6 +3542,12 @@
       ],
       "Loading...": [
         "불러오는 중..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
@@ -3680,6 +3815,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF는 누가 사용자의 도메인에 대한 이메일을 보낼 수 있는지 명확히 합니다. DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 TXT 레코드를 추가해야 합니다."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "(ID 공급자가 제공한) SSO 사용자가 삭제될 예정입니다"
@@ -4188,6 +4326,17 @@
         "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "조직의 존재하는 모든 사용자를 위해 새 주소를 추가하세요."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "조직에 새로운 사용자를 추가하여 주소를 생성하세요."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "보안 상의 이유로, ${ domainName }의 소유자인지 확인이 필요합니다. 다음 TXT 레코드를 (커스텀 도메인을 구매한 플랫폼에 위치한) DNS 콘솔에 입력하십시오. 이 링크에서 몇 가지 도움 되는 정보를 찾을 수 있습니다 ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "구독을 자동으로 갱신하기 위해 결제 방법을 추가할 수 있습니다. 다른 지불 방법도 사용할 수 있습니다."
@@ -4432,7 +4581,7 @@
         "삭제"
       ],
       "Delete recovery-related information.": [
-        "복구 관련 정보를 삭제해요."
+        "복구 관련 정보를 삭제합니다."
       ],
       "Device/certificate name": [
         "기기/증명서 이름"
@@ -4445,6 +4594,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
+      ],
+      "Domain name": [
+        "도메인 이름"
       ],
       "e.g. example.com": [
         "예시: example.com"
@@ -4602,6 +4754,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "구문은 특정 순서로 12개의 독특한 단어로 구성되어 있습니다."
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "다음의 모든 세가지 CNAME 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "다음 두 MX 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "다음 TXT 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
       "Please share any feedback to help us improve.": [
         "기능을 향상시키기 위해 피드백을 공유해 주세요."
       ],
@@ -4695,6 +4856,9 @@
       "What is the main reason you are deleting your account?": [
         "계정을 지우시는 사유가 무엇인가요?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
+      ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
       ],
@@ -4708,6 +4872,16 @@
     "label": {
       "Recovery phone number": [
         "복구 전화번호"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "${ MAIL_APP_NAME } 계정에 소유 중인 도메인을 추가하세요."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "다음 TXT 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
       ]
     },
     "Label for new member": {
@@ -4754,6 +4928,17 @@
       ],
       "Daily email notifications": [
         "일일 이메일 알림"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "주소"
+      ],
+      "Domain": [
+        "도메인"
+      ],
+      "Verify": [
+        "인증"
       ]
     },
     "Label on payment method": {
@@ -4805,6 +4990,9 @@
       ],
       "Help translate": [
         "번역 돕기"
+      ],
+      "here": [
+        "."
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
@@ -4858,7 +5046,7 @@
         "UDP와 TCP 프로토콜의 차이점이 무엇인가요?"
       ],
       "What’s this?": [
-        "이게 무엇인가요?"
+        "복구 관련 정보란?"
       ]
     },
     "Live Chat Modal": {
@@ -4982,6 +5170,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 줄 것입니다."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
       ]
@@ -5816,6 +6007,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "${ plus }, ${ bundle }, 및 ${ BRAND_NAME } for Business를 포함합니다."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "모든 ${ BRAND_NAME } 비즈니스 플랜에 포함"
       ]
@@ -6398,6 +6592,12 @@
       ],
       "Select state": [
         "시・도 선택"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -7346,6 +7546,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff }일 남음"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }과 버전 히스토리 기능"
       ],
@@ -7393,6 +7596,9 @@
       ],
       "Add any new files": [
         "새로운 파일을 추가할 수 없게 됩니다"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
       "Back up photos from your devices": [
         "기기에서 사진을 백업할 수 없게 됩니다"
@@ -7465,6 +7671,12 @@
       ],
       "Priority support": [
         "우선 지원"
+      ],
+      "Reactivate": [
+        "다시 활성화"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "${ planName } 기능을 다시 이용하려면 다시 활성화하세요."
       ],
       "Read the story": [
         "이야기 읽어보기"
@@ -7605,6 +7817,9 @@
       "Bug reported": [
         "버그 신고됨"
       ],
+      "Catch-all address updated": [
+        "Catch-all 주소 업데이트됨"
+      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
       ],
@@ -7616,6 +7831,12 @@
       ],
       "Display name updated": [
         "표시명 업데이트됨"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC 값 복사됨"
+      ],
+      "Domain verified": [
+        "도메인 인증됨"
       ],
       "Email address copied to clipboard": [
         "이메일 주소가 클립보드에 복사되었습니다"
@@ -7677,6 +7898,9 @@
       "Preference saved": [
         "설정이 저장되었습니다."
       ],
+      "SPF value copied to clipboard": [
+        "SPF 값 복사됨"
+      ],
       "User created": [
         "사용자 생성됨"
       ],
@@ -7685,6 +7909,12 @@
       ],
       "Username copied to clipboard": [
         "사용자 이름을 클립보드에 복사했습니다"
+      ],
+      "Value copied to clipboard": [
+        "값 복사됨"
+      ],
+      "Verification code copied to clipboard": [
+        "인증 코드 복사됨"
       ],
       "Verification successful": [
         "인증 성공"
@@ -7758,6 +7988,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "주소"
       ]
     },
     "Tab subscription modal": {
@@ -7863,6 +8098,9 @@
       "Add credits": [
         "크레딧 추가"
       ],
+      "Add domain": [
+        "도메인 추가"
+      ],
       "Add new user": [
         "새 사용자 추가"
       ],
@@ -7913,6 +8151,9 @@
       ],
       "Card verification": [
         "카드 확인"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Catch-all address": [
         "Catch-all 주소"
@@ -8048,6 +8289,9 @@
       ],
       "Edit display name": [
         "표시되는 이름 편집"
+      ],
+      "Edit domain": [
+        "도메인 수정"
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -8402,6 +8646,17 @@
         "${ MAIL_APP_NAME } 청구서"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "주소"
+      ],
+      "Catch-All": [
+        "Catch-All"
+      ],
+      "Status": [
+        "상태"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "주소"
@@ -8481,6 +8736,15 @@
       ],
       "Verified email address": [
         "인증된 이메일 주소"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS 구성에 문제를 감지했습니다. 아래 설명과 리코드가 일치한지 확인하십시오. 문제가 지속될시, DKIM 전환 로그아웃이 필요합니다."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
+      ],
+      "Your DKIM signing is working.": [
+        "DKIM 로그인이 작동합니다."
       ]
     },
     "tooltip": {
@@ -8703,11 +8967,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS 구성에 문제를 감지했습니다. 아래 설명과 리코드가 일치한지 확인하십시오. 문제가 지속될시, DKIM 전환 로그아웃이 필요합니다."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "비공개 멤버에 이메일 주소를 추가하기 전에 조직 키를 ${ activateLink }해야 합니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
       ]
     }
   }
