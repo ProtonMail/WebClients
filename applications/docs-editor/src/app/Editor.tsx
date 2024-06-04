@@ -36,6 +36,7 @@ import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { DefaultFont } from './Shared/Fonts'
 import { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
+import { sendErrorMessage } from './Utils/errorMessage'
 
 const TypingBotEnabled = false
 
@@ -74,7 +75,7 @@ export function Editor({
 
   const openLink = useCallback(
     (url: string) => {
-      clientInvoker.openLink(url).catch(console.error)
+      clientInvoker.openLink(url).catch(sendErrorMessage)
     },
     [clientInvoker],
   )

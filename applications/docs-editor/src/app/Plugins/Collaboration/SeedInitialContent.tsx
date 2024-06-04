@@ -2,6 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { DocStateInterface, FileToDocPendingConversion } from '@proton/docs-shared'
 import { useEffect, useRef } from 'react'
 import { $importDataIntoEditor } from '../../Tools/Conversion'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type Props = {
   docState: DocStateInterface
@@ -25,7 +26,7 @@ export default function SeedInitialContentPlugin({ docState, content }: Props): 
       .then(() => {
         seededInitialContent.current = true
       })
-      .catch(console.error)
+      .catch(sendErrorMessage)
   }, [content, docState, editor])
 
   return null

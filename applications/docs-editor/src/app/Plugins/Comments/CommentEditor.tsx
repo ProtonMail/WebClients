@@ -19,6 +19,7 @@ import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin'
 import clsx from '@proton/utils/clsx'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type Props = {
   initialContent: string | undefined
@@ -87,9 +88,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         initialConfig={{
           namespace: 'CommentEditor',
           nodes: [],
-          onError: (error) => {
-            console.error(error)
-          },
+          onError: (e: Error) => sendErrorMessage(e),
           theme: DocumentEditorTheme,
           editorState: initialContent ? initialContent : undefined,
         }}
@@ -128,8 +127,8 @@ export const CommentViewer = ({ content, className }: { content: string; classNa
       initialConfig={{
         namespace: 'CommentViewer',
         nodes: [],
-        onError: (error) => {
-          console.error(error)
+        onError: (error: Error) => {
+          sendErrorMessage(error)
         },
         theme: DocumentEditorTheme,
         editorState: content,
