@@ -530,7 +530,7 @@
         "Huippumoderni tekoälypohjainen suojausratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
-        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+        "Tehosta suojausta määrittämällä 2FA"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Aloita sähköpostiosoitettasi ja Hide-my-email-aliaksiasi käyttävien tilien tietomurtovalvonta."
@@ -761,9 +761,6 @@
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Päivitä tilauksesi saadaksesi varhaisen käyttöokeuden ${ PASS_APP_NAME }in työpöytäsovellukseen"
-      ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
@@ -783,7 +780,7 @@
         "Allekirjoituksen vahvistus epäonnistui"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Jotkin kolvit eivät ole enää käytettävissä salasanan nollauksen vuoksi. Palauta käyttöoikeus aktivoimalla tilisi avaimet uudelleen. ${ reactivateLink }"
+        "Jotkin kolvit eivät ole enää käytettävissä salasanan uudelleenasetuksen vuoksi. Palauta käyttöoikeus aktivoimalla tilisi avaimet uudelleen. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
@@ -1133,6 +1130,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
+      ],
+      "here": [
+        "tässä"
       ],
       "High Priority": [
         "Korkea tärkeys"
@@ -2453,7 +2453,7 @@
         "Tehosta suojausta määrittämällä 2FA"
       ],
       "Set up 2FA for more security": [
-        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+        "Tehosta suojausta määrittämällä 2FA"
       ],
       "Settings": [
         "Asetukset"

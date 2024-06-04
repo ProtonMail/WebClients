@@ -59,7 +59,7 @@
         "Množično premikanje predmetov v drug trezor"
       ],
       "Bulk move items to trash": [
-        "Množično premikanje predmetov v koš"
+        "Množično premikanje predmetov v smetnjak"
       ],
       "Bulk restore items from trash": [
         "Množična obnovitev predmetov iz smetnjaka"
@@ -225,6 +225,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Kako posodobiti ${ PASS_APP_NAME } na GNU/Linux sistemih."
       ],
       "Import": [
         "Uvoz"
@@ -767,9 +770,6 @@
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Nadgradite za zgodnji dostop do ${ PASS_APP_NAME } namizne aplikacije."
-      ],
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
@@ -1162,6 +1162,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
       ],
+      "here": [
+        "tukaj"
+      ],
       "High Priority": [
         "Visoka pomembnost"
       ],
@@ -1314,6 +1317,9 @@
       ],
       "Never": [
         "Nikoli"
+      ],
+      "New version ${ latestVersion } is available.": [
+        "Posodobitev ${ latestVersion } je na voljo."
       ],
       "No breaches detected": [
         "Ni odkritih uhajanj podatkov"
@@ -1474,6 +1480,9 @@
       "Thank you, the problem has been reported": [
         "Hvala, težava je bila prijavljena"
       ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Seznam sprememb je na povezavi ${ changelogLink }."
+      ],
       "The export will only contain vaults that you own.": [
         "Izvoz bo vseboval le trezorje, ki so v vaši lasti."
       ],
@@ -1586,10 +1595,10 @@
         "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje predmetov med vsemi trezorji nadgradite svojo naročnino."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Da ustvarite nov predmet v trezorjih nadgradite svojo naročnino."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Nove predmete je mogoče ustvariti samo v vaših prvih dveh trezorjih. Če želite ustvariti nove predmete v vseh trezorjih, nadgradite svojo naročnino."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število vzdevkov."
+        "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, lahko ustvarite neomejeno število vzdevkov."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
         "Dosegli ste omejitev plačilnih kartic, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število plačilnih kartic."
