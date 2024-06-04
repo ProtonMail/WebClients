@@ -58,7 +58,7 @@ export function App({ isViewOnly = false }: Props) {
   useEffectOnce(() => {
     setTtagLocales(locales)
   })
-  
+
   const editorRef = useRef<LexicalEditor | null>(null)
   const setEditorRef = useCallback((instance: LexicalEditor | null) => {
     editorRef.current = instance
@@ -80,7 +80,7 @@ export function App({ isViewOnly = false }: Props) {
           .getClientInvoker()
           .editorRequestsPropagationOfUpdate(message, originator, debugSource)
           .catch((e: Error) => {
-            bridge.getClientInvoker().reportError(e)
+            void bridge.getClientInvoker().reportError(e)
           })
       },
       handleAwarenessStateUpdate: (states) => {
@@ -88,7 +88,7 @@ export function App({ isViewOnly = false }: Props) {
           .getClientInvoker()
           .handleAwarenessStateUpdate(states)
           .catch((e: Error) => {
-            bridge.getClientInvoker().reportError(e)
+            void bridge.getClientInvoker().reportError(e)
           })
       },
     })
