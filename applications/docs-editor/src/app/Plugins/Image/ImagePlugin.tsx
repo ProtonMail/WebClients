@@ -15,6 +15,7 @@ import { $createImageNode, ImageNode } from './ImageNode'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type InsertImagePayload = File | Blob
 
@@ -58,7 +59,7 @@ export default function ImagesPlugin(): JSX.Element | null {
           createAndInsertImageNode(downsizedImage)
         }
 
-        handleDownsizingAndInsert().catch(console.error)
+        handleDownsizingAndInsert().catch(sendErrorMessage)
         return true
       },
       COMMAND_PRIORITY_EDITOR,
