@@ -474,6 +474,9 @@
       "Manage link": [
         "Hallitse linkkiä"
       ],
+      "Manage share": [
+        "Hallitse jakoa"
+      ],
       "Mark as resolved": [
         "Merkitse ratkaistuksi"
       ],
@@ -892,7 +895,7 @@
         "Mitä saan?"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
       ],
       "Your 3 GB bonus": [
@@ -1196,6 +1199,17 @@
       ],
       "Continue your subscription": [
         "Jatka tilaustasi"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "Säilytä seuraavat aktivoimalla uudelleen ${ formattedEndDate } mennessä:"
+      ],
+      "Reactivate subscription": [
+        "Aktivoi tilaus uudelleen"
+      ],
+      "Your subscription is ending soon": [
+        "Tilauksesi päättyy pian"
       ]
     },
     "Checkout row": {
@@ -2290,6 +2304,11 @@
         "VPN on liian hidas"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Auta meitä parantamaan"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -2523,6 +2542,15 @@
       "External accounts are not supported yet": [
         "Ulkoisia tilejä ei vielä tueta"
       ],
+      "External invitations are not available yet.": [
+        "Ulkoisia kutsuja eivät ole vielä mahdollisia."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Ulkoiset kutsut on tilapäisesti poistettu käytöstä."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
       ],
@@ -2619,9 +2647,6 @@
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
       "Not a valid number": [
         "Virheellinen puhelinnumero"
@@ -2738,6 +2763,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Kansion nimi on liian pitkä. Valitse eri nimi."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Kutsun viimeistely ei ole vielä mahdollista. Yritä myöhemmin uudelleen."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Kutsua ei ole enää olemassa"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Tunnisteen nimi on virheellinen. Valitse eri nimi."
       ],
@@ -2803,6 +2834,9 @@
       ],
       "Unknown payment token status": [
         "Tuntematon maksutunnisteen tila"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Tallennus tähän kansioon on tilapäisesti poistettu estetty"
       ],
       "Username must begin with a letter or digit": [
         "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
@@ -4551,6 +4585,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
+      "People with access": [
+        "Ihmiset, joilla on pääsy"
+      ],
       "Permanently delete all files in your locked drive": [
         "Poista kaikki lukitun levysi tiedostot"
       ],
@@ -4795,6 +4832,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5224,7 +5264,7 @@
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Tiedostosi eivät ole enää salasanan nollauksen vuoksi käytettävissä. Palauta käyttöoikeus lataamalla vanha salausavaimesi uudelleen. ${ KeyReactivationButton }"
+        "Tiedostosi eivät ole enää salasanan uudelleenasetuksen vuoksi käytettävissä. Palauta käyttöoikeus lataamalla vanha salausavaimesi uudelleen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -5664,6 +5704,12 @@
       "Main": [
         "Pää"
       ],
+      "Make editor": [
+        "Myönnä muokkausoikeus"
+      ],
+      "Make viewer": [
+        "Myönnä tarkasteluoikeus"
+      ],
       "Malware": [
         "Haittaohjelma"
       ],
@@ -5768,9 +5814,6 @@
       ],
       "Region": [
         "Alue"
-      ],
-      "Remove access": [
-        "Mitätöi käyttöoikeus"
       ],
       "Replace existing file": [
         "Korvaa olemassa oleva tiedosto"
@@ -5891,6 +5934,9 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
       "Wonderful": [
         "Erinomainen"
@@ -6774,6 +6820,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
       ]
     },
     "new_plans: feature info": {
@@ -7030,6 +7079,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka ohjaa sähköpostit pääpostilaatikkoosi)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
       ],
@@ -7043,7 +7095,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
+        "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -7154,7 +7206,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen tunnistautuminen"
+        "2FA-pakotus"
       ]
     },
     "Notification": {
@@ -7253,11 +7305,17 @@
       "Access for the member removed": [
         "Jäsenen käyttöoikeus mitätöitiin"
       ],
+      "Access updated": [
+        "Pääsy on päivitetty"
+      ],
       "Access updated and shared": [
         "Käyttöoikeus muutettiin ja jaettiin"
       ],
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
+      ],
+      "An invitation has been sent": [
+        "Kutsu on lähetetty"
       ],
       "Cannot load link": [
         "Linkin lataus epäonnistui"
@@ -7286,8 +7344,14 @@
       "Encrypted search activated": [
         "Salattu haku on käytössä"
       ],
+      "External invitation removed from the share": [
+        "Ulkoinen kutsu poistettiin jaosta"
+      ],
       "Failed to accept share invitation": [
         "Jakokutsun hyväksyntä epäonnistui"
+      ],
+      "Failed to convert external invitation": [
+        "Ulkoisen kutsun muunnos epäonnistui"
       ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
@@ -7343,9 +7407,6 @@
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Jakokutsun ID-tunnistetta ei löytynyt. Tarkista linkki."
       ],
       "Stopping to share this item has failed": [
         "Tämän kohteen jakamisen lopettaminen epäonnistui"
@@ -7523,6 +7584,12 @@
       "MM/YY": [
         "KK/VV"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
@@ -7655,6 +7722,9 @@
       ],
       "Set date": [
         "Aseta päivämäärä"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"
@@ -7968,8 +8038,8 @@
         "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
@@ -8256,6 +8326,14 @@
         "Tilaustasi perutaan. Odota."
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Hyväksytty"
+      ],
+      "Pending": [
+        "Odottaa"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Hanki lisää tallennustilaa"
@@ -8431,6 +8509,10 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
@@ -9421,7 +9503,7 @@
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
+        "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
@@ -9488,6 +9570,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Heille on lähetetty kutsu kohteeseen."
       ],
       "You do not have any contacts to export": [
         "Sinulla ei ole vietäviä yhteystietoja"

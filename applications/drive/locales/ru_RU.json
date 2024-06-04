@@ -190,6 +190,9 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy version number to clipboard": [
+        "Скопировать номер версии в буфер обмена"
+      ],
       "Create": [
         "Создать"
       ],
@@ -496,6 +499,9 @@
       "New": [
         "Новая"
       ],
+      "New folder": [
+        "Новая папка"
+      ],
       "New message": [
         "Новое сообщение"
       ],
@@ -516,6 +522,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in Docs": [
+        "Открыть в Docs"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -597,6 +606,9 @@
       ],
       "Report an issue": [
         "Сообщить о проблеме"
+      ],
+      "Request a call": [
+        "Запросить звонок"
       ],
       "Request a feature": [
         "Запросить функцию"
@@ -2145,6 +2157,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -2156,6 +2171,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
@@ -2475,9 +2493,6 @@
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Не аккаунт ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Номер недействителен"
@@ -5710,9 +5725,6 @@
       "Region": [
         "Регион"
       ],
-      "Remove access": [
-        "Отменить доступ"
-      ],
       "Replace existing file": [
         "Заменить существующий файл"
       ],
@@ -5832,6 +5844,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Да, я хочу навсегда удалить свои старые файлы"
+      ],
+      "Your alias": [
+        "Ваш псевдоним"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -7618,6 +7633,9 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Все псевдонимы"
+      ],
       "Create alias": [
         "Создать псевдоним"
       ],
@@ -7627,11 +7645,17 @@
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
       ],
+      "New alias": [
+        "Новый псевдоним"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Открыть ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Используется на Amazon для покупок и прочего"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7794,6 +7818,9 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } теперь доступен."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -8072,6 +8099,9 @@
       "For all ${ BRAND_NAME } services": [
         "Для всех служб ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ],
@@ -8184,6 +8214,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -8193,11 +8229,17 @@
       "10 email addresses": [
         "10 адресов электронной почты"
       ],
+      "6 users": [
+        "6 пользователей"
+      ],
       "Calendar sharing": [
         "Совместное использование календаря"
       ],
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Helping activists in Hong Kong": [
+        "Помощь активистам в Гонконге"
       ],
       "Keep ${ planName }": [
         "Сохранить ${ planName }"
@@ -8205,8 +8247,17 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Read the story": [
+        "Читать историю"
+      ],
+      "Unblocking internet access in Iran": [
+        "Разблокирование доступа к Интернету в Иране"
+      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Watch the interview": [
+        "Смотреть интервью"
       ]
     },
     "subscription reminder": {
@@ -8305,6 +8356,12 @@
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
+      "Alias copied to clipboard": [
+        "Псевдоним скопирован в буфер обмена"
+      ],
+      "Alias saved and copied": [
+        "Псевдоним сохранён и скопирован"
+      ],
       "Bug reported": [
         "Отчёт об ошибке отправлен"
       ],
@@ -8373,6 +8430,9 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Вы успешно отменили свою подписку"
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
