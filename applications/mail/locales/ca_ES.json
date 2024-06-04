@@ -1958,6 +1958,11 @@
         "Cancel·la la caducitat"
       ]
     },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Reactiva la subscripció"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuari",
@@ -3367,7 +3372,7 @@
         "Característiques que falten"
       ],
       "Other reason (please comment)": [
-        "Un altre motiu (comenteu)"
+        "Una altra raó (comenteu)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -3586,7 +3591,7 @@
         "Quantitat per sobre del màxim."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Import inferior al mínim (${ minimumAmount })."
+        "L'import és inferior al mínim (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "S'ha produït un error en carregar les opcions de l'àlies"
@@ -6756,7 +6761,7 @@
         "Versió ${ appVersion }"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat al porta-retalls"
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -8778,7 +8783,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Comprovacions periòdiques de la seguretat del seu compte. L'avisem si té contrasenyes febles o reutilitzades que cal actualitzar."
+        "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -8894,7 +8899,7 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escanegem la web fosca per comprovar si les seves adreces o àlies de ${ BRAND_NAME } s'han filtrat i l'avisem immediatament si trobem alguna cosa."
+        "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
     "new_plans: feature info": {
@@ -10639,6 +10644,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
