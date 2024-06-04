@@ -212,7 +212,7 @@
         "Pass Business holen"
       ],
       "Get Pass Plus": [
-        "Pass Plus erwerben"
+        "Pass Plus holen"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -501,6 +501,12 @@
       ]
     },
     "Description": {
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Zwei-Faktor-Authentifizierung fügt deinem Anmeldevorgang eine weitere Sicherheitsstufe hinzu. ${ PASS_APP_NAME } erleichtert die Zwei-Faktor-Authentifizierung durch die Speicherung und das automatische Ausfüllen deiner Authentifizierungscodes."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ein E-Mail-Alias funktioniert genau wie eine E-Mail-Adresse. Es verhindert zusätzlich Spam-Nachrichten und versteckt deine richtige E-Mail-Adresse sowie deine Identität."
+      ],
       "Change your passwords": [
         "Ändere deine Passwörter"
       ],
@@ -523,7 +529,10 @@
         "Richte 2FA für mehr Sicherheit ein"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Beginne mit der Überwachung auf Datenschutzverletzungen im Zusammenhang mit Konten, welche du mit deiner E-Mail-Adresse oder deinen hide-my-email Aliassen erstellt hast."
+        "Beginne mit der Überwachung auf Datenlecks im Zusammenhang mit Konten, welche du mit deiner E-Mail-Adresse oder deinen hide-my-email Aliassen erstellt hast."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Das Dark Web ist ein verborgener Teil des Internets, in dem gestohlene persönliche Informationen, wie z. B. Identitäten, gekauft und verkauft werden können."
       ],
       "These items remain at risk": [
         "Diese Einträge sind weiterhin gefährdet"
@@ -531,8 +540,14 @@
       "This account is vulnerable, visit the service and change your password.": [
         "Dieses Konto ist angreifbar, besuche den Dienst und ändere dein Passwort."
       ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Dieser Dienst unterstützt 2FA. Aktiviere sie für zusätzliche Kontosicherheit."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Schalte erweiterte Sicherheitsfunktionen und detaillierte Protokolle zum Schutz deiner Online-Präsenz frei."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Mit ${ PASS_SHORT_APP_NAME } Überwachung bist du Gefahren durch Sofort-Benachrichtigungen, falls deine Zugangsdaten kompromittiert wurden, immer eine Stufe voraus. Schalte fortschrittliche Sicherheitsfunktionen und die Erfassung detaillierter Logeinträge frei, um deinen Internetauftritt zu schützen."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Deine E-Mail-Adressen sind bei mindestens 1 Datendiebstahl veröffentlicht worden."
@@ -565,7 +580,7 @@
         "Einladungen können derzeit nicht versendet werden"
       ],
       "Cannot send invitations at the moment": [
-        "Kann derzeit keine Einladungen versenden"
+        "Einladungen können derzeit nicht versendet werden"
       ],
       "Could not confirm this invite at the moment": [
         "Fehler beim Bestätigen der Einladung."
@@ -589,7 +604,7 @@
         "Mitglieder der Freigabe können nicht festgelegt werden"
       ],
       "Could not validate addresses at the moment.": [
-        "Die Adressen können zur Zeit nicht validiert werden."
+        "Die Adressen können zurzeit nicht überprüft werden."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
@@ -629,25 +644,25 @@
         "Fehler beim erneuten Senden der Einladung."
       ],
       "Failed to add email address": [
-        "Hinzufügen der E-Mail Adresse fehlgeschlagen"
+        "Fehler beim Hinzufügen der E-Mail-Adresse."
       ],
       "Failed to delete email address from monitoring": [
-        "Löschen der E-Mail-Adresse aus der Überwachung fehlgeschlagen"
+        "Fehler beim Löschen der E-Mail-Adresse aus der Überwachung."
       ],
       "Failed to delete selected items": [
-        "Ausgewählten Einträge konnten nicht gelöscht werden"
+        "Fehler beim Löschen der ausgewählten Einträge."
       ],
       "Failed to edit organization settings": [
-        "Bearbeitung der Organisationseinstellungen fehlgeschlagen"
+        "Fehler beim Bearbeiten der Organisationseinstellungen."
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
       ],
       "Failed to load breaches for this address": [
-        "Datendiebstähle für diese Adresse konnten nicht geladen werden"
+        "Fehler beim Laden der Datenlecks für diese Adresse."
       ],
       "Failed to load breaches for this email alias": [
-        "Datendiebstahl für diesen E-Mail-Alias konnten nicht geladen werden"
+        "Fehler beim Laden der Datenlecks für diesen E-Mail-Alias."
       ],
       "Failed to load item history": [
         "Fehler beim Laden der Eintraghistorie."
@@ -659,7 +674,7 @@
         "Einträge konnte nicht verschoben werden"
       ],
       "Failed to move items to trash": [
-        "Einträge konnten nicht aus dem Papierkorb wiederhergestellt werden"
+        "Fehler beim Verschieben der Einträge in den Papierkorb."
       ],
       "Failed to pin item": [
         "Anheften des Eintrags fehlgeschlagen"
@@ -671,10 +686,10 @@
         "Überprüfung für benutzerdefinierte E-Mail konnte nicht erneut gesendet werden"
       ],
       "Failed to resolve breaches for this address": [
-        "Datendiebstahl für diese Adresse konnten nicht aufgeklärt werden"
+        "Fehler beim Lösen der Datenlecks für diese Adresse."
       ],
       "Failed to restore items from trash": [
-        "Einträge konnten nicht aus dem Papierkorb wiederhergestellt werden"
+        "Fehler beim Wiederherstellen der Einträge aus dem Papierkorb."
       ],
       "Failed to transfer this vault's ownership.": [
         "Fehler beim Übertragen der Tresor-Inhaberschaft."
@@ -683,13 +698,13 @@
         "Loslösen des Eintrags fehlgeschlagen"
       ],
       "Failed to update monitoring settings": [
-        "Aktualisierung der Überwachungseinstellungen fehlgeschlagen"
+        "Fehler beim Aktualisieren der Überwachungseinstellungen."
       ],
       "Failed to verify email address": [
-        "Verifizierung der E-Mail Adresse fehlgeschlagen"
+        "Fehler beim Verifizieren der E-Mail-Adresse."
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
-        "Aktualisierung der Einstellung ${ PROTON_SENTINEL_NAME } fehlgeschlagen"
+        "Fehler beim Aktualisieren der ${ PROTON_SENTINEL_NAME }-Einstellung."
       ],
       "Failed updating monitor flag of the item": [
         "Aktualisierung des Monitor Indikators für das Element fehlgeschlagen"
@@ -741,9 +756,6 @@
       ],
       "PIN codes do not match": [
         "PIN-Codes stimmen nicht überein"
-      ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Bitte upgraden, um frühzeitigen Zugriff auf ${ PASS_APP_NAME } Desktop Applikation zu erhalten"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -840,7 +852,7 @@
         "Integrierter 2FA-Authentifikator"
       ],
       "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
+        "Unbegrenzte hide-my-email-Aliasse"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
         "Tresor teilen (bis zu ${ MAX_VAULT_MEMBERS } Personen)"
@@ -921,10 +933,10 @@
         "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
-        "${ PROTON_SENTINEL_NAME } erfolgreich gelöscht"
+        "${ PROTON_SENTINEL_NAME } erfolgreich deaktiviert."
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
-        "${ PROTON_SENTINEL_NAME } erfolgreich aktiviert"
+        "${ PROTON_SENTINEL_NAME } erfolgreich aktiviert."
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } Datendiebstahl entdeckt",
@@ -946,7 +958,7 @@
         "Administrator"
       ],
       "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Nach Inaktivität ist für den Zugriff auf ${ PASS_APP_NAME } ein PIN-Code erforderlich, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du ausgeloggt."
+        "Nach Inaktivität ist für den Zugriff auf ${ PASS_APP_NAME } ein PIN-Code erforderlich, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
@@ -954,14 +966,20 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasse mit eigenen Domains werden nicht überwacht. Bitte füge diese als eigene E-Mail-Adresse hinzu, um sie zu überwachen."
+      ],
       "All breaches for this address were resolved": [
-        "Alle Datendiebstähle für diese Adresse wurden behoben"
+        "Alle Datenlecks für diese Adresse wurden behoben."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle vorhandenen Datenlecks werden als behoben markiert. Im Falle künftiger Datenlecks wirst du benachrichtigt."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle Einträge von \"${ payload.content.name }\" erfolgreich verschoben."
       ],
       "All items successfully moved": [
-        "Einträge erfolgreich verschoben"
+        "Alle Einträge erfolgreich verschoben"
       ],
       "All trashed items permanently deleted": [
         "Alle Einträge im Papierkorb dauerhaft gelöscht."
@@ -985,7 +1003,7 @@
         "Automatisches Sperren erfolgreich deaktiviert."
       ],
       "Breaches detected": [
-        "Datendiebstahl entdeckt"
+        "Datenlecks entdeckt"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Bring deine bestehenden Passwörter in ${ BRAND_NAME }"
@@ -994,7 +1012,7 @@
         "Integrierter 2FA-Authenticator"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Standardmäßig können Teammitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren"
+        "Standardmäßig können Teammitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Darf Einträge in diesem Tresor erstellen, bearbeiten, löschen und exportieren."
@@ -1048,16 +1066,19 @@
         "E-Mail"
       ],
       "Email address successfully deleted from monitoring": [
-        "E-Mail-Adresse erfolgreich aus der Überwachung gelöscht"
+        "E-Mail-Adresse erfolgreich aus der Überwachung gelöscht."
       ],
       "Email address successfully excluded from monitoring": [
-        "E-Mail-Adresse erfolgreich von der Überwachung ausgeschlossen"
+        "E-Mail-Adresse erfolgreich von der Überwachung ausgeschlossen."
       ],
       "Email address successfully included in monitoring": [
-        "E-Mail Adresse erfolgreich in die Überwachung aufgenommen"
+        "E-Mail-Adresse erfolgreich in die Überwachung aufgenommen."
       ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktiviere die ${ PASS_SHORT_APP_NAME } Beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -1159,10 +1180,10 @@
         "Eintrag wiederhergestellt."
       ],
       "Item successfully excluded from monitoring": [
-        "Element erfolgreich von der Überwachung ausgeschlossen"
+        "Eintrag erfolgreich von der Überwachung ausgeschlossen."
       ],
       "Item successfully included in monitoring": [
-        "Element erfolgreich in die Überwachung einbezogen"
+        "Eintrag erfolgreich in die Überwachung einbezogen."
       ],
       "Item successfully moved": [
         "Eintrag erfolgreich verschoben."
@@ -1210,7 +1231,7 @@
         "Konten überwachen"
       ],
       "Monitoring settings successfully updated": [
-        "Überwachungseinstellungen erfolgreich aktualisiert"
+        "Überwachungseinstellungen erfolgreich aktualisiert."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
@@ -1228,7 +1249,7 @@
         "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
       ],
       "Moving items to trash": [
-        "Einträge in den Papierkorb verschieben"
+        "Einträge werden in den Papierkorb verschoben"
       ],
       "Never": [
         "Niemals"
@@ -1274,7 +1295,7 @@
         "Angehalten"
       ],
       "Permanently deleting selected items": [
-        "Ausgewählte Einträge dauerhaft löschen"
+        "Ausgewählte Einträge werden dauerhaft gelöscht"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-Code erfolgreich registriert. Verwende ihn, um ${ PASS_APP_NAME } zu entsperren."
@@ -1322,7 +1343,7 @@
         "Erneut verbinden"
       ],
       "Restoring items from trash": [
-        "Einträge vom Papierkorb wiederherstellen"
+        "Einträge vom Papierkorb werden wiederhergestellt"
       ],
       "Restoring trashed items...": [
         "Stelle Einträge aus dem Papierkorb wieder her..."
@@ -1385,7 +1406,7 @@
         "Synchronisiere deine Tresore…"
       ],
       "Team members can only share vaults within organization": [
-        "Teammitglieder können Tresore nur innerhalb der Organisation gemeinsam nutzen"
+        "Teammitglieder können Tresore nur innerhalb der Organisation gemeinsam nutzen."
       ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
@@ -1413,7 +1434,7 @@
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
       "This setting is disabled on the organization level": [
-        "Diese Einstellung ist auf Organisationsebene deaktiviert"
+        "Diese Einstellung ist auf Organisationsebene deaktiviert."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
@@ -1443,7 +1464,7 @@
         "Nicht verifiziert"
       ],
       "Updating organization settings": [
-        "Aktualisierung der Organisationseinstellungen"
+        "Organisationseinstellungen werden aktualisiert"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade jetzt zum Freischalten von Premiumfunktionen"
@@ -1473,7 +1494,7 @@
         "Tresor \"${ share.content.name }\" wurde entfernt."
       ],
       "Verification code sent.": [
-        "Bestätigungscode gesendet"
+        "Bestätigungscode gesendet."
       ],
       "Viewer": [
         "Betrachter"
@@ -1515,6 +1536,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du wirst über Datenlecks im Zusammenhang mit diesen E-Mail-Adressen benachrichtigt."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Du wirst über Datenlecks im Zusammenhang mit dieser E-Mail-Adresse benachrichtigt."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du wirst nicht länger über Datenlecks im Zusammenhang mit diesen E-Mail-Adressen benachrichtigt."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du wirst nicht länger über Datenlecks im Zusammenhang mit dieser E-Mail-Adresse benachrichtigt."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du verwendest diese PIN, um ${ PASS_APP_NAME } zu entsperren, sobald es sich nach einer gewissen Zeit der Inaktivität automatisch sperrt."
       ],
@@ -1525,7 +1558,7 @@
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Deine Informationen wurden gefunden am ${ displayedDate }"
+        "Deine Informationen wurden am ${ displayedDate } gefunden."
       ]
     },
     "Label": {
@@ -1773,13 +1806,13 @@
         "Zugangsdaten"
       ],
       "Make all admins": [
-        "Mach alle zu Administratoren"
+        "Alle zu Administratoren machen"
       ],
       "Make all editors": [
-        "Mach alle zu Bearbeitern"
+        "Alle zu Bearbeitern machen"
       ],
       "Make all viewers": [
-        "Mach alle zu Betrachtern"
+        "Alle zu Betrachtern machen"
       ],
       "Members": [
         "Mitglieder"
@@ -1997,7 +2030,7 @@
         "Mehr erfahren"
       ],
       "stay safer online": [
-        "bleib online geschützter"
+        "online sicherer wird"
       ]
     },
     "lobby: Info": {
@@ -2137,7 +2170,7 @@
         "In allen Tresoren nach ${ pluralItemType } suchen"
       ],
       "Search in ${ vaultName }": [
-        "Durchsuche ${ vaultName }"
+        "In ${ vaultName } suchen"
       ],
       "Search in all vaults": [
         "In allen Tresoren suchen"
@@ -2198,13 +2231,13 @@
         "Aktualisieren der automatischen Sperre"
       ],
       "Breach detected": [
-        "Datendiebstahl entdeckt"
+        "Datenleck entdeckt"
       ],
       "Breaches": [
         "Datenlecks"
       ],
       "Breaches detected for": [
-        "Entdeckte Verstöße für"
+        "Datenlecks entdeckt für"
       ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
@@ -2224,8 +2257,14 @@
       "Current version": [
         "Aktuelle Version"
       ],
+      "Custom addresses": [
+        "Eigene Adressen"
+      ],
       "Custom email monitoring": [
         "Benutzerdefinierte E-Mail-Überwachung"
+      ],
+      "Custom emails": [
+        "Eigene E-Mails"
       ],
       "Dark Web Monitoring": [
         "Dark Web-Überwachung"
@@ -2289,6 +2328,9 @@
       ],
       "Leave vault ?": [
         "Tresor verlassen?"
+      ],
+      "Loading breaches...": [
+        "Lade Datenlecks..."
       ],
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
@@ -2517,6 +2559,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
+      "Failed to load breaches.": [
+        "Fehler beim Laden der Datenlecks."
+      ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
       ],
@@ -2586,6 +2631,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Der Alias-Präfix darf nicht länger als 40 Zeichen sein."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Diese E-Mail-Adresse wird nicht länger auf Datenlecks überwacht."
       ],
       "Title is required": [
         "Titel ist erforderlich"
