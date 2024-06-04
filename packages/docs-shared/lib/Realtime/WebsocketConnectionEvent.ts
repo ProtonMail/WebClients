@@ -7,6 +7,7 @@ export enum WebsocketConnectionEvent {
   Disconnected = 'disconnected',
   FailedToConnect = 'failed-to-connect',
   Message = 'message',
+  EncryptionError = 'encryption-error',
 }
 
 export type WebsocketConnectionEventStatusChange =
@@ -27,6 +28,10 @@ export type WebsocketDisconnectedPayload = BaseWebsocketPayload & {
 
 export type WebsocketFailedToConnectPayload = BaseWebsocketPayload & {
   serverReason: ConnectionCloseReason
+}
+
+export type WebsocketEncryptionErrorPayload = BaseWebsocketPayload & {
+  error: string
 }
 
 export type WebsocketMessagePayload = BaseWebsocketPayload & {

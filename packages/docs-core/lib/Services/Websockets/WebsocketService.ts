@@ -13,6 +13,7 @@ import {
   WebsocketMessagePayload,
   RealtimeUrlAndToken,
   WebsocketFailedToConnectPayload,
+  WebsocketEncryptionErrorPayload,
 } from '@proton/docs-shared'
 import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
 import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
@@ -100,6 +101,16 @@ export class WebsocketService implements WebsocketServiceInterface {
             },
           })
         }
+      },
+
+      onEncryptionError: (error) => {
+        this.eventBus.publish<WebsocketEncryptionErrorPayload>({
+          type: WebsocketConnectionEvent.EncryptionError,
+          payload: {
+            document,
+            error,
+          },
+        })
       },
 
       getUrlAndToken: async () => {
