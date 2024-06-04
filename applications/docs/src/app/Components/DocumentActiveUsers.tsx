@@ -15,10 +15,6 @@ export function DocumentActiveUsers() {
     }, DocAwarenessEvent.AwarenessStateChange)
   }, [application.eventBus])
 
-  if (states.length <= 1) {
-    return null
-  }
-
   return (
     <div className="flex items-center gap-2">
       {states.map(({ name, color, focusing }, index) => {
