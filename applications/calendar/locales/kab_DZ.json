@@ -6035,6 +6035,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Mazal ${ dayDiff } wass",
+        "Mazal ${ dayDiff } wussan"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } n uḥraz asemday"
       ],
