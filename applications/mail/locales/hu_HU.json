@@ -5538,6 +5538,9 @@
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
       ],
+      "JCB logo": [
+        "JCB logó"
+      ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Csatlakozzon a ${ PROTON_SENTINEL_NAME } programhoz a legmagasabb szintű fiókbiztonság és támogatás érdekében."
       ],
@@ -9421,6 +9424,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
