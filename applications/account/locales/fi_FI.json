@@ -3201,7 +3201,7 @@
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Poista ${ MAIL_APP_NAME }in alatunniste ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi ."
+        "Poista ${ MAIL_APP_NAME } -allekirjoitus ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi ."
       ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
@@ -3345,6 +3345,11 @@
       ],
       "The VPN is too slow": [
         "VPN on liian hidas"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Auta meitä parantamaan"
       ]
     },
     "Download link": {
@@ -3538,7 +3543,7 @@
         "Lisää ehto"
       ],
       "Add forwarding rule": [
-        "Lisää välityssääntö"
+        "Lisää ohjaussääntö"
       ],
       "Back": [
         "Takaisin"
@@ -3591,7 +3596,7 @@
     },
     "email_forwarding_2023: Description": {
       "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Hanki sähköpostin ohjaus parempaan saapuvien tietojen hallintaan sekä muita premium-ominaisuuksia päivittämällä tilauksesi."
+        "Hanki saapuvan tiedonhallintaa parantava viestiohjaus sekä muita premium-ominaisuuksia päivittämällä tilauksesi."
       ]
     },
     "email_forwarding_2023: Error": {
@@ -3639,7 +3644,7 @@
         "Osoitteelle ${ boldForwarderEmail } luodaan uusi salausavain."
       ],
       "Automatically forward emails to another email address.": [
-        "Välitä sähköpostit automaattisesti toiseen sähköpostiosoitteeseen."
+        "Ohjaa viestit automaattisesti toiseen sähköpostiosoitteeseen."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Välittäjä kutsutaan ja hänen on hyväksyttävä/hylättävä kutsu tai päivitettävä"
@@ -3773,12 +3778,12 @@
         "Ohjaus keskeytettiin"
       ],
       "Forwarding resumed": [
-        "Välitystä jatkettiin"
+        "Ohjausta jatkettiin"
       ]
     },
     "email_forwarding_2023: Title": {
       "Automatically forward emails to other accounts": [
-        "Välitä viestit automaattisesti toisille tileille"
+        "Ohjaa viestit automaattisesti muille tileille"
       ],
       "Delete forwarding?": [
         "Poistetaanko välitys?"
@@ -5028,7 +5033,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Lisää todennuslaite"
+        "Liitä todennuslaite"
       ],
       "Delete key": [
         "Poista todennuslaite"
@@ -5111,7 +5116,7 @@
         "Rekisteröi todennuslaitteesi"
       ],
       "Registered security keys": [
-        "Rekisteröidyt todennuslaitteet"
+        "Liitetyt todennuslaitteet"
       ],
       "Security key registered": [
         "Todennuslaite rekisteröitiin"
@@ -5958,17 +5963,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6183,7 +6177,7 @@
         "Tili on päivitetty"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivoi ainakin yksi tietojen palautustapa varmistaaksesi, että pääset käsiksi ${ BRAND_NAME }-tilisi sisältöön, jos unohdat salasanasi."
+        "Aktivoi ainakin yksi tiedonpalautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "active": [
         "käytössä"
@@ -6361,19 +6355,19 @@
         "Huomiota vaaditaan"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Automaattivastaus on joka kuukausi käytössä aloitusajasta lopetusaikaan."
+        "Automaattivastaus on käytössä joka kuukausi aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Automaattivastaus on joka viikko käytössä aloitusajasta lopetusaikaan."
+        "Automaattivastaus on käytössä joka viikko aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active from the start time to the end time.": [
         "Automaattivastaus on käytössä aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Automaattivastaus on käytössä kunnes se kytketään pois käytöstä."
+        "Automaattivastaus on käytössä kunnes se poistetaan käytöstä."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automaattivastaus on aina käytössä valittuina viikonpäivinä, valitulla tuntivälillä."
+        "Automaattivastaus on aina käytössä valittuina viikonpäivinä ja tuntivälillä."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla macOS, Windows ja Linux -alustoille."
@@ -6424,7 +6418,7 @@
         "Laskutusjakso: ${ text }"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        "Estää lähettäjiä näkemästä, jos ja koska avasit viestin."
+        "Estää lähettäjiä näkemästä jos ja milloin avasit viestin."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
@@ -6839,10 +6833,13 @@
         "Jos järjestelmän aikavyöhyke ei vastaa nykyistä aikavyöhykeasetustasi, sinua pyydetään päivittämään se (enintään kerran päivässä)."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
-        "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen"
+        "Jos tämä johtuu vanhasta salasanan uudelleenasetuksesta, voit estää viestiä näkymästä uudelleen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Jos olet kirjautuneena jossakin muualla, voi ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
@@ -7054,7 +7051,7 @@
         "live-keskustelu"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "Välityspalvelimemme suojaa ladattua sisältöä seurantasuojauksen ollessa käytössä."
+        "Seurantasuojausta käytettäessä välityspalvelimemme suojaa ladattavaa sisältöä."
       ],
       "Loading": [
         "Ladataan"
@@ -7108,7 +7105,7 @@
         "Valvo tilejä"
       ],
       "Monthly ${ onDayString }": [
-        "Kuukausittain ${ onDayString }"
+        "Joka kuukauden ${ onDayString }"
       ],
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
@@ -7576,6 +7573,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
+      ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
       ],
@@ -7706,7 +7706,7 @@
         "Tämä on salausavain, jonka olet saattanut tallentaa aiemmin."
       ],
       "This is the password you used before the password reset.": [
-        "Tämä on ennen salasanan nollausta käyttämäsi salasana."
+        "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojen ja maksukorttien tietojen kaltaisia tietoja. Älä jatka oman turvallisuutesi vuoksi."
@@ -7796,7 +7796,7 @@
         "Kehittääksemme palveluitamme edelleen, keräämme ajoittain jotakin tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan nollauksen jälkeen, valitse palautustapa."
+        "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan uudelleenasetuksen jälkeen, valitse palautustapa."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Varmista pääsy tilillesi aina määrittämällä tilin palautustapa"
@@ -8370,6 +8370,17 @@
         "Zoom-tapaamista"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
@@ -8795,7 +8806,7 @@
         "${ MAIL_APP_NAME } -osoite"
       ],
       "${ MAIL_APP_NAME } footer": [
-        "${ MAIL_APP_NAME } -alatunniste"
+        "${ MAIL_APP_NAME } -allekirjoitus"
       ],
       "${ n } month": [
         "${ n } kuukausi",
@@ -9174,10 +9185,10 @@
         "Viestit (viime kuukausi)"
       ],
       "End date": [
-        "Päättymispäivä"
+        "Lopetuspäivä"
       ],
       "End day of month": [
-        "Päättymispäivä"
+        "Kuukauden lopetuspäivä"
       ],
       "End time": [
         "Lopetusaika"
@@ -9501,13 +9512,13 @@
         "Luetuksi"
       ],
       "Recovery email address": [
-        "Palautusosoite"
+        "Palautussähköpostin osoite"
       ],
       "Recovery file": [
         "Palautustiedosto"
       ],
       "Recovery phone number": [
-        "Palautusnumero"
+        "Palautuspuhelimen numero"
       ],
       "Recovery phrase": [
         "Palautuslauseke"
@@ -9682,6 +9693,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
       "Why would you like to cancel?": [
         "Miksi haluat perua tilauksen?"
@@ -9972,6 +9986,9 @@
       ],
       "Paypal without credit card": [
         "PayPal ilman maksukorttia"
+      ],
+      "perform a password reset from your active session": [
+        "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
       "Privacy policy": [
         "Tietosuojakäytäntö"
@@ -10321,29 +10338,29 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "${ interval } kuukauden välein ${ onDayString }",
-        "${ interval } kuukauden välein ${ onDayString }"
+        "${ interval } kuukauden välein, kuun ${ onDayString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
-        "Kuukausittain ${ onDayString }"
+        "Joka kuukauden ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }",
-        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }"
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Kuukausittain ${ onDayString }, ${ timesString }"
+        "Joka kuukauden ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }",
-        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }"
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Kuukausittain ${ onDayString }, ${ untilString }"
+        "Joka kuukauden ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10956,6 +10973,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
       ]
     },
     "new_plans: feature info": {
@@ -11293,6 +11313,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka ohjaa sähköpostit pääpostilaatikkoosi)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
       ],
@@ -11306,7 +11329,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
+        "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -11428,7 +11451,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen tunnistautuminen"
+        "2FA-pakotus"
       ]
     },
     "Notification": {
@@ -12380,6 +12403,12 @@
       "Processing payment": [
         "Käsitellään maksua"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
@@ -12536,6 +12565,9 @@
       ],
       "Select state": [
         "Valitse osavaltio"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Text": [
         "Teksti"
@@ -13089,8 +13121,8 @@
         "Salasanan nollaus on käytettävissä ${ boldDate } alkaen. Tämä antaa sinulle aikaa perua kaikki valheelliset pyynnöt."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
@@ -13823,6 +13855,10 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
@@ -14892,10 +14928,10 @@
         "Windowsille"
       ],
       "Forward and auto-reply": [
-        "Välitä ja automaattivastaa"
+        "Ohjaus ja automaattivastaus"
       ],
       "Forward emails": [
-        "Välitä sähköpostit"
+        "Ohjaa viestit"
       ],
       "Gateways": [
         "Yhdyskäytävät"
@@ -15070,7 +15106,7 @@
         "Salasana"
       ],
       "Password reset settings": [
-        "Salasanan nollauksen asetukset"
+        "Salasanan uudelleenasetuksen asetukset"
       ],
       "Pay invoice": [
         "Maksa lasku"
@@ -15557,7 +15593,7 @@
         "Kaikki epäilyttävään toimintaan sovelletut suojaustoimenpiteet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
+        "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
@@ -16061,8 +16097,8 @@
         "${ interval } viikon välein ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
-        "${ interval } viikon välein kaikkina päivinä",
-        "${ interval } viikon välein kaikkina päivinä"
+        "${ interval } viikon välein joka päivä",
+        "${ interval } viikon välein joka päivä"
       ],
       "Every ${ interval } week on Friday": [
         "${ interval } viikon välein perjantaisin",
@@ -16108,7 +16144,7 @@
         "Viikoittain ${ multipleDaysString }"
       ],
       "Weekly on all days": [
-        "Viikoittain kaikkina päivinä"
+        "Viikoittain joka päivä"
       ],
       "Weekly on Friday": [
         "Viikoittain perjantaisin"
@@ -16138,8 +16174,8 @@
         "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "${ interval } viikon välein kaikkina päivinä, ${ timesString }",
-        "${ interval } viikon välein kaikkina päivinä, ${ timesString }"
+        "${ interval } viikon välein joka päivä, ${ timesString }",
+        "${ interval } viikon välein joka päivä, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "${ interval } viikon välein perjantaisin, ${ timesString }",
@@ -16161,7 +16197,7 @@
         "Viikoittain ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Viikoittain kaikkina päivinä, ${ timesString }"
+        "Viikoittain joka päivä, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
         "Viikoittain perjantaisin, ${ timesString }"
@@ -16191,8 +16227,8 @@
         "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "${ interval } viikon välein kaikkina päivinä, ${ untilString }",
-        "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
+        "${ interval } viikon välein joka päivä, ${ untilString }",
+        "${ interval } viikon välein joka päivä, ${ untilString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "${ interval } viikon välein perjantaisin, ${ untilString }",
@@ -16226,7 +16262,7 @@
         "Viikoittain ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Viikoittain kaikkina päivinä, ${ untilString }"
+        "Viikoittain joka päivä, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "Viikoittain perjantaisin, ${ untilString }"

@@ -5961,17 +5961,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -6987,6 +6976,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Έχω χρησιμοποιήσει το @ProtonMail και σκέφτηκα ότι μπορεί να σας αρέσει. Είναι μια ασφαλής υπηρεσία ηλεκτρονικού ταχυδρομείου που προστατεύει το απόρρητό σας. Εγγραφείτε με τον σύνδεσμο παραπομπής μου για να λάβετε δωρεάν 1 μήνα premium χαρακτηριστικών: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Λογότυπο JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
@@ -7572,6 +7564,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Subscription auto-renews every month.": [
         "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
@@ -8359,6 +8354,17 @@
       ],
       "Zoom meeting": [
         "Συνάντηση Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10794,6 +10800,9 @@
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
+      "Password health": [
+        "Υγεία κωδικού πρόσβασης"
+      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
@@ -10812,6 +10821,9 @@
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Τακτικοί έλεγχοι της ασφάλειας του λογαριασμού σας. Σας ειδοποιούμε εάν έχετε αδύναμους ή επαναχρησιμοποιημένους κωδικούς πρόσβασης που πρέπει να ενημερωθούν."
       ],
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
@@ -10935,6 +10947,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
     },
     "new_plans: feature info": {
@@ -11271,6 +11286,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Προστατέψτε την οικογένειά σας από επιβλαβείς ιστότοπους και αποκτήστε πρόσβαση στους διακομιστές VPN υψηλής ταχύτητας για να μεταδώσετε το αγαπημένο σας περιεχόμενο"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Προστατέψτε την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας από αποκάλυψη ή διαρροή με ψευδώνυμα (μια τυχαία διεύθυνση ηλεκτρονικού ταχυδρομείου που προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στα κύρια εισερχόμενά σας)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Παρέχει το υψηλότερο επίπεδο προστασίας ασφάλειας λογαριασμού και εξειδικευμένη υποστήριξη"
@@ -12352,6 +12370,12 @@
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ price } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -13796,6 +13820,10 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
