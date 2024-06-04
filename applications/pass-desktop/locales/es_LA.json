@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Cómo actualizar ${ PASS_APP_NAME } en Linux"
+      ],
       "Import": [
         "Importar"
       ],
@@ -761,9 +764,6 @@
       "PIN codes do not match": [
         "Los códigos PIN no coinciden"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Mejore el plan para obtener acceso anticipado a la aplicación de escritorio de ${ PASS_APP_NAME }"
-      ],
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
@@ -1134,6 +1134,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenga alias ilimitados, disfrute funciones exclusivas y apóyenos al suscribirse a Pass Plus."
       ],
+      "here": [
+        "aquí"
+      ],
       "High Priority": [
         "Prioridad alta"
       ],
@@ -1282,6 +1285,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "New version ${ latestVersion } is available.": [
+        "Versión nueva de ${ latestVersion } disponible."
       ],
       "No breaches detected": [
         "No se detectaron vulneraciones"
@@ -1439,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "El registro de cambios puede encontrarse ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las bóvedas que le pertenecen a usted."

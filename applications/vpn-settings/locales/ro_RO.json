@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Recomandați pe cineva"
       ],
+      "Refresh status": [
+        "Actualizare stare"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Revenire la autentificare"
       ],
+      "Review": [
+        "Revizuire"
+      ],
       "Revoke": [
         "Anulare"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Trimitere notificare"
+      ],
+      "Set catch-all": [
+        "Setare adresă de agregare"
       ],
       "Set new password": [
         "Setare parolă nouă"
@@ -726,6 +735,17 @@
       ],
       "Secure your communications": [
         "Securizați-vă informațiile"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Dezactivat"
+      ],
+      "Enabled": [
+        "Activat"
+      ],
+      "Missing keys": [
+        "Chei lipsă"
       ]
     },
     "bf2023: Action": {
@@ -1922,6 +1942,16 @@
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Verificat"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Subdomeniile 'www' nu sunt folosite de obicei pentru e-mail. Sigur doriți să folosiți această valoare ca domeniu?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
@@ -2229,8 +2259,17 @@
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verificarea nu a reușit. Reîncercaţi într-o oră."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Cod de verificare greșit. Asigurați-vă că ați copiat codul de verificare corect și reîncercați. Poate dura până la 24 de ore până se aplică modificările."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
@@ -2846,11 +2885,31 @@
       "Address": [
         "Adresa"
       ],
+      "Domain": [
+        "Domeniu"
+      ],
       "Status": [
         "Stare"
       ],
       "Username": [
         "Nume utilizator"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Nume gazdă"
+      ],
+      "Priority": [
+        "Prioritate"
+      ],
+      "Type": [
+        "Tip"
+      ],
+      "Value / Data": [
+        "Valoare/Date"
+      ],
+      "Value / Data / Points to": [
+        "Valoare/Date/Direcționat spre"
       ]
     },
     "Headline": {
@@ -2901,6 +2960,9 @@
         "${ n } adrese",
         "${ n } de adrese"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: nu se pun în carantină sau nu se resping e-mailurile neautorizate. De obicei, se folosește această politică doar pentru depanare sau testare."
+      ],
       "${ number } city": [
         "Un oraș",
         "${ number } orașe",
@@ -2918,6 +2980,12 @@
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: se cere platformelor destinatare să marcheze e-mailurile neautorizate ca fiind nedorite sau să le pună în carantină."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: se cere platformelor destinatare să respingă e-mailurile neautorizate."
       ],
       "${ remainingAddresses.length } more": [
         "încă ${ remainingAddresses.length }",
@@ -3091,6 +3159,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Înainte de a putea primi e-mailuri pentru adresele de domeniu personale la ${ MAIL_APP_NAME }, trebuie să adăugați următoarele două înregistrări MX în consola DNS (situată pe platforma de unde ați achiziționat domeniul personalizat). Puteți găsi un exemplu și câteva sfaturi utile ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
       ],
@@ -3183,6 +3254,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Se șterge ${ deletedServerCount } server poartă de acces",
         "Se șterg ${ deletedServerCount } servere poartă de acces",
@@ -3190,6 +3264,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM permite ca ${ BRAND_NAME } să vă semneze criptografic mesajele și să împiedice atacatorii să vă modifice conținutul acestora. Asigurați-vă că adăugați următoarele trei înregistrări CNAME în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC verifică dacă înregistrările SPF și DKIM ale expeditorului provin din domeniul dvs. Acest lucru poate împiedica atacatorii să folosească SPF și DKIM ale altui domeniu pentru a vă compromite identitatea domeniului. „p=\" (politica) din această înregistrare indică modul în care doriți ca platformele destinatare să gestioneze e-mailurile neautorizate. Vă recomandăm să utilizați politica „p=quarantine” pentru majoritatea domeniilor. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
       "DNS TXT record": [
         "Înregistrare DNS TXT"
@@ -3205,6 +3285,11 @@
       ],
       "Domain ownership verified.": [
         "Dovada deținerii domeniului este verificată."
+      ],
+      "domain used": [
+        "domeniu utilizat",
+        "domenii utilizate",
+        "de domenii utilizate"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
@@ -3235,6 +3320,9 @@
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Fiecare domeniu poate avea o singură înregistrare SPF (TXT). Dacă doriți să păstrați înregistrarea SPF (TXT) existentă, puteți adăuga ${ spf } la înregistrarea curentă (puneți-o după ${ spfValue })."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -3299,6 +3387,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Introduceți acum fraza de recuperare pentru a vă modifica parola."
       ],
+      "Example: ${ spfExample }": [
+        "Exemplu: ${ spfExample }"
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -3313,6 +3404,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Pentru membrii organizației care folosesc conectarea unică (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
@@ -3350,6 +3444,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail de agregare, pentru a primi mesajele trimise către domeniul propriu, dar către o adresă de e-mail inexistentă (ex: greșeli de redactare)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
       ],
@@ -3376,6 +3473,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANT: dacă în consola DNS nu se permite câmpurilor CNAME să se termine cu un punct, puteți elimina ultimul punct din valorile CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: Asigurați-vă că ați salvat codurile de recuperare. Altfel veți putea pierde permanent accesul la cont dacă vă veți pierde dispozitivul pentru autentificarea cu doi factori."
@@ -3451,6 +3551,12 @@
       ],
       "Loading...": [
         "Se încarcă…"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
@@ -3710,6 +3816,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF clarifică cine are permisiunea de a trimite mesaje pentru domeniul dvs. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi eliminați"
@@ -4227,6 +4336,17 @@
         "Pentru plata cu numerar contactați-ne la ${ email } pentru instrucțiuni."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Adăugare adresă nouă pentru utilizatorii existenți din organizație."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Adăugați un utilizator nou în organizație și creați o adresă pentru acesta."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Din motive de securitate, trebuie să avem dovada că dețineți domeniul ${ domainName }. Adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal). Puteți găsi un exemplu și câteva sfaturi utile ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puteți adăuga o metodă de plată pentru a avea abonamentul reînnoit automat. Sunt disponibile și alte metode de plată."
@@ -4488,6 +4608,9 @@
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
       ],
+      "Domain name": [
+        "Nume domeniu"
+      ],
       "e.g. example.com": [
         "ex. exemplu.com"
       ],
@@ -4638,6 +4761,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Adăugați toate trei câmpurile CNAME. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarele două înregistrări MX. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
       "Please share any feedback to help us improve.": [
         "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
       ],
@@ -4746,6 +4878,16 @@
         "Numărul de telefon pentru recuperare"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Adăugați un domeniu personal la contul ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -4792,6 +4934,17 @@
         "Notificări zilnice pe e-mail"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adrese"
+      ],
+      "Domain": [
+        "Domeniu"
+      ],
+      "Verify": [
+        "Verificare"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Implicită"
@@ -4835,6 +4988,9 @@
       ],
       "Help translate": [
         "Ajutați la traducere"
+      ],
+      "here": [
+        "aici"
       ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
@@ -5011,6 +5167,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
@@ -5885,6 +6044,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Inclus cu utilizatori multipli din planul ${ BRAND_NAME } for Business."
       ]
@@ -6471,6 +6633,9 @@
       ],
       "Select state": [
         "Selectare țară"
+      ],
+      "yourdomain.com": [
+        "domeniuldvs.com"
       ]
     },
     "plan customizer, ips": {
@@ -7488,6 +7653,11 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
       ],
+      "${ dayDiff } day left": [
+        "A mai rămas ${ dayDiff } zi",
+        "Au mai rămas ${ dayDiff } zile",
+        "Au mai rămas ${ dayDiff } de zile"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
@@ -7651,6 +7821,9 @@
       "Bug reported": [
         "Eroare raportată"
       ],
+      "Catch-all address updated": [
+        "Adresă de agregare actualizată"
+      ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
       ],
@@ -7662,6 +7835,12 @@
       ],
       "Display name updated": [
         "Nume afișat actualizat"
+      ],
+      "DMARC value copied to clipboard": [
+        "Valoarea DMARC a fost copiată în memorie"
+      ],
+      "Domain verified": [
+        "Domeniu verificat"
       ],
       "Email address copied to clipboard": [
         "Adresa de e-mail a fost copiată în memorie"
@@ -7723,6 +7902,9 @@
       "Preference saved": [
         "Preferințe salvate"
       ],
+      "SPF value copied to clipboard": [
+        "Valoarea SPF a fost copiată în memorie"
+      ],
       "User created": [
         "Utilizator creat"
       ],
@@ -7731,6 +7913,12 @@
       ],
       "Username copied to clipboard": [
         "Numele de utilizator s-a copiat în memorie."
+      ],
+      "Value copied to clipboard": [
+        "Valoarea a fost copiată în memorie"
+      ],
+      "Verification code copied to clipboard": [
+        "Codul de verificare a fost copiat în memorie"
       ],
       "Verification successful": [
         "Verificare reușită"
@@ -7804,6 +7992,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adrese"
       ]
     },
     "Tab subscription modal": {
@@ -7912,6 +8105,9 @@
       "Add credits": [
         "Adăugare credite"
       ],
+      "Add domain": [
+        "Adăugare domeniu"
+      ],
       "Add new user": [
         "Adăugare utilizator"
       ],
@@ -7962,6 +8158,9 @@
       ],
       "Card verification": [
         "Verificare card"
+      ],
+      "Catch-All address": [
+        "Adresă de agregare"
       ],
       "Catch-all address": [
         "Adresă de agregare"
@@ -8101,6 +8300,9 @@
       ],
       "Edit display name": [
         "Editare nume afișat"
+      ],
+      "Edit domain": [
+        "Editare domeniu"
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -8453,6 +8655,17 @@
         "Factura ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresa"
+      ],
+      "Catch-All": [
+        "Adresă de agregare"
+      ],
+      "Status": [
+        "Stare"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adrese"
@@ -8529,6 +8742,15 @@
       ],
       "Verified email address": [
         "Adresă de e-mail verificată."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
+      ],
+      "Your DKIM signing is working.": [
+        "Semnarea DKIM funcționează."
       ]
     },
     "tooltip": {
@@ -8757,11 +8979,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Trebuie să efectuați o ${ activateLink } a cheii organizației înainte de a adăuga o adresă de e-mail unui membru neprivat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
       ]
     }
   }

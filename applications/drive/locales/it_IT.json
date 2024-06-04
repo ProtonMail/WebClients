@@ -474,6 +474,9 @@
       "Manage link": [
         "Gestisci link"
       ],
+      "Manage share": [
+        "Gestisci condivisione"
+      ],
       "Mark as resolved": [
         "Segna come risolto"
       ],
@@ -2539,6 +2542,15 @@
       "External accounts are not supported yet": [
         "Gli account esterni non sono ancora supportati"
       ],
+      "External invitations are not available yet.": [
+        "Gli inviti esterni non sono ancora disponibili."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Gli inviti esterni sono temporaneamente disabilitati."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Gli inviti esterni sono temporaneamente disabilitati. Riprova più tardi"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
       ],
@@ -2635,9 +2647,6 @@
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Non è un account ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -2754,6 +2763,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "L'invito non può ancora essere completato. Riprova più tardi."
+      ],
+      "The invitation doesn't exist anymore": [
+        "L'invito non esiste più"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
@@ -2819,6 +2834,9 @@
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Il caricamento per questa cartella è temporaneamente disabilitato"
       ],
       "Username must begin with a letter or digit": [
         "Il nome utente deve iniziare con una lettera o un numero."
@@ -5689,6 +5707,12 @@
       "Main": [
         "Principale"
       ],
+      "Make editor": [
+        "Rendi editor"
+      ],
+      "Make viewer": [
+        "Rendi visualizzatore"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -5793,9 +5817,6 @@
       ],
       "Region": [
         "Regione"
-      ],
-      "Remove access": [
-        "Rimuovi l'accesso"
       ],
       "Replace existing file": [
         "Sostituisci il file esistente"
@@ -7349,6 +7370,9 @@
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
       ],
+      "An invitation has been sent": [
+        "È stato spedito un invito"
+      ],
       "Cannot load link": [
         "Impossibile caricare il link"
       ],
@@ -7376,8 +7400,14 @@
       "Encrypted search activated": [
         "Ricerca crittografata attivata"
       ],
+      "External invitation removed from the share": [
+        "Invito esterno rimosso dalla condivisione"
+      ],
       "Failed to accept share invitation": [
         "Impossibile accettare l'invito alla condivisione"
+      ],
+      "Failed to convert external invitation": [
+        "Impossibile convertire l'invito esterno"
       ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
@@ -7433,9 +7463,6 @@
       ],
       "Share invitation accepted successfully": [
         "Invito alla condivisione accettato con successo"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Impossibile trovare l'ID dell'invito condiviso. Controlla il link"
       ],
       "Stopping to share this item has failed": [
         "Impossibile interrompere la condivisione di questo elemento"
@@ -8355,6 +8382,14 @@
         "Annullamento dell'abbonamento in corso, attendere prego"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Accettato"
+      ],
+      "Pending": [
+        "In attesa"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Ottieni più spazio di archiviazione"
@@ -8534,6 +8569,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inclusa la condivisione del calendario"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } giorno rimasto",
+        "${ dayDiff } giorni rimasti"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inclusa la cronologia delle versioni"
       ],
@@ -8582,8 +8621,8 @@
       "Add any new files": [
         "Aggiungere nuovi file"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Una volta scaduto il tuo abbonamento a ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione per Drive. Perderai anche eventuali bonus di archiviazione precedentemente assegnati. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Una volta scaduto il tuo abbonamento a ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione per Drive. Perderai anche eventuali bonus di archiviazione precedentemente assegnati."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Una volta scaduto il tuo abbonamento a ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 5 GB di spazio di archiviazione per Drive e fino a 1 GB di spazio di archiviazione per Mail. Perderai anche eventuali bonus di archiviazione precedentemente assegnati."
@@ -8678,8 +8717,20 @@
       "What you give up when you cancel ${ planName }": [
         "A cosa rinunci quando annulli ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione su Drive. Perderai anche gli eventuali bonus di archiviazione precedentemente assegnati."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 5 GB di spazio di archiviazione su Drive e fino a 1 GB di spazio di archiviazione per Mail. Perderai anche gli eventuali bonus di archiviazione precedentemente assegnati."
+      ],
       "Yearly free storage bonuses": [
         "Bonus annuali gratuiti per lo spazio di archiviazione"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Hai ancora ${ expiryDate } sul tuo abbonamento ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Hai ancora ${ expiryDate } sul tuo abbonamento ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Il tuo abbonamento a ${ planName } termina il ${ expiryDate }. Successivamente, utilizzerai il piano ${ BRAND_NAME } Free. Se il tuo utilizzo supera i limiti del piano gratuito, potresti riscontrare un accesso limitato alle funzionalità del prodotto e ai tuoi dati. ${ learnMoreLink }"
@@ -9698,6 +9749,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Abbiamo spedito un invito per accedere all'elemento."
       ],
       "You do not have any contacts to export": [
         "Non hai alcun contatto da esportare"

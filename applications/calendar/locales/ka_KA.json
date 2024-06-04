@@ -172,6 +172,9 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Copy version number to clipboard": [
+        "ვერსიის ნომრის კოპირება ბუფერში"
+      ],
       "Create": [
         "შექმნა"
       ],
@@ -2355,7 +2358,7 @@
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
       "Availability unknown": [
-        "წვდომადბა უცნობია"
+        "წვდომადობა უცნობია"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
@@ -2461,6 +2464,15 @@
       "I found a cheaper VPN": [
         "ვიპოვე უფრო იაფი VPN"
       ],
+      "I found a VPN with better features": [
+        "მე უკეთესი ფუნქციების მქონე VPN ვიპოვე"
+      ],
+      "I have not managed to connect": [
+        "მე ვერ მიევუერთდი"
+      ],
+      "I only needed a VPN short-term": [
+        "მე VPN, მხოლოდ, ცოტა ხნით მჭირდება"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
       ],
@@ -2469,6 +2481,9 @@
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
+      ],
+      "Other reason (please comment)": [
+        "სხვა მიზეზი (დაწერეთ კომენტარებში)"
       ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
@@ -4433,6 +4448,9 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "JCB logo": [
+        "JCB ლოგო"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
       ],
@@ -6301,8 +6319,14 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ფასიანი ფუნქციები"
+      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
+      ],
+      "Password health": [
+        "პაროლის სიძლიერე"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -6376,6 +6400,9 @@
       ],
       "Unlimited devices": [
         "მოწყობილობების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited devices and aliases": [
+        "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
       ],
       "Unlimited filters": [
         "ფილტრების ულიმიტო რაოდენობა"
@@ -7117,6 +7144,13 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "უსაფრთხო გაზიარება ${ n } საცავთან",
+        "უსაფრთხო გაზიარება ${ n } საცავთან"
+      ],
+      "Secure sharing with multiple vaults": [
+        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ]
@@ -7911,6 +7945,11 @@
         "ახლა შეგიძლიათ ნახოთ, როდის არიან მონაწილეები თავისუფალი თქვენს შეხვედრაზე დასასწრებად."
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "ადგილის დამატება"
@@ -8088,6 +8127,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -8103,11 +8146,17 @@
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Helping activists in Hong Kong": [
+        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
       "Keep ${ planName }": [
         "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Our fight against censorship in Russia": [
+        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -8115,16 +8164,37 @@
       "Read the story": [
         "ისტორიის წაკითხვა"
       ],
+      "Unblocking internet access in Iran": [
+        "ინტერნეტთან წვდომის განბლოკვა ირანში"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ],
+      "Yearly free storage bonuses": [
+        "წლიური უფასო საცავის ბონუსები"
+      ],
+      "Your own custom email domain": [
+        "თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Your own short @pm.me email alias": [
+        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -8146,6 +8216,9 @@
       ],
       "We don't sell your data": [
         "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {

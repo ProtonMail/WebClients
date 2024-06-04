@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Копирование ключа в буфер обмена"
       ],
+      "Copy version number to clipboard": [
+        "Скопировать номер версии в буфер обмена"
+      ],
       "Create": [
         "Создать"
       ],
@@ -350,6 +353,9 @@
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
+      "Refresh status": [
+        "Обновить статус"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -373,6 +379,9 @@
       ],
       "Report a problem": [
         "Сообщить о проблеме"
+      ],
+      "Request a call": [
+        "Запросить звонок"
       ],
       "Request a feature": [
         "Запросить функцию"
@@ -400,6 +409,9 @@
       ],
       "Return to sign in": [
         "Вернуться к авторизации"
+      ],
+      "Review": [
+        "Просмотреть"
       ],
       "Revoke": [
         "Отозвать"
@@ -437,6 +449,9 @@
       "Select country": [
         "Выберите страну"
       ],
+      "select file": [
+        "выбрать файл"
+      ],
       "Select file": [
         "Выбрать файл"
       ],
@@ -451,6 +466,9 @@
       ],
       "Send reminder": [
         "Отправить напоминание"
+      ],
+      "Set catch-all": [
+        "Установить прием всей почты домена"
       ],
       "Set new password": [
         "Задать новый пароль"
@@ -699,6 +717,17 @@
     "app-switcher": {
       "Secure your communications": [
         "Держите письма в надежном месте"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Отключен"
+      ],
+      "Enabled": [
+        "Включен"
+      ],
+      "Missing keys": [
+        "Отсутствуют ключи"
       ]
     },
     "bf2023: Action": {
@@ -1882,6 +1911,11 @@
         "Вы достигли лимита удалений адреса для этого пользователя."
       ]
     },
+    "Delete domain prompt": {
+      "Delete": [
+        "Удалить"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -1890,6 +1924,16 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Подтверждён"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Поддомены с 'www' для эл. почты обычно не применяются. Вы уверены, что хотите использовать это значение для домена?"
       ]
     },
     "Downgrade account reason": {
@@ -1988,6 +2032,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
+      ],
+      "Failed to process the logo": [
+        "Не удалось обработать логотип"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Файл слишком большой. Ваш логотип должен быть не менее 30 КБ."
@@ -2157,8 +2204,17 @@
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Проверка не удалась, пожалуйста, попробуйте снова через час."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Мы перестали подписывать DKIM из-за проблем с конфигурацией вашего DNS. Пожалуйста, следуйте инструкциям ниже, чтобы возобновить подписывание."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Неправильная фраза для восстановления пароля. Попробуйте снова или используйте другой метод восстановления."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Недействительный код подтверждения. Пожалуйста, убедитесь, что правильно скопировали код и попробуйте снова. Вступление изменений в силу может занять до 24 часов."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Улучшите ваш тариф прежде, чем добавлять новые адреса."
@@ -2774,11 +2830,31 @@
       "Address": [
         "Адрес"
       ],
+      "Domain": [
+        "Домен"
+      ],
       "Status": [
         "Состояние"
       ],
       "Username": [
         "Имя пользователя"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Имя хоста"
+      ],
+      "Priority": [
+        "Приоритет"
+      ],
+      "Type": [
+        "Тип"
+      ],
+      "Value / Data": [
+        "Значение / Данные"
+      ],
+      "Value / Data / Points to": [
+        "Значение / Данные / Указывает на"
       ]
     },
     "Headline": {
@@ -2825,6 +2901,9 @@
         "${ n } адресов",
         "${ n } адресов"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: не помещать в карантин и не отклонять неавторизованные письма. Обычно люди используют эту политику только для устранения неполадок или тестирования."
+      ],
       "${ number } city": [
         "${ number } город",
         "${ number } города",
@@ -2845,6 +2924,12 @@
         "${ provisioningCounter } сервера всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
         "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
         "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: запрос платформам-получателям пометить неавторизованные письма как спам или поместить их в карантин."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: запрос платформам-получателям отклонять неавторизованные письма."
       ],
       "${ remainingAddresses.length } more": [
         "Ещё ${ remainingAddresses.length }",
@@ -3017,6 +3102,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Прежде чем вы сможете получать электронные письма для адресов пользовательских доменов по адресу ${ MAIL_APP_NAME }, вам необходимо добавить следующие две записи MX в вашей консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен). Вы можете найти пример и несколько полезных советов ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
@@ -3110,6 +3198,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Удаление ${ deletedServerCount } шлюзового сервера",
         "Удаление ${ deletedServerCount } шлюзовых серверов",
@@ -3118,6 +3209,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM позволяет ${ BRAND_NAME } криптографически подписывать ваши электронные письма и предотвращать подделку почты злоумышленниками. Убедитесь, что вы добавили следующие три записи CNAME в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC проверяет, исходят ли записи SPF и DKIM отправителя от вашего домена. Это может предотвратить использование злоумышленниками SPF и DKIM другого домена для выдачи себя за ваш домен. Параметр \"p=\" (политика) в этой записи указывает, как платформы-получатели должны обрабатывать несанкционированные сообщения электронной почты. Мы рекомендуем использовать политику \"p=quarantine\" для большинства доменов. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
       ],
       "DNS TXT record": [
         "Запись DNS TXT"
@@ -3133,6 +3230,12 @@
       ],
       "Domain ownership verified.": [
         "Владение доменом подтверждено."
+      ],
+      "domain used": [
+        "домен использован",
+        "домена использовано",
+        "доменов использовано",
+        "доменов использовано"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
@@ -3163,6 +3266,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Каждый домен может иметь только одну запись SPF (TXT). Если вы хотите сохранить существующую запись SPF (TXT), вы можете добавить ${ spf } к текущей записи (поместите ее после ${ spfValue })."
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -3227,6 +3333,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Введите фразу для восстановления, чтобы изменить пароль."
       ],
+      "Example: ${ spfExample }": [
+        "Пример: ${ spfExample }"
+      ],
       "Expired": [
         "Истёкший"
       ],
@@ -3241,6 +3350,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для членов организаций, использующих единое предъявление пароля (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."
       ],
       "Free forever": [
         "Бесплатно навсегда"
@@ -3278,6 +3390,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете установить адреса электронной почты для приема всех сообщений, отправленных на ваш домен, но на недействительный адрес электронной почты (например, из-за опечаток)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
       ],
@@ -3298,6 +3413,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖНО: Если ваша консоль DNS не позволяет значениям CNAME заканчиваться точкой, вы можете удалить последнюю точку в значениях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы можете навсегда потерять доступ к своей учётной записи, если потеряете своё устройство для двухфакторной аутентификации."
@@ -3364,6 +3482,12 @@
       ],
       "Loading...": [
         "Загрузка..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Основные почтовые службы могут отклонить или отфильтровать ваши письма в спам, если SPF/DKIM/DMARC отсутствуют или настроены неправильно."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Основные почтовые службы могут отклонять или фильтровать ваши письма в спам, если SPF/DKIM/DMARC отсутствуют или не настроены должным образом."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
@@ -3548,6 +3672,9 @@
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
       ],
+      "Request a phone call": [
+        "Запросить звонок"
+      ],
       "Resend verification email": [
         "Отправить письмо с подтверждением еще раз"
       ],
@@ -3616,6 +3743,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
       ],
       "Step ${ step }": [
         "Шаг ${ step }",
@@ -4127,6 +4257,14 @@
         "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Добавьте новый адрес для существующих пользователей вашей организации."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Добавить нового пользователя в вашу организацию и создать для него адрес."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
@@ -4385,6 +4523,9 @@
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
+      "Domain name": [
+        "Доменное имя"
+      ],
       "e.g. example.com": [
         "например, primer.com"
       ],
@@ -4535,6 +4676,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Добавьте все 3 из следующих записей CNAME. Примечание: обновление записей DNS может занять несколько часов."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Добавьте следующие две записи MX. Примечание: обновление записей DNS может занять несколько часов."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Добавьте следующую запись TXT. Примечание: обновление записей DNS может занять несколько часов."
+      ],
       "Please share any feedback to help us improve.": [
         "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
       ],
@@ -4628,6 +4778,11 @@
         "Номер телефона для восстановления"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Добавьте принадлежащий вам домен к вашему аккаунту ${ MAIL_APP_NAME }."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Администратор"
@@ -4669,6 +4824,17 @@
       ],
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Адреса"
+      ],
+      "Domain": [
+        "Домен"
+      ],
+      "Verify": [
+        "Подтвердить"
       ]
     },
     "Label on payment method": {
@@ -4714,6 +4880,9 @@
       ],
       "Help translate": [
         "Помочь с переводом"
+      ],
+      "here": [
+        "здесь"
       ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
@@ -4870,6 +5039,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Подключите свой пользовательский домен к ${ BRAND_NAME }, чтобы настроить пользовательские адреса электронной почты (например, you@yourcompany.com). Наш мастер проведет вас через весь процесс."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
       ]
@@ -5728,6 +5900,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Включено с ${ plus }, ${ bundle } и ${ BRAND_NAME } для предприятий."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "В комплект входит тариф ${ BRAND_NAME } for Business для нескольних пользователей."
       ]
@@ -6208,6 +6383,9 @@
       ],
       "Select a reason": [
         "Выберите причину"
+      ],
+      "yourdomain.com": [
+        "vashdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -6348,6 +6526,14 @@
       ],
       "Generate token": [
         "Сгенерировать токен"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Базовый URL SCIM"
+      ],
+      "SCIM token": [
+        "Токен SCIM"
       ]
     },
     "scim: Title": {
@@ -6600,6 +6786,9 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } теперь доступен."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -6893,6 +7082,9 @@
       "For all ${ BRAND_NAME } services": [
         "Для всех служб ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ],
@@ -7065,6 +7257,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -7073,6 +7271,9 @@
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
+      ],
+      "6 users": [
+        "6 пользователей"
       ],
       "Calendar sharing": [
         "Совместное использование календаря"
@@ -7092,14 +7293,29 @@
       "Have a question?": [
         "Появились вопросы?"
       ],
+      "Helping activists in Hong Kong": [
+        "Помощь активистам в Гонконге"
+      ],
+      "I still want to cancel": [
+        "Я все еще хочу отменить"
+      ],
       "Keep ${ planName }": [
         "Сохранить ${ planName }"
       ],
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Read the story": [
+        "Читать историю"
+      ],
+      "Unblocking internet access in Iran": [
+        "Разблокирование доступа к Интернету в Иране"
+      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Watch the interview": [
+        "Смотреть интервью"
       ]
     },
     "subscription reminder": {
@@ -7195,6 +7411,9 @@
       "Bug reported": [
         "Отчёт об ошибке отправлен"
       ],
+      "Catch-all address updated": [
+        "Адрес для приема всей почты домена обновлен"
+      ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
       ],
@@ -7206,6 +7425,12 @@
       ],
       "Display name updated": [
         "Отображаемое имя обновлено"
+      ],
+      "DMARC value copied to clipboard": [
+        "Значение DMARC скопировано в буфер обмена"
+      ],
+      "Domain verified": [
+        "Домен подтверждён"
       ],
       "Email address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
@@ -7267,6 +7492,9 @@
       "Preference saved": [
         "Настройки сохранены"
       ],
+      "SPF value copied to clipboard": [
+        "Значение SPF скопировано в буфер обмена"
+      ],
       "User created": [
         "Пользователь создан"
       ],
@@ -7276,8 +7504,17 @@
       "Username copied to clipboard": [
         "Имя пользователя скопировано в буфер обмена"
       ],
+      "Value copied to clipboard": [
+        "Значение скопировано в буфер обмена"
+      ],
+      "Verification code copied to clipboard": [
+        "Код подтверждения скопирован в буфер обмена"
+      ],
       "Verification successful": [
         "Проверка прошла успешно"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Вы успешно отменили свою подписку"
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
@@ -7345,6 +7582,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Адреса"
       ]
     },
     "Tab subscription modal": {
@@ -7450,6 +7692,9 @@
       "Add credits": [
         "Пополнить счёт"
       ],
+      "Add domain": [
+        "Добавление домена"
+      ],
       "Add new user": [
         "Добавить нового пользователя"
       ],
@@ -7500,6 +7745,9 @@
       ],
       "Card verification": [
         "Проверка карты"
+      ],
+      "Catch-All address": [
+        "Адрес для приема всей почты домена"
       ],
       "Catch-all address": [
         "Адрес для приема всей почты домена"
@@ -7582,6 +7830,9 @@
       "Custom selection of users": [
         "Индивидуальный выбор пользователей"
       ],
+      "Customization": [
+        "Персонализация"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Настройте количество IP-адресов в вашем тарифе"
       ],
@@ -7599,6 +7850,9 @@
       ],
       "Delete account": [
         "Удалить аккаунт"
+      ],
+      "Delete organization logo?": [
+        "Удалить логотип организации?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
@@ -7635,6 +7889,9 @@
       ],
       "Edit display name": [
         "Редактировать отображаемое имя"
+      ],
+      "Edit domain": [
+        "Изменить домен"
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -7704,6 +7961,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "How to choose a good logo": [
+        "Как выбрать хороший логотип"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
@@ -7980,6 +8240,17 @@
         "Счет ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Адрес"
+      ],
+      "Catch-All": [
+        "Прием всей почты домена"
+      ],
+      "Status": [
+        "Состояние"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Адреса"
@@ -8036,8 +8307,20 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
+      ],
       "Verified email address": [
         "Подтверждённый адрес эл. почты"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Мы обнаружили проблему с настройками DNS. Пожалуйста, убедитесь, что ваши записи соответствуют инструкциям ниже. Если проблема останется, нам придётся выключить подписывание DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Мы перестали подписывать DKIM из-за проблем с конфигурацией вашего DNS. Пожалуйста, следуйте инструкциям ниже, чтобы возобновить подписывание."
+      ],
+      "Your DKIM signing is working.": [
+        "Ваше подписание DKIM работает."
       ]
     },
     "tooltip": {
@@ -8247,8 +8530,16 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Мы обнаружили проблему с настройками DNS. Пожалуйста, убедитесь, что ваши записи соответствуют инструкциям ниже. Если проблема останется, нам придётся выключить подписывание DKIM."
+      ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
       ]
     }
   }

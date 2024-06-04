@@ -257,6 +257,9 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy version number to clipboard": [
+        "Скопировать номер версии в буфер обмена"
+      ],
       "Create": [
         "Создать"
       ],
@@ -761,6 +764,9 @@
       "Report a problem": [
         "Сообщить о проблеме"
       ],
+      "Request a call": [
+        "Запросить звонок"
+      ],
       "Request a feature": [
         "Запросить функцию"
       ],
@@ -859,6 +865,9 @@
       ],
       "Select country": [
         "Выберите страну"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Select file": [
         "Выбрать файл"
@@ -1757,7 +1766,7 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "Показать ещё ${ remainingItems }",
+        "Показать ${ remainingItems } ещё",
         "Показать ещё ${ remainingItems }",
         "Показать ещё ${ remainingItems }",
         "Показать ещё ${ remainingItems }"
@@ -3126,6 +3135,11 @@
         "Вы больше не будете иметь доступ к этому календарю."
       ]
     },
+    "Delete domain prompt": {
+      "Delete": [
+        "Удалить"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -3817,6 +3831,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не удалось получить активные сеансы. Пожалуйста, ${ refresh } или повторите попытку позже."
       ],
+      "Failed to process the logo": [
+        "Не удалось обработать логотип"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Файл слишком большой. Ваш логотип должен быть не менее 30 КБ."
       ],
@@ -4410,6 +4427,9 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ],
+      "Support ticket does not exist.": [
+        "Билет поддержки не существует."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
@@ -5837,14 +5857,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info": {
@@ -7315,6 +7327,9 @@
       "Report link expired": [
         "Ссылка на отчет устарела"
       ],
+      "Request a phone call": [
+        "Запросить звонок"
+      ],
       "Resend verification email": [
         "Отправить письмо с подтверждением еще раз"
       ],
@@ -8240,6 +8255,14 @@
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Когда включено, вложенные папки наследуют цвет родительской папки."
@@ -8370,6 +8393,18 @@
     "Key generation": {
       "Generate key": [
         "Сгенерировать ключ"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Не удалось сгенерировать ключ. Повторите попытку позже."
+      ],
+      "Key successfully generated.": [
+        "Ключ успешно сгенерирован."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Примечание: у вас уже есть ключ с тем же алгоритмом для этого пользователя. Если этот ключ не был раскрыт, возможно, нет необходимости генерировать новый ключ, поскольку это может замедлить работу вашего аккаунта."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "В ходе этого будет сгенерирован новый ключ, который будет использоваться для шифрования будущей информации о контактах, ключей шифрования электронной почты и других данных."
       ]
     },
     "Key state badge": {
@@ -9763,6 +9798,9 @@
       "here": [
         "здесь"
       ],
+      "How does monitoring work?": [
+        "Как работает мониторинг?"
+      ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
       ],
@@ -10290,14 +10328,23 @@
       "Back to inbox": [
         "Вернуться во Входящие"
       ],
+      "Back to vaults": [
+        "Вернуться к хранилищам"
+      ],
       "Block": [
         "Заблокировать"
       ],
       "Calendar": [
         "Календарь"
       ],
+      "Documents": [
+        "Документы"
+      ],
       "Inbox": [
         "Входящие"
+      ],
+      "Pass vaults": [
+        "Хранилища Pass"
       ],
       "Spam": [
         "Спам"
@@ -11267,6 +11314,12 @@
       ],
       "An external address cannot be default": [
         "Внешний адрес не может быть адресом по умолчанию"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Мониторинг Темной Паутины отключен"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Мониторинг Темной Паутины включен"
       ],
       "Invalid code": [
         "Недействительный код"
@@ -12488,6 +12541,14 @@
         "Сгенерировать токен"
       ]
     },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Базовый URL SCIM"
+      ],
+      "SCIM token": [
+        "Токен SCIM"
+      ]
+    },
     "scim: Title": {
       "Generate new SCIM token?": [
         "Генерировать новый токен SCIM?"
@@ -12786,6 +12847,9 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } теперь доступен."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -13208,6 +13272,9 @@
       "Get more storage": [
         "Получите больше дискового пространства"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Испытайте ${ app } в полном объеме"
       ],
@@ -13407,6 +13474,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -13415,6 +13488,9 @@
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
+      ],
+      "6 users": [
+        "6 пользователей"
       ],
       "Calendar sharing": [
         "Совместное использование календаря"
@@ -13434,14 +13510,29 @@
       "Have a question?": [
         "Появились вопросы?"
       ],
+      "Helping activists in Hong Kong": [
+        "Помощь активистам в Гонконге"
+      ],
+      "I still want to cancel": [
+        "Я все еще хочу отменить"
+      ],
       "Keep ${ planName }": [
         "Сохранить ${ planName }"
       ],
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Read the story": [
+        "Читать историю"
+      ],
+      "Unblocking internet access in Iran": [
+        "Разблокирование доступа к Интернету в Иране"
+      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Watch the interview": [
+        "Смотреть интервью"
       ]
     },
     "subscription reminder": {
@@ -13704,6 +13795,9 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Вы успешно отменили свою подписку"
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
@@ -14225,6 +14319,9 @@
       "Custom selection of users": [
         "Индивидуальный выбор пользователей"
       ],
+      "Customization": [
+        "Персонализация"
+      ],
       "Customize and confirm": [
         "Настройте и подтвердите"
       ],
@@ -14281,6 +14378,9 @@
       ],
       "Delete logs": [
         "Удалить записи журнала"
+      ],
+      "Delete organization logo?": [
+        "Удалить логотип организации?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
@@ -14482,6 +14582,9 @@
       ],
       "How does it work?": [
         "Как это работает?"
+      ],
+      "How to choose a good logo": [
+        "Как выбрать хороший логотип"
       ],
       "How to refer a friend and get credits": [
         "Как рекомендовать другу, чтобы получить кредиты"
@@ -14930,11 +15033,20 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы отправим электронное письмо на ваш новый адрес с инструкцией для завершения изменения."
       ],
+      "What is an alias?": [
+        "Что такое псевдоним?"
+      ],
+      "What is the dark web?": [
+        "Что такое темная паутина?"
+      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
+      ],
+      "You have no open alerts": [
+        "У вас нет открытых оповещений"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
@@ -15208,6 +15320,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Полосы прокрутки вашего браузера по умолчанию. Обычно, они больше и лучше видны"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
       ],
       "Verified email address": [
         "Подтверждённый адрес эл. почты"

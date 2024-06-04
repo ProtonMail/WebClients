@@ -639,6 +639,9 @@
       "Resend code": [
         "Kodu yeniden gönder"
       ],
+      "Resend invite": [
+        "Daveti yeniden gönder"
+      ],
       "Reset to default": [
         "Varsayılana sıfırla"
       ],
@@ -2617,9 +2620,6 @@
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
-      "Not a ${ BRAND_NAME } account": [
-        "Bir ${ BRAND_NAME } hesabı değil"
-      ],
       "Not a valid number": [
         "Numara geçerli değil"
       ],
@@ -4351,6 +4351,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "Invite link copied": [
+        "Davet bağlantısı kopyalandı"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
@@ -4362,6 +4365,9 @@
       ],
       "It’s easy and secure": [
         "Kolay ve güvenli"
+      ],
+      "JCB logo": [
+        "JCB logosu"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -4541,6 +4547,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "People with access": [
+        "Erişimi olan kişiler"
       ],
       "Permanently delete all files in your locked drive": [
         "Kilitlenmiş sürücüdeki tüm dosyaları kalıcı olarak sil"
@@ -4786,6 +4795,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonelik ${ cycle } ayda bir otomatik olarak yenilenir."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
@@ -5760,9 +5772,6 @@
       "Region": [
         "Bölge"
       ],
-      "Remove access": [
-        "Erişimi kaldır"
-      ],
       "Replace existing file": [
         "Var olan dosya değiştirilsin"
       ],
@@ -6628,6 +6637,9 @@
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
+      "Password health": [
+        "Parola sağlığı"
+      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
@@ -6646,6 +6658,9 @@
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
@@ -6759,6 +6774,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
       ]
     },
     "new_plans: feature info": {
@@ -7015,6 +7033,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
       ],
@@ -7238,6 +7259,9 @@
       "Access for the member removed": [
         "Üyenin erişimi kaldırıldı"
       ],
+      "Access updated": [
+        "Erişim güncellendi"
+      ],
       "Access updated and shared": [
         "Erişim güncellendi ve paylaşıldı"
       ],
@@ -7302,6 +7326,9 @@
       "File removed": [
         "Dosya kaldırıldı"
       ],
+      "Invitation email was sent again": [
+        "Davet e-postası yeniden gönderildi"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -7325,9 +7352,6 @@
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Paylaşma daveti kimliği bulunamadı. Lütfen bağlantıya tıklayın"
       ],
       "Stopping to share this item has failed": [
         "Bu ögenin paylaşması durdurulamadı"
@@ -7504,6 +7528,12 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -8414,6 +8444,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } gün kaldı",
+        "${ dayDiff } gün kaldı"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
@@ -8622,6 +8656,9 @@
       ],
       "Recovery has started": [
         "Kurtarma işlemi başlatıldı"
+      ],
+      "Secure link copied": [
+        "Güvenli bağlantı kopyalandı"
       ],
       "The link to your file was successfully copied": [
         "Dosya bağlantınız kopyalandı"

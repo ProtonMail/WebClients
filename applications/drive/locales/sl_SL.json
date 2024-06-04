@@ -480,6 +480,9 @@
       "Manage link": [
         "Upravljanje povezav"
       ],
+      "Manage share": [
+        "Upravljanje skupne rabe"
+      ],
       "Mark as resolved": [
         "Označi kot rešeno"
       ],
@@ -2567,6 +2570,15 @@
       "External accounts are not supported yet": [
         "Zunanji računi še niso podprti"
       ],
+      "External invitations are not available yet.": [
+        "Zunanja povabila še niso na voljo."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Zunanja povabila so začasno onemogočena."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datoteke »${ item.name }« ni mogoče naložiti zaradi napake »${ error }«."
       ],
@@ -2665,9 +2677,6 @@
       ],
       "No valid address found": [
         "Nobenega veljavnega naslova ni bilo mogoče najti."
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Ni ${ BRAND_NAME } račun"
       ],
       "Not a valid number": [
         "Ni veljavna številka"
@@ -2792,6 +2801,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Ime mape je predolgo. Izberite drugačno ime."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Vabila še ni mogoče dokončati. Poskusite znova pozneje."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Vabilo ne obstaja več."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "To ime oznake ni veljavno. Izberite drugačno ime."
       ],
@@ -2857,6 +2872,9 @@
       ],
       "Unknown payment token status": [
         "Neznano stanje žetona plačila"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Nalaganje v to mapo je začasno onemogočeno"
       ],
       "Username must begin with a letter or digit": [
         "Uporabniško ime se mora začeti s črko ali številko"
@@ -5860,6 +5878,12 @@
       "Main": [
         "Glavno"
       ],
+      "Make editor": [
+        "Lahko ureja"
+      ],
+      "Make viewer": [
+        "Lahko le ogleduje"
+      ],
       "Malware": [
         "Zlonamerni programi"
       ],
@@ -5964,9 +5988,6 @@
       ],
       "Region": [
         "Regija"
-      ],
-      "Remove access": [
-        "Odstrani dostop"
       ],
       "Replace existing file": [
         "Zamenjaj obstoječo datoteko"
@@ -7539,6 +7560,9 @@
       "All items will soon be permanently deleted from trash": [
         "Vsi predmeti bodo kmalu trajno izbrisani iz koša"
       ],
+      "An invitation has been sent": [
+        "Vabilo je bilo odposlano"
+      ],
       "Cannot load link": [
         "Povezave ni bilo mogoče naložiti"
       ],
@@ -7566,8 +7590,14 @@
       "Encrypted search activated": [
         "Aktivirano šifrirano iskanje"
       ],
+      "External invitation removed from the share": [
+        "Zunanje povabilo je bilo odstranjeno iz skupne rabe."
+      ],
       "Failed to accept share invitation": [
         "Povabila k skupni rabi ni bilo mogoče sprejeti"
+      ],
+      "Failed to convert external invitation": [
+        "Zunanjega vabila ni bilo mogoče pretvoriti."
       ],
       "Failed to download files: ${ err }": [
         "Prenos datotek ni uspel: ${ err }"
@@ -7631,9 +7661,6 @@
       ],
       "Share invitation accepted successfully": [
         "Povabilo k skupni rabi je bilo sprejeto"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "ID povabila za skupno rabo ni bil najden. Preverite povezavo"
       ],
       "Stopping to share this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
@@ -8601,6 +8628,14 @@
         "Preklic vaše naročnine, počakajte"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Sprejeto"
+      ],
+      "Pending": [
+        "V teku"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Pridobite več prostora"
@@ -8792,6 +8827,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } vključno s skupno rabo koledarja"
       ],
+      "${ dayDiff } day left": [
+        "Še ${ dayDiff } dan",
+        "Še ${ dayDiff } dneva",
+        "Še ${ dayDiff } dni",
+        "Še ${ dayDiff } dni"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } vključno z zgodovino različic"
       ],
@@ -8840,7 +8881,7 @@
       "Add any new files": [
         "Dodajanje novih datotek"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 1 GB prostora za shranjevanje za pošto in 5 GB prostora za shranjevanje za disk. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
@@ -8936,8 +8977,20 @@
       "What you give up when you cancel ${ planName }": [
         "Čemu se odpoveste, ko prekličete ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+      ],
       "Yearly free storage bonuses": [
         "Bonus prostor za shranjevanje"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Vaša naročnina ${ planName } se konča dne ${ expiryDate }. Po tem boste prešli na ${ BRAND_NAME } brezplačno naročnino. Če vaša uporaba preseže omejitve brezplačne naročnine, se lahko dostop do funkcij izdelka in vaših podatkov omeji. ${ learnMoreLink }"
@@ -9994,6 +10047,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Poslali smo jim povabilo za dostop do predmeta."
       ],
       "You do not have any contacts to export": [
         "Nimate stikov, ki bi jih lahko izvozili"

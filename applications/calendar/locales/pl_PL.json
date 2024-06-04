@@ -987,10 +987,10 @@
         "pierwszy miesiąc"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez ${ discountedMonths }. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } przez ${ nextMonths }. Można anulować w dowolnym momencie."
+        "Specjalna obniżona cena ${ discountedPrice } ważna przez ${ discountedMonths }. Odnowienie nastąpi w cenie ${ nextPrice } za ${ nextMonths }. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
+        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
     },
     "bf2023: Tooltip": {
@@ -1328,6 +1328,17 @@
         "${ more } więcej",
         "${ more } więcej",
         "${ more } więcej"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "Reaktywuj subskrypcję przed ${ formattedEndDate }, aby zachować te funkcje:"
+      ],
+      "Reactivate subscription": [
+        "Reaktywuj subskrypcję"
+      ],
+      "Your subscription is ending soon": [
+        "Subskrypcja wkrótce wygaśnie"
       ]
     },
     "Checkout row": {
@@ -5774,6 +5785,9 @@
       "What happened?": [
         "Co się stało?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Jaki jest główny powód anulowania lub obniżenia planu?"
+      ],
       "Wonderful": [
         "Wspaniale"
       ],
@@ -7496,14 +7510,11 @@
       "MM/YY": [
         "MM/RR"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ months }. Kupon jest ważny przez ${ couponRedemptions } odnowień. Następnie zostanie automatycznie odnowiony po cenie ${ price } na okres ${ months } miesięcy. Kupon można anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Specjalnie obniżona cena ${ priceWithDiscount } obowiązuje przez pierwsze ${ months }. Następnie zostanie automatycznie odnowiona po cenie ${ price } na ${ months }. Możesz anulować w dowolnym momencie."
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Specjalnie obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Następnie będzie automatycznie odnawiana co miesiąc za cenę ${ price }. Możesz anulować w dowolnym momencie."
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -7640,6 +7651,9 @@
       ],
       "Select state": [
         "Wybierz stan"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Wpisz adres e-mail"
@@ -8545,6 +8559,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } z udostępnianiem kalendarza"
       ],
+      "${ dayDiff } day left": [
+        "Pozostał ${ dayDiff } dzień",
+        "Pozostały ${ dayDiff } dni",
+        "Pozostało ${ dayDiff } dni",
+        "Pozostało ${ dayDiff } dnia"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } z historią wersji"
       ],
@@ -8593,6 +8613,12 @@
       "Add any new files": [
         "Dodaj nowe pliki"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Po wygaśnięciu subskrypcji ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Po wygaśnięciu subskrypcji ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 5 GB przestrzeni dyskowej Proton Drive i 1 GB przestrzeni dyskowej Proton Mail. Stracisz również bonusową przestrzeń dyskową."
+      ],
       "Back up photos from your devices": [
         "Tworzenia kopii zapasowej zdjęć na urządzeniach"
       ],
@@ -8616,6 +8642,9 @@
       ],
       "Helping activists in Hong Kong": [
         "Pomoc aktywistom w Hongkongu"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Jak nasz zespół wsparcia klienta sprawił, że aplikacja VPN trafiła bezpośrednio w ręce użytkowników."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Jak walczyliśmy, kiedy ${ BRAND_NAME } stał się celem agresywnej kampanii cenzorskiej."
@@ -8680,8 +8709,26 @@
       "What you give up when you cancel ${ planName }": [
         "Z czego rezygnujesz, anulując plan ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 5 GB przestrzeni dyskowej Proton Drive i 1 GB przestrzeni dyskowej Proton Mail. Stracisz również bonusową przestrzeń dyskową."
+      ],
       "Yearly free storage bonuses": [
         "Bonusowa przestrzeń dyskowa"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Subskrypcja ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Subskrypcja ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Subskrypcja ${ planName } wygaśnie ${ expiryDate }. Po tym czasie Twój plan zostanie obniżony do wersji ${ BRAND_NAME } Free. Jeśli po wygaśnięciu subskrypcji przekroczysz limity darmowego planu, dostęp do funkcji usług i danych może zostać ograniczony. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Subskrypcja ${ planName } wygaśnie ${ expiryDate }. Po tym czasie Twój plan zostanie obniżony do wersji ${ BRAND_NAME } Free. Jeśli po wygaśnięciu subskrypcji przekroczysz limity darmowego planu, dostęp do funkcji usług i danych może zostać ograniczony. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Własna niestandardowa domena"
