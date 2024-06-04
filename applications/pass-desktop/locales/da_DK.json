@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Sådan opdateres ${ PASS_APP_NAME } på Linux"
+      ],
       "Import": [
         "Importér"
       ],
@@ -761,9 +764,6 @@
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Opgrader for at få tidlig adgang til ${ PASS_APP_NAME } desktop-app"
-      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -1134,6 +1134,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
       ],
+      "here": [
+        "her"
+      ],
       "High Priority": [
         "Høj prioritet"
       ],
@@ -1282,6 +1285,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "New version ${ latestVersion } is available.": [
+        "Der findes en ny version ${ latestVersion }."
       ],
       "No breaches detected": [
         "Ingen databrud registreret"
@@ -1439,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Ændringsloggen kan tilgås her ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."

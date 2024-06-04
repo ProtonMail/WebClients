@@ -329,6 +329,9 @@
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "კოდის ხელახლა გადმოგზავნა (დარჩენილია ${ remaining } წმ)"
+      ],
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
       ],
@@ -493,6 +496,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "მოირგეთ 2FA მეტი უსაფრთხოებისთვის"
+      ],
       "These items remain at risk": [
         "ეს ელემენტები რჩება რისკის ქვეშ"
       ],
@@ -590,6 +596,9 @@
       "Failed resending invite.": [
         "მოწვევის თავიდან გაგზავნის შეცდომა."
       ],
+      "Failed to add email address": [
+        "ელფოსტის მისამართის დამატება ჩავარდა"
+      ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
       ],
@@ -598,6 +607,9 @@
       ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
+      ],
+      "Failed to load breaches for this address": [
+        "ამ მისამართისთვის გაჟონვების ჩატვირთვა ჩავარდა"
       ],
       "Failed to load item history": [
         "ელემენტის ისტორიის ჩატვირთვა ჩავარდა"
@@ -617,6 +629,9 @@
       "Failed to remove user's access.": [
         "მომხმარებლის წვდომის წაშლა ჩავარდა."
       ],
+      "Failed to resolve breaches for this address": [
+        "ამ მისამართისთვის გაჟონვების ამოხსნა ჩავარდა"
+      ],
       "Failed to restore items from trash": [
         "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
       ],
@@ -625,6 +640,15 @@
       ],
       "Failed to unpin item": [
         "ელემენტის მოხსნა ჩავარდა"
+      ],
+      "Failed to update monitoring settings": [
+        "მონიტორინგის პარამეტრები ჩავარდა"
+      ],
+      "Failed to verify email address": [
+        "ელფოსტის მისამართის გადამოწმება ჩავარდა"
+      ],
+      "Failed updating monitor flag of the item": [
+        "ელემენტის მონიტორინგის ალმის განახლება ჩავარდა"
       ],
       "File could not be parsed": [
         "ფაილის დამუშავება შეუძლებელია"
@@ -670,9 +694,6 @@
       ],
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
-      ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის კომპიუტერის აპთან ადრეული წვდომის მისაღებად"
       ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
@@ -887,6 +908,9 @@
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
       ],
+      "Add your custom email address to monitor :": [
+        "დაამატეთ თქვენი ელფოსტის მისამართი მონიტორინგისთვის :"
+      ],
       "Admin": [
         "ადმინისტრატორი"
       ],
@@ -898,6 +922,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
+      ],
+      "All breaches for this address were resolved": [
+        "ამ მისამართისთვის ყველა გაჟონვა გადაწყვეტილია"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
@@ -959,6 +986,9 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV გთავაზობთ მოხერხებულ ფორმატს თქვენი მონაცემების სანახავად. მაგრამ, მისი სიმარტივის გამო, ზოგიერთი მონაცემები (დამატებითი ველები, საკვანძო გასაღებები და ა.შ.) ჩასმული არ იქნება. მონაცემების სრული გატანისთვის, გირჩევთ, სხვა ფორმატი გამოიყენოთ."
+      ],
       "Current version": [
         "მიმდინარე ვერსია"
       ],
@@ -1013,6 +1043,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
+      ],
+      "here": [
+        "აქ"
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
@@ -1138,6 +1171,9 @@
       ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
+      ],
+      "Monitoring settings successfully updated": [
+        "მონიტორინგის პარამეტრები წარმატებით განახლდა"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
@@ -1451,6 +1487,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } სიტყვა",
         "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }-ის ვერსია"
       ],
       "${ usageCount } login": [
         "${ usageCount } შესვლის დეტალი",
@@ -2083,6 +2122,9 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } მისამართი"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }-ის მონიტორი"
+      ],
       "Account protection": [
         "ანგარიშის დაცვა"
       ],
@@ -2258,7 +2300,7 @@
         "რეკომენდებული ქმედებები"
       ],
       "Remove email address?": [
-        "წავშალო ლფოსტის მისამართი?"
+        "წავშალო ელფოსტის მისამართი?"
       ],
       "Resolved breaches": [
         "ამოხსნილი გაჟონვები"
@@ -2284,6 +2326,12 @@
       ],
       "Set access level": [
         "წვდომის დონის დაყენება"
+      ],
+      "Set up 2FA for better security": [
+        "მოირგეთ 2FA უკეთესი უსაფრთხოებისთვის"
+      ],
+      "Set up 2FA for more security": [
+        "მოირგეთ 2FA მეტი უსაფრთხოებისთვის"
       ],
       "Settings": [
         "მორგება"
@@ -2322,7 +2370,7 @@
         "გნებავთ, მეტი გაიგოთ?"
       ],
       "Weak password": [
-        "სუსტი პაროლი."
+        "სუსტი პაროლი"
       ],
       "Weak passwords": [
         "სუსტი პაროლები"
@@ -2502,6 +2550,9 @@
       ],
       "Vault name is required": [
         "საცავის სახელი აუცილებელია"
+      ],
+      "Verification code is required": [
+        "აუცილებელია გადამოწმების კოდი"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."

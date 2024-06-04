@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Як экспартаваць даныя з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Як абнавіць ${ PASS_APP_NAME } на Linux"
+      ],
       "Import": [
         "Імпартаваць"
       ],
@@ -767,9 +770,6 @@
       "PIN codes do not match": [
         "PIN-коды не супадаюць"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Палепшыце, каб мець ранні доступ да настольнай праграмы ${ PASS_APP_NAME }"
-      ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
@@ -1162,6 +1162,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, атрымлівайце асалоду ад эксклюзіўных функцый і падтрымлівайце нас падпісаўшыся на Pass Plus."
       ],
+      "here": [
+        "тут"
+      ],
       "High Priority": [
         "Высокі прыярытэт"
       ],
@@ -1314,6 +1317,9 @@
       ],
       "Never": [
         "Ніколі"
+      ],
+      "New version ${ latestVersion } is available.": [
+        "Даступна новая версія ${ latestVersion }."
       ],
       "No breaches detected": [
         "Парушэнні не выяўлены"
@@ -1473,6 +1479,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Журнал змен можна знайсці па спасылцы ${ changelogLink }"
       ],
       "The export will only contain vaults that you own.": [
         "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
