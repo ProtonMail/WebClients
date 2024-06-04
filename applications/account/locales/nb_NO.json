@@ -6030,17 +6030,6 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -7825,6 +7814,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denne verifiseringen kan ta opptil én time. Du kan trygt fortsette til de neste trinnene."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dette vil avbryte ditt gjeldende betalte abonnement og du vil miste eventuelle lojalitetsfordeler du har akkumulert."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dette vil slette alle tidligere versjoner av filene dine eldre enn ${ rententionLabel }."
       ],
@@ -8467,6 +8459,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -14004,6 +14007,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkludert kalenderdeling"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag igjen",
+        "${ dayDiff } dager igjen"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkludert versjonshistorikk"
       ],
@@ -14052,8 +14059,8 @@
       "Add any new files": [
         "Legge til eventuelle nye filer"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Disk-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
@@ -14172,8 +14179,20 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Når du avbestiller ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 5 GB Drive-lagring og opptil 1 GB Mail-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
+      ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ${ unavailablePlan }."
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ."
       ],
       "Your ${ planName } has been canceled.": [
         "${ planName } er kansellert."

@@ -521,6 +521,9 @@
       "Go to label": [
         "ラベルへ移動"
       ],
+      "Go to settings": [
+        "設定を開く"
+      ],
       "Got it": [
         "はい"
       ],
@@ -5734,17 +5737,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -6041,7 +6033,7 @@
         "支払額"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "電子メール エイリアスは電子メール アドレスのように機能しますが、スパムを減らし、実際の電子メール アドレスと身元を隠します。"
+        "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
       ],
       "An error occurred while communicating with the extension": [
         "拡張機能との通信中にエラーが発生しました"
@@ -6717,6 +6709,9 @@
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "@ProtonMail を使っているのですが、あなたにもおすすめです。これはプライバシーを保護する安全なメールサービスです。私の紹介リンクでサインアップすると、1 か月間のプレミアム機能が無料で利用できます: ${ referrerLink }"
+      ],
+      "JCB logo": [
+        "JCB ロゴ"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -8043,6 +8038,17 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10400,6 +10406,12 @@
       ],
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - プレミアム機能"
+      ],
+      "Passkeys supported": [
+        "パスキーに対応しています"
       ],
       "Password health": [
         "パスワードの健全性"
@@ -13243,6 +13255,9 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
+      ],
+      "${ dayDiff } day left": [
+        "残り ${ dayDiff } 日"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"

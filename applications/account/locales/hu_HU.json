@@ -4959,14 +4959,6 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -5761,6 +5753,9 @@
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Az @ProtonMailt használom és gondoltam, hogy neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, amely védi a magánéleted. Regisztrálj ezen a hivatkozáson, hogy 1 hónapig ingyen használhasd a prémium funkciókat is: ${ referrerLink }"
+      ],
+      "JCB logo": [
+        "JCB logó"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
@@ -6817,6 +6812,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info - folder colouring feature": {
@@ -10846,6 +10849,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],

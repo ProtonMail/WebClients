@@ -6036,17 +6036,6 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -8469,6 +8458,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -9764,6 +9764,9 @@
       "Verify keys with Key Transparency": [
         "Verificar as chaves com transparência de chave"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sentimos muito em vê-lo partir. Explique por que você está partindo para nos ajudar a melhorar."
       ],
@@ -10586,6 +10589,9 @@
       "Documents": [
         "Documentos"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -11246,6 +11252,9 @@
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
       ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
       "Your account's usage": [
         "Uso da sua conta"
       ]
@@ -11790,6 +11799,9 @@
       "Add to existing group": [
         "Adicionar a um grupo existente"
       ],
+      "Android": [
+        "Android"
+      ],
       "Ask each time": [
         "Sempre perguntar"
       ],
@@ -11811,6 +11823,9 @@
       "Free server configs": [
         "Configurações do servidor gratuito"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Encontrei outro serviço que considero melhor"
       ],
@@ -11831,6 +11846,9 @@
       ],
       "Left to Right": [
         "Esquerda para direita"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Meu motivo não está listado"
@@ -11900,6 +11918,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -12486,11 +12507,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -12919,11 +12946,32 @@
       "Enter URL and token into your identity provider": [
         "Insira o URL e o token em seu provedor de identidade"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Por razões de segurança, o token SCIM será ocultado após salvar as alterações e você não poderá vê-lo novamente."
+      ],
       "For security reasons, the token is hidden": [
         "Por motivos de segurança, o token está oculto."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Vá até seu provedor de identidade, copie e cole os dados abaixo e conclua a configuração do SCIM para ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Vá até o seu provedor de identidade, copie e cole o token abaixo e reabilite o SCIM para ${ VPN_APP_NAME }."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Certifique-se de copiar o token SCIM acima agora."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "O aprovisionamento automático do SCIM será desabilitado até que você entre com um novo token SCIM nas configurações do seu provedor de identidade."
+      ],
       "The SCIM base URL and token will be deleted.": [
         "O URL base e o token do SCIM serão excluídos."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Para reabilitar a sincronização com seu provedor de identidade, é necessário completar a integração com o SCIM novamente."
       ]
     },
     "scim: Label": {
@@ -13921,6 +13969,10 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
@@ -13996,6 +14048,9 @@
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas."
+      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Como reagimos quando a ${ BRAND_NAME } foi alvo de uma campanha agressiva de censura."
       ],
@@ -14031,6 +14086,12 @@
       ],
       "Priority support": [
         "Suporte prioritário"
+      ],
+      "Reactivate": [
+        "Reativar"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Ative novamente para restaurar o acesso aos recursos do ${ planName }"
       ],
       "Read the story": [
         "Leia a história"
@@ -14555,6 +14616,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Ferramenta de exportação do ${ MAIL_APP_NAME }"
@@ -15132,6 +15196,9 @@
       "Identity and addresses": [
         "Identidade e endereços"
       ],
+      "IMAP/SMTP": [
+        "IMAP/SMTP"
+      ],
       "Import": [
         "Importar"
       ],
@@ -15237,6 +15304,9 @@
       ],
       "Open pagination": [
         "Abrir paginação"
+      ],
+      "OpenVPN / IKEv2": [
+        "OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"
@@ -15586,6 +15656,9 @@
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
+      ],
+      "WireGuard": [
+        "WireGuard"
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
@@ -16174,8 +16247,26 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "iOS": [
         "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {
