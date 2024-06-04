@@ -81,7 +81,7 @@ const DriveOnboardingModal = (props: Props) => {
                         </li>
                         <li className="my-2 flex flex-nowrap">
                             <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
-                            <span className="flex-1">{c('Onboarding Info').t`Create a share link`}</span>
+                            <span className="flex-1">{c('Onboarding Info').t`Share a file`}</span>
                         </li>
                         <li className="my-2 flex flex-nowrap">
                             <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
