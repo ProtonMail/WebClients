@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { add, isBefore } from 'date-fns';
 
 import { ModelState, getInitialModelState } from '@proton/account';
 import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
+import { MINUTE } from '@proton/shared/lib/constants';
+import { isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -44,22 +45,23 @@ const modelThunk = createAsyncModelThunk<
         };
     },
     previous: ({ getState, options }) => {
-        const state = getState()[name].value;
+        const state = getState()[name];
 
-        if (!options?.thunkArg || !state) {
+        if (!options?.thunkArg || !state.value) {
             return undefined;
         }
 
         const [, walletAccountId] = options?.thunkArg;
+        const highestIndexValue = state.value[walletAccountId];
 
-        const highestIndexValue = state[walletAccountId];
-
-        const validUntil = highestIndexValue && add(new Date(highestIndexValue.time), { minutes: 10 });
-        if (validUntil && isBefore(new Date(), validUntil)) {
-            return getValidModel({ value: state });
+        if (!highestIndexValue) {
+            return undefined;
         }
 
-        return undefined;
+        return getValidModel({
+            value: state.value,
+            cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, 10 * MINUTE) ? 'stale' : undefined),
+        });
     },
 });
 
