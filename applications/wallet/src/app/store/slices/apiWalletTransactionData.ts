@@ -4,6 +4,7 @@ import { uniqBy } from 'lodash';
 import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiWalletTransactionData } from '@proton/andromeda';
 import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
+import { defaultExpiry, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -41,17 +42,22 @@ const modelThunk = createAsyncModelThunk<
 
         return uniqBy([...(state ?? []), ...data], ({ Data }) => Data.HashedTransactionID);
     },
-    previous: (extra) => {
-        const state = extra.getState()[apiWalletTransactionDataSliceName].value;
+    previous: ({ options, getState }) => {
+        const state = getState()[apiWalletTransactionDataSliceName];
+        const stateValue = state.value;
 
-        if (!extra.options?.thunkArg) {
+        if (!options?.thunkArg) {
             return undefined;
         }
 
-        const hashedTxIds = extra.options.thunkArg[2];
-        const cachedTxIds = state?.filter((tx) => hashedTxIds?.includes(tx.Data.HashedTransactionID ?? ''));
+        const hashedTxIds = options.thunkArg[2];
+        const cachedTxIds = stateValue?.filter((tx) => hashedTxIds?.includes(tx.Data.HashedTransactionID ?? ''));
+
         if (hashedTxIds?.length === cachedTxIds?.length) {
-            return getValidModel({ value: state });
+            return getValidModel({
+                value: stateValue,
+                cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, defaultExpiry) ? 'stale' : undefined),
+            });
         }
 
         return undefined;

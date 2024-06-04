@@ -4,6 +4,7 @@ import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
 import { SECOND } from '@proton/shared/lib/constants';
+import { defaultExpiry, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -63,17 +64,20 @@ const modelThunk = createAsyncModelThunk<
         }
     },
     previous: ({ getState, options }) => {
-        const state = getState()[name].value;
+        const state = getState()[name];
 
-        if (!options?.thunkArg || !state) {
+        if (!options?.thunkArg || !state.value) {
             return undefined;
         }
 
         const [fiat, date] = options?.thunkArg;
         const [key] = getKeyAndTs(fiat, date);
 
-        if (state[key]) {
-            return getValidModel({ value: state });
+        if (state.value[key]) {
+            return getValidModel({
+                value: state.value,
+                cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, defaultExpiry) ? 'stale' : undefined),
+            });
         }
 
         return undefined;
