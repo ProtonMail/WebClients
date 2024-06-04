@@ -1,32 +1,16 @@
-import type { NodeKey } from 'lexical'
 import { useRef } from 'react'
 import { Icon } from '@proton/components/components'
 import { CommentsPanelList } from './CommentsPanelList'
 import { CommentThreadInterface } from '@proton/docs-shared'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { c } from 'ttag'
 
 export function CommentsPanel({
-  activeIDs,
   threads,
-  markNodeMap,
   setShowComments,
-  controller,
-  resolveMarkNode,
-  unresolveMarkNode,
-  removeMarkNode,
-  username,
 }: {
-  username: string
-  activeIDs: string[]
   threads: CommentThreadInterface[]
-  markNodeMap: Map<string, Set<NodeKey>>
   setShowComments: (show: boolean) => void
-  controller: EditorRequiresClientMethods
-  resolveMarkNode: (markID: string) => void
-  unresolveMarkNode: (markID: string) => void
-  removeMarkNode: (markID: string) => void
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
@@ -53,17 +37,7 @@ export function CommentsPanel({
           {c('Info').t`No comments`}
         </div>
       ) : (
-        <CommentsPanelList
-          username={username}
-          activeIDs={activeIDs}
-          threads={threads}
-          listRef={listRef}
-          markNodeMap={markNodeMap}
-          controller={controller}
-          resolveMarkNode={resolveMarkNode}
-          unresolveMarkNode={unresolveMarkNode}
-          removeMarkNode={removeMarkNode}
-        />
+        <CommentsPanelList threads={threads} listRef={listRef} />
       )}
     </div>
   )

@@ -1,4 +1,3 @@
-import type { LexicalEditor, NodeKey } from 'lexical'
 import { $isMarkNode, MarkNode } from '@lexical/mark'
 import { $getNodeByKey } from 'lexical'
 import { useEffect, useMemo, useState } from 'react'
@@ -11,33 +10,18 @@ import {
   LiveCommentsEvent,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
-import { Icon } from '@proton/components'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { Icon, ToolbarButton } from '@proton/components'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
 import { c, msgid } from 'ttag'
+import ArrowUpCircleFilledIcon from '../../Icons/ArrowUpCircleFilledIcon'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { useCommentsContext } from './CommentsContext'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 
-export function CommentsPanelListThread({
-  editor,
-  thread,
-  controller,
-  markNodeMap,
-  activeIDs,
-  resolveMarkNode,
-  unresolveMarkNode,
-  removeMarkNode,
-  username,
-}: {
-  username: string
-  thread: CommentThreadInterface
-  controller: EditorRequiresClientMethods
-  activeIDs: string[]
-  editor: LexicalEditor
-  markNodeMap: Map<string, Set<NodeKey>>
-  resolveMarkNode: (markID: string) => void
-  unresolveMarkNode: (markID: string) => void
-  removeMarkNode: (markID: string) => void
-}) {
+export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
+  const [editor] = useLexicalComposerContext()
+  const { controller, markNodeMap, activeIDs } = useCommentsContext()
+
   const eventBus = useInternalEventBus()
   const [isDeleting, setIsDeleting] = useState(false)
 
@@ -115,7 +99,7 @@ export function CommentsPanelListThread({
       className={clsx(
         'group mb-3.5 overflow-hidden rounded border bg-[--background-norm] last:mb-0',
         isResolved ? 'border-[--primary-minor-1]' : 'border-[--border-weak]',
-        canSelect && 'cursor-pointer hover:border-[--primary]',
+        canSelect && 'hover:border-[--primary]',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
       )}
     >
@@ -136,15 +120,10 @@ export function CommentsPanelListThread({
       <ul className="my-3 px-3.5">
         {thread.comments.map((comment, index) => (
           <CommentsPanelListComment
-            username={username}
             key={comment.id}
             comment={comment}
             thread={thread}
-            controller={controller}
             isFirstComment={index === 0}
-            resolveMarkNode={resolveMarkNode}
-            unresolveMarkNode={unresolveMarkNode}
-            removeMarkNode={removeMarkNode}
             setIsDeletingThread={setIsDeleting}
           />
         ))}
@@ -166,6 +145,20 @@ export function CommentsPanelListThread({
             }}
             onBlur={() => {
               void controller.stoppedTypingInThread(thread.id)
+            }}
+            buttons={(canSubmit, submitComment) => {
+              if (!canSubmit) {
+                return null
+              }
+              return (
+                <ToolbarButton
+                  className="rounded p-1"
+                  title={c('Action').t`Reply`}
+                  icon={<ArrowUpCircleFilledIcon className="h-4 w-4 text-[--primary]" />}
+                  disabled={!canSubmit}
+                  onClick={submitComment}
+                />
+              )
             }}
           />
         </div>
