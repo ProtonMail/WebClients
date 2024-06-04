@@ -362,6 +362,9 @@
       "Refer a friend": [
         "Priporočite prijatelju"
       ],
+      "Refresh status": [
+        "Osveži stanje"
+      ],
       "Refresh the page": [
         "Osveži stran"
       ],
@@ -419,6 +422,9 @@
       "Return to sign in": [
         "Vrnite se k prijavi"
       ],
+      "Review": [
+        "Ocena"
+      ],
       "Revoke": [
         "Prekliči"
       ],
@@ -472,6 +478,9 @@
       ],
       "Send reminder": [
         "Pošlji opomnik"
+      ],
+      "Set catch-all": [
+        "Nastavite \"catch-all\""
       ],
       "Set new password": [
         "Nastavite novo geslo"
@@ -738,6 +747,17 @@
       ],
       "Secure your communications": [
         "Zavarujte svoje komunikacije"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Onemogočeno"
+      ],
+      "Enabled": [
+        "Omogočeno"
+      ],
+      "Missing keys": [
+        "Manjkajoči ključi"
       ]
     },
     "bf2023: Action": {
@@ -1950,6 +1970,20 @@
         "Dosegli ste omejitev brisanja naslovov za tega uporabnika."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Ste prepričani, da želite izbrisati to domeno?"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete domain?": [
+        "Izbris domene?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Upoštevajte, da če izbrišete domeno ${ domainName }, bodo vsi naslovi, povezani s to domeno, onemogočeni."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Zapadel račun"
@@ -1972,6 +2006,16 @@
       ],
       "Disable address?": [
         "Onemogoči naslov?"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Preverjeno"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Poddomene 'www' se običajno ne uporabljajo za e-pošto. Ali ste prepričani, da želite uporabiti to domeno?"
       ]
     },
     "Downgrade account reason": {
@@ -2286,8 +2330,17 @@
       "Username must end with a letter or digit": [
         "Uporabniško ime se mora končati s črko ali številko"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Preverjanje ni uspelo, poskusite znova čez eno uro."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Ustavili smo DKIM podpisovanje zaradi napak v vaši DNS konfiguraciji. Prosimo sledite spodnjim navodilom, da nadaljujete s podpisovanjem."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Napačna obnovitvena fraza. Poskusite znova ali uporabite drug način obnovitve."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Napačna koda za preverjanje. Prepričajte se, da ste pravilno kopirali kodo za preverjanje in poskusite znova. Do uveljavitve sprememb lahko mine tudi do 24 ur."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Uporabili ste vse naslove v svojem paketu. Prosimo nadgradite paket, da dodate nov naslov."
@@ -2918,11 +2971,31 @@
       "Address": [
         "Naslov"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Status": [
         "Stanje"
       ],
       "Username": [
         "Uporabniško ime"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Ime gostitelja"
+      ],
+      "Priority": [
+        "Prioriteta"
+      ],
+      "Type": [
+        "Vrsta"
+      ],
+      "Value / Data": [
+        "Vrednost / podatki"
+      ],
+      "Value / Data / Points to": [
+        "Vrednost / podatki / Kaže na"
       ]
     },
     "Headline": {
@@ -2974,6 +3047,9 @@
         "${ n } naslovi",
         "${ n } naslovov"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: ne postavljajte v karanteno ali zavračajte nepooblaščenih e-poštnih sporočil. Običajno ljudje uporabljajo ta pravilnik samo za odpravljanje težav ali testiranje."
+      ],
       "${ number } city": [
         "${ number } mesto",
         "${ number } mesti",
@@ -2994,6 +3070,12 @@
         "Strežnika ${ provisioningCounter } se še nastavljata. To običajno traja približno ${ provisioningDuration }.",
         "Strežniki ${ provisioningCounter } se še nastavljajo. To običajno traja približno ${ provisioningDuration }.",
         "Strežniki ${ provisioningCounter } se še nastavljajo. To običajno traja približno ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: poziva platforme prejemnikov, naj nepooblaščena e-poštna sporočila označijo kot neželeno pošto ali jih postavijo v karanteno."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: poziva platforme prejemnikov, da zavrnejo nepooblaščena e-poštna sporočila."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } več",
@@ -3175,6 +3257,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Preden lahko prejemate e-poštna sporočila za svoje naslove domene po meri na ${ MAIL_APP_NAME }, morate dodati naslednja dva zapisa MX v svojo konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri). Primer in nekaj koristnih nasvetov lahko najdete na ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Preden pričnete prejemati in pošiljati e-poštna sporočila z novih naslovov, morate zanje ustvariti šifrirane ključe."
       ],
@@ -3268,6 +3353,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Izbrišite druge zapise MX ali poskrbite, da je prioriteta ${ MAIL_APP_NAME } najnižja številka."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Brišem ${ deletedServerCount } prehodni strežnik",
         "Brišem ${ deletedServerCount } prehodna strežnika",
@@ -3276,6 +3364,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM omogoča ${ BRAND_NAME }, da kriptografsko podpiše vaša e-poštna sporočila in prepreči napadalcem poseganje v vašo e-pošto. Prepričajte se, da ste v svojo konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri) dodali naslednje tri zapise CNAME."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC preveri, ali pošiljateljevi zapisi SPF in DKIM izvirajo iz vaše domene. To lahko napadalcem prepreči uporabo SPF in DKIM druge domene za lažno predstavljanje vaše domene. »p=« (pravilnik) v tem zapisu nakazuje, kako želite, da platforme prejemnikov obravnavajo nepooblaščena e-poštna sporočila. Za večino domen priporočamo uporabo pravilnika \"p=karantena\". Prepričajte se, da ste dodali naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri)."
       ],
       "DNS TXT record": [
         "Zapis DNS TXT"
@@ -3291,6 +3385,12 @@
       ],
       "Domain ownership verified.": [
         "Lastništvo domene je preverjeno."
+      ],
+      "domain used": [
+        "uporabljena domena",
+        "uporabljenih domen",
+        "uporabljenih domen",
+        "uporabljenih domen"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Končano! Poslali smo kodo na ${ destination }."
@@ -3321,6 +3421,9 @@
       ],
       "Each code can only be used once": [
         "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Vsaka domena ima lahko le en zapis SPF (TXT). Če želite obdržati obstoječi zapis SPF (TXT), lahko trenutnemu zapisu dodate ${ spf } (postavite ga za ${ spfValue })."
       ],
       "Edit email address": [
         "Uredi e-poštni naslov"
@@ -3385,6 +3488,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Vnesite obnovitveno besedno zvezo, če želite zdaj spremeniti geslo."
       ],
+      "Example: ${ spfExample }": [
+        "Primer: ${ spfExample }"
+      ],
       "Expired": [
         "Poteklo"
       ],
@@ -3399,6 +3505,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Za člane organizacij, ki uporabljajo enotno prijavo (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Za uporabnike, ki prehajajo na ${ MAIL_APP_NAME } iz druge e-poštne storitve, izberite zavihek ${ boldAddresses } in dodajte vse aktivne e-poštne naslove, preden spremenite zapis MX, da zagotovite nemoten prenos."
       ],
       "Free forever": [
         "Brezplačno za vedno."
@@ -3439,6 +3548,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Če imate po meri določeno domeno v ${ MAIL_APP_NAME }, lahko nastavite splošen e-poštni naslov, kamor boste prejemali sporočila, poslana na vašo domeno, vendar na neveljaven e-poštni naslov (npr. zaradi tipkarskih napak)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Če imate darilno kodo, jo vnesite spodaj, da uveljavite svoj popust."
       ],
@@ -3465,6 +3577,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Če imate težave, smo vam na voljo za pomoč. ${ boldPhoneCall } ali ${ boldZoomMeeting } z enim od naših strokovnjakov za podporo."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "POMEMBNO: Če vaša konzola DNS ne dovoljuje, da se vrednosti CNAME končajo s piko, lahko odstranite zadnjo piko v vrednostih CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Pomembno: Prosimo, poskrbite, da shranite obnovitvene kode. Sicer lahko trajno izgubite dostop do računa, če izgubite svojo napravo za dvojno preverjanje pristnosti."
@@ -3540,6 +3655,12 @@
       ],
       "Loading...": [
         "Nalaganje ..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vašo e-pošto v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vaša e-poštna sporočila v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Poskrbite, da ${ addARecoveryMethod }, da boste lahko ponovno dostopali do svojega računa, če pozabite geslo."
@@ -3811,6 +3932,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF pojasnjuje, komu je dovoljeno pošiljati e-pošto za vašo domeno. Prepričajte se, da ste dodali naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri)."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Uporabniki SSO (ki jih zagotovi vaš ponudnik identitete) bodo izbrisani"
       ],
@@ -3927,6 +4051,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "To preverjanje lahko traja do ene ure. Varno lahko nadaljujete z naslednjimi koraki."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "To bo omogočilo uporabo PayPal-a za plačilo naročnine na ${ BRAND_NAME }. Preusmerili vas bomo na PayPal v nov zavihek brskalnika. Če uporabljate prepoved za pojavna okna, jo prosimo onemogočite, da nadaljujete."
@@ -4348,6 +4475,17 @@
         "Za pomoč pri plačilu z gotovino nas kontaktirajte na naslov ${ email }."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Dodajte nov naslov za obstoječe uporabnike vaše organizacije."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Dodajte novega uporabnika v vašo organizacijo in mu ustvarite naslov."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Iz varnostnih razlogov moramo preveriti, ali ste lastnik domene ${ domainName }. Dodajte naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri). Primer in nekaj koristnih nasvetov lahko najdete na ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Lahko dodate način plačila, da se vam naročnina samodejno obnovi. Na voljo so tudi drugi načini plačila."
@@ -4615,6 +4753,9 @@
       "Do you have any suggestions for our team?": [
         "Imate kak predlog za našo ekipo?"
       ],
+      "Domain name": [
+        "Ime domene"
+      ],
       "e.g. example.com": [
         "npr. primer.com"
       ],
@@ -4771,6 +4912,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Frazo sestavlja 12 edinstvenih besed v določenem vrstnem redu."
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Dodajte vse tri naslednje zapise CNAME. Opomba: posodobitev zapisov DNS lahko traja več ur."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Dodajte naslednja dva zapisa MX. Opomba: posodobitev zapisov DNS lahko traja več ur."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Prosimo dodajte sledeči TXT zapis. Vedite, da lahko DNS zapisi potrebujejo nekaj ur za posodobitev."
+      ],
       "Please share any feedback to help us improve.": [
         "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
       ],
@@ -4879,6 +5029,16 @@
         "Telefonska številka za obnovitev"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Dodajte domeno, ki jo imate, v vaš račun ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Prosimo dodajte sledeči TXT zapis. Vedite, da lahko DNS zapisi potrebujejo nekaj ur za posodobitev."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Skrbnik"
@@ -4923,6 +5083,17 @@
       ],
       "Daily email notifications": [
         "Dnevna e-poštna obvestila"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Naslovi"
+      ],
+      "Domain": [
+        "Domena"
+      ],
+      "Verify": [
+        "Preveri"
       ]
     },
     "Label on payment method": {
@@ -4974,6 +5145,9 @@
       ],
       "Help translate": [
         "Pomagajte prevesti"
+      ],
+      "here": [
+        "tukaj"
       ],
       "How to pay with Bitcoin?": [
         "Kako plačati z Bitcoinom?"
@@ -5154,6 +5328,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Povežite vašo domeno po meri v ${ BRAND_NAME } in pripravite e-poštne naslove po meri (npr. vi@vasepodjetje.com). Naš čarovnik vas bo vodil skozi postopek."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše brezplačno preskusno obdobje se je končalo. Dostop do vašega računa bo kmalu onemogočen. ${ action }"
       ]
@@ -6048,6 +6225,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Vključeno v ${ plus }, ${ bundle } in ${ BRAND_NAME } for Business."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Vključeno za več uporabnikov paketov ${ BRAND_NAME } za Business."
       ]
@@ -6627,6 +6807,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
+      ],
+      "yourdomain.com": [
+        "vašadomena.com"
       ]
     },
     "plan customizer, ips": {
@@ -7683,6 +7866,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } vključno s skupno rabo koledarja"
       ],
+      "${ dayDiff } day left": [
+        "Še ${ dayDiff } dan",
+        "Še ${ dayDiff } dneva",
+        "Še ${ dayDiff } dni",
+        "Še ${ dayDiff } dni"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } vključno z zgodovino različic"
       ],
@@ -7731,7 +7920,7 @@
       "Add any new files": [
         "Dodajanje novih datotek"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 1 GB prostora za shranjevanje za pošto in 5 GB prostora za shranjevanje za disk. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
@@ -7851,8 +8040,20 @@
       "What you give up when you cancel ${ planName }": [
         "Čemu se odpoveste, ko prekličete ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+      ],
       "Yearly free storage bonuses": [
         "Bonus prostor za shranjevanje"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Paket ${ planName } je bil preklican."
@@ -7963,6 +8164,9 @@
       "Bug reported": [
         "Napaka je prijavljena"
       ],
+      "Catch-all address updated": [
+        "Posodobljen splošen naslov."
+      ],
       "Code sent to ${ methodTo }": [
         "Koda je poslana na ${ methodTo }"
       ],
@@ -7974,6 +8178,12 @@
       ],
       "Display name updated": [
         "Prikazno ime je posodobljeno."
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC vrednost je kopirana v odložišče."
+      ],
+      "Domain verified": [
+        "Domena preverjena."
       ],
       "Email address copied to clipboard": [
         "E-poštni naslov kopiran v odložišče"
@@ -8035,6 +8245,9 @@
       "Preference saved": [
         "Nastavitev shranjena"
       ],
+      "SPF value copied to clipboard": [
+        "SPF vrednost je kopirana v odložišče."
+      ],
       "User created": [
         "Uporabnik ustvarjen"
       ],
@@ -8043,6 +8256,12 @@
       ],
       "Username copied to clipboard": [
         "​Uporabniško ime kopirano v odložišče"
+      ],
+      "Value copied to clipboard": [
+        "Vrednost kopirana v odložišče"
+      ],
+      "Verification code copied to clipboard": [
+        "Koda za preverjanje je bila kopirana v odložišče."
       ],
       "Verification successful": [
         "Preverjanje uspešno"
@@ -8116,6 +8335,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Naslovi"
       ]
     },
     "Tab subscription modal": {
@@ -8221,6 +8445,9 @@
       "Add credits": [
         "Dodaj dobrimetje"
       ],
+      "Add domain": [
+        "Dodaj domeno"
+      ],
       "Add new user": [
         "Dodaj novega uporabnika"
       ],
@@ -8271,6 +8498,9 @@
       ],
       "Card verification": [
         "Preverjanje kartice"
+      ],
+      "Catch-All address": [
+        "Prestreženi naslovi"
       ],
       "Catch-all address": [
         "Prestreženi naslovi"
@@ -8412,6 +8642,9 @@
       ],
       "Edit display name": [
         "Uredi prikazno ime"
+      ],
+      "Edit domain": [
+        "Urejanje domene"
       ],
       "Edit email address": [
         "Uredi e-poštni naslov"
@@ -8772,6 +9005,17 @@
         "${ MAIL_APP_NAME } račun"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Naslov"
+      ],
+      "Catch-All": [
+        "Ujemi vse"
+      ],
+      "Status": [
+        "Stanje"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Naslovi"
@@ -8851,6 +9095,15 @@
       ],
       "Verified email address": [
         "Potrjen e-poštni naslov"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Zaznali smo težavo z vašo nastavitvijo DNS. Prosimo, da preverite, če vaši zapisi ustrezajo spodnjim navodilom. Če bodo težave ostale, bomo morali izklopiti podpisovanje DKIM."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Ustavili smo DKIM podpisovanje zaradi napak v vaši DNS konfiguraciji. Prosimo sledite spodnjim navodilom, da nadaljujete s podpisovanjem."
+      ],
+      "Your DKIM signing is working.": [
+        "Vaše podpisovanje DKIM deluje."
       ]
     },
     "tooltip": {
@@ -9080,11 +9333,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Na žalost trenutno nismo na spletu. Izpolnite spodnji obrazec, da opišete svojo težavo, preučili jo bomo in se oglasili, ko bomo spet povezani."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Zaznali smo težavo z vašo nastavitvijo DNS. Prosimo, da preverite, če vaši zapisi ustrezajo spodnjim navodilom. Če bodo težave ostale, bomo morali izklopiti podpisovanje DKIM."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Preden dodate e-poštni naslov nezasebnemu članu, morate ${ activateLink } organizacijski ključ."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Vaše brezplačno preizkusno obdobje se konča dne ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Po uspešni preveritvi ne odstranjujte tega zapisa TXT, saj je potreben za potrditev, da ste še vedno lastnik domene."
       ]
     }
   }

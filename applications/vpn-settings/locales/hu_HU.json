@@ -296,6 +296,9 @@
       "Refer a friend": [
         "Ajánlja egy barátjának"
       ],
+      "Refresh status": [
+        "Állapot frissítése"
+      ],
       "Refresh the page": [
         "Oldal frissítése"
       ],
@@ -344,6 +347,9 @@
       "Return to sign in": [
         "Vissza a bejelentkezéshez"
       ],
+      "Review": [
+        "Áttekintés"
+      ],
       "Revoke": [
         "Visszavonás"
       ],
@@ -382,6 +388,9 @@
       ],
       "Send reminder": [
         "Emlékeztető beállítása"
+      ],
+      "Set catch-all": [
+        "Gyűjtő e-mail beállítása"
       ],
       "Set new password": [
         "Új jelszó beállítása"
@@ -575,6 +584,17 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Ez le fogja választani az összes routert és klienst, ami ezt a tanúsítvány használja."
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Letiltva"
+      ],
+      "Enabled": [
+        "Engedélyezve"
+      ],
+      "Missing keys": [
+        "Hiányzó kulcsok"
       ]
     },
     "bf2023: Action": {
@@ -1672,6 +1692,16 @@
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Ellenőrizve"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Az e-mailhez használt domain nevek általában nem tartalmazzák a \"www'\"részt. Biztos, hogy folytatja ezzel a domain névvel?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hibák vagy minőségi problémák"
@@ -1888,8 +1918,17 @@
       "Username must end with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Az igazolás sikertelen, kérjük hogy próbálja meg egy óra múlva."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Hibás visszaigazoló kód. Bizonyosodjon meg róla, hogy jól másolta ki a visszaigazoló kódot és próbálja újból. 24 órába is beletelhet, amíg a változások érvénybe lépnek."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
@@ -2333,11 +2372,31 @@
       "Address": [
         "Címek"
       ],
+      "Domain": [
+        "Domain név"
+      ],
       "Status": [
         "Állapot"
       ],
       "Username": [
         "Felhasználónév"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Hoszt név"
+      ],
+      "Priority": [
+        "Prioritás"
+      ],
+      "Type": [
+        "Típus"
+      ],
+      "Value / Data": [
+        "Érték / Adat"
+      ],
+      "Value / Data / Points to": [
+        "Érték / Adat / Cél cím"
       ]
     },
     "Human verification method": {
@@ -2560,11 +2619,18 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
+      ],
       "Discover ProtectBuy logo": [
         "Fedezze fel a ProtectBuy-t logó"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
+      ],
+      "domain used": [
+        "domain név használatban",
+        "domain név használatban"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Kész! Elküldtük a kódot ide: ${ destination }."
@@ -2680,6 +2746,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Ha saját domain névvel használja a ${ MAIL_APP_NAME }t, létrehozhat egy gyűjtő e-mail címet, amelyre minden olyan levél meg fog érkezni, amelyet nem létező címre küldenek (pl. elírások miatt)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ha van ajándék kódja, adja meg itt, a kedvezmény eléréséért."
       ],
@@ -2727,6 +2796,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "JCB logo": [
+        "JCB logó"
       ],
       "Lean more about single sign-on": [
         "További információ az egyszeri bejelentkezésről"
@@ -3301,6 +3373,11 @@
         "Kérjük, vegye fel velünk a kapcsolatot a ${ email } címen, hogy segíthessünk a készpénzes fizetésben."
       ]
     },
+    "Info for domain modal": {
+      "Add a new user to your organization and create an address for it.": [
+        "Vegyen fel egy új felhasználót a szervezethez és készítsen neki címet."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Az előfizetés automatikus megújításához megadhat egy fizetési módot. Más fizetési módok is elérhetők."
@@ -3531,6 +3608,9 @@
       "Do you have any suggestions for our team?": [
         "Lenne valamilyen javaslata a csapatunk számára?"
       ],
+      "Domain name": [
+        "Domain név"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3741,6 +3821,11 @@
         "Helyreállítási telefonszám"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Adjon hozzá saját domain nevet a ${ MAIL_APP_NAME } fiókjához."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Adminisztrátor"
@@ -3764,6 +3849,17 @@
       ],
       "Daily email notifications": [
         "Napi e-mail értesítések"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Címek"
+      ],
+      "Domain": [
+        "Domain név"
+      ],
+      "Verify": [
+        "Ellenőrzés"
       ]
     },
     "Label on payment method": {
@@ -3911,6 +4007,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Kapcsolja saját domain nevét a ${ BRAND_NAME } fiókjához, hogy egyedi e-mail címeket hozhasson létre (pl. önneve@öncége.com). A beállítási varázsló végigvezeti a szükséges lépéseken."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Igyenes próbaideje lejárt. Hozzáférés a fiókjához hamarosan le lesz tiltva. ${ action }"
       ]
@@ -4527,6 +4626,11 @@
         "Egynél több adminisztrátor is lehet. Minden admin hozhat létre és kezelhet felhasználókat, de csak az elsődleges admin fér hozzá a számlázáshoz."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "A ${ plus }, ${ bundle } és az Üzleti ${ BRAND_NAME } tartalmazza."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
@@ -4768,6 +4872,9 @@
       ],
       "Select a reason": [
         "Válasszon egy indokot"
+      ],
+      "yourdomain.com": [
+        "domainneve.com"
       ]
     },
     "plan customizer, users": {
@@ -5412,6 +5519,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
@@ -5465,6 +5576,9 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
+      "Catch-all address updated": [
+        "Gyűjtő e-mail cím frissítve"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -5476,6 +5590,12 @@
       ],
       "Display name updated": [
         "Megjelenített név frissítve"
+      ],
+      "DMARC value copied to clipboard": [
+        "A DMARC érték a vágólapra másolva"
+      ],
+      "Domain verified": [
+        "Domain név ellenőrizve"
       ],
       "Email address copied to clipboard": [
         "E-mail cím a vágólapra másolva"
@@ -5534,6 +5654,9 @@
       "Preference saved": [
         "Beállítások mentve"
       ],
+      "SPF value copied to clipboard": [
+        "Az SPF érték a vágólapra másolva"
+      ],
       "User created": [
         "Felhasználó létrehozva"
       ],
@@ -5542,6 +5665,12 @@
       ],
       "Username copied to clipboard": [
         "Felhasználónév másolva a vágólapra"
+      ],
+      "Value copied to clipboard": [
+        "Az érték a vágólapra másolva"
+      ],
+      "Verification code copied to clipboard": [
+        "Ellenőrző kód a vágólapra másolva"
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"
@@ -5612,6 +5741,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Címek"
       ]
     },
     "Tab subscription modal": {
@@ -5711,6 +5845,9 @@
       "Add credits": [
         "Kredit hozzáadása"
       ],
+      "Add domain": [
+        "Domain hozzáadása"
+      ],
       "Add new user": [
         "Új felhasználó hozzáadása"
       ],
@@ -5755,6 +5892,9 @@
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
+      ],
+      "Catch-All address": [
+        "Gyűjtő e-mail cím"
       ],
       "Catch-all address": [
         "Gyűjtő e-mail cím"
@@ -5862,6 +6002,9 @@
       ],
       "Edit display name": [
         "Megjelenített név szerkesztése"
+      ],
+      "Edit domain": [
+        "Domain szerkesztése"
       ],
       "Edit email address": [
         "E-mail cím szerkesztése"
@@ -6145,6 +6288,17 @@
         "${ MAIL_APP_NAME } számla"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Cím"
+      ],
+      "Catch-All": [
+        "Gyűjtő e-mail"
+      ],
+      "Status": [
+        "Állapot"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Címek"
@@ -6185,6 +6339,15 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
+      ],
+      "Your DKIM signing is working.": [
+        "A DKIM aláírás megfelelően működik."
       ]
     },
     "Tor out of date": {
@@ -6317,8 +6480,16 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
+      ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
       ]
     }
   }

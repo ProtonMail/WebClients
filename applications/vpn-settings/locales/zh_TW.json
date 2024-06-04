@@ -353,6 +353,9 @@
       "Refer a friend": [
         "推薦好友"
       ],
+      "Refresh status": [
+        "重新整理狀態"
+      ],
       "Refresh the page": [
         "重新整理此頁面"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "回到登入"
       ],
+      "Review": [
+        "檢閱"
+      ],
       "Revoke": [
         "撤銷"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "發送提醒"
+      ],
+      "Set catch-all": [
+        "設定全部擷取"
       ],
       "Set new password": [
         "設定新密碼"
@@ -705,6 +714,17 @@
     "app-switcher": {
       "Secure your communications": [
         "安全您的通訊"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "已停用"
+      ],
+      "Enabled": [
+        "已啟用"
+      ],
+      "Missing keys": [
+        "遺失金鑰"
       ]
     },
     "bf2023: Action": {
@@ -1882,6 +1902,16 @@
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "已驗證"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' 子網域通常不會用於電郵。您確定要使用此子網域數值嗎？"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "臭蟲或品質問題"
@@ -2186,8 +2216,17 @@
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "驗證失敗，請在一小時後再試。"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "我們停止了 DKIM 簽章，因為您的 DNS 配置發生問題。請遵從下列指示以恢復簽章。"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "錯誤的恢復短語。重試或使用其它復原方法。"
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "驗證碼錯誤，請確保已正確複製驗證碼後重試。變更或需時最長 24 小時才能生效。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -2785,11 +2824,31 @@
       "Address": [
         "電郵位址"
       ],
+      "Domain": [
+        "網域"
+      ],
       "Status": [
         "狀態"
       ],
       "Username": [
         "使用者名稱"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "主機名稱"
+      ],
+      "Priority": [
+        "優先順序"
+      ],
+      "Type": [
+        "類型"
+      ],
+      "Value / Data": [
+        "數值 / 資料"
+      ],
+      "Value / Data / Points to": [
+        "數值 / 資料 / 指向"
       ]
     },
     "Headline": {
@@ -2838,6 +2897,9 @@
       "${ n } address": [
         "${ n } 個電郵位址"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: 請求收件者忽略信件的授權狀態。通常僅用於除錯或測試。"
+      ],
       "${ number } city": [
         "${ number } 座城市"
       ],
@@ -2849,6 +2911,12 @@
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } 台伺服器仍在設置。通常需時約 ${ provisioningDuration }。"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: 請求收件者將未授權的信件標示為垃圾郵件或將其隔離。"
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: 請求收件者拒收未授權的信件。"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
@@ -2997,6 +3065,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "在您開始在${ MAIL_APP_NAME }接收自訂網域的信件之前，您需要添加以下兩條 MX 紀錄到您的DNS 中(通常由您的網域註冊商提供)。你可以在以下連結找到一些有用的範例 ${ kbLink }。"
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需創建加密金鑰，才可用來傳送和接收電郵。"
       ],
@@ -3087,11 +3158,20 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "具有專用 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM 允許 ${ BRAND_NAME } 對電子郵件簽章，可保護郵件不被竄改。確保您已添加下列 CNAME 記錄在您的 DNS 中（通常由您的網域註冊商提供）。"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DAMRC 檢查信件的 SPF 與 DKIM 來確認郵件來自何方，這可以阻止攻擊者使用其他網域的 SPF 與 DKIM 來冒充您的身份。其中的 \"p=\" (policy)可以指定收件伺服器如何處理不合規的電子郵件，通常我們建議大多數網域使用\"p=quarantine\"，即隔離不合規的信件。確保您有在您的 DNS 中 (通常由網域註冊商提供) 添加以下的 TXT 紀錄。"
       ],
       "DNS TXT record": [
         "DNS的TXT紀錄"
@@ -3107,6 +3187,9 @@
       ],
       "Domain ownership verified.": [
         "網域所有權驗證。"
+      ],
+      "domain used": [
+        "個網域已使用"
       ],
       "Done! We sent a code to ${ destination }.": [
         "完成！我們已將代碼傳送至 ${ destination }."
@@ -3137,6 +3220,9 @@
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
       "Edit email address": [
         "編輯電子郵件位址"
@@ -3201,6 +3287,9 @@
       "Enter your recovery phrase to change your password now.": [
         "請輸入您的復原片語，以便立即更改您的密碼。"
       ],
+      "Example: ${ spfExample }": [
+        "範例: ${ spfExample }"
+      ],
       "Expired": [
         "已過期"
       ],
@@ -3252,6 +3341,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電郵位址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以套用折扣。"
       ],
@@ -3272,6 +3364,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "若您想要將此帳號與其它的結合，則請不要刪除它。"
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "重要事項：若您的 DNS 不允許 CNAME 以「.」(英文句點) 結尾，您可以移除這個句點。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
@@ -3309,6 +3404,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "JCB logo": [
+        "JCB 符號"
+      ],
       "Keys created": [
         "金鑰已更新"
       ],
@@ -3344,6 +3442,12 @@
       ],
       "Loading...": [
         "載入中‧‧‧"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件。"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
@@ -3596,6 +3700,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允許以 SAML SSO 驗證的網域。"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF 聲明了誰可以以此網域的名義寄信。確保您添加下列的 TXT 記錄到您的 DNS 中 (通常由您的網域註冊商提供)。"
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "(由您的身分提供者提供的) SSO 使用者將予刪除"
@@ -4089,6 +4196,14 @@
         "請寄送電郵到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "為您組織的任何一個使用者新增地址。"
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "將新使用者加入到您的組織並為其創建位址。"
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "您可以加入繳款方式以便為您的訂購授權自動續約。其它繳款方式也可適用。"
@@ -4339,6 +4454,9 @@
       "Do you have any suggestions for our team?": [
         "您對我們的團隊有什麼建議嗎？"
       ],
+      "Domain name": [
+        "網域名稱"
+      ],
       "e.g. example.com": [
         "範例 example.com"
       ],
@@ -4489,6 +4607,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "短語包含12個獨一無二的單字以特定的順序排列"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "請將以下 3 項加入 CNAME 記錄。請注意：DNS 記錄可能需時數小時更新。"
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "請加入以下 2 條 MX 記錄。請注意：DNS 記錄可能需時數小時更新。"
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "請加入以下 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
+      ],
       "Please share any feedback to help us improve.": [
         "請提供任何意見回饋以協助我們改進。"
       ],
@@ -4594,6 +4721,16 @@
         "復原手機號碼"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "將您擁有的網域加入到您的 ${ MAIL_APP_NAME } 帳號。"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "請加入以下 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "管理員"
@@ -4640,6 +4777,17 @@
         "每日電子郵件通知"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "電郵位址"
+      ],
+      "Domain": [
+        "網域"
+      ],
+      "Verify": [
+        "驗證"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "預設"
@@ -4683,6 +4831,9 @@
       ],
       "Help translate": [
         "協助翻譯"
+      ],
+      "here": [
+        "這裡"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -4857,6 +5008,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "連接您的自訂網域至 ${ BRAND_NAME } ，以進行設定自訂電郵位址 (例如: you@yourcompany.com)。我們的提示小精靈將會引導您完成整個過程。"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
       ]
@@ -5661,6 +5815,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "包含於 ${ plus }、${ bundle } 和 ${ BRAND_NAME } 企業版。"
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "包含於多位 ${ BRAND_NAME } 企業版方案。"
       ]
@@ -6035,6 +6192,9 @@
       "Processing payment": [
         "正在處理付款"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
@@ -6142,6 +6302,9 @@
       ],
       "Select state": [
         "請選州"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -6294,6 +6457,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "額度附註"
+      ],
       "Currency conversion": [
         "貨幣轉換"
       ]
@@ -6984,6 +7150,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
@@ -7147,6 +7316,9 @@
       "Bug reported": [
         "錯誤已回報"
       ],
+      "Catch-all address updated": [
+        "全部擷取電子郵件位址已更新"
+      ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
@@ -7158,6 +7330,12 @@
       ],
       "Display name updated": [
         "已更新顯示名稱"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC 字串已經複製到剪貼簿"
+      ],
+      "Domain verified": [
+        "網域已驗證"
       ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
@@ -7219,6 +7397,9 @@
       "Preference saved": [
         "設定已儲存"
       ],
+      "SPF value copied to clipboard": [
+        "SFP 字串已複製到剪貼簿"
+      ],
       "User created": [
         "使用者已創建"
       ],
@@ -7227,6 +7408,12 @@
       ],
       "Username copied to clipboard": [
         "已複製使用者名稱到剪貼簿"
+      ],
+      "Value copied to clipboard": [
+        "值已複製到剪貼簿"
+      ],
+      "Verification code copied to clipboard": [
+        "驗證碼已複製到剪貼簿"
       ],
       "Verification successful": [
         "驗證成功"
@@ -7300,6 +7487,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "位址"
       ]
     },
     "Tab subscription modal": {
@@ -7408,6 +7600,9 @@
       "Add credits": [
         "儲值"
       ],
+      "Add domain": [
+        "加入網域"
+      ],
       "Add new user": [
         "新增使用者"
       ],
@@ -7458,6 +7653,9 @@
       ],
       "Card verification": [
         "信用卡驗證"
+      ],
+      "Catch-All address": [
+        "全部擷取電郵位址"
       ],
       "Catch-all address": [
         "全部擷取電郵位址"
@@ -7593,6 +7791,9 @@
       ],
       "Edit display name": [
         "編輯顯示名稱"
+      ],
+      "Edit domain": [
+        "編輯網域"
       ],
       "Edit email address": [
         "編輯電子郵件位址"
@@ -7941,6 +8142,17 @@
         "${ MAIL_APP_NAME } 繳款單"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "電郵位址"
+      ],
+      "Catch-All": [
+        "全部擷取"
+      ],
+      "Status": [
+        "狀態"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "電郵位址"
@@ -8014,6 +8226,15 @@
       ],
       "Verified email address": [
         "已驗證的電子郵件位址"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "我們已停止 DKIM 簽章，因為您的 DNS 配置發生問題。請遵照下列指示以恢復簽章。"
+      ],
+      "Your DKIM signing is working.": [
+        "您的 DKIM 簽章運作正常。"
       ]
     },
     "tooltip": {
@@ -8190,11 +8411,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "您必須${ activateLink }組織金鑰才可新增電子郵件地址到一個非私密成員。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "成功驗證之後，請勿移除此 TXT 記錄，因為這是用來確認您繼續擁有此網域。"
       ]
     }
   }

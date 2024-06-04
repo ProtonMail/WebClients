@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "გასაღების დაკოპირება ბუფერში"
       ],
+      "Copy version number to clipboard": [
+        "ვერსიის ნომრის კოპირება ბუფერში"
+      ],
       "Create": [
         "შექმნა"
       ],
@@ -350,6 +353,9 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
+      "Refresh status": [
+        "სტატუსის განახლება"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -407,6 +413,9 @@
       "Return to sign in": [
         "შესვლის გვერდზე დაბრუნება"
       ],
+      "Review": [
+        "გადახედვა"
+      ],
       "Revoke": [
         "გაუქმება"
       ],
@@ -460,6 +469,9 @@
       ],
       "Send reminder": [
         "შეხსენების გაგზავნა"
+      ],
+      "Set catch-all": [
+        "დომენის ყველა ელფოსტის მიღება"
       ],
       "Set new password": [
         "ახალი პაროლის დაყენება"
@@ -703,11 +715,31 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "იმუშავეთ ინტერნეტში კონფიენციალურად და დაბლოკეთ რეკლამა"
+      ],
       "Keep your schedule private": [
         "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
       ],
+      "Protect your passwords and identity": [
+        "დაიცავით თქვენი პაროლები და იდენტიფიკაცია"
+      ],
+      "Safeguard your files and photos": [
+        "დაიცავით თქვენი ფაილები და სურათები"
+      ],
       "Secure your communications": [
         "დაიცავით თქვენი კომუნიკაცია"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "გათიშულია"
+      ],
+      "Enabled": [
+        "ჩართულია"
+      ],
+      "Missing keys": [
+        "ნაკლული გასაღებები"
       ]
     },
     "bf2023: Action": {
@@ -1899,6 +1931,16 @@
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "გადამოწმებულია"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' ქვედომენი ჩვეულებრივ ელფოსტისთვის არ გამოიყენება. დარწმუნებული ბრძანდებით, რომ გნებავთ დომენის ამ მნიშვნელობის გამოყენება?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -1909,6 +1951,15 @@
       "I found a cheaper VPN": [
         "ვიპოვე უფრო იაფი VPN"
       ],
+      "I found a VPN with better features": [
+        "მე უკეთესი ფუნქციების მქონე VPN ვიპოვე"
+      ],
+      "I have not managed to connect": [
+        "მე ვერ მიევუერთდი"
+      ],
+      "I only needed a VPN short-term": [
+        "მე VPN, მხოლოდ, ცოტა ხნით მჭირდება"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
       ],
@@ -1917,6 +1968,9 @@
       ],
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
+      ],
+      "Other reason (please comment)": [
+        "სხვა მიზეზი (დაწერეთ კომენტარებში)"
       ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
@@ -2182,8 +2236,17 @@
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "შემოწმება წარუმატებელია. ერთ საათში თავიდან სცადეთ."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DKIM ხელმოწერა შეწყვეტილია თქვენი DNS-ის კონფიგურაციის პრობლემების გამო. ხელმოწერის გასაგრძელებლად ქვემოთ მოყვანილ ინსტრუქციებს მიჰყევით."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "სცადეთ ხელახლა ან გამოიყენეთ აღდგენის სხვა მეთოდი."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "შემოწმების არასწორი კოდი. დარწმუნდით, რომ კოდი სწორად დააკოპირეთ და თავიდან სცადეთ. ცვლილებებს შეიძლება 24 საათამდე დასჭირდეს."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -2790,11 +2853,31 @@
       "Address": [
         "მისამართი"
       ],
+      "Domain": [
+        "დომენი"
+      ],
       "Status": [
         "სტატუსი"
       ],
       "Username": [
         "მომხმარებლის სახელი"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "ჰოსტის სახელი"
+      ],
+      "Priority": [
+        "პრიორიტეტი"
+      ],
+      "Type": [
+        "ტიპი"
+      ],
+      "Value / Data": [
+        "მნიშვნელობა / მონაცემები"
+      ],
+      "Value / Data / Points to": [
+        "მნიშვნელობა / მონაცემები / მიუთითებს"
       ]
     },
     "Headline": {
@@ -2844,6 +2927,9 @@
         "${ n } მისამართი",
         "${ n } მისამართი"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: არაავტორიზებული ელფოსტები კარანტინში ჩასმული ან უარყოფილი არ იქნება. ჩვულებრივ ხალხი ამას წეების გასამართად ან დასატესტად იყენებს."
+      ],
       "${ number } city": [
         "${ number } ქალაქი",
         "${ number } ქალაქი"
@@ -2858,6 +2944,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: მიმღების პლატფორმებისთვის არაავტორიზებული ელფოსტების სპამად მონიშვნის ან მათი კარანტინის მოთხოვნა."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: მიმღების პლატფორმებისთვის არაავტორიზებული ელფოსტების უარყოფის თხოვნა."
       ],
       "${ remainingAddresses.length } more": [
         "კიდევ ${ remainingAddresses.length }",
@@ -3020,6 +3112,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "მანამდე, სანამ ${ MAIL_APP_NAME }-ზე თქვენს დომენზე ელფოსტის მიღებას შეძლებთ, გჭირდებათ დაამატოთ შემდეგი ორი MX ჩანაწერი თქვენს DNS კონსოლში (პლატფორმაზე, სადაც თქვენი დომენი შეიძინეთ). ამის მაგალითი და სხვა სასარგებლო ინფორმაცია იხილეთ ბმულზე ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
@@ -3094,7 +3189,7 @@
         "მიმდინარე ტარიფი"
       ],
       "Custom branding": [
-        "მომხმარებლის ბრენდინგი"
+        "მორგებული ბრენდინგი"
       ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
@@ -3111,12 +3206,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM საშუალებას აძლევს ${ BRAND_NAME }-ს, რომ თქვენს ელფოსტებს კრიპტოგრაფიული ხელმოწერა დაამატოს და ამით შემტევებს ელფოსტაში ჩახედვის საშუალებას ართმევს. დარწმუნდით, რომ დაამატეთ შემდეგი სამი CNAME ჩანაწერი თქვენს DNS კონსლში (პლატფორმაზე, სადაც თქეენი დომენი შეიძინეთ)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC ამოწმებს, გამომგზავნის SPF და DKIM ჩანაწერები თქვენი დომენიდან მოდის, თუ არა. ამას შეუძლია, შემტევებს ხელი შეუშალოს, სხვა დომენის SPF და DKIM ჩანაწერები გამოიყენოს, რომ თქვენი დომენი განასახიეროს. ამ ჩანაწერში \"p=\" (პოლიტიკა) ჩანაწერი მიუთითებს, როგორ გნებავთ, მიმღებმა პლატფორმებმა არაავტორიზებული ელფოსტები დაამუშაოს. გირჩევთ, პოლიტიკა \"p=quarantine\" დააყენოთ დომენების უმრავლესობისთვის. დარწმუნდით, რომ დაამატეთ შემდეგი TXT ჩანაწერი თქვენს DNS კონსოლში (იპოვით პლატფორმაზე, სადაც თქვენი დომენი შეიძინეთ)."
       ],
       "DNS TXT record": [
         "DNS TXT ჩანაწერი"
@@ -3132,6 +3236,10 @@
       ],
       "Domain ownership verified.": [
         "დომენის მფლობელი გადამოწმებულია."
+      ],
+      "domain used": [
+        "დომენი გამოყენებულია",
+        "დომენი გამოყენებულია"
       ],
       "Done! We sent a code to ${ destination }.": [
         "მზადაა! კოდი გაგზავნილია ${ destination }-ზე."
@@ -3162,6 +3270,9 @@
       ],
       "Each code can only be used once": [
         "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -3226,6 +3337,9 @@
       "Enter your recovery phrase to change your password now.": [
         "შეიყვანეთ აღდგენის ფრაზა, რომ თქვენი პაროლი ახლავე შეცვალოთ."
       ],
+      "Example: ${ spfExample }": [
+        "მაგ: ${ spfExample }"
+      ],
       "Expired": [
         "ვადაგასულია"
       ],
@@ -3240,6 +3354,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "ორგანიზაციის წევრებისთვის, რომელიც SSO-ს (SAML SSO) იყენებენ"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
@@ -3277,6 +3394,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "თუ გაქვთ თქვენი დომენი ${ MAIL_APP_NAME }-ით, შეგიძლიათ, დააყენოთ ყველას-ჩამჭერი მისამართი, რომელიც თქვენ დომენზე, მაგრამ არასწორ მომხმარებელზე (მაგალითად, არასწორად აკრეფის შემთხვევაში) გამოგზავნილ ელფოსტებს მიიღებს."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "სასაჩუქრე კოდის ქონის შემთხვევაში ფასდაკლების მისაღებად მისი კოდი ქვემოთ შეიყვანეთ."
       ],
@@ -3297,6 +3417,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "თუ გნებავთ ამ ანგარიშის სხვა ანგარიშთან გაერთიანება, არ წაშალოთ ის."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "მნიშვნელოვანია: თუ თქვენს DNS კონსოლს CNAME მნიშვნელობების, რომლებიც მძიმით მთავრდება, მხარდაჭერა არ აქვს, CNAME-ის მნიშვნელობებში ბოლო წერტილი შეგიძლიათ წაშალოთ."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "მნიშვნელოვანია: დარწმუნდით, რომ აღდგენის კოდები საიმედოდ შეინახეთ. წინააღმდეგ შემთხვევაში თუ 2FA მოწყობილობას დაკარგავთ, თქვენს ანგარიშზე წვდომა სამუდამოდ გაგიუქმდებათ."
@@ -3334,6 +3457,9 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "JCB logo": [
+        "JCB ლოგო"
+      ],
       "Keys created": [
         "გასაღებები შექმნა"
       ],
@@ -3366,6 +3492,12 @@
       ],
       "Loading...": [
         "ჩატვირთვა..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ SPF/DKIM/DMARC აკლია ან არასწორია."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ  SPF/DKIM/DMARC აკლია ან არასწორია."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "დარწმუნდით, რომ თქვენ ${ addARecoveryMethod } იმისათვის, რომ, თუ პაროლი დაგავიწყდათ, თქვენს ანგარიშში შესვლა მაინც შეძლოთ."
@@ -3620,6 +3752,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF განსაზღვრავს, ვის აქვს უფლება, თქვენს დომენზე ელფოსტა გამოაგზავნოს. დარწმუნდით, რომ დაამატეთ შედეგი TXT ჩანაწერ თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ)."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO მომხმარებლები (მოწოდებული თქვენი იდენტიფიკატორის მომწოდებლის მიერ) წაიშლება"
@@ -4113,6 +4248,17 @@
         "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "დაამატეთ თქვენი ორგანიზაციის არსებულ მომხმარებელს ახალი მისამართი."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "დაამატეთ ორგანიზაციის ახალი მომხმარებელი და მისამართი."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "უსაფრთხოებისთვის, ჩვენ გვჭირდება გადავამოწმოთ, რომ თქვენ ${ domainName }-ის მფლობელი ბრძანდებით. დაამატეთ შემდეგი TXT ჩანაწერი თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ). ამის მაგალითი და სხვა სასარგებლო ინფორმაცია იხილეთ ბმულზე ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
@@ -4371,6 +4517,9 @@
       "Do you have any suggestions for our team?": [
         "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
       ],
+      "Domain name": [
+        "დომენის სახელი"
+      ],
       "e.g. example.com": [
         "მაგ: example.com"
       ],
@@ -4521,6 +4670,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "ფრაზა მითითებული მიმდევრობით დალაგებული 12 უნიკალური სიტყვისგან შედგება"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს 3 CNAME ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს ორი MX ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება დასჭირდეს."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ],
       "Please share any feedback to help us improve.": [
         "გაგვიზიარეთ თქვენი აზრი."
       ],
@@ -4626,6 +4784,16 @@
         "აღდგენის ტელეფონის ნომერი"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "${ MAIL_APP_NAME }-ის ანგარიშისთვის თქვენი დომენის მიბმა."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "ადმინისტრატორი"
@@ -4672,6 +4840,17 @@
         "ელფოსტის დღიური გაფრთხილებები"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "მისამართები"
+      ],
+      "Domain": [
+        "დომენი"
+      ],
+      "Verify": [
+        "შემოწმება"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "ნაგულისხმევი"
@@ -4715,6 +4894,9 @@
       ],
       "Help translate": [
         "თარგმანში დახმარება"
+      ],
+      "here": [
+        "აქ"
       ],
       "How to pay with Bitcoin?": [
         "როგორ გადავიხადო ბიტკოინით?"
@@ -4890,6 +5072,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
       ]
@@ -5228,8 +5413,14 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - ფასიანი ფუნქციები"
+      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
+      ],
+      "Password health": [
+        "პაროლის სიძლიერე"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -5313,6 +5504,9 @@
       ],
       "Unlimited devices": [
         "მოწყობილობების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited devices and aliases": [
+        "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
       ],
       "Unlimited filters": [
         "ფილტრების ულიმიტო რაოდენობა"
@@ -5726,6 +5920,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "მას შეიცავს ${ plus }, ${ bundle } და ${ BRAND_NAME } ბიზნესისთვის."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "მოჰყვება ერთზე მეტ მომხმარებელს ${ BRAND_NAME }-ის ყველა სატარიფო გეგმას."
       ]
@@ -5911,12 +6108,29 @@
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "ძალიან შეკუმშული გამოსახულებების თავიდან აცილება."
+      ],
+      "Tips on choosing a good logo": [
+        "კარგი ლოგოს არჩევის მინიშნებები"
+      ],
+      "Use a solid background color.": [
+        "მყარი ფონის ფერის გამოყენება."
+      ]
+    },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "დააგდეთ გამოსახულების ფაილი აქ, ასატვირთად, ან"
+      ],
       "File in PNG or JPEG format": [
         "ფაილი PNG ან JPEG ფორმატში"
       ],
       "File not larger than 30 KB": [
         "ფაილი 30 კბ-ზე პატარაა"
+      ],
+      "Square image of at least 128 pixels": [
+        "ოთხკუთხედი გამოსახულება 128 პიქსელით მაინც"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6006,6 +6220,13 @@
       ],
       "Preparing your Recovery Kit": [
         "თქვენი აღგენის ნაკრების მომზადება"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "უსაფრთხო გაზიარება ${ n } საცავთან",
+        "უსაფრთხო გაზიარება ${ n } საცავთან"
+      ],
+      "Secure sharing with multiple vaults": [
+        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
@@ -6244,6 +6465,9 @@
       ],
       "Select state": [
         "აირჩიეთ შტატი"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -6389,9 +6613,23 @@
         "კოდის გენერაცია"
       ]
     },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
+      ],
+      "For security reasons, the token is hidden": [
+        "უსაფრთხოების მიზნით კოდი დამალულია"
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-ის საბაზისო URL და კოდი წაიშლება."
+      ]
+    },
     "scim: Label": {
       "SCIM base URL": [
         "SCIM-ის საბაზისო URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-ის საბაზისო URL (ან კლიენტის URL)"
       ],
       "SCIM token": [
         "SCIM კოდი"
@@ -6939,6 +7177,11 @@
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "ადგილის დამატება"
@@ -7147,6 +7390,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -7174,6 +7421,9 @@
       "Have a question?": [
         "კითხვები გაქვთ?"
       ],
+      "Helping activists in Hong Kong": [
+        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
@@ -7182,6 +7432,9 @@
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Our fight against censorship in Russia": [
+        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -7192,16 +7445,37 @@
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
       ],
+      "Unblocking internet access in Iran": [
+        "ინტერნეტთან წვდომის განბლოკვა ირანში"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ],
+      "Yearly free storage bonuses": [
+        "წლიური უფასო საცავის ბონუსები"
+      ],
+      "Your own custom email domain": [
+        "თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Your own short @pm.me email alias": [
+        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -7223,6 +7497,9 @@
       ],
       "We don't sell your data": [
         "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -7277,6 +7554,9 @@
       "Bug reported": [
         "შეცდომა გადაგზავნილია"
       ],
+      "Catch-all address updated": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი განახლებულია"
+      ],
       "Code sent to ${ methodTo }": [
         "კოდი გაგზავნილია ${ methodTo }-თან"
       ],
@@ -7288,6 +7568,12 @@
       ],
       "Display name updated": [
         "საჩვენებელი სახელი განახლდა"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC-ის მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Domain verified": [
+        "დომენი შემოწმებულია"
       ],
       "Email address copied to clipboard": [
         "ელფოსტის მისამართები დაკოპირდა გაცვლის ბაფერში"
@@ -7349,6 +7635,9 @@
       "Preference saved": [
         "პარამეტრები შენახულია"
       ],
+      "SPF value copied to clipboard": [
+        "SPF-ის მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"
+      ],
       "User created": [
         "მომხმარებელი შექმნილია"
       ],
@@ -7357,6 +7646,12 @@
       ],
       "Username copied to clipboard": [
         "მომხმარებელი დაკოპირებულია მიმოცვლის ბუფერში"
+      ],
+      "Value copied to clipboard": [
+        "მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Verification code copied to clipboard": [
+        "შემოწმების კოდი დაკოპირებულია მიმოცვლის ბაფერში"
       ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
@@ -7427,6 +7722,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "მისამართები"
       ]
     },
     "Tab subscription modal": {
@@ -7535,6 +7835,9 @@
       "Add credits": [
         "ანგარიშის შევსება"
       ],
+      "Add domain": [
+        "დომენის დამატება"
+      ],
       "Add new user": [
         "ახალი მომხმარებლის დამატება"
       ],
@@ -7585,6 +7888,9 @@
       ],
       "Card verification": [
         "ბარათის გადამოწმება"
+      ],
+      "Catch-All address": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
@@ -7722,6 +8028,9 @@
       ],
       "Edit display name": [
         "საჩვენებელი სახელის ჩასწორება"
+      ],
+      "Edit domain": [
+        "დომენის ჩასწორება"
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -8016,6 +8325,9 @@
       "Upload CSV file to create multiple accounts": [
         "ერთზე მეტი ანგარიშის შესასქმნელად CSV ფაილი ატვირთეთ"
       ],
+      "Upload your organization’s logo": [
+        "ატვირთეთ თქვენი ორგანიზაციის ლოგო"
+      ],
       "Users": [
         "მომხმარებლები"
       ],
@@ -8064,6 +8376,17 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-ის ინვოისი"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "მისამართი"
+      ],
+      "Catch-All": [
+        "ყველას დაჭერა"
+      ],
+      "Status": [
+        "სტატუსი"
       ]
     },
     "Title header for members table": {
@@ -8139,6 +8462,15 @@
       ],
       "Verified email address": [
         "გადამოწმებული ელფოსტის მისამართი"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "ნაპოვნია პრობლემა DNS-ის თქვენს კონფიგურაციასთან. დარწმუნდით, რომ ჩანაწერები ემთხვევა ქვემოთ მოყვანილ ინსტრუქციებს. თუ პრობლემა მაინც არ გაქრება, ჩვენ DKIM-ით ხელმოწერის გამორთვა მოგვიწევს."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DKIM ხელმოწერა შეწყვეტილია DNS-თან არსებული თქვენი კონფიგურაციის პრობლემების გამო. ხელმოწერის გასაგრძელებლად ქვემოთ მოყვანილ ინსტრუქციებს მიჰყევით."
+      ],
+      "Your DKIM signing is working.": [
+        "თქვენი DKIM ხელმოწერა მუშაობს."
       ]
     },
     "tooltip": {
@@ -8335,11 +8667,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "სამწუხაროდ, ამჟამად, ონლაინ არ ვართ. შეავსეთ ქვედა ფორმა, აღწერეთ თქვენი პრობლემა და ჩვენ მალევე დაგიკავშირდებით."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "ნაპოვნია პრობლემა DNS-ის თქვენს კონფიგურაციასთან. დარწმუნდით, რომ ჩანაწერები ემთხვევა ქვემოთ მოყვანილ ინსტრუქციებს. თუ პრობლემა მაინც არ გაქრება, ჩვენ DKIM-ით ხელმოწერის გამორთვა მოგვიწევს."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "არაკონფიდენციალური წევრისთვის ელფოსტის მისამართის დამატებამდე საჭიროა ორგანიზაციის გასაღების ${ activateLink }."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
       ]
     }
   }
