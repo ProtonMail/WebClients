@@ -6,7 +6,7 @@ import {
   DocControllerEvent,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
-import DebugMenu from './DebugMenu'
+import DebugMenu, { useDebug } from './DebugMenu'
 import { useApplication } from '../Containers/ApplicationProvider'
 import {
   CommentMarkNodeChangeData,
@@ -40,6 +40,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const [initializing, setInitializing] = useState(false)
   const [isEditorReady, setIsEditorReady] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const debug = useDebug()
 
   const themeContext = useTheme()
   useEffect(() => {
@@ -191,7 +192,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
   return (
     <div className="h-full w-full">
-      {isEditorReady && <DebugMenu docController={application.docLoader.getDocController()} />}
+      {isEditorReady && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
 
       {!docOrchestrator && (
         <div className="flex h-full w-full flex-col items-center justify-center gap-4">
