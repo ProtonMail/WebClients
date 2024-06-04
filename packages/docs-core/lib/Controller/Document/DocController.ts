@@ -37,7 +37,7 @@ import {
   ClientEventVersion,
 } from '@proton/docs-proto'
 import { PROTON_DOC_FILE_EXTENSION } from '@proton/docs-shared'
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
@@ -96,6 +96,42 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Message)
   }
 
+  private handleWebsocketConnectingEvent(): void {
+    if (this.editorInvoker) {
+      this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connecting).catch(console.error)
+    }
+  }
+
+  private handleWebsocketConnectedEvent(): void {
+    this.beginInitialSyncTimer()
+
+    if (this.initialConnectionTimer) {
+      clearTimeout(this.initialConnectionTimer)
+    }
+
+    if (!this.keys) {
+      throw new Error('Keys not initialized')
+    }
+
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    void this.editorInvoker.performOpeningCeremony()
+    void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connected)
+  }
+
+  private handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
+    if (this.editorInvoker) {
+      void this.editorInvoker.performClosingCeremony()
+      void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Disconnected)
+    }
+
+    if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
+      void this.reloadIfCommitIdMismatch()
+    }
+  }
+
   async handleEvent(event: InternalEventInterface<unknown>): Promise<void> {
     const { document } = event.payload as BaseWebsocketPayload
 
@@ -104,62 +140,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     if (event.type === WebsocketConnectionEvent.Disconnected) {
-      const { serverReason } = event.payload as WebsocketDisconnectedPayload
-
-      if (this.editorInvoker) {
-        void this.editorInvoker.performClosingCeremony()
-        void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Disconnected)
-      }
-
-      if (serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
-        void this.reloadIfCommitIdMismatch()
-      }
-    }
-
-    if (event.type === WebsocketConnectionEvent.Connected) {
-      this.beginInitialSyncTimer()
-
-      if (this.initialConnectionTimer) {
-        clearTimeout(this.initialConnectionTimer)
-      }
-
-      /**
-       * @TODO Remove this timeout DRVDOC-240
-       */
-      setTimeout(() => {
-        if (!this.keys) {
-          throw new Error('Keys not initialized')
-        }
-        const requestPresenceMessage = CreateClientEventMessage({
-          type: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState,
-          content: stringToUint8Array(JSON.stringify(true)),
-          authorAddress: this.keys.userOwnAddress,
-          timestamp: Date.now(),
-          version: ClientEventVersion.V1,
-        })
-
-        this.websocketService.sendMessageToDocument(
-          this.nodeMeta,
-          requestPresenceMessage,
-          'RequestPresenceState on WS open',
-        )
-      }, 250)
-
-      if (!this.editorInvoker) {
-        throw new Error('Editor invoker not initialized')
-      }
-
-      void this.editorInvoker.performOpeningCeremony()
-      void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connected)
-    }
-
-    if (event.type === WebsocketConnectionEvent.Connecting) {
-      if (this.editorInvoker) {
-        this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connecting).catch(console.error)
-      }
-    }
-
-    if (event.type === WebsocketConnectionEvent.Message) {
+      this.handleWebsocketDisconnectedEvent(event.payload as WebsocketDisconnectedPayload)
+    } else if (event.type === WebsocketConnectionEvent.Connected) {
+      this.handleWebsocketConnectedEvent()
+    } else if (event.type === WebsocketConnectionEvent.Connecting) {
+      this.handleWebsocketConnectingEvent()
+    } else if (event.type === WebsocketConnectionEvent.Message) {
       const { message } = event.payload as WebsocketMessagePayload
       void this.handleConnectionMessage(message)
     }
@@ -499,7 +485,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     for (const event of events) {
       const type = EventType.create(event.type)
 
-      this.logger.debug('Handling event from RTS:', EventTypeEnum[event.type], event.content)
+      this.logger.debug('Handling event from RTS:', EventTypeEnum[event.type])
 
       switch (type.value) {
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
@@ -521,11 +507,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
           }
           break
         }
-        case EventTypeEnum.PresenceChangeBlurredDocument:
-        case EventTypeEnum.ClientHasDetectedAPresenceChange:
-        case EventTypeEnum.ClientIsBroadcastingItsPresenceState:
-        case EventTypeEnum.PresenceChangeEnteredDocument:
-        case EventTypeEnum.PresenceChangeExitedDocument: {
+        case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
           const decrypted = await decryptPayload(event)
           if (decrypted) {
             void editorInvoker.receiveMessage({
@@ -548,7 +530,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   private async handleDocumentUpdatesMessage(message: ServerMessageWithDocumentUpdates, keys: DocumentKeys) {
-    this.logger.debug('Received message with document updates:', message)
+    this.logger.debug('Received message with document updates')
 
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
