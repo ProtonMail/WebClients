@@ -99,13 +99,13 @@ export function Editor({
         {!isViewOnly && <Toolbar />}
         <RichTextPlugin
           contentEditable={
-            <div
-              className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]"
-              style={{
-                fontFamily: DefaultFont.value,
-              }}
-            >
-              <ContentEditable className="DocumentEditor" />
+            <div className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]">
+              <ContentEditable
+                className="DocumentEditor"
+                style={{
+                  fontFamily: DefaultFont.value,
+                }}
+              />
             </div>
           }
           placeholder={null}

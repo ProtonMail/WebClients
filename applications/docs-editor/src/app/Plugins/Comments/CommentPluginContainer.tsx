@@ -16,6 +16,7 @@ import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
 import useLexicalEditable from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { CommentsProvider } from './CommentsContext'
 
 export default function CommentPlugin({
   controller,
@@ -324,13 +325,20 @@ export default function CommentPlugin({
   const containerElement = editor.getRootElement()?.parentElement
 
   return (
-    <>
+    <CommentsProvider
+      value={{
+        username,
+        controller,
+        removeMarkNode,
+        activeIDs,
+        markNodeMap,
+      }}
+    >
       {showCommentInput &&
         createPortal(
           <CommentInputBox
             editor={editor}
             cancelAddComment={cancelAddComment}
-            controller={controller}
             setShowCommentInput={setShowCommentInput}
           />,
           containerElement || document.body,
@@ -343,19 +351,7 @@ export default function CommentPlugin({
           <FloatingAddCommentButton anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
           containerElement || document.body,
         )}
-      {showComments && (
-        <CommentsPanel
-          username={username}
-          threads={threads}
-          activeIDs={activeIDs}
-          markNodeMap={markNodeMap}
-          controller={controller}
-          setShowComments={setShowComments}
-          resolveMarkNode={resolveMarkNode}
-          unresolveMarkNode={unresolveMarkNode}
-          removeMarkNode={removeMarkNode}
-        />
-      )}
-    </>
+      {showComments && <CommentsPanel threads={threads} setShowComments={setShowComments} />}
+    </CommentsProvider>
   )
 }

@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import {
   DropdownMenu,
   DropdownMenuButton,
   Icon,
   SimpleDropdown,
+  ToolbarButton,
   useConfirmActionModal,
 } from '@proton/components/components'
 import clsx from '@proton/utils/clsx'
@@ -13,31 +14,24 @@ import { CommentViewer } from './CommentEditor'
 import { CommentInterface, CommentThreadInterface, CommentThreadState } from '@proton/docs-shared'
 import { Button } from '@proton/atoms'
 import { CommentsComposer } from './CommentsComposer'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { c } from 'ttag'
+import { UserAvatar } from '../../Components/UserAvatar'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { useCommentsContext } from './CommentsContext'
 
 export function CommentsPanelListComment({
   comment,
   thread,
-  controller,
   isFirstComment,
-  resolveMarkNode,
-  unresolveMarkNode,
-  removeMarkNode,
   setIsDeletingThread,
-  username,
 }: {
-  username: string
   comment: CommentInterface
   thread: CommentThreadInterface
-  controller: EditorRequiresClientMethods
   isFirstComment: boolean
-  resolveMarkNode: (id: string) => void
-  unresolveMarkNode: (id: string) => void
-  removeMarkNode: (id: string) => void
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
+  const { username, controller, removeMarkNode } = useCommentsContext()
+
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
   const [isDeleting, setIsDeleting] = useState(false)
@@ -87,19 +81,28 @@ export function CommentsPanelListComment({
 
   const isAuthorCurrentUser = comment.author === username
 
+  const name = useMemo(() => {
+    return comment.author.split('@')[0]
+  }, [comment.author])
+
   const canShowOptions =
     isAuthorCurrentUser && !comment.isPlaceholder && !thread.isPlaceholder && !isDeleting && !isEditing
 
   const isThreadActive = thread.state === CommentThreadState.Active
+
+  const cancelEditing = useCallback(() => {
+    setIsEditing(false)
+  }, [])
 
   return (
     <>
       {confirmModal}
       <li className={clsx('group/comment mb-3 text-sm', comment.isPlaceholder || isDeleting ? 'opacity-50' : '')}>
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
+          <UserAvatar name={comment.author} className="mr-1 flex-shrink-0" />
           <div className="mr-auto flex flex-col overflow-hidden">
-            <span className="mb-1 w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
-              {comment.author || 'Author'}
+            <span className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize">
+              {name}
             </span>
             <span className="select-none text-xs opacity-50">
               <CommentTime createTime={comment.createTime} />
@@ -108,18 +111,6 @@ export function CommentsPanelListComment({
           </div>
           {canShowOptions && (
             <>
-              {isFirstComment && isThreadActive && (
-                <Button
-                  shape="ghost"
-                  size="small"
-                  icon
-                  onClick={() => {
-                    controller.resolveThread(thread.id).catch(sendErrorMessage)
-                  }}
-                >
-                  <Icon size={4.5} name="checkmark-circle" alt="Resolve thread" />
-                </Button>
-              )}
               <SimpleDropdown
                 as={Button}
                 shape="ghost"
@@ -136,7 +127,19 @@ export function CommentsPanelListComment({
                         setIsEditing(true)
                       }}
                     >
-                      {c('Action').t`Edit comment`}
+                      <Icon name="pencil" size={4.5} />
+                      {c('Action').t`Edit`}
+                    </DropdownMenuButton>
+                  )}
+                  {isFirstComment && isThreadActive && (
+                    <DropdownMenuButton
+                      className="flex items-center gap-3 text-left text-sm"
+                      onClick={() => {
+                        controller.resolveThread(thread.id).catch(sendErrorMessage)
+                      }}
+                    >
+                      <Icon name="checkmark-circle" size={4.5} />
+                      {c('Action').t`Resolve`}
                     </DropdownMenuButton>
                   )}
                   {isFirstComment && !isThreadActive && (
@@ -153,6 +156,7 @@ export function CommentsPanelListComment({
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={isFirstComment ? deleteThread : deleteComment}
                   >
+                    <Icon name="trash" size={4.5} />
                     {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
                   </DropdownMenuButton>
                 </DropdownMenu>
@@ -181,7 +185,24 @@ export function CommentsPanelListComment({
             onBlur={() => {
               void controller.stoppedTypingInThread(thread.id)
             }}
-            onCancel={() => setIsEditing(false)}
+            onCancel={cancelEditing}
+            buttons={(canSubmit, submitComment) => (
+              <>
+                <ToolbarButton
+                  className="rounded p-1"
+                  title={c('Action').t`Cancel`}
+                  icon={<Icon name="cross-circle-filled" size={4.5} />}
+                  onClick={cancelEditing}
+                />
+                <ToolbarButton
+                  className="rounded p-1"
+                  title={c('Action').t`Save`}
+                  icon={<Icon name="checkmark-circle-filled" size={4.5} className="fill-[--primary]" />}
+                  disabled={!canSubmit}
+                  onClick={submitComment}
+                />
+              </>
+            )}
           />
         ) : (
           <CommentViewer key={comment.content} content={comment.content} className="leading-relaxed" />
