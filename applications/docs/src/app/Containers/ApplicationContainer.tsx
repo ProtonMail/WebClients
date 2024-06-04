@@ -11,6 +11,7 @@ import { DocumentConverter } from '../Components/DocumentConverter'
 import { useDriveCompat, DocumentAction, DriveCompat } from '@proton/drive-store'
 import { FileToDocConversionResult } from '@proton/docs-core'
 import { FileToDocPendingConversion } from '@proton/docs-shared'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 function ApplicationContainer() {
   const api = useApi()
@@ -171,13 +172,16 @@ function Content({
     return (
       <div className="flex h-full w-full flex-col items-center justify-center gap-4">
         <CircleLoader size="large" />
-        <div className="text-center">Creating new document...</div>
+        <div className="text-center">{c('Info').t`Creating new document...`}</div>
       </div>
     )
   }
 
   if (!openAction || openAction.mode === 'create') {
-    return <div className="m-auto">No document supplied in URL. Return to Drive and select a document.</div>
+    return (
+      <div className="m-auto">{c('Info')
+        .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
+    )
   }
 
   const lookup = {
