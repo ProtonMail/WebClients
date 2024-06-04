@@ -6034,17 +6034,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -8453,6 +8442,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11986,6 +11986,12 @@
       "Avoid overly compressed images.": [
         "Undvik alltför komprimerade bilder."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Se till att din logga har utrymme runt sig."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Välj en PNG-bild som är 128x128 pixlar för tydlighet."
+      ],
       "Tips on choosing a good logo": [
         "Tips på att välja en bra logga"
       ],
@@ -12949,6 +12955,9 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "SCIM bas URL"
+      ],
       "SCIM token": [
         "SCIM-token"
       ]
@@ -13934,6 +13943,10 @@
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkluderar kalenderdelning"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag kvar",
+        "${ dayDiff } dagar kvar"
       ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkluderar versionshistorik"

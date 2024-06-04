@@ -493,6 +493,9 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "Forgot recovery method?": [
+        "Oblideu el mètode de recuperació?"
+      ],
       "Generate": [
         "Genera"
       ],
@@ -1338,6 +1341,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Navegueu pel web de manera privada i bloquegeu els anuncis"
+      ],
+      "Create and collaborate on documents securely": [
+        "Creï i col·labori en documents de manera segura"
       ],
       "Keep your schedule private": [
         "Manteniu la vostra agenda privada"
@@ -3330,7 +3336,7 @@
         "Característiques que falten"
       ],
       "Other reason (please comment)": [
-        "Un altre motiu (comenteu)"
+        "Una altra raó (comenteu)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -3842,7 +3848,7 @@
         "Quantitat per sobre del màxim."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Import inferior al mínim (${ minimumAmount })."
+        "L'import és inferior al mínim (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -5896,17 +5902,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -7773,7 +7768,7 @@
         "Historial de versions"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat al porta-retalls"
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -8130,6 +8125,17 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10559,7 +10565,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Comprovacions periòdiques de la seguretat del seu compte. L'avisem si té contrasenyes febles o reutilitzades que cal actualitzar."
+        "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -10685,7 +10691,7 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escanegem la web fosca per comprovar si les seves adreces o àlies de ${ BRAND_NAME } s'han filtrat i l'avisem immediatament si trobem alguna cosa."
+        "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
     "new_plans: feature info": {
@@ -13385,6 +13391,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
