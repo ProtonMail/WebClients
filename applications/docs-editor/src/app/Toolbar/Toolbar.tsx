@@ -69,6 +69,7 @@ import CheckListIcon from '../Icons/CheckListIcon'
 import clsx from '@proton/utils/clsx'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { DefaultFont, FontOptions } from '../Shared/Fonts'
+import { sendErrorMessage } from '../Utils/errorMessage'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -704,8 +705,8 @@ export default function DocumentEditorToolbar() {
             try {
               const file = event.target.files[0]
               activeEditor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
-            } catch (error) {
-              console.error(error)
+            } catch (error: unknown) {
+              sendErrorMessage(error)
             }
           }}
         />

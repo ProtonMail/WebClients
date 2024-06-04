@@ -7,6 +7,7 @@ import { DocControllerInterface } from '@proton/docs-core'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 const DocsHeader = () => {
   const application = useApplication()
@@ -17,7 +18,7 @@ const DocsHeader = () => {
       onSuccess: () => {
         setController(application.docLoader.getDocController())
       },
-      onError: console.error,
+      onError: traceError,
     })
   }, [application.docLoader])
 

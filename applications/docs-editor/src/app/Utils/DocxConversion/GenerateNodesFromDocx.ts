@@ -14,6 +14,7 @@ import {
 } from 'lexical'
 
 import { $createImageNode } from '../../Plugins/Image/ImageNode'
+import { sendErrorMessage } from '../errorMessage'
 
 type ParsedNode = (
   | {
@@ -409,6 +410,6 @@ export async function $importNodesFromDocx(editor: LexicalEditor, docx: Blob | A
         )
       })
       .then(resolve)
-      .catch(console.error)
+      .catch(sendErrorMessage)
   })
 }

@@ -15,6 +15,7 @@ import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
 import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 export default function CommentPlugin({
   controller,
@@ -29,7 +30,7 @@ export default function CommentPlugin({
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
 
   useEffect(() => {
-    controller.getAllThreads().then(setThreads).catch(console.error)
+    controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
   }, [controller])
 
   const markNodeMap = useMemo<Map<string, Set<NodeKey>>>(() => {
@@ -299,7 +300,7 @@ export default function CommentPlugin({
   useEffect(() => {
     return mergeRegister(
       eventBus.addEventCallback(() => {
-        controller.getAllThreads().then(setThreads).catch(console.error)
+        controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
       }, CommentsEvent.CommentsChanged),
       eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data

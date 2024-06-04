@@ -15,6 +15,7 @@ import { Icon } from '@proton/components'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
 import { c, msgid } from 'ttag'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 export function CommentsPanelListThread({
   editor,
@@ -43,12 +44,12 @@ export function CommentsPanelListThread({
   const [typers, setTypers] = useState<string[]>([])
 
   useEffect(() => {
-    controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(console.error)
+    controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
     return eventBus.addEventCallback((data) => {
       const eventData = data as LiveCommentsTypeStatusChangeData
       const { threadId } = eventData
       if (threadId === thread.id) {
-        controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(console.error)
+        controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
       }
     }, LiveCommentsEvent.TypingStatusChange)
   }, [controller, eventBus, thread.id])
@@ -154,7 +155,7 @@ export function CommentsPanelListThread({
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
             onSubmit={(content) => {
-              controller.createComment(content, thread.id).catch(console.error)
+              controller.createComment(content, thread.id).catch(sendErrorMessage)
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
@@ -174,7 +175,7 @@ export function CommentsPanelListThread({
           <button
             className="rounded border border-[--border-weak] px-2.5 py-1.5 text-sm hover:bg-[--background-weak] disabled:opacity-50"
             onClick={() => {
-              controller.unresolveThread(thread.id).catch(console.error)
+              controller.unresolveThread(thread.id).catch(sendErrorMessage)
             }}
           >
             {c('Action').t`Re-open thread`}
