@@ -580,19 +580,7 @@ export default function DocumentEditorToolbar() {
           disabled={!isEditable}
           active={isLink}
           onClick={() => {
-            if (!isLink) {
-              const link = prompt(c('Action').t`Enter the URL`)
-              if (!link) {
-                return
-              }
-              activeEditor.dispatchCommand(EDIT_LINK_COMMAND, link)
-            } else {
-              const confirmed = confirm(c('Action').t`Do you want to remove the link?`)
-              if (!confirmed) {
-                return
-              }
-              activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
-            }
+            activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
           }}
         >
           <Icon name="link" className="h-4 w-4 fill-current" />
