@@ -75,8 +75,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    console.warn('Calling connect on socket')
-
     const urlAndTokenResult = await this.callbacks.getUrlAndToken()
     if (urlAndTokenResult.isFailed()) {
       this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
@@ -176,7 +174,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       messageWrapper.eventsMessage = message
     }
 
-    this.logger.debug('Broadcasting message from source:', source, messageWrapper)
+    this.logger.debug('Broadcasting message from source:', source)
 
     this.socket.send(messageWrapper.serializeBinary())
   }
