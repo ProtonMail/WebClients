@@ -2495,9 +2495,6 @@
       "No valid address found": [
         "未找到有效地址"
       ],
-      "Not a ${ BRAND_NAME } account": [
-        "不是 ${ BRAND_NAME } 账户"
-      ],
       "Not a valid number": [
         "无效号码"
       ],
@@ -7532,6 +7529,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩余 ${ dayDiff } 天"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],

@@ -1192,6 +1192,11 @@
         "Continueu amb la vostra subscripció"
       ]
     },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Reactiva la subscripció"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuari",
@@ -2269,7 +2274,7 @@
         "Característiques que falten"
       ],
       "Other reason (please comment)": [
-        "Un altre motiu (comenteu)"
+        "Una altra raó (comenteu)"
       ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
@@ -2446,7 +2451,7 @@
         "Quantitat per sobre del màxim."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Import inferior al mínim (${ minimumAmount })."
+        "L'import és inferior al mínim (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "S'ha produït un error en carregar les opcions de l'àlies"
@@ -2615,9 +2620,6 @@
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "No és un compte de ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -5012,7 +5014,7 @@
         "S'ha restaurat la versió"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat al porta-retalls"
+        "El número de versió s'ha copiat correctament al porta-retalls"
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -5650,6 +5652,12 @@
       "Main": [
         "Principal"
       ],
+      "Make editor": [
+        "Estableix com a editor"
+      ],
+      "Make viewer": [
+        "Estableix com a visualitzador"
+      ],
       "Malware": [
         "Programari maliciós"
       ],
@@ -5751,9 +5759,6 @@
       ],
       "Region": [
         "Regió"
-      ],
-      "Remove access": [
-        "Esborra l'accés"
       ],
       "Replace existing file": [
         "Substitueix el fitxer existent"
@@ -6607,7 +6612,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Comprovacions periòdiques de la seguretat del seu compte. L'avisem si té contrasenyes febles o reutilitzades que cal actualitzar."
+        "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -6723,7 +6728,7 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escanegem la web fosca per comprovar si les seves adreces o àlies de ${ BRAND_NAME } s'han filtrat i l'avisem immediatament si trobem alguna cosa."
+        "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
     "new_plans: feature info": {
@@ -7278,9 +7283,6 @@
       ],
       "Share invitation accepted successfully": [
         "S'ha acceptat la invitació per a compartir"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "No s'ha trobat l'ID d'invitació per a compartir. Comproveu l'enllaç"
       ],
       "Stopping to share this item has failed": [
         "No s'ha pogut deixar de compartir aquest element"
@@ -8191,6 +8193,14 @@
         "Espereu, s'està cancel·lant la vostra subscripció"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Acceptat"
+      ],
+      "Pending": [
+        "Pendent"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
@@ -8342,6 +8352,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],

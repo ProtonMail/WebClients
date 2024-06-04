@@ -474,6 +474,9 @@
       "Manage link": [
         "Hantera länk"
       ],
+      "Manage share": [
+        "Hantera delning"
+      ],
       "Mark as resolved": [
         "Markera som löst"
       ],
@@ -2542,6 +2545,15 @@
       "External accounts are not supported yet": [
         "Externa konton stöds inte ännu"
       ],
+      "External invitations are not available yet.": [
+        "Externa inbjudningar är inte tillgängliga ännu."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Externa inbjudningar är tillfälligt inaktiverade."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Externa inbjudningar är tillfälligt inaktiverade. Försök igen senare"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
       ],
@@ -2638,9 +2650,6 @@
       ],
       "No valid address found": [
         "Ingen giltig adress hittades"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Inte ett ${ BRAND_NAME }-konto"
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
@@ -2757,6 +2766,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Mappnamnet är för långt. Välj ett annat namn."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Inbjudan kan inte slutföras ännu. Försök igen senare."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Inbjudan finns inte längre"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnamnet är ogiltigt. Välj ett annat namn."
       ],
@@ -2822,6 +2837,9 @@
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Uppladdning för denna mapp är tillfälligt inaktiverad"
       ],
       "Username must begin with a letter or digit": [
         "Användarnamn måste börja med en bokstav eller siffra"
@@ -5704,6 +5722,12 @@
       "Main": [
         "Huvud"
       ],
+      "Make editor": [
+        "Gör till redaktör"
+      ],
+      "Make viewer": [
+        "Gör till läsare"
+      ],
       "Malware": [
         "Skadlig kod"
       ],
@@ -5808,9 +5832,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Remove access": [
-        "Ta bort åtkomst"
       ],
       "Replace existing file": [
         "Ersätt befintlig fil"
@@ -7364,6 +7385,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alla objekt kommer snart att tas bort permanent från papperskorgen"
       ],
+      "An invitation has been sent": [
+        "En inbjudan har skickats"
+      ],
       "Cannot load link": [
         "Kan inte ladda länk"
       ],
@@ -7391,8 +7415,14 @@
       "Encrypted search activated": [
         "Krypterad sökning aktiverad"
       ],
+      "External invitation removed from the share": [
+        "Extern inbjudan borttagen från delningen"
+      ],
       "Failed to accept share invitation": [
         "Misslyckades att acceptera delningsinbjudan"
+      ],
+      "Failed to convert external invitation": [
+        "Misslyckades att konvertera extern inbjudan"
       ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
@@ -7448,9 +7478,6 @@
       ],
       "Share invitation accepted successfully": [
         "Delningsinbjudan accepterades"
-      ],
-      "Share invitation ID was not found. Please check the link": [
-        "Delningens inbjudnings-ID hittades inte. Kontrollera länken"
       ],
       "Stopping to share this item has failed": [
         "Misslyckades att stoppa delning till detta objekt"
@@ -8368,6 +8395,14 @@
         "Avbryter din prenumeration, vänta"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Accepterad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Skaffa mer lagringsutrymme"
@@ -8546,6 +8581,10 @@
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inkluderar kalenderdelning"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag kvar",
+        "${ dayDiff } dagar kvar"
       ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } inkluderar versionshistorik"
@@ -9687,6 +9726,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Vi har skickat dem en inbjudan att komma åt objektet."
       ],
       "You do not have any contacts to export": [
         "Du har inga kontakter att exportera"

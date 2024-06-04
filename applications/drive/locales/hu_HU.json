@@ -2293,9 +2293,6 @@
       "No valid address found": [
         "Nincs érvényes cím"
       ],
-      "Not a ${ BRAND_NAME } account": [
-        "Nem egy ${ BRAND_NAME } fiók"
-      ],
       "Not a valid number": [
         "Érvénytelen szám"
       ],
@@ -3918,6 +3915,9 @@
       "It’s easy and secure": [
         "Egyszerű és biztonságos"
       ],
+      "JCB logo": [
+        "JCB logó"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
@@ -4062,6 +4062,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
+      ],
+      "People with access": [
+        "Hozzáféréssel rendelkezők"
       ],
       "Permanently delete all files in your locked drive": [
         "A zárolt tárhelyen található összes fájl végleges törlése"
@@ -6911,6 +6914,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],

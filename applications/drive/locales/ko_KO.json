@@ -1188,6 +1188,11 @@
         "내 구독 유지하기"
       ]
     },
+    "Cancellation reminder": {
+      "Your subscription is ending soon": [
+        "구독이 곧 끝나게 됩니다"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 사용자"
@@ -2278,6 +2283,11 @@
         "VPN이 너무 느려서"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "개선을 도와주세요"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "설명:\n${ eventDescription }"
@@ -2604,9 +2614,6 @@
       ],
       "No valid address found": [
         "유효한 주소를 찾을 수 없습니다"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정이 아님"
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
@@ -5425,7 +5432,7 @@
         "드라이브를 삭제할까요?"
       ],
       "Delete recovery-related information.": [
-        "복구 관련 정보를 삭제해요."
+        "복구 관련 정보를 삭제합니다."
       ],
       "Deleted": [
         "삭제됨"
@@ -5688,9 +5695,6 @@
       "Region": [
         "시/도"
       ],
-      "Remove access": [
-        "접근 제거"
-      ],
       "Replace existing file": [
         "기존 파일 대체"
       ],
@@ -5811,6 +5815,9 @@
       "What happened?": [
         "무슨 일인가요?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
+      ],
       "Wonderful": [
         "최고"
       ],
@@ -5923,7 +5930,7 @@
         "휴지통"
       ],
       "What’s this?": [
-        "이게 무엇인가요?"
+        "복구 관련 정보란?"
       ]
     },
     "Loading info": {
@@ -7232,9 +7239,6 @@
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
       ],
-      "Share invitation ID was not found. Please check the link": [
-        "초대장 공유 ID를 찾을 수 없음. 링크를 확인하십시오."
-      ],
       "Stopping to share this item has failed": [
         "이 항목의 공유 정지가 실패했습니다."
       ],
@@ -7547,6 +7551,9 @@
       ],
       "Set date": [
         "날짜 설정"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
@@ -8299,6 +8306,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff }일 남음"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }과 버전 히스토리 기능"
       ],
@@ -8346,6 +8356,9 @@
       ],
       "Add any new files": [
         "새로운 파일을 추가할 수 없게 됩니다"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
       "Back up photos from your devices": [
         "기기에서 사진을 백업할 수 없게 됩니다"

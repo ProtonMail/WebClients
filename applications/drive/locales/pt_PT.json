@@ -14,7 +14,7 @@
     },
     "Account Settings - Info": {
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar meididas. ${ link }"
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ]
     },
     "Action": {
@@ -455,6 +455,9 @@
       ],
       "Manage link": [
         "Gerir a ligação"
+      ],
+      "Manage share": [
+        "Gerir a partilha"
       ],
       "Mark as resolved": [
         "Marcar como resolvida"
@@ -2204,6 +2207,11 @@
         "A VPN está demasiada lenta."
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -2499,9 +2507,6 @@
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
-      ],
-      "Not a ${ BRAND_NAME } account": [
-        "Não é uma conta do ${ BRAND_NAME }."
       ],
       "Not a valid number": [
         "O número não é válido."
@@ -4133,7 +4138,7 @@
         "Obtenha a aplicação de ‘desktop’ para sincronizar ficheiros a partir do seu computador."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Vá a «Os meus ficheiros» e envie alguns primeiro."
+        "Vá a «Meus ficheiros» e envie alguns primeiro."
       ],
       "here": [
         "aqui"
@@ -4209,7 +4214,7 @@
         "Ligação à Internet reposta."
       ],
       "Invite link copied": [
-        "O link do convite foi copiado."
+        "A ligação do convite foi copiado."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece que tentou recentemente enviar ${ uploadName }. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em curso, a substituição do ficheiro cancelará o envio em curso."
@@ -4388,6 +4393,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
+      ],
+      "People with access": [
+        "Pessoas com acesso"
       ],
       "Permanently delete all files in your locked drive": [
         "Elimine permanentemente todos os ficheiros da sua unidade bloqueada."
@@ -4574,7 +4582,7 @@
         "Partilhe ficheiros com ligações"
       ],
       "Share via link settings": [
-        "Partilhar através das definições do link"
+        "Partilhar através das definições da ligação"
       ],
       "Shareable link for ${ boldNameText }": [
         "Ligação partilhável para ${ boldNameText }"
@@ -5449,6 +5457,12 @@
       "Main": [
         "Principal"
       ],
+      "Make editor": [
+        "Definir como editor"
+      ],
+      "Make viewer": [
+        "Definir como leitor"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -5550,9 +5564,6 @@
       ],
       "Region": [
         "Região"
-      ],
-      "Remove access": [
-        "Remover o acesso"
       ],
       "Replace existing file": [
         "Substituir o ficheiro existente"
@@ -5777,7 +5788,7 @@
         "Partilhado comigo"
       ],
       "stay safer online": [
-        "mantenha-se mais seguro conectado"
+        "fique mais seguro online"
       ],
       "Trash": [
         "Lixeira"
@@ -5961,6 +5972,9 @@
       "MP3 audio": [
         "Áudio MP3"
       ],
+      "MPEG transport stream": [
+        "Fluxo de transporte MPEG"
+      ],
       "MPEG Video": [
         "Vídeo MPEG"
       ],
@@ -6002,6 +6016,9 @@
       ],
       "Video file": [
         "Ficheiro de vídeo"
+      ],
+      "Waveform Audio Format": [
+        "Formato de áudio Waveform"
       ],
       "WEBM audio": [
         "Áudio WEBM"
@@ -6234,7 +6251,7 @@
         "Monitoramento de violações de dados (em breve)"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6492,7 +6509,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -7747,6 +7764,14 @@
         "Agora pode pesquisar facilmente ficheiros na unidade, mantendo os seus dados seguros."
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Aceitado"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Obter mais espaço de armazenamento"
@@ -7874,6 +7899,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
