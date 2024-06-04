@@ -11,6 +11,7 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { DocControllerInterface } from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
+import { c } from 'ttag'
 
 const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
   const [title, setTitle] = useState<string>('Loading document title...')
@@ -84,22 +85,22 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
             }}
           >
             <Icon name="clock-rotate-left" className="color-weak mr-2" />
-            History
+            {c('Action').t`History`}
           </DropdownMenuButton>
 
           <DropdownMenuButton className="flex items-center text-left" onClick={onRename}>
             <Icon name="pencil" className="color-weak mr-2" />
-            Rename doc
+            {c('Action').t`Rename document`}
           </DropdownMenuButton>
 
           <DropdownMenuButton className="flex items-center text-left" onClick={onDuplicate}>
             <Icon name="squares" className="color-weak mr-2" />
-            Duplicate
+            {c('Action').t`Duplicate`}
           </DropdownMenuButton>
 
           <DropdownMenuButton className="flex items-center text-left" onClick={onNewDocument}>
             <Icon name="folder-plus" className="color-weak mr-2" />
-            New Document
+            {c('Action').t`New document`}
           </DropdownMenuButton>
 
           {/* <DropdownMenuButton

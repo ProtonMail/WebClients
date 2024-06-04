@@ -21,6 +21,7 @@ import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
 import { NodeMeta } from '@proton/drive-store'
+import { c } from 'ttag'
 
 type Props = {
   lookup: NodeMeta
@@ -197,7 +198,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
       {!docOrchestrator && (
         <div className="flex h-full w-full flex-col items-center justify-center gap-4">
           <CircleLoader size="large" />
-          <div className="text-center">Loading document...</div>
+          <div className="text-center">{c('Info').t`Loading document...`}</div>
         </div>
       )}
 
