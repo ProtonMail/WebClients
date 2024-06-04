@@ -46,4 +46,8 @@ export class DocsAwareness extends Awareness {
   getStates(): Map<number, DocsUserState> {
     return super.getStates() as Map<number, DocsUserState>
   }
+
+  getClientIds(): number[] {
+    return Array.from(this.getStates().keys())
+  }
 }
