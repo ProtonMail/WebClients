@@ -1,3 +1,5 @@
+import { c } from 'ttag'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { EncryptMessage } from '../UseCase/EncryptMessage'
 import { LoggerInterface } from '@standardnotes/utils'
 import {
@@ -182,7 +184,21 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private async encryptMessage(message: DocumentUpdate | Event): Promise<ArrayBuffer> {
     const content = message instanceof DocumentUpdate ? message.encryptedContent : message.content
     const result = await this._encryptMessage.execute(content, message, this.keys)
+
     if (result.isFailed()) {
+      const message = c('Error')
+        .t`A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.`
+
+      this.callbacks.onEncryptionError(message)
+
+      traceError('Unable to encrypt message', {
+        extra: {
+          errorInfo: {
+            message: result.getError(),
+          },
+        },
+      })
+
       throw new Error(`Unable to encrypt message: ${result.getError()}`)
     }
 
