@@ -98,9 +98,12 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                 text: (() => {
                     switch (mode) {
                         case LockMode.SESSION:
-                            return error instanceof Error && error.name === 'InactiveSession'
-                                ? c('Error').t`Too many failed attempts. Please sign in again.`
-                                : c('Error').t`Wrong PIN code. Try again.`;
+                            if (error instanceof Error) {
+                                if (error.name === 'LockedSession') return c('Error').t`Wrong PIN code. Try again.`;
+                                if (error.name === 'InactiveSession') {
+                                    return c('Error').t`Too many failed attempts. Please sign in again.`;
+                                }
+                            }
                         default:
                             return c('Error').t`Unlock failure`;
                     }
