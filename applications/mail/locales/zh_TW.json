@@ -5872,6 +5872,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "JCB logo": [
+        "JCB 符號"
+      ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "加入${ PROTON_SENTINEL_NAME }方案以堤升至最高帳號安全及支援。"
       ],
@@ -9292,6 +9295,9 @@
       "MM/YY": [
         "MM/YY"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
@@ -9674,6 +9680,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
       ],
@@ -10409,6 +10418,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],

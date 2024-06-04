@@ -45,7 +45,7 @@
     },
     "Account Settings - Info": {
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar meididas. ${ link }"
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ]
     },
     "Action": {
@@ -1064,13 +1064,13 @@
         "Atualize para ativar ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to view all": [
-        "Melhorar a sua subscrição para ver tudo"
+        "Atualize para ver tudo"
       ],
       "Upgrade your plan": [
         "Atualize o seu plano"
       ],
       "Upload": [
-        "Carregar"
+        "Enviar"
       ],
       "Upload logo": [
         "Enviar o logo"
@@ -3241,6 +3241,11 @@
         "A VPN está demasiada lenta."
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb para Debian/Ubuntu"
@@ -4053,6 +4058,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
+      ],
+      "Unable to upload file": [
+        "Não é possível enviar o ficheiro."
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contactos"
@@ -5723,17 +5731,6 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -6692,7 +6689,7 @@
         "Tipo de ligação"
       ],
       "Live chat": [
-        "Live chat"
+        "Chat ao vivo"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "O conteúdo carregado está protegido pelo nosso proxy quando a proteção do rastreador é ativada."
@@ -7906,6 +7903,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8034,7 +8042,7 @@
         "Gerar a chave"
       ],
       "Key successfully generated.": [
-        "A chave foi gerada."
+        "Chave gerada com sucesso"
       ]
     },
     "Key state badge": {
@@ -9040,7 +9048,7 @@
         "Enviar em"
       ],
       "Show others when I'm busy": [
-        "Mostrar quando estou ocupado para outros"
+        "Mostrar aos outros quando estou ocupado"
       ],
       "Show secondary time zone": [
         "Mostrar fuso horário secundário"
@@ -9436,7 +9444,7 @@
         "aqui"
       ],
       "How does monitoring work?": [
-        "Como funciona o monitoramento?"
+        "Como funciona a monitorização?"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -9481,7 +9489,7 @@
         "Iniciar sessão"
       ],
       "stay safer online": [
-        "mantenha-se mais seguro conectado"
+        "fique mais seguro online"
       ],
       "switch account": [
         "trocar de conta"
@@ -10179,7 +10187,7 @@
         "Servidores e IP dedicados"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -10474,7 +10482,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -11110,7 +11118,7 @@
         "Ligado"
       ],
       "Organization only": [
-        "Apenas organização"
+        "Apenas a organização"
       ],
       "Permanent": [
         "Permanente"
@@ -11143,7 +11151,7 @@
         "Selecione quem pode aceder..."
       ],
       "Send to all": [
-        "Enviar à todos"
+        "Enviar a todos"
       ],
       "Setup incomplete": [
         "A configuração está incompleta."
@@ -11600,13 +11608,13 @@
         "Sem permissão"
       ],
       "Organization only": [
-        "Apenas organização"
+        "Apenas a organização"
       ],
       "Receive from all": [
         "Receber de todos"
       ],
       "Send to all": [
-        "Enviar à todos"
+        "Enviar a todos"
       ],
       "Setup incomplete": [
         "A configuração está incompleta."
@@ -12829,6 +12837,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
@@ -12879,6 +12891,9 @@
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ],
+      "Reactivate": [
+        "Reativar"
       ],
       "Read the story": [
         "Leia a história"
@@ -14086,6 +14101,9 @@
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
+      ],
       "Phone": [
         "Telefone"
       ],
@@ -14892,6 +14910,9 @@
       "${ n } year": [
         "${ n } ano",
         "${ n } anos"
+      ],
+      "Just ${ price }": [
+        "Apenas ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Experimente ${ upsellPlanName } sem riscos"

@@ -4465,6 +4465,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "JCB logo": [
+        "JCB logo"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
@@ -4690,6 +4693,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
@@ -6376,6 +6382,9 @@
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmatige controle van je accountbeveiliging. We waarschuwen je als je zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
+      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
@@ -6488,6 +6497,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Kluis delen (tot ${ n } persoon)",
         "Kluis delen (tot ${ n } personen)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "We scannen het duistere web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
       ]
     },
     "new_plans: feature info": {
@@ -7204,6 +7216,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } voor ${ months } maanden. U kunt opzeggen wanneer u wilt."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } per maand. U kunt opzeggen wanneer u wilt."
@@ -8183,6 +8198,10 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag over",
+        "${ dayDiff } dagen over"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"

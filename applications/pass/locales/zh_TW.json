@@ -173,6 +173,9 @@
       "Get mobile apps": [
         "取得手機應用程式"
       ],
+      "Get Pass Business": [
+        "取得Pass Business"
+      ],
       "Get Pass Plus": [
         "取得Pass Plus"
       ],
@@ -1842,6 +1845,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
       ],
@@ -1870,8 +1876,20 @@
       "Auto-lock update": [
         "更新自動鎖定"
       ],
+      "Breach detected": [
+        "已偵測到外洩"
+      ],
+      "Breaches": [
+        "外露"
+      ],
+      "Breaches detected for": [
+        "為已偵測到外洩"
+      ],
       "Confirm PIN code": [
         "確認個人識別數字代碼"
+      ],
+      "Confirm your email": [
+        "確認您的電子郵件"
       ],
       "Create a vault": [
         "新增保管庫"
@@ -1888,8 +1906,14 @@
       "Custom addresses": [
         "自訂地址"
       ],
+      "Custom email monitoring": [
+        "自訂電子郵件監控"
+      ],
       "Custom emails": [
         "自訂電子郵件"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監控"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "刪除保管庫${ vaultName }?"
@@ -1951,6 +1975,9 @@
       "Leave vault ?": [
         "離開保管庫 ?"
       ],
+      "Loading breaches...": [
+        "載入外洩..."
+      ],
       "Low disk space": [
         "磁碟空間過低"
       ],
@@ -1975,6 +2002,12 @@
       "Move items?": [
         "移動項目?"
       ],
+      "No excluded items": [
+        "無排除的項目"
+      ],
+      "No inactive 2FAs": [
+        "無啟用的2FAsFAs"
+      ],
       "No items selected": [
         "未選擇任何項目"
       ],
@@ -1993,17 +2026,32 @@
       "Password Health": [
         "密碼健檢"
       ],
+      "Pause monitoring?": [
+        "暫停監控?"
+      ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
       ],
       "Permanently remove all items ?": [
         "永久刪除所有項目嗎?"
       ],
+      "Pinned (${ items.length })": [
+        "地址 (${ items.length })"
+      ],
       "Recommended actions": [
         "建議行動"
       ],
+      "Remove email address?": [
+        "移除電子郵件地址?"
+      ],
+      "Resolved breaches": [
+        "處理外洩"
+      ],
       "Restore this version?": [
         "還原此版本?"
+      ],
+      "Resume monitoring?": [
+        "繼續監控?"
       ],
       "Reused ${ count } time": [
         "接續${ count }時間"
@@ -2021,6 +2069,9 @@
         "設定存取層級"
       ],
       "Set up 2FA for better security": [
+        "為更好安全設定雙重驗證"
+      ],
+      "Set up 2FA for more security": [
         "為更好安全設定雙重驗證"
       ],
       "Settings": [
@@ -2058,6 +2109,9 @@
       ],
       "Want to learn more?": [
         "點擊瞭解更多"
+      ],
+      "Weak password": [
+        "脆弱密碼"
       ],
       "Weak passwords": [
         "強度不足的密碼"
@@ -2137,6 +2191,9 @@
       ],
       "Empty note": [
         "清空備註"
+      ],
+      "Failed to load breaches.": [
+        "載入外洩失敗。"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"

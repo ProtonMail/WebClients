@@ -485,7 +485,7 @@
         "2FA はログインに別のセキュリティ層を追加します。 ${ PASS_APP_NAME } は、2FA コードを保存して自動的に自動入力することで、2FA を簡単にします。"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "電子メール エイリアスは電子メール アドレスのように機能しますが、スパムを減らし、実際の電子メール アドレスと身元を隠します。"
+        "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
       ],
       "Change your passwords": [
         "パスワードを変更してください"
@@ -515,7 +515,7 @@
         "ダークウェブは、アイデンティティなどの盗まれた個人情報が売買されるインターネットの隠れた部分です。"
       ],
       "These items remain at risk": [
-        "これらの品目は依然として危険にさらされています"
+        "これらのアイテムは危険なままです"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "このアカウントは脆弱です。サービスにアクセスしてパスワードを変更してください。"
@@ -731,9 +731,6 @@
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
-      ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "${ PASS_APP_NAME } デスクトップ アプリに早期アクセスするにはアップグレードしてください"
       ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
@@ -2144,7 +2141,7 @@
         "${ BRAND_NAME } アドレス"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } モニター"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "アカウントの保護"
@@ -2213,7 +2210,7 @@
         "PIN を入力してください"
       ],
       "Excluded items": [
-        "除外品目"
+        "除外されたアイテム"
       ],
       "Get Started": [
         "利用開始"

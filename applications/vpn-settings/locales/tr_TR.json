@@ -353,6 +353,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Refresh status": [
+        "Durumu yenile"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -410,6 +413,9 @@
       "Return to sign in": [
         "Oturum açmaya geri dön"
       ],
+      "Review": [
+        "İncele"
+      ],
       "Revoke": [
         "Geçersiz kıl"
       ],
@@ -463,6 +469,9 @@
       ],
       "Send reminder": [
         "Hatırlatıcı gönder"
+      ],
+      "Set catch-all": [
+        "Tümünü toplama adresi yap"
       ],
       "Set new password": [
         "Yeni parola ayarla"
@@ -723,6 +732,17 @@
       ],
       "Secure your communications": [
         "İletişiminizin güvenliğini sağlayın"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Kullanım dışı"
+      ],
+      "Enabled": [
+        "Kullanılıyor"
+      ],
+      "Missing keys": [
+        "Eksik anahtarlar"
       ]
     },
     "bf2023: Action": {
@@ -1914,6 +1934,16 @@
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "Doğrulanmış"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' alt etki alanları genellikle e-posta için kullanılmaz. Bu alan adı değerini kullanmak istediğinize emin misiniz?"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
@@ -2221,8 +2251,17 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Doğrulama başarısız oldu. Lütfen bir saat içinde yeniden deneyin."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Doğrulama kodu yanlış. Lütfen doğrulama kodunu doğru bir şekilde kopyaladığınızdan emin olun ve yeniden deneyin. Değişikliklerin etkili olması 24 saati bulabilir."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
@@ -2829,11 +2868,31 @@
       "Address": [
         "Adres"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Status": [
         "Durum"
       ],
       "Username": [
         "Kullanıcı adı"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Sunucu adı"
+      ],
+      "Priority": [
+        "Öncelik"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "Value / Data": [
+        "Değer / Veri"
+      ],
+      "Value / Data / Points to": [
+        "Değer / Veri / Hedef"
       ]
     },
     "Headline": {
@@ -2883,6 +2942,9 @@
         "${ n } adres",
         "${ n } adres"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
+      ],
       "${ number } city": [
         "${ number } il",
         "${ number } il"
@@ -2897,6 +2959,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: Alıcı platformlardan, yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: Alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } diğer",
@@ -3062,6 +3130,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME } adresindeki özel etki alan adreslerinizle e-posta alabilmeniz için, aşağıdaki iki MX kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklemeniz gerekir. Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
       ],
@@ -3153,12 +3224,21 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM, ${ BRAND_NAME } kaydı, e-postalarınızın şifrelenmiş olarak imzalamasını ve kötü niyetli kişilerin e-postanızı taklit etmesini engeller. Aşağıdaki üç CNAME kaydını DNS bölgenize (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC, göndericinin SPF ve DKIM kayıtlarının etki alanınızdan gelip gelmediğini denetler. Böylece, kötü niyetli kişilerin etki alanınızı taklit etmek için başka bir alanın SPF ve DKIM kayıtlarını kullanması engellenebilir. Bu kayıttaki \"p=\" (ilke), alıcı platformların yetkisiz e-postaları nasıl işleyeceğini belirlemenizi sağlar. Çoğu etki alanı için \"p=quarantine\" ilkesini kullanmanızı öneririz. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
       ],
       "DNS TXT record": [
         "DNS TXT kaydı"
@@ -3174,6 +3254,10 @@
       ],
       "Domain ownership verified.": [
         "Etki alanının sahipliği doğrulanmış."
+      ],
+      "domain used": [
+        "etki alanı kullanıldı",
+        "etki alanı kullanıldı"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Tamam! ${ destination } alıcısına bir kod gönderdik."
@@ -3204,6 +3288,9 @@
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Her etki alanı için yalnızca bir SPF (TXT) kaydı olabilir. Var olan SPF (TXT) kaydını tutmak istiyorsanız var olan kaydınıza ${ spf } ekleyebilirsiniz (${ spfValue } sonrasına ekleyin)."
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -3268,6 +3355,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
       ],
+      "Example: ${ spfExample }": [
+        "Örnek: ${ spfExample }"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -3282,6 +3372,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Tek oturum açma (SAML SSO) kullanan kuruluşların üyeleri için"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
@@ -3319,6 +3412,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "${ MAIL_APP_NAME } üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü toplama e-posta adresi ayarlayabilirsiniz."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
@@ -3345,6 +3441,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile destek uzmanlarımızdan biriyle görüşün."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
@@ -3382,6 +3481,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "JCB logo": [
+        "JCB logosu"
+      ],
       "Keys created": [
         "Anahtarlar oluşturuldu"
       ],
@@ -3417,6 +3519,12 @@
       ],
       "Loading...": [
         "Yükleniyor..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
@@ -3672,6 +3780,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF, etki alanınız için kimlerin e-posta göndermesine izin verildiğini belirtir. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
+      ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Tek oturum açma kullanıcıları (kimlik hizmeti sağlayıcınız tarafından sağlanan) silinecek"
       ],
@@ -3693,6 +3804,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonelik ${ cycle } ayda bir otomatik olarak yenilenir."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
@@ -4176,6 +4290,17 @@
         "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Kuruluşunuzda var olan kullanıcılar için yeni bir adres ekleyin."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Kuruluşunuza yeni bir kullanıcı ve e-posta adresi ekleyin."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Güvenlik nedeniyle ${ domainName } etki alanının sahibi olduğunuzu doğrulamamız gerekiyor. Lütfen aşağıdaki TXT kaydını DNS panonuza ekleyin (özel etki alanınızı kiraladığınız yerde bulunur). Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
@@ -4434,6 +4559,9 @@
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
+      "Domain name": [
+        "Etki alanı adı"
+      ],
       "e.g. example.com": [
         "örnek: ornek.com"
       ],
@@ -4584,6 +4712,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "İfade belirli bir sıradaki 12 benzersiz sözcükten oluşur"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki 3 CNAME kaydını da ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat alabilir."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki iki MX kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ],
       "Please share any feedback to help us improve.": [
         "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
       ],
@@ -4689,6 +4826,16 @@
         "Kurtarma telefonu numarası"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "${ MAIL_APP_NAME } hesabınıza kendi etki alanınızı ekleyin."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Yönetici"
@@ -4735,6 +4882,17 @@
         "Günlük e-posta bildirimleri"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "Adresler"
+      ],
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Verify": [
+        "Doğrula"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Varsayılan"
@@ -4778,6 +4936,9 @@
       ],
       "Help translate": [
         "Çeviriye yardımcı olun"
+      ],
+      "here": [
+        "buradan"
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
@@ -4953,6 +5114,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
       ]
@@ -5297,6 +5461,9 @@
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
+      "Password health": [
+        "Parola sağlığı"
+      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
@@ -5315,6 +5482,9 @@
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
@@ -5438,6 +5608,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
       ]
     },
     "new_plans: feature info": {
@@ -5724,6 +5897,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
       ],
@@ -5795,6 +5971,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "${ plus }, ${ bundle } ve ${ BRAND_NAME } for Business tarifelerinde bulunur."
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "${ BRAND_NAME } Business tarifelerinde birden çok kullanıcı ile bulunur."
       ]
@@ -6242,6 +6421,12 @@
       "Processing payment": [
         "Ödeme işleniyor"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
@@ -6349,6 +6534,9 @@
       ],
       "Select state": [
         "İl seçin"
+      ],
+      "yourdomain.com": [
+        "etkialaniniz.com"
       ]
     },
     "plan customizer, ips": {
@@ -7330,6 +7518,10 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } gün kaldı",
+        "${ dayDiff } gün kaldı"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
@@ -7496,6 +7688,9 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
+      "Catch-all address updated": [
+        "Tümünü toplama adresi güncellendi"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -7507,6 +7702,12 @@
       ],
       "Display name updated": [
         "Görüntülenecek ad güncellendi"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC değeri panoya kopyalandı"
+      ],
+      "Domain verified": [
+        "Etki alanı doğrulandı"
       ],
       "Email address copied to clipboard": [
         "E-posta adresi panoya kopyalandı"
@@ -7568,6 +7769,9 @@
       "Preference saved": [
         "Ayar kaydedildi"
       ],
+      "SPF value copied to clipboard": [
+        "SPF değeri panoya kopyalandı"
+      ],
       "User created": [
         "Kullanıcı eklendi"
       ],
@@ -7576,6 +7780,12 @@
       ],
       "Username copied to clipboard": [
         "Kullanıcı adı panoya kopyalandı"
+      ],
+      "Value copied to clipboard": [
+        "Değer panoya kopyalandı"
+      ],
+      "Verification code copied to clipboard": [
+        "Doğrulama kodu panoya kopyalandı"
       ],
       "Verification successful": [
         "Doğrulandı"
@@ -7649,6 +7859,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresler"
       ]
     },
     "Tab subscription modal": {
@@ -7757,6 +7972,9 @@
       "Add credits": [
         "Kredi ekle"
       ],
+      "Add domain": [
+        "Etki alanı ekle"
+      ],
       "Add new user": [
         "Yeni kullanıcı ekle"
       ],
@@ -7807,6 +8025,9 @@
       ],
       "Card verification": [
         "Kart doğrulama"
+      ],
+      "Catch-All address": [
+        "Tümünü toplama adresi"
       ],
       "Catch-all address": [
         "Tümünü toplama adresi"
@@ -7944,6 +8165,9 @@
       ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"
+      ],
+      "Edit domain": [
+        "Etki alanını düzenle"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -8294,6 +8518,17 @@
         "${ MAIL_APP_NAME } faturası"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresler"
+      ],
+      "Catch-All": [
+        "Tümünü toplama"
+      ],
+      "Status": [
+        "Durum"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adresler"
@@ -8370,6 +8605,15 @@
       ],
       "Verified email address": [
         "E-posta adresi doğrulanmış"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
+      ],
+      "Your DKIM signing is working.": [
+        "DKIM imzanız çalışıyor."
       ]
     },
     "tooltip": {
@@ -8566,11 +8810,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Korunmayan bir üyeye e-posta adresi eklemeden önce kuruluş anahtarını ${ activateLink }manız gerekir."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ]
     }
   }

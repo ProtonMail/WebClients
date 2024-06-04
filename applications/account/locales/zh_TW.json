@@ -5834,17 +5834,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6796,6 +6785,9 @@
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "我在用 @ProtonMail，覺得您也會喜歡的。它是一個安全的電子郵件服務，可以保護到您的隱私。用我的推介連結註冊的話，還可以免費獲得 1 個月的尊享功能哦：${ referrerLink }"
+      ],
+      "JCB logo": [
+        "JCB 符號"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -8131,6 +8123,17 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11936,6 +11939,9 @@
       "Processing payment": [
         "正在處理付款"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
@@ -12330,6 +12336,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
       ],
@@ -12357,6 +12366,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "額度附註"
+      ],
       "Currency conversion": [
         "貨幣轉換"
       ]
@@ -13234,6 +13246,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],

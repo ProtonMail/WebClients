@@ -350,6 +350,9 @@
       "Refer a friend": [
         "友達を招待"
       ],
+      "Refresh status": [
+        "状態を更新"
+      ],
       "Refresh the page": [
         "ページを更新"
       ],
@@ -404,6 +407,9 @@
       "Return to sign in": [
         "サインインに戻る"
       ],
+      "Review": [
+        "レビュー"
+      ],
       "Revoke": [
         "失効"
       ],
@@ -457,6 +463,9 @@
       ],
       "Send reminder": [
         "リマインダーを送信"
+      ],
+      "Set catch-all": [
+        "Catch-All を設定"
       ],
       "Set new password": [
         "新しいパスワードを設定"
@@ -711,6 +720,17 @@
       ],
       "Secure your communications": [
         "コミュニケーションを保護します"
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "無効"
+      ],
+      "Enabled": [
+        "有効"
+      ],
+      "Missing keys": [
+        "鍵なし"
       ]
     },
     "bf2023: Action": {
@@ -1859,6 +1879,16 @@
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
       ]
     },
+    "Domain label": {
+      "Verified": [
+        "確認済み"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "通常、'www' サブドメインはメールには使用されません。このサブドメイン（www）を本当に使用しますか？"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "バグまたは品質の問題"
@@ -2129,8 +2159,17 @@
       "Username must end with a letter or digit": [
         "ユーザー名の最後は英字か数字でなければいけません"
       ],
+      "Verification did not succeed, please try again in an hour.": [
+        "検証に失敗しました。一時間程経ってからもう一度試してください。"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS設定に問題があるため、DKIMの署名を停止しました。署名を再開するには、以下の手順に従ってください。"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
@@ -2725,11 +2764,31 @@
       "Address": [
         "アドレス"
       ],
+      "Domain": [
+        "ドメイン"
+      ],
       "Status": [
         "状態"
       ],
       "Username": [
         "ユーザー名"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "ホスト名"
+      ],
+      "Priority": [
+        "優先度"
+      ],
+      "Type": [
+        "種類"
+      ],
+      "Value / Data": [
+        "値 / データ"
+      ],
+      "Value / Data / Points to": [
+        "値"
       ]
     },
     "Headline": {
@@ -2778,6 +2837,9 @@
       "${ n } address": [
         "${ n } 件のアドレス"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: 不正な電子メールを隔離したり拒否したりしません。 通常、このポリシーはトラブルシューティングまたはテストにのみ使用されます。"
+      ],
       "${ number } city": [
         "${ number } つの都市"
       ],
@@ -2789,6 +2851,12 @@
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } サーバーはまだセットアップ中です。 通常、これには ${ provisioningDuration } 程度かかります。"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: 受信者のプラットフォームに、不正な電子メールをスパムとしてマークするか隔離するかを要求します。"
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: 受信者のプラットフォームに不正な電子メールを拒否するよう要求します。"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
@@ -2943,6 +3011,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME } でカスタム ドメイン アドレスのメールを受信できるようにするには、DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の 2 つの MX レコードを追加する必要があります。 ${ kbLink } で例と役立つヒントを見つけることができます。"
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
       ],
@@ -3033,11 +3104,20 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
       ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM を使用すると、${ BRAND_NAME } がメールに暗号署名し、攻撃者によるメールの改ざんを防ぐことができます。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の 3 つの CNAME レコードを必ず追加してください。"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC は、送信者の SPF レコードと DKIM レコードがドメインからのものであるかどうかを確認します。 これにより、攻撃者が別のドメインの SPF および DKIM を使用してドメインになりすますのを防ぐことができます。 このレコードの「p=」(ポリシー)は、受信者プラットフォームが不正な電子メールをどのように処理するかを示します。 ほとんどのドメインでは「p=quarantine」ポリシーを使用することをお勧めします。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを必ず追加してください。"
       ],
       "DNS TXT record": [
         "DNS TXT レコード"
@@ -3053,6 +3133,9 @@
       ],
       "Domain ownership verified.": [
         "ドメイン所有権は検証済みです。"
+      ],
+      "domain used": [
+        "ドメインが使用済み"
       ],
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
@@ -3083,6 +3166,9 @@
       ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "各ドメインは SPF (TXT) レコードを 1 つだけ持つことができます。 既存の SPF (TXT) レコードを保持したい場合は、現在のレコードに ${ spf } を追加します (${ spfValue } の後に置きます)。"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -3147,6 +3233,9 @@
       "Enter your recovery phrase to change your password now.": [
         "今すぐパスワードを変更するには、回復用フレーズを入力してください。"
       ],
+      "Example: ${ spfExample }": [
+        "例: ${ spfExample }"
+      ],
       "Expired": [
         "有効期限切れ"
       ],
@@ -3161,6 +3250,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "シングル サインオン (SAML SSO) を使用する組織のメンバー向け"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "別の電子メール サービスから ${ MAIL_APP_NAME } に切り替えるユーザーの場合、スムーズに移行できるように、MX レコードを変更する前に、${ boldAddresses } タブを選択し、アクティブな電子メール アドレスをすべて追加してください。"
       ],
       "Free forever": [
         "永久に無料"
@@ -3198,6 +3290,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "${ MAIL_APP_NAME } に関連付けられた独自ドメインをお持ちの場合、Catch-All アドレスを設定することで、(誤字脱字などが原因で) 無効なメールアドレスに送られたメールを受信できるようになります。"
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "ギフトコードをお持ちの場合は、以下に入力して割引を適用できます。"
       ],
@@ -3224,6 +3319,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストのいずれかに ${ boldPhoneCall } または ${ boldZoomMeeting } を依頼してください。"
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "重要: DNS コンソールで CNAME 値がドットで終わることが許可されていない場合は、CNAME 値の最後のドットを削除できます。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
@@ -3261,6 +3359,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "JCB logo": [
+        "JCB ロゴ"
+      ],
       "Keys created": [
         "作成されたキー"
       ],
@@ -3293,6 +3394,12 @@
       ],
       "Loading...": [
         "読み込み中..."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "SPF/DKIM/DMARC が欠落しているか正しく設定されていない場合、主要な電子メール サービスで電子メールが拒否されたり、スパムにフィルタリングされたりすることがあります。"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "SPF/DKIM/DMARC が欠落している場合、または正しく設定されていない場合、主要な電子メール サービスで電子メールが拒否されたり、スパムにフィルタリングされたりすることがあります。"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }すると、パスワードを忘れた場合にアカウントに再び戻ることができます。"
@@ -3545,6 +3652,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF は、ドメインへの電子メールの送信を許可されているユーザーを明確にします。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを必ず追加してください。"
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "SSO ユーザー (アイデンティティ プロバイダーによって提供される) は削除されます"
@@ -4029,6 +4139,17 @@
         "現金での支払い方法については、${ email } 宛までお問い合わせください。"
       ]
     },
+    "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "組織の既存ユーザーの新しいアドレスを追加します。"
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "組織に新しいユーザーを追加し、そのアドレスを作成します。"
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "セキュリティ上の理由から、あなたが ${ domainName } の所有者であることを確認する必要があります。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを追加してください。 ${ kbLink } で例と役立つヒントを見つけることができます。"
+      ]
+    },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "自動的にサブスクリプションを更新するための支払い方法を追加することができます。その他のお支払方法も同様に利用可能です。"
@@ -4284,6 +4405,9 @@
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
       ],
+      "Domain name": [
+        "ドメイン名"
+      ],
       "e.g. example.com": [
         "例: example.com"
       ],
@@ -4434,6 +4558,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "フレーズは、特定の順序で12の一意の単語で構成されます"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "次の 3 つの CNAME レコードをすべて追加してください。 注: DNS レコードの更新には数時間かかる場合があります。"
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "次の 2 つの MX レコードを追加してください。 注: DNS レコードの更新には数時間かかる場合があります。"
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "次のTXTレコードを追加してください。 注: DNS レコードの更新には数時間かかる場合があります。"
+      ],
       "Please share any feedback to help us improve.": [
         "ご意見、ご感想がありましたら、ぜひお聞かせください。"
       ],
@@ -4539,6 +4672,16 @@
         "回復用電話番号"
       ]
     },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "あなたが所有しているドメインを ${ MAIL_APP_NAME } アカウントに追加します。"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "次のTXTレコードを追加してください。 注: DNS レコードの更新には数時間かかる場合があります。"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "管理者"
@@ -4585,6 +4728,17 @@
         "毎日のメール通知"
       ]
     },
+    "Label in domain modal": {
+      "Addresses": [
+        "メールアドレス"
+      ],
+      "Domain": [
+        "ドメイン"
+      ],
+      "Verify": [
+        "検証"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "既定"
@@ -4628,6 +4782,9 @@
       ],
       "Help translate": [
         "翻訳を手伝う"
+      ],
+      "here": [
+        "こちら"
       ],
       "How to pay with Bitcoin?": [
         "ビットコインで支払うには？"
@@ -4775,6 +4932,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "${ BRAND_NAME } に独自ドメインを接続し、独自メールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
       ]
@@ -5094,6 +5254,12 @@
       ],
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - プレミアム機能"
+      ],
+      "Passkeys supported": [
+        "パスキーに対応しています"
       ],
       "Password health": [
         "パスワードの健全性"
@@ -5588,6 +5754,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "${ plus }、${ bundle }、${ BRAND_NAME } for Business に含まれます。"
+      ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "複数のユーザーに${ BRAND_NAME } for Businesが含まれます。"
       ]
@@ -6117,6 +6286,9 @@
       ],
       "Select a reason": [
         "理由を選択"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ]
     },
     "plan customizer, ips": {
@@ -6988,6 +7160,9 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
       ],
+      "${ dayDiff } day left": [
+        "残り ${ dayDiff } 日"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
@@ -7121,6 +7296,9 @@
       "Bug reported": [
         "バグの報告が送信されました"
       ],
+      "Catch-all address updated": [
+        "Catch-All アドレスが更新されました"
+      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
       ],
@@ -7132,6 +7310,12 @@
       ],
       "Display name updated": [
         "表示名が更新されました"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC 値がクリップボードにコピーされました"
+      ],
+      "Domain verified": [
+        "ドメインが確認されました"
       ],
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました"
@@ -7193,6 +7377,9 @@
       "Preference saved": [
         "設定が保存されました"
       ],
+      "SPF value copied to clipboard": [
+        "SPF 値がクリップボードにコピーされました"
+      ],
       "User created": [
         "ユーザーが作成されました。"
       ],
@@ -7201,6 +7388,12 @@
       ],
       "Username copied to clipboard": [
         "クリップボードにコピーされたユーザー名"
+      ],
+      "Value copied to clipboard": [
+        "値がクリップボードにコピーされました"
+      ],
+      "Verification code copied to clipboard": [
+        "認証コードがクリップボードにコピーされました"
       ],
       "Verification successful": [
         "検証に成功しました"
@@ -7271,6 +7464,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "メールアドレス"
       ]
     },
     "Tab subscription modal": {
@@ -7379,6 +7577,9 @@
       "Add credits": [
         "クレジットを追加"
       ],
+      "Add domain": [
+        "ドメインを追加"
+      ],
       "Add new user": [
         "新規ユーザーの追加"
       ],
@@ -7429,6 +7630,9 @@
       ],
       "Card verification": [
         "カードの検証"
+      ],
+      "Catch-All address": [
+        "Catch-All アドレス"
       ],
       "Catch-all address": [
         "Catch-All アドレス"
@@ -7564,6 +7768,9 @@
       ],
       "Edit display name": [
         "表示名の編集"
+      ],
+      "Edit domain": [
+        "ドメインの編集"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -7909,6 +8116,17 @@
         "${ MAIL_APP_NAME } 請求書"
       ]
     },
+    "Title header for addresses domain table": {
+      "Address": [
+        "アドレス"
+      ],
+      "Catch-All": [
+        "キャッチオール"
+      ],
+      "Status": [
+        "状態"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "メールアドレス"
@@ -7985,6 +8203,15 @@
       ],
       "Verified email address": [
         "検証済みのメールアドレス"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS 設定に問題があるため、DKIM の署名を停止しました。署名を再開するには、以下の手順に従ってください。"
+      ],
+      "Your DKIM signing is working.": [
+        "DKIM 署名が機能しています。"
       ]
     },
     "tooltip": {
@@ -8172,11 +8399,19 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
       ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "電子メール アドレスを非公開メンバーに追加する前に、組織キーを ${ activateLink } する必要があります。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
       ]
     }
   }

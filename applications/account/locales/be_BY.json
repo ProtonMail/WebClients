@@ -6104,17 +6104,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7970,6 +7959,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Гэта выдаліць усе папярэднія версіі вашых файлаў, якія старэйшыя за ${ rententionLabel }."
       ],
@@ -8626,6 +8618,17 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -14307,6 +14310,12 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
+      "${ dayDiff } day left": [
+        "Застаўся ${ dayDiff } дзень",
+        "Засталося ${ dayDiff } дні",
+        "Засталося ${ dayDiff } дзён",
+        "Засталося ${ dayDiff } дзён"
+      ],
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
@@ -14355,8 +14364,8 @@
       "Add any new files": [
         "Дадаваць любыя новыя файлы"
       ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses. ": [
-        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней. "
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
@@ -14475,8 +14484,20 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
+      ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
@@ -14594,7 +14615,7 @@
         "Аўтаматычны адказ абноўлены"
       ],
       "Bug reported": [
-        "Справаздача пра памылку адпраўлена"
+        "Справаздача аб памылцы адпраўлена"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."

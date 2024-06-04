@@ -22,7 +22,7 @@
     },
     "Account Settings - Info": {
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar meididas. ${ link }"
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ]
     },
     "Action": {
@@ -896,7 +896,7 @@
     },
     "Badge": {
       "New!": [
-        "Novo"
+        "Novo!"
       ]
     },
     "bf2023: Deal details": {
@@ -2430,6 +2430,11 @@
       ],
       "The VPN is too slow": [
         "A VPN está demasiada lenta."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajude-nos a melhorar"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5424,7 +5429,7 @@
         "Selecione o seu plano"
       ],
       "Show others when I'm busy": [
-        "Mostrar quando estou ocupado para outros"
+        "Mostrar aos outros quando estou ocupado"
       ],
       "Show week numbers": [
         "Mostrar números de semana"
@@ -5586,7 +5591,7 @@
         "Pedir um convite"
       ],
       "stay safer online": [
-        "mantenha-se mais seguro conectado"
+        "fique mais seguro online"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -6121,7 +6126,7 @@
         "Monitoramento de violações de dados (em breve)"
       ],
       "Desktop app": [
-        "Aplicativo de desktop"
+        "Aplicação de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6379,7 +6384,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -7677,7 +7682,7 @@
     },
     "Spotlight": {
       "Color-code your calendar to better organize your day, track your time, and more.": [
-        "Utilize cores no seu calendário para melhor organizar o seu dia, organizar o seu tempo e muito mais."
+        "Codifique o seu calendário por cores para organizar melhor o seu dia, controlar o seu tempo e muito mais."
       ],
       "Custom event colors": [
         "Cores de eventos personalizados"
@@ -7820,6 +7825,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],

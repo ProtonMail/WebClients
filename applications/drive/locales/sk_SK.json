@@ -2650,9 +2650,6 @@
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
       ],
-      "Not a ${ BRAND_NAME } account": [
-        "Nie je ${ BRAND_NAME } účet"
-      ],
       "Not a valid number": [
         "Neplatné číslo"
       ],
@@ -5949,9 +5946,6 @@
       "Region": [
         "Kraj"
       ],
-      "Remove access": [
-        "Odobrať prístup"
-      ],
       "Replace existing file": [
         "Nahradiť existujúci súbor"
       ],
@@ -7613,9 +7607,6 @@
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"
       ],
-      "Share invitation ID was not found. Please check the link": [
-        "ID pozvánky na zdieľanie nebolo nájdené. Skontrolujte odkaz, prosím"
-      ],
       "Stopping to share this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
       ],
@@ -8766,6 +8757,12 @@
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
+      ],
+      "${ dayDiff } day left": [
+        "Zostáva ${ dayDiff } deň",
+        "Zostávajú ${ dayDiff } dni",
+        "Zostáva ${ dayDiff } dní",
+        "Zostáva ${ dayDiff } dní"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
