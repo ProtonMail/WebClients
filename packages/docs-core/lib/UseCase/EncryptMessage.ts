@@ -15,9 +15,20 @@ export class EncryptMessage implements UseCaseInterface<Uint8Array> {
     metadata: { version: number; authorAddress: string; timestamp: number },
     keys: DocumentKeys,
   ): Promise<Result<Uint8Array>> {
+    const aad = GetAssociatedEncryptionDataForRealtimeMessage(metadata)
+
+    return this.encryptAndValidate(update, aad, keys, 0)
+  }
+
+  async encryptAndValidate(
+    update: Uint8Array,
+    aad: string,
+    keys: DocumentKeys,
+    attemptCount: number,
+  ): Promise<Result<Uint8Array>> {
     const result = await this.encryption.signAndEncryptData(
       update,
-      GetAssociatedEncryptionDataForRealtimeMessage(metadata),
+      aad,
       keys.documentContentKey,
       keys.userAddressPrivateKey,
     )
@@ -26,6 +37,25 @@ export class EncryptMessage implements UseCaseInterface<Uint8Array> {
       return Result.fail(result.getError())
     }
 
+    const didDecryptSuccessfully = await this.canDecryptMessageToDetectBitflips(result.getValue(), aad, keys)
+    if (!didDecryptSuccessfully) {
+      if (attemptCount === 0) {
+        return this.encryptAndValidate(update, aad, keys, 1)
+      } else {
+        return Result.fail('Failed to decrypt message after encryption.')
+      }
+    }
+
     return Result.ok(result.getValue())
+  }
+
+  async canDecryptMessageToDetectBitflips(message: Uint8Array, aad: string, keys: DocumentKeys): Promise<boolean> {
+    const decrypted = await this.encryption.decryptData(message, aad, keys.documentContentKey)
+
+    if (decrypted.isFailed()) {
+      return false
+    }
+
+    return true
   }
 }
