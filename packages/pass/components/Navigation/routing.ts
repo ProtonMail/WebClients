@@ -42,8 +42,7 @@ export const getItemHistoryRoute = (shareId: string, itemId: string, options?: I
     `${getItemRoute(shareId, itemId, options)}/history`;
 
 /** Resolves the new item route given an item type. */
-export const getNewItemRoutePrefix = () => getLocalPath('item/new');
-export const getNewItemRoute = (type: ItemType) => getNewItemRoutePrefix().concat(`/${type}`);
+export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type}`);
 export const getTrashRoute = () => getLocalPath('trash');
 export const getOnboardingRoute = () => getLocalPath('onboarding');
 
