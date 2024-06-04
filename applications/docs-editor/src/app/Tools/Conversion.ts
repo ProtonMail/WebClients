@@ -6,6 +6,7 @@ import { $convertFromMarkdownString } from '../Utils/MarkdownImport'
 import { MarkdownTransformers } from './MarkdownTransformers'
 import { ConvertibleDataType } from '@proton/docs-shared'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { sendErrorMessage } from '../Utils/errorMessage'
 
 export function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
   try {
@@ -90,9 +91,8 @@ export async function $importDataIntoEditor(
           })
           $getRoot().selectEnd()
           $insertNodes(nodesToInsert.concat($createParagraphNode()))
-        } catch (error) {
-          // eslint-disable-next-line no-console
-          console.error(error)
+        } catch (error: unknown) {
+          sendErrorMessage(error)
           didThrow = true
         }
       },
@@ -103,9 +103,8 @@ export async function $importDataIntoEditor(
       () => {
         try {
           $convertFromMarkdownString(otherFormatString, MarkdownTransformers, undefined, false)
-        } catch (error) {
-          // eslint-disable-next-line no-console
-          console.error(error)
+        } catch (error: unknown) {
+          sendErrorMessage(error)
           didThrow = true
         }
       },
