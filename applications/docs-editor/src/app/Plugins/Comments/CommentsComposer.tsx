@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useRef, useState } from 'react'
+import { ReactNode, useRef, useState } from 'react'
 import { CommentEditor, CommentEditorHandle } from './CommentEditor'
-import { Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 
 export function CommentsComposer({
@@ -13,8 +12,8 @@ export function CommentsComposer({
   onTextContentChange,
   onBlur,
   onCancel,
-  hideCancelButton = !onCancel,
   className,
+  buttons,
 }: {
   onSubmit: (content: string) => void
   placeholder: string
@@ -23,8 +22,8 @@ export function CommentsComposer({
   onTextContentChange?: (textContent: string) => void
   onBlur?: () => void
   onCancel?: () => void
-  hideCancelButton?: boolean
   className?: string
+  buttons: (canSubmit: boolean, submitComment: () => void) => ReactNode
 }) {
   const [canSubmit, setCanSubmit] = useState(false)
   const [hasNewLines, setHasNewLines] = useState(false)
@@ -50,7 +49,7 @@ export function CommentsComposer({
     <div
       ref={composerRef}
       className={clsx(
-        'relative flex flex-wrap gap-1 rounded px-1.5 py-1 text-sm',
+        'relative flex flex-wrap gap-1 rounded-lg px-2 py-1 text-sm',
         hasNewLines ? 'flex-column' : 'items-center justify-between',
         className,
       )}
@@ -62,7 +61,7 @@ export function CommentsComposer({
     >
       <CommentEditor
         autoFocus={autoFocus}
-        className="min-w-0 flex-grow border border-[transparent] px-0.5 py-1 text-sm caret-[--primary]"
+        className="min-w-0 flex-grow border border-[transparent] text-sm caret-[--primary]"
         onEnter={(event) => {
           if (!event) {
             return false
@@ -85,31 +84,11 @@ export function CommentsComposer({
           setHasNewLines(textContent.search(/\n/) > 0)
         }}
         onBlur={onBlur}
-        placeholder={<div className="pointer-events-none absolute left-2.5 top-2 opacity-50">{placeholder}</div>}
+        placeholder={<div className="pointer-events-none absolute left-2.5 opacity-50">{placeholder}</div>}
         ref={commentEditorRef}
         initialContent={initialContent}
       />
-      <div className="ml-auto mr-0.5 flex items-center gap-1.5">
-        <button
-          className="flex items-center justify-center rounded border border-[transparent] bg-[--primary] p-1.5 text-sm text-[--primary-contrast] enabled:hover:brightness-125 disabled:bg-[--background-strong] disabled:text-[--text-norm] disabled:opacity-50"
-          onClick={submitComment}
-          disabled={!canSubmit}
-          aria-label="Send"
-          title="Send"
-        >
-          <Icon name="arrow-up" className="h-4 w-4 fill-current" />
-        </button>
-        {onCancel && !hideCancelButton && (
-          <button
-            className="flex items-center justify-center rounded border border-[--border-weak] bg-[--background-norm] p-1.5 text-sm text-[--text-weak] hover:bg-[--background-strong]"
-            onClick={onCancel}
-            aria-label="Cancel"
-            title="Cancel"
-          >
-            <Icon name="cross" className="h-4 w-4 fill-current" />
-          </button>
-        )}
-      </div>
+      <div className="ml-auto flex items-center gap-1.5">{buttons(canSubmit, submitComment)}</div>
     </div>
   )
 }

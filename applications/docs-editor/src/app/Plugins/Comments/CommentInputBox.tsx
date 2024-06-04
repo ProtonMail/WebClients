@@ -3,20 +3,21 @@ import { createDOMRange, createRectsFromDOMRange } from '@lexical/selection'
 import { $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { c } from 'ttag'
+import { Icon, ToolbarButton } from '@proton/components'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { useCommentsContext } from './CommentsContext'
 
 export function CommentInputBox({
   editor,
-  controller,
   cancelAddComment,
 }: {
   editor: LexicalEditor
-  controller: EditorRequiresClientMethods
   setShowCommentInput: (show: boolean) => void
   cancelAddComment: () => void
 }) {
+  const { controller } = useCommentsContext()
+
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
     () => ({
@@ -97,6 +98,16 @@ export function CommentInputBox({
     }
   }, [updateLocation])
 
+  const onSubmit = useCallback(
+    (content: string) => {
+      if (selectionRef.current) {
+        controller.createThread(content).catch(sendErrorMessage)
+        selectionRef.current = null
+      }
+    },
+    [controller],
+  )
+
   return (
     <div
       className="bg-norm border-norm absolute left-0 top-0 z-10 w-[250px] rounded border text-sm shadow-lg"
@@ -104,13 +115,19 @@ export function CommentInputBox({
     >
       <CommentsComposer
         autoFocus
-        hideCancelButton
+        className="py-1.5"
         placeholder={c('Placeholder').t`Add a comment...`}
-        onSubmit={(content) => {
-          controller.createThread(content).catch(sendErrorMessage)
-          selectionRef.current = null
-        }}
+        onSubmit={onSubmit}
         onCancel={cancelAddComment}
+        buttons={(canSubmit, submitComment) => (
+          <ToolbarButton
+            className="bg-primary rounded p-1"
+            title={c('Action').t`Add comment`}
+            icon={<Icon name="arrow-up" />}
+            disabled={!canSubmit}
+            onClick={submitComment}
+          />
+        )}
       />
     </div>
   )
