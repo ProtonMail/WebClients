@@ -2,7 +2,7 @@ import type { Action } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
 import type { ClientEndpoint } from '@proton/pass/types';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 
 import { type WithMeta, withMetaFactory } from './meta';
 
@@ -34,7 +34,7 @@ const parseNotification = (notification: NotificationOptions): Notification => {
         case 'error': {
             const errorMessage =
                 notification.error instanceof Error
-                    ? getApiErrorMessage(notification.error) ?? notification.error.message
+                    ? getErrorMessage(notification.error, notification.error.message)
                     : undefined;
 
             const serializedNotification: Notification = {
