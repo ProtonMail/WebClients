@@ -15,6 +15,7 @@ import { Button } from '@proton/atoms'
 import { CommentsComposer } from './CommentsComposer'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { c } from 'ttag'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 export function CommentsPanelListComment({
   comment,
@@ -58,7 +59,7 @@ export function CommentsPanelListComment({
               removeMarkNode(thread.markID)
             }
           })
-          .catch(console.error)
+          .catch(sendErrorMessage)
           .finally(() => {
             setIsDeleting(false)
             setIsDeletingThread(false)
@@ -76,7 +77,7 @@ export function CommentsPanelListComment({
         setIsDeleting(true)
         controller
           .deleteComment(thread.id, comment.id)
-          .catch(console.error)
+          .catch(sendErrorMessage)
           .finally(() => {
             setIsDeleting(false)
           })
@@ -113,7 +114,7 @@ export function CommentsPanelListComment({
                   size="small"
                   icon
                   onClick={() => {
-                    controller.resolveThread(thread.id).catch(console.error)
+                    controller.resolveThread(thread.id).catch(sendErrorMessage)
                   }}
                 >
                   <Icon size={4.5} name="checkmark-circle" alt="Resolve thread" />
@@ -142,7 +143,7 @@ export function CommentsPanelListComment({
                     <DropdownMenuButton
                       className="flex items-center gap-3 text-left text-sm"
                       onClick={() => {
-                        controller.unresolveThread(thread.id).catch(console.error)
+                        controller.unresolveThread(thread.id).catch(sendErrorMessage)
                       }}
                     >
                       {c('Action').t`Re-open`}
@@ -166,7 +167,7 @@ export function CommentsPanelListComment({
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Edit comment...`}
             onSubmit={(content) => {
-              controller.editComment(thread.id, comment.id, content).catch(console.error)
+              controller.editComment(thread.id, comment.id, content).catch(sendErrorMessage)
               setIsEditing(false)
               void controller.stoppedTypingInThread(thread.id)
             }}

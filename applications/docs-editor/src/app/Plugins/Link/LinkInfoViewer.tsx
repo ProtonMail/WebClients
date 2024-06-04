@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms'
 import { createPortal } from 'react-dom'
 import { c } from 'ttag'
 import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type Props = {
   linkNode: LinkNode
@@ -118,7 +119,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             size="small"
             shape="ghost"
             onClick={() => {
-              navigator.clipboard.writeText(linkUrl).catch(console.error)
+              navigator.clipboard.writeText(linkUrl).catch(sendErrorMessage)
             }}
           >
             <Icon name="link" />

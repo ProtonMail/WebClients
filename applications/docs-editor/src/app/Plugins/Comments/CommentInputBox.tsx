@@ -5,6 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { c } from 'ttag'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 export function CommentInputBox({
   editor,
@@ -106,7 +107,7 @@ export function CommentInputBox({
         hideCancelButton
         placeholder={c('Placeholder').t`Add a comment...`}
         onSubmit={(content) => {
-          controller.createThread(content).catch(console.error)
+          controller.createThread(content).catch(sendErrorMessage)
           selectionRef.current = null
         }}
         onCancel={cancelAddComment}
