@@ -60,18 +60,17 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
             openDrawer({
                 theme: getThemeForWallet(decryptedApiWalletsData ?? [], apiWalletData.Wallet.ID),
                 transaction,
-                apiWalletData,
-                apiAccount,
                 kind: 'transaction-data',
             });
         },
-        [openDrawer, decryptedApiWalletsData, apiWalletData, apiAccount]
+        [openDrawer, decryptedApiWalletsData, apiWalletData]
     );
 
     useEffect(() => {
         handleGoFirst();
     }, [apiWalletData?.Wallet.ID, apiAccount?.ID, handleGoFirst]);
 
+    const [flag, setFlag] = useState(0);
     useEffect(() => {
         if (apiWalletData?.Wallet.ID) {
             if (apiAccount?.ID) {
@@ -97,7 +96,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         } else {
             setTransactions([]);
         }
-    }, [currentPage, apiWalletData.Wallet.ID, walletsChainData, sortOrder, apiAccount?.ID, isSyncingWalletData]);
+    }, [apiAccount?.ID, apiWalletData.Wallet.ID, currentPage, sortOrder, walletsChainData, flag]);
 
     const { transactionDetails, loadingRecordInit, loadingApiData, updateWalletTransaction } = useWalletTransactions({
         transactions,
@@ -254,6 +253,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         <>
             <div className="flex flex-row mx-4 mb-6 mt-10 items-center justify-space-between">
                 <h2 className="mr-4 text-semibold">{c('Wallet transactions').t`Transactions`}</h2>
+                <button onClick={() => setFlag((p) => p + 1)}>refresh</button>
 
                 <div className="flex flex-row">
                     <CoolDownButton

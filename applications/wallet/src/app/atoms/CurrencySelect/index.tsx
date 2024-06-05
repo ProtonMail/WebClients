@@ -1,57 +1,111 @@
-import { uniq } from 'lodash';
+import { useCallback, useMemo, useState } from 'react';
 
-import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
+import { c } from 'ttag';
+
+import { WasmApiFiatCurrency, WasmFiatCurrencySymbol } from '@proton/andromeda';
+import generateUID from '@proton/atoms/generateUID';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import isTruthy from '@proton/utils/isTruthy';
+
+import { SearchableSelect } from '../Select';
+import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';
 
 interface Props {
-    allowedUnits?: WasmBitcoinUnit[];
-    exchangeRates?: WasmApiExchangeRate[];
-
-    value: WasmBitcoinUnit | WasmApiExchangeRate;
-    onChange: (value: WasmBitcoinUnit | WasmApiExchangeRate) => void;
-
+    /**
+     * Popular currency options
+     */
+    popularSymbols?: WasmFiatCurrencySymbol[];
+    /**
+     * Other currency options
+     */
+    options: WasmApiFiatCurrency[];
+    value?: WasmFiatCurrencySymbol;
+    onSelect?: (value: WasmApiFiatCurrency) => void;
+    error?: string;
+    hint?: string;
     disabled?: boolean;
+
+    label?: string;
+    placeholder?: string;
+
+    dense?: boolean;
 }
 
 export const CurrencySelect = ({
-    allowedUnits = ['BTC', 'MBTC', 'SATS'],
-    exchangeRates,
-
+    popularSymbols = ['USD', 'CHF', 'EUR', 'GBP', 'CAD', 'CNY'],
+    options,
     value,
-    onChange,
-
+    onSelect,
+    error,
+    hint,
     disabled,
+    label,
+    placeholder,
+    dense,
 }: Props) => {
-    return (
-        <>
-            <SelectTwo
-                id="currencySelect"
-                value={value}
-                onChange={(e: SelectChangeEvent<WasmBitcoinUnit | WasmApiExchangeRate>) => onChange(e.value)}
-                aria-describedby="currencySelect"
-                data-testid="currency-select"
-                disabled={disabled}
-                className="text-sm"
-            >
-                {[...(exchangeRates ?? []), ...uniq(allowedUnits)].filter(isTruthy).map((unitB) => {
-                    const value = typeof unitB === 'object' ? unitB.FiatCurrency : unitB;
+    const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol | undefined>(value);
 
+    const detailledValue = options.find((opt) => opt.Symbol === selectedCurrency);
+
+    const { allDropdownChildren, onlyOptions } = useMemo(() => {
+        const allDropdownChildren = getAllDropdownOptions(popularSymbols, options);
+        const onlyOptions = allDropdownChildren.filter(getIsCurrencyOption);
+
+        return { allDropdownChildren, onlyOptions };
+    }, [options, popularSymbols]);
+
+    const handleSelectOption = useCallback(
+        ({ value }: { value: string | undefined }) => {
+            const selectedOption = onlyOptions.find((o) => getSerialisedOption(o) === value);
+
+            if (selectedOption) {
+                setSelectedCurrency(selectedOption.Symbol);
+                onSelect?.(selectedOption);
+            }
+        },
+        [onSelect, onlyOptions]
+    );
+
+    const optionsComponents = useMemo(
+        () =>
+            allDropdownChildren.map((option) => {
+                if (option.type === 'option') {
+                    const title = dense ? option.Symbol : `${option.Name}, ${option.Symbol} ${option.Sign}`;
                     return (
-                        <Option
-                            key={value}
-                            data-testid={`${value}-amount-input-unit-button`}
-                            value={unitB}
-                            title={value}
-                            className="text-sm"
-                        >
-                            {value}
+                        <Option key={option.ID} value={getSerialisedOption(option)} title={title}>
+                            <span>{title}</span>
                         </Option>
                     );
-                })}
-            </SelectTwo>
-        </>
+                } else {
+                    return (
+                        <Option key={generateUID('divider')} value={null} title={option.text} disabled>
+                            <span className="text-sm">{option.text}</span>
+                        </Option>
+                    );
+                }
+            }),
+        [allDropdownChildren, dense]
+    );
+
+    return (
+        <SearchableSelect<string | undefined>
+            id="currency-selector"
+            placeholder={placeholder ?? c('Placeholder').t`Search`}
+            label={dense ? '' : label ?? c('Label').t`Currency`}
+            value={getSerialisedOption(detailledValue)}
+            onChange={handleSelectOption}
+            search={currencyFilterFunction}
+            error={error}
+            noSearchResults={<span className="text-bold">{c('Select search results').t`No results found`}</span>}
+            hint={hint}
+            data-testid="currency-selector"
+            disabled={disabled}
+            size={{
+                width: DropdownSizeUnit.Dynamic,
+                maxWidth: DropdownSizeUnit.Viewport,
+            }}
+        >
+            {optionsComponents}
+        </SearchableSelect>
     );
 };

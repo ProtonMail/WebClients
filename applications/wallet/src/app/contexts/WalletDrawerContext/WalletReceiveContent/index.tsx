@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Href } from '@proton/atoms/Href';
+import { WasmApiExchangeRate, WasmApiFiatCurrency, WasmApiWalletAccount } from '@proton/andromeda';
+import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
+import Href from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
 import QRCode from '@proton/components/components/image/QRCode';
@@ -16,8 +16,8 @@ import { Button, CoreButton, CoreButtonLike } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { Tip } from '../../../atoms/Tip';
-import { DEFAULT_BITCOIN_UNIT } from '../../../constants';
 import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
+import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 interface Props {
@@ -25,9 +25,13 @@ interface Props {
 }
 
 export const WalletReceiveContent = ({ account }: Props) => {
-    const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
-    const [exchangeRate] = useWalletAccountExchangeRate(account);
+    const [defaultExchangeRate] = useWalletAccountExchangeRate(account);
+    const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
+    const getExchangeRate = useGetExchangeRate();
+    const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
     const [isOpen, setOpen] = useState(false);
+
+    const [currencies] = useFiatCurrencies();
 
     useEffect(() => {
         setOpen(true);
@@ -49,11 +53,14 @@ export const WalletReceiveContent = ({ account }: Props) => {
         handleChangeAmount,
     } = useBitcoinReceive(isOpen, account);
 
-    useEffect(() => {
-        if (exchangeRate) {
-            setUnit(exchangeRate);
+    const handleChange = async (currency?: WasmApiFiatCurrency) => {
+        if (currency) {
+            const exchangeRate = await getExchangeRate(currency.Symbol);
+            if (exchangeRate) {
+                setControlledExchangeRate(exchangeRate);
+            }
         }
-    }, [exchangeRate]);
+    };
 
     return (
         <div className="flex flex-column grow justify-center">
@@ -132,7 +139,7 @@ export const WalletReceiveContent = ({ account }: Props) => {
                                                     placeholder={c('Wallet Receive').t`Amount to receive`}
                                                     value={amount}
                                                     onValueChange={(amount: number) => handleChangeAmount(amount)}
-                                                    unit={unit}
+                                                    unit={exchangeRate ?? 'SATS'}
                                                     assistiveText={c('Wallet Receive')
                                                         .t`Leave empty to let the sender choose the amount`}
                                                 />
@@ -140,9 +147,10 @@ export const WalletReceiveContent = ({ account }: Props) => {
 
                                             <div>
                                                 <CurrencySelect
-                                                    exchangeRates={exchangeRate && [exchangeRate]}
-                                                    value={unit}
-                                                    onChange={(u) => setUnit(u)}
+                                                    dense
+                                                    options={currencies ?? []}
+                                                    value={exchangeRate?.FiatCurrency}
+                                                    onSelect={(u) => handleChange(u)}
                                                 />
                                             </div>
                                         </>

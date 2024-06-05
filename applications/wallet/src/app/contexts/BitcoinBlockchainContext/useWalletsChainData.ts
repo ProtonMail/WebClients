@@ -46,44 +46,48 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
     const walletsChainDataRef = useRef<WalletChainDataByWalletId>();
 
-    const getWalletsChainDataInit = useCallback(async (apiWalletsData?: IWasmApiWalletData[]) => {
-        const network = await getNetwork();
+    const getWalletsChainDataInit = useCallback(
+        async (apiWalletsData?: IWasmApiWalletData[]) => {
+            const network = await getNetwork();
 
-        const walletsChainData = apiWalletsData?.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
-            const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
+            const walletsChainData = apiWalletsData?.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
+                const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
 
-            // TODO: support watch-only wallets
-            if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
-                return acc;
-            }
+                // TODO: support watch-only wallets
+                if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
+                    return acc;
+                }
 
-            const wasmWallet = new WasmWallet(network, Wallet.Mnemonic, Wallet.Passphrase ?? '');
+                const wasmWallet = new WasmWallet(network, Wallet.Mnemonic, Wallet.Passphrase ?? '');
 
-            // Get accounts created in wasm wallet
-            const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
-                const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
+                // Get accounts created in wasm wallet
+                const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
+                    const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
+
+                    return {
+                        ...acc,
+                        [account.ID]: {
+                            account: wasmAccount,
+                            scriptType: account.ScriptType,
+                            derivationPath: account.DerivationPath,
+                        },
+                    };
+                }, {});
 
                 return {
                     ...acc,
-                    [account.ID]: {
-                        account: wasmAccount,
-                        scriptType: account.ScriptType,
-                        derivationPath: account.DerivationPath,
+                    [Wallet.ID]: {
+                        wallet: wasmWallet,
+                        accounts: wasmAccounts,
                     },
                 };
             }, {});
 
-            return {
-                ...acc,
-                [Wallet.ID]: {
-                    wallet: wasmWallet,
-                    accounts: wasmAccounts,
-                },
-            };
-        }, {});
-
-        return walletsChainData;
-    }, []);
+            return walletsChainData;
+        },
+        // Here getNetwork dependency creates an infinite loop in testing because mocked hook cannot be memoized
+        []
+    );
 
     const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
         Partial<Record<string, SyncingMetadata>>
@@ -93,9 +97,26 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const syncingMetatadaByAccountIdRef = useMirroredRef(syncingMetatadaByAccountId, {});
 
     const incrementSyncKey = useCallback((walletId: string, accountId: string) => {
-        setWalletsChainData(
-            (prev) => prev && set(prev, [walletId, 'accounts', accountId, 'key'], generateUID('wallet-sync'))
-        );
+        setWalletsChainData((prev) => {
+            const wallet = prev && prev[walletId];
+            const account = wallet && wallet.accounts[accountId];
+
+            return (
+                account && {
+                    ...prev,
+                    [walletId]: {
+                        ...wallet,
+                        accounts: {
+                            ...prev[walletId]?.accounts,
+                            [accountId]: {
+                                ...account,
+                                key: generateUID('wallet-sync'),
+                            },
+                        },
+                    },
+                }
+            );
+        });
     }, []);
 
     const addNewSyncing = useCallback((walletId: string, walletAccountID: string) => {
@@ -142,12 +163,13 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                         } else {
                             await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + POOL_FILLING_THRESHOLD);
                         }
+
+                        incrementSyncKey(walletId, accountId);
                     }
                 } catch (error) {
                     createNotification({ text: c('Wallet').t`An error occured`, type: 'error' });
                 } finally {
                     removeSyncing(walletId, accountId);
-                    incrementSyncKey(walletId, accountId);
                 }
             }
         },
@@ -188,11 +210,10 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     );
 
     const startPolling = useCallback(
-        async (apiWalletsData?: IWasmApiWalletData[]) => {
+        async (init: WalletChainDataByWalletId) => {
             const pollingId = generateUID(POLLING_UID_PREFIX);
             pollingIdRef.current = pollingId;
 
-            const init = await getWalletsChainDataInit(apiWalletsData);
             setWalletsChainData(init);
             walletsChainDataRef.current = init;
 
@@ -205,16 +226,23 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 await wait(10 * MINUTE);
             }
         },
-        [getWalletsChainDataInit, syncManyWallets]
+        [syncManyWallets]
     );
 
     useEffect(() => {
-        void startPolling(apiWalletsData);
+        const run = async () => {
+            const init = await getWalletsChainDataInit(apiWalletsData);
+            if (init) {
+                void startPolling(init);
+            }
+        };
+
+        void run();
 
         return () => {
             pollingIdRef.current = undefined;
         };
-    }, [startPolling, apiWalletsData]);
+    }, [getWalletsChainDataInit, apiWalletsData, startPolling]);
 
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
     const accountIDByDerivationPathByWalletID = useMemo(() => {

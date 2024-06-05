@@ -1,4 +1,7 @@
 import Option from '@proton/components/components/option/Option';
+import CoreSearchableSelect, {
+    Props as CoreSearchableSelectProps,
+} from '@proton/components/components/selectTwo/SearchableSelect';
 import SelectTwo, { Props as SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import InputField, { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
@@ -28,6 +31,25 @@ export const Select = <V extends unknown>({ options, ...props }: Props<V>) => {
                     <Option key={opt.id} title={opt.label} value={opt.value} disabled={opt.disabled} />
                 ))}
             </InputField>
+        </div>
+    );
+};
+
+type SearchableSelectProps<V> = CoreSearchableSelectProps<V> & { label: string | JSX.Element; hint?: string };
+
+export const SearchableSelect = <V extends unknown>({ ...props }: SearchableSelectProps<V>) => {
+    return (
+        <div className="wallet-select wallet-select-dropdown-button bg-weak py-5 px-6 rounded-xl color-norm w-full">
+            <InputField
+                as={CoreSearchableSelect<V>}
+                dropdownClassName="wallet-select-dropdown"
+                assistContainerClassName="empty:hidden"
+                labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
+                inputContainerClassName="mt-1"
+                originalPlacement="bottom"
+                unstyled
+                {...props}
+            />
         </div>
     );
 };

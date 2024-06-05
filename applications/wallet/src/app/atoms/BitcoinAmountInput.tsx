@@ -47,6 +47,7 @@ export const BitcoinAmountInput = ({
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);
         const safeAmount = Number.isFinite(amount) ? amount : 0;
+
         onValueChange?.(convertAmount(safeAmount, unit, 'SATS'));
     };
 

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
 
+import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
 import { convertAmount } from '../utils';
 import { BitcoinAmountInput } from './BitcoinAmountInput';
 import { CoreButton } from './Button';
@@ -9,11 +10,10 @@ import { CurrencySelect } from './CurrencySelect';
 import { Price } from './Price';
 
 interface Props {
-    exchangeRates?: WasmApiExchangeRate[];
     remainingBalance: number;
 
-    unit: WasmBitcoinUnit | WasmApiExchangeRate;
-    onUnitChange: (u: WasmBitcoinUnit | WasmApiExchangeRate) => void;
+    exchangeRate?: WasmApiExchangeRate;
+    onExchangeRateChange: (u?: WasmApiExchangeRate) => void;
 
     onSendAll?: () => void;
 
@@ -22,15 +22,29 @@ interface Props {
 }
 
 export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
-    exchangeRates,
     remainingBalance,
-    unit,
+    exchangeRate,
     value,
-    onUnitChange,
+    onExchangeRateChange,
     onAmountChange,
     onSendAll,
 }: Props) => {
-    const price = <Price key={'available-amount'} satsAmount={remainingBalance} unit={unit} />;
+    const [currencies] = useFiatCurrencies();
+    const getExchangeRate = useGetExchangeRate();
+
+    const handleChange = async (currency?: WasmApiFiatCurrency) => {
+        if (currency) {
+            const exchangeRate = await getExchangeRate(currency.Symbol);
+            if (exchangeRate) {
+                onExchangeRateChange(exchangeRate);
+            }
+        } else {
+            onExchangeRateChange();
+        }
+    };
+
+    const price = <Price key={'available-amount'} satsAmount={remainingBalance} unit={exchangeRate ?? 'BTC'} />;
+
     return (
         <div className="mt-12 mb-4">
             <div className="flex flex-row items-center">
@@ -55,23 +69,28 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         onValueChange={(v) => {
                             onAmountChange?.(v);
                         }}
-                        unit={unit}
+                        unit={exchangeRate ?? 'BTC'}
                         unstyled
                         className="h1 invisible-number-input-arrow"
                         inputClassName="p-0"
                         style={{ fontSize: '3.75rem' }}
                         value={value}
                         readOnly={!onAmountChange}
-                        prefix={typeof unit === 'object' ? unit.FiatCurrency : unit}
+                        prefix={exchangeRate?.FiatCurrency}
                     />
                 </div>
 
                 <div className="no-shrink">
-                    <CurrencySelect exchangeRates={exchangeRates} value={unit} onChange={(u) => onUnitChange(u)} />
+                    <CurrencySelect
+                        dense
+                        options={currencies ?? []}
+                        value={exchangeRate?.FiatCurrency}
+                        onSelect={(u) => handleChange(u)}
+                    />
                 </div>
             </div>
 
-            <span className="block color-weak">{convertAmount(value, 'SATS', 'BTC')} BTC</span>
+            {!!exchangeRate && <span className="block color-weak">{convertAmount(value, 'SATS', 'BTC')} BTC</span>}
         </div>
     );
 };
