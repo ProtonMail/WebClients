@@ -9,7 +9,7 @@ import {
 } from '@proton/components/hooks/helpers/test';
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
 import { createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { Audience, Organization, Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -110,54 +110,6 @@ describe('SubscriptionContainer', () => {
     it('should render', () => {
         const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
         expect(container).not.toBeEmptyDOMElement();
-    });
-
-    it('should redirect user without supported addons directly to checkout step', async () => {
-        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
-
-        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
-        await waitFor(() => {
-            expect(container).toHaveTextContent('Review subscription and pay');
-        });
-
-        // that's text from one of the branches of <Payment> component
-        // depending on the specific test setup, you might need to change this text in the test.
-        // The key idea is to ensure that the Payment component was rendered, and no matter what's exactly inside.
-        // I could mock the Payment component, but I wanted to test the whole flow.
-        await waitFor(() => {
-            expect(container).toHaveTextContent('The minimum payment we accept is');
-        });
-    });
-
-    it('should render customization step', async () => {
-        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
-        props.planIDs = {
-            [PLANS.MAIL_PRO]: 1,
-        };
-
-        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
-
-        await waitFor(() => {
-            expect(container).toHaveTextContent('Customize your plan');
-        });
-    });
-
-    it('should not proceed to the checkout step after customization if there was a check error', async () => {
-        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
-        props.planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER]: 329 }; // user with 330 users in the organization
-
-        const { findByTestId, container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
-        const continueButton = await findByTestId('continue-to-review');
-
-        apiMock.mockClear();
-        apiMock.mockRejectedValueOnce(new Error());
-
-        fireEvent.click(continueButton);
-        await waitFor(() => {});
-
-        expect(apiMock).toHaveBeenCalledTimes(1);
-
-        expect(container).toHaveTextContent('Customize your plan');
     });
 
     it.skip('should not create payment token if the amount is 0', async () => {

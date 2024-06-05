@@ -356,6 +356,7 @@ const SingleSignupContainerV2 = ({
                     PLANS.FAMILY,
                     PLANS.BUNDLE,
                     PLANS.BUNDLE_PRO,
+                    PLANS.BUNDLE_PRO_2024,
                     PLANS.VPN_PASS_BUNDLE,
                     PLANS.PASS_PLUS,
                     PLANS.PASS_BUSINESS,
@@ -488,7 +489,7 @@ const SingleSignupContainerV2 = ({
             if (signupParameters.preSelectedPlan === upsell.plan.Name || !hasCheckResult) {
                 return;
             }
-            if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(upsell.plan.Name as any)) {
+            if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(upsell.plan.Name as any)) {
                 setUnlockModal(true);
                 return;
             }

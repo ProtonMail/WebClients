@@ -176,7 +176,7 @@ const SsoPage = () => {
                                         metrics: {
                                             source: 'upsells',
                                         },
-                                        step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                                        step: SUBSCRIPTION_STEPS.CHECKOUT,
                                         plan: PLANS.VPN_BUSINESS,
                                     });
                                 }}

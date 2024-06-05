@@ -3,10 +3,10 @@ import { Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import {
-    businessUpsell,
     drivePlusUpsell,
     familyUpsell,
     mailPlusUpsell,
+    mailProfessionalUpsell,
     passPlusUpsell,
     plans,
     subscription,
@@ -231,7 +231,7 @@ describe('resolveUpsellsToDisplay', () => {
     });
 
     describe('Essentials', () => {
-        it('should return Business upsell', () => {
+        it('should return Mail Business upsell', () => {
             const [upsell] = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
@@ -246,14 +246,14 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
             });
 
-            expect(upsell).toMatchObject(businessUpsell);
+            expect(upsell).toMatchObject(mailProfessionalUpsell);
 
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
-                plan: PLANS.BUNDLE_PRO,
+                plan: PLANS.MAIL_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 metrics: {
                     source: 'upsells',
@@ -336,7 +336,7 @@ describe('resolveUpsellsToDisplay', () => {
                 cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
                 plan: PLANS.VPN_BUSINESS,
-                step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
                 metrics: {
                     source: 'upsells',
                 },

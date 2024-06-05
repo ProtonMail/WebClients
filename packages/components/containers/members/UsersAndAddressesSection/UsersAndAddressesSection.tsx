@@ -19,11 +19,11 @@ import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
+    getHasMailB2BPlan,
     getHasPassB2BPlan,
     getHasVpnOrPassB2BPlan,
-    hasBundlePro,
+    hasAnyBundlePro,
     hasFamily,
-    hasMailPro,
     hasNewVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -109,7 +109,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
-    const hasInboxB2BPlan = hasBundlePro(subscription) || hasMailPro(subscription);
+    const hasInboxB2BPlan = hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
 
     const useEmail = hasVpnOrPassB2BPlan;
     const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
@@ -313,7 +313,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleGetMoreLicense = () => {
         openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics: {
                 /**

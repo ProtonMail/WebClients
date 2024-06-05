@@ -130,13 +130,9 @@ const ActionButtons = ({
         source: 'plans',
     } as const;
 
-    const hasPassB2B = getHasPassB2BPlan(subscription);
-
     const handleCustomizeSubscription = () => {
-        const step = hasPassB2B ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
-
         openSubscriptionModal({
-            step,
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
         });
@@ -153,6 +149,8 @@ const ActionButtons = ({
             disablePlanSelection: true,
             metrics,
         });
+
+    const hasPassB2B = getHasPassB2BPlan(subscription);
 
     const showEditBillingDetails =
         user.isPaid &&
@@ -388,7 +386,7 @@ const SubscriptionPanel = ({
                 data-testid="get-more-btn"
                 onClick={() =>
                     openSubscriptionModal({
-                        step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                        step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
                         metrics: {
                             /**
