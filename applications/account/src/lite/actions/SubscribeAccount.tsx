@@ -247,7 +247,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
     }
 
     return (
-        <div className={clsx(bgClassName, 'h-full overflow-auto')}>
+        <div className={clsx(bgClassName, 'h-full overflow-auto')} data-testid="lite:subscribe-account">
             <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
                 <div className="flex-auto">
                     <div
