@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// Credentials.swift
+// Proton Pass - Created on 20/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,21 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public struct Credentials: Sendable, Equatable, Codable {
+    public let sessionID: String
+    public let accessToken: String
+    public let refreshToken: String
+    public let userID: String
+
+    public init(sessionID: String,
+                accessToken: String,
+                refreshToken: String,
+                userID: String) {
+        self.sessionID = sessionID
+        self.accessToken = accessToken
+        self.refreshToken = refreshToken
+        self.userID = userID
     }
 }

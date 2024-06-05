@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// APIService+Extensions.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,15 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import ProtonCoreServices
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+extension APIService {
+    /// Async variant that can take an `Endpoint`
+    func exec<E: Endpoint>(endpoint: E) async throws -> E.Response {
+        try await withCheckedThrowingContinuation { continuation in
+            perform(request: endpoint) { _, result in
+                continuation.resume(with: result)
+            }
+        }
     }
 }

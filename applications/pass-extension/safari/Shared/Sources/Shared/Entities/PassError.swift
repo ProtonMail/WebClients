@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// PassError.swift
+// Proton Pass - Created on 20/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,24 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public enum PassError: Error, CustomDebugStringConvertible {
+    case notUtf8Data
+    case badJsonFormat(String)
+    case failedToParseCredentials
+    case noCredentialsToUpdate
+
+    public var debugDescription: String {
+        switch self {
+        case .notUtf8Data:
+            "Not UTF8 data"
+        case let .badJsonFormat(json):
+            "Bad JSON format \(json)"
+        case .failedToParseCredentials:
+            "Failed to parse credentials"
+        case .noCredentialsToUpdate:
+            "No credentials to update"
+        }
     }
 }

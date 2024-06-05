@@ -1,5 +1,5 @@
 //
-// AppDelegate.swift
+// KeychainProvider.swift
 // Proton Pass - Created on 17/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
@@ -19,13 +19,20 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
+import SimpleKeychain
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public protocol KeychainProvider: Sendable {
+    func getData(for key: String) async throws -> Data?
+    func setData(_ data: Data?, for key: String) async throws
+}
+
+extension SimpleKeychain: KeychainProvider {
+    public func getData(for key: String) async throws -> Data? {
+        try get(key: key)
+    }
+
+    public func setData(_ data: Data?, for key: String) async throws {
+        try set(data, for: key)
     }
 }

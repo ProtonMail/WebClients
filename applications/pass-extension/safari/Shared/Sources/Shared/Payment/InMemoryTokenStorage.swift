@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// InMemoryTokenStorage.swift
+// Proton Pass - Created on 22/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,22 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import ProtonCorePayments
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public final class InMemoryTokenStorage: PaymentTokenStorage {
+    private(set) var token: PaymentToken?
+
+    public init() {}
+
+    public func add(_ token: PaymentToken) {
+        self.token = token
+    }
+
+    public func get() -> PaymentToken? {
+        token
+    }
+
+    public func clear() {
+        token = nil
     }
 }

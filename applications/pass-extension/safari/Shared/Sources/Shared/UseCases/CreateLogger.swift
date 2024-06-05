@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// CreateLogger.swift
+// Proton Pass - Created on 20/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,23 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
+import OSLog
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public protocol CreateLoggerUseCase: Sendable {
+    func execute(category: String) -> Logger
+}
+
+public extension CreateLoggerUseCase {
+    func callAsFunction(category: String) -> Logger {
+        execute(category: category)
+    }
+}
+
+public final class CreateLogger: CreateLoggerUseCase {
+    public init() {}
+
+    public func execute(category: String) -> Logger {
+        Logger(subsystem: Bundle.main.bundleIdentifier ?? "ProtonPass", category: category)
     }
 }
