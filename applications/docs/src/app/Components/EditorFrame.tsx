@@ -1,15 +1,18 @@
-import { useCallback, useEffect, useState } from 'react'
+import { BridgeOriginProvider } from '@proton/docs-shared'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
   isViewOnly?: boolean
 }
 
-function getEditorUrl(isViewOnly = false) {
-  const url = new URL(window.location.origin.replace('docs', 'docs-editor'))
+function GetEditorUrl(isViewOnly = false) {
+  const url = new URL(BridgeOriginProvider.GetEditorOrigin())
+
   if (isViewOnly) {
     url.searchParams.set('viewOnly', 'true')
   }
+
   return url.toString()
 }
 
@@ -22,6 +25,7 @@ const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms'
 
 export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
+  const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
 
   useEffect(() => {
     if (!iframe) {
@@ -42,7 +46,7 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   return (
     <iframe
       title="Docs Editor"
-      src={getEditorUrl(isViewOnly)}
+      src={url}
       style={{ width: '100%', height: '100%' }}
       ref={setIframe}
       onLoad={onLoad}
