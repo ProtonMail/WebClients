@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { addMonths, format, getUnixTime } from 'date-fns';
 
 import { subscriptionMock, upcomingSubscriptionMock } from '@proton/testing/data';
 
@@ -33,11 +34,19 @@ it('should return status cancelled when clicking on cancel subscription', () => 
 });
 
 it('should display end date of the current subscription', () => {
+    // We ensure to have a date in the future to avoid formatting errors
+    const futureDate = addMonths(new Date(), 2);
+    const adaptedSubscription = {
+        ...subscriptionMock,
+        PeriodEnd: getUnixTime(futureDate),
+    };
+
     const { container } = render(
-        <CancelSubscriptionModal subscription={subscriptionMock} onResolve={onResolve} onReject={onReject} open />
+        <CancelSubscriptionModal subscription={adaptedSubscription} onResolve={onResolve} onReject={onReject} open />
     );
 
-    expect(container).toHaveTextContent('expires on Jun 5, 2024');
+    const expectedDate = format(futureDate, 'PP');
+    expect(container).toHaveTextContent(`expires on ${expectedDate}`);
 });
 
 it('should display the end date of the upcoming subscription if it exists', () => {
