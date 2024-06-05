@@ -29,6 +29,7 @@ const DocsHeader = () => {
       <div className="w-2" />
       <ConnectionStatus />
       <div className="mr-auto" />
+      <DocumentActiveUsers className="mr-2" />
       {controller && (
         <>
           <Button
@@ -49,7 +50,6 @@ const DocsHeader = () => {
           </Button>
         </>
       )}
-      <DocumentActiveUsers />
       <QuickSettingsAppButton />
       <div className="w-4" />
       <UserDropdown app={APPS.PROTONDOCS} />
