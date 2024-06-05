@@ -1,0 +1,15 @@
+PROJECT = "Proton Pass.xcodeproj"
+
+desc "Prompt for version number and bump in xcodeproj"
+lane :bump_version do |options|
+  # Check if version number was passed as an argument
+  version = options[:version]
+
+  # If version number was not provided, prompt the user to enter it
+  if version.nil?
+    version = UI.input("Enter version number in semver format: ")
+  end
+
+  # Call the action to increment version number in xcodeproj
+  increment_version_number_in_xcodeproj(version_number: version)
+end

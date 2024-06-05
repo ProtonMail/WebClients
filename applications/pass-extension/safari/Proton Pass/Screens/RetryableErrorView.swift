@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// RetryableErrorView.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,17 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import SwiftUI
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+struct RetryableErrorView: View {
+    let error: any Error
+    let onRetry: () -> Void
+
+    var body: some View {
+        VStack {
+            Text(error.localizedDescription)
+            Button(action: onRetry,
+                   label: { Text("Retry") })
+        }
     }
 }

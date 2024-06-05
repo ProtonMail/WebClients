@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// Bundle+Extension.swift
+// Proton Pass - Created on 21/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,14 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public extension Bundle {
+    var versionNumber: String { string(forKey: "CFBundleShortVersionString") ?? "0.0.0" }
+}
+
+private extension Bundle {
+    func string(forKey key: String) -> String? {
+        infoDictionary?[key] as? String
     }
 }

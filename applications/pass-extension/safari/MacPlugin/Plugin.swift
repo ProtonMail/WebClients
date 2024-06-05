@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// Plugin.swift
+// Proton Pass - Created on 18/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,13 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
-    }
+// Bridge between macOS catalyst and macOS native
+// https://betterprogramming.pub/how-to-access-the-appkit-api-from-mac-catalyst-apps-2184527020b5
+@objc(Plugin)
+public protocol Plugin: NSObjectProtocol {
+    init()
+
+    func openApp(bundleId: String)
 }

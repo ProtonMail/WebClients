@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// PaymentsConstants.swift
+// Proton Pass - Created on 22/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,26 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import ProtonCoreDataModel
+import ProtonCorePayments
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
-    }
+enum PaymentsConstants {
+    static let inAppPurchaseIdentifiers: ListOfIAPIdentifiers = [
+        "iospass_pass2023_12_usd_non_renewing_v1",
+        "iospass_pass2023_passlaunch_12_usd_non_renewing",
+        "iospass_bundle2022_12_usd_non_renewing"
+    ]
+
+    static let shownPlanNames: ListOfShownPlanNames = [
+        "pass2023",
+        "bundle2022",
+        "family2022",
+        "visionary2022",
+        "bundlepro2022",
+        "enterprise2022",
+        "visionary",
+        "passpro2024"
+    ]
+
+    static let clientApp = ClientApp.pass
 }

@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// SetCoreLoggerEnvironment.swift
+// Proton Pass - Created on 22/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,23 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
+import ProtonCoreLog
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public protocol SetCoreLoggerEnvironmentUseCase: Sendable {
+    func execute(_ environment: PassEnvironment)
+}
+
+public extension SetCoreLoggerEnvironmentUseCase {
+    func callAsFunction(_ environment: PassEnvironment) {
+        execute(environment)
+    }
+}
+
+public final class SetCoreLoggerEnvironment: SetCoreLoggerEnvironmentUseCase {
+    public init() {}
+
+    public func execute(_ environment: PassEnvironment) {
+        PMLog.setEnvironment(environment: environment.name)
     }
 }

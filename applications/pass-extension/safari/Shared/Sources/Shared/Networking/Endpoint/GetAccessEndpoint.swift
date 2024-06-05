@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// GetAccessEndpoint.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,17 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+@preconcurrency import ProtonCoreNetworking
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
-    }
+struct GetAccessResponse: Decodable, Equatable, Sendable {
+    let access: Access
+}
+
+struct GetAccessEndpoint: Endpoint {
+    typealias Body = EmptyRequest
+    typealias Response = GetAccessResponse
+
+    let debugDescription = "Get Pass access"
+    let path = "/pass/v1/user/access"
+    let method: HTTPMethod = .get
 }

@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// NavigationStackEmbededModifier.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,25 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import SwiftUI
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+struct NavigationStackEmbededModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(macCatalyst 16.0, *) {
+            NavigationStack {
+                content
+            }
+        } else {
+            NavigationView {
+                content
+            }
+            .navigationViewStyle(.stack)
+        }
+    }
+}
+
+extension View {
+    func navigationStackEmbeded() -> some View {
+        modifier(NavigationStackEmbededModifier())
     }
 }

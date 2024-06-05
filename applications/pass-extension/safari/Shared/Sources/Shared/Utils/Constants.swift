@@ -1,5 +1,5 @@
 //
-// AppDelegate.swift
+// Constants.swift
 // Proton Pass - Created on 17/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
@@ -19,13 +19,17 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
-    }
+public let kSharedUserDefaults = UserDefaults(suiteName: Constants.appGroup)
+
+public enum Constants: Sendable {
+    public static let teamId = "2SB5Z68H26"
+    public static let bundleId = "me.proton.pass.catalyst"
+    public static let extensionBundleId = "me.proton.pass.catalyst.safari-extension"
+    public static let appGroup = "group.me.proton.pass.catalyst"
+    public static let keychainAccessGroup = "\(teamId).\(appGroup)"
+    public static let appStoreUrl = "itms-apps://itunes.apple.com/app/id6502835663"
+    public static let environmentKey = "ENVIRONMENT"
+    public static let credentialsKey = "CREDENTIALS"
 }

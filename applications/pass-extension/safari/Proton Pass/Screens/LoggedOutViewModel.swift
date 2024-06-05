@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// LoggedOutViewModel.swift
+// Proton Pass - Created on 18/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,17 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Factory
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+@MainActor
+final class LoggedOutViewModel: ObservableObject {
+    private let loadPlugin = resolve(\UseCaseContainer.loadPlugin)
+
+    init() {}
+
+    func openSafari() {
+        guard let plugin = loadPlugin(bundle: .main) else { return }
+        plugin.openApp(bundleId: "com.apple.safari")
     }
 }

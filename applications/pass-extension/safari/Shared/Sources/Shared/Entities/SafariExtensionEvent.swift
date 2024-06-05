@@ -1,5 +1,5 @@
 //
-// AppDelegate.swift
+// SafariExtensionEvent.swift
 // Proton Pass - Created on 17/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
@@ -19,13 +19,11 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
-    }
+public enum SafariExtensionEvent: Sendable, Equatable {
+    case newCredentials(Credentials?)
+    case updateCredentials(RefreshedTokens)
+    case environment(PassEnvironment)
+    case unknown
 }
