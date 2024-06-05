@@ -40,7 +40,7 @@ const brandNameJSX = (
 
 export const InstallationSuccess: FC = () => {
     const login = useRequestForkWithPermissions({ replace: true });
-    const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
+    const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(BUILD_TARGET === 'safari' ? true : null);
 
     const { createNotification } = useNotifications();
 
@@ -92,10 +92,12 @@ export const InstallationSuccess: FC = () => {
                                 .jt`Welcome to your new password manager!`}</h1>
                         </div>
 
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
-                            <hr className="pass-installation--white-separator my-2 flex flex-auto" />
-                        </div>
+                        {BUILD_TARGET !== 'safari' ? (
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
+                                <hr className="pass-installation--white-separator my-2 flex flex-auto" />
+                            </div>
+                        ) : null}
 
                         <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">
                             {!isPinned && (
