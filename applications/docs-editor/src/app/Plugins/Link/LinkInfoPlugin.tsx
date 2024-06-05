@@ -16,7 +16,7 @@ import { LinkInfoViewer } from './LinkInfoViewer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { mergeRegister } from '@lexical/utils'
 import { LinkInfoEditor } from './LinkInfoEditor'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 
 export const $isLinkTextNode = (
   node: ReturnType<typeof getSelectedNode>,
