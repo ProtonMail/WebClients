@@ -63,11 +63,8 @@ export const getAccountTransactions = async (
     pagination?: WasmPagination,
     sort?: WasmSortOrder
 ) => {
-    return (
-        (await walletsChainData[walletId]?.accounts?.[accountId]?.account.getTransactions(pagination, sort))?.[0].map(
-            ({ Data }) => Data
-        ) ?? []
-    );
+    const account = walletsChainData[walletId]?.accounts?.[accountId]?.account;
+    return (await account?.getTransactions(pagination, sort))?.[0].map(({ Data }) => Data) ?? [];
 };
 
 export const getAccountsWithChainDataFromManyWallets = (

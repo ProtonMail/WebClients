@@ -12,7 +12,8 @@ import {
 } from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Input, Select } from '../../atoms';
+import { Input } from '../../atoms';
+import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { EmailIntegrationInput } from '../EmailIntegrationInput';
 import { useAccountPreferences } from './useAccountPreferences';
 
@@ -99,16 +100,15 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     }
                 />
                 <hr className="my-0" />
-                <Select
+                <CurrencySelect
                     disabled={loadingCurrencies || isLoadingFiatCurrencyUpdate}
-                    name="currency"
                     label={c('Wallet preferences').t`Local currency`}
-                    placeholder="USD"
+                    placeholder={c('Wallet preferences').t`Select your currency`}
                     value={walletAccount.FiatCurrency}
-                    onValue={(value) => {
-                        void onChangeFiatCurrency(value);
+                    onSelect={(value) => {
+                        void onChangeFiatCurrency(value.Symbol);
                     }}
-                    options={currencies?.map((c) => ({ label: c.Name, value: c.Symbol, id: c.ID })) ?? []}
+                    options={currencies ?? []}
                 />
                 <hr className="my-0" />
                 <EmailIntegrationInput

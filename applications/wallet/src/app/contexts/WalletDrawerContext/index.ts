@@ -11,8 +11,6 @@ import { SubTheme } from '../../utils';
 export interface WalletTransactionDrawerData {
     kind: 'transaction-data';
     transaction: TransactionData;
-    apiAccount: WasmApiWalletAccount | undefined;
-    apiWalletData: IWasmApiWalletData;
 }
 
 export interface WalletDiscoverDrawerData {
