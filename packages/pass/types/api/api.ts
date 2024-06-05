@@ -52,7 +52,7 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
     signal?: AbortSignal;
-    silent?: boolean;
+    sideEffects?: boolean;
     url?: U;
 };
 
