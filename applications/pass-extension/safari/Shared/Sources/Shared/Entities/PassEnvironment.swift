@@ -1,5 +1,5 @@
 //
-// AppDelegate.swift
+// PassEnvironment.swift
 // Proton Pass - Created on 17/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
@@ -19,13 +19,22 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public enum PassEnvironment: Sendable, Equatable, Codable {
+    case prod, black, scientist(String)
+}
+
+public extension PassEnvironment {
+    /// Used for Sentry only
+    var name: String {
+        switch self {
+        case .prod:
+            "production"
+        case .black:
+            "black"
+        case let .scientist(name):
+            "scientist_\(name)"
+        }
     }
 }

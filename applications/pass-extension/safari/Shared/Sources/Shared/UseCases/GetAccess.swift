@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// GetAccess.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,25 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Foundation
+import ProtonCoreServices
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+public protocol GetAccessUseCase: Sendable {
+    func execute(_ apiService: any APIService) async throws -> Access
+}
+
+public extension GetAccessUseCase {
+    func callAsFunction(_ apiService: any APIService) async throws -> Access {
+        try await execute(apiService)
+    }
+}
+
+public final class GetAccess: Sendable, GetAccessUseCase {
+    public init() {}
+
+    public func execute(_ apiService: any APIService) async throws -> Access {
+        let endpoint = GetAccessEndpoint()
+        let response = try await apiService.exec(endpoint: endpoint)
+        return response.access
     }
 }

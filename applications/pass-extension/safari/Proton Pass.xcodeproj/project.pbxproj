@@ -7,56 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F9664F52C048D21008E2283 /* dropdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B02C048D20008E2283 /* dropdown.js */; };
-		1F9664F62C048D21008E2283 /* notification.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B12C048D20008E2283 /* notification.js */; };
-		1F9664F72C048D21008E2283 /* chunk.5664.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B32C048D20008E2283 /* chunk.5664.js */; };
-		1F9664F82C048D21008E2283 /* chunk.crypto-worker-api.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B52C048D20008E2283 /* chunk.crypto-worker-api.js */; };
-		1F9664F92C048D21008E2283 /* settings.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B72C048D20008E2283 /* settings.js */; };
-		1F9664FA2C048D21008E2283 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B82C048D20008E2283 /* settings.html */; };
-		1F9664FB2C048D21008E2283 /* chunk.5908.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664B92C048D20008E2283 /* chunk.5908.js */; };
-		1F9664FC2C048D21008E2283 /* dropdown.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664BD2C048D20008E2283 /* dropdown.html */; };
-		1F9664FD2C048D21008E2283 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664BF2C048D20008E2283 /* styles */; };
-		1F9664FE2C048D21008E2283 /* chunk.6783.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664C02C048D20008E2283 /* chunk.6783.js */; };
-		1F9664FF2C048D21008E2283 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664C12C048D20008E2283 /* manifest.json */; };
-		1F9665002C048D21008E2283 /* onboarding.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664C22C048D20008E2283 /* onboarding.html */; };
-		1F9665012C048D21008E2283 /* 2df646675dbf3cad264b.module.wasm in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664C32C048D20008E2283 /* 2df646675dbf3cad264b.module.wasm */; };
-		1F9665022C048D21008E2283 /* webauthn.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664C52C048D20008E2283 /* webauthn.js */; };
-		1F9665032C048D21008E2283 /* chunk.crypto-worker-v6-canary.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664CA2C048D20008E2283 /* chunk.crypto-worker-v6-canary.js */; };
-		1F9665042C048D21008E2283 /* chunk.locales in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664CB2C048D20008E2283 /* chunk.locales */; };
-		1F9665052C048D21008E2283 /* chunk.5781.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664CD2C048D20008E2283 /* chunk.5781.js */; };
-		1F9665062C048D21008E2283 /* elements.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D02C048D20008E2283 /* elements.js */; };
-		1F9665072C048D21008E2283 /* chunk.7143.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D12C048D20008E2283 /* chunk.7143.js */; };
-		1F9665082C048D21008E2283 /* chunk.date-fns in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D22C048D20008E2283 /* chunk.date-fns */; };
-		1F9665092C048D21008E2283 /* chunk.6504.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D32C048D20008E2283 /* chunk.6504.js */; };
-		1F96650A2C048D21008E2283 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D52C048D20008E2283 /* assets */; };
-		1F96650B2C048D21008E2283 /* chunk.2494.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D62C048D20008E2283 /* chunk.2494.js */; };
-		1F96650C2C048D21008E2283 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D72C048D20008E2283 /* popup.js */; };
-		1F96650D2C048D21008E2283 /* chunk.crypto-worker.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664D92C048D20008E2283 /* chunk.crypto-worker.js */; };
-		1F96650E2C048D21008E2283 /* chunk.6851.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664DA2C048D21008E2283 /* chunk.6851.js */; };
-		1F96650F2C048D21008E2283 /* notification.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664DB2C048D21008E2283 /* notification.html */; };
-		1F9665102C048D21008E2283 /* chunk.6659.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664DC2C048D21008E2283 /* chunk.6659.js */; };
-		1F9665112C048D21008E2283 /* onboarding.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664DD2C048D21008E2283 /* onboarding.js */; };
-		1F9665122C048D21008E2283 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664DF2C048D21008E2283 /* popup.html */; };
-		1F9665132C048D21008E2283 /* chunk.1677.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664E22C048D21008E2283 /* chunk.1677.js */; };
-		1F9665142C048D21008E2283 /* orchestrator.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664E32C048D21008E2283 /* orchestrator.js */; };
-		1F9665152C048D21008E2283 /* chunk.8916.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664E52C048D21008E2283 /* chunk.8916.js */; };
-		1F9665162C048D21008E2283 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664E82C048D21008E2283 /* background.js */; };
-		1F9665172C048D21008E2283 /* chunk.1923.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664E92C048D21008E2283 /* chunk.1923.js */; };
-		1F9665182C048D21008E2283 /* chunk.3978.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664EC2C048D21008E2283 /* chunk.3978.js */; };
-		1F9665192C048D21008E2283 /* chunk.7449.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664ED2C048D21008E2283 /* chunk.7449.js */; };
-		1F96651A2C048D21008E2283 /* chunk.1470.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664EF2C048D21008E2283 /* chunk.1470.js */; };
-		1F96651B2C048D21008E2283 /* chunk.1147.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664F22C048D21008E2283 /* chunk.1147.js */; };
-		1F96651C2C048D21008E2283 /* client.js in Resources */ = {isa = PBXBuildFile; fileRef = 1F9664F32C048D21008E2283 /* client.js */; };
 		1FEA7CF52BE8E86900EF2ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */; };
-		1FEA7CF92BE8E86900EF2ED2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7CF82BE8E86900EF2ED2 /* Base */; };
-		1FEA7CFB2BE8E86900EF2ED2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7CFA2BE8E86900EF2ED2 /* Icon.png */; };
-		1FEA7CFD2BE8E86900EF2ED2 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7CFC2BE8E86900EF2ED2 /* Style.css */; };
-		1FEA7CFF2BE8E86900EF2ED2 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7CFE2BE8E86900EF2ED2 /* Script.js */; };
-		1FEA7D012BE8E86900EF2ED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7D002BE8E86900EF2ED2 /* ViewController.swift */; };
-		1FEA7D042BE8E86900EF2ED2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7D032BE8E86900EF2ED2 /* Base */; };
 		1FEA7D062BE8E86900EF2ED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */; };
-		1FEA7D0F2BE8E86A00EF2ED2 /* Proton Pass Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1FEA7D0E2BE8E86A00EF2ED2 /* Proton Pass Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1FEA7D0F2BE8E86A00EF2ED2 /* Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1FEA7D142BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */; };
+		3515DC6F2BFF869A00AD699A /* LoadPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515DC6C2BFF869400AD699A /* LoadPlugin.swift */; };
+		353534422BF8CB0D0003BE4B /* LoggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534412BF8CB0D0003BE4B /* LoggedOutView.swift */; };
+		353534462BF8CB7A0003BE4B /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534452BF8CB7A0003BE4B /* LogoView.swift */; };
+		353534752BF8E6870003BE4B /* MacPlugin.bundle in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 353534712BF8E6680003BE4B /* MacPlugin.bundle */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		353534812BF8E7290003BE4B /* MacPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3535347E2BF8E7290003BE4B /* MacPlugin.swift */; };
+		353534832BF8E7710003BE4B /* LoggedOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */; };
+		353AA4102BFA9AC70084B00C /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
+		3570308B2BFE0F5000E283F4 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308A2BFE0F5000E283F4 /* LoggedInView.swift */; };
+		3570308D2BFE0F6E00E283F4 /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */; };
+		357CEE422C04912500867A76 /* chunk.date-fns in Resources */ = {isa = PBXBuildFile; fileRef = 357CEDFE2C04912300867A76 /* chunk.date-fns */; };
+		357CEE432C04912500867A76 /* chunk.6504.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEDFF2C04912300867A76 /* chunk.6504.js */; };
+		357CEE442C04912500867A76 /* chunk.6851.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE002C04912300867A76 /* chunk.6851.js */; };
+		357CEE452C04912500867A76 /* onboarding.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE032C04912300867A76 /* onboarding.js */; };
+		357CEE462C04912500867A76 /* dropdown.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE052C04912300867A76 /* dropdown.html */; };
+		357CEE472C04912500867A76 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE062C04912300867A76 /* assets */; };
+		357CEE482C04912500867A76 /* orchestrator.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE072C04912300867A76 /* orchestrator.js */; };
+		357CEE492C04912500867A76 /* client.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE082C04912300867A76 /* client.js */; };
+		357CEE4A2C04912500867A76 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0B2C04912300867A76 /* popup.html */; };
+		357CEE4B2C04912500867A76 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0C2C04912300867A76 /* background.js */; };
+		357CEE4C2C04912500867A76 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0D2C04912300867A76 /* styles */; };
+		357CEE4D2C04912500867A76 /* dropdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0E2C04912300867A76 /* dropdown.js */; };
+		357CEE4E2C04912500867A76 /* chunk.7449.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0F2C04912300867A76 /* chunk.7449.js */; };
+		357CEE4F2C04912500867A76 /* chunk.8916.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE102C04912300867A76 /* chunk.8916.js */; };
+		357CEE502C04912500867A76 /* chunk.3978.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE112C04912300867A76 /* chunk.3978.js */; };
+		357CEE512C04912500867A76 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE132C04912300867A76 /* manifest.json */; };
+		357CEE522C04912500867A76 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE142C04912300867A76 /* settings.html */; };
+		357CEE532C04912500867A76 /* chunk.locales in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE152C04912300867A76 /* chunk.locales */; };
+		357CEE542C04912500867A76 /* chunk.1923.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE162C04912300867A76 /* chunk.1923.js */; };
+		357CEE552C04912500867A76 /* settings.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1A2C04912400867A76 /* settings.js */; };
+		357CEE562C04912500867A76 /* notification.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1B2C04912400867A76 /* notification.html */; };
+		357CEE572C04912500867A76 /* notification.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1F2C04912400867A76 /* notification.js */; };
+		357CEE582C04912500867A76 /* 2430b21d6e7b99d5e8ea.module.wasm in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */; };
+		357CEE592C04912500867A76 /* webauthn.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE212C04912400867A76 /* webauthn.js */; };
+		357CEE5A2C04912500867A76 /* chunk.1470.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE232C04912400867A76 /* chunk.1470.js */; };
+		357CEE5B2C04912500867A76 /* chunk.crypto-worker-api.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */; };
+		357CEE5C2C04912500867A76 /* chunk.1677.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE262C04912400867A76 /* chunk.1677.js */; };
+		357CEE5D2C04912500867A76 /* chunk.6659.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE292C04912400867A76 /* chunk.6659.js */; };
+		357CEE5E2C04912500867A76 /* chunk.6783.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2B2C04912400867A76 /* chunk.6783.js */; };
+		357CEE5F2C04912500867A76 /* chunk.5664.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2C2C04912400867A76 /* chunk.5664.js */; };
+		357CEE602C04912500867A76 /* chunk.5781.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2E2C04912400867A76 /* chunk.5781.js */; };
+		357CEE612C04912500867A76 /* elements.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE302C04912400867A76 /* elements.js */; };
+		357CEE622C04912500867A76 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE312C04912400867A76 /* popup.js */; };
+		357CEE632C04912500867A76 /* chunk.2494.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE322C04912400867A76 /* chunk.2494.js */; };
+		357CEE642C04912500867A76 /* chunk.5908.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE352C04912400867A76 /* chunk.5908.js */; };
+		357CEE652C04912500867A76 /* onboarding.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE372C04912500867A76 /* onboarding.html */; };
+		357CEE662C04912500867A76 /* chunk.7143.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3A2C04912500867A76 /* chunk.7143.js */; };
+		357CEE672C04912500867A76 /* chunk.crypto-worker.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */; };
+		357CEE682C04912500867A76 /* chunk.1147.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3D2C04912500867A76 /* chunk.1147.js */; };
+		357CEE692C04912500867A76 /* chunk.crypto-worker-v6-canary.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */; };
+		3587FB3A2BFF95F8006C170F /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
+		3587FB3C2BFF9625006C170F /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */; };
+		358A2BDF2BFC847B007C8D5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BDE2BFC847B007C8D5C /* MainView.swift */; };
+		358A2BE12BFC848E007C8D5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE02BFC848E007C8D5C /* MainViewModel.swift */; };
+		358A2BE32BFC86E9007C8D5C /* SharedToolingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */; };
+		358A2BE42BFC8727007C8D5C /* SharedToolingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */; };
+		358AB4932BFF67080008A7EC /* RetryableErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4922BFF67080008A7EC /* RetryableErrorView.swift */; };
+		358AB4962BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */; };
+		358AB4982BFF85150008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
+		358AB4992BFF85180008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
+		35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC4D2BF7DDC90086D497 /* Factory */; };
+		35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC502BF7DE4F0086D497 /* Shared */; };
+		35F4EC532BF7DE540086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC522BF7DE540086D497 /* Factory */; };
+		35F4EC552BF7DE570086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC542BF7DE570086D497 /* Shared */; };
+		35F4EC582BF7EA5A0086D497 /* ProtonPassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +85,13 @@
 			remoteGlobalIDString = 1FEA7D0D2BE8E86A00EF2ED2;
 			remoteInfo = "Proton Pass Extension";
 		};
+		353534762BF8E6870003BE4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FEA7CE92BE8E86900EF2ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 353534702BF8E6680003BE4B;
+			remoteInfo = MacPlugin;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +101,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1FEA7D0F2BE8E86A00EF2ED2 /* Proton Pass Extension.appex in Embed Foundation Extensions */,
+				353534752BF8E6870003BE4B /* MacPlugin.bundle in Embed Foundation Extensions */,
+				1FEA7D0F2BE8E86A00EF2ED2 /* Safari Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,90 +110,103 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F9664B02C048D20008E2283 /* dropdown.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = dropdown.js; path = ../../dist/dropdown.js; sourceTree = "<group>"; };
-		1F9664B12C048D20008E2283 /* notification.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = notification.js; path = ../../dist/notification.js; sourceTree = "<group>"; };
-		1F9664B22C048D20008E2283 /* onboarding.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = onboarding.js.map; path = ../../dist/onboarding.js.map; sourceTree = "<group>"; };
-		1F9664B32C048D20008E2283 /* chunk.5664.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5664.js; path = ../../dist/chunk.5664.js; sourceTree = "<group>"; };
-		1F9664B42C048D20008E2283 /* settings.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = settings.js.map; path = ../../dist/settings.js.map; sourceTree = "<group>"; };
-		1F9664B52C048D20008E2283 /* chunk.crypto-worker-api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-api.js"; path = "../../dist/chunk.crypto-worker-api.js"; sourceTree = "<group>"; };
-		1F9664B62C048D20008E2283 /* chunk.7449.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7449.js.map; path = ../../dist/chunk.7449.js.map; sourceTree = "<group>"; };
-		1F9664B72C048D20008E2283 /* settings.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = settings.js; path = ../../dist/settings.js; sourceTree = "<group>"; };
-		1F9664B82C048D20008E2283 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = ../../dist/settings.html; sourceTree = "<group>"; };
-		1F9664B92C048D20008E2283 /* chunk.5908.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5908.js; path = ../../dist/chunk.5908.js; sourceTree = "<group>"; };
-		1F9664BA2C048D20008E2283 /* popup.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = popup.js.map; path = ../../dist/popup.js.map; sourceTree = "<group>"; };
-		1F9664BB2C048D20008E2283 /* chunk.crypto-worker.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker.js.map"; path = "../../dist/chunk.crypto-worker.js.map"; sourceTree = "<group>"; };
-		1F9664BC2C048D20008E2283 /* chunk.6504.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6504.js.map; path = ../../dist/chunk.6504.js.map; sourceTree = "<group>"; };
-		1F9664BD2C048D20008E2283 /* dropdown.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = dropdown.html; path = ../../dist/dropdown.html; sourceTree = "<group>"; };
-		1F9664BE2C048D20008E2283 /* elements.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = elements.js.map; path = ../../dist/elements.js.map; sourceTree = "<group>"; };
-		1F9664BF2C048D20008E2283 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../dist/styles; sourceTree = "<group>"; };
-		1F9664C02C048D20008E2283 /* chunk.6783.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6783.js; path = ../../dist/chunk.6783.js; sourceTree = "<group>"; };
-		1F9664C12C048D20008E2283 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../dist/manifest.json; sourceTree = "<group>"; };
-		1F9664C22C048D20008E2283 /* onboarding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = onboarding.html; path = ../../dist/onboarding.html; sourceTree = "<group>"; };
-		1F9664C32C048D20008E2283 /* 2df646675dbf3cad264b.module.wasm */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2df646675dbf3cad264b.module.wasm; path = ../../dist/2df646675dbf3cad264b.module.wasm; sourceTree = "<group>"; };
-		1F9664C42C048D20008E2283 /* chunk.crypto-worker-v6-canary.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-v6-canary.js.map"; path = "../../dist/chunk.crypto-worker-v6-canary.js.map"; sourceTree = "<group>"; };
-		1F9664C52C048D20008E2283 /* webauthn.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = webauthn.js; path = ../../dist/webauthn.js; sourceTree = "<group>"; };
-		1F9664C62C048D20008E2283 /* chunk.2494.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.2494.js.map; path = ../../dist/chunk.2494.js.map; sourceTree = "<group>"; };
-		1F9664C72C048D20008E2283 /* chunk.7143.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7143.js.map; path = ../../dist/chunk.7143.js.map; sourceTree = "<group>"; };
-		1F9664C82C048D20008E2283 /* chunk.1923.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1923.js.map; path = ../../dist/chunk.1923.js.map; sourceTree = "<group>"; };
-		1F9664C92C048D20008E2283 /* chunk.1147.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1147.js.map; path = ../../dist/chunk.1147.js.map; sourceTree = "<group>"; };
-		1F9664CA2C048D20008E2283 /* chunk.crypto-worker-v6-canary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-v6-canary.js"; path = "../../dist/chunk.crypto-worker-v6-canary.js"; sourceTree = "<group>"; };
-		1F9664CB2C048D20008E2283 /* chunk.locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = chunk.locales; path = ../../dist/chunk.locales; sourceTree = "<group>"; };
-		1F9664CC2C048D20008E2283 /* chunk.crypto-worker-api.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-api.js.map"; path = "../../dist/chunk.crypto-worker-api.js.map"; sourceTree = "<group>"; };
-		1F9664CD2C048D20008E2283 /* chunk.5781.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5781.js; path = ../../dist/chunk.5781.js; sourceTree = "<group>"; };
-		1F9664CE2C048D20008E2283 /* chunk.6851.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6851.js.map; path = ../../dist/chunk.6851.js.map; sourceTree = "<group>"; };
-		1F9664CF2C048D20008E2283 /* client.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = client.js.map; path = ../../dist/client.js.map; sourceTree = "<group>"; };
-		1F9664D02C048D20008E2283 /* elements.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = elements.js; path = ../../dist/elements.js; sourceTree = "<group>"; };
-		1F9664D12C048D20008E2283 /* chunk.7143.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7143.js; path = ../../dist/chunk.7143.js; sourceTree = "<group>"; };
-		1F9664D22C048D20008E2283 /* chunk.date-fns */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "chunk.date-fns"; path = "../../dist/chunk.date-fns"; sourceTree = "<group>"; };
-		1F9664D32C048D20008E2283 /* chunk.6504.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6504.js; path = ../../dist/chunk.6504.js; sourceTree = "<group>"; };
-		1F9664D42C048D20008E2283 /* notification.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = notification.js.map; path = ../../dist/notification.js.map; sourceTree = "<group>"; };
-		1F9664D52C048D20008E2283 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../dist/assets; sourceTree = "<group>"; };
-		1F9664D62C048D20008E2283 /* chunk.2494.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.2494.js; path = ../../dist/chunk.2494.js; sourceTree = "<group>"; };
-		1F9664D72C048D20008E2283 /* popup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../dist/popup.js; sourceTree = "<group>"; };
-		1F9664D82C048D20008E2283 /* chunk.5908.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5908.js.map; path = ../../dist/chunk.5908.js.map; sourceTree = "<group>"; };
-		1F9664D92C048D20008E2283 /* chunk.crypto-worker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker.js"; path = "../../dist/chunk.crypto-worker.js"; sourceTree = "<group>"; };
-		1F9664DA2C048D21008E2283 /* chunk.6851.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6851.js; path = ../../dist/chunk.6851.js; sourceTree = "<group>"; };
-		1F9664DB2C048D21008E2283 /* notification.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = notification.html; path = ../../dist/notification.html; sourceTree = "<group>"; };
-		1F9664DC2C048D21008E2283 /* chunk.6659.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6659.js; path = ../../dist/chunk.6659.js; sourceTree = "<group>"; };
-		1F9664DD2C048D21008E2283 /* onboarding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = onboarding.js; path = ../../dist/onboarding.js; sourceTree = "<group>"; };
-		1F9664DE2C048D21008E2283 /* chunk.1677.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1677.js.map; path = ../../dist/chunk.1677.js.map; sourceTree = "<group>"; };
-		1F9664DF2C048D21008E2283 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = popup.html; path = ../../dist/popup.html; sourceTree = "<group>"; };
-		1F9664E02C048D21008E2283 /* chunk.6659.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6659.js.map; path = ../../dist/chunk.6659.js.map; sourceTree = "<group>"; };
-		1F9664E12C048D21008E2283 /* chunk.6783.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6783.js.map; path = ../../dist/chunk.6783.js.map; sourceTree = "<group>"; };
-		1F9664E22C048D21008E2283 /* chunk.1677.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1677.js; path = ../../dist/chunk.1677.js; sourceTree = "<group>"; };
-		1F9664E32C048D21008E2283 /* orchestrator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = orchestrator.js; path = ../../dist/orchestrator.js; sourceTree = "<group>"; };
-		1F9664E42C048D21008E2283 /* chunk.3978.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.3978.js.map; path = ../../dist/chunk.3978.js.map; sourceTree = "<group>"; };
-		1F9664E52C048D21008E2283 /* chunk.8916.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.8916.js; path = ../../dist/chunk.8916.js; sourceTree = "<group>"; };
-		1F9664E62C048D21008E2283 /* dropdown.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = dropdown.js.map; path = ../../dist/dropdown.js.map; sourceTree = "<group>"; };
-		1F9664E72C048D21008E2283 /* chunk.5664.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5664.js.map; path = ../../dist/chunk.5664.js.map; sourceTree = "<group>"; };
-		1F9664E82C048D21008E2283 /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../dist/background.js; sourceTree = "<group>"; };
-		1F9664E92C048D21008E2283 /* chunk.1923.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1923.js; path = ../../dist/chunk.1923.js; sourceTree = "<group>"; };
-		1F9664EA2C048D21008E2283 /* webauthn.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = webauthn.js.map; path = ../../dist/webauthn.js.map; sourceTree = "<group>"; };
-		1F9664EB2C048D21008E2283 /* background.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = background.js.map; path = ../../dist/background.js.map; sourceTree = "<group>"; };
-		1F9664EC2C048D21008E2283 /* chunk.3978.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.3978.js; path = ../../dist/chunk.3978.js; sourceTree = "<group>"; };
-		1F9664ED2C048D21008E2283 /* chunk.7449.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7449.js; path = ../../dist/chunk.7449.js; sourceTree = "<group>"; };
-		1F9664EE2C048D21008E2283 /* chunk.1470.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1470.js.map; path = ../../dist/chunk.1470.js.map; sourceTree = "<group>"; };
-		1F9664EF2C048D21008E2283 /* chunk.1470.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1470.js; path = ../../dist/chunk.1470.js; sourceTree = "<group>"; };
-		1F9664F02C048D21008E2283 /* orchestrator.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = orchestrator.js.map; path = ../../dist/orchestrator.js.map; sourceTree = "<group>"; };
-		1F9664F12C048D21008E2283 /* chunk.5781.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5781.js.map; path = ../../dist/chunk.5781.js.map; sourceTree = "<group>"; };
-		1F9664F22C048D21008E2283 /* chunk.1147.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1147.js; path = ../../dist/chunk.1147.js; sourceTree = "<group>"; };
-		1F9664F32C048D21008E2283 /* client.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = client.js; path = ../../dist/client.js; sourceTree = "<group>"; };
-		1F9664F42C048D21008E2283 /* chunk.8916.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.8916.js.map; path = ../../dist/chunk.8916.js.map; sourceTree = "<group>"; };
-		1FEA7CF12BE8E86900EF2ED2 /* Proton Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proton Pass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proton Pass for Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FEA7CF82BE8E86900EF2ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
-		1FEA7CFA2BE8E86900EF2ED2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		1FEA7CFC2BE8E86900EF2ED2 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		1FEA7CFE2BE8E86900EF2ED2 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		1FEA7D002BE8E86900EF2ED2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1FEA7D032BE8E86900EF2ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FEA7D072BE8E86900EF2ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEA7D092BE8E86900EF2ED2 /* Proton Pass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proton Pass.entitlements"; sourceTree = "<group>"; };
-		1FEA7D0E2BE8E86A00EF2ED2 /* Proton Pass Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Proton Pass Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		1FEA7D152BE8E86A00EF2ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FEA7D162BE8E86A00EF2ED2 /* Proton Pass Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proton Pass Extension.entitlements"; sourceTree = "<group>"; };
+		1FEA7D162BE8E86A00EF2ED2 /* Safari Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Safari Extension.entitlements"; sourceTree = "<group>"; };
+		3515DC6C2BFF869400AD699A /* LoadPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPlugin.swift; sourceTree = "<group>"; };
+		353534412BF8CB0D0003BE4B /* LoggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutView.swift; sourceTree = "<group>"; };
+		353534452BF8CB7A0003BE4B /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		353534712BF8E6680003BE4B /* MacPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		353534792BF8E6BD0003BE4B /* MacPlugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacPlugin-Bridging-Header.h"; sourceTree = "<group>"; };
+		3535347E2BF8E7290003BE4B /* MacPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPlugin.swift; sourceTree = "<group>"; };
+		353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewModel.swift; sourceTree = "<group>"; };
+		353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUseCaseContainer.swift; sourceTree = "<group>"; };
+		353B23772BF7DA4200D77597 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		3570308A2BFE0F5000E283F4 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
+		357CEDFD2C04912300867A76 /* chunk.5781.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5781.js.map; path = ../../dist/chunk.5781.js.map; sourceTree = "<group>"; };
+		357CEDFE2C04912300867A76 /* chunk.date-fns */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "chunk.date-fns"; path = "../../dist/chunk.date-fns"; sourceTree = "<group>"; };
+		357CEDFF2C04912300867A76 /* chunk.6504.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6504.js; path = ../../dist/chunk.6504.js; sourceTree = "<group>"; };
+		357CEE002C04912300867A76 /* chunk.6851.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6851.js; path = ../../dist/chunk.6851.js; sourceTree = "<group>"; };
+		357CEE012C04912300867A76 /* webauthn.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = webauthn.js.map; path = ../../dist/webauthn.js.map; sourceTree = "<group>"; };
+		357CEE022C04912300867A76 /* notification.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = notification.js.map; path = ../../dist/notification.js.map; sourceTree = "<group>"; };
+		357CEE032C04912300867A76 /* onboarding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = onboarding.js; path = ../../dist/onboarding.js; sourceTree = "<group>"; };
+		357CEE042C04912300867A76 /* chunk.3978.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.3978.js.map; path = ../../dist/chunk.3978.js.map; sourceTree = "<group>"; };
+		357CEE052C04912300867A76 /* dropdown.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = dropdown.html; path = ../../dist/dropdown.html; sourceTree = "<group>"; };
+		357CEE062C04912300867A76 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../dist/assets; sourceTree = "<group>"; };
+		357CEE072C04912300867A76 /* orchestrator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = orchestrator.js; path = ../../dist/orchestrator.js; sourceTree = "<group>"; };
+		357CEE082C04912300867A76 /* client.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = client.js; path = ../../dist/client.js; sourceTree = "<group>"; };
+		357CEE092C04912300867A76 /* chunk.crypto-worker-v6-canary.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-v6-canary.js.map"; path = "../../dist/chunk.crypto-worker-v6-canary.js.map"; sourceTree = "<group>"; };
+		357CEE0A2C04912300867A76 /* chunk.6659.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6659.js.map; path = ../../dist/chunk.6659.js.map; sourceTree = "<group>"; };
+		357CEE0B2C04912300867A76 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = popup.html; path = ../../dist/popup.html; sourceTree = "<group>"; };
+		357CEE0C2C04912300867A76 /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../dist/background.js; sourceTree = "<group>"; };
+		357CEE0D2C04912300867A76 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../dist/styles; sourceTree = "<group>"; };
+		357CEE0E2C04912300867A76 /* dropdown.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = dropdown.js; path = ../../dist/dropdown.js; sourceTree = "<group>"; };
+		357CEE0F2C04912300867A76 /* chunk.7449.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7449.js; path = ../../dist/chunk.7449.js; sourceTree = "<group>"; };
+		357CEE102C04912300867A76 /* chunk.8916.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.8916.js; path = ../../dist/chunk.8916.js; sourceTree = "<group>"; };
+		357CEE112C04912300867A76 /* chunk.3978.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.3978.js; path = ../../dist/chunk.3978.js; sourceTree = "<group>"; };
+		357CEE122C04912300867A76 /* popup.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = popup.js.map; path = ../../dist/popup.js.map; sourceTree = "<group>"; };
+		357CEE132C04912300867A76 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../dist/manifest.json; sourceTree = "<group>"; };
+		357CEE142C04912300867A76 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = ../../dist/settings.html; sourceTree = "<group>"; };
+		357CEE152C04912300867A76 /* chunk.locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = chunk.locales; path = ../../dist/chunk.locales; sourceTree = "<group>"; };
+		357CEE162C04912300867A76 /* chunk.1923.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1923.js; path = ../../dist/chunk.1923.js; sourceTree = "<group>"; };
+		357CEE172C04912400867A76 /* orchestrator.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = orchestrator.js.map; path = ../../dist/orchestrator.js.map; sourceTree = "<group>"; };
+		357CEE182C04912400867A76 /* chunk.crypto-worker.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker.js.map"; path = "../../dist/chunk.crypto-worker.js.map"; sourceTree = "<group>"; };
+		357CEE192C04912400867A76 /* onboarding.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = onboarding.js.map; path = ../../dist/onboarding.js.map; sourceTree = "<group>"; };
+		357CEE1A2C04912400867A76 /* settings.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = settings.js; path = ../../dist/settings.js; sourceTree = "<group>"; };
+		357CEE1B2C04912400867A76 /* notification.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = notification.html; path = ../../dist/notification.html; sourceTree = "<group>"; };
+		357CEE1C2C04912400867A76 /* chunk.6851.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6851.js.map; path = ../../dist/chunk.6851.js.map; sourceTree = "<group>"; };
+		357CEE1D2C04912400867A76 /* chunk.1470.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1470.js.map; path = ../../dist/chunk.1470.js.map; sourceTree = "<group>"; };
+		357CEE1E2C04912400867A76 /* chunk.1677.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1677.js.map; path = ../../dist/chunk.1677.js.map; sourceTree = "<group>"; };
+		357CEE1F2C04912400867A76 /* notification.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = notification.js; path = ../../dist/notification.js; sourceTree = "<group>"; };
+		357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2430b21d6e7b99d5e8ea.module.wasm; path = ../../dist/2430b21d6e7b99d5e8ea.module.wasm; sourceTree = "<group>"; };
+		357CEE212C04912400867A76 /* webauthn.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = webauthn.js; path = ../../dist/webauthn.js; sourceTree = "<group>"; };
+		357CEE222C04912400867A76 /* chunk.7449.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7449.js.map; path = ../../dist/chunk.7449.js.map; sourceTree = "<group>"; };
+		357CEE232C04912400867A76 /* chunk.1470.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1470.js; path = ../../dist/chunk.1470.js; sourceTree = "<group>"; };
+		357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-api.js"; path = "../../dist/chunk.crypto-worker-api.js"; sourceTree = "<group>"; };
+		357CEE252C04912400867A76 /* chunk.1147.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1147.js.map; path = ../../dist/chunk.1147.js.map; sourceTree = "<group>"; };
+		357CEE262C04912400867A76 /* chunk.1677.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1677.js; path = ../../dist/chunk.1677.js; sourceTree = "<group>"; };
+		357CEE272C04912400867A76 /* chunk.6783.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6783.js.map; path = ../../dist/chunk.6783.js.map; sourceTree = "<group>"; };
+		357CEE282C04912400867A76 /* chunk.1923.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1923.js.map; path = ../../dist/chunk.1923.js.map; sourceTree = "<group>"; };
+		357CEE292C04912400867A76 /* chunk.6659.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6659.js; path = ../../dist/chunk.6659.js; sourceTree = "<group>"; };
+		357CEE2A2C04912400867A76 /* client.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = client.js.map; path = ../../dist/client.js.map; sourceTree = "<group>"; };
+		357CEE2B2C04912400867A76 /* chunk.6783.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6783.js; path = ../../dist/chunk.6783.js; sourceTree = "<group>"; };
+		357CEE2C2C04912400867A76 /* chunk.5664.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5664.js; path = ../../dist/chunk.5664.js; sourceTree = "<group>"; };
+		357CEE2D2C04912400867A76 /* chunk.crypto-worker-api.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-api.js.map"; path = "../../dist/chunk.crypto-worker-api.js.map"; sourceTree = "<group>"; };
+		357CEE2E2C04912400867A76 /* chunk.5781.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5781.js; path = ../../dist/chunk.5781.js; sourceTree = "<group>"; };
+		357CEE2F2C04912400867A76 /* dropdown.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = dropdown.js.map; path = ../../dist/dropdown.js.map; sourceTree = "<group>"; };
+		357CEE302C04912400867A76 /* elements.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = elements.js; path = ../../dist/elements.js; sourceTree = "<group>"; };
+		357CEE312C04912400867A76 /* popup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../dist/popup.js; sourceTree = "<group>"; };
+		357CEE322C04912400867A76 /* chunk.2494.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.2494.js; path = ../../dist/chunk.2494.js; sourceTree = "<group>"; };
+		357CEE332C04912400867A76 /* settings.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = settings.js.map; path = ../../dist/settings.js.map; sourceTree = "<group>"; };
+		357CEE342C04912400867A76 /* elements.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = elements.js.map; path = ../../dist/elements.js.map; sourceTree = "<group>"; };
+		357CEE352C04912400867A76 /* chunk.5908.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5908.js; path = ../../dist/chunk.5908.js; sourceTree = "<group>"; };
+		357CEE362C04912400867A76 /* background.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = background.js.map; path = ../../dist/background.js.map; sourceTree = "<group>"; };
+		357CEE372C04912500867A76 /* onboarding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = onboarding.html; path = ../../dist/onboarding.html; sourceTree = "<group>"; };
+		357CEE382C04912500867A76 /* chunk.5664.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5664.js.map; path = ../../dist/chunk.5664.js.map; sourceTree = "<group>"; };
+		357CEE392C04912500867A76 /* chunk.6504.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6504.js.map; path = ../../dist/chunk.6504.js.map; sourceTree = "<group>"; };
+		357CEE3A2C04912500867A76 /* chunk.7143.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7143.js; path = ../../dist/chunk.7143.js; sourceTree = "<group>"; };
+		357CEE3B2C04912500867A76 /* chunk.7143.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7143.js.map; path = ../../dist/chunk.7143.js.map; sourceTree = "<group>"; };
+		357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker.js"; path = "../../dist/chunk.crypto-worker.js"; sourceTree = "<group>"; };
+		357CEE3D2C04912500867A76 /* chunk.1147.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1147.js; path = ../../dist/chunk.1147.js; sourceTree = "<group>"; };
+		357CEE3E2C04912500867A76 /* chunk.2494.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.2494.js.map; path = ../../dist/chunk.2494.js.map; sourceTree = "<group>"; };
+		357CEE3F2C04912500867A76 /* chunk.5908.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5908.js.map; path = ../../dist/chunk.5908.js.map; sourceTree = "<group>"; };
+		357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-v6-canary.js"; path = "../../dist/chunk.crypto-worker-v6-canary.js"; sourceTree = "<group>"; };
+		357CEE412C04912500867A76 /* chunk.8916.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.8916.js.map; path = ../../dist/chunk.8916.js.map; sourceTree = "<group>"; };
+		3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
+		358A2BDE2BFC847B007C8D5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		358A2BE02BFC848E007C8D5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedToolingContainer.swift; sourceTree = "<group>"; };
+		358AB4922BFF67080008A7EC /* RetryableErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryableErrorView.swift; sourceTree = "<group>"; };
+		358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEmbededModifier.swift; sourceTree = "<group>"; };
+		358AB4972BFF85150008A7EC /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonPassApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,10 +214,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */,
+				35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1FEA7D0B2BE8E86A00EF2ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F4EC532BF7DE540086D497 /* Factory in Frameworks */,
+				35F4EC552BF7DE570086D497 /* Shared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346E2BF8E6680003BE4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,75 +241,75 @@
 		1F5AFA6C2BF380E800C88A8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1F9664C32C048D20008E2283 /* 2df646675dbf3cad264b.module.wasm */,
-				1F9664D52C048D20008E2283 /* assets */,
-				1F9664E82C048D21008E2283 /* background.js */,
-				1F9664EB2C048D21008E2283 /* background.js.map */,
-				1F9664F22C048D21008E2283 /* chunk.1147.js */,
-				1F9664C92C048D20008E2283 /* chunk.1147.js.map */,
-				1F9664EF2C048D21008E2283 /* chunk.1470.js */,
-				1F9664EE2C048D21008E2283 /* chunk.1470.js.map */,
-				1F9664E22C048D21008E2283 /* chunk.1677.js */,
-				1F9664DE2C048D21008E2283 /* chunk.1677.js.map */,
-				1F9664E92C048D21008E2283 /* chunk.1923.js */,
-				1F9664C82C048D20008E2283 /* chunk.1923.js.map */,
-				1F9664D62C048D20008E2283 /* chunk.2494.js */,
-				1F9664C62C048D20008E2283 /* chunk.2494.js.map */,
-				1F9664EC2C048D21008E2283 /* chunk.3978.js */,
-				1F9664E42C048D21008E2283 /* chunk.3978.js.map */,
-				1F9664B32C048D20008E2283 /* chunk.5664.js */,
-				1F9664E72C048D21008E2283 /* chunk.5664.js.map */,
-				1F9664CD2C048D20008E2283 /* chunk.5781.js */,
-				1F9664F12C048D21008E2283 /* chunk.5781.js.map */,
-				1F9664B92C048D20008E2283 /* chunk.5908.js */,
-				1F9664D82C048D20008E2283 /* chunk.5908.js.map */,
-				1F9664D32C048D20008E2283 /* chunk.6504.js */,
-				1F9664BC2C048D20008E2283 /* chunk.6504.js.map */,
-				1F9664DC2C048D21008E2283 /* chunk.6659.js */,
-				1F9664E02C048D21008E2283 /* chunk.6659.js.map */,
-				1F9664C02C048D20008E2283 /* chunk.6783.js */,
-				1F9664E12C048D21008E2283 /* chunk.6783.js.map */,
-				1F9664DA2C048D21008E2283 /* chunk.6851.js */,
-				1F9664CE2C048D20008E2283 /* chunk.6851.js.map */,
-				1F9664D12C048D20008E2283 /* chunk.7143.js */,
-				1F9664C72C048D20008E2283 /* chunk.7143.js.map */,
-				1F9664ED2C048D21008E2283 /* chunk.7449.js */,
-				1F9664B62C048D20008E2283 /* chunk.7449.js.map */,
-				1F9664E52C048D21008E2283 /* chunk.8916.js */,
-				1F9664F42C048D21008E2283 /* chunk.8916.js.map */,
-				1F9664B52C048D20008E2283 /* chunk.crypto-worker-api.js */,
-				1F9664CC2C048D20008E2283 /* chunk.crypto-worker-api.js.map */,
-				1F9664CA2C048D20008E2283 /* chunk.crypto-worker-v6-canary.js */,
-				1F9664C42C048D20008E2283 /* chunk.crypto-worker-v6-canary.js.map */,
-				1F9664D92C048D20008E2283 /* chunk.crypto-worker.js */,
-				1F9664BB2C048D20008E2283 /* chunk.crypto-worker.js.map */,
-				1F9664D22C048D20008E2283 /* chunk.date-fns */,
-				1F9664CB2C048D20008E2283 /* chunk.locales */,
-				1F9664F32C048D21008E2283 /* client.js */,
-				1F9664CF2C048D20008E2283 /* client.js.map */,
-				1F9664BD2C048D20008E2283 /* dropdown.html */,
-				1F9664B02C048D20008E2283 /* dropdown.js */,
-				1F9664E62C048D21008E2283 /* dropdown.js.map */,
-				1F9664D02C048D20008E2283 /* elements.js */,
-				1F9664BE2C048D20008E2283 /* elements.js.map */,
-				1F9664C12C048D20008E2283 /* manifest.json */,
-				1F9664DB2C048D21008E2283 /* notification.html */,
-				1F9664B12C048D20008E2283 /* notification.js */,
-				1F9664D42C048D20008E2283 /* notification.js.map */,
-				1F9664C22C048D20008E2283 /* onboarding.html */,
-				1F9664DD2C048D21008E2283 /* onboarding.js */,
-				1F9664B22C048D20008E2283 /* onboarding.js.map */,
-				1F9664E32C048D21008E2283 /* orchestrator.js */,
-				1F9664F02C048D21008E2283 /* orchestrator.js.map */,
-				1F9664DF2C048D21008E2283 /* popup.html */,
-				1F9664D72C048D20008E2283 /* popup.js */,
-				1F9664BA2C048D20008E2283 /* popup.js.map */,
-				1F9664B82C048D20008E2283 /* settings.html */,
-				1F9664B72C048D20008E2283 /* settings.js */,
-				1F9664B42C048D20008E2283 /* settings.js.map */,
-				1F9664BF2C048D20008E2283 /* styles */,
-				1F9664C52C048D20008E2283 /* webauthn.js */,
-				1F9664EA2C048D21008E2283 /* webauthn.js.map */,
+				357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */,
+				357CEE062C04912300867A76 /* assets */,
+				357CEE0C2C04912300867A76 /* background.js */,
+				357CEE362C04912400867A76 /* background.js.map */,
+				357CEE3D2C04912500867A76 /* chunk.1147.js */,
+				357CEE252C04912400867A76 /* chunk.1147.js.map */,
+				357CEE232C04912400867A76 /* chunk.1470.js */,
+				357CEE1D2C04912400867A76 /* chunk.1470.js.map */,
+				357CEE262C04912400867A76 /* chunk.1677.js */,
+				357CEE1E2C04912400867A76 /* chunk.1677.js.map */,
+				357CEE162C04912300867A76 /* chunk.1923.js */,
+				357CEE282C04912400867A76 /* chunk.1923.js.map */,
+				357CEE322C04912400867A76 /* chunk.2494.js */,
+				357CEE3E2C04912500867A76 /* chunk.2494.js.map */,
+				357CEE112C04912300867A76 /* chunk.3978.js */,
+				357CEE042C04912300867A76 /* chunk.3978.js.map */,
+				357CEE2C2C04912400867A76 /* chunk.5664.js */,
+				357CEE382C04912500867A76 /* chunk.5664.js.map */,
+				357CEE2E2C04912400867A76 /* chunk.5781.js */,
+				357CEDFD2C04912300867A76 /* chunk.5781.js.map */,
+				357CEE352C04912400867A76 /* chunk.5908.js */,
+				357CEE3F2C04912500867A76 /* chunk.5908.js.map */,
+				357CEDFF2C04912300867A76 /* chunk.6504.js */,
+				357CEE392C04912500867A76 /* chunk.6504.js.map */,
+				357CEE292C04912400867A76 /* chunk.6659.js */,
+				357CEE0A2C04912300867A76 /* chunk.6659.js.map */,
+				357CEE2B2C04912400867A76 /* chunk.6783.js */,
+				357CEE272C04912400867A76 /* chunk.6783.js.map */,
+				357CEE002C04912300867A76 /* chunk.6851.js */,
+				357CEE1C2C04912400867A76 /* chunk.6851.js.map */,
+				357CEE3A2C04912500867A76 /* chunk.7143.js */,
+				357CEE3B2C04912500867A76 /* chunk.7143.js.map */,
+				357CEE0F2C04912300867A76 /* chunk.7449.js */,
+				357CEE222C04912400867A76 /* chunk.7449.js.map */,
+				357CEE102C04912300867A76 /* chunk.8916.js */,
+				357CEE412C04912500867A76 /* chunk.8916.js.map */,
+				357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */,
+				357CEE2D2C04912400867A76 /* chunk.crypto-worker-api.js.map */,
+				357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */,
+				357CEE092C04912300867A76 /* chunk.crypto-worker-v6-canary.js.map */,
+				357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */,
+				357CEE182C04912400867A76 /* chunk.crypto-worker.js.map */,
+				357CEDFE2C04912300867A76 /* chunk.date-fns */,
+				357CEE152C04912300867A76 /* chunk.locales */,
+				357CEE082C04912300867A76 /* client.js */,
+				357CEE2A2C04912400867A76 /* client.js.map */,
+				357CEE052C04912300867A76 /* dropdown.html */,
+				357CEE0E2C04912300867A76 /* dropdown.js */,
+				357CEE2F2C04912400867A76 /* dropdown.js.map */,
+				357CEE302C04912400867A76 /* elements.js */,
+				357CEE342C04912400867A76 /* elements.js.map */,
+				357CEE132C04912300867A76 /* manifest.json */,
+				357CEE1B2C04912400867A76 /* notification.html */,
+				357CEE1F2C04912400867A76 /* notification.js */,
+				357CEE022C04912300867A76 /* notification.js.map */,
+				357CEE372C04912500867A76 /* onboarding.html */,
+				357CEE032C04912300867A76 /* onboarding.js */,
+				357CEE192C04912400867A76 /* onboarding.js.map */,
+				357CEE072C04912300867A76 /* orchestrator.js */,
+				357CEE172C04912400867A76 /* orchestrator.js.map */,
+				357CEE0B2C04912300867A76 /* popup.html */,
+				357CEE312C04912400867A76 /* popup.js */,
+				357CEE122C04912300867A76 /* popup.js.map */,
+				357CEE142C04912300867A76 /* settings.html */,
+				357CEE1A2C04912400867A76 /* settings.js */,
+				357CEE332C04912400867A76 /* settings.js.map */,
+				357CEE0D2C04912300867A76 /* styles */,
+				357CEE212C04912400867A76 /* webauthn.js */,
+				357CEE012C04912300867A76 /* webauthn.js.map */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,16 +318,20 @@
 			isa = PBXGroup;
 			children = (
 				1FEA7CF32BE8E86900EF2ED2 /* Proton Pass */,
-				1FEA7D122BE8E86A00EF2ED2 /* Proton Pass Extension */,
+				1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */,
+				353534782BF8E6AA0003BE4B /* MacPlugin */,
+				353B23772BF7DA4200D77597 /* Shared */,
 				1FEA7CF22BE8E86900EF2ED2 /* Products */,
+				35F4EC4F2BF7DE4F0086D497 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		1FEA7CF22BE8E86900EF2ED2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FEA7CF12BE8E86900EF2ED2 /* Proton Pass.app */,
-				1FEA7D0E2BE8E86A00EF2ED2 /* Proton Pass Extension.appex */,
+				1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */,
+				1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */,
+				353534712BF8E6680003BE4B /* MacPlugin.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,63 +340,111 @@
 			isa = PBXGroup;
 			children = (
 				1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */,
-				1FEA7D002BE8E86900EF2ED2 /* ViewController.swift */,
-				1FEA7D022BE8E86900EF2ED2 /* Main.storyboard */,
+				35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */,
 				1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */,
 				1FEA7D072BE8E86900EF2ED2 /* Info.plist */,
 				1FEA7D092BE8E86900EF2ED2 /* Proton Pass.entitlements */,
-				1FEA7CF62BE8E86900EF2ED2 /* Resources */,
+				353AA40E2BFA9AAF0084B00C /* DI */,
+				35F4EC562BF7EA1E0086D497 /* Screens */,
+				358AB4942BFF7D0A0008A7EC /* Utils */,
 			);
 			path = "Proton Pass";
 			sourceTree = "<group>";
 		};
-		1FEA7CF62BE8E86900EF2ED2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1FEA7CF72BE8E86900EF2ED2 /* Main.html */,
-				1FEA7CFA2BE8E86900EF2ED2 /* Icon.png */,
-				1FEA7CFC2BE8E86900EF2ED2 /* Style.css */,
-				1FEA7CFE2BE8E86900EF2ED2 /* Script.js */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1FEA7D122BE8E86A00EF2ED2 /* Proton Pass Extension */ = {
+		1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */ = {
 			isa = PBXGroup;
 			children = (
 				1F5AFA6C2BF380E800C88A8E /* Resources */,
 				1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */,
 				1FEA7D152BE8E86A00EF2ED2 /* Info.plist */,
-				1FEA7D162BE8E86A00EF2ED2 /* Proton Pass Extension.entitlements */,
+				1FEA7D162BE8E86A00EF2ED2 /* Safari Extension.entitlements */,
 			);
-			path = "Proton Pass Extension";
+			path = "Safari Extension";
+			sourceTree = "<group>";
+		};
+		353534782BF8E6AA0003BE4B /* MacPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				358AB4972BFF85150008A7EC /* Plugin.swift */,
+				3515DC6C2BFF869400AD699A /* LoadPlugin.swift */,
+				353534792BF8E6BD0003BE4B /* MacPlugin-Bridging-Header.h */,
+				3535347E2BF8E7290003BE4B /* MacPlugin.swift */,
+			);
+			path = MacPlugin;
+			sourceTree = "<group>";
+		};
+		353AA40E2BFA9AAF0084B00C /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */,
+				353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */,
+				3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		358AB4942BFF7D0A0008A7EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35F4EC4F2BF7DE4F0086D497 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35F4EC562BF7EA1E0086D497 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3570308A2BFE0F5000E283F4 /* LoggedInView.swift */,
+				3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */,
+				353534412BF8CB0D0003BE4B /* LoggedOutView.swift */,
+				353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */,
+				353534452BF8CB7A0003BE4B /* LogoView.swift */,
+				358A2BDE2BFC847B007C8D5C /* MainView.swift */,
+				358A2BE02BFC848E007C8D5C /* MainViewModel.swift */,
+				358AB4922BFF67080008A7EC /* RetryableErrorView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FEA7CF02BE8E86900EF2ED2 /* Proton Pass */ = {
+		1FEA7CF02BE8E86900EF2ED2 /* Proton Pass for Safari */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass" */;
+			buildConfigurationList = 1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass for Safari" */;
 			buildPhases = (
 				1FEA7CED2BE8E86900EF2ED2 /* Sources */,
 				1FEA7CEE2BE8E86900EF2ED2 /* Frameworks */,
 				1FEA7CEF2BE8E86900EF2ED2 /* Resources */,
 				1FEA7D1C2BE8E86A00EF2ED2 /* Embed Foundation Extensions */,
+				357E7DD62BFF2AFC00BDF2B8 /* SwiftLint */,
+				357E7DD72BFF2B2400BDF2B8 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1FEA7D112BE8E86A00EF2ED2 /* PBXTargetDependency */,
+				353534772BF8E6870003BE4B /* PBXTargetDependency */,
 			);
-			name = "Proton Pass";
+			name = "Proton Pass for Safari";
+			packageProductDependencies = (
+				35F4EC4D2BF7DDC90086D497 /* Factory */,
+				35F4EC502BF7DE4F0086D497 /* Shared */,
+			);
 			productName = "Proton Pass";
-			productReference = 1FEA7CF12BE8E86900EF2ED2 /* Proton Pass.app */;
+			productReference = 1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FEA7D0D2BE8E86A00EF2ED2 /* Proton Pass Extension */ = {
+		1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass Extension" */;
+			buildConfigurationList = 1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Safari Extension" */;
 			buildPhases = (
 				1FEA7D0A2BE8E86A00EF2ED2 /* Sources */,
 				1FEA7D0B2BE8E86A00EF2ED2 /* Frameworks */,
@@ -352,10 +454,33 @@
 			);
 			dependencies = (
 			);
-			name = "Proton Pass Extension";
+			name = "Safari Extension";
+			packageProductDependencies = (
+				35F4EC522BF7DE540086D497 /* Factory */,
+				35F4EC542BF7DE570086D497 /* Shared */,
+			);
 			productName = "Proton Pass Extension";
-			productReference = 1FEA7D0E2BE8E86A00EF2ED2 /* Proton Pass Extension.appex */;
+			productReference = 1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		353534702BF8E6680003BE4B /* MacPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 353534742BF8E6680003BE4B /* Build configuration list for PBXNativeTarget "MacPlugin" */;
+			buildPhases = (
+				3535346D2BF8E6680003BE4B /* Sources */,
+				3535346E2BF8E6680003BE4B /* Frameworks */,
+				3535346F2BF8E6680003BE4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacPlugin;
+			packageProductDependencies = (
+			);
+			productName = MacPlugin;
+			productReference = 353534712BF8E6680003BE4B /* MacPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -373,6 +498,10 @@
 					1FEA7D0D2BE8E86A00EF2ED2 = {
 						CreatedOnToolsVersion = 15.3;
 					};
+					353534702BF8E6680003BE4B = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+					};
 				};
 			};
 			buildConfigurationList = 1FEA7CEC2BE8E86900EF2ED2 /* Build configuration list for PBXProject "Proton Pass" */;
@@ -384,12 +513,16 @@
 				Base,
 			);
 			mainGroup = 1FEA7CE82BE8E86900EF2ED2;
+			packageReferences = (
+				35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */,
+			);
 			productRefGroup = 1FEA7CF22BE8E86900EF2ED2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FEA7CF02BE8E86900EF2ED2 /* Proton Pass */,
-				1FEA7D0D2BE8E86A00EF2ED2 /* Proton Pass Extension */,
+				1FEA7CF02BE8E86900EF2ED2 /* Proton Pass for Safari */,
+				1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */,
+				353534702BF8E6680003BE4B /* MacPlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -399,12 +532,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FEA7CFB2BE8E86900EF2ED2 /* Icon.png in Resources */,
-				1FEA7CFF2BE8E86900EF2ED2 /* Script.js in Resources */,
-				1FEA7CF92BE8E86900EF2ED2 /* Base in Resources */,
-				1FEA7CFD2BE8E86900EF2ED2 /* Style.css in Resources */,
 				1FEA7D062BE8E86900EF2ED2 /* Assets.xcassets in Resources */,
-				1FEA7D042BE8E86900EF2ED2 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,58 +540,120 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9664F52C048D21008E2283 /* dropdown.js in Resources */,
-				1F9665172C048D21008E2283 /* chunk.1923.js in Resources */,
-				1F9665182C048D21008E2283 /* chunk.3978.js in Resources */,
-				1F9665122C048D21008E2283 /* popup.html in Resources */,
-				1F9664FD2C048D21008E2283 /* styles in Resources */,
-				1F9664F92C048D21008E2283 /* settings.js in Resources */,
-				1F9664F62C048D21008E2283 /* notification.js in Resources */,
-				1F9665152C048D21008E2283 /* chunk.8916.js in Resources */,
-				1F96650F2C048D21008E2283 /* notification.html in Resources */,
-				1F9664FA2C048D21008E2283 /* settings.html in Resources */,
-				1F9664FF2C048D21008E2283 /* manifest.json in Resources */,
-				1F9665132C048D21008E2283 /* chunk.1677.js in Resources */,
-				1F9664FB2C048D21008E2283 /* chunk.5908.js in Resources */,
-				1F96650C2C048D21008E2283 /* popup.js in Resources */,
-				1F9665082C048D21008E2283 /* chunk.date-fns in Resources */,
-				1F96651A2C048D21008E2283 /* chunk.1470.js in Resources */,
-				1F9665112C048D21008E2283 /* onboarding.js in Resources */,
-				1F9665062C048D21008E2283 /* elements.js in Resources */,
-				1F9665042C048D21008E2283 /* chunk.locales in Resources */,
-				1F96650E2C048D21008E2283 /* chunk.6851.js in Resources */,
-				1F9665102C048D21008E2283 /* chunk.6659.js in Resources */,
-				1F9664FC2C048D21008E2283 /* dropdown.html in Resources */,
-				1F9665022C048D21008E2283 /* webauthn.js in Resources */,
-				1F9665072C048D21008E2283 /* chunk.7143.js in Resources */,
-				1F9664F72C048D21008E2283 /* chunk.5664.js in Resources */,
-				1F96650D2C048D21008E2283 /* chunk.crypto-worker.js in Resources */,
-				1F96651B2C048D21008E2283 /* chunk.1147.js in Resources */,
-				1F9665092C048D21008E2283 /* chunk.6504.js in Resources */,
-				1F9665052C048D21008E2283 /* chunk.5781.js in Resources */,
-				1F9665012C048D21008E2283 /* 2df646675dbf3cad264b.module.wasm in Resources */,
-				1F9665002C048D21008E2283 /* onboarding.html in Resources */,
-				1F9665142C048D21008E2283 /* orchestrator.js in Resources */,
-				1F9664F82C048D21008E2283 /* chunk.crypto-worker-api.js in Resources */,
-				1F9664FE2C048D21008E2283 /* chunk.6783.js in Resources */,
-				1F96650B2C048D21008E2283 /* chunk.2494.js in Resources */,
-				1F96651C2C048D21008E2283 /* client.js in Resources */,
-				1F9665032C048D21008E2283 /* chunk.crypto-worker-v6-canary.js in Resources */,
-				1F9665162C048D21008E2283 /* background.js in Resources */,
-				1F96650A2C048D21008E2283 /* assets in Resources */,
-				1F9665192C048D21008E2283 /* chunk.7449.js in Resources */,
+				357CEE482C04912500867A76 /* orchestrator.js in Resources */,
+				357CEE602C04912500867A76 /* chunk.5781.js in Resources */,
+				357CEE5E2C04912500867A76 /* chunk.6783.js in Resources */,
+				357CEE662C04912500867A76 /* chunk.7143.js in Resources */,
+				357CEE692C04912500867A76 /* chunk.crypto-worker-v6-canary.js in Resources */,
+				357CEE5F2C04912500867A76 /* chunk.5664.js in Resources */,
+				357CEE622C04912500867A76 /* popup.js in Resources */,
+				357CEE542C04912500867A76 /* chunk.1923.js in Resources */,
+				357CEE432C04912500867A76 /* chunk.6504.js in Resources */,
+				357CEE422C04912500867A76 /* chunk.date-fns in Resources */,
+				357CEE592C04912500867A76 /* webauthn.js in Resources */,
+				357CEE4E2C04912500867A76 /* chunk.7449.js in Resources */,
+				357CEE4D2C04912500867A76 /* dropdown.js in Resources */,
+				357CEE532C04912500867A76 /* chunk.locales in Resources */,
+				357CEE492C04912500867A76 /* client.js in Resources */,
+				357CEE4C2C04912500867A76 /* styles in Resources */,
+				357CEE572C04912500867A76 /* notification.js in Resources */,
+				357CEE4F2C04912500867A76 /* chunk.8916.js in Resources */,
+				357CEE4B2C04912500867A76 /* background.js in Resources */,
+				357CEE5D2C04912500867A76 /* chunk.6659.js in Resources */,
+				357CEE552C04912500867A76 /* settings.js in Resources */,
+				357CEE5C2C04912500867A76 /* chunk.1677.js in Resources */,
+				357CEE632C04912500867A76 /* chunk.2494.js in Resources */,
+				357CEE652C04912500867A76 /* onboarding.html in Resources */,
+				357CEE612C04912500867A76 /* elements.js in Resources */,
+				357CEE4A2C04912500867A76 /* popup.html in Resources */,
+				357CEE562C04912500867A76 /* notification.html in Resources */,
+				357CEE682C04912500867A76 /* chunk.1147.js in Resources */,
+				357CEE582C04912500867A76 /* 2430b21d6e7b99d5e8ea.module.wasm in Resources */,
+				357CEE642C04912500867A76 /* chunk.5908.js in Resources */,
+				357CEE442C04912500867A76 /* chunk.6851.js in Resources */,
+				357CEE502C04912500867A76 /* chunk.3978.js in Resources */,
+				357CEE5A2C04912500867A76 /* chunk.1470.js in Resources */,
+				357CEE512C04912500867A76 /* manifest.json in Resources */,
+				357CEE522C04912500867A76 /* settings.html in Resources */,
+				357CEE472C04912500867A76 /* assets in Resources */,
+				357CEE5B2C04912500867A76 /* chunk.crypto-worker-api.js in Resources */,
+				357CEE452C04912500867A76 /* onboarding.js in Resources */,
+				357CEE672C04912500867A76 /* chunk.crypto-worker.js in Resources */,
+				357CEE462C04912500867A76 /* dropdown.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346F2BF8E6680003BE4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		357E7DD62BFF2AFC00BDF2B8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "tools/swiftlint.sh\n";
+		};
+		357E7DD72BFF2B2400BDF2B8 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "tools/swiftformat.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FEA7CED2BE8E86900EF2ED2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FEA7D012BE8E86900EF2ED2 /* ViewController.swift in Sources */,
+				358A2BE32BFC86E9007C8D5C /* SharedToolingContainer.swift in Sources */,
+				353534832BF8E7710003BE4B /* LoggedOutViewModel.swift in Sources */,
+				358AB4992BFF85180008A7EC /* Plugin.swift in Sources */,
+				358A2BDF2BFC847B007C8D5C /* MainView.swift in Sources */,
+				35F4EC582BF7EA5A0086D497 /* ProtonPassApp.swift in Sources */,
+				353534462BF8CB7A0003BE4B /* LogoView.swift in Sources */,
+				3570308B2BFE0F5000E283F4 /* LoggedInView.swift in Sources */,
+				353534422BF8CB0D0003BE4B /* LoggedOutView.swift in Sources */,
+				3570308D2BFE0F6E00E283F4 /* LoggedInViewModel.swift in Sources */,
+				3515DC6F2BFF869A00AD699A /* LoadPlugin.swift in Sources */,
+				358AB4962BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift in Sources */,
+				353AA4102BFA9AC70084B00C /* SharedUseCaseContainer.swift in Sources */,
 				1FEA7CF52BE8E86900EF2ED2 /* AppDelegate.swift in Sources */,
+				3587FB3C2BFF9625006C170F /* UseCaseContainer.swift in Sources */,
+				358A2BE12BFC848E007C8D5C /* MainViewModel.swift in Sources */,
+				358AB4932BFF67080008A7EC /* RetryableErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +661,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358A2BE42BFC8727007C8D5C /* SharedToolingContainer.swift in Sources */,
+				3587FB3A2BFF95F8006C170F /* SharedUseCaseContainer.swift in Sources */,
 				1FEA7D142BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346D2BF8E6680003BE4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				358AB4982BFF85150008A7EC /* Plugin.swift in Sources */,
+				353534812BF8E7290003BE4B /* MacPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,29 +681,16 @@
 /* Begin PBXTargetDependency section */
 		1FEA7D112BE8E86A00EF2ED2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1FEA7D0D2BE8E86A00EF2ED2 /* Proton Pass Extension */;
+			target = 1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */;
 			targetProxy = 1FEA7D102BE8E86A00EF2ED2 /* PBXContainerItemProxy */;
 		};
+		353534772BF8E6870003BE4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
+			target = 353534702BF8E6680003BE4B /* MacPlugin */;
+			targetProxy = 353534762BF8E6870003BE4B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1FEA7CF72BE8E86900EF2ED2 /* Main.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FEA7CF82BE8E86900EF2ED2 /* Base */,
-			);
-			name = Main.html;
-			sourceTree = "<group>";
-		};
-		1FEA7D022BE8E86900EF2ED2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FEA7D032BE8E86900EF2ED2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1FEA7D172BE8E86A00EF2ED2 /* Debug */ = {
@@ -557,8 +745,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -614,8 +803,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -626,64 +816,74 @@
 		1FEA7D1A2BE8E86A00EF2ED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Proton Pass Extension/Proton Pass Extension.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_ENTITLEMENTS = "Safari Extension/Safari Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Proton Pass Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass Extension";
+				INFOPLIST_FILE = "Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.17.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.safari-pass.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		1FEA7D1B2BE8E86A00EF2ED2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Proton Pass Extension/Proton Pass Extension.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_ENTITLEMENTS = "Safari Extension/Safari Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Proton Pass Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass Extension";
+				INFOPLIST_FILE = "Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.17.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.safari-pass.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -694,34 +894,39 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Proton Pass/Proton Pass.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SX779MTYR9;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Proton Pass/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass";
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.17.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.safari-pass";
+				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.catalyst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -732,33 +937,89 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Proton Pass/Proton Pass.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Proton Pass/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass";
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.17.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.safari-pass";
+				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.catalyst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		353534722BF8E6680003BE4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.17.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.mac-plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacPlugin/MacPlugin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		353534732BF8E6680003BE4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.17.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.mac-plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacPlugin/MacPlugin-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -774,7 +1035,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass Extension" */ = {
+		1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Safari Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEA7D1A2BE8E86A00EF2ED2 /* Debug */,
@@ -783,7 +1044,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass" */ = {
+		1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass for Safari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEA7D1E2BE8E86A00EF2ED2 /* Debug */,
@@ -792,7 +1053,48 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		353534742BF8E6680003BE4B /* Build configuration list for PBXNativeTarget "MacPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353534722BF8E6680003BE4B /* Debug */,
+				353534732BF8E6680003BE4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35F4EC4D2BF7DDC90086D497 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		35F4EC502BF7DE4F0086D497 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+		35F4EC522BF7DE540086D497 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		35F4EC542BF7DE570086D497 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FEA7CE92BE8E86900EF2ED2 /* Project object */;
 }

@@ -1,6 +1,6 @@
 //
-// AppDelegate.swift
-// Proton Pass - Created on 17/05/2024.
+// UseCaseContainer.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,13 +19,20 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import ProtonCoreCryptoGoImplementation
-import UIKit
+import Factory
+import Foundation
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        injectDefaultCryptoImplementation()
-        return true
+final class UseCaseContainer: SharedContainer, AutoRegistering {
+    static let shared = UseCaseContainer()
+    let manager = ContainerManager()
+
+    func autoRegister() {
+        manager.defaultScope = .shared
+    }
+}
+
+extension UseCaseContainer {
+    var loadPlugin: Factory<any LoadPluginUseCase> {
+        self { LoadPlugin() }
     }
 }
