@@ -17,8 +17,27 @@ const downloadLogs = (logs: string[]) => {
     const file = new File(
         logs.map((line) => `${line}\n`),
         `${PASS_APP_NAME}_logs_${Date.now()}`,
-        { type: 'text/plain' }
+        {
+            // Safari extensions require 'application/octet-stream' to trigger a download
+            type: BUILD_TARGET === 'safari' ? 'application/octet-stream' : 'text/plain',
+        }
     );
+
+    // Safari extensions don't properly support the HTML download attribute nor createObjectURL
+    if (BUILD_TARGET === 'safari') {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            const base64data = reader.result as string;
+            const link = document.createElement('a');
+            link.href = base64data;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        return;
+    }
 
     const link = document.createElement('a');
     const url = URL.createObjectURL(file);
