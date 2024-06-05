@@ -136,7 +136,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
             location.search /* indirectly matches filter changes */,
             matchOnboarding,
             matchTrash,
-            matchRootExact,
+            matchItemList,
             selectedItem,
         ]
     );
