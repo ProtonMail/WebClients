@@ -25,6 +25,18 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const warnings = useMemo(
         () =>
             [
+                /* Safari ZIP warning */
+                BUILD_TARGET === 'safari' &&
+                    form.values.format === ExportFormat.ZIP &&
+                    c('Info')
+                        .t`Before exporting your data with this format, please open Safari settings -> "General" tab -> disable the option "Open safe files after downloading". This will prevent Safari from incorrectly extracting the exported file.`,
+
+                /* Safari PGP warning */
+                BUILD_TARGET === 'safari' &&
+                    form.values.format === ExportFormat.PGP &&
+                    c('Info')
+                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".pgp". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.`,
+
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
                     c('Info')
