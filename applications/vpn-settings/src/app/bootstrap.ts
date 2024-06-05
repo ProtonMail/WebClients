@@ -32,12 +32,13 @@ export const bootstrapApp = async ({
 
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
+        const user = sessionResult.payload.session?.User;
         extendStore({ unleashClient });
 
         const dispatch = store.dispatch;
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        if (user) {
+            dispatch(initEvent({ User: user }));
         }
 
         const loadUser = async () => {

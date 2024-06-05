@@ -154,7 +154,7 @@ const SwitchAccountContainer = ({
             await onLogin({
                 ...validatedSession,
                 flow: 'switch',
-                prompt: params.get('prompt') === 'login' ? 'login' : undefined,
+                prompt: params.get(ForkSearchParameters.Prompt) === 'login' ? 'login' : undefined,
             });
         } catch (e: any) {
             setLoadingMap((old) => ({ ...old, [localID]: false }));
