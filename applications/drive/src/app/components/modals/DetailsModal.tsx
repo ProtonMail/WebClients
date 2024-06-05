@@ -234,7 +234,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         <UserNameCell />
                     </DetailsRow>
                 )}
-                {link.parentLinkId && (
+                {link.parentLinkId && !isSharedWithMeLink && (
                     <DetailsRow label={c('Title').t`Location`}>
                         <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
                     </DetailsRow>
