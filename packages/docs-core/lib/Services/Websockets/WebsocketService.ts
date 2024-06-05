@@ -1,7 +1,7 @@
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import {
   InternalEventBusInterface,

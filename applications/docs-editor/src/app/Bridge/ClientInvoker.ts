@@ -1,4 +1,4 @@
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import {
   EditorToClientInvokationMessage,
   ClientToEditorReplyMessage,

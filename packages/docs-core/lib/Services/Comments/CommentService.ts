@@ -12,7 +12,7 @@ import {
 } from '@proton/docs-shared'
 import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import { CreateRealtimeCommentMessage } from './CreateRealtimeCommentMessage'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { LocalCommentsState } from './LocalCommentsState'
