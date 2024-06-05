@@ -77,8 +77,16 @@ export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof con
         return null;
     }
     try {
-        const result = await consumeFork({ selector, api, state, key, persistent, trusted, payloadVersion, mode });
-        return result;
+        return await consumeFork({
+            selector,
+            api,
+            state,
+            key,
+            persistent,
+            trusted,
+            payloadVersion,
+            mode,
+        });
     } catch (e: any) {
         removeHashParameters();
         throw e;
@@ -122,6 +130,12 @@ export const init = ({
     removeLoaderClassName();
 };
 
+export interface SessionPayloadData {
+    session: ResumedSessionResult | undefined;
+    basename: string | undefined;
+    forkState?: ForkState;
+}
+
 export const loadSession = async ({
     authentication,
     api,
@@ -132,18 +146,13 @@ export const loadSession = async ({
     authentication: AuthenticationStore;
     api: ApiWithListener;
     searchParams: URLSearchParams;
-}): Promise<{
-    type: 'ok';
-    payload: Partial<ResumedSessionResult & { path: string; basename: string }>;
-}> => {
+}): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: {
-                basename: authentication.basename,
-            },
+            session: undefined,
+            basename: authentication.basename,
         };
     }
 
@@ -163,12 +172,13 @@ export const loadSession = async ({
             if (pathname.startsWith(SSO_PATHS.FORK)) {
                 const result = await maybeConsumeFork({ api, mode: authentication.mode });
                 if (result) {
-                    authentication.login(result);
+                    authentication.login(result.session);
                     api.UID = authentication.UID;
 
                     return {
-                        type: 'ok' as const,
-                        payload: { ...result, basename: authentication.basename },
+                        session: result.session,
+                        basename: authentication.basename,
+                        forkState: result.forkState,
                     };
                 }
             }
@@ -180,8 +190,8 @@ export const loadSession = async ({
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: { ...result, basename: authentication.basename, path: undefined },
+            session: result,
+            basename: authentication.basename,
         };
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
@@ -201,17 +211,11 @@ export const loadDrawerSession = async ({
     parentApp: APP_NAMES;
     authentication: AuthenticationStore;
     api: ApiWithListener;
-}): Promise<
-    | {
-          type: 'ok';
-          payload: Partial<ResumedSessionResult & { path: string; basename: string }>;
-      }
-    | undefined
-> => {
+}): Promise<SessionPayloadData | undefined> => {
     if (authentication.ready) {
         return {
-            type: 'ok' as const,
-            payload: {},
+            session: undefined,
+            basename: authentication.basename,
         };
     }
 
@@ -226,19 +230,31 @@ export const loadDrawerSession = async ({
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: { ...result, basename: authentication.basename, path: undefined },
+            session: result,
+            basename: authentication.basename,
         };
     } catch (error) {
         return undefined;
     }
 };
 
-export const createHistory = ({ basename, path }: Partial<{ basename: string; path: string }>) => {
+export const createHistory = ({
+    sessionResult: { basename, forkState },
+    pathname,
+}: {
+    sessionResult: SessionPayloadData;
+    pathname: string;
+}) => {
     const history = createBrowserHistory({ basename });
-    if (path) {
-        history.push(getSafePath(path));
+
+    const path = forkState?.url ? getParsedCurrentUrl(forkState.url) : '';
+
+    if (path || (basename && !pathname.startsWith(basename))) {
+        const safePath = `/${getSafePath(path || '')}`;
+        // Important that there's a history event even if no path is set so that basename gets properly set
+        history.replace(safePath);
     }
+
     return history;
 };
 
