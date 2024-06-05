@@ -14,7 +14,7 @@ import { CommentMarkNodeChangeData, CommentThreadInterface, CommentsEvent } from
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
 

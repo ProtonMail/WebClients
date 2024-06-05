@@ -1,5 +1,5 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { useEffect } from 'react'
 
 /**

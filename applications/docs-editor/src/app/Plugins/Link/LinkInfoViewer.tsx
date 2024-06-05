@@ -8,7 +8,7 @@ import { Icon, Tooltip } from '@proton/components'
 import { Button } from '@proton/atoms'
 import { createPortal } from 'react-dom'
 import { c } from 'ttag'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type Props = {
