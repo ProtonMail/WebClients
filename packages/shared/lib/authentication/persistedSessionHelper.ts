@@ -1,4 +1,3 @@
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -286,20 +285,17 @@ const pickSessionByEmail = async ({
 }) => {
     const lowerCaseEmail = email.toLowerCase();
 
-    // TODO: Extend this to match against all emails by persisting all addresses
     const matchingSession = sessions.find((session) => session.remote.PrimaryEmail?.toLowerCase() === lowerCaseEmail);
 
     if (!matchingSession) {
-        // If there's no matching session and there's just 1 session available, let's fetch all
-        // addresses of the single user to see if any one of them might be a match.
-        // TODO: Remove this when persisting all addresses
-        if (session && sessions.length <= 1) {
+        if (session) {
             const uidApi = getUIDApi(session.UID, api);
-            // Ignore if it fails, worse case the user will have to pick the account.
-            const addresses = await getAllAddresses(uidApi).catch(noop);
-            const userHasMatchingAddress = addresses?.some((address) => address.Email.toLowerCase() === lowerCaseEmail);
-            if (userHasMatchingAddress) {
-                return session;
+            const result = await uidApi<{
+                Sessions: LocalSessionResponse[];
+            }>(getLocalSessions({ Email: lowerCaseEmail }));
+            const firstMatchingSession = result?.Sessions?.[0];
+            if (firstMatchingSession && firstMatchingSession.LocalID !== undefined) {
+                return resumeSession({ api, localID: firstMatchingSession.LocalID });
             }
         }
         return;
@@ -309,7 +305,7 @@ const pickSessionByEmail = async ({
         return session;
     }
 
-    return resumeSession({ api, localID: matchingSession.remote.LocalID }).catch(noop);
+    return resumeSession({ api, localID: matchingSession.remote.LocalID });
 };
 
 export const maybePickSessionByEmail = async ({
@@ -333,7 +329,7 @@ export const maybePickSessionByEmail = async ({
             email,
             session,
             sessions,
-        });
+        }).catch(noop);
 
         if (maybeMatchingResumedSession) {
             return { session: maybeMatchingResumedSession, sessions, type: GetActiveSessionType.AutoPick };
