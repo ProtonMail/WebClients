@@ -10,7 +10,7 @@ import {
 } from 'lexical'
 import { c, msgid } from 'ttag'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import {
   $deleteTableColumn__EXPERIMENTAL,
   $deleteTableRow__EXPERIMENTAL,
