@@ -379,7 +379,26 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
         plan: PLANS.MAIL_PRO,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info').t`Secure email and calendar for professionals and businesses.`,
+        description: c('new_plans: info').t`Encrypted email and calendar to get you started.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
+            getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
+            getNDomainsFeature({ n: plan.MaxDomains }),
+            getFoldersAndLabelsFeature('unlimited'),
+            getContactGroupsManagement(),
+            getCalendarAppFeature(),
+            getSMTPToken(true),
+        ],
+    };
+};
+
+export const getMailBusinessPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.MAIL_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`Enhanced security and premium features for teams.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
@@ -395,11 +414,11 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
 
 export const getBundleProPlan = (plan: Plan): ShortPlan => {
     return {
-        plan: PLANS.BUNDLE_PRO,
+        plan: PLANS.BUNDLE_PRO_2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
-            .t`Privacy and security suite for businesses, including all premium ${BRAND_NAME} services.`,
+            .t`All ${BRAND_NAME} business apps and premium features to protect your entire business.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
@@ -596,9 +615,12 @@ export const getShortPlan = (
             return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
+        case PLANS.MAIL_BUSINESS:
+            return getMailBusinessPlan(planData);
         case PLANS.BUNDLE:
             return getBundlePlan({ plan: planData, vpnServersCountData: vpnServers, freePlan });
         case PLANS.BUNDLE_PRO:
+        case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan(planData);
         case PLANS.NEW_VISIONARY:
             return getNewVisionaryPlan({ plan: planData, freePlan });

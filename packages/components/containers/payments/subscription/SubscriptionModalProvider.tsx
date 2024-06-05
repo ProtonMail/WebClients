@@ -128,19 +128,11 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             <ModalTwo
                                 className={clsx([
                                     subscriptionModalClassName,
-                                    [
-                                        SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                                        SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                                        SUBSCRIPTION_STEPS.CHECKOUT,
-                                        SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
-                                    ].includes(step) && 'subscription-modal--fixed-height',
+                                    [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
+                                        'subscription-modal--fixed-height',
                                     [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) &&
                                         'subscription-modal--large-width',
-                                    [
-                                        SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                                        SUBSCRIPTION_STEPS.CHECKOUT,
-                                        SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
-                                    ].includes(step) && 'subscription-modal--medium-width',
+                                    [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) && 'subscription-modal--medium-width',
                                 ])}
                                 data-testid="plansModal"
                                 {...modalState}

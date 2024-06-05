@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import {
@@ -51,6 +52,7 @@ const SentinelSection = ({ app }: Props) => {
     const [loadingSentinel, withLoadingSentinel] = useLoading();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const bundleProPlan = useBundleProPlan();
 
     const sentinelToggleRef = useRef<HTMLInputElement | null>(null);
 
@@ -107,7 +109,7 @@ const SentinelSection = ({ app }: Props) => {
                 {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
                 {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
                     PLAN_NAMES[PLANS.FAMILY]
-                }, or ${PLAN_NAMES[PLANS.BUNDLE_PRO]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
+                }, or ${PLAN_NAMES[bundleProPlan]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
             </>
         );
     };

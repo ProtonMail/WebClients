@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import {
     TotalPricing,
     allCycles,
@@ -174,7 +174,8 @@ const CycleItem = ({
 
 export const getMonthlySuffix = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
-    return Object.keys(supportedAddons).some((addon) => addon.startsWith(MEMBER_ADDON_PREFIX))
+
+    return (Object.keys(supportedAddons) as ADDON_NAMES[]).some((addon) => isMemberAddon(addon))
         ? c('Suffix').t`/user per month`
         : c('Suffix').t`/month`;
 };
@@ -204,7 +205,7 @@ export const SubscriptionCheckoutCycleItem = ({
                 text={getShortBillingText(replacementCycle)}
                 currency={currency}
                 discount={result.discountPerCycle}
-                monthlySuffix={getMonthlySuffix(planIDs)}
+                monthlySuffix={c('Suffix').t`/month`}
                 freeMonths={freeMonths}
                 total={result.withDiscountPerCycle}
                 totalPerMonth={result.withDiscountPerMonth}

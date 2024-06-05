@@ -193,6 +193,7 @@ export const plans = [
     },
     PLANS_MAP[PLANS.VPN_PRO],
     PLANS_MAP[PLANS.VPN_BUSINESS],
+    PLANS_MAP[PLANS.MAIL_BUSINESS],
 ] as unknown as Plan[];
 
 export const mailPlusUpsell = {
@@ -383,7 +384,7 @@ export const businessUpsell = {
     plan: PLANS.BUNDLE_PRO,
     planKey: PLANS.BUNDLE_PRO,
     title: 'Business',
-    description: 'Privacy and security suite for businesses, including all premium Proton services.',
+    description: 'All Proton business apps and premium features to protect your entire business.',
     upsellRefLink: 'upsell_mail-button-business-dashboard_settings',
     features: [
         {
@@ -405,6 +406,45 @@ export const businessUpsell = {
         {
             icon: 'checkmark-circle',
             text: 'Access advanced VPN features',
+        },
+    ],
+    otherCtas: [],
+    price: {
+        value: 999,
+        currency: 'EUR',
+    },
+};
+
+export const mailProfessionalUpsell = {
+    plan: PLANS.MAIL_BUSINESS,
+    planKey: PLANS.MAIL_BUSINESS,
+    title: 'Mail Professional',
+    description: 'Enhanced security and premium features for teams.',
+    upsellRefLink: 'upsell_mail-button-mailpro-dashboard_settings',
+    features: [
+        {
+            icon: 'storage',
+            text: 'Boost your storage space to 50 GB per user',
+        },
+        {
+            icon: 'envelope',
+            text: '10 email addresses per user',
+        },
+        {
+            icon: 'globe',
+            text: 'Support for 10 custom email domains',
+        },
+        {
+            icon: 'brand-proton-vpn',
+            text: '1 VPN connection',
+        },
+        {
+            icon: 'image',
+            text: 'Custom workspace branding',
+        },
+        {
+            icon: 'shield',
+            text: 'Proton Sentinel program',
         },
     ],
     otherCtas: [],

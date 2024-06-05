@@ -40,8 +40,10 @@ const getCycleUnit = (planName: PLANS) => {
         case PLANS.FREE:
             return '';
         case PLANS.MAIL_PRO:
+        case PLANS.MAIL_BUSINESS:
         case PLANS.DRIVE_PRO:
         case PLANS.BUNDLE_PRO:
+        case PLANS.BUNDLE_PRO_2024:
         case PLANS.ENTERPRISE:
         case PLANS.PASS_PRO:
         case PLANS.PASS_BUSINESS:
@@ -122,7 +124,7 @@ const PlanCard = ({
                                     {price / cycle}
                                 </Price>
                             </span>
-                            <span className="color-weak plan-selection-suffix">{getCycleUnit(planName)}</span>
+                            <span className="color-weak plan-selection-suffix text-left">{getCycleUnit(planName)}</span>
                         </>
                     ) : (
                         <span className="mb-5">
@@ -138,7 +140,7 @@ const PlanCard = ({
                     <div className="mb-1 plan-selection-spacing">{actionLabel}</div>
                 ) : null}
 
-                <div className="flex flex-column flex-nowrap flex-auto mt-2">{features}</div>
+                <div className="flex flex-column flex-nowrap flex-auto text-wrap-balance mt-2">{features}</div>
             </div>
         </>
     );

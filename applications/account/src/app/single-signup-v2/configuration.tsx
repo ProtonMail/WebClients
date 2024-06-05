@@ -180,7 +180,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.BUNDLE_PRO) {
+    if (plan && (plan?.Name === PLANS.BUNDLE_PRO || plan?.Name === PLANS.BUNDLE_PRO_2024)) {
         const shortPlan = getBundleProPlan(plan);
         return {
             logo: (

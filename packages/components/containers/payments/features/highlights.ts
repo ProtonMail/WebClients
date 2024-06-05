@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
@@ -30,7 +30,9 @@ const getUsers = (): PlanCardFeature => {
                 highlight: true,
             },
             [PLANS.MAIL_PRO]: null,
+            [PLANS.MAIL_BUSINESS]: null,
             [PLANS.BUNDLE_PRO]: null,
+            [PLANS.BUNDLE_PRO_2024]: null,
             [PLANS.PASS_PRO]: null,
             [PLANS.PASS_BUSINESS]: null,
             [PLANS.VPN_PRO]: null,
@@ -106,6 +108,16 @@ export const getAdminPanel = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getCustomBranding = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Custom workspace branding`,
+        tooltip: c('new_plans: tooltip')
+            .t`Upload your business' logo to customize your teams experience on the ${BRAND_NAME} web apps`,
+        included,
+        icon: 'image',
+    };
+};
+
 export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature[] => {
     return [
         getUsers(),
@@ -121,7 +133,9 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_PLUS]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.MAIL_PRO]: getSupport('priority'),
+                [PLANS.MAIL_BUSINESS]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
+                [PLANS.BUNDLE_PRO_2024]: getSupport('priority'),
                 [PLANS.PASS_PRO]: get24x7Support(),
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
@@ -139,11 +153,33 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_PLUS]: getSentinel(true),
                 [PLANS.FAMILY]: getSentinel(true),
                 [PLANS.MAIL_PRO]: getSentinel(),
+                [PLANS.MAIL_BUSINESS]: getSentinel(true),
                 [PLANS.BUNDLE_PRO]: getSentinel(true),
+                [PLANS.BUNDLE_PRO_2024]: getSentinel(true),
                 [PLANS.PASS_PRO]: getSentinel(),
                 [PLANS.PASS_BUSINESS]: getSentinel(true),
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
+            },
+        },
+        {
+            name: 'custom-branding',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.MAIL_PRO]: getCustomBranding(false),
+                [PLANS.MAIL_BUSINESS]: getCustomBranding(true),
+                [PLANS.BUNDLE_PRO]: getCustomBranding(true),
+                [PLANS.BUNDLE_PRO_2024]: getCustomBranding(true),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -157,14 +193,15 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_PLUS]: getEasySwitch(),
                 [PLANS.FAMILY]: getEasySwitch(),
                 [PLANS.MAIL_PRO]: getEasySwitch(),
+                [PLANS.MAIL_BUSINESS]: getEasySwitch(),
                 [PLANS.BUNDLE_PRO]: getEasySwitch(),
+                [PLANS.BUNDLE_PRO_2024]: getEasySwitch(),
                 [PLANS.PASS_PRO]: getEasySwitch(),
                 [PLANS.PASS_BUSINESS]: getEasySwitch(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
         },
-
         {
             name: 'admin-panel',
             target: Audience.B2B,
@@ -177,7 +214,9 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_PLUS]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
                 [PLANS.PASS_PRO]: getAdminPanel(),
                 [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
