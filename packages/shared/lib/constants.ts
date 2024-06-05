@@ -49,6 +49,8 @@ export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const DOCS_SHORT_APP_NAME = 'Docs';
 export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
+export const DOCS_EDITOR_SHORT_APP_NAME = 'Docs Editor';
+export const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
@@ -69,6 +71,7 @@ export const APPS = {
     PROTONEXTENSION: 'proton-extension',
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
     PROTONDOCS: 'proton-docs',
+    PROTONDOCSEDITOR: 'proton-docs-editor',
 } as const;
 
 interface AppConfiguration {
@@ -222,6 +225,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-docs',
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs',
+    },
+    [APPS.PROTONDOCSEDITOR]: {
+        publicPath: '',
+        subdomain: 'docs-editor',
+        name: DOCS_EDITOR_APP_NAME,
+        bareName: DOCS_EDITOR_SHORT_APP_NAME,
+        clientID: 'web-docs-editor',
+        icon: 'brand-proton', // TODO: brand icon for Docs
+        settingsSlug: 'docs-editor',
     },
 };
 
