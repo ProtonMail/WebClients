@@ -40,7 +40,7 @@ const useManageFolders = ({ mapping, isLabelMapping, onChange }: Props) => {
 
         newFolders[index] = newFolder;
 
-        const updatedFolders = renameChildFolders(newFolder, newFolders, newName);
+        const updatedFolders = renameChildFolders(newFolder, newFolders, newName, isLabelMapping);
 
         onChange(formatMapping(updatedFolders));
     };
