@@ -335,12 +335,20 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                 render={({ onSubmit, title, content, footer, step }) => {
                                     return (
                                         <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <div className="flex flex-nowrap shrink-0 items-start justify-space-between">
+                                            <div
+                                                className="flex flex-nowrap shrink-0 items-start justify-space-between"
+                                                data-testid="lite:account-header"
+                                            >
                                                 <div>
                                                     {title && (
                                                         <>
-                                                            <h1 className={'text-bold text-4xl'}>{title}</h1>
-                                                            <div className="color-weak text-break">{nameToDisplay}</div>
+                                                            <h1 className="text-bold text-4xl">{title}</h1>
+                                                            <div
+                                                                className="color-weak text-break"
+                                                                data-testid="lite:account-info"
+                                                            >
+                                                                {nameToDisplay}
+                                                            </div>
                                                         </>
                                                     )}
                                                 </div>
