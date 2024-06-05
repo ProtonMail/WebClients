@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { downloadFileWithSafariFix } from '@proton/pass/lib/export/downloadFilesWithSafariFix';
 import { type Maybe } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -23,32 +24,7 @@ const downloadLogs = (logs: string[]) => {
         }
     );
 
-    // Safari extensions don't properly support the HTML download attribute nor createObjectURL
-    if (BUILD_TARGET === 'safari') {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            const base64data = reader.result as string;
-            const link = document.createElement('a');
-            link.href = base64data;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        };
-
-        return;
-    }
-
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(file);
-
-    link.href = url;
-    link.download = file.name;
-    document.body.appendChild(link);
-    link.click();
-
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    downloadFileWithSafariFix(file);
 };
 
 export const ApplicationLogs: FC<Props> = ({ opened, style }) => {

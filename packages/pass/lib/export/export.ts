@@ -86,7 +86,7 @@ const getMimeType = (format: ExportFormat) => {
         case ExportFormat.ZIP:
             return 'application/zip';
         case ExportFormat.PGP:
-            return 'data:text/plain;charset=utf-8;';
+            return 'application/pgp-encrypted';
         case ExportFormat.CSV:
             return 'text/csv;charset=utf-8;';
     }
