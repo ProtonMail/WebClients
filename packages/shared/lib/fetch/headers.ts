@@ -18,13 +18,15 @@ export const mergeHeaders = ({ headers: configHeaders, ...restConfig }: MergeHea
     },
 });
 
+export const getAppVersionHeader = (appVersion: string) => ({
+    'x-pm-appversion': appVersion,
+});
+
 export const getAppVersionHeaders = (clientID: string, appVersion: string) => {
     if (process.env.NODE_ENV !== 'production') {
         appVersion = `${appVersion.replace(/-.*/, '')}-dev`;
     }
-    return {
-        'x-pm-appversion': `${clientID}@${appVersion}`,
-    };
+    return getAppVersionHeader(`${clientID}@${appVersion}`);
 };
 
 export const getUIDHeaderValue = (headers: Headers) => headers?.['x-pm-uid'];

@@ -90,15 +90,18 @@ export type ApiWithListener = Api & {
 
 const createApi = ({
     config,
+    defaultHeaders,
     noErrorState,
     sendLocaleHeaders,
 }: {
     sendLocaleHeaders?: boolean;
+    defaultHeaders?: any;
     config: any;
     noErrorState?: boolean;
 }): ApiWithListener => {
     const call = configureApi({
         ...config,
+        defaultHeaders,
         clientID: getClientID(config.APP_NAME),
         xhr,
     }) as any;

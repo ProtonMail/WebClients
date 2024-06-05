@@ -13,7 +13,7 @@ import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 
-const AccountRecoverySection = () => {
+const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
@@ -83,7 +83,7 @@ const AccountRecoverySection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            <hr className="my-8" />
+            {divider && <hr className="my-8" />}
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
