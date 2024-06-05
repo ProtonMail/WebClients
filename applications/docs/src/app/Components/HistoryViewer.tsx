@@ -15,7 +15,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { EditorFrame } from './EditorFrame'
 import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
-import { Logger } from '@standardnotes/utils'
+import { Logger } from '@proton/utils/logs'
 import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 
 function HistoryViewerModalContent({

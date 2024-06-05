@@ -1,4 +1,4 @@
-import { convertTimestampToMilliseconds } from '@standardnotes/utils'
+import { convertTimestampToMilliseconds } from './convertTimestampToMilliseconds'
 
 const rtf = new Intl.RelativeTimeFormat('en', {
   localeMatcher: 'best fit',

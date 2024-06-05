@@ -9,7 +9,7 @@ import {
 } from '@proton/docs-shared'
 import { EditorInvoker } from './EditorInvoker'
 import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
-import { Logger } from '@standardnotes/utils'
+import { Logger } from '@proton/utils/logs'
 import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 
 export class ClientToEditorBridge {
@@ -21,8 +21,6 @@ export class ClientToEditorBridge {
     private editorFrame: HTMLIFrameElement,
     private readonly editorController: EditorOrchestratorInterface,
   ) {
-    this.logger.setLevel('error')
-
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
         this.logger.info('Ignoring message from unknown source', event.data)
@@ -60,7 +58,7 @@ export class ClientToEditorBridge {
 
       this.editorFrame.contentWindow?.postMessage(reply, BridgeOriginProvider.GetEditorOrigin())
     } catch (error) {
-      this.logger.error('Error while handling editor request', 'message:', message, 'error:', error)
+      this.logger.error('Error while handling editor request', 'message:', message, 'error:', String(error))
     }
   }
 }
