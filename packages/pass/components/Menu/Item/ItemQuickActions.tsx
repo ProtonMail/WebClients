@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -9,8 +9,10 @@ import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -26,14 +28,23 @@ type Props = {
 };
 
 export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
+    const { matchItemList } = useNavigation();
     const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close, open } = usePopperAnchor<HTMLButtonElement>();
+
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
+
+    const listRef = useRef<HTMLUListElement>(null);
+    useNewItemShortcut(() => {
+        if (isOpen || !matchItemList) return;
+        open();
+        setTimeout(() => listRef.current?.querySelector('button')?.focus(), 50);
+    });
 
     const handleNewPasswordClick = () => {
         void passwordContext.generate({
@@ -78,7 +89,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                 onClose={close}
                 originalPlacement="bottom-start"
             >
-                <DropdownMenu>
+                <DropdownMenu listRef={listRef}>
                     {quickActions.map(({ type, label }) => (
                         <DropdownMenuButton
                             key={`item-type-dropdown-button-${type}`}
