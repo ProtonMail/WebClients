@@ -124,9 +124,10 @@ export const pullForkSession = (selector: string) => ({
     url: `auth/v4/sessions/forks/${selector}`,
 });
 
-export const getLocalSessions = () => ({
+export const getLocalSessions = (params?: { Email: string }) => ({
     method: 'get',
     url: `auth/v4/sessions/local`,
+    params,
 });
 
 export const getInfo = (Username?: string, intent: 'Proton' | 'Auto' | 'SSO' = 'Proton') => ({
@@ -187,10 +188,7 @@ export const payload = (data: ChallengePayload) => ({
     },
 });
 
-export const reauthMnemonic = (data: {
-    Username: string;
-    PersistentCookies: boolean;
-}) => ({
+export const reauthMnemonic = (data: { Username: string; PersistentCookies: boolean }) => ({
     method: 'post',
     url: 'auth/v4/mnemonic/reauth',
     data: {
