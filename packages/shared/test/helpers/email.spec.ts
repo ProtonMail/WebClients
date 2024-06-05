@@ -79,6 +79,10 @@ describe('email', () => {
                 'crypto@charlie.2b2',
                 '!def!xyz%abc@example.com',
                 '1234567890123456789012345678901234567890123456789012345678901234+x@a.example.com',
+                'test@-domain.com',
+                'test@domain-.com',
+                'admin@test.xn--9wy623f',
+                'admin@xn--svanstrm-t4a.com',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(emails.length);
         });
@@ -92,8 +96,6 @@ describe('email', () => {
                 'test@[192.168.1.1.2]',
                 'test(rare)@[19245.168.12.23]',
                 'test@domain',
-                'test@-domain.com',
-                'test@domain-.com',
                 'test@test@domain.com',
                 'français@baguette.fr',
                 'asd,@asd.com',
