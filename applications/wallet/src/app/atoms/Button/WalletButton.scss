@@ -30,9 +30,9 @@
 .wallet-button.button-solid-weak,
 .wallet-button.button-outline-weak,
 .wallet-button.button-ghost-weak {
-	--button-default-text-color: var(--text-weak);
-	--button-hover-text-color: var(--text-weak);
-	--button-active-text-color: var(--text-weak);
+	--button-default-text-color: var(--text-norm);
+	--button-hover-text-color: var(--text-norm);
+	--button-active-text-color: var(--text-norm);
 }
 
 .wallet-button.button-solid-weak {
@@ -49,7 +49,7 @@
 }
 
 .wallet-button.button-ghost-weak {
-	--button-default-background-color: var(--interaction-weak-major-1);
+	--button-default-background-color: var(--interaction-weak);
 }
 
 // Dark

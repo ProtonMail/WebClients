@@ -8,7 +8,6 @@ import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../atoms';
-import { BitcoinReceiveModal } from '../components';
 import { AccountPreferencesModal } from '../components/AccountPreferencesModal';
 import { Balance } from '../components/Balance';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
@@ -16,6 +15,7 @@ import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { useBitcoinBlockchainContext } from '../contexts';
+import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { getThemeForWallet } from '../utils';
 
 export const AccountContainer = () => {
@@ -23,10 +23,10 @@ export const AccountContainer = () => {
     const history = useHistory();
 
     const [walletSendModal, setWalletSendModal] = useModalState();
-    const [walletReceiveModal, setWalletReceiveModal] = useModalState();
     const [accountPreferencesModalState, setAccountPreferencesModalState] = useModalState();
 
     const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
+    const { openDrawer } = useWalletDrawerContext();
 
     const walletIndex = useMemo(
         () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
@@ -95,7 +95,9 @@ export const AccountContainer = () => {
                         apiAccount={walletAccount}
                         disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
-                        onClickReceive={() => setWalletReceiveModal(true)}
+                        onClickReceive={() => {
+                            openDrawer({ account: walletAccount, kind: 'wallet-receive', theme });
+                        }}
                     />
 
                     <TransactionList apiWalletData={wallet} apiAccount={walletAccount} />
@@ -110,11 +112,8 @@ export const AccountContainer = () => {
                         }}
                     />
 
-                    {walletAccount && !isSyncingChainData && (
-                        <>
-                            <BitcoinReceiveModal account={walletAccount} {...walletReceiveModal} />
-                            <BitcoinSendModal wallet={wallet} account={walletAccount} {...walletSendModal} />
-                        </>
+                    {!isSyncingChainData && (
+                        <BitcoinSendModal wallet={wallet} account={walletAccount} {...walletSendModal} />
                     )}
                 </div>
             </div>

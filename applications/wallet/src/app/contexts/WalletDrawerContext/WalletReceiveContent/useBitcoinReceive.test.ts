@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { mockUseBitcoinBlockchainContext } from '../../tests';
-import { apiWalletsData } from '../../tests/fixtures/api';
-import { mockUseBitcoinAddressHighestIndexModule } from '../../tests/mocks/useGetBitcoinAddressHighestIndex';
+import { mockUseBitcoinBlockchainContext } from '../../../tests';
+import { apiWalletsData } from '../../../tests/fixtures/api';
+import { mockUseBitcoinAddressHighestIndexModule } from '../../../tests/mocks/useGetBitcoinAddressHighestIndex';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 describe('useBitcoinReceive', () => {

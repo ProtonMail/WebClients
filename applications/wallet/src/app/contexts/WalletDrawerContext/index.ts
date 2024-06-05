@@ -6,20 +6,32 @@ import { WasmApiWalletAccount } from '@proton/andromeda';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { TransactionData } from '../../hooks/useWalletTransactions';
+import { SubTheme } from '../../utils';
 
 export interface WalletTransactionDrawerData {
+    kind: 'transaction-data';
     transaction: TransactionData;
     apiAccount: WasmApiWalletAccount | undefined;
     apiWalletData: IWasmApiWalletData;
 }
 
 export interface WalletDiscoverDrawerData {
-    discover: true;
+    kind: 'discover';
     wallet: IWasmApiWalletData;
 }
 
-// will be an union later
-export type WalletDrawerContextData = WalletTransactionDrawerData | WalletDiscoverDrawerData;
+export interface WalletReceiveDrawerData {
+    kind: 'wallet-receive';
+    account: WasmApiWalletAccount;
+}
+
+export type WalletDrawerContentData = WalletTransactionDrawerData | WalletDiscoverDrawerData | WalletReceiveDrawerData;
+
+export interface WalletCommonData {
+    theme?: SubTheme;
+}
+
+export type WalletDrawerContextData = WalletDrawerContentData & WalletCommonData;
 
 export interface WalletDrawerContextValue {
     drawer?: { data: WalletDrawerContextData };

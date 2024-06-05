@@ -1,5 +1,4 @@
 export * from './layout_';
-export * from './BitcoinReceiveModal';
 export * from './WalletCreationModal';
 export * from './BitcoinSendModal';
 export * from './Balance';
