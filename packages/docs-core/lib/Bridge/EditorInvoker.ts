@@ -9,7 +9,7 @@ import {
   WebsocketConnectionEventStatusChange,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
 
 /** Allows the client to invoke methods on the editor */

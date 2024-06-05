@@ -2,7 +2,7 @@ import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketConnection } from './WebsocketConnection'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { EncryptMessage } from '../UseCase/EncryptMessage'
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection

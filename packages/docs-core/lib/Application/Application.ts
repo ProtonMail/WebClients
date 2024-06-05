@@ -5,7 +5,6 @@ import { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocument
 import { DocLoader } from '../Services/DocumentLoader/DocLoader'
 import { DocLoaderInterface } from '../Services/DocumentLoader/DocLoaderInterface'
 import { InternalEventBusInterface } from '@proton/docs-shared'
-import { LoggerInterface } from '@standardnotes/utils'
 import type { DriveCompat } from '@proton/drive-store'
 import { ApplicationInterface } from './ApplicationInterface'
 import { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
@@ -17,9 +16,7 @@ export class Application implements ApplicationInterface {
     private protonApi: Api,
     private user: UserModel,
     private driveCompat: DriveCompat,
-  ) {
-    this.logger.setLevel('debug')
-  }
+  ) {}
 
   public get eventBus(): InternalEventBusInterface {
     return this.deps.get<InternalEventBusInterface>(App_TYPES.EventBus)
@@ -35,9 +32,5 @@ export class Application implements ApplicationInterface {
 
   public get websocketService(): WebsocketServiceInterface {
     return this.deps.get<WebsocketServiceInterface>(App_TYPES.WebsocketService)
-  }
-
-  private get logger(): LoggerInterface {
-    return this.deps.get<LoggerInterface>(App_TYPES.Logger)
   }
 }

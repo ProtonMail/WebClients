@@ -1,4 +1,5 @@
-import { DependencyContainer, Logger, LoggerInterface } from '@standardnotes/utils'
+import { Logger, LoggerInterface } from '@proton/utils/logs'
+import { DependencyContainer } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
 import { DocsApi } from '../../Api/Docs/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'

@@ -1,4 +1,4 @@
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import { UserService } from '../User/UserService'
 import { DocController } from '../../Controller/Document/DocController'
 import { SquashDocument } from '../../UseCase/SquashDocument'
