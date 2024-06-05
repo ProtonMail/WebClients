@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { WasmApiExchangeRate, WasmApiFiatCurrency, WasmApiWalletAccount } from '@proton/andromeda';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import Href from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
 import QRCode from '@proton/components/components/image/QRCode';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -63,7 +62,7 @@ export const WalletReceiveContent = ({ account }: Props) => {
     };
 
     return (
-        <div className="flex flex-column grow justify-center">
+        <div className="block overflow-auto">
             <div className="flex flex-column">
                 <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
                     .t`Your bitcoin address`}</h3>
@@ -176,19 +175,29 @@ export const WalletReceiveContent = ({ account }: Props) => {
                         onClick={() => {}}
                     >{c('Wallet receive').t`Share address`}</Button>
 
-                    <Button
-                        fullWidth
-                        className="mt-2"
-                        shape="ghost"
-                        size="large"
-                        onClick={() => incrementIndex()}
-                        disabled={isIndexAboveGap || !paymentLink || loadingPaymentLink}
-                    >{c('Wallet receive').t`Generate new address`}</Button>
+                    {(() => {
+                        const button = (
+                            <Button
+                                fullWidth
+                                className="mt-2"
+                                shape="ghost"
+                                size="large"
+                                onClick={() => incrementIndex()}
+                                disabled={isIndexAboveGap || !paymentLink || loadingPaymentLink}
+                            >{c('Wallet receive').t`Generate new address`}</Button>
+                        );
 
-                    {isIndexAboveGap && (
-                        <Alert type="warning">{c('Wallet receive')
-                            .t`Gap between next address and last used one is too large. Please use one of the address you generate before`}</Alert>
-                    )}
+                        return isIndexAboveGap ? (
+                            <Tooltip
+                                title={c('Wallet receive')
+                                    .t`Gap between next address and last used one is too large. Please use one of the address you generate before`}
+                            >
+                                {button}
+                            </Tooltip>
+                        ) : (
+                            button
+                        );
+                    })()}
                 </div>
             </div>
         </div>
