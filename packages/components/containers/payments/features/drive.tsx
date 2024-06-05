@@ -167,17 +167,20 @@ const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getTeamManagement = (): PlanCardFeatureDefinition => {
+const getDocumentEditor = (included: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Team management`,
-        included: false,
+        text: included
+            ? c('new_plans: feature').t`Document editors (docs, sheets, slides) (soon)`
+            : c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
+        included,
+        status: 'coming-soon',
     };
 };
 
-const getDocumentEditor = (): PlanCardFeatureDefinition => {
+export const getCollaborate = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
-        included: false,
+        text: c('new_plans: feature').t`Collaborate and share large files`,
+        included: true,
     };
 };
 
@@ -205,7 +208,13 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360, {
                 subtext: true,
             }),
+            [PLANS.MAIL_BUSINESS]: getStorageFeatureB2B(plansMap[PLANS.MAIL_BUSINESS]?.MaxSpace ?? 53687091200, {
+                subtext: true,
+            }),
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000, {
+                subtext: true,
+            }),
+            [PLANS.BUNDLE_PRO_2024]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO_2024]?.MaxSpace ?? 536870912000, {
                 subtext: true,
             }),
             [PLANS.PASS_PRO]: getStorageFeature(-1, { subtext: true, freePlan }),
@@ -230,7 +239,9 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_PLUS]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
+                [PLANS.MAIL_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
+                [PLANS.BUNDLE_PRO_2024]: getEndToEndEncryption(),
                 [PLANS.PASS_PRO]: getEndToEndEncryption(),
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
@@ -248,7 +259,9 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_PLUS]: getShareFeature(),
                 [PLANS.FAMILY]: getShareFeature(),
                 [PLANS.MAIL_PRO]: getShareFeature(),
+                [PLANS.MAIL_BUSINESS]: getShareFeature(),
                 [PLANS.BUNDLE_PRO]: getShareFeature(),
+                [PLANS.BUNDLE_PRO_2024]: getShareFeature(),
                 [PLANS.PASS_PRO]: getShareFeature(),
                 [PLANS.PASS_BUSINESS]: getShareFeature(),
                 [PLANS.VPN_PRO]: null,
@@ -266,28 +279,11 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_PLUS]: getAdvancedShareFeature(),
                 [PLANS.FAMILY]: getAdvancedShareFeature(),
                 [PLANS.MAIL_PRO]: getAdvancedShareFeature(),
+                [PLANS.MAIL_BUSINESS]: getAdvancedShareFeature(),
                 [PLANS.BUNDLE_PRO]: getAdvancedShareFeature(),
+                [PLANS.BUNDLE_PRO_2024]: getAdvancedShareFeature(),
                 [PLANS.PASS_PRO]: getAdvancedShareFeature(),
                 [PLANS.PASS_BUSINESS]: getAdvancedShareFeature(),
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
-            },
-        },
-        {
-            name: 'team-management',
-            target: Audience.B2B,
-            plans: {
-                [PLANS.FREE]: getTeamManagement(),
-                [PLANS.BUNDLE]: getTeamManagement(),
-                [PLANS.MAIL]: getTeamManagement(),
-                [PLANS.VPN]: getTeamManagement(),
-                [PLANS.DRIVE]: getTeamManagement(),
-                [PLANS.PASS_PLUS]: getTeamManagement(),
-                [PLANS.FAMILY]: getTeamManagement(),
-                [PLANS.MAIL_PRO]: getTeamManagement(),
-                [PLANS.BUNDLE_PRO]: getTeamManagement(),
-                [PLANS.PASS_PRO]: getTeamManagement(),
-                [PLANS.PASS_BUSINESS]: getTeamManagement(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -296,17 +292,19 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
             name: 'document-editor',
             target: Audience.B2B,
             plans: {
-                [PLANS.FREE]: getDocumentEditor(),
-                [PLANS.BUNDLE]: getDocumentEditor(),
-                [PLANS.MAIL]: getDocumentEditor(),
-                [PLANS.VPN]: getDocumentEditor(),
-                [PLANS.DRIVE]: getDocumentEditor(),
-                [PLANS.PASS_PLUS]: getDocumentEditor(),
-                [PLANS.FAMILY]: getDocumentEditor(),
-                [PLANS.MAIL_PRO]: getDocumentEditor(),
-                [PLANS.BUNDLE_PRO]: getDocumentEditor(),
-                [PLANS.PASS_PRO]: getDocumentEditor(),
-                [PLANS.PASS_BUSINESS]: getDocumentEditor(),
+                [PLANS.FREE]: getDocumentEditor(false),
+                [PLANS.BUNDLE]: getDocumentEditor(false),
+                [PLANS.MAIL]: getDocumentEditor(false),
+                [PLANS.VPN]: getDocumentEditor(false),
+                [PLANS.DRIVE]: getDocumentEditor(false),
+                [PLANS.PASS_PLUS]: getDocumentEditor(false),
+                [PLANS.FAMILY]: getDocumentEditor(false),
+                [PLANS.MAIL_PRO]: getDocumentEditor(false),
+                [PLANS.MAIL_BUSINESS]: getDocumentEditor(false),
+                [PLANS.BUNDLE_PRO]: getDocumentEditor(true),
+                [PLANS.BUNDLE_PRO_2024]: getDocumentEditor(true),
+                [PLANS.PASS_PRO]: getDocumentEditor(false),
+                [PLANS.PASS_BUSINESS]: getDocumentEditor(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

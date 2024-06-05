@@ -9,9 +9,15 @@ import { getOrganizationThemeFromCookie, serializeOrgTheme, syncToCookie } from 
 import { organizationThemeSlice } from './slice';
 
 const getHasAccess = (organization: Organization | undefined) => {
-    return [PLANS.BUNDLE_PRO, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS, PLANS.ENTERPRISE, PLANS.NEW_VISIONARY].includes(
-        organization?.PlanName as any
-    );
+    return [
+        PLANS.BUNDLE_PRO,
+        PLANS.BUNDLE_PRO_2024,
+        PLANS.MAIL_BUSINESS,
+        PLANS.PASS_BUSINESS,
+        PLANS.VPN_BUSINESS,
+        PLANS.ENTERPRISE,
+        PLANS.NEW_VISIONARY,
+    ].includes(organization?.PlanName as any);
 };
 
 const getOrganizationLogoURL = (data: { logoID: string | null; API_URL: string; UID: string }) => {

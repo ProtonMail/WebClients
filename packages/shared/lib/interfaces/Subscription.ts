@@ -61,6 +61,11 @@ export interface Plan {
     Offers: Offer[];
 }
 
+export interface Addon extends Plan {
+    Type: PLAN_TYPES.ADDON;
+    Name: ADDON_NAMES;
+}
+
 export interface FreePlanDefault extends Plan {
     Name: PLANS.FREE;
     Type: PLAN_TYPES.PLAN;

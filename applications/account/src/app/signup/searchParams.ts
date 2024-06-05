@@ -8,13 +8,12 @@ import {
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
-    MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -53,7 +52,11 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
     let product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
     const productParam = getProductParam(product, maybeProductParam || maybeProductPathname);
     if (!product) {
-        if ([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO].includes(searchParams.get('plan') as any)) {
+        if (
+            [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(
+                searchParams.get('plan') as any
+            )
+        ) {
             product = APPS.PROTONMAIL;
         }
     }
@@ -178,7 +181,7 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.users !== undefined) {
         const usersAddon = plans.find(
-            ({ Name }) => Name.startsWith(MEMBER_ADDON_PREFIX) && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) => isMemberAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
         );
 
         const clampedUsers = clamp(

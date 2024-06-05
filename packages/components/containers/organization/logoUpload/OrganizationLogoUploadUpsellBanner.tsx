@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Organization } from '@proton/shared/lib/interfaces';
 import lightlabellingUpsellSvg from '@proton/styles/assets/img/illustrations/account-lightlabelling-upsell.svg';
@@ -20,13 +21,14 @@ export const OrganizationLogoUploadUpsellBanner = ({
     isPartOfFamily,
 }: UpsellBannerProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
+    const bundleProPlan = useBundleProPlan();
 
     const currentPlan = organization.PlanName;
 
     const isVisionary = currentPlan === PLANS.NEW_VISIONARY;
 
     const upgradePlanMapping: { [key in PLANS]?: PLANS } = {
-        [PLANS.MAIL_PRO]: PLANS.BUNDLE_PRO,
+        [PLANS.MAIL_PRO]: bundleProPlan,
         [PLANS.VPN_PRO]: PLANS.VPN_BUSINESS,
         [PLANS.PASS_PRO]: PLANS.PASS_BUSINESS,
     };
@@ -39,7 +41,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
                 metrics: {
                     source: 'upsells',
                 },
-                step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
                 plan: newPlan,
             });
         }

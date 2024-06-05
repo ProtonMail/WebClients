@@ -30,7 +30,6 @@ const SubscriptionSubmitButton = ({
     className,
     paypal,
     currency,
-    step,
     loading,
     paymentMethodValue,
     checkResult,
@@ -66,20 +65,6 @@ const SubscriptionSubmitButton = ({
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Close`}
-            </PrimaryButton>
-        );
-    }
-
-    if (step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
-        return (
-            <PrimaryButton
-                className={className}
-                disabled={disabled}
-                loading={loading}
-                type="submit"
-                data-testid="confirm"
-            >
-                {c('Action').t`Continue`}
             </PrimaryButton>
         );
     }

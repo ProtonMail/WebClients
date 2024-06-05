@@ -8,7 +8,6 @@ import { Price } from '@proton/components/components/price';
 import {
     Alert3ds,
     CurrencySelector,
-    PlanCustomization,
     StyledPayPalButton,
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
@@ -16,6 +15,9 @@ import {
 } from '@proton/components/containers/payments';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import ProtonPlanCustomization, {
+    getHasPlanCustomizer,
+} from '@proton/components/containers/payments/ProtonPlanCustomizer';
 import {
     OnBillingAddressChange,
     WrappedTaxCountrySelector,
@@ -35,10 +37,16 @@ import { PaymentProcessorHook } from '@proton/components/payments/react-extensio
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsConsumerVpnPlan,
+    getIsVpnPlan,
+    getPlanFromIds,
+} from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
@@ -184,6 +192,9 @@ const PaymentStep = ({
         checkResult: subscriptionData.checkResult,
     });
 
+    const isB2bAudience = getIsB2BAudienceFromPlan(getPlanFromIds(subscriptionData.planIDs));
+    const defaultCycles = isB2bAudience ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
+
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
@@ -217,6 +228,7 @@ const PaymentStep = ({
                             onChangeCycle={onChangeCycle}
                             plansMap={plansMap}
                             planIDs={subscriptionData.planIDs}
+                            defaultCycles={defaultCycles}
                         />
                     )}
                     <div className="text-sm color-weak">
@@ -235,16 +247,28 @@ const PaymentStep = ({
                             onBillingAddressChange={onChangeBillingAddress}
                         />
                     )}
-                    <PlanCustomization
-                        mode="signup"
-                        loading={false}
-                        currency={subscriptionData.currency}
-                        cycle={subscriptionData.cycle}
-                        plansMap={plansMap}
-                        planIDs={subscriptionData.planIDs}
-                        onChangePlanIDs={onChangePlanIDs}
-                        className="pb-7 mb-8"
-                    />
+                    {(() => {
+                        const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
+                            plansMap,
+                            planIDs: subscriptionData.planIDs,
+                        });
+                        if (!hasPlanCustomizer || !currentPlan) {
+                            return null;
+                        }
+                        return (
+                            <ProtonPlanCustomization
+                                mode="signup"
+                                currentPlan={currentPlan}
+                                loading={false}
+                                currency={subscriptionData.currency}
+                                cycle={subscriptionData.cycle}
+                                plansMap={plansMap}
+                                planIDs={subscriptionData.planIDs}
+                                onChangePlanIDs={onChangePlanIDs}
+                                className="pb-7 mb-8"
+                            />
+                        );
+                    })()}
                     <div className="text-sm">
                         {hasGuarantee && (
                             <div className="flex flex-nowrap color-weak mb-2">
