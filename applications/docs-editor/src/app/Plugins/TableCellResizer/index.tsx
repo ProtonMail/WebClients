@@ -4,7 +4,7 @@ import type { LexicalEditor } from 'lexical'
 import './index.css'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import useLexicalEditable from '@lexical/react/useLexicalEditable'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import {
   $getTableColumnIndexFromTableCellNode,
   $getTableNodeFromLexicalNodeOrThrow,
