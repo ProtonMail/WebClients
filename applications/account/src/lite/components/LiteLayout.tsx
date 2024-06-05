@@ -2,23 +2,24 @@ import { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import getIsDarkLayout from '../helper';
+import { SupportedActions } from '../helper';
 
 import './LiteLayout.scss';
 
 interface Props {
     children: ReactNode;
-    searchParams?: URLSearchParams;
+    searchParams: URLSearchParams;
     className?: string;
 }
 
 const LiteLayout = ({ searchParams, className, children }: Props) => {
-    const dark = searchParams ? getIsDarkLayout(searchParams) : false;
-    return (
-        <div className={clsx(dark ? 'lite-layout--dark-bg' : 'lite-layout--light-bg', 'h-full', className)}>
-            {children}
-        </div>
-    );
+    const classNames = () => {
+        const action = searchParams.get('action') || undefined;
+        if (action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) {
+            return 'lite-layout--dark-bg';
+        }
+    };
+    return <div className={clsx(classNames(), 'h-full', className)}>{children}</div>;
 };
 
 export default LiteLayout;

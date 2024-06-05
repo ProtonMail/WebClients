@@ -5,6 +5,11 @@ export enum SupportedActions {
     DeleteAccount = 'delete-account',
     SubscribeAccount = 'subscribe-account',
     SubscribeAccountLink = 'subscribe-account-link',
+    MailSettings = 'mail-settings',
+    SubscriptionDetails = 'subscription-details',
+    SpamFiltersSettings = 'spam-filters-settings',
+    LabelsSettings = 'labels-settings',
+    AccountRecovery = 'account-recovery',
 }
 
 const list: { value: string; product: ProductParam }[] = [

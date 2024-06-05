@@ -9,15 +9,25 @@ const addClientSecret = ['core/v4/auth', 'core/v4/auth/info', 'auth/v4/sessions'
  * @param {String} APP_VERSION - The app version
  * @param {String} CLIENT_ID - The id of the client
  * @param {String} [CLIENT_SECRET] - Optional client secret
+ * @param {Object} defaultHeaders - This help to override parameters in the default headers
  * @return {function}
  */
-export default ({ xhr, UID, API_URL, APP_VERSION, clientID, CLIENT_SECRET }) => {
+export default ({
+    xhr,
+    UID,
+    API_URL,
+    APP_VERSION,
+    clientID,
+    CLIENT_SECRET,
+    defaultHeaders: otherDefaultHeaders = {},
+}) => {
     let authHeaders = UID ? getUIDHeaders(UID) : undefined;
     const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
 
     const defaultHeaders = {
         accept: 'application/vnd.protonmail.v1+json',
         ...appVersionHeaders,
+        ...otherDefaultHeaders,
     };
 
     const cb = ({ url, data, headers, ...rest }) => {

@@ -1,0 +1,64 @@
+@import '~@proton/styles/scss/lib';
+
+// overrides for mobile app settings, not meant to follow taxonomy (it's temporary)
+
+.mobile-settings {
+	background-color: var(--background-weak);
+	padding: 1rem;
+	min-block-size: 100vh;
+	block-size: auto;
+
+	// override for toggle design
+	$toggle-width: em(42);
+	$toggle-width-button: em(20);
+
+	.toggle-container {
+		background-color: var(--field-norm);
+		inline-size: $toggle-width;
+		transition: background-color 0.25s easing(ease-out-cubic);
+
+		&::before {
+			background-color: var(--background-norm) !important;
+			inline-size: #{$toggle-width-button};
+			block-size: #{$toggle-width-button};
+			inset-block: em(2);
+			inset-inline-start: em(2);
+		}
+
+		&--checked {
+			background-color: var(--interaction-norm);
+
+			&::before {
+				transform: translateX(#{$toggle-width - $toggle-width-button - em(4)});
+				background-color: var(--background-norm);
+			}
+		}
+
+		&::after {
+			border: 0;
+		}
+
+		&-img {
+			display: none;
+		}
+
+		& > .toggle-container-text > .toggle-container-loader {
+			color: var(--field-norm);
+		}
+	}
+}
+
+// global structure
+.mobile-section {
+	& &-row {
+		&:first-child {
+			border-start-start-radius: var(--border-radius-xl);
+			border-start-end-radius: var(--border-radius-xl);
+		}
+
+		&:last-child {
+			border-end-start-radius: var(--border-radius-xl);
+			border-end-end-radius: var(--border-radius-xl);
+		}
+	}
+}
