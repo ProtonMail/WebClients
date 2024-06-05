@@ -86,5 +86,6 @@ export interface MailSettings {
     AlmostAllMail: ALMOST_ALL_MAIL;
     ReceiveMIMEType: string;
     ShowMIMEType: string;
+    NextMessageOnMove: number;
     KT: KEY_TRANSPARENCY_SETTING;
 }

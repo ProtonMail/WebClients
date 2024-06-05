@@ -207,5 +207,6 @@ export const DEFAULT_MAILSETTINGS: MailSettings = {
     ReceiveMIMEType: MIME_TYPES.DEFAULT,
     ShowMIMEType: MIME_TYPES.DEFAULT,
     PageSize: MAIL_PAGE_SIZE.FIFTY,
+    NextMessageOnMove: 0,
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
 };

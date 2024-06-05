@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { ReactNode, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -53,8 +53,6 @@ import clsx from '@proton/utils/clsx';
 
 import broadcast, { MessageType } from '../broadcast';
 import LiteBox from '../components/LiteBox';
-import LiteLayout from '../components/LiteLayout';
-import LiteLoaderPage from '../components/LiteLoaderPage';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
 import PromotionExpired from '../components/PromotionExpired';
 import SubscribeAccountDone from '../components/SubscribeAccountDone';
@@ -67,12 +65,13 @@ interface Props {
     fullscreen?: boolean;
     searchParams: URLSearchParams;
     app: ProductParam;
-    loader: JSX.Element;
+    loader: ReactNode;
+    layout: (children: ReactNode, props: any) => ReactNode;
 }
 
 const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE];
 
-const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
+const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
@@ -97,10 +96,11 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
 
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
-        return (
-            <LiteLayout searchParams={searchParams} className="flex justify-center items-center">
-                <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>
-            </LiteLayout>
+        return layout(
+            <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>,
+            {
+                className: 'flex justify-center items-center',
+            }
         );
     }
 
@@ -422,16 +422,10 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
     );
 };
 
-const SubscribeAccountWithProviders = (props: Omit<Props, 'loader'>) => {
-    const loader = (
-        <LiteLayout searchParams={props.searchParams}>
-            <LiteLoaderPage />
-        </LiteLayout>
-    );
-
+const SubscribeAccountWithProviders = (props: Props) => {
     return (
-        <PaymentSwitcher loader={loader}>
-            <SubscribeAccount {...props} loader={loader} />
+        <PaymentSwitcher loader={props.loader}>
+            <SubscribeAccount {...props} />
         </PaymentSwitcher>
     );
 };
