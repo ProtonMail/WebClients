@@ -19,10 +19,12 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getHasConsumerVpnPlan,
+    getIsB2BAudienceFromPlan,
     getOverriddenPricePerCycle,
     hasBundle,
     hasDrive,
     hasMail,
+    hasMailBusiness,
     hasMailPro,
     hasPassPlus,
     hasVPN,
@@ -37,9 +39,10 @@ import { Currency, FreePlanDefault, Plan, Subscription, VPNServersCountData } fr
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { getPhoneSupport } from '../../features/b2b';
 import { getNCalendarsFeature } from '../../features/calendar';
-import { getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
-import { getSentinel, getUsersFeature } from '../../features/highlights';
+import { getCollaborate, getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
+import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/highlights';
 import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
@@ -48,21 +51,22 @@ import {
     getNAddressesFeatureB2B,
     getNDomainsFeature,
 } from '../../features/mail';
-import { FREE_PASS_ALIASES, getProtonPassFeature } from '../../features/pass';
+import { FREE_PASS_ALIASES, getPasswordManager, getProtonPassFeature } from '../../features/pass';
 import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
 import {
-    getAdvancedVPNFeature,
     getB2BHighSpeedVPNConnectionsFeature,
     getDedicatedAccountManagerVPNFeature,
     getDedicatedServersVPNFeature,
     getHighSpeedVPNConnectionsFeature,
+    getVPNConnections,
     getVPNConnectionsFeature,
 } from '../../features/vpn';
 import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
 
-const cycle = CYCLE.TWO_YEARS;
+const defaultUpsellCycleB2C = CYCLE.TWO_YEARS;
+const defaultUpsellCycleB2B = CYCLE.YEARLY;
 
 export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];
@@ -131,6 +135,7 @@ type GetUpsellArgs = {
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
+    customCycle?: CYCLE;
 } & Partial<Upsell>;
 
 type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
@@ -147,6 +152,7 @@ const getUpsell = ({
     upsellPath,
     freePlan,
     app,
+    customCycle,
     ...upsellFields
 }: GetUpsellArgs) => {
     const fullPlan = plansMap[plan];
@@ -162,6 +168,12 @@ const getUpsell = ({
         feature: upsellPath,
         component: UPSELL_COMPONENT.BUTTON,
     });
+
+    const defaultCycleForSelectedAudience = getIsB2BAudienceFromPlan(plan)
+        ? defaultUpsellCycleB2B
+        : defaultUpsellCycleB2C;
+
+    const cycle = customCycle ?? defaultCycleForSelectedAudience;
 
     return {
         plan,
@@ -239,7 +251,7 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUps
         upsellPath: DASHBOARD_UPSELL_PATHS.DRIVE,
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: defaultUpsellCycleB2C,
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -260,7 +272,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsel
         upsellPath: DASHBOARD_UPSELL_PATHS.VPN,
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: defaultUpsellCycleB2C,
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -279,7 +291,7 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
         upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: defaultUpsellCycleB2C,
                 plan: PLANS.PASS_PLUS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -323,7 +335,7 @@ const getBundleUpsell = ({
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: defaultUpsellCycleB2C,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -371,7 +383,7 @@ const getFamilyUpsell = ({
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: defaultUpsellCycleB2C,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -382,27 +394,64 @@ const getFamilyUpsell = ({
     });
 };
 
+const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    const mailBusinessPlan = plansMap[PLANS.MAIL_BUSINESS];
+    const mailBusinessStorage = humanSize({ bytes: mailBusinessPlan?.MaxSpace ?? 50, fraction: 0 });
+
+    const features: UpsellFeature[] = [
+        getStorageBoostFeatureB2B(mailBusinessStorage),
+        getNAddressesFeatureB2B({ n: mailBusinessPlan?.MaxAddresses ?? 15 }),
+        getB2BNDomainsFeature(mailBusinessPlan?.MaxDomains ?? 10),
+        getVPNConnections(1),
+        getCustomBranding(true),
+        getSentinel(true),
+    ];
+
+    return getUpsell({
+        plan: PLANS.MAIL_BUSINESS,
+        plansMap,
+        features,
+        upsellPath: DASHBOARD_UPSELL_PATHS.MAILEPRO,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: defaultUpsellCycleB2B,
+                plan: PLANS.MAIL_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
 const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    const bundleProPlan = plansMap[PLANS.BUNDLE_PRO];
+    const bundleProPlan = plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO];
+
     const businessStorage = humanSize({ bytes: bundleProPlan?.MaxSpace ?? 500, fraction: 0 });
 
     const features: UpsellFeature[] = [
         getStorageBoostFeatureB2B(businessStorage),
-        getNAddressesFeatureB2B({ n: 5 }),
-        getB2BNDomainsFeature(),
+        getB2BNDomainsFeature(bundleProPlan?.MaxDomains ?? 15),
+        getCollaborate(),
+        getPasswordManager(),
         getB2BHighSpeedVPNConnectionsFeature(),
-        getAdvancedVPNFeature(),
+        getSentinel(true),
+        getPhoneSupport(),
     ];
 
+    const plan: PLANS = bundleProPlan.Name as PLANS;
+
     return getUpsell({
-        plan: PLANS.BUNDLE_PRO,
+        plan,
         plansMap,
         features,
         upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
-                plan: PLANS.BUNDLE_PRO,
+                plan,
+                cycle: defaultUpsellCycleB2B,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
@@ -416,16 +465,19 @@ const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPla
 const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const features: UpsellFeature[] = [getDedicatedServersVPNFeature()];
 
+    const customCycle = CYCLE.TWO_YEARS;
+
     return getUpsell({
         plan: PLANS.VPN_BUSINESS,
         plansMap,
         features,
+        customCycle,
         upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
         onUpgrade: () =>
             openSubscriptionModal({
-                cycle,
+                cycle: customCycle,
                 plan: PLANS.VPN_BUSINESS,
-                step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
                     source: 'upsells',
@@ -529,6 +581,8 @@ export const resolveUpsellsToDisplay = ({
             case hasBundle(subscription):
                 return [getFamilyUpsell(upsellsPayload)];
             case hasMailPro(subscription):
+                return [getMailBusinessUpsell(upsellsPayload)];
+            case hasMailBusiness(subscription):
                 return [getBundleProUpsell(upsellsPayload)];
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];

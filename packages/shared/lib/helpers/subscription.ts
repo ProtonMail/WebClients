@@ -1,7 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 
 import {
     ADDON_NAMES,
@@ -10,7 +10,6 @@ import {
     CYCLE,
     FreeSubscription,
     IPS_INCLUDED_IN_PLAN,
-    MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
@@ -32,10 +31,12 @@ import {
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
+
 const {
     NEW_VISIONARY,
     MAIL,
     MAIL_PRO,
+    MAIL_BUSINESS,
     DRIVE,
     DRIVE_PRO,
     PASS_PLUS,
@@ -45,6 +46,7 @@ const {
     ENTERPRISE,
     BUNDLE,
     BUNDLE_PRO,
+    BUNDLE_PRO_2024,
     FAMILY,
     VPN_PRO,
     VPN_BUSINESS,
@@ -111,18 +113,23 @@ export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
+export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
 export const hasPassPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PLUS);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
+export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO_2024);
 export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, FAMILY);
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PRO);
 export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_BUSINESS);
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PRO);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
+
+export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
+    hasBundlePro(subscription) || hasBundlePro2024(subscription);
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
@@ -138,16 +145,25 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
                 return PLANS.MAIL;
         }
     }
-    if (hasBundle(subscription) || hasBundlePro(subscription)) {
-        return PLANS.BUNDLE_PRO;
+    if (hasBundle(subscription) || hasBundlePro(subscription) || hasBundlePro2024(subscription)) {
+        return PLANS.BUNDLE_PRO_2024;
     }
     return PLANS.BUNDLE;
 };
 
 export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES) => {
-    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE, VPN_PRO, VPN_BUSINESS, PASS_PRO, PASS_BUSINESS].includes(
-        planName as any
-    );
+    return [
+        MAIL_PRO,
+        MAIL_BUSINESS,
+        DRIVE_PRO,
+        BUNDLE_PRO,
+        BUNDLE_PRO_2024,
+        ENTERPRISE,
+        VPN_PRO,
+        VPN_BUSINESS,
+        PASS_PRO,
+        PASS_BUSINESS,
+    ].includes(planName as any);
 };
 
 export const canCheckItemPaidChecklist = (subscription: Subscription | undefined) => {
@@ -210,6 +226,10 @@ export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
 
 export const getHasVpnOrPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
+};
+
+export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return hasMailPro(subscription) || hasMailBusiness(subscription);
 };
 
 export const getPrimaryPlan = (subscription: Subscription | undefined) => {
@@ -283,10 +303,7 @@ export const getHasMemberCapablePlan = (
     subscription: Subscription | undefined
 ) => {
     const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
-    return (
-        (organization?.MaxMembers || 0) > 1 ||
-        Object.keys(supportedAddons).some((key) => key.startsWith(MEMBER_ADDON_PREFIX))
-    );
+    return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
@@ -431,8 +448,7 @@ function isMultiUserPersonalPlan(plan: Plan) {
 }
 
 function getPlanMembers(plan: Plan, quantity: number): number {
-    const hasMembers =
-        plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && plan.Name.startsWith(MEMBER_ADDON_PREFIX));
+    const hasMembers = plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && isMemberAddon(plan.Name));
 
     let membersNumberInPlan = 0;
     if (isMultiUserPersonalPlan(plan)) {

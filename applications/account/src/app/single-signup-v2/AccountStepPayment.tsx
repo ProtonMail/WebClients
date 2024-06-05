@@ -7,9 +7,12 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { PayPalButton, PlanCustomization, StyledPayPalButton } from '@proton/components/containers';
+import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import ProtonPlanCustomization, {
+    getHasPlanCustomizer,
+} from '@proton/components/containers/payments/ProtonPlanCustomizer';
 import {
     OnBillingAddressChange,
     WrappedTaxCountrySelector,
@@ -315,22 +318,32 @@ const AccountStepPayment = ({
                     }}
                     method="post"
                 >
-                    {isB2BPlan && (
-                        <PlanCustomization
-                            mode="signup"
-                            loading={false}
-                            currency={subscriptionData.currency}
-                            cycle={subscriptionData.cycle}
-                            plansMap={model.plansMap}
-                            planIDs={subscriptionData.planIDs}
-                            onChangePlanIDs={debouncedHandlePlanIDs}
-                            below={
+                    {(() => {
+                        const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
+                            plansMap: model.plansMap,
+                            planIDs: subscriptionData.planIDs,
+                        });
+                        if (!hasPlanCustomizer || !currentPlan) {
+                            return null;
+                        }
+                        return (
+                            <>
+                                <ProtonPlanCustomization
+                                    mode="signup"
+                                    loading={false}
+                                    currentPlan={currentPlan}
+                                    currency={subscriptionData.currency}
+                                    cycle={subscriptionData.cycle}
+                                    plansMap={model.plansMap}
+                                    planIDs={subscriptionData.planIDs}
+                                    onChangePlanIDs={debouncedHandlePlanIDs}
+                                />
                                 <div className="mt-6 mb-6">
                                     <hr />
                                 </div>
-                            }
-                        />
-                    )}
+                            </>
+                        );
+                    })()}
                     {options.checkResult.AmountDue ? (
                         <PaymentWrapper
                             {...paymentFacade}

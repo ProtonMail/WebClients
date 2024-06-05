@@ -40,9 +40,7 @@ type Props = ButtonGroupProps | SelectProps | SelectTwoProps;
 
 const propsToOmit = ['onSelect', 'options', 'cycle', 'disabled'] as const;
 
-const CycleSelector = (props: Props) => {
-    const { onSelect, disabled, minimumCycle, maximumCycle } = props;
-
+export function getRestrictedCycle(props: Pick<SharedProps, 'options' | 'cycle' | 'minimumCycle' | 'maximumCycle'>) {
     const defaultOptions = [
         { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
         { text: c('Billing cycle option').t`Annually`, value: YEARLY },
@@ -51,29 +49,42 @@ const CycleSelector = (props: Props) => {
 
     const options = (props.options || defaultOptions)
         .filter(({ value }) => {
+            const { minimumCycle, maximumCycle } = props;
+
             if (minimumCycle && value < minimumCycle) {
                 return false;
             }
             if (maximumCycle && value > maximumCycle) {
                 return false;
             }
+
             return true;
         })
         .sort((a, b) => a.value - b.value);
 
-    const cycle = (() => {
-        const cycleToCheck = props.cycle || DEFAULT_CYCLE;
+    const cycleToCheck = props.cycle || DEFAULT_CYCLE;
 
-        // Check cycle is an option
-        const optionValues = options.map(({ value }) => value);
-        const optionsContainCycle = optionValues.includes(cycleToCheck);
-        if (optionsContainCycle) {
-            return cycleToCheck;
-        }
+    // Check cycle is an option
+    const optionValues = options.map(({ value }) => value);
+    const optionsContainCycle = optionValues.includes(cycleToCheck);
+    if (optionsContainCycle) {
+        return {
+            options,
+            cycle: cycleToCheck,
+        };
+    }
 
-        // If not then default the cycle to the highest option
-        return optionValues[optionValues.length - 1];
-    })();
+    // If not then default the cycle to the highest option
+    return {
+        options,
+        cycle: optionValues[optionValues.length - 1],
+    };
+}
+
+const CycleSelector = (props: Props) => {
+    const { onSelect, disabled } = props;
+
+    const { options, cycle } = getRestrictedCycle(props);
 
     if (props.mode === 'buttons') {
         const rest = omit(props, propsToOmit);

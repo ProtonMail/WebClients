@@ -317,7 +317,7 @@ const getUpsell = ({
             if (getHasBusinessUpsell(currentPlan.Name)) {
                 return {
                     ...defaultValue,
-                    plan: plansMap[PLANS.BUNDLE_PRO],
+                    plan: plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO],
                     mode: UpsellTypes.UPSELL,
                 };
             }
@@ -327,9 +327,13 @@ const getUpsell = ({
             } else {
                 if (
                     getHasAnyPlusPlan(currentPlan.Name) &&
-                    ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
-                        planParameters.plan.Name as any
-                    )
+                    ![
+                        PLANS.BUNDLE,
+                        PLANS.FAMILY,
+                        PLANS.BUNDLE_PRO,
+                        PLANS.BUNDLE_PRO_2024,
+                        PLANS.NEW_VISIONARY,
+                    ].includes(planParameters.plan.Name as any)
                 ) {
                     return {
                         ...defaultValue,
@@ -340,11 +344,13 @@ const getUpsell = ({
 
                 if (
                     getHasBusinessUpsell(currentPlan.Name) &&
-                    ![PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+                    ![PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
+                        planParameters.plan.Name as any
+                    )
                 ) {
                     return {
                         ...defaultValue,
-                        plan: plansMap[PLANS.BUNDLE_PRO],
+                        plan: plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO],
                         mode: UpsellTypes.UPSELL,
                     };
                 }
@@ -396,6 +402,7 @@ const hasAccess = ({
                 PLANS.NEW_VISIONARY,
                 PLANS.FAMILY,
                 PLANS.BUNDLE_PRO,
+                PLANS.BUNDLE_PRO_2024,
                 PLANS.ENTERPRISE,
             ].includes(currentPlan?.Name as any);
         }
@@ -547,19 +554,21 @@ export const getUserInfo = async ({
             state.access = false;
         } else if (
             getHasAnyPlusPlan(currentPlan.Name) &&
-            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
+            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
                 planParameters.plan.Name as any
             )
         ) {
             state.access = false;
         } else if (
             currentPlan.Name === PLANS.BUNDLE &&
-            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
+                planParameters.plan.Name as any
+            )
         ) {
             state.access = false;
         } else if (
             currentPlan.Name === PLANS.FAMILY &&
-            [PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+            [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
         ) {
             state.access = false;
         }

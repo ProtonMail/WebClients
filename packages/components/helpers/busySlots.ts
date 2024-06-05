@@ -5,10 +5,12 @@ import { Organization } from '@proton/shared/lib/interfaces';
 export const isUserEligibleForBusySlots = (organization: Organization): boolean => {
     const isEligible = [
         PLANS.BUNDLE_PRO, // Business
+        PLANS.BUNDLE_PRO_2024, // Business
         PLANS.NEW_VISIONARY, // Visionary
         PLANS.FAMILY, // Family
         PLANS.ENTERPRISE, // Enterprise
         PLANS.MAIL_PRO, // Mail Essentials
+        PLANS.MAIL_BUSINESS, // Mail Business
     ].includes(organization.PlanName);
 
     return !!isEligible;

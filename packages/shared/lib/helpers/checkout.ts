@@ -1,14 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import {
-    ADDON_NAMES,
-    CYCLE,
-    DEFAULT_CYCLE,
-    MEMBER_ADDON_PREFIX,
-    PLANS,
-    PLAN_TYPES,
-    VPN_PASS_PROMOTION_COUPONS
-} from '../constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES, VPN_PASS_PROMOTION_COUPONS } from '../constants';
 import {
     Plan,
     PlanIDs,
@@ -19,7 +11,7 @@ import {
     SubscriptionCheckResponse,
     getPlanMaxIPs,
 } from '../interfaces';
-import { getPlanFromCheckout } from './planIDs';
+import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon } from './planIDs';
 import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
 
 export const getDiscountText = () => {
@@ -32,28 +24,28 @@ export const getUserTitle = (users: number) => {
 };
 
 const getAddonQuantity = (addon: Plan, quantity: number) => {
-    if (addon.Name.startsWith('1domain')) {
+    if (isDomainAddon(addon.Name)) {
         return quantity * (addon.MaxDomains || 0);
     }
-    if (addon.Name.startsWith(MEMBER_ADDON_PREFIX)) {
+    if (isMemberAddon(addon.Name)) {
         return quantity * (addon.MaxMembers || 0);
     }
-    if (addon.Name.startsWith('1ip')) {
+    if (isIpAddon(addon.Name)) {
         return quantity * getPlanMaxIPs(addon);
     }
     return 0;
 };
 
 export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
-    if (addonName.startsWith('1domain')) {
+    if (isDomainAddon(addonName)) {
         const domains = quantity;
         return c('Addon').ngettext(msgid`${domains} custom domain`, `${domains} custom domains`, domains);
     }
-    if (addonName.startsWith(MEMBER_ADDON_PREFIX)) {
+    if (isMemberAddon(addonName)) {
         const users = quantity;
         return c('Addon').ngettext(msgid`${users} user`, `${users} users`, users);
     }
-    if (addonName.startsWith('1ip')) {
+    if (isIpAddon(addonName)) {
         const ips = quantity;
         return c('Addon').ngettext(msgid`${ips} server`, `${ips} servers`, ips);
     }
@@ -106,7 +98,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
 
     const memberAddonsNumber = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const planOrAddon = plansMap[planName as keyof typeof plansMap];
-        if (planOrAddon?.Type === PLAN_TYPES.ADDON && planOrAddon.Name.startsWith(MEMBER_ADDON_PREFIX)) {
+        if (planOrAddon?.Type === PLAN_TYPES.ADDON && isMemberAddon(planOrAddon.Name)) {
             acc += quantity;
         }
 
@@ -119,7 +111,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
         [addonName: string]: AddonDescription;
     }>((acc, [planName, quantity]) => {
         const planOrAddon = plansMap[planName as keyof typeof plansMap];
-        if (planOrAddon?.Type !== PLAN_TYPES.ADDON || planOrAddon.Name.startsWith(MEMBER_ADDON_PREFIX)) {
+        if (planOrAddon?.Type !== PLAN_TYPES.ADDON || isMemberAddon(planOrAddon.Name)) {
             return acc;
         }
 

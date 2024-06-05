@@ -63,6 +63,7 @@ const thunk = (): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, 
                     plans: await plans,
                     freePlan: await freePlan,
                 };
+
                 dispatch(slice.actions.fulfilled(value));
                 return value;
             } catch (error) {

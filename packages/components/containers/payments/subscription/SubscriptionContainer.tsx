@@ -3,16 +3,6 @@ import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState }
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getShortBillingText, isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { BillingAddress, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
-import { PaymentProcessorHook, PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
@@ -30,20 +20,13 @@ import {
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import {
-    getPlanFromCheckout,
-    getPlanFromPlanIDs,
-    hasPlanIDs,
-    supportAddons,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs, supportAddons, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
     getHasSomeVpnPlan,
-    getHasVpnB2BPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
@@ -72,7 +55,15 @@ import debounce from '@proton/utils/debounce';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { usePaymentFacade } from '../../../../components/payments/client-extensions';
+import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
+import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
+import { BillingAddress, PAYMENT_METHOD_TYPES } from '../../../../components/payments/core';
+import { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
+import { PaymentProcessorHook, PaymentProcessorType } from '../../../../components/payments/react-extensions/interface';
+import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { Icon, Tooltip } from '../../../components';
+import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import {
     useApi,
     useConfig,
@@ -83,24 +74,28 @@ import {
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
+import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
+import ProtonPlanCustomization, { getHasPlanCustomizer } from '../ProtonPlanCustomizer';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
-import PlanCustomization from './PlanCustomization';
 import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
-import SubscriptionCycleSelector, {
-    SubscriptionItemView,
-    getDiscountPrice,
-    getMonthlySuffix,
-} from './SubscriptionCycleSelector';
+import SubscriptionCycleSelector, { SubscriptionCheckoutCycleItem } from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { SelectedProductPlans, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
+import {
+    SelectedProductPlans,
+    exclude24Months,
+    getAutoCoupon,
+    getCurrency,
+    getDefaultSelectedProductPlans,
+} from './helpers';
+import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -125,8 +120,7 @@ export interface Model {
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
-    [SUBSCRIPTION_STEPS.CUSTOMIZATION]: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-    [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+    [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.PLAN_SELECTION,
 };
 
 const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
@@ -209,21 +203,17 @@ const SubscriptionContainer = ({
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
-        [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Customize your plan`,
         [SUBSCRIPTION_STEPS.CHECKOUT]: c('new_plans: title').t`Review subscription and pay`,
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
         [SUBSCRIPTION_STEPS.THANKS]: '',
-        [SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION]: c('new_plans: title').t`Review subscription and pay`,
     };
 
     const metricStepMap: Record<SUBSCRIPTION_STEPS, MetricsStep> = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: 'network-error',
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: 'plan-selection',
-        [SUBSCRIPTION_STEPS.CUSTOMIZATION]: 'customization',
         [SUBSCRIPTION_STEPS.CHECKOUT]: 'checkout',
         [SUBSCRIPTION_STEPS.UPGRADE]: 'upgrade',
         [SUBSCRIPTION_STEPS.THANKS]: 'thanks',
-        [SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION]: 'checkout-with-customization',
     };
 
     const topRef = useRef<HTMLDivElement>(null);
@@ -277,14 +267,7 @@ const SubscriptionContainer = ({
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
     const [model, setModel] = useState<Model>(() => {
-        const step = (() => {
-            // Users with VPN B2B plans must not have access to the checkout step.
-            if (getHasVpnB2BPlan(subscription) && maybeStep === SUBSCRIPTION_STEPS.CHECKOUT) {
-                return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
-            }
-
-            return maybeStep ?? SUBSCRIPTION_STEPS.PLAN_SELECTION;
-        })();
+        const step = getInitialCheckoutStep(planIDs, maybeStep);
 
         const cycle = (() => {
             if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
@@ -352,10 +335,18 @@ const SubscriptionContainer = ({
             })
     );
 
-    const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
+    const defaultCycles = exclude24Months(model.planIDs, subscription, [
+        PLANS.VPN_PRO,
+        PLANS.VPN_BUSINESS,
+        PLANS.PASS_PRO,
+        PLANS.PASS_BUSINESS,
+        PLANS.MAIL_PRO,
+        PLANS.MAIL_BUSINESS,
+        PLANS.BUNDLE_PRO,
+        PLANS.BUNDLE_PRO_2024,
+    ]);
 
-    const isPassB2bPlan = !!model.planIDs[PLANS.PASS_PRO] || !!model.planIDs[PLANS.PASS_BUSINESS];
-    const defaultCycles = isPassB2bPlan ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
+    const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
     const application = useMemo(() => {
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
@@ -389,10 +380,7 @@ const SubscriptionContainer = ({
 
     const abortControllerRef = useRef<AbortController>();
 
-    const amount =
-        model.step === SUBSCRIPTION_STEPS.CHECKOUT || model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-            ? amountDue
-            : 0;
+    const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
     const currency = checkResult?.Currency || DEFAULT_CURRENCY;
 
     const handlePlanWarnings = async (planIDs: PlanIDs) => {
@@ -447,7 +435,6 @@ const SubscriptionContainer = ({
         }
 
         // When user has an error during checkout, we need to return him to the exact same step
-        // Two possible cases: CHECKOUT and CHECKOUT_WITH_CUSTOMIZATION
         const checkoutStep = model.step;
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
@@ -544,16 +531,11 @@ const SubscriptionContainer = ({
     });
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
-        const isInitialCheck = !newModel.initialCheckComplete;
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
             noPaymentNeeded: false,
         };
-
-        if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
-            copyNewModel.step = SUBSCRIPTION_STEPS.CHECKOUT;
-        }
 
         if (!hasPlanIDs(newModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
@@ -561,9 +543,7 @@ const SubscriptionContainer = ({
             return true;
         }
 
-        const dontQueryCheck =
-            copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION ||
-            (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && isInitialCheck);
+        const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
 
         if (dontQueryCheck) {
             setCheckResult({
@@ -763,35 +743,11 @@ const SubscriptionContainer = ({
 
     const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
 
-    const handleCustomizationSubmit = () => {
-        const run = async () => {
-            const samePlan = isSubscriptionUnchanged(subscription, model.planIDs);
-            if (samePlan) {
-                createNotification({ text: c('Info').t`No changes made to the current subscription`, type: 'info' });
-                return;
-            }
-
-            let isSuccess = await check();
-
-            if (isSuccess) {
-                setModel((old) => ({
-                    ...old,
-                    step: SUBSCRIPTION_STEPS.CHECKOUT,
-                }));
-            }
-        };
-        void withLoading(run());
-    };
-
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
         if (model.noPaymentNeeded) {
             onCancel?.();
-            return;
-        }
-
-        if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
             return;
         }
 
@@ -887,6 +843,8 @@ const SubscriptionContainer = ({
         ...checkoutModifiers,
     };
 
+    const { currentPlan, hasPlanCustomizer } = getHasPlanCustomizer({ plansMap, planIDs: model.planIDs });
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -907,22 +865,13 @@ const SubscriptionContainer = ({
                     mode={modeType}
                     hasFreePlan={showFreePlan}
                     subscription={subscription}
-                    onChangePlanIDs={(planIDs) =>
+                    onChangePlanIDs={(planIDs, cycle) =>
                         withLoadingCheck(
                             check({
                                 ...model,
+                                cycle,
                                 planIDs,
-                                step: (() => {
-                                    if (!!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]) {
-                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
-                                    }
-
-                                    if (!!planIDs[PLANS.PASS_PRO] || !!planIDs[PLANS.PASS_BUSINESS]) {
-                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
-                                    }
-
-                                    return SUBSCRIPTION_STEPS.CUSTOMIZATION;
-                                })(),
+                                step: SUBSCRIPTION_STEPS.CHECKOUT,
                             })
                         )
                     }
@@ -935,215 +884,93 @@ const SubscriptionContainer = ({
                     organization={organization}
                 />
             )}
-            {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
-                <div className="subscriptionCheckout-top-container">
-                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
-                        <div className="max-w-custom" style={{ '--max-w-custom': '50em' }}>
-                            <PlanCustomization
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                plansMap={plansMap}
-                                planIDs={model.planIDs}
-                                organization={organization}
-                                onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
-                                currentSubscription={subscription}
-                                className="pb-7 mb-8"
-                            />
-                        </div>
-                    </div>
-                    <div className="subscriptionCheckout-column bg-weak rounded">
-                        <div
-                            className="subscriptionCheckout-container sticky top-0"
-                            data-testid="subscription-checkout"
-                        >
-                            <SubscriptionCheckout
-                                freePlan={freePlan}
-                                submit={
-                                    <Button
-                                        color="norm"
-                                        loading={loading}
-                                        onClick={handleCustomizationSubmit}
-                                        fullWidth
-                                        data-testid="continue-to-review"
-                                    >
-                                        {c('new_plans: action').t`Continue to review`}
-                                    </Button>
-                                }
-                                checkResult={getOptimisticCheckResult({
-                                    plansMap,
-                                    cycle: model.cycle,
-                                    planIDs: model.planIDs,
-                                })}
-                                plansMap={plansMap}
-                                vpnServers={vpnServers}
-                                isOptimistic={true}
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                planIDs={model.planIDs}
-                                subscription={subscription}
-                                onChangeCurrency={handleChangeCurrency}
-                                statusExtended={paymentFacade.statusExtended}
-                                {...checkoutModifiers}
-                            />
-                        </div>
-                    </div>
-                </div>
-            )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                <>
-                    <div className="subscriptionCheckout-top-container">
-                        <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <div
-                                className="mx-auto max-w-custom subscriptionCheckout-options"
-                                style={{ '--max-w-custom': '37em' }}
-                            >
-                                {(() => {
-                                    if (isFreePlanSelected) {
-                                        return null;
-                                    }
-                                    if (disableCycleSelector) {
-                                        return (
-                                            <>
-                                                <h2 className="text-2xl text-bold mb-4">{c('Label').t`New plan`}</h2>
-                                                <div className="mb-8">
-                                                    {(() => {
-                                                        const plan = getPlanFromCheckout(model.planIDs, plansMap);
-                                                        const result = getCheckout({
-                                                            planIDs: model.planIDs,
-                                                            plansMap,
-                                                            checkResult: checkResult,
-                                                        });
-                                                        return (
-                                                            <SubscriptionItemView
-                                                                title={plan?.Title}
-                                                                bottomLeft={getShortBillingText(model.cycle)}
-                                                                topRight={getSimplePriceString(
-                                                                    model.currency,
-                                                                    result.withDiscountPerMonth,
-                                                                    getMonthlySuffix(model.planIDs)
-                                                                )}
-                                                                bottomRight={getDiscountPrice(
-                                                                    result.discountPerCycle,
-                                                                    model.currency
-                                                                )}
-                                                                loading={loadingCheck}
-                                                            />
-                                                        );
-                                                    })()}
-                                                </div>
-                                            </>
-                                        );
-                                    }
-                                    return (
-                                        <>
-                                            <h2 className="text-2xl text-bold mb-4">
-                                                {c('Label').t`Subscription options`}
-                                            </h2>
-                                            <div className="mb-8">
-                                                <SubscriptionCycleSelector
-                                                    mode="buttons"
-                                                    plansMap={plansMap}
-                                                    planIDs={model.planIDs}
-                                                    cycle={model.cycle}
-                                                    currency={model.currency}
-                                                    priceType={
-                                                        model.planIDs[PLANS.VPN2024] &&
-                                                        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) &&
-                                                        couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
-                                                        model.initialCheckComplete
-                                                            ? PriceType.default
-                                                            : undefined
-                                                    }
-                                                    onChangeCycle={handleChangeCycle}
-                                                    disabled={loadingCheck}
-                                                    minimumCycle={minimumCycle}
-                                                    maximumCycle={maximumCycle}
-                                                    subscription={subscription}
-                                                    defaultCycles={defaultCycles}
-                                                />
-                                            </div>
-                                        </>
-                                    );
-                                })()}
-                                {/* avoid mounting/unmounting the component which re-triggers the hook */}
-                                <div className={amountDue ? undefined : 'hidden'}>
-                                    <PaymentWrapper
-                                        {...paymentFacade}
-                                        onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
-                                        noMaxWidth
-                                        hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
-                                        hasSomeVpnPlan={hasSomeVpnPlan}
-                                    />
-                                </div>
-                                <NoPaymentRequiredNote
-                                    amountDue={amountDue}
-                                    checkResult={checkResult}
-                                    creditsRemaining={creditsRemaining}
-                                    subscription={subscription}
-                                    hasPaymentMethod={hasPaymentMethod}
-                                />
-                            </div>
-                        </div>
-                        <div className="subscriptionCheckout-column bg-weak rounded">
-                            <div
-                                className="subscriptionCheckout-container sticky top-0"
-                                data-testid="subscription-checkout"
-                            >
-                                <SubscriptionCheckout {...subscriptionCheckoutProps} />
-                            </div>
-                        </div>
-                    </div>
-                </>
-            )}
-            {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
                     <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
-                        <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
-                        <PlanCustomization
-                            loading={blockAccountSizeSelector}
-                            currency={model.currency}
-                            cycle={model.cycle}
-                            plansMap={plansMap}
-                            planIDs={model.planIDs}
-                            organization={organization}
-                            onChangePlanIDs={debounce((planIDs) => {
-                                const newModel = { ...model, planIDs };
-                                setModel(newModel);
-                                const checkPromise = check(newModel);
-                                void withLoadingCheck(checkPromise);
-                                void withBlockCycleSelector(checkPromise);
-                            }, 300)}
-                            forceHideDescriptions
-                            showUsersTooltip={false}
-                            currentSubscription={subscription}
-                            className="mb-8"
-                        />
+                        {hasPlanCustomizer && currentPlan && (
+                            <>
+                                <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
+                                <ProtonPlanCustomization
+                                    loading={blockAccountSizeSelector}
+                                    currency={model.currency}
+                                    cycle={model.cycle}
+                                    plansMap={plansMap}
+                                    currentPlan={currentPlan}
+                                    planIDs={model.planIDs}
+                                    organization={organization}
+                                    onChangePlanIDs={debounce((planIDs) => {
+                                        const newModel = { ...model, planIDs };
+                                        setModel(newModel);
+                                        const checkPromise = check(newModel);
+                                        void withLoadingCheck(checkPromise);
+                                        void withBlockCycleSelector(checkPromise);
+                                    }, 300)}
+                                    forceHideDescriptions
+                                    showUsersTooltip={false}
+                                    currentSubscription={subscription}
+                                    className="mb-8"
+                                />
+                            </>
+                        )}
                         <div
                             className="mx-auto max-w-custom subscriptionCheckout-options"
                             style={{ '--max-w-custom': '37em' }}
                         >
-                            {!disableCycleSelector && (
-                                <>
-                                    <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
-                                    <div className="mb-8">
-                                        <SubscriptionCycleSelector
-                                            mode="buttons"
-                                            plansMap={plansMap}
-                                            planIDs={model.planIDs}
-                                            cycle={model.cycle}
-                                            currency={model.currency}
-                                            onChangeCycle={handleChangeCycle}
-                                            disabled={loadingCheck}
-                                            faded={blockCycleSelector}
-                                            minimumCycle={minimumCycle}
-                                            subscription={subscription}
-                                            defaultCycles={defaultCycles}
-                                        />
-                                    </div>
-                                </>
-                            )}
+                            {(() => {
+                                if (isFreePlanSelected) {
+                                    return null;
+                                }
+                                if (disableCycleSelector) {
+                                    return (
+                                        <>
+                                            <h2 className="text-2xl text-bold mb-4">{c('Label').t`New plan`}</h2>
+                                            <div className="mb-8">
+                                                {(() => {
+                                                    return (
+                                                        <SubscriptionCheckoutCycleItem
+                                                            checkResult={checkResult}
+                                                            plansMap={plansMap}
+                                                            planIDs={model.planIDs}
+                                                            loading={loadingCheck}
+                                                        />
+                                                    );
+                                                })()}
+                                            </div>
+                                        </>
+                                    );
+                                }
+                                return (
+                                    <>
+                                        <h2 className="text-2xl text-bold mb-4">
+                                            {c('Label').t`Subscription options`}
+                                        </h2>
+                                        <div className="mb-8">
+                                            <SubscriptionCycleSelector
+                                                mode="buttons"
+                                                plansMap={plansMap}
+                                                planIDs={model.planIDs}
+                                                cycle={model.cycle}
+                                                currency={model.currency}
+                                                priceType={
+                                                    model.planIDs[PLANS.VPN2024] &&
+                                                    [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) &&
+                                                    couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
+                                                    model.initialCheckComplete
+                                                        ? PriceType.default
+                                                        : undefined
+                                                }
+                                                onChangeCycle={handleChangeCycle}
+                                                disabled={loadingCheck}
+                                                minimumCycle={minimumCycle}
+                                                maximumCycle={maximumCycle}
+                                                subscription={subscription}
+                                                defaultCycles={defaultCycles}
+                                                faded={blockCycleSelector}
+                                            />
+                                        </div>
+                                    </>
+                                );
+                            })()}
                             <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
                             {/* avoid mounting/unmounting the component which re-triggers the hook */}
                             <div className={amountDue ? undefined : 'hidden'}>
@@ -1172,9 +999,9 @@ const SubscriptionContainer = ({
                         >
                             <SubscriptionCheckout
                                 {...subscriptionCheckoutProps}
-                                showDiscount={false}
-                                enableDetailedAddons={true}
-                                showPlanDescription={false}
+                                showDiscount={!hasPlanCustomizer}
+                                enableDetailedAddons={!!hasPlanCustomizer}
+                                showPlanDescription={!hasPlanCustomizer}
                             />
                         </div>
                     </div>
