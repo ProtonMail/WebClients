@@ -1,15 +1,23 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
+import clsx from '@proton/utils/clsx';
 
 import { WalletDrawerContext, WalletDrawerContextData, WalletDrawerContextValue } from '.';
 import { Drawer } from './Drawer';
 import { WalletDiscoverContent } from './WalletDiscoverContent';
+import { WalletReceiveContent } from './WalletReceiveContent';
 import { WalletTransactionDataDrawer } from './WalletTransactionDataContent';
 
 interface Props {
     children: ReactNode;
 }
+
+const styleByKind: Record<WalletDrawerContextData['kind'], { bg: 'bg-weak' | 'bg-norm'; width?: string }> = {
+    ['discover']: { bg: 'bg-norm' },
+    ['transaction-data']: { bg: 'bg-weak' },
+    ['wallet-receive']: { bg: 'bg-norm' },
+};
 
 export const WalletDrawerContextProvider = ({ children }: Props) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -36,6 +44,8 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
         setIsDrawerOpen(!!drawerData);
     }, [drawerData]);
 
+    const style = drawerData && styleByKind[drawerData?.data.kind];
+
     return (
         <WalletDrawerContext.Provider value={{ drawer: drawerData, openDrawer: openDrawerExt }}>
             {children}
@@ -45,10 +55,10 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                     open={isDrawerOpen}
                     onClose={closeDrawer}
                     style={{ '--w-custom': '24rem' }}
-                    className="overflow-auto"
-                    bg={'discover' in drawerData.data ? 'bg-norm' : 'bg-weak'}
+                    className={clsx('overflow-auto', drawerData.data.theme)}
+                    bg={style?.bg}
                 >
-                    {'transaction' in drawerData.data && (
+                    {drawerData.data.kind === 'transaction-data' && (
                         <WalletTransactionDataDrawer
                             transaction={drawerData.data.transaction}
                             apiAccount={drawerData.data.apiAccount}
@@ -56,7 +66,13 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                         />
                     )}
 
-                    {'discover' in drawerData.data && <WalletDiscoverContent wallet={drawerData.data.wallet} />}
+                    {drawerData.data.kind === 'discover' && drawerData.data && (
+                        <WalletDiscoverContent wallet={drawerData.data.wallet} />
+                    )}
+
+                    {drawerData.data.kind === 'wallet-receive' && (
+                        <WalletReceiveContent account={drawerData.data.account} />
+                    )}
                 </Drawer>
             )}
         </WalletDrawerContext.Provider>

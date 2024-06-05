@@ -13,10 +13,18 @@ export interface Props {
 
     style?: CSSProperties;
     className?: string;
-    bg?: "bg-weak" | "bg-norm"
+    bg?: 'bg-weak' | 'bg-norm';
 }
 
-export const Drawer = ({ open, onClose, title, style, className,bg="bg-weak", children }: PropsWithChildren<Props>) => {
+export const Drawer = ({
+    open,
+    onClose,
+    title,
+    style,
+    className,
+    bg = 'bg-weak',
+    children,
+}: PropsWithChildren<Props>) => {
     const ref = useRef(document.body);
 
     useHotkeys(ref, [
@@ -41,7 +49,11 @@ export const Drawer = ({ open, onClose, title, style, className,bg="bg-weak", ch
                 }}
             />
             <div
-                className={clsx('absolute top-0 right-0 h-full w-custom max-w-full py-3 px-6', bg, className)}
+                className={clsx(
+                    'absolute top-0 right-0 h-full w-custom max-w-full py-3 px-6 flex flex-column flex-nowrap',
+                    bg,
+                    className
+                )}
                 style={{ ...style, transform: open ? undefined : 'translateX(100%)', transitionDuration: '300ms' }}
             >
                 <DrawerHeader title={title} onClose={() => onClose?.()} bg={bg} />

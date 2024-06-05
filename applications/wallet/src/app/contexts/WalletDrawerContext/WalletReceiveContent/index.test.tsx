@@ -2,12 +2,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 
-import { BitcoinReceiveModal } from '.';
-import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../tests';
-import { apiWalletsData } from '../../tests/fixtures/api';
+import { WalletReceiveContent } from '.';
+import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';
+import { apiWalletsData } from '../../../tests/fixtures/api';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
-describe('BitcoinReceiveModal', () => {
+describe('WalletReceiveContent', () => {
     let helper: useBitcoinReceiveModule.UseBitcoinReceiveHelper;
 
     const mockUseBitcoinReceive = vi.spyOn(useBitcoinReceiveModule, 'useBitcoinReceive');
@@ -45,7 +45,7 @@ describe('BitcoinReceiveModal', () => {
                 paymentLink: undefined,
             });
 
-            render(<BitcoinReceiveModal open account={testAccount} />);
+            render(<WalletReceiveContent account={testAccount} />);
         });
 
         it('should display a loader', () => {
@@ -73,7 +73,7 @@ describe('BitcoinReceiveModal', () => {
                 loadingPaymentLink: true,
             });
 
-            render(<BitcoinReceiveModal open account={testAccount} />);
+            render(<WalletReceiveContent account={testAccount} />);
         });
 
         it('should display a loader', () => {
@@ -96,7 +96,7 @@ describe('BitcoinReceiveModal', () => {
 
     describe('when user clicks on `Add amount`', () => {
         it('should call `showAmountInput`', async () => {
-            render(<BitcoinReceiveModal open account={testAccount} />);
+            render(<WalletReceiveContent account={testAccount} />);
 
             const button = screen.getByTestId('show-amount-input-button');
             await fireEvent.click(button);
@@ -113,7 +113,7 @@ describe('BitcoinReceiveModal', () => {
                 shouldShowAmountInput: true,
             });
 
-            render(<BitcoinReceiveModal open account={testAccount} />);
+            render(<WalletReceiveContent account={testAccount} />);
         });
 
         it('display amount input', async () => {
@@ -144,7 +144,7 @@ describe('BitcoinReceiveModal', () => {
                 paymentLink: bitcoinURI,
             });
 
-            render(<BitcoinReceiveModal open account={testAccount} />);
+            render(<WalletReceiveContent account={testAccount} />);
         });
 
         it('should display QRCode containing serialized payment info', () => {
