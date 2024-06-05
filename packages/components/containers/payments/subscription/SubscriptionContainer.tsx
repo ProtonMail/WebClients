@@ -22,7 +22,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanFromPlanIDs, hasPlanIDs, supportAddons, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
@@ -734,10 +734,7 @@ const SubscriptionContainer = ({
         void withLoadingCheck(check({ ...model, taxBillingAddress: billingAddress }));
     };
 
-    const backStep =
-        model.step === SUBSCRIPTION_STEPS.CHECKOUT && !supportAddons(model.planIDs)
-            ? SUBSCRIPTION_STEPS.PLAN_SELECTION
-            : BACK[model.step];
+    const backStep = BACK[model.step];
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
 
@@ -1027,8 +1024,12 @@ const SubscriptionContainer = ({
     );
 
     const footer = (() => {
-        if ((disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) || backStep === undefined) {
-            return undefined;
+        if (
+            !model.initialCheckComplete ||
+            (disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
+            backStep === undefined
+        ) {
+            return;
         }
 
         return (
