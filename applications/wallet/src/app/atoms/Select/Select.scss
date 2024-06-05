@@ -28,3 +28,31 @@
 		font-size: 16px;
 	}
 }
+
+.wallet-select-dropdown-button {
+	.field-two-input-container {
+		button {
+			// container is already outlined
+			outline: none !important;
+		}
+	}
+}
+
+.wallet-select-dropdown {
+	.dropdown-search {
+		background-color: var(--background-weak);
+
+		.field {
+			background-color: var(--background-weak);
+			border: 1px solid var(--border-weak);
+
+			&:hover {
+				border: 2px solid var(--border-weak);
+			}
+
+			&:focus-within {
+				outline: 2px solid var(--interaction-norm-contrast);
+			}
+		}
+	}
+}

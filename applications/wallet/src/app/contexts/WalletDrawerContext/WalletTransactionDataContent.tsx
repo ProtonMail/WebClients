@@ -2,15 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Icon, Price, useModalStateWithData } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
 import { TransactionNoteModal } from '../../components/TransactionNoteModal';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import {
@@ -22,28 +19,30 @@ import {
 } from './data-items';
 
 interface Props {
-    apiWalletData: IWasmApiWalletData;
-    apiAccount: WasmApiWalletAccount | undefined;
     transaction: TransactionData;
 }
 
-export const WalletTransactionDataDrawer = ({ apiAccount, apiWalletData, transaction }: Props) => {
-    const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
-        apiAccount ?? apiWalletData.WalletAccounts[0]
-    );
-
+export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
     const [showMore, setShowMore] = useState(false);
+    const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
 
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
 
-    const value = transaction.networkData.received - transaction.networkData.sent;
+    const isSender = transaction.networkData.sent > transaction.networkData.received;
+    /**
+     * If user is sender, we want to display what the amount he actually sent, without change output amount and feees
+     * If user is recipient, we want to the amount he received
+     */
+    const value = isSender
+        ? transaction.networkData.sent - (transaction.networkData.fee ?? 0) - transaction.networkData.received
+        : transaction.networkData.received - transaction.networkData.sent;
 
     return (
         <>
             <div className="flex flex-column">
                 <div className="flex flex-column mb-10">
                     <div className="flex flex-row flex-nowrap items-center my-1">
-                        <div className={clsx('text-semibold', loadingExchangeRate && 'skeleton-loader')}>
+                        <div className={clsx('text-semibold')}>
                             <Price
                                 currency={exchangeRate?.FiatCurrency}
                                 className="h1 text-semibold"

@@ -5,6 +5,8 @@ import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';
 import { apiWalletsData } from '../../../tests/fixtures/api';
+import { mockUseFiatCurrencies } from '../../../tests/mocks/useFiatCurrencies';
+import { mockUseGetExchangeRate } from '../../../tests/mocks/useGetExchangeRate';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
 describe('WalletReceiveContent', () => {
@@ -18,6 +20,8 @@ describe('WalletReceiveContent', () => {
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
         mockUseWalletAccountExchangeRate(null);
+        mockUseGetExchangeRate();
+        mockUseFiatCurrencies();
 
         const bitcoinURI = WasmPaymentLink.tryParse(
             'bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h?amount=0.005',

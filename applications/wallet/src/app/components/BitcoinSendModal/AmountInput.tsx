@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
@@ -10,9 +10,8 @@ import { Button, CoreButton } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { Price } from '../../atoms/Price';
-import { DEFAULT_BITCOIN_UNIT } from '../../constants';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
+import { useExchangeRate } from '../../store/hooks';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
@@ -43,9 +42,11 @@ export const AmountInput = ({
         return acc || (index > 0 && current[2] !== recipients[index - 1][2]);
     }, false);
 
-    const [exchangeRate] = useWalletAccountExchangeRate(apiAccount);
     const [useDetailledInput, setUseDetailledInput] = useState(isSingleAmountInputHidden);
-    const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
+    const [defaultExchangeRate] = useExchangeRate(apiAccount.FiatCurrency);
+    const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
+
+    const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
 
     const accountBalance = useAsyncValue(getAccountBalance(account), 0);
 
@@ -54,12 +55,6 @@ export const AmountInput = ({
     }, 0);
 
     const remainingAmount = accountBalance - totalSentAmount;
-
-    useEffect(() => {
-        if (exchangeRate) {
-            setUnit(exchangeRate);
-        }
-    }, [exchangeRate]);
 
     /**
      * User can update a single amount input, the update amount will be attributed to every recipient
@@ -83,10 +78,9 @@ export const AmountInput = ({
                 <>
                     <div className="mb-6">
                         <BitcoinAmountInputWithBalanceAndCurrencySelect
-                            unit={unit}
+                            exchangeRate={exchangeRate}
                             value={Number(totalSentAmount)}
-                            exchangeRates={exchangeRate && [exchangeRate]}
-                            onUnitChange={(u) => setUnit(u)}
+                            onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                             remainingBalance={remainingAmount}
                         />
                     </div>
@@ -139,7 +133,7 @@ export const AmountInput = ({
 
                                     <div className="w-custom mr-1 no-shrink" style={{ '--w-custom': '7.5rem' }}>
                                         <BitcoinAmountInput
-                                            unit={unit}
+                                            unit={exchangeRate ?? 'BTC'}
                                             value={Number(amount)}
                                             onValueChange={(v) => {
                                                 updateTxBuilder((txBuilder) =>
@@ -165,7 +159,13 @@ export const AmountInput = ({
                         const recipients = compact(txBuilder.getRecipients().map((r) => btcAddressMap[r[1]]));
                         const [firstRecipient] = recipients;
 
-                        const price = <Price key={'sent-amount-total'} satsAmount={totalSentAmount} unit={unit} />;
+                        const price = (
+                            <Price
+                                key={'sent-amount-total'}
+                                satsAmount={totalSentAmount}
+                                unit={exchangeRate ?? 'BTC'}
+                            />
+                        );
 
                         return (
                             <>
@@ -175,12 +175,11 @@ export const AmountInput = ({
                                 />
 
                                 <BitcoinAmountInputWithBalanceAndCurrencySelect
-                                    unit={unit}
+                                    exchangeRate={exchangeRate}
                                     value={Number(firstRecipientAmount)}
                                     onSendAll={handleSendAllFromSingleAmount}
-                                    exchangeRates={exchangeRate && [exchangeRate]}
                                     onAmountChange={(v) => handleUpdateSingleAmount(v)}
-                                    onUnitChange={(u) => setUnit(u)}
+                                    onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                                     remainingBalance={remainingAmount}
                                 />
 
@@ -218,7 +217,7 @@ export const AmountInput = ({
                         }
                     });
 
-                    onReview(unit);
+                    onReview(exchangeRate ?? 'BTC');
                 }}
                 disabled={txBuilder.getRecipients().every((r) => !r[2])}
             >{c('Wallet send').t`Review`}</Button>
