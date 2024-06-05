@@ -95,4 +95,56 @@ describe('Logger', () => {
         expect(createElementSpy).not.toHaveBeenCalled();
         createElementSpy.mockRestore();
     });
+
+    test('should call downloadLogs on Ctrl+Shift+H in main frame', () => {
+        const createElementSpy = jest.spyOn(document, 'createElement');
+        // Simulate Ctrl+Shift+H keydown event
+        const event = new KeyboardEvent('keydown', {
+            key: 'H',
+            ctrlKey: true,
+            shiftKey: true,
+        });
+        window.dispatchEvent(event);
+
+        // Assert that downloadLogs has been called
+        expect(createElementSpy).toHaveBeenCalled();
+    });
+
+    test('should call downloadLogs on message event in main frame', () => {
+        const createElementSpy = jest.spyOn(document, 'createElement');
+        // Simulate a message event from a child frame
+        const event = new MessageEvent('message', {
+            data: { type: 'downloadLogs' },
+        });
+        window.dispatchEvent(event);
+
+        // Assert that downloadLogs has been called
+        expect(createElementSpy).toHaveBeenCalled();
+    });
+});
+
+describe('Logger Iframe', () => {
+    let logger: Logger;
+
+    beforeEach(() => {
+        Object.defineProperty(window, 'top', { value: {} });
+        logger = new Logger('test-logger-iframe');
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
+    test('should post message to parent frame on Ctrl+Shift+H in child frame', () => {
+        const spyPostMessage = jest.spyOn(window.parent, 'postMessage');
+        logger.debug('test');
+        const event = new KeyboardEvent('keydown', {
+            key: 'H',
+            ctrlKey: true,
+            shiftKey: true,
+        });
+        window.dispatchEvent(event);
+        expect(window.self === window.top).toEqual(false);
+        expect(spyPostMessage).toHaveBeenCalledWith({ type: 'downloadLogs' }, '*');
+    });
 });
