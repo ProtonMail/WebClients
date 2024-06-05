@@ -15,7 +15,7 @@ import { CommentInterface, CommentThreadInterface, CommentThreadState } from '@p
 import { Button } from '@proton/atoms'
 import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
-import { UserAvatar } from '../../Components/UserAvatar'
+import { UserAvatar } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 
