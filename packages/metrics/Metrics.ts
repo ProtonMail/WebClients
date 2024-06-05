@@ -6,8 +6,21 @@
  * https://confluence.protontech.ch/pages/viewpage.action?pageId=121927830
  */
 import Counter from './lib/Counter';
+import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
+import { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
+import { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/docs_comments_error_total_v1.schema';
+import { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
+import { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
+import { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
+import { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
+import { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
+import { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
+import { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
+import { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
+import { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
+import { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
 import { HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson } from './types/drive_upload_erroring_users_total_v1.schema';
 import { HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson } from './types/drive_upload_errors_total_v1.schema';
 import { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
@@ -70,6 +83,30 @@ import { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscrip
 import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public docs_aborted_squashes_total: Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>;
+
+    public docs_comments_error_total: Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>;
+
+    public docs_comments_total: Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>;
+
+    public docs_document_updates_load_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson>;
+
+    public docs_document_updates_save_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson>;
+
+    public docs_document_updates_total: Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>;
+
+    public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
+
+    public docs_realtime_edit_latency_histogram: Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>;
+
+    public docs_squashes_latency_histogram: Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>;
+
+    public docs_squashes_total: Counter<HttpsProtonMeDocsSquashesTotalV1SchemaJson>;
+
+    public docs_time_load_document_histogram: Histogram<HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson>;
+
+    public docs_users_success_rate_total: Counter<HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson>;
+
     public drive_upload_erroring_users_total: Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>;
 
     public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>;
@@ -192,6 +229,70 @@ class Metrics extends MetricsBase {
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
+
+        this.docs_aborted_squashes_total = new Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>(
+            { name: 'docs_aborted_squashes_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_comments_error_total = new Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>(
+            { name: 'docs_comments_error_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_comments_total = new Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>(
+            { name: 'docs_comments_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_document_updates_load_error_total =
+            new Counter<HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson>(
+                { name: 'docs_document_updates_load_error_total', version: 1 },
+                this.requestService
+            );
+
+        this.docs_document_updates_save_error_total =
+            new Counter<HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson>(
+                { name: 'docs_document_updates_save_error_total', version: 1 },
+                this.requestService
+            );
+
+        this.docs_document_updates_total = new Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>(
+            { name: 'docs_document_updates_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_failed_websocket_connections_total =
+            new Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>(
+                { name: 'docs_failed_websocket_connections_total', version: 1 },
+                this.requestService
+            );
+
+        this.docs_realtime_edit_latency_histogram =
+            new Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>(
+                { name: 'docs_realtime_edit_latency_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.docs_squashes_latency_histogram = new Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>(
+            { name: 'docs_squashes_latency_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.docs_squashes_total = new Counter<HttpsProtonMeDocsSquashesTotalV1SchemaJson>(
+            { name: 'docs_squashes_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_time_load_document_histogram = new Histogram<HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson>(
+            { name: 'docs_time_load_document_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.docs_users_success_rate_total = new Counter<HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson>(
+            { name: 'docs_users_success_rate_total', version: 1 },
+            this.requestService
+        );
 
         this.drive_upload_erroring_users_total = new Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>(
             { name: 'drive_upload_erroring_users_total', version: 1 },
