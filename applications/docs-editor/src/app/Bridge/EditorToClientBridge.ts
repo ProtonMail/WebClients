@@ -1,4 +1,4 @@
-import { Logger } from '@standardnotes/utils'
+import { Logger } from '@proton/utils/logs'
 import {
   ClientToEditorGenericMessage,
   ClientToEditorInvokationMessage,
@@ -18,8 +18,6 @@ export class EditorToClientBridge {
   private requestHandler?: ClientRequiresEditorMethods
 
   constructor(private clientFrame: Window) {
-    this.logger.setLevel('error')
-
     window.addEventListener('message', (event) => {
       if (event.source !== this.clientFrame) {
         this.logger.info('Ignoring message from unknown source', event.data)
