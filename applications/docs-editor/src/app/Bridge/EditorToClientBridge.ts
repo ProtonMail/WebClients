@@ -7,6 +7,7 @@ import {
   EditorBridgeMessageType,
   EditorRequiresClientMethods,
   EditorToClientReplyMessage,
+  BridgeOriginProvider,
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
@@ -65,6 +66,6 @@ export class EditorToClientBridge {
       type: EditorBridgeMessageType.EditorToClientReply,
     }
 
-    this.clientFrame.postMessage(reply, '*')
+    this.clientFrame.postMessage(reply, BridgeOriginProvider.GetClientOrigin())
   }
 }
