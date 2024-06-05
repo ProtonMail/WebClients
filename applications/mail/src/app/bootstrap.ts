@@ -59,11 +59,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
 
-        const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
+        const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        const user = session.payload?.User;
+        const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
 
         await unleashPromise;
@@ -80,8 +80,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled });
         const dispatch = store.dispatch;
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        if (user) {
+            dispatch(initEvent({ User: user }));
         }
 
         const cacheOptions = {

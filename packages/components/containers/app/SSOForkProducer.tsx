@@ -51,6 +51,7 @@ export type ProtonForkData = {
     type: SSOType.Proton;
     payload: {
         forkParameters: ProduceForkParametersFull;
+        searchParameters?: URLSearchParams;
     };
 };
 

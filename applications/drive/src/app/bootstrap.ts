@@ -49,15 +49,16 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const run = async () => {
         const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
-        const history = bootstrap.createHistory({ data: sessionResult.payload.history, pathname })
+        const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
+        const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
         const store = setupStore();
         const dispatch = store.dispatch;
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        if (user) {
+            dispatch(initEvent({ User: user }));
         }
 
         const cacheOptions = {
