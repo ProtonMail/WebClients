@@ -16,7 +16,7 @@ import {
   YDocMap,
   DocStateInterface,
 } from '@proton/docs-shared'
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
+import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from './Tools/MarkdownTransformers'
 import CodeHighlightPlugin from './Plugins/CodeHighlightPlugin'
