@@ -19,6 +19,12 @@ export const updatePageSize = (PageSize: MAIL_PAGE_SIZE) => ({
     data: { PageSize },
 });
 
+export const updateNextMessageOnMove = (NextMessageOnMove: number) => ({
+    url: 'mail/v4/settings/next-message-on-move',
+    method: 'put',
+    data: { NextMessageOnMove },
+});
+
 export const updateShowMoved = (ShowMoved: number) => ({
     url: 'mail/v4/settings/moved',
     method: 'put',

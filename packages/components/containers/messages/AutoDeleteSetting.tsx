@@ -7,10 +7,11 @@ import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { AutoDeleteUpsellModal, Info, Toggle, useModalState } from '../../components';
+import { AutoDeleteUpsellModal, Info, useModalState } from '../../components';
 import { useApi, useEventManager, useFeature, useUser } from '../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
 import { FeatureCode } from '../features';
+import AutoDeleteSpamAndTrashDaysToggle from './AutoDeleteSpamAndTrashDaysToggle';
 
 interface Props {
     onSaved: () => void;
@@ -54,25 +55,19 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                 </SettingsLayoutLeft>
 
                 <SettingsLayoutRight isToggleContainer>
-                    <Toggle
+                    <AutoDeleteSpamAndTrashDaysToggle
                         id="autoDelete"
                         loading={loadingAutoDelete}
-                        checked={!!settingValue}
-                        onChange={({ target }) => {
+                        autoDeleteSpamAndTrashDays={settingValue}
+                        onToggle={(newValue: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
                             /* Didn't used disabled attr because need to catch label and input click */
                             if (disabled) {
                                 toggleUpsellModal(true);
                                 return;
                             }
-                            void withLoadingAutoDelete(
-                                handleChangeAutoDelete(
-                                    target.checked
-                                        ? AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE
-                                        : AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED
-                                )
-                            );
+                            void withLoadingAutoDelete(handleChangeAutoDelete(newValue));
                         }}
-                        data-testid="message-setting:auto-delete-toggle"
+                        dataTestID="message-setting:auto-delete-toggle"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>

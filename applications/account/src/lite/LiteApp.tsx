@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, ReactNode, useMemo, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
@@ -22,6 +22,7 @@ import metrics from '@proton/metrics';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
+import { getAppVersionHeader } from '@proton/shared/lib/fetch/headers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
@@ -34,14 +35,21 @@ import { extendStore, setupStore } from '../app/store/store';
 import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
+import LiteLayout from './components/LiteLayout';
+import LiteLoaderPage from './components/LiteLoaderPage';
 import { SupportedActions, getApp } from './helper';
 
-const bootstrapApp = () => {
+const bootstrapApp = ({ appVersion }: { appVersion: string | null }) => {
+    const defaultHeaders = appVersion ? getAppVersionHeader(appVersion) : undefined;
     const config = {
         ...defaultConfig,
         APP_NAME: APPS.PROTONACCOUNTLITE,
     };
-    const api = createApi({ config, sendLocaleHeaders: true });
+    const api = createApi({
+        config,
+        defaultHeaders,
+        sendLocaleHeaders: true,
+    });
     const authentication = bootstrap.createAuthentication({ mode: 'standalone' });
     bootstrap.init({ config, authentication, locales });
     initSafariFontFixClassnames();
@@ -61,12 +69,13 @@ const bootstrapApp = () => {
 };
 
 const App = () => {
-    const { api, config, store, authentication, cache } = useInstance(bootstrapApp);
+    const searchParams = new URLSearchParams(window.location.search);
+    const appVersion = searchParams.get('app-version');
+    const { api, config, store, authentication, cache } = useInstance(() => bootstrapApp({ appVersion }));
 
     const [UID, setUID] = useState<string | undefined>(() => authentication.UID);
     const [isLogout, setLogout] = useState(false);
 
-    const searchParams = new URLSearchParams(window.location.search);
     const action = searchParams.get('action') as SupportedActions | null;
     const client = searchParams.get('client');
 
@@ -119,6 +128,16 @@ const App = () => {
         }
     };
 
+    const layout = (children: ReactNode, props?: any) => {
+        return (
+            <LiteLayout searchParams={searchParams} {...props}>
+                {children}
+            </LiteLayout>
+        );
+    };
+
+    const loader = layout(<LiteLoaderPage />);
+
     return (
         <ProtonStoreProvider store={store}>
             <ConfigProvider config={config}>
@@ -141,8 +160,15 @@ const App = () => {
                                                     <CacheProvider cache={cache}>
                                                         <ErrorBoundary big component={<StandardErrorPage big />}>
                                                             {isLogout ? null : (
-                                                                <Setup api={api} UID={UID} onLogin={handleLogin}>
+                                                                <Setup
+                                                                    api={api}
+                                                                    UID={UID}
+                                                                    onLogin={handleLogin}
+                                                                    loader={loader}
+                                                                >
                                                                     <MainContainer
+                                                                        layout={layout}
+                                                                        loader={loader}
                                                                         action={action}
                                                                         redirect={redirect}
                                                                         app={app}

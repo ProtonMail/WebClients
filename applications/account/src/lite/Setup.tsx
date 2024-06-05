@@ -42,8 +42,6 @@ import { extendStore } from '../app/store/store';
 import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
-import LiteLayout from './components/LiteLayout';
-import LiteLoaderPage from './components/LiteLoaderPage';
 
 const checkDomain = (hostname: string, domain: string) => {
     return hostname === domain || hostname.endsWith(`.${domain}`);
@@ -63,9 +61,10 @@ interface Props {
     UID?: string;
     children: ReactNode;
     api: ApiWithListener;
+    loader: ReactNode;
 }
 
-const Setup = ({ api, onLogin, UID, children }: Props) => {
+const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
     const errorHandler = useErrorHandler();
     const dispatch = useAccountDispatch();
 
@@ -238,11 +237,7 @@ const Setup = ({ api, onLogin, UID, children }: Props) => {
     }
 
     if (loading) {
-        return (
-            <LiteLayout searchParams={searchParams}>
-                <LiteLoaderPage />
-            </LiteLayout>
-        );
+        return loader;
     }
 
     return (
