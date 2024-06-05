@@ -28,7 +28,9 @@ export interface PlanCardFeature {
         [PLANS.PASS_PLUS]: PlanCardFeatureDefinition | null;
         [PLANS.FAMILY]: PlanCardFeatureDefinition | null;
         [PLANS.MAIL_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.MAIL_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.BUNDLE_PRO_2024]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
@@ -59,7 +61,9 @@ export interface ShortPlan {
         | PLANS.PASS_PRO
         | PLANS.PASS_BUSINESS
         | PLANS.BUNDLE_PRO
+        | PLANS.BUNDLE_PRO_2024
         | PLANS.MAIL_PRO
+        | PLANS.MAIL_BUSINESS
         | PLANS.VPN
         | PLANS.NEW_VISIONARY
         | PLANS.FAMILY

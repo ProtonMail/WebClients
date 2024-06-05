@@ -49,7 +49,7 @@ import {
 } from '../../../components';
 import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
-import CycleSelector from '../CycleSelector';
+import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
 import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
@@ -57,7 +57,7 @@ import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import { useB2CCancellationFlow } from './b2cCancellationFlow';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { getVPNPlanToUse } from './helpers/payment';
+import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -108,7 +108,7 @@ interface Props {
     vpnServers: VPNServersCountData;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal' | 'upsell-modal';
-    onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
+    onChangePlanIDs: (newPlanIDs: PlanIDs, cycle: Cycle) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
     onChangeCycle: (newCyle: Cycle) => void;
     audience: Audience;
@@ -191,9 +191,9 @@ const PlanSelection = ({
     plansMap,
     freePlan,
     vpnServers,
-    cycle,
-    minimumCycle,
-    maximumCycle,
+    cycle: cycleProp,
+    minimumCycle: maybeMinimumCycle,
+    maximumCycle: maybeMaximumCycle,
     currency,
     loading,
     subscription,
@@ -217,13 +217,29 @@ const PlanSelection = ({
         PLANS.DRIVE,
         PLANS.PASS_PLUS,
     ];
-    const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
+    const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
 
     const { hasAccess, redirectToCancellationFlow } = useB2CCancellationFlow();
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
     const isNewCancellationFlowEnabled = useFlag('NewCancellationFlow');
+
+    let maximumCycle: Cycle | undefined = maybeMaximumCycle;
+    if (audience === Audience.B2B) {
+        if (maybeMaximumCycle !== undefined) {
+            maximumCycle = Math.min(maybeMaximumCycle, CYCLE.YEARLY);
+        } else {
+            maximumCycle = CYCLE.YEARLY;
+        }
+    }
+
+    const { cycle: restrictedCycle } = getRestrictedCycle({
+        cycle: cycleProp,
+        minimumCycle: maybeMinimumCycle,
+        maximumCycle,
+        options: getCycleSelectorOptions(app),
+    });
 
     function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
         if (isShortPlanLike(plan)) {
@@ -263,7 +279,11 @@ const PlanSelection = ({
         getVPNEnterprisePlan(vpnServers),
     ]);
 
-    const passB2BPlans = filterPlans([plansMap[PLANS.PASS_PRO], plansMap[PLANS.PASS_BUSINESS]]);
+    const passB2BPlans = filterPlans([
+        plansMap[PLANS.PASS_PRO],
+        plansMap[PLANS.PASS_BUSINESS],
+        plansMap[bundleProPlan],
+    ]);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
@@ -281,12 +301,7 @@ const PlanSelection = ({
     } else if (isPassB2bPlans) {
         B2BPlans = passB2BPlans;
     } else {
-        B2BPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
-            getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) ||
-                plansMap[PLANS.MAIL_PRO],
-            plansMap[PLANS.BUNDLE_PRO],
-        ]);
+        B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     }
 
     const isSignupMode = mode === 'signup';
@@ -297,7 +312,7 @@ const PlanSelection = ({
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
-    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.FAMILY];
+    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.FAMILY];
 
     const renderPlanCard = (plan: Plan, audience: Audience) => {
         const isFree = plan.ID === PLANS.FREE;
@@ -317,7 +332,9 @@ const PlanSelection = ({
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const actionLabel =
-            plan.Name === PLANS.VPN_BUSINESS ? <ActionLabel plan={plan} currency={currency} cycle={cycle} /> : null;
+            plan.Name === PLANS.VPN_BUSINESS ? (
+                <ActionLabel plan={plan} currency={currency} cycle={restrictedCycle} />
+            ) : null;
 
         const plansList = audience === Audience.B2C ? plansListB2C : [];
         const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
@@ -327,7 +344,7 @@ const PlanSelection = ({
             ? selectedProductPlans[audience]
             : plansList[0]?.planName;
 
-        const price = getPrice(plan, cycle, plansMap);
+        const price = getPrice(plan, restrictedCycle, plansMap);
         if (price === null) {
             return null;
         }
@@ -374,7 +391,7 @@ const PlanSelection = ({
                         !isFreeSubscription(subscription) &&
                         subscription?.Renew === Renew.Disabled)
                 }
-                cycle={cycle}
+                cycle={restrictedCycle}
                 key={plan.ID}
                 price={price}
                 features={featuresElement}
@@ -391,7 +408,8 @@ const PlanSelection = ({
                             planID: isFree ? undefined : planName,
                             organization,
                             plans,
-                        })
+                        }),
+                        restrictedCycle
                     );
                 }}
             />
@@ -412,7 +430,7 @@ const PlanSelection = ({
                 planTitle={plan.title}
                 recommended={false}
                 currency={currency}
-                cycle={cycle}
+                cycle={restrictedCycle}
                 key={plan.plan}
                 price={
                     // translator: displayed instead of price for VPN Enterprise plan. User should contact Sales first.
@@ -485,10 +503,10 @@ const PlanSelection = ({
                 {renderCycleSelector && (
                     <CycleSelector
                         mode="buttons"
-                        cycle={cycle}
+                        cycle={restrictedCycle}
                         onSelect={onChangeCycle}
                         disabled={loading}
-                        minimumCycle={minimumCycle}
+                        minimumCycle={maybeMinimumCycle}
                         maximumCycle={maximumCycle}
                         options={getCycleSelectorOptions(app)}
                     />

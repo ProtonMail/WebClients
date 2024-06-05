@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS, isStringPLAN } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, isStringPLAN } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -17,7 +17,7 @@ import {
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Icon, Loader } from '../../components';
@@ -80,7 +80,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
 
     useLoad();
 
-    const handleModal = async (newPlanIDs: PlanIDs) => {
+    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
         if (!hasPlanIDs(newPlanIDs)) {
             throw new Error('Downgrade not supported');
         }
@@ -89,28 +89,16 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         const { Coupon } = await paymentsApi.checkWithAutomaticVersion({
             Plans: newPlanIDs,
             Currency: currency,
-            Cycle: cycle,
+            Cycle: newCycle,
             CouponCode: couponCode,
         });
-
-        const step = (() => {
-            if (newPlanIDs[PLANS.VPN_BUSINESS] || newPlanIDs[PLANS.VPN_PRO]) {
-                return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
-            }
-
-            if (newPlanIDs[PLANS.PASS_PRO] || newPlanIDs[PLANS.PASS_BUSINESS]) {
-                return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
-            }
-
-            return SUBSCRIPTION_STEPS.CUSTOMIZATION;
-        })();
 
         open({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             coupon: Coupon?.Code,
-            step,
-            cycle,
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
+            cycle: newCycle,
             currency,
             defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BAudienceFromPlan(planID as any))
                 ? Audience.B2B
@@ -122,15 +110,15 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
-    const handlePlanChange = (newPlanIDs: PlanIDs) => {
+    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
         const isNewPlanCorrect = isStringPLAN(newPlanName);
         if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
-            upgradeButtonClick(cycle, newPlanName);
+            upgradeButtonClick(newCycle, newPlanName);
             return;
         }
 
-        void withLoading(handleModal(newPlanIDs));
+        void withLoading(handleModal(newPlanIDs, newCycle));
     };
 
     useEffect(() => {

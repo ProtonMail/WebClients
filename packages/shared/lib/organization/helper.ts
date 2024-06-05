@@ -31,8 +31,10 @@ export const isOrganizationVisionary = (organization: Organization) => organizat
 export const isOrganizationB2B = (organization?: Organization) => {
     return [
         PLANS.MAIL_PRO,
+        PLANS.MAIL_BUSINESS,
         PLANS.DRIVE_PRO,
         PLANS.BUNDLE_PRO,
+        PLANS.BUNDLE_PRO_2024,
         PLANS.ENTERPRISE,
         PLANS.FAMILY,
         PLANS.NEW_VISIONARY,

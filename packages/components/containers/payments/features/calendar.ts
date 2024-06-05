@@ -73,6 +73,15 @@ const getInvitation = (): PlanCardFeatureDefinition => {
     };
 };
 
+const getTeamAvailability = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`See team's availability`,
+        tooltip: c('new_plans: tooltip')
+            .t`See the availability of meeting participants and save time scheduling meetings`,
+        included: true,
+    };
+};
+
 export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
         text: CALENDAR_APP_NAME,
@@ -100,10 +109,18 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getNCalendarsPerUserFeature(
                     Math.floor((MAX_CALENDARS_FAMILY ?? plansMap[PLANS.FAMILY]?.MaxCalendars) / FAMILY_MAX_USERS)
                 ),
-                [PLANS.BUNDLE_PRO]: getNCalendarsFeature(
+                [PLANS.BUNDLE_PRO]: getNCalendarsPerUserFeature(
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),
-                [PLANS.MAIL_PRO]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars),
+                [PLANS.BUNDLE_PRO_2024]: getNCalendarsPerUserFeature(
+                    MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO_2024]?.MaxCalendars
+                ),
+                [PLANS.MAIL_PRO]: getNCalendarsPerUserFeature(
+                    MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars
+                ),
+                [PLANS.MAIL_BUSINESS]: getNCalendarsPerUserFeature(
+                    MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_BUSINESS]?.MaxCalendars
+                ),
                 [PLANS.PASS_PRO]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.PASS_PRO]?.MaxCalendars),
                 [PLANS.PASS_BUSINESS]: getNCalendarsFeature(
                     MAX_CALENDARS_FREE || plansMap[PLANS.PASS_BUSINESS]?.MaxCalendars
@@ -123,7 +140,9 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_PLUS]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
+                [PLANS.BUNDLE_PRO_2024]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
+                [PLANS.MAIL_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.PASS_PRO]: getEndToEndEncryption(),
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
@@ -141,7 +160,9 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_PLUS]: getShareFeature(plansMap, PLANS.PASS_PLUS),
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
+                [PLANS.BUNDLE_PRO_2024]: getShareFeature(plansMap, PLANS.BUNDLE_PRO_2024, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
+                [PLANS.MAIL_BUSINESS]: getShareFeature(plansMap, PLANS.MAIL_BUSINESS, Audience.B2B),
                 [PLANS.PASS_PRO]: getShareFeature(plansMap, PLANS.PASS_PRO, Audience.B2B),
                 [PLANS.PASS_BUSINESS]: getShareFeature(plansMap, PLANS.PASS_BUSINESS, Audience.B2B),
                 [PLANS.VPN_PRO]: null,
@@ -159,9 +180,31 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_PLUS]: getInvitation(),
                 [PLANS.FAMILY]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
+                [PLANS.BUNDLE_PRO_2024]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),
+                [PLANS.MAIL_BUSINESS]: getInvitation(),
                 [PLANS.PASS_PRO]: getInvitation(),
                 [PLANS.PASS_BUSINESS]: getInvitation(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'availability',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: getTeamAvailability(),
+                [PLANS.BUNDLE_PRO]: getTeamAvailability(),
+                [PLANS.BUNDLE_PRO_2024]: getTeamAvailability(),
+                [PLANS.MAIL_PRO]: getTeamAvailability(),
+                [PLANS.MAIL_BUSINESS]: getTeamAvailability(),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

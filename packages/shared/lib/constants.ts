@@ -363,7 +363,6 @@ export enum INVOICE_OWNER {
 
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'] as const;
-export const MIN_DONATION_AMOUNT = 100;
 export const MIN_CREDIT_AMOUNT = 500;
 export const MAX_CREDIT_AMOUNT = 4000000;
 export const MIN_BITCOIN_AMOUNT = MIN_CREDIT_AMOUNT;
@@ -622,6 +621,7 @@ export enum SHARED_UPSELL_PATHS {
 
 export enum DASHBOARD_UPSELL_PATHS {
     MAILPLUS = 'mailplus-dashboard',
+    MAILEPRO = 'mailpro-dashboard',
     UNLIMITED = 'unlimited-dashboard',
     DRIVE = 'drive-dashboard',
     PASS = 'pass-dashboard',
@@ -736,11 +736,6 @@ export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';
 
-export enum LINK_WARNING {
-    KEY = 'link_warning',
-    VALUE = 'dontAsk',
-}
-
 export const MEMBER_ADDON_PREFIX = '1member';
 export const DOMAIN_ADDON_PREFIX = '1domain';
 export const IP_ADDON_PREFIX = '1ip';
@@ -753,8 +748,11 @@ export enum ADDON_NAMES {
     VPN = '1vpn',
     MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
     MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
+    MEMBER_MAIL_BUSINESS = `${MEMBER_ADDON_PREFIX}-mailbiz2024`,
     MEMBER_BUNDLE_PRO = `${MEMBER_ADDON_PREFIX}-bundlepro2022`,
+    MEMBER_BUNDLE_PRO_2024 = `${MEMBER_ADDON_PREFIX}-bundlepro2024`,
     DOMAIN_BUNDLE_PRO = `${DOMAIN_ADDON_PREFIX}-bundlepro2022`,
+    DOMAIN_BUNDLE_PRO_2024 = `${DOMAIN_ADDON_PREFIX}-bundlepro2024`,
     MEMBER_ENTERPRISE = `${MEMBER_ADDON_PREFIX}-enterprise2022`,
     DOMAIN_ENTERPRISE = `${DOMAIN_ADDON_PREFIX}-enterprise2022`,
     MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
@@ -798,10 +796,12 @@ export enum PLANS {
     PASS_PLUS = 'pass2023',
     MAIL = 'mail2022',
     MAIL_PRO = 'mailpro2022',
+    MAIL_BUSINESS = 'mailbiz2024',
     VPN = 'vpn2022',
     VPN2024 = 'vpn2024',
     BUNDLE = 'bundle2022',
     BUNDLE_PRO = 'bundlepro2022',
+    BUNDLE_PRO_2024 = 'bundlepro2024',
     ENTERPRISE = 'enterprise2022',
     FAMILY = 'family2022',
     NEW_VISIONARY = 'visionary2022',
@@ -822,17 +822,19 @@ export const PLAN_NAMES = {
     [PLANS.PASS_PLUS]: 'Pass Plus',
     [PLANS.MAIL]: 'Mail Plus',
     [PLANS.MAIL_PRO]: 'Mail Essentials',
+    [PLANS.MAIL_BUSINESS]: 'Mail Professional',
     [PLANS.VPN]: 'VPN Plus',
     [PLANS.BUNDLE]: 'Proton Unlimited',
-    [PLANS.BUNDLE_PRO]: 'Business',
+    [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
+    [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.NEW_VISIONARY]: 'Proton Visionary',
     [PLANS.VPN_PRO]: 'VPN Essentials',
-    [PLANS.VPN_BUSINESS]: 'VPN Business',
+    [PLANS.VPN_BUSINESS]: 'VPN Professional',
     [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',
     [PLANS.PASS_PRO]: 'Pass Essentials',
-    [PLANS.PASS_BUSINESS]: 'Pass Business',
+    [PLANS.PASS_BUSINESS]: 'Pass Professional',
 };
 
 export enum COUPON_CODES {
@@ -853,6 +855,7 @@ export enum COUPON_CODES {
     MAILPLUSINTRO = 'MAILPLUSINTRO',
     TRYVPNPLUS2024 = 'TRYVPNPLUS2024',
     PREMIUM_DEAL = 'PREMIUM_DEAL',
+    MAIL_B2B_INTRO = 'MAILB2BINTRO2024',
     //
     TECHRADARVPNPASS = 'TECHRADARVPNPASS',
     CNETVPNPASS = 'CNETVPNPASS',
@@ -877,7 +880,7 @@ export const VPN_PASS_PROMOTION_COUPONS = [
     COUPON_CODES.PCMAGVPNPASS,
 ];
 
-export const GIFT_CODE_LENGTH = 16;
+export const FAMILY_MAX_USERS = 6;
 
 export const KEY_EXTENSION = 'asc';
 export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
@@ -1180,8 +1183,6 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
 }
 
 export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';
-
-export const FAMILY_MAX_USERS = 6;
 
 export enum DESKTOP_APP_NAMES {
     DRIVE = 'drive',

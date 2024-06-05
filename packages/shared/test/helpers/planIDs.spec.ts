@@ -1,5 +1,5 @@
 import { ADDON_NAMES, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../../lib/constants';
-import { clearPlanIDs, getHasPlanType, hasPlanIDs, setQuantity, switchPlan } from '../../lib/helpers/planIDs';
+import { clearPlanIDs, hasPlanIDs, setQuantity, switchPlan } from '../../lib/helpers/planIDs';
 import { Organization, Plan } from '../../lib/interfaces';
 
 const MOCK_PLANS = [
@@ -295,25 +295,6 @@ const MOCK_PLANS = [
 ] as Plan[];
 
 const MOCK_ORGANIZATION = {} as Organization;
-
-describe('hasPlanType', () => {
-    it('should return true if plan type is set', () => {
-        expect(getHasPlanType({ [PLANS.MAIL_PRO]: 1 }, MOCK_PLANS, PLANS.MAIL_PRO)).toBeTrue();
-        expect(getHasPlanType({ [PLANS.MAIL]: 1, [PLANS.MAIL_PRO]: 1 }, MOCK_PLANS, PLANS.MAIL_PRO)).toBeTrue();
-        expect(
-            getHasPlanType(
-                { [PLANS.NEW_VISIONARY]: 1, [PLANS.MAIL]: 1, [PLANS.MAIL_PRO]: 1 },
-                MOCK_PLANS,
-                PLANS.NEW_VISIONARY
-            )
-        ).toBeTrue();
-    });
-    it('should not return true if plan type is not set', () => {
-        expect(getHasPlanType({ [PLANS.MAIL_PRO]: 0 }, MOCK_PLANS, PLANS.MAIL_PRO)).toBeFalse();
-        expect(getHasPlanType({ [PLANS.MAIL]: 1 }, MOCK_PLANS, PLANS.MAIL_PRO)).toBeFalse();
-        expect(getHasPlanType({ [PLANS.MAIL]: 1, [PLANS.MAIL_PRO]: 1 }, MOCK_PLANS, PLANS.NEW_VISIONARY)).toBeFalse();
-    });
-});
 
 describe('hasPlanIDs', () => {
     it('should return true if plan IDs are set', () => {
