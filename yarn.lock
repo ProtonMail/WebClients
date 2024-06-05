@@ -6778,7 +6778,6 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/testing": "workspace:packages/testing"
     "@standardnotes/domain-core": "npm:^1.41.1"
-    "@standardnotes/utils": "npm:^1.17.13"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^14.3.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6831,7 +6830,6 @@ __metadata:
     "@lexical/yjs": "npm:0.15.0"
     "@proton/docs-proto": "workspace:packages/docs-proto"
     "@proton/eslint-config-proton": "workspace:^"
-    "@standardnotes/utils": "npm:^1.17.13"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@types/google-protobuf": "npm:^3.15.12"
     "@types/jest": "npm:^29.5.12"
@@ -8229,33 +8227,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@standardnotes/common@npm:^1.50.0":
-  version: 1.52.2
-  resolution: "@standardnotes/common@npm:1.52.2"
-  dependencies:
-    reflect-metadata: "npm:^0.2.1"
-  checksum: 10c0/cb6a73780b2ebcc29dd44b43f32027a6c4e1f132c71346ce2ff871a0a871004d097f93a0279b810584f551ff005e3dbfbb08e2af6148ce39f332103816295eb0
-  languageName: node
-  linkType: hard
-
 "@standardnotes/domain-core@npm:^1.41.1":
   version: 1.41.1
   resolution: "@standardnotes/domain-core@npm:1.41.1"
   dependencies:
     uuid: "npm:^9.0.0"
   checksum: 10c0/f467534af1ef5e272a32cb6985489c406074ccb1eff9393644214dca74f60ff8d860f84c2e0cf035c66f1ca4601161d0ef5633069dc33a55e8035ad4afc8a80f
-  languageName: node
-  linkType: hard
-
-"@standardnotes/utils@npm:^1.17.13":
-  version: 1.17.13
-  resolution: "@standardnotes/utils@npm:1.17.13"
-  dependencies:
-    "@standardnotes/common": "npm:^1.50.0"
-    dompurify: "npm:^2.4.1"
-    lodash: "npm:^4.17.21"
-    reflect-metadata: "npm:^0.1.13"
-  checksum: 10c0/698ef487de1a4c614a16efaa08dec58abeab2a65cff97cb28a7d92613f2088d0d9fd4998397f38ac54039cca42a3bb0f54947bec2127f927bcf537c3f6c0f515
   languageName: node
   linkType: hard
 
@@ -18719,13 +18696,6 @@ __metadata:
   dependencies:
     domelementtype: "npm:^2.3.0"
   checksum: 10c0/bba1e5932b3e196ad6862286d76adc89a0dbf0c773e5ced1eb01f9af930c50093a084eff14b8de5ea60b895c56a04d5de8bbc4930c5543d029091916770b2d2a
-  languageName: node
-  linkType: hard
-
-"dompurify@npm:^2.4.1":
-  version: 2.5.4
-  resolution: "dompurify@npm:2.5.4"
-  checksum: 10c0/c7e974a24375295b5762e688807aeea6d972f393fc07dd0c24800c6aa31660d4e628184b7e5eaf36a1ae527249537a96e5eb440ddaa9b4872162cc0580b08238
   languageName: node
   linkType: hard
 
@@ -35012,20 +34982,6 @@ __metadata:
   version: 5.0.1
   resolution: "redux@npm:5.0.1"
   checksum: 10c0/b10c28357194f38e7d53b760ed5e64faa317cc63de1fb95bc5d9e127fab956392344368c357b8e7a9bedb0c35b111e7efa522210cfdc3b3c75e5074718e9069c
-  languageName: node
-  linkType: hard
-
-"reflect-metadata@npm:^0.1.13":
-  version: 0.1.14
-  resolution: "reflect-metadata@npm:0.1.14"
-  checksum: 10c0/3a6190c7f6cb224f26a012d11f9e329360c01c1945e2cbefea23976a8bacf9db6b794aeb5bf18adcb673c448a234fbc06fc41853c00a6c206b30f0777ecf019e
-  languageName: node
-  linkType: hard
-
-"reflect-metadata@npm:^0.2.1":
-  version: 0.2.2
-  resolution: "reflect-metadata@npm:0.2.2"
-  checksum: 10c0/1cd93a15ea291e420204955544637c264c216e7aac527470e393d54b4bb075f10a17e60d8168ec96600c7e0b9fcc0cb0bb6e91c3fbf5b0d8c9056f04e6ac1ec2
   languageName: node
   linkType: hard
 

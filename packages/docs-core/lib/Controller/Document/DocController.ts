@@ -1,5 +1,5 @@
 import { c } from 'ttag'
-import { LoggerInterface, assertUnreachable } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { UserService } from '../../Services/User/UserService'
 import * as encoding from 'lib0/encoding'
@@ -22,6 +22,7 @@ import {
   WebsocketDisconnectedPayload,
   BaseWebsocketPayload,
   WebsocketMessagePayload,
+  assertUnreachable,
 } from '@proton/docs-shared'
 import {
   ServerMessageWithDocumentUpdates,
@@ -288,7 +289,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.docMeta = newDoc
       this.changeObservers.forEach((observer) => observer(newDoc))
     } catch (error) {
-      this.logger.error('Failed to get decrypted link', error)
+      this.logger.error('Failed to get decrypted link', String(error))
     }
   }
 

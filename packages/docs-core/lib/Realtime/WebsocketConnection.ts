@@ -1,7 +1,7 @@
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { EncryptMessage } from '../UseCase/EncryptMessage'
-import { LoggerInterface } from '@standardnotes/utils'
+import { LoggerInterface } from '@proton/utils/logs'
 import {
   ClientMessageWithDocumentUpdates,
   ClientMessage,
