@@ -8,7 +8,6 @@ import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../atoms';
-import { BitcoinReceiveModal } from '../components';
 import { Balance } from '../components/Balance';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
@@ -27,7 +26,6 @@ export const WalletContainer = () => {
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
     const [walletSendModal, setWalletSendModal] = useModalState();
-    const [walletReceiveModal, setWalletReceiveModal] = useModalState();
 
     const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
 
@@ -94,7 +92,7 @@ export const WalletContainer = () => {
                             shape="underline"
                             color="norm"
                             onClick={() => {
-                                openDrawer({ discover: true, wallet });
+                                openDrawer({ kind: 'discover', wallet, theme });
                             }}
                         >{c('Wallet header').t`Secure your wallet`}</CoreButton>
                     </div>
@@ -107,7 +105,9 @@ export const WalletContainer = () => {
                         apiWalletData={wallet}
                         disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
-                        onClickReceive={() => setWalletReceiveModal(true)}
+                        onClickReceive={() => {
+                            openDrawer({ account: firstAccount, kind: 'wallet-receive', theme });
+                        }}
                     />
 
                     <TransactionList apiWalletData={wallet} />
@@ -130,12 +130,7 @@ export const WalletContainer = () => {
                         />
                     )}
 
-                    {firstAccount && (
-                        <>
-                            <BitcoinReceiveModal account={firstAccount} {...walletReceiveModal} />
-                            <BitcoinSendModal wallet={wallet} account={firstAccount} {...walletSendModal} />
-                        </>
-                    )}
+                    {firstAccount && <BitcoinSendModal wallet={wallet} account={firstAccount} {...walletSendModal} />}
                 </div>
             </div>
         </>

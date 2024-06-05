@@ -18,7 +18,7 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
-import { getAccountTransactions, getWalletTransactions } from '../../utils';
+import { getAccountTransactions, getThemeForWallet, getWalletTransactions } from '../../utils';
 import { DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
 import {
@@ -34,7 +34,7 @@ interface Props {
 }
 
 export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
-    const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
+    const { walletsChainData, decryptedApiWalletsData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
         useBitcoinBlockchainContext();
     const { openDrawer } = useWalletDrawerContext();
     const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
@@ -57,9 +57,15 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
 
     const handleClickRow = useCallback(
         async (transaction: TransactionData) => {
-            openDrawer({ transaction, apiWalletData, apiAccount });
+            openDrawer({
+                theme: getThemeForWallet(decryptedApiWalletsData ?? [], apiWalletData.Wallet.ID),
+                transaction,
+                apiWalletData,
+                apiAccount,
+                kind: 'transaction-data',
+            });
         },
-        [openDrawer, apiWalletData, apiAccount]
+        [openDrawer, decryptedApiWalletsData, apiWalletData, apiAccount]
     );
 
     useEffect(() => {

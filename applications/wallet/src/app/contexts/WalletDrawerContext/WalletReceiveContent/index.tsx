@@ -5,30 +5,36 @@ import { c } from 'ttag';
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps } from '@proton/components/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import walletSendSvg from '@proton/styles/assets/img/illustrations/wallet-send.svg';
 
-import { Button, CoreButton } from '../../atoms';
-import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
-import { CurrencySelect } from '../../atoms/CurrencySelect';
-import { FullscreenModal } from '../../atoms/FullscreenModal';
-import { DEFAULT_BITCOIN_UNIT } from '../../constants';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
+import { Button, CoreButton, CoreButtonLike } from '../../../atoms';
+import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { CurrencySelect } from '../../../atoms/CurrencySelect';
+import { Tip } from '../../../atoms/Tip';
+import { DEFAULT_BITCOIN_UNIT } from '../../../constants';
+import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
-interface Props extends ModalOwnProps {
+interface Props {
     account: WasmApiWalletAccount;
 }
 
-export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
+export const WalletReceiveContent = ({ account }: Props) => {
     const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>(DEFAULT_BITCOIN_UNIT);
     const [exchangeRate] = useWalletAccountExchangeRate(account);
+    const [isOpen, setOpen] = useState(false);
 
-    const isModalOpen = modalProps.open ?? false;
+    useEffect(() => {
+        setOpen(true);
+        return () => {
+            setOpen(false);
+        };
+    }, []);
 
     const {
         shouldShowAmountInput,
@@ -41,7 +47,7 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
 
         showAmountInput,
         handleChangeAmount,
-    } = useBitcoinReceive(isModalOpen, account);
+    } = useBitcoinReceive(isOpen, account);
 
     useEffect(() => {
         if (exchangeRate) {
@@ -50,17 +56,27 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
     }, [exchangeRate]);
 
     return (
-        <FullscreenModal title={c('Wallet receive').t`Receive bitcoin`} {...modalProps}>
+        <div className="flex flex-column grow justify-center">
             <div className="flex flex-column">
                 <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
                     .t`Your bitcoin address`}</h3>
                 <div className="color-weak text-break mb-6">
                     <p className="text-center my-2">
                         {c('Receive bitcoin')
-                            .t`Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.`}
+                            .t`Here is your Bitcoin address. For better privacy, use a different address for each transaction.`}
                     </p>
                 </div>
             </div>
+
+            <Tip
+                className={'mb-3'}
+                image={walletSendSvg}
+                text={c('Wallet Receive').t`Other ${WALLET_APP_NAME} users can send Bitcoin to your email.`}
+                action={
+                    <CoreButtonLike shape="underline" className="unstyled p-0 font-semibold">{c('Wallet Receive')
+                        .t`Discover Bitcoin Via Email`}</CoreButtonLike>
+                }
+            />
 
             <div className="flex flex-column items-center">
                 {/* Payment info data */}
@@ -70,30 +86,28 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <div className="bg-norm rounded-xl p-6 flex flex-column items-center">
+                            <div className="bg-weak rounded-xl p-6 flex flex-column items-center">
                                 <div className="w-custom" style={{ '--w-custom': '12.5rem' }}>
                                     <QRCode data-testid="serialized-payment-info-qrcode" value={paymentLinkString} />
                                 </div>
 
                                 <div className="flex flex-row flex-nowrap items-center mt-4 px-5">
                                     <div>
-                                        <Href href={paymentLinkUri} className="color-norm">
-                                            <Tooltip title={paymentLinkString}>
+                                        <Tooltip title={paymentLinkString}>
+                                            <Href href={paymentLinkUri} className="color-norm">
                                                 <span className="block text-break-all text-center text-no-decoration">
                                                     {paymentLinkString}
                                                 </span>
-                                            </Tooltip>
-                                        </Href>
+                                            </Href>
+                                        </Tooltip>
                                     </div>
 
                                     <Copy
-                                        value={paymentLinkUri}
+                                        value={paymentLinkString}
                                         className="flex items-start flex-nowrap gap-2 no-shrink ml-1"
                                         shape="ghost"
                                         color="weak"
-                                    >
-                                        <Icon size={5} name="squares" />
-                                    </Copy>
+                                    />
                                 </div>
 
                                 <div className="flex flex-row flex-nowrap items-center mt-4">
@@ -144,21 +158,21 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                     </div>
                 )}
 
-                <div className="flex flex-column items-center mt-6 w-full px-12">
+                <div className="flex flex-column items-center mt-6 w-full">
                     <Button
                         fullWidth
                         shape="solid"
                         color="norm"
                         disabled={!paymentLink || loadingPaymentLink}
                         size="large"
-                        shadow
                         onClick={() => {}}
                     >{c('Wallet receive').t`Share address`}</Button>
 
                     <Button
-                        className="mt-2 color-weak"
+                        fullWidth
+                        className="mt-2"
                         shape="ghost"
-                        style={{ background: 'transparent' }}
+                        size="large"
                         onClick={() => incrementIndex()}
                         disabled={isIndexAboveGap || !paymentLink || loadingPaymentLink}
                     >{c('Wallet receive').t`Generate new address`}</Button>
@@ -169,6 +183,6 @@ export const BitcoinReceiveModal = ({ account, ...modalProps }: Props) => {
                     )}
                 </div>
             </div>
-        </FullscreenModal>
+        </div>
     );
 };

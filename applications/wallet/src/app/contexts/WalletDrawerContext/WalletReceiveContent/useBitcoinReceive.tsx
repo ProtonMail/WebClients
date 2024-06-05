@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { WasmApiWalletAccount, WasmPaymentLink } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
 
-import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '../../constants';
-import { useBitcoinBlockchainContext } from '../../contexts';
-import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
-import { getAccountWithChainDataFromManyWallets } from '../../utils';
+import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '../../../constants';
+import { useGetBitcoinAddressHighestIndex } from '../../../store/hooks/useBitcoinAddressHighestIndex';
+import { getAccountWithChainDataFromManyWallets } from '../../../utils';
+import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
 
 export interface UseBitcoinReceiveHelper {
     /**

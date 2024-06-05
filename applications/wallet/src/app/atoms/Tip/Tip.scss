@@ -1,0 +1,11 @@
+.tip {
+	background: var(--interaction-norm-minor-1);
+	color: var(--interaction-norm-major-3);
+
+	&--action,
+	&--close {
+		button {
+			color: var(--interaction-norm);
+		}
+	}
+}
