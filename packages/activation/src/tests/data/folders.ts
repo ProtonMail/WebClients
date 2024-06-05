@@ -132,6 +132,82 @@ export const folderWithChildren: FolderMapItem[] = [
     },
 ];
 
+export const labelsWithChildren: FolderMapItem[] = [
+    {
+        id: 'Programming',
+        providerPath: ['Programming'],
+        checked: true,
+        color: '#DB60D6',
+        isSystemFolderChild: false,
+        folderParentID: undefined,
+        folderChildIDS: ['Programming/C++'],
+        protonPath: ['Programming'],
+        separator: '/',
+        size: 0,
+        disabled: false,
+        errors: [],
+        isLabel: true,
+        category: undefined,
+        systemFolder: undefined,
+    },
+    {
+        id: 'Programming/C++',
+        providerPath: ['Programming', 'C++'],
+        checked: true,
+        color: '#DB60D6',
+        isSystemFolderChild: false,
+        folderChildIDS: [],
+        folderParentID: 'Programming',
+        protonPath: ['Programming-C++'],
+        separator: '/',
+        size: 0,
+        disabled: false,
+        errors: [],
+        isLabel: true,
+        category: undefined,
+        systemFolder: undefined,
+    },
+];
+
+export const getRenamedLabel = (newName: string) => {
+    return [
+        {
+            id: 'Programming',
+            providerPath: ['Programming'],
+            checked: true,
+            color: '#DB60D6',
+            isSystemFolderChild: false,
+            folderParentID: undefined,
+            folderChildIDS: ['Programming/C++'],
+            protonPath: [newName],
+            separator: '/',
+            size: 0,
+            disabled: false,
+            errors: [],
+            isLabel: true,
+            category: undefined,
+            systemFolder: undefined,
+        },
+        {
+            id: 'Programming/C++',
+            providerPath: ['Programming', 'C++'],
+            checked: true,
+            color: '#DB60D6',
+            isSystemFolderChild: false,
+            folderChildIDS: [],
+            folderParentID: 'Programming',
+            protonPath: [`${newName}-C++`],
+            separator: '/',
+            size: 0,
+            disabled: false,
+            errors: [],
+            isLabel: true,
+            category: undefined,
+            systemFolder: undefined,
+        },
+    ];
+};
+
 export const getRenamedFolders = (newName: string) => {
     return [
         {
