@@ -5,6 +5,7 @@ import {
   ClientToEditorReplyMessage,
   EditorRequiresClientMethods,
   EditorBridgeMessageType,
+  BridgeOriginProvider,
 } from '@proton/docs-shared'
 import { EditorInvoker } from './EditorInvoker'
 import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
@@ -57,7 +58,7 @@ export class ClientToEditorBridge {
         type: EditorBridgeMessageType.ClientToEditorReply,
       }
 
-      this.editorFrame.contentWindow?.postMessage(reply, '*')
+      this.editorFrame.contentWindow?.postMessage(reply, BridgeOriginProvider.GetEditorOrigin())
     } catch (error) {
       this.logger.error('Error while handling editor request', 'message:', message, 'error:', error)
     }
