@@ -49,7 +49,9 @@ export const validateDomain = (domain: string) => {
     if (domain.length > 255) {
         return false;
     }
-    if (/\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\]/.test(domain)) {
+    const domainRegex =
+        /^((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+([a-zA-Z]{2,}[0-9]*|xn--[a-zA-Z\-0-9]+)))$/;
+    if (domainRegex.test(domain)) {
         return true;
     }
     const dnsLabels = domain.toLowerCase().split('.').filter(isTruthy);
