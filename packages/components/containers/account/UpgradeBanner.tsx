@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { useSubscription, useUser } from '@proton/components/hooks';
+import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -21,6 +22,8 @@ interface Props {
 const UpgradeBanner = ({ className, children, audience, upsellPath }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const bundleProPlan = useBundleProPlan();
+
     return (
         <Card className={clsx(['flex items-center', className])} rounded>
             <p className="m-0 mr-8 flex-1">{children}</p>
@@ -31,7 +34,7 @@ const UpgradeBanner = ({ className, children, audience, upsellPath }: Props) => 
                         getUpgradePath({
                             user,
                             subscription,
-                            plan: audience === Audience.B2B ? PLANS.BUNDLE_PRO : PLANS.BUNDLE,
+                            plan: audience === Audience.B2B ? bundleProPlan : PLANS.BUNDLE,
                             audience,
                         }),
                         upsellPath

@@ -34,6 +34,20 @@ export const getVPNPlanToUse = ({
     return PLANS.VPN2024;
 };
 
+export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {
+    // If the user is on the bundlepro2022 plan, we keep showing that
+    if (planIDs?.[PLANS.BUNDLE_PRO]) {
+        return PLANS.BUNDLE_PRO;
+    }
+    if (plansMap[PLANS.BUNDLE_PRO_2024]) {
+        return PLANS.BUNDLE_PRO_2024;
+    }
+    if (plansMap[PLANS.BUNDLE_PRO]) {
+        return PLANS.BUNDLE_PRO;
+    }
+    return PLANS.BUNDLE_PRO_2024;
+};
+
 export const getCurrency = (
     user: UserModel | undefined,
     subscription: Subscription | FreeSubscription | undefined,
@@ -178,6 +192,10 @@ export const getAutoCoupon = ({
         [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any)
     ) {
         return COUPON_CODES.VPN_INTRO_2024;
+    }
+
+    if (!coupon && [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS].some((plan) => planIDs?.[plan])) {
+        return COUPON_CODES.MAIL_B2B_INTRO;
     }
 
     return coupon || undefined;

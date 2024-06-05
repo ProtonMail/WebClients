@@ -13,8 +13,16 @@ import {
     MAX_MEMBER_VPN_B2B_ADDON,
     MAX_SPACE_ADDON,
     MAX_VPN_ADDON,
+    PLANS,
+    PLAN_TYPES,
 } from '@proton/shared/lib/constants';
-import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
+import {
+    getSupportedAddons,
+    isDomainAddon,
+    isIpAddon,
+    isMemberAddon,
+    setQuantity,
+} from '@proton/shared/lib/helpers/planIDs';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
@@ -23,6 +31,7 @@ import {
     Organization,
     Plan,
     PlanIDs,
+    PlansMap,
     Subscription,
     getPlanMaxIPs,
 } from '@proton/shared/lib/interfaces';
@@ -37,18 +46,21 @@ const AddonKey: Readonly<{
     [ADDON_NAMES.MEMBER]: 'MaxMembers',
     [ADDON_NAMES.DOMAIN]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
+    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
     [ADDON_NAMES.VPN]: 'MaxVPN',
     [ADDON_NAMES.SPACE]: 'MaxSpace',
     [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
     [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
     [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 'MaxMembers',
 } as const;
 
 export type CustomiserMode = 'signup' | undefined;
@@ -167,18 +179,21 @@ const addonLimit = {
     [ADDON_NAMES.MEMBER]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.DOMAIN]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
+    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.ADDRESS]: MAX_ADDRESS_ADDON,
     [ADDON_NAMES.VPN]: MAX_VPN_ADDON,
     [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
     [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: MAX_MEMBER_ADDON,
 } as const;
 
 // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
@@ -358,6 +373,34 @@ const IPsNumberCustomiser = ({
     );
 };
 
+export const getHasPlanCustomizer = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs }) => {
+    const [currentPlanName] =
+        Object.entries(planIDs).find(([planName, planQuantity]) => {
+            if (planQuantity) {
+                const plan = plansMap[planName as keyof PlansMap];
+                return plan?.Type === PLAN_TYPES.PLAN;
+            }
+            return false;
+        }) || [];
+    const currentPlan = plansMap?.[currentPlanName as keyof PlansMap];
+    const hasPlanCustomizer = Boolean(
+        currentPlan &&
+            [
+                PLANS.MAIL_PRO,
+                PLANS.MAIL_BUSINESS,
+                PLANS.DRIVE_PRO,
+                PLANS.BUNDLE_PRO,
+                PLANS.BUNDLE_PRO_2024,
+                PLANS.ENTERPRISE,
+                PLANS.VPN_PRO,
+                PLANS.VPN_BUSINESS,
+                PLANS.PASS_PRO,
+                PLANS.PASS_BUSINESS,
+            ].includes(currentPlan.Name as PLANS)
+    );
+    return { currentPlan, hasPlanCustomizer };
+};
+
 const ProtonPlanCustomizer = ({
     cycle,
     mode,
@@ -460,19 +503,7 @@ const ProtonPlanCustomizer = ({
                     />
                 );
 
-                if (
-                    [
-                        ADDON_NAMES.MEMBER,
-                        ADDON_NAMES.MEMBER_BUNDLE_PRO,
-                        ADDON_NAMES.MEMBER_DRIVE_PRO,
-                        ADDON_NAMES.MEMBER_MAIL_PRO,
-                        ADDON_NAMES.MEMBER_ENTERPRISE,
-                        ADDON_NAMES.MEMBER_VPN_PRO,
-                        ADDON_NAMES.MEMBER_VPN_BUSINESS,
-                        ADDON_NAMES.MEMBER_PASS_PRO,
-                        ADDON_NAMES.MEMBER_PASS_BUSINESS,
-                    ].includes(addonNameKey)
-                ) {
+                if (isMemberAddon(addonNameKey)) {
                     return (
                         <AccountSizeCustomiser
                             key={`${addon.Name}-size`}
@@ -486,12 +517,7 @@ const ProtonPlanCustomizer = ({
                     );
                 }
 
-                if (
-                    mode !== 'signup' &&
-                    [ADDON_NAMES.DOMAIN, ADDON_NAMES.DOMAIN_BUNDLE_PRO, ADDON_NAMES.DOMAIN_ENTERPRISE].includes(
-                        addonNameKey
-                    )
-                ) {
+                if (isDomainAddon(addonNameKey) && mode !== 'signup') {
                     return (
                         <AdditionalOptionsCustomiser
                             key={`${addon.Name}-options`}
@@ -503,7 +529,7 @@ const ProtonPlanCustomizer = ({
                     );
                 }
 
-                if (addonNameKey === ADDON_NAMES.IP_VPN_BUSINESS) {
+                if (isIpAddon(addonNameKey)) {
                     return (
                         <IPsNumberCustomiser
                             key={`${addon.Name}-ips`}

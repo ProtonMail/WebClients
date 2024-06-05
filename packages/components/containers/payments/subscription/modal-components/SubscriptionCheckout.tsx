@@ -3,7 +3,7 @@ import { ReactNode, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { PaymentMethodStatusExtended } from '@proton/components/payments/core';
-import { APPS, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
     AddonDescription,
     Included,
@@ -11,7 +11,7 @@ import {
     getCheckout,
     getDiscountText,
 } from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
@@ -119,11 +119,11 @@ const AddonTooltip = ({
     const price = <Price currency={currency}>{pricePerAddon}</Price>;
 
     let text: ReactNode;
-    if (addon.name.startsWith('1domain')) {
+    if (isDomainAddon(addon.name)) {
         text = c('Addon').jt`${price} per domain`;
-    } else if (addon.name.startsWith(MEMBER_ADDON_PREFIX)) {
+    } else if (isMemberAddon(addon.name)) {
         text = c('Addon').jt`${price} per user`;
-    } else if (addon.name.startsWith('1ip')) {
+    } else if (isIpAddon(addon.name)) {
         text = c('Addon').jt`${price} per dedicated server`;
     } else {
         return null;
@@ -270,8 +270,8 @@ const SubscriptionCheckout = ({
             }
         >
             <div className="mb-4 flex flex-column">
-                <strong className="mb-1">{planTitle}</strong>
-                <BilledText cycle={cycle} />
+                <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
+                {!isFreePlanSelected && <BilledText cycle={cycle} />}
             </div>
             <CheckoutRow
                 title={
@@ -369,7 +369,7 @@ const SubscriptionCheckout = ({
                     <div className="mb-4">
                         <hr />
                     </div>
-                    {showTaxCountry && (
+                    {showTaxCountry && !isFreePlanSelected && (
                         <WrappedTaxCountrySelector
                             statusExtended={statusExtended}
                             onBillingAddressChange={onBillingAddressChange}

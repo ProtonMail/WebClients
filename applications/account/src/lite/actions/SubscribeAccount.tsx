@@ -165,7 +165,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
         if (maybeType === 'upgrade' && plan) {
             return SUBSCRIPTION_STEPS.PLAN_SELECTION;
         }
-        return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
     })();
 
     const disableCycleSelectorParam = searchParams.get('disableCycleSelector');

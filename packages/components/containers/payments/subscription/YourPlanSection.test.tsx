@@ -176,7 +176,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Business');
+            within(upsellPanel as HTMLElement).getByText('Mail Professional');
 
             // Usage Panel
             expect(usagePanel).toBeTruthy();
@@ -200,7 +200,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Business');
+            within(upsellPanel as HTMLElement).getByText('Mail Professional');
         });
     });
 });
