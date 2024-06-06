@@ -688,10 +688,10 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3144,6 +3144,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Bu adresi silmek istediğinize emin misiniz?"
+      ],
+      "Delete address permanently?": [
+        "Adres kalıcı olarak silinsin mi?"
+      ],
+      "Delete address?": [
+        "Adresi sil?"
+      ],
       "You can only delete 1 address per year.": [
         "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
       ]
@@ -3162,6 +3171,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "Bu takvime artık erişiminiz yok."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Bu etki alanını silmek istediğinize emin misiniz?"
       ]
     },
     "Delinquent modal title": {
@@ -3348,6 +3362,11 @@
       ],
       "The VPN is too slow": [
         "VPN çok yavaş çalışıyor"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
     "Download link": {
@@ -5961,6 +5980,17 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -7138,9 +7168,6 @@
       "No addresses exist": [
         "Herhangi bir adres yok"
       ],
-      "No changes made to the current subscription": [
-        "Var olan abonelikte herhangi bir değişiklik yapılmadı"
-      ],
       "No credit card required": [
         "Kredi kartı gerekmez"
       ],
@@ -7724,6 +7751,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Bu doğrulama bir saat kadar sürebilir. Güvenle sonraki adımlara geçebilirsiniz."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
       ],
@@ -7892,8 +7922,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } tarifesine yükseltin."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[bundleProPlan] } tarifesine yükseltin."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
@@ -8354,17 +8384,6 @@
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9527,9 +9546,6 @@
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
-      "Select your plan": [
-        "Tarifenizi seçin"
-      ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
@@ -9915,6 +9931,9 @@
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
       ],
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
@@ -10525,9 +10544,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Gözden geçirmeyi sürdür"
-      ],
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
       ],
@@ -10806,8 +10822,8 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Phone support (6+ users)": [
-        "Telefon desteği (6+ kullanıcı)"
+      "Phone support (40+ users)": [
+        "Telefon desteği (40+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -10876,9 +10892,6 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
-      ],
-      "Team management": [
-        "Ekip yönetimi"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -11041,9 +11054,6 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için gizlilik ve güvenlik paketi."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -11052,9 +11062,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
@@ -11131,14 +11138,6 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -11157,6 +11156,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -11402,9 +11409,6 @@
       "Central control panel": [
         "Merkez yönetim panosu"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
-      ],
       "Create up to ${ n } calendar": [
         "${ n } taneye kadar takvim oluşturun",
         "${ n } taneye kadar takvim oluşturun"
@@ -11426,6 +11430,9 @@
       ],
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Notification": {
@@ -13817,87 +13824,6 @@
         "Toplam"
       ]
     },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } gün kaldı",
-        "${ dayDiff } gün kaldı"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
-      ],
-      "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } toplam depolama alanı"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
-      ],
-      "6 users": [
-        "6 kullanıcı"
-      ],
-      "Calendar sharing": [
-        "Takvim paylaşımı"
-      ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
-      ],
-      "Cancel subscription?": [
-        "Abonelik iptal edilsin mi?"
-      ],
-      "Close": [
-        "Kapat"
-      ],
-      "Custom schedule send and snooze times": [
-        "Özel zamanlanmış gönderim ve erteleme süreleri"
-      ],
-      "Have a question?": [
-        "Bir sorunuz mu var?"
-      ],
-      "Helping activists in Hong Kong": [
-        "Hong Kong aktivistlerine yardımlarımız"
-      ],
-      "I still want to cancel": [
-        "Yine de iptal etmek istiyorum"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } tarifesinde kal"
-      ],
-      "Learn more about our impact": [
-        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
-      ],
-      "Our fight against censorship in Russia": [
-        "Rusya'da sansüre karşı mücadelemiz"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
-      ],
-      "Read the story": [
-        "Öykümüzü okuyun"
-      ],
-      "Subscription canceled": [
-        "Abonelik iptal edildi"
-      ],
-      "Unblocking internet access in Iran": [
-        "İran İnternet erişimi engelini kaldırmak"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
-      ],
-      "Watch the interview": [
-        "Röportajı izleyin"
-      ],
-      "Yearly free storage bonuses": [
-        "Yıllık ücretsiz depolama alanı hediyeleri"
-      ],
-      "Your own custom email domain": [
-        "Kendi özel e-posta etki alanınız"
-      ],
-      "Your own short @pm.me email alias": [
-        "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -13937,6 +13863,99 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } gün kaldı",
+        "${ dayDiff } gün kaldı"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } toplam depolama alanı"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Cancel subscription?": [
+        "Abonelik iptal edilsin mi?"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
+      "Have a question?": [
+        "Bir sorunuz mu var?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hong Kong aktivistlerine yardımlarımız"
+      ],
+      "I still want to cancel": [
+        "Yine de iptal etmek istiyorum"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } tarifesinde kal"
+      ],
+      "Learn more about our impact": [
+        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Online privacy, for your whole family": [
+        "Tüm aileniz için çevrim içi gizlilik"
+      ],
+      "Our fight against censorship in Russia": [
+        "Rusya'da sansüre karşı mücadelemiz"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Read the story": [
+        "Öykümüzü okuyun"
+      ],
+      "Subscription canceled": [
+        "Abonelik iptal edildi"
+      ],
+      "Unblocking internet access in Iran": [
+        "İran İnternet erişimi engelini kaldırmak"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
+      ],
+      "Watch the interview": [
+        "Röportajı izleyin"
+      ],
+      "Yearly free storage bonuses": [
+        "Yıllık ücretsiz depolama alanı hediyeleri"
+      ],
+      "Your own custom email domain": [
+        "Kendi özel e-posta etki alanınız"
+      ],
+      "Your own short @pm.me email alias": [
+        "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
     "Subscription renewal state": {
@@ -14685,9 +14704,6 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
-      ],
-      "Customize your plan": [
-        "Tarifenizi özelleştirin"
       ],
       "Dashboard": [
         "Pano"

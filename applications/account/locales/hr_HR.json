@@ -466,10 +466,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2243,7 +2243,15 @@
         "Nepoznato"
       ]
     },
+    "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Jeste li sigurni da želite ukloniti ovu adresu?"
+      ]
+    },
     "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Jeste li sigurni da želite ukloniti ovu domenu?"
+      ],
       "Delete": [
         "Izbriši"
       ]
@@ -5564,6 +5572,9 @@
       "Encryption and keys": [
         "Šifriranje i ključevi"
       ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
+      ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
       ],
@@ -6079,11 +6090,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6093,6 +6099,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7095,7 +7106,15 @@
         "Za"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ]
+    },
     "Subscription reminder": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 adrese e-pošte"
       ],
@@ -7107,11 +7126,9 @@
       ],
       "Priority support": [
         "Prioritetna podrška"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
+      ],
+      "Version history": [
+        "Povijest verzija"
       ]
     },
     "Subscription renewal state": {
@@ -7575,9 +7592,6 @@
       ],
       "Custom filters": [
         "Prilagođeni filtri"
-      ],
-      "Customize your plan": [
-        "Prilagodite vaš plan"
       ],
       "Dashboard": [
         "Upravljačka ploča"
