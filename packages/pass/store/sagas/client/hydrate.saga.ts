@@ -2,10 +2,12 @@ import { put, select } from 'redux-saga/effects';
 
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
+import { DESKTOP_BUILD } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
-import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
+import { getPassPlan } from '@proton/pass/lib/user/user.plan';
+import { isPaidPlan, userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import { stateHydrate } from '@proton/pass/store/actions';
 import { migrate } from '@proton/pass/store/migrate';
@@ -63,7 +65,17 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         settings.beta = BUILD_TARGET === 'web' && sanitizeBetaSetting(settings.beta);
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
-        settings.offlineEnabled = Boolean(settings.offlineEnabled && authStore.getOfflineConfig());
+
+        /** Activate offline mode by default for paid users who
+         * haven't touched the `offlineEnabled` setting yet */
+        if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
+            const supported = DESKTOP_BUILD || (userState.features.PassWebOfflineMode ?? false);
+            const plan = getPassPlan(userState.plan);
+            const paid = isPaidPlan(plan);
+            const hasOfflinePassword = authStore.hasOfflinePassword();
+            const autoEnableOffline = settings.offlineEnabled === undefined && supported && paid && hasOfflinePassword;
+            settings.offlineEnabled = autoEnableOffline || settings.offlineEnabled;
+        }
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
