@@ -64,10 +64,13 @@ const parsedRecipientList = (toList: string | null): Partial<Record<string, stri
  */
 const decryptTransactionData = async (
     apiTransaction: WasmApiWalletTransaction,
-    userKey: PrivateKeyReference,
+    userKey?: PrivateKeyReference,
     addressKeys?: PrivateKeyReference[]
 ): Promise<DecryptedTransactionData> => {
-    const TransactionID = await decryptTextData(apiTransaction.TransactionID, [userKey, ...(addressKeys ?? [])]);
+    const TransactionID = await decryptTextData(apiTransaction.TransactionID, [
+        ...(userKey ? [userKey] : []),
+        ...(addressKeys ?? []),
+    ]);
 
     if (!addressKeys) {
         return {
@@ -201,7 +204,7 @@ const addMissingHashToWalletTransactions = async (
             }
         } catch (e) {
             // TODO: do something to avoid creating wallet transaction when error occurs here
-            console.error('An error occured during transactin decryption, we will create a new transaction');
+            console.error('An error occured during transactin decryption, we will create a new transaction', e);
         }
     }
 
@@ -364,6 +367,7 @@ export const useWalletTransactions = ({
         }
 
         const [primaryUserKey] = userKeys;
+
         const {
             WalletKey,
             Wallet: { ID: walletId },
@@ -489,14 +493,20 @@ export const useWalletTransactions = ({
                     );
 
                     const hashedTxId = updatedTx.HashedTransactionID;
+                    const updatedTransactionData: TransactionData = {
+                        networkData,
+                        apiData: { ...decryptedTransactionData, Label: labelInput },
+                    };
+
                     if (hashedTxId) {
                         setTransactionDataByHashedTxId((prev) => ({
                             ...prev,
-                            [hashedTxId]: [networkData, { ...decryptedTransactionData, Label: labelInput }],
+                            [hashedTxId]: [updatedTransactionData.networkData, updatedTransactionData.apiData],
                         }));
                     }
 
                     createNotification({ text: c('Wallet Transaction').t`Transaction label successfully updated` });
+                    return updatedTransactionData;
                 } catch (e) {
                     createNotification({
                         type: 'error',

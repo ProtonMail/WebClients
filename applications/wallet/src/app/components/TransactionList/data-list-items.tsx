@@ -3,15 +3,22 @@ import { c, msgid } from 'ttag';
 import { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Price } from '@proton/components/components';
+import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
+import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
+import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { getFormattedPeriodSinceConfirmation, satsToFiat } from '../../utils';
+import {
+    getFormattedPeriodSinceConfirmation,
+    getTransactionRecipientsHumanReadableName,
+    getTransactionSenderHumanReadableName,
+    satsToFiat,
+} from '../../utils';
 import { DataListItem } from '../DataList';
-import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
-import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 
 export interface TxDataListItemProps {
     tx: TransactionData;
@@ -65,28 +72,27 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
 };
 
 export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemProps) => {
-    const isReceivedTx = tx.networkData.received > tx.networkData.sent;
+    const isSent = tx.networkData.sent > tx.networkData.received;
+    const [addresses] = useAddresses();
+    const { walletMap } = useBitcoinBlockchainContext();
 
-    const outputsWithProtonRecipient = tx.networkData.outputs.map(
-        (o) => [o.address, tx.apiData?.ToList[o.address]] as const
-    );
-    const firstOutputWithProtonRecipient = outputsWithProtonRecipient.find((o): o is [string, string] => !!o[1]);
+    const name = isSent
+        ? getTransactionRecipientsHumanReadableName(tx, walletMap, addresses)[0] ?? tx.networkData.outputs[0]?.address
+        : getTransactionSenderHumanReadableName(tx, walletMap);
 
     return (
         <DataListItem
             label={
-                isReceivedTx
-                    ? c('Wallet transactions').ngettext(msgid`Sender`, `Senders`, tx.networkData.inputs.length)
-                    : c('Wallet transactions').ngettext(msgid`Recipient`, `Recipients`, tx.networkData.outputs.length)
+                isSent
+                    ? c('Wallet transactions').ngettext(msgid`Recipient`, `Recipients`, tx.networkData.outputs.length)
+                    : c('Wallet transactions').ngettext(msgid`Sender`, `Senders`, tx.networkData.inputs.length)
             }
             bottomNode={
                 <div
                     className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}
                     style={{ height: '1.5rem' }}
                 >
-                    {isReceivedTx
-                        ? tx.apiData?.Sender ?? tx.networkData.inputs[0].previous_output?.address ?? '-'
-                        : firstOutputWithProtonRecipient?.[1] ?? outputsWithProtonRecipient[0][0] ?? '-'}
+                    {name}
                 </div>
             }
         />

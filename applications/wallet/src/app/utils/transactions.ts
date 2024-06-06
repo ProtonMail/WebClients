@@ -1,9 +1,15 @@
 import { format } from 'date-fns';
 import { intervalToDuration } from 'date-fns';
 import { compact } from 'lodash';
+import { c } from 'ttag';
 
-import { WasmTransactionDetails, WasmTransactionTime } from '@proton/andromeda';
+import { WasmTransactionDetails, WasmTransactionTime, WasmTxOut } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
+import { Address } from '@proton/shared/lib/interfaces';
+import { WalletMap } from '@proton/wallet';
+
+import { TransactionData } from '../hooks/useWalletTransactions';
+import { isSelfAddress } from './email';
 
 const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
@@ -62,4 +68,66 @@ export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Dat
 
         return index < periods.length ? `${acc}, ${cur}` : `${acc} and ${cur} ago`;
     }, '');
+};
+
+export const getTransactionSenderHumanReadableName = (transaction: TransactionData, walletMap: WalletMap) => {
+    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
+
+    // If transaction was sent using the current wallet account, we display the Wallet - WalletAccount as sender
+    if (isSentTx && transaction.apiData?.WalletID && transaction.apiData?.WalletAccountID) {
+        const wallet = walletMap[transaction.apiData.WalletID];
+        const account = wallet?.accounts[transaction.apiData.WalletAccountID];
+
+        if (wallet && account) {
+            return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
+        }
+    }
+
+    // If there is a sender attached to the transaction, we display it
+    if (transaction.apiData?.Sender) {
+        return transaction.apiData?.Sender;
+    }
+
+    // Fallback
+    return c('Wallet transaction').t`Unknown`;
+};
+
+export const getTransactionRecipientHumanReadableName = (
+    transaction: TransactionData,
+    output: WasmTxOut,
+    walletMap: WalletMap,
+    addresses: Address[] = []
+) => {
+    const address = transaction.apiData?.ToList[output.address];
+    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
+
+    // If output is owned by wallet account and transaction wasn't sent from it, we display the Wallet - WalletAccount as recipient
+    if (!isSentTx && output.is_mine && transaction.apiData?.WalletID && transaction.apiData?.WalletAccountID) {
+        const wallet = walletMap[transaction.apiData.WalletID];
+        const account = wallet?.accounts[transaction.apiData.WalletAccountID];
+
+        if (wallet && account) {
+            return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
+        }
+    }
+
+    if (address) {
+        return isSelfAddress(address, addresses ?? []) ? c('Wallet transaction').t`${address} (me)` : address;
+    }
+
+    return null;
+};
+
+export const getTransactionRecipientsHumanReadableName = (
+    transaction: TransactionData,
+    walletMap: WalletMap,
+    addresses: Address[] = []
+) => {
+    const humanReadableOutputs = compact(
+        transaction.networkData.outputs.map((o) =>
+            getTransactionRecipientHumanReadableName(transaction, o, walletMap, addresses)
+        )
+    );
+
+    return humanReadableOutputs;
 };
