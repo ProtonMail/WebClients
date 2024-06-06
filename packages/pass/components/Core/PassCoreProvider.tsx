@@ -29,6 +29,8 @@ export type PassCoreContextValue = {
     monitor: MonitorService;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
+    /** Checks if offline-mode is enabled */
+    getOfflineEnabled?: () => Promise<boolean>;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];

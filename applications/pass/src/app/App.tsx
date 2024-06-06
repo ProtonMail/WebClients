@@ -7,6 +7,7 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import {
@@ -82,12 +83,13 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
 
         getApiState: api.getState,
 
+        getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
+
         /** If service worker support is unavailable, use a fallback caching strategy for
          * domain images. When service worker is enabled, utilize abort message passing to
          * correctly abort intercepted fetch requests. */
         getDomainImage: async (domain, signal) => {
             const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
-
             const cachedImage = cache.get(url);
             if (cachedImage) return cachedImage;
 
@@ -118,7 +120,7 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
                 hash: page,
             }),
 
-        prepareImport: prepareImport,
+        prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
 };

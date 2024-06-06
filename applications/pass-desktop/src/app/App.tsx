@@ -11,6 +11,7 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import {
@@ -86,6 +87,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
     getApiState: api.getState,
+
+    getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
 
     getDomainImage: async (domain, signal) => {
         const res = await (async () => {
