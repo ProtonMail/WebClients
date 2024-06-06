@@ -43,7 +43,7 @@ export const LinuxUpdateBar: FC = () => {
                     (release) =>
                         release.CategoryName === 'Stable' &&
                         release.RolloutPercentage === 1 &&
-                        semver(release.Version) >= semver(installedVersion)
+                        semver(release.Version) > semver(installedVersion)
                 );
                 if (availableVersion) {
                     setLatestVersion(availableVersion.Version);
