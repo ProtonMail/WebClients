@@ -55,7 +55,7 @@ describe('useInboxDesktopBadgeCount', () => {
         expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
     });
 
-    it('should call with 1 when 1 unread', () => {
+    it('should call with 1 when 1 unread conversation', () => {
         desktopHelpersMock.isElectronMail = true;
         useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
@@ -65,11 +65,31 @@ describe('useInboxDesktopBadgeCount', () => {
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
     });
 
-    it('should call with 100 when 100 unread', () => {
+    it('should call with 100 when 100 unread conversation', () => {
         desktopHelpersMock.isElectronMail = true;
         useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
         useMessageCountsMock.mockReturnValue([]);
+
+        renderHook(() => useInboxDesktopBadgeCount());
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
+    });
+
+    it('should call with 1 when 1 unread message', () => {
+        desktopHelpersMock.isElectronMail = true;
+        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.SINGLE }]);
+        useConversationCountsMock.mockReturnValue([]);
+        useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
+
+        renderHook(() => useInboxDesktopBadgeCount());
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
+    });
+
+    it('should call with 100 when 100 unread message', () => {
+        desktopHelpersMock.isElectronMail = true;
+        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.SINGLE }]);
+        useConversationCountsMock.mockReturnValue([]);
+        useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
 
         renderHook(() => useInboxDesktopBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
