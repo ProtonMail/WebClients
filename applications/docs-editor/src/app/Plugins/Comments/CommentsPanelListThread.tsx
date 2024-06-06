@@ -1,4 +1,3 @@
-import { $isMarkNode, MarkNode } from '@lexical/mark'
 import { $getNodeByKey } from 'lexical'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
@@ -16,6 +15,7 @@ import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { $isCommentThreadMarkNode, CommentThreadMarkNode } from './CommentThreadMarkNode'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
@@ -45,8 +45,8 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       const markNodeKeys = markNodeMap.get(markID)
       if (markNodeKeys !== undefined) {
         const markNodeKey = Array.from(markNodeKeys)[0]
-        const markNode = $getNodeByKey<MarkNode>(markNodeKey)
-        if ($isMarkNode(markNode)) {
+        const markNode = $getNodeByKey<CommentThreadMarkNode>(markNodeKey)
+        if ($isCommentThreadMarkNode(markNode)) {
           quote = markNode.getTextContent()
         }
       }
@@ -63,8 +63,8 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       editor.update(
         () => {
           const markNodeKey = Array.from(markNodeKeys)[0]
-          const markNode = $getNodeByKey<MarkNode>(markNodeKey)
-          if ($isMarkNode(markNode)) {
+          const markNode = $getNodeByKey<CommentThreadMarkNode>(markNodeKey)
+          if ($isCommentThreadMarkNode(markNode)) {
             markNode.selectStart()
           }
         },
