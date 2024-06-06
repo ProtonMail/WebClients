@@ -42,7 +42,9 @@ export default function CommentPlugin({
   const [activeIDs, setActiveIDs] = useState<string[]>([])
 
   const [showCommentInput, setShowCommentInput] = useState(false)
-  const [showComments, setShowComments] = useState(false)
+  const [showCommentsPanel, setShowCommentsPanel] = useState(false)
+
+  const [threadToFocus, setThreadToFocus] = useState<string | null>(null)
 
   useEffect(() => {
     if (!isEditorEditable) {
@@ -72,7 +74,7 @@ export default function CommentPlugin({
           if (elem !== null) {
             elem.classList.add('selected')
             changedElems.push(elem)
-            setShowComments(true)
+            setShowCommentsPanel(true)
           }
         }
       }
@@ -180,7 +182,7 @@ export default function CommentPlugin({
             domSelection.removeAllRanges()
           }
           setShowCommentInput(true)
-          setShowComments(false)
+          setShowCommentsPanel(false)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -188,7 +190,7 @@ export default function CommentPlugin({
       editor.registerCommand(
         SHOW_ALL_COMMENTS_COMMAND,
         () => {
-          setShowComments((show) => !show)
+          setShowCommentsPanel((show) => !show)
           setShowCommentInput(false)
           return true
         },
@@ -202,7 +204,7 @@ export default function CommentPlugin({
   }
 
   useEffect(() => {
-    if (!showComments) {
+    if (!showCommentsPanel) {
       return
     }
     if (!activeIDs.length) {
@@ -214,7 +216,7 @@ export default function CommentPlugin({
       return
     }
     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [activeIDs, showComments])
+  }, [activeIDs, showCommentsPanel])
 
   const createMarkNodeForCurrentSelection = useCallback(
     (id: string) => {
@@ -332,6 +334,8 @@ export default function CommentPlugin({
         removeMarkNode,
         activeIDs,
         markNodeMap,
+        threadToFocus,
+        setThreadToFocus,
       }}
     >
       {showCommentInput &&
@@ -339,7 +343,7 @@ export default function CommentPlugin({
           <CommentInputBox
             editor={editor}
             cancelAddComment={cancelAddComment}
-            setShowCommentInput={setShowCommentInput}
+            setShowCommentsPanel={setShowCommentsPanel}
           />,
           containerElement || document.body,
         )}
@@ -351,7 +355,7 @@ export default function CommentPlugin({
           <FloatingAddCommentButton anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
           containerElement || document.body,
         )}
-      {showComments && <CommentsPanel threads={threads} setShowComments={setShowComments} />}
+      {showCommentsPanel && <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />}
     </CommentsProvider>
   )
 }
