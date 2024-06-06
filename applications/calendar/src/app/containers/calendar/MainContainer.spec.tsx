@@ -397,7 +397,7 @@ describe.skip('MainContainer', () => {
             expect(screen.getByTitle(/Select event's last date/)).toBeInTheDocument();
 
             fireEvent.click(endsButton);
-            fireEvent.click(screen.getByText(/After repeating…/));
+            fireEvent.click(screen.getByText(/Ends after…/));
             expect(screen.getByTitle(/Choose how many times this event will repeat/)).toBeInTheDocument();
         });
 
