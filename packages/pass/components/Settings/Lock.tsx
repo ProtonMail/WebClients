@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { RadioGroup, useNotifications } from '@proton/components';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
@@ -13,22 +14,26 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL } from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL, selectUserSettings } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { SettingsPanel } from './SettingsPanel';
 
 export const LockSettings: FC = () => {
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
-
+    const authStore = useAuthStore();
     const { createNotification } = useNotifications();
 
-    const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
-
+    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const lockTTL = useSelector(selectLockTTL);
     const lockMode = useSelector(selectLockMode);
+    const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+    const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
+    const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
+    const canToggleTTL = lockMode !== LockMode.NONE;
 
     /** When switching locks, the next lock might temporarily
      * be set to `LockMode.NONE` before updating to the new lock.
@@ -36,14 +41,14 @@ export const LockSettings: FC = () => {
      * this, we use an optimistic value for the next lock. */
     const [nextLock, setNextLock] = useState<MaybeNull<{ ttl: number; mode: LockMode }>>(null);
 
+    const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
+
     const createLock = useActionRequest(lockCreateIntent, {
         initialRequestId: lockCreateRequest(),
         onStart: ({ data }) => setNextLock({ ttl: data.lock.ttl, mode: data.lock.mode }),
         onFailure: () => setNextLock(null),
         onSuccess: () => setNextLock(null),
     });
-
-    const canToggleTTL = lockMode !== LockMode.NONE;
 
     const handleLockModeSwitch = async (mode: LockMode) => {
         const ttl = lockTTL ?? 900;
@@ -152,9 +157,8 @@ export const LockSettings: FC = () => {
                         ),
                         value: LockMode.SESSION,
                     },
-                    ...(EXTENSION_BUILD
-                        ? []
-                        : [
+                    ...(canPasswordLock
+                        ? [
                               {
                                   label: (
                                       <span className="block">
@@ -165,7 +169,8 @@ export const LockSettings: FC = () => {
                                   ),
                                   value: LockMode.PASSWORD,
                               },
-                          ]),
+                          ]
+                        : []),
                 ]}
             />
 
