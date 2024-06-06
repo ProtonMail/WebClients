@@ -37,7 +37,6 @@ export enum SignupSteps {
     TrialPlan = 'trial-plan',
     Explore = 'explore',
     Done = 'done',
-    SetupAddress = 'setup-address',
 }
 
 export const SERVICES: { [key: string]: APP_NAMES } = {

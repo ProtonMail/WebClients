@@ -17,7 +17,7 @@ interface Props {
     onSubmit: ({ orgName }: { orgName: string }) => Promise<void>;
 }
 
-const CongratulationsStep = ({ onSubmit }: Props) => {
+const OrgSetupStep = ({ onSubmit }: Props) => {
     const [orgName, setOrgName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
@@ -63,4 +63,4 @@ const CongratulationsStep = ({ onSubmit }: Props) => {
     );
 };
 
-export default CongratulationsStep;
+export default OrgSetupStep;
