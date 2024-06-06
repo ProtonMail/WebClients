@@ -1,13 +1,19 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components';
+import { useActiveBreakpoint, useNewFeatureOnboarding } from '@proton/components';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { EncryptedLink, LinkShareUrl, useFolderView, useThumbnailsDownload } from '../../../store';
+import {
+    EncryptedLink,
+    LinkShareUrl,
+    useDriveSharingFlags,
+    useFolderView,
+    useThumbnailsDownload,
+} from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, {
@@ -18,6 +24,7 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import DriveSharingOnboardingModal from '../../modals/DriveSharingOnboardingModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import useOpenPreview from '../../useOpenPreview';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -93,6 +100,12 @@ function Drive({ activeFolder, folderView }: Props) {
     const { openDocument } = useDocumentActions();
     const isDocsEnabled = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { isSharingInviteAvailable, isDirectSharingDisabled } = useDriveSharingFlags();
+    const { showOnboarding, onWasShown: onSharingOnboardingWasShown } = useNewFeatureOnboarding({
+        key: 'drive-sharing',
+        featureFlagsEnabled: isSharingInviteAvailable && !isDirectSharingDisabled,
+        shouldWelcomeFlowBeDone: true,
+    });
 
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
 
@@ -171,6 +184,12 @@ function Drive({ activeFolder, folderView }: Props) {
         browserItemContextMenu.close();
     };
 
+    const handleShartingOnboardingDone = useCallback(() => {
+        if (items.length) {
+            onSharingOnboardingWasShown();
+        }
+    }, [items, selectionControls]);
+
     useEffect(() => {
         browserContextMenu.close();
         browserItemContextMenu.close();
@@ -186,6 +205,7 @@ function Drive({ activeFolder, folderView }: Props) {
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
     const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
+    const showSharingOnboarding = showOnboarding && items.length;
 
     return (
         <>
@@ -233,6 +253,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 getDragMoveControls={folderView.isActiveLinkReadOnly ? undefined : getDragMoveControls}
             />
             {linkSharingModal}
+            {showSharingOnboarding && <DriveSharingOnboardingModal open onDone={handleShartingOnboardingDone} />}
         </>
     );
 }
