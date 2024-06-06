@@ -2163,6 +2163,11 @@
         "一時的な理由で、将来的に再度使用する予定"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "改善にご協力ください"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
@@ -4163,9 +4168,6 @@
       "No": [
         "いいえ"
       ],
-      "No changes made to the current subscription": [
-        "現在のサブスクリプションに変更は加えられていません"
-      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
@@ -5105,9 +5107,6 @@
       "Create ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
       ],
-      "Create a share link": [
-        "共有リンクを作成"
-      ],
       "Created": [
         "作成日時"
       ],
@@ -5392,9 +5391,6 @@
       ],
       "Select type of abuse": [
         "通報の種類を選択"
-      ],
-      "Select your plan": [
-        "プランの選択"
       ],
       "Set expiration date": [
         "有効期限を設定"
@@ -5948,9 +5944,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "見直しを行う"
-      ],
       "Delete account": [
         "アカウントを削除"
       ],
@@ -6187,8 +6180,8 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
-      "Phone support (6+ users)": [
-        "電話サポート（6 ユーザー以上）"
+      "Phone support (40+ users)": [
+        "電話サポート（40 ユーザー以上）"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -6243,9 +6236,6 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
-      ],
-      "Team management": [
-        "チーム管理"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -6379,9 +6369,6 @@
       "Popular": [
         "最も人気"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム ${ BRAND_NAME } サービスが利用できるプランです。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -6390,9 +6377,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "プロフェッショナルとビジネスのための、安全な電子メールとカレンダーのプランです。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
@@ -6665,9 +6649,6 @@
       "Central control panel": [
         "中央制御盤"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
-      ],
       "Create up to ${ n } calendar": [
         "最大 ${ n } 個までのカレンダーを作成"
       ],
@@ -6688,6 +6669,9 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Notification": {
@@ -6895,9 +6879,6 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "共有リンクを作成"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } を使い始めると、ストレージが 5 GB にアップグレードされます！"
       ],
@@ -7773,6 +7754,9 @@
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
       "10 email addresses": [
         "10個のメールアドレス"
       ],
@@ -7782,6 +7766,9 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
       ],
@@ -7790,6 +7777,9 @@
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Online privacy, for your whole family": [
+        "家族全員のオンラインプライバシー"
       ],
       "Our fight against censorship in Russia": [
         "ロシアにおける検閲との闘い"
@@ -7805,6 +7795,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Version history": [
+        "バージョン履歴"
       ],
       "Watch the interview": [
         "インタビューを見る"
@@ -8213,9 +8206,6 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
-      ],
-      "Customize your plan": [
-        "プランをカスタマイズ"
       ],
       "Data recovery": [
         "データの回復"

@@ -4506,9 +4506,6 @@
       "No": [
         "Ei"
       ],
-      "No changes made to the current subscription": [
-        "Nykyiseen tilaukseen ei ole tehty muutoksia"
-      ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
       ],
@@ -5532,9 +5529,6 @@
       "Create ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a share link": [
-        "Luo jakolinkki"
-      ],
       "Created": [
         "Luotu"
       ],
@@ -5830,9 +5824,6 @@
       "Select type of abuse": [
         "Valitse väärinkäytön tyyppi"
       ],
-      "Select your plan": [
-        "Valitse tilauksesi"
-      ],
       "Set expiration date": [
         "Aseta erääntymisaika"
       ],
@@ -5841,6 +5832,9 @@
       ],
       "Set recovery method": [
         "Määritä palautustapa"
+      ],
+      "Share a file": [
+        "Jaa tiedosto"
       ],
       "Shared by": [
         "Jakanut"
@@ -6225,7 +6219,7 @@
         "Apple Installer -paketti"
       ],
       "Archive document": [
-        "Arkistoasiakirja"
+        "Arkistodokumentti"
       ],
       "Audio file": [
         "Ääni"
@@ -6432,9 +6426,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Jatka tarkistukseen"
-      ],
       "Delete account": [
         "Poista tili"
       ],
@@ -6577,6 +6568,9 @@
       "Centralized billing": [
         "Keskitetty laskutus"
       ],
+      "Collaborate and share large files": [
+        "Tee yhteistyötä ja jaa suuria tiedostoja"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -6609,6 +6603,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -6686,11 +6683,14 @@
       "Password health": [
         "Salasanaterveys"
       ],
+      "Password manager to secure credentials": [
+        "Salasananhallinta kirjautumistietojen turvaamiseen"
+      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Phone support (6+ users)": [
-        "Puhelinasiakaspalvelu (6+ käyttäjää)"
+      "Phone support (40+ users)": [
+        "Puhelinasiakaspalvelu (40+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6726,6 +6726,9 @@
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
+      "See team's availability": [
+        "Katso tiimin saatavuus"
+      ],
       "Send & receive invitations": [
         "Lähetä ja vastaanota kutsuja"
       ],
@@ -6749,9 +6752,6 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
-      ],
-      "Team management": [
-        "Tiimin hallinta"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -6817,6 +6817,9 @@
       "User session management": [
         "Käyttäjäistuntojen hallinta"
       ],
+      "User storage management": [
+        "Käyttäjien tallennustilan hallinta"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
@@ -6863,6 +6866,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
       ],
@@ -6871,6 +6877,12 @@
       ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Salattu sähköposti ja kalenteri, joilla pääset alkuun."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Välttämätön suojaus ja turvallinen yhteistoiminta rajoittamattomille käyttäjille."
@@ -6893,9 +6905,6 @@
       "Popular": [
         "Suosittu"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tietosuojaa ja turvaa yrityksille tarjoava paketti ${ BRAND_NAME }in kaikilla premium-palveluilla."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
@@ -6904,9 +6913,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
@@ -7025,6 +7031,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridgen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
       ],
+      "Increase or reallocate storage for a user": [
+        "Käyttäjän tallennustilan lisääminen tai uudelleen jakaminen"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
       ],
@@ -7133,6 +7142,9 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
       ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Lähetä yrityksesi logo, jotta voit mukauttaa tiimiesi kokemusta ${ BRAND_NAME } -verkkosovelluksissa"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Käytä omaa verkkotunnustasi käyttäviä sähköpostiosoitteita, kuten nimesi@esimerkki.fi"
       ],
@@ -7183,9 +7195,6 @@
       "Central control panel": [
         "Keskitetty hallintapaneeli"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Laajenna toimialuettasi 10 omalla sähköpostiverkkotunnuksella."
-      ],
       "Create up to ${ n } calendar": [
         "Luo enintään ${ n } kalenteri",
         "Luo enintään ${ n } kalenteria"
@@ -7207,6 +7216,9 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -7476,14 +7488,14 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "Luo jakolinkki"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin korotamme ilmaisen tallennustilasi 5 gigatavuun!"
       ],
       "Set a recovery method": [
         "Määritä palautustapa"
+      ],
+      "Share a file": [
+        "Jaa tiedosto"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Tee vain nämä tehtävät seuraavan ${ expiresInDays } päivän aikana:",
@@ -8510,27 +8522,93 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }, sisältäen kalenterijaon"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } päivä jäljellä",
         "${ dayDiff } päivää jäljellä"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }, sisältäen versiohistorian"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } ja kaikki premium-tuottavuusominaisuudet"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteillesi, liitetiedostoillesi, tapahtumillesi, salasanoillesi ja tiedostoillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa tiedostoillesi ja kuvillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } -ohjelma"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME }, pääsy kaikkiin huippunopeisiin palvelimiin ${ vpnCountries } maassa"
+      ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
+      ],
+      "6 users": [
+        "6 käyttäjää"
+      ],
+      "Add any new files": [
+        "Lisää uusia tiedostoja"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "Back up photos from your devices": [
+        "Varmuuskopioi valokuvia laitteistasi"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
       ],
+      "Comprehensive privacy and security": [
+        "Kattava yksityisyys ja suojaus"
+      ],
       "Custom schedule send and snooze times": [
         "Mukautetut lähetys- ja torkutusajat"
       ],
+      "Early access to new apps and features": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Extra storage and bonuses": [
+        "Enemmän tallennustilaa ja bonuksia"
+      ],
       "Helping activists in Hong Kong": [
         "Aktivistien auttaminen Hongkongissa"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Miten asiakaspalvelutiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Miten taistelimme vastaan, kun ${ BRAND_NAME } joutui aggressiivisen sensuurikampanjan kohteeksi."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Miten tuimme paikallisia aktivisteja, kun yksityisyyttä ja sananvapautta uhattiin Hongkongissa."
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Jos ylität ilmaisen tilauksen rajat ${ planName } -tilauksesi päättyessä, et voi:"
       ],
       "Keep ${ planName }": [
         "Pidä ${ planName }"
@@ -8538,8 +8616,20 @@
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
       ],
+      "Manage your calendar": [
+        "Hallitse kalenteriasi"
+      ],
+      "Online privacy, for your whole family": [
+        "Yksityisyyttä verkossa, koko perheellesi"
+      ],
       "Our fight against censorship in Russia": [
         "Taistelumme Venäjän sensuuria vastaan"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Huomaa, että ${ planName } -tilaus ei ole enää ostettavissa. Jos alennat tilisi, menetät kaikki sen edut, etkä voi tilata sitä uudelleen."
+      ],
+      "Premium productivity features": [
+        "Premium-tuottavuusominaisuudet"
       ],
       "Priority support": [
         "Ensisijainen tuki"
@@ -8547,17 +8637,44 @@
       "Read the story": [
         "Lue juttu"
       ],
+      "Receive new emails": [
+        "Vastaanota uusia sähköposteja"
+      ],
+      "Send emails with attachments": [
+        "Lähetä sähköposteja liitetiedostojen kanssa"
+      ],
+      "Sync files on devices": [
+        "Synkronoi tiedostoja laitteilla"
+      ],
       "Unblocking internet access in Iran": [
         "Internet-yhteyksien vapauttaminen Iranissa"
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
       ],
+      "Version history": [
+        "Versiohistoria"
+      ],
       "Watch the interview": [
         "Katso haastattelu"
       ],
+      "What you give up when you cancel ${ planName }": [
+        "Mitä menetä perumalla ${ planName }-tilauksen"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa . Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Oma sähköpostiverkkotunnuksesi"
@@ -9017,9 +9134,6 @@
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
-      ],
-      "Customize your plan": [
-        "Mukauta tilaustasi"
       ],
       "Data recovery": [
         "Tietojen palautus"
