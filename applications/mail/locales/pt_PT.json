@@ -1905,6 +1905,11 @@
         "Cancelar a expiração"
       ]
     },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Reativar a subscrição"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } utilizador",
@@ -7626,9 +7631,6 @@
       "Security code (${ codeName })": [
         "Código de segurança (${ codeName })"
       ],
-      "Select your plan": [
-        "Selecione o seu plano"
-      ],
       "Send auto-reply": [
         "Enviar resposta automática"
       ],
@@ -8332,9 +8334,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Prosseguir para a revisão"
-      ],
       "Delete account": [
         "Eliminar conta"
       ],
@@ -8583,8 +8582,8 @@
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
-      "Phone support (6+ users)": [
-        "Apoio telefónico (6+ utilizadores)"
+      "Phone support (40+ users)": [
+        "Apoio telefónico (40+ utilizadores)"
       ],
       "Priority email support": [
         "Apoio prioritário por e-mail"
@@ -8628,9 +8627,6 @@
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
-      ],
-      "Team management": [
-        "Gestão de equipa"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -8750,9 +8746,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -8761,9 +8754,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "E-mail e calendário seguros para profissionais e empresas."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
@@ -8998,9 +8988,6 @@
       "Central control panel": [
         "Painel de controlo central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Beneficie-se de ainda mais possibilidades com o suporte a 10 domínios de e-mail personalizados."
-      ],
       "Create up to ${ n } calendar": [
         "Crie até ${ n } calendário",
         "Crie até ${ n } calendários"
@@ -9022,6 +9009,9 @@
       ],
       "Require 2FA": [
         "Requer A2F"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
     "Notification": {
@@ -10288,6 +10278,9 @@
       "Calendar sharing": [
         "Partilha de calendário"
       ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
       "Extra storage and bonuses": [
         "Armazenamento adicional e bónus"
       ],
@@ -10299,6 +10292,9 @@
       ],
       "Manage your calendar": [
         "Gerencie o seu calendário"
+      ],
+      "Online privacy, for your whole family": [
+        "Privacidade online, para toda a sua família"
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
@@ -10989,9 +10985,6 @@
       ],
       "Customize your mail import": [
         "Personalize a sua importação de e-mail"
-      ],
-      "Customize your plan": [
-        "Personalize o seu plano"
       ],
       "Data recovery": [
         "Recuperação de dados"

@@ -3599,9 +3599,6 @@
       "No addresses exist": [
         "Tidak ada alamat"
       ],
-      "No changes made to the current subscription": [
-        "Tidak ada perubahan yang diterapkan bagi paket langganan saat ini"
-      ],
       "No gateways": [
         "Tidak ada gateway"
       ],
@@ -3937,6 +3934,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Proses verifikasi ini dapat berlangsung hingga satu jam. Anda dapat melanjutkan ke langkah selanjutnya secara aman."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan menganulir seluruh manfaat loyalitas yang telah Anda peroleh."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
@@ -4816,9 +4816,6 @@
       "Security code (${ codeName })": [
         "Kode keamanan (${ codeName })"
       ],
-      "Select your plan": [
-        "Pilih paket Anda"
-      ],
       "Single sign-on entity ID": [
         "ID entitas single sign-on"
       ],
@@ -5259,9 +5256,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Lanjut ke proses peninjauan"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -5519,8 +5513,8 @@
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
-      "Phone support (6+ users)": [
-        "Dukungan via telepon (6+ pengguna)"
+      "Phone support (40+ users)": [
+        "Dukungan via telepon (40+ pengguna)"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -5587,9 +5581,6 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
-      ],
-      "Team management": [
-        "Manajemen tim"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -5711,6 +5702,9 @@
       "Early access to new apps and features": [
         "Akses dini ke berbagai aplikasi dan fitur baru"
       ],
+      "Encrypted email and calendar to get you started.": [
+        "Email dan kalender terenkripsi untuk membantu Anda memulai."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Perlindungan esensial dan kolaborasi aman tanpa batasan jumlah pengguna."
       ],
@@ -5732,9 +5726,6 @@
       "Popular": [
         "Populer"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium ${ BRAND_NAME } yang terkandung di dalamnya."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
@@ -5743,9 +5734,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Layanan email dan kalender yang aman untuk para profesional dan pelaku usaha."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
@@ -6056,9 +6044,6 @@
       "Central control panel": [
         "Kontrol panel pusat"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
-      ],
       "Create up to ${ n } calendar": [
         "Buat hingga ${ n } kalender"
       ],
@@ -6079,6 +6064,9 @@
       ],
       "Require 2FA": [
         "Membutuhkan 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Notification": {
@@ -7587,6 +7575,9 @@
       "Add any new files": [
         "Tambahkan berkas baru mana pun"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Setelah langganan ${ planName } Anda berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah diberikan kepada Anda sebelumnya."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Setelah langganan ${ planName } berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah diberikan kepada Anda sebelumnya."
       ],
@@ -7704,8 +7695,20 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
+      ],
       "Yearly free storage bonuses": [
         "Bonus ruang penyimpanan gratis tahunan"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Anda masih memiliki ${ expiryDate } tersisa pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "${ planName } Anda telah dibatalkan."
@@ -8240,9 +8243,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Sesuaikan jumlah alamat IP dalam paket Anda"
-      ],
-      "Customize your plan": [
-        "Sesuaikan paket Anda"
       ],
       "Date": [
         "Tanggal"

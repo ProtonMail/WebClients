@@ -697,10 +697,10 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6104,6 +6104,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7344,9 +7355,6 @@
       "No addresses exist": [
         "Няма адрасоў"
       ],
-      "No changes made to the current subscription": [
-        "Для бягучай падпіскі ніякія змены не зроблены"
-      ],
       "No credit card required": [
         "Крэдытная картка не патрабуецца"
       ],
@@ -8133,8 +8141,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
@@ -8618,17 +8626,6 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9812,9 +9809,6 @@
       "Security code (${ codeName })": [
         "Код бяспекі (${ codeName })"
       ],
-      "Select your plan": [
-        "Выберыце тарыфны план"
-      ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
       ],
@@ -10853,9 +10847,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Працягнуць агляд"
-      ],
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
       ],
@@ -11041,6 +11032,9 @@
       "Centralized settings and billings": [
         "Цэнтралізаваныя налады і выстаўленне рахункаў"
       ],
+      "Collaborate and share large files": [
+        "Сумесная праца і абагульванне вялікіх файлаў"
+      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
@@ -11076,6 +11070,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды) (неўзабаве)"
       ],
       "Double hop": [
         "Double hop"
@@ -11164,8 +11161,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (6+ users)": [
-        "Падтрымка па тэлефоне (ад 6 карыстальнікаў)"
+      "Phone support (40+ users)": [
+        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -11239,9 +11236,6 @@
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
-      "Team management": [
-        "Кіраванне камандамі"
-      ],
       "Tor over VPN": [
         "Tor праз VPN"
       ],
@@ -11307,6 +11301,9 @@
       ],
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
+      ],
+      "User storage management": [
+        "Кіраванне сховішчам карыстальніка"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Абагульванне сховішча (да ${ n } асобы)",
@@ -11407,9 +11404,6 @@
       "Popular": [
         "Папулярны"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
@@ -11418,9 +11412,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Бяспечная электронная пошта і каляндар для прафесіяналаў, а таксама кампаній."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -11497,14 +11488,6 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -11523,6 +11506,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -11770,9 +11761,6 @@
       "Central control panel": [
         "Цэнтральная панэль кіравання"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
-      ],
       "Create up to ${ n } calendar": [
         "Стварыць да ${ n } календара",
         "Стварыць да ${ n } календароў",
@@ -11796,6 +11784,9 @@
       ],
       "Require 2FA": [
         "Патрэбна 2ФА"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
     "Notification": {
@@ -14303,6 +14294,47 @@
         "За"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Адзіная крыніца даходу ${ BRAND_NAME } - гэта падпіскі карыстальнікаў. Ваша падтрымка дазваляе нам заставацца незалежнымі і прасоўваць нашу місію па прыватнасці ў інтэрнэце, як неад'емнае права кожнага карыстальніка. Мы працягваем падтрымліваць актывістаў і арганізацыі, якія змагаюцца за прыватнасць і свабоду."
@@ -14494,10 +14526,10 @@
         "Штогадовы бонус бясплатнага сховішча"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
@@ -14513,47 +14545,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -15316,9 +15307,6 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
-      ],
-      "Customize your plan": [
-        "Наладжванне вашага тарыфнага плана"
       ],
       "Dashboard": [
         "Панэль кіравання"

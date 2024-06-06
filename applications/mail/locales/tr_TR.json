@@ -3388,6 +3388,11 @@
         "VPN çok yavaş çalışıyor"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Kendimizi geliştirmemize yardımcı olun"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Tümünü indir"
@@ -6127,9 +6132,6 @@
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
       ],
-      "No changes made to the current subscription": [
-        "Var olan abonelikte herhangi bir değişiklik yapılmadı"
-      ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
@@ -7776,9 +7778,6 @@
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
-      "Select your plan": [
-        "Tarifenizi seçin"
-      ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
@@ -8511,9 +8510,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Gözden geçirmeyi sürdür"
-      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -8768,8 +8764,8 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Phone support (6+ users)": [
-        "Telefon desteği (6+ kullanıcı)"
+      "Phone support (40+ users)": [
+        "Telefon desteği (40+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -8828,9 +8824,6 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
-      ],
-      "Team management": [
-        "Ekip yönetimi"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -8972,9 +8965,6 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için gizlilik ve güvenlik paketi."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -8983,9 +8973,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
@@ -9262,9 +9249,6 @@
       "Central control panel": [
         "Merkez yönetim panosu"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
-      ],
       "Create up to ${ n } calendar": [
         "${ n } taneye kadar takvim oluşturun",
         "${ n } taneye kadar takvim oluşturun"
@@ -9286,6 +9270,9 @@
       ],
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Notification": {
@@ -10702,6 +10689,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
       "10 email addresses": [
         "10 e-posta adresi"
       ],
@@ -10714,6 +10704,9 @@
       "Custom schedule send and snooze times": [
         "Özel zamanlanmış gönderim ve erteleme süreleri"
       ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"
       ],
@@ -10722,6 +10715,9 @@
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Online privacy, for your whole family": [
+        "Tüm aileniz için çevrim içi gizlilik"
       ],
       "Our fight against censorship in Russia": [
         "Rusya'da sansüre karşı mücadelemiz"
@@ -10737,6 +10733,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
       ],
       "Watch the interview": [
         "Röportajı izleyin"
@@ -11427,9 +11426,6 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
-      ],
-      "Customize your plan": [
-        "Tarifenizi özelleştirin"
       ],
       "Data recovery": [
         "Veri kurtarma"

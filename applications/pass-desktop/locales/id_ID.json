@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Bagaimana cara mengekspor data saya dari ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Cara memperbarui ${ PASS_APP_NAME } di Linux"
+      ],
       "Import": [
         "Impor"
       ],
@@ -1267,6 +1270,9 @@
       "Never": [
         "Tidak pernah"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Versi baru ${ latestVersion } tersedia."
+      ],
       "No breaches detected": [
         "Tidak ada kebocoran yang terdeteksi"
       ],
@@ -1422,6 +1428,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Riwayat perubahan ini dapat ditemukan ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Ekspor ini hanya akan mengandung brankas yang Anda miliki."

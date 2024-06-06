@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Cómo actualizar ${ PASS_APP_NAME } en Linux"
+      ],
       "Import": [
         "Importar"
       ],
@@ -1283,6 +1286,9 @@
       "Never": [
         "Nunca"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Una versión nueva de ${ latestVersion } está disponible."
+      ],
       "No breaches detected": [
         "No se han detectado vulneraciones."
       ],
@@ -1439,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "El registro de cambios puede encontrarse ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las cajas fuertes que te pertenecen."

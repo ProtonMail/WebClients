@@ -620,10 +620,10 @@
       "No, thanks": [
         "不，谢谢"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2942,12 +2942,28 @@
         "未知"
       ]
     },
+    "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "您确定要删除该地址吗？"
+      ],
+      "Delete address permanently?": [
+        "永久删除该地址？"
+      ],
+      "Delete address?": [
+        "删除地址?"
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "此日历中的所有事件都将被删除。"
       ],
       "You will no longer have access to this calendar.": [
         "您将无法再访问此日历。"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "确定要删除此域名吗？"
       ]
     },
     "Delinquent modal title": {
@@ -5263,6 +5279,17 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
@@ -6299,9 +6326,6 @@
       "No addresses exist": [
         "没有地址"
       ],
-      "No changes made to the current subscription": [
-        "当前订阅没有更改"
-      ],
       "No credit card required": [
         "无需信用卡"
       ],
@@ -6824,6 +6848,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此用户负责为您的组织付款。降低其权限后，您将负责此组织的付款。"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "这将取消您当前的付费订阅，并且您将失去您积累的任何忠诚度福利。"
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "这将删除所有早于 ${ rententionLabel } 的旧版本文件。"
       ],
@@ -6980,8 +7007,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[bundleProPlan] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7396,17 +7423,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -8488,9 +8504,6 @@
       "Security code (${ codeName })": [
         "安全码 (${ codeName })"
       ],
-      "Select your plan": [
-        "选择您的套餐"
-      ],
       "Send auto-reply": [
         "自动回复"
       ],
@@ -8857,6 +8870,9 @@
       ],
       "Encryption and keys": [
         "加密与密钥"
+      ],
+      "Forgot password?": [
+        "忘记密码?"
       ],
       "Forgot username?": [
         "忘记用户名"
@@ -9379,9 +9395,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "前去结算"
-      ],
       "Continue with Free": [
         "注册免费账户"
       ],
@@ -9636,8 +9649,8 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
-      "Phone support (6+ users)": [
-        "电话客服（6+ 位用户）"
+      "Phone support (40+ users)": [
+        "电话客服（40+ 位用户）"
       ],
       "Priority email support": [
         "优先享受邮件客服"
@@ -9701,9 +9714,6 @@
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
-      ],
-      "Team management": [
-        "团队管理"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -9846,17 +9856,11 @@
       "Popular": [
         "流行的"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "为企业量身定制的隐私与安全防护体系，囊括了所有 ${ BRAND_NAME } 高级服务。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的云存储，让您轻松安全地存储、同步和共享文件。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "面向专业人士和企业的安全邮箱与日历。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
@@ -9924,14 +9928,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -9950,6 +9946,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -10158,14 +10162,14 @@
       "Central control panel": [
         "中央控制面板"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 个自有域名更显游刃有余"
-      ],
       "Create up to ${ n } calendar": [
         "最多可创建 ${ n } 份日历"
       ],
       "Multi-platform support": [
         "多平台支持"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支持 ${ n } 个自定义域"
       ]
     },
     "Notification": {
@@ -11837,6 +11841,17 @@
         "支付"
       ]
     },
+    "subscription reminder": {
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "剩余 ${ dayDiff } 天"
@@ -11846,6 +11861,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 计划"
       ],
       "10 email addresses": [
         "10 个邮箱地址"
@@ -11862,25 +11880,23 @@
       "Custom schedule send and snooze times": [
         "自由调整定时发送和延迟通知时间"
       ],
+      "Early access to new apps and features": [
+        "抢先访问新应用和功能"
+      ],
       "Keep ${ planName }": [
         "保持计划 ${ planName }"
+      ],
+      "Online privacy, for your whole family": [
+        "与全家人共同守护网络隐私"
       ],
       "Priority support": [
         "优先支持"
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
-      ]
-    },
-    "subscription reminder": {
-      "Desktop app": [
-        "桌面应用"
       ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
+      "Version history": [
+        "版本历史"
       ]
     },
     "Subscription renewal state": {
@@ -12571,9 +12587,6 @@
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
-      ],
-      "Customize your plan": [
-        "定制账户等级"
       ],
       "Dashboard": [
         "总览"

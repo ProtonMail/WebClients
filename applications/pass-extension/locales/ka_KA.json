@@ -517,6 +517,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
+      ],
       "A checked box means the feature is disabled.": [
         "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
       ],
@@ -584,7 +588,7 @@
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
       ],
       "Could not validate addresses at the moment.": [
-        "მისამართების გადამოწმება ამჟამად შეუძლებელია."
+        "მისამართების გადამოწმება, ამჟამად, შეუძლებელია."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
@@ -626,6 +630,9 @@
       "Failed to add email address": [
         "ელფოსტის მისამართის დამატება ჩავარდა"
       ],
+      "Failed to delete email address from monitoring": [
+        "მონიტორინგიდან ელფოსტის მისამართის წაშლა ჩავარდა"
+      ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
       ],
@@ -637,6 +644,9 @@
       ],
       "Failed to load breaches for this address": [
         "ამ მისამართისთვის გაჟონვების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to load breaches for this email alias": [
+        "ამ ელფოსტის ფსევდონიმისთვის გაჟონვების ჩატვირთვა ჩავარდა"
       ],
       "Failed to load item history": [
         "ელემენტის ისტორიის ჩატვირთვა ჩავარდა"
@@ -656,6 +666,9 @@
       "Failed to remove user's access.": [
         "მომხმარებლის წვდომის წაშლა ჩავარდა."
       ],
+      "Failed to resend verification for custom email": [
+        "მორგებული ელფოსტისთვის გადამოწმების თავიდან გაგზავნა ჩავარდა"
+      ],
       "Failed to resolve breaches for this address": [
         "ამ მისამართისთვის გაჟონვების ამოხსნა ჩავარდა"
       ],
@@ -673,6 +686,9 @@
       ],
       "Failed to verify email address": [
         "ელფოსტის მისამართის გადამოწმება ჩავარდა"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME }-ის პარამეტრის განახლება ჩავარდა"
       ],
       "Failed updating monitor flag of the item": [
         "ელემენტის მონიტორინგის ალმის განახლება ჩავარდა"
@@ -902,7 +918,7 @@
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } გკითხავთ მაშინვე, როცა შექმნილი პაროლები ავტომატურად შევსებულია."
+        "${ PASS_APP_NAME } გკითხავთ მაშინვე, როცა შექმნილი პაროლები ავტომატურად შეივსება."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } გკითხავთ, გნებავთ თქვენი ავტორიზაციის დეტალების შენახვა, თუ არა."
@@ -918,6 +934,12 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } შემოგთავაზებთ წვდომის გასაღების შენახვას."
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } წარმატებით გაითიშა"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } წარმატებით ჩაირთო"
       ],
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
@@ -1051,6 +1073,9 @@
       ],
       "Editor": [
         "რედაქტორი"
+      ],
+      "Email address successfully included in monitoring": [
+        "ელფოსტის მისამართის მონიტორინგში ჩასმა წარმატებულია"
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
@@ -1360,7 +1385,7 @@
         "თქვენი საცავების სინქრონიზაცია…"
       ],
       "Team members can only share vaults within organization": [
-        "გუნდის წევრებს საცავების გაზიარება, მხოოდ, ორგანიზაციის შიგნით შეუძლიათ"
+        "გუნდის წევრებს საცავების გაზიარება, მხოლოდ, ორგანიზაციის შიგნით შეუძლიათ"
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"

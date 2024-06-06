@@ -688,11 +688,11 @@
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -3144,6 +3144,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
+      ],
+      "Delete address permanently?": [
+        "Οριστική διαγραφή διεύθυνσης;"
+      ],
+      "Delete address?": [
+        "Διαγραφή διεύθυνσης?"
+      ],
       "You can only delete 1 address per year.": [
         "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος."
       ]
@@ -3162,6 +3171,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "Δε θα έχετε πλέον πρόσβαση σε αυτό το ημερολόγιο."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον τομέα;"
       ]
     },
     "Delinquent modal title": {
@@ -3348,6 +3362,11 @@
       ],
       "The VPN is too slow": [
         "Το PIN είναι πολύ αργό"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Βοηθήστε μας να βελτιωθούμε"
       ]
     },
     "Download link": {
@@ -5961,6 +5980,17 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -7138,9 +7168,6 @@
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
-      "No changes made to the current subscription": [
-        "Δεν έγιναν αλλαγές στην τρέχουσα συνδρομή"
-      ],
       "No credit card required": [
         "Δεν απαιτείται πιστωτική κάρτα"
       ],
@@ -7724,6 +7751,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μπορείτε να συνεχίσετε με ασφάλεια στα επόμενα βήματα."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας που είναι παλαιότερες από ${ rententionLabel }."
       ],
@@ -7892,8 +7922,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[bundleProPlan] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
@@ -8354,17 +8384,6 @@
       ],
       "Zoom meeting": [
         "Συνάντηση Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9527,9 +9546,6 @@
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
       ],
-      "Select your plan": [
-        "Επιλέξτε το πλάνο σας"
-      ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
@@ -9915,6 +9931,9 @@
       ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
+      ],
+      "Forgot password?": [
+        "Ξέχασα τον κωδικό πρόσβασης?"
       ],
       "Forgot username?": [
         "Ξεχάσατε το όνομα χρήστη;"
@@ -10525,9 +10544,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Συνεχίστε την αξιολόγηση"
-      ],
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
       ],
@@ -10806,8 +10822,8 @@
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
-      "Phone support (6+ users)": [
-        "Τηλεφωνική υποστήριξη (6+ χρήστες)"
+      "Phone support (40+ users)": [
+        "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
@@ -10876,9 +10892,6 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
-      ],
-      "Team management": [
-        "Διαχείριση ομάδας"
       ],
       "Tor over VPN": [
         "Tor μέσω VPN"
@@ -11041,9 +11054,6 @@
       "Popular": [
         "Δημοφιλές"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Σουίτα απορρήτου και ασφάλειας για επιχειρήσεις, συμπεριλαμβανομένων όλων των premium υπηρεσιών του ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
       ],
@@ -11052,9 +11062,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Ασφαλής αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Ασφαλές ηλεκτρονικό ταχυδρομείο και ημερολόγιο για επαγγελματίες και επιχειρήσεις."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
@@ -11131,14 +11138,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -11157,6 +11156,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -11402,9 +11409,6 @@
       "Central control panel": [
         "Κεντρικός πίνακας ελέγχου"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Καλύψτε περισσότερο έδαφος με υποστήριξη για 10 προσαρμοσμένους τομείς email"
-      ],
       "Create up to ${ n } calendar": [
         "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
         "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
@@ -11426,6 +11430,9 @@
       ],
       "Require 2FA": [
         "Απαιτείται 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Notification": {
@@ -13817,84 +13824,6 @@
         "Για"
       ]
     },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } ημέρα απομένει",
-        "${ dayDiff } ημέρες απομένουν"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
-      ],
-      "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
-      ],
-      "10 email addresses": [
-        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Calendar sharing": [
-        "Κοινή χρήση ημερολογίου"
-      ],
-      "Cancel subscription": [
-        "Ακύρωση συνδρομής"
-      ],
-      "Cancel subscription?": [
-        "Ακύρωση συνδρομής;"
-      ],
-      "Close": [
-        "Κλείσιμο"
-      ],
-      "Custom schedule send and snooze times": [
-        "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
-      ],
-      "Have a question?": [
-        "Έχετε απορίες;"
-      ],
-      "Helping activists in Hong Kong": [
-        "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"
-      ],
-      "I still want to cancel": [
-        "Εξακολουθώ να θέλω να ακυρώσω"
-      ],
-      "Keep ${ planName }": [
-        "Διατήρηση ${ planName }"
-      ],
-      "Learn more about our impact": [
-        "Μάθετε περισσότερα για τον αντίκτυπό μας"
-      ],
-      "Our fight against censorship in Russia": [
-        "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
-      ],
-      "Priority support": [
-        "Υποστήριξη με προτεραιότητα"
-      ],
-      "Read the story": [
-        "Διαβάστε την ιστορία"
-      ],
-      "Subscription canceled": [
-        "Η συνδρομή ακυρώθηκε"
-      ],
-      "Unblocking internet access in Iran": [
-        "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
-      ],
-      "Watch the interview": [
-        "Δείτε τη συνέντευξη"
-      ],
-      "Yearly free storage bonuses": [
-        "Ετήσια δωρεάν μπόνους αποθήκευσης"
-      ],
-      "Your own custom email domain": [
-        "Ο δικός σας προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Your own short @pm.me email alias": [
-        "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -13934,6 +13863,96 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } πρόγραμμα"
+      ],
+      "10 email addresses": [
+        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
+      ],
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Cancel subscription?": [
+        "Ακύρωση συνδρομής;"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Custom schedule send and snooze times": [
+        "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
+      ],
+      "Early access to new apps and features": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
+      "Have a question?": [
+        "Έχετε απορίες;"
+      ],
+      "Helping activists in Hong Kong": [
+        "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"
+      ],
+      "I still want to cancel": [
+        "Εξακολουθώ να θέλω να ακυρώσω"
+      ],
+      "Keep ${ planName }": [
+        "Διατήρηση ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Μάθετε περισσότερα για τον αντίκτυπό μας"
+      ],
+      "Online privacy, for your whole family": [
+        "Online ιδιωτικότητα, για όλη την οικογένειά σας"
+      ],
+      "Our fight against censorship in Russia": [
+        "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
+      ],
+      "Read the story": [
+        "Διαβάστε την ιστορία"
+      ],
+      "Subscription canceled": [
+        "Η συνδρομή ακυρώθηκε"
+      ],
+      "Unblocking internet access in Iran": [
+        "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
+      ],
+      "Watch the interview": [
+        "Δείτε τη συνέντευξη"
+      ],
+      "Yearly free storage bonuses": [
+        "Ετήσια δωρεάν μπόνους αποθήκευσης"
+      ],
+      "Your own custom email domain": [
+        "Ο δικός σας προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your own short @pm.me email alias": [
+        "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Subscription renewal state": {
@@ -14679,9 +14698,6 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
-      ],
-      "Customize your plan": [
-        "Προσαρμόστε το πλάνο σας"
       ],
       "Dashboard": [
         "Πίνακας Ελέγχου"

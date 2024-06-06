@@ -688,11 +688,11 @@
       "No, thanks": [
         "Nie, ďakujem"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -3170,6 +3170,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Naozaj chcete vymazať túto adresu?"
+      ],
+      "Delete address permanently?": [
+        "Vymazať adresu natrvalo?"
+      ],
+      "Delete address?": [
+        "Vymazať adresu?"
+      ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
       ]
@@ -3188,6 +3197,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "K tomuto kalendáru už nebudete mať prístup."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Naozaj chcete vymazať túto doménu?"
       ]
     },
     "Delinquent modal title": {
@@ -3374,6 +3388,11 @@
       ],
       "The VPN is too slow": [
         "VPN je príliš pomalá"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Pomôžte nám zlepšiť sa"
       ]
     },
     "Download link": {
@@ -6035,6 +6054,17 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -7272,9 +7302,6 @@
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
-      "No changes made to the current subscription": [
-        "V aktuálnom predplatnom nedošlo k žiadnym zmenám"
-      ],
       "No credit card required": [
         "Nie je potrebná platobná karta"
       ],
@@ -7872,6 +7899,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto overenie môže trvať až jednu hodinu. Môžete bezpečne pokračovať k ďalším krokom."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Toto zmaže všetky predchádzajúce verzie vašich súborov, ktoré sú staršie ako ${ rententionLabel }."
       ],
@@ -8040,8 +8070,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Upgradujte na ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] },${ PLAN_NAMES[PLANS.FAMILY] } alebo ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pre získanie prístupu k ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgradujte na ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] },${ PLAN_NAMES[PLANS.FAMILY] } alebo ${ PLAN_NAMES[bundleProPlan] } pre získanie prístupu k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgradujte, ak chcete pridať kratšiu @pm.me adresu k vášmu účtu, ktorá sa jednoduchšie zdieľa. To znamená „${ MAIL_APP_NAME } me“ alebo „Private message me“."
@@ -8516,17 +8546,6 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9701,9 +9720,6 @@
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
       ],
-      "Select your plan": [
-        "Vyberte plán"
-      ],
       "Send auto-reply": [
         "Poslať automatickú odpoveď"
       ],
@@ -10089,6 +10105,9 @@
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
+      ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
       ],
       "Forgot username?": [
         "Zabudli ste používateľské meno?"
@@ -10721,9 +10740,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovať na rekapituláciu"
-      ],
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
       ],
@@ -11032,8 +11048,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ používateľov)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -11106,9 +11122,6 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
-      ],
-      "Team management": [
-        "Manažment tímu"
       ],
       "Tor over VPN": [
         "TOR cez VPN"
@@ -11275,9 +11288,6 @@
       "Popular": [
         "Populárne"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Súprava ochrany osobných údajov a zabezpečenia pre firmy vrátane všetkých prémiových služieb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -11286,9 +11296,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Bezpečný email a kalendár pre profesionálov a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -11365,14 +11372,6 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -11391,6 +11390,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -11638,9 +11645,6 @@
       "Central control panel": [
         "Centrálny ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšírte pôsobnosť s podporou pre 10 vlastných emailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvorte až ${ n } kalendár",
         "Vytvorte až ${ n } kalendáre",
@@ -11664,6 +11668,9 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Notification": {
@@ -14147,86 +14154,6 @@
         "Pre"
       ]
     },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
-      ],
-      "${ dayDiff } day left": [
-        "Zostáva ${ dayDiff } deň",
-        "Zostávajú ${ dayDiff } dni",
-        "Zostáva ${ dayDiff } dní",
-        "Zostáva ${ dayDiff } dní"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Desktopová aplikácia ${ MAIL_APP_NAME } "
-      ],
-      "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } úložného priestoru"
-      ],
-      "10 email addresses": [
-        "10 emailových adries"
-      ],
-      "Calendar sharing": [
-        "Zdieľanie kalendára"
-      ],
-      "Cancel subscription": [
-        "Zrušiť predplatné"
-      ],
-      "Cancel subscription?": [
-        "Zrušiť predplatné?"
-      ],
-      "Close": [
-        "Zavrieť"
-      ],
-      "Custom schedule send and snooze times": [
-        "Vlastné časy odoslania a odloženia"
-      ],
-      "Have a question?": [
-        "Máte otázku?"
-      ],
-      "Helping activists in Hong Kong": [
-        "Pomáhame aktivistom v Hongkongu"
-      ],
-      "I still want to cancel": [
-        "Stále chcem službu zrušiť"
-      ],
-      "Keep ${ planName }": [
-        "Ponechať ${ planName }"
-      ],
-      "Learn more about our impact": [
-        "Zistite viac o našom vplyve"
-      ],
-      "Our fight against censorship in Russia": [
-        "Náš boj proti cenzúre v Rusku"
-      ],
-      "Priority support": [
-        "Prioritná podpora"
-      ],
-      "Read the story": [
-        "Prečítať príbeh"
-      ],
-      "Subscription canceled": [
-        "Predplatné bolo zrušené"
-      ],
-      "Unblocking internet access in Iran": [
-        "Odblokovanie prístupu na internet v Iráne"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Watch the interview": [
-        "Pozrite si rozhovor"
-      ],
-      "Yearly free storage bonuses": [
-        "Každoročné bonusy na kapacitu úložiska"
-      ],
-      "Your own custom email domain": [
-        "Vaša vlastná emailová doména"
-      ],
-      "Your own short @pm.me email alias": [
-        "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -14266,6 +14193,98 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
+      ],
+      "${ dayDiff } day left": [
+        "Zostáva ${ dayDiff } deň",
+        "Zostávajú ${ dayDiff } dni",
+        "Zostáva ${ dayDiff } dní",
+        "Zostáva ${ dayDiff } dní"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Desktopová aplikácia ${ MAIL_APP_NAME } "
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } úložného priestoru"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
+      "10 email addresses": [
+        "10 emailových adries"
+      ],
+      "Calendar sharing": [
+        "Zdieľanie kalendára"
+      ],
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Cancel subscription?": [
+        "Zrušiť predplatné?"
+      ],
+      "Close": [
+        "Zavrieť"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastné časy odoslania a odloženia"
+      ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
+      ],
+      "Have a question?": [
+        "Máte otázku?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pomáhame aktivistom v Hongkongu"
+      ],
+      "I still want to cancel": [
+        "Stále chcem službu zrušiť"
+      ],
+      "Keep ${ planName }": [
+        "Ponechať ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Zistite viac o našom vplyve"
+      ],
+      "Online privacy, for your whole family": [
+        "Súkromie online, pre celú vašu rodinu"
+      ],
+      "Our fight against censorship in Russia": [
+        "Náš boj proti cenzúre v Rusku"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ],
+      "Read the story": [
+        "Prečítať príbeh"
+      ],
+      "Subscription canceled": [
+        "Predplatné bolo zrušené"
+      ],
+      "Unblocking internet access in Iran": [
+        "Odblokovanie prístupu na internet v Iráne"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Version history": [
+        "História verzií"
+      ],
+      "Watch the interview": [
+        "Pozrite si rozhovor"
+      ],
+      "Yearly free storage bonuses": [
+        "Každoročné bonusy na kapacitu úložiska"
+      ],
+      "Your own custom email domain": [
+        "Vaša vlastná emailová doména"
+      ],
+      "Your own short @pm.me email alias": [
+        "Váš vlastný skrátený emailový alias @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -15028,9 +15047,6 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
-      ],
-      "Customize your plan": [
-        "Prispôsobte si svoj plán"
       ],
       "Dashboard": [
         "Prehľad"

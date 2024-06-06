@@ -4709,9 +4709,6 @@
       "New": [
         "Novo"
       ],
-      "No changes made to the current subscription": [
-        "Pri trenutni naročnini ni bilo sprememb."
-      ],
       "No contacts added yet": [
         "Ni stikov"
       ],
@@ -5734,9 +5731,6 @@
       "Security code (${ codeName })": [
         "Varnostna koda (${ codeName })"
       ],
-      "Select your plan": [
-        "Izberite svoj paket"
-      ],
       "Show others when I'm busy": [
         "Pokaži drugim, ko sem zaseden"
       ],
@@ -6316,9 +6310,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Nadaljuj na pregled"
-      ],
       "Delete account": [
         "Izbriši račun"
       ],
@@ -6603,8 +6594,8 @@
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
       ],
-      "Phone support (6+ users)": [
-        "Telefonska podpora (6+ uporabnikov)"
+      "Phone support (40+ users)": [
+        "Telefonska podpora (40+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -6665,9 +6656,6 @@
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
-      ],
-      "Team management": [
-        "Upravljavci ekipe"
       ],
       "Tor over VPN": [
         "Tor preko VPN"
@@ -6813,9 +6801,6 @@
       "Popular": [
         "Priljubljeno"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Paket za zasebnost in varnost za podjetja, vključno z vsemi premijskimi storitvami ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
       ],
@@ -6824,9 +6809,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Varna e-pošta in koledar za strokovnjake in podjetja"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."
@@ -7105,9 +7087,6 @@
       "Central control panel": [
         "Glavna kontrolna plošča"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Dosezite več s podporo za 10 e-poštnih domen po meri"
-      ],
       "Create up to ${ n } calendar": [
         "Ustvarite ${ n } koledar.",
         "Ustvarite do ${ n } koledarja.",
@@ -7131,6 +7110,9 @@
       ],
       "Require 2FA": [
         "Obvezno 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora za ${ n } e-poštni domeni po meri"
       ]
     },
     "Notification": {
@@ -9292,9 +9274,6 @@
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
-      ],
-      "Customize your plan": [
-        "Prilagodite paket"
       ],
       "Data recovery": [
         "Obnovitev podatkov"
