@@ -481,6 +481,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
+      ],
       "Change your passwords": [
         "შეცვალეთ თქვენი პაროლები"
       ],
@@ -557,7 +561,7 @@
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
       ],
       "Could not validate addresses at the moment.": [
-        "მისამართების გადამოწმება ამჟამად შეუძლებელია."
+        "მისამართების გადამოწმება, ამჟამად, შეუძლებელია."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
@@ -599,6 +603,9 @@
       "Failed to add email address": [
         "ელფოსტის მისამართის დამატება ჩავარდა"
       ],
+      "Failed to delete email address from monitoring": [
+        "მონიტორინგიდან ელფოსტის მისამართის წაშლა ჩავარდა"
+      ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
       ],
@@ -610,6 +617,9 @@
       ],
       "Failed to load breaches for this address": [
         "ამ მისამართისთვის გაჟონვების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to load breaches for this email alias": [
+        "ამ ელფოსტის ფსევდონიმისთვის გაჟონვების ჩატვირთვა ჩავარდა"
       ],
       "Failed to load item history": [
         "ელემენტის ისტორიის ჩატვირთვა ჩავარდა"
@@ -629,6 +639,9 @@
       "Failed to remove user's access.": [
         "მომხმარებლის წვდომის წაშლა ჩავარდა."
       ],
+      "Failed to resend verification for custom email": [
+        "მორგებული ელფოსტისთვის გადამოწმების თავიდან გაგზავნა ჩავარდა"
+      ],
       "Failed to resolve breaches for this address": [
         "ამ მისამართისთვის გაჟონვების ამოხსნა ჩავარდა"
       ],
@@ -646,6 +659,9 @@
       ],
       "Failed to verify email address": [
         "ელფოსტის მისამართის გადამოწმება ჩავარდა"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME }-ის პარამეტრის განახლება ჩავარდა"
       ],
       "Failed updating monitor flag of the item": [
         "ელემენტის მონიტორინგის ალმის განახლება ჩავარდა"
@@ -870,6 +886,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } წარმატებით გაითიშა"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } წარმატებით ჩაირთო"
+      ],
       "${ row.breachCount } breach detected": [
         "აღმოჩენილია ${ row.breachCount } გაჟონვა",
         "აღმოჩენილია ${ row.breachCount } გაჟონვა"
@@ -990,6 +1012,9 @@
       ],
       "email": [
         "ელფოსტა"
+      ],
+      "Email address successfully included in monitoring": [
+        "ელფოსტის მისამართის მონიტორინგში ჩასმა წარმატებულია"
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
@@ -1320,7 +1345,7 @@
         "თქვენი საცავების სინქრონიზაცია…"
       ],
       "Team members can only share vaults within organization": [
-        "გუნდის წევრებს საცავების გაზიარება, მხოოდ, ორგანიზაციის შიგნით შეუძლიათ"
+        "გუნდის წევრებს საცავების გაზიარება, მხოლოდ, ორგანიზაციის შიგნით შეუძლიათ"
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
@@ -2146,7 +2171,7 @@
         "მომხმარებლის ელფოსტის მონიტორინგი"
       ],
       "Custom emails": [
-        "მომხმარებლის ელფოსტები"
+        "მორგებული ელფოსტები"
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
