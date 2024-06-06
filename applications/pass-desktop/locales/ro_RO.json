@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Cum se pot exporta datele din ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Cum se actualizează ${ PASS_APP_NAME } pe Linux"
+      ],
       "Import": [
         "Importare"
       ],
@@ -1299,6 +1302,9 @@
       "Never": [
         "Niciodată"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Este disponibilă o versiune nouă pentru ${ latestVersion }."
+      ],
       "No breaches detected": [
         "Nu există divulgări"
       ],
@@ -1456,6 +1462,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Lista de modificări poate fi găsită la ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Exportarea va conține doar seifurile pe care le dețineți."
