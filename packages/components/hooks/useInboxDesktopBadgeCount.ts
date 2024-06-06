@@ -19,12 +19,11 @@ const useInboxDesktopBadgeCount = () => {
         }
 
         const inboxConvCount = counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.INBOX);
-        if (inboxConvCount) {
-            invokeInboxDesktopIPC({
-                type: 'updateNotification',
-                payload: inboxConvCount.Unread ?? 0,
-            });
-        }
+
+        invokeInboxDesktopIPC({
+            type: 'updateNotification',
+            payload: inboxConvCount?.Unread ?? 0,
+        });
     }, [counts]);
 };
 
