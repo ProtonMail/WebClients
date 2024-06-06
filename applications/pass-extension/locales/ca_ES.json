@@ -38,6 +38,12 @@
       "Back": [
         "Torna"
       ],
+      "Bulk delete items from trash": [
+        "Suprimeix en massa els elements de la paperera"
+      ],
+      "Bulk move items to another vault": [
+        "Mou els elements en massa a una altra caixa forta"
+      ],
       "Bulk move items to trash": [
         "Mou en massa els elements a la paperera"
       ],
@@ -501,7 +507,7 @@
         "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Aquest servei ofereix 2FA. Habiliti'l per augmentar la seguretat del compte."
+        "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegi característiques de seguretat avançades i registres detallats per protegir la seva presència en línia."
@@ -589,6 +595,9 @@
       ],
       "Failed to delete email address from monitoring": [
         "No s'ha pogut suprimir l'adreça de correu electrònic de la supervisió"
+      ],
+      "Failed to delete selected items": [
+        "No s'han pogut suprimir els elements seleccionats"
       ],
       "Failed to edit organization settings": [
         "No s'ha pogut editar la configuració de l'organització"
@@ -1007,6 +1016,9 @@
       "Import in progress:": [
         "Importació en curs:"
       ],
+      "Import the CSV file below.": [
+        "Importa el fitxer CSV de sota."
+      ],
       "Imported ${ payload.total } item": [
         "S'ha importat ${ payload.total } element",
         "S'han importat ${ payload.total } elements"
@@ -1170,6 +1182,12 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
+      ],
+      "Restoring items from trash": [
+        "S'estan restaurant els elements de la paperera"
+      ],
+      "Restoring trashed items...": [
+        "S'estan restaurant els elements de la paperera..."
       ],
       "Save login": [
         "Desa l'inici de sessió"
@@ -2111,7 +2129,7 @@
         "Estableix el nivell d`accés"
       ],
       "Set up 2FA for more security": [
-        "Configuri 2FA per a més seguretat"
+        "Configureu A2F per a més seguretat"
       ],
       "Share with": [
         "Comparteix amb"
@@ -2213,8 +2231,14 @@
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
+      "Duplicate email addresses.": [
+        "Duplicitat d'adreces de correu electrònic."
+      ],
       "Empty note": [
         "Nota buida"
+      ],
+      "Encryption password is required": [
+        "Es requereix una contrasenya de xifratge"
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
