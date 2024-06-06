@@ -59,6 +59,16 @@ describe('Logger', () => {
         expect(logs).toContain('Second message');
     });
 
+    test('should save logs with objects', () => {
+        const obj = { hello: 'world', test: true, docs: 123 };
+        logger.info('First message');
+        logger.info('Second message', obj);
+
+        const logs = logger.getLogs();
+        expect(logs).toContain('First message');
+        expect(logs).toContain(`Second message hello:world test:true docs:123`);
+    });
+
     test('should clear logs', () => {
         logger.info('First message');
         logger.clearLogs();
