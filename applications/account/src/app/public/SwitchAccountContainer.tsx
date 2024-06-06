@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,7 +28,6 @@ import {
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import clsx from '@proton/utils/clsx';
@@ -82,6 +81,7 @@ const SwitchAccountContainer = ({
     const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
+    const validRef = useRef(false);
 
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
     const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
@@ -139,9 +139,12 @@ const SwitchAccountContainer = ({
 
     const handleClickSession = async (localID: number) => {
         try {
+            if (validRef.current) {
+                return;
+            }
+            validRef.current = true;
             const params = new URLSearchParams(location.search);
             setLoadingMap((old) => ({ ...old, [localID]: true }));
-            await wait(300);
             const validatedSession = await resumeSession(silentApi, localID);
             await onLogin({
                 ...validatedSession,
@@ -159,6 +162,8 @@ const SwitchAccountContainer = ({
                 return;
             }
             errorHandler(e);
+        } finally {
+            validRef.current = false;
         }
     };
 
