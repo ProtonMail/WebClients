@@ -27,9 +27,11 @@ const report = (tag: string, ...args: Args) => {
         tags: {
             tag,
         },
-        extra: {
-            ...args.filter((arg) => arg instanceof Error),
-        },
+        ...(error && {
+            extra: {
+                ...args.filter((arg) => arg instanceof Error),
+            },
+        }),
     });
 };
 
@@ -82,6 +84,7 @@ export class Logger implements LoggerInterface {
 
     constructor(identifier: string) {
         this.identifier = identifier;
+        this.listenForKeyBoard();
     }
 
     public debug(...args: Args): void {
@@ -113,7 +116,7 @@ export class Logger implements LoggerInterface {
 
         const elm = document.createElement('a');
         elm.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(logData));
-        elm.setAttribute('download', `proton-debug.log`);
+        elm.setAttribute('download', `proton-${this.identifier}-debug.log`);
         elm.style.display = 'none';
         document.body.appendChild(elm);
         elm.click();
@@ -158,5 +161,30 @@ export class Logger implements LoggerInterface {
         const date = new Date();
         const timeString = `${date.toLocaleTimeString().replace(' PM', '').replace(' AM', '')}.${date.getMilliseconds()}`;
         return [`%c${this.identifier}%c${timeString}`, 'color: font-weight: bold; margin-right: 4px', 'color: gray'];
+    }
+
+    private listenForKeyBoard(): void {
+        const isMainFrame = window.top === window.self;
+        window.addEventListener('keydown', (event) => {
+            // Mac/Windows/Linux: Press Ctrl + Shift + H (uppercase)
+            if (event.ctrlKey && event.shiftKey && event.key === 'H') {
+                // Download logs from current frame
+                this.downloadLogs();
+
+                // If we're in a child frame, we postMessage to the parent
+                if (!isMainFrame) {
+                    window.parent.postMessage({ type: 'downloadLogs' }, '*');
+                }
+            }
+        });
+
+        // For main frame, we listen to child frames padding over the keyboard event
+        if (isMainFrame) {
+            window.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'downloadLogs') {
+                    this.downloadLogs();
+                }
+            });
+        }
     }
 }
