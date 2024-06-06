@@ -4518,9 +4518,6 @@
       "No": [
         "Nej"
       ],
-      "No changes made to the current subscription": [
-        "Inga ändringar gjorda i den nuvarande prenumerationen"
-      ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
       ],
@@ -5550,9 +5547,6 @@
       "Create ${ BRAND_NAME } account": [
         "Skapa ditt ${ BRAND_NAME }-konto"
       ],
-      "Create a share link": [
-        "Skapa en delningslänk"
-      ],
       "Created": [
         "Skapad"
       ],
@@ -5848,9 +5842,6 @@
       "Select type of abuse": [
         "Välj typ av missbruk"
       ],
-      "Select your plan": [
-        "Välj ditt paket"
-      ],
       "Set expiration date": [
         "Ange utgångsdatum"
       ],
@@ -5859,6 +5850,9 @@
       ],
       "Set recovery method": [
         "Ställ in återställningsmetod"
+      ],
+      "Share a file": [
+        "Dela en fil"
       ],
       "Shared by": [
         "Delat av"
@@ -6504,9 +6498,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Fortsätt att utvärdera"
-      ],
       "Delete account": [
         "Ta bort konto"
       ],
@@ -6649,6 +6640,9 @@
       "Centralized billing": [
         "Centraliserad fakturering"
       ],
+      "Collaborate and share large files": [
+        "Samarbeta och dela stora filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -6761,8 +6755,8 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Phone support (6+ users)": [
-        "Telefonsupport (6+ användare)"
+      "Phone support (40+ users)": [
+        "Telefonsupport (40+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -6821,9 +6815,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
-      ],
-      "Team management": [
-        "Teamhantering"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -6941,6 +6932,12 @@
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
       ],
+      "Encrypted email and calendar to get you started.": [
+        "Krypterad e-post och kalender för att du ska komma igång."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Förbättrad säkerhet och premiumfunktioner för team."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Grundläggande skydd och säkert samarbete för obegränsat antal användare."
       ],
@@ -6962,9 +6959,6 @@
       "Popular": [
         "Populär"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Integritet- och säkerhetssvit för företag, inklusive alla premiumtjänster för ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -6973,9 +6967,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Säker e-post och kalender för professionella och företag."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -7254,9 +7245,6 @@
       "Central control panel": [
         "Central kontrollpanel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Få mer gjort med stöd för 10 anpassade e-postdomäner"
-      ],
       "Create up to ${ n } calendar": [
         "Skapa upp till ${ n } kalender",
         "Skapa upp till ${ n } kalendrar"
@@ -7278,6 +7266,9 @@
       ],
       "Require 2FA": [
         "Kräver 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Notification": {
@@ -7547,14 +7538,14 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "Skapa en delningslänk"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Kom igång med ${ DRIVE_APP_NAME } så kommer vi uppgradera ditt lagringsutrymme till 5 GB!"
       ],
       "Set a recovery method": [
         "Ställ in en återställningsmetod"
+      ],
+      "Share a file": [
+        "Dela en fil"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Slutför helt enkelt följande inom ${ expiresInDays } dag:",
@@ -8712,6 +8703,12 @@
       "What you give up when you cancel ${ planName }": [
         "Vad du förlorar när du avbryter ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
@@ -9170,9 +9167,6 @@
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
-      ],
-      "Customize your plan": [
-        "Anpassa ditt paket"
       ],
       "Data recovery": [
         "Dataåterställning"

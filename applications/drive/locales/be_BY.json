@@ -2571,10 +2571,10 @@
         "Знешнія ўліковыя запісы пакуль не падтрымліваюцца"
       ],
       "External invitations are not available yet.": [
-        "Знешнія запрашэнні пакуль недаступныя."
+        "Знешнія запрашэнні пакуль недаступны."
       ],
       "External invitations are temporarily disabled.": [
-        "Знешнія запрашэнні часова адключаныя."
+        "Знешнія запрашэнні часова адключаны."
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
@@ -4205,7 +4205,7 @@
         "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
       ],
       "Create public link": [
-        "Стварэнне публічнай спасылкі"
+        "Стварыць публічную спасылку"
       ],
       "Create your first folder and start moving your files.": [
         "Стварыце сваю першую папку і пачніце перамяшчаць туды вашы файлы."
@@ -4653,9 +4653,6 @@
       ],
       "No": [
         "Не"
-      ],
-      "No changes made to the current subscription": [
-        "Для бягучай падпіскі ніякія змены не зроблены"
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
@@ -5704,9 +5701,6 @@
       "Create ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a share link": [
-        "Стварыць абагуленую спасылку"
-      ],
       "Created": [
         "Створана"
       ],
@@ -6004,9 +5998,6 @@
       "Select type of abuse": [
         "Выберыце тып парушэння"
       ],
-      "Select your plan": [
-        "Выберыце тарыфны план"
-      ],
       "Set expiration date": [
         "Задаць тэрмін дзеяння"
       ],
@@ -6015,6 +6006,9 @@
       ],
       "Set recovery method": [
         "Задаць спосаб аднаўлення"
+      ],
+      "Share a file": [
+        "Абагульванне файла"
       ],
       "Shared by": [
         "Абагулена"
@@ -6667,9 +6661,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Працягнуць агляд"
-      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -6840,6 +6831,9 @@
       "Centralized billing": [
         "Цэнтралізаваная аплата"
       ],
+      "Collaborate and share large files": [
+        "Сумесная праца і абагульванне вялікіх файлаў"
+      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
@@ -6872,6 +6866,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды) (неўзабаве)"
       ],
       "Double hop": [
         "Double hop"
@@ -6954,8 +6951,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (6+ users)": [
-        "Падтрымка па тэлефоне (ад 6 карыстальнікаў)"
+      "Phone support (40+ users)": [
+        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -7016,9 +7013,6 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
-      ],
-      "Team management": [
-        "Кіраванне камандамі"
       ],
       "Tor over VPN": [
         "Tor праз VPN"
@@ -7085,6 +7079,9 @@
       ],
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
+      ],
+      "User storage management": [
+        "Кіраванне сховішчам карыстальніка"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Абагульванне сховішча (да ${ n } асобы)",
@@ -7164,9 +7161,6 @@
       "Popular": [
         "Папулярны"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
@@ -7175,9 +7169,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Бяспечная электронная пошта і каляндар для прафесіяналаў, а таксама кампаній."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -7456,9 +7447,6 @@
       "Central control panel": [
         "Цэнтральная панэль кіравання"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
-      ],
       "Create up to ${ n } calendar": [
         "Стварыць да ${ n } календара",
         "Стварыць да ${ n } календароў",
@@ -7482,6 +7470,9 @@
       ],
       "Require 2FA": [
         "Патрэбна 2ФА"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
     "Notification": {
@@ -7781,14 +7772,14 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "Стварыць абагуленую спасылку"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME } і мы палепшым ваша сховішча да 5 ГБ!"
       ],
       "Set a recovery method": [
         "Задаць спосаб аднаўлення"
+      ],
+      "Share a file": [
+        "Абагульванне файла"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дня:",
@@ -9038,10 +9029,10 @@
         "Штогадовы бонус бясплатнага сховішча"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink }"
@@ -9537,9 +9528,6 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
-      ],
-      "Customize your plan": [
-        "Наладжванне вашага тарыфнага плана"
       ],
       "Data recovery": [
         "Аднаўленне даных"
