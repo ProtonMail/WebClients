@@ -7,6 +7,7 @@ import {
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
   ListNode,
+  ListType,
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
@@ -84,6 +85,7 @@ export default function DocumentEditorToolbar() {
   const [canRedo, setCanRedo] = useState(false)
 
   const [blockType, setBlockType] = useState<BlockType>('paragraph')
+  const [listType, setListType] = useState<ListType>()
   const [elementFormat, setElementFormat] = useState<ElementFormatType>('left')
 
   const [isBold, setIsBold] = useState(false)
@@ -106,41 +108,59 @@ export default function DocumentEditorToolbar() {
 
   const imageInputRef = useRef<HTMLInputElement>(null)
 
+  const focusEditor = useCallback(() => {
+    editor.focus()
+  }, [editor])
+
   const formatParagraph = () => {
-    editor.update(() => {
-      const selection = $getSelection()
-      $setBlocksType(selection, () => $createParagraphNode())
-    })
+    editor.update(
+      () => {
+        const selection = $getSelection()
+        $setBlocksType(selection, () => $createParagraphNode())
+      },
+      {
+        onUpdate: focusEditor,
+      },
+    )
   }
 
   const formatHeading = (headingSize: HeadingTagType) => {
     if (blockType !== headingSize) {
-      editor.update(() => {
-        const selection = $getSelection()
-        $setBlocksType(selection, () => $createHeadingNode(headingSize))
-      })
+      editor.update(
+        () => {
+          const selection = $getSelection()
+          $setBlocksType(selection, () => $createHeadingNode(headingSize))
+          editor.focus()
+        },
+        {
+          onUpdate: focusEditor,
+        },
+      )
     }
   }
 
   const formatBulletList = () => {
-    if (blockType !== 'bullet') {
+    if (listType !== 'bullet') {
       editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
+      focusEditor()
     } else {
       formatParagraph()
     }
   }
 
   const formatCheckList = () => {
-    if (blockType !== 'check') {
+    if (listType !== 'check') {
       editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
+      focusEditor()
     } else {
       formatParagraph()
     }
   }
 
   const formatNumberedList = () => {
-    if (blockType !== 'number') {
+    if (listType !== 'number') {
       editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
+      focusEditor()
     } else {
       formatParagraph()
     }
@@ -148,32 +168,42 @@ export default function DocumentEditorToolbar() {
 
   const formatQuote = () => {
     if (blockType !== 'quote') {
-      editor.update(() => {
-        const selection = $getSelection()
-        $setBlocksType(selection, () => $createQuoteNode())
-      })
+      editor.update(
+        () => {
+          const selection = $getSelection()
+          $setBlocksType(selection, () => $createQuoteNode())
+        },
+        {
+          onUpdate: focusEditor,
+        },
+      )
     }
   }
 
   const formatCode = () => {
     if (blockType !== 'code') {
-      editor.update(() => {
-        let selection = $getSelection()
+      editor.update(
+        () => {
+          let selection = $getSelection()
 
-        if (selection !== null) {
-          if (selection.isCollapsed()) {
-            $setBlocksType(selection, () => $createCodeNode())
-          } else {
-            const textContent = selection.getTextContent()
-            const codeNode = $createCodeNode()
-            selection.insertNodes([codeNode])
-            selection = $getSelection()
-            if ($isRangeSelection(selection)) {
-              selection.insertRawText(textContent)
+          if (selection !== null) {
+            if (selection.isCollapsed()) {
+              $setBlocksType(selection, () => $createCodeNode())
+            } else {
+              const textContent = selection.getTextContent()
+              const codeNode = $createCodeNode()
+              selection.insertNodes([codeNode])
+              selection = $getSelection()
+              if ($isRangeSelection(selection)) {
+                selection.insertRawText(textContent)
+              }
             }
           }
-        }
-      })
+        },
+        {
+          onUpdate: focusEditor,
+        },
+      )
     }
   }
 
@@ -213,8 +243,10 @@ export default function DocumentEditorToolbar() {
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
           const type = parentList ? parentList.getListType() : element.getListType()
-          setBlockType(type)
+          setListType(type)
+          setBlockType('paragraph')
         } else {
+          setListType(undefined)
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
           if (type in blockTypeToBlockName) {
             setBlockType(type as BlockType)
@@ -377,32 +409,20 @@ export default function DocumentEditorToolbar() {
   const checkListTypes = [
     {
       type: 'check',
-      name: (
-        <>
-          <CheckListIcon className="h-4 w-4 fill-current" />
-          {blockTypeToBlockName.check}
-        </>
-      ),
+      icon: <CheckListIcon className="h-4 w-4 fill-current" />,
+      name: 'Check List',
       onClick: formatCheckList,
     },
     {
       type: 'bullet',
-      name: (
-        <>
-          <Icon name="list-bullets" />
-          {blockTypeToBlockName.bullet}
-        </>
-      ),
+      icon: <Icon name="list-bullets" />,
+      name: 'Bulleted List',
       onClick: formatBulletList,
     },
     {
       type: 'number',
-      name: (
-        <>
-          <Icon name="list-numbers" />
-          {blockTypeToBlockName.number}
-        </>
-      ),
+      icon: <Icon name="list-numbers" />,
+      name: 'Numbered List',
       onClick: formatNumberedList,
     },
   ]
@@ -426,7 +446,7 @@ export default function DocumentEditorToolbar() {
   )
 
   return (
-    <div className="flex items-center gap-1.5 overflow-auto border-b border-[--border-weak] bg-[--background-norm] px-3 py-1.5 [grid-column:1_/_3] [grid-row:1] [scrollbar-width:thin]">
+    <div className="flex items-center gap-1.5 overflow-auto border-y border-[--border-weak] bg-[--background-norm] px-3 py-1.5 [grid-column:1_/_3] [grid-row:1] [scrollbar-width:thin]">
       <div className="mx-auto flex max-w-max items-center gap-1.5">
         <ToolbarButton
           label={c('Action').t`Undo`}
@@ -456,7 +476,7 @@ export default function DocumentEditorToolbar() {
           size="small"
           type="button"
           color="norm"
-          className="text-[--text-norm]"
+          className="color-norm text-sm"
           content={<>{blockTypeToBlockName[blockType]}</>}
           disabled={!isEditable}
         >
@@ -474,7 +494,7 @@ export default function DocumentEditorToolbar() {
           size="small"
           type="button"
           color="norm"
-          className="text-[--text-norm]"
+          className="color-norm text-sm"
           content={<>{fontFamilyLabel}</>}
           disabled={!isEditable}
         >
@@ -648,19 +668,19 @@ export default function DocumentEditorToolbar() {
         <ToolbarSeparator />
         <SimpleDropdown
           as={ToolbarButton}
-          active={checkListTypes.some(({ type }) => type === blockType)}
+          active={checkListTypes.some(({ type }) => type === listType)}
           shape="ghost"
           type="button"
           className="text-[--text-norm]"
           content={
-            <>
+            checkListTypes.find(({ type }) => type === listType)?.icon || (
               <CheckListIcon className="h-4 w-4 fill-current" />
-            </>
+            )
           }
           disabled={!isEditable}
         >
           <DropdownMenu>
-            {checkListTypes.map(({ type, name, onClick }) => (
+            {checkListTypes.map(({ type, icon, name, onClick }) => (
               <DropdownMenuButton
                 key={type}
                 className={clsx(
@@ -670,6 +690,7 @@ export default function DocumentEditorToolbar() {
                 onClick={onClick}
                 disabled={!isEditable}
               >
+                {icon}
                 {name}
               </DropdownMenuButton>
             ))}
