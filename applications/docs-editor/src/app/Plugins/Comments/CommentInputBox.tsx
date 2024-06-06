@@ -7,16 +7,18 @@ import { c } from 'ttag'
 import { Icon, ToolbarButton } from '@proton/components'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
+import { flushSync } from 'react-dom'
 
 export function CommentInputBox({
   editor,
+  setShowCommentsPanel,
   cancelAddComment,
 }: {
   editor: LexicalEditor
-  setShowCommentInput: (show: boolean) => void
+  setShowCommentsPanel: (show: boolean) => void
   cancelAddComment: () => void
 }) {
-  const { controller } = useCommentsContext()
+  const { controller, setThreadToFocus } = useCommentsContext()
 
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
@@ -64,7 +66,7 @@ export function CommentInputBox({
               elements[i] = elem
               container.appendChild(elem)
             }
-            const color = '255, 212, 0'
+            const color = '255, 153, 0'
             const style = `position:absolute;top:${selectionRect.top + parentScrollTop - parentRect.top}px;left:${selectionRect.left - parentRect.left}px;height:${selectionRect.height}px;width:${selectionRect.width}px;background-color:rgba(${color}, 0.3);pointer-events:none;z-index:5;`
             elem.style.cssText = style
           }
@@ -101,11 +103,19 @@ export function CommentInputBox({
   const onSubmit = useCallback(
     (content: string) => {
       if (selectionRef.current) {
-        controller.createThread(content).catch(sendErrorMessage)
+        flushSync(() => setShowCommentsPanel(true))
+        controller
+          .createThread(content)
+          .then((thread) => {
+            if (thread) {
+              setThreadToFocus(thread.id)
+            }
+          })
+          .catch(sendErrorMessage)
         selectionRef.current = null
       }
     },
-    [controller],
+    [controller, setShowCommentsPanel, setThreadToFocus],
   )
 
   return (
@@ -121,9 +131,9 @@ export function CommentInputBox({
         onCancel={cancelAddComment}
         buttons={(canSubmit, submitComment) => (
           <ToolbarButton
-            className="bg-primary rounded p-1"
+            className="bg-primary rounded-full p-1"
             title={c('Action').t`Add comment`}
-            icon={<Icon name="arrow-up" />}
+            icon={<Icon name="arrow-up" size={3.5} />}
             disabled={!canSubmit}
             onClick={submitComment}
           />

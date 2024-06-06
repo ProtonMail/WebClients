@@ -3,6 +3,7 @@
 import { ReactNode, useRef, useState } from 'react'
 import { CommentEditor, CommentEditorHandle } from './CommentEditor'
 import clsx from '@proton/utils/clsx'
+import { isMac } from '@proton/shared/lib/helpers/browser'
 
 export function CommentsComposer({
   autoFocus,
@@ -66,7 +67,8 @@ export function CommentsComposer({
           if (!event) {
             return false
           }
-          if (event.ctrlKey && canSubmit) {
+          const hasModifier = isMac() ? event.metaKey : event.ctrlKey
+          if (hasModifier && canSubmit) {
             event.preventDefault()
             submitComment()
             return true
