@@ -30,6 +30,34 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
         setDrawer(undefined);
     };
 
+    /**
+     * Sets drawer data partially. Needs to have data initialised via openDrawer first.
+     * Only update field that were initially set on drawer
+     */
+    const setDrawerData = (data: Partial<WalletDrawerContextData>) => {
+        setDrawer((prev) => {
+            if (prev) {
+                const update = Object.entries(data).reduce((acc, [key, value]) => {
+                    if (acc[key]) {
+                        return {
+                            ...acc,
+                            [key]: value,
+                        };
+                    } else {
+                        return acc;
+                    }
+                }, prev.data);
+
+                return { data: update };
+            } else {
+                return prev;
+            }
+        });
+    };
+
+    /**
+     * Close drawer if any opened and then sets new data
+     */
     const openDrawerExt = (data: WalletDrawerContextData) => {
         if (drawerData) {
             void closeDrawer().then(() => {
@@ -47,7 +75,9 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
     const style = drawerData && styleByKind[drawerData?.data.kind];
 
     return (
-        <WalletDrawerContext.Provider value={{ drawer: drawerData, openDrawer: openDrawerExt }}>
+        <WalletDrawerContext.Provider
+            value={{ drawer: drawerData, isDrawerOpen, setDrawerData, openDrawer: openDrawerExt }}
+        >
             {children}
 
             {drawerData && (
@@ -59,7 +89,10 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                     bg={style?.bg}
                 >
                     {drawerData.data.kind === 'transaction-data' && (
-                        <WalletTransactionDataDrawer transaction={drawerData.data.transaction} />
+                        <WalletTransactionDataDrawer
+                            transaction={drawerData.data.transaction}
+                            onClickEditNote={drawerData.data.onClickEditNote}
+                        />
                     )}
 
                     {drawerData.data.kind === 'discover' && drawerData.data && (
