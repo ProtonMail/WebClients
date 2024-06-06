@@ -3402,6 +3402,11 @@
         "VPN занадто повільний"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Допоможіть нам вдосконалитися"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Завантажити все"
@@ -6267,9 +6272,6 @@
       "No action selected": [
         "Жодної дії не вибрано"
       ],
-      "No changes made to the current subscription": [
-        "Щодо поточної передплати не внесено жодних змін"
-      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -7938,9 +7940,6 @@
       "Security code (${ codeName })": [
         "Код безпеки (${ codeName })"
       ],
-      "Select your plan": [
-        "Оберіть тарифний план"
-      ],
       "Send auto-reply": [
         "Надіслати автовідповідь"
       ],
@@ -8677,9 +8676,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Переглядати далі"
-      ],
       "Delete account": [
         "Видалити обліковий запис"
       ],
@@ -8964,8 +8960,8 @@
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
-      "Phone support (6+ users)": [
-        "Підтримка за телефоном (6+ користувачів)"
+      "Phone support (40+ users)": [
+        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -9026,9 +9022,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Team management": [
-        "Керування командою"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -9174,9 +9167,6 @@
       "Popular": [
         "Популярний"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Комплект із приватності та безпеки для компаній, включно з преміумслужбами ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
@@ -9185,9 +9175,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Захищена електронна пошта й календар для професіоналів та компаній."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
@@ -9466,9 +9453,6 @@
       "Central control panel": [
         "Центральна панель керування"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
-      ],
       "Create up to ${ n } calendar": [
         "Створіть до ${ n } календаря",
         "Створіть до ${ n } календарів",
@@ -9492,6 +9476,9 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Notification": {
@@ -10952,6 +10939,9 @@
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Програма ${ PROTON_SENTINEL_NAME }"
+      ],
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
@@ -10961,6 +10951,9 @@
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
       ],
+      "Early access to new apps and features": [
+        "Ранній доступ до нових програм і функцій"
+      ],
       "Helping activists in Hong Kong": [
         "Допомога активістам у Гонконзі"
       ],
@@ -10969,6 +10962,9 @@
       ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
+      ],
+      "Online privacy, for your whole family": [
+        "Приватність в інтернеті для всієї родини"
       ],
       "Our fight against censorship in Russia": [
         "Наша боротьба проти цензури в Росії"
@@ -10984,6 +10980,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Version history": [
+        "Історія версій"
       ],
       "Watch the interview": [
         "Переглянути інтерв'ю"
@@ -11732,9 +11731,6 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
-      ],
-      "Customize your plan": [
-        "Налаштуйте свій тарифний план"
       ],
       "Data recovery": [
         "Відновлення даних"
