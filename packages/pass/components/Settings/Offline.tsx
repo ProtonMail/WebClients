@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/index';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { UpsellRef } from '@proton/pass/constants';
@@ -19,15 +20,17 @@ import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
     const confirmPassword = usePasswordUnlock();
+    const authStore = useAuthStore();
 
     const enabled = useSelector(selectOfflineEnabled);
     const plan = useSelector(selectPassPlan);
-    const pwMode = useSelector(selectUserSettings)?.Password?.Mode;
-    const toggle = useRequest(offlineToggle, { initialRequestId: offlineToggleRequest() });
-
+    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const freeUser = !isPaidPlan(plan);
-    const twoPasswordMode = pwMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
-    const disabled = freeUser || twoPasswordMode;
+    const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+    const canEnableOffline = !freeUser && (!twoPwdMode || (authStore?.hasOfflinePassword() ?? false));
+    const disabled = !canEnableOffline;
+
+    const toggle = useRequest(offlineToggle, { initialRequestId: offlineToggleRequest() });
 
     const toggleOffline = async (enabled: boolean) =>
         confirmPassword({
