@@ -1912,6 +1912,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Bu adresi silmek istediğinize emin misiniz?"
+      ],
+      "Delete address permanently?": [
+        "Adres kalıcı olarak silinsin mi?"
+      ],
+      "Delete address?": [
+        "Adresi sil?"
+      ],
       "You can only delete 1 address per year.": [
         "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
       ]
@@ -1922,6 +1931,11 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "Bu kullanıcı için adres silme sayısı sınırına ulaştınız."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Bu etki alanını silmek istediğinize emin misiniz?"
       ]
     },
     "Delinquent modal title": {
@@ -1986,6 +2000,11 @@
       ],
       "The VPN is too slow": [
         "VPN çok yavaş çalışıyor"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
     "Email verification": {
@@ -3559,9 +3578,6 @@
       "No addresses exist": [
         "Herhangi bir adres yok"
       ],
-      "No changes made to the current subscription": [
-        "Var olan abonelikte herhangi bir değişiklik yapılmadı"
-      ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
       ],
@@ -3888,6 +3904,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Bu doğrulama bir saat kadar sürebilir. Güvenle sonraki adımlara geçebilirsiniz."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
@@ -4757,9 +4776,6 @@
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
-      "Select your plan": [
-        "Tarifenizi seçin"
-      ],
       "Single sign-on entity ID": [
         "Tek oturum açma varlık kimliği"
       ],
@@ -4930,6 +4946,9 @@
       ],
       "Create account": [
         "Hesap ekle"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
       ],
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
@@ -5192,9 +5211,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Gözden geçirmeyi sürdür"
-      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -5467,8 +5483,8 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Phone support (6+ users)": [
-        "Telefon desteği (6+ kullanıcı)"
+      "Phone support (40+ users)": [
+        "Telefon desteği (40+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -5537,9 +5553,6 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
-      ],
-      "Team management": [
-        "Ekip yönetimi"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -5684,9 +5697,6 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için gizlilik ve güvenlik paketi."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -5695,9 +5705,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
@@ -6009,9 +6016,6 @@
       "Central control panel": [
         "Merkez yönetim panosu"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
-      ],
       "Create up to ${ n } calendar": [
         "${ n } taneye kadar takvim oluşturun",
         "${ n } taneye kadar takvim oluşturun"
@@ -6033,6 +6037,9 @@
       ],
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Notification": {
@@ -7528,6 +7535,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
       "10 email addresses": [
         "10 e-posta adresi"
       ],
@@ -7549,6 +7559,9 @@
       "Custom schedule send and snooze times": [
         "Özel zamanlanmış gönderim ve erteleme süreleri"
       ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
       "Have a question?": [
         "Bir sorunuz mu var?"
       ],
@@ -7563,6 +7576,9 @@
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Online privacy, for your whole family": [
+        "Tüm aileniz için çevrim içi gizlilik"
       ],
       "Our fight against censorship in Russia": [
         "Rusya'da sansüre karşı mücadelemiz"
@@ -7581,6 +7597,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
       ],
       "Watch the interview": [
         "Röportajı izleyin"
@@ -8113,9 +8132,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Tarifenizdeki IP adreslerinin sayısını özelleştirin"
-      ],
-      "Customize your plan": [
-        "Tarifenizi özelleştirin"
       ],
       "Date": [
         "Tarih"

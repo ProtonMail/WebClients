@@ -3631,9 +3631,6 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
-      "No changes made to the current subscription": [
-        "Ingen endringer er gjort i gjeldende abonnement"
-      ],
       "No gateways": [
         "Ingen mellomtjenere"
       ],
@@ -4868,9 +4865,6 @@
       "Security code (${ codeName })": [
         "Sikkerhetskode (${ codeName })"
       ],
-      "Select your plan": [
-        "Velg din plan"
-      ],
       "Single sign-on entity ID": [
         "Enhets-ID for enkeltpålogging"
       ],
@@ -5318,9 +5312,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Fortsett gjennomgangen"
-      ],
       "Delete account": [
         "Slett konto"
       ],
@@ -5472,6 +5463,9 @@
       "Centralized settings and billings": [
         "Sentraliserte innstillinger og faktureringer"
       ],
+      "Collaborate and share large files": [
+        "Samarbeid og del store filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -5490,6 +5484,9 @@
       "Custom snooze time": [
         "Tilpasset slumretid"
       ],
+      "Custom workspace branding": [
+        "Tilpasset merkevarebygging for arbeidsområdet"
+      ],
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
@@ -5507,6 +5504,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Dokumentredigerere (dokumenter, ark, lysbilder)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentredigerere (dokumenter, ark, lysbilder) (snart)"
       ],
       "Double hop": [
         "Double hop"
@@ -5590,11 +5590,14 @@
       "Password health": [
         "Passordhelse"
       ],
+      "Password manager to secure credentials": [
+        "Passordbehandling for å sikre legitimasjon"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (6+ users)": [
-        "Telefonstøtte (6+ brukere)"
+      "Phone support (40+ users)": [
+        "Telefonstøtte (40+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -5630,6 +5633,9 @@
       "Secure Core servers": [
         "Secure Core-tjenere"
       ],
+      "See team's availability": [
+        "Se teamets tilgjengelighet"
+      ],
       "Send & receive invitations": [
         "Send & motta invitasjoner"
       ],
@@ -5663,9 +5669,6 @@
       ],
       "Strict no-logs policy": [
         "Streng ingen-loggførings-praksis"
-      ],
-      "Team management": [
-        "Teamledelse"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -5731,6 +5734,9 @@
       "User session management": [
         "Administrasjon av brukerøkt"
       ],
+      "User storage management": [
+        "Administrasjon av brukerlagring"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
@@ -5780,6 +5786,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }s apper og deres premium funksjoner"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle ${ BRAND_NAME } forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Gjeldende kreditter, prorasjon og kuponger brukes i neste trinn"
       ],
@@ -5788,6 +5797,12 @@
       ],
       "Early access to new apps and features": [
         "Tidlig tilgang til nye apper og funksjoner"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Kryptert e-post og kalender for å komme i gang."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Forbedrede sikkerhets- og premiumfunksjoner for team."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Essensiell beskyttelse og sikkert samarbeid for ubegrensede brukere."
@@ -5810,9 +5825,6 @@
       "Popular": [
         "Populær"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Personvern og sikkerhetspakke for virksomheter, inkludert alle premium ${ BRAND_NAME }-tjenester."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
       ],
@@ -5821,9 +5833,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Trygg e-post og kalender for profesjonelle og virksomheter."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -5969,6 +5978,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-støtte er begrenset til bruk av skrivebordsapper (eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME }-Bridge. Skybasert IMAP-integrering er for tiden ikke støttet."
       ],
+      "Increase or reallocate storage for a user": [
+        "Øk eller omfordel lagringsplass for en bruker"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold planene dine private for deg og familien din med en kryptert kalender."
       ],
@@ -6050,6 +6062,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagre kontaktenes detaljer på en sikker måte, for eksempel telefonnummer, adresse, bursdag og personlige notater. Nulltilgangskryptering sikrer at selv ${ BRAND_NAME } ikke får tilgang til dem."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se tilgjengeligheten til møtedeltakere og spar tid på å planlegge møter"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Send e-post til store grupper raskt og enkelt ved å opprette så mange kontaktgrupper du trenger (opptil 100 kontakter per gruppe)."
       ],
@@ -6076,6 +6091,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Støtte for fildelingsprotokoller som BitTorrent."
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Last opp bedriftens logo for å tilpasse teamopplevelsen på nettappene til ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Bruk dine egendefinerte e-post-domeneadresser, f.eks., deg@dittnavn.no."
@@ -6135,9 +6153,6 @@
       "Central control panel": [
         "Sentralt kontrollpanel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Tilbakelegg mer grunn med støtte for 10 tilpassede e-postdomener"
-      ],
       "Create up to ${ n } calendar": [
         "Opprett opptil ${ n } kalender",
         "Opprett opptil ${ n } kalendere"
@@ -6159,6 +6174,9 @@
       ],
       "Require 2FA": [
         "Krever 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
     "Notification": {
@@ -8395,9 +8413,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Tilpass antall IP-adresser i planen din"
-      ],
-      "Customize your plan": [
-        "Tilpass planen din"
       ],
       "Date": [
         "Dato"

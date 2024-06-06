@@ -3686,9 +3686,6 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
-      "No changes made to the current subscription": [
-        "Nebyly provedeny žádné změny vašeho předplatného"
-      ],
       "No gateways": [
         "Žádné brány"
       ],
@@ -4036,6 +4033,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto ověření může trvat až jednu hodinu. Můžete nyní bez obav pokračovat dalšími kroky."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
@@ -4936,9 +4936,6 @@
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
       ],
-      "Select your plan": [
-        "Vyberte tarif"
-      ],
       "Single sign-on entity ID": [
         "ID subjektu jednotného přihlášení"
       ],
@@ -5385,9 +5382,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovat na rekapitulaci"
-      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -5690,8 +5684,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ uživatelů)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -5764,9 +5758,6 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
-      ],
-      "Team management": [
-        "Řízení týmu"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -5915,9 +5906,6 @@
       "Popular": [
         "Oblíbené"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
       ],
@@ -5926,9 +5914,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Zabezpečený e-mail a kalendář pro profesionály a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -6242,9 +6227,6 @@
       "Central control panel": [
         "Centrální ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvořte až ${ n } kalendář",
         "Vytvořte až ${ n } kalendáře",
@@ -6268,6 +6250,9 @@
       ],
       "Require 2FA": [
         "Požadování 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
     "Notification": {
@@ -7944,6 +7929,9 @@
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí."
+      ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
       ],
@@ -8555,9 +8543,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Přizpůsobení počtu IP adres v plánu"
-      ],
-      "Customize your plan": [
-        "Přizpůsobte svůj tarif"
       ],
       "Date": [
         "Datum"
