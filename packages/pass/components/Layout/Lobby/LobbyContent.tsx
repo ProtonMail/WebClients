@@ -3,8 +3,9 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { useOnline } from '@proton/components/hooks';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import {
@@ -16,6 +17,7 @@ import {
 } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import './LobbyContent.scss';
 
@@ -25,14 +27,26 @@ type Props = {
     status: AppStatus;
     onLogin: () => void;
     onLogout: (options: { soft: boolean }) => void;
+    onOffline: () => void;
     onRegister: () => void;
     renderError: () => ReactNode;
     renderFooter?: () => ReactNode;
 };
 
-export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError, renderFooter }) => {
+export const LobbyContent: FC<Props> = ({
+    status,
+    onLogin,
+    onLogout,
+    onOffline,
+    onRegister,
+    renderError,
+    renderFooter,
+}) => {
+    const { getOfflineEnabled } = usePassCore();
+    const online = useConnectivity();
     const [timeoutError, setTimeoutError] = useState(false);
     const [unlocking, setUnlocking] = useState(false);
+    const [offlineEnabled, setOfflineEnabled] = useState<Maybe<boolean>>(undefined);
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
@@ -40,13 +54,19 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     const passwordLocked = clientPasswordLocked(status);
     const busy = clientBusy(status);
     const canSignOut = errored || locked || passwordLocked;
-    const navigatorOnline = useOnline();
 
     useEffect(() => {
         setTimeoutError(false);
         let timer: Maybe<NodeJS.Timeout> = stale ? setTimeout(() => setTimeoutError(true), ERROR_TIMEOUT) : undefined;
         return () => clearTimeout(timer);
     }, [stale]);
+
+    useEffect(() => {
+        (async () => {
+            const enabled = (await getOfflineEnabled?.()) ?? false;
+            setOfflineEnabled(enabled);
+        })().catch(noop);
+    }, [online]);
 
     const brandNameJSX = (
         <img
@@ -115,13 +135,17 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                     switch (status) {
                         case AppStatus.SESSION_LOCKED:
                             return (
-                                <div className="mb-8">
-                                    <PinUnlock onLoading={setUnlocking} />
-                                    {unlocking && <CircleLoader size="small" className="mt-12" />}
+                                <div>
+                                    <PinUnlock
+                                        onLoading={setUnlocking}
+                                        onOffline={onOffline}
+                                        offlineEnabled={offlineEnabled}
+                                    />
+                                    {unlocking && <CircleLoader size="small" className="mt-4" />}
                                 </div>
                             );
                         case AppStatus.PASSWORD_LOCKED:
-                            return <PasswordUnlock />;
+                            return <PasswordUnlock offlineEnabled={offlineEnabled} />;
                         default:
                             return (
                                 <Button
@@ -130,7 +154,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                                     color="norm"
                                     className="w-full"
                                     onClick={onLogin}
-                                    disabled={errored ? false : !navigatorOnline}
+                                    disabled={!online && (errored || !offlineEnabled)}
                                 >
                                     {errored ? c('Action').t`Sign back in` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
@@ -145,7 +169,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                             color={'weak'}
                             onClick={() => onLogout({ soft: true })}
                             pill
-                            shape={'ghost'}
+                            shape="ghost"
                         >
                             {c('Action').t`Sign out`}
                         </Button>
@@ -156,7 +180,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                             color="weak"
                             className="w-full"
                             onClick={onRegister}
-                            disabled={!navigatorOnline}
+                            disabled={!online}
                         >
                             {c('Action').t`Create a ${BRAND_NAME} account`}
                         </Button>
