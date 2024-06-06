@@ -4964,11 +4964,17 @@
       ]
     },
     "Subscription reminder": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 adrese e-pošte"
       ],
       "Priority support": [
         "Prioritetna podrška"
+      ],
+      "Version history": [
+        "Povijest verzija"
       ]
     },
     "subscription reminder": {
@@ -5352,9 +5358,6 @@
       ],
       "Currency": [
         "Valuta"
-      ],
-      "Customize your plan": [
-        "Prilagodite vaš plan"
       ],
       "Data recovery": [
         "Povrat podataka"

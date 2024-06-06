@@ -2331,6 +2331,11 @@
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Segítsen fejlődni"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Naptár hozzáadása"
@@ -5046,9 +5051,6 @@
       "Security code (${ codeName })": [
         "Biztonsági kód (${ codeName })"
       ],
-      "Select your plan": [
-        "Válasszon csomagot!"
-      ],
       "Show week numbers": [
         "Hetek sorszámának megjelenítése"
       ],
@@ -5538,9 +5540,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Tovább az áttekintéshez"
-      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -5732,8 +5731,8 @@
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
       ],
-      "Phone support (6+ users)": [
-        "Telefonos támogatás (6 felhasználótól)"
+      "Phone support (40+ users)": [
+        "Telefonos támogatás (40 felhasználótól)"
       ],
       "Priority email support": [
         "Elsőbbségi e-mail támogatás"
@@ -5777,9 +5776,6 @@
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
-      ],
-      "Team management": [
-        "Csoport menedzsment"
       ],
       "Tor over VPN": [
         "Tor VPN-en"
@@ -5884,14 +5880,8 @@
       "Popular": [
         "Népszerű"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Adatvédelmi és biztonsági csomag cégeknek, beleértve az összes ${ BRAND_NAME } prémium szolgáltatást."
-      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Biztonságos e-mail és naptár, vállalkozóknak és cégeknek."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
@@ -6090,15 +6080,15 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Fedjen le több területet 10 saját e-mail domain név támogatásával"
-      ],
       "Create up to ${ n } calendar": [
         "Akár ${ n } naptár létrehozása",
         "Akár ${ n } naptár létrehozása"
       ],
       "Multi-platform support": [
         "Multi platform támogatás"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } saját e-mail domain név használata"
       ]
     },
     "Notification": {
@@ -7127,6 +7117,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
       ],
@@ -7136,11 +7129,17 @@
       "Keep ${ planName }": [
         "Maradjon ${ planName }"
       ],
+      "Online privacy, for your whole family": [
+        "Online adatvédelem az egész családnak"
+      ],
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Version history": [
+        "Verziótörténet"
       ]
     },
     "Subscription renewal state": {
@@ -7578,9 +7577,6 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
-      ],
-      "Customize your plan": [
-        "Csomag testreszabása"
       ],
       "Data recovery": [
         "Adat helyreállítás"
