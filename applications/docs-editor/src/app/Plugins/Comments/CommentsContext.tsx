@@ -8,6 +8,8 @@ type CommentsContextValue = {
   removeMarkNode: (id: string) => void
   activeIDs: string[]
   markNodeMap: Map<string, Set<NodeKey>>
+  threadToFocus: string | null
+  setThreadToFocus: (id: string | null) => void
 }
 
 const CommentsContext = createContext<CommentsContextValue | null>(null)

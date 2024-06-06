@@ -110,58 +110,60 @@ export function CommentsPanelListComment({
             </span>
           </div>
           {canShowOptions && (
-            <>
-              <SimpleDropdown
-                as={Button}
-                shape="ghost"
-                size="small"
-                icon
-                content={<Icon size={4.5} name="three-dots-vertical" alt="More options" />}
-                hasCaret={false}
-              >
-                <DropdownMenu>
-                  {(!isFirstComment || isThreadActive) && (
-                    <DropdownMenuButton
-                      className="flex items-center gap-3 text-left text-sm"
-                      onClick={() => {
-                        setIsEditing(true)
-                      }}
-                    >
-                      <Icon name="pencil" size={4.5} />
-                      {c('Action').t`Edit`}
-                    </DropdownMenuButton>
-                  )}
-                  {isFirstComment && isThreadActive && (
-                    <DropdownMenuButton
-                      className="flex items-center gap-3 text-left text-sm"
-                      onClick={() => {
-                        controller.resolveThread(thread.id).catch(sendErrorMessage)
-                      }}
-                    >
-                      <Icon name="checkmark-circle" size={4.5} />
-                      {c('Action').t`Resolve`}
-                    </DropdownMenuButton>
-                  )}
-                  {isFirstComment && !isThreadActive && (
-                    <DropdownMenuButton
-                      className="flex items-center gap-3 text-left text-sm"
-                      onClick={() => {
-                        controller.unresolveThread(thread.id).catch(sendErrorMessage)
-                      }}
-                    >
-                      {c('Action').t`Re-open`}
-                    </DropdownMenuButton>
-                  )}
+            <SimpleDropdown
+              as={Button}
+              shape="ghost"
+              size="small"
+              icon
+              style={{
+                pointerEvents: 'auto',
+              }}
+              className="opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100"
+              content={<Icon size={4.5} name="three-dots-vertical" alt={c('Label').t`More options`} />}
+              hasCaret={false}
+            >
+              <DropdownMenu>
+                {(!isFirstComment || isThreadActive) && (
                   <DropdownMenuButton
-                    className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
-                    onClick={isFirstComment ? deleteThread : deleteComment}
+                    className="flex items-center gap-3 text-left text-sm"
+                    onClick={() => {
+                      setIsEditing(true)
+                    }}
                   >
-                    <Icon name="trash" size={4.5} />
-                    {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
+                    <Icon name="pencil" size={4.5} />
+                    {c('Action').t`Edit`}
                   </DropdownMenuButton>
-                </DropdownMenu>
-              </SimpleDropdown>
-            </>
+                )}
+                {isFirstComment && isThreadActive && (
+                  <DropdownMenuButton
+                    className="flex items-center gap-3 text-left text-sm"
+                    onClick={() => {
+                      controller.resolveThread(thread.id).catch(sendErrorMessage)
+                    }}
+                  >
+                    <Icon name="checkmark-circle" size={4.5} />
+                    {c('Action').t`Resolve`}
+                  </DropdownMenuButton>
+                )}
+                {isFirstComment && !isThreadActive && (
+                  <DropdownMenuButton
+                    className="flex items-center gap-3 text-left text-sm"
+                    onClick={() => {
+                      controller.unresolveThread(thread.id).catch(sendErrorMessage)
+                    }}
+                  >
+                    {c('Action').t`Re-open`}
+                  </DropdownMenuButton>
+                )}
+                <DropdownMenuButton
+                  className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
+                  onClick={isFirstComment ? deleteThread : deleteComment}
+                >
+                  <Icon name="trash" size={4.5} />
+                  {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            </SimpleDropdown>
           )}
         </div>
         {isEditing ? (
@@ -189,15 +191,15 @@ export function CommentsPanelListComment({
             buttons={(canSubmit, submitComment) => (
               <>
                 <ToolbarButton
-                  className="rounded p-1"
+                  className="rounded-full border-none"
                   title={c('Action').t`Cancel`}
-                  icon={<Icon name="cross-circle-filled" size={4.5} />}
+                  icon={<Icon name="cross-circle-filled" size={6} />}
                   onClick={cancelEditing}
                 />
                 <ToolbarButton
-                  className="rounded p-1"
+                  className="rounded-full border-none"
                   title={c('Action').t`Save`}
-                  icon={<Icon name="checkmark-circle-filled" size={4.5} className="fill-[--primary]" />}
+                  icon={<Icon name="checkmark-circle-filled" size={6} className="fill-[--primary]" />}
                   disabled={!canSubmit}
                   onClick={submitComment}
                 />
