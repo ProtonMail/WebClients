@@ -5,14 +5,14 @@ import { updateDownloaded } from "../update";
 
 const store = new Store();
 
-export const defaultWidth = 1024;
-export const defaultHeight = 768;
+export const DEFAULT_WIDTH = 1024;
+export const DEFAULT_HEIGHT = 768;
 
 export const getWindowBounds = () => {
     // Get stored window size and position
     const windowBounds = store.get("windowBounds", {
-        width: defaultWidth,
-        height: defaultHeight,
+        width: DEFAULT_WIDTH,
+        height: DEFAULT_HEIGHT,
         x: undefined,
         y: undefined,
     }) as Rectangle;
