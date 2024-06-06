@@ -16,9 +16,8 @@ export const ToolbarButton = forwardRef(function ToolbarButton(
       <button
         type="button"
         className={clsx([
-          'relative rounded-lg px-2.5 py-2.5',
-          active ? 'bg-[--primary-minor-2]' : 'bg-none enabled:hover:bg-[--primary-minor-1]',
-          'editor-toolbar-button interactive-pseudo-inset m-0 flex',
+          'editor-toolbar-button interactive relative m-0 flex rounded-lg px-2.5 py-2.5',
+          active && 'active',
           className,
         ])}
         ref={ref}
