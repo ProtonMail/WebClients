@@ -697,11 +697,11 @@
       "No, thanks": [
         "Nein, danke"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -1013,7 +1013,7 @@
         "Importvorgang starten"
       ],
       "Start live chat": [
-        "Live Chat starten"
+        "Live-Chat starten"
       ],
       "Stay": [
         "Nicht schließen"
@@ -3180,7 +3180,7 @@
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Du kannst jährlich nur eine Adresse löschen"
+        "Du kannst jährlich nur eine Adresse löschen."
       ],
       "You've reached the limit of address deletions for this user.": [
         "Du hast das Limit für das Löschen von Adressen für diesen Benutzer erreicht."
@@ -6030,6 +6030,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6834,7 +6845,7 @@
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
       ],
       "finance": [
-        "finanzen"
+        "Finanzen"
       ],
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
@@ -7115,7 +7126,7 @@
         "Linktyp"
       ],
       "Live chat": [
-        "Live Chat"
+        "Live-Chat"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Geladene Inhalte werden durch unseren Proxy geschützt, wenn der Tracker-Schutz aktiviert ist."
@@ -7209,9 +7220,6 @@
       ],
       "No addresses exist": [
         "Keine Adressen vorhanden"
-      ],
-      "No changes made to the current subscription": [
-        "Keine Änderungen am aktuellen Abonnement vorgenommen"
       ],
       "No credit card required": [
         "Keine Kreditkarte erforderlich"
@@ -7811,6 +7819,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Diese Verifizierung kann bis zu einer Stunde dauern. Du kannst gefahrlos mit den nächsten Schritten fortfahren."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dadurch werden alle früheren Versionen, die älter sind als ${ rententionLabel }, gelöscht."
       ],
@@ -7982,8 +7993,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[bundleProPlan] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -8453,17 +8464,6 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9635,9 +9635,6 @@
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
       ],
-      "Select your plan": [
-        "Wähle dein Abonnement"
-      ],
       "Send auto-reply": [
         "Automatische Antwort senden"
       ],
@@ -10654,9 +10651,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Weiter zur Prüfung"
-      ],
       "Continue with Free": [
         "Mit Free fortfahren"
       ],
@@ -10830,7 +10824,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene Aufschubzeit"
+        "Eigene stumm Zeit"
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
@@ -10935,8 +10929,8 @@
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Phone support (6+ users)": [
-        "Telefonischer Support (ab 6 Benutzern)"
+      "Phone support (40+ users)": [
+        "Telefonischer Support (ab 40 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -11006,9 +11000,6 @@
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
       ],
-      "Team management": [
-        "Teamverwaltung"
-      ],
       "Tor over VPN": [
         "Tor über VPN"
       ],
@@ -11019,7 +11010,7 @@
         "Unbegrenzte Geräte"
       ],
       "Unlimited devices and aliases": [
-        "Unbegrenzte Geräte und Aliasse"
+        "Unbegrenzt viele Geräte und Aliasse"
       ],
       "Unlimited filters": [
         "Unbegrenzte Anzahl von Filtern"
@@ -11089,7 +11080,7 @@
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Schiebe die Nachricht auf und werde daran erinnert wann du möchtest"
+        "Schalte Nachrichten stumm und werde daran erinnert wann immer du möchtest."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -11170,9 +11161,6 @@
       "Popular": [
         "Beliebt"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Privatsphären- und Sicherheitssuite für Unternehmen, einschließlich aller Premium-${ BRAND_NAME }-Dienste."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
@@ -11181,9 +11169,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Sichere E-Mails und Kalender für Profis und Unternehmen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -11260,14 +11245,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -11286,6 +11263,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -11531,9 +11516,6 @@
       "Central control panel": [
         "Zentrale Systemsteuerung"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Erhöhe deine Reichweite mit 10 eigenen E-Mail-Domains."
-      ],
       "Create up to ${ n } calendar": [
         "Erstelle bis zu ${ n } Kalender",
         "Erstelle bis zu ${ n } Kalender"
@@ -11555,6 +11537,9 @@
       ],
       "Require 2FA": [
         "2FA erzwingen"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Unterstützung für ${ n } benutzerdefinierte E-Mail-Domänen"
       ]
     },
     "Notification": {
@@ -12446,7 +12431,7 @@
         "Bitte stelle sicher, dass sie eine aktivierte Adresse haben und lade sie später separat ein."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben"
+        "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben."
       ],
       "Reset organization key": [
         "Schlüssel der Organisation zurücksetzen"
@@ -13970,6 +13955,47 @@
         "Für"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Die einzige Einnahmequelle von ${ BRAND_NAME } sind Nutzerabonnements. Deine Unterstützung ermöglicht es uns, unabhängig zu bleiben, unsere Mission voranzutreiben, den Datenschutz im Internet zum Standard zu machen, und weiterhin Aktivisten und Organisationen zu unterstützen, die für Datenschutz und Freiheit kämpfen."
@@ -14028,6 +14054,9 @@
       ],
       "Add any new files": [
         "Füge neue Dateien hinzu"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf den kostenlosen ${ BRAND_NAME } Plan zurückgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
@@ -14146,8 +14175,20 @@
       "What you give up when you cancel ${ planName }": [
         "Bei der Kündigung von ${ planName } verlierst du folgende Vorteile"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherplatzboni."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 5 GB Drive-Speicher und bis zu 1 GB Mail-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherplatzboni."
+      ],
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Dein ${ planName } wurde gekündigt."
@@ -14163,47 +14204,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -14952,9 +14952,6 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
-      ],
-      "Customize your plan": [
-        "Abonnement anpassen"
       ],
       "Dashboard": [
         "Dashboard"
