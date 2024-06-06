@@ -4,6 +4,7 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
@@ -19,6 +20,7 @@ import './RevisionPreview.scss';
 export interface RevisionsProviderState {
     hasPreviewAvailable: boolean;
     isLoading: boolean;
+    permissions: SHARE_MEMBER_PERMISSIONS;
     currentRevision: DriveFileRevision;
     categorizedRevisions: CategorizedRevisions;
     openRevisionPreview: (revision: DriveFileRevision) => void;
@@ -42,6 +44,7 @@ export const RevisionsProvider = ({
     const {
         isLoading,
         revisions: [currentRevision, ...olderRevisions],
+        permissions,
         deleteRevision,
         restoreRevision,
     } = useRevisionsView(link.rootShareId, link.linkId);
@@ -146,6 +149,7 @@ export const RevisionsProvider = ({
             value={{
                 hasPreviewAvailable,
                 isLoading,
+                permissions,
                 deleteRevision: handleRevisionDelete,
                 restoreRevision: handleRevisionRestore,
                 currentRevision,
