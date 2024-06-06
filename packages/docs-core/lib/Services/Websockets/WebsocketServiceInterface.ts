@@ -1,5 +1,5 @@
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { WebsocketConnectionInterface } from '@proton/docs-shared'
+import { BroadcastSources, WebsocketConnectionInterface } from '@proton/docs-shared'
 import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
 
 export interface WebsocketServiceInterface {
@@ -12,7 +12,7 @@ export interface WebsocketServiceInterface {
   sendMessageToDocument(
     document: NodeMeta,
     message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: string,
+    source: BroadcastSources,
   ): void
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>

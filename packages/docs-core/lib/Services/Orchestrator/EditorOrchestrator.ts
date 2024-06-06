@@ -5,6 +5,7 @@ import {
   ClientRequiresEditorMethods,
   RtsMessagePayload,
   DocumentMetaInterface,
+  BroadcastSources,
 } from '@proton/docs-shared'
 import { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
@@ -33,7 +34,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   async editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     origin: string,
-    updateSource: string,
+    updateSource: BroadcastSources,
   ): Promise<void> {
     return this.docs.editorRequestsPropagationOfUpdate(message, origin, updateSource)
   }
