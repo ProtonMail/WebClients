@@ -2342,6 +2342,11 @@
         "अस्थाई जरूरत, भविष्य में वापस आ सकती है"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "हमें सुधरने में मदद करें"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "कैलेंडर जोड़ें"
@@ -4137,9 +4142,6 @@
       "New": [
         "नया"
       ],
-      "No changes made to the current subscription": [
-        "वर्तमान सदस्यता में कोई परिवर्तन नहीं किया गया"
-      ],
       "No contacts added yet": [
         "अभी तक कोई संपर्क नहीं जोड़ा गया है"
       ],
@@ -5100,9 +5102,6 @@
       "Security code (${ codeName })": [
         "सुरक्षा कोड (${ codeName })"
       ],
-      "Select your plan": [
-        "अपनी योजना चुनें"
-      ],
       "Show others when I'm busy": [
         "मैं कब व्यस्त हूँ ये दुसरो को दिखाएँ"
       ],
@@ -5582,9 +5581,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "देखना जारी रखें"
-      ],
       "Delete account": [
         "खाता हटा दो"
       ],
@@ -5819,9 +5815,6 @@
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
-      "Phone support (6+ users)": [
-        "फोन मदद (6+ यूज़र)"
-      ],
       "Priority email support": [
         "प्राथमिक ईमेल मदद"
       ],
@@ -5876,9 +5869,6 @@
       ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
-      ],
-      "Team management": [
-        "टीम संभालना"
       ],
       "Tor over VPN": [
         "वीपीएन के ऊपर Tor"
@@ -6005,9 +5995,6 @@
       "Popular": [
         "लोकप्रिय"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "बिज़नेस के लिए निजता और सुरक्षा का बंडल, सारे प्रीमियम ${ BRAND_NAME } सेवाओं के साथ।"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "सभी ${ BRAND_NAME } सेवाओं के साथ अपने परिवार की गोपनीयता की रक्षा करें।"
       ],
@@ -6016,9 +6003,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "सुरक्षित ईमेल और कैलेंडर प्रोफेशनलो और बिज़नेसो के लिए"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
@@ -6223,12 +6207,12 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "अपना स्टोरेज जगह ${ bundleStorage } तक ले जाएं"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 कस्टम ईमेल डोमेन के सपोर्ट के साथ काम करें ज़्यादा"
-      ],
       "Create up to ${ n } calendar": [
         "${ n } कैलेंडर तक बनाएं",
         "${ n } कैलेंडर तक बनाएं"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "Notification": {
@@ -7253,6 +7237,9 @@
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } क्रमादेश"
+      ],
       "10 email addresses": [
         "10 ईमेल पते"
       ],
@@ -7268,6 +7255,9 @@
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
       ],
+      "Online privacy, for your whole family": [
+        "ऑनलाइन निजता, आपके पूरे परिवार के लिए"
+      ],
       "Our fight against censorship in Russia": [
         "रूस में सेंसरशिप के खिलाफ हमारी लड़ाई"
       ],
@@ -7276,6 +7266,9 @@
       ],
       "Read the story": [
         "कहानी पढ़ें"
+      ],
+      "Version history": [
+        "संस्करण इतिहास"
       ]
     },
     "Subscription renewal state": {
@@ -7737,9 +7730,6 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
-      ],
-      "Customize your plan": [
-        "अपना प्लान अनुकूलित करे"
       ],
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"

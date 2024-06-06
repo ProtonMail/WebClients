@@ -2512,6 +2512,11 @@
         "De VPN is te traag"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Help ons verbeteren"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Agenda toevoegen"
@@ -4466,7 +4471,7 @@
         "Internetverbinding hersteld."
       ],
       "JCB logo": [
-        "JCB logo"
+        "JCB-logo"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -4539,9 +4544,6 @@
       ],
       "New": [
         "Nieuw"
-      ],
-      "No changes made to the current subscription": [
-        "Er zijn geen wijzigingen aangebracht aan het huidige abonnement"
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -5549,9 +5551,6 @@
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
       ],
-      "Select your plan": [
-        "Kies uw abonnement"
-      ],
       "Show others when I'm busy": [
         "Laat anderen zien wanneer ik bezet ben"
       ],
@@ -6112,9 +6111,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Doorgaan naar controle"
-      ],
       "Delete account": [
         "Account verwijderen"
       ],
@@ -6366,8 +6362,8 @@
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
-      "Phone support (6+ users)": [
-        "Telefonische ondersteuning (6+ gebruikers)"
+      "Phone support (40+ users)": [
+        "Telefonische ondersteuning (40+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -6383,7 +6379,7 @@
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Regelmatige controle van je accountbeveiliging. We waarschuwen je als je zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
+        "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
@@ -6426,9 +6422,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
-      ],
-      "Team management": [
-        "Teambeheer"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -6499,7 +6492,7 @@
         "Kluis delen (tot ${ n } personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "We scannen het duistere web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+        "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
       ]
     },
     "new_plans: feature info": {
@@ -6570,9 +6563,6 @@
       "Popular": [
         "Populair"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium ${ BRAND_NAME }-services."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
@@ -6581,9 +6571,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Veilige e-mail en agenda voor professionals en bedrijven."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -6857,9 +6844,6 @@
       "Central control panel": [
         "Centraal bedieningspaneel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
-      ],
       "Create up to ${ n } calendar": [
         "Maak tot ${ n } agenda",
         "Maak tot ${ n } agenda's"
@@ -6881,6 +6865,9 @@
       ],
       "Require 2FA": [
         "2FA vereist"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Notification": {
@@ -8209,6 +8196,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } opslagruimte"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programma"
+      ],
       "10 email addresses": [
         "10 e-mailadressen"
       ],
@@ -8218,6 +8208,9 @@
       "Custom schedule send and snooze times": [
         "Aangepaste planning en snooze-tijden voor verzenden"
       ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
       "Helping activists in Hong Kong": [
         "Activisten helpen in Hongkong"
       ],
@@ -8226,6 +8219,9 @@
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"
+      ],
+      "Online privacy, for your whole family": [
+        "Online privacy voor het hele gezin"
       ],
       "Our fight against censorship in Russia": [
         "Onze strijd tegen censuur in Rusland"
@@ -8241,6 +8237,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
       ],
       "Watch the interview": [
         "Bekijk het interview"
@@ -8776,9 +8775,6 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
-      ],
-      "Customize your plan": [
-        "Abonnement aanpassen"
       ],
       "Data recovery": [
         "Dataherstel"
