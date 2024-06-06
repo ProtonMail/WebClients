@@ -697,10 +697,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6104,6 +6104,17 @@
         "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -7344,9 +7355,6 @@
       "No addresses exist": [
         "Naslovi ne obstajajo"
       ],
-      "No changes made to the current subscription": [
-        "Pri trenutni naročnini ni bilo sprememb."
-      ],
       "No credit card required": [
         "Plačilna kartica ni potrebna"
       ],
@@ -8133,8 +8141,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Nadgradite na paket ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, paket ${ PLAN_NAMES[PLANS.FAMILY] } ali paket ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, da pridobite dostop do ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Nadgradite na paket ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, paket ${ PLAN_NAMES[PLANS.FAMILY] } ali paket ${ PLAN_NAMES[bundleProPlan] }, da pridobite dostop do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nadgradite, da boste lahko svojemu računu dodali krajši naslov @pm.me, ki je enostavnejši za deljenje. Gre za kratico za \"Pošlji mi ${ MAIL_APP_NAME }\" ali \"Zasebno sporočilo\"."
@@ -8618,17 +8626,6 @@
       ],
       "Zoom meeting": [
         "Srečanje Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9812,9 +9809,6 @@
       "Security code (${ codeName })": [
         "Varnostna koda (${ codeName })"
       ],
-      "Select your plan": [
-        "Izberite svoj paket"
-      ],
       "Send auto-reply": [
         "Pošlji samodejni odgovor"
       ],
@@ -10853,9 +10847,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Nadaljuj na pregled"
-      ],
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
       ],
@@ -11164,8 +11155,8 @@
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
       ],
-      "Phone support (6+ users)": [
-        "Telefonska podpora (6+ uporabnikov)"
+      "Phone support (40+ users)": [
+        "Telefonska podpora (40+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -11238,9 +11229,6 @@
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
-      ],
-      "Team management": [
-        "Upravljavci ekipe"
       ],
       "Tor over VPN": [
         "Tor preko VPN"
@@ -11407,9 +11395,6 @@
       "Popular": [
         "Priljubljeno"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Paket za zasebnost in varnost za podjetja, vključno z vsemi premijskimi storitvami ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
       ],
@@ -11418,9 +11403,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Varna e-pošta in koledar za strokovnjake in podjetja"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."
@@ -11497,14 +11479,6 @@
         "Izbrali ste: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11523,6 +11497,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -11770,9 +11752,6 @@
       "Central control panel": [
         "Glavna kontrolna plošča"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Dosezite več s podporo za 10 e-poštnih domen po meri"
-      ],
       "Create up to ${ n } calendar": [
         "Ustvarite ${ n } koledar.",
         "Ustvarite do ${ n } koledarja.",
@@ -11796,6 +11775,9 @@
       ],
       "Require 2FA": [
         "Obvezno 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora za ${ n } e-poštni domeni po meri"
       ]
     },
     "Notification": {
@@ -14303,6 +14285,47 @@
         "Za"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 vrhunskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Edini vir prihodka ${ BRAND_NAME } so naročnine uporabnikov. Vaša podpora nam omogoča, da ostanemo neodvisni, napredujemo pri našem poslanstvu, da zasebnost postane privzeta spletna naloga, in še naprej podpiramo aktiviste in organizacije, ki se borijo za zasebnost in svobodo."
@@ -14513,47 +14536,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 vrhunskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -15313,9 +15295,6 @@
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
-      ],
-      "Customize your plan": [
-        "Prilagodite paket"
       ],
       "Dashboard": [
         "Nadzorna plošča"

@@ -1857,6 +1857,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "本当にこのアドレスを削除してよいですか。"
+      ],
+      "Delete address permanently?": [
+        "アドレスを完全に削除しますか?"
+      ],
+      "Delete address?": [
+        "アドレスの削除?"
+      ],
       "You can only delete 1 address per year.": [
         "削除できるアドレスは 1 年に 1 つだけです。"
       ]
@@ -1867,6 +1876,11 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "このユーザーのアドレス削除の制限に達しました。"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "このドメインを削除しますか?"
       ]
     },
     "Delinquent modal title": {
@@ -1907,6 +1921,11 @@
       ],
       "Temporary need, may come back in the future": [
         "一時的な理由で、将来的に再度使用する予定"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "改善にご協力ください"
       ]
     },
     "Email verification": {
@@ -3434,9 +3453,6 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
-      "No changes made to the current subscription": [
-        "現在のサブスクリプションに変更は加えられていません"
-      ],
       "No gateways": [
         "ゲートウェイなし"
       ],
@@ -3754,6 +3770,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "この検証には最大 1 時間かかる場合があります。安全に次のステップに進むことができます。"
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
@@ -4603,9 +4622,6 @@
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
       ],
-      "Select your plan": [
-        "プランの選択"
-      ],
       "Single sign-on entity ID": [
         "シングル サインオン エンティティ ID"
       ],
@@ -4776,6 +4792,9 @@
       ],
       "Create account": [
         "アカウントを作成"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れた?"
       ],
       "Forgot username?": [
         "ユーザー名をお忘れですか？"
@@ -5010,9 +5029,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "見直しを行う"
-      ],
       "Delete account": [
         "アカウントを削除"
       ],
@@ -5267,8 +5283,8 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
-      "Phone support (6+ users)": [
-        "電話サポート（6 ユーザー以上）"
+      "Phone support (40+ users)": [
+        "電話サポート（40 ユーザー以上）"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -5332,9 +5348,6 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
-      ],
-      "Team management": [
-        "チーム管理"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -5471,9 +5484,6 @@
       "Popular": [
         "最も人気"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム ${ BRAND_NAME } サービスが利用できるプランです。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -5482,9 +5492,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "プロフェッショナルとビジネスのための、安全な電子メールとカレンダーのプランです。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
@@ -5792,9 +5799,6 @@
       "Central control panel": [
         "中央制御盤"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
-      ],
       "Create up to ${ n } calendar": [
         "最大 ${ n } 個までのカレンダーを作成"
       ],
@@ -5815,6 +5819,9 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Notification": {
@@ -7169,6 +7176,9 @@
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
       "10 email addresses": [
         "10個のメールアドレス"
       ],
@@ -7187,6 +7197,9 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ],
       "Have a question?": [
         "質問がありますか？"
       ],
@@ -7201,6 +7214,9 @@
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Online privacy, for your whole family": [
+        "家族全員のオンラインプライバシー"
       ],
       "Our fight against censorship in Russia": [
         "ロシアにおける検閲との闘い"
@@ -7219,6 +7235,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Version history": [
+        "バージョン履歴"
       ],
       "Watch the interview": [
         "インタビューを見る"
@@ -7717,9 +7736,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "プランのIPアドレス数のカスタマイズ"
-      ],
-      "Customize your plan": [
-        "プランをカスタマイズ"
       ],
       "Date": [
         "日付"

@@ -4390,9 +4390,6 @@
       "New": [
         "新"
       ],
-      "No changes made to the current subscription": [
-        "当前订阅没有更改"
-      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -5367,9 +5364,6 @@
       "Security code (${ codeName })": [
         "安全码 (${ codeName })"
       ],
-      "Select your plan": [
-        "选择您的套餐"
-      ],
       "Show others when I'm busy": [
         "显示忙碌"
       ],
@@ -5919,9 +5913,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "前去结算"
-      ],
       "Delete account": [
         "删除账户"
       ],
@@ -6152,8 +6143,8 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
-      "Phone support (6+ users)": [
-        "电话客服（6+ 位用户）"
+      "Phone support (40+ users)": [
+        "电话客服（40+ 位用户）"
       ],
       "Priority email support": [
         "优先享受邮件客服"
@@ -6208,9 +6199,6 @@
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
-      ],
-      "Team management": [
-        "团队管理"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -6332,17 +6320,11 @@
       "Popular": [
         "流行的"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "为企业量身定制的隐私与安全防护体系，囊括了所有 ${ BRAND_NAME } 高级服务。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的云存储，让您轻松安全地存储、同步和共享文件。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "面向专业人士和企业的安全邮箱与日历。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
@@ -6582,14 +6564,14 @@
       "Central control panel": [
         "中央控制面板"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 个自有域名更显游刃有余"
-      ],
       "Create up to ${ n } calendar": [
         "最多可创建 ${ n } 份日历"
       ],
       "Multi-platform support": [
         "多平台支持"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支持 ${ n } 个自定义域"
       ]
     },
     "Notification": {
@@ -7724,6 +7706,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 计划"
+      ],
       "10 email addresses": [
         "10 个邮箱地址"
       ],
@@ -7733,14 +7718,23 @@
       "Custom schedule send and snooze times": [
         "自由调整定时发送和延迟通知时间"
       ],
+      "Early access to new apps and features": [
+        "抢先访问新应用和功能"
+      ],
       "Keep ${ planName }": [
         "保持计划 ${ planName }"
+      ],
+      "Online privacy, for your whole family": [
+        "与全家人共同守护网络隐私"
       ],
       "Priority support": [
         "优先支持"
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
+      ],
+      "Version history": [
+        "版本历史"
       ]
     },
     "subscription reminder": {
@@ -8205,9 +8199,6 @@
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
-      ],
-      "Customize your plan": [
-        "定制账户等级"
       ],
       "Data recovery": [
         "数据恢复"

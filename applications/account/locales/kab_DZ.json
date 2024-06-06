@@ -2634,6 +2634,16 @@
         "Arussin"
       ]
     },
+    "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Tebɣiḍ ad tekkseḍ tansa-agi?"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Triḍ ad tekseḍ taɣult-a?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tafaturt ur nettwaxelleṣ ara"
@@ -2726,6 +2736,11 @@
       ],
       "Switching to a different provider": [
         "Tuɣalin ɣer usaǧǧaw-nniḍen"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ɛawen-aɣ ad nennarni"
       ]
     },
     "drive_signup_2023: Info": {
@@ -4541,6 +4556,11 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5892,11 +5912,6 @@
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Mi yermed, ikaramen isnawanen ttawin ini n ukaram agejdan."
@@ -6880,9 +6895,6 @@
       "Security code (${ codeName })": [
         "Tangalt n tɣellist (${ codeName })"
       ],
-      "Select your plan": [
-        "Fren aɣawas"
-      ],
       "Send auto-reply": [
         "Azen tiririt tawurmant"
       ],
@@ -7827,8 +7839,8 @@
       "No-logs policy": [
         "Ulac tasertit n yiɣmisen"
       ],
-      "Phone support (6+ users)": [
-        "Tallalt s tilifun (ugar n 6 yiseqdacen)"
+      "Phone support (40+ users)": [
+        "Tallalt s tilifun (ugar n 40 yiseqdacen)"
       ],
       "Priority email support": [
         "Imayl n tallalt yezwaren"
@@ -7870,9 +7882,6 @@
       ],
       "Strict no-logs policy": [
         "Tasertit tuḥrist war aɣmis"
-      ],
-      "Team management": [
-        "Asefrek n terbaɛt"
       ],
       "Tor over VPN": [
         "Tor ɣef VPN"
@@ -7973,14 +7982,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -7990,6 +7991,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -8049,6 +8058,9 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Notification": {
@@ -9307,6 +9319,9 @@
       ],
       "Priority support": [
         "Tallalt yezwaren"
+      ],
+      "Version history": [
+        "Azray n lqem"
       ]
     },
     "Subscription renewal state": {
@@ -9955,9 +9970,6 @@
       ],
       "Customize your mail import": [
         "Sagen tektert n imayl inek•inem"
-      ],
-      "Customize your plan": [
-        "Mudd udem i uɣawas-ik"
       ],
       "Dashboard": [
         "Tafelwit n usenqed"

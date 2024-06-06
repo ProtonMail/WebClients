@@ -1296,8 +1296,8 @@
         "Ja, jeg deltager"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
-        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
+        "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
+        "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter om 2 dage. ${ upgradeButton }"
@@ -6143,9 +6143,6 @@
       "No action selected": [
         "Ingen handling valgt"
       ],
-      "No changes made to the current subscription": [
-        "Ingen ændringer er lavet til din nuværende abonnement"
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -7792,9 +7789,6 @@
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
       ],
-      "Select your plan": [
-        "Vælg dit abonnement"
-      ],
       "Send auto-reply": [
         "Send auto-svar"
       ],
@@ -8530,9 +8524,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Fortsæt for at gennemgå"
-      ],
       "Delete account": [
         "Slet konto"
       ],
@@ -8675,6 +8666,9 @@
       "Centralized billing": [
         "Samlet fakturering"
       ],
+      "Collaborate and share large files": [
+        "Samarbejd og del store filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -8693,6 +8687,9 @@
       "Custom snooze time": [
         "Brugerdefineret udsættelsestid"
       ],
+      "Custom workspace branding": [
+        "Tilpas branding af arbejdsområde"
+      ],
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
@@ -8707,6 +8704,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Dokumentredaktører (dokumenter, ark, dias)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentredigering (dokumenter, ark, dias) (snart)"
       ],
       "Double hop": [
         "Dobbelthop"
@@ -8784,11 +8784,14 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
+      "Password manager to secure credentials": [
+        "Adgangskodehåndtering for at sikre adgangsoplysninger"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
-      "Phone support (6+ users)": [
-        "Telefon-support (6+ brugere)"
+      "Phone support (40+ users)": [
+        "Telefon-support (40+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mail-support"
@@ -8824,6 +8827,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "See team's availability": [
+        "Se teamets tilgængelighed"
+      ],
       "Send & receive invitations": [
         "Send og modtag invitationer"
       ],
@@ -8847,9 +8853,6 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
-      ],
-      "Team management": [
-        "Brugeradministration"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -8915,6 +8918,9 @@
       "User session management": [
         "Administration af brugersessioner"
       ],
+      "User storage management": [
+        "Pladshåndtering for bruger"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
@@ -8961,6 +8967,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Gældende kreditter, proratering og kuponer anvendes i næste trin"
       ],
@@ -8969,6 +8978,12 @@
       ],
       "Early access to new apps and features": [
         "Forhåndsadgang til nye apps og funktioner"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Krypteret e-mail og kalender for at komme i gang."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Forbedret sikkerhed og premium-funktioner til teams."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Essentiel beskyttelse og sikkert samarbejde for ubegrænsede brugere."
@@ -8991,9 +9006,6 @@
       "Popular": [
         "Populær"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Privatlivs- og sikkerhedspakke til virksomheder, herunder alle premium ${ BRAND_NAME }-tjenester."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
       ],
@@ -9002,9 +9014,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sikker lagring i skyen der lader dig gemme, synkronisere og dele dine filer nemt og sikkert."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Sikker e-mail og kalender til professionelle og virksomheder."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
@@ -9123,6 +9132,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-understøttelse er begrænset til skrivebords-apps (f.eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-baserede IMAP-integrationer er i øjeblikket ikke understøttet."
       ],
+      "Increase or reallocate storage for a user": [
+        "Øg eller omfordel lagerplads til en bruger"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold dine planer private for dig og din familie med en krypteret kalender"
       ],
@@ -9204,6 +9216,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Opbevar dine kontakters oplysninger sikkert, f.eks. telefonnummer, adresse, fødselsdag og personlige noter. Nuladgangskryptering sikrer, at selv ${ BRAND_NAME } ikke kan få adgang til dem."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se mødedeltagernes tilgængelighed og spar tid på at planlægge møder"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Send e-mails til store grupper hurtigt og nemt ved at oprette så mange kontaktgrupper, som du har brug for (Op til 100 kontakter pr. gruppe)"
       ],
@@ -9230,6 +9245,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Upload din virksomheds logo for at tilpasse dine teams brugeroplevelse på ${ BRAND_NAME } webapps"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
@@ -9281,9 +9299,6 @@
       "Central control panel": [
         "Centralt kontrolpanel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
-      ],
       "Create up to ${ n } calendar": [
         "Opret op til ${ n } kalender",
         "Opret op til ${ n } kalendere"
@@ -9305,6 +9320,9 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Notification": {
@@ -11570,9 +11588,6 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
-      "Customize your plan": [
-        "Tilpas dit abonnement"
-      ],
       "Data recovery": [
         "Datagendannelse"
       ],
@@ -12060,7 +12075,7 @@
         "Til"
       ],
       "Trash": [
-        "Flyt til papirkurv"
+        "Papirkurv"
       ],
       "Trust new key?": [
         "Stol på ny nøgle?",

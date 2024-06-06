@@ -2561,6 +2561,11 @@
         "VPN je príliš pomalá"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Pomôžte nám zlepšiť sa"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Pridať kalendár"
@@ -4693,9 +4698,6 @@
       "New": [
         "Nový"
       ],
-      "No changes made to the current subscription": [
-        "V aktuálnom predplatnom nedošlo k žiadnym zmenám"
-      ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
@@ -5718,9 +5720,6 @@
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
       ],
-      "Select your plan": [
-        "Vyberte plán"
-      ],
       "Show others when I'm busy": [
         "Zobraziť ostatným, kedy som zaneprázdnený"
       ],
@@ -6297,9 +6296,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovať na rekapituláciu"
-      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -6584,8 +6580,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ používateľov)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -6646,9 +6642,6 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
-      ],
-      "Team management": [
-        "Manažment tímu"
       ],
       "Tor over VPN": [
         "TOR cez VPN"
@@ -6794,9 +6787,6 @@
       "Popular": [
         "Populárne"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Súprava ochrany osobných údajov a zabezpečenia pre firmy vrátane všetkých prémiových služieb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -6805,9 +6795,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Bezpečný email a kalendár pre profesionálov a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -7086,9 +7073,6 @@
       "Central control panel": [
         "Centrálny ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšírte pôsobnosť s podporou pre 10 vlastných emailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvorte až ${ n } kalendár",
         "Vytvorte až ${ n } kalendáre",
@@ -7112,6 +7096,9 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Notification": {
@@ -8558,6 +8545,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 emailových adries"
       ],
@@ -8567,6 +8557,9 @@
       "Custom schedule send and snooze times": [
         "Vlastné časy odoslania a odloženia"
       ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
+      ],
       "Helping activists in Hong Kong": [
         "Pomáhame aktivistom v Hongkongu"
       ],
@@ -8575,6 +8568,9 @@
       ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
+      ],
+      "Online privacy, for your whole family": [
+        "Súkromie online, pre celú vašu rodinu"
       ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzúre v Rusku"
@@ -8590,6 +8586,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Version history": [
+        "História verzií"
       ],
       "Watch the interview": [
         "Pozrite si rozhovor"
@@ -9147,9 +9146,6 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
-      ],
-      "Customize your plan": [
-        "Prispôsobte si svoj plán"
       ],
       "Data recovery": [
         "Obnovenie údajov"

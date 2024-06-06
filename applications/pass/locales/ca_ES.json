@@ -52,6 +52,12 @@
       "Back": [
         "Torna"
       ],
+      "Bulk delete items from trash": [
+        "Suprimeix en massa els elements de la paperera"
+      ],
+      "Bulk move items to another vault": [
+        "Mou els elements en massa a una altra caixa forta"
+      ],
       "Bulk move items to trash": [
         "Mou en massa els elements a la paperera"
       ],
@@ -503,7 +509,7 @@
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
-        "Configuri 2FA per a més seguretat"
+        "Configureu A2F per a més seguretat"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Comenceu a supervisar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
@@ -518,7 +524,7 @@
         "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Aquest servei ofereix 2FA. Habiliti'l per augmentar la seguretat del compte."
+        "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegi característiques de seguretat avançades i registres detallats per protegir la seva presència en línia."
@@ -606,6 +612,9 @@
       ],
       "Failed to delete email address from monitoring": [
         "No s'ha pogut suprimir l'adreça de correu electrònic de la supervisió"
+      ],
+      "Failed to delete selected items": [
+        "No s'han pogut suprimir els elements seleccionats"
       ],
       "Failed to edit organization settings": [
         "No s'ha pogut editar la configuració de l'organització"
@@ -987,6 +996,9 @@
       "Import in progress:": [
         "Importació en curs:"
       ],
+      "Import the CSV file below.": [
+        "Importa el fitxer CSV de sota."
+      ],
       "Imported ${ payload.total } item": [
         "S'ha importat ${ payload.total } element",
         "S'han importat ${ payload.total } elements"
@@ -1174,6 +1186,12 @@
       ],
       "Reconnect": [
         "Torna a connectar"
+      ],
+      "Restoring items from trash": [
+        "S'estan restaurant els elements de la paperera"
+      ],
+      "Restoring trashed items...": [
+        "S'estan restaurant els elements de la paperera..."
       ],
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
@@ -1821,7 +1839,7 @@
         "Més informació"
       ],
       "stay safer online": [
-        "mantenir-se amb major seguretat en línia"
+        "millorar la vostra seguretat en línia"
       ]
     },
     "lobby: Info": {
@@ -2215,7 +2233,7 @@
         "Configuri 2FA per a major seguretat"
       ],
       "Set up 2FA for more security": [
-        "Configuri 2FA per a més seguretat"
+        "Configureu A2F per a més seguretat"
       ],
       "Settings": [
         "Preferències"
@@ -2317,11 +2335,17 @@
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
+      "Duplicate email addresses.": [
+        "Duplicitat d'adreces de correu electrònic."
+      ],
       "Email is required": [
         "El correu electrònic és obligatori"
       ],
       "Empty note": [
         "Nota buida"
+      ],
+      "Encryption password is required": [
+        "Es requereix una contrasenya de xifratge"
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."

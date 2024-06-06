@@ -1131,6 +1131,9 @@
       "Latest breach on ${ formattedDate }": [
         "Последняя утечка ${ formattedDate }"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Узнайте как ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Покидаю хранилище..."
       ],
@@ -1335,6 +1338,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
         "Следующие ${ result.ignored.length } элемента не могут быть импортированы:",
@@ -1466,6 +1472,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Ваша информация была найдена ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1905,6 +1914,9 @@
     "Link": {
       "Learn more": [
         "Подробнее"
+      ],
+      "stay safer online": [
+        "будьте в большей безопасности в Интернете"
       ]
     },
     "lobby: Info": {

@@ -697,11 +697,11 @@
       "No, thanks": [
         "Ne, děkuji"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -6098,6 +6098,17 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -7335,9 +7346,6 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
-      "No changes made to the current subscription": [
-        "Nebyly provedeny žádné změny vašeho předplatného"
-      ],
       "No credit card required": [
         "Platební karta není vyžadována"
       ],
@@ -7944,6 +7952,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto ověření může trvat až jednu hodinu. Můžete nyní bez obav pokračovat dalšími kroky."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Toto smaže všechny předchozí verze vašich souborů, které jsou starší než ${ rententionLabel }."
       ],
@@ -8115,8 +8126,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navyšte na tarif ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, nebo ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navyšte na tarif ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, nebo ${ PLAN_NAMES[bundleProPlan] } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. Její význam je \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
@@ -8597,17 +8608,6 @@
       ],
       "Zoom meeting": [
         "setkání na Zoomu"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9791,9 +9791,6 @@
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
       ],
-      "Select your plan": [
-        "Vyberte tarif"
-      ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
       ],
@@ -10829,9 +10826,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovat na rekapitulaci"
-      ],
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
       ],
@@ -11140,8 +11134,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ uživatelů)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -11214,9 +11208,6 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
-      ],
-      "Team management": [
-        "Řízení týmu"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -11383,9 +11374,6 @@
       "Popular": [
         "Oblíbené"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
       ],
@@ -11394,9 +11382,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Zabezpečený e-mail a kalendář pro profesionály a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -11473,14 +11458,6 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -11499,6 +11476,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -11746,9 +11731,6 @@
       "Central control panel": [
         "Centrální ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvořte až ${ n } kalendář",
         "Vytvořte až ${ n } kalendáře",
@@ -11772,6 +11754,9 @@
       ],
       "Require 2FA": [
         "Požadování 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
     "Notification": {
@@ -14300,6 +14285,47 @@
         "Pro"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojem příjmů společnosti ${ BRAND_NAME } je předplatné od uživatelů. Díky vaší podpoře můžeme zůstat nezávislí, rozvíjet naše poslání vytvářet internet, kde je soukromí samozřejmostí a pokračovat v podpoře aktivistů a organizací bojujících za soukromí a svobodu."
@@ -14384,6 +14410,9 @@
       ],
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
@@ -14474,47 +14503,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -15277,9 +15265,6 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
-      ],
-      "Customize your plan": [
-        "Přizpůsobte svůj tarif"
       ],
       "Dashboard": [
         "Přehled"

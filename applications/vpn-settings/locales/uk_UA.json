@@ -1916,6 +1916,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Ви дійсно хочете видалити цю адресу?"
+      ],
+      "Delete address permanently?": [
+        "Видалити адресу остаточно?"
+      ],
+      "Delete address?": [
+        "Видалити адресу?"
+      ],
       "You can only delete 1 address per year.": [
         "Ви можете видаляти лише 1 адресу на рік."
       ]
@@ -1926,6 +1935,11 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "Ви досягли обмеження видалення адрес для цього користувача."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Ви впевнені, що хочете видалити цей домен?"
       ]
     },
     "Delinquent modal title": {
@@ -1990,6 +2004,11 @@
       ],
       "The VPN is too slow": [
         "VPN занадто повільний"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Допоможіть нам вдосконалитися"
       ]
     },
     "Email verification": {
@@ -3605,9 +3624,6 @@
       "No addresses exist": [
         "Немає адрес"
       ],
-      "No changes made to the current subscription": [
-        "Щодо поточної передплати не внесено жодних змін"
-      ],
       "No gateways": [
         "Без мережевих шлюзів"
       ],
@@ -3946,6 +3962,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Перевірка може тривати до однієї години. Тим часом ви можете перейти до наступних кроків."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дасть змогу використовувати PayPal для вашої передплати ${ BRAND_NAME }. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -4831,9 +4850,6 @@
       "Security code (${ codeName })": [
         "Код безпеки (${ codeName })"
       ],
-      "Select your plan": [
-        "Оберіть тарифний план"
-      ],
       "Single sign-on entity ID": [
         "Entity ID єдиного входу (SSO)"
       ],
@@ -5004,6 +5020,9 @@
       ],
       "Create account": [
         "Зареєструватися"
+      ],
+      "Forgot password?": [
+        "Забули пароль?"
       ],
       "Forgot username?": [
         "Забули ім'я користувача?"
@@ -5268,9 +5287,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Переглядати далі"
-      ],
       "Delete account": [
         "Видалити обліковий запис"
       ],
@@ -5573,8 +5589,8 @@
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
-      "Phone support (6+ users)": [
-        "Підтримка за телефоном (6+ користувачів)"
+      "Phone support (40+ users)": [
+        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -5647,9 +5663,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Team management": [
-        "Керування командою"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -5798,9 +5811,6 @@
       "Popular": [
         "Популярний"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Комплект із приватності та безпеки для компаній, включно з преміумслужбами ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
@@ -5809,9 +5819,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Захищена електронна пошта й календар для професіоналів та компаній."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
@@ -6125,9 +6132,6 @@
       "Central control panel": [
         "Центральна панель керування"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
-      ],
       "Create up to ${ n } calendar": [
         "Створіть до ${ n } календаря",
         "Створіть до ${ n } календарів",
@@ -6151,6 +6155,9 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Notification": {
@@ -7698,6 +7705,9 @@
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Програма ${ PROTON_SENTINEL_NAME }"
+      ],
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
@@ -7716,6 +7726,9 @@
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
       ],
+      "Early access to new apps and features": [
+        "Ранній доступ до нових програм і функцій"
+      ],
       "Have a question?": [
         "Виникли запитання?"
       ],
@@ -7730,6 +7743,9 @@
       ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
+      ],
+      "Online privacy, for your whole family": [
+        "Приватність в інтернеті для всієї родини"
       ],
       "Our fight against censorship in Russia": [
         "Наша боротьба проти цензури в Росії"
@@ -7748,6 +7764,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Version history": [
+        "Історія версій"
       ],
       "Watch the interview": [
         "Переглянути інтерв'ю"
@@ -8282,9 +8301,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Налаштуйте кількість IP-адрес у вашому тарифному плані"
-      ],
-      "Customize your plan": [
-        "Налаштуйте свій тарифний план"
       ],
       "Date": [
         "Дата"

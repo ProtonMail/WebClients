@@ -697,10 +697,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6030,6 +6030,17 @@
         "Parte del contenido del calendario es incompatible y no será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -7210,9 +7221,6 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
-      "No changes made to the current subscription": [
-        "No hay cambios realizados a la suscripción actual"
-      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -7985,8 +7993,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Mejore al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para obtener ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Mejore al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, o ${ PLAN_NAMES[bundleProPlan] } para obtener acceso a ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Mejore para añadir una dirección corta @pm.me a la cuenta para que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “mensaje privado” en inglés."
@@ -8456,17 +8464,6 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9638,9 +9635,6 @@
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
       ],
-      "Select your plan": [
-        "Elija la suscripción"
-      ],
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
@@ -10657,9 +10651,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continuar a la revisión"
-      ],
       "Continue with Free": [
         "Seguir con el plan gratuito"
       ],
@@ -10817,6 +10808,9 @@
       "Centralized settings and billings": [
         "Ajustes y facturación centralizados"
       ],
+      "Collaborate and share large files": [
+        "Colaborar y compartir grandes archivos"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
@@ -10835,6 +10829,9 @@
       "Custom snooze time": [
         "Tiempo de pausa personalizado"
       ],
+      "Custom workspace branding": [
+        "Marca personalizada del espacio de trabajo"
+      ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
@@ -10852,6 +10849,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Editores de texto (documentos, hojas de cálculo y presentaciones)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Editores de texto (documentos, hojas de cálculo y presentaciones) (pronto)"
       ],
       "Double hop": [
         "Double hop"
@@ -10935,11 +10935,14 @@
       "Password health": [
         "Estado de la contraseña"
       ],
+      "Password manager to secure credentials": [
+        "Gestor de contraseñas para proteger credenciales"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (6+ users)": [
-        "Soporte por teléfono (6 o más usuarios)"
+      "Phone support (40+ users)": [
+        "Soporte telefónico (más de 40 usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -10975,6 +10978,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "See team's availability": [
+        "Ver la disponibilidad del equipo"
+      ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
       ],
@@ -11008,9 +11014,6 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
-      ],
-      "Team management": [
-        "Gestión de equipos"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -11076,6 +11079,9 @@
       "User session management": [
         "Gestión de sesiones de usuario"
       ],
+      "User storage management": [
+        "Gestión de almacenamiento de usuario"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
@@ -11140,6 +11146,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo su negocio."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
       ],
@@ -11148,6 +11157,12 @@
       ],
       "Early access to new apps and features": [
         "Acceso anticipado a funciones y aplicaciones nuevas"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Correo electrónico y calendario cifrado para empezar."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Seguridad mejorada y funciones premium para equipos."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protección esencial y colaboración segura para usuarios ilimitados."
@@ -11173,9 +11188,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suite de privacidad y seguridad para empresas, incluyendo todos los servicios premium de ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja la privacidad de su familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -11184,9 +11196,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Almacenamiento seguro en la nube que le permite almacenar, sincronizar y compartir archivos de manera fácil y segura."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Correo electrónico y calendario seguros para empresas y profesionales independientes."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para su día a día."
@@ -11263,14 +11272,6 @@
         "El plan seleccionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -11289,6 +11290,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -11364,6 +11373,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
+      ],
+      "Increase or reallocate storage for a user": [
+        "Incremente o reasigne almacenamiento para un usuario"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenga privados sus planes y los de su familia con un calendario cifrado"
@@ -11446,6 +11458,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Almacene de forma segura los detalles de los contactos, como el número de teléfono, la dirección, la fecha de nacimiento y las notas personales. El cifrado de acceso cero garantiza que incluso ${ BRAND_NAME } no pueda acceder a ellos."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Vea la disponibilidad de los participantes de la reunión y ahorre tiempo programando reuniones"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envíe correos electrónicos a muchas personas fácil y rápidamente creando todos los grupos de contactos que necesite (hasta 100 contactos por grupo)"
       ],
@@ -11472,6 +11487,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Cargue el logotipo de su empresa para personalizar la experiencia de sus equipos en las aplicaciones web de ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
@@ -11534,9 +11552,6 @@
       "Central control panel": [
         "Panel de control central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Cubra más con soporte para 10 dominios de correo electrónico personalizados"
-      ],
       "Create up to ${ n } calendar": [
         "Cree hasta ${ n } calendario",
         "Cree hasta ${ n } calendarios"
@@ -11558,6 +11573,9 @@
       ],
       "Require 2FA": [
         "Requiere 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Soporte para ${ n } dominios de correo personalizados"
       ]
     },
     "Notification": {
@@ -13973,6 +13991,47 @@
         "Al"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Los ingresos de ${ BRAND_NAME } solo provienen de las suscripciones de sus usuarios. Su ayuda nos permite mantenernos independientes, avanzar en nuestra misión de hacer que la privacidad en línea sea lo primero y seguir apoyando a activistas y organizaciones que luchan por la privacidad y la libertad."
@@ -14181,47 +14240,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
@@ -14970,9 +14988,6 @@
       ],
       "Customize your mail import": [
         "Personalice la importación del correo"
-      ],
-      "Customize your plan": [
-        "Personalice el plan"
       ],
       "Dashboard": [
         "Panel de control"

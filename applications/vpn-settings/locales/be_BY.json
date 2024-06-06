@@ -3695,9 +3695,6 @@
       "No addresses exist": [
         "Няма адрасоў"
       ],
-      "No changes made to the current subscription": [
-        "Для бягучай падпіскі ніякія змены не зроблены"
-      ],
       "No gateways": [
         "Без шлюзоў"
       ],
@@ -4957,9 +4954,6 @@
       "Security code (${ codeName })": [
         "Код бяспекі (${ codeName })"
       ],
-      "Select your plan": [
-        "Выберыце тарыфны план"
-      ],
       "Single sign-on entity ID": [
         "Адзіны ўваход Entity ID"
       ],
@@ -5406,9 +5400,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Працягнуць агляд"
-      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -5588,6 +5579,9 @@
       "Centralized settings and billings": [
         "Цэнтралізаваныя налады і выстаўленне рахункаў"
       ],
+      "Collaborate and share large files": [
+        "Сумесная праца і абагульванне вялікіх файлаў"
+      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
@@ -5623,6 +5617,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды) (неўзабаве)"
       ],
       "Double hop": [
         "Double hop"
@@ -5711,8 +5708,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (6+ users)": [
-        "Падтрымка па тэлефоне (ад 6 карыстальнікаў)"
+      "Phone support (40+ users)": [
+        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -5786,9 +5783,6 @@
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
-      "Team management": [
-        "Кіраванне камандамі"
-      ],
       "Tor over VPN": [
         "Tor праз VPN"
       ],
@@ -5854,6 +5848,9 @@
       ],
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
+      ],
+      "User storage management": [
+        "Кіраванне сховішчам карыстальніка"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Абагульванне сховішча (да ${ n } асобы)",
@@ -5936,9 +5933,6 @@
       "Popular": [
         "Папулярны"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
@@ -5947,9 +5941,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Бяспечная электронная пошта і каляндар для прафесіяналаў, а таксама кампаній."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -6263,9 +6254,6 @@
       "Central control panel": [
         "Цэнтральная панэль кіравання"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
-      ],
       "Create up to ${ n } calendar": [
         "Стварыць да ${ n } календара",
         "Стварыць да ${ n } календароў",
@@ -6289,6 +6277,9 @@
       ],
       "Require 2FA": [
         "Патрэбна 2ФА"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
     "Notification": {
@@ -8050,10 +8041,10 @@
         "Штогадовы бонус бясплатнага сховішча"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "У вас яшчэ засталося ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас яшчэ ёсць ${ expiryDate } на вашай падпісцы ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } быў скасаваны."
@@ -8591,9 +8582,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Наладзьце колькасць IP-адрасоў на сваім тарыфным плане"
-      ],
-      "Customize your plan": [
-        "Наладжванне вашага тарыфнага плана"
       ],
       "Date": [
         "Дата"

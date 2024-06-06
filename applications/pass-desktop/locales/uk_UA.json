@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Як експортувати дані з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Як оновити ${ PASS_APP_NAME } на Linux"
+      ],
       "Import": [
         "Імпорт"
       ],
@@ -297,6 +300,9 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
+      ],
+      "Multiple select": [
+        "Множинний вибір"
       ],
       "OK": [
         "Застосувати"
@@ -1294,8 +1300,14 @@
       "Never": [
         "Ніколи"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Доступна нова версія ${ latestVersion }."
+      ],
       "No breaches detected": [
         "Витоків не виявлено"
+      ],
+      "No network connection": [
+        "Немає підключення до мережі"
       ],
       "None": [
         "Немає"
@@ -1378,6 +1390,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Захищений ${ PROTON_SENTINEL_LINK }, нашою вдосконаленою програмою захисту облікового запису"
       ],
+      "Reconnect": [
+        "Перез'єднати"
+      ],
       "Restoring items from trash": [
         "Відновлення елементів зі смітника"
       ],
@@ -1446,6 +1461,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Список змін можна знайти ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Експорт міститиме лише ті сховища, якими ви володієте."
@@ -2616,6 +2634,9 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Запрошення адрес електронної пошти поза організацією не допускається."
+      ],
+      "item was imported without custom fields": [
+        "елемент було імпортовано без користувацьких полів"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максимальна довжина - ${ maxLength } символ",

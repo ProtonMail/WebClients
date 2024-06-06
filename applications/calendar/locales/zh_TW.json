@@ -2478,6 +2478,11 @@
         "此VPN太慢了"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "幫助我們改善"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "加入行事曆"
@@ -4451,9 +4456,6 @@
       "New": [
         "加入"
       ],
-      "No changes made to the current subscription": [
-        "現時訂購授權並沒有更改"
-      ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
       ],
@@ -5452,9 +5454,6 @@
       "Security code (${ codeName })": [
         "安全驗證代碼(${ codeName })"
       ],
-      "Select your plan": [
-        "選擇你的方案"
-      ],
       "Show others when I'm busy": [
         "向其他人顯示我正在忙"
       ],
@@ -6007,9 +6006,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "繼續確認方案"
-      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -6249,8 +6245,8 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
-      "Phone support (6+ users)": [
-        "電話支援（6+ 使用者）"
+      "Phone support (40+ users)": [
+        "電話支援（40+ 使用者）"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -6308,9 +6304,6 @@
       ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
-      ],
-      "Team management": [
-        "團隊管理"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -6444,9 +6437,6 @@
       "Popular": [
         "熱門"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "隱私和保密套裝，專為企業而設，包含所有尊享 ${ BRAND_NAME } 服務。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
       ],
@@ -6455,9 +6445,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "安全的電子郵件和行事曆，專為專業人士和企業而設。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
@@ -6709,9 +6696,6 @@
       "Central control panel": [
         "中控面板"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "支援 10 個自訂電郵網域更全面性的服務"
-      ],
       "Create up to ${ n } calendar": [
         "創建多達 ${ n } 個行事曆"
       ],
@@ -6732,6 +6716,9 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Notification": {
@@ -7979,6 +7966,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 方案"
+      ],
       "10 email addresses": [
         "10 個電子信箱"
       ],
@@ -7988,6 +7978,9 @@
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
       ],
@@ -7996,6 +7989,9 @@
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Online privacy, for your whole family": [
+        "您整個家庭的線上隱私"
       ],
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
@@ -8011,6 +8007,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
       ],
       "Watch the interview": [
         "瀏覽訪談"
@@ -8535,9 +8534,6 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
-      ],
-      "Customize your plan": [
-        "自訂您的方案"
       ],
       "Data recovery": [
         "資料救援"

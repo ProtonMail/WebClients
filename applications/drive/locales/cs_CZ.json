@@ -480,6 +480,9 @@
       "Manage link": [
         "Správa odkazu"
       ],
+      "Manage share": [
+        "Spravovat sdílení"
+      ],
       "Mark as resolved": [
         "Označit jako vyřešené"
       ],
@@ -4642,9 +4645,6 @@
       "No": [
         "Ne"
       ],
-      "No changes made to the current subscription": [
-        "Nebyly provedeny žádné změny vašeho předplatného"
-      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -5692,9 +5692,6 @@
       "Create ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
       ],
-      "Create a share link": [
-        "Vytvořit odkaz pro sdílení"
-      ],
       "Created": [
         "Vytvořeno"
       ],
@@ -5866,6 +5863,12 @@
       "Main": [
         "Hlavní"
       ],
+      "Make editor": [
+        "Nastavit editorem"
+      ],
+      "Make viewer": [
+        "Nastavit prohlížejícím"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -5986,9 +5989,6 @@
       "Select type of abuse": [
         "Vyberte typ zneužití"
       ],
-      "Select your plan": [
-        "Vyberte tarif"
-      ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
       ],
@@ -5997,6 +5997,9 @@
       ],
       "Set recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Share a file": [
+        "Sdílet soubor"
       ],
       "Shared by": [
         "Sdílel(a)"
@@ -6598,9 +6601,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovat na rekapitulaci"
-      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -6885,8 +6885,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ uživatelů)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -6947,9 +6947,6 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
-      ],
-      "Team management": [
-        "Řízení týmu"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -7095,9 +7092,6 @@
       "Popular": [
         "Oblíbené"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
       ],
@@ -7106,9 +7100,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Zabezpečený e-mail a kalendář pro profesionály a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -7387,9 +7378,6 @@
       "Central control panel": [
         "Centrální ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvořte až ${ n } kalendář",
         "Vytvořte až ${ n } kalendáře",
@@ -7413,6 +7401,9 @@
       ],
       "Require 2FA": [
         "Požadování 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
     "Notification": {
@@ -7542,6 +7533,9 @@
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
+      "An invitation has been sent": [
+        "Pozvánka byla odeslána"
+      ],
       "Cannot load link": [
         "Odkaz se nepodařilo načíst"
       ],
@@ -7569,8 +7563,14 @@
       "Encrypted search activated": [
         "Vyhledávání v šifrovaných datech bylo zapnuto"
       ],
+      "External invitation removed from the share": [
+        "Externí pozvánka odebrána ze sdílení"
+      ],
       "Failed to accept share invitation": [
         "Přijetí pozvánky ke sdílení selhalo"
+      ],
+      "Failed to convert external invitation": [
+        "Nepodařilo se převést externí pozvánku"
       ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
@@ -7703,14 +7703,14 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "Vytvořit odkaz pro sdílení"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začněte používat ${ DRIVE_APP_NAME } a my vám navýšíme úložiště na 5 GB!"
       ],
       "Set a recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Share a file": [
+        "Sdílet soubor"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Stačí, když během následujícího ${ expiresInDays } dne vyplníte následující údaje:",
@@ -8601,6 +8601,14 @@
         "Rušení předplatného, počkejte prosím"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Přijato"
+      ],
+      "Pending": [
+        "Čekající"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Získat více úložného prostoru"
@@ -8857,6 +8865,9 @@
       ],
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
@@ -9421,9 +9432,6 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
-      ],
-      "Customize your plan": [
-        "Přizpůsobte svůj tarif"
       ],
       "Data recovery": [
         "Obnovení dat"

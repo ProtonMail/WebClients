@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Linux에서 ${ PASS_APP_NAME } 업데이트 방법"
+      ],
       "Import": [
         "불러오기"
       ],
@@ -1267,6 +1270,9 @@
       "Never": [
         "안 함"
       ],
+      "New version ${ latestVersion } is available.": [
+        "새 버전인 ${ latestVersion }이(가) 사용 가능합니다."
+      ],
       "No breaches detected": [
         "감지된 침해사례 없음"
       ],
@@ -1422,6 +1428,9 @@
       ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "변경 로그를 찾을 수 있습니다 ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "내보낼 시 개인이 소유한 금고만 포함됩니다."
@@ -2218,7 +2227,7 @@
     },
     "Title": {
       "${ BRAND_NAME } addresses": [
-        "${ BRAND_NAME } 주소를 얻으세요"
+        "${ BRAND_NAME } 주소"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"

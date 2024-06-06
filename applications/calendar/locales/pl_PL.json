@@ -4703,9 +4703,6 @@
       "New": [
         "Nowy"
       ],
-      "No changes made to the current subscription": [
-        "Brak zmian w obecnej subskrypcji"
-      ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
@@ -5725,9 +5722,6 @@
       "Security code (${ codeName })": [
         "Kod zabezpieczający (${ codeName })"
       ],
-      "Select your plan": [
-        "Wybierz plan"
-      ],
       "Show others when I'm busy": [
         "Pokaż, kiedy jestem zajęty"
       ],
@@ -6307,9 +6301,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Przejdź do przeglądu"
-      ],
       "Delete account": [
         "Usuń konto"
       ],
@@ -6594,8 +6585,8 @@
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
-      "Phone support (6+ users)": [
-        "Wsparcie telefoniczne (dla ponad 6 użytkowników)"
+      "Phone support (40+ users)": [
+        "Wsparcie telefoniczne (dla ponad 40 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -6656,9 +6647,6 @@
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
-      ],
-      "Team management": [
-        "Zarządzanie zespołem"
       ],
       "Tor over VPN": [
         "Tor przez VPN"
@@ -6804,9 +6792,6 @@
       "Popular": [
         "Popularny"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Pakiet dla biznesów w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi ${ BRAND_NAME } premium."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chroń prywatność rodziny za pomocą usług ${ BRAND_NAME }."
       ],
@@ -6815,9 +6800,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Bezpieczna poczta e-mail i kalendarz dla profesjonalistów oraz biznesów."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -6993,7 +6975,7 @@
         "Chroń rodzinę przed szkodliwymi stronami internetowymi i uzyskaj dostęp do szybkich serwerów, aby odtwarzać ulubione treści"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Chroń swój prawdziwy adres e-mail przed ujawnieniem lub wyciekiem za pomocą aliasów (losowo wygenerowany adres e-mail, który przekazuje wiadomości e-mail do głównej skrzynki odbiorczej)."
+        "Chroń swój prawdziwy adres e-mail przed ujawnieniem lub wyciekiem za pomocą aliasów (losowo wygenerowany adres e-mail, który przekierowuje wiadomości do głównej skrzynki odbiorczej)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Zapewnia najwyższy poziom ochrony konta i specjalistyczne wsparcie."
@@ -7096,9 +7078,6 @@
       "Central control panel": [
         "Centralny panel sterowania"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Pracuj przy wielu projektach dzięki wsparciu dla 10 niestandardowych domen"
-      ],
       "Create up to ${ n } calendar": [
         "Utwórz do ${ n } kalendarza",
         "Utwórz do ${ n } kalendarzy",
@@ -7122,6 +7101,9 @@
       ],
       "Require 2FA": [
         "Wymaganie uwierzytelniania dwustopniowego"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
     "Notification": {
@@ -9280,9 +9262,6 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
-      ],
-      "Customize your plan": [
-        "Dostosuj plan"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"
