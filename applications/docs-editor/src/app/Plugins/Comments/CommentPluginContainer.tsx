@@ -1,6 +1,12 @@
 import type { NodeKey } from 'lexical'
-import { $getMarkIDs, $unwrapMarkNode, $wrapSelectionInMarkNode } from '@lexical/mark'
-import { $createCommentThreadMarkNode, $isCommentThreadMarkNode, CommentThreadMarkNode } from './CommentThreadMarkNode'
+import {
+  $createCommentThreadMarkNode,
+  $getCommentThreadMarkIDs,
+  $isCommentThreadMarkNode,
+  $unwrapCommentThreadMarkNode,
+  $wrapSelectionInCommentThreadMarkNode,
+  CommentThreadMarkNode,
+} from './CommentThreadMarkNode'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { mergeRegister, registerNestedElementResolver } from '@lexical/utils'
 import { $getNodeByKey, $getSelection, $isRangeSelection, $isTextNode, COMMAND_PRIORITY_EDITOR } from 'lexical'
@@ -152,7 +158,7 @@ export default function CommentPlugin({
             const anchorNode = selection.anchor.getNode()
 
             if ($isTextNode(anchorNode)) {
-              const commentIDs = $getMarkIDs(anchorNode, selection.anchor.offset)
+              const commentIDs = $getCommentThreadMarkIDs(anchorNode, selection.anchor.offset)
               if (commentIDs !== null) {
                 setActiveIDs(commentIDs)
                 hasActiveIds = true
@@ -224,7 +230,7 @@ export default function CommentPlugin({
         const selection = $getSelection()
         if ($isRangeSelection(selection)) {
           const isBackward = selection.isBackward()
-          $wrapSelectionInMarkNode(selection, isBackward, id, (ids) => $createCommentThreadMarkNode(ids))
+          $wrapSelectionInCommentThreadMarkNode(selection, isBackward, id)
         }
       })
     },
@@ -243,7 +249,7 @@ export default function CommentPlugin({
               if ($isCommentThreadMarkNode(node)) {
                 node.deleteID(markID)
                 if (node.getIDs().length === 0) {
-                  $unwrapMarkNode(node)
+                  $unwrapCommentThreadMarkNode(node)
                 }
               }
             }
