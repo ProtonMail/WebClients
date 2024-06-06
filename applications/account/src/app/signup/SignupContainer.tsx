@@ -39,7 +39,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -86,6 +86,7 @@ import {
     handlePayment,
     handleSaveRecovery,
     handleSelectPlan,
+    handleSetupOrg,
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
@@ -891,6 +892,21 @@ const SignupContainer = ({
                                     reportPaymentFailure(method, overrides);
                                 },
                             });
+
+                            {
+                                const maybeSetupOrg = async () => {
+                                    const cache = signupActionResponse.cache;
+                                    const orgName = signupParameters.orgName;
+                                    const api = cache.setupData?.api;
+                                    const user = cache.setupData?.user;
+                                    if (orgName && api && user && plan && getIsB2BAudienceFromPlan(plan.Name)) {
+                                        const password = cache.accountData.password;
+                                        const keyPassword = cache.setupData?.keyPassword || '';
+                                        await handleSetupOrg({ api, user, password, keyPassword, orgName });
+                                    }
+                                };
+                                await maybeSetupOrg().catch(noop);
+                            }
 
                             /**
                              * Batch process can now resume since the auth cookie will have been set
