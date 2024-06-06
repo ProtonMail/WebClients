@@ -1,6 +1,6 @@
 import { $isMarkNode, MarkNode } from '@lexical/mark'
 import { $getNodeByKey } from 'lexical'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
@@ -13,14 +13,13 @@ import {
 import { Icon, ToolbarButton } from '@proton/components'
 import { useInternalEventBus } from '../../InternalEventBusProvider'
 import { c, msgid } from 'ttag'
-import ArrowUpCircleFilledIcon from '../../Icons/ArrowUpCircleFilledIcon'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
-  const { controller, markNodeMap, activeIDs } = useCommentsContext()
+  const { controller, markNodeMap, activeIDs, threadToFocus, setThreadToFocus } = useCommentsContext()
 
   const eventBus = useInternalEventBus()
   const [isDeleting, setIsDeleting] = useState(false)
@@ -91,9 +90,35 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   // translator: list of names (eg: "Tom, John and Henry")
   const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
 
+  const focusThread = useCallback(
+    (threadElement: HTMLLIElement | null) => {
+      const shouldFocus = threadToFocus === thread.id
+      if (!threadElement || !shouldFocus) {
+        return
+      }
+      threadElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      threadElement.focus()
+      threadElement.animate(
+        [
+          {
+            transform: 'scale(1.05)',
+          },
+        ],
+        {
+          delay: 250,
+          duration: 300,
+          easing: 'ease',
+        },
+      )
+      setThreadToFocus(null)
+    },
+    [setThreadToFocus, thread.id, threadToFocus],
+  )
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
     <li
+      ref={focusThread}
       data-thread-mark-id={markID}
       onClick={handleClickThread}
       className={clsx(
@@ -152,9 +177,9 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
               }
               return (
                 <ToolbarButton
-                  className="rounded p-1"
+                  className="bg-primary rounded-full p-1"
                   title={c('Action').t`Reply`}
-                  icon={<ArrowUpCircleFilledIcon className="h-4 w-4 text-[--primary]" />}
+                  icon={<Icon name="arrow-up" size={3.5} />}
                   disabled={!canSubmit}
                   onClick={submitComment}
                 />
