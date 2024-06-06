@@ -95,7 +95,7 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
             const [headers, requestId] = sw ? getRequestIDHeaders() : [];
             if (sw) signal.onabort = () => sw?.send({ type: 'abort', requestId: requestId! });
 
-            return api<Response>({ url, output: 'raw', signal, headers })
+            return api<Response>({ url, output: 'raw', headers, signal, sideEffects: false })
                 .then(async (res) => {
                     const dataURL = await imageResponsetoDataURL(res);
                     if (!sw) cache.set(url, dataURL);

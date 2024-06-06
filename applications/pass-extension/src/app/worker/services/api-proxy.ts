@@ -56,7 +56,6 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
     })
         .then(async (res) => {
             logger.debug('[CacheProxy] Caching succesful network response', res.url);
-
             if (res.ok) {
                 /* max-age is set to 0 on image responses from BE: this is sub-optimal in
                  * the context of the extension -> override the max-age header. */
@@ -92,7 +91,7 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
             }
 
             logger.debug(`[CacheProxy] Network or API error while fetching ${url}`, err);
-            return createNetworkError();
+            return createNetworkError(408);
         });
 
     /* FIXME: stale-while-revalidate window should be computed */
