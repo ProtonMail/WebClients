@@ -188,7 +188,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 history.replace('/');
             },
 
-            onForkConsumed: async (_, state) => {
+            onForkConsumed: async (session, state) => {
+                const { offlineConfig, offlineKD } = session;
                 history.replace({ hash: '' }); /** removes selector from hash */
 
                 try {
@@ -196,6 +197,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     if ('url' in data && typeof data.url === 'string') setRedirectPath(data.url);
                 } catch {
                     setRedirectPath('/');
+                }
+
+                if (Boolean(offlineConfig && offlineKD)) {
+                    logger.info('[AuthServiceProvider] Automatically creating password lock');
+                    session.lockMode = LockMode.PASSWORD;
+                    session.lockTTL = 900;
+                    authStore.setLockLastExtendTime(getEpoch());
                 }
             },
 
