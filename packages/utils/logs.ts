@@ -16,6 +16,15 @@ type LogTypes = 'error' | 'warn' | 'debug' | 'info';
 const toString = (args: Args): string => {
     return args
         .map((arg: any) => {
+            if (typeof arg === 'object' && arg.toString() === '[object Object]') {
+                return Object.keys(arg)
+                    .map((key) => {
+                        if (['string', 'number', 'boolean'].includes(typeof arg[key])) {
+                            return `${key}:${arg[key]}`;
+                        }
+                    })
+                    .join(' ');
+            }
             return arg.toString();
         })
         .join(' ');
