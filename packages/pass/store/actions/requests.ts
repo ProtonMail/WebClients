@@ -5,6 +5,7 @@ export const syncRequest = () => 'worker::sync';
 export const channelRequest = (channelId: string) => `worker::channel::${channelId}`;
 export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
 export const offlineToggleRequest = () => `offline::toggle`;
+export const offlineResumeRequest = () => `offline::resume`;
 
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
