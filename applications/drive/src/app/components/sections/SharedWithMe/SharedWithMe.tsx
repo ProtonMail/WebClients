@@ -71,16 +71,8 @@ const headerItemsLargeScreen: ListViewHeaderItem[] = [
 ];
 
 const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
-type SharedLinksSortFields = Extract<
-    SortField,
-    SortField.name | SortField.linkCreateTime | SortField.linkExpireTime | SortField.numAccesses
->;
-const SORT_FIELDS: SharedLinksSortFields[] = [
-    SortField.name,
-    SortField.linkCreateTime,
-    SortField.linkExpireTime,
-    SortField.numAccesses,
-];
+type SharedWithMeSortFields = Extract<SortField, SortField.name | SortField.sharedBy | SortField.sharedOn>;
+const SORT_FIELDS: SharedWithMeSortFields[] = [SortField.name, SortField.sharedBy, SortField.sharedOn];
 
 const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
