@@ -1,6 +1,6 @@
 import { BrowserWindowConstructorOptions, Session, app } from "electron";
 import { join } from "path";
-import { DEFAULT_HEIGHT, DEFAULT_WIDTH, getWindowBounds } from "../../store/boundsStore";
+import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
 import { getConfig, isProdEnv } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
@@ -39,8 +39,8 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
         y,
         width,
         height,
-        minWidth: DEFAULT_WIDTH,
-        minHeight: DEFAULT_HEIGHT,
+        minWidth: MINIMUM_WIDTH,
+        minHeight: MINIMUM_HEIGHT,
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: areDevToolsAvailable(),

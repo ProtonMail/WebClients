@@ -8,6 +8,11 @@ const store = new Store();
 export const DEFAULT_WIDTH = 1024;
 export const DEFAULT_HEIGHT = 768;
 
+// This minimum width avoids triggering mobile design in calendar view,
+// which is around 870 pixels
+export const MINIMUM_WIDTH = 900;
+export const MINIMUM_HEIGHT = 300;
+
 export const getWindowBounds = () => {
     // Get stored window size and position
     const windowBounds = store.get("windowBounds", {
