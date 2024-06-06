@@ -12,6 +12,7 @@ import { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
+import { BroadcastSources } from '../Bridge/BroadcastSources'
 
 export enum DocUpdateOrigin {
   DocState = 'DocState',
@@ -66,7 +67,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
       content: stringToUint8Array(JSON.stringify(true)),
     }
 
-    void this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness - On WS Open')
+    void this.callbacks.docStateRequestsPropagationOfUpdate(
+      message,
+      DocUpdateOrigin.DocState,
+      BroadcastSources.AwarenessWebSocketOpen,
+    )
 
     this.broadcastInitialAwarenessState()
   }
@@ -131,7 +136,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
       EventTypeEnum.ClientIsBroadcastingItsPresenceState,
     )
 
-    void this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness - On WS Open')
+    void this.callbacks.docStateRequestsPropagationOfUpdate(
+      message,
+      DocUpdateOrigin.DocState,
+      BroadcastSources.AwarenessWebSocketOpen,
+    )
   }
 
   private handleWindowUnloadEvent = () => {
@@ -151,7 +160,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
       EventTypeEnum.ClientIsBroadcastingItsPresenceState,
     )
 
-    this.callbacks.docStateRequestsPropagationOfUpdate(message, DocUpdateOrigin.DocState, 'Awareness Update Handler')
+    this.callbacks.docStateRequestsPropagationOfUpdate(
+      message,
+      DocUpdateOrigin.DocState,
+      BroadcastSources.AwarenessUpdateHandler,
+    )
   }
 
   private handleDocBeingUpdatedByLexical = (update: Uint8Array, origin: any) => {
@@ -163,7 +176,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.callbacks.docStateRequestsPropagationOfUpdate(
       updateMessage,
       DocUpdateOrigin.DocState,
-      'HandleDocBeingUpdatedByLexical',
+      BroadcastSources.HandleDocBeingUpdatedByLexical,
     )
   }
 
@@ -204,7 +217,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      'DocState | broadcastPresenceState',
+      BroadcastSources.DocPresenceState,
     )
   }
 }
