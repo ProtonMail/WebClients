@@ -1,4 +1,5 @@
 import {
+  BroadcastSources,
   ClientRequiresEditorMethods,
   DocChangeObserver,
   DocumentMetaInterface,
@@ -19,7 +20,11 @@ export interface DocControllerInterface {
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   duplicateDocument(): Promise<void>
-  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, originator: string, debugSource: string): Promise<void>
+  editorRequestsPropagationOfUpdate(
+    message: RtsMessagePayload,
+    originator: string,
+    debugSource: BroadcastSources,
+  ): Promise<void>
   getDocumentClientId(): Promise<number>
   getSureDocument(): DocumentMetaInterface
   debugGetUnrestrictedSharingUrl(): Promise<string>

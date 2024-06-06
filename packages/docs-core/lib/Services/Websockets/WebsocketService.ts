@@ -14,6 +14,7 @@ import {
   RealtimeUrlAndToken,
   WebsocketFailedToConnectPayload,
   WebsocketEncryptionErrorPayload,
+  BroadcastSources,
 } from '@proton/docs-shared'
 import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
 import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
@@ -140,7 +141,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   sendMessageToDocument(
     document: NodeMeta,
     message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: string,
+    source: BroadcastSources,
   ): void {
     const connection = this.connections[document.linkId]
     if (!connection) {
