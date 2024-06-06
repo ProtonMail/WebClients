@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Miten päivität ${ PASS_APP_NAME } Linuxilla"
+      ],
       "Import": [
         "Tuo"
       ],
@@ -1283,6 +1286,9 @@
       "Never": [
         "Ei koskaan"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Uusi versio ${ latestVersion } on saatavilla."
+      ],
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
@@ -1439,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Muutosloki löytyy osoitteesta ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Vienti sisältää vain omistamasi holvit."
@@ -2036,7 +2045,7 @@
         "Näytä lokitiedot"
       ],
       "Vulnerable": [
-        "Haavoittuva"
+        "Haavoittuvainen"
       ],
       "Weak": [
         "Heikko"

@@ -688,10 +688,10 @@
       "No, thanks": [
         "Nu, mulțumesc"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3157,6 +3157,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Sigur doriți ștergerea acestei adrese?"
+      ],
+      "Delete address permanently?": [
+        "Ștergeți permanent adresa?"
+      ],
+      "Delete address?": [
+        "Ștergere adresă?"
+      ],
       "You can only delete 1 address per year.": [
         "Puteți șterge o singură adresă pe an."
       ]
@@ -3175,6 +3184,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "Nu veți mai avea acces la acest calendar."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Sigur doriți să ștergeți acest domeniu?"
       ]
     },
     "Delinquent modal title": {
@@ -3361,6 +3375,11 @@
       ],
       "The VPN is too slow": [
         "Viteza pe VPN e prea mică"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajutați-ne să se îmbunătățim"
       ]
     },
     "Download link": {
@@ -5998,6 +6017,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -7205,9 +7235,6 @@
       "No addresses exist": [
         "Nu există adrese"
       ],
-      "No changes made to the current subscription": [
-        "Nu s-au efectuat modificări la abonamentul actual."
-      ],
       "No credit card required": [
         "Nu trebuie card de credit"
       ],
@@ -7801,6 +7828,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Această verificare poate dura până la o oră. Puteți continua în siguranță cu pașii următori."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
       ],
@@ -7969,8 +7999,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Treceți la ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Treceți la ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[bundleProPlan] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
@@ -8438,17 +8468,6 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9617,9 +9636,6 @@
       "Security code (${ codeName })": [
         "Cod de securitate (${ codeName })"
       ],
-      "Select your plan": [
-        "Selectați planul"
-      ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
@@ -10008,6 +10024,9 @@
       ],
       "Encryption and keys": [
         "Criptare și chei"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Forgot username?": [
         "Ați uitat numele de utilizator?"
@@ -10629,9 +10648,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continuare revizuire"
-      ],
       "Continue with Free": [
         "Continuare cu Free"
       ],
@@ -10925,8 +10941,8 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
-      "Phone support (6+ users)": [
-        "Asistență telefonică (peste 6 utilizatori)"
+      "Phone support (40+ users)": [
+        "Asistență telefonică (40+ utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -10998,9 +11014,6 @@
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
       ],
-      "Team management": [
-        "Gestionare echipă"
-      ],
       "Tor over VPN": [
         "Tor prin VPN"
       ],
@@ -11065,6 +11078,9 @@
       ],
       "User session management": [
         "Gestionare sesiuni utilizator"
+      ],
+      "User storage management": [
+        "Gestionarea spațiului de stocare al utilizatorilor"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partajare seif (maxim ${ n } persoană)",
@@ -11140,6 +11156,9 @@
       "Early access to new apps and features": [
         "Acces timpuriu la aplicațiile și funcțiile noi"
       ],
+      "Enhanced security and premium features for teams.": [
+        "Securitate sporită și beneficii exclusive pentru echipe."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protecție esențială și colaborare sigură pentru utilizatori nelimitați."
       ],
@@ -11164,9 +11183,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suită de confidențialitate și securitate pentru companii, incluzând toate serviciile premium ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -11175,9 +11191,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "E-mail și calendar securizat pentru profesioniști și companii."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
@@ -11254,14 +11267,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -11280,6 +11285,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -11526,9 +11539,6 @@
       "Central control panel": [
         "Panou de control central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
-      ],
       "Create up to ${ n } calendar": [
         "Creați maxim ${ n } calendar",
         "Creați până la ${ n } calendare",
@@ -11551,6 +11561,9 @@
       ],
       "Require 2FA": [
         "Necesită A2F"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Suport pentru ${ n } de domenii de e-mail personale"
       ]
     },
     "Notification": {
@@ -14009,85 +14022,6 @@
         "Pentru"
       ]
     },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
-      ],
-      "${ dayDiff } day left": [
-        "A mai rămas ${ dayDiff } zi",
-        "Au mai rămas ${ dayDiff } zile",
-        "Au mai rămas ${ dayDiff } de zile"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
-      ],
-      "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } spațiu total"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
-      ],
-      "Calendar sharing": [
-        "Partajare calendar"
-      ],
-      "Cancel subscription": [
-        "Anulare abonament"
-      ],
-      "Cancel subscription?": [
-        "Anulare abonament?"
-      ],
-      "Close": [
-        "Închidere"
-      ],
-      "Custom schedule send and snooze times": [
-        "Programări personale și amânări"
-      ],
-      "Have a question?": [
-        "Aveți o întrebare?"
-      ],
-      "Helping activists in Hong Kong": [
-        "Ajurarea activiștilor din Hong Kong"
-      ],
-      "I still want to cancel": [
-        "Doresc să anulez"
-      ],
-      "Keep ${ planName }": [
-        "Păstrare ${ planName }"
-      ],
-      "Learn more about our impact": [
-        "Aflați mai multe despre impactul nostru"
-      ],
-      "Our fight against censorship in Russia": [
-        "Lupta noastră împotriva cenzurii în Rusia"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
-      ],
-      "Read the story": [
-        "Citiți articolul"
-      ],
-      "Subscription canceled": [
-        "Abonament anulat"
-      ],
-      "Unblocking internet access in Iran": [
-        "Deblocarea accesului la internet în Iran"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Watch the interview": [
-        "Priviți interviul"
-      ],
-      "Yearly free storage bonuses": [
-        "Bonusuri de stocare gratuită anuală"
-      ],
-      "Your own custom email domain": [
-        "Domeniu personal de e-mail"
-      ],
-      "Your own short @pm.me email alias": [
-        "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GiB spațiu de stocare"
@@ -14127,6 +14061,97 @@
       ],
       "Your privacy is our mission": [
         "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
+      ],
+      "${ dayDiff } day left": [
+        "A mai rămas ${ dayDiff } zi",
+        "Au mai rămas ${ dayDiff } zile",
+        "Au mai rămas ${ dayDiff } de zile"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } spațiu total"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programul ${ PROTON_SENTINEL_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Calendar sharing": [
+        "Partajare calendar"
+      ],
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Cancel subscription?": [
+        "Anulare abonament?"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
+      "Have a question?": [
+        "Aveți o întrebare?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ajurarea activiștilor din Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Doresc să anulez"
+      ],
+      "Keep ${ planName }": [
+        "Păstrare ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Aflați mai multe despre impactul nostru"
+      ],
+      "Online privacy, for your whole family": [
+        "Confidențialitate online, pentru întreaga familie"
+      ],
+      "Our fight against censorship in Russia": [
+        "Lupta noastră împotriva cenzurii în Rusia"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Read the story": [
+        "Citiți articolul"
+      ],
+      "Subscription canceled": [
+        "Abonament anulat"
+      ],
+      "Unblocking internet access in Iran": [
+        "Deblocarea accesului la internet în Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Version history": [
+        "Istoric versiuni"
+      ],
+      "Watch the interview": [
+        "Priviți interviul"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonusuri de stocare gratuită anuală"
+      ],
+      "Your own custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Your own short @pm.me email alias": [
+        "Propriul alias de e-mail scurt @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -14882,9 +14907,6 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
-      ],
-      "Customize your plan": [
-        "Personalizare plan"
       ],
       "Dashboard": [
         "Panou general"

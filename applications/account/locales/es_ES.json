@@ -697,11 +697,11 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "OK": [
-        "Aceptar"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -6030,6 +6030,17 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -7210,9 +7221,6 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
-      "No changes made to the current subscription": [
-        "No se han realizados cambios a la suscripción actual."
-      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -7985,8 +7993,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Mejora al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para obtener ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Mejora al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[bundleProPlan] } para obtener ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Actualiza tu cuenta para añadir una dirección corta @pm.me que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “Private Message me”."
@@ -8456,17 +8464,6 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9638,9 +9635,6 @@
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
       ],
-      "Select your plan": [
-        "Elige tu suscripción"
-      ],
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
@@ -10657,9 +10651,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pasar a la revisión"
-      ],
       "Continue with Free": [
         "Seguir con el plan gratuito"
       ],
@@ -10938,8 +10929,8 @@
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (6+ users)": [
-        "Soporte por teléfono (6 o más usuarios)"
+      "Phone support (40+ users)": [
+        "Soporte por teléfono (40 o más usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -11008,9 +10999,6 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
-      ],
-      "Team management": [
-        "Gestión de equipos"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -11173,9 +11161,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Conjunto de soluciones de privacidad y seguridad para empresas con todos los servicios premium de ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -11184,9 +11169,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Almacenamiento seguro en la nube que te permite almacenar, sincronizar y compartir archivos de forma fácil y segura."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Correo electrónico y calendario seguros para empresas y profesionales independientes."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
@@ -11263,14 +11245,6 @@
         "Has seleccionado el plan ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -11289,6 +11263,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquea funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -11534,9 +11516,6 @@
       "Central control panel": [
         "Panel de control central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Cubre más posibilidades con 10 dominios de correo electrónico personalizados."
-      ],
       "Create up to ${ n } calendar": [
         "Crea hasta ${ n } calendario",
         "Crea hasta ${ n } calendarios"
@@ -11558,6 +11537,9 @@
       ],
       "Require 2FA": [
         "Requiere 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Soporte para ${ n } dominios de correo electrónico personalizado"
       ]
     },
     "Notification": {
@@ -13973,6 +13955,47 @@
         "Por"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Los ingresos de ${ BRAND_NAME } solo provienen de las suscripciones de sus usuarios. Tu ayuda nos permite mantenernos independientes, avanzar en nuestra misión de hacer que la privacidad en línea sea lo primero y seguir apoyando a activistas y organizaciones que luchan por la privacidad y la libertad."
@@ -14181,47 +14204,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -14970,9 +14952,6 @@
       ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
-      ],
-      "Customize your plan": [
-        "Personaliza tu plan"
       ],
       "Dashboard": [
         "Panel de control"

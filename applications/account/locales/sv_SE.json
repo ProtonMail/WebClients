@@ -697,11 +697,11 @@
       "No, thanks": [
         "Nej tack"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -6034,6 +6034,17 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7211,9 +7222,6 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
-      "No changes made to the current subscription": [
-        "Inga ändringar gjorda i den nuvarande prenumerationen"
-      ],
       "No credit card required": [
         "Inget kreditkort krävs"
       ],
@@ -7812,6 +7820,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
       ],
@@ -7983,8 +7994,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Uppgradera till ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[bundleProPlan] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
@@ -8442,17 +8453,6 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9618,9 +9618,6 @@
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
       ],
-      "Select your plan": [
-        "Välj ditt paket"
-      ],
       "Send auto-reply": [
         "Skicka autosvar"
       ],
@@ -10637,9 +10634,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Fortsätt att utvärdera"
-      ],
       "Continue with Free": [
         "Fortsätt med Free"
       ],
@@ -10797,6 +10791,9 @@
       "Centralized settings and billings": [
         "Centraliserade inställningar och faktureringar"
       ],
+      "Collaborate and share large files": [
+        "Samarbeta och dela stora filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -10918,8 +10915,8 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Phone support (6+ users)": [
-        "Telefonsupport (6+ användare)"
+      "Phone support (40+ users)": [
+        "Telefonsupport (40+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -10988,9 +10985,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
-      ],
-      "Team management": [
-        "Teamhantering"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -11126,6 +11120,12 @@
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
       ],
+      "Encrypted email and calendar to get you started.": [
+        "Krypterad e-post och kalender för att du ska komma igång."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Förbättrad säkerhet och premiumfunktioner för team."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Grundläggande skydd och säkert samarbete för obegränsat antal användare."
       ],
@@ -11150,9 +11150,6 @@
       "Popular": [
         "Populär"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Integritet- och säkerhetssvit för företag, inklusive alla premiumtjänster för ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -11161,9 +11158,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Säker e-post och kalender för professionella och företag."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -11240,17 +11234,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -11269,6 +11252,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -11511,9 +11505,6 @@
       "Central control panel": [
         "Central kontrollpanel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Få mer gjort med stöd för 10 anpassade e-postdomäner"
-      ],
       "Create up to ${ n } calendar": [
         "Skapa upp till ${ n } kalender",
         "Skapa upp till ${ n } kalendrar"
@@ -11535,6 +11526,9 @@
       ],
       "Require 2FA": [
         "Kräver 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Notification": {
@@ -13937,6 +13931,44 @@
         "För"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Enda inkomstkälla som ${ BRAND_NAME } har är användarprenumerationer. Ditt stöd tillåter oss att förbli oberoende, främja vårt uppdrag att göra integritet till standard online och fortsätta att stödja aktivister och organisationer som kämpar för integritet och frihet."
@@ -14098,6 +14130,12 @@
       "What you give up when you cancel ${ planName }": [
         "Vad du förlorar när du avbryter ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
@@ -14109,44 +14147,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Desktop app": [
-        "App för stationär dator"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -14898,9 +14898,6 @@
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
-      ],
-      "Customize your plan": [
-        "Anpassa ditt paket"
       ],
       "Dashboard": [
         "Adminpanel"

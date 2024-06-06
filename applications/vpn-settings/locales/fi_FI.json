@@ -200,6 +200,12 @@
       "Edit name": [
         "Muokkaa nimeä"
       ],
+      "Edit organization identity": [
+        "Muokkaa organisaation identiteettiä"
+      ],
+      "Edit organization name": [
+        "Muokkaa organisaation nimeä"
+      ],
       "Edit password": [
         "Muokkaa salasanaa"
       ],
@@ -235,6 +241,9 @@
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
+      ],
+      "Forgot recovery method?": [
+        "Unohditko palautustavan?"
       ],
       "Get ${ vpnPlus }": [
         "Hanki ${ vpnPlus }"
@@ -718,6 +727,9 @@
       "Browse the web privately and block ads": [
         "Selaa verkkoa yksityisesti ja estä mainoksia"
       ],
+      "Create and collaborate on documents securely": [
+        "Luo ja tee yhteistyötä asiakirjojen parissa turvallisesti"
+      ],
       "Keep your schedule private": [
         "Pidä aikataulusi yksityisenä"
       ],
@@ -751,6 +763,9 @@
       ],
       "Get the deal": [
         "Hanki tarjous"
+      ],
+      "Save even more with a 12-month plan": [
+        "Säästä vielä enemään 12 kuukauden tilauksella"
       ]
     },
     "bf2023: Deal details": {
@@ -1909,6 +1924,24 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Haluatko varmasti poistaa tämän osoitteen?"
+      ],
+      "Delete address": [
+        "Poista osoite"
+      ],
+      "Delete address permanently?": [
+        "Poistetaanko osoite pysyvästi?"
+      ],
+      "Delete address?": [
+        "Poista osoite?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Poiston jälkeen kukaan muu ei voi enää käyttää osoitetta ${ address }."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Huomioithan, ettet voi osoitteen ${ address } poiston jälkeen enää lähettää tai vastaanottaa viestejä sitä käyttäen."
+      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vuoden sisällä vain yhden osoitteen."
       ]
@@ -1921,6 +1954,20 @@
         "Olet saavuttanut tämän käyttäjän osoitteiden poistojen enimmäismäärän."
       ]
     },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Haluatko varmasti poistaa verkkotunnuksen?"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Delete domain?": [
+        "Poistetaanko verkkotunnus?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Huomioithan, että verkkotunnuksen ${ domainName } poisto poistaa myös kaikki sitä käyttävät osoitteet käytöstä."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Erääntynyt lasku"
@@ -1929,6 +1976,20 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Haluatko varmasti poistaa tämän osoitteen käytöstä?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Poistamalla osoitteen ${ address } käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja sitä käyttäen, ja kaikki siihen liitetyt ${ BRAND_NAME } -tuotteet poistetaan käytöstä."
+      ],
+      "Disable address": [
+        "Poista osoite käytöstä"
+      ],
+      "Disable address?": [
+        "Poistetaanko osoite käytöstä?"
       ]
     },
     "Domain label": {
@@ -2488,6 +2549,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, syötä se tähän. Muutoin heidän on ensin luotava tili."
       ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organizationName }."
+      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen ilmaiseen 30 päivän kokeiluun*."
       ],
@@ -2843,6 +2907,9 @@
       ],
       "Organization key fingerprint": [
         "Organisaation avaimen sormenjälki"
+      ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Isoja säästöjä parhailla ${ VPN_APP_NAME } -tarjouksilla"
       ],
       "Select your deal": [
         "Valitse tarjouksesi"
@@ -3310,7 +3377,7 @@
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
-        "Henkilöllisyyden tarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
+        "Identiteetin tarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
       "Enhance your network security": [
         "Paranna verkkotietoturvaasi"
@@ -3564,9 +3631,6 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
-      "No changes made to the current subscription": [
-        "Nykyiseen tilaukseen ei ole tehty muutoksia"
-      ],
       "No gateways": [
         "Yhdyskäytäviä ei ole"
       ],
@@ -3665,6 +3729,9 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
+      "please open a support ticket": [
+        "avaa tukipyyntö"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
       ],
@@ -3748,6 +3815,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Määritä tilisi skannaamalla tämä koodi todennuslaitteellasi. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "SCIM-integraatio poistettu käytöstä"
+      ],
+      "SCIM token active": [
+        "SCIM-tunniste käytössä"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Suojaa ${ BRAND_NAME }-tilisi"
@@ -3891,11 +3964,17 @@
       "This file is too large to preview": [
         "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Tämä viesti ei mene tukitiimille, jos sinulla on ongelmia palvelumme kanssa tai tarvitset lisätoimenpiteitä meiltä ${ supportLink }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Tämä vahvistus voi kestää jopa tunnin. Voit jatkaa turvallisesti seuraaviin vaiheisiin."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
@@ -3988,7 +4067,7 @@
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
-        "Henkilöllisyyden tarjoajan luoma yksilöllinen tunnistetieto, yleensä henkilöllisyyden tarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
+        "Identiteetin tarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteetin tarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
       ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
@@ -4118,6 +4197,12 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Kun peruutat nykyisen maksullisen tilauksesi, tilauksesi saldo palautetaan tilikrediitteinä ja sinut alennetaan ${ BRAND_NAME } ${ PLANS.FREE } -tilaukseen."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kun peruutat tilauksesi, sitä ei uusita, mutta voit silti nauttia tilauksen eduista tilausjakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
@@ -4549,6 +4634,9 @@
       "Current email": [
         "Nykyinen sähköpostiosoite"
       ],
+      "Current organization identity": [
+        "Nykyinen organisaation identiteetti"
+      ],
       "Default language": [
         "Oletuskieli"
       ],
@@ -4663,6 +4751,9 @@
       "New mailbox password": [
         "Uusi postilaatikon salasana"
       ],
+      "New organization identity": [
+        "Uusi organisaation identiteetti"
+      ],
       "New organization password": [
         "Uusi organisaation salasana"
       ],
@@ -4692,6 +4783,9 @@
       ],
       "Optional": [
         "Valinnainen"
+      ],
+      "Organization identity": [
+        "Organisaation identiteetti"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -4767,9 +4861,6 @@
       ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
-      ],
-      "Select your plan": [
-        "Valitse tilauksesi"
       ],
       "Single sign-on entity ID": [
         "Kertakirjautumisen entiteetin ID (SSO entity ID)"
@@ -4950,6 +5041,9 @@
       ],
       "Forgot username?": [
         "Unohditko käyttäjätunnuksesi?"
+      ],
+      "Help": [
+        "Tuki"
       ],
       "Help translate": [
         "Osallistu käännökseen"
@@ -5212,9 +5306,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Jatka tarkistukseen"
-      ],
       "Delete account": [
         "Poista tili"
       ],
@@ -5366,6 +5457,9 @@
       "Centralized settings and billings": [
         "Keskitetyt asetukset ja laskutus"
       ],
+      "Collaborate and share large files": [
+        "Tee yhteistyötä ja jaa suuria tiedostoja"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -5401,6 +5495,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -5484,11 +5581,14 @@
       "Password health": [
         "Salasanaterveys"
       ],
+      "Password manager to secure credentials": [
+        "Salasananhallinta kirjautumistietojen turvaamiseen"
+      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Phone support (6+ users)": [
-        "Puhelinasiakaspalvelu (6+ käyttäjää)"
+      "Phone support (40+ users)": [
+        "Puhelinasiakaspalvelu (40+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -5524,6 +5624,9 @@
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
+      "See team's availability": [
+        "Katso tiimin saatavuus"
+      ],
       "Send & receive invitations": [
         "Lähetä ja vastaanota kutsuja"
       ],
@@ -5557,9 +5660,6 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
-      ],
-      "Team management": [
-        "Tiimin hallinta"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -5625,6 +5725,9 @@
       "User session management": [
         "Käyttäjäistuntojen hallinta"
       ],
+      "User storage management": [
+        "Käyttäjien tallennustilan hallinta"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
@@ -5674,6 +5777,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
       ],
@@ -5682,6 +5788,12 @@
       ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Salattu sähköposti ja kalenteri, joilla pääset alkuun."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Välttämätön suojaus ja turvallinen yhteistoiminta rajoittamattomille käyttäjille."
@@ -5704,9 +5816,6 @@
       "Popular": [
         "Suosittu"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tietosuojaa ja turvaa yrityksille tarjoava paketti ${ BRAND_NAME }in kaikilla premium-palveluilla."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
@@ -5715,9 +5824,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
@@ -5863,6 +5969,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-tuki on käytettävissä vain työpöytäsovellusten (esim. Outlook, Apple Mail ja Thunderbird) kanssa ${ MAIL_APP_NAME } Bridgen välityksellä. Pilvipohjaisia IMAP-integraatioita ei tällä hetkellä tueta."
       ],
+      "Increase or reallocate storage for a user": [
+        "Käyttäjän tallennustilan lisääminen tai uudelleen jakaminen"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
       ],
@@ -5971,6 +6080,9 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
       ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Lähetä yrityksesi logo, jotta voit mukauttaa tiimiesi kokemusta ${ BRAND_NAME } -verkkosovelluksissa"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Käytä omaa verkkotunnustasi käyttäviä sähköpostiosoitteita, kuten nimesi@esimerkki.fi"
       ],
@@ -6029,9 +6141,6 @@
       "Central control panel": [
         "Keskitetty hallintapaneeli"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Laajenna toimialuettasi 10 omalla sähköpostiverkkotunnuksella."
-      ],
       "Create up to ${ n } calendar": [
         "Luo enintään ${ n } kalenteri",
         "Luo enintään ${ n } kalenteria"
@@ -6053,6 +6162,9 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -6401,8 +6513,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää, ottamalla yhteyttä toiseen ylläpitäjään tai nollaamalla organisaation avain."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Emme voineet vahvistaa tämän identiteetin aitoutta."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Olemme vahvistaneet tämän identiteetin aitouden."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
@@ -6715,10 +6833,10 @@
         "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
       ],
       "Enter token into your identity provider": [
-        "Syötä tunniste henkilöllisyyden tarjoajaasi"
+        "Syötä tunniste identiteetin tarjoajaasi"
       ],
       "Enter URL and token into your identity provider": [
-        "Syötä URL-osoite ja tunniste henkilöllisyyden tarjoajaasi"
+        "Syötä URL-osoite ja tunniste identiteetin tarjoajaasi"
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Turvallisuussyistä SCIM-tunniste piilotetaan muutosten tallentamisen jälkeen, etkä voi enää nähdä sitä."
@@ -6727,31 +6845,31 @@
         "Tunniste on tietoturvasyistä piilotettu"
       ],
       "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry henkilöllisyyden tarjoajallesi, kopioi ja liitä alla olevat tiedot ja viimeistele SCIM-määritys ${ VPN_APP_NAME }:lle."
+        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla olevat tiedot ja viimeistele SCIM-määritys ${ VPN_APP_NAME }:lle."
       ],
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry henkilöllisyyden tarjoajallesi, kopioi ja liitä alla oleva tunniste ja ota SCIM uudelleen käyttöön ${ VPN_APP_NAME }:lle."
+        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla oleva tunniste ja ota SCIM uudelleen käyttöön ${ VPN_APP_NAME }:lle."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
-        "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että henkilöllisyyden tarjoajan asetukset on päivitettävä."
+        "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetin tarjoajan asetukset on päivitettävä."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Varmista, että kopioit yllä olevan SCIM-tunnuksen nyt."
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki henkilöllisyyden tarjoajan automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
+        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki identitetin tarjoajan automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
         "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteettitoimittajastasi, niin muutokset toteutetaan automaattisesti myös ${ VPN_APP_NAME } -organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen henkilöllisyyden tarjoajan asetuksiin."
+        "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetin tarjoajan asetuksiin."
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-URL-osoite ja -tunniste poistetaan."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Ottaaksesi synkronoinnin uudelleen käyttöön henkilöllisyyden tarjoajan kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
+        "Ottaaksesi synkronoinnin uudelleen käyttöön identiteetin tarjoajan kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
       ]
     },
     "scim: Label": {
@@ -7541,18 +7659,63 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }, sisältäen kalenterijaon"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } päivä jäljellä",
         "${ dayDiff } päivää jäljellä"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }, sisältäen versiohistorian"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } ja kaikki premium-tuottavuusominaisuudet"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteillesi, liitetiedostoillesi, tapahtumillesi, salasanoillesi ja tiedostoillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa tiedostoillesi ja kuvillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } -ohjelma"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME }, pääsy kaikkiin huippunopeisiin palvelimiin ${ vpnCountries } maassa"
+      ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
+      ],
+      "6 users": [
+        "6 käyttäjää"
+      ],
+      "Add any new files": [
+        "Lisää uusia tiedostoja"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "Back up photos from your devices": [
+        "Varmuuskopioi valokuvia laitteistasi"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -7566,8 +7729,17 @@
       "Close": [
         "Sulje"
       ],
+      "Comprehensive privacy and security": [
+        "Kattava yksityisyys ja suojaus"
+      ],
       "Custom schedule send and snooze times": [
         "Mukautetut lähetys- ja torkutusajat"
+      ],
+      "Early access to new apps and features": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Extra storage and bonuses": [
+        "Enemmän tallennustilaa ja bonuksia"
       ],
       "Have a question?": [
         "Onko sinulla kysyttävää?"
@@ -7575,8 +7747,20 @@
       "Helping activists in Hong Kong": [
         "Aktivistien auttaminen Hongkongissa"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Miten asiakaspalvelutiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Miten taistelimme vastaan, kun ${ BRAND_NAME } joutui aggressiivisen sensuurikampanjan kohteeksi."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Miten tuimme paikallisia aktivisteja, kun yksityisyyttä ja sananvapautta uhattiin Hongkongissa."
+      ],
       "I still want to cancel": [
         "Haluan edelleen perua"
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Jos ylität ilmaisen tilauksen rajat ${ planName } -tilauksesi päättyessä, et voi:"
       ],
       "Keep ${ planName }": [
         "Pidä ${ planName }"
@@ -7584,17 +7768,41 @@
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
       ],
+      "Manage your calendar": [
+        "Hallitse kalenteriasi"
+      ],
+      "Online privacy, for your whole family": [
+        "Yksityisyyttä verkossa, koko perheellesi"
+      ],
       "Our fight against censorship in Russia": [
         "Taistelumme Venäjän sensuuria vastaan"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Huomaa, että ${ planName } -tilaus ei ole enää ostettavissa. Jos alennat tilisi, menetät kaikki sen edut, etkä voi tilata sitä uudelleen."
+      ],
+      "Premium productivity features": [
+        "Premium-tuottavuusominaisuudet"
       ],
       "Priority support": [
         "Ensisijainen tuki"
       ],
+      "Reactivate": [
+        "Uudelleenaktivoi"
+      ],
       "Read the story": [
         "Lue juttu"
       ],
+      "Receive new emails": [
+        "Vastaanota uusia sähköposteja"
+      ],
+      "Send emails with attachments": [
+        "Lähetä sähköposteja liitetiedostojen kanssa"
+      ],
       "Subscription canceled": [
         "Tilaus on peruttu"
+      ],
+      "Sync files on devices": [
+        "Synkronoi tiedostoja laitteilla"
       ],
       "Unblocking internet access in Iran": [
         "Internet-yhteyksien vapauttaminen Iranissa"
@@ -7602,11 +7810,32 @@
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
       ],
+      "Version history": [
+        "Versiohistoria"
+      ],
       "Watch the interview": [
         "Katso haastattelu"
       ],
+      "What you give up when you cancel ${ planName }": [
+        "Mitä menetä perumalla ${ planName }-tilauksen"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa . Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
+      ],
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "${ planName }-tilauksesi on peruttu."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Oma sähköpostiverkkotunnuksesi"
@@ -8134,9 +8363,6 @@
       "Customize the number of IP addresses in your plan": [
         "Muuta tilauksesi IP-osoitemäärää"
       ],
-      "Customize your plan": [
-        "Mukauta tilaustasi"
-      ],
       "Date": [
         "Päivämäärä"
       ],
@@ -8198,6 +8424,9 @@
       "Edit invoice details": [
         "Muokkaa laskun tietoja"
       ],
+      "Edit organization identity": [
+        "Muokkaa organisaation identiteettiä"
+      ],
       "Edit servers": [
         "Muokkaa palvelimia"
       ],
@@ -8220,7 +8449,7 @@
         "Sähköpostitilaukset"
       ],
       "Enter endpoints into your identity provider": [
-        "Syötä päätepisteet henkilöllisyyden tarjoajaasi"
+        "Syötä päätepisteet identiteetin tarjoajaasi"
       ],
       "Enter SAML metadata": [
         "Syötä SAML-metatiedot"
@@ -8243,6 +8472,9 @@
       ],
       "Find email or username": [
         "Etsi osoite tai tunnus"
+      ],
+      "Forgot recovery method": [
+        "Unohtunut palautustapa"
       ],
       "Gateways": [
         "Yhdyskäytävät"
@@ -8591,7 +8823,7 @@
         "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "Henkilöllisyyden tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
+        "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
@@ -8617,11 +8849,14 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
       ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Tämä sähköpostiosoite näytetään kaikille organisaation jäsenille tilinhallintatoimintoja suoritettaessa."
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "Yleensä henkilöllisyyden tarjoajan nimen sisältävä URL-osoite"
+        "Yleensä identiteetin tarjoajan nimen sisältävä URL-osoite"
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
@@ -8786,6 +9021,12 @@
       "${ n } year": [
         "${ n } vuosi",
         "${ n } vuotta"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Sisältää ${ plan }, premium-salasanahallintamme, ilmaiseksi ensimmäisen vuoden ajan!"
+      ],
+      "Just ${ price }": [
+        "Vain ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Kokeile ${ upsellPlanName } -tilausta riskittömästi"

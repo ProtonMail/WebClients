@@ -3628,9 +3628,6 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
-      "No changes made to the current subscription": [
-        "Inga ändringar gjorda i den nuvarande prenumerationen"
-      ],
       "No gateways": [
         "Inga gateways"
       ],
@@ -3975,6 +3972,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta kommer att göra det möjligt att använda PayPal för att betala för din ${ BRAND_NAME }-prenumeration. Du kommer att omdirigeras till PayPal i en ny webbläsarflik. Om du använder några popup-blockerare, inaktivera den för att fortsätta."
@@ -4847,9 +4847,6 @@
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
       ],
-      "Select your plan": [
-        "Välj ditt paket"
-      ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
       ],
@@ -5291,9 +5288,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Fortsätt att utvärdera"
-      ],
       "Delete account": [
         "Ta bort konto"
       ],
@@ -5445,6 +5439,9 @@
       "Centralized settings and billings": [
         "Centraliserade inställningar och faktureringar"
       ],
+      "Collaborate and share large files": [
+        "Samarbeta och dela stora filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -5566,8 +5563,8 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Phone support (6+ users)": [
-        "Telefonsupport (6+ användare)"
+      "Phone support (40+ users)": [
+        "Telefonsupport (40+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -5636,9 +5633,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
-      ],
-      "Team management": [
-        "Teamhantering"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -5759,6 +5753,12 @@
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
       ],
+      "Encrypted email and calendar to get you started.": [
+        "Krypterad e-post och kalender för att du ska komma igång."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Förbättrad säkerhet och premiumfunktioner för team."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Grundläggande skydd och säkert samarbete för obegränsat antal användare."
       ],
@@ -5780,9 +5780,6 @@
       "Popular": [
         "Populär"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Integritet- och säkerhetssvit för företag, inklusive alla premiumtjänster för ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -5791,9 +5788,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Säker e-post och kalender för professionella och företag."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -6105,9 +6099,6 @@
       "Central control panel": [
         "Central kontrollpanel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Få mer gjort med stöd för 10 anpassade e-postdomäner"
-      ],
       "Create up to ${ n } calendar": [
         "Skapa upp till ${ n } kalender",
         "Skapa upp till ${ n } kalendrar"
@@ -6129,6 +6120,9 @@
       ],
       "Require 2FA": [
         "Kräver 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Notification": {
@@ -7767,6 +7761,12 @@
       "What you give up when you cancel ${ planName }": [
         "Vad du förlorar när du avbryter ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
@@ -8295,9 +8295,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Anpassa antalet IP-adresser i ditt paket"
-      ],
-      "Customize your plan": [
-        "Anpassa ditt paket"
       ],
       "Date": [
         "Datum"

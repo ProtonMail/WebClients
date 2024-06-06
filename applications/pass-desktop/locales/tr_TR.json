@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Linux üzerinde ${ PASS_APP_NAME } nasıl güncellenir"
+      ],
       "Import": [
         "İçe aktar"
       ],
@@ -1283,6 +1286,9 @@
       "Never": [
         "Asla"
       ],
+      "New version ${ latestVersion } is available.": [
+        "${ latestVersion } sürümü yayınlanmış."
+      ],
       "No breaches detected": [
         "Herhangi bir veri ele geçirilmemiş"
       ],
@@ -1439,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Değişiklik günlüğüne ${ changelogLink } adresinden bakabilirsiniz."
       ],
       "The export will only contain vaults that you own.": [
         "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."

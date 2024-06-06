@@ -2521,6 +2521,11 @@
         "Το PIN είναι πολύ αργό"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Βοηθήστε μας να βελτιωθούμε"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Προσθήκη ημερολογίου"
@@ -4549,9 +4554,6 @@
       "New": [
         "Νέο"
       ],
-      "No changes made to the current subscription": [
-        "Δεν έγιναν αλλαγές στην τρέχουσα συνδρομή"
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -5558,9 +5560,6 @@
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
       ],
-      "Select your plan": [
-        "Επιλέξτε το πλάνο σας"
-      ],
       "Show others when I'm busy": [
         "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
       ],
@@ -6121,9 +6120,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Συνεχίστε την αξιολόγηση"
-      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -6378,8 +6374,8 @@
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
-      "Phone support (6+ users)": [
-        "Τηλεφωνική υποστήριξη (6+ χρήστες)"
+      "Phone support (40+ users)": [
+        "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
@@ -6438,9 +6434,6 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
-      ],
-      "Team management": [
-        "Διαχείριση ομάδας"
       ],
       "Tor over VPN": [
         "Tor μέσω VPN"
@@ -6582,9 +6575,6 @@
       "Popular": [
         "Δημοφιλές"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Σουίτα απορρήτου και ασφάλειας για επιχειρήσεις, συμπεριλαμβανομένων όλων των premium υπηρεσιών του ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
       ],
@@ -6593,9 +6583,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Ασφαλής αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Ασφαλές ηλεκτρονικό ταχυδρομείο και ημερολόγιο για επαγγελματίες και επιχειρήσεις."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
@@ -6872,9 +6859,6 @@
       "Central control panel": [
         "Κεντρικός πίνακας ελέγχου"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Καλύψτε περισσότερο έδαφος με υποστήριξη για 10 προσαρμοσμένους τομείς email"
-      ],
       "Create up to ${ n } calendar": [
         "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
         "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
@@ -6896,6 +6880,9 @@
       ],
       "Require 2FA": [
         "Απαιτείται 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Notification": {
@@ -8230,6 +8217,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } πρόγραμμα"
+      ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
@@ -8239,6 +8229,9 @@
       "Custom schedule send and snooze times": [
         "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
       ],
+      "Early access to new apps and features": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
       "Helping activists in Hong Kong": [
         "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"
       ],
@@ -8247,6 +8240,9 @@
       ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
+      ],
+      "Online privacy, for your whole family": [
+        "Online ιδιωτικότητα, για όλη την οικογένειά σας"
       ],
       "Our fight against censorship in Russia": [
         "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
@@ -8262,6 +8258,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
       ],
       "Watch the interview": [
         "Δείτε τη συνέντευξη"
@@ -8797,9 +8796,6 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
-      ],
-      "Customize your plan": [
-        "Προσαρμόστε το πλάνο σας"
       ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"

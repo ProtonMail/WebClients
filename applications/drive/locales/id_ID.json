@@ -2744,6 +2744,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Undangan ini belum dapat diselesaikan. Silakan coba lagi nanti."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Undangan ini tidak lagi ada"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Nama label tidak valid. Silakan pilih nama lain."
       ],
@@ -4426,9 +4432,6 @@
       "No": [
         "Tidak"
       ],
-      "No changes made to the current subscription": [
-        "Tidak ada perubahan yang diterapkan bagi paket langganan saat ini"
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -5440,9 +5443,6 @@
       "Create ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
       ],
-      "Create a share link": [
-        "Buat tautan berbagi"
-      ],
       "Created": [
         "Waktu pembuatan"
       ],
@@ -5737,9 +5737,6 @@
       "Select type of abuse": [
         "Pilih jenis penyalahgunaan"
       ],
-      "Select your plan": [
-        "Pilih paket Anda"
-      ],
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
       ],
@@ -5748,6 +5745,9 @@
       ],
       "Set recovery method": [
         "Tentukan metode pemulihan"
+      ],
+      "Share a file": [
+        "Bagikan berkas"
       ],
       "Shared by": [
         "Dibagikan oleh"
@@ -6391,9 +6391,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Lanjut ke proses peninjauan"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -6633,8 +6630,8 @@
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
-      "Phone support (6+ users)": [
-        "Dukungan via telepon (6+ pengguna)"
+      "Phone support (40+ users)": [
+        "Dukungan via telepon (40+ pengguna)"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -6692,9 +6689,6 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
-      ],
-      "Team management": [
-        "Manajemen tim"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -6813,6 +6807,9 @@
       "Early access to new apps and features": [
         "Akses dini ke berbagai aplikasi dan fitur baru"
       ],
+      "Encrypted email and calendar to get you started.": [
+        "Email dan kalender terenkripsi untuk membantu Anda memulai."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Perlindungan esensial dan kolaborasi aman tanpa batasan jumlah pengguna."
       ],
@@ -6834,9 +6831,6 @@
       "Popular": [
         "Populer"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium ${ BRAND_NAME } yang terkandung di dalamnya."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
@@ -6845,9 +6839,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Layanan email dan kalender yang aman untuk para profesional dan pelaku usaha."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
@@ -7123,9 +7114,6 @@
       "Central control panel": [
         "Kontrol panel pusat"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
-      ],
       "Create up to ${ n } calendar": [
         "Buat hingga ${ n } kalender"
       ],
@@ -7146,6 +7134,9 @@
       ],
       "Require 2FA": [
         "Membutuhkan 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Notification": {
@@ -7242,6 +7233,9 @@
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
+      "An invitation has been sent": [
+        "Undangan telah dikirim"
+      ],
       "Cannot load link": [
         "Tautan tidak dapat dimuat"
       ],
@@ -7269,8 +7263,14 @@
       "Encrypted search activated": [
         "Pencarian terenkripsi diaktifkan"
       ],
+      "External invitation removed from the share": [
+        "Undangan eksternal dihapus dari pembagian"
+      ],
       "Failed to accept share invitation": [
         "Gagal menerima undangan pembagian"
+      ],
+      "Failed to convert external invitation": [
+        "Undangan eksternal gagal dikonversi"
       ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas: ${ err }"
@@ -7391,14 +7391,14 @@
       ]
     },
     "Onboarding Info": {
-      "Create a share link": [
-        "Buat tautan berbagi"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Mulai gunakan ${ DRIVE_APP_NAME } dan kami akan meningkatkan ruang penyimpanan Anda ke 5 GB!"
       ],
       "Set a recovery method": [
         "Tentukan metode pemulihan"
+      ],
+      "Share a file": [
+        "Bagikan berkas"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ expiresInDays } hari ke depan:"
@@ -8217,6 +8217,14 @@
         "Membatalkan langganan Anda, mohon menunggu"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Diterima"
+      ],
+      "Pending": [
+        "Menunggu jawaban"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Dapatkan ruang penyimpanan tambahan"
@@ -8441,6 +8449,9 @@
       "Add any new files": [
         "Tambahkan berkas baru mana pun"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Setelah langganan ${ planName } Anda berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah diberikan kepada Anda sebelumnya."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Setelah langganan ${ planName } berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah diberikan kepada Anda sebelumnya."
       ],
@@ -8534,8 +8545,20 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
+      ],
       "Yearly free storage bonuses": [
         "Bonus ruang penyimpanan gratis tahunan"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Anda masih memiliki ${ expiryDate } tersisa pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Langganan ${ planName } Anda akan berakhir pada ${ expiryDate }. Setelahnya, Anda akan ditempatkan pada paket ${ BRAND_NAME } Free. Apabila Anda melampaui batas penggunaan paket gratis ini, Anda mungkin hanya akan dapat mengakses berbagai fitur produk dan data Anda secara terbatas. ${ learnMoreLink }"
@@ -8986,9 +9009,6 @@
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
-      ],
-      "Customize your plan": [
-        "Sesuaikan paket Anda"
       ],
       "Data recovery": [
         "Pemulihan data"
@@ -9535,6 +9555,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Kami telah mengirim undangan untuk mengakses berkas ini."
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"

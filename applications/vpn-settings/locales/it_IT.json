@@ -3631,9 +3631,6 @@
       "No addresses exist": [
         "Nessun indirizzo esistente"
       ],
-      "No changes made to the current subscription": [
-        "Non sono state effettuate modifiche all'abbonamento attuale"
-      ],
       "No gateways": [
         "Nessun gateway"
       ],
@@ -3978,6 +3975,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Questa verifica può richiedere fino a un'ora. Puoi tranquillamente continuare con i passaggi successivi."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Questa azione annullerà il tuo attuale abbonamento a pagamento e perderai tutti i vantaggi fedeltà accumulati."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi un qualsiasi blocco pop-up, disabilitalo per continuare."
@@ -4865,9 +4865,6 @@
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
       ],
-      "Select your plan": [
-        "Seleziona il tuo piano"
-      ],
       "Single sign-on entity ID": [
         "Entity ID di accesso singolo"
       ],
@@ -5315,9 +5312,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continua per controllare"
-      ],
       "Delete account": [
         "Elimina l'account"
       ],
@@ -5590,8 +5584,8 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
-      "Phone support (6+ users)": [
-        "Assistenza telefonica (Più di 6 utenti)"
+      "Phone support (40+ users)": [
+        "Assistenza telefonica (Più di 40 utenti)"
       ],
       "Priority email support": [
         "Assistenza email prioritaria"
@@ -5660,9 +5654,6 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
-      ],
-      "Team management": [
-        "Gestione del team"
       ],
       "Tor over VPN": [
         "Tor su VPN"
@@ -5807,9 +5798,6 @@
       "Popular": [
         "Popolare"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suite di privacy e sicurezza per le aziende, con tutti i servizi premium di ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
       ],
@@ -5818,9 +5806,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Archiviazione cloud sicura che ti consente di archiviare, sincronizzare e condividere file in modo semplice e sicuro."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Email e calendario sicuri per professionisti e aziende."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email sicura con funzioni avanzate per le tue comunicazioni quotidiane."
@@ -6135,9 +6120,6 @@
       "Central control panel": [
         "Pannello di controllo centrale"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Ottieni di più con 10 domini email personalizzati inclusi"
-      ],
       "Create up to ${ n } calendar": [
         "Crea fino a ${ n } calendario",
         "Crea fino a ${ n } calendari"
@@ -6159,6 +6141,9 @@
       ],
       "Require 2FA": [
         "Richiedi 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Supporto per ${ n } domini email personalizzati"
       ]
     },
     "Notification": {
@@ -8398,9 +8383,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Personalizza il numero di indirizzi IP nel tuo piano"
-      ],
-      "Customize your plan": [
-        "Personalizza il tuo piano"
       ],
       "Date": [
         "Data"

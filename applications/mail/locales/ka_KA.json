@@ -3338,7 +3338,7 @@
         "მე უკეთესი ფუნქციების მქონე VPN ვიპოვე"
       ],
       "I have not managed to connect": [
-        "მე ვერ მიევუერთდი"
+        "მე ვერ მივუერთდი"
       ],
       "I only needed a VPN short-term": [
         "მე VPN, მხოლოდ, ცოტა ხნით მჭირდება"
@@ -3366,6 +3366,11 @@
       ],
       "The VPN is too slow": [
         "VPN ძალიან ნელია"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "დაგვეხმარეთ, გავუმჯობესდეთ"
       ]
     },
     "Download attachments": {
@@ -6098,9 +6103,6 @@
       "No action selected": [
         "ქმედება არჩეული არაა"
       ],
-      "No changes made to the current subscription": [
-        "მიმდინარე სატარიფო გეგმაში ცვლილებები არ შესულა"
-      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -6229,7 +6231,7 @@
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
       ],
       "Please try again in a few moments": [
-        "გთხოვთ ხელახლა სცადოთ რამდენიმე წამში"
+        "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
@@ -6417,6 +6419,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "გამოწერა ყოველ ${ cycle } თვეში განახლდება."
       ],
       "Subscription auto-renews every month.": [
         "გამოწერა ყოველთვე განახლდება."
@@ -6723,6 +6728,9 @@
       ],
       "Version ${ appVersion }": [
         "ვერსია ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
@@ -7732,9 +7740,6 @@
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
       ],
-      "Select your plan": [
-        "აირჩიეთ ტარიფი"
-      ],
       "Send auto-reply": [
         "პასუხის ავტომატურად გაცემა"
       ],
@@ -8467,9 +8472,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "გადახედვაზე გადასვლა"
-      ],
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
@@ -8724,8 +8726,8 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
-      "Phone support (6+ users)": [
-        "სატელეფონო მხარდაჭერა (6+ მომხმარებელი)"
+      "Phone support (40+ users)": [
+        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -8781,9 +8783,6 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
-      ],
-      "Team management": [
-        "ჯგუფის მართვა"
       ],
       "Tor over VPN": [
         "Tor VPN-ის ზემოდან"
@@ -8922,9 +8921,6 @@
       "Popular": [
         "პოპულარული"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "კონფიდენციალობა და უსაფრთხოება ბიზნესებისთვის, ${ BRAND_NAME }-ის ყველა ფასიანი ფუნქციის ჩათვლით."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -8933,9 +8929,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "დაცული ღრუბლოვანი საცავი, რომელიც საშუალებას გაძლევთ, ადვილად და დაცულად შეინახოთ, დასინქოთ და გააზიაროთ ფაილები."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "ელფოსტისა და კალენდრის დაცული სერვისი პროფესიონალებისა და კომპანიებისათვის."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."
@@ -9209,9 +9202,6 @@
       "Central control panel": [
         "ცენტრალური კონტროლის პანელი"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "მოიცავით უფრო მეტი ხელით მითითებული 10 დამატებითი დომენით"
-      ],
       "Create up to ${ n } calendar": [
         "შექმენით ${ n }-მდე კალენდარი",
         "შექმენით ${ n }-მდე კალენდარი"
@@ -9233,6 +9223,9 @@
       ],
       "Require 2FA": [
         "2FA-ის მოთხოვნა"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
     "Notification": {
@@ -10612,6 +10605,9 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } პროგრამა"
+      ],
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
       ],
@@ -10621,6 +10617,9 @@
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Early access to new apps and features": [
+        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
       ],
@@ -10629,6 +10628,9 @@
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Online privacy, for your whole family": [
+        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
       ],
       "Our fight against censorship in Russia": [
         "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
@@ -10644,6 +10646,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Version history": [
+        "ვერსიის ისტორია"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
@@ -11008,6 +11013,9 @@
       "Verification successful": [
         "გადამოწმება წარმატებულია"
       ],
+      "You have successfully canceled your subscription.": [
+        "ტარიფი წარმატებით გააუქმეთ."
+      ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
       ]
@@ -11328,9 +11336,6 @@
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
-      ],
-      "Customize your plan": [
-        "მოირგეთ თქვენი გეგმა"
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"
