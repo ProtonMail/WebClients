@@ -1,5 +1,5 @@
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
-import { WebsocketConnectionInterface } from '@proton/docs-shared'
+import { WebsocketConnectionInterface, BroadcastSources } from '@proton/docs-shared'
 import { EventTypeEnum, CreateClientEventMessage, ClientEventVersion } from '@proton/docs-proto'
 import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 
@@ -19,7 +19,7 @@ export class DebugSendCommitCommandToRTS implements UseCaseInterface<boolean> {
       timestamp: Date.now(),
     })
 
-    void connection.broadcastMessage(message, 'CommitDocumentUseCase')
+    void connection.broadcastMessage(message, BroadcastSources.CommitDocumentUseCase)
 
     return Result.ok(true)
   }

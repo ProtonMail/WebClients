@@ -5,6 +5,7 @@ import {
   ClientRequiresEditorMethods,
   RtsMessagePayload,
   DocumentMetaInterface,
+  BroadcastSources,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -15,7 +16,11 @@ export interface EditorOrchestratorInterface {
   addEditorReadyObserver(observer: () => void): () => void
 
   passEditorInvokerToDocController(editorInvoker: ClientRequiresEditorMethods): void
-  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, originator: string, debugSource: string): Promise<void>
+  editorRequestsPropagationOfUpdate(
+    message: RtsMessagePayload,
+    originator: string,
+    debugSource: BroadcastSources,
+  ): Promise<void>
 
   getTypersExcludingSelf(threadId: string): string[]
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
