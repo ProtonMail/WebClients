@@ -501,6 +501,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } anderer Login verwendet das gleiche Passwort",
+        "${ total } andere Logins verwenden das gleiche Passwort"
+      ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Zwei-Faktor-Authentifizierung fügt deinem Anmeldevorgang eine weitere Sicherheitsstufe hinzu. ${ PASS_APP_NAME } erleichtert die Zwei-Faktor-Authentifizierung durch die Speicherung und das automatische Ausfüllen deiner Authentifizierungscodes."
       ],
@@ -514,7 +518,7 @@
         "Erstelle einzigartige Passwörter"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Dark Web-Überwachung ist mit einem kostenpflichtigen Plan verfügbar. Upgrade für sofortigen Zugriff."
+        "Dark Web-Überwachung ist mit einem kostenpflichtigen Abonnement verfügbar. Upgrade für sofortigen Zugriff."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Lass dich benachrichtigen, wenn deine E-Mail, dein Passwort oder andere persönliche Daten entwendet wurden."
@@ -589,7 +593,7 @@
         "Fehler beim Verlassen des Tresors."
       ],
       "Could not load recommendations at the moment.": [
-        "Die Empfehlungen können im Moment nicht geladen werden."
+        "Fehler beim Laden der Empfehlungen."
       ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
@@ -665,19 +669,19 @@
         "Fehler beim Laden der Datenlecks für diesen E-Mail-Alias."
       ],
       "Failed to load item history": [
-        "Fehler beim Laden der Eintraghistorie."
+        "Fehler beim Laden des Eintragsverlaufs."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
       ],
       "Failed to move items": [
-        "Einträge konnte nicht verschoben werden"
+        "Fehler beim Verschieben der Einträge."
       ],
       "Failed to move items to trash": [
         "Fehler beim Verschieben der Einträge in den Papierkorb."
       ],
       "Failed to pin item": [
-        "Anheften des Eintrags fehlgeschlagen"
+        "Fehler beim Anheften des Eintrags."
       ],
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
@@ -695,7 +699,7 @@
         "Fehler beim Übertragen der Tresor-Inhaberschaft."
       ],
       "Failed to unpin item": [
-        "Loslösen des Eintrags fehlgeschlagen"
+        "Fehler beim Loslösen des Eintrags."
       ],
       "Failed to update monitoring settings": [
         "Fehler beim Aktualisieren der Überwachungseinstellungen."
@@ -1006,7 +1010,7 @@
         "Datenlecks entdeckt"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Bring deine bestehenden Passwörter in ${ BRAND_NAME }"
+        "Hol deine bestehenden Passwörter zu ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
@@ -1078,7 +1082,7 @@
         "Papierkorb wird geleert..."
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktiviere die ${ PASS_SHORT_APP_NAME } Beta"
+        "${ PASS_SHORT_APP_NAME } Beta aktivieren"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -1087,7 +1091,7 @@
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
       "finance": [
-        "finanzen"
+        "Finanzen"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
@@ -1096,11 +1100,11 @@
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert",
-        "Die generierten Passwörter werden für einen Zeitraum von ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen gespeichert."
+        "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert.",
+        "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen gespeichert."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Hole das Beste aus Pass heraus, indem du einen Tresor für jedes Team oder Projekt erstellst."
+        "Hol das Beste aus Pass heraus, indem du einen Tresor für jedes Team oder Projekt erstellst."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Erhalte unbegrenzte Aliasse, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
@@ -1288,8 +1292,8 @@
         "Passwort"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
-        "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
+        "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
+        "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
       ],
       "Paused": [
         "Angehalten"
@@ -1722,7 +1726,7 @@
         "Exportieren"
       ],
       "Exporting policy": [
-        "Ausfuhrpolitik"
+        "Export-Richtlinie"
       ],
       "Field name": [
         "Feldname"
@@ -1770,7 +1774,7 @@
         "Einladungen"
       ],
       "Item ID": [
-        "Artikel ID"
+        "Eintrag-ID"
       ],
       "Key": [
         "Schlüssel"
@@ -2533,7 +2537,7 @@
         "Beim Exportieren deiner Daten ist ein Fehler aufgetreten."
       ],
       "At least one email address is required": [
-        "Mindestens eine E-Mail Adresse ist erforderlich"
+        "Mindestens eine E-Mail-Adresse ist erforderlich."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Mailboxen für diesen Alias können derzeit nicht abgerufen werden."
@@ -2545,7 +2549,7 @@
         "An folgende Adressen konnten keine Einladungen gesendet werden:"
       ],
       "Duplicate email addresses.": [
-        "Doppelte E-Mail-Adressen"
+        "Doppelte E-Mail-Adressen."
       ],
       "Email is required": [
         "E-Mail-Adresse erforderlich"
