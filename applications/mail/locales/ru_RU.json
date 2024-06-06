@@ -1684,6 +1684,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Продолжить, используя ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Продолжить подписку"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3345,9 +3348,40 @@
         "Временная нехватка средств, могу вернуться в будущем"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Помогите нам совершенствоваться"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Скачать все"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "Описание:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "Время:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "Время:\n${ formattedStart } (Весь день)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "Время:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Удаленно"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "Местоположение:\n${ eventLocation }"
       ]
     },
     "Email reminder banner": {
@@ -3531,6 +3565,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Невозможно включить поиск контента. Пожалуйста, перезапустите приложение или очистите данные."
+      ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
       ],
@@ -3653,6 +3690,9 @@
       ],
       "Last name is too long": [
         "Фамилия слишком длинная"
+      ],
+      "Maximum expiration time reached.": [
+        "Достигнуто максимальное время истечения срока действия."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Превышено максимальное количество вложений (${ attachmentsCountLimit })"
@@ -3782,6 +3822,9 @@
       ],
       "Require at least one condition": [
         "Требуется как минимум одно условие"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Отправка вложений ограничена до тех пор, пока вы не достигнете ограничений своего плана или не обновите его."
       ],
       "Signature not verified": [
         "Подпись подтверждена"
@@ -3944,6 +3987,9 @@
       ],
       "You must set a name": [
         "Вы должны задать имя"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Вы набрали максимальное количество символов. Пожалуйста, сократите ваше сообщение."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Ваши электронные письма не могут быть расшифрованы из-за недавнего сброса пароля. Если вы помните свой предыдущий пароль, вы можете ${ reActivateKeyLink } чтобы получить доступ к своим сообщениям. ${ learnMoreLink }"
@@ -6025,6 +6071,9 @@
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Узнайте как ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Узнать больше"
       ],
@@ -6042,6 +6091,9 @@
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Подождите пока загружается календарь. Вы будете перенаправлены на нашу платформу для составления расписаний Calendly в новой вкладке."
       ],
       "Loading message": [
         "Загрузка сообщения"
@@ -6126,9 +6178,6 @@
       ],
       "No action selected": [
         "Действие не выбрано"
-      ],
-      "No changes made to the current subscription": [
-        "Никаких изменений в текущей подписке не было сделано"
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -6477,6 +6526,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Если вы покинете эту страницу, то введённые в черновике данные могут быть потеряны."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Локальная база данных в процессе подготовки"
@@ -6931,6 +6983,12 @@
         "У Вас **${ count } сообщений** с этим ярлыком",
         "У Вас **${ count } сообщений** с этим ярлыком"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "У вас пробная подписка на ${ planTitle }. В данный момент оплата не требуется. Ваша подписка будет автоматически продлена по окончании пробного периода."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Вы не указали тему сообщения. Всё равно отправить сообщение?"
       ],
@@ -7039,11 +7097,17 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Ваш адрес электронной почты и пароль подверглись утечке:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Ваша информация была найдена ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -7062,6 +7126,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Your next billing date is ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Произошла утечка вашего пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
@@ -7801,9 +7868,6 @@
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
       ],
-      "Select your plan": [
-        "Выберете себе план"
-      ],
       "Send auto-reply": [
         "Отправить автоответ"
       ],
@@ -8112,6 +8176,9 @@
       ],
       "Starred": [
         "Отмеченные *"
+      ],
+      "stay safer online": [
+        "будьте в большей безопасности в Интернете"
       ],
       "Terms": [
         "Правила"
@@ -8528,9 +8595,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Перейти к обзору"
-      ],
       "Delete account": [
         "Удалить аккаунт"
       ],
@@ -8800,14 +8864,17 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - платные функции"
+      ],
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
-      "Phone support (6+ users)": [
-        "Поддержка по телефону (более 6 пользователей)"
+      "Phone support (40+ users)": [
+        "Поддержка по телефону (более 40 пользователей)"
       ],
       "Priority email support": [
         "Приоритетная поддержка по электронной почте"
@@ -8866,9 +8933,6 @@
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
-      "Team management": [
-        "Управление командой"
-      ],
       "Tor over VPN": [
         "Tor через VPN"
       ],
@@ -8877,6 +8941,9 @@
       ],
       "Unlimited devices": [
         "Неограниченное число устройств"
+      ],
+      "Unlimited devices and aliases": [
+        "Неограниченное количество устройств и псевдонимов"
       ],
       "Unlimited filters": [
         "Неограниченное количество фильтров"
@@ -8898,6 +8965,9 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited vault sharing": [
+        "Неограниченный общий доступ к хранилищу"
       ],
       "Unlimited vaults": [
         "Неограниченное число хранилищ"
@@ -8998,9 +9068,6 @@
       "Popular": [
         "Популярный"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Пакет обеспечения конфиденциальности и безопасности для бизнеса, включающий все платные услуги ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
       ],
@@ -9009,9 +9076,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Защищенные электронная почта и календарь для отдельных пользователей и предприятий."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
@@ -9281,9 +9345,6 @@
       "Central control panel": [
         "Центральная панель управления"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
-      ],
       "Create up to ${ n } calendar": [
         "Создайте до ${ n } календаря",
         "Создайте до ${ n } календарей",
@@ -9307,6 +9368,9 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Notification": {
@@ -9472,6 +9536,14 @@
     "Participant name": {
       "You": [
         "Вы"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with multiple vaults": [
+        "Безопасное совместное использование с помощью нескольких хранилищ"
+      ],
+      "Secure vault sharing": [
+        "Защищенный общий доступ к хранилищу"
       ]
     },
     "Payment method option": {
@@ -9870,6 +9942,11 @@
         "Просмотр журналов"
       ]
     },
+    "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Получайте уведомления об утечке вашего пароля или других данных из сторонних служб. ${ learnMoreLink }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Загрузить"
@@ -10060,9 +10137,19 @@
         "Отменить сброс пароля"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Сброс пароля отменен"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запрос на сброс пароля отменен (${ user.Email }). Если вы не делали этот запрос, ${ changePasswordLink }."
       ]
     },
     "session_recovery:in_progress:action": {
@@ -10268,6 +10355,11 @@
         "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти к тарифам"
@@ -10440,6 +10532,9 @@
       ]
     },
     "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Хранилище для данных, создаваемых ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ],
       "Up to ${ totalStorageSize } Drive storage": [
         "Объём хранилища Drive: до ${ totalStorageSize }"
       ],
@@ -10575,6 +10670,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
+      ],
       "${ dayDiff } day left": [
         "Остался ${ dayDiff } день",
         "Осталось ${ dayDiff } дня",
@@ -10586,6 +10684,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Программа ${ PROTON_SENTINEL_NAME }"
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
@@ -10599,11 +10700,23 @@
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
       ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
       ],
       "Keep ${ planName }": [
         "Сохранить ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Узнайте больше о нашем вкладе"
+      ],
+      "Online privacy, for your whole family": [
+        "Конфиденциальность онлайн для всей семьи"
+      ],
+      "Our fight against censorship in Russia": [
+        "Наша борьба с цензурой в России"
       ],
       "Priority support": [
         "Приоритетная поддержка"
@@ -10617,8 +10730,20 @@
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
       ],
+      "Version history": [
+        "История версий"
+      ],
       "Watch the interview": [
         "Смотреть интервью"
+      ],
+      "Yearly free storage bonuses": [
+        "Ежегодные бесплатные бонусы для места в хранилище"
+      ],
+      "Your own custom email domain": [
+        "Ваш собственный пользовательский домен электронной почты"
+      ],
+      "Your own short @pm.me email alias": [
+        "Ваш собственный короткий псевдоним электронной почты @pm.me"
       ]
     },
     "subscription reminder": {
@@ -11364,9 +11489,6 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
-      ],
-      "Customize your plan": [
-        "Настроить свой план"
       ],
       "Data recovery": [
         "Восстановление данных"

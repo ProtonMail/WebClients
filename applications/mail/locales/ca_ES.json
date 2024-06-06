@@ -6128,9 +6128,6 @@
       "No action selected": [
         "No s'ha seleccionat cap acció"
       ],
-      "No changes made to the current subscription": [
-        "No s'ha fet cap canvi a la subscripció actual"
-      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
@@ -7774,9 +7771,6 @@
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
       ],
-      "Select your plan": [
-        "Seleccioneu el vostre pla"
-      ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
@@ -8087,7 +8081,7 @@
         "Destacats"
       ],
       "stay safer online": [
-        "mantenir-se amb major seguretat en línia"
+        "millorar la vostra seguretat en línia"
       ],
       "Terms": [
         "Termes"
@@ -8509,9 +8503,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continua revisant"
-      ],
       "Delete account": [
         "Elimina el compte"
       ],
@@ -8766,8 +8757,8 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
-      "Phone support (6+ users)": [
-        "Suport telefònic (a partir de 6 usuaris)"
+      "Phone support (40+ users)": [
+        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -8826,9 +8817,6 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
-      ],
-      "Team management": [
-        "Gestió d'equips"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -8970,9 +8958,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suite de privacitat i seguretat per a empreses, amb tots els serveis prèmium de ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protegiu la privadesa de la vostra família amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
@@ -8981,9 +8966,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Correu electrònic i calendari segurs per a professionals i empreses."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
@@ -9142,7 +9124,7 @@
         "Protegiu la vostra família de llocs web nocius i accediu als nostres servidors VPN d'alta velocitat per veure el vostre contingut preferit"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Protegeixi la seva adreça de correu electrònic real perquè no es divulgui o es filtri amb àlies (una adreça de correu electrònic generada aleatòriament que reenvia correus electrònics a la seva safata d'entrada principal)."
+        "Protegiu la vostra adreça de correu electrònic real perquè no es divulgui o es filtri amb àlies (una adreça de correu electrònic generada aleatòriament que reenvia correus electrònics a la safata d'entrada principal)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Proporciona el més alt nivell de protecció de la seguretat del compte i suport especialitzat"
@@ -9242,9 +9224,6 @@
       "Central control panel": [
         "Panell de control central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Obteniu més opcions amb suport per a 10 dominis de correu electrònic personalitzats"
-      ],
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
@@ -9266,6 +9245,9 @@
       ],
       "Require 2FA": [
         "Requereix 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Suport per a ${ n } dominis de correu personalitzats"
       ]
     },
     "Notification": {
@@ -9455,7 +9437,7 @@
     },
     "pass_signup_2023: Info": {
       "Secure sharing with ${ n } vault": [
-        "Compartició segura amb ${ n } caixa forte",
+        "Compartició segura amb ${ n } caixa forta",
         "Compartició segura amb ${ n } caixes fortes"
       ],
       "Secure sharing with multiple vaults": [
@@ -9487,10 +9469,10 @@
         "MM/AA"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Pot cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. Aleshores, es renovarà automàticament a ${ price } per ${ months }. Pot cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months } mesos. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ price } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -10104,7 +10086,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "S'ha cancel·lat la sol·licitud de restabliment de la contrasenya (${ user.Email }). Si no ha fet aquesta sol·licitud, ${ changePasswordLink }."
+        "S'ha cancel·lat la sol·licitud de restabliment de la contrasenya (${ user.Email }). Si no heu fet aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10664,16 +10646,31 @@
         "6 usuaris"
       ],
       "Add any new files": [
-        "Afegeix nous fitxers"
+        "Afegiu fitxers nous"
+      ],
+      "Back up photos from your devices": [
+        "Feu una còpia de seguretat de les fotos dels vostres dispositius."
       ],
       "Calendar sharing": [
         "Compartició de calendari"
       ],
+      "Comprehensive privacy and security": [
+        "Privacitat i seguretat exhaustives"
+      ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
       ],
+      "Direct contribution to our mission": [
+        "Contribució directa a la nostra missió"
+      ],
       "Early access to new apps and features": [
         "Accés anticipat a noves aplicacions i característiques"
+      ],
+      "Extra storage and bonuses": [
+        "Emmagatzematge addicional i bonus"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ajudar els activistes a Hong Kong"
       ],
       "Keep ${ planName }": [
         "Segueix amb ${ planName }"
@@ -10682,10 +10679,13 @@
         "Descobriu més sobre el nostre impacte"
       ],
       "Manage your calendar": [
-        "Gestió dels vostres calendaris"
+        "Gestioneu el vostre calendari"
       ],
       "Online privacy, for your whole family": [
         "Privacitat en línia per a tota la vostra família"
+      ],
+      "Premium productivity features": [
+        "Característiques de productivitat prèmium"
       ],
       "Priority support": [
         "Suport prioritari"
@@ -10694,10 +10694,19 @@
         "Llegiu la història"
       ],
       "Receive new emails": [
-        "Rebi nous correus electrònics"
+        "Rebeu nous correus electrònics"
+      ],
+      "Send emails with attachments": [
+        "Envia correus electrònics amb adjunts"
+      ],
+      "Sync files on devices": [
+        "Sincronitza fitxers en els vostres dispositius"
       ],
       "The best of ${ BRAND_NAME }": [
         "El millor de ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloquejar l'accés a Internet a l'Iran"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
@@ -10710,6 +10719,12 @@
       ],
       "Yearly free storage bonuses": [
         "Bonificacions anuals d'emmagatzematge gratuïtes"
+      ],
+      "Your own custom email domain": [
+        "El vostre propi domini de correu electrònic personalitzat"
+      ],
+      "Your own short @pm.me email alias": [
+        "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
     "subscription reminder": {
@@ -10724,6 +10739,9 @@
       ],
       "No ads or tracking": [
         "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
       ],
       "Support our mission": [
         "Doneu suport a la nostra missió"
@@ -11376,9 +11394,6 @@
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
-      ],
-      "Customize your plan": [
-        "Personalitzar el vostre pla"
       ],
       "Data recovery": [
         "Recuperació de dades"

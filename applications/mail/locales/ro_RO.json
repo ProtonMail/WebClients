@@ -3407,6 +3407,11 @@
         "Viteza pe VPN e prea mică"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Ajutați-ne să se îmbunătățim"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Descărcare toate"
@@ -6233,9 +6238,6 @@
       "No action selected": [
         "Nicio acțiune selectată"
       ],
-      "No changes made to the current subscription": [
-        "Nu s-au efectuat modificări la abonamentul actual."
-      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -7908,9 +7910,6 @@
       "Security code (${ codeName })": [
         "Cod de securitate (${ codeName })"
       ],
-      "Select your plan": [
-        "Selectați planul"
-      ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
@@ -8651,9 +8650,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continuare revizuire"
-      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -8923,8 +8919,8 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
-      "Phone support (6+ users)": [
-        "Asistență telefonică (peste 6 utilizatori)"
+      "Phone support (40+ users)": [
+        "Asistență telefonică (40+ utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -8984,9 +8980,6 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
-      ],
-      "Team management": [
-        "Gestionare echipă"
       ],
       "Tor over VPN": [
         "Tor prin VPN"
@@ -9053,6 +9046,9 @@
       "User session management": [
         "Gestionare sesiuni utilizator"
       ],
+      "User storage management": [
+        "Gestionarea spațiului de stocare al utilizatorilor"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Partajare seif (maxim ${ n } persoană)",
         "Partajare seif (maxim ${ n } persoane)",
@@ -9109,6 +9105,9 @@
       "Early access to new apps and features": [
         "Acces timpuriu la aplicațiile și funcțiile noi"
       ],
+      "Enhanced security and premium features for teams.": [
+        "Securitate sporită și beneficii exclusive pentru echipe."
+      ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protecție esențială și colaborare sigură pentru utilizatori nelimitați."
       ],
@@ -9130,9 +9129,6 @@
       "Popular": [
         "Popular"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suită de confidențialitate și securitate pentru companii, incluzând toate serviciile premium ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -9141,9 +9137,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "E-mail și calendar securizat pentru profesioniști și companii."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
@@ -9421,9 +9414,6 @@
       "Central control panel": [
         "Panou de control central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
-      ],
       "Create up to ${ n } calendar": [
         "Creați maxim ${ n } calendar",
         "Creați până la ${ n } calendare",
@@ -9446,6 +9436,9 @@
       ],
       "Require 2FA": [
         "Necesită A2F"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Suport pentru ${ n } de domenii de e-mail personale"
       ]
     },
     "Notification": {
@@ -10899,6 +10892,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } spațiu total"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programul ${ PROTON_SENTINEL_NAME }"
+      ],
       "10 email addresses": [
         "10 adrese de e-mail"
       ],
@@ -10908,6 +10904,9 @@
       "Custom schedule send and snooze times": [
         "Programări personale și amânări"
       ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
       "Helping activists in Hong Kong": [
         "Ajurarea activiștilor din Hong Kong"
       ],
@@ -10916,6 +10915,9 @@
       ],
       "Learn more about our impact": [
         "Aflați mai multe despre impactul nostru"
+      ],
+      "Online privacy, for your whole family": [
+        "Confidențialitate online, pentru întreaga familie"
       ],
       "Our fight against censorship in Russia": [
         "Lupta noastră împotriva cenzurii în Rusia"
@@ -10931,6 +10933,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ],
+      "Version history": [
+        "Istoric versiuni"
       ],
       "Watch the interview": [
         "Priviți interviul"
@@ -11656,9 +11661,6 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
-      ],
-      "Customize your plan": [
-        "Personalizare plan"
       ],
       "Data recovery": [
         "Recuperare date"
