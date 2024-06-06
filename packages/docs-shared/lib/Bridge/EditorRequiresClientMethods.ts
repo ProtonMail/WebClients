@@ -3,9 +3,14 @@ import { UserState } from '@lexical/yjs'
 import { CommentInterface } from '../CommentInterface'
 import { CommentThreadInterface } from '../CommentThreadInterface'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
+import { BroadcastSources } from './BroadcastSources'
 
 export interface EditorRequiresClientMethods {
-  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, originator: string, debugSource: string): Promise<void>
+  editorRequestsPropagationOfUpdate(
+    message: RtsMessagePayload,
+    originator: string,
+    debugSource: BroadcastSources,
+  ): Promise<void>
 
   getTypersExcludingSelf(threadId: string): Promise<string[]>
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>

@@ -9,6 +9,7 @@ import {
   CommentThreadInterface,
   ParamsExcludingFunctions,
   RtsMessagePayload,
+  BroadcastSources,
 } from '@proton/docs-shared'
 import { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
@@ -25,7 +26,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: string,
+    debugSource: BroadcastSources,
   ): Promise<void> {
     return this.invokeClientMethod('editorRequestsPropagationOfUpdate', [message, originator, debugSource])
   }
