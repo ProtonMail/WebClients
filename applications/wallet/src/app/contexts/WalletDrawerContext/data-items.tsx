@@ -2,16 +2,25 @@ import { c } from 'ttag';
 
 import { WasmApiExchangeRate } from '@proton/andromeda';
 import { Icon, Price, Tooltip } from '@proton/components/components';
+import { useAddresses } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { satsToBitcoin, satsToFiat } from '../../utils';
+import {
+    getTransactionRecipientHumanReadableName,
+    getTransactionSenderHumanReadableName,
+    satsToBitcoin,
+    satsToFiat,
+} from '../../utils';
 import { multilineStrToMultilineJsx } from '../../utils/string';
+import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
 export const RecipientsDataListItem = ({ tx }: TxDataListItemProps) => {
     const isSentTx = tx.networkData.sent > tx.networkData.received;
+    const [addresses] = useAddresses();
+    const { walletMap } = useBitcoinBlockchainContext();
 
     return (
         <div className="w-full">
@@ -19,48 +28,41 @@ export const RecipientsDataListItem = ({ tx }: TxDataListItemProps) => {
             <ul className="unstyled mt-1 text-lg">
                 {tx.networkData.outputs
                     .filter((o) => !isSentTx || !o.is_mine)
-                    .map((output, index) => (
-                        <li key={index} className="flex flex-column my-1">
-                            {tx.apiData?.ToList[output.address] && (
-                                <Tooltip title={tx.apiData?.ToList[output.address]}>
-                                    <span className="block w-full text-ellipsis">
-                                        {tx.apiData?.ToList[output.address]}
-                                    </span>
-                                </Tooltip>
-                            )}
+                    .map((output, index) => {
+                        const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
 
-                            <Tooltip title={output.address}>
-                                <span className="block w-full text-ellipsis color-weak">{output.address}</span>
-                            </Tooltip>
-                        </li>
-                    ))}
+                        return (
+                            <li key={index} className="flex flex-column my-1">
+                                {recipient && (
+                                    <Tooltip title={recipient}>
+                                        <span className="block w-full text-ellipsis">{recipient}</span>
+                                    </Tooltip>
+                                )}
+
+                                <Tooltip title={output.address}>
+                                    <span className="block w-full text-ellipsis color-weak">{output.address}</span>
+                                </Tooltip>
+                            </li>
+                        );
+                    })}
             </ul>
         </div>
     );
 };
 
 export const SendersDataListItem = ({ tx }: TxDataListItemProps) => {
+    const { walletMap } = useBitcoinBlockchainContext();
+    const senderName = getTransactionSenderHumanReadableName(tx, walletMap);
+
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
             <ul className="unstyled mt-1 text-lg">
-                {tx.apiData?.Sender ? (
-                    <li className="flex flex-column my-1">
-                        <Tooltip title={tx.apiData?.Sender}>
-                            <span className="block w-full text-ellipsis">{tx.apiData?.Sender}</span>
-                        </Tooltip>
-                    </li>
-                ) : (
-                    tx.networkData.inputs.map((input, index) => (
-                        <li key={index} className="flex flex-column my-1">
-                            <Tooltip title={input.previous_output?.address ?? '-'}>
-                                <span className="block w-full text-ellipsis color-weak">
-                                    {input.previous_output?.address ?? '-'}
-                                </span>
-                            </Tooltip>
-                        </li>
-                    ))
-                )}
+                <li className="flex flex-column my-1">
+                    <Tooltip title={senderName}>
+                        <span className="block w-full text-ellipsis">{senderName}</span>
+                    </Tooltip>
+                </li>
             </ul>
         </div>
     );
@@ -86,7 +88,7 @@ export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClic
             </div>
             <div className="w-full flex">
                 {tx.apiData?.Label ? (
-                    <p className="color-weak block text-ellipsis">
+                    <p className="my-0 mt-1 text-lg text-ellipsis">
                         {multilineStrToMultilineJsx(tx.apiData.Label, 'transaction-label')}
                     </p>
                 ) : (
@@ -114,7 +116,7 @@ export const MessageDataListItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{c('Wallet transaction').t`Message`}</span>
-            <p className="text-lg">{tx.apiData?.Body}</p>
+            <p className="my-0 mt-1 text-lg">{tx.apiData?.Body}</p>
         </div>
     );
 };

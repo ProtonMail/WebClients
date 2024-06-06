@@ -36,7 +36,7 @@ interface Props {
 export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     const { walletsChainData, decryptedApiWalletsData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
         useBitcoinBlockchainContext();
-    const { openDrawer } = useWalletDrawerContext();
+    const { openDrawer, drawer, setDrawerData } = useWalletDrawerContext();
     const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
 
     const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
@@ -61,9 +61,10 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 theme: getThemeForWallet(decryptedApiWalletsData ?? [], apiWalletData.Wallet.ID),
                 transaction,
                 kind: 'transaction-data',
+                onClickEditNote: () => setNoteModalState({ transaction }),
             });
         },
-        [openDrawer, decryptedApiWalletsData, apiWalletData]
+        [openDrawer, decryptedApiWalletsData, apiWalletData.Wallet.ID, setNoteModalState]
     );
 
     useEffect(() => {
@@ -302,8 +303,11 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
 
             <TransactionNoteModal
                 onUpdateLabel={(label, tx) => {
-                    void updateWalletTransaction(label, tx).then(() => {
+                    void updateWalletTransaction(label, tx).then((transaction) => {
                         noteModalState.onClose?.();
+                        if (drawer?.data.kind === 'transaction-data' && transaction) {
+                            setDrawerData({ transaction });
+                        }
                     });
                 }}
                 {...noteModalState}

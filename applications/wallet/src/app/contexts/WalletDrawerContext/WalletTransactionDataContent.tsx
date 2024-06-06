@@ -2,12 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Price, useModalStateWithData } from '@proton/components/components';
+import { Icon, Price } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
-import { TransactionNoteModal } from '../../components/TransactionNoteModal';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { satsToBitcoin, satsToFiat } from '../../utils';
 import {
@@ -20,13 +19,12 @@ import {
 
 interface Props {
     transaction: TransactionData;
+    onClickEditNote: () => void;
 }
 
-export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
+export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Props) => {
     const [showMore, setShowMore] = useState(false);
     const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
-
-    const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
 
     const isSender = transaction.networkData.sent > transaction.networkData.received;
     /**
@@ -75,7 +73,7 @@ export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
                 <NoteDataListItem
                     tx={transaction}
                     onClick={() => {
-                        setNoteModalState({ transaction });
+                        onClickEditNote();
                     }}
                 />
                 <hr className="my-4" />
@@ -104,16 +102,6 @@ export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
                     </div>
                 )}
             </div>
-
-            <TransactionNoteModal
-                onUpdateLabel={() => {
-                    // TODO: maybe create slice in store for wallet transactions
-                    // void updateWalletTransaction(label, tx).then(() => {
-                    //     noteModalState.onClose?.();
-                    // });
-                }}
-                {...noteModalState}
-            />
         </>
     );
 };
