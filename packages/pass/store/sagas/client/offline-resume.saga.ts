@@ -1,34 +1,36 @@
-import { takeLeading } from 'redux-saga/effects';
+import { put, takeLeading } from 'redux-saga/effects';
 
-import { isOnline } from '@proton/pass/lib/api/utils';
-import { offlineResume } from '@proton/pass/store/actions';
+import { offlineResume, startEventPolling } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
 
 import { hydrate } from './hydrate.saga';
 
-function* offlineResumeWorker(options: RootSagaOptions, { payload }: ReturnType<typeof offlineResume>) {
+function* offlineResumeWorker(options: RootSagaOptions, { payload, meta }: ReturnType<typeof offlineResume.intent>) {
     const auth = options.getAuthService();
+    const requestId = meta.request.id;
     const { localID } = payload;
 
-    if (isOnline()) {
-        try {
-            if ((yield auth.resumeSession(localID, { retryable: false })) as boolean) {
-                yield hydrate(
-                    {
-                        allowFailure: false,
-                        merge: identity,
-                        onError: function* () {
-                            yield auth.logout({ soft: true });
-                        },
+    try {
+        if ((yield auth.resumeSession(localID, { retryable: false })) as boolean) {
+            yield hydrate(
+                {
+                    allowFailure: false,
+                    merge: identity,
+                    onError: function* () {
+                        yield auth.logout({ soft: true });
                     },
-                    options
-                );
-            }
-        } catch {}
+                },
+                options
+            );
+            yield put(startEventPolling());
+            yield put(offlineResume.success(requestId));
+        } else throw new Error();
+    } catch (err) {
+        yield put(offlineResume.failure(requestId, err));
     }
 }
 
 export default function* watcher(options: RootSagaOptions): Generator {
-    yield takeLeading(offlineResume.match, offlineResumeWorker, options);
+    yield takeLeading(offlineResume.intent.match, offlineResumeWorker, options);
 }

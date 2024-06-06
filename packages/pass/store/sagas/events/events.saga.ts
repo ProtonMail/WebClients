@@ -4,7 +4,6 @@ import type { Task } from 'redux-saga';
 import { all, cancel, fork, take } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
-import { isOnline } from '@proton/pass/lib/api/utils';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -20,12 +19,10 @@ function* eventsWorker(options: RootSagaOptions): Generator {
 
 export default function* watcher(options: RootSagaOptions): Generator {
     while (yield take(startEventPolling.match)) {
-        if (isOnline()) {
-            logger.info(`[ServerEvents] start polling all event channels`);
-            const events = (yield fork(eventsWorker, options)) as Task;
-            const action = (yield take(stopEventPolling.match)) as Action;
-            logger.info(`[ServerEvents] cancelling all event channels [${action.type}]`);
-            yield cancel(events);
-        }
+        logger.info(`[ServerEvents] start polling all event channels`);
+        const events = (yield fork(eventsWorker, options)) as Task;
+        const action = (yield take(stopEventPolling.match)) as Action;
+        logger.info(`[ServerEvents] cancelling all event channels [${action.type}]`);
+        yield cancel(events);
     }
 }

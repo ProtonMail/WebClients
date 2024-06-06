@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
@@ -28,6 +28,8 @@ import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActions
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
+import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
@@ -41,6 +43,7 @@ const MainSwitch: FC = () => {
     const dispatch = useDispatch();
     const client = useClient();
     const offline = clientOffline(client.state.status);
+    const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
     const { state: expanded, toggle } = useToggle();
 
     const connectivityBar = useConnectivityBar((online) => ({
@@ -52,11 +55,13 @@ const MainSwitch: FC = () => {
 
                 <Button
                     className="text-sm"
-                    onClick={() => dispatch(offlineResume(authStore.getLocalID()))}
+                    onClick={() => dispatch(offlineResume.intent({ localID: authStore.getLocalID() }))}
                     shape="underline"
                     size="small"
+                    loading={offlineResuming}
+                    disabled={offlineResuming}
                 >
-                    ({c('Info').t`Reconnect`})
+                    {offlineResuming ? c('Info').t`Reconnecting` : c('Info').t`Reconnect`}
                 </Button>
             </div>
         ) : undefined,

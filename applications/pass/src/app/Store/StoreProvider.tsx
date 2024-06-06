@@ -8,6 +8,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
@@ -37,6 +38,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const authService = useAuthService();
     const history = useHistory();
     const { installed } = usePassExtensionLink();
+    const online = useConnectivity();
 
     const client = useClientRef();
     const sw = useServiceWorker();
@@ -66,7 +68,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         telemetry.start().catch(noop);
                         core.i18n.setLocale(selectLocale(state)).catch(noop);
 
-                        if (isDocumentVisible()) store.dispatch(startEventPolling());
+                        if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
                         const onboardingEnabled = selectOnboardingEnabled(installed)(state);
                         const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
@@ -117,10 +119,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         };
     }, []);
 
-    useVisibleEffect((visible) => {
-        if (visible && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
-        else if (!visible) store.dispatch(stopEventPolling());
-    });
+    useVisibleEffect(
+        (visible: boolean) => {
+            if (visible && online && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
+            else if (!visible || !online) store.dispatch(stopEventPolling());
+        },
+        [online]
+    );
 
     return <ReduxProvider store={store}>{children}</ReduxProvider>;
 };
