@@ -71,7 +71,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const matchRootExact = useRouteMatch({ exact: true, path: getLocalPath() });
     const matchItemExact = useRouteMatch({ exact: true, path: itemRoute });
-    const matchItemList = matchRootExact !== null || matchItemExact !== null;
+    const matchItemList = matchRootExact !== null || matchItemExact !== null || matchTrash;
 
     const navigate = (pathname: string, options: NavigateOptions = { mode: 'push' }) => {
         const search = new URLSearchParams(history.location.search);
