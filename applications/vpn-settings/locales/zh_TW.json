@@ -1883,6 +1883,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "您確定要刪除此電子郵件位址嗎？"
+      ],
+      "Delete address permanently?": [
+        "永久刪除主要地址？"
+      ],
+      "Delete address?": [
+        "刪除地址?"
+      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -1890,6 +1899,11 @@
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
         "每年只能刪除一個位址"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "您確定要刪除此網域嗎？"
       ]
     },
     "Delinquent modal title": {
@@ -1954,6 +1968,11 @@
       ],
       "The VPN is too slow": [
         "此VPN太慢了"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "幫助我們改善"
       ]
     },
     "Email verification": {
@@ -3482,9 +3501,6 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
-      "No changes made to the current subscription": [
-        "現時訂購授權並沒有更改"
-      ],
       "No gateways": [
         "無閘道器"
       ],
@@ -3802,6 +3818,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "此驗證或需時長達一小時。您可安心繼續之後的步驟。"
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "此會取消目前訂購授權，您會失去目前使用的福利"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將允許使用 PayPal 來支付您的 ${ BRAND_NAME } 訂購授權。我們將在瀏覽器的新分頁中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用它然後再繼續。"
@@ -4652,9 +4671,6 @@
       "Security code (${ codeName })": [
         "安全驗證代碼(${ codeName })"
       ],
-      "Select your plan": [
-        "選擇你的方案"
-      ],
       "Single sign-on entity ID": [
         "單一登入登入ID"
       ],
@@ -4825,6 +4841,9 @@
       ],
       "Create account": [
         "創建帳號"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Forgot username?": [
         "忘記使用者名稱？"
@@ -5086,9 +5105,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "繼續確認方案"
-      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -5346,8 +5362,8 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
-      "Phone support (6+ users)": [
-        "電話支援（6+ 使用者）"
+      "Phone support (40+ users)": [
+        "電話支援（40+ 使用者）"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -5414,9 +5430,6 @@
       ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
-      ],
-      "Team management": [
-        "團隊管理"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -5553,9 +5566,6 @@
       "Popular": [
         "熱門"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "隱私和保密套裝，專為企業而設，包含所有尊享 ${ BRAND_NAME } 服務。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
       ],
@@ -5564,9 +5574,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "安全的電子郵件和行事曆，專為專業人士和企業而設。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
@@ -5853,9 +5860,6 @@
       "Central control panel": [
         "中控面板"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "支援 10 個自訂電郵網域更全面性的服務"
-      ],
       "Create up to ${ n } calendar": [
         "創建多達 ${ n } 個行事曆"
       ],
@@ -5876,6 +5880,9 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Notification": {
@@ -7159,6 +7166,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 方案"
+      ],
       "10 email addresses": [
         "10 個電子信箱"
       ],
@@ -7177,6 +7187,9 @@
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
       "Have a question?": [
         "有問題嗎？"
       ],
@@ -7191,6 +7204,9 @@
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Online privacy, for your whole family": [
+        "您整個家庭的線上隱私"
       ],
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
@@ -7209,6 +7225,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
       ],
       "Watch the interview": [
         "瀏覽訪談"
@@ -7740,9 +7759,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "自訂方案使用的 IP 位址數量"
-      ],
-      "Customize your plan": [
-        "自訂您的方案"
       ],
       "Date": [
         "日期"

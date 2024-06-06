@@ -3631,9 +3631,6 @@
       "No addresses exist": [
         "Aucune adresse n'existe."
       ],
-      "No changes made to the current subscription": [
-        "Aucune modification n'a été apportée à l'abonnement actuel."
-      ],
       "No gateways": [
         "Aucune Passerelle"
       ],
@@ -4865,9 +4862,6 @@
       "Security code (${ codeName })": [
         "Code de sécurité (${ codeName })"
       ],
-      "Select your plan": [
-        "Choisissez votre abonnement"
-      ],
       "Single sign-on entity ID": [
         "ID de l'entité d'authentification unique"
       ],
@@ -5312,9 +5306,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Continuer et vérifier"
-      ],
       "Delete account": [
         "Supprimer le compte"
       ],
@@ -5466,6 +5457,9 @@
       "Centralized settings and billings": [
         "Paramètres et facturation centralisés"
       ],
+      "Collaborate and share large files": [
+        "Collaboration et partage de fichiers volumineux"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -5484,6 +5478,9 @@
       "Custom snooze time": [
         "Périodes de mise en attente personnalisées"
       ],
+      "Custom workspace branding": [
+        "Personnalisation de l'espace de travail avec votre marque"
+      ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
@@ -5501,6 +5498,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Éditeurs de documents (documents, feuilles de calcul, présentations)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -5584,11 +5584,14 @@
       "Password health": [
         "Sécurité des mots de passe"
       ],
+      "Password manager to secure credentials": [
+        "Gestionnaire de mots de passe pour sécuriser les informations de connexion"
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
-      "Phone support (6+ users)": [
-        "Assistance téléphonique (compte 6 utilisateurs ou plus)"
+      "Phone support (40+ users)": [
+        "Assistance téléphonique (compte 40 utilisateurs ou plus)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -5624,6 +5627,9 @@
       "Secure Core servers": [
         "Serveurs Secure Core"
       ],
+      "See team's availability": [
+        "Afficher les disponibilités de votre équipe"
+      ],
       "Send & receive invitations": [
         "Envoyer et recevoir des invitations"
       ],
@@ -5657,9 +5663,6 @@
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
-      ],
-      "Team management": [
-        "Gestion de l'équipe"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -5725,6 +5728,9 @@
       "User session management": [
         "Gestion des sessions des utilisateurs"
       ],
+      "User storage management": [
+        "Gestion de l'espace de stockage des utilisateurs"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
@@ -5774,6 +5780,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
       ],
@@ -5782,6 +5791,12 @@
       ],
       "Early access to new apps and features": [
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Boite mail et calendrier chiffrés pour bien démarrer."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Sécurité renforcée et fonctionnalités premium pour vos équipes"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "L'essentiel pour la protection et la collaboration sécurisée avec un nombre illimité d'utilisateurs."
@@ -5804,9 +5819,6 @@
       "Popular": [
         "Populaire"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suite de confidentialité et de sécurité pour les entreprises, avec tous les services premium de ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
       ],
@@ -5815,9 +5827,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Une messagerie électronique et un calendrier sécurisés pour les professionnels et les entreprises."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
@@ -5963,6 +5972,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "La prise en charge IMAP est limitée à l'utilisation des applications de bureau (comme Outlook, Apple Mail, Thunderbird) via l'application ${ MAIL_APP_NAME } Bridge. Les intégrations IMAP basées sur le Cloud ne sont actuellement pas prises en charge."
       ],
+      "Increase or reallocate storage for a user": [
+        "Augmenter ou réallouer l'espace de stockage d'un utilisateur"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Assurez la confidentialité de vos activités familiales avec un calendrier chiffré."
       ],
@@ -6044,6 +6056,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Conservez en sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire, ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Affichez la disponibilité des participants de la réunion et gagnez du temps lors de la planification."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envoyez rapidement et facilement des messages à un grand nombre de personnes en créant autant de groupes de contacts que nécessaire (jusqu'à 100 contacts par groupe)."
       ],
@@ -6070,6 +6085,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Importez le logo de votre entreprise pour personnaliser l'expérience utilisateur des applications web ${ BRAND_NAME } pour vos équipes."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilisez vos adresses e-mail personnalisées à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -6129,9 +6147,6 @@
       "Central control panel": [
         "Panneau de contrôle central"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
-      ],
       "Create up to ${ n } calendar": [
         "Créez jusqu'à ${ n } calendrier",
         "Créez jusqu'à ${ n } calendriers"
@@ -6153,6 +6168,9 @@
       ],
       "Require 2FA": [
         "Demande d'authentification A2F"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Prise en charge pour ${ n } domaines de messagerie personnalisés"
       ]
     },
     "Notification": {
@@ -8371,9 +8389,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Personnalisez le nombre d'adresses IP de votre abonnement."
-      ],
-      "Customize your plan": [
-        "Personnalisez votre abonnement"
       ],
       "Date": [
         "Date"
