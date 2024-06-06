@@ -209,7 +209,6 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
             );
         }
 
-        const isShared = link.shareUrl && !link.shareUrl.isExpired ? c('Info').t`Yes` : c('Info').t`No`;
         return (
             <ModalTwoContent>
                 <SignatureAlert
@@ -275,15 +274,23 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         )}
                     </>
                 )}
-                {isSharedWithMeLink ? (
+                {link.activeRevision?.signatureAddress && (
                     <DetailsRow label={c('Title').t`Last edited by`} dataTestId={'drive:last-edited-by'}>
                         {link.activeRevision?.signatureAddress}
                     </DetailsRow>
-                ) : (
-                    <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
-                        {isShared}
+                )}
+                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                    {link.isShared ? c('Info').t`Yes` : c('Info').t`No`}
+                </DetailsRow>
+                {link.sharingDetails?.shareUrl && (
+                    <DetailsRow
+                        label={c('Title').t`Public shared link status`}
+                        dataTestId={'drive:public-sharing-status'}
+                    >
+                        {link.sharingDetails.shareUrl.isExpired ? c('Info').t`Expired` : c('Info').t`Available`}
                     </DetailsRow>
                 )}
+
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
                     <DetailsRow
                         label={
