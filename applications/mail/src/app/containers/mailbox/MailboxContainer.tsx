@@ -15,6 +15,7 @@ import {
     useCalendars,
     useFlag,
     useFolders,
+    useInboxDesktopBadgeCount,
     useItemsSelection,
     useLabels,
     useModalState,
@@ -188,6 +189,7 @@ const MailboxContainer = ({
 
     useMailboxPageTitle(labelID, location);
     useMailboxFavicon(labelID, location);
+    useInboxDesktopBadgeCount();
     useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     const onCheck = (checked: boolean) => {
