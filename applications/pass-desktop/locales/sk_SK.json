@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Ako môžem exportovať svoje údaje z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Ako aktualizovať ${ PASS_APP_NAME } na Linuxe"
+      ],
       "Import": [
         "Importovať"
       ],
@@ -1315,6 +1318,9 @@
       "Never": [
         "Nikdy"
       ],
+      "New version ${ latestVersion } is available.": [
+        "K dispozícii je nová verzia aplikácie ${ latestVersion }."
+      ],
       "No breaches detected": [
         "Neboli zistené žiadne prípady únikov"
       ],
@@ -1473,6 +1479,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Zoznam zmien nájdete na ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovať iba trezory, ktoré vlastníte."

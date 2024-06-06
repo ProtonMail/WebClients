@@ -226,6 +226,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como eu exporto meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Como atualizar o ${ PASS_APP_NAME } no Linux"
+      ],
       "Import": [
         "Importar"
       ],
@@ -549,6 +552,9 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Com o ${ PASS_SHORT_APP_NAME } Monitor, fique à frente das ameaças recebendo alertas instantâneos se suas credenciais forem comprometidas. Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença on-line."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Seus endereços de email foram vazados em pelo menos 1 violação de dados."
@@ -1280,6 +1286,9 @@
       "Never": [
         "Nunca"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Uma nova versão do ${ latestVersion } está disponível."
+      ],
       "No breaches detected": [
         "Nenhuma violação detectada"
       ],
@@ -1436,6 +1445,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "O registro de alterações pode ser encontrado ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "A exportação conterá apenas cofres que você possui."
