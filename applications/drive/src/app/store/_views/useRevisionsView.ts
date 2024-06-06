@@ -6,6 +6,7 @@ import {
     queryFileRevisions,
     queryRestoreFileRevision,
 } from '@proton/shared/lib/api/drive/files';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import {
     DriveFileRestoreRevisionResult,
     DriveFileRevisionPayload,
@@ -16,6 +17,7 @@ import {
 import { revisionPayloadToRevision } from '../_api';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { DriveFileRevision } from '../_revisions';
+import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 
 const filterRevisions = (revisions: DriveFileRevisionPayload[]) => {
     // Draft state, we don't want to show it to the user
@@ -31,16 +33,21 @@ export default function useRevisionsView(shareId: string, linkId: string) {
     const debouncedRequest = useDebouncedRequest();
     const [isLoading, withLoading] = useLoading(true);
     const [revisions, setRevisions] = useState<DriveFileRevision[]>([]);
+    const { getSharePermissions } = useDirectSharingInfo();
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
 
     const loadRevisions = useCallback(
         (abortSignal: AbortSignal) => {
-            void withLoading(
-                debouncedRequest<DriveFileRevisionsResult>(queryFileRevisions(shareId, linkId), abortSignal).then(
-                    (result) => {
-                        setRevisions(filterRevisions(result.Revisions));
-                    }
-                )
-            );
+            void withLoading(async () => {
+                await Promise.all([
+                    debouncedRequest<DriveFileRevisionsResult>(queryFileRevisions(shareId, linkId), abortSignal).then(
+                        (result) => {
+                            setRevisions(filterRevisions(result.Revisions));
+                        }
+                    ),
+                    getSharePermissions(abortSignal, shareId).then(setPermissions),
+                ]);
+            });
         },
         [shareId, linkId]
     );
@@ -72,6 +79,7 @@ export default function useRevisionsView(shareId: string, linkId: string) {
     return {
         isLoading,
         revisions,
+        permissions,
         deleteRevision,
         restoreRevision,
     };

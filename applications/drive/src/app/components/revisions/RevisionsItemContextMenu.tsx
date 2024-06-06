@@ -1,4 +1,7 @@
+import { useMemo } from 'react';
+
 import { ContextSeparator } from '@proton/components/components';
+import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 
 import type { DriveFileRevision } from '../../store';
 import { ContextMenuProps } from '../FileBrowser';
@@ -25,6 +28,7 @@ export function RevisionsItemContextMenu({
     isCurrent: boolean;
 }) {
     const {
+        permissions,
         hasPreviewAvailable,
         openRevisionPreview,
         downloadRevision,
@@ -32,6 +36,7 @@ export function RevisionsItemContextMenu({
         deleteRevision,
         restoreRevision,
     } = useRevisionsProvider();
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
     if (isCurrent) {
         return (
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -63,8 +68,13 @@ export function RevisionsItemContextMenu({
             <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
             <ContextSeparator />
             <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
-            <ContextSeparator />
-            <RevisionDeleteButton deleteRevision={deleteRevision} revision={revision} close={close} />
+
+            {isAdmin && (
+                <>
+                    <ContextSeparator />
+                    <RevisionDeleteButton deleteRevision={deleteRevision} revision={revision} close={close} />
+                </>
+            )}
         </ItemContextMenu>
     );
 }
