@@ -53,9 +53,9 @@ export const handleImage = fetchController.register(async (event, signal) => {
 
                 cache?.put(url, response.clone()).catch(noop);
                 return response;
-            } else return res;
+            } else throw new Error();
         })
-        .catch(createNetworkError);
+        .catch(() => createNetworkError(408));
 
     /* FIXME: stale-while-revalidate window should be computed */
     if (cachedResponse) return cachedResponse;

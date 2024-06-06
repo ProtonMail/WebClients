@@ -32,9 +32,9 @@ export const getRequestIDHeaders = (init?: HeadersInit): [Record<string, string>
  * API error response format in order to conform to client
  * side error handlers. As our service-worker fetch handler
  * acts as some kind of proxy, if we cannot reach */
-export const createNetworkError = () =>
+export const createNetworkError = (status: number = 503) =>
     new Response(JSON.stringify({ Error: 'Network error', Code: PassErrorCode.SERVICE_NETWORK_ERROR }), {
-        status: 503,
+        status,
         statusText: 'Network error',
         headers: { 'Content-Type': 'application/json' },
     });
