@@ -659,11 +659,11 @@
       "No, thanks": [
         "いいえ"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -3055,6 +3055,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "本当にこのアドレスを削除してよいですか。"
+      ],
+      "Delete address permanently?": [
+        "アドレスを完全に削除しますか?"
+      ],
+      "Delete address?": [
+        "アドレスの削除?"
+      ],
       "You can only delete 1 address per year.": [
         "削除できるアドレスは 1 年に 1 つだけです。"
       ]
@@ -3073,6 +3082,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "このカレンダーにはアクセスできなくなります。"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "このドメインを削除しますか?"
       ]
     },
     "Delinquent modal title": {
@@ -3232,6 +3246,11 @@
       ],
       "Temporary need, may come back in the future": [
         "一時的な理由で、将来的に再度使用する予定"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "改善にご協力ください"
       ]
     },
     "Download link": {
@@ -5737,6 +5756,17 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -6866,9 +6896,6 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
-      "No changes made to the current subscription": [
-        "現在のサブスクリプションに変更は加えられていません"
-      ],
       "No credit card required": [
         "クレジットカード不要"
       ],
@@ -7436,6 +7463,9 @@
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "この検証には最大 1 時間かかる場合があります。安全に次のステップに進むことができます。"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "これにより、${ rententionLabel }より古い以前のファイルバージョンがすべて削除されます。"
       ],
@@ -7604,8 +7634,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります 。"
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[bundleProPlan] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります 。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
@@ -8038,17 +8068,6 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9202,9 +9221,6 @@
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
       ],
-      "Select your plan": [
-        "プランの選択"
-      ],
       "Send auto-reply": [
         "自動返信を送信"
       ],
@@ -9587,6 +9603,9 @@
       ],
       "Encryption and keys": [
         "暗号化と鍵"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れた?"
       ],
       "Forgot username?": [
         "ユーザー名をお忘れですか？"
@@ -10156,9 +10175,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "見直しを行う"
-      ],
       "Continue with Free": [
         "Free で続行"
       ],
@@ -10419,8 +10435,8 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
-      "Phone support (6+ users)": [
-        "電話サポート（6 ユーザー以上）"
+      "Phone support (40+ users)": [
+        "電話サポート（40 ユーザー以上）"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -10484,9 +10500,6 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
-      ],
-      "Team management": [
-        "チーム管理"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -10641,9 +10654,6 @@
       "Popular": [
         "最も人気"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム ${ BRAND_NAME } サービスが利用できるプランです。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -10652,9 +10662,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "プロフェッショナルとビジネスのための、安全な電子メールとカレンダーのプランです。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
@@ -10731,14 +10738,6 @@
         "選択中のプラン: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -10757,6 +10756,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -10998,9 +11005,6 @@
       "Central control panel": [
         "中央制御盤"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
-      ],
       "Create up to ${ n } calendar": [
         "最大 ${ n } 個までのカレンダーを作成"
       ],
@@ -11021,6 +11025,9 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Notification": {
@@ -13252,6 +13259,17 @@
         "価格:"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
@@ -13264,6 +13282,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }プログラム"
       ],
       "10 email addresses": [
         "10個のメールアドレス"
@@ -13283,6 +13304,9 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ],
       "Have a question?": [
         "質問がありますか？"
       ],
@@ -13297,6 +13321,9 @@
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Online privacy, for your whole family": [
+        "家族全員のオンラインプライバシー"
       ],
       "Our fight against censorship in Russia": [
         "ロシアにおける検閲との闘い"
@@ -13316,6 +13343,9 @@
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
       ],
+      "Version history": [
+        "バージョン履歴"
+      ],
       "Watch the interview": [
         "インタビューを見る"
       ],
@@ -13327,17 +13357,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -14073,9 +14092,6 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
-      ],
-      "Customize your plan": [
-        "プランをカスタマイズ"
       ],
       "Dashboard": [
         "ダッシュボード"

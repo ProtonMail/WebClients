@@ -643,10 +643,10 @@
       "No, thanks": [
         "नहीं, शुक्रिया"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2975,6 +2975,12 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "क्या आप वाकई इस पते को मिटाना चाहते हैं?"
+      ],
+      "Delete address permanently?": [
+        "पता स्थायी रूप से हटाएं?"
+      ],
       "You can only delete 1 address per year.": [
         "आप प्रति वर्ष केवल 1 पता ही हटा सकते हैं।"
       ]
@@ -2993,6 +2999,11 @@
       ],
       "You will no longer have access to this calendar.": [
         "आप इस कैलेंडर को आगे एक्सेस नहीं कर पाएगे।"
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
       ]
     },
     "Delinquent modal title": {
@@ -3129,6 +3140,11 @@
       ],
       "Temporary need, may come back in the future": [
         "अस्थाई जरूरत, भविष्य में वापस आ सकती है"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "हमें सुधरने में मदद करें"
       ]
     },
     "Download link": {
@@ -5388,6 +5404,14 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -6417,9 +6441,6 @@
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
       ],
-      "No changes made to the current subscription": [
-        "वर्तमान सदस्यता में कोई परिवर्तन नहीं किया गया"
-      ],
       "No credit card required": [
         "कोई क्रेडिट कार्ड नहीं चाहिए"
       ],
@@ -6946,6 +6967,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "इससे ${ rententionLabel } से पुराने आपके फ़ाइलों के सभी पिछले संस्करण हटा दिए जाएंगे।"
       ],
@@ -7099,8 +7123,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } प्लान में अपग्रेड करें।"
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[bundleProPlan] } प्लान में अपग्रेड करें।"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “मुझे निजी संदेश भेजें”।"
@@ -7520,14 +7544,6 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8634,9 +8650,6 @@
       "Security code (${ codeName })": [
         "सुरक्षा कोड (${ codeName })"
       ],
-      "Select your plan": [
-        "अपनी योजना चुनें"
-      ],
       "Send auto-reply": [
         "ऑटो-रिप्लाई भेजें"
       ],
@@ -9479,9 +9492,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "देखना जारी रखें"
-      ],
       "Continue with Free": [
         "Free जारी रखें"
       ],
@@ -9740,9 +9750,6 @@
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
-      "Phone support (6+ users)": [
-        "फोन मदद (6+ यूज़र)"
-      ],
       "Priority email support": [
         "प्राथमिक ईमेल मदद"
       ],
@@ -9807,9 +9814,6 @@
       ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
-      ],
-      "Team management": [
-        "टीम संभालना"
       ],
       "Tor over VPN": [
         "वीपीएन के ऊपर Tor"
@@ -9957,9 +9961,6 @@
       "Popular": [
         "लोकप्रिय"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "बिज़नेस के लिए निजता और सुरक्षा का बंडल, सारे प्रीमियम ${ BRAND_NAME } सेवाओं के साथ।"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "सभी ${ BRAND_NAME } सेवाओं के साथ अपने परिवार की गोपनीयता की रक्षा करें।"
       ],
@@ -9968,9 +9969,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "सुरक्षित ईमेल और कैलेंडर प्रोफेशनलो और बिज़नेसो के लिए"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
@@ -10041,14 +10039,6 @@
         "आपकी चुनी हुई योजना: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -10067,6 +10057,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -10240,12 +10238,12 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "अपना स्टोरेज जगह ${ bundleStorage } तक ले जाएं"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "10 कस्टम ईमेल डोमेन के सपोर्ट के साथ काम करें ज़्यादा"
-      ],
       "Create up to ${ n } calendar": [
         "${ n } कैलेंडर तक बनाएं",
         "${ n } कैलेंडर तक बनाएं"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "Notification": {
@@ -12009,6 +12007,9 @@
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } क्रमादेश"
+      ],
       "10 email addresses": [
         "10 ईमेल पते"
       ],
@@ -12033,6 +12034,9 @@
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
       ],
+      "Online privacy, for your whole family": [
+        "ऑनलाइन निजता, आपके पूरे परिवार के लिए"
+      ],
       "Our fight against censorship in Russia": [
         "रूस में सेंसरशिप के खिलाफ हमारी लड़ाई"
       ],
@@ -12044,6 +12048,9 @@
       ],
       "Subscription canceled": [
         "सदस्यता रद्द की गई"
+      ],
+      "Version history": [
+        "संस्करण इतिहास"
       ]
     },
     "Subscription renewal state": {
@@ -12750,9 +12757,6 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
-      ],
-      "Customize your plan": [
-        "अपना प्लान अनुकूलित करे"
       ],
       "Dashboard": [
         "डैशबोर्ड"
