@@ -1670,6 +1670,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Biztosan törli ezt a címet?"
+      ],
+      "Delete address permanently?": [
+        "Véglegesen törli a címet?"
+      ],
+      "Delete address?": [
+        "Cím törlése?"
+      ],
       "You can only delete 1 address per year.": [
         "Évente csak egy címet törölhet."
       ]
@@ -1680,6 +1689,11 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "Elérte a címtörlési limitet ennél a felhasználónál."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Biztosan törölni szeretné ezt a domain nevet?"
       ]
     },
     "Delinquent modal title": {
@@ -1720,6 +1734,11 @@
       ],
       "Temporary need, may come back in the future": [
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Segítsen fejlődni"
       ]
     },
     "Email verification": {
@@ -3076,6 +3095,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Ezzel megszakítja jelenlegi előfizetését, és elveszíti az eddigi felhalmozott hűségbónuszokat."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ez lehetővé teszi, hogy a ${ BRAND_NAME } előfizetését PayPallal fizesse. A tranzakció befejezéséhez átirányításra kerül a PayPalhoz egy új böngészőfülön. A folytatáshoz engedélyezze a felugró ablakokat."
       ],
@@ -3764,9 +3786,6 @@
       "Security code (${ codeName })": [
         "Biztonsági kód (${ codeName })"
       ],
-      "Select your plan": [
-        "Válasszon csomagot!"
-      ],
       "Start date": [
         "Kezdő dátum"
       ],
@@ -3899,6 +3918,9 @@
       ],
       "Create account": [
         "Fiók létrehozása"
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ],
       "Forgot username?": [
         "Elfelejtette a felhasználónevét?"
@@ -4056,9 +4078,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Tovább az áttekintéshez"
-      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -4253,8 +4272,8 @@
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
       ],
-      "Phone support (6+ users)": [
-        "Telefonos támogatás (6 felhasználótól)"
+      "Phone support (40+ users)": [
+        "Telefonos támogatás (40 felhasználótól)"
       ],
       "Priority email support": [
         "Elsőbbségi e-mail támogatás"
@@ -4302,9 +4321,6 @@
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
-      ],
-      "Team management": [
-        "Csoport menedzsment"
       ],
       "Tor over VPN": [
         "Tor VPN-en"
@@ -4412,14 +4428,8 @@
       "Popular": [
         "Népszerű"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Adatvédelmi és biztonsági csomag cégeknek, beleértve az összes ${ BRAND_NAME } prémium szolgáltatást."
-      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Biztonságos e-mail és naptár, vállalkozóknak és cégeknek."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
@@ -4647,15 +4657,15 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Fedjen le több területet 10 saját e-mail domain név támogatásával"
-      ],
       "Create up to ${ n } calendar": [
         "Akár ${ n } naptár létrehozása",
         "Akár ${ n } naptár létrehozása"
       ],
       "Multi-platform support": [
         "Multi platform támogatás"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } saját e-mail domain név használata"
       ]
     },
     "Notification": {
@@ -5529,6 +5539,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
       ],
@@ -5544,11 +5557,17 @@
       "Keep ${ planName }": [
         "Maradjon ${ planName }"
       ],
+      "Online privacy, for your whole family": [
+        "Online adatvédelem az egész családnak"
+      ],
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Version history": [
+        "Verziótörténet"
       ]
     },
     "Subscription renewal state": {
@@ -5953,9 +5972,6 @@
       ],
       "Currency": [
         "Pénznem"
-      ],
-      "Customize your plan": [
-        "Csomag testreszabása"
       ],
       "Date": [
         "Dátum"

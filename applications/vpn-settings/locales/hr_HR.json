@@ -1524,7 +1524,15 @@
         "/mjesec"
       ]
     },
+    "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Jeste li sigurni da želite ukloniti ovu adresu?"
+      ]
+    },
     "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Jeste li sigurni da želite ukloniti ovu domenu?"
+      ],
       "Delete": [
         "Izbriši"
       ]
@@ -2896,6 +2904,9 @@
       "Create account": [
         "Stvori račun"
       ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
+      ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
       ],
@@ -3724,6 +3735,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 adrese e-pošte"
       ],
@@ -3735,6 +3749,9 @@
       ],
       "Priority support": [
         "Prioritetna podrška"
+      ],
+      "Version history": [
+        "Povijest verzija"
       ]
     },
     "subscription reminder": {
@@ -4051,9 +4068,6 @@
       ],
       "Currency": [
         "Valuta"
-      ],
-      "Customize your plan": [
-        "Prilagodite vaš plan"
       ],
       "Date": [
         "Datum"

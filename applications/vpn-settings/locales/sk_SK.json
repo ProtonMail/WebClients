@@ -1928,6 +1928,15 @@
       ]
     },
     "Delete address prompt": {
+      "Are you sure you want to delete this address?": [
+        "Naozaj chcete vymazať túto adresu?"
+      ],
+      "Delete address permanently?": [
+        "Vymazať adresu natrvalo?"
+      ],
+      "Delete address?": [
+        "Vymazať adresu?"
+      ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
       ]
@@ -1938,6 +1947,11 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "Dosiahli ste limit mazania adries pre tohto používateľa."
+      ]
+    },
+    "Delete domain prompt": {
+      "Are you sure you want to delete this domain?": [
+        "Naozaj chcete vymazať túto doménu?"
       ]
     },
     "Delinquent modal title": {
@@ -2002,6 +2016,11 @@
       ],
       "The VPN is too slow": [
         "VPN je príliš pomalá"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Pomôžte nám zlepšiť sa"
       ]
     },
     "Email verification": {
@@ -3623,9 +3642,6 @@
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
-      "No changes made to the current subscription": [
-        "V aktuálnom predplatnom nedošlo k žiadnym zmenám"
-      ],
       "No gateways": [
         "Žiadne brány"
       ],
@@ -3964,6 +3980,9 @@
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
         "Toto overenie môže trvať až jednu hodinu. Môžete bezpečne pokračovať k ďalším krokom."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
@@ -4849,9 +4868,6 @@
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
       ],
-      "Select your plan": [
-        "Vyberte plán"
-      ],
       "Single sign-on entity ID": [
         "ID subjektu jednotného prihlásenia"
       ],
@@ -5022,6 +5038,9 @@
       ],
       "Create account": [
         "Vytvoriť účet"
+      ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
       ],
       "Forgot username?": [
         "Zabudli ste používateľské meno?"
@@ -5286,9 +5305,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        "Pokračovať na rekapituláciu"
-      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -5591,8 +5607,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (6+ users)": [
-        "Telefonická podpora (6+ používateľov)"
+      "Phone support (40+ users)": [
+        "Telefonická podpora (40+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -5665,9 +5681,6 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
-      ],
-      "Team management": [
-        "Manažment tímu"
       ],
       "Tor over VPN": [
         "TOR cez VPN"
@@ -5816,9 +5829,6 @@
       "Popular": [
         "Populárne"
       ],
-      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Súprava ochrany osobných údajov a zabezpečenia pre firmy vrátane všetkých prémiových služieb ${ BRAND_NAME }."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -5827,9 +5837,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        "Bezpečný email a kalendár pre profesionálov a firmy."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -6143,9 +6150,6 @@
       "Central control panel": [
         "Centrálny ovládací panel"
       ],
-      "Cover more ground with support for 10 custom email domains": [
-        "Rozšírte pôsobnosť s podporou pre 10 vlastných emailových domén"
-      ],
       "Create up to ${ n } calendar": [
         "Vytvorte až ${ n } kalendár",
         "Vytvorte až ${ n } kalendáre",
@@ -6169,6 +6173,9 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Notification": {
@@ -7746,6 +7753,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
       "10 email addresses": [
         "10 emailových adries"
       ],
@@ -7764,6 +7774,9 @@
       "Custom schedule send and snooze times": [
         "Vlastné časy odoslania a odloženia"
       ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
+      ],
       "Have a question?": [
         "Máte otázku?"
       ],
@@ -7778,6 +7791,9 @@
       ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
+      ],
+      "Online privacy, for your whole family": [
+        "Súkromie online, pre celú vašu rodinu"
       ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzúre v Rusku"
@@ -7796,6 +7812,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Version history": [
+        "História verzií"
       ],
       "Watch the interview": [
         "Pozrite si rozhovor"
@@ -8330,9 +8349,6 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Prispôsobenie počtu IP adries v pláne"
-      ],
-      "Customize your plan": [
-        "Prispôsobte si svoj plán"
       ],
       "Date": [
         "Dátum"
