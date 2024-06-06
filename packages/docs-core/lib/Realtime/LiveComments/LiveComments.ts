@@ -1,5 +1,5 @@
 import { NodeMeta } from '@proton/drive-store'
-import { BeganTypingData, CommentsMessageType, StoppedTypingData } from '@proton/docs-shared'
+import { BeganTypingData, BroadcastSources, CommentsMessageType, StoppedTypingData } from '@proton/docs-shared'
 import { LiveCommentsEvent, LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
 import { CreateRealtimeCommentMessage } from '../../Services/Comments/CreateRealtimeCommentMessage'
 import { CommentTypers } from './CommentTypers'
@@ -41,7 +41,7 @@ export class LiveComments {
           this.userAddress,
         )
 
-    void this.websocketService.sendMessageToDocument(this.document, message, 'Typing Status Change')
+    void this.websocketService.sendMessageToDocument(this.document, message, BroadcastSources.TypingStatusChange)
   }
 
   private updateStatusOfTyper(threadId: string, userId: string, isTyping: boolean): { didChange: boolean } {

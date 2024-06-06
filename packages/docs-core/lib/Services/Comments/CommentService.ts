@@ -9,6 +9,7 @@ import {
   InternalEventBusInterface,
   CommentsEvent,
   CommentMarkNodeChangeData,
+  BroadcastSources,
 } from '@proton/docs-shared'
 import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
@@ -23,7 +24,7 @@ import { LoadThreads } from '../../UseCase/LoadThreads'
 import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from '../../Controller/Document/DocControllerEvent'
-
+import metrics from '@proton/metrics'
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
 
@@ -64,7 +65,12 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   private broadcastCommentMessage(type: CommentsMessageType, dto: AnyCommentMessageData): void {
     const message = CreateRealtimeCommentMessage(type, dto, this.keys.userOwnAddress)
 
-    void this.websocketService.sendMessageToDocument(this.document, message, 'CommentsController')
+    if ([CommentsMessageType.AddThread, CommentsMessageType.AddComment].includes(type)) {
+      metrics.docs_comments_total.increment({
+        type: CommentsMessageType.AddThread ? 'comment' : 'reply',
+      })
+    }
+    void this.websocketService.sendMessageToDocument(this.document, message, BroadcastSources.CommentsController)
   }
 
   public getTypersExcludingSelf(threadId: string): string[] {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
 import {
+  BroadcastSources,
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
   CommentsEvent,
@@ -75,7 +76,11 @@ export function App({ isViewOnly = false }: Props) {
     }
 
     const newDocState = new DocState({
-      docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, originator: string, debugSource: string) => {
+      docStateRequestsPropagationOfUpdate: (
+        message: RtsMessagePayload,
+        originator: string,
+        debugSource: BroadcastSources,
+      ) => {
         bridge
           .getClientInvoker()
           .editorRequestsPropagationOfUpdate(message, originator, debugSource)

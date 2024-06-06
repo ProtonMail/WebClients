@@ -16,7 +16,7 @@ import { GenerateManifestSignature } from './GenerateManifestSignature'
 import { DecryptCommit } from './DecryptCommit'
 import { UpdatePair, SquashAlgorithm } from './SquashAlgorithm'
 import { SQUASH_FACTOR, SQUASH_THRESHOLD } from '../Types/SquashingConstants'
-
+import metrics from '@proton/metrics'
 /**
  * Squashes a document's series of updates into one or more resulting updates.
  */
@@ -53,6 +53,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     })
 
     if (decryptionResult.isFailed()) {
+      metrics.docs_aborted_squashes_total.increment({ reason: 'decryption_error' })
       return Result.fail(decryptionResult.getError())
     }
 
@@ -89,6 +90,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       keys,
     )
     if (encryptedResult.isFailed()) {
+      metrics.docs_aborted_squashes_total.increment({ reason: 'encryption_error' })
       return Result.fail(encryptedResult.getError())
     }
 

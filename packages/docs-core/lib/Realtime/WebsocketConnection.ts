@@ -12,9 +12,10 @@ import {
   SERVER_HEARTBEAT_INTERVAL,
 } from '@proton/docs-proto'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
-import { WebsocketConnectionInterface } from '@proton/docs-shared'
+import { WebsocketConnectionInterface, BroadcastSources } from '@proton/docs-shared'
 import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
+import metrics from '@proton/metrics'
 
 const DebugDisableSockets = false
 
@@ -121,6 +122,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     websocket.onerror = (event) => {
       this.logger.error('Websocket error:', event)
+      metrics.docs_failed_websocket_connections_total.increment({
+        retry: 'false',
+        type: 'network_error',
+      })
     }
 
     websocket.onclose = (event) => {
@@ -152,7 +157,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   async broadcastMessage(
     message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: string,
+    source: BroadcastSources,
   ): Promise<void> {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
       return
@@ -160,14 +165,23 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     const messageWrapper = new ClientMessage()
 
-    if (message instanceof ClientMessageWithEvents) {
-      for (const event of message.events) {
-        event.content = new Uint8Array(await this.encryptMessage(event))
+    try {
+      if (message instanceof ClientMessageWithEvents) {
+        for (const event of message.events) {
+          event.content = new Uint8Array(await this.encryptMessage(event))
+        }
+      } else {
+        for (const update of message.updates.documentUpdates) {
+          update.encryptedContent = new Uint8Array(await this.encryptMessage(update))
+        }
       }
-    } else {
-      for (const update of message.updates.documentUpdates) {
-        update.encryptedContent = new Uint8Array(await this.encryptMessage(update))
+    } catch (e: unknown) {
+      if (source === BroadcastSources.CommentsController) {
+        metrics.docs_comments_error_total.increment({
+          reason: 'encryption_error',
+        })
       }
+      throw e
     }
 
     if (message instanceof ClientMessageWithDocumentUpdates) {
@@ -177,7 +191,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     this.logger.debug('Broadcasting message from source:', source)
-
     this.socket.send(messageWrapper.serializeBinary())
   }
 

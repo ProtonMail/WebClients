@@ -23,6 +23,7 @@ import {
   BaseWebsocketPayload,
   WebsocketMessagePayload,
   assertUnreachable,
+  BroadcastSources,
 } from '@proton/docs-shared'
 import {
   ServerMessageWithDocumentUpdates,
@@ -53,6 +54,7 @@ import { NativeVersionHistory } from '../../VersionHistory'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import { DecryptedMessage } from '../../Models/DecryptedMessage'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './DocControllerEvent'
+import metrics from '@proton/metrics'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -320,7 +322,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   async editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: string,
+    debugSource: BroadcastSources,
   ): Promise<void> {
     if (!this.keys) {
       throw new Error('Connection not initialized')
@@ -392,6 +394,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (result.isFailed()) {
       this.logger.error('Failed to squash document', result.getError())
     } else {
+      metrics.docs_squashes_total.increment({})
       this.logger.info('Squash result', result.getValue())
     }
   }
