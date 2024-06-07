@@ -62,7 +62,6 @@ import { useInternalEventBus } from '../InternalEventBusProvider'
 import { EditorEditableChangeEvent } from '@proton/docs-shared'
 import { ToolbarButton } from './ToolbarButton'
 import { ToolbarSeparator } from './ToolbarSeparator'
-import { TableOption } from './TableOption'
 import { c } from 'ttag'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
@@ -71,6 +70,8 @@ import clsx from '@proton/utils/clsx'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { DefaultFont, FontOptions } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
+import { INSERT_TABLE_COMMAND } from '@lexical/table'
+import TableIcon from '../Icons/TableIcon'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -746,7 +747,18 @@ export default function DocumentEditorToolbar() {
         >
           <Icon name="image" className="h-4 w-4 fill-current" />
         </ToolbarButton>
-        <TableOption editor={activeEditor} disabled={!isEditable} />
+        <ToolbarButton
+          label={c('Action').t`Insert table`}
+          disabled={!isEditable}
+          onClick={() => {
+            editor.dispatchCommand(INSERT_TABLE_COMMAND, {
+              rows: '3',
+              columns: '3',
+            })
+          }}
+        >
+          <TableIcon className="h-4 w-4 fill-current" />
+        </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton label={c('Action').t`Clear formatting`} disabled={!isEditable} onClick={clearFormatting}>
           <Icon name="eraser" className="h-4 w-4 fill-current" />
