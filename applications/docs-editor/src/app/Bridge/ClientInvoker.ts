@@ -10,6 +10,7 @@ import {
   ParamsExcludingFunctions,
   RtsMessagePayload,
   BroadcastSources,
+  BridgeOriginProvider,
 } from '@proton/docs-shared'
 import { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
@@ -114,7 +115,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
     this.logger.debug('Sending message to client', message)
 
-    this.clientFrame.postMessage(message, '*')
+    this.clientFrame.postMessage(message, BridgeOriginProvider.GetClientOrigin())
 
     return new Promise<Awaited<ReturnType<EditorRequiresClientMethods[K]>>>((resolve) => {
       this.pendingMessages.push({
