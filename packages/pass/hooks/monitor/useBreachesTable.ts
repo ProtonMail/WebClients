@@ -5,13 +5,12 @@ import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
-import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
+import { filterItemsByUserIdentifier, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
@@ -30,7 +29,7 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
 
     const suggestions = items.reduce<Map<string, number>>((acc, item) => {
         if (!item.data.content.itemEmail.v && !item.data.content.itemUsername.v) return acc;
-        const userIdentifier = deobfuscate(item.data.content.itemEmail) || deobfuscate(item.data.content.itemUsername);
+        const userIdentifier = intoUserIdentifier(item);
         if (monitored.has(userIdentifier)) return acc;
         if (validateEmailAddress(userIdentifier)) acc.set(userIdentifier, (acc.get(userIdentifier) ?? 0) + 1);
 

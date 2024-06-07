@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import {
     hasEmail,
+    hasUserIdentifier,
     isActive,
     isItemType,
     isPasskeyItem,
@@ -255,11 +256,7 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
         (subdomainItems, domainItems, userIdentifier) => {
             const candidates = deduplicate(subdomainItems.concat(domainItems), itemEq);
             if (!userIdentifier) return candidates;
-            return candidates.filter(
-                ({ data }) =>
-                    deobfuscate(data.content.itemEmail) === userIdentifier ||
-                    deobfuscate(data.content.itemUsername) === userIdentifier
-            );
+            return candidates.filter(hasUserIdentifier(userIdentifier));
         }
     );
 

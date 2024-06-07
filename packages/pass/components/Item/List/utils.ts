@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { cardNumberHiddenValue } from '@proton/pass/components/Form/Field/masks/credit-card';
+import { intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import type { ItemRevision, ItemType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -15,9 +16,9 @@ const itemListPresenter: ItemListPresenterMap = {
             ? c('Warning').t`Empty note`
             : deobfuscate(data.metadata.note).split('\n')[0],
     }),
-    login: ({ data }) => ({
-        heading: data.metadata.name,
-        subheading: deobfuscate(data.content.itemUsername) || deobfuscate(data.content.itemEmail),
+    login: (item) => ({
+        heading: item.data.metadata.name,
+        subheading: intoUserIdentifier(item),
     }),
     alias: ({ data, aliasEmail }) => ({
         heading: data.metadata.name,

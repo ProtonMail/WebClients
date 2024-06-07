@@ -48,7 +48,6 @@ export const readProtonPassCSV = async ({
         });
 
         const hasNoEmailColumn = result.items[0]?.email === undefined;
-
         const groupByVaults = groupByKey(result.items, 'vault');
 
         return {

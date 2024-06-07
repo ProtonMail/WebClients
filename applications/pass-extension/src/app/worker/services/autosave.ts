@@ -4,6 +4,7 @@ import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-en
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import {
@@ -35,13 +36,7 @@ export const createAutoSaveService = () => {
         if (type === 'register') {
             const candidates = selectAutosaveCandidate({ domain, subdomain, userIdentifier: '', shareIds })(state);
             const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
-            const fullMatch =
-                userIdentifier &&
-                pwMatch.some(
-                    (item) =>
-                        deobfuscate(item.data.content.itemEmail) === userIdentifier ||
-                        deobfuscate(item.data.content.itemUsername) === userIdentifier
-                );
+            const fullMatch = Boolean(userIdentifier) && pwMatch.some(hasUserIdentifier(userIdentifier));
 
             /* The credentials may have been saved during the password-autosuggest autosave
              * sequence - as such ensure we don't have an exact username/password match */
@@ -129,16 +124,12 @@ export const createAutoSaveService = () => {
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
-            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
-
             // TODO: migrate to use Rust's email validation
-            if (validateEmailAddress(payload.userIdentifier) || !usernameSplitEnabled) {
-                item.get('content').set('itemEmail', (itemEmail) => (passkey ? itemEmail : payload.userIdentifier));
-            } else {
-                item.get('content').set('itemUsername', (itemUsername) =>
-                    passkey ? itemUsername : payload.userIdentifier
-                );
-            }
+            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
+            const isEmail = usernameSplitEnabled && validateEmailAddress(payload.userIdentifier);
+            const userIdKey = isEmail ? 'itemEmail' : 'itemUsername';
+
+            item.get('content').set(userIdKey, (value) => (passkey ? value : payload.userIdentifier));
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
