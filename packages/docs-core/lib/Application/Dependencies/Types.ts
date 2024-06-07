@@ -26,6 +26,7 @@ export const App_TYPES = {
   CreateEmptyDocumentForConversion: Symbol.for('CreateEmptyDocumentForConversion'),
   CreateRealtimeValetToken: Symbol.for('CreateRealtimeValetToken'),
   LoadDocument: Symbol.for('LoadDocument'),
+  LoadCommit: Symbol.for('LoadCommit'),
   GetCommitData: Symbol.for('GetCommitData'),
   DecryptCommit: Symbol.for('DecryptCommit'),
   SendCommitCommandToRTS: Symbol.for('SendCommitCommandToRTS'),

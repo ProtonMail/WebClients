@@ -57,6 +57,7 @@ import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './Doc
 import metrics from '@proton/metrics'
 import { DocsClientEvent, DocsClientSquashVerificationObjectionMadePayload } from '../../Application/DocsClientEvent'
 import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
+import { LoadCommit } from '../../UseCase/LoadCommit'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -65,7 +66,7 @@ const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
  * Controls the lifecycle of a single document.
  */
 export class DocController implements DocControllerInterface, InternalEventHandlerInterface {
-  private keys: DocumentKeys | null = null
+  keys: DocumentKeys | null = null
   private decryptedNode?: DecryptedNode
   private changeObservers: DocChangeObserver[] = []
   editorInvoker?: ClientRequiresEditorMethods
@@ -74,10 +75,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private lastCommitIdReceivedFromRts?: string
   private initialSyncTimer: NodeJS.Timeout | null = null
   private initialConnectionTimer: NodeJS.Timeout | null = null
-  private editorReady = false
+  realtimeConnectionReady = false
+  docsServerConnectionReady = false
+  didAlreadyReceiveEditorReadyEvent = false
+  readonly updatesReceivedWhileEditorInvokerWasNotReady: (ServerMessageWithDocumentUpdates | Event)[] = []
 
   public readonly username: string
-  public initialized = false
 
   constructor(
     private readonly nodeMeta: NodeMeta,
@@ -86,6 +89,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _squashDocument: SquashDocument,
     private _createInitialCommit: DebugCreateInitialCommit,
     private _loadDocument: LoadDocument,
+    private _loadCommit: LoadCommit,
     private _decryptMessage: DecryptMessage,
     private _duplicateDocument: DuplicateDocument,
     private _createNewDocument: CreateNewDocument,
@@ -102,35 +106,24 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Message)
   }
 
-  private handleWebsocketConnectingEvent(): void {
+  handleWebsocketConnectingEvent(): void {
     if (this.editorInvoker) {
-      this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connecting).catch(console.error)
+      this.editorInvoker.changeEditingAllowance(false).catch(console.error)
     }
   }
 
-  private handleWebsocketConnectedEvent(): void {
+  handleWebsocketConnectedEvent(): void {
     this.beginInitialSyncTimer()
 
     if (this.initialConnectionTimer) {
       clearTimeout(this.initialConnectionTimer)
     }
-
-    if (!this.keys) {
-      throw new Error('Keys not initialized')
-    }
-
-    if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
-    }
-
-    void this.editorInvoker.performOpeningCeremony()
-    void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Connected)
   }
 
-  private handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
+  handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
     if (this.editorInvoker) {
       void this.editorInvoker.performClosingCeremony()
-      void this.editorInvoker.handleWSConnectionStatusChange(WebsocketConnectionEvent.Disconnected)
+      void this.editorInvoker.changeEditingAllowance(false)
     }
 
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
@@ -157,8 +150,39 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
+  /**
+   * The editorInvoker is provided as soon as the editor iframe completes its initial initialization.
+   */
   public setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
     this.editorInvoker = editorInvoker
+
+    this.logger.info('Editor invoker set')
+
+    this.sendInitialCommitToEditor()
+
+    this.showEditorIfAllConnectionsReady()
+
+    if (this.updatesReceivedWhileEditorInvokerWasNotReady.length > 0) {
+      if (!this.keys) {
+        throw new Error('Attepting to play back pending updates before keys are initialized')
+      }
+
+      this.logger.info(
+        `Playing back ${this.updatesReceivedWhileEditorInvokerWasNotReady.length} realtime updates received while editor was not ready`,
+      )
+
+      for (const message of this.updatesReceivedWhileEditorInvokerWasNotReady) {
+        if (message instanceof ServerMessageWithDocumentUpdates) {
+          void this.handleDocumentUpdatesMessage(message, this.keys)
+        } else if (message instanceof Event) {
+          void this.handleRealtimeServerEvent([message], this.keys)
+        } else {
+          throw new Error('Attempting to replay unknown message type')
+        }
+      }
+
+      this.updatesReceivedWhileEditorInvokerWasNotReady.length = 0
+    }
   }
 
   public addChangeObserver(observer: DocChangeObserver): () => void {
@@ -184,23 +208,36 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return Result.fail(loadResult.getError())
     }
 
-    const { keys, docMeta, decryptedCommit } = loadResult.getValue()
-
-    this.logger.info(`Loaded commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+    const { keys, meta, lastCommitId } = loadResult.getValue()
+    this.logger.info(`Loaded document meta with last commit id ${lastCommitId}`)
 
     this.keys = keys
-    this.docMeta = docMeta
-    this.setInitialCommit(decryptedCommit)
+    this.docMeta = meta
 
-    this.logger.info(`Loaded document with last commit id ${decryptedCommit?.commitId}`)
-
-    const connection = this.websocketService.createConnection(this.nodeMeta, keys, { commitId: () => this.commitId })
+    const connection = this.websocketService.createConnection(this.nodeMeta, keys, {
+      commitId: () => this.commitId ?? lastCommitId,
+    })
 
     connection.connect().catch(this.logger.error)
 
     this.beginInitialConnectionTimer()
 
-    this.initialized = true
+    if (lastCommitId) {
+      const decryptResult = await this._loadCommit.execute(this.nodeMeta, lastCommitId, keys)
+      if (decryptResult.isFailed()) {
+        this.logger.error('Failed to load commit', decryptResult.getError())
+        connection.destroy()
+
+        return Result.fail(decryptResult.getError())
+      }
+
+      const decryptedCommit = decryptResult.getValue()
+      this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+
+      this.setInitialCommit(decryptedCommit)
+    }
+
+    this.handleDocsServerConnectionReady()
 
     void this.loadDecryptedNode()
 
@@ -209,27 +246,55 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     })
   }
 
-  private beginInitialConnectionTimer(): void {
+  beginInitialConnectionTimer(): void {
     this.initialConnectionTimer = setTimeout(() => {
-      this.logger.warn('Initial connection with RTS timed out')
+      this.logger.warn('Initial connection with RTS cannot seem to be formed in a reasonable time')
       void this.editorInvoker?.showEditor()
     }, MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR)
   }
 
-  private beginInitialSyncTimer(): void {
+  beginInitialSyncTimer(): void {
     this.initialSyncTimer = setTimeout(() => {
       this.logger.warn('Initial sync with RTS timed out')
-      this.handleCompletingInitialSyncWithRts()
+      this.handleRealtimeConnectionReady()
     }, MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT)
   }
 
-  handleCompletingInitialSyncWithRts(): void {
+  handleRealtimeConnectionReady(): void {
     if (this.initialSyncTimer) {
       clearTimeout(this.initialSyncTimer)
       this.initialSyncTimer = null
     }
 
-    void this.editorInvoker?.showEditor()
+    if (this.realtimeConnectionReady) {
+      return
+    }
+
+    this.realtimeConnectionReady = true
+    this.showEditorIfAllConnectionsReady()
+  }
+
+  private handleDocsServerConnectionReady(): void {
+    this.docsServerConnectionReady = true
+    this.showEditorIfAllConnectionsReady()
+  }
+
+  showEditorIfAllConnectionsReady(): void {
+    if (!this.realtimeConnectionReady || !this.docsServerConnectionReady || !this.editorInvoker) {
+      return
+    }
+
+    this.showEditor()
+  }
+
+  showEditor(): void {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    void this.editorInvoker.showEditor()
+    void this.editorInvoker.performOpeningCeremony()
+    void this.editorInvoker.changeEditingAllowance(true)
   }
 
   get commitId(): string | undefined {
@@ -251,22 +316,36 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const newCommitId = docMeta.commitIds[docMeta.commitIds.length - 1]
 
     if (currentCommitId !== newCommitId) {
-      this.logger.debug('Reloading document due to commit id mismatch')
+      this.logger.info('Reloading document due to commit id mismatch')
       window.location.reload()
     }
   }
 
-  private setInitialCommit(decryptedCommit: DecryptedCommit | undefined): void {
+  setInitialCommit(decryptedCommit: DecryptedCommit | undefined): void {
     this.initialCommit = decryptedCommit
 
     if (!decryptedCommit) {
       return
     }
 
+    this.sendInitialCommitToEditor()
+
     if (decryptedCommit.needsSquash()) {
       this.logger.info('Document needs squash')
 
       void this.squashDocument()
+    }
+  }
+
+  sendInitialCommitToEditor(): void {
+    if (this.docMeta && this.initialCommit && this.editorInvoker) {
+      this.logger.info('Sending initial commit to editor')
+
+      void this.editorInvoker.receiveMessage({
+        type: { wrapper: 'du' },
+        content: this.initialCommit.squashedRepresentation(),
+        origin: DocUpdateOrigin.InitialLoad,
+      })
     }
   }
 
@@ -291,30 +370,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.changeObservers.forEach((observer) => observer(newDoc))
     } catch (error) {
       this.logger.error('Failed to get decrypted link', String(error))
-    }
-  }
-
-  public onEditorReady(): void {
-    if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
-    }
-
-    if (this.editorReady) {
-      this.logger.warn('Received duplicate onEditorReady event')
-      return
-    }
-
-    this.editorReady = true
-
-    this.logger.info('Editor ready')
-
-    if (this.docMeta && this.initialCommit) {
-      this.logger.info('Initializing connection with initial commit', this.initialCommit)
-      void this.editorInvoker.receiveMessage({
-        type: { wrapper: 'du' },
-        content: this.initialCommit.squashedRepresentation(),
-        origin: DocUpdateOrigin.InitialLoad,
-      })
     }
   }
 
@@ -460,11 +515,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     void this.driveCompat.openDocument(shell)
   }
 
-  public async getDocumentClientId(): Promise<number> {
-    if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
+  public async getDocumentClientId(): Promise<number | undefined> {
+    if (this.editorInvoker) {
+      return this.editorInvoker.getClientId()
     }
-    return this.editorInvoker.getClientId()
+
+    return undefined
   }
 
   public async renameDocument(newName: string): Promise<Result<void>> {
@@ -493,7 +549,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   private async handleRealtimeServerEvent(events: Event[], keys: DocumentKeys) {
     if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
+      this.updatesReceivedWhileEditorInvokerWasNotReady.push(...events)
+
+      return
     }
 
     const editorInvoker = this.editorInvoker
@@ -511,7 +569,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     for (const event of events) {
       const type = EventType.create(event.type)
 
-      this.logger.debug('Handling event from RTS:', EventTypeEnum[event.type])
+      this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
 
       switch (type.value) {
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
@@ -544,7 +602,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
           break
         }
         case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
-          this.handleCompletingInitialSyncWithRts()
+          this.handleRealtimeConnectionReady()
           break
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
@@ -556,10 +614,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   async handleDocumentUpdatesMessage(message: ServerMessageWithDocumentUpdates, keys: DocumentKeys) {
-    this.logger.debug('Received message with document updates')
+    this.logger.info('Received message with document updates')
 
     if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
+      this.updatesReceivedWhileEditorInvokerWasNotReady.push(message)
+
+      return
     }
 
     for (const update of message.updates.documentUpdates) {

@@ -6,7 +6,6 @@ import {
   PendingMessage,
   EditorBridgeMessageType,
   ConvertibleDataType,
-  WebsocketConnectionEventStatusChange,
   RtsMessagePayload,
   BridgeOriginProvider,
 } from '@proton/docs-shared'
@@ -74,8 +73,8 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('handleUnresolveCommentMarkNode', [markID])
   }
 
-  async handleWSConnectionStatusChange(status: WebsocketConnectionEventStatusChange): Promise<void> {
-    return this.invokeEditorMethod('handleWSConnectionStatusChange', [status])
+  async changeEditingAllowance(allow: boolean): Promise<void> {
+    return this.invokeEditorMethod('changeEditingAllowance', [allow])
   }
 
   async broadcastPresenceState(): Promise<void> {
