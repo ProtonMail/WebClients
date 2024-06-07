@@ -18,6 +18,7 @@ import {
     isDomainAddon,
     isIpAddon,
     isMemberAddon,
+    isOrgSizeAddon,
     isScribeAddon,
     setQuantity,
 } from '@proton/shared/lib/helpers/planIDs';
@@ -485,7 +486,7 @@ const ProtonPlanCustomizer = ({
                 if (isMemberAddon(addonNameKey)) {
                     return (
                         <AccountSizeCustomiser
-                            mode="users"
+                            mode={isOrgSizeAddon(addonNameKey) ? 'org-size' : 'users'}
                             key={`${addon.Name}-size`}
                             addon={addon}
                             price={addonPriceInline}

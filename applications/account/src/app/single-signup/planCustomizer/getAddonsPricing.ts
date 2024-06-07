@@ -74,6 +74,10 @@ export default function getAddonsPricing({
 
             const addonPricePerCycle = addon.Pricing[cycle] || 0;
 
+            if (!value) {
+                return;
+            }
+
             return {
                 addonPricePerCycle,
                 cycle,
