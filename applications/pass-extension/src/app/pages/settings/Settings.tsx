@@ -22,6 +22,7 @@ import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLog
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -157,10 +158,11 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
 const SettingsApp: FC = () => {
     const { createNotification } = useNotifications();
+    const enhance = useNotificationEnhancer();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.endpoint === 'page') {
-            createNotification(message.payload.notification);
+            createNotification(enhance(message.payload.notification));
         }
     }, []);
 
