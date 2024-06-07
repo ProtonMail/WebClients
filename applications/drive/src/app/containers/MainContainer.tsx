@@ -28,6 +28,7 @@ import {
 } from '../store';
 // TODO: This should be removed after rollout phase
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
+import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
@@ -62,6 +63,7 @@ const InitContainer = () => {
     const [hasPhotosShare, setHasPhotosShare] = useState(false);
     const isPhotosEnabled = usePhotosFeatureFlag();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
+    const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
 
     useActivePing();
 
@@ -92,6 +94,10 @@ const InitContainer = () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
     }, [defaultShareRoot.volumeId]);
+
+    useEffect(() => {
+        driveEventManager.eventHandlers.register((_volumeId, events) => convertExternalInvitationsFromEvents(events));
+    }, []);
 
     if (loading) {
         return (
