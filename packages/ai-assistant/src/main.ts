@@ -1,6 +1,6 @@
-import { downloadModel } from '@proton/llm/lib/downloader';
-import { isAssistantPostMessage, postMessageToAssistantParent } from '@proton/llm/lib/helpers';
-import { ASSISTANT_EVENTS, AssistantConfig } from '@proton/llm/lib/types';
+import { LlmFile, downloadModel } from '@proton/llm/lib/downloader';
+import { isAssistantPostMessage, postMessageIframeToParent } from '@proton/llm/lib/helpers';
+import { AssistantConfig, AssistantEvent } from '@proton/llm/lib/types';
 
 window.addEventListener('load', async () => {
     let abortController: AbortController | undefined; // defined if status === 'loading'
@@ -9,7 +9,7 @@ window.addEventListener('load', async () => {
     const handleDownloadModel = async (
         assistantConfig: AssistantConfig,
         modelVariant: string,
-        filesToIgnore: string[]
+        filesToIgnore: LlmFile[]
     ) => {
         try {
             if (!abortController) {
@@ -18,15 +18,17 @@ window.addEventListener('load', async () => {
                 abortController = undefined;
             }
         } catch (error: any) {
-            postMessageToAssistantParent(
+            postMessageIframeToParent(
                 {
-                    type: ASSISTANT_EVENTS.DOWNLOAD_ERROR,
+                    type: AssistantEvent.DOWNLOAD_ERROR,
                     payload: {
                         error,
                     },
                 },
                 parentURL
             );
+        } finally {
+            abortController = undefined;
         }
     };
 
@@ -47,17 +49,24 @@ window.addEventListener('load', async () => {
         }
 
         switch (event.data.type) {
-            case ASSISTANT_EVENTS.START_DOWNLOAD:
+            case AssistantEvent.START_DOWNLOAD:
                 {
                     // If we passed all the validations and receive a start download event,
                     // we assume the parent url is the origin of the received event
                     parentURL = event.origin;
 
+                    postMessageIframeToParent(
+                        {
+                            type: AssistantEvent.IFRAME_READY,
+                        },
+                        parentURL
+                    );
+
                     const { config, modelVariant, filesToIgnore } = event.data.payload;
                     await handleDownloadModel(config, modelVariant, filesToIgnore);
                 }
                 break;
-            case ASSISTANT_EVENTS.PAUSE_DOWNLOAD:
+            case AssistantEvent.PAUSE_DOWNLOAD:
                 {
                     cancelDownload();
                 }

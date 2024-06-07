@@ -41,7 +41,7 @@ import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import {
@@ -141,6 +141,14 @@ const MainContainer = () => {
     const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
+    // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
+    const hasAssistant = hasAIAssistant(subscription);
+    const assistantUpsellKillSwitch = useFlag('AIAssistantToggleKillSwitch');
+    const hasAllProducts = hasAllProductsB2CPlan(subscription);
+    const isInAllowedApps =
+        hasAllProducts || appFromPathname === APPS.PROTONMAIL || appFromPathname === APPS.PROTONCALENDAR;
+    const assistantKillSwitch = isInAllowedApps ? !hasAssistant && assistantUpsellKillSwitch : true;
+
     const organizationTheme = useOrganizationTheme();
 
     const routes = getRoutes({
@@ -156,6 +164,7 @@ const MainContainer = () => {
         isBreachesAccountDashboardEnabled,
         showThemeSelection,
         isNewCancellationFlowExtended,
+        assistantKillSwitch,
     });
 
     useEffect(() => {

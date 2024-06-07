@@ -28,6 +28,7 @@ export const FREE_PLAN: FreePlanDefault = {
     Offers: [],
     MaxVPN: 1,
     MaxTier: 0,
+    MaxAI: 0,
     Services: PLAN_SERVICES.MAIL + PLAN_SERVICES.VPN,
     Quantity: 1,
     State: 1,

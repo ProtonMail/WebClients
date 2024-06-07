@@ -1,4 +1,3 @@
-import { GpuAssessmentResult } from '@proton/llm/lib/types';
 import { isBrave } from '@proton/shared/lib/helpers/browser';
 
 type HardwareSpecs = {
@@ -9,7 +8,18 @@ type HardwareSpecs = {
     webGlVendor: string;
 };
 
-const isBlacklisted = (specs: HardwareSpecs, adapter: GPUAdapter): GpuAssessmentResult | null => {
+export type GpuAssessmentResult =
+    | 'ok' // seems like WebGPU should work
+    | 'noWebGpu' // we cannot load WebGPU
+    | 'noWebGpuFirefox' // we cannot load WebGPU and we specifically know it's because the user uses Firefox
+    | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
+    | 'macPreM1' // Mac detected, but it seems to be an older Intel CPU that cannot run LLMs
+    | 'noShaderF16' // this GPU is lacking newer features that are required for LLM text generation
+    | 'noShaderF16Brave' // in some cases Brave won't report shader-f16 despite the hardware supporting it
+    | 'maxBufferSizeTooLow'; // this GPU is likely underpowered
+
+// TODO Fix the any
+const isBlacklisted = (specs: HardwareSpecs, adapter: any): GpuAssessmentResult | null => {
     // Returns null if not blacklisted, else returns a reason why it was blacklisted
 
     // Check FP16 support.
@@ -51,7 +61,7 @@ const isBlacklisted = (specs: HardwareSpecs, adapter: GPUAdapter): GpuAssessment
     return null; // ok
 };
 
-export const checkGpu = async (): Promise<GpuAssessmentResult> => {
+export const checkHardwareForAssistant = async (): Promise<GpuAssessmentResult> => {
     const canvas = document.createElement('canvas');
 
     // Gather specs
@@ -87,7 +97,8 @@ export const checkGpu = async (): Promise<GpuAssessmentResult> => {
     // Test if we can load webgpu
     try {
         const navigator = globalThis.navigator as any;
-        const adapter: GPUAdapter | undefined = await navigator.gpu?.requestAdapter();
+        // TODO Fix the any
+        const adapter: any | undefined = await navigator.gpu?.requestAdapter();
         if (!adapter) {
             console.error('WebGPU is not available.');
             if (specs.userAgent.includes('Firefox')) {

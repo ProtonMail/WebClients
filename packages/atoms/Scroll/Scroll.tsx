@@ -10,9 +10,19 @@ const TOLERANCE = 4;
 export interface ScrollProps extends ComponentPropsWithoutRef<'div'> {
     horizontal?: boolean;
     customContainerRef?: Ref<HTMLElement>;
+    customChildRef?: Ref<HTMLElement>;
+    onScroll?: () => void;
 }
 
-const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }: ScrollProps) => {
+const Scroll = ({
+    children,
+    horizontal,
+    className,
+    customContainerRef,
+    customChildRef,
+    onScroll,
+    ...rest
+}: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const scrollChildRef = useRef<HTMLDivElement>(null);
     const [showStartShadow, setShowStartShadow] = useState(false);
@@ -22,6 +32,9 @@ const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }
         ? [scrollContainerRef, customContainerRef as Ref<HTMLDivElement>]
         : [scrollContainerRef];
     const containerRefs = useCombinedRefs(...containersRefs);
+
+    const childsRefs = customChildRef ? [scrollChildRef, customChildRef as Ref<HTMLDivElement>] : [scrollChildRef];
+    const childRefs = useCombinedRefs(...childsRefs);
 
     const setShadows = (container: HTMLDivElement, child: HTMLDivElement) => {
         if (!container || !child) {
@@ -96,6 +109,7 @@ const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }
         }
 
         setShadows(scrollContainer, scrollChild);
+        onScroll?.();
     };
 
     return (
@@ -112,7 +126,7 @@ const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }
                 aria-hidden="true"
             />
             <div className="scroll-inner" ref={containerRefs} onScroll={handleScroll}>
-                <div className="scroll-child" ref={scrollChildRef}>
+                <div className="scroll-child" ref={childRefs}>
                     {children}
                 </div>
             </div>

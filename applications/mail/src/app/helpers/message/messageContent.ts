@@ -1,7 +1,10 @@
+import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/constants';
 import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { message } from '@proton/shared/lib/sanitize';
+import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -183,7 +186,30 @@ export const getContentWithBlockquotes = (
     }
 };
 
-export const insertTextBeforeContent = (message: MessageState, textToInsert: string) => {
+/**
+ * @param mailSettings
+ * @returns string containing fon styles. to be inserted in `style` attribute of an HTML element
+ * @example
+ * ```
+ * This usage
+ * <div style="${getComposerDefaultFontStyles(mailSettings)}">...</div>
+ * Becomes
+ * <div style="font-family: Arial, serif; font-size: 12px;">...</div>
+ * ```
+ */
+export const getComposerDefaultFontStyles = (mailSettings: MailSettings) =>
+    `font-family: ${mailSettings?.FontFace || DEFAULT_FONT_FACE_ID}; font-size: ${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`;
+
+export const sanitizeContentToInsert = (textToInsert: string, isPlainText: boolean) => {
+    // Because rich text editor convert text to HTML, we need to escape the text before inserting it
+    // As a 2nd layer of security, to prevent adding unsafe elements, we also want to sanitize the content before importing it
+    const escapedText = escape(textToInsert);
+    const sanitizedText = message(escapedText);
+
+    return isPlainText ? unescape(sanitizedText) : sanitizedText;
+};
+
+export const insertTextBeforeContent = (message: MessageState, textToInsert: string, mailSettings: MailSettings) => {
     let newBody;
     const separator = '--------------------';
     if (isPlainText(message.data)) {
@@ -193,8 +219,9 @@ export const insertTextBeforeContent = (message: MessageState, textToInsert: str
     } else {
         const messageBody = message.messageDocument?.document?.innerHTML;
         const textToInsertHTML = textToInsert.replaceAll('\n', '<br>');
+        const fontStyles = getComposerDefaultFontStyles(mailSettings);
 
-        newBody = `${textToInsertHTML}<br>${separator}<br>${messageBody}`;
+        newBody = `<div style="${fontStyles}">${textToInsertHTML}</div><br>${separator}<br>${messageBody}`;
     }
     return newBody;
 };

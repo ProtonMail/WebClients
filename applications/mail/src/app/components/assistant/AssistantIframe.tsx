@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ASSISTANT_FEATURE_NAME, getAssistantIframeURL, useAssistant } from '@proton/llm/lib';
+import { getAssistantIframeURL, useAssistant } from '@proton/llm/lib';
 
 const AssistantIframe = () => {
     const { canShowAssistant, hasCompatibleHardware, hasCompatibleBrowser, isModelDownloaded } = useAssistant();
@@ -15,7 +15,7 @@ const AssistantIframe = () => {
         <iframe
             className="hidden"
             id="assistant-iframe"
-            title={c('loc_nightly_assistant').t`${ASSISTANT_FEATURE_NAME} iframe`}
+            title={c('Info').t`writing assistant iframe`}
             src={getAssistantIframeURL()}
             tabIndex={-1}
         />

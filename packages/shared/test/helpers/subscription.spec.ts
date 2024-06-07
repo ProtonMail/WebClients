@@ -15,6 +15,7 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasLifetime,
+    hasSomeAddOn,
     isManagedExternally,
     isTrial,
     isTrialExpired,
@@ -57,6 +58,7 @@ beforeEach(() => {
         MaxCalendars: 123,
         MaxMembers: 123,
         MaxVPN: 123,
+        MaxAI: 123,
         MaxTier: 123,
         Services: 123,
         Features: 123,
@@ -228,6 +230,7 @@ describe('getPricingFromPlanIDs', () => {
                 MaxMembers: 0,
                 MaxVPN: 0,
                 MaxTier: 0,
+                MaxAI: 0,
                 Services: 8,
                 Features: 0,
                 State: 1,
@@ -258,8 +261,9 @@ describe('getPricingFromPlanIDs', () => {
             },
         };
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 499,
+            defaultMonthlyPriceWithoutAddons: 499,
             all: {
                 '1': 499,
                 '3': 0,
@@ -301,8 +305,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.MAIL_PRO]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 799,
+            defaultMonthlyPriceWithoutAddons: 799,
             all: {
                 '1': 799,
                 '3': 0,
@@ -345,8 +350,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.MAIL_PRO, ADDON_NAMES.MEMBER_MAIL_PRO]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 6392,
+            defaultMonthlyPriceWithoutAddons: 799,
             all: {
                 '1': 6392,
                 '3': 0,
@@ -389,8 +395,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.BUNDLE_PRO]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 1299,
+            defaultMonthlyPriceWithoutAddons: 1299,
             all: {
                 '1': 1299,
                 '3': 0,
@@ -439,8 +446,9 @@ describe('getPricingFromPlanIDs', () => {
             ADDON_NAMES.DOMAIN_BUNDLE_PRO,
         ]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 11742,
+            defaultMonthlyPriceWithoutAddons: 1299,
             all: {
                 '1': 11742,
                 '3': 0,
@@ -483,8 +491,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.FAMILY]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 2999,
+            defaultMonthlyPriceWithoutAddons: 2999,
             all: {
                 '1': 2999,
                 '3': 0,
@@ -529,8 +538,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_PRO]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 1798,
+            defaultMonthlyPriceWithoutAddons: 1798,
             all: {
                 '1': 1798,
                 '3': 0,
@@ -575,8 +585,9 @@ describe('getPricingFromPlanIDs', () => {
 
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
 
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 8084,
+            defaultMonthlyPriceWithoutAddons: 1798,
             all: {
                 '1': 8084,
                 '3': 0,
@@ -623,8 +634,9 @@ describe('getPricingFromPlanIDs', () => {
         // monthly: each user currently costs 11.99 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 7397,
+            defaultMonthlyPriceWithoutAddons: 7397,
             all: {
                 '1': 7397,
                 '3': 0,
@@ -677,8 +689,9 @@ describe('getPricingFromPlanIDs', () => {
         // monthly: each user currently costs 11.99 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
-        const expected = {
+        const expected: AggregatedPricing = {
             defaultMonthlyPrice: 30787,
+            defaultMonthlyPriceWithoutAddons: 7397,
             all: {
                 '1': 30787,
                 '3': 0,
@@ -720,6 +733,7 @@ describe('getTotalFromPricing', () => {
     it('should calculate the prices correctly', () => {
         const pricing: AggregatedPricing = {
             defaultMonthlyPrice: 8596,
+            defaultMonthlyPriceWithoutAddons: 499,
             all: {
                 '1': 8596,
                 '3': 0,
@@ -781,6 +795,7 @@ describe('getTotalFromPricing', () => {
     it('should calculate the prices correctly from a different monthly price', () => {
         const pricing: AggregatedPricing = {
             defaultMonthlyPrice: 999,
+            defaultMonthlyPriceWithoutAddons: 499,
             all: {
                 '1': 899,
                 '3': 0,
@@ -883,5 +898,37 @@ describe('getPlanNameFromIDs', () => {
 
     it('should return undefined if there are no plan IDs', () => {
         expect(getPlanNameFromIDs({})).toBeUndefined();
+    });
+});
+
+describe('hasSomeAddOn', () => {
+    it('Should test a single add-on Name', () => {
+        subscription = {
+            ...subscription,
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+        };
+
+        const result = hasSomeAddOn(subscription, ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
+        expect(result).toEqual(true);
+    });
+
+    it('Should test a list of add-on Name', () => {
+        subscription = {
+            ...subscription,
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+        };
+
+        const result = hasSomeAddOn(subscription, [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, ADDON_NAMES.MEMBER_DRIVE_PRO]);
+        expect(result).toEqual(true);
+    });
+
+    it('Should test a list of add-on Name with no match', () => {
+        subscription = {
+            ...subscription,
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+        };
+
+        const result = hasSomeAddOn(subscription, [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
+        expect(result).toEqual(false);
     });
 });

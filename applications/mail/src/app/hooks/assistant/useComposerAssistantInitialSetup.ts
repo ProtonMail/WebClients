@@ -6,19 +6,12 @@ import { FeatureCode } from '@proton/features';
 interface Props {
     onToggleAssistant: () => void;
     canShowAssistant: boolean;
-    hasCompatibleHardware: boolean;
-    hasCompatibleBrowser: boolean;
 }
-const useComposerAssistantInitialSetup = ({
-    onToggleAssistant,
-    canShowAssistant,
-    hasCompatibleHardware,
-    hasCompatibleBrowser,
-}: Props) => {
+const useComposerAssistantInitialSetup = ({ onToggleAssistant, canShowAssistant }: Props) => {
     const [isAssistantInitialSetup, setIsAssistantInitialSetup] = useState(false);
 
     // Feature flag that we use to open the assistant automatically the first time the user opens the composer
-    const { show: showSetupSpotlight, onDisplayed: onDisplayedSetupSpotlight } = useSpotlightOnFeature(
+    const { show: showComposerSpotlight, onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
         FeatureCode.ComposerAssistantInitialSetup
     );
 
@@ -28,12 +21,10 @@ const useComposerAssistantInitialSetup = ({
     );
 
     useEffect(() => {
-        const canOpenAssistantOnSetup =
-            showSetupSpotlight && canShowAssistant && hasCompatibleHardware && hasCompatibleBrowser;
+        const canOpenAssistantOnSetup = showComposerSpotlight && canShowAssistant;
         if (canOpenAssistantOnSetup) {
             setIsAssistantInitialSetup(true);
             onToggleAssistant();
-            onDisplayedSetupSpotlight();
 
             /* If the user account has been created recently, the user won't see the sidebar spotlight.
              * But if the user opens manually the composer in the meantime and sees the assistant,
@@ -44,13 +35,11 @@ const useComposerAssistantInitialSetup = ({
             }
         }
     }, [
-        showSetupSpotlight,
-        onDisplayedSetupSpotlight,
+        showComposerSpotlight,
+        onDisplayedComposerSpotlight,
         showSidebarSpotlight,
         onDisplayedSidebarSpotlight,
         canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
     ]);
 
     return { isAssistantInitialSetup };
