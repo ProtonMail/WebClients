@@ -8,7 +8,6 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
-import { Organization } from '@proton/pass/components/Settings/Organization';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { Unpack } from '@proton/pass/types';
@@ -29,7 +28,7 @@ const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: <Export /> },
     { hash: 'account', title: c('Label').t`Account`, content: <></> },
-    ...(orgEnabled ? [{ hash: 'organization', title: c('Label').t`Organization`, content: <Organization /> }] : []),
+    ...(orgEnabled ? [{ hash: 'organization', title: c('Label').t`Organization`, content: <></> }] : []),
     { hash: 'support', title: c('Label').t`Support`, content: <Support /> },
 ];
 
@@ -41,6 +40,7 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     const { openSettings } = usePassCore();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const organization = useOrganization();
@@ -50,6 +50,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].hash === 'account') navigateToAccount();
+        if (tabs[nextTab].hash === 'organization') navigateToOrganization();
         else openSettings?.(tabs[nextTab].hash);
     };
 
