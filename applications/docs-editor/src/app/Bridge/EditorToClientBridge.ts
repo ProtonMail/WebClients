@@ -8,12 +8,13 @@ import {
   EditorRequiresClientMethods,
   EditorToClientReplyMessage,
   BridgeOriginProvider,
+  DOCS_DEBUG_KEY,
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
 
 export class EditorToClientBridge {
-  private logger = new Logger('EditorIframe')
+  private logger = new Logger('EditorIframe', DOCS_DEBUG_KEY)
   private readonly clientInvoker = new ClientInvoker(this.clientFrame, this.logger)
   private requestHandler?: ClientRequiresEditorMethods
 
