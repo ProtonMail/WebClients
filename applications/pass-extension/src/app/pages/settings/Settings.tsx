@@ -19,7 +19,6 @@ import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockCon
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
-import { Organization } from '@proton/pass/components/Settings/Organization';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
@@ -50,7 +49,7 @@ const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
     { path: '/account', title: c('Label').t`Account`, content: <></> },
-    ...(orgEnabled ? [{ path: '/organization', title: c('Label').t`Organization`, content: <Organization /> }] : []),
+    ...(orgEnabled ? [{ path: '/organization', title: c('Label').t`Organization`, content: <></> }] : []),
     { path: '/support', title: c('Label').t`Support`, content: <Support /> },
     ...(ENV === 'development' ? [{ path: '/dev', title: 'Developer', content: <Developer /> }] : []),
 ];
@@ -71,12 +70,14 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
     const history = useHistory();
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].path === '/account') navigateToAccount();
+        if (tabs[nextTab].path === '/organization') navigateToOrganization();
         else history.push(tabs[nextTab].path);
     };
 
