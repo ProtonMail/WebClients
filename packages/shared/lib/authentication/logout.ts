@@ -1,3 +1,4 @@
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import noop from '@proton/utils/noop';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
@@ -59,6 +60,7 @@ export const getLogoutURL = ({
     persistedSessions: inputPersistedSessions,
     clearDeviceRecoveryData,
     reason,
+    localID,
 }: {
     type?: 'full' | 'local';
     appName: APP_NAMES;
@@ -66,23 +68,22 @@ export const getLogoutURL = ({
     persistedSessions: PersistedSession[];
     clearDeviceRecoveryData?: boolean;
     reason: 'signout' | 'session-expired';
+    localID: number;
 }) => {
     if (mode === 'sso') {
-        let url = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
-        url.searchParams.set('reason', reason);
-
         // If it's not a full logout on account, we just strip the local id from the path in order to get redirected back
         if (appName === APPS.PROTONACCOUNT && type !== 'full') {
-            const currentURL = new URL(window.location.href);
-            const strippedPathname = stripLocalBasenameFromPathname(currentURL.pathname);
-            if (strippedPathname && strippedPathname !== '/') {
-                currentURL.pathname = strippedPathname;
-                return currentURL.toString();
+            const url = new URL(window.location.href);
+            url.pathname = stripLocalBasenameFromPathname(url.pathname);
+            if (localID !== undefined) {
+                url.searchParams.set(ForkSearchParameters.LocalID, `${localID}`);
             }
+            return url.toString();
         }
 
+        const url = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
+        url.searchParams.set('reason', reason);
         const persistedSessions = type === 'full' ? inputPersistedSessions : [];
-
         return serializeLogoutURL({ appName, url, persistedSessions, clearDeviceRecoveryData }).toString();
     }
 
@@ -154,7 +155,17 @@ export const handleLogout = async ({
     authentication.logout();
 
     if (appName === APPS.PROTONACCOUNT || appName === APPS.PROTONVPN_SETTINGS || mode !== 'sso' || type === 'full') {
-        replaceUrl(getLogoutURL({ type, appName, reason, mode, persistedSessions, clearDeviceRecoveryData }));
+        replaceUrl(
+            getLogoutURL({
+                type,
+                appName,
+                reason,
+                mode,
+                persistedSessions,
+                clearDeviceRecoveryData,
+                localID,
+            })
+        );
     } else {
         requestFork({ fromApp: appName, localID, reason, extra });
     }
