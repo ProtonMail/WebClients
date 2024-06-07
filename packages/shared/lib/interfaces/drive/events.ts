@@ -9,7 +9,7 @@ export interface DriveEventsResult {
 }
 
 type DriveEventResult = {
-    Data: any;
+    Data?: DriveEventData;
     Link: LinkMeta;
     CreateTime: number;
 } & (
@@ -22,6 +22,10 @@ type DriveEventResult = {
           FromContextShareID?: string;
       }
 );
+
+type DriveEventData = {
+    ExternalInvitationSignup?: string;
+};
 
 enum DriveEventsPaginationFlag {
     completed = 0,
