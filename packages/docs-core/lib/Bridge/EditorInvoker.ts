@@ -8,6 +8,7 @@ import {
   ConvertibleDataType,
   WebsocketConnectionEventStatusChange,
   RtsMessagePayload,
+  BridgeOriginProvider,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
@@ -115,9 +116,9 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
       messageId,
     }
 
-    this.logger.info('Sending message to editor', message)
+    this.logger.debug('Sending message to editor', message)
 
-    this.editorFrame.contentWindow?.postMessage(message, '*')
+    this.editorFrame.contentWindow?.postMessage(message, BridgeOriginProvider.GetEditorOrigin())
 
     return new Promise<ReturnType<ClientRequiresEditorMethods[K]>>((resolve) => {
       this.pendingMessages.push({

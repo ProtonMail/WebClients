@@ -29,7 +29,7 @@ export class ClientToEditorBridge {
 
       const message = event.data as EditorToClientGenericMessage
 
-      this.logger.info('Received message data from editor', message)
+      this.logger.debug('Received message data from editor', message)
 
       if (message.type === EditorBridgeMessageType.EditorToClientInvokation) {
         void this.handleEditorRequestingClientMethod(
