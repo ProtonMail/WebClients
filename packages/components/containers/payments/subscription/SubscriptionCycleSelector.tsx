@@ -6,12 +6,11 @@ import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import {
+    PricingMode,
     TotalPricing,
-    allCycles,
     getPlan,
     getPlanFromIds,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
+    getTotals,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -28,6 +27,8 @@ import { EllipsisLoader, Option, Price, Radio, SelectTwo } from '../../../compon
 import InputField from '../../../components/v2/field/InputField';
 import { getMonthFreeText } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
+import PlanDiscount from './helpers/PlanDiscount';
+import PlanPrice from './helpers/PlanPrice';
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
@@ -112,18 +113,7 @@ const CycleItemView = ({
                         </span>
                     )}
                 </div>
-                <strong className="text-lg shrink-0 color-primary">
-                    {loading ? (
-                        <EllipsisLoader />
-                    ) : (
-                        <>
-                            {c('Subscription price').t`For`}
-                            <Price className="ml-1" currency={currency} data-testid="subscription-total-price">
-                                {total}
-                            </Price>
-                        </>
-                    )}
-                </strong>
+                <PlanPrice loading={loading} total={total} currency={currency} />
             </div>
             <div className="flex items-center">
                 <span className="color-weak flex flex-auto" data-testid={`price-per-user-per-month-${cycle}`}>
@@ -135,9 +125,7 @@ const CycleItemView = ({
                         </Price>
                     )}
                 </span>
-                <span className="color-success flex shrink-0">
-                    {loading ? null : getDiscountPrice(discount, currency)}
-                </span>
+                <PlanDiscount loading={loading} discount={discount} currency={currency} />
             </div>
         </div>
     );
@@ -215,18 +203,55 @@ export const SubscriptionCheckoutCycleItem = ({
     );
 };
 
+// todo: that's not a long-term solution, because we already have cycles like 3, 15, 18, 30
+// which might appear for certain promotions.
+function capMaximumCycle(maximumCycle: CYCLE, planIDs: PlanIDs, subscription: SubscriptionModel | undefined): CYCLE {
+    const cappedPlans: {
+        plan: PLANS | ADDON_NAMES;
+        cycle: CYCLE;
+    }[] = [
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN2024, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_PASS_BUNDLE, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS_PRO, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_BIZ, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_FAMILY, cycle: CYCLE.YEARLY },
+    ];
+
+    // filter a capped plan from the list of capped plans if it is present in planIDs
+    const plan = cappedPlans.find((cappedPlan) => planIDs[cappedPlan.plan]);
+
+    let result = maximumCycle;
+    if (plan) {
+        result = Math.min(maximumCycle, plan.cycle);
+    }
+
+    return Math.max(result, subscription?.Cycle ?? 0, subscription?.UpcomingSubscription?.Cycle ?? 0);
+}
+
 export const getAllowedCycles = ({
     subscription,
     minimumCycle,
     maximumCycle,
     planIDs,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
+    disableUpcomingCycleCheck,
 }: {
     subscription: SubscriptionModel | undefined;
     minimumCycle: CYCLE;
     maximumCycle: CYCLE;
     planIDs: PlanIDs;
     defaultCycles?: CYCLE[];
+    disableUpcomingCycleCheck?: boolean;
 }): CYCLE[] => {
     const isTrialSubscription = isTrial(subscription);
     const sortedCycles = defaultCycles.sort((a, b) => b - a);
@@ -234,15 +259,26 @@ export const getAllowedCycles = ({
     const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
     const isSamePlan = currentPlanName === newPlanName;
 
-    return sortedCycles.filter((cycle) => {
-        const isHigherThanCurrentSubscription = cycle >= (subscription?.Cycle ?? 0);
-        const isHigherThanUpcoming = cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0);
+    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, subscription);
 
-        const isEligibleForSelection =
+    const result = sortedCycles.filter((cycle) => {
+        const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
+
+        // disableUpcomingCycleCheck is an escape hatch to allow the selection of the cycle which is **lower** than upcoming one
+        // but higher than current one
+        // Example: user has current subscription 1 month and upcoming 12 months. Now they want to buy Scribe addon.
+        // Normally, we would not show them the current one, because we consider that downgrading of the cycle.
+        // But in this case, we want them to buy same 1 month subscription but with Scribe addon.
+        const isHigherThanUpcoming: boolean =
+            cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0) || !!disableUpcomingCycleCheck;
+
+        const isEligibleForSelection: boolean =
             (isHigherThanCurrentSubscription && isHigherThanUpcoming) || isTrialSubscription || !isSamePlan;
 
-        return cycle >= minimumCycle && cycle <= maximumCycle && isEligibleForSelection;
+        return cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection;
     });
+
+    return result;
 };
 
 export interface Props {
@@ -259,6 +295,8 @@ export interface Props {
     subscription?: SubscriptionModel;
     defaultCycles?: CYCLE[];
     priceType?: PriceType;
+    pricingMode?: PricingMode;
+    disableUpcomingCycleCheck?: boolean;
 }
 
 const SubscriptionCycleSelector = ({
@@ -275,17 +313,21 @@ const SubscriptionCycleSelector = ({
     subscription,
     defaultCycles,
     priceType,
+    pricingMode,
+    disableUpcomingCycleCheck,
 }: Props) => {
-    const cycles = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
+    const cycles = getAllowedCycles({
+        subscription,
+        minimumCycle,
+        maximumCycle,
+        defaultCycles,
+        planIDs,
+        disableUpcomingCycleCheck: !!disableUpcomingCycleCheck,
+    });
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
-    const pricing = getPricingFromPlanIDs(planIDs, plansMap, priceType);
-
-    const totals = allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
-        acc[cycle] = getTotalFromPricing(pricing, cycle);
-        return acc;
-    }, {} as any);
+    const totals = getTotals(planIDs, plansMap, priceType, pricingMode);
 
     const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
 

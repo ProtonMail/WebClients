@@ -47,6 +47,11 @@
 	}
 }
 
+// don't use this if you don't know what you're doing
+.display-contents {
+	display: contents;
+}
+
 /* table-design in CSS */
 .row {
 	display: table;

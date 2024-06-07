@@ -25,6 +25,7 @@ export const defaultCountriesCount = {
         },
         {
             MaxTier: 2,
+            MaxAI: 0,
             Count: 51,
         },
     ],

@@ -7,6 +7,7 @@ import { EasySwitchSettingsArea } from '@proton/activation';
 import {
     AccessibilitySection,
     AccountRecoverySection,
+    AssistantToggle,
     AutomaticSubscriptionModal,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
@@ -75,6 +76,7 @@ const AccountSettingsRouter = ({
                         <PrivateMainSettingsArea config={dashboard}>
                             <YourStorageSection app={app} />
                             <YourPlanSection app={app} />
+                            <AssistantToggle />
                             <SubscriptionsSection />
                             <PaymentMethodsSection />
                             <CreditsSection />

@@ -45,6 +45,7 @@ export enum FeatureCode {
     CleanUTMTrackers = 'CleanUTMTrackers',
     ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
     ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
+    ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
     DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveMyDevices = 'DriveWebMyDevices',

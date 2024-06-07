@@ -12,6 +12,7 @@ export enum ComposerInnerModalStates {
     NoRecipients,
     NoSubjects,
     NoAttachments,
+    AssistantSettings,
 }
 
 interface UseComposerInnerModals {

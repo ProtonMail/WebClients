@@ -1,5 +1,6 @@
 import { MutableRefObject, useMemo, useState } from 'react';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
@@ -96,6 +97,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useApi();
     const { call } = useEventManager();
+    const accessToAssistant = useFlag('ComposerAssistant');
+
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupActiveOrganization =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetup(organization);
@@ -115,6 +118,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
     const allowVpnAccessConfiguration = !hasVpnOrPassB2BPlan;
     const allowPrivateMemberConfiguration = !hasVpnOrPassB2BPlan;
+    const allowAIAssistantConfiguration = accessToAssistant;
 
     const showMultipleUserUploadButton = hasVpnOrPassB2BPlan;
     const showAddressesSection = !hasVpnOrPassB2BPlan;
@@ -438,6 +442,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         showMultipleUserUploadButton={showMultipleUserUploadButton}
                         disableStorageValidation={!allowStorageConfiguration}
                         disableDomainValidation={useEmail}
@@ -451,6 +456,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         showAddressesSection={showAddressesSection}
                         {...subUserEditModalProps}
                     />
@@ -473,6 +479,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         members={members}
                         organization={organization}
                         verifiedDomains={verifiedDomains}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         onInviteUser={handleInviteUser}
                         app={app}
                         {...inviteOrCreateUserModalProps}
@@ -580,21 +587,20 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                 Boolean(member.Private) && (
                                                     <Badge
                                                         type="origin"
-                                                        className="rounded-sm"
                                                         data-testid="users-and-addresses-table:memberIsPrivate"
                                                     >
                                                         {c('Private Member').t`private`}
                                                     </Badge>
                                                 )}
                                             {member['2faStatus'] > 0 && (
-                                                <Badge type="origin" className="rounded-sm">
-                                                    {c('Enabled 2FA').t`2FA`}
-                                                </Badge>
+                                                <Badge type="origin">{c('Enabled 2FA').t`2FA`}</Badge>
+                                            )}
+                                            {member.NumAI > 0 && (
+                                                <Badge type="origin">{c('Users table: AI-powered').t`AI`}</Badge>
                                             )}
                                             {member.SSO > 0 && (
                                                 <Badge
                                                     type="success"
-                                                    className="rounded-sm"
                                                     tooltip={c('Users table: single sign-on tooltip')
                                                         .t`SSO user provided by your identity provider`}
                                                 >

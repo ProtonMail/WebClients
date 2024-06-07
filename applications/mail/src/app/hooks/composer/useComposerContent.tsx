@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { EditorActions, EditorMetadata } from '@proton/components/components';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { getHasAssistantStatus } from '@proton/llm/lib';
+import { OpenedAssistant, OpenedAssistantStatus } from '@proton/llm/lib/types';
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -11,6 +13,11 @@ import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import {
+    getMessageContentBeforeBlockquote,
+    setMessageContentBeforeBlockquote,
+} from 'proton-mail/helpers/composer/contentFromComposerMessage';
+import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
@@ -23,7 +30,13 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { getDate } from '../../helpers/elements';
-import { getContent, getContentWithBlockquotes, setContent } from '../../helpers/message/messageContent';
+import {
+    exportPlainText,
+    getComposerDefaultFontStyles,
+    getContent,
+    getContentWithBlockquotes,
+    setContent,
+} from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
@@ -64,9 +77,10 @@ export interface EditorComposer {
     toggleMaximized?: () => void;
     composerID: ComposerID;
     minimizeButtonRef: RefObject<HTMLButtonElement>;
-    openedAssistants: string[];
+    openedAssistants: OpenedAssistant[];
     openAssistant: (id: string) => void;
     closeAssistant: (id: string) => void;
+    setAssistantStatus: (id: string, status: OpenedAssistantStatus) => void;
 }
 
 export interface EditorQuickReply {
@@ -132,19 +146,19 @@ export const useComposerContent = (args: EditorArgs) => {
     const messageSendInfo = useMessageSendInfo(modelMessage);
     const reloadSendInfo = useReloadSendInfo();
 
-    const [showAssistant, setShowAssistant] = useState(false);
     const [hasUsedAssistantText, setHasUsedAssistantText] = useState(false);
     const { sendSendMessageAssistantReport } = useAssistantTelemetry();
 
-    const toggleAssistant = () => {
-        setShowAssistant(!showAssistant);
-    };
-
-    const isAssistantOpenedInComposer = isComposer && args.openedAssistants.includes(args.composerID);
+    const isAssistantExpanded = useMemo(() => {
+        return (
+            isComposer && getHasAssistantStatus(args.openedAssistants, args.composerID, OpenedAssistantStatus.EXPANDED)
+        );
+    }, [args]);
 
     const handleCloseAssistant = () => {
-        if (isComposer && isAssistantOpenedInComposer) {
-            args.closeAssistant(args.composerID);
+        if (isComposer) {
+            const { composerID, closeAssistant } = args;
+            closeAssistant(composerID);
         }
     };
 
@@ -424,6 +438,76 @@ export const useComposerContent = (args: EditorArgs) => {
     );
 
     /**
+     * Returns plain text content before the blockquote and signature in the editor
+     */
+    const getContentBeforeBlockquote = () => {
+        const { editorRef, type } = args;
+        // Do nothing if quick reply
+        if (type === EditorTypes.quickReply) {
+            return '';
+        }
+
+        const editorType = isPlainText ? 'plaintext' : 'html';
+        const editorContent = editorRef.current?.getContent() || '';
+
+        // Plain text only
+        const addressSignature = (() => {
+            const content = insertSignature(
+                '',
+                addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
+                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
+                mailSettings,
+                userSettings,
+                undefined,
+                false
+            );
+
+            return exportPlainText(content);
+        })();
+
+        return getMessageContentBeforeBlockquote({
+            editorType,
+            editorContent,
+            addressSignature,
+        });
+    };
+
+    const setContentBeforeBlockquote = (content: string) => {
+        const { editorRef, type } = args;
+        // Do nothing if quick reply
+        if (type === EditorTypes.quickReply) {
+            return;
+        }
+
+        const editorType = isPlainText ? 'plaintext' : 'html';
+        const editorContent = editorRef.current?.getContent() || '';
+
+        // Plain text only
+        const addressSignature = (() => {
+            const content = insertSignature(
+                '',
+                addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
+                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
+                mailSettings,
+                userSettings,
+                undefined,
+                false
+            );
+            return exportPlainText(content);
+        })();
+
+        const nextContent = setMessageContentBeforeBlockquote({
+            editorType,
+            editorContent,
+            content,
+            wrapperDivStyles: getComposerDefaultFontStyles(mailSettings),
+            addressSignature,
+        });
+
+        return handleChangeContent(nextContent, true);
+    };
+
+    /**
      * In some rare situations, Squire can miss an input event.
      * A missed event can lead to not sending the expected content which is serious.
      * This function perform an ultimate content check before sending especially.
@@ -673,7 +757,7 @@ export const useComposerContent = (args: EditorArgs) => {
               hasHotkeysEnabled,
               editorRef: args.editorRef,
               minimizeButtonRef: args.minimizeButtonRef,
-              showAssistant,
+              isAssistantExpanded,
               closeAssistant: handleCloseAssistant,
           }
         : {
@@ -737,6 +821,8 @@ export const useComposerContent = (args: EditorArgs) => {
         handleChange,
         handleChangeContent,
         handleSend,
+        getContentBeforeBlockquote,
+        setContentBeforeBlockquote,
         handleDeleteDraft,
         handleDelete,
         handleClose,
@@ -779,9 +865,6 @@ export const useComposerContent = (args: EditorArgs) => {
         handleSendQuickReply,
 
         // Assistant
-        showAssistant,
-        setShowAssistant,
-        toggleAssistant,
         setHasUsedAssistantText,
     };
 };

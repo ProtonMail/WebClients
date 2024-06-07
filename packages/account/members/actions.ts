@@ -7,6 +7,7 @@ import {
     createMemberAddress,
     createMember as createMemberConfig,
     privatizeMember,
+    updateAI,
     updateName,
     updateQuota,
     updateRole,
@@ -73,6 +74,7 @@ interface CreateMemberPayload {
     vpn?: boolean;
     password: string;
     role: MEMBER_ROLE | null;
+    numAI: boolean;
 }
 
 export const editMember = ({
@@ -95,6 +97,9 @@ export const editMember = ({
         }
         if (memberDiff.vpn !== undefined) {
             await api(updateVPN(member.ID, memberDiff.vpn ? VPN_CONNECTIONS : 0));
+        }
+        if (memberDiff.numAI !== undefined) {
+            await api(updateAI(member.ID, memberDiff.numAI ? 1 : 0));
         }
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             await dispatch(setAdminRole({ member, payload: memberKeyPacketPayload, api }));
@@ -189,6 +194,7 @@ export const createMember = ({
                 Private: +model.private,
                 MaxSpace: +model.storage,
                 MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
+                MaxAI: model.numAI ? 1 : 0,
             }),
         });
 

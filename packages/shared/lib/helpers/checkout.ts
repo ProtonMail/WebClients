@@ -11,7 +11,7 @@ import {
     SubscriptionCheckResponse,
     getPlanMaxIPs,
 } from '../interfaces';
-import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon } from './planIDs';
+import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './planIDs';
 import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
 
 export const getDiscountText = () => {
@@ -33,10 +33,15 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
     if (isIpAddon(addon.Name)) {
         return quantity * getPlanMaxIPs(addon);
     }
+    //TODO this might not be sufficient. Before the change it was:
+    // return quantity * (addon.MaxAI || 0);
+    if (isScribeAddon(addon.Name)) {
+        return quantity;
+    }
     return 0;
 };
 
-export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
+export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
     if (isDomainAddon(addonName)) {
         const domains = quantity;
         return c('Addon').ngettext(msgid`${domains} custom domain`, `${domains} custom domains`, domains);
@@ -48,6 +53,16 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
     if (isIpAddon(addonName)) {
         const ips = quantity;
         return c('Addon').ngettext(msgid`${ips} server`, `${ips} servers`, ips);
+    }
+
+    if (isScribeAddon(addonName)) {
+        const isB2C = planIDs[PLANS.MAIL] || planIDs[PLANS.BUNDLE];
+        if (isB2C) {
+            return c('Info').t`Writing assistant`;
+        }
+        const seats = quantity;
+        // translator: sentence is "1 writing assistant seat" or "2 writing assistant seats"
+        return c('Addon').ngettext(msgid`${seats} writing assistant seat`, `${seats} writing assistant seats`, seats);
     }
     return '';
 };
@@ -72,9 +87,15 @@ export interface SubscriptionCheckoutData {
     withoutDiscountPerMonth: number;
     withDiscountPerMonth: number;
     membersPerMonth: number;
-    addonsPerMonth: number;
     discountPerCycle: number;
     discountPercent: number;
+    addonsPerMonth: number;
+    addonsPerMonthBase: number;
+    addonsDiscountPerCycle: number;
+    addonsPerCycleBase: number;
+    addonsDiscountPercent: number;
+    memberDiscountPerCycle: number;
+    memberDiscountPercent: number;
 }
 
 export type RequiredCheckResponse = Pick<
@@ -116,7 +137,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
         }
 
         const name = planOrAddon.Name as ADDON_NAMES;
-        const title = getAddonTitle(name, quantity);
+        const title = getAddonTitle(name, quantity, planIDs);
         acc[name] = {
             name,
             title,
@@ -145,7 +166,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
             };
         }
 
-        addonsMap[IP].title = getAddonTitle(IP, addonsMap[IP].quantity);
+        addonsMap[IP].title = getAddonTitle(IP, addonsMap[IP].quantity, planIDs);
     }
 
     const addons: AddonDescription[] = Object.values(addonsMap);
@@ -212,10 +233,22 @@ export const getCheckout = ({
         return acc + ((pricing[cycle] || 0) * quantity) / cycle;
     }, 0);
 
-    const membersPerCycle = usersAndAddons.usersPricing?.[cycle] ?? null;
+    const addonsPerMonthBase = usersAndAddons.addons.reduce((acc, { quantity, pricing }) => {
+        return acc + (pricing[CYCLE.MONTHLY] ?? 0) * quantity;
+    }, 0);
+    const addonsPerCycleBase = addonsPerMonthBase * cycle;
+    const addonsDiscountPerCycle = addonsPerCycleBase - addonsPerMonth * cycle;
+    const addonsDiscountPercent =
+        addonsPerCycleBase === 0 ? 0 : Math.round(100 * (addonsDiscountPerCycle / addonsPerCycleBase));
 
+    const membersPerCycle = usersAndAddons.usersPricing?.[cycle] ?? null;
     const membersPerMonth =
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
+    const oneMemberPerCycleBase = (usersAndAddons.usersPricing?.[CYCLE.MONTHLY] ?? 0) * cycle;
+    const oneMemberPerCycle = usersAndAddons.usersPricing?.[cycle] ?? 0;
+
+    const memberDiscountPerCycle = oneMemberPerCycleBase - oneMemberPerCycle;
+    const memberDiscountPercent = Math.round(100 * (memberDiscountPerCycle / oneMemberPerCycleBase));
 
     return {
         couponDiscount: checkResult?.CouponDiscount,
@@ -231,8 +264,14 @@ export const getCheckout = ({
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
         addonsPerMonth,
+        addonsPerMonthBase,
+        addonsPerCycleBase,
+        addonsDiscountPerCycle,
         discountPerCycle,
         discountPercent,
+        addonsDiscountPercent,
+        memberDiscountPerCycle,
+        memberDiscountPercent,
     };
 };
 

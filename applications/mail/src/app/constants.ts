@@ -165,3 +165,5 @@ export const EO_PASSWORD_KEY = 'proton:eo_password';
 
 export const MAX_ROW_ATTACHMENT_THUMBNAILS = 3;
 export const MAX_COLUMN_ATTACHMENT_THUMBNAILS = 2;
+
+export const ASSISTANT_INPUT_ID = 'assistant-input';

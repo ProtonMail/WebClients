@@ -1,3 +1,5 @@
+import { cloneDeep } from 'lodash';
+
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { External, Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
@@ -29,6 +31,7 @@ export const subscriptionMock: SubscriptionModel = {
             MaxMembers: 1,
             MaxVPN: 10,
             MaxTier: 2,
+            MaxAI: 0,
             Services: 15,
             Features: 1,
             State: 1,
@@ -43,9 +46,7 @@ export const subscriptionMock: SubscriptionModel = {
 };
 
 export function getSubscriptionMock() {
-    return {
-        ...subscriptionMock,
-    };
+    return cloneDeep(subscriptionMock);
 }
 
 export const upcomingSubscriptionMock: Subscription = {
@@ -76,6 +77,7 @@ export const upcomingSubscriptionMock: Subscription = {
             MaxMembers: 1,
             MaxVPN: 10,
             MaxTier: 2,
+            MaxAI: 0,
             Services: 15,
             Features: 1,
             State: 1,

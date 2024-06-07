@@ -4,7 +4,7 @@ import noop from '@proton/utils/noop';
 
 const storeName = 'entry' as const;
 const dbName = 'store' as const;
-const dbVersion = 2;
+const dbVersion = 3;
 
 interface StoredEncryptedCache {
     state: ArrayBuffer;

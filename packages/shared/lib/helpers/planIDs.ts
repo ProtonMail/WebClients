@@ -1,12 +1,31 @@
 import {
     ADDON_NAMES,
     DOMAIN_ADDON_PREFIX,
+    FreeSubscription,
     IP_ADDON_PREFIX,
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
+    SCRIBE_ADDON_PREFIX,
+    isFreeSubscription,
 } from '../constants';
-import { Addon, Organization, Plan, PlanIDs, PlansMap } from '../interfaces';
+import { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel } from '../interfaces';
+
+const {
+    MAIL,
+    DRIVE,
+    MAIL_BUSINESS,
+    ENTERPRISE,
+    BUNDLE,
+    BUNDLE_PRO,
+    BUNDLE_PRO_2024,
+    MAIL_PRO,
+    DRIVE_PRO,
+    VPN_PRO,
+    VPN_BUSINESS,
+    PASS_PRO,
+    PASS_BUSINESS,
+} = PLANS;
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
@@ -32,28 +51,37 @@ export const getPlanFromCheckout = (planIDs: PlanIDs, plansMap: PlansMap): Plan 
     return null;
 };
 
-export const getSupportedAddons = (planIDs: PlanIDs) => {
-    const {
-        ENTERPRISE,
-        BUNDLE_PRO,
-        BUNDLE_PRO_2024,
-        MAIL_PRO,
-        MAIL_BUSINESS,
-        DRIVE_PRO,
-        VPN_PRO,
-        VPN_BUSINESS,
-        PASS_PRO,
-        PASS_BUSINESS,
-    } = PLANS;
+export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
 
-    const supported: Partial<Record<ADDON_NAMES, boolean>> = {};
+export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
+    const supported: SupportedAddons = {};
+
+    if (planIDs[MAIL]) {
+        supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
+    }
+
+    if (planIDs[DRIVE]) {
+        supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
+    }
+
+    if (planIDs[BUNDLE]) {
+        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
+    }
+
+    return supported;
+}
+
+export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
+    const supported: SupportedAddons = {};
 
     if (planIDs[MAIL_PRO]) {
         supported[ADDON_NAMES.MEMBER_MAIL_PRO] = true;
+        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] = true;
     }
 
     if (planIDs[MAIL_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_MAIL_BUSINESS] = true;
+        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS] = true;
     }
 
     if (planIDs[DRIVE_PRO]) {
@@ -63,6 +91,7 @@ export const getSupportedAddons = (planIDs: PlanIDs) => {
     if (planIDs[BUNDLE_PRO]) {
         supported[ADDON_NAMES.MEMBER_BUNDLE_PRO] = true;
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO] = true;
+        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO] = true;
     }
 
     if (planIDs[BUNDLE_PRO_2024]) {
@@ -93,6 +122,15 @@ export const getSupportedAddons = (planIDs: PlanIDs) => {
     }
 
     return supported;
+}
+
+export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
+    const supported: SupportedAddons = {
+        ...getSupportedB2CAddons(planIDs),
+        ...getSupportedB2BAddons(planIDs),
+    };
+
+    return supported;
 };
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
@@ -118,6 +156,21 @@ export function isDomainAddon(addonOrName: AddonOrName): boolean {
 
 export function isIpAddon(addonOrName: AddonOrName): boolean {
     return isAddonType(addonOrName, IP_ADDON_PREFIX);
+}
+
+export function isScribeAddon(addonOrName: AddonOrName): boolean {
+    return isAddonType(addonOrName, SCRIBE_ADDON_PREFIX);
+}
+
+export function hasScribeAddon(subscriptionOrPlanIds: SubscriptionModel | FreeSubscription | undefined): boolean {
+    const subscription = subscriptionOrPlanIds;
+
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    const plans = subscription.Plans;
+    return plans.some((plan) => isScribeAddon(plan.Name));
 }
 
 /**
@@ -200,13 +253,21 @@ export const switchPlan = ({
                     }
                 }
 
+                let scribeAddons = 0;
+                for (const addonName of Object.values(ADDON_NAMES)) {
+                    if (isScribeAddon(addonName)) {
+                        scribeAddons += planIDs[addonName] ?? 0;
+                    }
+                }
+
                 newPlanIDs[addon] = Math.max(
                     memberAddonsWithEnoughSpace,
                     memberAddonsWithEnoughAddresses,
                     memberAddonsWithEnoughVPNConnections,
                     memberAddonsWithEnoughMembers,
                     memberAddonsWithEnoughCalendars,
-                    memberAddons
+                    memberAddons,
+                    scribeAddons
                 );
             }
         }
@@ -221,6 +282,26 @@ export const switchPlan = ({
                     diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
                     (planIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) + (planIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0)
                 );
+            }
+        }
+
+        if (isScribeAddon(addon) && plan && organization) {
+            const gptAddon = plans.find(({ Name }) => Name === addon);
+            const diffAIs = (organization.UsedAI || 0) - plan.MaxAI;
+
+            if (gptAddon) {
+                const gptAddonsWithEnoughSeats =
+                    diffAIs > 0 && gptAddon.MaxAI ? Math.ceil(diffAIs / gptAddon.MaxAI) : 0;
+
+                // let count all available GPT addons in the new planIDs selection
+                let gptAddons = 0;
+                for (const addonName of Object.values(ADDON_NAMES)) {
+                    if (isScribeAddon(addonName)) {
+                        gptAddons += planIDs[addonName] ?? 0;
+                    }
+                }
+
+                newPlanIDs[addon] = Math.max(gptAddonsWithEnoughSeats, gptAddons);
             }
         }
 
@@ -242,8 +323,8 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
     };
 };
 
-export const supportAddons = (planIDs: PlanIDs) => {
-    const supportedAddons = getSupportedAddons(planIDs);
+export const supportB2BAddons = (planIDs: PlanIDs) => {
+    const supportedAddons = getSupportedB2BAddons(planIDs);
     return !!Object.keys(supportedAddons).length;
 };
 
