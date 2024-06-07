@@ -100,14 +100,19 @@ export class Logger implements LoggerInterface {
 
     private stack: [string, DebugLogDetail][] = [];
 
-    constructor(identifier: string) {
+    private verbose: boolean = false;
+
+    constructor(identifier: string, debugKey?: string) {
         this.identifier = identifier;
+        this.verbose = typeof debugKey !== 'undefined' && Boolean(localStorage.getItem(debugKey));
         this.listen();
     }
 
     public debug(...args: Args): void {
-        console.log(...this.logWithColorParams(), ...args);
-        this.save(toString(args), 'warn');
+        if (this.verbose) {
+            console.log(...this.logWithColorParams(), ...args);
+            this.save(toString(args), 'warn');
+        }
     }
 
     public info(...args: Args): void {
