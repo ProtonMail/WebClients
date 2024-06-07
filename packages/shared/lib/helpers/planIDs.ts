@@ -146,6 +146,16 @@ function isAddonType(addonOrName: AddonOrName, addonPrefix: string): boolean {
     return addonName.startsWith(addonPrefix);
 }
 
+const ORG_SIZE_ADDONS = [
+    ADDON_NAMES.MEMBER_VPN_BUSINESS,
+    ADDON_NAMES.MEMBER_VPN_PRO,
+    ADDON_NAMES.MEMBER_PASS_BUSINESS,
+    ADDON_NAMES.MEMBER_PASS_PRO,
+];
+export function isOrgSizeAddon(addonOrName: AddonOrName): boolean {
+    return ORG_SIZE_ADDONS.some((name) => addonOrName === name);
+}
+
 export function isMemberAddon(addonOrName: AddonOrName): boolean {
     return isAddonType(addonOrName, MEMBER_ADDON_PREFIX);
 }
