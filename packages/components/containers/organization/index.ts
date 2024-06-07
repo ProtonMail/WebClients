@@ -5,6 +5,7 @@ export { default as OrganizationSpamFiltersSection } from './OrganizationSpamFil
 export { default as OrganizationTwoFAHeader } from './OrganizationTwoFAHeader';
 export { default as OrganizationTwoFAEnforcementSection } from './OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFARemindersSection } from './OrganizationTwoFARemindersSection';
+export { default as PassPolicies } from './PassPolicies';
 
 export * from './sso';
 export * from './logoUpload';
