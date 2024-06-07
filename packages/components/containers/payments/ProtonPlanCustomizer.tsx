@@ -4,30 +4,27 @@ import { c, msgid } from 'ttag';
 
 import {
     ADDON_NAMES,
+    AddonKey,
+    AddonLimit,
     BRAND_NAME,
     GIGA,
-    MAX_ADDRESS_ADDON,
-    MAX_DOMAIN_PRO_ADDON,
-    MAX_IPS_ADDON,
-    MAX_MEMBER_ADDON,
-    MAX_MEMBER_VPN_B2B_ADDON,
-    MAX_SPACE_ADDON,
-    MAX_VPN_ADDON,
+    MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
+    SCRIBE_ADDON_PREFIX,
 } from '@proton/shared/lib/constants';
 import {
     getSupportedAddons,
     isDomainAddon,
     isIpAddon,
     isMemberAddon,
+    isScribeAddon,
     setQuantity,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
     Cycle,
-    MaxKeys,
     Organization,
     Plan,
     PlanIDs,
@@ -38,30 +35,6 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
-
-const AddonKey: Readonly<{
-    [K in ADDON_NAMES]: MaxKeys;
-}> = {
-    [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
-    [ADDON_NAMES.MEMBER]: 'MaxMembers',
-    [ADDON_NAMES.DOMAIN]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
-    [ADDON_NAMES.VPN]: 'MaxVPN',
-    [ADDON_NAMES.SPACE]: 'MaxSpace',
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
-    [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 'MaxMembers',
-} as const;
 
 export type CustomiserMode = 'signup' | undefined;
 
@@ -79,6 +52,10 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     showUsersTooltip?: boolean;
     currentSubscription?: Subscription;
 }
+
+const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
+    return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
+};
 
 const ButtonNumberInput = ({
     value,
@@ -99,14 +76,10 @@ const ButtonNumberInput = ({
 }) => {
     const [tmpValue, setTmpValue] = useState<number | undefined>(value);
 
-    const getIsValidValue = (newValue?: number) => {
-        return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
-    };
+    const isDecDisabled = disabled || !getIsValidValue(min, max, step, (tmpValue || 0) - step);
+    const isIncDisabled = disabled || !getIsValidValue(min, max, step, (tmpValue || 0) + step);
 
-    const isDecDisabled = disabled || !getIsValidValue((tmpValue || 0) - step);
-    const isIncDisabled = disabled || !getIsValidValue((tmpValue || 0) + step);
-
-    const isValidTmpValue = getIsValidValue(tmpValue);
+    const isValidTmpValue = getIsValidValue(min, max, step, tmpValue);
 
     return (
         <div className="border rounded shrink-0 flex flex-nowrap">
@@ -148,7 +121,7 @@ const ButtonNumberInput = ({
                         }
                         const newIntValue = parseInt(newValue, 10);
                         setTmpValue?.(newIntValue);
-                        if (getIsValidValue(newIntValue)) {
+                        if (getIsValidValue(min, max, step, newIntValue)) {
                             onChange?.(newIntValue);
                         }
                     }}
@@ -173,28 +146,6 @@ const ButtonNumberInput = ({
         </div>
     );
 };
-
-const addonLimit = {
-    [ADDON_NAMES.SPACE]: MAX_SPACE_ADDON,
-    [ADDON_NAMES.MEMBER]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.DOMAIN]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.ADDRESS]: MAX_ADDRESS_ADDON,
-    [ADDON_NAMES.VPN]: MAX_VPN_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: MAX_MEMBER_ADDON,
-} as const;
 
 // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
 const contactString = c('plan customizer, users').t`contact`;
@@ -226,12 +177,10 @@ const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
     ];
 };
 
-const ORG_SIZE_ADDONS = [
-    ADDON_NAMES.MEMBER_VPN_BUSINESS,
-    ADDON_NAMES.MEMBER_VPN_PRO,
-    ADDON_NAMES.MEMBER_PASS_BUSINESS,
-    ADDON_NAMES.MEMBER_PASS_PRO,
-];
+type AccountTypeKey = 'org-size' | 'users' | 'gpt-seats';
+type AccountSizeConfig = {
+    [key in AccountTypeKey]: { label: string; tooltip?: string };
+};
 
 const AccountSizeCustomiser = ({
     addon,
@@ -240,6 +189,7 @@ const AccountSizeCustomiser = ({
     input,
     showDescription = true,
     showTooltip = true,
+    mode,
 }: {
     addon: Plan;
     maxUsers: number;
@@ -247,8 +197,22 @@ const AccountSizeCustomiser = ({
     input: ReactElement;
     showDescription?: boolean;
     showTooltip?: boolean;
+    mode: AccountTypeKey;
 }) => {
-    const mode = ORG_SIZE_ADDONS.some((name) => addon.Name === name) ? 'org-size' : 'users';
+    const config: AccountSizeConfig = {
+        'org-size': {
+            label: c('Info').t`Organization size`,
+        },
+        users: {
+            label: c('Info').t`Users`,
+            tooltip: c('Info').t`A user is an account associated with a single username, mailbox, and person`,
+        },
+        'gpt-seats': {
+            label: c('Info').t`Writing assistant add-on`,
+            tooltip: c('Infog').t`AI powered assistant to help you craft better emails, quickly and effortlessly.`,
+        },
+    };
+
     return (
         <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
             {showDescription && mode === 'users' && (
@@ -263,20 +227,15 @@ const AccountSizeCustomiser = ({
                     className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
-                    {mode === 'org-size' ? c('Info').t`Organization size` : c('Info').t`Users`}
-                    {showTooltip && mode === 'users' && (
-                        <Info
-                            buttonClass="ml-2"
-                            title={c('Info')
-                                .t`A user is an account associated with a single username, mailbox, and person`}
-                        />
-                    )}
+                    {config[mode].label}
+                    {showTooltip && config[mode]?.tooltip && <Info buttonClass="ml-2" title={config[mode].tooltip} />}
                 </label>
                 {input}
             </div>
         </div>
     );
 };
+
 const AdditionalOptionsCustomiser = ({
     addon,
     price,
@@ -458,7 +417,7 @@ const ProtonPlanCustomizer = ({
                 } else {
                     min = currentPlan[addonMaxKey] ?? 0;
                 }
-                const max = addonLimit[addonNameKey] * addonMultiplier;
+                const max = AddonLimit[addonNameKey] * addonMultiplier;
                 // Member addon comes with MaxSpace + MaxAddresses
                 const value = isSupported
                     ? min + quantity * addonMultiplier
@@ -474,7 +433,7 @@ const ProtonPlanCustomizer = ({
                           return acc + quantity * multiplier;
                       }, 0);
                 const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
-                const maxTotal = max / divider;
+                let maxTotal = max / divider;
 
                 const addonPricePerCycle = addon.Pricing[cycle] || 0;
                 const addonPriceInline = (
@@ -485,6 +444,26 @@ const ProtonPlanCustomizer = ({
 
                 const canDowngrade = addonMaxKey !== 'MaxIPs' || !hasVpnBusiness(currentSubscription);
                 const displayMin = canDowngrade ? min / divider : getVPNDedicatedIPs(currentSubscription);
+
+                if (isScribeAddon(addonNameKey)) {
+                    // We get the amount of add-ons starting with the members, this is used for the GPT add-ons
+                    // We start at one since the members starts at 1 not 0 (for the admin)
+                    const memberTotal = Object.entries(planIDs).reduce((previous, value) => {
+                        if (value[0].startsWith(MEMBER_ADDON_PREFIX)) {
+                            return previous + value[1];
+                        }
+                        return previous;
+                    }, 1);
+
+                    const gptAddonNumber = Object.entries(planIDs).reduce((previous, value) => {
+                        if (value[0].startsWith(SCRIBE_ADDON_PREFIX)) {
+                            return previous + value[1];
+                        }
+                        return previous;
+                    }, 0);
+
+                    maxTotal = gptAddonNumber > memberTotal ? gptAddonNumber : memberTotal;
+                }
 
                 const input = (
                     <ButtonNumberInput
@@ -506,6 +485,7 @@ const ProtonPlanCustomizer = ({
                 if (isMemberAddon(addonNameKey)) {
                     return (
                         <AccountSizeCustomiser
+                            mode="users"
                             key={`${addon.Name}-size`}
                             addon={addon}
                             price={addonPriceInline}
@@ -538,6 +518,21 @@ const ProtonPlanCustomizer = ({
                             input={input}
                             showDescription={showAddonDescriptions}
                             maxIPs={maxTotal}
+                        />
+                    );
+                }
+
+                if (isScribeAddon(addonNameKey)) {
+                    return (
+                        <AccountSizeCustomiser
+                            key={`${addon.Name}-size`}
+                            addon={addon}
+                            price={addonPriceInline}
+                            input={input}
+                            maxUsers={maxTotal}
+                            showDescription={showAddonDescriptions}
+                            showTooltip={showUsersTooltip}
+                            mode="gpt-seats"
                         />
                     );
                 }

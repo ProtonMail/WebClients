@@ -2,6 +2,7 @@ import { ADDON_NAMES, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../..
 import { clearPlanIDs, hasPlanIDs, setQuantity, switchPlan } from '../../lib/helpers/planIDs';
 import { Organization, Plan } from '../../lib/interfaces';
 
+// TODO add AI addon tests
 const MOCK_PLANS = [
     {
         Title: PLAN_NAMES[PLANS.MAIL],
@@ -16,6 +17,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Features: 1,
         State: 1,
         Pricing: {
@@ -40,6 +42,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Features: 1,
         State: 1,
         Pricing: {
@@ -63,6 +66,7 @@ const MOCK_PLANS = [
         MaxMembers: 6,
         MaxVPN: 60,
         MaxTier: 2,
+        MaxAI: 0,
         Services: 7,
         Features: 1,
         State: 0,
@@ -87,6 +91,7 @@ const MOCK_PLANS = [
         MaxMembers: 0,
         MaxVPN: 10,
         MaxTier: 2,
+        MaxAI: 0,
         Services: 4,
         Features: 0,
         State: 1,
@@ -111,6 +116,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
+        MaxAI: 0,
         Services: 7,
         Features: 1,
         State: 1,
@@ -135,6 +141,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
+        MaxAI: 0,
         Services: 7,
         Features: 1,
         State: 1,
@@ -160,6 +167,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
+        MaxAI: 0,
         Services: 7,
         Features: 1,
         State: 1,
@@ -184,6 +192,7 @@ const MOCK_PLANS = [
         MaxMembers: 0,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 7,
         Features: 0,
         State: 1,
@@ -208,6 +217,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 1,
         Features: 0,
         State: 1,
@@ -232,6 +242,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 7,
         Features: 0,
         State: 1,
@@ -256,6 +267,7 @@ const MOCK_PLANS = [
         MaxMembers: 0,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 7,
         Features: 0,
         State: 1,
@@ -280,6 +292,7 @@ const MOCK_PLANS = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 7,
         Features: 0,
         State: 1,

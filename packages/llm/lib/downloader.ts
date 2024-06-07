@@ -1,11 +1,11 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { postMessageToAssistantParent } from '@proton/llm/lib/helpers';
+import { postMessageIframeToParent } from '@proton/llm/lib/helpers';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 import throttle from '@proton/utils/throttle';
 
 import type { AssistantConfig, AssistantConfigModel } from './types';
-import { ASSISTANT_EVENTS } from './types';
+import { AssistantEvent } from './types';
 
 type NdarrayCache = {
     metadata: {
@@ -31,22 +31,19 @@ type NdarrayCache = {
 
 const ndarrayCache = _ndarrayCache as NdarrayCache;
 
-export enum DESTINATION_CACHE {
+export enum CacheId {
     WASM = 'webllm/wasm',
     MODEL = 'webllm/model',
     CONFIG = 'webllm/config',
 }
 
-type LlmFile = {
-    url: string;
-    key: string;
-    destinationCache: Cache;
+export type LlmFile = {
+    downloadUrl: string;
+    cacheUrl: string;
+    cacheKey: string;
+    cacheId: CacheId;
     expectedMd5?: string;
     expectedSize?: number;
-};
-
-type FileDownload = Omit<LlmFile, 'destinationCache'> & {
-    destinationCacheID: DESTINATION_CACHE;
 };
 
 export type DownloadResult = {
@@ -56,7 +53,7 @@ export type DownloadResult = {
     status: number;
 };
 
-export type AppCaches = { wasm: Cache; model: Cache; config: Cache };
+export type AppCaches = { [k in CacheId]: Cache };
 
 // A function to monitor the progress of a single file.
 type OneFileProgressCallback = (url: string, received: number, total: number) => void;
@@ -69,15 +66,15 @@ type OneFileProgressCallback = (url: string, received: number, total: number) =>
 
 // Initiate a download, monitors the progress, and returns the result when finished.
 async function downloadFile(
-    url: string,
+    downloadUrl: string,
     callback: OneFileProgressCallback,
     abortController: AbortController
 ): Promise<DownloadResult> {
     const signal = abortController.signal;
-    const response = await fetch(url, { signal });
+    const response = await fetch(downloadUrl, { signal });
     const { status, statusText, ok } = response;
     if (!ok) {
-        throw Error(`${url}: Failed to download: ${status} ${statusText}`);
+        throw Error(`${downloadUrl}: Failed to download: ${status} ${statusText}`);
     }
     const headers = new Headers(response.headers);
     const reader = response.body?.getReader();
@@ -98,23 +95,19 @@ async function downloadFile(
         chunks.push(value);
         receivedLength += value.length;
         const totalReceivedLength = receivedLength;
-        debouncedCallback(() => callback(url, totalReceivedLength, contentLength));
+        debouncedCallback(() => callback(downloadUrl, totalReceivedLength, contentLength));
     }
-    const serializedHeaders = JSON.stringify(Object.fromEntries(headers));
+    let headersMap = Object.fromEntries(headers);
+    const serializedHeaders = JSON.stringify(headersMap);
     return { status, statusText, headers: serializedHeaders, chunks };
 }
 
 // Compute the file url using the model_url so that we cache the file correctly in the parent app
-function getFileParentURL(url: string, variantConfig: AssistantConfigModel) {
-    const parentBaseURL = new URL(variantConfig.model_url);
-    return `${parentBaseURL.origin}${new URL(url).pathname}`;
-}
-
 async function downloadFilesSequentially(
-    files: FileDownload[],
+    files: LlmFile[],
     callback: OneFileProgressCallback,
     abortController: AbortController,
-    filesToIgnore: string[],
+    filesToIgnore: LlmFile[],
     variantConfig: AssistantConfigModel,
     parentURL: string
 ) {
@@ -123,17 +116,18 @@ async function downloadFilesSequentially(
     for (let i = 0; i < files.length; i++) {
         if (abortController.signal.aborted) return;
 
-        const { url, destinationCacheID, expectedMd5 } = files[i];
+        const { downloadUrl, cacheUrl, cacheId, expectedMd5 } = files[i];
 
         // Do not download files that have already been downloaded and cached
-        if (!filesToIgnore.includes(url)) {
+        let ignoreThisFile = filesToIgnore.some((f) => f.downloadUrl === downloadUrl);
+        if (!ignoreThisFile) {
             // Start the download for a new file.
-            const downloadResult = await downloadFile(url, callback, abortController);
+            const downloadResult = await downloadFile(downloadUrl, callback, abortController);
             filesDownloaded++;
 
-            postMessageToAssistantParent(
+            postMessageIframeToParent(
                 {
-                    type: ASSISTANT_EVENTS.DOWNLOAD_DATA,
+                    type: AssistantEvent.DOWNLOAD_DATA,
                     payload: {
                         downloadResult: {
                             headers: downloadResult.headers,
@@ -142,8 +136,8 @@ async function downloadFilesSequentially(
                             statusText: downloadResult.statusText,
                         },
                         // use the parent model url so that we put the right element in cache
-                        url: getFileParentURL(url, variantConfig),
-                        destinationCacheID,
+                        cacheId,
+                        cacheUrl,
                         expectedMd5,
                         terminate: filesDownloaded === totalFilesToDownload,
                     },
@@ -156,39 +150,40 @@ async function downloadFilesSequentially(
 }
 
 // Prepare the list of all the files we need to download
-function listFilesToDownload(variantConfig: AssistantConfigModel) {
+function listFilesToDownload(variantConfig: AssistantConfigModel): LlmFile[] {
     // From the iframe, we are downloading files using the model_download_url
     // Then, before sending an event to the parent app,
     // we will update the url so that we use the model_url domain instead for the file caching
     const baseKey = new URL(variantConfig.model_download_url).pathname;
-    const baseUrl = variantConfig.model_download_url;
-
-    const chatConfigURL = new URL('mlc-chat-config.json', baseUrl).href;
-    const tokenizerURL = new URL('tokenizer.json', baseUrl).href;
+    const baseDownloadUrl = variantConfig.model_download_url;
+    const baseCacheUrl = variantConfig.model_url;
 
     // Since we don't have access to the app using the model from the cache,
     // put the destination cache identifiers
-    const files: FileDownload[] = [];
+    const files: LlmFile[] = [];
     files.push({
         // "webllm/model" -> ".../mlc-chat-config.json"
-        url: chatConfigURL,
-        key: `${baseKey}mlc-chat-config.json`,
-        destinationCacheID: DESTINATION_CACHE.CONFIG,
+        downloadUrl: new URL('mlc-chat-config.json', baseDownloadUrl).href,
+        cacheUrl: new URL('mlc-chat-config.json', baseCacheUrl).href,
+        cacheKey: `${baseKey}mlc-chat-config.json`,
+        cacheId: CacheId.CONFIG,
     });
 
     files.push({
         // "webllm/model" -> ".../tokenizer.json"
-        url: tokenizerURL,
-        key: `${baseKey}tokenizer.json`,
-        destinationCacheID: DESTINATION_CACHE.MODEL,
+        downloadUrl: new URL('tokenizer.json', baseDownloadUrl).href,
+        cacheUrl: new URL('tokenizer.json', baseCacheUrl).href,
+        cacheKey: `${baseKey}tokenizer.json`,
+        cacheId: CacheId.MODEL,
     });
 
     files.push(
         ...ndarrayCache.records.map((record) => ({
             // "webllm/model" -> ".../params_shard_*.bin"
-            url: new URL(record.dataPath, baseUrl).href,
-            key: `${baseKey}${record.dataPath}`,
-            destinationCacheID: DESTINATION_CACHE.MODEL,
+            downloadUrl: new URL(record.dataPath, baseDownloadUrl).href,
+            cacheUrl: new URL(record.dataPath, baseCacheUrl).href,
+            cacheKey: `${baseKey}${record.dataPath}`,
+            cacheId: CacheId.MODEL,
             expectedMd5: record.md5sum,
             expectedSize: record.nbytes,
         }))
@@ -201,7 +196,7 @@ export async function downloadModel(
     variant: string,
     assistantConfig: AssistantConfig,
     abortController: AbortController,
-    filesToIgnore: string[],
+    filesToIgnore: LlmFile[],
     parentURL: string
 ) {
     // Grab the entry for our chosen model inside mlc-config.
@@ -224,7 +219,7 @@ export async function downloadModel(
     const expectedSizes: Map<string, number> = new Map();
     for (const f of files) {
         if (f.expectedSize) {
-            expectedSizes.set(f.url, f.expectedSize!);
+            expectedSizes.set(f.downloadUrl, f.expectedSize!);
         }
     }
     const overallExpectedSize = () => [...expectedSizes.values()].reduce((acc, n) => acc + n, 0);
@@ -235,35 +230,36 @@ export async function downloadModel(
     // Consequently, it will be frequently updated, namely each time we receive a new chunk of data.
     const receivedSizes: Map<string, number> = new Map();
     for (const f of files) {
-        if (filesToIgnore.includes(getFileParentURL(f.url, variantConfig))) {
-            receivedSizes.set(f.url, f.expectedSize || 0);
+        let ignoreThisFile = filesToIgnore.some((ignored) => ignored.downloadUrl === f.downloadUrl);
+        if (ignoreThisFile) {
+            receivedSizes.set(f.downloadUrl, f.expectedSize || 0);
         } else {
-            receivedSizes.set(f.url, 0);
+            receivedSizes.set(f.downloadUrl, 0);
         }
     }
     const overallReceived = () => [...receivedSizes.values()].reduce((acc, n) => acc + n, 0);
 
     const nFinishedFiles = () =>
         files.filter((f) => {
-            let r = receivedSizes.get(f.url);
-            let e = expectedSizes.get(f.url);
+            let r = receivedSizes.get(f.downloadUrl);
+            let e = expectedSizes.get(f.downloadUrl);
             return r !== undefined && e !== undefined && r >= e;
         }).length;
 
     // Start downloading files
-    const updateProgressOneFile = (url: string, received: number, total: number) => {
-        if (!expectedSizes.has(url) && total > 0) {
-            expectedSizes.set(url, total);
+    const updateProgressOneFile = (downloadUrl: string, received: number, total: number) => {
+        if (!expectedSizes.has(downloadUrl) && total > 0) {
+            expectedSizes.set(downloadUrl, total);
         }
         const receivedCapped = Math.min(received, total);
-        receivedSizes.set(url, receivedCapped);
+        receivedSizes.set(downloadUrl, receivedCapped);
         const r = overallReceived();
         const e = overallExpectedSize();
 
         // Send a message to the parent app so that we can update the download progress
-        postMessageToAssistantParent(
+        postMessageIframeToParent(
             {
-                type: ASSISTANT_EVENTS.DOWNLOAD_PROGRESS,
+                type: AssistantEvent.DOWNLOAD_PROGRESS,
                 payload: {
                     progress: {
                         receivedBytes: r,
@@ -323,79 +319,53 @@ function buildFakeResponseForCache(data: string, filename: string, origin: strin
 // because we already have it in a JavaScript object right here.
 // This creates a fake response that looks like the server sent
 // it, and stores it in the cache.
-async function storeLocalDataInCache(
-    object: any,
-    filename: string,
-    destinationCache: Cache,
-    origin: string,
-    baseKey: string
-) {
+async function storeLocalDataInCache(object: any, filename: string, cacheId: Cache, origin: string, baseKey: string) {
     const data = JSON.stringify(object);
     const response = buildFakeResponseForCache(data, filename, origin);
-    await destinationCache.put(`${baseKey}${filename}`, response);
+    await cacheId.put(`${baseKey}${filename}`, response);
 }
 
 // Check if a given url is already present in the cache, and optionally verify its MD5 checksum.
-async function existsInCache(url: string, destinationCache: Cache, expectedMd5?: string) {
-    let cachedResponse = await destinationCache.match(url);
+async function existsInCache(
+    cacheUrl: string,
+    cache: Cache,
+    expects?: { md5?: string; size?: number }
+): Promise<boolean> {
+    let cachedResponse = await cache.match(cacheUrl);
     if (!cachedResponse) {
         return false;
     }
-    if (!expectedMd5) {
+    const expectedSize = expects?.size;
+    const expectedMd5 = expects?.md5;
+
+    const needsCheck = expectedSize !== undefined || expectedMd5 !== undefined;
+    if (!needsCheck) {
         return true;
     }
+
     const arrayBuffer = await cachedResponse.arrayBuffer();
-    const data = new Uint8Array(arrayBuffer);
 
-    // disabling for now; it takes too long to compute checksum for cached files
-    const BYPASS_CHECKSUM_FOR_CACHED_FILES = true;
-    if (BYPASS_CHECKSUM_FOR_CACHED_FILES) {
-        return true;
+    if (expectedSize !== undefined) {
+        return arrayBuffer.byteLength === expectedSize;
     }
 
-    const actualMd5 = await computeMd5(data);
-    if (actualMd5 === expectedMd5) {
-        return true;
+    if (expectedMd5 !== undefined) {
+        // disabling for now; it takes too long to compute checksum for cached files
+        const BYPASS_CHECKSUM_FOR_CACHED_FILES = true;
+        if (BYPASS_CHECKSUM_FOR_CACHED_FILES) {
+            return true;
+        }
+
+        const data = new Uint8Array(arrayBuffer);
+
+        const actualMd5 = await computeMd5(data);
+        if (actualMd5 === expectedMd5) {
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 
-// List all files that we need to use the model
-function listFilesNeeded(variantConfig: AssistantConfigModel, appCaches: AppCaches) {
-    // From the parent app, we are caching files using the model_url
-    // However, from the iframe, we will have to download the files using the model_download_url
-    const baseKey = new URL(variantConfig.model_url).pathname;
-    const baseUrl = variantConfig.model_url;
-
-    const chatConfigURL = new URL('mlc-chat-config.json', baseUrl).href;
-    const tokenizerURL = new URL('tokenizer.json', baseUrl).href;
-
-    const files: LlmFile[] = [];
-    files.push({
-        // "webllm/model" -> ".../mlc-chat-config.json"
-        url: chatConfigURL,
-        key: `${baseKey}mlc-chat-config.json`,
-        destinationCache: appCaches.config,
-    });
-
-    files.push({
-        // "webllm/model" -> ".../tokenizer.json"
-        url: tokenizerURL,
-        key: `${baseKey}tokenizer.json`,
-        destinationCache: appCaches.model,
-    });
-
-    files.push(
-        ...ndarrayCache.records.map((record) => ({
-            // "webllm/model" -> ".../params_shard_*.bin"
-            url: new URL(record.dataPath, baseUrl).href,
-            key: `${baseKey}${record.dataPath}`,
-            destinationCache: appCaches.model,
-            expectedMd5: record.md5sum,
-            expectedSize: record.nbytes,
-        }))
-    );
-    return files;
+    return true;
 }
 
 // Put files that we don't need to download from the iframe in the cache
@@ -406,28 +376,27 @@ async function cacheParentAppFiles(appCaches: AppCaches, variantConfig: Assistan
     const origin = window.location.origin;
     const baseKey = new URL(variantConfig.model_url).pathname;
     // - "webllm/model" -> ".../ndarray-cache.json"
-    await storeLocalDataInCache(ndarrayCache, 'ndarray-cache.json', appCaches.model, origin, baseKey);
+    await storeLocalDataInCache(ndarrayCache, 'ndarray-cache.json', appCaches[CacheId.MODEL], origin, baseKey);
 
     // Cache files that we stored in the app assets
     // "webllm/wasm" -> ".../file.wasm"
     const wasmUrl = variantConfig.model_lib_url; // 'https://mail.proton.me/.../file.wasm'
-    const isWasmInCache = await existsInCache(wasmUrl, appCaches.wasm);
+    const isWasmInCache = await existsInCache(wasmUrl, appCaches[CacheId.WASM]);
     if (!isWasmInCache) {
-        const wasmKey = new URL(variantConfig.model_lib_url).pathname; // '/.../file.wasm'
         const wasmResponse = await fetch(wasmUrl);
-        await appCaches.wasm.put(wasmKey, wasmResponse);
+        await appCaches[CacheId.WASM].put(wasmUrl, wasmResponse);
     }
 }
 
 // Search for files that we have already downloaded and stored in the cache
 export async function getCachedFiles(variant: string, assistantConfig: AssistantConfig) {
-    const filesAlreadyDownloaded: string[] = [];
+    const filesAlreadyDownloaded: LlmFile[] = [];
 
     // Open caches
-    const appCaches = {
-        model: await caches.open(DESTINATION_CACHE.MODEL),
-        wasm: await caches.open(DESTINATION_CACHE.WASM),
-        config: await caches.open(DESTINATION_CACHE.CONFIG),
+    const appCaches: AppCaches = {
+        [CacheId.MODEL]: await caches.open(CacheId.MODEL),
+        [CacheId.WASM]: await caches.open(CacheId.WASM),
+        [CacheId.CONFIG]: await caches.open(CacheId.CONFIG),
     };
 
     // Grab the entry for our chosen model inside mlc-config.
@@ -441,15 +410,15 @@ export async function getCachedFiles(variant: string, assistantConfig: Assistant
     await cacheParentAppFiles(appCaches, variantConfig);
 
     // Prepare a list of files that we need to run the model
-    const files = listFilesNeeded(variantConfig, appCaches);
+    const files = listFilesToDownload(variantConfig);
 
     // Check which files are present in the cache
     for (const f of files) {
-        const { url, destinationCache, expectedMd5 } = f;
-        const exists = await existsInCache(url, destinationCache, expectedMd5);
+        const { cacheUrl, cacheId, expectedSize } = f;
+        const exists = await existsInCache(cacheUrl, appCaches[cacheId], { size: expectedSize });
 
         if (exists) {
-            filesAlreadyDownloaded.push(url);
+            filesAlreadyDownloaded.push(f);
         }
     }
 
@@ -458,11 +427,19 @@ export async function getCachedFiles(variant: string, assistantConfig: Assistant
     return { filesAlreadyDownloaded, needsAdditionalDownload, appCaches };
 }
 
+/**
+ * Clears the cache related to the AI Assistant
+ * @returns A promise that resolves when the cache is cleared
+ */
+export async function deleteAssistantCachedFiles() {
+    return Promise.all([caches.delete(CacheId.MODEL), caches.delete(CacheId.WASM), caches.delete(CacheId.CONFIG)]);
+}
+
 // Store a fully downloaded file into the cache.
 export async function storeInCache(
     downloadResult: DownloadResult,
-    url: string,
-    destinationCache: Cache,
+    cacheUrl: string,
+    cache: Cache,
     expectedMd5: string | undefined
 ) {
     const { status, statusText, headers, chunks } = downloadResult;
@@ -474,23 +451,13 @@ export async function storeInCache(
     if (!expectedMd5 || actualMd5 === expectedMd5) {
         try {
             const parsedHeaders = JSON.parse(headers);
-            await destinationCache.put(url, new Response(blob, { status, statusText, headers: parsedHeaders }));
-        } catch {
-            throw new Error(`${url}: checksum failed, expected ${expectedMd5}, got ${actualMd5}`);
+            await cache.put(cacheUrl, new Response(blob, { status, statusText, headers: parsedHeaders }));
+        } catch (e) {
+            throw new Error(`${cacheUrl}: error while storing in cache: ${e}`);
         }
     } else {
-        throw new Error(`${url}: checksum failed, expected ${expectedMd5}, got ${actualMd5}`);
+        throw new Error(`${cacheUrl}: checksum failed, expected ${expectedMd5}, got ${actualMd5}`);
     }
 }
 
 // Map the destination cache ID with the cache in which we want to store files
-export function getDestinationCacheFromID(destinationCacheID: string, appCaches: AppCaches) {
-    switch (destinationCacheID) {
-        case DESTINATION_CACHE.CONFIG:
-            return appCaches.config;
-        case DESTINATION_CACHE.MODEL:
-            return appCaches.model;
-        case DESTINATION_CACHE.WASM:
-            return appCaches.wasm;
-    }
-}

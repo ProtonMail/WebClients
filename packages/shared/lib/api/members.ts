@@ -53,7 +53,13 @@ export const getAllMemberAddresses = (api: Api, memberID: string) => {
     });
 };
 
-export const createMember = (data: { Name: string; Private: number; MaxSpace: number; MaxVPN: number }) => ({
+export const createMember = (data: {
+    Name: string;
+    Private: number;
+    MaxSpace: number;
+    MaxVPN: number;
+    MaxAI: number;
+}) => ({
     method: 'post',
     url: 'core/v4/members',
     data,
@@ -123,6 +129,12 @@ export const updateVPN = (memberID: string, MaxVPN: number) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/vpn`,
     data: { MaxVPN },
+});
+
+export const updateAI = (memberID: string, MaxAI: number) => ({
+    method: 'put',
+    url: `core/v4/members/${memberID}/ai`,
+    data: { MaxAI },
 });
 
 export const removeMember = (memberID: string) => ({

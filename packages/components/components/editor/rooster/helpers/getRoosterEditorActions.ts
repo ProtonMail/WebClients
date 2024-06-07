@@ -26,7 +26,9 @@ const getRoosterEditorActions = (
             return editorInstance.isDisposed();
         },
         setContent(value: string) {
-            editorInstance.setContent(value);
+            editorInstance.addUndoSnapshot(() => {
+                editorInstance.setContent(value);
+            });
         },
         focus() {
             if (editorInstance.isDisposed()) {
@@ -80,9 +82,11 @@ const getRoosterEditorActions = (
                     if (isNewLine) {
                         currentBlock = inlineElement.getParentBlock();
                         content += '\n';
-                    } else {
-                        content += ' ';
                     }
+                    // TODO: needed to remove this for the assistant feature, need to rework it later
+                    // else {
+                    // content += ' ';
+                    // }
                     content += inlineElement.getTextContent();
                     inlineElement = selectionTraverser.getNextInlineElement();
                 }

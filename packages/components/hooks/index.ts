@@ -116,6 +116,7 @@ export { useWelcomeFlags } from './useWelcomeFlags';
 export { default as useWindowSize } from './useWindowSize';
 export { default as useSearchParamsEffect } from './useSearchParamsEffect';
 export * from './drawer';
+export * from './assistant';
 export { default as useDynamicFavicon } from './useDynamicFavicon';
 export * from './useDriveWindowsGASpotlight';
 export { useDragToScroll } from './useDragToScroll';

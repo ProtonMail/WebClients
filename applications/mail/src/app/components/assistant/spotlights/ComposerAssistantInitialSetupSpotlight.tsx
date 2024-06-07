@@ -1,50 +1,76 @@
-import { ReactNode, RefObject } from 'react';
+import { ReactNode, RefObject, forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Spotlight, useSpotlightShow } from '@proton/components/components';
-import { ASSISTANT_TRIAL_TIME_DAYS } from '@proton/llm/lib';
+import { Spotlight } from '@proton/components/components';
+import { FeatureCode } from '@proton/components/containers';
+import { useSpotlightOnFeature } from '@proton/components/hooks';
+import { useAssistant } from '@proton/llm/lib';
 
 interface Props {
     anchorRef: RefObject<HTMLElement>;
     children: ReactNode;
-    isInitialSetup?: boolean;
 }
 
-const ComposerAssistantInitialSetupSpotlight = ({ children, anchorRef, isInitialSetup = false }: Props) => {
-    const shouldShowSpotlight = useSpotlightShow(isInitialSetup);
+export interface ComposerAssistantInitialSetupSpotlightRef {
+    showSpotlight: () => void;
+    hideSpotlight: () => void;
+}
 
-    const handleClickSubscribe = () => {
-        // TODO
-    };
+const ComposerAssistantInitialSetupSpotlight = forwardRef<ComposerAssistantInitialSetupSpotlightRef, Props>(
+    ({ children, anchorRef }, ref) => {
+        const { show, onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
+            FeatureCode.ComposerAssistantInitialSetup
+        );
+        const { isModelLoadedOnGPU } = useAssistant();
+        const [showSpotlight, setShowSpotlight] = useState(false);
 
-    // TODO adapt for org members
-    const subscribeButton = (
-        <Button onClick={handleClickSubscribe} shape="underline" color="norm">{c('loc_nightly_assistant')
-            .t`subscribe now`}</Button>
-    );
-    const subscribeText = c('loc_nightly_assistant')
-        .jt`Try it for free for ${ASSISTANT_TRIAL_TIME_DAYS} days or ${subscribeButton}.`;
+        useImperativeHandle(ref, () => ({
+            showSpotlight: () => {
+                if (!show) {
+                    return;
+                }
 
-    return (
-        <Spotlight
-            originalPlacement="bottom-start"
-            show={shouldShowSpotlight}
-            anchorRef={anchorRef}
-            content={
-                <>
-                    <div>
-                        {c('loc_nightly_assistant')
-                            .t`The initial setup may take a few minutes and only needs to be done once.`}
-                    </div>
-                    <div>{subscribeText}</div>
-                </>
+                setShowSpotlight(true);
+                onDisplayedComposerSpotlight();
+            },
+            hideSpotlight: () => {
+                if (!showSpotlight) {
+                    return;
+                }
+
+                setShowSpotlight(false);
+            },
+        }));
+
+        useEffect(() => {
+            // If user has downloaded model on GPU, hide spotlight
+            if (isModelLoadedOnGPU) {
+                setShowSpotlight(false);
             }
-        >
-            {children}
-        </Spotlight>
-    );
-};
+        }, [isModelLoadedOnGPU]);
+
+        return (
+            <Spotlight
+                originalPlacement="bottom-start"
+                show={showSpotlight}
+                anchorRef={anchorRef}
+                content={
+                    <div>
+                        <div>
+                            {c('Info').t`The initial setup may take a few minutes.`}
+                            <br />
+                            {c('Info').t`This only needs to be done once.`}
+                        </div>
+                    </div>
+                }
+            >
+                {children}
+            </Spotlight>
+        );
+    }
+);
+
+ComposerAssistantInitialSetupSpotlight.displayName = 'ComposerAssistantInitialSetupSpotlight';
 
 export default ComposerAssistantInitialSetupSpotlight;

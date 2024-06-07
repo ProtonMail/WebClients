@@ -32,7 +32,6 @@ import OnboardingChecklistModal from 'proton-mail/components/header/OnboardingCh
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
 
@@ -49,8 +48,6 @@ const MailQuickSettings = () => {
 
     const [{ Density }] = useUserSettings();
     const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
-    const { esStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = esStatus;
 
     const keyTransparencyNotification = useKeyTransparencyNotification();
     const { ktActivation } = useKeyTransparencyContext();
@@ -315,28 +312,20 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
-                {(dbExists || esEnabled || isElectronMail) && (
-                    <>
-                        <Tooltip
-                            title={
-                                isElectronMail
-                                    ? c('Info')
-                                          .t`Removes all data associated with this app, including downloaded messages`
-                                    : c('Info')
-                                          .t`Clears browser data related to message content search including downloaded messages`
-                            }
-                        >
-                            <QuickSettingsButton
-                                onClick={() => setClearBrowserDataModalOpen(true)}
-                                data-testid="mail-quick-settings:clear-cache-button"
-                            >
-                                {isElectronMail
-                                    ? c('Action').t`Clear application data`
-                                    : c('Action').t`Clear browser data`}
-                            </QuickSettingsButton>
-                        </Tooltip>
-                    </>
-                )}
+                <Tooltip
+                    title={
+                        isElectronMail
+                            ? c('Info').t`Removes all data associated with this app (including downloaded messages, …)`
+                            : c('Info').t`Clears browser data (including downloaded messages, …)`
+                    }
+                >
+                    <QuickSettingsButton
+                        onClick={() => setClearBrowserDataModalOpen(true)}
+                        data-testid="mail-quick-settings:clear-cache-button"
+                    >
+                        {isElectronMail ? c('Action').t`Clear application data` : c('Action').t`Clear browser data`}
+                    </QuickSettingsButton>
+                </Tooltip>
             </QuickSettingsButtonSection>
 
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />

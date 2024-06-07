@@ -3,68 +3,13 @@ import { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Info } from '@proton/components';
-import {
-    ADDON_NAMES,
-    MAX_ADDRESS_ADDON,
-    MAX_DOMAIN_PRO_ADDON,
-    MAX_IPS_ADDON,
-    MAX_MEMBER_ADDON,
-    MAX_MEMBER_VPN_B2B_ADDON,
-    MAX_SPACE_ADDON,
-    MAX_VPN_ADDON,
-} from '@proton/shared/lib/constants';
+import { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, MaxKeys, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput from './ButtonNumberInput';
 import getAddonsPricing from './getAddonsPricing';
-
-export const AddonKey: Readonly<{
-    [K in ADDON_NAMES]: MaxKeys;
-}> = {
-    [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
-    [ADDON_NAMES.MEMBER]: 'MaxMembers',
-    [ADDON_NAMES.DOMAIN]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
-    [ADDON_NAMES.VPN]: 'MaxVPN',
-    [ADDON_NAMES.SPACE]: 'MaxSpace',
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
-    [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 'MaxMembers',
-};
-
-export const addonLimit = {
-    [ADDON_NAMES.SPACE]: MAX_SPACE_ADDON,
-    [ADDON_NAMES.MEMBER]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.DOMAIN]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.ADDRESS]: MAX_ADDRESS_ADDON,
-    [ADDON_NAMES.VPN]: MAX_VPN_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: MAX_MEMBER_ADDON,
-} as const;
 
 interface AddonFieldProps extends ComponentPropsWithoutRef<'div'> {
     id: string;

@@ -17,6 +17,7 @@ export interface Organization {
     MaxCalendars: number;
     MaxSpace: number;
     MaxMembers: number;
+    MaxAI: number;
     IsScimEnabled: boolean;
     MaxVPN: number;
     Features: number; // bits: 1 = catch-all addresses
@@ -30,6 +31,7 @@ export interface Organization {
     AssignedSpace: number;
     UsedMembers: number;
     UsedVPN: number;
+    UsedAI: number;
     InvitationsRemaining: number;
     HasKeys: number;
     CreateTime: number;

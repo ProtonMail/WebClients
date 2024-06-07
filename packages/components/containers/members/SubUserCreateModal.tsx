@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { createMember, getPrivateAdminError } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -69,6 +69,7 @@ interface Props extends ModalProps {
     allowStorageConfiguration?: boolean;
     allowVpnAccessConfiguration?: boolean;
     allowPrivateMemberConfiguration?: boolean;
+    allowAIAssistantConfiguration?: boolean;
     showMultipleUserUploadButton?: boolean;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
@@ -87,6 +88,7 @@ const SubUserCreateModal = ({
     allowStorageConfiguration,
     allowVpnAccessConfiguration,
     allowPrivateMemberConfiguration,
+    allowAIAssistantConfiguration,
     showMultipleUserUploadButton,
     disableStorageValidation,
     disableDomainValidation,
@@ -104,6 +106,8 @@ const SubUserCreateModal = ({
     const errorHandler = useErrorHandler();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
+    const { MaxAI = 0, UsedAI = 0 } = organization || {};
+    const assistantSeatRemaining = MaxAI > UsedAI;
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
@@ -119,6 +123,7 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
+        numAI: false,
         domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&
@@ -126,6 +131,7 @@ const SubUserCreateModal = ({
             (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
+
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());
     const [submitting, withLoading] = useLoading();
 
@@ -159,6 +165,7 @@ const SubUserCreateModal = ({
                     ...model,
                     address: emailAddressParts,
                     role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
+                    numAI: model.numAI,
                 },
                 verifiedDomains,
                 validationOptions: {
@@ -315,50 +322,66 @@ const SubUserCreateModal = ({
                 )}
 
                 {allowVpnAccessConfiguration && hasVPN && (
-                    <div className="flex mb-5">
-                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
-                            {c('Label for new member').t`VPN connections`}
-                        </label>
+                    <div className="flex items-center gap-2 mb-5">
                         <Toggle
                             id="vpn-toggle"
                             checked={model.vpn}
                             onChange={({ target }) => handleChange('vpn')(target.checked)}
                         />
+                        <label className="text-semibold" htmlFor="vpn-toggle">
+                            {c('Label for new member').t`VPN connections`}
+                        </label>
                     </div>
                 )}
 
                 {allowPrivateMemberConfiguration && (
-                    <div className="flex mb-6">
-                        <label className="text-semibold mr-4" htmlFor="private-toggle">
-                            {c('Label for new member').t`Private`}
-                        </label>
+                    <div className="flex items-center gap-2 mb-6">
                         <Toggle
                             id="private-toggle"
                             checked={model.private}
                             onChange={({ target }) => handleChange('private')(target.checked)}
                         />
+                        <label className="text-semibold" htmlFor="private-toggle">
+                            {c('Label for new member').t`Private`}
+                        </label>
                     </div>
                 )}
 
-                <div className="flex items-center mb-6">
-                    <label className="text-semibold mr-1" htmlFor="admin-toggle">
-                        {c('Label for new member').t`Admin`}
-                    </label>
-                    <Tooltip title={adminTooltipText}>
-                        <Icon name="info-circle" className="color-primary" />
-                    </Tooltip>
+                <div className="flex items-center gap-2 mb-6">
                     <Toggle
                         id="admin-toggle"
-                        className="ml-2"
                         checked={model.admin}
                         onChange={({ target }) => handleChange('admin')(target.checked)}
                     />
+                    <label className="text-semibold" htmlFor="admin-toggle">
+                        {c('Label for new member').t`Admin`}
+                    </label>
+                    <Tooltip title={adminTooltipText()}>
+                        <Icon name="info-circle" className="color-primary" />
+                    </Tooltip>
                     {passwordlessMode && model.private && model.admin && (
                         <Tooltip title={getPrivateAdminError()} openDelay={0}>
                             <Icon className="color-danger ml-2" name="info-circle-filled" />
                         </Tooltip>
                     )}
                 </div>
+
+                {allowAIAssistantConfiguration && (
+                    <div className="flex items-center gap-2 mb-6">
+                        <Toggle
+                            id="ai-assistant-toggle"
+                            checked={model.numAI}
+                            disabled={!assistantSeatRemaining}
+                            onChange={({ target }) => handleChange('numAI')(target.checked)}
+                        />
+                        <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                            {c('Info').t`Writing assistant`}
+                        </label>
+                        {!assistantSeatRemaining && (
+                            <Href href="/dashboard#assistant-toggle">{c('Link').t`Add to your subscription`}</Href>
+                        )}
+                    </div>
+                )}
                 <SubUserCreateHint className="mt-8" />
             </ModalContent>
             <ModalFooter>

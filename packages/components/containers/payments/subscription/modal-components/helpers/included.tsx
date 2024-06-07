@@ -14,13 +14,13 @@ import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { FreePlanDefault, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
-import { getNUsersText } from '../../../payments/features/highlights';
+import { getNUsersText } from '../../../features/highlights';
 import {
     get2FAAuthenticatorText,
     getDevicesText,
     getLoginsAndNotesText,
     getUnlimitedHideMyEmailAliasesText,
-} from '../../../payments/features/pass';
+} from '../../../features/pass';
 
 export const getWhatsIncluded = ({
     planIDs,
