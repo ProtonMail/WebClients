@@ -66,11 +66,10 @@ export class CommentThreadMarkNode extends ElementNode {
 
   createDOM(config: EditorConfig): HTMLElement {
     const element = document.createElement('mark')
-    addClassNamesToElement(element, config.theme.mark)
-    if (this.getIDs()?.length > 1) {
-      addClassNamesToElement(element, config.theme.markOverlap)
-    }
     addClassNamesToElement(element, 'Lexical__commentThreadMark')
+    if (this.getIDs()?.length > 1) {
+      addClassNamesToElement(element, 'Lexical__commentThreadMarkOverlap')
+    }
     return element
   }
 
