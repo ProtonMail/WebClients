@@ -1,3 +1,4 @@
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 type DebugLogDetail = {
@@ -31,21 +32,29 @@ const toString = (args: Args): string => {
 };
 
 const report = (tag: string, ...args: Args) => {
-    const error = args.find((arg) => arg instanceof Error);
-    traceError(error || new Error(toString(args)), {
-        tags: {
-            tag,
-        },
-        ...(error && {
-            extra: {
-                ...args.filter((arg) => arg instanceof Error),
+    const isMainFrame = !getIsIframe();
+
+    if (isMainFrame) {
+        const error = args.find((arg) => arg instanceof Error);
+        traceError(error || new Error(toString(args)), {
+            tags: {
+                tag,
             },
-        }),
-    });
+            ...(error && {
+                extra: {
+                    ...args.filter((arg) => !(arg instanceof Error)),
+                },
+            }),
+        });
+    } else {
+        // child frames bubble up the report to parent
+        window.parent.postMessage({ type: '@proton/utils/logs:report', tag, args }, '*');
+    }
 };
 
 /**
  * Interface for a logger system that supports different levels of logging.
+ * The logger can work within iframes.
  * All logs are kept in memory and can be sent to customer support at the choice of the customer.
  * No private or sensitive information should be ever logged using any of these methods.
  * PII is what that ties back to the user. Eg: account information, keys, media metadata (filename, size, etc..), network setup, browser setup and so on.
@@ -93,7 +102,7 @@ export class Logger implements LoggerInterface {
 
     constructor(identifier: string) {
         this.identifier = identifier;
-        this.listenForKeyBoard();
+        this.listen();
     }
 
     public debug(...args: Args): void {
@@ -172,8 +181,9 @@ export class Logger implements LoggerInterface {
         return [`%c${this.identifier}%c${timeString}`, 'color: font-weight: bold; margin-right: 4px', 'color: gray'];
     }
 
-    private listenForKeyBoard(): void {
-        const isMainFrame = window.top === window.self;
+    private listen(): void {
+        const isMainFrame = !getIsIframe();
+
         window.addEventListener('keydown', (event) => {
             // Mac/Windows/Linux: Press Ctrl + Shift + H (uppercase)
             if (event.ctrlKey && event.shiftKey && event.key === 'H') {
@@ -182,7 +192,7 @@ export class Logger implements LoggerInterface {
 
                 // If we're in a child frame, we postMessage to the parent
                 if (!isMainFrame) {
-                    window.parent.postMessage({ type: 'downloadLogs' }, '*');
+                    window.parent.postMessage({ type: '@proton/utils/logs:downloadLogs' }, '*');
                 }
             }
         });
@@ -190,8 +200,23 @@ export class Logger implements LoggerInterface {
         // For main frame, we listen to child frames padding over the keyboard event
         if (isMainFrame) {
             window.addEventListener('message', (event) => {
-                if (event.data && event.data.type === 'downloadLogs') {
+                if (event.data && event.data.type === '@proton/utils/logs:downloadLogs') {
                     this.downloadLogs();
+                }
+                if (event.data && event.data.type === '@proton/utils/logs:report') {
+                    if (
+                        typeof event.data.tag === 'string' &&
+                        event.data.args &&
+                        event.data.args != null &&
+                        typeof event.data.args[Symbol.iterator] === 'function'
+                    ) {
+                        report(event.data.tag, ...event.data.args);
+                    } else {
+                        report(
+                            this.identifier,
+                            new Error('@proton/utils/logs:report message does not contain args or is not spreadable')
+                        );
+                    }
                 }
             });
         }
