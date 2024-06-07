@@ -1,5 +1,5 @@
 import { Logger, LoggerInterface } from '@proton/utils/logs'
-import { DependencyContainer } from '@proton/docs-shared'
+import { DOCS_DEBUG_KEY, DependencyContainer } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
 import { DocsApi } from '../../Api/Docs/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
@@ -40,7 +40,7 @@ export class AppDependencies extends DependencyContainer {
     super()
 
     this.bind(App_TYPES.Logger, () => {
-      return new Logger('proton-docs')
+      return new Logger('proton-docs', DOCS_DEBUG_KEY)
     })
 
     this.bind(App_TYPES.EventBus, () => {

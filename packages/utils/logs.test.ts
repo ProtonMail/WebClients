@@ -20,13 +20,23 @@ describe('Logger', () => {
 
     afterEach(() => {
         jest.clearAllMocks();
+        localStorage.removeItem('test-logger-debug');
     });
 
-    test('should log debug messages', () => {
+    test('should log debug messages if verbose is true', () => {
+        localStorage.setItem('test-logger-debug', 'true');
+        logger = new Logger('test-logger', 'test-logger-debug');
         logger.debug('This is a debug message');
 
         expect(console.log).toHaveBeenCalledTimes(1);
         expect(logger.getLogs()).toContain('This is a debug message');
+    });
+
+    test('should not log debug messages if verbose is false', () => {
+        logger.debug('This is a debug message');
+
+        expect(console.log).toHaveBeenCalledTimes(0);
+        expect(logger.getLogs()).not.toContain('This is a debug message');
     });
 
     test('should log info messages', () => {
