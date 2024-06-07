@@ -43,6 +43,21 @@ export const isMail = (urlString: string) => {
     }
 };
 
+const isCalendarHome = (urlString: string) => {
+    try {
+        const configURL = getConfig().url;
+        const url = new URL(urlString);
+
+        if (configURL.calendar !== url.origin) {
+            return false;
+        }
+
+        return url.pathname === "" || url.pathname === "/" || /^\/u\/(\d+)\/?$/.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 const isMailHome = (urlString: string) => {
     try {
         const configURL = getConfig().url;
@@ -168,6 +183,10 @@ export const isSameURL = (urlA: string, urlB: string) => {
     }
 
     if (isMailHome(urlA) && isMailHome(urlB)) {
+        return true;
+    }
+
+    if (isCalendarHome(urlA) && isCalendarHome(urlB)) {
         return true;
     }
 
