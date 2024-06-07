@@ -211,6 +211,8 @@ export const loadURL = async (viewID: ViewID, url: string) => {
             await internalLoadURL(viewID, url);
         }
     } else {
+        stopViewNavigation(viewID);
+
         if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
             Logger.info(`View ${viewID} already in given url`, loggedURL);
             showView(viewID);
@@ -249,7 +251,7 @@ export const reloadHiddenViews = () => {
 export const resetHiddenViews = async () => {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            Logger.info("Resetting hidden view", viewID);
+            Logger.info(`${viewID}(reset)`);
             await internalLoadURL(viewID as ViewID, "about:blank");
         }
     }
@@ -306,22 +308,28 @@ async function internalLoadURL(viewID: ViewID, url: string) {
     const logPrefix = `${viewID}(loadURL)`;
 
     if (view) {
+        stopViewNavigation(viewID);
         Logger.info(logPrefix, loggedURL);
 
         try {
-            view.webContents.stop();
             await view.webContents.loadURL(url);
         } catch (error) {
-            // ERR_ABORTED is expected when we stop existing navigation to redirect views to other URLs,
-            // something that can easily happen during the auth process.
-            if (error && typeof error === "object" && "code" in error && error.code === "ERR_ABORTED") {
-                return;
-            }
-
             Logger.error(logPrefix, error);
-            throw error;
         }
     } else {
         Logger.error(logPrefix, "view is not available", loggedURL);
+    }
+}
+
+function stopViewNavigation(viewID: ViewID) {
+    const logPrefix = `${viewID}(stopNavigation)`;
+
+    try {
+        Logger.info(logPrefix);
+        browserViewMap[viewID]?.webContents.stop();
+    } catch (error) {
+        // When stoping navigation, something that can happen often during redirection,
+        // we just want to keep it in the log with no further action.
+        Logger.warn(logPrefix, error);
     }
 }
