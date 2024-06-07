@@ -1,11 +1,11 @@
-import { useRef } from 'react'
 import { Icon } from '@proton/components/components'
 import { CommentsPanelList } from './CommentsPanelList'
-import { CommentThreadInterface } from '@proton/docs-shared'
+import { CommentThreadInterface, CommentThreadState } from '@proton/docs-shared'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { c } from 'ttag'
+import { memo, useMemo } from 'react'
 
-export function CommentsPanel({
+function CommentsPanel({
   threads,
   setShowComments,
 }: {
@@ -14,8 +14,13 @@ export function CommentsPanel({
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
-  const listRef = useRef<HTMLUListElement>(null)
   const isEmpty = threads.length === 0
+
+  const active = useMemo(
+    () => threads.filter((thread) => thread.state === CommentThreadState.Active).reverse(),
+    [threads],
+  )
+  const resolved = useMemo(() => threads.filter((thread) => thread.state === CommentThreadState.Resolved), [threads])
 
   return (
     <div className="z-30 flex flex-col flex-nowrap overflow-hidden border-l border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2]">
@@ -37,8 +42,18 @@ export function CommentsPanel({
           {c('Info').t`No comments`}
         </div>
       ) : (
-        <CommentsPanelList threads={threads} listRef={listRef} />
+        <div className="w-full overflow-y-auto px-4 pb-2 pt-1 focus:-outline-offset-2">
+          <CommentsPanelList threads={active} />
+          {resolved.length > 0 && (
+            <>
+              <div className="color-weak mb-1.5 mt-4 text-sm font-medium">Resolved</div>
+              <CommentsPanelList threads={resolved} />
+            </>
+          )}
+        </div>
       )}
     </div>
   )
 }
+
+export default memo(CommentsPanel)
