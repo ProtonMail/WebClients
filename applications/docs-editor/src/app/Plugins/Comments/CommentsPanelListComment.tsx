@@ -18,6 +18,7 @@ import { c } from 'ttag'
 import { UserAvatar } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
+import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 
 export function CommentsPanelListComment({
   comment,
@@ -30,6 +31,7 @@ export function CommentsPanelListComment({
   isFirstComment: boolean
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
+  const { color } = useCollaborationContext()
   const { username, controller, removeMarkNode } = useCommentsContext()
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
@@ -99,7 +101,11 @@ export function CommentsPanelListComment({
       {confirmModal}
       <li className={clsx('group/comment mb-3 text-sm', comment.isPlaceholder || isDeleting ? 'opacity-50' : '')}>
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
-          <UserAvatar name={comment.author} className="mr-1 flex-shrink-0" />
+          <UserAvatar
+            name={comment.author}
+            color={isAuthorCurrentUser ? { hsl: color } : undefined}
+            className="mr-1 flex-shrink-0"
+          />
           <div className="mr-auto flex flex-col overflow-hidden">
             <span className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize">
               {name}
@@ -118,7 +124,10 @@ export function CommentsPanelListComment({
               style={{
                 pointerEvents: 'auto',
               }}
-              className="opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100"
+              className={clsx(
+                'opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                isFirstComment && 'group-focus-within/thread:opacity-100',
+              )}
               content={<Icon size={4.5} name="three-dots-vertical" alt={c('Label').t`More options`} />}
               hasCaret={false}
             >

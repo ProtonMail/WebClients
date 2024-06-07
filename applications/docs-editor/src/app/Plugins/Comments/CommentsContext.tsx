@@ -7,6 +7,7 @@ type CommentsContextValue = {
   controller: EditorRequiresClientMethods
   removeMarkNode: (id: string) => void
   activeIDs: string[]
+  setActiveIDs: (ids: string[]) => void
   markNodeMap: Map<string, Set<NodeKey>>
   threadToFocus: string | null
   setThreadToFocus: (id: string | null) => void

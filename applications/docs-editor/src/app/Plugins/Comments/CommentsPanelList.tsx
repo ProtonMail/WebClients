@@ -2,13 +2,7 @@ import { useEffect, useState } from 'react'
 import { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 
-export function CommentsPanelList({
-  threads,
-  listRef,
-}: {
-  threads: CommentThreadInterface[]
-  listRef: { current: null | HTMLUListElement }
-}): JSX.Element {
+export function CommentsPanelList({ threads }: { threads: CommentThreadInterface[] }): JSX.Element {
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
@@ -23,7 +17,7 @@ export function CommentsPanelList({
   }, [counter])
 
   return (
-    <ul className="w-full overflow-y-auto px-4 pb-2 pt-1" ref={listRef}>
+    <ul>
       {threads.map((thread) => {
         return <CommentsPanelListThread key={thread.id} thread={thread} />
       })}

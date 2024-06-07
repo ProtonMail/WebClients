@@ -15,7 +15,7 @@ import { createPortal } from 'react-dom'
 
 import { CommentInputBox } from './CommentInputBox'
 import { FloatingAddCommentButton } from './FloatingAddCommentButton'
-import { CommentsPanel } from './CommentsPanel'
+import CommentsPanel from './CommentsPanel'
 import { CommentMarkNodeChangeData, CommentThreadInterface, CommentsEvent } from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
@@ -221,7 +221,8 @@ export default function CommentPlugin({
     if (!element) {
       return
     }
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // eslint-disable-next-line custom-rules/deprecate-classes
+    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [activeIDs, showCommentsPanel])
 
   const createMarkNodeForCurrentSelection = useCallback(
@@ -339,6 +340,7 @@ export default function CommentPlugin({
         controller,
         removeMarkNode,
         activeIDs,
+        setActiveIDs,
         markNodeMap,
         threadToFocus,
         setThreadToFocus,
