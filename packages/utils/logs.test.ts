@@ -1,4 +1,12 @@
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+
 import { Logger } from './logs';
+
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: jest.fn(),
+}));
+
+const mockTraceError = jest.mocked(traceError);
 
 describe('Logger', () => {
     let logger: Logger;
@@ -48,6 +56,28 @@ describe('Logger', () => {
 
         expect(console.error).toHaveBeenCalledWith('This is an error message');
         expect(logger.getLogs()).toContain('This is an error message');
+        expect(mockTraceError).toHaveBeenCalledWith(expect.any(Error), {
+            tags: {
+                tag: 'test-logger',
+            },
+        });
+    });
+
+    test('should log error messages with Error and extras', () => {
+        const error = new Error('This is an error message');
+        logger.error(error, 'extra', 123);
+
+        expect(console.error).toHaveBeenCalledWith(error, 'extra', 123);
+        expect(logger.getLogs()).toContain('This is an error message');
+        expect(mockTraceError).toHaveBeenCalledWith(expect.any(Error), {
+            tags: {
+                tag: 'test-logger',
+            },
+            extra: {
+                0: 'extra',
+                1: 123,
+            },
+        });
     });
 
     test('should save logs', () => {
@@ -124,37 +154,43 @@ describe('Logger', () => {
         const createElementSpy = jest.spyOn(document, 'createElement');
         // Simulate a message event from a child frame
         const event = new MessageEvent('message', {
-            data: { type: 'downloadLogs' },
+            data: { type: '@proton/utils/logs:downloadLogs' },
         });
         window.dispatchEvent(event);
 
         // Assert that downloadLogs has been called
         expect(createElementSpy).toHaveBeenCalled();
     });
-});
 
-describe('Logger Iframe', () => {
-    let logger: Logger;
-
-    beforeEach(() => {
-        Object.defineProperty(window, 'top', { value: {} });
-        logger = new Logger('test-logger-iframe');
-    });
-
-    afterEach(() => {
-        jest.clearAllMocks();
-    });
-
-    test('should post message to parent frame on Ctrl+Shift+H in child frame', () => {
-        const spyPostMessage = jest.spyOn(window.parent, 'postMessage');
-        logger.debug('test');
-        const event = new KeyboardEvent('keydown', {
-            key: 'H',
-            ctrlKey: true,
-            shiftKey: true,
+    test('should log report on main frame when receiving message from child frames', () => {
+        const err = new Error('test');
+        const tag = 'test';
+        const event = new MessageEvent('message', {
+            data: { type: '@proton/utils/logs:report', tag, args: [err] },
         });
         window.dispatchEvent(event);
-        expect(window.self === window.top).toEqual(false);
-        expect(spyPostMessage).toHaveBeenCalledWith({ type: 'downloadLogs' }, '*');
+        expect(mockTraceError).toHaveBeenCalledWith(err, {
+            tags: {
+                tag,
+            },
+            extra: {},
+        });
+    });
+
+    test('should log report on main frame when receiving message from child frames in the wrong format', () => {
+        const err = new Error('test');
+        const event = new MessageEvent('message', {
+            data: { type: '@proton/utils/logs:report', not: 'good format', args: [err] },
+        });
+        window.dispatchEvent(event);
+        expect(mockTraceError).toHaveBeenCalledWith(
+            new Error('@proton/utils/logs:report message does not contain args or is not spreadable'),
+            {
+                tags: {
+                    tag: 'test-logger',
+                },
+                extra: {},
+            }
+        );
     });
 });
