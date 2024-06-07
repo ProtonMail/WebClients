@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
+import { isValidSession } from '@proton/pass/lib/auth/session';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -36,6 +37,21 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
             authStore.setLocked(lock.locked);
             authStore.setLockTTL(lock.ttl);
+
+            /* another client may have mutated the API lock */
+            if (authStore.getLockMode() !== lock.mode) {
+                authStore.setLockMode(lock.mode);
+
+                if (lock.mode === LockMode.NONE) {
+                    authStore.setLockToken(undefined);
+                    await auth.config.onLockUpdate?.(lock, authStore.getLocalID(), true);
+                    await auth.persistSession().catch(noop);
+                }
+
+                if (lock.mode === LockMode.SESSION) {
+                    await auth.lock(adapter.type, { broadcast: true, soft: true });
+                }
+            }
 
             return lock;
         },
@@ -94,6 +110,9 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
             logger.info(`[SessionLock] unlocking session`);
             await api.reset();
 
+            const currentToken = authStore.getLockToken();
+            const currentMode = authStore.getLockMode();
+
             const token = await unlockSession(secret).catch(async (error) => {
                 /** When unlocking the session, if the lock was unregistered by
                  * another client we will hit a 400 status-code with the 300008 response
@@ -119,7 +138,11 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
             authStore.setLockToken(token);
             authStore.setLockMode(LockMode.SESSION);
-            await auth.persistSession().catch(noop);
+
+            /** session may be partially hydrated when unlocking  */
+            const validSession = isValidSession(authStore.getSession());
+            const shouldPersist = validSession && (currentToken !== token || currentMode !== LockMode.SESSION);
+            if (shouldPersist) await auth.persistSession().catch(noop);
 
             return token;
         },

@@ -13,6 +13,10 @@ function* lockCreateWorker(
         const auth = getAuthService();
         const authStore = getAuthStore();
 
+        /** check the currently registered lock in case it was mutated by another client.
+         * This can happen if the web-app and extension are logged in to the same session. */
+        yield auth.checkLock();
+
         const lock: Lock = yield call(function* (): Generator<any, Lock> {
             switch (payload.lock.mode) {
                 case LockMode.SESSION:

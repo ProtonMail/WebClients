@@ -239,6 +239,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         createLock: async (payload: LockCreateDTO) => {
+            if (payload.mode === LockMode.NONE) return;
+
             const adapter = getLockAdapter(payload.mode);
             const localID = authStore.getLocalID();
             const sessionLockRegistered = authStore.getLockMode() === LockMode.SESSION;
@@ -258,6 +260,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         deleteLock: async (mode: LockMode, secret: string) => {
+            if (mode === LockMode.NONE) return;
+
             const adapter = getLockAdapter(mode);
             const lock = await adapter.delete(secret);
             const localID = authStore.getLocalID();
@@ -277,6 +281,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         unlock: async (mode: LockMode, secret: string): Promise<void> => {
+            if (mode === LockMode.NONE) return;
+
             try {
                 const adapter = getLockAdapter(mode);
                 const token = await adapter.unlock(secret);
