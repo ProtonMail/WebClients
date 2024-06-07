@@ -6,7 +6,7 @@ import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
-import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
+import { intoSafeLoginItem, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
@@ -30,13 +30,13 @@ export const createAutoFillService = () => {
 
     const getAutofillData = ({ shareId, itemId }: SelectedItem): Maybe<FormCredentials> => {
         const state = store.getState();
-        const item = selectItem(shareId, itemId)(state);
+        const item = selectItem<'login'>(shareId, itemId)(state);
 
         if (item !== undefined && item.data.type === 'login') {
             store.dispatch(itemAutofilled({ shareId, itemId }));
             return {
                 /** For autofill we use the username if not empty, otherwise the email */
-                userIdentifier: deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail),
+                userIdentifier: intoUserIdentifier(item),
                 password: deobfuscate(item.data.content.password),
             };
         }
