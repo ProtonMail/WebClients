@@ -104,7 +104,7 @@ export class Logger implements LoggerInterface {
 
     constructor(identifier: string, debugKey?: string) {
         this.identifier = identifier;
-        this.verbose = typeof debugKey !== 'undefined' && Boolean(localStorage.getItem(debugKey));
+        this.verbose = typeof debugKey !== 'undefined' && localStorage.getItem(debugKey) === 'true';
         this.listen();
     }
 
