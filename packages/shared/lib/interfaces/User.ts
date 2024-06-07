@@ -56,6 +56,7 @@ export interface User {
     MaxBaseSpace: number;
     MaxDriveSpace: number;
     MaxUpload: number;
+    NumAI: number;
     Role: USER_ROLES;
     Private: number;
     Type: UserType;

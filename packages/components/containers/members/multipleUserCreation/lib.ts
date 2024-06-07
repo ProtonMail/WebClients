@@ -111,6 +111,7 @@ export const createUser = async ({
             Private: +privateSubUser,
             MaxSpace: Math.round(totalStorage),
             MaxVPN: vpnAccess ? VPN_CONNECTIONS : 0,
+            MaxAI: 0,
         }),
     });
 

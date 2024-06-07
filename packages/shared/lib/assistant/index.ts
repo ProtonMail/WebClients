@@ -1,0 +1,1 @@
+export { checkHardwareForAssistant } from './checkHardwareForAssistant';

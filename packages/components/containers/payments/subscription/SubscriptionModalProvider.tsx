@@ -33,6 +33,7 @@ export interface OpenCallbackProps
         | 'metrics'
         | 'upsellRef'
         | 'maximumCycle'
+        | 'minimumCycle'
     > {
     hasClose?: boolean;
     onClose?: () => void;
@@ -41,6 +42,7 @@ export interface OpenCallbackProps
     onSubscribed?: () => void;
     onUnsubscribed?: () => void;
     mode?: 'upsell-modal';
+    withB2CAddons?: boolean;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;

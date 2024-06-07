@@ -13,16 +13,17 @@ import {
 import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
-import { cleanAssistantEmailGeneration } from '@proton/llm/lib';
+import { getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import { insertTextBeforeContent } from 'proton-mail/helpers/message/messageContent';
+import { insertTextBeforeContent, sanitizeContentToInsert } from 'proton-mail/helpers/message/messageContent';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useComposerAssistantInitialSetup from 'proton-mail/hooks/assistant/useComposerAssistantInitialSetup';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -90,9 +91,19 @@ const Composer = (
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const composerMetaRef = useRef<HTMLDivElement>(null);
 
+    const { openedAssistants, openAssistant, closeAssistant, setAssistantStatus, canShowAssistant } =
+        useAssistant(composerID);
+
     // onClose handler can be called in an async handler
     // Input onClose ref can change in the meantime
-    const onClose = useHandler(inputOnClose);
+    const inputCloseHandler = useHandler(inputOnClose);
+
+    const onClose = () => {
+        // Close the assistant when closing the composer
+        closeAssistant(composerID);
+
+        inputCloseHandler();
+    };
 
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
@@ -113,15 +124,6 @@ const Composer = (
             onFocus();
         }
     };
-
-    const {
-        openedAssistants,
-        openAssistant,
-        closeAssistant,
-        canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
-    } = useAssistant(composerID);
 
     const {
         modelMessage,
@@ -166,10 +168,9 @@ const Composer = (
         handleRemoveAttachment,
         handleRemoveUpload,
 
-        showAssistant,
-        setShowAssistant,
-        toggleAssistant,
         setHasUsedAssistantText,
+        getContentBeforeBlockquote,
+        setContentBeforeBlockquote,
     } = useComposerContent({
         type: EditorTypes.composer,
         composerID,
@@ -185,6 +186,7 @@ const Composer = (
         openedAssistants,
         openAssistant,
         closeAssistant,
+        setAssistantStatus,
     });
 
     // Update subject on ComposerFrame
@@ -221,10 +223,9 @@ const Composer = (
         }
     });
 
-    const isAssistantOpenedInComposer = openedAssistants.includes(composerID);
+    const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, composerID);
 
     const handleToggleAssistant = () => {
-        toggleAssistant();
         if (isAssistantOpenedInComposer) {
             closeAssistant(composerID);
         } else {
@@ -236,8 +237,6 @@ const Composer = (
     const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
         onToggleAssistant: handleToggleAssistant,
         canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
     });
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
@@ -286,32 +285,50 @@ const Composer = (
     }, []);
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
-        // const newBody = insertTextBeforeBlockquotes(textToInsert, modelMessage, mailSettings, userSettings, addresses);
-        const newBody = insertTextBeforeContent(modelMessage, textToInsert);
+        const cleanedText = sanitizeContentToInsert(textToInsert, metadata.isPlainText);
+        const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings);
 
         // Update the content in the composer
         handleChangeContent(newBody, true);
 
         setHasUsedAssistantText(true);
+        setSelectedText('');
     };
 
+    // TODO: Execute this method only if assistant is opened
+    // Might need a useEffect is user opens on selection but
+    // as this method could affect performances, we need to be sure it's only called when needed
     const handleEditorSelection = () => {
-        if (editorRef.current) {
-            const selectedText = editorRef.current.getSelectionContent();
-            const cleanedText = selectedText ? removeLineBreaks(selectedText) : '';
-            setSelectedText(cleanedText);
-        }
+        // Need to wait for a processor tick to get Rooster method work efficiently
+        setTimeout(() => {
+            if (editorRef.current) {
+                const selectedText = editorRef.current.getSelectionContent();
+                const cleanedText = selectedText ? removeLineBreaks(selectedText).trim() : '';
+                setSelectedText(cleanedText);
+            }
+        }, 0);
     };
 
     const handleSetEditorSelection = (textToInsert: string) => {
         if (editorRef.current) {
-            editorRef.current.setSelectionContent(textToInsert);
+            const cleanedText = sanitizeContentToInsert(textToInsert, metadata.isPlainText);
+
+            editorRef.current.setSelectionContent(cleanedText);
         }
+        setSelectedText('');
     };
 
-    // Disable the assistant button if another composer has the assistant opened,
-    // but allow to close the assistant in the current composer by clicking on the button
-    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
+    /**
+     * ATM we don't have a queue mechanism in the assistant in local mode.
+     * In that case we want to disable it if another composer has the assistant opened.
+     * However, we still want to be able to close it by clicking on the button.
+     *
+     * In server mode, we don't need a queue mechanism so we can display the assistant in all composers.
+     */
+    const isRunningAssistantLocally = userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY;
+    const disableAssistantButton = isRunningAssistantLocally
+        ? openedAssistants.length > 0 && !isAssistantOpenedInComposer
+        : false;
 
     return (
         <div
@@ -335,19 +352,19 @@ const Composer = (
                 handleCancelSend={handleCancelSend}
             />
             <div className="composer-blur-container flex flex-column flex-1 max-w-full">
-                {showAssistant && (
+                {isAssistantOpenedInComposer && (
                     <ComposerAssistant
                         onUseGeneratedText={handleInsertGeneratedTextInEditor}
                         onUseRefinedText={handleSetEditorSelection}
-                        onUpdateShowAssistant={(value: boolean) => setShowAssistant(value)}
                         assistantID={composerID}
-                        onCleanGeneration={cleanAssistantEmailGeneration}
                         composerContentRef={composerContentRef}
                         composerContainerRef={composerContainerRef}
                         composerMetaRef={composerMetaRef}
                         isAssistantInitialSetup={isAssistantInitialSetup}
                         selectedText={selectedText}
-                        editorRef={editorRef}
+                        getContentBeforeBlockquote={getContentBeforeBlockquote}
+                        setContentBeforeBlockquote={setContentBeforeBlockquote}
+                        setInnerModal={setInnerModal}
                     />
                 )}
                 <div

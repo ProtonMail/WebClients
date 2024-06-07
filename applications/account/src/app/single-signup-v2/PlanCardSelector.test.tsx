@@ -25,6 +25,7 @@ const defaultPlansMap: PlansMap = {
         MaxMembers: 0,
         MaxVPN: 0,
         MaxTier: 0,
+        MaxAI: 0,
         Services: 8,
         Features: 0,
         State: 1,

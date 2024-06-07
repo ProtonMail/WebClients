@@ -1,14 +1,12 @@
-import {APPS, APPS_CONFIGURATION, MINUTE} from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, MINUTE, SECOND } from '@proton/shared/lib/constants';
 
-const { PROTONMAIL} = APPS;
-
-export const ASSISTANT_FEATURE_NAME = 'AI Assistant';
+const { PROTONMAIL } = APPS;
 
 export const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
 
-export const ASSISTANT_TRIAL_TIME_DAYS = 14;
+export const IFRAME_COMMUNICATION_TIMEOUT = 30 * SECOND;
 
-export const enum ASSISTANT_STATUS {
+export const enum AssistantStatus {
     NOT_LOADED,
     DOWNLOADING,
     DOWNLOADED,
@@ -16,6 +14,4 @@ export const enum ASSISTANT_STATUS {
     READY,
 }
 
-export const assistantAuthorizedApps = [
-    APPS_CONFIGURATION[PROTONMAIL].subdomain,
-];
+export const assistantAuthorizedApps = [APPS_CONFIGURATION[PROTONMAIL].subdomain];

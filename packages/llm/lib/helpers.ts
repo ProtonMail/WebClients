@@ -1,13 +1,24 @@
 import { isURLProtonInternal } from '@proton/components/helpers/url';
+import { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
-import { ASSISTANT_STATUS, assistantAuthorizedApps } from '@proton/llm/lib/constants';
-import { checkGpu } from '@proton/llm/lib/hardware';
-import { ASSISTANT_ACTION, ASSISTANT_EVENTS, AssistantModel } from '@proton/llm/lib/types';
+import { AssistantStatus, assistantAuthorizedApps } from '@proton/llm/lib/constants';
+import {
+    Action,
+    AssistantEvent,
+    AssistantModel,
+    IframeToParentMessage,
+    OpenedAssistant,
+    OpenedAssistantStatus,
+    ParentToIframeMessage,
+} from '@proton/llm/lib/types';
+import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import window from '@proton/shared/lib/window';
+
+import { GENERATION_TYPE } from './useAssistantTelemetry';
 
 export const getAssistantHasCompatibleBrowser = () => {
     const isOnMobile = isMobile();
@@ -16,8 +27,8 @@ export const getAssistantHasCompatibleBrowser = () => {
 };
 
 export const getAssistantHasCompatibleHardware = async () => {
-    const compatibility = await checkGpu();
-    return compatibility === 'ok';
+    const compatibility = await checkHardwareForAssistant();
+    return compatibility;
 };
 
 export const getCanShowAssistant = (assistantFeatureAvailable?: boolean) => {
@@ -27,6 +38,39 @@ export const getCanShowAssistant = (assistantFeatureAvailable?: boolean) => {
 export const getCanUseAssistant = (user: User) => {
     // TODO improve this condition later
     return isPaid(user);
+};
+
+export const getGenerationType = (action: Action) => {
+    switch (action.type) {
+        case 'writeFullEmail':
+            return GENERATION_TYPE.WRITE_FULL_EMAIL;
+        case 'customRefine':
+            return GENERATION_TYPE.CUSTOM_REFINE;
+        case 'proofread':
+            return GENERATION_TYPE.PROOFREAD;
+        case 'shorten':
+            return GENERATION_TYPE.SHORTEN;
+        case 'formal':
+            return GENERATION_TYPE.FORMALIZE;
+        case 'friendly':
+            return GENERATION_TYPE.FRIENDLY;
+        //case "expand":
+        //    return GENERATION_TYPE.EXPAND;
+        default:
+            return GENERATION_TYPE.WRITE_FULL_EMAIL;
+    }
+};
+
+export const getIsAssistantOpened = (openedAssistants: OpenedAssistant[], assistantID: string) => {
+    return !!openedAssistants.find((assistant) => assistant.id === assistantID);
+};
+
+export const getHasAssistantStatus = (
+    openedAssistants: OpenedAssistant[],
+    assistantID: string,
+    status: OpenedAssistantStatus
+) => {
+    return openedAssistants.find((assistant) => assistant.id === assistantID)?.status === status;
 };
 
 export const getAssistantStatus = ({
@@ -39,21 +83,21 @@ export const getAssistantStatus = ({
     isModelDownloaded: boolean;
     isModelLoadingOnGPU: boolean;
     isModelLoadedOnGPU: boolean;
-}): ASSISTANT_STATUS => {
+}): AssistantStatus => {
     if (isModelDownloading) {
-        return ASSISTANT_STATUS.DOWNLOADING;
+        return AssistantStatus.DOWNLOADING;
     }
     if (isModelLoadingOnGPU) {
-        return ASSISTANT_STATUS.LOADING_GPU;
+        return AssistantStatus.LOADING_GPU;
     }
     if (isModelLoadedOnGPU) {
-        return ASSISTANT_STATUS.READY;
+        return AssistantStatus.READY;
     }
     if (isModelDownloaded) {
-        return ASSISTANT_STATUS.DOWNLOADED;
+        return AssistantStatus.DOWNLOADED;
     }
 
-    return ASSISTANT_STATUS.NOT_LOADED;
+    return AssistantStatus.NOT_LOADED;
 };
 
 export const checkHarmful = (inputText: string) => {
@@ -63,7 +107,21 @@ export const checkHarmful = (inputText: string) => {
     return /^\s*yes/i.test(inputText);
 };
 
-export const cleanAssistantEmailGeneration = (inputText: string) => {
+export function removeStopStrings(text: string, customStopStrings?: string[]) {
+    const GENERAL_STOP_STRINGS = ['<|', '[INST]', '[/INST]', '\n\n\n'];
+    customStopStrings ||= [];
+    const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
+    const leftMostStopIdx: number | undefined = stopStrings
+        .map((s) => text.indexOf(s))
+        .filter((idx) => idx >= 0)
+        .reduce((minIdx, idx) => (minIdx === undefined ? idx : Math.min(minIdx, idx)), undefined as number | undefined);
+    if (leftMostStopIdx !== undefined) {
+        text = text.slice(0, leftMostStopIdx);
+    }
+    return text;
+}
+
+export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: string): string | undefined => {
     /* The LLM generates text that contains extraneous data, such as:
      *
      *   - a token to tell if the prompt was harmful (yes/no)
@@ -84,16 +142,19 @@ export const cleanAssistantEmailGeneration = (inputText: string) => {
     // The LLM begins with an answer to the question: "Harmful? (yes/no):"
     // If the prompt is harmful, we do not let the text pass through.
     if (text.toLowerCase().startsWith('yes')) {
-        return '[Rejected]';
+        return undefined;
     }
+
+    // Remove stop strings and anything that come after.
+    text = removeStopStrings(text, ['\n[Your Name]']);
 
     // Split lines
     let lines = text.split('\n');
     lines = lines.map((line) => line.trim());
 
-    // The LLM should have replied "no" to the harmful prompt.
+    // The LLM first line should be the reply to the harmful prompt ("no" or "No")
     // We drop this answer since it's not part of the actual email we want to generate.
-    lines = lines.filter((line, i) => i > 0 || line !== 'no');
+    lines = lines.filter((_line, i) => i !== 0);
 
     // Drop the subject.
     // The LLM often wants to generates a subject line before the email content. We're not using it at
@@ -165,9 +226,17 @@ export const buildMLCConfig = (models: AssistantModel[]) => {
          * However, in we want to store files in the cache using the current url.
          * So we need to build the model_url in the assistant configuration with the same format https://mail.proton.me/mlc-ai/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/resolve/main/
          */
+
         const modelURLDownloadURL = getModelURL(model.ModelURL).toString();
-        // TODO need to do more for localhost, we want to access to http://localhost:8080/assets/ml-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm
-        const modelLibURL = getModelURL(model.ModelLibURL).toString();
+
+        var modelLibURL = getModelURL(model.ModelLibURL).toString();
+        if (window.origin.includes('localhost')) {
+            // The line below forces web-llm to grab the wasm from the cache (where we carefully placed it)
+            // instead of fetching it itself. See:
+            //   https://github.com/mlc-ai/web-llm/blob/bd2409c37af793bc7bc51e49ccec40553976d136/src/engine.ts#L145
+            modelLibURL = modelLibURL.replace('localhost', 'LOCALHOST');
+        }
+
         // compute the model url with the needed format https://mail.proton.me/mlc-ai/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/resolve/main/
         const modelURL = `${window.origin}${new URL(modelURLDownloadURL).pathname}`;
 
@@ -257,25 +326,21 @@ export const isAssistantPostMessage = (event: MessageEvent, hostname = window.lo
     // Check that the assistant event is a valid event based on
     // - The url of the event origin, is it an authorized url?
     // - Does the event contain a valid `ASSISTANT_EVENTS`
-    return isValidURL && event.data && Object.values(ASSISTANT_EVENTS).includes(event.data.type);
+    return isValidURL && event.data && Object.values(AssistantEvent).includes(event.data.type);
 };
 
 // Function used to post messages to the assistant iframe
-export const postMessageToAssistantIframe = (message: ASSISTANT_ACTION) => {
+export const postMessageParentToIframe = (message: ParentToIframeMessage) => {
     const iframe = document.querySelector('[id^=assistant-iframe]') as HTMLIFrameElement | null;
     const assistantURL = getAssistantIframeURL();
     iframe?.contentWindow?.postMessage(message, assistantURL);
 };
 
 // Function used to post messages to the assistant iframe parent app
-export const postMessageToAssistantParent = (
-    message: ASSISTANT_ACTION,
+export const postMessageIframeToParent = (
+    message: IframeToParentMessage,
     parentURL: string,
     arrayBuffers?: ArrayBuffer[]
 ) => {
-    if (arrayBuffers) {
-        window.parent?.postMessage(message, parentURL, arrayBuffers);
-    } else {
-        window.parent?.postMessage(message, parentURL);
-    }
+    window.parent?.postMessage(message, parentURL, arrayBuffers || undefined);
 };

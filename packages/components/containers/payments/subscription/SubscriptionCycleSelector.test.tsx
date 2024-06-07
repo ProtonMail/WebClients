@@ -32,6 +32,7 @@ beforeEach(() => {
                 MaxMembers: 1,
                 MaxVPN: 0,
                 MaxTier: 0,
+                MaxAI: 0,
                 Services: 1,
                 Features: 1,
                 State: 1,
@@ -93,6 +94,7 @@ it('should correctly display price per user per month', () => {
             MaxMembers: 1,
             MaxVPN: 0,
             MaxTier: 0,
+            MaxAI: 0,
             Services: 1,
             Features: 1,
             State: 1,
@@ -129,6 +131,7 @@ it('should correctly display price per user per month', () => {
             MaxMembers: 1,
             MaxVPN: 0,
             MaxTier: 0,
+            MaxAI: 0,
             Services: 1,
             Features: 0,
             State: 1,
@@ -184,6 +187,7 @@ it('should correctly display price per user per month when there are non-user ad
             MaxMembers: 1,
             MaxVPN: 10,
             MaxTier: 2,
+            MaxAI: 0,
             Services: 15,
             Features: 1,
             State: 1,
@@ -220,6 +224,7 @@ it('should correctly display price per user per month when there are non-user ad
             MaxMembers: 0,
             MaxVPN: 0,
             MaxTier: 0,
+            MaxAI: 0,
             Services: 15,
             Features: 0,
             State: 1,
@@ -256,6 +261,7 @@ it('should correctly display price per user per month when there are non-user ad
             MaxMembers: 1,
             MaxVPN: 10,
             MaxTier: 0,
+            MaxAI: 0,
             Services: 15,
             Features: 0,
             State: 1,
@@ -315,6 +321,7 @@ it('should display the prices correctly for VPN Plus', () => {
             MaxMembers: 0,
             MaxVPN: 10,
             MaxTier: 2,
+            MaxAI: 0,
             Services: 4,
             Features: 0,
             State: 1,
@@ -605,8 +612,62 @@ describe('getAllowedCycles', () => {
             [PLANS.BUNDLE]: 1,
         };
 
+        subscription.Cycle = CYCLE.MONTHLY;
+
         const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
         expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it('should allow the current cycle even if it is higher than maximum', () => {
+        const subscription = getSubscriptionMock();
+        const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.YEARLY;
+        const planIDs: PlanIDs = {
+            [PLANS.BUNDLE]: 1,
+        };
+
+        subscription.Cycle = CYCLE.TWO_YEARS;
+
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
+        expect(result).toEqual([CYCLE.TWO_YEARS]);
+    });
+
+    it('should allow upcoming cycle even if it is higher than maximum', () => {
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.YEARLY;
+        const upcomingSubscription = getSubscriptionMock();
+        upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
+        subscription.UpcomingSubscription = upcomingSubscription;
+        const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.YEARLY;
+        const planIDs: PlanIDs = {
+            [PLANS.BUNDLE]: 1,
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
+        expect(result).toEqual([CYCLE.TWO_YEARS]);
+    });
+
+    it('should ignore upcoming cycle check with disableUpcomingCycleCheck', () => {
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.YEARLY;
+        const upcomingSubscription = getSubscriptionMock();
+        upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
+        subscription.UpcomingSubscription = upcomingSubscription;
+        const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
+        const planIDs: PlanIDs = {
+            [PLANS.BUNDLE]: 1,
+        };
+        const disableUpcomingCycleCheck = true;
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            disableUpcomingCycleCheck,
+        });
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
     describe('defaultCycles', () => {

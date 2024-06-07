@@ -77,7 +77,7 @@ const ComposerFrame = ({
         drawerOffset,
     });
 
-    const { openedAssistants, closeAssistant } = useAssistant(composerID);
+    const { closeAssistant } = useAssistant(composerID);
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -102,9 +102,7 @@ const ComposerFrame = ({
     }, [windowHeight]);
 
     const handleClose = () => {
-        if (openedAssistants.includes(composerID)) {
-            closeAssistant(composerID);
-        }
+        closeAssistant(composerID);
         composerRef?.current?.close();
     };
 

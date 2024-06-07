@@ -64,6 +64,13 @@ export interface Flags {
     Welcomed: number;
 }
 
+export enum AI_ASSISTANT_ACCESS {
+    UNSET = 0,
+    OFF = 1,
+    SERVER_ONLY = 2,
+    CLIENT_ONLY = 3,
+}
+
 export interface UserSettings {
     '2FA': {
         Enabled: number; // 0 for disabled, 1 for OTP, 2 for FIDO2, 3 for both
@@ -71,6 +78,7 @@ export interface UserSettings {
         ExpirationTime: number | null; // If set, after this time force add 2FA
         RegisteredKeys: RegisteredKey[];
     };
+    AIAssistantFlags: AI_ASSISTANT_ACCESS;
     AppWelcome: {
         Account?: string[];
         Calendar?: string[];

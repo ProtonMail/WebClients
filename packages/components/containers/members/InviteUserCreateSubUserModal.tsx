@@ -13,6 +13,7 @@ interface Props extends ModalStateProps {
     organization?: Organization;
     verifiedDomains: Domain[];
     onInviteUser: () => void;
+    allowAIAssistantConfiguration: boolean;
     app: APP_NAMES;
 }
 
@@ -70,6 +71,7 @@ const InviteUserCreateSubUserModal = ({
     verifiedDomains,
     onInviteUser,
     app,
+    allowAIAssistantConfiguration,
     ...modalState
 }: Props) => {
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
@@ -106,6 +108,7 @@ const InviteUserCreateSubUserModal = ({
                     allowStorageConfiguration
                     allowVpnAccessConfiguration
                     allowPrivateMemberConfiguration
+                    allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                     app={app}
                 />
             )}
