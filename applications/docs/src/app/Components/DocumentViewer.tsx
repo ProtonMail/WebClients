@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ClientToEditorBridge,
-  EditorOrchestratorInterface,
-  CommitVerificationFailedPayload,
   DocControllerEvent,
+  DocsClientEvent,
+  DocsClientSquashVerificationObjectionMadePayload,
+  EditorOrchestratorInterface,
+  SquashVerificationObjectionDecision,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
@@ -72,26 +74,38 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   }, [application.eventBus, bridge])
 
   useEffect(() => {
-    return application.eventBus.addEventCallback((data: CommitVerificationFailedPayload) => {
+    return application.eventBus.addEventCallback(() => {
       setHasSignatureIssues(true)
-    }, DocControllerEvent.CommitVerificationFailed)
+    }, DocControllerEvent.SquashVerificationObjectionDecisionRequired)
   }, [application.eventBus, bridge])
 
   const showFailedSignatureModal = useCallback(() => {
     isSignatureFailedModalOpen.current = true
     openSignatureFailedModal({
-      commitId: '',
       ignore: () => {
         isSignatureFailedModalOpen.current = false
+        const payload: DocsClientSquashVerificationObjectionMadePayload = {
+          decision: SquashVerificationObjectionDecision.AbortSquash,
+        }
+        application.eventBus.publish({
+          type: DocsClientEvent.SquashVerificationObjectionDecisionMade,
+          payload,
+        })
       },
-      accept: (commitId) => {
+      accept: () => {
         setHasSignatureIssues(false)
         isSignatureFailedModalOpen.current = false
 
-        void application.docLoader.getDocController().acceptFailedVerificationCommit(commitId)
+        const payload: DocsClientSquashVerificationObjectionMadePayload = {
+          decision: SquashVerificationObjectionDecision.ContinueSquash,
+        }
+        application.eventBus.publish({
+          type: DocsClientEvent.SquashVerificationObjectionDecisionMade,
+          payload,
+        })
       },
     })
-  }, [application.docLoader, openSignatureFailedModal])
+  }, [application.eventBus, openSignatureFailedModal])
 
   useEffect(() => {
     if (isSignatureFailedModalOpen.current || !hasSignatureIssues) {

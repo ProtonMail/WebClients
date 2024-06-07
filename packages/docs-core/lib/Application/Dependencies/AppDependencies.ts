@@ -33,6 +33,7 @@ import { CreateComment } from '../../UseCase/CreateComment'
 import { CreateThread } from '../../UseCase/CreateThread'
 import { LoadThreads } from '../../UseCase/LoadThreads'
 import { WebsocketService } from '../../Services/Websockets/WebsocketService'
+import { VerifyMessages } from '../../UseCase/VerifyMessages'
 
 export class AppDependencies extends DependencyContainer {
   constructor(api: Api, user: UserModel, driveCompat: DriveCompat) {
@@ -87,11 +88,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DecryptCommit, () => {
-      return new DecryptCommit(
-        this.get<DecryptMessage>(App_TYPES.DecryptMessage),
-        this.get<VerifyCommit>(App_TYPES.VerifyCommit),
-        this.get<InternalEventBusInterface>(App_TYPES.EventBus),
-      )
+      return new DecryptCommit(this.get<DecryptMessage>(App_TYPES.DecryptMessage))
     })
 
     this.bind(App_TYPES.CreateEmptyDocumentForConversion, () => {
@@ -107,6 +104,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
+        this.get<VerifyCommit>(App_TYPES.VerifyCommit),
         this.get<GenerateManifestSignature>(App_TYPES.GenerateManifestSignature),
         this.get<SquashAlgorithm>(App_TYPES.SquashAlgorithm),
       )
@@ -121,7 +119,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.VerifyCommit, () => {
-      return new VerifyCommit(
+      return new VerifyCommit(this.get<VerifyMessages>(App_TYPES.VerifyMessages))
+    })
+
+    this.bind(App_TYPES.VerifyMessages, () => {
+      return new VerifyMessages(
         this.get<EncryptionService<EncryptionContext.RealtimeMessage>>(App_TYPES.RealtimeEncryptionService),
       )
     })
