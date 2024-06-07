@@ -23,6 +23,7 @@ enum CommonFeatureFlag {
 
 enum AccountFlag {
     PersistedState = 'PersistedState',
+    AIAssistantToggleKillSwitch = 'AIAssistantToggleKillSwitch',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',

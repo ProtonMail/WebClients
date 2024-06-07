@@ -24,7 +24,15 @@ export interface CycleMapping<T> {
 
 export type Pricing = CycleMapping<number>;
 
-export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier' | 'MaxIPs';
+export type MaxKeys =
+    | 'MaxDomains'
+    | 'MaxAddresses'
+    | 'MaxSpace'
+    | 'MaxMembers'
+    | 'MaxVPN'
+    | 'MaxTier'
+    | 'MaxIPs'
+    | 'MaxAI';
 
 export type Quantity = number;
 
@@ -51,6 +59,7 @@ export interface Plan {
     MaxMembers: number;
     MaxVPN: number;
     MaxTier: number;
+    MaxAI: number;
     Services: number;
     Features: number;
     Quantity: Quantity;

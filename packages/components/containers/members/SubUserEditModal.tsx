@@ -9,7 +9,7 @@ import {
     getMemberEditPayload,
     getPrivateAdminError,
 } from '@proton/account';
-import { Button, Card } from '@proton/atoms';
+import { Button, Card, Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -53,6 +53,7 @@ interface Props extends ModalProps<'form'> {
     allowStorageConfiguration?: boolean;
     allowVpnAccessConfiguration?: boolean;
     allowPrivateMemberConfiguration?: boolean;
+    allowAIAssistantConfiguration?: boolean;
     showAddressesSection?: boolean;
 }
 
@@ -61,6 +62,7 @@ const SubUserEditModal = ({
     allowStorageConfiguration,
     allowVpnAccessConfiguration,
     allowPrivateMemberConfiguration,
+    allowAIAssistantConfiguration,
     showAddressesSection,
     ...rest
 }: Props) => {
@@ -76,6 +78,11 @@ const SubUserEditModal = ({
     const memberKeyPacketPayload = useRef<MemberKeyPayload | null>(null);
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
+    // We want to keep AI enabled if all seats are taken but the user already has a seat
+    const disableAI = !allowAIAssistantConfiguration && !member.NumAI;
+    const { MaxAI = 0, UsedAI = 0 } = organization || {};
+    const assistantSeatRemaining = MaxAI > UsedAI;
+
     useEffect(() => {
         dispatch(getMemberAddresses({ member })).catch(noop);
     }, []);
@@ -86,6 +93,7 @@ const SubUserEditModal = ({
             storage: member.MaxSpace,
             vpn: !!member.MaxVPN,
             private: !!member.Private,
+            ai: !!member.NumAI,
             admin: member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
@@ -122,6 +130,7 @@ const SubUserEditModal = ({
                     name: initialModel.name !== model.name ? model.name : undefined,
                     storage: initialModel.storage !== model.storage ? model.storage : undefined,
                     vpn: hasVPN && initialModel.vpn !== model.vpn ? model.vpn : undefined,
+                    numAI: initialModel.ai !== model.ai ? model.ai : undefined,
                     private:
                         canMakePrivate && model.private && model.private !== initialModel.private ? true : undefined,
                     role: role !== null ? role : undefined,
@@ -275,53 +284,44 @@ const SubUserEditModal = ({
                         placeholder={NAME_PLACEHOLDER}
                         autoFocus
                     />
-                    {allowStorageConfiguration && (
-                        <MemberStorageSelector
-                            className="mb-5"
-                            value={model.storage}
-                            sizeUnit={storageSizeUnit}
-                            totalStorage={getTotalStorage(member, organization)}
-                            range={getStorageRange(member, organization)}
-                            onChange={(storage) => updatePartialModel({ storage })}
-                        />
-                    )}
 
                     {allowVpnAccessConfiguration && hasVPN ? (
-                        <div className="flex mb-5">
-                            <label className="text-semibold mr-4" htmlFor="vpn-toggle">
-                                {c('Label for new member').t`VPN connections`}
-                            </label>
+                        <div className="flex mb-6 items-center gap-2">
                             <Toggle
                                 id="vpn-toggle"
                                 checked={model.vpn}
                                 onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
                             />
+                            <label className="text-semibold" htmlFor="vpn-toggle">
+                                {c('Label for new member').t`VPN connections`}
+                            </label>
                         </div>
                     ) : null}
 
                     {allowPrivateMemberConfiguration && canMakePrivate && (
-                        <div className="flex mb-6">
-                            <label className="text-semibold mr-4" htmlFor="private-toggle">
-                                {c('Label for new member').t`Private`}
-                            </label>
+                        <div className="flex mb-6 items-center gap-2">
                             <Toggle
                                 id="private-toggle"
                                 checked={model.private}
                                 onChange={({ target }) => updatePartialModel({ private: target.checked })}
                             />
+                            <label className="text-semibold" htmlFor="private-toggle">
+                                {c('Label for new member').t`Private`}
+                            </label>
                         </div>
                     )}
+
                     {(canMakeAdmin || canRevokeAdmin) && (
-                        <div className="flex items-center mb-6">
-                            <label className="text-semibold mr-1" htmlFor="admin-toggle">
-                                {c('Label for new member').t`Admin`}
-                            </label>
-                            <Info className="mr-4" title={adminTooltipText} url={getKnowledgeBaseUrl('/user-roles')} />
+                        <div className="flex items-center mb-6 gap-2">
                             <Toggle
                                 id="admin-toggle"
                                 checked={model.admin}
                                 onChange={({ target }) => updatePartialModel({ admin: target.checked })}
                             />
+                            <label className="text-semibold mr-1" htmlFor="admin-toggle">
+                                {c('Label for new member').t`Admin`}
+                            </label>
+                            <Info title={adminTooltipText()} url={getKnowledgeBaseUrl('/user-roles')} />
                             {passwordlessMode &&
                                 model.private &&
                                 model.admin &&
@@ -332,6 +332,35 @@ const SubUserEditModal = ({
                                     </Tooltip>
                                 )}
                         </div>
+                    )}
+
+                    {allowAIAssistantConfiguration && (
+                        <div className="flex items-center gap-2 mb-6">
+                            <Toggle
+                                id="ai-assistant-toggle"
+                                checked={model.ai}
+                                disabled={disableAI}
+                                onChange={({ target }) => updatePartialModel({ ai: target.checked })}
+                            />
+                            <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                                {c('Info').t`Writing assistant`}
+                            </label>
+                            {!assistantSeatRemaining && (
+                                <Href target="_blank" href="/dashboard#assistant-toggle">{c('Link')
+                                    .t`Add to your subscription`}</Href>
+                            )}
+                        </div>
+                    )}
+
+                    {allowStorageConfiguration && (
+                        <MemberStorageSelector
+                            className="mb-5"
+                            value={model.storage}
+                            sizeUnit={storageSizeUnit}
+                            totalStorage={getTotalStorage(member, organization)}
+                            range={getStorageRange(member, organization)}
+                            onChange={(storage) => updatePartialModel({ storage })}
+                        />
                     )}
                     {showAddressesSection && (
                         <div>

@@ -6,7 +6,7 @@ import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { templateBuilder } from './message/messageSignature';
 import { toText } from './parserHtml';
 
-const SIGNATURE_PLACEHOLDER = '--protonSignature--';
+export const SIGNATURE_PLACEHOLDER = '--protonSignature--';
 
 const OPTIONS = {
     breaks: true,

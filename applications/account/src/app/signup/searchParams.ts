@@ -5,6 +5,7 @@ import {
     ADDON_NAMES,
     APPS,
     APP_NAMES,
+    AddonLimit,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
@@ -21,7 +22,6 @@ import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';
 
 import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
-import { addonLimit } from '../single-signup/planCustomizer/PlanCustomizer';
 import { SERVICES } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
@@ -187,7 +187,7 @@ export const getPlanIDsFromParams = (
         const clampedUsers = clamp(
             signupParameters.users,
             0,
-            usersAddon ? addonLimit[usersAddon.Name as ADDON_NAMES] : 0
+            usersAddon ? AddonLimit[usersAddon.Name as ADDON_NAMES] : 0
         );
         const amount = clampedUsers - plan.MaxMembers;
         if (usersAddon && amount > 0) {

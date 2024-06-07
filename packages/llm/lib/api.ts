@@ -1,4 +1,10 @@
 export const getAssistantModels = () => ({
-    url: 'core/v4/ai/models',
+    url: 'ai/v1/models',
     method: 'get',
+});
+
+export const sendAssistantRequest = (Prompt: string, DecodeLine = false) => ({
+    url: 'ai/v1/assist',
+    method: 'post',
+    data: { Prompt, DecodeLine },
 });

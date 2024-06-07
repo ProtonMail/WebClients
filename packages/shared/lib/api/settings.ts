@@ -1,5 +1,6 @@
 import { DENSITY, NEWSLETTER_SUBSCRIPTIONS } from '@proton/shared/lib/constants';
 import {
+    AI_ASSISTANT_ACCESS,
     DRAWER_VISIBILITY,
     SETTINGS_DATE_FORMAT,
     SETTINGS_LOG_AUTH_STATE,
@@ -272,4 +273,10 @@ export const disableBreachAlert = () => ({
     url: 'core/v4/settings/breachalerts',
     method: 'delete',
     data: {},
+});
+
+export const updateAIAssistant = (AIAssistantFlags: AI_ASSISTANT_ACCESS) => ({
+    url: 'core/v4/settings/ai-assistant-flags',
+    method: 'put',
+    data: { AIAssistantFlags },
 });

@@ -3,8 +3,9 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 interface Props {
     assistantResultRef: RefObject<HTMLDivElement>;
     inputSelectedText?: string;
+    onResetRequest?: () => void;
 }
-const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedText }: Props) => {
+const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedText, onResetRequest }: Props) => {
     // Selected text in the composer or assistant result that the user might want to refine
     const [selectedText, setSelectedText] = useState(inputSelectedText);
 
@@ -13,19 +14,22 @@ const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedTex
     const mouseDownRef = useRef(false);
 
     const handleSelectionChange = () => {
-        const selection = document.getSelection();
-        if (selection && assistantResultRef.current) {
-            // Selection can start before or end after the div containing the result
-            // We want to make sure the full selected text is inside the result container
-            const selectionInAssistant =
-                assistantResultRef.current.contains(selection.anchorNode) &&
-                assistantResultRef.current.contains(selection.focusNode);
-            if (selectionInAssistant) {
-                setSelectedText(selection.toString());
-                return;
+        setTimeout(() => {
+            const selection = document.getSelection();
+            if (selection && assistantResultRef.current) {
+                // Selection can start before or end after the div containing the result
+                // We want to make sure the full selected text is inside the result container
+                const selectionInAssistant =
+                    assistantResultRef.current.contains(selection.anchorNode) &&
+                    assistantResultRef.current.contains(selection.focusNode);
+                if (selectionInAssistant) {
+                    setSelectedText(selection.toString().trim());
+                    onResetRequest?.();
+                    return;
+                }
             }
-        }
-        setSelectedText('');
+            setSelectedText('');
+        }, 0);
     };
 
     const handleMouseDown = () => {

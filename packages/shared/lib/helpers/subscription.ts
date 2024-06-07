@@ -54,6 +54,16 @@ const {
     PASS_BUSINESS,
 } = PLANS;
 
+const {
+    MEMBER_SCRIBE_MAILPLUS,
+    MEMBER_SCRIBE_DRIVEPLUS,
+    MEMBER_SCRIBE_BUNDLE,
+    MEMBER_SCRIBE_PASS,
+    MEMBER_SCRIBE_VPN,
+    MEMBER_SCRIBE_VPN2024,
+    MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+} = ADDON_NAMES;
+
 type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
@@ -87,6 +97,18 @@ export const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS
     }
 
     return (subscription?.Plans || []).some(({ Name }) => Name === planName);
+};
+
+export const hasSomeAddOn = (subscription: MaybeFreeSubscription, addonName: ADDON_NAMES | ADDON_NAMES[]) => {
+    if (isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    if (Array.isArray(addonName)) {
+        return (subscription?.Plans || []).some(({ Name }) => addonName.includes(Name as ADDON_NAMES));
+    }
+
+    return (subscription?.Plans || []).some(({ Name }) => Name === addonName);
 };
 
 export const hasLifetime = (subscription: Subscription | undefined) => {
@@ -130,6 +152,21 @@ export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.P
 
 export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
     hasBundlePro(subscription) || hasBundlePro2024(subscription);
+
+// TODO add accounts from batch 3
+export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
+    hasSomeAddOn(subscription, [
+        MEMBER_SCRIBE_MAILPLUS,
+        MEMBER_SCRIBE_DRIVEPLUS,
+        MEMBER_SCRIBE_BUNDLE,
+        MEMBER_SCRIBE_PASS,
+        MEMBER_SCRIBE_VPN,
+        MEMBER_SCRIBE_VPN2024,
+        MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+    ]);
+
+export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>
+    hasFamily(subscription) || hasBundle(subscription) || hasNewVisionary(subscription);
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
@@ -420,6 +457,7 @@ interface PricingForCycles {
 export interface AggregatedPricing {
     all: PricingForCycles;
     defaultMonthlyPrice: number;
+    defaultMonthlyPriceWithoutAddons: number;
     /**
      * That's pricing that counts only aggregate of cost for members. That's useful for rendering of
      * "per user per month" pricing.
@@ -592,6 +630,9 @@ export const getPricingFromPlanIDs = (
                 allCycles.forEach((cycle) => {
                     add(acc.plans, cycle);
                 });
+
+                acc.defaultMonthlyPriceWithoutAddons +=
+                    quantity * (getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0);
             }
 
             const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
@@ -608,6 +649,7 @@ export const getPricingFromPlanIDs = (
         },
         {
             defaultMonthlyPrice: 0,
+            defaultMonthlyPriceWithoutAddons: 0,
             all: { ...initial },
             members: {
                 ...initial,
@@ -629,10 +671,20 @@ export interface TotalPricing {
     perUserPerMonth: number;
 }
 
-export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): TotalPricing => {
-    const total = pricing.all[cycle];
-    const totalPerMonth = pricing.all[cycle] / cycle;
-    const totalNoDiscount = pricing.defaultMonthlyPrice * cycle;
+export type PricingMode = 'all' | 'plans';
+
+export const getTotalFromPricing = (
+    pricing: AggregatedPricing,
+    cycle: CYCLE,
+    mode: PricingMode = 'all'
+): TotalPricing => {
+    const { defaultMonthlyPrice, defaultMonthlyPriceWithoutAddons } = pricing;
+
+    const total = pricing[mode][cycle];
+    const totalPerMonth = pricing[mode][cycle] / cycle;
+
+    const price = mode === 'all' ? defaultMonthlyPrice : defaultMonthlyPriceWithoutAddons;
+    const totalNoDiscount = price * cycle;
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
     const perUserPerMonth = Math.floor(pricing.members[cycle] / cycle / pricing.membersNumber);
 
@@ -645,6 +697,15 @@ export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): T
         perUserPerMonth,
     };
 };
+
+export function getTotals(planIDs: PlanIDs, plansMap: PlansMap, priceType?: PriceType, mode?: PricingMode) {
+    const pricing = getPricingFromPlanIDs(planIDs, plansMap, priceType);
+
+    return allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
+        acc[cycle] = getTotalFromPricing(pricing, cycle, mode);
+        return acc;
+    }, {} as any);
+}
 
 interface OfferResult {
     pricing: Pricing;

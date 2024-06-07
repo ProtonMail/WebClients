@@ -36,6 +36,7 @@ export const subscriptionDefaultResponse: {
                 MaxMembers: 1,
                 MaxVPN: 10,
                 MaxTier: 2,
+                MaxAI: 0,
                 Services: 7,
                 Features: 1,
                 State: 1,

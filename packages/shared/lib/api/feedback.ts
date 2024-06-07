@@ -11,3 +11,38 @@ export const sendFeedback = ({
     method: 'post',
     data: { Score, Feedback, FeedbackType },
 });
+
+export interface AssistantFeedback {
+    Category: string;
+    Sentiment: 'Positive' | 'Negative' | 'Neutral';
+    Environment: 'Local' | 'Remote';
+    ModelID?: string;
+    Component: 'Mail';
+    Body: string;
+    Prompt?: string;
+    ModelOutput?: string;
+}
+
+export const sendAssistantFeedback = ({
+    Category,
+    Sentiment,
+    Environment,
+    ModelID,
+    Body,
+    Prompt,
+    ModelOutput,
+    Component,
+}: AssistantFeedback) => ({
+    url: `ai/v1/feedback`,
+    method: 'post',
+    data: {
+        Category,
+        Sentiment,
+        Environment,
+        ModelID,
+        Body,
+        Prompt,
+        ModelOutput,
+        Component,
+    },
+});

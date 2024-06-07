@@ -38,6 +38,7 @@ export const getAccountAppRoutes = ({
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
     isNewCancellationFlowExtended,
+    assistantKillSwitch,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -51,6 +52,7 @@ export const getAccountAppRoutes = ({
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
     isNewCancellationFlowExtended: boolean;
+    assistantKillSwitch: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -94,6 +96,10 @@ export const getAccountAppRoutes = ({
                         text: hasSplitStorage ? c('Title').t`Your plan` : undefined,
                         id: 'your-plan',
                         available: canPay,
+                    },
+                    {
+                        id: 'assistant-toggle',
+                        available: !assistantKillSwitch,
                     },
                     {
                         text: c('Title').t`Your subscriptions`,

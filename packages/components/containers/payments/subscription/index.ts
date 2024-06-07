@@ -7,6 +7,7 @@ export { default as SubscriptionModalProvider } from './SubscriptionModalProvide
 export { default as UpgradeVpnSection } from './UpgradeVpnSection';
 export { default as YourPlanSection } from './YourPlanSection';
 export { default as YourStorageSection } from './YourStorageSection';
+export * from './assistant';
 export * from './b2cCancellationFlow';
 export { default as CancelB2bSubscriptionSection } from './cancelB2bSubscription/CancelB2bSubscriptionSection';
 export { CancelSubscriptionSection } from './cancelSubscription';

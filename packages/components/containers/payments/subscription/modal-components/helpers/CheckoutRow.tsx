@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { EllipsisLoader, Price } from '../../../../components';
+import { EllipsisLoader, Price } from '../../../../../components';
 
 export interface Props {
     title: ReactNode;
@@ -40,9 +40,7 @@ const CheckoutRow = ({
     }
     return (
         <>
-            <div
-                className={clsx(['flex flex-nowrap justify-space-between', !suffixNextLine && 'mb-4', className])}
-            >
+            <div className={clsx(['flex flex-nowrap justify-space-between', !suffixNextLine && 'mb-4', className])}>
                 <div className="pr-2">{title}</div>
                 {loading ? (
                     <EllipsisLoader />
