@@ -14,10 +14,6 @@ import { ErrorInfo } from 'react'
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
   constructor(private readonly docOrchestrator: EditorOrchestratorInterface) {}
 
-  async onEditorReady(): Promise<void> {
-    this.docOrchestrator.onEditorReady()
-  }
-
   async editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,

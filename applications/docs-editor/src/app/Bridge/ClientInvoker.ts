@@ -32,10 +32,6 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('editorRequestsPropagationOfUpdate', [message, originator, debugSource])
   }
 
-  async onEditorReady(): Promise<void> {
-    return this.invokeClientMethod('onEditorReady', [])
-  }
-
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {
     return this.invokeClientMethod('getTypersExcludingSelf', [threadId])
   }
