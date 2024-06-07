@@ -208,6 +208,7 @@ export function LinkInfoEditor({
             <Icon name="info-circle" className="flex-shrink-0" />
             <Input
               aria-label={c('Label').t`Link text`}
+              placeholder={c('Placeholder').t`Text`}
               value={text}
               onChange={(event) => {
                 setText(event.target.value)
@@ -220,6 +221,7 @@ export function LinkInfoEditor({
           <Input
             value={url}
             aria-label={c('Label').t`Link URL`}
+            placeholder={c('Placeholder').t`Paste link`}
             onChange={(event) => {
               setURL(event.target.value)
             }}
