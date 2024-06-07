@@ -37,6 +37,7 @@ import { DefaultFont } from './Shared/Fonts'
 import { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { sendErrorMessage } from './Utils/errorMessage'
+import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
 
 const TypingBotEnabled = false
 
@@ -118,6 +119,7 @@ export function Editor({
         <TablePlugin hasCellBackgroundColor hasCellMerge hasTabHandler />
         <TableActionMenuPlugin />
         <TableCellResizerPlugin />
+        <TabIndentationPlugin />
         <LinkPlugin />
         {!isViewOnly && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
