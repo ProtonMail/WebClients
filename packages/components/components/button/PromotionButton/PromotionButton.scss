@@ -51,4 +51,44 @@
 			--color-stop-2: var(--upgrade-color-stop-2);
 		}
 	}
+
+	// temporary variants
+	&--red {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(86.26deg, #cc2d62 0%, #f23574 100%);
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
+	}
+
+	&--yellow {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(263.66deg, #ffd600 0%, #f2a842 100%);
+				border: 0;
+			}
+		}
+	}
+
+	&--pinkblue {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(86.26deg, #da30ea 0%, #6d4aff 51.44%, #4ab8f6 100%);
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
+	}
 }
