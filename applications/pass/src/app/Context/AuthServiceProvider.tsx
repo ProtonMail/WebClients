@@ -28,7 +28,7 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
-import { clientOffline } from '@proton/pass/lib/client';
+import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -264,6 +264,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onUnlocked: async (mode, _, localID) => {
+                if (clientBooted(client.current.state.status)) return;
+
                 const validSession = isValidSession(authStore.getSession());
 
                 if (mode === LockMode.SESSION) {
