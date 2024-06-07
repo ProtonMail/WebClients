@@ -473,11 +473,20 @@ export default function DocumentEditorToolbar() {
         <SimpleDropdown
           as={Button}
           shape="ghost"
-          size="small"
           type="button"
           color="norm"
-          className="color-norm text-sm"
-          content={<>{blockTypeToBlockName[blockType]}</>}
+          className="color-norm text-left text-sm"
+          content={
+            <span
+              className="w-custom line-clamp-1 break-all"
+              style={{
+                '--w-custom': '7ch',
+                color: 'var(--text-norm)',
+              }}
+            >
+              {blockTypeToBlockName[blockType]}
+            </span>
+          }
           disabled={!isEditable}
         >
           <DropdownMenu>
@@ -491,11 +500,20 @@ export default function DocumentEditorToolbar() {
         <SimpleDropdown
           as={Button}
           shape="ghost"
-          size="small"
           type="button"
           color="norm"
-          className="color-norm text-sm"
-          content={<>{fontFamilyLabel}</>}
+          className="color-norm text-left text-sm"
+          content={
+            <span
+              className="w-custom line-clamp-1 break-all"
+              style={{
+                '--w-custom': '7ch',
+                color: 'var(--text-norm)',
+              }}
+            >
+              {fontFamilyLabel}
+            </span>
+          }
           disabled={!isEditable}
         >
           <DropdownMenu>
@@ -594,16 +612,6 @@ export default function DocumentEditorToolbar() {
           }}
         >
           <UnderlineIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Link`}
-          disabled={!isEditable}
-          active={isLink}
-          onClick={() => {
-            activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
-          }}
-        >
-          <Icon name="link" className="h-4 w-4 fill-current" />
         </ToolbarButton>
         <ToolbarSeparator />
         <ToolbarButton
@@ -719,6 +727,16 @@ export default function DocumentEditorToolbar() {
             }
           }}
         />
+        <ToolbarButton
+          label={c('Action').t`Link`}
+          disabled={!isEditable}
+          active={isLink}
+          onClick={() => {
+            activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
+          }}
+        >
+          <Icon name="link" className="h-4 w-4 fill-current" />
+        </ToolbarButton>
         <ToolbarButton
           label={c('Action').t`Insert image`}
           disabled={!isEditable}
