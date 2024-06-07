@@ -1,11 +1,12 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
-import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
+import { loadURL, reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
+import { getConfig } from "../utils/config";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -64,7 +65,7 @@ export const handleIPCCalls = () => {
                 showEndOfTrial();
                 break;
             case "changeView":
-                showView(payload);
+                loadURL(payload, getConfig().url[payload]);
                 break;
             case "showNotification":
                 showNotification(payload);
