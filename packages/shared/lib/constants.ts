@@ -617,6 +617,9 @@ export enum SHARED_UPSELL_PATHS {
     SENTINEL = 'sentinel',
     TRIAL_WILL_END = 'trial-will-end',
     TOP_NAVIGATION_BAR = 'top-navigation-bar',
+    TOP_NAVIGATION_BAR_RED = 'top-navigation-bar-red',
+    TOP_NAVIGATION_BAR_YELLOW = 'top-navigation-bar-yellow',
+    TOP_NAVIGATION_BAR_PINKBLUE = 'top-navigation-bar-pinkblue',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {
