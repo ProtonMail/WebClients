@@ -1,12 +1,8 @@
 import { DecryptedMessage } from '../../Models/DecryptedMessage'
 
 export enum DocControllerEvent {
-  CommitVerificationFailed = 'CommitVerificationFailed',
   RealtimeCommentMessageReceived = 'RealtimeCommentMessageReceived',
-}
-
-export type CommitVerificationFailedPayload = {
-  commitId: string
+  SquashVerificationObjectionDecisionRequired = 'SquashVerificationObjectionDecisionRequired',
 }
 
 export type RealtimeCommentMessageReceivedPayload = {

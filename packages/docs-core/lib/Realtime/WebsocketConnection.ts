@@ -16,11 +16,12 @@ import { WebsocketConnectionInterface, BroadcastSources } from '@proton/docs-sha
 import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
+import { isDev } from '../Util/isDevOrBlack'
 
 const DebugDisableSockets = false
 
 const DebugConnection = {
-  enabled: false,
+  enabled: isDev() && false,
   url: 'ws://localhost:4000/websockets',
 }
 
