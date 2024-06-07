@@ -41,10 +41,10 @@ export function FloatingAddCommentButton({
   }, [anchorKey, editor, updatePosition])
 
   return (
-    <div className="absolute z-10 rounded border border-[--border-weak] bg-[--background-norm]" ref={boxRef}>
+    <div className="shadow-raised border-weak bg-norm absolute z-10 rounded-lg border p-0.5" ref={boxRef}>
       <button
         aria-label="Add comment"
-        className="flex cursor-pointer items-center justify-center rounded border-0 bg-none p-2 hover:bg-[--background-strong]"
+        className="flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]"
         onClick={onAddComment}
       >
         <AddCommentIcon className="h-4 w-4 fill-current" />
