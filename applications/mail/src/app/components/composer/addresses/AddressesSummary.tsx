@@ -64,9 +64,7 @@ const AddressesSummary = ({
                     role="button"
                     tabIndex={0}
                 >
-                    {recipients.length === 0 ? (
-                        <span className="placeholder">{c('Placeholder').t`Email address`}</span>
-                    ) : null}
+                    {recipients.length === 0 ? <span className="placeholder">{c('Placeholder').t`To`}</span> : null}
                     {recipientTypes.map((type) => {
                         const recipients: Recipient[] = composer.recipients[type] || [];
                         if (recipients.length === 0) {

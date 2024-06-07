@@ -4,6 +4,10 @@
 	// will need to taxonomise, left as exception ATM
 	--special-color: #d132ea;
 
+	&-special-color {
+		color: var(--special-color);
+	}
+
 	&-container {
 		inset-inline: 0;
 		padding-inline: 1em 1em;
@@ -13,7 +17,7 @@
 
 		// need to push the composer content when collapsed
 		+ .composer-body-container .editor-wrapper {
-			margin-block-start: 5em; // move it from good size
+			margin-block-start: 4.2em; // move it from good size (includes room for status)
 		}
 
 		&--expanded {
@@ -27,8 +31,8 @@
 		}
 
 		+ .composer-body-container .editor-textarea {
-			margin-block-start: 5em; // move it from good size
-			block-size: calc(100% - 5em);
+			margin-block-start: 4.2em; // move it from good size (includes room for status)
+			block-size: calc(100% - 4.2em);
 		}
 	}
 
@@ -36,6 +40,11 @@
 	block-size: 95%;
 	padding-inline: 1em;
 	padding-block: 0;
+
+	// If hint is empty in field, add some margin to generated content
+	&:has(.composer-assistant-hint:empty) .text-pre-line {
+		padding-block-start: 0.5em;
+	}
 
 	&-input {
 		color: var(--text-hint);
@@ -56,13 +65,18 @@
 		min-block-size: 2.2em; // magic value to avoid jumps, because pause button is taller than some others
 		margin-block-start: 1px;
 
-		/* &:empty {
+		&:empty {
 			min-block-size: 0; // to see if we keep it
-		} */
+		}
 	}
 
-	&-special-color {
-		color: var(--special-color);
+	&-right-icons-container {
+		min-block-size: 2em;
+		max-block-size: 2em;
+	}
+
+	&-refine-button {
+		--padding-inline: #{em(8)};
 	}
 
 	&-refine-popover {

@@ -1,17 +1,11 @@
-import { ReactNode, useMemo } from 'react';
+import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { PaymentMethodStatusExtended } from '@proton/components/payments/core';
-import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import {
-    AddonDescription,
-    Included,
-    RequiredCheckResponse,
-    getCheckout,
-    getDiscountText,
-} from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { RequiredCheckResponse, getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
@@ -24,16 +18,7 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import {
-    Badge,
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-    Info,
-    Price,
-} from '../../../../components';
+import { Badge, Info } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
@@ -41,98 +26,13 @@ import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { OnBillingAddressChange, WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../../helper';
 import { CheckoutModifiers } from '../useCheckoutModifiers';
-import CheckoutRow from './CheckoutRow';
-import { getWhatsIncluded } from './included';
+import { AddonTooltip } from './helpers/AddonTooltip';
+import { BilledText } from './helpers/BilledText';
+import CheckoutRow from './helpers/CheckoutRow';
+import { PlanDescription } from './helpers/PlanDescription';
+import { getWhatsIncluded } from './helpers/included';
 
-const PlanDescription = ({ list }: { list: Included[] }) => {
-    return (
-        <div className="mt-8">
-            <hr />
-            <Collapsible>
-                <CollapsibleHeader
-                    className="text-semibold"
-                    suffix={
-                        <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
-                        </CollapsibleHeaderIconButton>
-                    }
-                >
-                    {c('Action').t`What do I get?`}
-                </CollapsibleHeader>
-                <CollapsibleContent>
-                    {list.map((item) => {
-                        if (item.type === 'value') {
-                            return (
-                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-auto text-ellipsis mr-4">{item.text}</div>
-                                    <div className="flex-auto shrink-0 text-right">{item.value}</div>
-                                </div>
-                            );
-                        }
-                        if (item.type === 'text') {
-                            return (
-                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-auto text-ellipsis">{item.text}</div>
-                                </div>
-                            );
-                        }
-                        return null;
-                    })}
-                </CollapsibleContent>
-            </Collapsible>
-        </div>
-    );
-};
-
-const BilledText = ({ cycle }: { cycle: Cycle }) => {
-    let text: string = useMemo(() => {
-        switch (cycle) {
-            case CYCLE.TWO_YEARS:
-                return c('Subscription').t`Billed every 2 years`;
-            case CYCLE.YEARLY:
-                return c('Subscription').t`Billed yearly`;
-            case CYCLE.MONTHLY:
-                return c('Subscription').t`Billed monthly`;
-            case CYCLE.THREE:
-                return c('Subscription').t`Billed for 3 months`;
-            case CYCLE.FIFTEEN:
-                return c('Subscription').t`Billed for 15 months`;
-            case CYCLE.EIGHTEEN:
-                return c('Subscription').t`Billed for 18 months`;
-            case CYCLE.THIRTY:
-                return c('Subscription').t`Billed for 30 months`;
-        }
-    }, [cycle]);
-
-    return <span className="color-weak text-sm">{text}</span>;
-};
-
-const AddonTooltip = ({
-    addon,
-    pricePerAddon,
-    currency,
-}: {
-    addon: AddonDescription;
-    pricePerAddon: number;
-    currency: Currency;
-}) => {
-    const price = <Price currency={currency}>{pricePerAddon}</Price>;
-
-    let text: ReactNode;
-    if (isDomainAddon(addon.name)) {
-        text = c('Addon').jt`${price} per domain`;
-    } else if (isMemberAddon(addon.name)) {
-        text = c('Addon').jt`${price} per user`;
-    } else if (isIpAddon(addon.name)) {
-        text = c('Addon').jt`${price} per dedicated server`;
-    } else {
-        return null;
-    }
-
-    return <Info title={text} className="ml-2" />;
-};
-
-interface BaseProps {
+type Props = {
     freePlan: FreePlanDefault;
     submit?: ReactNode;
     loading?: boolean;
@@ -153,9 +53,7 @@ interface BaseProps {
     showTaxCountry?: boolean;
     statusExtended?: PaymentMethodStatusExtended;
     onBillingAddressChange?: OnBillingAddressChange;
-}
-
-type Props = BaseProps & CheckoutModifiers;
+} & CheckoutModifiers;
 
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
@@ -173,7 +71,7 @@ const SubscriptionCheckout = ({
     subscription,
     nextSubscriptionStart,
     showDiscount = true,
-    enableDetailedAddons = false,
+    enableDetailedAddons = true,
     showPlanDescription = true,
     isScheduledSubscription,
     isProration,
@@ -192,12 +90,13 @@ const SubscriptionCheckout = ({
     const {
         planTitle,
         usersTitle,
-        discountPercent,
         withDiscountPerCycle,
         addons,
         membersPerMonth,
         withDiscountPerMonth,
         addonsPerMonth,
+        memberDiscountPercent,
+        addonsDiscountPercent,
     } = checkout;
 
     if (!checkResult) {
@@ -230,6 +129,8 @@ const SubscriptionCheckout = ({
     })();
 
     const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
+
+    const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
     return (
         <Checkout
@@ -277,16 +178,16 @@ const SubscriptionCheckout = ({
                 title={
                     <>
                         {usersTitle}
-                        {showDiscount && discountPercent > 0 && (
+                        {showDiscount && memberDiscountPercent > 0 && (
                             <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
-                                -{discountPercent}%
+                                -{memberDiscountPercent}%
                             </Badge>
                         )}
                     </>
                 }
                 amount={membersAmount}
                 currency={currency}
-                suffix={<span className="color-weak text-sm">{c('Suffix').t`/month`}</span>}
+                suffix={perMonthSuffix}
                 suffixNextLine={enableDetailedAddons}
                 loading={loading}
                 data-testid="price"
@@ -304,11 +205,22 @@ const SubscriptionCheckout = ({
                                           pricePerAddon={(addon.pricing[cycle] || 0) / cycle}
                                           currency={currency}
                                       />
+                                      {showDiscount && addonsDiscountPercent > 0 && (
+                                          <Badge
+                                              type="success"
+                                              tooltip={getDiscountText()}
+                                              className="ml-2 text-semibold"
+                                          >
+                                              -{addonsDiscountPercent}%
+                                          </Badge>
+                                      )}
                                   </>
                               }
                               amount={(addon.quantity * (addon.pricing[cycle] || 0)) / cycle}
                               currency={currency}
                               loading={loading}
+                              suffix={perMonthSuffix}
+                              suffixNextLine={true}
                           />
                       );
                   })

@@ -1,9 +1,7 @@
-import { ADDON_NAMES, GIGA } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, AddonKey, AddonLimit, GIGA } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { Cycle, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { AddonKey, addonLimit } from './PlanCustomizer';
 
 export default function getAddonsPricing({
     currentPlan,
@@ -57,7 +55,7 @@ export default function getAddonsPricing({
                 min = currentPlan[addonMaxKey] ?? 0;
             }
 
-            const max = addonLimit[addonNameKey] * addonMultiplier;
+            const max = AddonLimit[addonNameKey] * addonMultiplier;
             // Member addon comes with MaxSpace + MaxAddresses
             const value = isSupported
                 ? min + quantity * addonMultiplier

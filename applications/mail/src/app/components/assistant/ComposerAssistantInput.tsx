@@ -1,27 +1,66 @@
-import { KeyboardEvent, MouseEvent, useMemo, useRef, useState } from 'react';
+import { KeyboardEvent, MouseEvent, MutableRefObject, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, InputFieldTwo, Progress, Tooltip, useModalState } from '@proton/components/components';
+import {
+    ComposerAssistantTrialEndedUpsellModal,
+    Dropdown,
+    DropdownButton,
+    DropdownMenuButton,
+    Icon,
+    InputFieldTwo,
+    Progress,
+    Tooltip,
+    useModalState,
+    useModalStateObject,
+    usePopperAnchor,
+} from '@proton/components/components';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { ASSISTANT_FEATURE_NAME } from '@proton/llm/lib';
+import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
+import {
+    Action,
+    ActionType,
+    PartialRefineAction,
+    RefineActionType,
+    RefineLocation,
+    isPredefinedRefineActionType,
+    isRefineActionType,
+} from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
+import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
+import { ASSISTANT_INPUT_ID } from 'proton-mail/constants';
+import { removeLineBreaks } from 'proton-mail/helpers/string';
+import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
+
+import { ReplacementStyle } from './ComposerAssistant';
 import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
-import ComposerAssistantInitialSetupSpotlight from './spotlights/ComposerAssistantInitialSetupSpotlight';
+import ComposerAssistantInitialSetupSpotlight, {
+    ComposerAssistantInitialSetupSpotlightRef,
+} from './spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
-    onGenerateResult: (fulltext: string) => void;
+    onGenerateResult: (fulltext: string, prompt: string) => void;
     assistantID: string;
     onContentChange: () => void;
     isAssistantInitialSetup?: boolean;
-    onRefine: (prompt: string) => Promise<void>;
+    onRefine: (partialAction: PartialRefineAction) => Promise<void>;
     hasSelection: boolean;
+    expanded: boolean;
+    canUseRefineActions: boolean;
+    assistantResult?: string;
+    onClickRefine: () => void;
+    onResetSelection: () => void;
+    resetRequestRef: MutableRefObject<() => void>;
+    getContentBeforeBlockquote: () => string;
+    setReplacementStyle: (action: ReplacementStyle) => void;
+    setInnerModal: (innerModal: ComposerInnerModalStates) => void;
 }
 
 const ComposerAssistantInput = ({
@@ -31,15 +70,33 @@ const ComposerAssistantInput = ({
     onRefine,
     isAssistantInitialSetup,
     hasSelection,
+    expanded,
+    canUseRefineActions,
+    assistantResult,
+    onClickRefine,
+    onResetSelection,
+    resetRequestRef,
+    getContentBeforeBlockquote,
+    setReplacementStyle,
+    setInnerModal,
 }: Props) => {
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
+    const [inputOnFocus, setInputOnFocus] = useState(false);
+    const [{ AIAssistantFlags }] = useUserSettings();
+    const [isRefiningText, setIsRefiningText] = useState(false);
 
-    // Show a spotlight the first time the user is viewing the assistant (when clicking on the input)
-    const [showSetupSpotlight, setShowSetupSpotlight] = useState(false);
+    resetRequestRef.current = () => setAssistantRequest('');
+
+    const composerAssistantInitialSetupSpotlightRef = useRef<ComposerAssistantInitialSetupSpotlightRef>(null);
     const spotlightAnchorRef = useRef<HTMLDivElement>(null);
+    const upsellModal = useModalStateObject();
 
     const [resumeDownloadProps, setResumeDownloadModalOpen] = useModalState();
+
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const { sendPauseDownloadAssistantReport } = useAssistantTelemetry();
 
     const {
         isModelDownloading,
@@ -57,37 +114,165 @@ const ComposerAssistantInput = ({
         initAssistant,
     } = useAssistant(assistantID);
 
-    const refineResult = async () => {
-        await onRefine(assistantRequest);
-    };
+    const hasDownloadError = useMemo(() => {
+        return !!error && !isModelDownloaded;
+    }, [isModelDownloaded, error]);
 
-    const startGeneratingResult = async () => {
+    const { trialStatus } = useAssistantSubscriptionStatus();
+
+    function getEmailContentsForRefinement() {
+        const composerContent = removeLineBreaks(getContentBeforeBlockquote());
+        if (expanded && assistantResult) {
+            return assistantResult;
+        } else if (composerContent) {
+            return composerContent;
+        }
+    }
+
+    function buildAction(actionType: ActionType): Action | undefined {
+        if (actionType === 'writeFullEmail') {
+            return {
+                type: 'writeFullEmail',
+                prompt: assistantRequest,
+            };
+        }
+
+        const fullEmail = getEmailContentsForRefinement();
+        if (!fullEmail) {
+            return undefined;
+        }
+
+        const refineLocation: RefineLocation = {
+            fullEmail,
+            idxStart: 0,
+            idxEnd: fullEmail.length,
+        };
+
+        // Predefined refine (shorten, proofread etc)
+        if (isPredefinedRefineActionType(actionType)) {
+            return {
+                type: actionType,
+                ...refineLocation,
+            };
+        }
+
+        // Custom refine (with user prompt)
+        return {
+            type: actionType,
+            prompt: assistantRequest,
+            ...refineLocation,
+        };
+    }
+
+    async function refineWithSelection(actionType: RefineActionType) {
+        let partialAction: PartialRefineAction;
+        if (isPredefinedRefineActionType(actionType)) {
+            partialAction = {
+                type: actionType,
+            };
+        } else {
+            partialAction = {
+                type: actionType,
+                prompt: assistantRequest,
+            };
+        }
+
+        await onRefine(partialAction); // refine location (idxStart/idxEnd) is set later
+    }
+
+    function detectReplacementStyle(actionType: ActionType, hasGeneratedText: boolean): ReplacementStyle | undefined {
+        const isRefine = isRefineActionType(actionType);
+        // @formatter:off
+        // prettier-ignore
+        return (
+            ( hasSelection && !assistantResult              ) ? 'refineSelectedText' :
+            (!hasSelection && !hasGeneratedText &&  isRefine) ? 'refineFullMessage' :
+            (!hasSelection && !assistantResult  && !isRefine) ? 'generateFullMessage' :
+            undefined
+        )
+        // @formatter:on
+    }
+
+    const startGeneratingResult = async (actionType?: ActionType) => {
         // Warn the user that we need the download to be completed before generating a result
         if (downloadPaused) {
             setResumeDownloadModalOpen(true);
-        } else {
-            if (hasSelection) {
-                // Refine some part of the editor content
-                await refineResult();
-            } else {
-                // Generate result from a prompt
-                await generateResult({
-                    action: {
-                        type: 'writeFullEmail',
-                        prompt: assistantRequest,
-                    },
-                    callback: onGenerateResult,
-                });
-            }
+            return;
         }
+
+        // Stop if trial ended
+        if (trialStatus === 'trial-ended') {
+            upsellModal.openModal(true);
+            return;
+        }
+
+        // Unselect text (may take effect later, due to useState?)
+        onResetSelection();
+
+        // If actionType is undefined, it means the we're being called with a user request
+        // (user has typed stuff the AI input field), but caller doesn't know if this
+        // has to be applied to full message generation or refinement of a specific part.
+        const hasGeneratedText = Boolean(expanded && assistantResult);
+        if (!actionType) {
+            actionType = hasGeneratedText && hasSelection ? 'customRefine' : 'writeFullEmail';
+        }
+
+        // Figure out which replacement style must be used to insert the new content
+        const replacementStyle = detectReplacementStyle(actionType, hasGeneratedText);
+        if (replacementStyle) {
+            setReplacementStyle(replacementStyle);
+        }
+
+        const isRefineAction = isRefineActionType(actionType);
+
+        if (isRefineAction) {
+            setIsRefiningText(true);
+        }
+
+        // In case some text is selected, this is a refine action and
+        // we let the composer input figure out idxStart / idxEnd
+        if (hasSelection && isRefineAction) {
+            await refineWithSelection(actionType as RefineActionType);
+            setIsRefiningText(false);
+            return;
+        }
+
+        // Empty the user request field after they typed Enter
+        if (isRefineActionType(actionType)) {
+            setAssistantRequest('');
+        }
+
+        // No text is selected. It can be either full email generation, or a refine action.
+        // Prepare the action and fire the LLM with it.
+        const action = buildAction(actionType);
+        if (action) {
+            await generateResult({
+                action,
+                callback: (res) => onGenerateResult(res, assistantRequest),
+            });
+        }
+
+        setIsRefiningText(false);
     };
 
-    const handleGenieKeyDown = async (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    const handleGenerateSubmit = async () => {
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+            setInnerModal(ComposerInnerModalStates.AssistantSettings);
+            return;
+        }
+
+        await startGeneratingResult(undefined);
+    };
+
+    const handleKeyDown = async (event: KeyboardEvent<HTMLTextAreaElement>) => {
+        composerAssistantInitialSetupSpotlightRef.current?.hideSpotlight();
+
         // Block the submit action when
         // - A generation is going on in the current input
         // - There is no prompt in the input
         if (event.key === 'Enter' && !event.shiftKey && !isGeneratingResult && assistantRequest !== '') {
-            await startGeneratingResult();
+            event.preventDefault();
+            await handleGenerateSubmit();
         }
     };
 
@@ -129,20 +314,28 @@ const ComposerAssistantInput = ({
     }, [isModelDownloading, isModelLoadingOnGPU, downloadReceivedBytes, downloadModelSize, error, downloadPaused]);
 
     const handlePauseDownload = () => {
-        cancelDownloadModel();
+        sendPauseDownloadAssistantReport();
+        cancelDownloadModel?.();
     };
 
     const handleResumeDownload = () => {
-        resumeDownloadModel();
+        resumeDownloadModel?.();
     };
 
     const handleClickOnInput = (e: MouseEvent) => {
         e.stopPropagation(); // TODO REMOVE?
+
+        // If user hasn't set the assistant yet, invite him to do so
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+            setInnerModal(ComposerInnerModalStates.AssistantSettings);
+            return;
+        }
+
         // The first time the user is opening the composer, the assistant will be opened by default to show the feature
         // Then when the user clicks on the input, we will show a spotlight and start the model init (download + load on GPU)
-        if (isAssistantInitialSetup) {
-            initAssistant();
-            setShowSetupSpotlight(true);
+        if (isAssistantInitialSetup && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+            initAssistant?.();
+            composerAssistantInitialSetupSpotlightRef.current?.showSpotlight();
         }
 
         // Reset the input content when the user wants to refine text and clicks on the input, so that he can add a new prompt
@@ -153,77 +346,242 @@ const ComposerAssistantInput = ({
 
     const getLeftIcon = () => {
         if (isGeneratingResult) {
-            return <img src={generatingLoader} alt="" width={20} />;
+            return <img src={generatingLoader} alt="" width={20} className="mt-1" />;
+        }
+        if (hasSelection) {
+            return (
+                <Icon
+                    name="text-quote-filled"
+                    className="composer-assistant-special-color"
+                    size={5}
+                    alt={c('Info').t`You selected some content:`}
+                />
+            );
         }
         return <Icon name="pen-sparks" size={5} className="composer-assistant-special-color" />;
     };
 
+    /** Show refine actions when
+     *  - Not generating a result
+     *  - Not downloading the model
+     *  - Not loading the model on the GPU
+     *  - Some text is selected or present in the editor or generated text present in the assistant (canUseRefineActions)
+     *  - The input is not on focus
+     */
+    const canShowRefineButtons = useMemo(() => {
+        return (
+            !isGeneratingResult &&
+            !isModelDownloading &&
+            !isModelLoadingOnGPU &&
+            !downloadPaused &&
+            canUseRefineActions &&
+            !inputOnFocus &&
+            !hasDownloadError
+        );
+    }, [
+        isGeneratingResult,
+        isModelDownloading,
+        isModelLoadingOnGPU,
+        downloadPaused,
+        canUseRefineActions,
+        inputOnFocus,
+        hasDownloadError,
+    ]);
+
     const getRightButton = () => {
         if (isGeneratingResult) {
+            if (inputOnFocus) {
+                setInputOnFocus(false);
+            }
+
             return (
-                <Tooltip title={c('loc_nightly_assistant').t`Stop generating result`}>
+                <Tooltip title={c('Action').t`Stop generating result`}>
                     <Button
                         icon
                         shape="ghost"
                         size="small"
+                        pill
                         disabled={!isGeneratingResult}
                         onClick={cancelRunningAction}
-                        className="mb-auto"
+                        className="mb-auto padding-custom"
+                        style={{ padding: '0.0625rem' }} // 1px to get 28px button
                     >
-                        <Icon name="stop" alt={c('loc_nightly_assistant').t`Stop generating result`} />
+                        <Icon name="stop" size={6} alt={c('Action').t`Stop generating result`} />
                     </Button>
                 </Tooltip>
             );
         }
 
-        return (
-            <Button
-                icon
-                shape="ghost"
-                color="weak"
-                size="small"
-                disabled={isGeneratingResult || assistantRequest === ''}
-                onClick={startGeneratingResult}
-                className="mb-auto"
-            >
-                <Icon
-                    name="arrow-left-and-up"
-                    className="rotateZ-270 composer-assistant-special-color"
-                    alt={c('loc_nightly_assistant').t`Generate`}
-                />
-            </Button>
-        );
+        /** real condition is
+         * AI assistant expanded AND
+         * (no selection OR (selection AND focus in prompt field) => focus in prompt field
+         */
+        if (expanded && (inputOnFocus || assistantRequest)) {
+            return (
+                <Tooltip title={c('Info').t`Generate text`}>
+                    <Button
+                        icon
+                        shape="ghost"
+                        color="weak"
+                        size="small"
+                        disabled={isGeneratingResult || assistantRequest === ''}
+                        onClick={handleGenerateSubmit}
+                        className="mb-auto"
+                    >
+                        <Icon
+                            name="arrow-left-and-up"
+                            className="rotateZ-270 composer-assistant-special-color"
+                            alt={c('Action').t`Generate text`}
+                        />
+                    </Button>
+                </Tooltip>
+            );
+        }
+
+        if (canShowRefineButtons) {
+            const handleClick = () => {
+                toggle();
+            };
+
+            return (
+                <span className="overflow-hidden flex flex-nowrap">
+                    <Tooltip title={hasSelection ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`}>
+                        <Button
+                            onClick={() => {
+                                onClickRefine();
+                                void startGeneratingResult('proofread');
+                            }}
+                            shape="outline"
+                            className="mr-2 mb-auto composer-assistant-refine-button"
+                            size="small"
+                        >
+                            <Icon name="magnifier-check" className="composer-assistant-special-color mr-1" />
+                            {c('Action').t`Proofread`}
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={hasSelection ? c('Info').t`Shorten selection` : c('Info').t`Shorten text`}>
+                        <Button
+                            onClick={() => {
+                                onClickRefine();
+                                void startGeneratingResult('shorten');
+                            }}
+                            shape="outline"
+                            className="mr-2 mb-auto composer-assistant-refine-button"
+                            size="small"
+                        >
+                            <Icon name="arrow-to-center-horizontal" className="composer-assistant-special-color mr-1" />
+                            {c('Action').t`Shorten`}
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={c('Info').t`More refine actions`}>
+                        <DropdownButton
+                            as={Button}
+                            type="button"
+                            ref={anchorRef}
+                            isOpen={isOpen}
+                            onClick={handleClick}
+                            className="mb-auto"
+                            size="small"
+                            shape="outline"
+                            icon
+                        >
+                            <Icon name="three-dots-horizontal" alt={c('Action').t`More refine actions`} />
+                        </DropdownButton>
+                    </Tooltip>
+                    <Dropdown autoClose autoCloseOutside isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap items-center"
+                            onClick={() => {
+                                onClickRefine();
+                                void startGeneratingResult('shorten'); // TODO: expand
+                            }}
+                        >
+                            {c('Action').t`Expand`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap items-center"
+                            onClick={() => {
+                                onClickRefine();
+                                void startGeneratingResult('formal');
+                            }}
+                        >
+                            {c('Action').t`Formalize`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap items-center"
+                            onClick={() => {
+                                onClickRefine();
+                                void startGeneratingResult('friendly');
+                            }}
+                        >
+                            {c('Action').t`Make it friendly`}
+                        </DropdownMenuButton>
+                    </Dropdown>
+                </span>
+            );
+        }
     };
 
     const rightButton = getRightButton();
 
+    const placeholderRandom = useMemo(() => {
+        if (isGeneratingResult) {
+            if (isRefiningText) {
+                return c('Placeholder').t`Refining your text...`;
+            }
+            return c('Placeholder').t`Generating...`;
+        }
+
+        const placeholderPrompts = [
+            c('Placeholder').t`Try “Invite Jane to my party”`,
+            c('Placeholder').t`Try “Write a cover letter for an internship”`,
+            c('Placeholder').t`Try “Cancel my gym membership”`,
+            c('Placeholder').t`Try “Write a follow-up email to a client”`,
+            c('Placeholder').t`Try “Complain to customer service about a product”`,
+            c('Placeholder').t`Try “Thank my coworker for help on a project”`,
+        ];
+
+        return placeholderPrompts[Math.floor(Math.random() * placeholderPrompts.length)];
+    }, [assistantID, isGeneratingResult, isRefiningText]);
+
     return (
-        <ComposerAssistantInitialSetupSpotlight isInitialSetup={showSetupSpotlight} anchorRef={spotlightAnchorRef}>
-            <div className="w-full flex flex-column flex-nowrap">
+        <ComposerAssistantInitialSetupSpotlight
+            ref={composerAssistantInitialSetupSpotlightRef}
+            anchorRef={spotlightAnchorRef}
+        >
+            <div className="w-full flex flex-column flex-nowrap" ref={spotlightAnchorRef}>
                 <div className="flex flex-nowrap flex-row w-full mb-2">
-                    <span className="shrink-0 mt-1 mr-2 flex">{getLeftIcon()}</span>
-                    <label className="sr-only">{c('loc_nightly_assistant')
-                        .t`Type a prompt to generate an output`}</label>
+                    <span className="shrink-0 mt-1 mr-2 flex items-start">{getLeftIcon()}</span>
+                    <label className="sr-only">{c('Label').t`Type a prompt to generate an output`}</label>
                     <InputFieldTwo
                         as={TextArea}
-                        autoFocus
+                        id={ASSISTANT_INPUT_ID}
+                        autoFocus={!hasSelection}
                         value={assistantRequest}
                         onClick={handleClickOnInput}
-                        placeholder={c('loc_nightly_assistant').t`Try "Invite Vanessa to my birthday party"`}
+                        placeholder={
+                            hasSelection
+                                ? c('Placeholder').t`How do you want the selected text modified?`
+                                : placeholderRandom
+                        }
                         onValue={(value: string) => {
                             onContentChange?.();
                             setAssistantRequest(value);
                         }}
-                        onKeyDown={handleGenieKeyDown}
-                        disabled={isGeneratingResult}
+                        onKeyDown={handleKeyDown}
+                        disabled={isGeneratingResult || hasDownloadError}
                         data-testid="composer:genie"
                         autoGrow
                         unstyled
                         dense
                         className="rounded-none composer-assistant-input pt-1 pb-0 resize-none"
                         aria-describedby="composer-assistant-refine-popover composer-assistant-hint"
+                        onFocus={() => setInputOnFocus(true)}
+                        onBlur={() => setInputOnFocus(false)}
                     />
-                    <span className="shrink-0 pr-8 flex">{rightButton}</span>
+                    <span className="shrink-0 flex composer-assistant-right-icons-container relative flex-row flex-nowrap overflow-hidden">
+                        {rightButton}
+                    </span>
                 </div>
                 <Progress
                     value={hasAssistantError ? 100 : progress}
@@ -239,43 +597,47 @@ const ComposerAssistantInput = ({
                     {hasAssistantError && <ErrorZone>{error}</ErrorZone>}
                     {showDownloadState && (
                         <>
-                            <span aria-live="polite" aria-atomic="true">{c('loc_nightly_assistant')
-                                .jt`Downloading ${ASSISTANT_FEATURE_NAME}: ${progressDisplay} GB`}</span>
                             {downloadPaused ? (
-                                <Button
-                                    size="small"
-                                    color="norm"
-                                    shape="underline"
-                                    className="ml-2 inline-flex items-center"
-                                    onClick={handleResumeDownload}
-                                >
-                                    {c('loc_nightly_assistant').t`Resume downloading`}
-                                </Button>
-                            ) : (
-                                <Tooltip
-                                    title={c('loc_nightly_assistant').t`Stop downloading ${ASSISTANT_FEATURE_NAME}`}
-                                >
+                                <>
+                                    <span aria-live="polite" aria-atomic="true">{c('Info')
+                                        .jt`Downloading paused: ${progressDisplay} GB`}</span>
                                     <Button
-                                        icon
-                                        pill
                                         size="small"
-                                        shape="ghost"
-                                        className="ml-1 inline-flex items-center"
-                                        onClick={handlePauseDownload}
+                                        color="norm"
+                                        shape="underline"
+                                        className="ml-2 inline-flex items-center"
+                                        onClick={handleResumeDownload}
                                     >
-                                        <Icon
-                                            name="pause-filled"
-                                            alt={c('loc_nightly_assistant')
-                                                .t`Stop downloading ${ASSISTANT_FEATURE_NAME}`}
-                                        />
+                                        {c('Action').t`Resume downloading`}
                                     </Button>
-                                </Tooltip>
+                                </>
+                            ) : (
+                                <>
+                                    <span aria-live="polite" aria-atomic="true">{c('Info')
+                                        .jt`Downloading the writing assistant: ${progressDisplay} GB`}</span>
+                                    <Tooltip title={c('Action').t`Stop downloading the writing assistant`}>
+                                        <Button
+                                            icon
+                                            pill
+                                            size="small"
+                                            shape="ghost"
+                                            className="ml-1 inline-flex items-center"
+                                            onClick={handlePauseDownload}
+                                        >
+                                            <Icon
+                                                name="pause-filled"
+                                                alt={c('Action').t`Stop downloading the writing assistant`}
+                                            />
+                                        </Button>
+                                    </Tooltip>
+                                </>
                             )}
                         </>
                     )}
-                    {showInitializationState && <span>{c('loc_nightly_assistant').t`Initializing…`}</span>}
+                    {showInitializationState && <span>{c('Info').t`Initializing…`}</span>}
                 </span>
                 <ResumeDownloadingModal onResumeDownload={handleResumeDownload} {...resumeDownloadProps} />
+                {upsellModal.render && <ComposerAssistantTrialEndedUpsellModal modalProps={upsellModal.modalProps} />}
             </div>
         </ComposerAssistantInitialSetupSpotlight>
     );

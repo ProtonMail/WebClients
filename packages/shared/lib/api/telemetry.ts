@@ -116,13 +116,14 @@ export enum TelemetryMailSelectAllEvents {
 
 export enum TelemetryMailComposerAssistantEvents {
     show_assistant = 'show_assistant',
+    free_trial_start = 'free_trial_start',
     download_model = 'download_model',
-    request_help = 'request_help',
-    regenerate_answer = 'regenerate_answer',
     use_answer = 'use_answer',
+    not_use_answer = 'not_use_answer',
     request_assistant = 'request_assistant',
+    assistant_error = 'assistant_error',
     send_message = 'send_message',
-    cancel_download = 'cancel_download',
+    pause_download = 'pause_download',
     load_model = 'load_model',
     unload_model = 'unload_model',
 }

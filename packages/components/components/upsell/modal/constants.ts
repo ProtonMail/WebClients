@@ -17,7 +17,11 @@ export type UpsellFeatureName =
     | 'email-aliases'
     | 'snooze-messages'
     | 'more-calendars'
-    | 'calendar-sharing';
+    | 'calendar-sharing'
+    | 'composer-assistant-words'
+    | 'composer-assistant-tone'
+    | 'composer-assistant-craft-emails'
+    | 'composer-assistant-save-time';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -82,5 +86,21 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     'calendar-sharing': {
         icon: 'users',
         getText: () => c('new_plans: feature').t`Calendar sharing`,
+    },
+    'composer-assistant-words': {
+        icon: 'checkmark',
+        getText: () => c('new_plans: feature').t`Find the right words`,
+    },
+    'composer-assistant-tone': {
+        icon: 'checkmark',
+        getText: () => c('new_plans: feature').t`Hit the right tone`,
+    },
+    'composer-assistant-craft-emails': {
+        icon: 'checkmark',
+        getText: () => c('new_plans: feature').t`Craft perfectly polished emails`,
+    },
+    'composer-assistant-save-time': {
+        icon: 'checkmark',
+        getText: () => c('new_plans: feature').t`Save time emailing`,
     },
 };

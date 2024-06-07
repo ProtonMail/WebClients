@@ -26,7 +26,7 @@ export const getMemberHasAccessToOrgKey = (member: Member) =>
 export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
 
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
-export const isOrganizationVisionary = (organization: Organization) => organization.PlanName === PLANS.NEW_VISIONARY;
+export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.NEW_VISIONARY;
 
 export const isOrganizationB2B = (organization?: Organization) => {
     return [
@@ -40,6 +40,10 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.NEW_VISIONARY,
     ].includes(organization?.PlanName as PLANS);
 };
+
+/** True if user is part of an organization (works also for org admins) */
+export const isOrganization = (organization?: Organization) =>
+    isOrganizationFamily(organization) || isOrganizationB2B(organization) || isOrganizationVisionary(organization);
 
 export enum OrganizationKeyState {
     NoKey,

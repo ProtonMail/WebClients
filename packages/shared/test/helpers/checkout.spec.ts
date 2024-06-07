@@ -11,6 +11,7 @@ const getAddon = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.ADDON } as Plan;
 };
 
+// TODO add AI addon tests
 const vpnPlan: Partial<Plan> = {
     Name: PLANS.VPN,
     Title: 'VPN',
@@ -133,6 +134,12 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 999,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 0,
+            memberDiscountPerCycle: 0,
         });
     });
 
@@ -188,6 +195,12 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 1199,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 0,
+            memberDiscountPerCycle: 0,
         });
     });
 
@@ -241,6 +254,12 @@ describe('should get checkout result', () => {
             discountPercent: 20,
             membersPerMonth: 799,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 0,
+            memberDiscountPerCycle: 0,
         });
     });
 
@@ -281,6 +300,12 @@ describe('should get checkout result', () => {
             discountPercent: 40,
             membersPerMonth: 11994,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 33,
+            memberDiscountPerCycle: 24000,
         });
     });
 
@@ -321,6 +346,12 @@ describe('should get checkout result', () => {
             discountPercent: 60,
             membersPerMonth: 999,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 0,
+            memberDiscountPerCycle: 0,
         });
     });
 
@@ -376,6 +407,12 @@ describe('should get checkout result', () => {
             discountPercent: 22,
             membersPerMonth: 2997,
             addonsPerMonth: 390,
+            addonsPerMonthBase: 450,
+            addonsPerCycleBase: 10800,
+            addonsDiscountPerCycle: 1440,
+            addonsDiscountPercent: 13,
+            memberDiscountPercent: 23,
+            memberDiscountPerCycle: 7200,
         });
     });
 
@@ -423,6 +460,12 @@ describe('should get checkout result', () => {
             discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 33,
+            memberDiscountPerCycle: 7200,
         });
     });
 
@@ -478,6 +521,12 @@ describe('should get checkout result', () => {
             discountPercent: 17,
             membersPerMonth: twoYearPrice3Members / 24,
             addonsPerMonth: 3599,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 0,
+            memberDiscountPerCycle: 0,
         });
     });
 
@@ -520,6 +569,12 @@ describe('should get checkout result', () => {
             discountPercent: 100,
             membersPerMonth: 11994,
             addonsPerMonth: 0,
+            addonsPerMonthBase: 0,
+            addonsPerCycleBase: 0,
+            addonsDiscountPerCycle: 0,
+            addonsDiscountPercent: 0,
+            memberDiscountPercent: 33,
+            memberDiscountPerCycle: 24000,
         });
     });
 });

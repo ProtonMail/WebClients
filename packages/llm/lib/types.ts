@@ -3,21 +3,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { DESTINATION_CACHE, DownloadResult } from '@proton/llm/lib/downloader';
+import { CacheId, DownloadResult, LlmFile } from '@proton/llm/lib/downloader';
 
 export type PromiseResolve = (value: PromiseLike<void> | void) => void;
 
 export type PromiseReject = (reason?: any) => void;
-
-export type GpuAssessmentResult =
-    | 'ok' // seems like WebGPU should work
-    | 'noWebGpu' // we cannot load WebGPU
-    | 'noWebGpuFirefox' // we cannot load WebGPU and we specifically know it's because the user uses Firefox
-    | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
-    | 'macPreM1' // Mac detected, but it seems to be an older Intel CPU that cannot run LLMs
-    | 'noShaderF16' // this GPU is lacking newer features that are required for LLM text generation
-    | 'noShaderF16Brave' // in some cases Brave won't report shader-f16 despite the hardware supporting it
-    | 'maxBufferSizeTooLow'; // this GPU is likely underpowered
 
 export interface LlmManager {
     // prefer passing a canvas, it will allow us to get some info using WebGL
@@ -40,25 +30,91 @@ export interface RunningAction {
     waitForCompletion(): Promise<void>;
 }
 
-export type GenerationCallback = (fulltext: string) => void;
-export type Action = WriteFullEmailAction | RefineAction | ShortenAction;
+export type GenerationCallbackDetails = {
+    slow: boolean;
+};
+export type GenerationCallback = (fulltext: string, details?: GenerationCallbackDetails) => void;
 
+/** ACTION TYPES
+ *
+ * Here is the classification for the different actions:
+ *
+ * writeFullEmail
+ * proofread         } "predefined           }
+ * shorten           }  refine actions"      }  "refine actions"
+ * customRefine                              }
+ *
+ * The types below indicate this hierarchy, along with optional info
+ * like the refine location.
+ */
+
+// "Write Full Email": initial generation of an email based on a user prompt.
 export type WriteFullEmailAction = {
     type: 'writeFullEmail';
     prompt: string;
 };
-export type RefineAction = {
-    type: 'refine';
+
+// Identifies a substring to refine along with its context. Only for refine actions.
+// Usually, this will be a selection inside the generated text.
+export type RefineLocation = {
     fullEmail: string; // `fullEmail.slice(idxStart, idxEnd)` is the part to rephrase
     idxStart: number; // beginning of part to rephrase
     idxEnd: number; // end of part to rephrase
+};
+
+// "Custom Refine" refers to the reformulation of an already-generated email, or part of it,
+// with a custom request written by the user (e.g. "make it formal").
+export type CustomRefineAction = PartialCustomRefineAction & RefineLocation;
+export type PartialCustomRefineAction = {
+    type: 'customRefine';
     prompt: string; // user-submitted instruction of what to do with this text
 };
-export type ShortenAction = {
-    type: 'shorten';
-    fullEmail: string;
-    partToRephrase: string; // partToRephrase should be contained in fullEmail
+
+// "Proofread" action button.
+export type ProofreadAction = PartialProofreadAction & RefineLocation;
+export type PartialProofreadAction = {
+    type: 'proofread';
 };
+
+// "Shorten" action button.
+export type ShortenAction = PartialShortenAction & RefineLocation;
+export type PartialShortenAction = {
+    type: 'shorten';
+};
+
+// "Formal" action button.
+export type FormalAction = PartialFormalAction & RefineLocation;
+export type PartialFormalAction = {
+    type: 'formal';
+};
+
+// "Friendly" action button.
+export type FriendlyAction = PartialFriendlyAction & RefineLocation;
+export type PartialFriendlyAction = {
+    type: 'friendly';
+};
+
+export type PartialRefineAction =
+    | PartialProofreadAction
+    | PartialShortenAction
+    | PartialFormalAction
+    | PartialFriendlyAction
+    | PartialCustomRefineAction;
+export type RefineAction = PartialRefineAction & RefineLocation;
+export type PredefinedRefineAction = ProofreadAction | ShortenAction | FormalAction | FriendlyAction;
+export type Action = WriteFullEmailAction | RefineAction;
+
+export type PredefinedRefineActionType = PredefinedRefineAction['type'];
+export type RefineActionType = RefineAction['type'];
+export type ActionType = Action['type'];
+
+export function isPredefinedRefineActionType(value: any): value is PredefinedRefineActionType {
+    return value === 'shorten' || value === 'proofread' || value === 'formal' || value === 'friendly';
+}
+
+export function isRefineActionType(value: any): value is RefineActionType {
+    return value === 'customRefine' || isPredefinedRefineActionType(value);
+}
 
 // A function to monitor the overall download progress.
 //
@@ -102,56 +158,77 @@ export interface AssistantConfig {
     use_web_worker: boolean;
 }
 
+export enum OpenedAssistantStatus {
+    EXPANDED = 'expanded',
+    COLLAPSED = 'collapsed',
+}
+
+export type OpenedAssistant = {
+    id: string;
+    status: OpenedAssistantStatus;
+};
+
 /**
  * Events sent from or to the assistant iframe
  */
-export enum ASSISTANT_EVENTS {
+export enum AssistantEvent {
     // Messages from parent to iframe
     START_DOWNLOAD = 'start-download',
     PAUSE_DOWNLOAD = 'pause-download',
 
     // Messages from iframe to parent
+    IFRAME_READY = 'iframe-ready',
     DOWNLOAD_DATA = 'download-data',
     DOWNLOAD_PROGRESS = 'download-progress',
     DOWNLOAD_ERROR = 'download-error',
 }
 
-interface START_DOWNLOAD {
-    type: ASSISTANT_EVENTS.START_DOWNLOAD;
+interface StartDownloadMessage {
+    type: AssistantEvent.START_DOWNLOAD;
     payload: {
         config: AssistantConfig;
         modelVariant: string;
-        filesToIgnore: string[];
+        filesToIgnore: LlmFile[];
     };
 }
 
-interface PAUSE_DOWNLOAD {
-    type: ASSISTANT_EVENTS.PAUSE_DOWNLOAD;
+interface PauseDownloadMessage {
+    type: AssistantEvent.PAUSE_DOWNLOAD;
 }
 
-interface DOWNLOAD_DATA {
-    type: ASSISTANT_EVENTS.DOWNLOAD_DATA;
+interface IframeReady {
+    type: AssistantEvent.IFRAME_READY;
+}
+
+interface DownloadedChunkMessage {
+    type: AssistantEvent.DOWNLOAD_DATA;
     payload: {
         downloadResult: DownloadResult;
-        url: string;
-        destinationCacheID: DESTINATION_CACHE;
+        cacheId: CacheId;
+        cacheUrl: string;
         expectedMd5?: string;
         terminate: boolean;
     };
 }
 
-interface DOWNLOAD_PROGRESS {
-    type: ASSISTANT_EVENTS.DOWNLOAD_PROGRESS;
+interface DownloadProgressMessage {
+    type: AssistantEvent.DOWNLOAD_PROGRESS;
     payload: {
         progress: DownloadProgressInfo;
     };
 }
 
-interface DOWNLOAD_ERROR {
-    type: ASSISTANT_EVENTS.DOWNLOAD_ERROR;
+interface DownloadErrorMessage {
+    type: AssistantEvent.DOWNLOAD_ERROR;
     payload: {
         error: any;
     };
 }
 
-export type ASSISTANT_ACTION = START_DOWNLOAD | PAUSE_DOWNLOAD | DOWNLOAD_DATA | DOWNLOAD_PROGRESS | DOWNLOAD_ERROR;
+export type ParentToIframeMessage = StartDownloadMessage | PauseDownloadMessage;
+
+export type IframeToParentMessage =
+    | IframeReady
+    | DownloadedChunkMessage
+    | DownloadProgressMessage
+    | DownloadErrorMessage;

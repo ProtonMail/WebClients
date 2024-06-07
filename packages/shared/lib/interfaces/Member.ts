@@ -37,6 +37,7 @@ export interface Member {
     ToMigrate: 0 | 1 | 2;
     MaxSpace: number;
     MaxVPN: number;
+    NumAI: number;
     Name: string;
     UsedSpace: number;
     Self: number;

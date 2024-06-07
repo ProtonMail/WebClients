@@ -24,6 +24,7 @@ interface Arguments {
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
     isNewCancellationFlowExtended: boolean;
+    assistantKillSwitch: boolean;
 }
 
 export const getRoutes = ({
@@ -39,6 +40,7 @@ export const getRoutes = ({
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
     isNewCancellationFlowExtended,
+    assistantKillSwitch,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -54,6 +56,7 @@ export const getRoutes = ({
             isBreachesAccountDashboardEnabled,
             showThemeSelection,
             isNewCancellationFlowExtended,
+            assistantKillSwitch,
         }),
         mail: getMailAppRoutes({
             app,

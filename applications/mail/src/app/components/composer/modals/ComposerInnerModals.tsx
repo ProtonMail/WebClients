@@ -14,6 +14,7 @@ import ComposerInnerModal from './ComposerInnerModal';
 import ComposerInsertImageModal from './ComposerInsertImageModal';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerScheduleSendModal from './ComposerScheduleSendModal';
+import InnerModalAssistantSetting from './InnerModal/InnerModalAssistantSetting';
 
 interface Props {
     innerModal: ComposerInnerModalStates;
@@ -116,6 +117,9 @@ const ComposerInnerModals = ({
                         </div>
                     </Alert>
                 </ComposerInnerModal>
+            )}
+            {innerModal === ComposerInnerModalStates.AssistantSettings && (
+                <InnerModalAssistantSetting onClose={handleCloseInnerModal} />
             )}
         </>
     );

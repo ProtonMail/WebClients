@@ -91,7 +91,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                 shape="ghost"
                 data-testid="composer:password-button"
                 onClick={onPassword}
-                className="mr-2"
+                className="mr-1 sm:mr-2"
                 aria-pressed={isPassword}
             >
                 <Icon name="lock" alt={c('Action').t`Encryption`} />

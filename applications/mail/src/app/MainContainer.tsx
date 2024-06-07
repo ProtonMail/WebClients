@@ -11,7 +11,7 @@ import {
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { AssistantProvider } from '@proton/llm/lib/useAssistant';
+import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
