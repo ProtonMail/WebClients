@@ -13,10 +13,10 @@ import { NativeVersionHistory } from '../../VersionHistory'
 export interface DocControllerInterface {
   username: string
 
-  getVersionHistory(): NativeVersionHistory | undefined
   addChangeObserver(observer: DocChangeObserver): () => void
   createInitialCommit(): Promise<void>
   createNewDocument(): Promise<void>
+  debugGetUnrestrictedSharingUrl(): Promise<string>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   duplicateDocument(): Promise<void>
@@ -27,14 +27,13 @@ export interface DocControllerInterface {
   ): Promise<void>
   getDocumentClientId(): Promise<number>
   getSureDocument(): DocumentMetaInterface
-  debugGetUnrestrictedSharingUrl(): Promise<string>
+  getVersionHistory(): NativeVersionHistory | undefined
+  handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
   onEditorReady(): void
-  renameDocument(newName: string): Promise<Result<void>>
   openDocumentSharingModal(): Promise<void>
+  renameDocument(newName: string): Promise<Result<void>>
   setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
-  squashDocument(): void
-  handleAwarenessStateUpdate(states: UserState[]): Promise<void>
-  acceptFailedVerificationCommit(commitId: string): Promise<void>
   showCommentsPanel(): void
+  squashDocument(): Promise<void>
 }
