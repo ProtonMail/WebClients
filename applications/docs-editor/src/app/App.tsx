@@ -11,7 +11,6 @@ import {
   EditorEditableChangeEvent,
   LiveCommentsEvent,
   RtsMessagePayload,
-  WebsocketConnectionEvent,
   YDocMap,
 } from '@proton/docs-shared'
 import { Doc as YDoc } from 'yjs'
@@ -199,27 +198,14 @@ export function App({ isViewOnly = false }: Props) {
         })
       },
 
-      async handleWSConnectionStatusChange(status) {
-        switch (status) {
-          case WebsocketConnectionEvent.Connected:
-            newDocState.canBeEditable = true
-            eventBus.publish({
-              type: EditorEditableChangeEvent,
-              payload: {
-                editable: true,
-              },
-            })
-            break
-          default:
-            newDocState.canBeEditable = false
-            eventBus.publish({
-              type: EditorEditableChangeEvent,
-              payload: {
-                editable: false,
-              },
-            })
-            break
-        }
+      async changeEditingAllowance(allow) {
+        newDocState.canBeEditable = allow
+        eventBus.publish({
+          type: EditorEditableChangeEvent,
+          payload: {
+            editable: allow,
+          },
+        })
       },
 
       async initializeEditor(
@@ -266,9 +252,8 @@ export function App({ isViewOnly = false }: Props) {
           injectWithNewContent={initialConfig.initialData}
           username={initialConfig.username}
           isViewOnly={isViewOnly}
-          onEditorReady={() => {
-            void bridge.getClientInvoker().onEditorReady()
-            docState.onEditorReady()
+          onEditorReadyToReceiveUpdates={() => {
+            docState.onEditorReadyToReceiveUpdates()
           }}
           setEditorRef={setEditorRef}
         />

@@ -16,8 +16,6 @@ import { UserState } from '@lexical/yjs'
  * without exposing access to the direct services/controllers.
  */
 export class EditorOrchestrator implements EditorOrchestratorInterface {
-  private readonly editorReadyObservers: (() => void)[] = []
-
   constructor(
     private readonly comments: CommentServiceInterface,
     private readonly docs: DocControllerInterface,
@@ -41,25 +39,6 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
 
   public passEditorInvokerToDocController(editorInvoker: ClientRequiresEditorMethods): void {
     this.docs.setEditorInvoker(editorInvoker)
-  }
-
-  public addEditorReadyObserver(observer: () => void): () => void {
-    this.editorReadyObservers.push(observer)
-
-    return () => {
-      const index = this.editorReadyObservers.indexOf(observer)
-      if (index !== -1) {
-        this.editorReadyObservers.splice(index, 1)
-      }
-    }
-  }
-
-  onEditorReady(): void {
-    this.docs.onEditorReady()
-
-    for (const observer of this.editorReadyObservers) {
-      observer()
-    }
   }
 
   getTypersExcludingSelf(threadId: string): string[] {
