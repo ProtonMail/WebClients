@@ -76,12 +76,6 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
         (async () => usernameSplitEnabled && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
             .then((show) => setShowUsernameOnboarding(Boolean(show)))
             .catch(noop);
-
-        return () => {
-            if (usernameSplitEnabled) {
-                acknowledge(OnboardingMessage.USERNAME_TOOLTIP);
-            }
-        };
     }, [usernameSplitEnabled]);
 
     useEffect(() => {
@@ -123,6 +117,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                                     </>
                                 }
                                 originalPlacement="bottom-start"
+                                onClose={() => acknowledge(OnboardingMessage.USERNAME_TOOLTIP)}
                                 show={showUsernameOnboarding}
                             >
                                 {addUsernameButton}
