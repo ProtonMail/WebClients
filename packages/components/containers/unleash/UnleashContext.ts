@@ -18,6 +18,7 @@ enum CommonFeatureFlag {
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
+    InboxFreeUserRotatingButtonStyles = 'InboxFreeUserRotatingButtonStyles',
 }
 
 enum AccountFlag {
