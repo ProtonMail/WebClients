@@ -41,7 +41,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
-  const [isEditorReady, setIsEditorReady] = useState(false)
+  const [readyToShowDebugMenu, setReadyToShowDebugMenu] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const debug = useDebug()
 
@@ -179,10 +179,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     const observer = application.docLoader.addStatusObserver({
       onSuccess: (orchestrator) => {
         setDocOrchestrator(orchestrator)
-
-        orchestrator.addEditorReadyObserver(() => {
-          setIsEditorReady(true)
-        })
+        setReadyToShowDebugMenu(true)
 
         if (frame) {
           createBridge()
@@ -207,7 +204,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
   return (
     <div className="h-full w-full">
-      {isEditorReady && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
+      {readyToShowDebugMenu && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
 
       {!docOrchestrator && (
         <div className="flex h-full w-full flex-col items-center justify-center gap-4">

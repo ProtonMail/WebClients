@@ -29,6 +29,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private socket?: WebSocket
   private state: WebsocketStateInterface = new WebsocketState()
   private pingTimeout: NodeJS.Timeout | undefined = undefined
+  private destroyed = false
 
   constructor(
     private keys: DocumentKeys,
@@ -53,6 +54,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   destroy(): void {
+    this.destroyed = true
     clearInterval(this.pingTimeout)
     this.disconnect()
   }
@@ -70,6 +72,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   async connect(): Promise<void> {
+    if (this.destroyed) {
+      throw new Error('Attempted to connect to a destroyed WebsocketConnection')
+    }
+
     if (DebugDisableSockets) {
       this.logger.warn('Websockets are disabled in debug mode')
       return
@@ -79,24 +85,25 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
+    this.logger.info('Fetching url and token for websocket connection')
+
     const urlAndTokenResult = await this.callbacks.getUrlAndToken()
     if (urlAndTokenResult.isFailed()) {
       this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
-
       this.state.didFailToFetchToken()
 
       const reconnectDelay = this.state.getBackoff()
-
       this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
 
       setTimeout(() => this.connect(), reconnectDelay)
-
       return
     }
 
     const { token, url: serverUrl } = urlAndTokenResult.getValue()
     const commitId = this.callbacks.getLatestCommitId()
     const url = this.buildUrl({ serverUrl, token, commitId })
+
+    this.logger.info('Opening websocket connection')
 
     const websocket = new WebSocket(url)
     websocket.binaryType = 'arraybuffer'

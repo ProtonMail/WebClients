@@ -12,9 +12,6 @@ export interface EditorOrchestratorInterface {
   username: string
   docMeta: DocumentMetaInterface
 
-  onEditorReady(): void
-  addEditorReadyObserver(observer: () => void): () => void
-
   passEditorInvokerToDocController(editorInvoker: ClientRequiresEditorMethods): void
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,

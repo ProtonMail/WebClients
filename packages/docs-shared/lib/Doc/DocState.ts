@@ -89,19 +89,14 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   private flushMessagesQueue(): void {
-    const queueLength = this.messageQueue.length
-
-    for (let i = 0; i < queueLength; i++) {
-      const message = this.messageQueue.shift()
-      if (!message) {
-        return
-      }
-
+    for (const message of this.messageQueue) {
       this.receiveMessage(message)
     }
+
+    this.messageQueue.length = 0
   }
 
-  public onEditorReady(): void {
+  public onEditorReadyToReceiveUpdates(): void {
     this.isEditorReady = true
 
     this.flushMessagesQueue()

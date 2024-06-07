@@ -34,6 +34,7 @@ import { CreateThread } from '../../UseCase/CreateThread'
 import { LoadThreads } from '../../UseCase/LoadThreads'
 import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 import { VerifyMessages } from '../../UseCase/VerifyMessages'
+import { LoadCommit } from '../../UseCase/LoadCommit'
 
 export class AppDependencies extends DependencyContainer {
   constructor(api: Api, user: UserModel, driveCompat: DriveCompat) {
@@ -129,9 +130,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.LoadDocument, () => {
-      return new LoadDocument(
-        driveCompat,
-        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+      return new LoadDocument(driveCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+    })
+
+    this.bind(App_TYPES.LoadCommit, () => {
+      return new LoadCommit(
         this.get<GetCommitData>(App_TYPES.GetCommitData),
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
       )
@@ -173,6 +176,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<SquashDocument>(App_TYPES.SquashDocument),
         this.get<DebugCreateInitialCommit>(App_TYPES.CreateInitialCommit),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
+        this.get<LoadCommit>(App_TYPES.LoadCommit),
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<EncryptComment>(App_TYPES.EncryptComment),
         this.get<CreateComment>(App_TYPES.CreateComment),
