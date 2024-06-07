@@ -1,5 +1,5 @@
 import { DecryptedMessage } from './DecryptedMessage'
-import { SQUASH_THRESHOLD } from '../Types/SquashingConstants'
+import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 
 export class DecryptedCommit {
@@ -13,7 +13,7 @@ export class DecryptedCommit {
   }
 
   needsSquash(): boolean {
-    return this.numberOfUpdates() > SQUASH_THRESHOLD
+    return this.numberOfUpdates() > GetCommitDULimit()
   }
 
   squashedRepresentation(): Uint8Array {

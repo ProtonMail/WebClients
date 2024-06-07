@@ -63,7 +63,6 @@ export class LoadDocument implements UseCaseInterface<LoadDocumentResult> {
         commit,
         commitId: lastCommitId,
         keys: documentKey,
-        verificationMode: 'deferred',
       })
 
       if (decryptResult.isFailed()) {

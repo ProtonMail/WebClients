@@ -30,6 +30,7 @@ export const App_TYPES = {
   DecryptCommit: Symbol.for('DecryptCommit'),
   SendCommitCommandToRTS: Symbol.for('SendCommitCommandToRTS'),
   VerifyCommit: Symbol.for('VerifyCommit'),
+  VerifyMessages: Symbol.for('VerifyMessages'),
   SquashAlgorithm: Symbol.for('SquashAlgorithm'),
   CreateComment: Symbol.for('CreateComment'),
   CreateThread: Symbol.for('CreateThread'),
