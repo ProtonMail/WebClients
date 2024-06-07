@@ -295,7 +295,6 @@ export const useShareInvitation = () => {
         );
     };
 
-    // TODO: Check if everything is working correctly also make error cleaner, parallelise calls
     const convertExternalInvitation = async (
         abortSignal: AbortSignal,
         {
