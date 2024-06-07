@@ -67,10 +67,11 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                         name: name,
                         shareId: null,
                         items: itemsToImport.map((item) => {
-                            // Migrate username to itemEmail
+                            /* Migrate username to itemEmail */
                             if (semver(parsedExport.version) < semver('1.18.0')) {
                                 if (item.data.type === 'login' && 'username' in item.data.content) {
-                                    item.data.content.itemEmail = item.data.content.username as string;
+                                    const { username } = item.data.content;
+                                    item.data.content.itemEmail = typeof username === 'string' ? username : '';
                                     item.data.content.itemUsername = '';
                                     delete item.data.content.username;
                                 }

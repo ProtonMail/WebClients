@@ -1,3 +1,4 @@
+import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectAutofillCandidates, selectItem } from '@proton/pass/store/selectors';
 import type { Maybe, OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
@@ -49,14 +50,7 @@ export const createOTPService = () => {
         const submission = formTracker.get(tabId, url.domain ?? '');
         const candidates = selectAutofillCandidates(url)(store.getState());
         const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri.v));
-
-        const match = submission
-            ? otpItems.find(
-                  (item) =>
-                      deobfuscate(item.data.content.itemEmail) === submission.data.userIdentifier ||
-                      deobfuscate(item.data.content.itemUsername) === submission.data.userIdentifier
-              )
-            : otpItems[0];
+        const match = submission ? otpItems.find(hasUserIdentifier(submission.data.userIdentifier)) : otpItems[0];
 
         return match ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId } : { shouldPrompt: false };
     });
