@@ -10,7 +10,13 @@ import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/type
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS, isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { clientAuthorized, clientReady, clientSessionLocked, clientUnauthorized } from '@proton/pass/lib/client';
+import {
+    clientAuthorized,
+    clientBooted,
+    clientReady,
+    clientSessionLocked,
+    clientUnauthorized,
+} from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import {
@@ -160,15 +166,17 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
-        onUnlocked: async (mode, _, localID) => {
-            const validSession = isValidSession(authStore.getSession());
+        onUnlocked: withContext(async (ctx, mode, _, localID) => {
+            if (clientBooted(ctx.getState().status)) return;
+
             if (mode === LockMode.SESSION) {
                 /** If the unlock request was triggered before the authentication
                  * store session was fully hydrated, trigger a session resume. */
+                const validSession = isValidSession(authStore.getSession());
                 if (!validSession) await authService.resumeSession(localID, { retryable: false, unlocked: true });
                 else await authService.login(authStore.getSession(), { unlocked: true });
             }
-        },
+        }),
 
         onSessionPersist: withContext(async (ctx, encryptedSession) => {
             void ctx.service.storage.local.setItem('ps', encryptedSession);
