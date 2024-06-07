@@ -27,7 +27,7 @@ function* lockCreateWorker(
 
         yield put(lockCreateSuccess(meta.request.id, lock, meta.sender?.endpoint));
     } catch (error) {
-        yield put(lockCreateFailure(meta.request.id, payload.lock.mode, error));
+        yield put(lockCreateFailure(meta.request.id, payload.lock.mode, error, meta.sender?.endpoint));
     }
 }
 
