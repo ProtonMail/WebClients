@@ -55,6 +55,8 @@ import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketSe
 import { DecryptedMessage } from '../../Models/DecryptedMessage'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './DocControllerEvent'
 import metrics from '@proton/metrics'
+import { DocsClientEvent, DocsClientSquashVerificationObjectionMadePayload } from '../../Application/DocsClientEvent'
+import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -66,7 +68,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private keys: DocumentKeys | null = null
   private decryptedNode?: DecryptedNode
   private changeObservers: DocChangeObserver[] = []
-  private editorInvoker?: ClientRequiresEditorMethods
+  editorInvoker?: ClientRequiresEditorMethods
   private docMeta!: DocumentMetaInterface
   private initialCommit?: DecryptedCommit
   private lastCommitIdReceivedFromRts?: string
@@ -155,22 +157,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  private beginInitialSyncTimer(): void {
-    this.initialSyncTimer = setTimeout(() => {
-      this.logger.warn('Initial sync with RTS timed out')
-      this.handleCompletingInitialSyncWithRts()
-    }, MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT)
-  }
-
-  private handleCompletingInitialSyncWithRts(): void {
-    if (this.initialSyncTimer) {
-      clearTimeout(this.initialSyncTimer)
-      this.initialSyncTimer = null
-    }
-
-    void this.editorInvoker?.showEditor()
-  }
-
   public setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
     this.editorInvoker = editorInvoker
   }
@@ -230,8 +216,20 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }, MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR)
   }
 
-  async acceptFailedVerificationCommit(commitId: string): Promise<void> {
-    this.logger.info('Accepting failed verification commit', commitId)
+  private beginInitialSyncTimer(): void {
+    this.initialSyncTimer = setTimeout(() => {
+      this.logger.warn('Initial sync with RTS timed out')
+      this.handleCompletingInitialSyncWithRts()
+    }, MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT)
+  }
+
+  handleCompletingInitialSyncWithRts(): void {
+    if (this.initialSyncTimer) {
+      clearTimeout(this.initialSyncTimer)
+      this.initialSyncTimer = null
+    }
+
+    void this.editorInvoker?.showEditor()
   }
 
   get commitId(): string | undefined {
@@ -276,6 +274,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.initialCommit) {
       return
     }
+
     return new NativeVersionHistory(this.initialCommit)
   }
 
@@ -344,7 +343,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
             timestamp: Date.now(),
           })
 
-    await this.websocketService.sendMessageToDocument(this.nodeMeta, wrappedMessage, debugSource)
+    this.websocketService.sendMessageToDocument(this.nodeMeta, wrappedMessage, debugSource)
   }
 
   public async debugSendCommitCommandToRTS(): Promise<void> {
@@ -385,11 +384,26 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.logger.info('Squashing document')
 
-    const result = await this._squashDocument.execute(
-      this.docMeta,
-      this.lastCommitIdReceivedFromRts ?? this.initialCommit.commitId,
-      this.keys,
-    )
+    const handleVerificationObjection: SquashVerificationObjectionCallback = async () => {
+      this.eventBus.publish({
+        type: DocControllerEvent.SquashVerificationObjectionDecisionRequired,
+        payload: undefined,
+      })
+
+      return new Promise((resolve) => {
+        const disposer = this.eventBus.addEventCallback((data: DocsClientSquashVerificationObjectionMadePayload) => {
+          disposer()
+          resolve(data.decision)
+        }, DocsClientEvent.SquashVerificationObjectionDecisionMade)
+      })
+    }
+
+    const result = await this._squashDocument.execute({
+      docMeta: this.docMeta,
+      commitId: this.lastCommitIdReceivedFromRts ?? this.initialCommit.commitId,
+      keys: this.keys,
+      handleVerificationObjection,
+    })
 
     if (result.isFailed()) {
       this.logger.error('Failed to squash document', result.getError())
@@ -485,7 +499,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const editorInvoker = this.editorInvoker
 
     const decryptPayload = async (event: Event): Promise<DecryptedMessage | undefined> => {
-      const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: true })
+      const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
       if (decryptionResult.isFailed()) {
         this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
         return undefined
@@ -541,7 +555,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  private async handleDocumentUpdatesMessage(message: ServerMessageWithDocumentUpdates, keys: DocumentKeys) {
+  async handleDocumentUpdatesMessage(message: ServerMessageWithDocumentUpdates, keys: DocumentKeys) {
     this.logger.debug('Received message with document updates')
 
     if (!this.editorInvoker) {
@@ -549,7 +563,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     for (const update of message.updates.documentUpdates) {
-      const decryptionResult = await this._decryptMessage.execute({ message: update, keys: keys, verify: true })
+      const decryptionResult = await this._decryptMessage.execute({
+        message: update,
+        keys: keys,
+        verify: false,
+      })
       if (decryptionResult.isFailed()) {
         throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
       }

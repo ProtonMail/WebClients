@@ -22,18 +22,11 @@ export enum SignatureFailDecision {
 }
 
 interface Props {
-  commitId: string
-  accept: (commitId: string) => void
+  accept: () => void
   ignore: () => void
 }
 
-export default function SignatureCheckFailedModal({
-  ignore,
-  accept,
-  commitId,
-  onClose,
-  ...modalProps
-}: Props & ModalStateProps) {
+export default function SignatureCheckFailedModal({ ignore, accept, onClose, ...modalProps }: Props & ModalStateProps) {
   const [decision, setDecision] = useState(SignatureFailDecision.Accept)
 
   const handleClose = () => {
@@ -43,7 +36,7 @@ export default function SignatureCheckFailedModal({
 
   const handleSubmit = () => {
     if (decision === SignatureFailDecision.Accept) {
-      accept(commitId)
+      accept()
     } else {
       ignore()
     }
