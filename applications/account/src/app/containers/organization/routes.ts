@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { APPS, APP_NAMES, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, ORGANIZATION_STATE, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
     hasFamily,
+    hasPassBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -182,6 +183,18 @@ export const getOrganizationAppRoutes = ({ app, user, organization, subscription
                     hasVpnB2BPlan &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            policies: <SectionConfig>{
+                text: c('Title').t`Policies`,
+                to: '/policies',
+                icon: 'checkmark-triple',
+                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassBusiness(subscription),
+                subsections: [
+                    {
+                        text: PASS_APP_NAME,
+                        id: 'pass',
+                    },
+                ],
             },
         },
     };
