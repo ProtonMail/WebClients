@@ -73,22 +73,23 @@
 	vertical-align: super;
 }
 
-.Lexical__mark {
-	--base-bg: rgb(var(--primary-rgb) / 0.15);
-	--overlap-bg: rgb(var(--primary-rgb) / 0.3);
-	--selected-bg: rgb(var(--primary-rgb) / 0.4);
+.Lexical__commentThreadMark {
+	--rgb: 255 135 0;
+	--base-bg: rgb(var(--rgb) / 0.3);
+	--overlap-bg: rgb(var(--rgb) / 0.35);
+	--selected-bg: rgb(var(--rgb) / 0.4);
 
 	background: var(--base-bg);
 	font-weight: inherit;
 	color: inherit;
-}
 
-.Lexical__mark.selected {
-	background: var(--selected-bg);
-}
+	&.selected {
+		background: var(--selected-bg);
+	}
 
-.Lexical__markOverlap {
-	background: var(--overlap-bg);
+	&Overlap {
+		background: var(--overlap-bg);
+	}
 }
 
 .Lexical__commentThreadMark.resolved {
