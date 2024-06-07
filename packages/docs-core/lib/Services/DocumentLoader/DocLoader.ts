@@ -22,6 +22,7 @@ import { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorI
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 import { CommentService } from '../Comments/CommentService'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
+import { LoadCommit } from '../../UseCase/LoadCommit'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -42,6 +43,7 @@ export class DocLoader implements DocLoaderInterface {
     private squashDoc: SquashDocument,
     private createInitialCommit: DebugCreateInitialCommit,
     private loadDocument: LoadDocument,
+    private loadCommit: LoadCommit,
     private decryptMessage: DecryptMessage,
     private encryptComment: EncryptComment,
     private createComment: CreateComment,
@@ -67,6 +69,7 @@ export class DocLoader implements DocLoaderInterface {
       this.squashDoc,
       this.createInitialCommit,
       this.loadDocument,
+      this.loadCommit,
       this.decryptMessage,
       this.duplicateDocument,
       this.createNewDocument,

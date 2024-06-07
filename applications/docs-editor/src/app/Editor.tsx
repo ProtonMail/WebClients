@@ -49,7 +49,7 @@ type Props = {
   clientInvoker: EditorRequiresClientMethods
   isViewOnly: boolean
   hidden: boolean
-  onEditorReady: () => void
+  onEditorReadyToReceiveUpdates: () => void
   setEditorRef: (instance: LexicalEditor | null) => void
   injectWithNewContent?: FileToDocPendingConversion
 }
@@ -63,7 +63,7 @@ export function Editor({
   docMap,
   isViewOnly,
   hidden,
-  onEditorReady,
+  onEditorReadyToReceiveUpdates,
   setEditorRef,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
@@ -127,7 +127,7 @@ export function Editor({
           id={documentId}
           providerFactory={yjsWebsockProvider!}
           shouldBootstrap={ShouldBootstrap}
-          onCollabReady={onEditorReady}
+          onCollabReady={onEditorReadyToReceiveUpdates}
         />
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />

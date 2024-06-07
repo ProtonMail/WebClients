@@ -20,8 +20,6 @@ export interface EditorRequiresClientMethods {
   editComment(threadID: string, commentID: string, content: string): Promise<boolean>
   deleteComment(threadID: string, commentID: string): Promise<boolean>
 
-  onEditorReady(): Promise<void>
-
   getAllThreads(): Promise<CommentThreadInterface[]>
   createThread(commentContent: string): Promise<CommentThreadInterface | undefined>
   resolveThread(threadId: string): Promise<boolean>

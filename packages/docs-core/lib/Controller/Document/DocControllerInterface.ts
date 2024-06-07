@@ -25,12 +25,11 @@ export interface DocControllerInterface {
     originator: string,
     debugSource: BroadcastSources,
   ): Promise<void>
-  getDocumentClientId(): Promise<number>
+  getDocumentClientId(): Promise<number | undefined>
   getSureDocument(): DocumentMetaInterface
   getVersionHistory(): NativeVersionHistory | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
-  onEditorReady(): void
   openDocumentSharingModal(): Promise<void>
   renameDocument(newName: string): Promise<Result<void>>
   setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
