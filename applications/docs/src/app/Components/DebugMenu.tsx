@@ -3,9 +3,10 @@ import { Icon } from '@proton/components/components'
 import { DocControllerInterface } from '@proton/docs-core'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useLocalState } from '@proton/components/hooks'
+import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 
 export const useDebug = () => {
-  const [debug] = useLocalState(false, 'proton-docs-debug')
+  const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
   return Boolean(debug)
 }
 
