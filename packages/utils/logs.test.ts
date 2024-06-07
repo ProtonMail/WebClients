@@ -33,6 +33,8 @@ describe('Logger', () => {
     });
 
     test('should not log debug messages if verbose is false', () => {
+        localStorage.setItem('test-logger-debug', 'false');
+        logger = new Logger('test-logger', 'test-logger-debug');
         logger.debug('This is a debug message');
 
         expect(console.log).toHaveBeenCalledTimes(0);
