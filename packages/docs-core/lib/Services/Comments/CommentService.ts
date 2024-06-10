@@ -243,4 +243,8 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
 
     return true
   }
+
+  markThreadAsRead(id: string): void {
+    this.localCommentsState.markThreadAsRead(id)
+  }
 }

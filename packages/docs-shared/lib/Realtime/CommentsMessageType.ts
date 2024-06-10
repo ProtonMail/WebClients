@@ -24,6 +24,7 @@ export type EditCommentData = {
   commentID: string
   threadID: string
   content: string
+  markThreadUnread?: boolean
 }
 
 export type DeleteCommentData = {

@@ -42,7 +42,7 @@ function CommentsPanel({
           {c('Info').t`No comments`}
         </div>
       ) : (
-        <div className="w-full overflow-y-auto px-4 pb-2 pt-1 focus:-outline-offset-2">
+        <div className="w-full flex-grow overflow-y-auto px-4 pb-2 pt-1 focus:-outline-offset-2">
           <CommentsPanelList threads={active} />
           {resolved.length > 0 && (
             <>
