@@ -37,8 +37,8 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.docs.editorRequestsPropagationOfUpdate(message, origin, updateSource)
   }
 
-  public passEditorInvokerToDocController(editorInvoker: ClientRequiresEditorMethods): void {
-    this.docs.setEditorInvoker(editorInvoker)
+  public provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
+    void this.docs.editorIsReadyToReceiveInvocations(editorInvoker)
   }
 
   getTypersExcludingSelf(threadId: string): string[] {
