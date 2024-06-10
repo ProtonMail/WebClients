@@ -15,6 +15,7 @@ import type {
     AssistantConfig,
     CustomRefineAction,
     DownloadProgressCallback,
+    ExpandAction,
     FormalAction,
     FriendlyAction,
     GenerationCallback,
@@ -127,6 +128,30 @@ function proofreadActionToCustomRefineAction(action: ProofreadAction): CustomRef
     };
 }
 
+function formalActionToCustomRefineAction(action: FormalAction): CustomRefineAction {
+    return {
+        ...action,
+        type: 'customRefine',
+        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting.',
+    };
+}
+
+function friendlyActionToCustomRefineAction(action: FriendlyAction): CustomRefineAction {
+    return {
+        ...action,
+        type: 'customRefine',
+        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend.',
+    };
+}
+
+function expandActionToCustomRefineAction(action: ExpandAction): CustomRefineAction {
+    return {
+        ...action,
+        type: 'customRefine',
+        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing.',
+    };
+}
+
 function makePromptFromTurns(turns: Turn[]): string {
     return turns
         .map((turn) => {
@@ -219,6 +244,18 @@ function formatPromptProofread(action: ProofreadAction): string {
     return formatPromptCustomRefine(proofreadActionToCustomRefineAction(action));
 }
 
+function formatPromptFormal(action: FormalAction): string {
+    return formatPromptCustomRefine(formalActionToCustomRefineAction(action));
+}
+
+function formatPromptFriendly(action: FriendlyAction): string {
+    return formatPromptCustomRefine(friendlyActionToCustomRefineAction(action));
+}
+
+function formatPromptExpand(action: ExpandAction): string {
+    return formatPromptCustomRefine(expandActionToCustomRefineAction(action));
+}
+
 export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
     constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptWriteFullEmail(action);
@@ -253,22 +290,21 @@ export class GpuProofreadRunningAction extends GpuRefineRunningAction {
 
 export class GpuFormalRunningAction extends GpuRefineRunningAction {
     constructor(action: FormalAction, chat: WebWorkerEngine, callback: GenerationCallback) {
-        const refineAction: CustomRefineAction = {
-            ...action,
-            type: 'customRefine',
-            prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting.',
-        };
+        const refineAction = formalActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
     }
 }
 
 export class GpuFriendlyRunningAction extends GpuRefineRunningAction {
     constructor(action: FriendlyAction, chat: WebWorkerEngine, callback: GenerationCallback) {
-        const refineAction: CustomRefineAction = {
-            ...action,
-            type: 'customRefine',
-            prompt: 'Rewrite the same text with a friendly tone, like writing to a friend.',
-        };
+        const refineAction = friendlyActionToCustomRefineAction(action);
+        super(refineAction, chat, callback);
+    }
+}
+
+export class GpuExpandRunningAction extends GpuRefineRunningAction {
+    constructor(action: ExpandAction, chat: WebWorkerEngine, callback: GenerationCallback) {
+        const refineAction = expandActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
     }
 }
@@ -301,6 +337,8 @@ export class GpuLlmModel implements LlmModel {
                 return new GpuFormalRunningAction(action, this.chat, callback);
             case 'friendly':
                 return new GpuFriendlyRunningAction(action, this.chat, callback);
+            case 'expand':
+                return new GpuExpandRunningAction(action, this.chat, callback);
             case 'customRefine':
                 return new GpuRefineRunningAction(action, this.chat, callback);
             default:
@@ -528,6 +566,12 @@ export function getPromptForAction(action: Action) {
             return formatPromptShorten(action);
         case 'proofread':
             return formatPromptProofread(action);
+        case 'friendly':
+            return formatPromptFriendly(action);
+        case 'formal':
+            return formatPromptFormal(action);
+        case 'expand':
+            return formatPromptExpand(action);
         case 'customRefine':
             return formatPromptCustomRefine(action);
         default:

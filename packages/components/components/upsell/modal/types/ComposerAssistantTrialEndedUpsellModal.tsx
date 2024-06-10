@@ -19,8 +19,9 @@ import { getAIAddonMonthlyPrice } from './ComposerAssistantTrialEndedupsellModel
 
 interface Props {
     modalProps: ModalStateProps;
+    handleCloseAssistant: () => void;
 }
-const ComposerAssistantTrialEndedUpsellModal = ({ modalProps }: Props) => {
+const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssistant }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const [organization, loadingOrg] = useOrganization();
     const [member, loadingMember] = useMember();
@@ -53,20 +54,30 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps }: Props) => {
                     ? c('Description').t`To continue to use the writing assistant, request access from your admin.`
                     : c('Description').t`To continue to use the writing assistant, add it to your subscription.`
             }
-            modalProps={modalProps}
+            modalProps={{
+                ...modalProps,
+                onClose: () => {
+                    handleCloseAssistant();
+                    modalProps.onClose();
+                },
+            }}
             headerType="composer-assistant"
             featuresDescription={<b className="pb-4">{c('Description').t`Use the writing assistant to:`}</b>}
-            features={[
-                'composer-assistant-tone',
-                'composer-assistant-words',
-                'composer-assistant-craft-emails',
-                'composer-assistant-save-time',
-            ]}
+            features={['generate-emails-with-prompt', 'reply-to-messages', 'proofread-an-refine', 'save-time-emailing']}
             size="small"
             submitText={c('Action').t`Get the writing assistant`}
             submitButton={
                 isOrgUser ? (
-                    <Button size="large" color="norm" shape="solid" fullWidth onClick={modalProps.onClose}>
+                    <Button
+                        size="large"
+                        color="norm"
+                        shape="solid"
+                        fullWidth
+                        onClick={() => {
+                            modalProps.onClose();
+                            handleCloseAssistant();
+                        }}
+                    >
                         {c('Action').t`Close`}
                     </Button>
                 ) : (
@@ -78,6 +89,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps }: Props) => {
                         onClick={() => {
                             if (assistantUpsellConfig) {
                                 openSubscriptionModal(assistantUpsellConfig);
+                                modalProps.onClose();
                             }
                         }}
                     >{c('Action').jt`Get it from only ${addonPriceWithCurrency} /month`}</Button>
