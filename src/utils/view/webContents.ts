@@ -1,7 +1,6 @@
 import { WebContents, app, shell } from "electron";
 import Logger from "electron-log";
 import {
-    getSessionID,
     isAccount,
     isAccountAuthorize,
     isAccountSwitch,
@@ -18,7 +17,6 @@ import {
     getCurrentView,
     getMailView,
     getWebContentsViewName,
-    reloadCalendarWithSession,
     showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
@@ -47,13 +45,6 @@ export function handleWebContents(contents: WebContents) {
         // This is used to redirect users to the external browser for internal upgrade modals
         if (isAccount(url) && isUpgradeURL(url)) {
             return;
-        }
-
-        const sessionID = getSessionID(url);
-        const calendarView = getCalendarView();
-        const calendarSessionID = getSessionID(calendarView.webContents.getURL());
-        if (isMail(url) && sessionID && !calendarSessionID) {
-            reloadCalendarWithSession(sessionID);
         }
     });
 

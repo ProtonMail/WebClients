@@ -10,7 +10,7 @@ import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { isSameURL } from "../urls/urlTests";
+import { getSessionID, isHostAllowed, isSameURL } from "../urls/urlTests";
 
 const config = getConfig();
 const settings = getSettings();
@@ -122,8 +122,32 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
     return bounds;
 };
 
-export async function showView(viewID: VIEW_TARGET, url: string = "") {
+async function updateSessionID(urlString: string) {
+    if (!isHostAllowed(urlString)) {
+        return urlString;
+    }
+
+    const currentURLString = await getViewURL(currentViewID);
+    const currentSessionID = getSessionID(currentURLString);
+
+    if (currentSessionID === null) {
+        return urlString;
+    }
+
+    if (currentSessionID === getSessionID(urlString)) {
+        return urlString;
+    }
+
+    const url = new URL(urlString);
+    url.pathname = `/u/${currentSessionID}`;
+
+    Logger.warn("Rewriting URL to include session id", app.isPackaged ? "" : url.toString());
+    return url.toString();
+}
+
+export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
     const logPrefix = `${viewID}(showView)`;
+    const url = targetURL ? await updateSessionID(targetURL) : targetURL;
     const loggedURL = app.isPackaged ? "" : url;
 
     if (!mainWindow) {
@@ -245,11 +269,6 @@ export async function showEndOfTrial() {
     await loadURL("account", trialEndURL);
     showView("account");
     resetHiddenViews();
-}
-
-export async function reloadCalendarWithSession(session: string) {
-    Logger.info("Reloading calendar with session", session);
-    await loadURL("calendar", `${config.url.calendar}/u/${session}`);
 }
 
 export function getSpellCheckStatus() {
