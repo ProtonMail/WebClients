@@ -56,12 +56,20 @@ const {
 
 const {
     MEMBER_SCRIBE_MAILPLUS,
+    MEMBER_SCRIBE_MAIL_BUSINESS,
     MEMBER_SCRIBE_DRIVEPLUS,
     MEMBER_SCRIBE_BUNDLE,
     MEMBER_SCRIBE_PASS,
     MEMBER_SCRIBE_VPN,
     MEMBER_SCRIBE_VPN2024,
     MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+    MEMBER_SCRIBE_BUNDLE_PRO,
+    MEMBER_SCRIBE_MAIL_PRO,
+    MEMBER_SCRIBE_PASS_PRO,
+    MEMBER_SCRIBE_VPN_BIZ,
+    MEMBER_SCRIBE_PASS_BIZ,
+    MEMBER_SCRIBE_VPN_PRO,
+    MEMBER_SCRIBE_FAMILY,
 } = ADDON_NAMES;
 
 type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
@@ -153,16 +161,23 @@ export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.P
 export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
     hasBundlePro(subscription) || hasBundlePro2024(subscription);
 
-// TODO add accounts from batch 3
 export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
     hasSomeAddOn(subscription, [
         MEMBER_SCRIBE_MAILPLUS,
+        MEMBER_SCRIBE_MAIL_BUSINESS,
         MEMBER_SCRIBE_DRIVEPLUS,
         MEMBER_SCRIBE_BUNDLE,
         MEMBER_SCRIBE_PASS,
         MEMBER_SCRIBE_VPN,
         MEMBER_SCRIBE_VPN2024,
         MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+        MEMBER_SCRIBE_BUNDLE_PRO,
+        MEMBER_SCRIBE_MAIL_PRO,
+        MEMBER_SCRIBE_PASS_PRO,
+        MEMBER_SCRIBE_VPN_BIZ,
+        MEMBER_SCRIBE_PASS_BIZ,
+        MEMBER_SCRIBE_VPN_PRO,
+        MEMBER_SCRIBE_FAMILY,
     ]);
 
 export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>

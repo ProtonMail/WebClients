@@ -5,7 +5,7 @@ import { ModalProps, Prompt, useApi, useEventManager, useSettingsLink } from '@p
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isDesktop } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
@@ -14,7 +14,6 @@ interface Props {
 }
 
 const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
-    const isDesktopApp = isDesktop();
     const { onClose } = modalProps;
     const goToSettings = useSettingsLink();
     const [loading, withLoading] = useLoading();
@@ -33,7 +32,7 @@ const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
         onClose?.();
     };
 
-    const modalText = isDesktopApp
+    const modalText = isElectronMail
         ? /* translator:
            * Full string for reference: Your browser doesn’t support the writing assistant. Try running it on Proton servers.
            */
@@ -45,7 +44,7 @@ const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
               .t`Your browser doesn't support the writing assistant. Download the ${MAIL_APP_NAME} desktop app or try running it on ${BRAND_NAME} servers.`;
 
     const buttons: [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element] = (() => {
-        if (isDesktopApp) {
+        if (isElectronMail) {
             return [
                 <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
                     .t`Run on ${BRAND_NAME} servers`}</Button>,
