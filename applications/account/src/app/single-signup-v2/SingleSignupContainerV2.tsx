@@ -427,12 +427,21 @@ const SingleSignupContainerV2 = ({
         const values = 'values' in data ? data.values : {};
         const flow = (() => {
             if (toApp === APPS.PROTONDRIVE) {
+                if (audience === Audience.B2B) {
+                    return 'drive_signup_b2b';
+                }
                 return 'drive_signup';
             }
             if (toApp === APPS.PROTONCALENDAR) {
+                if (audience === Audience.B2B) {
+                    return 'calendar_signup_b2b';
+                }
                 return 'calendar_signup';
             }
             if (toApp === APPS.PROTONMAIL) {
+                if (audience === Audience.B2B) {
+                    return 'mail_signup_b2b';
+                }
                 return 'mail_signup';
             }
             if (toApp === APPS.PROTONPASS) {
@@ -443,6 +452,9 @@ const SingleSignupContainerV2 = ({
                     return 'pass_signup_b2b';
                 }
                 return 'pass_signup';
+            }
+            if (productParam === 'business') {
+                return 'legacy_business_signup';
             }
             return 'generic_signup';
         })();
