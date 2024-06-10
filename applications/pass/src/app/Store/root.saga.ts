@@ -53,7 +53,6 @@ import monitorAddressResolve from '@proton/pass/store/sagas/monitor/monitor-addr
 import monitorAddressToggle from '@proton/pass/store/sagas/monitor/monitor-address.toggle.saga';
 import monitorToggle from '@proton/pass/store/sagas/monitor/monitor-toggle.saga';
 import sentinelToggle from '@proton/pass/store/sagas/monitor/sentinel-toggle.saga';
-import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
 import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
 import shareAccessOptions from '@proton/pass/store/sagas/shares/share-access-options.saga';
 import shareEditRole from '@proton/pass/store/sagas/shares/share-edit-role.saga';
@@ -120,7 +119,6 @@ export function* rootSaga(options: RootSagaOptions) {
             offlineDisable,
             offlineResume,
             offlineSetup,
-            organizationSettingsEdit,
             organizationSettingsGet,
             reportProblem,
             sentinelToggle,

@@ -13,6 +13,7 @@ import {
     OrganizationTwoFAEnforcementSection,
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
+    PassPolicies,
     PrivateMainSettingsArea,
     SsoPage,
     SubscriptionModalProvider,
@@ -21,6 +22,7 @@ import {
 } from '@proton/components';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getOrganizationAppRoutes } from './routes';
@@ -40,7 +42,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, policies },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -125,6 +127,15 @@ const OrganizationSettingsRouter = ({
                             <SsoPage />
                         </SubscriptionModalProvider>
                     </PrivateMainSettingsAreaBase>
+                </Route>
+            )}
+            {getIsSectionAvailable(policies) && (
+                <Route path={getSectionPath(path, policies)}>
+                    <PrivateMainSettingsArea config={policies}>
+                        <PassBridgeProvider>
+                            <PassPolicies />
+                        </PassBridgeProvider>
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {redirect}

@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import {
-    getOrganizationSettingsIntent,
-    organizationSettingsEditIntent,
-} from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -21,7 +18,6 @@ export type OrganizationContextValue = {
     settings: OrganizationSettings & {
         enabled: boolean;
         sync: () => void;
-        update: <K extends keyof OrganizationSettings>(setting: K, value: OrganizationSettings[K]) => void;
     };
 };
 
@@ -51,7 +47,6 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                           ...org.settings,
                           enabled: org.canUpdate && enabled,
                           sync: () => dispatch(withRevalidate(getOrganizationSettingsIntent())),
-                          update: (key, value) => dispatch(organizationSettingsEditIntent({ [key]: value })),
                       },
                   }
                 : null,

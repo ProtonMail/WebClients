@@ -1,13 +1,9 @@
 import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
-import {
-    getOrganizationSettingsSuccess,
-    organizationSettingsEditSuccess,
-} from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationSettingsSuccess } from '@proton/pass/store/actions/creators/organization';
 import { BitField, type MaybeNull, PlanType } from '@proton/pass/types';
 import { type OrganizationSettings } from '@proton/pass/types/data/organization';
-import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
@@ -34,7 +30,7 @@ const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null
             return partialMerge(state, { organization: action.payload.Organization });
         }
 
-        if (or(getOrganizationSettingsSuccess.match, organizationSettingsEditSuccess.match)(action)) {
+        if (getOrganizationSettingsSuccess.match(action)) {
             const { Settings, CanUpdate } = action.payload;
             return partialMerge(state, { settings: Settings, canUpdate: CanUpdate });
         }

@@ -31,6 +31,7 @@ export const SettingsDropdown: FC = () => {
     const offlineSignaled = useOfflineSupported() && !offlineEnabled;
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
     const onLogout = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
@@ -46,7 +47,14 @@ export const SettingsDropdown: FC = () => {
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
             { key: 'account', label: c('Label').t`Account`, icon: 'arrow-out-square', onClick: navigateToAccount },
             ...(orgEnabled
-                ? [{ key: 'organization', label: c('Label').t`Organization`, icon: 'buildings' } as const]
+                ? [
+                      {
+                          key: 'organization',
+                          label: c('Label').t`Organization`,
+                          icon: 'buildings',
+                          onClick: navigateToOrganization,
+                      } as const,
+                  ]
                 : []),
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },

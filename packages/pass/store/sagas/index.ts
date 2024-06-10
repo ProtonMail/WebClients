@@ -42,7 +42,6 @@ import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
 import itemSetFlags from './items/item.set-flags.saga';
-import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
 import shareEditRole from './shares/share-edit-role.saga';
@@ -95,7 +94,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
-            organizationSettingsEdit,
             reportProblem,
             sessionLockDisable,
             sessionLockEnable,
