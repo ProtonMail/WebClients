@@ -1,5 +1,5 @@
 import { BridgeOriginProvider } from '@proton/docs-shared'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
@@ -27,19 +27,18 @@ const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downl
 export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
-
-  useEffect(() => {
-    if (!iframe) {
-      return
-    }
-
-    onFrameReady(iframe)
-  }, [iframe, onFrameReady])
+  const didAlreadyLoad = useRef(false)
 
   const onLoad = useCallback(() => {
     if (!iframe) {
       throw new Error('Frame not found')
     }
+
+    if (didAlreadyLoad.current) {
+      return
+    }
+
+    didAlreadyLoad.current = true
 
     onFrameReady(iframe)
   }, [iframe, onFrameReady])
