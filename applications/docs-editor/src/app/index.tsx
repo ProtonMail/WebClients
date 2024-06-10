@@ -18,6 +18,6 @@ const container = document.querySelector('.app-root')
 const root = createRoot(container!)
 root.render(
   <ErrorBoundary>
-    <App isViewOnly={isViewOnly} />
+    <App nonInteractiveMode={isViewOnly} />
   </ErrorBoundary>,
 )
