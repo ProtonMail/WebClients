@@ -10,7 +10,7 @@ import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { getSessionID, isHostAllowed, isSameURL } from "../urls/urlTests";
+import { getLocalID, isHostAllowed, isSameURL } from "../urls/urlTests";
 
 const config = getConfig();
 const settings = getSettings();
@@ -122,32 +122,32 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
     return bounds;
 };
 
-async function updateSessionID(urlString: string) {
+async function updateLocalID(urlString: string) {
     if (!isHostAllowed(urlString)) {
         return urlString;
     }
 
     const currentURLString = await getViewURL(currentViewID);
-    const currentSessionID = getSessionID(currentURLString);
+    const currentLocalID = getLocalID(currentURLString);
 
-    if (currentSessionID === null) {
+    if (currentLocalID === null) {
         return urlString;
     }
 
-    if (currentSessionID === getSessionID(urlString)) {
+    if (currentLocalID === getLocalID(urlString)) {
         return urlString;
     }
 
     const url = new URL(urlString);
-    url.pathname = `/u/${currentSessionID}`;
+    url.pathname = `/u/${currentLocalID}`;
 
-    Logger.warn("Rewriting URL to include session id", app.isPackaged ? "" : url.toString());
+    Logger.warn("Rewriting URL to include local id", app.isPackaged ? "" : url.toString());
     return url.toString();
 }
 
 export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
     const logPrefix = `${viewID}(showView)`;
-    const url = targetURL ? await updateSessionID(targetURL) : targetURL;
+    const url = targetURL ? await updateLocalID(targetURL) : targetURL;
     const loggedURL = app.isPackaged ? "" : url;
 
     if (!mainWindow) {

@@ -2,7 +2,7 @@ import Logger from "electron-log";
 import { getConfig } from "../config";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
-export const getSessionID = (url?: string) => {
+export const getLocalID = (url?: string) => {
     if (!url) {
         return null;
     }
@@ -10,15 +10,15 @@ export const getSessionID = (url?: string) => {
     try {
         const pathName = new URL(url).pathname;
 
-        const sessionID = pathName.match(sessionRegex)?.[0];
+        const localID = pathName.match(sessionRegex)?.[0];
 
-        if (isNaN(Number(sessionID))) {
+        if (isNaN(Number(localID))) {
             return null;
         }
 
-        return sessionID;
+        return localID;
     } catch (error) {
-        Logger.error("getSessionID", error);
+        Logger.error("getLocalID", error);
         return null;
     }
 };
