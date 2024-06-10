@@ -17,9 +17,10 @@ const ToggleAssistantContainer = () => {
                     <label htmlFor="assistantSelect" className="flex-1">
                         <span className="text-semibold">{c('Title').t`Enable writing assistant`}</span>
                     </label>
-                    <Href className="block text-sm" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>{c(
-                        'Link'
-                    ).t`Learn more`}</Href>
+                    <Href
+                        className="block text-sm"
+                        href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}
+                    >{c('Link').t`Learn more`}</Href>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
                     <ToggleAssistant id="assistantSelect" />
