@@ -1,13 +1,14 @@
 import { AppsDropdown, Icon, QuickSettingsAppButton, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
-import DocumentTitleDropdown from './DocumentTitleDropdown'
+import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
-import { ConnectionStatus } from './ConnectionStatus'
+import { ConnectionStatus } from '../layout/ConnectionStatus'
 import { DocControllerInterface } from '@proton/docs-core'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
+import { CommentsButton } from './CommentsButton'
 
 const DocsHeader = () => {
   const application = useApplication()
@@ -40,14 +41,7 @@ const DocsHeader = () => {
             <Icon name="user-plus" />
             Share
           </Button>
-          <Button
-            icon
-            shape="ghost"
-            className="flex items-center gap-2 text-sm"
-            onClick={() => controller.showCommentsPanel()}
-          >
-            <Icon name="speech-bubble" />
-          </Button>
+          <CommentsButton controller={controller} />
         </>
       )}
       <QuickSettingsAppButton />

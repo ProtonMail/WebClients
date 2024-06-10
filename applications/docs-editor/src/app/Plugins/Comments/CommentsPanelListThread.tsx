@@ -55,6 +55,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   }, [editor, markID, markNodeMap])
 
   const handleClickThread = () => {
+    controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
     const markNodeKeys = markNodeMap.get(markID)
     if (!markNodeKeys) {
       setActiveIDs([])

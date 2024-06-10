@@ -31,6 +31,7 @@ export interface EditorOrchestratorInterface {
   createThread(commentContent: string): Promise<CommentThreadInterface | undefined>
   resolveThread(threadId: string): Promise<boolean>
   deleteThread(id: string): Promise<boolean>
+  markThreadAsRead(id: string): Promise<void>
 
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
 }
