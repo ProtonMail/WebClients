@@ -4,6 +4,7 @@ import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 import { DocumentKeys } from '@proton/drive-store'
 import { DecryptedMessage } from '../Models/DecryptedMessage'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
+import metrics from '@proton/metrics'
 
 type DecryptCommitDTO = {
   commit: Commit
@@ -29,9 +30,15 @@ export class DecryptCommit implements UseCaseInterface<DecryptedCommit> {
       ),
     )
 
-    const failedResult = decryptedResults.find((result) => result.isFailed())
-    if (failedResult) {
-      return Result.fail(failedResult.getError())
+    const failedResults = decryptedResults.filter((result) => result.isFailed())
+    if (failedResults.length > 0) {
+      for (const _ of failedResults) {
+        metrics.docs_document_updates_decryption_error_total.increment({
+          source: 'persistent',
+        })
+      }
+
+      return Result.fail(failedResults[0].getError())
     }
 
     const commit = new DecryptedCommit(
