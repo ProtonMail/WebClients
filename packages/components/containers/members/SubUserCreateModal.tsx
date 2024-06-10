@@ -124,7 +124,7 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
-        numAI: isVisionary, // Visionary users should have the toggle set to true by default
+        numAI: assistantSeatRemaining && isVisionary, // Visionary users should have the toggle set to true by default
         domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&
