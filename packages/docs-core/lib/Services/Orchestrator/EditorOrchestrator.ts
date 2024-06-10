@@ -61,6 +61,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.unresolveThread(threadId)
   }
 
+  async markThreadAsRead(id: string): Promise<void> {
+    return this.comments.markThreadAsRead(id)
+  }
+
   editComment(threadID: string, commentID: string, content: string): Promise<boolean> {
     return this.comments.editComment(threadID, commentID, content)
   }

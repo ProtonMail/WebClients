@@ -2,6 +2,7 @@ import {
   CommentInterface,
   CommentThreadInterface,
   CommentThreadState,
+  CommentsChangedData,
   CommentsEvent,
   EditCommentData,
   InternalEventBusInterface,
@@ -9,24 +10,40 @@ import {
 
 export class LocalCommentsState {
   private threads: CommentThreadInterface[] = []
+  private unreadThreadIDs = new Set<string>()
 
   constructor(private eventBus: InternalEventBusInterface) {}
 
-  getAllThreads() {
+  getAllThreads(): CommentThreadInterface[] {
     return this.threads
+  }
+
+  hasUnreadThreads(): boolean {
+    return this.unreadThreadIDs.size > 0
+  }
+
+  markThreadAsRead(id: string): void {
+    this.unreadThreadIDs.delete(id)
+    this.notifyLocalListeners()
   }
 
   findThreadById(threadId: string): CommentThreadInterface | undefined {
     return this.threads.find((thread) => thread.id === threadId)
   }
 
-  addThread(thread: CommentThreadInterface) {
+  addThread(thread: CommentThreadInterface, markUnread = false) {
     this.threads.push(thread)
+    if (markUnread) {
+      this.unreadThreadIDs.add(thread.id)
+    }
     this.notifyLocalListeners()
   }
 
   deleteThread(id: string): void {
     this.threads = this.threads.filter((thread) => thread.id !== id)
+    if (this.unreadThreadIDs.has(id)) {
+      this.unreadThreadIDs.delete(id)
+    }
     this.notifyLocalListeners()
   }
 
@@ -50,16 +67,19 @@ export class LocalCommentsState {
     return thread
   }
 
-  addComment(comment: CommentInterface, threadID: string): void {
+  addComment(comment: CommentInterface, threadID: string, markUnread = false): void {
     const thread = this.findThreadById(threadID)
     if (!thread) {
       return
     }
     thread.comments.push(comment)
+    if (markUnread) {
+      this.unreadThreadIDs.add(thread.id)
+    }
     this.notifyLocalListeners()
   }
 
-  editComment({ commentID, threadID, content }: EditCommentData): void {
+  editComment({ commentID, threadID, content, markThreadUnread = false }: EditCommentData): void {
     const thread = this.findThreadById(threadID)
     if (!thread) {
       return
@@ -71,6 +91,10 @@ export class LocalCommentsState {
     }
 
     comment.content = content
+
+    if (markThreadUnread) {
+      this.unreadThreadIDs.add(thread.id)
+    }
 
     this.notifyLocalListeners()
   }
@@ -125,9 +149,11 @@ export class LocalCommentsState {
   }
 
   private notifyLocalListeners(): void {
-    this.eventBus.publish({
+    this.eventBus.publish<CommentsChangedData>({
       type: CommentsEvent.CommentsChanged,
-      payload: undefined,
+      payload: {
+        hasUnreadThreads: this.hasUnreadThreads(),
+      },
     })
   }
 }
