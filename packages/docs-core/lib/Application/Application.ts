@@ -8,6 +8,7 @@ import { InternalEventBusInterface } from '@proton/docs-shared'
 import type { DriveCompat } from '@proton/drive-store'
 import { ApplicationInterface } from './ApplicationInterface'
 import { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
+import { LoggerInterface } from '@proton/utils/logs'
 
 export class Application implements ApplicationInterface {
   private readonly deps = new AppDependencies(this.protonApi, this.user, this.driveCompat)
@@ -20,6 +21,10 @@ export class Application implements ApplicationInterface {
 
   public get eventBus(): InternalEventBusInterface {
     return this.deps.get<InternalEventBusInterface>(App_TYPES.EventBus)
+  }
+
+  public get logger(): LoggerInterface {
+    return this.deps.get<LoggerInterface>(App_TYPES.Logger)
   }
 
   public get docLoader(): DocLoaderInterface {

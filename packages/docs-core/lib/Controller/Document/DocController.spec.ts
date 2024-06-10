@@ -88,7 +88,7 @@ describe('DocController', () => {
 
     controller.handleDocumentUpdatesMessage = jest.fn()
 
-    controller.setEditorInvoker({
+    await controller.editorIsReadyToReceiveInvocations({
       receiveMessage: jest.fn(),
       showEditor: jest.fn(),
       performOpeningCeremony: jest.fn(),
@@ -99,11 +99,13 @@ describe('DocController', () => {
     expect(controller.updatesReceivedWhileEditorInvokerWasNotReady).toHaveLength(0)
   })
 
-  describe('setEditorInvoker', () => {
+  describe('editorIsReadyToReceiveInvocations', () => {
     it('should send initial commit to editor', async () => {
       controller.sendInitialCommitToEditor = jest.fn()
 
-      controller.setEditorInvoker(controller.editorInvoker!)
+      const editorInvoker = controller.editorInvoker!
+      controller.editorInvoker = undefined
+      await controller.editorIsReadyToReceiveInvocations(editorInvoker)
 
       expect(controller.sendInitialCommitToEditor).toHaveBeenCalled()
     })
@@ -198,6 +200,14 @@ describe('DocController', () => {
       controller.handleWebsocketConnectedEvent()
 
       expect(controller.beginInitialSyncTimer).toHaveBeenCalled()
+    })
+  })
+
+  describe('handleWebsocketConnectedEvent', () => {
+    it('should allow editing', () => {
+      controller.handleWebsocketConnectedEvent()
+
+      expect(controller.editorInvoker!.changeEditingAllowance).toHaveBeenCalledWith(true)
     })
   })
 })
