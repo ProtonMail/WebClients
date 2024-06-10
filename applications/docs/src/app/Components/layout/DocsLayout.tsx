@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 
-import DocsHeader from './DocsHeader'
+import DocsHeader from '../DocsHeader/DocsHeader'
 import DocsQuickSettings from './DocsQuickSettings'
 
 interface Props {

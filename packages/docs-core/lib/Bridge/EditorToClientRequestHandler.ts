@@ -66,6 +66,10 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.deleteThread(id)
   }
 
+  async markThreadAsRead(id: string): Promise<void> {
+    return this.docOrchestrator.markThreadAsRead(id)
+  }
+
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
     return this.docOrchestrator.handleAwarenessStateUpdate(states)
   }
