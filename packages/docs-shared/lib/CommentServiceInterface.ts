@@ -23,6 +23,8 @@ export interface CommentServiceInterface {
 
   unresolveThread(threadId: string): Promise<boolean>
 
+  markThreadAsRead(id: string): void
+
   getTypersExcludingSelf(threadId: string): string[]
   beganTypingInThread(threadID: string): void
   stoppedTypingInThread(threadID: string): void

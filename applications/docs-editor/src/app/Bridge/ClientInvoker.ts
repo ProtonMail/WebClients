@@ -76,6 +76,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('deleteThread', [id])
   }
 
+  async markThreadAsRead(id: string): Promise<void> {
+    this.invokeClientMethod('markThreadAsRead', [id])
+  }
+
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
     return this.invokeClientMethod('handleAwarenessStateUpdate', [states])
   }
