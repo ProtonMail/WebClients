@@ -2,12 +2,14 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
 import {
+  BridgeOriginProvider,
   BroadcastSources,
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
   CommentsEvent,
   ConvertibleDataType,
   DocState,
+  EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
   RtsMessagePayload,
   YDocMap,
@@ -67,6 +69,10 @@ export function App({ nonInteractiveMode = false }: Props) {
   const docMap = useMemo(() => {
     const map: YDocMap = new Map<string, YDoc>()
     return map
+  }, [])
+
+  const notifyParentEditorIsReady = useCallback(() => {
+    window.parent.postMessage(EDITOR_READY_POST_MESSAGE_EVENT, BridgeOriginProvider.GetClientOrigin())
   }, [])
 
   const setBridgeRequestHandler = useCallback(
@@ -191,7 +197,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
       }
 
-      bridge.setRequestHandler(requestHandler)
+      bridge.setClientRequestHandler(requestHandler)
     },
     [bridge, docMap, eventBus],
   )
@@ -236,7 +242,17 @@ export function App({ nonInteractiveMode = false }: Props) {
     }
 
     setBridgeRequestHandler(newDocState)
-  }, [createInitialDocState, docMap, docState, nonInteractiveMode, setBridgeRequestHandler, viewOnlyDocumentId])
+
+    notifyParentEditorIsReady()
+  }, [
+    createInitialDocState,
+    docMap,
+    docState,
+    nonInteractiveMode,
+    notifyParentEditorIsReady,
+    setBridgeRequestHandler,
+    viewOnlyDocumentId,
+  ])
 
   const onEditingAllowanceChange = useCallback(
     (editable: boolean) => {

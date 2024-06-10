@@ -40,6 +40,8 @@ export class ClientToEditorBridge {
         this.editorInvoker.handleReplyFromEditor(message as EditorToClientReplyMessage)
       }
     })
+
+    editorController.provideEditorInvoker(this.editorInvoker)
   }
 
   private async handleEditorRequestingClientMethod(

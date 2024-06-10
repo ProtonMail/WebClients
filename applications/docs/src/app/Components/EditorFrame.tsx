@@ -1,5 +1,5 @@
-import { BridgeOriginProvider } from '@proton/docs-shared'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { BridgeOriginProvider, EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
@@ -29,7 +29,7 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
   const didAlreadyLoad = useRef(false)
 
-  const onLoad = useCallback(() => {
+  const onReady = useCallback(() => {
     if (!iframe) {
       throw new Error('Frame not found')
     }
@@ -43,13 +43,34 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
     onFrameReady(iframe)
   }, [iframe, onFrameReady])
 
+  useEffect(() => {
+    const eventListener = (event: MessageEvent) => {
+      if (!iframe) {
+        return
+      }
+
+      if (event.source !== iframe.contentWindow) {
+        return
+      }
+
+      if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
+        onReady()
+      }
+    }
+
+    window.addEventListener('message', eventListener)
+
+    return () => {
+      window.removeEventListener('message', eventListener)
+    }
+  }, [iframe, onReady])
+
   return (
     <iframe
       title="Docs Editor"
       src={url}
       style={{ width: '100%', height: '100%' }}
       ref={setIframe}
-      onLoad={onLoad}
       sandbox={SANDBOX_OPTIONS}
     ></iframe>
   )
