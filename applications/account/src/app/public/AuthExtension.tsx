@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { ExtensionForkResult, ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
+import type { ExtensionForkResult, ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import { type ExtensionApp, sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS } from '@proton/shared/lib/constants';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';

@@ -7,6 +7,10 @@ import { OnLoginCallbackResult, ProtonLoginCallback, StandardLoadErrorPage, useA
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import {
+    getEmailSessionForkSearchParameter,
+    getLocalIDForkSearchParameter,
+} from '@proton/shared/lib/authentication/fork';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
     GetActiveSessionsResult,
@@ -45,7 +49,11 @@ const AccountPublicApp = ({
         const runGetSessions = async () => {
             const searchParams = new URLSearchParams(location.search);
             await publicApp({ app: APPS.PROTONACCOUNT, locales, searchParams, pathLocale });
-            const activeSessionsResult = await getActiveSessions(silentApi);
+            const activeSessionsResult = await getActiveSessions({
+                api: silentApi,
+                localID: getLocalIDForkSearchParameter(searchParams),
+                email: getEmailSessionForkSearchParameter(searchParams),
+            });
             const activeSessions = await onActiveSessions(activeSessionsResult);
             if (activeSessions.state !== 'complete') {
                 setLoading(false);
@@ -54,7 +62,7 @@ const AccountPublicApp = ({
 
         const runResumeSession = async (localID: number) => {
             try {
-                const result = await resumeSession(silentApi, localID);
+                const result = await resumeSession({ api: silentApi, localID });
                 return onLogin(result);
             } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {

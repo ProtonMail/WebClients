@@ -7,18 +7,20 @@ import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customCo
 import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
+    OAuthProduceForkParameters,
+    ProduceForkParametersFull,
+    getEmailSessionForkSearchParameter,
+    getProduceForkParameters,
+    getRequiredForkParameters,
+    getShouldReAuth,
+} from '@proton/shared/lib/authentication/fork';
+import {
+    GetActiveSessionType,
     GetActiveSessionsResult,
     getActiveLocalSession,
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
-    OAuthProduceForkParameters,
-    ProduceForkParametersFull,
-    getProduceForkParameters,
-    getRequiredForkParameters,
-    getShouldReAuth,
-} from '@proton/shared/lib/authentication/sessionForking';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -27,10 +29,12 @@ const getProduceOAuthForkParameters = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const clientID = searchParams.get('ClientID') || '';
     const oaSession = searchParams.get('OaSession') || '';
+    const email = getEmailSessionForkSearchParameter(searchParams);
 
     return {
         clientID,
         oaSession,
+        email,
     };
 };
 
@@ -47,6 +51,7 @@ export type ProtonForkData = {
     type: SSOType.Proton;
     payload: {
         forkParameters: ProduceForkParametersFull;
+        searchParameters?: URLSearchParams;
     };
 };
 
@@ -79,14 +84,14 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
         const silentApi = getSilentApi(normalApi);
 
         const runOAuth = async () => {
-            const { clientID, oaSession } = getProduceOAuthForkParameters();
+            const { clientID, oaSession, email } = getProduceOAuthForkParameters();
             if (!clientID || !oaSession) {
                 onInvalidFork();
                 return;
             }
 
             const [activeSessionsResult, { Info }] = await Promise.all([
-                getActiveSessions(silentApi),
+                getActiveSessions({ api: silentApi, email }),
                 silentApi<{ Info: OAuthClientInfo }>(getOAuthClientInfo(clientID)),
             ]);
 
@@ -96,9 +101,9 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                 oaSession,
             };
 
-            const { session, sessions } = activeSessionsResult;
+            const { session, type } = activeSessionsResult;
 
-            if (session && sessions.length === 1) {
+            if (type === GetActiveSessionType.AutoPick) {
                 await onProduceFork(
                     {
                         type: SSOType.OAuth,
@@ -114,7 +119,8 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
         };
 
         const runInternal = async () => {
-            const forkParameters = getProduceForkParameters();
+            const searchParams = new URLSearchParams(window.location.search);
+            const forkParameters = getProduceForkParameters(searchParams);
             if (!getRequiredForkParameters(forkParameters)) {
                 onInvalidFork();
                 return;
@@ -130,18 +136,18 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
 
             const localID = forkParameters.localID;
             if (localID === undefined) {
-                const activeSessionsResult = await getActiveSessions(silentApi, localID);
+                const activeSessionsResult = await getActiveSessions({ api: silentApi, email: forkParameters.email });
                 await handleActiveSessions(activeSessionsResult);
                 return;
             }
 
             try {
                 // Resume session and produce the fork
-                const session = await resumeSession(silentApi, localID);
+                const session = await resumeSession({ api: silentApi, localID });
 
                 if (getShouldReAuth(forkParameters, session)) {
                     const sessions = await getActiveLocalSession(getUIDApi(session.UID, silentApi));
-                    const activeSessionsResult = { session, sessions };
+                    const activeSessionsResult = { session, sessions, type: GetActiveSessionType.AutoPick };
                     await handleActiveSessions(activeSessionsResult);
                     return;
                 }
@@ -149,7 +155,11 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                 await handleProduceFork(session);
             } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
-                    const activeSessionsResult = await getActiveSessions(silentApi);
+                    const activeSessionsResult = await getActiveSessions({
+                        api: silentApi,
+                        email: forkParameters.email,
+                        localID,
+                    });
                     await handleActiveSessions(activeSessionsResult);
                     return;
                 }

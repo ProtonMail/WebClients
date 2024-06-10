@@ -1,7 +1,7 @@
 import getRandomString from '@proton/utils/getRandomString';
 import lastItem from '@proton/utils/lastItem';
 
-import { ExtensionForkPayload } from '../authentication/sessionForking';
+import type { ExtensionForkPayload } from '../authentication/fork/extension';
 import { APPS, EXTENSIONS } from '../constants';
 import { browserAPI, isChromiumBased, isSafari } from '../helpers/browser';
 
