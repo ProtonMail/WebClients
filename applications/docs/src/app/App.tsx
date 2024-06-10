@@ -18,7 +18,7 @@ import {
 } from '@proton/components'
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import metrics from '@proton/metrics/index'
+import metrics from '@proton/metrics'
 import { ProtonStoreProvider } from '@proton/redux-shared-store'
 import { getClientID } from '@proton/shared/lib/apps/helper'
 import { newVersionUpdater } from '@proton/shared/lib/busy'
@@ -31,6 +31,7 @@ import * as config from './config'
 import locales from './locales'
 import { DocsStore } from './ReduxStore/store'
 import { extraThunkArguments } from './ReduxStore/thunk'
+import { Availability, AvailabilityReport, AvailabilityTypes } from '@proton/utils/availability'
 
 setTtagLocales(locales)
 setupGuestCrossStorage()
@@ -55,6 +56,21 @@ const App = () => {
   useEffectOnce(() => {
     void (async () => {
       try {
+        /*
+          Availability will report every 5 minutes the user status:
+          - if an error occured and was reported to Sentry
+          - if an error occured and was explicitely marked as an error
+          - if an error occurred and was explicitely marked as critical
+        */
+        Availability.init((report: AvailabilityReport) => {
+          metrics.docs_users_success_rate_total.increment({
+            plan: state.initialUser?.isFree ? 'free' : 'paid',
+            critical: report[AvailabilityTypes.CRITICAL] ? 'true' : 'false',
+            error: report[AvailabilityTypes.ERROR] ? 'true' : 'false',
+            sentry: report[AvailabilityTypes.SENTRY] ? 'true' : 'false',
+          })
+        })
+
         const { scopes, user, userSettings, MainContainer, store } = await bootstrapApp({
           config,
         })

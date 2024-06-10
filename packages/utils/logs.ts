@@ -1,6 +1,8 @@
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { Availability, AvailabilityTypes } from './availability';
+
 type DebugLogDetail = {
     type: string;
     times: Date[];
@@ -128,6 +130,7 @@ export class Logger implements LoggerInterface {
     public error(...args: Args): void {
         console.error(...args);
         report(this.identifier, ...args);
+        Availability.mark(AvailabilityTypes.ERROR);
         this.save(toString(args), 'error');
     }
 

@@ -6,12 +6,14 @@
  */
 
 /**
- * Error free vs errored users counts (every 10min)
+ * Users success rate (every 5min)
  */
 export interface HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson {
   Labels: {
     plan: "free" | "paid";
-    type: "error" | "success";
+    critical: "true" | "false";
+    error: "true" | "false";
+    sentry: "true" | "false";
   };
   Value: number;
 }
