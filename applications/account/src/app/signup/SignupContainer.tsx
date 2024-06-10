@@ -20,6 +20,7 @@ import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_sig
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
+import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -36,6 +37,7 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -52,6 +54,7 @@ import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getContinueToString } from '../public/helper';
 import { getSubscriptionData } from '../single-signup-v2/helper';
+import { getSignupTelemetryData } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -77,6 +80,7 @@ import {
     SignupType,
     SubscriptionData,
 } from './interfaces';
+import { TelemetryMeasurementData } from './measure';
 import { getPlanIDsFromParams, getSignupSearchParams } from './searchParams';
 import {
     handleCreateAccount,
@@ -184,6 +188,32 @@ const SignupContainer = ({
 
     const isReferral = model.referralData && !isMailTrial;
 
+    const measure = (data: TelemetryMeasurementData) => {
+        const values = 'values' in data ? data.values : {};
+        const flow = (() => {
+            if (toApp === APPS.PROTONCALENDAR) {
+                return 'legacy_calendar_signup';
+            }
+            if (toApp === APPS.PROTONMAIL) {
+                return 'legacy_mail_signup';
+            }
+            if (productParam === 'business') {
+                return 'legacy_business_signup';
+            }
+            return 'legacy_generic_signup';
+        })();
+        return sendTelemetryReport({
+            api: silentApi,
+            measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: data.event,
+            dimensions: {
+                ...data.dimensions,
+                flow,
+            },
+            values,
+        }).catch(noop);
+    };
+
     const signupTypes = (() => {
         // Only on account.protonvpn.com do we suggest external only sign up
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
@@ -280,6 +310,11 @@ const SignupContainer = ({
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
+            });
+
+            void measure({
+                event: TelemetryAccountSignupEvents.pageLoad,
+                dimensions: {},
             });
         };
 
@@ -892,6 +927,8 @@ const SignupContainer = ({
                                     reportPaymentFailure(method, overrides);
                                 },
                             });
+
+                            measure(getSignupTelemetryData(model.plansMap, cache));
 
                             {
                                 const maybeSetupOrg = async () => {
