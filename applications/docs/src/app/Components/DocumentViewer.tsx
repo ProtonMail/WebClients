@@ -37,7 +37,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const isSignatureFailedModalOpen = useRef(false)
   const [hasSignatureIssues, setHasSignatureIssues] = useState(false)
 
-  const [frame, setFrame] = useState<HTMLIFrameElement | null>(null)
+  const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
@@ -63,12 +63,13 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
       }
       void bridge.editorInvoker.receiveThemeChanges(themeStyles)
     })
-  }, [bridge, themeContext])
+  }, [bridge, themeContext, editorFrame])
 
   useEffect(() => {
     if (!bridge) {
       return
     }
+
     return application.eventBus.addEventCallback(() => {
       void bridge.editorInvoker.handleCommentsChange()
     }, CommentsEvent.CommentsChanged)
@@ -146,23 +147,25 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
   const createBridge = useCallback(
     (orchestrator: EditorOrchestratorInterface, editorFrame: HTMLIFrameElement) => {
-      const newBridge = new ClientToEditorBridge(editorFrame, orchestrator)
-      setBridge(newBridge)
-      orchestrator.passEditorInvokerToDocController(newBridge.editorInvoker)
+      application.logger.info('Creating bridge from client to editor')
 
-      void newBridge.editorInvoker.initializeEditor(
+      const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator)
+
+      setBridge(clientToEditorBridge)
+
+      void clientToEditorBridge.editorInvoker.initializeEditor(
         orchestrator.docMeta.uniqueIdentifier,
         orchestrator.username,
         injectWithNewContent?.data,
         injectWithNewContent?.type,
       )
     },
-    [injectWithNewContent],
+    [application.logger, injectWithNewContent?.data, injectWithNewContent?.type],
   )
 
   const onFrameReady = useCallback(
     (frame: HTMLIFrameElement) => {
-      setFrame(frame)
+      setEditorFrame(frame)
 
       if (docOrchestrator) {
         createBridge(docOrchestrator, frame)
@@ -181,8 +184,8 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
         setDocOrchestrator(orchestrator)
         setReadyToShowDebugMenu(true)
 
-        if (frame) {
-          createBridge(orchestrator, frame)
+        if (editorFrame) {
+          createBridge(orchestrator, editorFrame)
         }
       },
       onError: (errorMessage) => {
@@ -196,7 +199,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     }
 
     return observer
-  }, [application, lookup, docOrchestrator, frame, createBridge, initializing])
+  }, [application, lookup, docOrchestrator, editorFrame, createBridge, initializing])
 
   if (error) {
     return <div className="flex h-full w-full items-center justify-center text-[color:--signal-danger]">{error}</div>
