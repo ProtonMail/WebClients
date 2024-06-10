@@ -9,6 +9,8 @@ import {
 } from '@sentry/browser';
 import { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 
+import { Availability, AvailabilityTypes } from '@proton/utils/availability';
+
 import { VPN_HOSTNAME } from '../constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
@@ -258,6 +260,7 @@ function main({
 export const traceError = (...args: Parameters<typeof captureException>) => {
     if (!isLocalhost(window.location.host)) {
         captureException(...args);
+        Availability.mark(AvailabilityTypes.SENTRY);
     }
 };
 
