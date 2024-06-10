@@ -4,13 +4,13 @@ import { Button } from '@proton/atoms/Button';
 import {
     AssistantIncompatibleBrowserModal,
     AssistantIncompatibleHardwareModal,
+    Info,
     RadioGroup,
     useModalStateObject,
 } from '@proton/components';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 import useAssistantToggle from '../../payments/subscription/assistant/useAssistantToggle';
@@ -20,19 +20,18 @@ const { SERVER_ONLY, CLIENT_ONLY, UNSET, OFF } = AI_ASSISTANT_ACCESS;
 const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     if (runtime === SERVER_ONLY) {
         return (
-            <span>
-                <h3 className="text-rg text-bold">{c('Assistant option').t`Run on ${BRAND_NAME} servers`}</h3>
-                <p className="my-0 color-weak">{c('Assistant option').t`Faster, broader device compatibility`}</p>
-            </span>
+            <>
+                <h3 className="text-rg mr-2">{c('Assistant option').t`Run on servers`}</h3>
+                <Info title={c('Assistant option').t`Faster, broader device compatibility`} />
+            </>
         );
     }
 
     return (
-        <span>
-            <h3 className="text-rg text-bold">{c('Assistant option').t`Run locally`}</h3>
-            <p className="my-0 color-weak">{c('Assistant option').t`No data transmission while using,`}</p>
-            <p className="my-0 color-weak">{c('Assistant option').t`Requires one-time download`}</p>
-        </span>
+        <>
+            <h3 className="text-rg mr-2">{c('Assistant option').t`Run locally`}</h3>
+            <Info title={c('Assistant option').t`No data transmitted while using,requires one-time download`} />
+        </>
     );
 };
 

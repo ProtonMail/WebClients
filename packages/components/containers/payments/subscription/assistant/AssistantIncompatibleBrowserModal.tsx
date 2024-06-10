@@ -64,7 +64,7 @@ const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
     return (
         <Prompt title={c('Info').t`Browser not supported`} buttons={buttons} {...modalProps}>
             <span>{modalText}</span>
-            <Href className="ml-2" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>
+            <Href className="ml-2" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}>
                 {c('Info').t`Learn more`}
             </Href>
         </Prompt>
