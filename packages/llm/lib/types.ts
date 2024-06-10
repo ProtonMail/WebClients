@@ -94,14 +94,21 @@ export type PartialFriendlyAction = {
     type: 'friendly';
 };
 
+// "Expand" action button.
+export type ExpandAction = PartialExpandAction & RefineLocation;
+export type PartialExpandAction = {
+    type: 'expand';
+};
+
 export type PartialRefineAction =
     | PartialProofreadAction
     | PartialShortenAction
     | PartialFormalAction
     | PartialFriendlyAction
+    | PartialExpandAction
     | PartialCustomRefineAction;
 export type RefineAction = PartialRefineAction & RefineLocation;
-export type PredefinedRefineAction = ProofreadAction | ShortenAction | FormalAction | FriendlyAction;
+export type PredefinedRefineAction = ProofreadAction | ShortenAction | FormalAction | FriendlyAction | ExpandAction;
 export type Action = WriteFullEmailAction | RefineAction;
 
 export type PredefinedRefineActionType = PredefinedRefineAction['type'];
@@ -109,7 +116,9 @@ export type RefineActionType = RefineAction['type'];
 export type ActionType = Action['type'];
 
 export function isPredefinedRefineActionType(value: any): value is PredefinedRefineActionType {
-    return value === 'shorten' || value === 'proofread' || value === 'formal' || value === 'friendly';
+    return (
+        value === 'shorten' || value === 'proofread' || value === 'formal' || value === 'friendly' || value === 'expand'
+    );
 }
 
 export function isRefineActionType(value: any): value is RefineActionType {

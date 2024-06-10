@@ -112,6 +112,7 @@ const ComposerAssistantInput = ({
         isModelDownloaded,
         error,
         initAssistant,
+        closeAssistant,
     } = useAssistant(assistantID);
 
     const hasDownloadError = useMemo(() => {
@@ -493,7 +494,7 @@ const ComposerAssistantInput = ({
                             className="text-left flex flex-nowrap items-center"
                             onClick={() => {
                                 onClickRefine();
-                                void startGeneratingResult('shorten'); // TODO: expand
+                                void startGeneratingResult('expand');
                             }}
                         >
                             {c('Action').t`Expand`}
@@ -534,10 +535,10 @@ const ComposerAssistantInput = ({
 
         const placeholderPrompts = [
             c('Placeholder').t`Try “Invite Jane to my party”`,
+            c('Placeholder').t`Try “Announce upcoming events in a newsletter”`,
             c('Placeholder').t`Try “Write a cover letter for an internship”`,
             c('Placeholder').t`Try “Cancel my gym membership”`,
             c('Placeholder').t`Try “Write a follow-up email to a client”`,
-            c('Placeholder').t`Try “Complain to customer service about a product”`,
             c('Placeholder').t`Try “Thank my coworker for help on a project”`,
         ];
 
@@ -637,7 +638,14 @@ const ComposerAssistantInput = ({
                     {showInitializationState && <span>{c('Info').t`Initializing…`}</span>}
                 </span>
                 <ResumeDownloadingModal onResumeDownload={handleResumeDownload} {...resumeDownloadProps} />
-                {upsellModal.render && <ComposerAssistantTrialEndedUpsellModal modalProps={upsellModal.modalProps} />}
+                {upsellModal.render && (
+                    <ComposerAssistantTrialEndedUpsellModal
+                        modalProps={{
+                            ...upsellModal.modalProps,
+                        }}
+                        handleCloseAssistant={() => closeAssistant(assistantID)}
+                    />
+                )}
             </div>
         </ComposerAssistantInitialSetupSpotlight>
     );
