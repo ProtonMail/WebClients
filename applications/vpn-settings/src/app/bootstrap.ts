@@ -32,7 +32,7 @@ export const bootstrapApp = async ({
 
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
-        const user = sessionResult.payload.session?.User;
+        const user = sessionResult.session?.User;
         extendStore({ unleashClient });
 
         const dispatch = store.dispatch;
