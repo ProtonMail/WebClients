@@ -6,6 +6,10 @@ export enum CommentsEvent {
   UnresolveMarkNode = 'UnresolveMarkNode',
 }
 
+export type CommentsChangedData = {
+  hasUnreadThreads: boolean
+}
+
 export type CommentMarkNodeChangeData = {
   markID: string
 }

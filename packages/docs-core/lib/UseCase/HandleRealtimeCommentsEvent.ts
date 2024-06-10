@@ -33,16 +33,17 @@ export class HandleRealtimeCommentsEvent implements SyncUseCaseInterface<void> {
         case CommentsMessageType.AddThread: {
           const threadData = data as AddThreadData
           const thread = CommentThread.fromPayload(threadData)
-          localCommentsState.addThread(thread)
+          localCommentsState.addThread(thread, true)
           break
         }
         case CommentsMessageType.AddComment: {
           const commentData = data as AddCommentData
           const comment = Comment.fromPayload(commentData.comment)
-          localCommentsState.addComment(comment, commentData.threadID)
+          localCommentsState.addComment(comment, commentData.threadID, true)
           break
         }
         case CommentsMessageType.EditComment:
+          ;(data as EditCommentData).markThreadUnread = true
           localCommentsState.editComment(data as EditCommentData)
           break
         case CommentsMessageType.DeleteThread:
