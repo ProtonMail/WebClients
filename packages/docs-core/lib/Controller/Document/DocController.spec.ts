@@ -33,7 +33,7 @@ describe('DocController', () => {
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<DebugCreateInitialCommit>,
       {
-        execute: jest.fn().mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommit: '123' })),
+        execute: jest.fn().mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommitId: '123' })),
       } as unknown as jest.Mocked<LoadDocument>,
       {
         execute: jest.fn().mockReturnValue(Result.ok({ numberOfUpdates: jest.fn() })),
