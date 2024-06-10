@@ -53,20 +53,23 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const [displayUpgradeButton, setDisplayUpgradeButton] = useState(() => {
-        // We want to have metrics from where the user has clicked on the upgrade button
-        const displayUpgradeButtonInit =
+    const check = () => {
+        return (
             (user.isFree || isTrial(subscription)) &&
             !location.pathname.endsWith(upgradePathname) &&
-            getCookieExpiration();
+            getCookieExpiration()
+        );
+    };
 
-        return displayUpgradeButtonInit;
+    const [displayUpgradeButton, setDisplayUpgradeButton] = useState(() => {
+        // We want to have metrics from where the user has clicked on the upgrade button
+        return check();
     });
 
     useEffect(() => {
         // we check every hour if cookie has expired
         const intervalID = window.setInterval(() => {
-            setDisplayUpgradeButton(!location.pathname.endsWith(upgradePathname) && getCookieExpiration());
+            setDisplayUpgradeButton(check());
         }, 1000 * 3600);
 
         return () => {
