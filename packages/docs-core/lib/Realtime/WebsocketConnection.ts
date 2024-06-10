@@ -137,7 +137,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     websocket.onclose = (event) => {
-      this.logger.debug('Websocket closed:', event.code, event.reason)
+      this.logger.info('Websocket closed:', event.code, event.reason)
 
       this.socket = undefined
 
@@ -198,7 +198,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       messageWrapper.eventsMessage = message
     }
 
-    this.logger.debug('Broadcasting message from source:', source)
+    this.logger.info('Broadcasting message from source:', source)
     this.socket.send(messageWrapper.serializeBinary())
   }
 

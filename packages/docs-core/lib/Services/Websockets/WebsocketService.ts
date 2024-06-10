@@ -43,7 +43,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     keys: DocumentKeys,
     options: { commitId: () => string | undefined; isStressTestor?: boolean },
   ): WebsocketConnectionInterface {
-    this.logger.debug(`Creating connection for document ${document.linkId} isStressTestor: ${options.isStressTestor}`)
+    this.logger.info(`Creating connection for document ${document.linkId} isStressTestor: ${options.isStressTestor}`)
 
     const callbacks: WebsocketCallbacks = {
       onConnecting: () => {
