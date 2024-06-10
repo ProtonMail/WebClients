@@ -25,40 +25,8 @@ const AssistantToggleDescription = ({ onRenewClick, onClick }: Props) => {
     );
 
     const { trialStatus, trialEndDate } = useAssistantSubscriptionStatus();
-    const isFreeTrialRunning = trialStatus === 'trial-ongoing';
-    if (isFreeTrialRunning && trialEndDate) {
-        const formattedDate = format(trialEndDate, 'PP');
-        return (
-            <>
-                <p className="m-0">{c('Assistant toggle').jt`from ${price} /month`}</p>
-                <p className="color-weak m-0">{c('Assistant toggle').t`Trial expires on ${formattedDate}`}</p>
-            </>
-        );
-    }
 
     const subscriptionRenewalDate = format(fromUnixTime(subscription?.PeriodEnd ?? 0), 'PP');
-    if (hasBoughtPlan && isRenewalEnabled && !isOrgAdmin) {
-        return (
-            <div>
-                <p className="m-0 mb-1">{c('Assistant toggle')
-                    .t`Automatically renews on ${subscriptionRenewalDate}`}</p>
-                <Button shape="underline" className="color-weak m-0 p-0" onClick={onClick}>{c('Assistant toggle')
-                    .t`Cancel the writing assistant subscription`}</Button>
-            </div>
-        );
-    }
-
-    if (hasBoughtPlan && !isRenewalEnabled) {
-        return (
-            <div>
-                <p className="m-0 mb-1 flex items-center gap-2">{c('Assistant toggle')
-                    .t`Active until ${subscriptionRenewalDate}`}</p>
-                <Button onClick={onRenewClick} shape="underline" color="norm" className="m-0 p-0">{c('Assistant toggle')
-                    .t`Renew subscription`}</Button>
-            </div>
-        );
-    }
-
     if (isOrgAdmin) {
         if (hasBoughtPlan) {
             return (
@@ -81,15 +49,57 @@ const AssistantToggleDescription = ({ onRenewClick, onClick }: Props) => {
         return (
             <div>
                 <Button shape="underline" className="p-0 m-0" color="norm" onClick={onClick}>{c('Assistant toggle')
-                    .t`Customize plan to add seats`}</Button>
-
+                    .t`Add writing assistant to your plan`}</Button>
                 <p className="m-0 color-weak">{c('Assistant toggle')
-                    .jt`You can enable/disable this add-on per user in ${userAndAddressesButton}`}</p>
+                    .jt`Assign it to specific users in ${userAndAddressesButton}`}</p>
             </div>
         );
     }
 
-    return <p className="m-0">{c('Assistant toggle').jt`from ${price} /month`}</p>;
+    const AddAssistant = () => (
+        <Button shape="outline" onClick={onClick}>{c('Assistant toggle').t`Add writing assistant`}</Button>
+    );
+
+    if (trialStatus === 'trial-ongoing' && trialEndDate) {
+        const formattedDate = format(trialEndDate, 'PP');
+        return (
+            <>
+                <AddAssistant />
+                <p className="m-0">{c('Assistant toggle').jt`from ${price} /month`}</p>
+                <p className="color-weak m-0">{c('Assistant toggle').t`Trial expires on ${formattedDate}`}</p>
+            </>
+        );
+    }
+
+    if (hasBoughtPlan && isRenewalEnabled) {
+        return (
+            <div>
+                <p className="m-0 mb-1">{c('Assistant toggle')
+                    .t`Automatically renews on ${subscriptionRenewalDate}`}</p>
+                <Button shape="underline" className="color-weak m-0 p-0" onClick={onClick}>{c('Assistant toggle')
+                    .t`Cancel writing assistant add-on`}</Button>
+            </div>
+        );
+    }
+
+    if (hasBoughtPlan && !isRenewalEnabled) {
+        return (
+            <>
+                <Button shape="outline" onClick={onRenewClick}>{c('Assistant toggle').t`Renew subscription`}</Button>
+                <p className="m-0 mb-1 flex items-center gap-2">{c('Assistant toggle')
+                    .t`Active until ${subscriptionRenewalDate}`}</p>
+            </>
+        );
+    }
+
+    return (
+        <>
+            <Button shape="outline" onClick={onClick}>{c('Assistant toggle').t`Add writing assistant`}</Button>
+            <p className="m-0">{c('Assistant toggle').jt`from ${price} /month`}</p>
+        </>
+    );
+
+    return;
 };
 
 export default AssistantToggleDescription;

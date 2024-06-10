@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react';
 
-import { usePlans, useSubscription, useUser } from '@proton/components/hooks';
+import { useOrganization, usePlans, useSubscription, useUser } from '@proton/components/hooks';
 import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { GpuAssessmentResult } from '@proton/shared/lib/assistant/checkHardwareForAssistant';
 import { ADDON_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { isScribeAddon } from '@proton/shared/lib/helpers/planIDs';
 import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
+import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
 const useAssistantToggle = () => {
     const [user, userLoading] = useUser();
     const [plans, plansLoading] = usePlans();
+    const [organization] = useOrganization();
     const [subscription, subscriptionLoading] = useSubscription();
     const addonPlan = plans?.plans.find((plan) => plan.Name === ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
-    const isOrgAdmin = user.isAdmin;
+    const isOrgAdmin = user.isAdmin && isOrganizationB2B(organization);
     const currentAddonSubscription = subscription?.Plans?.filter((plan) => {
         if (plan.Type === PLAN_TYPES.ADDON && isScribeAddon(plan.Name)) {
             return plan;
