@@ -2,7 +2,6 @@ import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { UserService } from '../../Services/User/UserService'
-import * as encoding from 'lib0/encoding'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
@@ -639,6 +638,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         verify: false,
       })
       if (decryptionResult.isFailed()) {
+        metrics.docs_document_updates_decryption_error_total.increment({
+          source: 'realtime',
+        })
         throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
       }
 
@@ -651,7 +653,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  private async handleConnectionMessage(data: Uint8Array): Promise<encoding.Encoder> {
+  private async handleConnectionMessage(data: Uint8Array): Promise<void> {
     if (!this.keys) {
       throw new Error('Keys not initialized')
     }
@@ -666,9 +668,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     } else {
       throw new Error('Unknown message type')
     }
-
-    const encoder = encoding.createEncoder()
-    return encoder
   }
 
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
