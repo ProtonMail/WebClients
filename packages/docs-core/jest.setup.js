@@ -32,3 +32,9 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
 jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+// Some components use the metrics API. If we don't mock it, tests might fail in a seemingly random manner.
+// For instance, a test covering a component with metrics might finish successfully, but a subsequent test
+// could fail seconds later when the metrics batch is sent via fetch.
+// The metrics package has its own test coverage, so we don't need to test it here.
+jest.mock('@proton/metrics');
