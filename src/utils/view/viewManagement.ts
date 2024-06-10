@@ -25,6 +25,12 @@ const browserViewMap: Record<ViewID, BrowserView | undefined> = {
     account: undefined,
 };
 
+const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
+    mail: undefined,
+    calendar: undefined,
+    account: undefined,
+};
+
 let mainWindow: undefined | BrowserWindow = undefined;
 
 export const viewCreationAppStartup = (session: Session) => {
@@ -116,159 +122,144 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
     return bounds;
 };
 
-const showMailView = (window: BrowserWindow) => {
-    Logger.info("Showing mail view");
-    if (!browserViewMap.mail) {
-        Logger.error("Mail view not created");
-        return;
-    }
+export async function showView(viewID: VIEW_TARGET, url: string = "") {
+    const logPrefix = `${viewID}(showView)`;
+    const loggedURL = app.isPackaged ? "" : url;
 
-    const bounds = adjustBoundsForWindows(window.getBounds());
-    browserViewMap.mail.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(browserViewMap.mail);
-};
-
-const showCalendarView = (window: BrowserWindow) => {
-    Logger.info("Showing calendar view");
-    if (!browserViewMap.calendar) {
-        Logger.error("Calendar view not created");
-        return;
-    }
-
-    const bounds = adjustBoundsForWindows(window.getBounds());
-    browserViewMap.calendar.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(browserViewMap.calendar);
-};
-
-export const showAccountView = (window: BrowserWindow) => {
-    Logger.info("Showing account view");
-    if (!browserViewMap.account) {
-        Logger.info("Account view not created, creating...");
-        const config = getWindowConfig(window.webContents.session);
-        browserViewMap.account = new BrowserView({ ...config });
-    }
-
-    const bounds = adjustBoundsForWindows(window.getBounds());
-    browserViewMap.account.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(browserViewMap.account);
-};
-
-export const showView = (target: VIEW_TARGET) => {
     if (!mainWindow) {
         throw new Error("mainWindow is undefined");
     }
 
-    if (target === currentViewID) {
-        Logger.warn(target, "view is already current view");
+    const internalShowView = async (windowTitle: string) => {
+        const view = browserViewMap[viewID]!;
+        const bounds = adjustBoundsForWindows(mainWindow!.getBounds());
+        view.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+
+        if (viewID === currentViewID) {
+            Logger.info(logPrefix, "loading in current view", loggedURL);
+            await loadURL(viewID, url);
+            return;
+        }
+
+        currentViewID = viewID;
+        mainWindow!.title = windowTitle;
+
+        if (url && !isSameURL(url, await getViewURL(viewID))) {
+            Logger.info(logPrefix, "loading", loggedURL);
+            await loadURL(viewID, "about:blank");
+            const loadPromise = loadURL(viewID, url);
+            mainWindow!.setBrowserView(view);
+            await loadPromise;
+        } else {
+            Logger.info(logPrefix, "showing view");
+            mainWindow!.setBrowserView(view);
+        }
+    };
+
+    switch (viewID) {
+        case "mail":
+            await internalShowView("Proton Mail");
+            break;
+        case "calendar":
+            await internalShowView("Proton Calendar");
+            break;
+        case "account":
+            await internalShowView("Proton");
+            break;
+        default:
+            Logger.error(logPrefix, "unsupported view");
+            break;
+    }
+}
+
+export async function loadURL(viewID: ViewID, url: string) {
+    const view = browserViewMap[viewID]!;
+    const loggedURL = app.isPackaged ? "" : url;
+    const logPrefix = `${viewID}(loadURL)`;
+
+    if (isSameURL(await getViewURL(viewID), url)) {
+        Logger.info(logPrefix, "already in given url", loggedURL);
         return;
     }
 
-    switch (target) {
-        case "mail":
-            showMailView(mainWindow);
-            mainWindow.title = "Proton Mail";
-            currentViewID = "mail";
-            break;
-        case "calendar":
-            showCalendarView(mainWindow);
-            mainWindow.title = "Proton Calendar";
-            currentViewID = "calendar";
-            break;
-        case "account":
-            showAccountView(mainWindow);
-            mainWindow.title = "Proton";
-            currentViewID = "account";
-            break;
-        default:
-            Logger.error("Unsupported view", target);
-            break;
+    Logger.info(logPrefix, "loading", loggedURL);
+
+    if (view.webContents.isLoadingMainFrame()) {
+        view.webContents.stop();
     }
-};
 
-export const loadURL = async (viewID: ViewID, url: string) => {
-    const currentView = getCurrentView()!;
-    const nextView = browserViewMap[viewID];
-    const loggedURL = app.isPackaged ? "" : url;
+    loadingViewMap[viewID] = new Promise<void>((resolve, reject) => {
+        let loadingTimeoutID: NodeJS.Timeout | undefined = undefined;
 
-    if (currentView === nextView) {
-        if (isSameURL(currentView.webContents.getURL(), url)) {
-            Logger.info(`Current view ${viewID} already in given url`, loggedURL);
-        } else {
-            Logger.info("Loading URL in current view");
-            await internalLoadURL(viewID, url);
-        }
-    } else {
-        stopViewNavigation(viewID);
+        const handleLoadingTimeout = () => {
+            Logger.error(logPrefix, "timeout", loggedURL);
+            clearTimeout(loadingTimeoutID);
+            reject();
+        };
 
-        if (nextView && isSameURL(nextView.webContents.getURL(), url)) {
-            Logger.info(`View ${viewID} already in given url`, loggedURL);
-            showView(viewID);
-        } else if (nextView) {
-            // Clear nextView before changing to it show it does not show a flash of content
-            await internalLoadURL(viewID, "about:blank");
-            showView(viewID);
-            await internalLoadURL(viewID, url);
-        } else {
-            // View hasn't loaded yet, try to load it now
-            showView(viewID);
-            const loadedNextView = getCurrentView();
+        const handleStopLoading = () => {
+            Logger.info(logPrefix, "loaded", loggedURL);
+            clearTimeout(loadingTimeoutID);
+            view.webContents.off("did-stop-loading", handleStopLoading);
+            resolve();
+        };
 
-            if (loadedNextView) {
-                if (isSameURL(loadedNextView.webContents.getURL(), url)) {
-                    Logger.info(`View ${viewID} already in given url`, loggedURL);
-                } else {
-                    await internalLoadURL(viewID, url);
-                }
-            } else {
-                Logger.error(`Cant load URL in ${viewID}, view is not available`, loggedURL);
-            }
-        }
-    }
-};
+        view.webContents.on("did-stop-loading", handleStopLoading);
+        loadingTimeoutID = setTimeout(handleLoadingTimeout, 30000);
+        view.webContents.loadURL(url);
+    });
 
-export const reloadHiddenViews = () => {
+    await loadingViewMap[viewID];
+    return;
+}
+
+async function getViewURL(viewID: ViewID): Promise<string> {
+    await loadingViewMap[viewID];
+    return browserViewMap[viewID]!.webContents.getURL();
+}
+
+export async function reloadHiddenViews() {
+    const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             Logger.info("Reloading hidden view", viewID);
-            view.webContents.reload();
+            loadPromises.push(loadURL(viewID as ViewID, await getViewURL(viewID as ViewID)));
         }
     }
-};
+    await Promise.all(loadPromises);
+}
 
 export async function resetHiddenViews() {
+    const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             Logger.info(`${viewID}(reset)`);
-            await internalLoadURL(viewID as ViewID, "about:blank");
+            loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
         }
     }
-};
+    await Promise.all(loadPromises);
+}
 
 export async function showEndOfTrial() {
     const trialEndURL = `${config.url.account}/trial-ended`;
     await loadURL("account", trialEndURL);
-    await resetHiddenViews();
-};
+    showView("account");
+    resetHiddenViews();
+}
 
 export async function reloadCalendarWithSession(session: string) {
     Logger.info("Reloading calendar with session", session);
-    if (!browserViewMap.calendar) {
-        Logger.error("Calendar view not created");
-        const config = getWindowConfig(mainWindow!.webContents.session);
-        browserViewMap.calendar = new BrowserView({ ...config });
-    }
-
-    await internalLoadURL("calendar", `${config.url.calendar}/u/${session}`);
-};
+    await loadURL("calendar", `${config.url.calendar}/u/${session}`);
+}
 
 export function getSpellCheckStatus() {
     return mainWindow?.webContents?.session?.spellCheckerEnabled ?? settings.spellChecker;
-};
+}
 
 export function toggleSpellCheck(enabled: boolean) {
     saveSettings({ ...settings, spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
-};
+}
 
 export function getMailView() {
     return browserViewMap.mail!;
@@ -298,35 +289,4 @@ export function getWebContentsViewName(webContents: WebContents) {
     }
 
     return "unknown";
-
-async function internalLoadURL(viewID: ViewID, url: string) {
-    const view = browserViewMap[viewID];
-    const loggedURL = app.isPackaged ? "" : url;
-    const logPrefix = `${viewID}(loadURL)`;
-
-    if (view) {
-        stopViewNavigation(viewID);
-        Logger.info(logPrefix, loggedURL);
-
-        try {
-            await view.webContents.loadURL(url);
-        } catch (error) {
-            Logger.error(logPrefix, error);
-        }
-    } else {
-        Logger.error(logPrefix, "view is not available", loggedURL);
-    }
-}
-
-function stopViewNavigation(viewID: ViewID) {
-    const logPrefix = `${viewID}(stopNavigation)`;
-
-    try {
-        Logger.info(logPrefix);
-        browserViewMap[viewID]?.webContents.stop();
-    } catch (error) {
-        // When stoping navigation, something that can happen often during redirection,
-        // we just want to keep it in the log with no further action.
-        Logger.warn(logPrefix, error);
-    }
 }

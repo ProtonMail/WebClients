@@ -18,8 +18,8 @@ import {
     getCurrentView,
     getMailView,
     getWebContentsViewName,
-    loadURL,
     reloadCalendarWithSession,
+    showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 
@@ -70,17 +70,17 @@ export function handleWebContents(contents: WebContents) {
         // the visible web contents.
         if (getCurrentView()!.webContents === contents) {
             if (isAccount(details.url) && !isAccountAuthorize(details.url) && getCurrentView() !== getAccountView()) {
-                loadURL("account", details.url);
+                showView("account", details.url);
                 return preventDefault(details);
             }
 
             if (isCalendar(details.url) && getCurrentView() !== getCalendarView()) {
-                loadURL("calendar", details.url);
+                showView("calendar", details.url);
                 return preventDefault(details);
             }
 
             if (isMail(details.url) && getCurrentView() !== getMailView()) {
-                loadURL("mail", details.url);
+                showView("mail", details.url);
                 return preventDefault(details);
             }
         }
@@ -94,13 +94,13 @@ export function handleWebContents(contents: WebContents) {
 
         if (isCalendar(url)) {
             log("Calendar link", loggedURL);
-            loadURL("calendar", url);
+            showView("calendar", url);
             return { action: "deny" };
         }
 
         if (isMail(url)) {
             log("Mail link", loggedURL);
-            loadURL("mail", url);
+            showView("mail", url);
             return { action: "deny" };
         }
 
@@ -111,7 +111,7 @@ export function handleWebContents(contents: WebContents) {
                 shell.openExternal(url);
             } else {
                 log("Account link", loggedURL);
-                loadURL("account", url);
+                showView("account", url);
             }
 
             return { action: "deny" };

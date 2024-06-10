@@ -29,9 +29,16 @@ export const showNotification = (payload: ElectronNotification) => {
 
     notification.on("click", () => {
         const mainWindow = getMainWindow();
-        showView(app);
+
         if (labelID && elementID && app === "mail") {
-            addHashToCurrentURL(getMailView(), `#elementID=${elementID}&labelID=${labelID}`);
+            const url = addHashToCurrentURL(
+                getMailView().webContents.getURL(),
+                `#elementID=${elementID}&labelID=${labelID}`,
+            );
+
+            showView("mail", url);
+        } else {
+            showView(app);
         }
 
         if (mainWindow) {

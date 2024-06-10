@@ -1,7 +1,7 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
-import { loadURL, reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
+import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
@@ -65,7 +65,7 @@ export const handleIPCCalls = () => {
                 showEndOfTrial();
                 break;
             case "changeView":
-                loadURL(payload, getConfig().url[payload]);
+                showView(payload, getConfig().url[payload]);
                 break;
             case "showNotification":
                 showNotification(payload);
