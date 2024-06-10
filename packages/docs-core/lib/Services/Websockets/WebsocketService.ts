@@ -163,6 +163,17 @@ export class WebsocketService implements WebsocketServiceInterface {
     await this._sendCommitCommandToRTS.execute(connection, keys.userOwnAddress)
   }
 
+  public debugCloseConnection(document: { linkId: string }): void {
+    this.logger.info('Closing connection')
+
+    const connection = this.connections[document.linkId]
+    if (!connection) {
+      throw new Error('Connection not found')
+    }
+
+    void connection.disconnect()
+  }
+
   public createStressTestConnections(count: number): void {
     this.logger.debug(`Creating ${count} stress test connections`)
 

@@ -119,6 +119,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (this.initialConnectionTimer) {
       clearTimeout(this.initialConnectionTimer)
     }
+
+    if (this.editorInvoker) {
+      void this.editorInvoker.changeEditingAllowance(true)
+    }
   }
 
   handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
@@ -153,17 +157,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  /**
-   * The editorInvoker is provided as soon as the editor iframe completes its initial initialization.
-   */
-  public setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
+  async editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void> {
     if (this.editorInvoker) {
       throw new Error('Editor invoker already set')
     }
 
     this.editorInvoker = editorInvoker
 
-    this.logger.info('Editor invoker set')
+    this.logger.info('Editor is ready to receive invocations')
 
     this.sendInitialCommitToEditor()
 

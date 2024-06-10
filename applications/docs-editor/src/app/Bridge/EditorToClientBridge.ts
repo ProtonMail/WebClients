@@ -39,7 +39,7 @@ export class EditorToClientBridge {
     })
   }
 
-  public setRequestHandler(requestHandler: ClientRequiresEditorMethods) {
+  public setClientRequestHandler(requestHandler: ClientRequiresEditorMethods) {
     this.requestHandler = requestHandler
   }
 
@@ -51,7 +51,7 @@ export class EditorToClientBridge {
     message: ClientToEditorInvokationMessage<keyof ClientRequiresEditorMethods>,
   ) {
     if (!this.requestHandler) {
-      throw new Error('Request handler not set')
+      throw new Error(`Request handler not set; attempting to invoke ${message.functionName}`)
     }
 
     const func = this.requestHandler[message.functionName].bind(this.requestHandler)

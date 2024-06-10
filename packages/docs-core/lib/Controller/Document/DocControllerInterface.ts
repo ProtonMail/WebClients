@@ -20,6 +20,7 @@ export interface DocControllerInterface {
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   duplicateDocument(): Promise<void>
+  editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
@@ -32,7 +33,6 @@ export interface DocControllerInterface {
   initialize(): Promise<Result<DocLoadSuccessResult>>
   openDocumentSharingModal(): Promise<void>
   renameDocument(newName: string): Promise<Result<void>>
-  setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   showCommentsPanel(): void
   squashDocument(): Promise<void>
 }

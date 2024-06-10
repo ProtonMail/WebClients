@@ -16,6 +16,6 @@ export interface WebsocketServiceInterface {
   ): void
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
-
+  debugCloseConnection(document: { linkId: string }): void
   createStressTestConnections(count: number): void
 }
