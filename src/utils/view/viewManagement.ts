@@ -235,7 +235,7 @@ export const reloadHiddenViews = () => {
     }
 };
 
-export const resetHiddenViews = async () => {
+export async function resetHiddenViews() {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             Logger.info(`${viewID}(reset)`);
@@ -244,13 +244,13 @@ export const resetHiddenViews = async () => {
     }
 };
 
-export const showEndOfTrial = async () => {
+export async function showEndOfTrial() {
     const trialEndURL = `${config.url.account}/trial-ended`;
     await loadURL("account", trialEndURL);
     await resetHiddenViews();
 };
 
-export const reloadCalendarWithSession = async (session: string) => {
+export async function reloadCalendarWithSession(session: string) {
     Logger.info("Reloading calendar with session", session);
     if (!browserViewMap.calendar) {
         Logger.error("Calendar view not created");
@@ -261,25 +261,36 @@ export const reloadCalendarWithSession = async (session: string) => {
     await internalLoadURL("calendar", `${config.url.calendar}/u/${session}`);
 };
 
-export const getSpellCheckStatus = () => {
+export function getSpellCheckStatus() {
     return mainWindow?.webContents?.session?.spellCheckerEnabled ?? settings.spellChecker;
 };
 
-export const toggleSpellCheck = (enabled: boolean) => {
+export function toggleSpellCheck(enabled: boolean) {
     saveSettings({ ...settings, spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 };
 
-export const getMailView = () => browserViewMap.mail!;
-export const getCalendarView = () => browserViewMap.calendar!;
-export const getAccountView = () => browserViewMap.account;
-export const getMainWindow = () => mainWindow!;
+export function getMailView() {
+    return browserViewMap.mail!;
+}
 
-export const getCurrentView = () => {
+export function getCalendarView() {
+    return browserViewMap.calendar!;
+}
+
+export function getAccountView() {
+    return browserViewMap.account;
+}
+
+export function getMainWindow() {
+    return mainWindow!;
+}
+
+export function getCurrentView() {
     return browserViewMap[currentViewID];
-};
+}
 
-export const getWebContentsViewName = (webContents: WebContents) => {
+export function getWebContentsViewName(webContents: WebContents) {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (view?.webContents === webContents) {
             return viewID;
@@ -287,7 +298,6 @@ export const getWebContentsViewName = (webContents: WebContents) => {
     }
 
     return "unknown";
-};
 
 async function internalLoadURL(viewID: ViewID, url: string) {
     const view = browserViewMap[viewID];
