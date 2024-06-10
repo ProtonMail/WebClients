@@ -70,6 +70,7 @@ import { DefaultFont, FontOptions } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import { INSERT_TABLE_COMMAND } from '@lexical/table'
 import TableIcon from '../Icons/TableIcon'
+import { PredefinedTextColorOptions, PredefinedHighlightColorOptions } from '../Shared/Color'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -408,7 +409,7 @@ export default function DocumentEditorToolbar({
     },
   ]
 
-  const checkListTypes = [
+  const listTypes = [
     {
       type: 'check',
       icon: <CheckListIcon className="h-4 w-4 fill-current" />,
@@ -443,6 +444,21 @@ export default function DocumentEditorToolbar({
           })
         }
       })
+    },
+    [activeEditor],
+  )
+
+  const applyStyleText = useCallback(
+    (styles: Record<string, string>, skipHistoryStack?: boolean) => {
+      activeEditor.update(
+        () => {
+          const selection = $getSelection()
+          if (selection !== null) {
+            $patchStyleText(selection, styles)
+          }
+        },
+        skipHistoryStack ? { tag: 'historic' } : {},
+      )
     },
     [activeEditor],
   )
@@ -615,6 +631,68 @@ export default function DocumentEditorToolbar({
         >
           <UnderlineIcon className="h-4 w-4 fill-current" />
         </ToolbarButton>
+        <SimpleDropdown
+          as={ToolbarButton}
+          shape="ghost"
+          type="button"
+          className="text-[--text-norm]"
+          content={<Icon name="palette" />}
+          disabled={!isEditable}
+        >
+          <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Text colour`}</div>
+          <DropdownMenu>
+            {PredefinedTextColorOptions.map(([name, color]) => {
+              const rgbColor = `rgb(${color})`
+              return (
+                <DropdownMenuButton
+                  key={name}
+                  className={'flex items-center gap-2 text-left text-sm'}
+                  onClick={() => {
+                    applyStyleText({ color: rgbColor })
+                  }}
+                  disabled={!isEditable}
+                >
+                  <div className="border-weak flex items-center justify-center rounded border p-1">
+                    <Icon
+                      name="text-bold"
+                      size={4}
+                      style={{
+                        fill: rgbColor,
+                      }}
+                    />
+                  </div>
+                  {name}
+                </DropdownMenuButton>
+              )
+            })}
+          </DropdownMenu>
+          <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Background colour`}</div>
+          <DropdownMenu>
+            {PredefinedHighlightColorOptions.map(([name, color]) => {
+              const rgbColor = `rgba(${color}, 0.15)`
+              return (
+                <DropdownMenuButton
+                  key={name}
+                  className={'flex items-center gap-2 text-left text-sm'}
+                  onClick={() => {
+                    applyStyleText({ 'background-color': rgbColor })
+                  }}
+                  disabled={!isEditable}
+                >
+                  <div
+                    className="border-weak flex items-center justify-center rounded border p-1"
+                    style={{
+                      backgroundColor: rgbColor,
+                    }}
+                  >
+                    <Icon name="text-bold" size={4} />
+                  </div>
+                  {name}
+                </DropdownMenuButton>
+              )
+            })}
+          </DropdownMenu>
+        </SimpleDropdown>
         <ToolbarSeparator />
         <ToolbarButton
           label={c('Action').t`Left align`}
@@ -678,19 +756,17 @@ export default function DocumentEditorToolbar({
         <ToolbarSeparator />
         <SimpleDropdown
           as={ToolbarButton}
-          active={checkListTypes.some(({ type }) => type === listType)}
+          active={listTypes.some(({ type }) => type === listType)}
           shape="ghost"
           type="button"
           className="text-[--text-norm]"
           content={
-            checkListTypes.find(({ type }) => type === listType)?.icon || (
-              <CheckListIcon className="h-4 w-4 fill-current" />
-            )
+            listTypes.find(({ type }) => type === listType)?.icon || <CheckListIcon className="h-4 w-4 fill-current" />
           }
           disabled={!isEditable}
         >
           <DropdownMenu>
-            {checkListTypes.map(({ type, icon, name, onClick }) => (
+            {listTypes.map(({ type, icon, name, onClick }) => (
               <DropdownMenuButton
                 key={type}
                 className={clsx(
