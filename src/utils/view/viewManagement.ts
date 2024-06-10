@@ -17,7 +17,7 @@ const settings = getSettings();
 
 type ViewID = keyof (typeof config)["url"];
 
-let currentViewID: ViewID = "mail";
+let currentViewID: ViewID;
 
 const browserViewMap: Record<ViewID, BrowserView | undefined> = {
     mail: undefined,
@@ -30,13 +30,10 @@ let mainWindow: undefined | BrowserWindow = undefined;
 export const viewCreationAppStartup = (session: Session) => {
     mainWindow = createBrowserWindow(session);
     createViews(session);
-    configureViews();
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-    setTimeout(() => {
-        showMailView(mainWindow!);
-    }, delay);
+    setTimeout(() => showView("mail"), delay);
 
     mainWindow.on("close", (ev) => {
         macOSExitEvent(mainWindow!, ev);
@@ -46,50 +43,49 @@ export const viewCreationAppStartup = (session: Session) => {
     return mainWindow;
 };
 
+const createView = (session: Session) => {
+    const view = new BrowserView(getWindowConfig(session));
+
+    handleBeforeHandle(view);
+
+    view.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, view)?.popup();
+    });
+
+    view.webContents.session.setCertificateVerifyProc((request, callback) => {
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
+    });
+
+    return view;
+};
+
 const createViews = (session: Session) => {
-    const config = getWindowConfig(session);
-    Logger.info("Creating mail and calendar views");
-    browserViewMap.mail = new BrowserView({ ...config });
-    browserViewMap.calendar = new BrowserView({ ...config });
-
-    handleBeforeHandle(browserViewMap.mail);
-    handleBeforeHandle(browserViewMap.calendar);
-
-    browserViewMap.mail.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, browserViewMap.mail!)?.popup();
-    });
-
-    browserViewMap.calendar.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, browserViewMap.calendar!)?.popup();
-    });
-
-    browserViewMap.mail.webContents.session.setCertificateVerifyProc((request, callback) => {
-        const callbackValue = checkKeys(request);
-        callback(callbackValue);
-    });
-
-    browserViewMap.calendar.webContents.session.setCertificateVerifyProc((request, callback) => {
-        const callbackValue = checkKeys(request);
-        callback(callbackValue);
-    });
+    Logger.info("Creating views");
+    browserViewMap.mail = createView(session);
+    browserViewMap.calendar = createView(session);
+    browserViewMap.account = createView(session);
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
 
-        const keyPressHandling = (input: Input) => {
+        const handleBeforeInput = (_event: unknown, input: Input) => {
             if (input.key === "Alt" && input.type === "keyDown") {
                 mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
             }
         };
 
-        browserViewMap.mail.webContents.on("before-input-event", (_e, input) => {
-            keyPressHandling(input);
-        });
-
-        browserViewMap.calendar.webContents.on("before-input-event", (_e, input) => {
-            keyPressHandling(input);
-        });
+        browserViewMap.mail.webContents.on("before-input-event", handleBeforeInput);
+        browserViewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
+        browserViewMap.account.webContents.on("before-input-event", handleBeforeInput);
     }
+
+    browserViewMap.mail.setAutoResize({ width: true, height: true });
+    browserViewMap.calendar.setAutoResize({ width: true, height: true });
+    browserViewMap.account.setAutoResize({ width: true, height: true });
+
+    loadURL("mail", config.url.mail);
+    loadURL("calendar", config.url.calendar);
 };
 
 const createBrowserWindow = (session: Session) => {
@@ -103,15 +99,6 @@ const createBrowserWindow = (session: Session) => {
     });
 
     return mainWindow;
-};
-
-const configureViews = () => {
-    Logger.info("Configuring mail and calendar views");
-    browserViewMap.mail!.setAutoResize({ width: true, height: true });
-    internalLoadURL("mail", config.url.mail);
-
-    browserViewMap.calendar!.setAutoResize({ width: true, height: true });
-    internalLoadURL("calendar", config.url.calendar);
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
