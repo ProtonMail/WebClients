@@ -15,7 +15,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
@@ -111,6 +111,7 @@ const SubUserCreateModal = ({
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
+    const isVisionary = hasNewVisionary(subscription);
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
 
@@ -123,7 +124,7 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
-        numAI: false,
+        numAI: isVisionary, // Visionary users should have the toggle set to true by default
         domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&

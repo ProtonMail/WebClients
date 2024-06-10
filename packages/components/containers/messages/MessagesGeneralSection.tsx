@@ -2,7 +2,6 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { useFlag } from '@proton/components/containers';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import {
     APPS,
@@ -33,7 +32,6 @@ const MessagesGeneralSection = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const assistantFeatureEnabled = useFlag('ComposerAssistant');
 
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
@@ -136,7 +134,7 @@ const MessagesGeneralSection = () => {
                         </div>
                     </SettingsLayoutRight>
                 </SettingsLayout>
-                {assistantFeatureEnabled && <ToggleAssistantContainer />}
+                <ToggleAssistantContainer />
             </SettingsSection>
         </>
     );
