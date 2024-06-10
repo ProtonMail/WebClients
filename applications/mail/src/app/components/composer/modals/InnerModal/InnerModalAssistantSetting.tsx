@@ -74,7 +74,9 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
                     <Button fullWidth color="norm" onClick={() => withLoading(onSubmit)} loading={loading}>
                         {c('Action').t`Get started`}
                     </Button>
-                    <div className="color-weak pt-4 text-center">{c('Info').t`Free for 14 days`}</div>
+                    {trialStatus === 'trial-not-started' && (
+                        <div className="color-weak pt-4 text-center">{c('Info').t`Free for 14 days`}</div>
+                    )}
                 </>
             }
         >

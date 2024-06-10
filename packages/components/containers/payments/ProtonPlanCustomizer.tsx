@@ -443,8 +443,19 @@ const ProtonPlanCustomizer = ({
                     </Price>
                 );
 
-                const canDowngrade = addonMaxKey !== 'MaxIPs' || !hasVpnBusiness(currentSubscription);
-                const displayMin = canDowngrade ? min / divider : getVPNDedicatedIPs(currentSubscription);
+                const getDisplayMin = () => {
+                    if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(currentSubscription)) {
+                        return getVPNDedicatedIPs(currentSubscription);
+                    }
+
+                    if (addonMaxKey === 'MaxAI') {
+                        return organization?.UsedAI || 0;
+                    }
+
+                    return min / divider;
+                };
+
+                const displayMin = getDisplayMin();
 
                 if (isScribeAddon(addonNameKey)) {
                     // We get the amount of add-ons starting with the members, this is used for the GPT add-ons
