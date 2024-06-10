@@ -4,6 +4,7 @@ import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { getOrganizationSettings, setOrganizationSettings } from '@proton/pass/lib/organization/organization.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
@@ -18,6 +19,7 @@ import { and, truthy } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -109,6 +111,17 @@ export const createPassBridge = (api: Api): PassBridge => {
 
                         return aliases.map((item): PassBridgeAliasItem => ({ item }));
                     }),
+                },
+                organization: {
+                    get: getOrganizationSettings,
+                    set: async (key, value) => {
+                        const settings = await getOrganizationSettings();
+
+                        if (!settings.Settings) throw new Error('You are not in an organization');
+                        if (!settings.CanUpdate) throw new Error('You do not have permission to update these settings');
+
+                        return setOrganizationSettings(partialMerge(settings.Settings, { [key]: value }));
+                    },
                 },
             };
 
