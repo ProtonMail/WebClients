@@ -45,7 +45,7 @@ export function SharedLinksItemContextMenu({
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { isSharingInviteAvailable } = useDriveSharingFlags();
-    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
+    const { showOpenInDocs } = useOpenInDocs(selectedLink);
 
     const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
     return (
