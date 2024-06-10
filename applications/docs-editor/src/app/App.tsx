@@ -8,7 +8,6 @@ import {
   CommentsEvent,
   ConvertibleDataType,
   DocState,
-  EditorEditableChangeEvent,
   LiveCommentsEvent,
   RtsMessagePayload,
   YDocMap,
@@ -27,7 +26,7 @@ import { LexicalEditor } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 
 type Props = {
-  isViewOnly: boolean
+  nonInteractiveMode: boolean
 }
 
 type InitialConfig = {
@@ -39,11 +38,11 @@ type InitialConfig = {
   username: string
 }
 
-export function App({ isViewOnly = false }: Props) {
+export function App({ nonInteractiveMode = false }: Props) {
   const viewOnlyDocumentId = useId()
 
   const [initialConfig, setInitialConfig] = useState<InitialConfig | null>(
-    isViewOnly
+    nonInteractiveMode
       ? {
           documentId: viewOnlyDocumentId,
           username: '',
@@ -54,6 +53,7 @@ export function App({ isViewOnly = false }: Props) {
   const [docState, setDocState] = useState<DocState | null>(null)
   const [eventBus] = useState(() => new InternalEventBus())
   const [editorHidden, setEditorHidden] = useState(true)
+  const [editingAllowed, setEditingAllowed] = useState(false)
 
   useEffectOnce(() => {
     setTtagLocales(locales)
@@ -69,11 +69,134 @@ export function App({ isViewOnly = false }: Props) {
     return map
   }, [])
 
-  useEffect(() => {
-    if (docState) {
-      return
-    }
+  const setBridgeRequestHandler = useCallback(
+    (newDocState: DocState) => {
+      const requestHandler: ClientRequiresEditorMethods = {
+        async receiveMessage(message: RtsMessagePayload) {
+          void newDocState.receiveMessage(message)
+        },
 
+        async showEditor() {
+          setEditorHidden(false)
+        },
+
+        async showCommentsPanel() {
+          const editor = editorRef.current
+          if (!editor) {
+            return
+          }
+          editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
+        },
+
+        async receiveThemeChanges(styles: string) {
+          const themeStylesheet = document.getElementById(THEME_ID)
+
+          if (!themeStylesheet) {
+            return
+          }
+
+          themeStylesheet.innerHTML = styles
+        },
+
+        async getClientId() {
+          return newDocState.getClientId()
+        },
+
+        async performClosingCeremony() {
+          void newDocState.performOpeningCeremony()
+        },
+
+        async performOpeningCeremony() {
+          void newDocState.performClosingCeremony()
+        },
+
+        async getDocumentState() {
+          return newDocState.getDocState()
+        },
+
+        async handleCommentsChange() {
+          eventBus.publish({
+            type: CommentsEvent.CommentsChanged,
+            payload: undefined,
+          })
+        },
+
+        async handleTypingStatusChange(threadId: string) {
+          eventBus.publish({
+            type: LiveCommentsEvent.TypingStatusChange,
+            payload: {
+              threadId,
+            },
+          })
+        },
+
+        async handleCreateCommentMarkNode(markID: string) {
+          eventBus.publish<CommentMarkNodeChangeData>({
+            type: CommentsEvent.CreateMarkNode,
+            payload: {
+              markID,
+            },
+          })
+        },
+
+        async handleRemoveCommentMarkNode(markID: string) {
+          eventBus.publish<CommentMarkNodeChangeData>({
+            type: CommentsEvent.RemoveMarkNode,
+            payload: {
+              markID,
+            },
+          })
+        },
+
+        async handleResolveCommentMarkNode(markID: string) {
+          eventBus.publish<CommentMarkNodeChangeData>({
+            type: CommentsEvent.ResolveMarkNode,
+            payload: {
+              markID,
+            },
+          })
+        },
+
+        async handleUnresolveCommentMarkNode(markID: string) {
+          eventBus.publish<CommentMarkNodeChangeData>({
+            type: CommentsEvent.UnresolveMarkNode,
+            payload: {
+              markID,
+            },
+          })
+        },
+
+        async changeEditingAllowance(allow) {
+          newDocState.canBeEditable = allow
+          setEditingAllowed(allow)
+        },
+
+        async initializeEditor(
+          documentId: string,
+          username: string,
+          initialData?: Uint8Array,
+          initialDataType?: ConvertibleDataType,
+        ) {
+          docMap.set(documentId, newDocState.getDoc())
+
+          if (initialData && initialDataType) {
+            setInitialConfig({ documentId, username, initialData: { data: initialData, type: initialDataType } })
+          } else {
+            setInitialConfig({ documentId, username })
+          }
+        },
+
+        async broadcastPresenceState() {
+          newDocState.broadcastPresenceState()
+        },
+      }
+
+      bridge.setRequestHandler(requestHandler)
+    },
+    [bridge, docMap, eventBus],
+  )
+
+  const createInitialDocState = useCallback(() => {
     const newDocState = new DocState({
       docStateRequestsPropagationOfUpdate: (
         message: RtsMessagePayload,
@@ -97,139 +220,30 @@ export function App({ isViewOnly = false }: Props) {
       },
     })
 
+    return newDocState
+  }, [bridge])
+
+  useEffect(() => {
+    if (docState) {
+      return
+    }
+
+    const newDocState = createInitialDocState()
     setDocState(newDocState)
 
-    if (isViewOnly) {
+    if (nonInteractiveMode) {
       docMap.set(viewOnlyDocumentId, newDocState.getDoc())
     }
 
-    const requestHandler: ClientRequiresEditorMethods = {
-      async receiveMessage(message: RtsMessagePayload) {
-        void newDocState.receiveMessage(message)
-      },
+    setBridgeRequestHandler(newDocState)
+  }, [createInitialDocState, docMap, docState, nonInteractiveMode, setBridgeRequestHandler, viewOnlyDocumentId])
 
-      async showEditor() {
-        setEditorHidden(false)
-      },
-
-      async showCommentsPanel() {
-        const editor = editorRef.current
-        if (!editor) {
-          return
-        }
-        editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
-      },
-
-      async receiveThemeChanges(styles: string) {
-        const themeStylesheet = document.getElementById(THEME_ID)
-
-        if (!themeStylesheet) {
-          return
-        }
-
-        themeStylesheet.innerHTML = styles
-      },
-
-      async getClientId() {
-        return newDocState.getClientId()
-      },
-
-      async performClosingCeremony() {
-        void newDocState.performOpeningCeremony()
-      },
-
-      async performOpeningCeremony() {
-        void newDocState.performClosingCeremony()
-      },
-
-      async getDocumentState() {
-        return newDocState.getDocState()
-      },
-
-      async handleCommentsChange() {
-        eventBus.publish({
-          type: CommentsEvent.CommentsChanged,
-          payload: undefined,
-        })
-      },
-
-      async handleTypingStatusChange(threadId: string) {
-        eventBus.publish({
-          type: LiveCommentsEvent.TypingStatusChange,
-          payload: {
-            threadId,
-          },
-        })
-      },
-
-      async handleCreateCommentMarkNode(markID: string) {
-        eventBus.publish<CommentMarkNodeChangeData>({
-          type: CommentsEvent.CreateMarkNode,
-          payload: {
-            markID,
-          },
-        })
-      },
-
-      async handleRemoveCommentMarkNode(markID: string) {
-        eventBus.publish<CommentMarkNodeChangeData>({
-          type: CommentsEvent.RemoveMarkNode,
-          payload: {
-            markID,
-          },
-        })
-      },
-
-      async handleResolveCommentMarkNode(markID: string) {
-        eventBus.publish<CommentMarkNodeChangeData>({
-          type: CommentsEvent.ResolveMarkNode,
-          payload: {
-            markID,
-          },
-        })
-      },
-
-      async handleUnresolveCommentMarkNode(markID: string) {
-        eventBus.publish<CommentMarkNodeChangeData>({
-          type: CommentsEvent.UnresolveMarkNode,
-          payload: {
-            markID,
-          },
-        })
-      },
-
-      async changeEditingAllowance(allow) {
-        newDocState.canBeEditable = allow
-        eventBus.publish({
-          type: EditorEditableChangeEvent,
-          payload: {
-            editable: allow,
-          },
-        })
-      },
-
-      async initializeEditor(
-        documentId: string,
-        username: string,
-        initialData?: Uint8Array,
-        initialDataType?: ConvertibleDataType,
-      ) {
-        docMap.set(documentId, newDocState.getDoc())
-
-        if (initialData && initialDataType) {
-          setInitialConfig({ documentId, username, initialData: { data: initialData, type: initialDataType } })
-        } else {
-          setInitialConfig({ documentId, username })
-        }
-      },
-
-      async broadcastPresenceState() {
-        newDocState.broadcastPresenceState()
-      },
-    }
-
-    bridge.setRequestHandler(requestHandler)
-  }, [bridge, docMap, docState, eventBus, isViewOnly, viewOnlyDocumentId])
+  const onEditingAllowanceChange = useCallback(
+    (editable: boolean) => {
+      setEditingAllowed(editable)
+    },
+    [setEditingAllowed],
+  )
 
   if (!initialConfig || !docState) {
     return (
@@ -251,7 +265,9 @@ export function App({ isViewOnly = false }: Props) {
           documentId={initialConfig.documentId}
           injectWithNewContent={initialConfig.initialData}
           username={initialConfig.username}
-          isViewOnly={isViewOnly}
+          editingAllowed={editingAllowed}
+          nonInteractiveMode={nonInteractiveMode}
+          onEditingAllowanceChange={onEditingAllowanceChange}
           onEditorReadyToReceiveUpdates={() => {
             docState.onEditorReadyToReceiveUpdates()
           }}

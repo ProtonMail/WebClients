@@ -47,11 +47,14 @@ type Props = {
   username: string
   docState: DocStateInterface
   clientInvoker: EditorRequiresClientMethods
-  isViewOnly: boolean
+  editingAllowed: boolean
+  /** Non-interactive mode is used when displaying the editor to show a previous history revision */
+  nonInteractiveMode: boolean
   hidden: boolean
   onEditorReadyToReceiveUpdates: () => void
   setEditorRef: (instance: LexicalEditor | null) => void
   injectWithNewContent?: FileToDocPendingConversion
+  onEditingAllowanceChange: (editable: boolean) => void
 }
 
 export function Editor({
@@ -61,10 +64,12 @@ export function Editor({
   documentId,
   username,
   docMap,
-  isViewOnly,
+  editingAllowed,
+  nonInteractiveMode: nonInteractiveMode,
   hidden,
   onEditorReadyToReceiveUpdates,
   setEditorRef,
+  onEditingAllowanceChange,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -97,7 +102,7 @@ export function Editor({
         </div>
       )}
       <LexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
-        {!isViewOnly && <Toolbar />}
+        {!nonInteractiveMode && <Toolbar onEditingAllowanceChange={onEditingAllowanceChange} />}
         <RichTextPlugin
           contentEditable={
             <div className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]">
@@ -121,7 +126,7 @@ export function Editor({
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
         <LinkPlugin />
-        {!isViewOnly && <LinkInfoPlugin openLink={openLink} />}
+        {!nonInteractiveMode && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
         <CollaborationPlugin
           id={documentId}
@@ -133,7 +138,7 @@ export function Editor({
         <CodeHighlightPlugin />
         <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
-        {!isViewOnly && <EditorReadonlyPlugin docState={docState} />}
+        {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={editingAllowed} />}
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
       </LexicalComposer>

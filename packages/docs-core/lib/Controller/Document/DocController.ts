@@ -108,6 +108,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   handleWebsocketConnectingEvent(): void {
     if (this.editorInvoker) {
+      this.logger.info('Changing editing allowance to false while connecting to RTS')
+
       this.editorInvoker.changeEditingAllowance(false).catch(console.error)
     }
   }
@@ -122,6 +124,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
     if (this.editorInvoker) {
+      this.logger.info('Changing editing allowance to false after RTS disconnect')
+
       void this.editorInvoker.performClosingCeremony()
       void this.editorInvoker.changeEditingAllowance(false)
     }
@@ -154,6 +158,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
    * The editorInvoker is provided as soon as the editor iframe completes its initial initialization.
    */
   public setEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
+    if (this.editorInvoker) {
+      throw new Error('Editor invoker already set')
+    }
+
     this.editorInvoker = editorInvoker
 
     this.logger.info('Editor invoker set')
@@ -291,6 +299,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
+
+    this.logger.info('Showing editor and allowing editing')
 
     void this.editorInvoker.showEditor()
     void this.editorInvoker.performOpeningCeremony()
