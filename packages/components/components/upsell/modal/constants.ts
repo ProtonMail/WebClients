@@ -18,10 +18,10 @@ export type UpsellFeatureName =
     | 'snooze-messages'
     | 'more-calendars'
     | 'calendar-sharing'
-    | 'composer-assistant-words'
-    | 'composer-assistant-tone'
-    | 'composer-assistant-craft-emails'
-    | 'composer-assistant-save-time';
+    | 'generate-emails-with-prompt'
+    | 'reply-to-messages'
+    | 'proofread-an-refine'
+    | 'save-time-emailing';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -87,19 +87,19 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
         icon: 'users',
         getText: () => c('new_plans: feature').t`Calendar sharing`,
     },
-    'composer-assistant-words': {
+    'generate-emails-with-prompt': {
         icon: 'checkmark',
-        getText: () => c('new_plans: feature').t`Find the right words`,
+        getText: () => c('new_plans: feature').t`Generate emails with only a prompt`,
     },
-    'composer-assistant-tone': {
+    'reply-to-messages': {
         icon: 'checkmark',
-        getText: () => c('new_plans: feature').t`Hit the right tone`,
+        getText: () => c('new_plans: feature').t`Reply to messages`,
     },
-    'composer-assistant-craft-emails': {
+    'proofread-an-refine': {
         icon: 'checkmark',
-        getText: () => c('new_plans: feature').t`Craft perfectly polished emails`,
+        getText: () => c('new_plans: feature').t`Proofread and refine your texts`,
     },
-    'composer-assistant-save-time': {
+    'save-time-emailing': {
         icon: 'checkmark',
         getText: () => c('new_plans: feature').t`Save time emailing`,
     },

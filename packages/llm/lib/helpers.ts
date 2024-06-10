@@ -14,8 +14,7 @@ import {
 import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import { Api, User } from '@proton/shared/lib/interfaces';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import { Api } from '@proton/shared/lib/interfaces';
 import window from '@proton/shared/lib/window';
 
 import { GENERATION_TYPE } from './useAssistantTelemetry';
@@ -35,11 +34,6 @@ export const getCanShowAssistant = (assistantFeatureAvailable?: boolean) => {
     return !!assistantFeatureAvailable;
 };
 
-export const getCanUseAssistant = (user: User) => {
-    // TODO improve this condition later
-    return isPaid(user);
-};
-
 export const getGenerationType = (action: Action) => {
     switch (action.type) {
         case 'writeFullEmail':
@@ -54,8 +48,8 @@ export const getGenerationType = (action: Action) => {
             return GENERATION_TYPE.FORMALIZE;
         case 'friendly':
             return GENERATION_TYPE.FRIENDLY;
-        //case "expand":
-        //    return GENERATION_TYPE.EXPAND;
+        case 'expand':
+            return GENERATION_TYPE.EXPAND;
         default:
             return GENERATION_TYPE.WRITE_FULL_EMAIL;
     }
