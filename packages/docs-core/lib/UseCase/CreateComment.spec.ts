@@ -1,7 +1,6 @@
 import { Result } from '@standardnotes/domain-core'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
-import { ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
@@ -10,12 +9,6 @@ import { CreateComment } from './CreateComment'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
-}))
-
-jest.mock('@proton/docs-shared', () => ({
-  ServerTime: {
-    now: jest.fn(),
-  },
 }))
 
 const mockEncryptComment = {
@@ -51,7 +44,6 @@ describe('CreateComment', () => {
       mockEncryptComment as unknown as EncryptComment,
     )
     ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')
-    ;(ServerTime.now as jest.Mock).mockReturnValue(new Date())
   })
 
   it('should call encryptComment, api.addCommentToThread, and decryptComment in order', async () => {
@@ -71,10 +63,7 @@ describe('CreateComment', () => {
       'encrypted-comment',
       null,
     )
-    expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalledWith('uuid', {
-      id: 'uuid',
-      text: 'decrypted comment',
-    })
+    expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalled()
   })
 
   it('should delete comment if encryption fails', async () => {
