@@ -46,6 +46,7 @@ export const PASS_UPGRADE_PATH = 'pass/signup';
 export enum AccountPath {
     ACCOUNT_PASSWORD = 'pass/account-password',
     USERS = 'pass/users-addresses',
+    POLICIES = 'pass/policies',
 }
 
 export const PASS_BF_MONTHLY_PRICE = 199;

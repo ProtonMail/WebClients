@@ -1,5 +1,13 @@
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import type { AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
+import type {
+    AliasMailbox,
+    AliasOptions,
+    ItemRevision,
+    OrganizationGetResponse,
+    Share,
+    ShareType,
+} from '@proton/pass/types';
+import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { MaxAgeMemoizedFn } from '@proton/pass/utils/fp/memo';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
@@ -46,6 +54,15 @@ export interface PassBridge {
         /** Retrieves and decrypts all alias items for a given shareId and retrieves
          * the alias details for the underlying items. */
         getAllByShareId: MaxAgeMemoizedFn<(shareId: string) => Promise<PassBridgeAliasItem[]>>;
+    };
+    organization: {
+        /** Get organization settings for Pass */
+        get: () => Promise<OrganizationGetResponse>;
+        /** Update an organization setting for Pass */
+        set: <K extends keyof OrganizationSettings>(
+            setting: K,
+            value: OrganizationSettings[K]
+        ) => Promise<OrganizationGetResponse>;
     };
 }
 
