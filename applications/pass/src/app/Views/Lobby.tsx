@@ -9,7 +9,7 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientBusy, clientErrored } from '@proton/pass/lib/client';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -36,7 +36,7 @@ export const Lobby: FC = () => {
                         : authService.requestFork({ host, app })
                 }
                 onLogout={() => authService.logout({ soft: true })}
-                onRegister={() => authService.requestFork({ host, app, forkType: FORK_TYPE.SIGNUP })}
+                onRegister={() => authService.requestFork({ host, app, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
             />
 

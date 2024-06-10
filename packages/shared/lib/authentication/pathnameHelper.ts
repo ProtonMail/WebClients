@@ -1,6 +1,6 @@
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import { PUBLIC_PATH } from '../webpack.constants';
-import { getValidatedLocalID } from './sessionForkValidation';
+import { getValidatedLocalID } from './fork/validation';
 
 export const getLocalIDPath = (u?: number) => (u === undefined ? undefined : `u/${u}`);
 

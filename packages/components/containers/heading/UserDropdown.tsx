@@ -40,8 +40,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
+import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import {
     APPS,
     APPS_CONFIGURATION,
@@ -374,7 +373,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                         !getIsEventModified(event.nativeEvent)
                                     ) {
                                         event.preventDefault();
-                                        return requestFork({ fromApp: APP_NAME, forkType: FORK_TYPE.SWITCH });
+                                        return requestFork({ fromApp: APP_NAME, forkType: ForkType.SWITCH });
                                     }
                                 }}
                                 data-testid="userdropdown:button:switch-account"

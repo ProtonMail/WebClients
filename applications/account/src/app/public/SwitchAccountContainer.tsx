@@ -20,6 +20,7 @@ import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { ForkSearchParameters, getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
 import {
     LocalSessionPersisted,
     getActiveSessions,
@@ -94,7 +95,11 @@ const SwitchAccountContainer = ({
     useEffect(() => {
         if (!activeSessions) {
             const run = async () => {
-                const { sessions } = await getActiveSessions(silentApi);
+                const searchParams = new URLSearchParams(window.location.search);
+                const { sessions } = await getActiveSessions({
+                    api: silentApi,
+                    email: getEmailSessionForkSearchParameter(searchParams),
+                });
                 updateActiveSessions(sessions);
             };
             void withLoading(run().catch(() => setError(true)));
@@ -145,11 +150,11 @@ const SwitchAccountContainer = ({
             validRef.current = true;
             const params = new URLSearchParams(location.search);
             setLoadingMap((old) => ({ ...old, [localID]: true }));
-            const validatedSession = await resumeSession(silentApi, localID);
+            const validatedSession = await resumeSession({ api: silentApi, localID });
             await onLogin({
                 ...validatedSession,
                 flow: 'switch',
-                prompt: params.get('prompt') === 'login' ? 'login' : undefined,
+                prompt: params.get(ForkSearchParameters.Prompt) === 'login' ? 'login' : undefined,
             });
         } catch (e: any) {
             setLoadingMap((old) => ({ ...old, [localID]: false }));

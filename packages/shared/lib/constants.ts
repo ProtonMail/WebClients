@@ -1224,20 +1224,6 @@ export const OPENPGP =
           }
         : WEBPACK_OPENPGP;
 
-export const FORKABLE_APPS = new Set(
-    [
-        APPS.PROTONMAIL,
-        APPS.PROTONCONTACTS,
-        APPS.PROTONDRIVE,
-        APPS.PROTONCALENDAR,
-        APPS.PROTONPASS,
-        APPS.PROTONDOCS,
-        APPS.PROTONEXTENSION,
-        APPS.PROTONPASSBROWSEREXTENSION,
-        APPS.PROTONVPNBROWSEREXTENSION,
-    ].filter(Boolean)
-);
-
 const PROTONPASS_EXTENSION_IDS = [
     'ghmbeldphafepmbegfdlkpapadhbakde' /* chromium production */,
     'hlaiofkbmjenhgeinjlmkafaipackfjh' /* chromium beta channel */,

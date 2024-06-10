@@ -21,14 +21,18 @@ import createAuthenticationStore, {
 } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
-import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { ResumedSessionResult, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     consumeFork,
     getConsumeForkParameters,
+    getEmailSessionForkSearchParameter,
+    getReturnUrlParameter,
     removeHashParameters,
-} from '@proton/shared/lib/authentication/sessionForking';
+} from '@proton/shared/lib/authentication/fork';
+import { ForkState, getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
+import { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
+import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { ResumedSessionResult, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -54,17 +58,18 @@ import noop from '@proton/utils/noop';
 export * from './action';
 
 class InvalidSessionError extends Error {
-    public localID: number | undefined;
+    public extra: ExtraSessionForkData = {};
 
-    constructor(message: string, localID: number | undefined) {
+    constructor(message: string, extra: ExtraSessionForkData) {
         super(['Invalid session', message].filter(Boolean).join(':'));
-        this.localID = localID;
+        this.extra = extra;
         Object.setPrototypeOf(this, InvalidSessionError.prototype);
     }
 }
 
 export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFork>[0], 'api' | 'mode'>) => {
-    const { state, selector, key, persistent, trusted, payloadVersion } = getConsumeForkParameters();
+    const hashParams = new URLSearchParams(window.location.hash.slice(1));
+    const { state, selector, key, persistent, trusted, payloadVersion } = getConsumeForkParameters(hashParams);
     if (!state && !selector && !key) {
         return null;
     }
@@ -72,8 +77,16 @@ export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof con
         return null;
     }
     try {
-        const result = await consumeFork({ selector, api, state, key, persistent, trusted, payloadVersion, mode });
-        return result;
+        return await consumeFork({
+            selector,
+            api,
+            state,
+            key,
+            persistent,
+            trusted,
+            payloadVersion,
+            mode,
+        });
     } catch (e: any) {
         removeHashParameters();
         throw e;
@@ -117,26 +130,29 @@ export const init = ({
     removeLoaderClassName();
 };
 
+export interface SessionPayloadData {
+    session: ResumedSessionResult | undefined;
+    basename: string | undefined;
+    forkState?: ForkState;
+}
+
 export const loadSession = async ({
     authentication,
     api,
     pathname,
+    searchParams,
 }: {
     pathname: string;
     authentication: AuthenticationStore;
     api: ApiWithListener;
-}): Promise<{
-    type: 'ok';
-    payload: Partial<ResumedSessionResult & { path: string; basename: string }>;
-}> => {
+    searchParams: URLSearchParams;
+}): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: {
-                basename: authentication.basename,
-            },
+            session: undefined,
+            basename: authentication.basename,
         };
     }
 
@@ -144,34 +160,42 @@ export const loadSession = async ({
 
     api.UID = undefined;
 
+    const extra = {
+        localID,
+        email: getEmailSessionForkSearchParameter(searchParams),
+        returnUrl: getReturnUrlParameter(searchParams),
+        pathname,
+    };
+
     try {
         if (localID === undefined) {
             if (pathname.startsWith(SSO_PATHS.FORK)) {
                 const result = await maybeConsumeFork({ api, mode: authentication.mode });
                 if (result) {
-                    authentication.login(result);
+                    authentication.login(result.session);
                     api.UID = authentication.UID;
 
                     return {
-                        type: 'ok' as const,
-                        payload: { ...result, basename: authentication.basename },
+                        session: result.session,
+                        basename: authentication.basename,
+                        forkState: result.forkState,
                     };
                 }
             }
-            throw new InvalidSessionError('Missing localID', undefined);
+            throw new InvalidSessionError('Missing localID', extra);
         }
 
-        const result = await resumeSession(api, localID);
+        const result = await resumeSession({ api, localID });
         authentication.login(result);
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: { ...result, basename: authentication.basename, path: undefined },
+            session: result,
+            basename: authentication.basename,
         };
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
-            throw new InvalidSessionError('Missing localID', localID);
+            throw new InvalidSessionError('Set localID', extra);
         }
         throw e;
     }
@@ -187,17 +211,11 @@ export const loadDrawerSession = async ({
     parentApp: APP_NAMES;
     authentication: AuthenticationStore;
     api: ApiWithListener;
-}): Promise<
-    | {
-          type: 'ok';
-          payload: Partial<ResumedSessionResult & { path: string; basename: string }>;
-      }
-    | undefined
-> => {
+}): Promise<SessionPayloadData | undefined> => {
     if (authentication.ready) {
         return {
-            type: 'ok' as const,
-            payload: {},
+            session: undefined,
+            basename: authentication.basename,
         };
     }
 
@@ -212,19 +230,31 @@ export const loadDrawerSession = async ({
         api.UID = authentication.UID;
 
         return {
-            type: 'ok' as const,
-            payload: { ...result, basename: authentication.basename, path: undefined },
+            session: result,
+            basename: authentication.basename,
         };
     } catch (error) {
         return undefined;
     }
 };
 
-export const createHistory = ({ basename, path }: Partial<{ basename: string; path: string }>) => {
+export const createHistory = ({
+    sessionResult: { basename, forkState },
+    pathname,
+}: {
+    sessionResult: SessionPayloadData;
+    pathname: string;
+}) => {
     const history = createBrowserHistory({ basename });
-    if (path) {
-        history.push(getSafePath(path));
+
+    const path = forkState?.url ? getParsedCurrentUrl(forkState.url) : '';
+
+    if (path || (basename && !pathname.startsWith(basename))) {
+        const safePath = `/${getSafePath(path || '')}`;
+        // Important that there's a history event even if no path is set so that basename gets properly set
+        history.replace(safePath);
     }
+
     return history;
 };
 
@@ -397,7 +427,7 @@ export const wrap = async <T>(
                 handleInvalidSession({
                     appName,
                     authentication,
-                    localID: error instanceof InvalidSessionError ? error.localID : undefined,
+                    extra: error instanceof InvalidSessionError ? error.extra : undefined,
                 });
                 await new Promise(noop);
             }
