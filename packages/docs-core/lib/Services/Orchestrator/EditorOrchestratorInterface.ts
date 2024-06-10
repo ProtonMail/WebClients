@@ -12,7 +12,7 @@ export interface EditorOrchestratorInterface {
   username: string
   docMeta: DocumentMetaInterface
 
-  passEditorInvokerToDocController(editorInvoker: ClientRequiresEditorMethods): void
+  provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,

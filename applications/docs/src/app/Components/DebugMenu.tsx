@@ -24,26 +24,18 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   }, [docController])
 
   const commitToRTS = async () => {
-    if (!docController) {
-      throw new Error('Controller not found')
-    }
-
     void docController.debugSendCommitCommandToRTS()
   }
 
   const squashDocument = async () => {
-    if (!docController) {
-      throw new Error('Controller not found')
-    }
-
     void docController.squashDocument()
   }
 
-  const createInitialCommit = async () => {
-    if (!docController) {
-      throw new Error('Controller not found')
-    }
+  const closeConnection = async () => {
+    void application.websocketService.debugCloseConnection(docController.getSureDocument())
+  }
 
+  const createInitialCommit = async () => {
     void docController.createInitialCommit()
   }
 
@@ -119,6 +111,12 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
           onClick={createStressTestors}
         >
           Create Websocket Stress Testers
+        </button>
+        <button
+          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
+          onClick={closeConnection}
+        >
+          Close Connection
         </button>
         {sharingUrl && (
           <div className="flex flex-col">
