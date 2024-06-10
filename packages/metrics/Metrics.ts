@@ -12,6 +12,7 @@ import IMetricsRequestService from './lib/types/IMetricsRequestService';
 import { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
 import { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/docs_comments_error_total_v1.schema';
 import { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
+import { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
@@ -88,6 +89,8 @@ class Metrics extends MetricsBase {
     public docs_comments_error_total: Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>;
 
     public docs_comments_total: Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>;
+
+    public docs_document_updates_decryption_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson>;
 
     public docs_document_updates_load_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson>;
 
@@ -244,6 +247,12 @@ class Metrics extends MetricsBase {
             { name: 'docs_comments_total', version: 1 },
             this.requestService
         );
+
+        this.docs_document_updates_decryption_error_total =
+            new Counter<HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson>(
+                { name: 'docs_document_updates_decryption_error_total', version: 1 },
+                this.requestService
+            );
 
         this.docs_document_updates_load_error_total =
             new Counter<HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson>(
