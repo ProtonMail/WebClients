@@ -32,7 +32,7 @@ export function SharedWithMeContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
+    const { showOpenInDocs } = useOpenInDocs(selectedLink);
 
     return (
         <>
