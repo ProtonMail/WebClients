@@ -58,8 +58,6 @@ import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { Button } from '@proton/atoms'
 import { INSERT_IMAGE_COMMAND } from '../Plugins/Image/ImagePlugin'
 import { $isLinkNode } from '@lexical/link'
-import { useInternalEventBus } from '../InternalEventBusProvider'
-import { EditorEditableChangeEvent } from '@proton/docs-shared'
 import { ToolbarButton } from './ToolbarButton'
 import { ToolbarSeparator } from './ToolbarSeparator'
 import { c } from 'ttag'
@@ -75,8 +73,11 @@ import TableIcon from '../Icons/TableIcon'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
-export default function DocumentEditorToolbar() {
-  const eventBus = useInternalEventBus()
+export default function DocumentEditorToolbar({
+  onEditingAllowanceChange,
+}: {
+  onEditingAllowanceChange: (editable: boolean) => void
+}) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
@@ -775,12 +776,7 @@ export default function DocumentEditorToolbar() {
           <DropdownMenuButton
             className="flex items-center gap-2 text-left text-sm"
             onClick={() => {
-              eventBus.publish({
-                type: EditorEditableChangeEvent,
-                payload: {
-                  editable: true,
-                },
-              })
+              onEditingAllowanceChange(true)
             }}
           >
             <Icon name="pencil" size={4.5} />
@@ -789,12 +785,7 @@ export default function DocumentEditorToolbar() {
           <DropdownMenuButton
             className="flex items-center gap-2 text-left text-sm"
             onClick={() => {
-              eventBus.publish({
-                type: EditorEditableChangeEvent,
-                payload: {
-                  editable: false,
-                },
-              })
+              onEditingAllowanceChange(false)
             }}
           >
             <Icon name="eye" size={4.5} />

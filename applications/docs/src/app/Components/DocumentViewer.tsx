@@ -46,6 +46,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const debug = useDebug()
 
   const themeContext = useTheme()
+
   useEffect(() => {
     if (!bridge) {
       return
@@ -143,29 +144,28 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     )
   }, [application.eventBus, bridge])
 
-  const createBridge = useCallback(() => {
-    if (!docOrchestrator || !frame) {
-      return
-    }
+  const createBridge = useCallback(
+    (orchestrator: EditorOrchestratorInterface, editorFrame: HTMLIFrameElement) => {
+      const newBridge = new ClientToEditorBridge(editorFrame, orchestrator)
+      setBridge(newBridge)
+      orchestrator.passEditorInvokerToDocController(newBridge.editorInvoker)
 
-    const newBridge = new ClientToEditorBridge(frame, docOrchestrator)
-    setBridge(newBridge)
-    docOrchestrator.passEditorInvokerToDocController(newBridge.editorInvoker)
-
-    void newBridge.editorInvoker.initializeEditor(
-      docOrchestrator.docMeta.uniqueIdentifier,
-      docOrchestrator.username,
-      injectWithNewContent?.data,
-      injectWithNewContent?.type,
-    )
-  }, [docOrchestrator, frame, injectWithNewContent])
+      void newBridge.editorInvoker.initializeEditor(
+        orchestrator.docMeta.uniqueIdentifier,
+        orchestrator.username,
+        injectWithNewContent?.data,
+        injectWithNewContent?.type,
+      )
+    },
+    [injectWithNewContent],
+  )
 
   const onFrameReady = useCallback(
     (frame: HTMLIFrameElement) => {
       setFrame(frame)
 
       if (docOrchestrator) {
-        createBridge()
+        createBridge(docOrchestrator, frame)
       }
     },
     [docOrchestrator, createBridge],
@@ -182,7 +182,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
         setReadyToShowDebugMenu(true)
 
         if (frame) {
-          createBridge()
+          createBridge(orchestrator, frame)
         }
       },
       onError: (errorMessage) => {
@@ -213,7 +213,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
         </div>
       )}
 
-      <EditorFrame onFrameReady={onFrameReady} />
+      <EditorFrame key="docs-editor-iframe" onFrameReady={onFrameReady} />
       {signatureFailedModal}
     </div>
   )
