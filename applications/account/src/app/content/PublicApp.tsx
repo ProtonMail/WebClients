@@ -22,7 +22,7 @@ import {
 import { ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import type { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { AuthSession, AuthType } from '@proton/components/containers/login/interface';
+import { AppIntent, AuthSession, AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
@@ -41,28 +41,36 @@ import {
     getInvoicesPathname,
     isExtension,
 } from '@proton/shared/lib/apps/helper';
-import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getIsPassApp, getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
-import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
-    GetActiveSessionsResult,
-    LocalSessionPersisted,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
+    ForkType,
     getCanUserReAuth,
     getShouldReAuth,
     produceExtensionFork,
     produceFork,
+    produceForkConsumption,
     produceOAuthFork,
-} from '@proton/shared/lib/authentication/sessionForking';
-import { APPS, CLIENT_TYPES, PLANS, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
+} from '@proton/shared/lib/authentication/fork';
+import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import {
+    GetActiveSessionType,
+    GetActiveSessionsResult,
+    LocalSessionPersisted,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    APPS,
+    APP_NAMES,
+    CLIENT_TYPES,
+    PLANS,
+    SETUP_ADDRESS_PATH,
+    SSO_PATHS,
+    UNPAID_STATE,
+} from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
@@ -102,7 +110,7 @@ import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
-import { getPaths } from './helper';
+import { UNAUTHENTICATED_ROUTES, getLocalRedirect, getPaths } from './helper';
 import { addSession } from './session';
 
 const completeResult: OnLoginCallbackResult = { state: 'complete' };
@@ -129,34 +137,6 @@ export const getSearchParams = (location: H.Location, searchParams: URLSearchPar
     return { product, productParam };
 };
 
-const getLocalRedirect = (path?: string) => {
-    if (!path) {
-        return undefined;
-    }
-    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(path));
-    if (!trimmedPathname) {
-        return undefined;
-    }
-    // Special case to not add the slug...
-    if (path.includes(SETUP_ADDRESS_PATH)) {
-        return {
-            path,
-            toApp: DEFAULT_APP,
-        };
-    }
-    const toApp = getAppFromPathname(trimmedPathname);
-    if (!toApp) {
-        return {
-            path,
-            toApp: undefined,
-        };
-    }
-    return {
-        path,
-        toApp,
-    };
-};
-
 const SIGN_IN_ROUTES = [
     SSO_PATHS.LOGIN,
     SSO_PATHS.MAIL_SIGN_IN,
@@ -167,19 +147,24 @@ const SIGN_IN_ROUTES = [
     SSO_PATHS.DOCS_SIGN_IN,
 ];
 
+const getDefaultPath = (toApp: APP_NAMES) => {
+    if (toApp === APPS.PROTONMAIL) {
+        return '/inbox';
+    }
+    return '/';
+};
+
+const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent }: { appIntent?: AppIntent }) => {
+    searchParams.append('welcome', 'true');
+    if (appIntent?.ref !== undefined) {
+        searchParams.append('ref', appIntent.ref);
+    }
+};
+
 // All SSO paths except login
 const DISABLE_AUTO_SIGN_IN_ROUTES: string[] = Object.values(SSO_PATHS).filter(
     (path) => !SIGN_IN_ROUTES.includes(path as any)
 );
-
-const UNAUTHENTICATED_ROUTES = {
-    UNSUBSCRIBE: '/unsubscribe',
-    VERIFY_EMAIL: '/verify-email',
-    REMOVE_EMAIL: '/remove-email',
-    DISABLE_ACCOUNT: '/disable-account',
-    EMAIL_FORWARDING: '/email-forwarding',
-    CLOSE_TICKET: '/close-ticket',
-};
 
 interface Props {
     onLogin: ProtonLoginCallback;
@@ -215,16 +200,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
     }, []);
 
     const [maybeLocalRedirect] = useState(() => {
-        const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
-            location.pathname
-        )
-            ? undefined
-            : location;
-        if (!localLocation) {
-            return;
-        }
-        // If trying to access a non-public location from this app, set up a local redirect
-        return getLocalRedirect(getPathFromLocation(localLocation));
+        return getLocalRedirect(location);
     });
 
     const getPreAppIntent = (forkState: ProduceForkData | undefined) => {
@@ -241,7 +217,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const handleProduceFork = async (data: ProduceForkData, session: AuthSession): Promise<OnLoginCallbackResult> => {
         if (data.type === SSOType.Proton) {
-            const { forkParameters } = data.payload;
+            const { forkParameters, searchParameters } = data.payload;
             const { app } = forkParameters;
 
             if (isExtension(app)) {
@@ -269,11 +245,12 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 return inputResult;
             }
 
-            await produceFork({
+            const produceForkPayload = await produceFork({
                 api,
                 session,
                 forkParameters,
             });
+            produceForkConsumption(produceForkPayload, searchParameters);
             return completeResult;
         }
 
@@ -360,8 +337,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 };
             }
             if (toApp === APPS.PROTONVPN_SETTINGS) {
+                const path = session.flow === 'signup' ? '/vpn-apps?prompt=true' : '/';
                 return {
-                    path: joinPaths(getSlugFromApp(toApp), '/'),
+                    path: joinPaths(getSlugFromApp(toApp), path),
                     toApp: toApp,
                 };
             }
@@ -413,46 +391,42 @@ const BasePublicApp = ({ onLogin }: Props) => {
             );
         }
 
-        // If the user signed up and there is an active fork, purposefully ignore it so that it
-        // triggers a page load with the query parameters
-        if (forkState?.type === SSOType.Proton && session.flow !== 'signup') {
+        if (forkState?.type === SSOType.Proton) {
+            const searchParameters = new URLSearchParams();
+            if (session.flow === 'signup') {
+                addSignupSearchParams(searchParameters, { appIntent });
+            }
             return handleProduceFork(
                 {
                     type: SSOType.Proton,
-                    payload: { forkParameters: forkState.payload.forkParameters },
+                    payload: {
+                        searchParameters,
+                        forkParameters: forkState.payload.forkParameters,
+                    },
                 },
                 session
             );
         }
 
-        const url = (() => {
-            let path;
-
-            if (localRedirect) {
-                if (session.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
-                    path = joinPaths(getSlugFromApp(APPS.PROTONVPN_SETTINGS), '/vpn-apps?prompt=true');
-                } else if (session.flow === 'signup' && toApp === APPS.PROTONPASS) {
-                    path = joinPaths(getSlugFromApp(APPS.PROTONPASS), '/download');
-                } else {
-                    path = localRedirect.path || '';
+        const getDefaultRedirectUrl = () => {
+            const url = (() => {
+                if (localRedirect) {
+                    const path = localRedirect.path || '/';
+                    return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
                 }
-                return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
+
+                const path = getDefaultPath(toApp);
+                return new URL(getAppHref(path, toApp, LocalID));
+            })();
+
+            if (session.flow === 'signup') {
+                addSignupSearchParams(url.searchParams, { appIntent });
             }
 
-            if (toApp === APPS.PROTONMAIL) {
-                path = '/inbox';
-            } else {
-                path = '/';
-            }
-            return new URL(getAppHref(path, toApp, LocalID));
-        })();
+            return url;
+        };
 
-        if (session.flow === 'signup') {
-            url.searchParams.append('welcome', 'true');
-            if (appIntent?.ref !== undefined) {
-                url.searchParams.append('ref', appIntent.ref);
-            }
-        }
+        const url = getDefaultRedirectUrl();
 
         if (url.hostname === window.location.hostname || authentication.mode !== 'sso') {
             onLogin({
@@ -468,7 +442,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const handleActiveSessionsFork = async (
         newForkState: ProduceForkData,
-        { session, sessions }: GetActiveSessionsResult
+        { session, sessions, type }: GetActiveSessionsResult
     ): Promise<OnLoginCallbackResult> => {
         ignoreAutoRef.current = true;
 
@@ -477,7 +451,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
         if (newForkState.type === SSOType.Proton) {
             const forkParameters = newForkState.payload.forkParameters;
-            const autoSignIn = session && (sessions.length === 1 || forkParameters.localID !== undefined);
+            const autoSignIn = type === GetActiveSessionType.AutoPick;
 
             if (autoSignIn && getShouldReAuth(forkParameters, session)) {
                 const reAuthState: ReAuthState = { session, reAuthType: forkParameters.promptType };
@@ -496,7 +470,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 );
             }
 
-            if (forkParameters.forkType === FORK_TYPE.SIGNUP) {
+            if (forkParameters.forkType === ForkType.SIGNUP) {
                 const paths = getPaths(
                     location.localePrefix,
                     newForkState,
@@ -520,6 +494,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const handleActiveSessions = async ({
         session,
         sessions,
+        type,
     }: GetActiveSessionsResult): Promise<OnLoginCallbackResult> => {
         // Ignore the automatic login
         if (ignoreAutoRef.current || DISABLE_AUTO_SIGN_IN_ROUTES.includes(location.pathname)) {
@@ -531,12 +506,12 @@ const BasePublicApp = ({ onLogin }: Props) => {
             }
             return inputResult;
         }
+        if (type === GetActiveSessionType.AutoPick) {
+            return handleLogin(session);
+        }
         if (!sessions.length) {
             setActiveSessions(sessions);
             return inputResult;
-        }
-        if (session && sessions.length === 1) {
-            return handleLogin(session);
         }
         setActiveSessions(sessions);
         history.replace(SSO_PATHS.SWITCH);

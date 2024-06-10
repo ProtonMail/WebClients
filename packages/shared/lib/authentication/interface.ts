@@ -96,3 +96,10 @@ export interface MemberAuthResponse {
     UID: string;
     LocalID: number;
 }
+
+export interface ExtraSessionForkData {
+    localID?: number;
+    email?: string | null;
+    returnUrl?: string;
+    pathname?: string;
+}

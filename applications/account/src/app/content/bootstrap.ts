@@ -28,6 +28,7 @@ const getAppContainer = () =>
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
+    const searchParams = new URLSearchParams(window.location.search);
     const api = createApi({ config });
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
@@ -46,13 +47,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
-        const session = await bootstrap.loadSession({ api, authentication, pathname });
+        const sessionResult = await bootstrap.loadSession({ api, authentication, pathname, searchParams });
 
-        const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
+        const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        const user = session.payload?.User;
+        const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, history, unleashClient });
 
         let persistedState = await getDecryptedPersistedState<Partial<AccountState>>({

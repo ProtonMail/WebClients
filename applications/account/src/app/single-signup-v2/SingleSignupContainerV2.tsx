@@ -518,7 +518,10 @@ const SingleSignupContainerV2 = ({
             let resumedSession: ResumedSessionResult | undefined;
             if (maybeSession?.persisted.UID) {
                 // Try to resume the session first so that in case it's expired, the rest of the flow is fine.
-                resumedSession = await resumeSession(silentApi, maybeSession?.persisted.localID).catch(noop);
+                resumedSession = await resumeSession({
+                    api: silentApi,
+                    localID: maybeSession?.persisted.localID,
+                }).catch(noop);
                 if (resumedSession) {
                     silentApi = getUIDApi(resumedSession.UID, silentApi);
                 }
@@ -876,7 +879,7 @@ const SingleSignupContainerV2 = ({
         try {
             accountRef.current.signingIn = true;
             const silentApi = getSilentApi(unauthApi);
-            const resumedSession = await resumeSession(silentApi, session.persisted.localID);
+            const resumedSession = await resumeSession({ api: silentApi, localID: session.persisted.localID });
             if (resumedSession) {
                 return await handleSignIn(resumedSession, { ignore: true });
             }

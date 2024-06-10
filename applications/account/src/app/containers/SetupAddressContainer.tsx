@@ -22,8 +22,8 @@ import { AddressGeneration } from '@proton/components/containers/login/interface
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
+import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validation';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
-import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { User } from '@proton/shared/lib/interfaces';

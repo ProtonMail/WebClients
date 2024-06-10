@@ -1,6 +1,9 @@
+import * as H from 'history';
+
 import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { DEFAULT_APP, getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import {
     getIsCalendarApp,
     getIsDocsApp,
@@ -9,8 +12,11 @@ import {
     getIsPassApp,
     getIsVPNApp,
 } from '@proton/shared/lib/authentication/apps';
-import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
-import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getPathFromLocation, getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
 import { getLocaleMapping } from '../locales';
@@ -122,4 +128,60 @@ export const getPaths = (
 
 export const getLocaleTermsURL = () => {
     return getTermsURL(getLocaleMapping(localeCode));
+};
+
+export const UNAUTHENTICATED_ROUTES = {
+    UNSUBSCRIBE: '/unsubscribe',
+    VERIFY_EMAIL: '/verify-email',
+    REMOVE_EMAIL: '/remove-email',
+    DISABLE_ACCOUNT: '/disable-account',
+    EMAIL_FORWARDING: '/email-forwarding',
+    CLOSE_TICKET: '/close-ticket',
+};
+
+const getCleanPath = (location: H.Location) => {
+    try {
+        const path = getPathFromLocation(location);
+        const url = new URL(path, window.location.origin);
+        url.searchParams.delete(ForkSearchParameters.LocalID);
+        return getPathFromLocation(url);
+    } catch {}
+};
+
+export const getLocalRedirect = (location: H.Location) => {
+    // If trying to access a non-public location from this app, set up a local redirect
+    const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
+        location.pathname
+    )
+        ? undefined
+        : location;
+    if (!localLocation) {
+        return;
+    }
+    const path = getCleanPath(location);
+    if (!path) {
+        return undefined;
+    }
+    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(path));
+    if (!trimmedPathname) {
+        return undefined;
+    }
+    // Special case to not add the slug...
+    if (path.includes(SETUP_ADDRESS_PATH)) {
+        return {
+            path,
+            toApp: DEFAULT_APP,
+        };
+    }
+    const toApp = getAppFromPathname(trimmedPathname);
+    if (!toApp) {
+        return {
+            path,
+            toApp: undefined,
+        };
+    }
+    return {
+        path,
+        toApp,
+    };
 };

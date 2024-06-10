@@ -6,12 +6,12 @@ import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/sha
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
+import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
+import { ForkSearchParameters, type ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/sessionForkBlob';
-import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/sessionForkValidation';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -24,7 +24,7 @@ export type RequestForkOptions = {
     app: APP_NAMES;
     host?: string;
     localID?: number;
-    forkType?: FORK_TYPE;
+    forkType?: ForkType;
     payloadType?: 'offline';
     payloadVersion?: AuthSessionVersion;
 };
@@ -41,14 +41,14 @@ export const requestFork = ({
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
-    searchParams.append('app', app);
-    searchParams.append('state', state);
-    searchParams.append('independent', '0');
+    searchParams.append(ForkSearchParameters.App, app);
+    searchParams.append(ForkSearchParameters.State, state);
+    searchParams.append(ForkSearchParameters.Independent, '0');
 
-    if (payloadType === 'offline') searchParams.append('pt', payloadType);
-    if (payloadVersion === 2) searchParams.append('pv', `${payloadVersion}`);
-    if (localID !== undefined) searchParams.append('u', `${localID}`);
-    if (forkType) searchParams.append('t', forkType);
+    if (payloadType === 'offline') searchParams.append(ForkSearchParameters.PayloadType, payloadType);
+    if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
+    if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
+    if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
 
     return { url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, state };
 };
@@ -172,14 +172,14 @@ export const getAccountForkResponsePayload = (type: AccountForkResponse, error?:
 export const getConsumeForkParameters = () => {
     const sliceIndex = window.location.hash.lastIndexOf('#') + 1;
     const hashParams = new URLSearchParams(window.location.hash.slice(sliceIndex));
-    const selector = hashParams.get('selector') || '';
-    const state = hashParams.get('state') || '';
-    const base64StringKey = hashParams.get('sk') || '';
-    const type = hashParams.get('t') || '';
-    const persistent = hashParams.get('p') || '';
-    const trusted = hashParams.get('tr') || '';
-    const payloadVersion = hashParams.get('pv') || '';
-    const payloadType = hashParams.get('pt') || '';
+    const selector = hashParams.get(ForkSearchParameters.Selector) || '';
+    const state = hashParams.get(ForkSearchParameters.State) || '';
+    const base64StringKey = hashParams.get(ForkSearchParameters.Base64Key) || '';
+    const type = hashParams.get(ForkSearchParameters.ForkType) || '';
+    const persistent = hashParams.get(ForkSearchParameters.Persistent) || '';
+    const trusted = hashParams.get(ForkSearchParameters.Trusted) || '';
+    const payloadVersion = hashParams.get(ForkSearchParameters.PayloadVersion) || '';
+    const payloadType = hashParams.get(ForkSearchParameters.PayloadType) || '';
 
     return {
         state: state.slice(0, 100),
