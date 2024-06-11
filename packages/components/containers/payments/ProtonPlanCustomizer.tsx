@@ -444,7 +444,7 @@ const ProtonPlanCustomizer = ({
                 );
 
                 const getDisplayMin = () => {
-                    if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(currentSubscription)) {
+                    if (addonMaxKey === 'MaxIPs' && hasVpnBusiness(currentSubscription)) {
                         return getVPNDedicatedIPs(currentSubscription);
                     }
 
