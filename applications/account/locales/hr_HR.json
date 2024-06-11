@@ -466,10 +466,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -814,6 +814,11 @@
     "Action in trial plan": {
       "No, thanks": [
         "Ne, hvala"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "Ponovo aktiviraj"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1202,6 +1207,9 @@
       "enzian": [
         "gorčica"
       ],
+      "fern": [
+        "paprat"
+      ],
       "forest": [
         "šuma"
       ],
@@ -1232,6 +1240,9 @@
       "pickle": [
         "kiseli krastavac"
       ],
+      "pine": [
+        "bor"
+      ],
       "pink": [
         "ružičasta"
       ],
@@ -1244,11 +1255,17 @@
       "purple": [
         "ljubičasta"
       ],
+      "reef": [
+        "greben"
+      ],
       "sahara": [
         "sahara"
       ],
       "slateblue": [
         "škriljevac plava"
+      ],
+      "soil": [
+        "tlo"
       ],
       "strawberry": [
         "jagoda"
@@ -2445,6 +2462,11 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
@@ -3404,6 +3426,11 @@
         "Ostalo"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktirajte nas"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
@@ -3708,6 +3735,9 @@
       ],
       "Add a recovery phone number": [
         "Dodajte telefonski broj za oporavak"
+      ],
+      "Add domain": [
+        "Dodaj domenu"
       ],
       "Add image URL": [
         "Dodajte URL slike"
@@ -4148,6 +4178,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
+      ],
+      "Preview": [
+        "Pregled"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -5216,9 +5249,6 @@
       "New password": [
         "Nova lozinka"
       ],
-      "New plan": [
-        "Novi plan"
-      ],
       "No label found": [
         "Nema pronađene oznake"
       ],
@@ -5542,6 +5572,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Za: ${ to }"
       ]
     },
     "Link": {
@@ -5632,6 +5665,11 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saznajte više"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Omogući ${ reason }"
@@ -5641,6 +5679,11 @@
       ],
       "Enable authentication logs": [
         "Omogući autentikacijske zapise"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Special Offer": [
+        "Posebna ponuda"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -7101,22 +7144,15 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
-    "Subscription price": {
-      "For": [
-        "Za"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ]
-    },
     "Subscription reminder": {
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
       "10 email addresses": [
         "10 adrese e-pošte"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Cancel subscription": [
         "Otkaži pretplatu"
@@ -7127,8 +7163,19 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
+      "Reactivate": [
+        "Ponovo aktiviraj"
+      ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ]
     },
     "Subscription renewal state": {
@@ -7614,6 +7661,9 @@
       "Delete calendar": [
         "Ukloni kalendar"
       ],
+      "Delete label?": [
+        "Izbriši oznaku?"
+      ],
       "Delete logs": [
         "Izbriši zapise"
       ],
@@ -7862,6 +7912,9 @@
       ],
       "Processing...": [
         "Obrada..."
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Preporučeno"

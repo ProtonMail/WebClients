@@ -178,6 +178,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel add-on": [
+        "Скасаваць дадатак"
+      ],
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
@@ -393,6 +396,9 @@
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
+      ],
+      "Download Desktop App": [
+        "Спампаваць настольную праграму"
       ],
       "Download ICS": [
         "Спампаваць ICS"
@@ -625,6 +631,9 @@
       "Keep my Plus subscription": [
         "Пакінуць падпіску Plus"
       ],
+      "Keep the writing assistant": [
+        "Пакінуць памочніка ў напісанні"
+      ],
       "label emails as": [
         "пазначыць лісты як"
       ],
@@ -697,10 +706,10 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -855,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "Адклікаць гэта запрашэнне"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Запусціць на серверы ${ BRAND_NAME }"
       ],
       "Save": [
         "Захаваць"
@@ -1159,6 +1171,9 @@
       "What do I get?": [
         "Што я атрымаю?"
       ],
+      "Why can't the model run locally?": [
+        "Чаму нельга запусціць мадэль на маім камп'ютары?"
+      ],
       "Wipe": [
         "Сцерці"
       ],
@@ -1232,6 +1247,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } ліцэнзія памочніка ў напісанні",
+        "${ seats } ліцэнзіі памочніка ў напісанні",
+        "${ seats }ліцэнзій памочніка ў напісанні",
+        "${ seats }ліцэнзій памочніка ў напісанні"
       ],
       "${ users } user": [
         "${ users } карыстальнік",
@@ -1376,6 +1397,43 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Хутчэйшая і больш шырокая сумяшчальнасць прылад"
+      ],
+      "Run locally": [
+        "Выканаць лакальна"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/месяц"
+      ],
+      "${ price } /year": [
+        "${ price }/год"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Актыўна да ${ subscriptionRenewalDate }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Аўтаматычна падоўжыцца ${ subscriptionRenewalDate }"
+      ],
+      "Customize plan": [
+        "Наладжванне тарыфнага плана"
+      ],
+      "from ${ price } /month": [
+        "ад ${ price }/месяц"
+      ],
+      "New": [
+        "Новае"
+      ],
+      "Renew subscription": [
+        "Падоўжыць падпісу"
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Пробны перыяд міне ${ formattedDate }"
       ]
     },
     "Attached ics file error": {
@@ -3944,6 +4002,9 @@
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
       ],
+      "Alias options could not be resolved": [
+        "Не атрымалася вызначыць параметры псеўданіма"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
       ],
@@ -3985,6 +4046,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Could not open created vault": [
+        "Немагчыма адкрыць створанае сховішча"
+      ],
+      "Could not open updated vault": [
+        "Немагчыма адкрыць абноўленае сховішча"
       ],
       "Could not save preference": [
         "Немагчыма захаваць параметры"
@@ -4111,6 +4178,9 @@
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Змесціва элемента не можа перавышаць 40 КБ"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -5607,6 +5677,9 @@
       "Folders": [
         "Папкі"
       ],
+      "Hardware not compatible": [
+        "Несумяшчальнае абсталяванне"
+      ],
       "IP address": [
         "IP-адрас"
       ],
@@ -6102,17 +6175,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info": {
@@ -6623,6 +6685,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
+      "Browser not supported": [
+        "Браўзер не падтрымліваецца"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -6978,7 +7043,7 @@
         "фінансы"
       ],
       "for choosing ${ product }": [
-        "для выбару ${ product }"
+        "за выбар ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
@@ -7018,6 +7083,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
       ],
       "here": [
         "тут"
@@ -7309,6 +7377,9 @@
       ],
       "Merged": [
         "Аб'яднана"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Паведамленні ў папцы Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -7730,6 +7801,9 @@
       "Settings updated": [
         "Налады абноўлены"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Паказвае відарыс кожнага адпраўніка ў спісе паведамлення. Будуць паказаны ініцыялы адпраўніка ў выпадку, калі фатаграфія недаступна."
+      ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
       ],
@@ -7744,9 +7818,6 @@
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых адрасоў карыстальніцкага дамена. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
@@ -7901,6 +7972,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Дадатак памочнік у напісанні **не будзе падоўжаны**. Вы можаце працягваць карыстацца сэрвісам да **${ subscriptionRenewalDate }.**"
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні падключэння па VPN на маршрутызатары."
       ],
@@ -7924,6 +7998,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Гэта функцыя затрымлівае адпраўку вашых паведамленняў, што дае вам магчымасць адрабіць адпраўку на працягу выбранага перыяду часу."
       ],
       "This file is too large to preview": [
         "Занадта вялікі файл для папярэдняга прагляду"
@@ -8330,6 +8407,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Калі вы націсніце на спасылку, функцыя антыфішынгавай абароны папросіць вас пацвердзіць URL-адрас вэб-старонкі."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
@@ -8359,6 +8439,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant add-on": [
+        "Дадатак памочніка ў напісанні"
       ],
       "Yearly": [
         "Штогод"
@@ -8567,6 +8653,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Ваш браўзер не падтрымлівае памочніка ў напісанні. Спампуйце настольную праграму ${ MAIL_APP_NAME } або паспрабуйце запусціць яго на серверы ${ BRAND_NAME }."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы ${ BRAND_NAME }."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
@@ -8578,6 +8670,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы ${ BRAND_NAME }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -8626,6 +8721,17 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8691,6 +8797,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Толькі прагляд"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
       ]
     },
     "Input label": {
@@ -9188,6 +9299,12 @@
       "Auto-detect primary time zone": [
         "Аўтаматычнае вызначэнне асноўнага часавага пояса"
       ],
+      "Auto-load embedded images": [
+        "Аўтаматычная загрузка ўбудаваных відарысаў"
+      ],
+      "Auto-load remote content": [
+        "Аўтаматычная загрузка аддаленага змесціва"
+      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -9587,6 +9704,9 @@
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
+      "Mail settings": [
+        "Налады пошты"
+      ],
       "Mailbox password": [
         "Пароль паштовай скрыні"
       ],
@@ -9659,9 +9779,6 @@
       "New password": [
         "Новы пароль"
       ],
-      "New plan": [
-        "Новы тарыфны план"
-      ],
       "No filter": [
         "Не фільтраваць"
       ],
@@ -9709,9 +9826,6 @@
       ],
       "Organization password": [
         "Пароль арганізацыі"
-      ],
-      "Organization size": [
-        "Памер арганізацыі"
       ],
       "Other amount": [
         "Іншая сума"
@@ -10168,6 +10282,9 @@
       "Add gift code": [
         "Дадаць падарункавы код"
       ],
+      "Add to your subscription": [
+        "Дадаць да вашай падпіскі"
+      ],
       "Apps and extensions": [
         "Праграмы і пашырэнні"
       ],
@@ -10287,6 +10404,9 @@
       ],
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
+      ],
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
       ],
       "View guide": [
         "Паглядзець дапаможнік"
@@ -11053,6 +11173,9 @@
       "Custom snooze time": [
         "Карыстальніцкі час адкладання"
       ],
+      "Custom workspace branding": [
+        "Брэндзіраванне карыстальніцкай працоўнай прасторы"
+      ],
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
@@ -11158,6 +11281,9 @@
       "Password health": [
         "Якасць пароля"
       ],
+      "Password manager to secure credentials": [
+        "Менеджар пароляў для бяспекі ўліковых даных"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
@@ -11188,6 +11314,9 @@
       "Router support": [
         "Падтрымка маршрутызатараў"
       ],
+      "Save time emailing": [
+        "Ашчаджайце час на напісанне лістоў"
+      ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
       ],
@@ -11199,6 +11328,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "See team's availability": [
+        "Прагляд даступнасці каманды"
       ],
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
@@ -11371,6 +11503,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
@@ -11379,6 +11514,12 @@
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашыфраваная электронная пошта і каляндар для пачатку працы."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Палепшаная бяспека і прэміяльныя функцыі для каманд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
@@ -11592,6 +11733,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
       ],
+      "Increase or reallocate storage for a user": [
+        "Павялічце або пераразмеркуйце сховішча для карыстальніка"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
       ],
@@ -11673,6 +11817,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Хутка і лёгка адпраўляйце электронныя лісты вялікім групам з дапамогай стварэння неабходнай колькасці груп кантактаў (да 100 кантактаў у кожнай групе)"
       ],
@@ -11699,6 +11846,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -11831,6 +11981,9 @@
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
+      ],
+      "Trial started": [
+        "Пачаты пробны перыяд"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Двухфактарная аўтэнтыфікацыя прымусова ўжываецца для адміністратараў"
@@ -14290,49 +14443,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14545,6 +14657,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -14766,6 +14919,15 @@
       ],
       "Verification successful": [
         "Паспяхова праверана"
+      ],
+      "Writing assistant disabled": [
+        "Памочнік у напісанні адключаны"
+      ],
+      "Writing assistant enabled": [
+        "Памочнік у напісанні ўключаны"
+      ],
+      "Writing assistant setting updated": [
+        "Налады памочніка ў напісанні адключаны"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -15173,6 +15335,9 @@
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Скасаваць дадатак памочніка ў напісанні?"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -15289,6 +15454,9 @@
       ],
       "Custom filters": [
         "Карыстальніцкія фільтры"
+      ],
+      "Custom folders and labels": [
+        "Карыстальніцкія папкі і меткі"
       ],
       "Custom selection of users": [
         "Персаналізаваны выбар карыстальнікаў"
@@ -15454,6 +15622,9 @@
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
+      ],
+      "Enable writing assistant": [
+        "Уключыць памочніка ў напісанні"
       ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
@@ -15725,9 +15896,6 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Персаналізуйце ніжні калонтытул свайго ліста"
-      ],
       "Phone": [
         "Тэлефон"
       ],
@@ -15742,6 +15910,9 @@
       ],
       "Processing...": [
         "Апрацоўка..."
+      ],
+      "Profile": [
+        "Профіль"
       ],
       "Recommended": [
         "Рэкамендавана"
@@ -15910,6 +16081,9 @@
       ],
       "Sort labels alphabetically": [
         "Сартаваць меткі па алфавіце"
+      ],
+      "Spam filters": [
+        "Фільтры спама"
       ],
       "Spam, block, and allow lists": [
         "Спам, а таксама спісы заблакіраваных і дазволеных адрасоў"
@@ -16473,6 +16647,11 @@
         "Асноўны адміністратар"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "ШІ"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
@@ -16667,6 +16846,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Адключыўшы журналы, вы таксама ачысціце ўсю сваю гісторыю журналаў. Вы сапраўды хочаце адключыць журналы?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Калі вы скасуеце гэта імпартаванне, вы не зможаце яго ўзнавіць. ${ BRAND_NAME } захаваў увесь ход выканання ў вашым уліковым запісе. Усё роўна скасаваць?"

@@ -9,6 +9,11 @@
         "OK"
       ]
     },
+    "Assistant option": {
+      "No data transmitted while using,requires one-time download": [
+        "No data transmitted while using, requires one-time download"
+      ]
+    },
     "bf2023: Tooltip": {
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Includes support for ${ domains } custom email domain, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.",
@@ -104,11 +109,11 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
+      ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }**."
       ],
       "Tor": [
         "Tor"
@@ -203,11 +208,6 @@
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
-      ]
-    },
-    "Title": {
-      "Personalise your e-mail footer": [
-        "Personalize your e-mail footer"
       ]
     },
     "Tooltip": {

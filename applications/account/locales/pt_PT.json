@@ -379,6 +379,9 @@
       "Download CSV sample": [
         "Transferir a amostra CSV"
       ],
+      "Download Desktop App": [
+        "Transferir a aplicação para desktop"
+      ],
       "Download ICS": [
         "Transferir ICS"
       ],
@@ -676,11 +679,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -3676,6 +3679,9 @@
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
@@ -3714,6 +3720,12 @@
       ],
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
+      ],
+      "Could not open created vault": [
+        "Não foi possível abrir o cofre criado"
+      ],
+      "Could not open updated vault": [
+        "Não foi possível abrir o cofre actualizado"
       ],
       "Could not save preference": [
         "Não foi possível guardar as preferências"
@@ -3833,6 +3845,9 @@
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40 KB."
       ],
       "Label name cannot be empty.": [
         "O nome da etiqueta não pode estar vazio."
@@ -5735,17 +5750,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7923,6 +7927,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8903,9 +8918,6 @@
       "New password": [
         "Nova palavra-passe"
       ],
-      "New plan": [
-        "Novo plano"
-      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -8953,9 +8965,6 @@
       ],
       "Organization password": [
         "Palavra-passe da organização"
-      ],
-      "Organization size": [
-        "Tamanho da organização"
       ],
       "Other amount": [
         "Outro valor"
@@ -12825,43 +12834,6 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
-    "Subscription price": {
-      "For": [
-        "Por"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -12953,6 +12925,38 @@
       ],
       "Yearly free storage bonuses": [
         "Bónus de armazenamento gratuito anual"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -14097,9 +14101,6 @@
       ],
       "PayPal verification failed": [
         "Erro na verificação PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"
