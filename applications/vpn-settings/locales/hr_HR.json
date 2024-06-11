@@ -453,6 +453,11 @@
         "Smanji"
       ]
     },
+    "Action subscription": {
+      "Reactivate": [
+        "Ponovo aktiviraj"
+      ]
+    },
     "Addon": {
       "${ domains } custom domain": [
         "${ domains } prilagođena domena",
@@ -706,6 +711,9 @@
       "enzian": [
         "gorčica"
       ],
+      "fern": [
+        "paprat"
+      ],
       "forest": [
         "šuma"
       ],
@@ -721,6 +729,9 @@
       "pickle": [
         "kiseli krastavac"
       ],
+      "pine": [
+        "bor"
+      ],
       "pink": [
         "ružičasta"
       ],
@@ -730,11 +741,17 @@
       "purple": [
         "ljubičasta"
       ],
+      "reef": [
+        "greben"
+      ],
       "sahara": [
         "sahara"
       ],
       "slateblue": [
         "škriljevac plava"
+      ],
+      "soil": [
+        "tlo"
       ],
       "strawberry": [
         "jagoda"
@@ -1557,6 +1574,11 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
@@ -2014,6 +2036,11 @@
         "Vrijednost / Podaci / Ukazuje na"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktirajte nas"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-pošta"
@@ -2061,6 +2088,9 @@
       ],
       "active": [
         "aktivno"
+      ],
+      "Add domain": [
+        "Dodaj domenu"
       ],
       "All your changes will be lost.": [
         "Sve vaše promjene će biti izgubljene."
@@ -2288,6 +2318,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
+      ],
+      "Preview": [
+        "Pregled"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
@@ -2743,9 +2776,6 @@
       "New password": [
         "Nova lozinka"
       ],
-      "New plan": [
-        "Novi plan"
-      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 lozinka"
       ],
@@ -2948,6 +2978,16 @@
       ],
       "What’s this?": [
         "Što je ovo?"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saznajte više"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Special Offer": [
+        "Posebna ponuda"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -3729,17 +3769,15 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
-    "Subscription price": {
-      "For": [
-        "Za"
-      ]
-    },
     "Subscription reminder": {
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
       "10 email addresses": [
         "10 adrese e-pošte"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Cancel subscription": [
         "Otkaži pretplatu"
@@ -3750,6 +3788,9 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
+      "Reactivate": [
+        "Ponovo aktiviraj"
+      ],
       "Version history": [
         "Povijest verzija"
       ]
@@ -3757,6 +3798,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ]
     },
     "Subscription renewal state": {
