@@ -4,6 +4,26 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка данных ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка из ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка с ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Добавить"
@@ -226,6 +246,9 @@
       ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
+      ],
+      "Mark as resolved": [
+        "Отметить как устраненную"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -938,9 +961,6 @@
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
       ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "По умолчанию члены команды могут экспортировать только хранилища, владельцами которых они являются. Если эта опция включена, они не смогут экспортировать никакие данные."
-      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
       ],
@@ -1178,9 +1198,6 @@
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
       ],
-      "Organization settings successfully updated": [
-        "Настройки организации успешно обновлены"
-      ],
       "Owner": [
         "Владелец"
       ],
@@ -1304,9 +1321,6 @@
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
       ],
-      "Team members can only share vaults within organization": [
-        "Члены команды могут делиться хранилищами только внутри организации"
-      ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
       ],
@@ -1357,9 +1371,6 @@
       ],
       "Unverified": [
         "Не подтвержденный"
-      ],
-      "Updating organization settings": [
-        "Настройки организации обновляются"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
@@ -1743,6 +1754,9 @@
       ],
       "Organization": [
         "Организация"
+      ],
+      "Passkey": [
+        "Ключ доступа"
       ],
       "Passphrase": [
         "Кодовая фраза"
@@ -2215,6 +2229,9 @@
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
+      ],
+      "Passkey": [
+        "Ключ доступа"
       ],
       "Password": [
         "Пароль"
