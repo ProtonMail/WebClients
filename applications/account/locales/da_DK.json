@@ -178,6 +178,9 @@
       "Cancel": [
         "Annullér"
       ],
+      "Cancel add-on": [
+        "Annuller tilføjelse"
+      ],
       "Cancel subscription": [
         "Opsig abonnement"
       ],
@@ -393,6 +396,9 @@
       ],
       "Download CSV sample": [
         "Hent CSV-eksempel"
+      ],
+      "Download Desktop App": [
+        "Hent skrivebordsappen"
       ],
       "Download ICS": [
         "Download ICS"
@@ -625,6 +631,9 @@
       "Keep my Plus subscription": [
         "Behold mit Plus-abonnement"
       ],
+      "Keep the writing assistant": [
+        "Behold skriveassistenten"
+      ],
       "label emails as": [
         "giv e-mails etiketten"
       ],
@@ -697,10 +706,10 @@
       "No, thanks": [
         "Nej tak"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -855,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "Tilbagetræk denne invitation"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kør på ${ BRAND_NAME } servere"
       ],
       "Save": [
         "Gem"
@@ -1159,6 +1171,9 @@
       "What do I get?": [
         "Hvad får jeg?"
       ],
+      "Why can't the model run locally?": [
+        "Hvorfor kan modellen ikke køre lokalt?"
+      ],
       "Wipe": [
         "Ryd"
       ],
@@ -1228,6 +1243,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruger"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentplads",
+        "${ seats } skriveassistentpladser"
       ],
       "${ users } user": [
         "${ users } bruger",
@@ -1370,6 +1389,67 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applikationer"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Hurtigere, bredere enhedskompatibilitet"
+      ],
+      "No data transmitted while using,requires one-time download": [
+        "Ingen data overføres under brug, kræver engangsoverførsel"
+      ],
+      "Run locally": [
+        "Kør lokalt"
+      ],
+      "Run on servers": [
+        "Kør på servere"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /måned"
+      ],
+      "${ price } /year": [
+        "${ price } /år"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Aktiv indtil ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Tilføj skriveassistent"
+      ],
+      "Add writing assistant to your plan": [
+        "Tilføj skriveassistent til dit abonnement"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Tildel det til specifikke brugere i ${ userAndAddressesButton }."
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Automatisk fornyelse d. ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Annuller tilføjelse til skriveassistent"
+      ],
+      "Customize plan": [
+        "Tilpas abonnement"
+      ],
+      "from ${ price } /month": [
+        "fra ${ price } /måned"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Renew subscription": [
+        "Forny abonnement"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Prøveperioden udløber d. ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Prøveperiode i gang"
       ]
     },
     "Attached ics file error": {
@@ -3918,6 +3998,9 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias options could not be resolved": [
+        "Alias-indstillinger kunne ikke hentes"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
       ],
@@ -3959,6 +4042,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Fakturaer kunne ikke indlæses. Prøv venligst igen senere."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åbne den opdaterede boks"
       ],
       "Could not save preference": [
         "Kunne ikke gemme præference"
@@ -4081,6 +4170,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Element-indhold må ikke overstige 40 kB"
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
@@ -5401,7 +5493,7 @@
         "Fortsæt med at bruge desktop appen"
       ],
       "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
-        "Åben ${ MAIL_APP_NAME } i ${ webAppMessage }"
+        "Åbn ${ MAIL_APP_NAME } i ${ webAppMessage }"
       ],
       "Your desktop app free trial has ended": [
         "Din desktop app's gratis prøveperiode er slut"
@@ -5548,6 +5640,9 @@
       ],
       "Folders": [
         "Mapper"
+      ],
+      "Hardware not compatible": [
+        "Hardware ikke kompatibel"
       ],
       "IP address": [
         "IP-adresse"
@@ -6030,17 +6125,6 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -6501,6 +6585,12 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
+      "Browser not supported": [
+        "Browser understøttes ikke"
+      ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan organisationsmedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne tilvalg er slået til, kan de ikke eksportere nogen data."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
@@ -6915,6 +7005,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel nulstilling af adgangskoden, kan du forhindre, at meddelelsen vises igen"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Hvis denne tilvalg er slået til, vil organisationsmedlemmer kun kunne dele bokse internt i organisationen."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -7615,7 +7708,7 @@
         "Single sign-on fjernet"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP tillader 3. part's tjenester eller enheder til at sende e-mails via ${ MAIL_APP_NAME } til dine brugerdefinerede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for business brugere med brugerdefinerede domæner."
+        "SMTP-indsendelse tillader 3-partstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } til dine tilpassede domæneadresser. Funktionen gælder kun for ${ BRAND_NAME } til erhvervsbrugere med tilpassede domæner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
@@ -7761,6 +7854,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
+      ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Skriveassistent-tilføjelsen **bliver ikke fornyet**. Du kan fortsætte med at bruge tjenesten indtil **${ subscriptionRenewalDate }.**."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller indstiller en VPN-forbindelse på en router."
@@ -8227,6 +8323,12 @@
       "Would you like to receive a new verification code?": [
         "Ønsker du at modtage en ny verifikationskode?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tilføjelse"
+      ],
       "Yearly": [
         "Årlig"
       ],
@@ -8261,6 +8363,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller browseren i mellemtiden."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Du kan fastlægge retningslinjer for ${ PASS_APP_NAME } for organisationens medlemmer."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
@@ -8422,6 +8527,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Din browser understøtter ikke skriveassistenten. Hent skrivebordsappen ${ MAIL_APP_NAME }, eller prøv at køre den på ${ BRAND_NAME }-servere."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Din browser understøtter ikke skriveassistenten. Prøv at køre den på ${ BRAND_NAME }-servere."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -8433,6 +8544,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Din hardwaren understøtter ikke lokal kørsel af skriveassistenten. Prøv at køre den på ${ BRAND_NAME }-servere."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import fra ${ accounts } er midlertidigt forsinket.",
@@ -8479,6 +8593,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8540,6 +8665,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Kun visning"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Input label": {
@@ -9248,6 +9378,12 @@
       "Disable animations": [
         "Deaktivér animationer"
       ],
+      "Disable data export for organization members": [
+        "Deaktiver dataeksport for organisationsmedlemmer"
+      ],
+      "Disable sharing outside the organization.": [
+        "Deaktiver deling uden for organisationen."
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -9512,9 +9648,6 @@
       "New password": [
         "Ny adgangskode"
       ],
-      "New plan": [
-        "Nyt abonnement"
-      ],
       "No filter": [
         "Intet filter"
       ],
@@ -9562,9 +9695,6 @@
       ],
       "Organization password": [
         "Oorganisationsadgangskode"
-      ],
-      "Organization size": [
-        "Størrelse på organisationen"
       ],
       "Other amount": [
         "Andet beløb"
@@ -10021,6 +10151,9 @@
       "Add gift code": [
         "Tilføj gavekode"
       ],
+      "Add to your subscription": [
+        "Tilføj til dit abonnement"
+      ],
       "Apps and extensions": [
         "Apps og udvidelser"
       ],
@@ -10140,6 +10273,9 @@
       ],
       "Upgrade your plan": [
         "Opgradér abonnement"
+      ],
+      "Users and addresses": [
+        "Brugere og adresser"
       ],
       "View guide": [
         "Se guide"
@@ -10916,6 +11052,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Generate emails with only a prompt": [
+        "Generér e-mails med kun en besked"
+      ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
@@ -10980,6 +11119,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturlæs og finpuds dine tekster"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
@@ -10987,11 +11129,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
+      "Reply to messages": [
+        "Svar på beskeder"
+      ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
       ],
       "Router support": [
         "Router support"
+      ],
+      "Save time emailing": [
+        "Spar tid ved at sende e-mail"
       ],
       "Schedule and snooze emails for any time": [
         "Planlæg og snooze e-mails til enhver tid"
@@ -11647,6 +11795,9 @@
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
+      ],
+      "Trial started": [
+        "Prøveperiode startet"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "To-faktor-godkendelse er blevet gjort obligatorisk for administratorer."
@@ -14014,49 +14165,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Til"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
+      "For ${ totalPrice }": [
+        "Til ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14267,6 +14377,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -14488,6 +14639,15 @@
       ],
       "Verification successful": [
         "Bekræftelse gennemført"
+      ],
+      "Writing assistant disabled": [
+        "Skriveassistent deaktiveret"
+      ],
+      "Writing assistant enabled": [
+        "Skriveassistent aktiveret"
+      ],
+      "Writing assistant setting updated": [
+        "Indstilling af skriveassistent opdateret"
       ],
       "You have successfully canceled your subscription.": [
         "Du har nu opsagt dit abonnement."
@@ -14883,6 +15043,9 @@
       "Cancel subscription?": [
         "Opsig abonnement?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Annuller skriveassistent-tilføjelsen?"
+      ],
       "Card verification": [
         "Kortbekræftelse"
       ],
@@ -15164,6 +15327,9 @@
       "Email subscriptions": [
         "E-mail-abonnementer"
       ],
+      "Enable writing assistant": [
+        "Aktiver skriveassistent"
+      ],
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
@@ -15431,10 +15597,13 @@
         "PayPal-bekræftelse fejlede"
       ],
       "Personalise your e-mail footer": [
-        "Tilpas din e-mail sidefod"
+        "Skræddersy din e-mail-sidefod"
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Policies": [
+        "Retningslinjer"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -16180,6 +16349,11 @@
         "Primær admin"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
@@ -16356,6 +16530,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Ved at deaktivere logfilerne vil du også rydde hele din logfilshistorik. Er du sikker på, at du vil deaktivere loggerne?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Hvis du annullerer denne import, vil du ikke kunne genoptage den. ${ BRAND_NAME } gemte alle fremskridt på din konto. Annuller alligevel?"

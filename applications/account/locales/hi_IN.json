@@ -643,10 +643,10 @@
       "No, thanks": [
         "नहीं, शुक्रिया"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3462,6 +3462,9 @@
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
+      "Alias options could not be resolved": [
+        "नकली नाम के ऑप्शन रिज़ॉल्व ना हो सके"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
@@ -3503,6 +3506,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "रसीद लोड नहीं हो सकी। कृपया बाद में पुन: प्रयास करें।"
+      ],
+      "Could not open created vault": [
+        "बनाए गए तिजोरी को खोल नहीं पा रहे"
+      ],
+      "Could not open updated vault": [
+        "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Could not save preference": [
         "प्राथमिकता सहेजे नहीं जा सके"
@@ -3616,6 +3625,9 @@
       ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
+      ],
+      "Item content cannot exceed 40KB": [
+        "आइटम का कंटेंट 40 केबी से ज़्यादा बड़ा नहीं हो सकता"
       ],
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
@@ -5402,14 +5414,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info": {
@@ -7546,6 +7550,14 @@
         "ज़ूम मीटिंग"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
@@ -8509,9 +8521,6 @@
       "New password": [
         "नया पासवर्ड"
       ],
-      "New plan": [
-        "नई योजना"
-      ],
       "No filter": [
         "फिल्टर नहीं"
       ],
@@ -8556,9 +8565,6 @@
       ],
       "Organization password": [
         "संगठन का पासवर्ड"
-      ],
-      "Organization size": [
-        "संगठन का साइज़"
       ],
       "Other amount": [
         "दूसरा रकम"
@@ -11989,11 +11995,6 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "आपकी योजना को एक iOS ऐप का उपयोग करके खरीदा गया था। इसलिए, अपनी योजना में बदलाव करने या अपने भुगतान विवरण को अपडेट करने के लिए, आपको Apple App Store पर जाना होगा।"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "के लिए"
       ]
     },
     "Subscription reminder": {

@@ -394,6 +394,9 @@
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
       ],
+      "Download Desktop App": [
+        "Desktop-App herunterladen"
+      ],
       "Download ICS": [
         "ICS herunterladen"
       ],
@@ -697,11 +700,11 @@
       "No, thanks": [
         "Nein, danke"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -3918,6 +3921,9 @@
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
+      "Alias options could not be resolved": [
+        "Fehler beim Auflösen der Aliasoptionen."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
       ],
@@ -3959,6 +3965,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
+      ],
+      "Could not open created vault": [
+        "Erstellter Tresor konnte nicht geöffnet werden."
+      ],
+      "Could not open updated vault": [
+        "Aktualisierter Tresor konnte nicht geöffnet werden."
       ],
       "Could not save preference": [
         "Einstellung konnte nicht gespeichert werden."
@@ -4081,6 +4093,9 @@
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
@@ -6030,17 +6045,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6501,6 +6505,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
+      "Browser not supported": [
+        "Browser nicht unterstützt"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
       ],
@@ -6889,6 +6896,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
+      ],
       "here": [
         "hier"
       ],
@@ -7175,6 +7185,9 @@
       ],
       "Merged": [
         "Zusammengeführt"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
       "MM/YY": [
         "MM/JJ"
@@ -7590,6 +7603,9 @@
       "Settings updated": [
         "Einstellungen aktualisiert"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Zeigt das Bild eines jeden Absenders in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
+      ],
       "Show original message": [
         "Originalnachricht anzeigen"
       ],
@@ -7604,9 +7620,6 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME } for Business-Kunden mit benutzerdefinierten Domains zur Verfügung."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
@@ -7776,6 +7789,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Diese Funktion verzögert den Versand deiner E-Mails und gibt dir die Möglichkeit, den Versand während des gewählten Zeitfensters zu widerrufen."
       ],
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
@@ -8182,6 +8198,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Wenn du auf einen Link klickst, wirst du von dieser Anti-Phishing-Funktion aufgefordert, die URL der Webseite zu bestätigen."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
@@ -8211,6 +8230,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ],
+      "Writing assistant add-on": [
+        "Schreibassistent Add-on"
       ],
       "Yearly": [
         "Jährlich"
@@ -8407,6 +8432,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Dein Browser unterstützt den Schreibassistenten nicht. Lade dir die ${ MAIL_APP_NAME } Desktop-Version herunter oder versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
@@ -8418,6 +8449,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Dein Import von ${ accounts } verzögert sich vorübergehend.",
@@ -8464,6 +8498,17 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9413,6 +9458,9 @@
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
       ],
+      "Mail settings": [
+        "E-Mail-Einstellungen"
+      ],
       "Mailbox password": [
         "Postfach-Passwort"
       ],
@@ -9485,9 +9533,6 @@
       "New password": [
         "Neues Passwort"
       ],
-      "New plan": [
-        "Neues Abonnement"
-      ],
       "No filter": [
         "Kein Filter"
       ],
@@ -9535,9 +9580,6 @@
       ],
       "Organization password": [
         "Passwort der Organisation"
-      ],
-      "Organization size": [
-        "Organisationsgröße"
       ],
       "Other amount": [
         "Anderer Betrag"
@@ -10808,6 +10850,9 @@
       "Centralized settings and billings": [
         "Zentrale Einstellungen und Abrechnungen"
       ],
+      "Collaborate and share large files": [
+        "Arbeite mit anderen zusammen und tausche große Dateien aus"
+      ],
       "Contact groups": [
         "Kontaktgruppen"
       ],
@@ -10826,6 +10871,9 @@
       "Custom snooze time": [
         "Eigene stumm Zeit"
       ],
+      "Custom workspace branding": [
+        "Gestaltung für den Arbeitsbereich"
+      ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
@@ -10843,6 +10891,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Dokumentbearbeitung (Dokumente, Tabellen, Präsentationen)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Bearbeitungsprogramme (Dokumente, Tabellen, Präsentationen) (kommt bald)"
       ],
       "Double hop": [
         "Double Hop"
@@ -10926,6 +10977,9 @@
       "Password health": [
         "Passwortsicherheit"
       ],
+      "Password manager to secure credentials": [
+        "Passwortmanager um Anmeldedaten zu schützen"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -10965,6 +11019,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-Server"
+      ],
+      "See team's availability": [
+        "Verfügbarkeit des Teams anzeigen"
       ],
       "Send & receive invitations": [
         "Einladungen senden & empfangen"
@@ -11064,6 +11121,9 @@
       "User session management": [
         "Verwaltung von Benutzersitzungen"
       ],
+      "User storage management": [
+        "Benutzer-Speicherverwaltung"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
@@ -11128,6 +11188,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle ${ BRAND_NAME } Premiumfunktionen und Gewerbeapps, um dein gesamtes Unternehmen zu schützen."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbares Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
@@ -11136,6 +11199,12 @@
       ],
       "Early access to new apps and features": [
         "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Verschlüsselter Kalender und E-Mails, um loszulegen."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Erweiterte Sicherheits- und Premiumfunktionen für Teams."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Unverzichtbarer Schutz und sichere Zusammenarbeit für unbegrenzte Benutzer."
@@ -11347,6 +11416,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Die IMAP-Unterstützung ist auf die Nutzung von Desktop-Apps (z. B. Outlook, Apple Mail, Thunderbird) über ${ MAIL_APP_NAME } Bridge beschränkt. Cloud-basierte IMAP-Integrationen werden derzeit nicht unterstützt."
       ],
+      "Increase or reallocate storage for a user": [
+        "Erhöhe oder weise den Speicher für einen Benutzer neu zu"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Sichere die Privatsphäre deiner Familienaktivitäten mit einem verschlüsselten Kalender ab."
       ],
@@ -11428,6 +11500,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Sieh die Verfügbarkeit von Teilnehmern und spare dir Zeit beim Organisieren von Meetings"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Sende E-Mails schnell und einfach an große Gruppen, indem du so viele Kontaktgruppen wie nötig erstellst (mit bis zu 100 Kontakten pro Gruppe)."
       ],
@@ -11454,6 +11529,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Unterstützung für File-Sharing-Protokolle wie BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Lade dein Unternehmenslogo hoch, um die Erfahrung deines Teams auf der ${ BRAND_NAME } Web-App zu personalisieren"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
@@ -11584,6 +11662,9 @@
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
+      ],
+      "Trial started": [
+        "Probezeit begonnen"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Die Zwei-Faktor-Authentifizierung wurde für Administratoren zur Pflicht."
@@ -13951,49 +14032,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Für"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
+      "For ${ totalPrice }": [
+        "Für ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14204,6 +14244,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -14935,6 +15016,9 @@
       "Custom filters": [
         "Benutzerdefinierte Filter"
       ],
+      "Custom folders and labels": [
+        "Benutzerdefinierte Ordner und Kategorien"
+      ],
       "Custom selection of users": [
         "Individuelle Auswahl von Nutzern"
       ],
@@ -15364,9 +15448,6 @@
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
       ],
-      "Personalise your e-mail footer": [
-        "Personalisiere deine E-Mail-Fußzeile"
-      ],
       "Phone": [
         "Telefon"
       ],
@@ -15381,6 +15462,9 @@
       ],
       "Processing...": [
         "Wird verarbeitet..."
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Empfohlen"
@@ -15549,6 +15633,9 @@
       ],
       "Sort labels alphabetically": [
         "Kategorien alphabetisch sortieren"
+      ],
+      "Spam filters": [
+        "Spamfilter"
       ],
       "Spam, block, and allow lists": [
         "Listen gesperrter und zugelassener Absender"
@@ -16284,6 +16371,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Wenn du die Protokollierung deaktivierst, wird auch dein gesamter Protokollverlauf gelöscht. Möchtest du die Protokollierung wirklich deaktivieren?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Ablaufdatum ist nicht im Format MM/JJ."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Wenn du diesen Import abbrichst, wirst du ihn nicht mehr fortsetzen können. ${ BRAND_NAME } hat jeglichen Fortschritt in deinem Konto gespeichert. Trotzdem abbrechen?"
