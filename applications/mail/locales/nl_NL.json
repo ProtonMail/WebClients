@@ -429,6 +429,9 @@
       "exclude message content": [
         "berichtinhoud uitsluiten"
       ],
+      "Expand": [
+        "Uitklappen"
+      ],
       "Expand composer": [
         "Opstelvenster vergroten"
       ],
@@ -912,6 +915,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Report an issue": [
+        "Een probleem melden"
       ],
       "Report phishing": [
         "Phishing rapporteren"
@@ -5643,6 +5649,9 @@
       "Clear app data": [
         "App-gegevens wissen"
       ],
+      "Clear browser data": [
+        "Wis browsergegevens"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -5651,9 +5660,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Het wissen van browsergegevens deactiveert ook het zoeken naar berichteninhoud op dit toestel. Alle berichten zullen opnieuw moeten worden gedownload om erin te kunnen zoeken."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Wist browsergegevens met betrekking tot het zoeken naar berichtinhoud, inclusief gedownloade berichten"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -5736,9 +5742,6 @@
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
-      ],
-      "Disable message content search": [
-        "Uitschakelen van zoeken naar berichtinhoud"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -6300,9 +6303,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Verwijdert alle gegevens die geassocieerd zijn met dit programma, inclusief gedownloade berichten"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
@@ -7667,9 +7667,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New plan": [
-        "Nieuw plan"
-      ],
       "No label found": [
         "Geen label gevonden"
       ],
@@ -7702,9 +7699,6 @@
       ],
       "Or": [
         "Of"
-      ],
-      "Organization size": [
-        "Grootte van de organisatie"
       ],
       "Original link": [
         "Originele link"
@@ -9457,6 +9451,20 @@
         "Veilig delen van kluis"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
@@ -10653,8 +10661,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Voor"
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

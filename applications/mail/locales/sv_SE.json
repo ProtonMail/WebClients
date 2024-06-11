@@ -438,6 +438,9 @@
       "exclude message content": [
         "exkludera meddelandeinnehåll"
       ],
+      "Expand": [
+        "Expandera"
+      ],
       "Expand composer": [
         "Expandera redigeringsfönstret"
       ],
@@ -474,17 +477,29 @@
       "Forgot password?": [
         "Glömt lösenord?"
       ],
+      "Formalize": [
+        "Formalisera"
+      ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
       ],
+      "Generate text": [
+        "Generera text"
+      ],
       "Get in touch": [
         "Kontakta oss"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Få det från endast ${ addonPriceWithCurrency }/månad"
       ],
       "Get SimpleLogin extension": [
         "Skaffa SimpleLogin-utökningen"
       ],
       "Get started": [
         "Kom igång"
+      ],
+      "Get the writing assistant": [
+        "Skaffa skrivassistenten"
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
@@ -645,6 +660,9 @@
       ],
       "Loading${ ellipsis }": [
         "Laddar${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "Gör det vänligt"
       ],
       "Manage folders": [
         "Hantera mappar"
@@ -859,6 +877,9 @@
       "Print": [
         "Skriv ut"
       ],
+      "Proofread": [
+        "Korrekturläs"
+      ],
       "Quit": [
         "Avsluta"
       ],
@@ -925,6 +946,9 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
+      "Report an issue": [
+        "Rapportera ett problem"
+      ],
       "Report phishing": [
         "Rapportera nätfiske"
       ],
@@ -955,11 +979,17 @@
       "Resume": [
         "Återuppta"
       ],
+      "Resume downloading": [
+        "Återuppta nedladdning"
+      ],
       "Retry": [
         "Försök igen"
       ],
       "Revert to original display": [
         "Återgå till originalvisning"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kör på ${ BRAND_NAME }-servrar"
       ],
       "Save": [
         "Spara"
@@ -969,6 +999,9 @@
       ],
       "Schedule message": [
         "Schemalägg meddelande"
+      ],
+      "Scroll to bottom": [
+        "Rulla till botten"
       ],
       "Search": [
         "Sök"
@@ -1120,6 +1153,12 @@
       "Stay": [
         "Stanna"
       ],
+      "Stop downloading the writing assistant": [
+        "Stoppa ladda ner skrivassistenten"
+      ],
+      "Stop generating result": [
+        "Stoppa generera resultat"
+      ],
       "Strikethrough": [
         "Genomstrykning"
       ],
@@ -1246,6 +1285,9 @@
       ],
       "Use recovery code": [
         "Använd återställningskod"
+      ],
+      "Use this": [
+        "Använd detta"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Använd musen för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda vänster- och högerpiltangenterna för att ändra storlek."
@@ -1456,6 +1498,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applikationer"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Webbläsare stöds inte "
+      ],
+      "Fast and secure": [
+        "Snabb och säker"
+      ],
+      "Needs compatible hardware": [
+        "Behöver kompatibel hårdvara"
+      ],
+      "No logs": [
+        "Inga loggar"
+      ],
+      "Requires one-time download": [
+        "Kräver engångsnedladdning"
+      ],
+      "Run locally": [
+        "Kör lokalt"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kör på ${ BRAND_NAME }-servrar"
+      ],
+      "Runs on all devices": [
+        "Körs på alla enheter"
+      ],
+      "Runs on your device": [
+        "Körs på din enhet"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "Hårdvara inte kompatibel"
       ]
     },
     "Attached ics file error": {
@@ -3296,6 +3372,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Ställ in en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "För att fortsätta använda skrivassistenten, begär åtkomst från din administratör."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3319,6 +3401,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
+      ],
+      "Use the writing assistant to:": [
+        "Använd skrivassistenten för att:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi hittade inga kända spårare och spårnings-URL:er i detta e-postmeddelande."
@@ -3690,6 +3775,9 @@
       "Draft could not be saved. Try again.": [
         "Utkast kunde inte sparas. Försök igen."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "På grund av ett fel kunde textgenereringen inte avbrytas"
+      ],
       "Email address disabled": [
         "E-postadress inaktiverad"
       ],
@@ -3737,6 +3825,9 @@
       ],
       "Forward address is required": [
         "Adress för vidarebefordran är obligatoriskt"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "Jag kan inte fortsätta med denna förfrågan på grund av mina etiska riktlinjer. Prova en annan prompt."
       ],
       "Image upload failed": [
         "Bilduppladdning misslyckades"
@@ -3871,6 +3962,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Välj en kategori och vad som gick fel med den genererade texten"
+      ],
+      "Please try generating the text again": [
+        "Försök att generera texten igen"
+      ],
       "Port is required": [
         "Port är obligatoriskt"
       ],
@@ -3885,6 +3982,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Den primära nyckeln för ${ BRAND_NAME } användare är inte giltig för att skicka"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Problem att ladda ner skrivassistenten. Försök igen."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Problem att ladda skrivassistenten till din enhet. Försök igen."
       ],
       "Process aborted": [
         "Process avbruten"
@@ -3952,6 +4055,9 @@
       ],
       "Tab closed": [
         "Flik stängd"
+      ],
+      "Thanks for the feedback!": [
+        "Tack för feedbacken!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Bilagan kunde inte dekrypteras.\nOm du har motsvarande privat nyckel kommer du fortfarande att kunna dekryptera\nfilen med ett program som exempelvis GnuPG.",
@@ -4957,11 +5063,26 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Hardware not compatible": [
+        "Hårdvara inte kompatibel"
+      ],
+      "Resume downloading": [
+        "Återuppta nedladdning"
+      ],
       "Search": [
         "Sök"
       ],
       "Security Center": [
         "Säkerhetscenter"
+      ],
+      "Set up the writing assistant": [
+        "Ställ in skrivassistenten"
+      ],
+      "Tell us more": [
+        "Berätta mer"
+      ],
+      "Write faster with the writing assistant": [
+        "Skriv snabbare med skrivassistenten"
       ]
     },
     "Hint": {
@@ -5657,6 +5778,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
+      "Browser not supported": [
+        "Webbläsare stöds inte"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -5681,6 +5805,9 @@
       "Clear app data": [
         "Rensa appdata"
       ],
+      "Clear browser data": [
+        "Rensa webbläsardata"
+      ],
       "Clear data": [
         "Rensa data"
       ],
@@ -5690,8 +5817,8 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Genom att rensa webbläsardata inaktiverades även sökning av meddelandeinnehåll på denna enhet. Alla meddelanden måste laddas ner igen för att kunna söka i dem."
       ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Rensar webbläsardata relaterad till sökning av meddelandeinnehåll inklusive nedladdade meddelanden"
+      "Clears browser data (including downloaded messages, …)": [
+        "Rensar webbläsardata (inklusive nedladdade meddelanden, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -5775,9 +5902,6 @@
       "Default email application": [
         "Standardapplikation för e-post"
       ],
-      "Disable message content search": [
-        "Inaktivera sökning av meddelandeinnehåll"
-      ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
@@ -5808,6 +5932,12 @@
       ],
       "Downloading paused": [
         "Nedladdning pausad"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Nedladdning pausad: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Laddar ner skrivassistenten: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Utkast"
@@ -5934,8 +6064,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
+      "Free for 14 days": [
+        "Gratis i 14 dagar"
+      ],
       "From": [
         "Från"
+      ],
+      "Generate text": [
+        "Generera text"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } bilaga (${ numAttachmentsSize })",
@@ -6011,11 +6147,17 @@
       "Include Spam/Trash.": [
         "Inkludera skräppost/papperskorg."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Inkludera din prompt och svaret för att hjälpa oss att förbättra noggrannheten."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
+      ],
+      "Initializing…": [
+        "Initierar…"
       ],
       "Insert image": [
         "Infoga bild"
@@ -6059,8 +6201,14 @@
       "Learn more": [
         "Lär dig mer"
       ],
+      "Learn more about ${ PrivacyLink }": [
+        "Lär sig mer om ${ PrivacyLink }"
+      ],
       "Left to Right": [
         "Vänster till höger"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Låt skrivassistenten hjälpa dig att skriva och svara på e-post och se din produktivitet stiga."
       ],
       "Link type": [
         "Länktyp"
@@ -6288,6 +6436,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Dela vad du förväntade dig"
+      ],
       "Please try again in a few moments": [
         "Försök igen om en stund"
       ],
@@ -6339,8 +6490,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Tar bort all data associerad med denna app, inklusive nedladdade meddelanden"
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
@@ -6436,6 +6587,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
       ],
+      "Shorten text": [
+        "Förkorta text"
+      ],
       "Show original message": [
         "Visa originalmeddelande"
       ],
@@ -6505,6 +6659,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "Den initiala installationen kan ta några minuter."
+      ],
       "The local database is being prepared": [
         "Den lokala databasen förbereds"
       ],
@@ -6529,6 +6686,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Skrivassistenten måste slutföra nedladdningen innan den kan användas."
       ],
       "Themes can give your inbox a new look.": [
         "Teman kan ge din inkorg ett nytt utseende."
@@ -6633,6 +6793,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Detta meddelande kommer löpa ut imorgon kl. ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Detta behöver bara göras en gång."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
@@ -6862,6 +7025,9 @@
       "Would you like to receive a new verification code?": [
         "Vill du få en ny verifieringskod?"
       ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ],
       "Yearly": [
         "Årligen"
       ],
@@ -6996,6 +7162,9 @@
         "Du valde **${ elementsCount } meddelande**.",
         "Du valde **${ elementsCount } meddelanden**."
       ],
+      "You selected some content:": [
+        "Du valde lite innehåll:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
       ],
@@ -7035,6 +7204,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Din webbläsare stöder inte skrivassistenten. Prova att köra det på ${ BRAND_NAME }-servrar."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -7049,6 +7221,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra det på ${ BRAND_NAME }-servrar."
       ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
@@ -7116,6 +7291,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Endast visa"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
     "Key badge": {
@@ -7537,11 +7717,17 @@
       "Density": [
         "Densitet"
       ],
+      "Did not follow instructions": [
+        "Följde inte instruktionerna"
+      ],
       "Do you have any suggestions for our team?": [
         "Har du några förslag till vårt team?"
       ],
       "Don't ask again": [
         "Fråga inte igen"
+      ],
+      "Don't like the style": [
+        "Gillar inte stilen"
       ],
       "Don't show this again": [
         "Visa inte detta igen"
@@ -7708,11 +7894,11 @@
       "New password": [
         "Nytt lösenord"
       ],
-      "New plan": [
-        "Nytt paket"
-      ],
       "No label found": [
         "Ingen etikett hittades"
+      ],
+      "Not factually correct": [
+        "Inte faktamässigt korrekt"
       ],
       "Note": [
         "Anteckning"
@@ -7743,9 +7929,6 @@
       ],
       "Or": [
         "Eller"
-      ],
-      "Organization size": [
-        "Organisationens storlek"
       ],
       "Original link": [
         "Originallänk"
@@ -7870,8 +8053,14 @@
       "Type a command...": [
         "Skriv ett kommando..."
       ],
+      "Type a prompt to generate an output": [
+        "Skriv en prompt för att generera en utdata"
+      ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
+      ],
+      "Unsafe or problematic": [
+        "Osäkert eller problematisk"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -8720,6 +8909,9 @@
       "Document editors (docs, sheets, slides)": [
         "Dokumentredigerare (dokument, kalkylark, bildspel)"
       ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentredigerare (dokument, kalkylark, bildspel) (snart)"
+      ],
       "Double hop": [
         "Double hop"
       ],
@@ -8796,6 +8988,9 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
@@ -8835,6 +9030,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-servrar"
+      ],
+      "See team's availability": [
+        "Se teamets tillgänglighet"
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
@@ -8923,6 +9121,9 @@
       ],
       "User session management": [
         "Hantering av användarsession"
+      ],
+      "User storage management": [
+        "Hantering av lagringsutrymme för användare"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
@@ -9131,6 +9332,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-stöd är begränsat till användning av appar för stationära datorer (t.ex. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Molnbaserade IMAP-integreringar stöds för närvarande inte."
       ],
+      "Increase or reallocate storage for a user": [
+        "Öka eller omfördela lagringsutrymme för en användare"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Håll dina planer privata för dig och din familj med en krypterad kalender"
       ],
@@ -9212,6 +9416,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagra dina kontaktdetaljer, såsom telefonnummer, adresser, födelsedagar och personliga anteckningar på ett säkert sätt. Noll-åtkomst-kryptering säkerställer att inte ens ${ BRAND_NAME } kan få tillgång till dem."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se tillgängligheten för mötesdeltagare och spara tid på att schemalägga möten"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Skicka e-post till stora grupper snabbt och enkelt genom att skapa så många kontaktgrupper du behöver (upp till 100 kontakter per grupp)"
       ],
@@ -9238,6 +9445,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Stöd för fildelningsprotokoll som BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Ladda upp ditt företags logga för att anpassa ditt teams upplevelse på webbapparna för ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Använd dina egna anpassade e-postdomänadresser, t.ex. du@dittnamn.com"
@@ -9345,6 +9555,12 @@
       ],
       "Senders blocked": [
         "Avsändare blockerad"
+      ],
+      "The writing assistant is ready to use": [
+        "Skrivassistenten är redo att användas"
+      ],
+      "Trial started": [
+        "Provperiod startad"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9512,6 +9728,20 @@
         "Säker valvdelning"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisationsnyckel finns inte."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Åtkomst nekad, administratörsrättigheter har begränsats."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnyckeln måste aktiveras först."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
+      ]
+    },
     "Payment method option": {
       "Bitcoin": [
         "Bitcoin"
@@ -9624,6 +9854,9 @@
       "First name": [
         "Förnamn"
       ],
+      "Generating...": [
+        "Genererar …"
+      ],
       "Gift code": [
         "Presentkod"
       ],
@@ -9632,6 +9865,9 @@
       ],
       "Hint": [
         "Ledtråd"
+      ],
+      "How do you want the selected text modified?": [
+        "Hur vill du att den markerade texten ändras?"
       ],
       "Image URL": [
         "Bild-URL"
@@ -9659,6 +9895,12 @@
       ],
       "Please insert link first": [
         "Infoga länk först"
+      ],
+      "Please share what you expected": [
+        "Dela vad du förväntade dig"
+      ],
+      "Refining your text...": [
+        "Förfinar din text …"
       ],
       "Search date, name, email address, or subject line": [
         "Sök datum, namn, e-postadress eller ämnesrad"
@@ -9701,6 +9943,12 @@
       ],
       "Text": [
         "Text"
+      ],
+      "To": [
+        "Till"
+      ],
+      "Try “Invite Jane to my party”": [
+        "Prova ”Bjud in Jane till min fest”"
       ],
       "Type a command…": [
         "Skriv ett kommando…"
@@ -10712,8 +10960,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "För"
+      "For ${ totalPrice }": [
+        "För ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -12093,6 +12341,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your free trial has ended": [
+        "Din gratis provperiod har avslutats"
       ]
     },
     "Title subscription": {
