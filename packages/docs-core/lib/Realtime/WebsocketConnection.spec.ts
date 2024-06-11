@@ -18,6 +18,7 @@ describe('WebsocketConnection', () => {
 
   afterEach(() => {
     connection.destroy()
+    jest.clearAllMocks()
   })
 
   it('should correctly format url without commit id', () => {
@@ -42,5 +43,39 @@ describe('WebsocketConnection', () => {
     })
 
     expect(result).toEqual(expectedResult)
+  })
+
+  it('should disconnect websocket when offline browser event is triggered', async () => {
+    const fn = (connection.disconnect = jest.fn())
+
+    window.dispatchEvent(new Event('offline'))
+
+    await new Promise<void>((resolve) => {
+      const interval = setInterval(() => {
+        if (fn.mock.calls.length > 0) {
+          clearInterval(interval)
+          resolve()
+        }
+      }, 10)
+    })
+
+    expect(connection.disconnect).toHaveBeenCalled()
+  })
+
+  it('should connect websocket when online browser event is triggered', async () => {
+    const fn = (connection.connect = jest.fn())
+
+    window.dispatchEvent(new Event('online'))
+
+    await new Promise<void>((resolve) => {
+      const interval = setInterval(() => {
+        if (fn.mock.calls.length > 0) {
+          clearInterval(interval)
+          resolve()
+        }
+      }, 10)
+    })
+
+    expect(connection.connect).toHaveBeenCalled()
   })
 })
