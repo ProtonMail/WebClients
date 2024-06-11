@@ -524,7 +524,7 @@
         "Моніторинг Dark Web доступний за платним тарифом. Покращте його для отримання доступу до цієї функції."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Список доменів, для яких не повинні виконуватися певні автоматичні функції ${ PASS_SHORT_APP_NAME }, як-от автозаповнення, пропозиції чи автозбереження. ${ infoText }"
+        "Список доменів, для яких певні автоматичні функції ${ PASS_SHORT_APP_NAME } (Автозаповнення, Пропозиції, Автозбереження) не повинні виконуватися.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Цей обліковий запис вразливий, відвідайте сервіс і змініть пароль."
@@ -589,7 +589,7 @@
         "Не вдалося відкрити оновлене сховище"
       ],
       "Could not resolve share members": [
-        "Не можна вирішити проблему із доступом учасників"
+        "Не вдалось створити спільний доступ для учасників"
       ],
       "Could not validate addresses at the moment.": [
         "Не вдалося перевірити адреси на цей час."
@@ -642,9 +642,6 @@
       "Failed to delete selected items": [
         "Не вдалося видалити вибрані елементи"
       ],
-      "Failed to edit organization settings": [
-        "Не вдалося змінити налаштування організації"
-      ],
       "Failed to edit user's access.": [
         "Не вдалося змінити доступ користувача."
       ],
@@ -679,7 +676,7 @@
         "Не вдалося перевірити витоки для цієї адреси"
       ],
       "Failed to restore items from trash": [
-        "Не вдалося відновити елементи з смітника"
+        "Не вдалося відновити елементи з кошика"
       ],
       "Failed to transfer this vault's ownership.": [
         "Не вдалося передати володіння сховищем."
@@ -739,7 +736,7 @@
         "LastPass експортує пошкоджений файл CSV, якщо будь-яке з полів вашого елемента містить неочікувані коми, лапки або кілька рядків"
       ],
       "Missing passkey": [
-        "Відсутній ключ доступа"
+        "Відсутній ключ доступу"
       ],
       "Moving item failed": [
         "Не вдалося перемістити елемент"
@@ -899,6 +896,12 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Info": {
@@ -1030,9 +1033,6 @@
       ],
       "Built in 2FA authenticator": [
         "Створений у 2FA автентифікатор"
-      ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "За замовчуванням, члени команди можуть експортувати лише ті сховища, власниками яких вони є. Якщо цю опцію увімкнено, вони не зможуть експортувати жодних даних"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
@@ -1280,9 +1280,6 @@
       "Open the Extensions menu": [
         "Відкрити меню розширень"
       ],
-      "Organization settings successfully updated": [
-        "Налаштування організації успішно оновлено"
-      ],
       "Owner": [
         "Власник"
       ],
@@ -1421,9 +1418,6 @@
       "Syncing your vaults…": [
         "Синхронізація сховищ…"
       ],
-      "Team members can only share vaults within organization": [
-        "Члени команди можуть ділитися сховищами лише в межах організації"
-      ],
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
       ],
@@ -1486,9 +1480,6 @@
       ],
       "Update login": [
         "Оновити дані для входу"
-      ],
-      "Updating organization settings": [
-        "Оновлення налаштувань організації"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Покращити ${ PASS_APP_NAME }"
@@ -1720,12 +1711,6 @@
       "Device": [
         "Пристрій"
       ],
-      "Disable data export for team members": [
-        "Вимкнути експорт даних для членів команди"
-      ],
-      "Disable sharing outside the organization": [
-        "Вимкнути спільний доступ за межами організації"
-      ],
       "Display": [
         "Показувати"
       ],
@@ -1752,9 +1737,6 @@
       ],
       "Export": [
         "Експорт"
-      ],
-      "Exporting policy": [
-        "Політика експорту"
       ],
       "Field name": [
         "Назва поля"
@@ -1971,9 +1953,6 @@
       ],
       "Settings": [
         "Налаштування"
-      ],
-      "Sharing policy": [
-        "Правила спільного користування"
       ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"
