@@ -1,3 +1,5 @@
+import { useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,8 +15,9 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import { ShareInvitee, ShareMember, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
+import { ShareMember, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import ErrorState from './ErrorState';
@@ -69,7 +72,11 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         deleteShareIfEmpty,
     } = useShareMemberView(rootShareId, linkId);
 
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
+
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
+
+    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
     // It's important in this order. As if it's hasSharedLink is true, isShared is true as well (even if cache not updated)
@@ -79,11 +86,18 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const isInvitationWorkflow = !!invitees.length;
     const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
+    const isDirectSharingAutocompleteDisabled = isAdding || isLoading || isDirectSharingDisabled;
 
-    const handleSubmit = async (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => {
+    const handleSubmit = async () => {
         await addNewMembers(invitees, selectedPermissions);
         cleanInvitees();
     };
+
+    // Here we check if the email address is already in invited members
+    const isSubmitDisabled = useMemo(
+        () => !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error),
+        [invitees]
+    );
 
     const handleCancel = () => {
         cleanInvitees();
@@ -147,24 +161,23 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                             : undefined
                     }
                     additionalContent={
-                        <>
-                            <DirectSharingAutocomplete
-                                onCancel={handleCancel}
-                                isAdding={isAdding}
-                                onSubmit={handleSubmit}
-                                existingEmails={existingEmails}
-                                invitees={invitees}
-                                onAdd={addInvitee}
-                                onRemove={removeInvitee}
-                                hideFormActions={!isInvitationWorkflow}
-                            />
-                            {!isInvitationWorkflow && (
+                        !isInvitationWorkflow ? (
+                            <>
+                                <DirectSharingAutocomplete
+                                    disabled={isDirectSharingAutocompleteDisabled}
+                                    existingEmails={existingEmails}
+                                    invitees={invitees}
+                                    onAdd={addInvitee}
+                                    onRemove={removeInvitee}
+                                    onChangePermissions={setPermissions}
+                                    selectedPermissions={selectedPermissions}
+                                />
                                 <h2 className="text-lg text-semibold">{c('Info').t`People with access`}</h2>
-                            )}
-                        </>
+                            </>
+                        ) : undefined
                     }
                 />
-                {!isInvitationWorkflow && (
+                {!isInvitationWorkflow ? (
                     <>
                         <ModalTwoContent className="mb-5">
                             <DirectSharingListing
@@ -191,6 +204,34 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 publicSharedLink={sharedLink}
                                 deleteSharedLink={handleDeleteLink}
                             />
+                        </ModalTwoFooter>
+                    </>
+                ) : (
+                    <>
+                        <ModalTwoContent className="mb-5">
+                            <DirectSharingAutocomplete
+                                disabled={isDirectSharingAutocompleteDisabled}
+                                existingEmails={existingEmails}
+                                invitees={invitees}
+                                onAdd={addInvitee}
+                                onRemove={removeInvitee}
+                                onChangePermissions={setPermissions}
+                                selectedPermissions={selectedPermissions}
+                            />
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <div className="w-full flex justify-space-between mb-4">
+                                <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                                <Button
+                                    type="submit"
+                                    color="norm"
+                                    disabled={isSubmitDisabled}
+                                    loading={isAdding}
+                                    onClick={handleSubmit}
+                                >
+                                    {c('Action').t`Share`}
+                                </Button>
+                            </div>
                         </ModalTwoFooter>
                     </>
                 )}
