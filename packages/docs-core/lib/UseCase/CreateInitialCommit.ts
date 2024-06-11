@@ -6,10 +6,10 @@ import { DocumentKeys } from '@proton/drive-store'
 import { DocumentMetaInterface } from '@proton/docs-shared'
 
 /**
- * Allows the client to create an initial commit. This is a debug utility exposed in development by the Debug menu.
- * Initial commits are typically created by the RTS on first commit.
+ * Allows the client to create an initial commit. This used by the Duplicate function to allow us to seed the document
+ * with an initial commit value equaling the source document's.
  */
-export class DebugCreateInitialCommit implements UseCaseInterface<boolean> {
+export class CreateInitialCommit implements UseCaseInterface<boolean> {
   constructor(
     private docsApi: DocsApi,
     private encryptMessage: EncryptMessage,
