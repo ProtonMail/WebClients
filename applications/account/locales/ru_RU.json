@@ -43,6 +43,26 @@
         "Вы остановите пересылку почты."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка данных ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка из ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка с ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -374,6 +394,9 @@
       "Download CSV sample": [
         "Скачать образец файла CSV"
       ],
+      "Download Desktop App": [
+        "Скачать приложение для компьютера"
+      ],
       "Download ICS": [
         "Скачать ICS"
       ],
@@ -409,6 +432,12 @@
       ],
       "Edit name": [
         "Изменить имя"
+      ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
+      "Edit organization name": [
+        "Изменить название организации"
       ],
       "Edit password": [
         "Изменить пароль"
@@ -469,6 +498,9 @@
       ],
       "Forgot password?": [
         "Забыли пароль?"
+      ],
+      "Forgot recovery method?": [
+        "Забыли метод восстановления?"
       ],
       "Generate": [
         "Сгенерировать"
@@ -632,6 +664,9 @@
       "Mark as open": [
         "Пометить как открытый"
       ],
+      "Mark as resolved": [
+        "Отметить как устраненную"
+      ],
       "mark emails as": [
         "отметить письма как"
       ],
@@ -665,10 +700,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3133,6 +3168,9 @@
       "Are you sure you want to delete this address?": [
         "Вы уверены, что хотите удалить этот адрес?"
       ],
+      "Delete address": [
+        "Удалить адрес"
+      ],
       "Delete address permanently?": [
         "Удалить адрес навсегда?"
       ],
@@ -3165,6 +3203,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Пожалуйста, обратите внимание, что если вы удалите этот домен ${ domainName }, все адреса, связанные с ним будут отключены."
       ]
     },
     "Delinquent modal title": {
@@ -3381,6 +3422,11 @@
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Описание:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "This event was updated.": [
+        "Это событие было обновлено."
       ]
     },
     "Email body for invitation (date part)": {
@@ -3799,6 +3845,9 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias options could not be resolved": [
+        "Параметры псевдонима не могут быть определены"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
       ],
@@ -3840,6 +3889,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Не удалось загрузить счета-фактуры. Повторите попытку позже."
+      ],
+      "Could not open created vault": [
+        "Не могу открыть созданное хранилище"
+      ],
+      "Could not open updated vault": [
+        "Не могу открыть обновлённое хранилище"
       ],
       "Could not save preference": [
         "Не удалось сохранить предпочтение"
@@ -3967,6 +4022,9 @@
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
+      "Item content cannot exceed 40KB": [
+        "Содержимое элемента не может превышать 40 Кбайт"
+      ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
       ],
@@ -4072,6 +4130,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
+      "Please upload a square file": [
+        "Загрузите квадратный файл"
+      ],
       "Please upload an xml file": [
         "Загрузите файл xml"
       ],
@@ -4146,6 +4207,12 @@
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Файл слишком большой, максимальный размер должен составлять ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Файл слишком мал, минимальный размер должен составлять ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
@@ -5462,6 +5529,12 @@
       "Protection": [
         "Защита"
       ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Выберете свое предложение"
+      ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
       ],
@@ -5920,14 +5993,6 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -6294,6 +6359,9 @@
       ],
       "Amount due": [
         "Сумма к оплате"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
       ],
       "An error occurred while communicating with the extension": [
         "Произошла ошибка во время связи с расширением"
@@ -7093,6 +7161,9 @@
       "Merged": [
         "Объединённые"
       ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Сообщения папок Отправленные или Черновики будут отображаться в этих папках, даже если вы переместите их в другую папку."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -7218,6 +7289,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Другие пользователи в вашей организации будут видеть ваши занятые часы. Никакие подробности события не сообщаются."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
@@ -7489,6 +7563,9 @@
       "Settings updated": [
         "Настройки обновлены"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Показать изображение каждого отправителя в списке сообщений. Инициалы отправителя будут показаны, если фотография недоступна."
+      ],
       "Show original message": [
         "Показать исходное сообщение"
       ],
@@ -7606,6 +7683,9 @@
       "The credentials from your Identity Provider will be deleted.": [
         "Учетные данные поставщика идентификационных данных будут удалены."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Истёк срок действия ссылки для подтверждения почты. Пожалуйста, войдите ещё раз, чтобы отправить её заново."
       ],
@@ -7674,6 +7754,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Это может занять некоторое время. Не закрывайте эту страницу и не отключайтесь от Интернета."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Эта функция задерживает отправку писем, давая вам возможность отменить отправку на протяжении выбранного промежутка времени."
       ],
       "This file is too large to preview": [
         "Этот файл слишком большой для предпросмотра"
@@ -8062,6 +8145,9 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Когда они подписываются на тариф, вы получаете кредиты, которые можно использовать на подписку."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "При нажатии на ссылку эта функция антифишинга попросит подтвердить URL веб-страницы."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
@@ -8349,6 +8435,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -8893,6 +8987,9 @@
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
       ],
+      "Auto-load embedded images": [
+        "Авто-показ встроенных изображений"
+      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -9051,6 +9148,9 @@
       ],
       "Current email": [
         "Текущая электронная почта"
+      ],
+      "Current organization identity": [
+        "Текущие личные данные организации"
       ],
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
@@ -9352,14 +9452,14 @@
       "New mailbox password": [
         "Новый пароль почтового ящика"
       ],
+      "New organization identity": [
+        "Новые личные данные организации"
+      ],
       "New organization password": [
         "Новый пароль организации"
       ],
       "New password": [
         "Новый пароль"
-      ],
-      "New plan": [
-        "Новый план"
       ],
       "No filter": [
         "Без фильтра"
@@ -9400,14 +9500,14 @@
       "Or": [
         "Или"
       ],
+      "Organization identity": [
+        "Личные данные организации"
+      ],
       "Organization name": [
         "Название организации"
       ],
       "Organization password": [
         "Пароль организации"
-      ],
-      "Organization size": [
-        "Размер организации"
       ],
       "Other amount": [
         "Другая сумма"
@@ -9886,6 +9986,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Перейти на тариф ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        "Помощь"
+      ],
       "Help translate": [
         "Помочь с переводом"
       ],
@@ -9921,6 +10024,9 @@
       ],
       "Paypal without credit card": [
         "Paypal без кредитной карты"
+      ],
+      "perform a password reset from your active session": [
+        "выполнить сброс пароля из вашего активного сеанса"
       ],
       "Privacy policy": [
         "Политика конфиденциальности"
@@ -10419,6 +10525,9 @@
       "Back to calendar": [
         "Вернуться в Календарь"
       ],
+      "Back to documents": [
+        "Назад к документам"
+      ],
       "Back to files": [
         "Вернуться к файлам"
       ],
@@ -10672,6 +10781,9 @@
       "Centralized settings and billings": [
         "Централизованные настройки и выставление счетов"
       ],
+      "Collaborate and share large files": [
+        "Работайте вместе и делитесь большими файлами"
+      ],
       "Contact groups": [
         "Группы контактов"
       ],
@@ -10686,6 +10798,9 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
+      ],
+      "Custom workspace branding": [
+        "Пользовательское брендирование рабочего пространства"
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
@@ -10704,6 +10819,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редакторы документов (текстовых документов, электронных таблиц, слайдов)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редакторы документов (текстовых документов, электронных таблиц, слайдов) (скоро)"
       ],
       "Double hop": [
         "Двойной перелёт"
@@ -10786,6 +10904,9 @@
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролей для защиты учетных данных"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -10824,6 +10945,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "See team's availability": [
+        "Посмотреть доступность команды"
       ],
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
@@ -10924,6 +11048,9 @@
       "User session management": [
         "Управление сеансом пользователя"
       ],
+      "User storage management": [
+        "Управление хранилищем пользователя"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Совместное использование хранилища (до ${ n } человека)",
         "Совместное использование хранилища (до ${ n } человек)",
@@ -10984,6 +11111,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Все приложения ${ BRAND_NAME } и их платные функции"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
@@ -10992,6 +11122,12 @@
       ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрованная почта и календарь, чтобы начать работу."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Повышенная безопасность и платные функции для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
@@ -11202,6 +11338,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
       ],
+      "Increase or reallocate storage for a user": [
+        "Увеличить или перераспределить хранилище пользователя"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
       ],
@@ -11277,6 +11416,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Узнайте о наличии участников и сэкономьте время на планировании встреч."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
       ],
@@ -11303,6 +11445,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Загрузите логотип вашей компании, чтобы настроить работу команды в веб-приложениях ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
@@ -11852,6 +11997,9 @@
       "File not larger than 30 KB": [
         "Файл не более 30 КБ"
       ],
+      "Square image of at least 128 pixels": [
+        "Квадратное изображение не менее 128 пикселей"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
       ]
@@ -11988,6 +12136,12 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Передовая защита, выходящая за рамки отраслевых стандартов"
+      ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "Оповещения о взломанных письмах и уязвимых паролях"
+      ],
+      "Alerts for vulnerable passwords": [
+        "Оповещения об уязвимых паролях"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Все премиальные сервисы ${ BRAND_NAME }."
@@ -12132,6 +12286,12 @@
       ],
       "Save your recovery kit to continue": [
         "Сохраните свой набор для восстановления, чтобы продолжить."
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Безопасный общий доступ с ${ n } хранилищем",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами"
       ],
       "Secure sharing with multiple vaults": [
         "Безопасное совместное использование с помощью нескольких хранилищ"
@@ -12818,6 +12978,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Чтобы изменить пароль, зайдите на устройство, с которого осуществлялся вход (в сеансе, где был инициирован запрос)."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
@@ -12879,6 +13042,11 @@
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Отменить сброс пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введите свой текущий пароль, чтобы отменить процесс сброса пароля. Никакие другие изменения не вступят в силу."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -13676,8 +13844,130 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
+      ],
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Программа ${ PROTON_SENTINEL_NAME }"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Add any new files": [
+        "Добавление любых новых файлов"
+      ],
+      "Back up photos from your devices": [
+        "Резервное копирование фотографий с ваших устройств"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Cancel subscription?": [
+        "Отменить подписку?"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
+      "Extra storage and bonuses": [
+        "Дополнительное место в хранилище и бонусы"
+      ],
+      "Have a question?": [
+        "Появились вопросы?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Помощь активистам в Гонконге"
+      ],
+      "I still want to cancel": [
+        "Я все еще хочу отменить"
+      ],
+      "Keep ${ planName }": [
+        "Сохранить ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Узнайте больше о нашем вкладе"
+      ],
+      "Manage your calendar": [
+        "Управление календарями"
+      ],
+      "Online privacy, for your whole family": [
+        "Конфиденциальность онлайн для всей семьи"
+      ],
+      "Our fight against censorship in Russia": [
+        "Наша борьба с цензурой в России"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Reactivate": [
+        "Возобновить"
+      ],
+      "Read the story": [
+        "Читать историю"
+      ],
+      "Receive new emails": [
+        "Получать новые электронные письма"
+      ],
+      "Send emails with attachments": [
+        "Отправлять электронные письма с вложениями"
+      ],
+      "Subscription canceled": [
+        "Подписка отменена"
+      ],
+      "Sync files on devices": [
+        "Синхронизация файлов на устройствах"
+      ],
+      "Unblocking internet access in Iran": [
+        "Разблокирование доступа к Интернету в Иране"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Version history": [
+        "История версий"
+      ],
+      "Watch the interview": [
+        "Смотреть интервью"
+      ],
+      "Yearly free storage bonuses": [
+        "Ежегодные бесплатные бонусы для места в хранилище"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "Ваш ${ planName } был отменен."
+      ],
+      "Your own custom email domain": [
+        "Ваш собственный пользовательский домен электронной почты"
+      ],
+      "Your own short @pm.me email alias": [
+        "Ваш собственный короткий псевдоним электронной почты @pm.me"
       ]
     },
     "subscription reminder": {
@@ -13719,101 +14009,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
-      ]
-    },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
-      ],
-      "${ dayDiff } day left": [
-        "Остался ${ dayDiff } день",
-        "Осталось ${ dayDiff } дня",
-        "Осталось ${ dayDiff } дней",
-        "Осталось ${ dayDiff } дней"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Приложение ${ MAIL_APP_NAME } для ПК"
-      ],
-      "${ planMaxSpace } total storage": [
-        "Хранилище объемом ${ planMaxSpace }"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Программа ${ PROTON_SENTINEL_NAME }"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
-      "Calendar sharing": [
-        "Совместное использование календаря"
-      ],
-      "Cancel subscription": [
-        "Отменить подписку"
-      ],
-      "Cancel subscription?": [
-        "Отменить подписку?"
-      ],
-      "Close": [
-        "Закрыть"
-      ],
-      "Custom schedule send and snooze times": [
-        "Пользовательское планирование и откладывание писем на любое время"
-      ],
-      "Early access to new apps and features": [
-        "Early access to new apps and features"
-      ],
-      "Have a question?": [
-        "Появились вопросы?"
-      ],
-      "Helping activists in Hong Kong": [
-        "Помощь активистам в Гонконге"
-      ],
-      "I still want to cancel": [
-        "Я все еще хочу отменить"
-      ],
-      "Keep ${ planName }": [
-        "Сохранить ${ planName }"
-      ],
-      "Learn more about our impact": [
-        "Узнайте больше о нашем вкладе"
-      ],
-      "Online privacy, for your whole family": [
-        "Конфиденциальность онлайн для всей семьи"
-      ],
-      "Our fight against censorship in Russia": [
-        "Наша борьба с цензурой в России"
-      ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ],
-      "Read the story": [
-        "Читать историю"
-      ],
-      "Subscription canceled": [
-        "Подписка отменена"
-      ],
-      "Unblocking internet access in Iran": [
-        "Разблокирование доступа к Интернету в Иране"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Version history": [
-        "История версий"
-      ],
-      "Watch the interview": [
-        "Смотреть интервью"
-      ],
-      "Yearly free storage bonuses": [
-        "Ежегодные бесплатные бонусы для места в хранилище"
-      ],
-      "Your own custom email domain": [
-        "Ваш собственный пользовательский домен электронной почты"
-      ],
-      "Your own short @pm.me email alias": [
-        "Ваш собственный короткий псевдоним электронной почты @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -14682,6 +14877,9 @@
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
       ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
       "Edit servers": [
         "Изменить серверы"
       ],
@@ -14780,6 +14978,9 @@
       ],
       "For Windows": [
         "Для Windows"
+      ],
+      "Forgot recovery method": [
+        "Забыли метод восстановления"
       ],
       "Forward and auto-reply": [
         "Пересылка и автоответчик"
@@ -14979,9 +15180,6 @@
       "PayPal verification failed": [
         "Сбой проверки PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Настройте нижний колонтитул вашего электронного письма"
-      ],
       "Phone": [
         "Телефон"
       ],
@@ -14996,6 +15194,9 @@
       ],
       "Processing...": [
         "Обработка…"
+      ],
+      "Profile": [
+        "Профиль"
       ],
       "Recommended": [
         "Рекомендуется"
@@ -15234,6 +15435,9 @@
       "Upload CSV file to create multiple accounts": [
         "Загрузите файл CSV, чтобы создать множество пользователей"
       ],
+      "Upload your organization’s logo": [
+        "Загрузите логотип вашей организации"
+      ],
       "Users": [
         "Пользователи"
       ],
@@ -15441,6 +15645,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
+      ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
       ],
@@ -15533,6 +15740,9 @@
       ],
       "This address has been disabled": [
         "Этот адрес был отключён"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Этот адрес электронной почты будет показан всем членам организации при выполнении операций управления аккаунтом."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Эта функция задерживает отправку писем, давая вам возможность отменить отправку на протяжении выбранного промежутка времени."
@@ -15871,6 +16081,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Отключив журналы, вы также очистите всю свою историю журналов. Вы уверены, что хотите отключить журналы?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Срок действия не в формате ММ/ГГ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Если вы отмените этот импорт, вы не сможете его возобновить. ${ BRAND_NAME } сохранил весь прогресс в вашем аккаунте. Все равно отменить?"
