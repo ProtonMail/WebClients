@@ -5299,9 +5299,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New plan": [
-        "新しいプラン"
-      ],
       "Note": [
         "メモ"
       ],
@@ -5319,9 +5316,6 @@
       ],
       "Optional": [
         "任意"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Other": [
         "その他"
@@ -7737,8 +7731,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "価格:"
+      "For ${ totalPrice }": [
+        "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {
