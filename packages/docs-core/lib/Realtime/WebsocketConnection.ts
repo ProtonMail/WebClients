@@ -36,7 +36,18 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     private callbacks: WebsocketCallbacks,
     private _encryptMessage: EncryptMessage,
     private logger: LoggerInterface,
-  ) {}
+  ) {
+    window.addEventListener('offline', this.handleOfflineConnectionEvent)
+    window.addEventListener('online', this.handleOnlineConnectionEvent)
+  }
+
+  handleOfflineConnectionEvent = (): void => {
+    this.disconnect()
+  }
+
+  handleOnlineConnectionEvent = (): void => {
+    void this.connect()
+  }
 
   /**
    * In some cases, a client may lose their connection to the websocket without even realizing it.
@@ -56,6 +67,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   destroy(): void {
     this.destroyed = true
     clearInterval(this.pingTimeout)
+    window.removeEventListener('offline', this.handleOfflineConnectionEvent)
+    window.removeEventListener('online', this.handleOnlineConnectionEvent)
     this.disconnect()
   }
 
