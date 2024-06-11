@@ -415,6 +415,9 @@
       "exclude message content": [
         "关闭全文搜索"
       ],
+      "Expand": [
+        "展开"
+      ],
       "Expand composer": [
         "展开编辑窗"
       ],
@@ -894,6 +897,9 @@
       ],
       "Report a problem": [
         "反馈问题"
+      ],
+      "Report an issue": [
+        "报告问题"
       ],
       "Report phishing": [
         "举报欺诈邮件"
@@ -5471,6 +5477,9 @@
       "Clear app data": [
         "清除应用数据"
       ],
+      "Clear browser data": [
+        "清除浏览器数据"
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -5479,9 +5488,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "清除浏览器数据还会停用此设备的邮件全文搜索，需要重新下载所有邮件后才能进行搜索。"
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "清除与邮件全文搜索相关的浏览器数据，包括已下载的邮件"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
@@ -5563,9 +5569,6 @@
       ],
       "Default email application": [
         "设为默认邮件应用"
-      ],
-      "Disable message content search": [
-        "禁用邮件全文搜索"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
@@ -6112,9 +6115,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "删除与此应用相关的所有数据，包括已下载的消息"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
@@ -7433,9 +7433,6 @@
       "New password": [
         "新密码"
       ],
-      "New plan": [
-        "新套餐"
-      ],
       "No label found": [
         "未找到标签"
       ],
@@ -7468,9 +7465,6 @@
       ],
       "Or": [
         "或"
-      ],
-      "Organization size": [
-        "组织规模"
       ],
       "Original link": [
         "原始链接"
@@ -9090,6 +9084,17 @@
         "你"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "组织密钥不存在."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "权限被拒绝, 管理员权限受到限制。"
+      ],
+      "The organization key must be activated first.": [
+        "必须先激活机构密钥。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "信用卡/借记卡"
@@ -9101,6 +9106,9 @@
     "Payments": {
       "Billing Country": [
         "计费国家"
+      ],
+      "MM/YY": [
+        "月/年"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
@@ -10128,11 +10136,6 @@
       ],
       "Subscriptions": [
         "订阅"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "支付"
       ]
     },
     "Subscription reminder": {

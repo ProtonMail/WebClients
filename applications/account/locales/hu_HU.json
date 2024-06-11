@@ -230,6 +230,9 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
+      "Copy version number to clipboard": [
+        "A verziószám másolása a vágólapra"
+      ],
       "Create": [
         "Létrehozás"
       ],
@@ -331,6 +334,9 @@
       ],
       "Download CSV sample": [
         "CSV minta letöltése"
+      ],
+      "Download Desktop App": [
+        "Asztali alkalmazás letöltése"
       ],
       "Download ICS": [
         "ICS letöltése"
@@ -458,6 +464,9 @@
       "Go to label": [
         "Címkéhez ugrás"
       ],
+      "Go to settings": [
+        "Beállítások megnyitása"
+      ],
       "Got it": [
         "Rendben!"
       ],
@@ -521,6 +530,9 @@
       "label emails as": [
         "címke hozzáadása:"
       ],
+      "Later": [
+        "Később"
+      ],
       "Leave": [
         "Kilépés"
       ],
@@ -581,10 +593,10 @@
       "No, thanks": [
         "Köszönöm, nem"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,6 +775,9 @@
       ],
       "Select calendar view": [
         "Naptár nézet kiválasztása"
+      ],
+      "Select country": [
+        "Válassza ki az országot"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -973,6 +988,9 @@
       ],
       "View": [
         "Megtekintés"
+      ],
+      "View all reports": [
+        "Az összes jelentés megtekintése"
       ],
       "View invoice": [
         "Számla megtekintése"
@@ -1198,8 +1216,20 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "3,000+ szerver több mint 65 országban"
+      ],
       "6 users": [
         "6 felhasználó"
+      ],
+      "Access content worldwide": [
+        "Hozzáférés tartalmakhoz világszerte"
+      ],
+      "Ad-blocker and malware protection": [
+        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+      ],
+      "High speed streaming": [
+        "Nagy sebességű streamelés"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -2930,11 +2960,17 @@
       "Bugs or quality issue": [
         "Hibák vagy minőségi problémák"
       ],
+      "I do not wish to share": [
+        "Nem kívánom megosztani"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Egy másik ${ BRAND_NAME } fiókot használok"
       ],
       "Missing feature(s)": [
         "Funkciók hiányoznak"
+      ],
+      "Other reason (please comment)": [
+        "Egyéb okból (kérjük, írja meg)"
       ],
       "Subscription is too expensive": [
         "Az előfizetés túl drága"
@@ -2944,6 +2980,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
+      ],
+      "The VPN is too slow": [
+        "A VPN túl lassú"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3190,6 +3229,9 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
+      "Alias options could not be resolved": [
+        "Az e-mail álnév adatainak betöltése nem sikerült"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
       ],
@@ -3228,6 +3270,12 @@
       ],
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Could not open created vault": [
+        "A létrehozott tároló megnyitása nem sikerült"
+      ],
+      "Could not open updated vault": [
+        "A frissített tároló megnyitása nem sikerült"
       ],
       "Could not save preference": [
         "Nem sikerült menteni a preferenciát."
@@ -3332,6 +3380,9 @@
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Az elem tartalma nem lehet több 40KB-nál"
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
@@ -3555,6 +3606,9 @@
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Váratlan hiba, nem tudjuk importálni a névjegyeket"
+      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
@@ -3593,6 +3647,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Elérte a naptárak maximális számát."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
@@ -3799,6 +3856,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Az alkalmazás jelenleg nem elérhető"
+      ],
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
@@ -3807,6 +3867,9 @@
       ],
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
+      ],
+      "Open in browser": [
+        "Megnyitás böngészőben"
       ],
       "Please refresh the page or try again later.": [
         "Frissítse az oldalt vagy próbálja újra később."
@@ -4978,14 +5041,6 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -5294,6 +5349,9 @@
       "Are you sure you want to delete this filter?": [
         "Biztosan törölni akarja ezt a szűrőt?"
       ],
+      "Are you sure you want to delete this folder?": [
+        "Biztos, hogy törölni szeretné ezt a mappát?"
+      ],
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
       ],
@@ -5365,6 +5423,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Megakadályozza, hogy a feladó értesüljön arról amikor megnyitja az üzenetet."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Erősítse szervezetének márkaidentitását, és hozzon létre egységesebb online élményt a felhasználók számára."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
@@ -5535,6 +5596,9 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
@@ -6036,6 +6100,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Kérjük, próbálja újra, válasszon más fizetési módot vagy kérjen segítséget a PayPaltól."
       ],
+      "Please use another browser or download the file.": [
+        "Kérjük, használjon másik böngészőt, vagy töltse le a fájlt."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Ellenőrizze a fizetést a megnyílt új böngészőfülön."
       ],
@@ -6047,6 +6114,9 @@
       ],
       "Preview failed to be loaded": [
         "Az előnézet betöltése nem sikerült"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Előnézet ehhez a fájltípushoz jelenleg nem támogatott ebben a böngészőben."
       ],
       "Preview for this file type is not supported": [
         "Ehhez a fájltípushoz nem jeleníthető meg előnézet"
@@ -6220,6 +6290,9 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
@@ -6312,6 +6385,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ez eltarthat egy ideig. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
+      ],
+      "This file is too large to preview": [
+        "Ez a fájl túl nagy az előnézethez"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ez egy 12 szóból álló jelmondat, amelynek kértük öntől a beállítását."
@@ -6547,6 +6623,9 @@
       "Version history": [
         "Verziótörténet"
       ],
+      "Version number successfully copied to clipboard": [
+        "A verziószám sikeresen másolva a vágólapra"
+      ],
       "Visa Secure logo": [
         "Visa biztonsági logó"
       ],
@@ -6588,6 +6667,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
+      ],
+      "We'll email you once import is complete.": [
+        "Amint az importálás befejeződött, e-mailt küldünk Önnek."
       ],
       "We'll get back to you shortly.": [
         "Hamarosan válaszolunk."
@@ -6673,6 +6755,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Közben bezárhatja a lapot vagy a böngészőt."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkesztheti, hogy biztosítsa a helyes e-mail címet hitelesítéshez."
@@ -6844,6 +6929,17 @@
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ],
+      "Selected color:": [
+        "A kiválasztott szín:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
@@ -7003,6 +7099,9 @@
       ],
       "Expand / contract composer": [
         "Szerkesztő kiterjesztése / összehúzása"
+      ],
+      "Filter": [
+        "Szűrő"
       ],
       "Forward": [
         "Továbbítás"
@@ -7240,6 +7339,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
+      ],
+      "Access to my events": [
+        "Hozzáférés az eseményeimhez"
       ],
       "Account storage": [
         "Fiók tárhely"
@@ -7813,9 +7915,6 @@
       ],
       "Organization password": [
         "Szervezeti jelszó"
-      ],
-      "Organization size": [
-        "Szervezet mérete"
       ],
       "Other amount": [
         "Más összeg"
@@ -8836,6 +8935,9 @@
       "Centralized billing": [
         "Központosított számlázás"
       ],
+      "Collaborate and share large files": [
+        "Együttműködés és nagyméretű fájlok megosztása"
+      ],
       "Contact groups": [
         "Névjegy csoportok"
       ],
@@ -8851,6 +8953,9 @@
       "Custom fields": [
         "Egyéni mezők"
       ],
+      "Custom workspace branding": [
+        "Egyéni munkaterület márkajelzései"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
@@ -8859,6 +8964,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Dokumentum szerkesztők (dokumentum, táblázat, prezentáció)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentum szerkesztők (szöveg, táblázat, dia) (hamarosan)"
       ],
       "Easy Switch import assistant": [
         "Easy Switch importálási segéd"
@@ -8909,6 +9017,9 @@
       "No-logs policy": [
         "Nincs naplózás"
       ],
+      "Password manager to secure credentials": [
+        "Jelszókezelő a biztonsági hitelesítő adatok számára"
+      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
       ],
@@ -8936,6 +9047,9 @@
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
+      ],
+      "See team's availability": [
+        "Lásd a csoport elérhetőségét"
       ],
       "Send & receive invitations": [
         "Meghívók küldése és fogadása"
@@ -9010,6 +9124,9 @@
       "User session management": [
         "Felhasználói munkafolyamatok kezelése"
       ],
+      "User storage management": [
+        "Felhasználói tárhely kezelés"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Archívum megosztás (${ n } személyig).",
         "Archívum megosztás (${ n } személyig)."
@@ -9059,11 +9176,20 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 30 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "A rendelkezésre álló kreditek, arányosítás és kuponok a következő lépésben alkalmazódnak"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Kezdésként titkosított e-mail és naptár"
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Megnövelt biztonság és prémium funkciók a csoportok számára"
       ],
       "For next-level password management and identity protection.": [
         "Új szint a jelszókezelésben és a személyi adatok védelmében."
@@ -9230,6 +9356,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Az IMAP támogatás asztali alkalmazásokra korlátozódik (pl. Outlook, Apple Mail, Thunderbird) a ${ MAIL_APP_NAME } Bridge-en keresztül. Felhő alapú IMAP megoldások jelenleg nem támogatottak."
       ],
+      "Increase or reallocate storage for a user": [
+        "Tárhely növelése vagy átcsoportosítása egy felhasználó számára"
+      ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "A hálózati forgalom teljes lekapcsolásával védi önt, abban az esetben, ha váratlanul leszakadna a VPN kapcsolat."
       ],
@@ -9287,6 +9416,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Tárolja biztonságban a névjegyei adatait, mint például telefonszám, cím, születésnap és személyes jegyzetek. A zéró-hozzáférés titkosítás biztosítja, hogy még a ${ BRAND_NAME } sem fér hozzá."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Tekintse meg az értekezlet résztvevőinek elérhetőségét, és takarítson meg időt az értekezletek ütemezésével"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Küldjön e-mailt nagyobb csoportoknak könnyedén, tetszőleges számú névjegy csoport létrehozásával (maximum 100 címzett csoportonként)"
       ],
@@ -9304,6 +9436,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Támogatja a fájlmegosztási protokollokat, mint a BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Töltse fel vállalati logóját a ${ BRAND_NAME } web alkalmazásokban a jobb csapat élményért"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
@@ -9839,6 +9974,9 @@
         "Biztonságos megosztás ${ n } trezorral",
         "Biztonságos megosztás ${ n } trezorokkal"
       ],
+      "Secure vault sharing": [
+        "Biztonságos tároló-megosztás"
+      ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"
       ],
@@ -9873,6 +10011,11 @@
       ],
       "New credit/debit card": [
         "Új bankkártya"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Számlázási ország"
       ]
     },
     "Payments.Error": {
@@ -10235,6 +10378,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Ez az engedély ${ timeRemaining.inHours } óra múlva lejár",
         "Ez az engedély${ timeRemaining.inHours } óra múlva lejár"
+      ],
+      "This permission expires soon": [
+        "Az engedély hamarosan lejár"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Most ${ boldDaysRemaining } áll rendelkezésére, hogy megváltoztassa a jelszavát a(z) ${ boldEmail } fiókhoz."
@@ -10747,8 +10893,14 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
+      "contact your administrator": [
+        "lépjen kapcsolatba a rendszergazdával"
+      ],
       "Get more storage": [
         "További tárhely igénylése"
+      ],
+      "upgrade for more storage": [
+        "váltson nagyobb csomagra több tárhelyért"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Frissítse csomagját, hogy továbbra is megszakítás nélkül használhassa fiókját."
@@ -10776,11 +10928,17 @@
       ]
     },
     "Subscription": {
+      "Billed for 15 months": [
+        "15 havonta számlázva"
+      ],
       "Billed for 18 months": [
         "18 havonta számlázva"
       ],
       "Billed for 3 months": [
         "3 havonta számlázva"
+      ],
+      "Billed for 30 months": [
+        "30 havonta számlázva"
       ],
       "Billed monthly": [
         "Havonta számlázva"
@@ -10854,8 +11012,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Ár:"
+      "For ${ totalPrice }": [
+        "Neki: ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -10898,6 +11056,17 @@
       ],
       "Version history": [
         "Verziótörténet"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
       ]
     },
     "Subscription renewal state": {

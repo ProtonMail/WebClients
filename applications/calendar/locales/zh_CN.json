@@ -450,10 +450,10 @@
       "Not now": [
         "以后再说"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2220,9 +2220,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "重复…"
-      ],
       "Never": [
         "从不"
       ],
@@ -5271,9 +5268,6 @@
       "New password": [
         "新密码"
       ],
-      "New plan": [
-        "新套餐"
-      ],
       "Note": [
         "笔记"
       ],
@@ -5294,9 +5288,6 @@
       ],
       "Optional": [
         "非必填"
-      ],
-      "Organization size": [
-        "组织规模"
       ],
       "Organizer": [
         "组织者"
@@ -6862,6 +6853,9 @@
       "Billing Country": [
         "计费国家"
       ],
+      "MM/YY": [
+        "月/年"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
       ]
@@ -7689,11 +7683,6 @@
       ],
       "Subscriptions": [
         "订阅"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "支付"
       ]
     },
     "Subscription reminder": {

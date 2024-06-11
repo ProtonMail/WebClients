@@ -476,11 +476,11 @@
       "Not now": [
         "Ahora no"
       ],
-      "OK": [
-        "Aceptar"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -827,6 +827,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } asiento del asistente de escritura",
+        "${ seats } asientos del asistente de escritura"
       ],
       "${ users } user": [
         "${ users } usuario",
@@ -2280,8 +2284,8 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Después de repetir…"
+      "Ends after…": [
+        "Termina después de..."
       ],
       "Never": [
         "Nunca"
@@ -4914,6 +4918,12 @@
       "Would you like to update this event?": [
         "¿Quieres actualizar este evento?"
       ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant add-on": [
+        "Complemento del asistente de escritura"
+      ],
       "Yearly": [
         "Cada año"
       ],
@@ -5150,6 +5160,11 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Puedes volver a compartir tus calendarios en la configuración."
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -5480,9 +5495,6 @@
       "New password": [
         "Nueva contraseña"
       ],
-      "New plan": [
-        "Nuevo plan"
-      ],
       "Note": [
         "Nota"
       ],
@@ -5503,9 +5515,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Organization size": [
-        "Tamaño de la organización"
       ],
       "Organizer": [
         "Organizador"
@@ -6279,6 +6288,9 @@
       "Centralized billing": [
         "Facturación centralizada"
       ],
+      "Collaborate and share large files": [
+        "Colabora y comparte archivos grandes"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
@@ -6297,6 +6309,9 @@
       "Custom snooze time": [
         "Tiempo de pausa personalizado"
       ],
+      "Custom workspace branding": [
+        "Personalización del espacio de trabajo con tu marca"
+      ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
@@ -6311,6 +6326,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Editores de documentos (documentos, hojas de cálculo y presentaciones)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Editores de documentos (documentos, hojas de cálculo y presentaciones) (próximamente)"
       ],
       "Double hop": [
         "Double hop"
@@ -6388,6 +6406,9 @@
       "Password health": [
         "Estado de la contraseña"
       ],
+      "Password manager to secure credentials": [
+        "Gestor de contraseñas para proteger credenciales"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -6416,6 +6437,9 @@
       "Router support": [
         "Compatibilidad con enrutadores"
       ],
+      "Save time emailing": [
+        "Ahorra tiempo enviando correos electrónicos"
+      ],
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
       ],
@@ -6427,6 +6451,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "See team's availability": [
+        "Mostrar la disponibilidad de tu equipo"
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
@@ -6516,6 +6543,9 @@
       "User session management": [
         "Administración de sesiones de usuario"
       ],
+      "User storage management": [
+        "Gestión del almacenamiento de los usuarios"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
@@ -6562,6 +6592,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo tu negocio."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
@@ -6570,6 +6603,12 @@
       ],
       "Early access to new apps and features": [
         "Acceso anticipado a funciones y aplicaciones nuevas"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Correo electrónico y calendario cifrado para empezar."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Seguridad mejorada y funciones premium para equipos."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protección esencial y colaboración segura para usuarios ilimitados."
@@ -6718,6 +6757,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede utilizar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) con ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
+      "Increase or reallocate storage for a user": [
+        "Aumentar o reasignar almacenamiento para un usuario"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantén privados tus planes y los de tu familia con un calendario cifrado."
       ],
@@ -6799,6 +6841,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Guarda a buen recaudo los datos de tus contactos (teléfono, dirección, cumpleaños y notas personales). El cifrado de acceso cero garantiza que ni ${ BRAND_NAME } pueda acceder a ellos."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Ve la disponibilidad de los participantes de la reunión y ahorra tiempo programando reuniones"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envía correos electrónicos a muchas personas fácilmente y rápidamente creando todos los grupos de contactos que necesites (hasta 100 contactos por grupo)."
       ],
@@ -6825,6 +6870,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Carga el logotipo de tu empresa para personalizar la experiencia de tus equipos en las aplicaciones web de ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
@@ -8219,8 +8267,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Por"
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

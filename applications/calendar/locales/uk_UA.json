@@ -482,11 +482,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -840,6 +840,12 @@
       "${ price } per user": [
         "${ price } за користувача"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } сидіння помічника з письма",
+        "${ seats } сидіння помічників з письма",
+        "${ seats } сидінь помічників з письма",
+        "${ seats } сидінь помічників з письма"
+      ],
       "${ users } user": [
         "${ users } користувач",
         "${ users } користувачі",
@@ -996,6 +1002,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Можливість використання ${ domains } власного домену електронної пошти, ${ addresses } адреси електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
@@ -2287,9 +2299,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Після повторення…"
-      ],
       "Never": [
         "Ніколи"
       ],
@@ -2334,11 +2343,23 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Щодня, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Кожен ${ interval } день, ${ timesString }",
+        "Кожні ${ interval } дні, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Щодня, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Кожен ${ interval } день, ${ untilString }",
+        "Кожні ${ interval } дні, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }"
       ]
     },
     "Day": {
@@ -3719,6 +3740,12 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Filter notification": {
@@ -4822,7 +4849,7 @@
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Підписка автоматично поновлюється кожні ${ cycle } місяців."
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців."
       ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
@@ -5018,6 +5045,12 @@
       ],
       "Would you like to update this event?": [
         "Бажаєте оновити цю подію?"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ],
+      "Writing assistant add-on": [
+        "Доповнення для помічника з написання"
       ],
       "Yearly": [
         "Щороку"
@@ -5594,9 +5627,6 @@
       "New password": [
         "Новий пароль"
       ],
-      "New plan": [
-        "Новий тарифний план"
-      ],
       "Note": [
         "Нотатка"
       ],
@@ -5617,9 +5647,6 @@
       ],
       "Optional": [
         "Необов'язково"
-      ],
-      "Organization size": [
-        "Розмір організації"
       ],
       "Organizer": [
         "Організатор"
@@ -5746,6 +5773,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Яка ваша основна причина скасування чи пониження тарифу?"
       ],
       "Wonderful": [
         "Дивовижно"
@@ -6104,11 +6134,23 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Щомісяця ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Щомісяця ${ onDayString }, ${ untilString }"
       ]
@@ -6424,6 +6466,9 @@
       "Centralized billing": [
         "Централізоване управління платежами"
       ],
+      "Collaborate and share large files": [
+        "Співпраця та обмін великих файлів"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -6442,6 +6487,9 @@
       "Custom snooze time": [
         "Власний час відкладення"
       ],
+      "Custom workspace branding": [
+        "Брендування власного робочого простору"
+      ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
       ],
@@ -6456,6 +6504,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редактори документів (документи, таблиці, слайди)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редактори документів (документи, таблиці, слайди) (незабаром)"
       ],
       "Double hop": [
         "Double hop"
@@ -6535,6 +6586,9 @@
       "Password health": [
         "Стан паролю"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролів для захисту облікових даних"
+      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
@@ -6565,6 +6619,9 @@
       "Router support": [
         "Підтримка маршрутизатора"
       ],
+      "Save time emailing": [
+        "Економте час надсилання електронною поштою"
+      ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
       ],
@@ -6576,6 +6633,9 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
+      ],
+      "See team's availability": [
+        "Переглянути доступність команди"
       ],
       "Send & receive invitations": [
         "Надсилайте й отримуйте запрошення"
@@ -6667,6 +6727,9 @@
       "User session management": [
         "Керування сеансами користувачів"
       ],
+      "User storage management": [
+        "Керування сховищем користувача"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Спільне використання сховища (до ${ n } особи)",
         "Спільне використання сховища (до ${ n } осіб)",
@@ -6715,6 +6778,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Вся застосунки ${ BRAND_NAME } та преміум функції, щоб захистити ваш бізнес."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
       ],
@@ -6723,6 +6789,12 @@
       ],
       "Early access to new apps and features": [
         "Ранній доступ до нових програм і функцій"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрована пошта та календар для початку роботи."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Покращена безпека та преміум функції для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Необхідний захист і безпечна співпраця для необмеженої кількості користувачів."
@@ -7590,6 +7662,9 @@
       "Select state": [
         "Оберіть країну"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Поділіться своїми враженнями, щоб вдосконалити ${ BRAND_NAME }"
+      ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
       ]
@@ -7830,6 +7905,18 @@
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Щоб змінити пароль, перейдіть на авторизований пристрій, з якого було ініційовано запит."
       ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } день",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } дні",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годину",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } години",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин"
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -7838,6 +7925,12 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } дня.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
@@ -7915,8 +8008,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Ще ${ gracePeriodHoursRemaining } година",
+        "Ще ${ gracePeriodHoursRemaining } години",
+        "Ще ${ gracePeriodHoursRemaining } годин",
+        "Ще ${ gracePeriodHoursRemaining } годин"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйте запит, якщо ви не просили скинути пароль."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годину.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } години.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Щоб переконатися, що ви справді намагаєтеся скинути пароль, ми чекаємо 72 години, перш ніж схвалювати запити. Ви можете змінити пароль через ${ boldTimeLeft }. ${ viewRequest }"
@@ -8453,8 +8558,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8523,6 +8628,9 @@
       ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне сховище"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Ви ще маєте ${ expiryDate } у вашому тарифі ${ planName }. Ми додамо кредитів за час, що залишився на вашому обліковому запису ${ BRAND_NAME }. Переконайтеся, що ви не перевищили ліміти безплатного тарифу перед скасуванням. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Ваш власний домен електронної пошти"
@@ -9622,9 +9730,9 @@
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяці.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць."
+        "Ваша передплата автоматично поновиться через ${ cycle } місяці.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {
@@ -9845,6 +9953,42 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Кожні ${ interval } тижні щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Кожні ${ interval } тижні у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
+        "Кожні ${ interval } тижні у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у середу, ${ timesString }",
+        "Кожні ${ interval } тижні у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Щотижня ${ multipleDaysString }, ${ timesString }"
       ],
@@ -9874,6 +10018,60 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Кожні ${ interval } тижні щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Кожні ${ interval } тижні у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Кожні ${ interval } тижні у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Кожні ${ interval } тижні у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Кожні ${ interval } тижні у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Щотижня ${ multipleDaysString }, ${ untilString }"
       ],
@@ -9937,6 +10135,12 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожен ${ interval } рік, ${ timesString }",
+        "Кожні ${ interval } роки, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Щороку, ${ timesString }"
       ]

@@ -223,6 +223,9 @@
       "Close & discard": [
         "Lukk & forkast"
       ],
+      "Close AI refine suggestion": [
+        "Lukk KI-avgrens forslag"
+      ],
       "Close composer": [
         "Lukk skrivevinduet"
       ],
@@ -438,6 +441,9 @@
       "exclude message content": [
         "ekskluder meldingsinnhold"
       ],
+      "Expand": [
+        "Utvid"
+      ],
       "Expand composer": [
         "Utvid skrivevinduet"
       ],
@@ -474,17 +480,29 @@
       "Forgot password?": [
         "Glemt passord?"
       ],
+      "Formalize": [
+        "Formaliser"
+      ],
       "Forward as attachment": [
         "Videresend som vedlegg"
       ],
+      "Generate text": [
+        "Generer tekst"
+      ],
       "Get in touch": [
         "Ta kontakt"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Få den fra kun ${ addonPriceWithCurrency }/måned"
       ],
       "Get SimpleLogin extension": [
         "Hent SimpleLogin-utvidelse"
       ],
       "Get started": [
         "Kom i gang"
+      ],
+      "Get the writing assistant": [
+        "Skaff deg skriveassistenten"
       ],
       "Get verification code": [
         "Få verifiseringskode"
@@ -643,6 +661,9 @@
       "Loading${ ellipsis }": [
         "Laster${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Gjør det vennlig"
+      ],
       "Manage folders": [
         "Behandle mapper"
       ],
@@ -705,6 +726,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Flere finjusteringshandlinger"
       ],
       "More search options": [
         "Flere søkealternativer"
@@ -856,6 +880,9 @@
       "Print": [
         "Skriv ut"
       ],
+      "Proofread": [
+        "Korrekturlese"
+      ],
       "Quit": [
         "Avslutt"
       ],
@@ -922,6 +949,9 @@
       "Report a problem": [
         "Rapporter et problem"
       ],
+      "Report an issue": [
+        "Rapporter et problem"
+      ],
       "Report phishing": [
         "Rapportér nettfisking"
       ],
@@ -952,11 +982,17 @@
       "Resume": [
         "Gjenoppta"
       ],
+      "Resume downloading": [
+        "Gjenoppta nedlasting"
+      ],
       "Retry": [
         "Prøv på nytt"
       ],
       "Revert to original display": [
         "Vend tilbake til opprinnelig visning"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kjør på ${ BRAND_NAME }-tjenere"
       ],
       "Save": [
         "Lagre"
@@ -966,6 +1002,9 @@
       ],
       "Schedule message": [
         "Planlegg melding"
+      ],
+      "Scroll to bottom": [
+        "Rull til bunnen"
       ],
       "Search": [
         "Søk"
@@ -1057,6 +1096,9 @@
       "Sharing options": [
         "Delingsalternativer"
       ],
+      "Shorten": [
+        "Forkorte"
+      ],
       "Show": [
         "Vis"
       ],
@@ -1116,6 +1158,12 @@
       ],
       "Stay": [
         "Bli"
+      ],
+      "Stop downloading the writing assistant": [
+        "Stopp nedlastingen av skriveassistenten"
+      ],
+      "Stop generating result": [
+        "Slutt å generere resultater"
       ],
       "Strikethrough": [
         "Gjennomstrek"
@@ -1244,6 +1292,9 @@
       "Use recovery code": [
         "Bruk gjenopprettingskode"
       ],
+      "Use this": [
+        "Bruk dette"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Bruk musen for å endre størrelsen på visningen. Bruker du tastaturet, kan du bruke venstre og høyre piltast for å endre størrelsen."
       ],
@@ -1307,6 +1358,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Din e-postskrivingsassistent"
       ],
       "Zoom in": [
         "Zoom inn"
@@ -1375,6 +1429,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentlisens",
+        "${ seats } skriveassistentlisenser"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1448,6 +1506,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applikasjoner"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Nettleser ikke støttet "
+      ],
+      "Fast and secure": [
+        "Rask og sikker"
+      ],
+      "Needs compatible hardware": [
+        "Trenger kompatibel maskinvare"
+      ],
+      "No logs": [
+        "Ingen loggføring"
+      ],
+      "Requires one-time download": [
+        "Krever engangsnedlasting"
+      ],
+      "Run locally": [
+        "Kjør lokalt"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kjør på ${ BRAND_NAME }-tjenere"
+      ],
+      "Runs on all devices": [
+        "Kjører på alle enheter"
+      ],
+      "Runs on your device": [
+        "Kjører på enheten din"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "Maskinvare ikke kompatibel"
       ]
     },
     "Attached ics file error": {
@@ -3289,6 +3381,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Angi en gjenopprettingsmetode for å forhindre at du mister tilgang til kontoen din."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Hvis du vil fortsette å bruke skriveassistenten, legg den til i abonnementet ditt."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Hvis du vil fortsette å bruke skriveassistenten, be om tilgang fra administratoren din."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3312,6 +3410,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
+      ],
+      "Use the writing assistant to:": [
+        "Bruk skriveassistenten til å:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi fant ingen kjente sporere og sporingsnettadresser i denne e-posten."
@@ -3683,6 +3784,9 @@
       "Draft could not be saved. Try again.": [
         "Utkastet kunne ikke lagres. Prøv igjen."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "På grunn av en feil kunne ikke tekstgenerering avbrytes"
+      ],
       "Email address disabled": [
         "E-postadresse deaktivert"
       ],
@@ -3730,6 +3834,9 @@
       ],
       "Forward address is required": [
         "Videresendingsadresse kreves"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "Jeg kan ikke gå videre med denne forespørselen på grunn av mine etiske retningslinjer. Vennligst prøv en annen ledetekst."
       ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
@@ -3864,6 +3971,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Vennligst angi enten et fornavn, et etternavn eller et visningsnavn."
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Vennligst velg en kategori og hva som gikk galt med den genererte teksten"
+      ],
+      "Please try generating the text again": [
+        "Prøv å generere teksten på nytt"
+      ],
       "Port is required": [
         "Port kreves"
       ],
@@ -3878,6 +3991,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Hovednøkkel hentet for ${ BRAND_NAME }-bruker er ugyldig for sending"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Problem med å laste ned skriveassistenten. Vennligst prøv på nytt."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Problem med å laste skriveassistenten til enheten. Vennligst prøv på nytt."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Problem med å laste ut data som ikke er nødvendig når skriveassistenten er inaktiv"
       ],
       "Process aborted": [
         "Prosessen ble avbrutt"
@@ -3945,6 +4067,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "Thanks for the feedback!": [
+        "Takk for tilbakemeldingen!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Vedlegget kan ikke dekrypteres.\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\nfilen med et program som GnuPG.",
@@ -4945,11 +5070,26 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Hardware not compatible": [
+        "Maskinvare ikke kompatibel"
+      ],
+      "Resume downloading": [
+        "Gjenoppta nedlasting"
+      ],
       "Search": [
         "Søk"
       ],
       "Security Center": [
         "Sikkerhetssenter"
+      ],
+      "Set up the writing assistant": [
+        "Sett opp skriveassistenten"
+      ],
+      "Tell us more": [
+        "Fortell oss mer"
+      ],
+      "Write faster with the writing assistant": [
+        "Skriv raskere med skriveassistenten"
       ]
     },
     "Hint": {
@@ -5639,6 +5779,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
+      "Browser not supported": [
+        "Nettleser ikke støttet"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -5663,6 +5806,9 @@
       "Clear app data": [
         "Fjern appdata"
       ],
+      "Clear browser data": [
+        "Tøm nettleserdata"
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -5672,8 +5818,8 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Sletting av nettleserdata deaktiverer også meldingsinnholdssøk på denne enheten. Alle meldinger må lastes ned på nytt for å søke i dem."
       ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Sletter nettleserdata relatert til søk etter meldingsinnhold, inkludert nedlastede meldinger."
+      "Clears browser data (including downloaded messages, …)": [
+        "Tømmer nettleserdata (inkludert nedlastede meldinger, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
@@ -5757,9 +5903,6 @@
       "Default email application": [
         "Standardprogram for e-post"
       ],
-      "Disable message content search": [
-        "Deaktiver søk etter meldingsinnhold"
-      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -5790,6 +5933,12 @@
       ],
       "Downloading paused": [
         "Nedlastingen satt på pause"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Nedlasting satt på vent: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Laster ned skriveassistenten: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Utkast"
@@ -5916,8 +6065,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "For flere søkeresultater, prøv å søke etter dette nøkkelordet i innholdet til dine e-postmeldinger."
       ],
+      "Free for 14 days": [
+        "Gratis i 14 dager"
+      ],
       "From": [
         "Fra"
+      ],
+      "Generate text": [
+        "Generer tekst"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })",
@@ -5993,11 +6148,17 @@
       "Include Spam/Trash.": [
         "Inkluder søppelpost/papirkurv."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Ta med forespørselen din og svaret for å hjelpe oss med å forbedre nøyaktigheten."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
+      ],
+      "Initializing…": [
+        "Initialiserer…"
       ],
       "Insert image": [
         "Sett inn bilde"
@@ -6041,8 +6202,14 @@
       "Learn more": [
         "Lær mer"
       ],
+      "Learn more about ${ PrivacyLink }": [
+        "Lær mer om ${ PrivacyLink }"
+      ],
       "Left to Right": [
         "Venstre til høyre"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "La skriveassistenten hjelpe deg med å skrive og svare på e-post, og se produktiviteten din skyte i været."
       ],
       "Link type": [
         "Type kobling"
@@ -6133,6 +6300,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Flere finjusteringshandlinger"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
@@ -6270,6 +6440,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Vennligst del hva du forventet"
+      ],
       "Please try again in a few moments": [
         "Vennligst prøv igjen om få øyeblikk"
       ],
@@ -6309,6 +6482,12 @@
       "Print email": [
         "Skriv ut e-post"
       ],
+      "Proofread selection": [
+        "Korrekturles utvalg"
+      ],
+      "Proofread text": [
+        "Korrekturles tekst"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskytt e-postadressen din fra å bli lekket til e-postlister eller utsendere av søppelpost med ${ maskMyEmailButton }."
       ],
@@ -6321,8 +6500,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Fjerner alle data knyttet til denne appen, inkludert nedlastede meldinger."
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Fjerner alle data knyttet til denne appen (inkludert nedlastede meldinger, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Hvis du rapporterer en melding som et forsøk på nettfisking, sendes meldingen til oss, slik at vi kan analysere den og forbedre filtrene våre. Dette betyr at vi vil kunne se innholdet i meldingen i sin helhet."
@@ -6418,6 +6597,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
+      "Shorten selection": [
+        "Forkort utvalget"
+      ],
+      "Shorten text": [
+        "Forkort teksten"
+      ],
       "Show original message": [
         "Vis opprinnelig melding"
       ],
@@ -6490,6 +6675,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
+      "The initial setup may take a few minutes.": [
+        "Det første oppsettet kan ta noen minutter."
+      ],
       "The local database is being prepared": [
         "Den lokale databasen er under utarbeidelse"
       ],
@@ -6514,6 +6702,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Vennligst deaktiver alle aktive blokkeringer av sprett-opp-vinduer."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Nedlasting av skriveassistenten må fullføres før den kan brukes."
       ],
       "Themes can give your inbox a new look.": [
         "Temaer kan gi innboksen din et nytt utseende."
@@ -6554,6 +6745,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Invitasjonen er lagret i en deaktivert kalender."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Dette er ment som et skrivehjelpemiddel. Kontroller om foreslått tekst er nøyaktig. ${ learnMoreResult }."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
@@ -6618,6 +6812,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Denne meldingen utløper i morgen kl. ${ value }."
+      ],
+      "This only needs to be done once.": [
+        "Dette trenger bare å gjøres en gang."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøkkelen brukes automatisk til å kryptere e-post som sendes til denne adressen."
@@ -6847,6 +7044,15 @@
       "Would you like to receive a new verification code?": [
         "Ønsker du å motta en ny verifiseringskode?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tillegg"
+      ],
+      "writing assistant iframe": [
+        "skriveassistent iframe"
+      ],
       "Yearly": [
         "Årlig"
       ],
@@ -6981,6 +7187,9 @@
         "Du valgte **${ elementsCount } melding**.",
         "Du valgte **${ elementsCount } meldinger**."
       ],
+      "You selected some content:": [
+        "Du har valgt noe innhold:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Du vil miste tilgang til Plus-funksjoner på denne datoen."
       ],
@@ -7020,6 +7229,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil bli oppdatert så snart betalingen er klarert."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -7034,6 +7249,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Maskinvaren støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -7101,6 +7319,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vis bare"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
     "Key badge": {
@@ -7516,11 +7739,17 @@
       "Density": [
         "Tetthet"
       ],
+      "Did not follow instructions": [
+        "Fulgte ikke instruksjoner"
+      ],
       "Do you have any suggestions for our team?": [
         "Har du noen forslag til teamet vårt?"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
+      ],
+      "Don't like the style": [
+        "Liker ikke stilen"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -7687,11 +7916,11 @@
       "New password": [
         "Nytt passord"
       ],
-      "New plan": [
-        "Ny plan"
-      ],
       "No label found": [
         "Ingen etikett funnet"
+      ],
+      "Not factually correct": [
+        "Ikke faktisk korrekt"
       ],
       "Note": [
         "Notat"
@@ -7722,9 +7951,6 @@
       ],
       "Or": [
         "Eller"
-      ],
-      "Organization size": [
-        "Organisasjonsstørrelse"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -7849,8 +8075,14 @@
       "Type a command...": [
         "Skriv en kommando..."
       ],
+      "Type a prompt to generate an output": [
+        "Skriv inn en melding for å generere utdata"
+      ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
+      ],
+      "Unsafe or problematic": [
+        "Utrygt eller problematisk"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -7978,6 +8210,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "${ BRAND_NAME }s bransjeledende personvern"
+      ],
       "Add a gift code": [
         "Legg til gavekode"
       ],
@@ -8815,6 +9050,9 @@
       "Router support": [
         "Ruterstøtte"
       ],
+      "Save time emailing": [
+        "Spar tid på e-post"
+      ],
       "Schedule and snooze emails for any time": [
         "Planlegg og slumre e-poster når som helst"
       ],
@@ -9355,6 +9593,12 @@
       ],
       "Senders blocked": [
         "Avsendere blokkert"
+      ],
+      "The writing assistant is ready to use": [
+        "Skriveassistenten er klar til bruk"
+      ],
+      "Trial started": [
+        "Prøvetid startet"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9522,6 +9766,20 @@
         "Sikker hvelvdeling"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisasjonsnøkkel eksisterer ikke."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tillatelse nektet, administratorrettigheter er begrenset."
+      ],
+      "The organization key must be activated first.": [
+        "Organisasjonsnøkkelen må aktiveres først."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du trenger tilgang til organisasjonsnøkkelen for å utføre denne operasjonen."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditt-/debetkort"
@@ -9631,6 +9889,9 @@
       "First name": [
         "Fornavn"
       ],
+      "Generating...": [
+        "Genererer..."
+      ],
       "Gift code": [
         "Gavekode"
       ],
@@ -9639,6 +9900,9 @@
       ],
       "Hint": [
         "Hint"
+      ],
+      "How do you want the selected text modified?": [
+        "Hvordan vil du at den valgte teksten skal endres?"
       ],
       "Image URL": [
         "Bildenettadresse"
@@ -9666,6 +9930,12 @@
       ],
       "Please insert link first": [
         "Vennligst sett inn kobling først"
+      ],
+      "Please share what you expected": [
+        "Vennligst del hva du forventet"
+      ],
+      "Refining your text...": [
+        "Finjusterer teksten din..."
       ],
       "Search date, name, email address, or subject line": [
         "Søk dato, navn, e-postadresse eller emnelinje"
@@ -9708,6 +9978,24 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "To": [
+        "Til"
+      ],
+      "Try “Cancel my gym membership”": [
+        "Prøv \"avbryt treningsmedlemskapet mitt\""
+      ],
+      "Try “Invite Jane to my party”": [
+        "Prøv \"inviter Janne til festen min\""
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "Prøv \"takk kollegaen min for hjelp med et prosjekt\""
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "Prøv \"skriv et følgebrev for en praksisplass\""
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Prøv \"skriv en oppfølgings-e-post til en klient\""
       ],
       "Type a command…": [
         "Skriv en kommando…"
@@ -10724,8 +11012,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "For"
+      "For ${ totalPrice }": [
+        "For ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -12141,6 +12429,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your free trial has ended": [
+        "Din gratis prøveperiode har utløpt"
       ]
     },
     "Title subscription": {

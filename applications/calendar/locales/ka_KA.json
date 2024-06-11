@@ -456,10 +456,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1288,6 +1288,14 @@
       "${ more } more": [
         "კიდევ ${ more }",
         "კიდევ ${ more }"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
+      ],
+      "Your subscription is ending soon": [
+        "თქვენი გამოწერა მალე დასრულდება"
       ]
     },
     "Checkout row": {
@@ -2249,9 +2257,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "გამეორების შემდეგ…"
-      ],
       "Never": [
         "არასოდეს"
       ],
@@ -2545,7 +2550,7 @@
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ყველა მოვლენა ამ სერიაში განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
+        "ყველა მოვლენა ამ სერიაში განახლდა. რა შეიცვალა:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
         "ამ მოვლენის მოხდენა გაუქმდა."
@@ -5425,9 +5430,6 @@
       "New password": [
         "ახალი პაროლი"
       ],
-      "New plan": [
-        "ახალი ტარიფი"
-      ],
       "Note": [
         "შენიშვნა"
       ],
@@ -5448,9 +5450,6 @@
       ],
       "Optional": [
         "არასავალდებულო"
-      ],
-      "Organization size": [
-        "ორგანიზაციის ზომა"
       ],
       "Organizer": [
         "ორგანიზატორი"
@@ -5575,6 +5574,9 @@
       ],
       "What happened?": [
         "რა მოხდა?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
       ],
       "Wonderful": [
         "შესანიშნავია"
@@ -6221,6 +6223,9 @@
       "Centralized billing": [
         "ცენტრალიზებული გადახდა"
       ],
+      "Collaborate and share large files": [
+        "იმუშავეთ ერთად და გააზიარეთ დიდი ფაილები"
+      ],
       "Contact groups": [
         "კონტაქტის ჯგუფები"
       ],
@@ -6239,6 +6244,9 @@
       "Custom snooze time": [
         "მომხმარებლის დროებით დადუმების დრო"
       ],
+      "Custom workspace branding": [
+        "მორგებული სამუშაო სივრცის ბრენდინგი"
+      ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
@@ -6253,6 +6261,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები) (მალე)"
       ],
       "Double hop": [
         "Double hop"
@@ -6330,6 +6341,9 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
+      "Password manager to secure credentials": [
+        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
+      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
@@ -6366,6 +6380,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
+      ],
+      "See team's availability": [
+        "გუნდის ხელმისაწვდომობის ნახვა"
       ],
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
@@ -6455,6 +6472,9 @@
       "User session management": [
         "მომხმარებლის სესიის მართვა"
       ],
+      "User storage management": [
+        "მომხმარებლის საცავის მართვა"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
@@ -6506,6 +6526,12 @@
       ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "დაშიფრული ელფოსტა და კალენდარ დასაწყისისთვის."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "გაუმჯობესებული უსაფრთხოება და ფასიანი ფუნქციები გუნდებისთვის."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "ძირითადი დაცვა და უსაფრთხო კოლაბორაცია განუსაზღვრელი მომხმარებლებისთვის."
@@ -6594,7 +6620,7 @@
         "${ VPN_APP_NAME }: იქონიეთ წვდომა დაბლოკილ შემცველობასთან და იმუშავეთ ინტერნეტში კონფიდენციალურად. შეიცავს ${ serversAndCountries }, ყველაზე სწრაფ VPN-ს, წვდომას ვიდეოსტრიმინგის სერვისებთან, მავნე პროგრამებისა და რეკლამის დაბლოკვას, სწრაფ BtTorrent-ს და სხვ."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "წვდომა ${ MAIL_APP_NAME }-სა და ${ CALENDAR_APP_NAME }-ზე თქვენი დესკტოპის მოხერხებულობიდან"
+        "წვდომა ${ MAIL_APP_NAME }-სა და ${ CALENDAR_APP_NAME }-ზე თქვენი სამუშაო მაგიდიდან"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან"
@@ -6653,6 +6679,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-ის მხარდაჭერა შეზღუდულია კომპიუტერის აპებზე (მაგ: Outlook, Apple Mail, Thunderbird) ${ MAIL_APP_NAME }-ის ხიდის მიერ. ღრუბლოვანი IMAP ინტეგრაციები ჯერ მხარდაჭერილი არაა."
+      ],
+      "Increase or reallocate storage for a user": [
+        "მომხმარებლისთვის საცავის გაზრდა ან თავიდან გამოყოფა"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "დაიტოვეთ თქვენი გეგმები თქვენთვის და თქვენი ოჯახისთვის, დაშიფრული კალენდრით"
@@ -7307,6 +7336,9 @@
       ],
       "Select state": [
         "აირჩიეთ შტატი"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "გაგვიზიარეთ, როგორ შეგვიძლია, ${ BRAND_NAME } უკეთესი გავხადოთ"
       ],
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
@@ -8115,14 +8147,23 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "ფასი"
+      "For ${ totalPrice }": [
+        "${ totalPrice }-თვის"
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
+      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } და ყველა პროდუქიულობის ფასიანი თვისება"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -8136,14 +8177,32 @@
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
       ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "Add any new files": [
+        "დაამატეთ ნებისმიერი ახალი ფაილები"
+      ],
+      "Back up photos from your devices": [
+        "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
+      ],
+      "Comprehensive privacy and security": [
+        "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
       ],
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Direct contribution to our mission": [
+        "პირდაპირი შემოწირვა ჩვენს მისიაზე"
+      ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Extra storage and bonuses": [
+        "დამატებითი საცავი და ბონუსები"
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
@@ -8154,17 +8213,35 @@
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
       ],
+      "Manage your calendar": [
+        "მართეთ თქვენი კალენდარი"
+      ],
       "Online privacy, for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
       ],
       "Our fight against censorship in Russia": [
         "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
       ],
+      "Premium productivity features": [
+        "ფასიანი პროდუქტიულობის ფუნქციები"
+      ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
       ],
       "Read the story": [
         "ისტორიის წაკითხვა"
+      ],
+      "Receive new emails": [
+        "ახალი ელფოსტების მიღება"
+      ],
+      "Send emails with attachments": [
+        "დანართებიანი ელფოსტების გაგზავნა"
+      ],
+      "Sync files on devices": [
+        "ფაილების დასინქრონება მოწყობილობებზე"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME }-ის საუკეთესი ნაწილი"
       ],
       "Unblocking internet access in Iran": [
         "ინტერნეტთან წვდომის განბლოკვა ირანში"
@@ -8177,6 +8254,9 @@
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
       ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
@@ -9051,6 +9131,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "თქვენ მოიწვიეთ მონაწილეები ექვივალენტური ელფოსტით"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"

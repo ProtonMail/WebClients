@@ -942,9 +942,6 @@
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
       ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "По умолчанию члены команды могут экспортировать только хранилища, владельцами которых они являются. Если эта опция включена, они не смогут экспортировать никакие данные."
-      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
       ],
@@ -1170,9 +1167,6 @@
       "Open the Extensions menu": [
         "Откройте меню Расширения"
       ],
-      "Organization settings successfully updated": [
-        "Настройки организации успешно обновлены"
-      ],
       "Owner": [
         "Владелец"
       ],
@@ -1293,9 +1287,6 @@
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
       ],
-      "Team members can only share vaults within organization": [
-        "Члены команды могут делиться хранилищами только внутри организации"
-      ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
       ],
@@ -1346,9 +1337,6 @@
       ],
       "Update login": [
         "Обновить логин"
-      ],
-      "Updating organization settings": [
-        "Настройки организации обновляются"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
@@ -1720,6 +1708,9 @@
       ],
       "Organization": [
         "Организация"
+      ],
+      "Passkey": [
+        "Ключ доступа"
       ],
       "Passphrase": [
         "Кодовая фраза"
@@ -2123,6 +2114,9 @@
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
+      ],
+      "Passkey": [
+        "Ключ доступа"
       ],
       "Password": [
         "Пароль"

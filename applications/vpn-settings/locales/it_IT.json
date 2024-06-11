@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price } per utente"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } posto dell'assistente alla scrittura",
+        "${ seats } posti dell'assistente alla scrittura"
+      ],
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
@@ -4234,6 +4238,12 @@
       "Would you like to receive a new verification code?": [
         "Vuoi ricevere un nuovo codice di verifica?"
       ],
+      "Writing assistant": [
+        "Assistente alla scrittura"
+      ],
+      "Writing assistant add-on": [
+        "Componente aggiuntivo dell'assistente alla scrittura"
+      ],
       "You already have a free account": [
         "Hai già un account gratuito"
       ],
@@ -4423,6 +4433,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Visualizza soltanto"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
       ]
     },
     "Invoice state display as badge": {
@@ -4763,9 +4778,6 @@
       "New password": [
         "Nuova password"
       ],
-      "New plan": [
-        "Nuovo piano"
-      ],
       "No filter": [
         "Nessun filtro"
       ],
@@ -4795,9 +4807,6 @@
       ],
       "Organization password": [
         "Password dell'organizzazione"
-      ],
-      "Organization size": [
-        "Dimensione dell'organizzazione"
       ],
       "Other amount": [
         "Altro importo"
@@ -5023,6 +5032,9 @@
       ],
       "Add gift code": [
         "Aggiungi codice regalo"
+      ],
+      "Add to your subscription": [
+        "Aggiungi al tuo abbonamento"
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
@@ -5463,6 +5475,9 @@
       "Centralized settings and billings": [
         "Impostazioni e fatturazione centralizzate"
       ],
+      "Collaborate and share large files": [
+        "Collabora e condividi file di grandi dimensioni"
+      ],
       "Contact groups": [
         "Gruppi di contatti"
       ],
@@ -5481,6 +5496,9 @@
       "Custom snooze time": [
         "Periodo di posticipazione personalizzato"
       ],
+      "Custom workspace branding": [
+        "Branding personalizzato dello spazio di lavoro"
+      ],
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
@@ -5498,6 +5516,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Editor di documenti (documenti, fogli di lavoro, diapositive)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Editor di documenti (documenti, fogli di lavoro, diapositive) (presto disponibile)"
       ],
       "Double hop": [
         "Double hop"
@@ -5534,6 +5555,9 @@
       ],
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
+      ],
+      "Generate emails with only a prompt": [
+        "Genera email con un solo comando"
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
@@ -5581,6 +5605,9 @@
       "Password health": [
         "Stato delle password"
       ],
+      "Password manager to secure credentials": [
+        "Gestore password per la protezione delle credenziali"
+      ],
       "Password-protected Emails": [
         "Email protette da password"
       ],
@@ -5596,6 +5623,9 @@
       "Priority support & live chat": [
         "Supporto prioritario e chat dal vivo"
       ],
+      "Proofread and refine your texts": [
+        "Correggi e perfeziona i tuoi testi"
+      ],
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
@@ -5603,11 +5633,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Controlli regolari della sicurezza del tuo account. Ti avvisiamo se hai password deboli o riutilizzate che devono essere aggiornate."
       ],
+      "Reply to messages": [
+        "Rispondi ai messaggi"
+      ],
       "Require 2FA for organization": [
         "Richiedi 2FA per l'organizzazione"
       ],
       "Router support": [
         "Assistenza router"
+      ],
+      "Save time emailing": [
+        "Risparmia tempo mentre scrivi le email"
       ],
       "Schedule and snooze emails for any time": [
         "Pianifica e posticipa le email in qualsiasi momento"
@@ -5620,6 +5656,9 @@
       ],
       "Secure Core servers": [
         "Server Secure Core"
+      ],
+      "See team's availability": [
+        "Visualizza la disponibilità del team"
       ],
       "Send & receive invitations": [
         "Invia e ricevi inviti"
@@ -5719,6 +5758,9 @@
       "User session management": [
         "Gestione della sessione utente"
       ],
+      "User storage management": [
+        "Gestione dello spazio di archiviazione utente"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
@@ -5768,6 +5810,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Tutte le app di ${ BRAND_NAME } e le loro funzionalità premium"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
       ],
@@ -5776,6 +5821,12 @@
       ],
       "Early access to new apps and features": [
         "Accesso anticipato a nuove app e funzionalità"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Inizia con email e calendario crittografati."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Sicurezza avanzata e funzionalità premium per i team."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protezione essenziale e collaborazione sicura per utenti illimitati."
@@ -5954,6 +6005,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Il supporto IMAP è limitato all'uso di applicazioni desktop (ad esempio, Outlook, Apple Mail, Thunderbird) tramite ${ MAIL_APP_NAME } Bridge. Le integrazioni IMAP basate sul cloud non sono attualmente supportate."
       ],
+      "Increase or reallocate storage for a user": [
+        "Aumenta o riassegna lo spazio di archiviazione di un utente"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantieni privati i tuoi piani e quelli della tua famiglia con un calendario crittografato"
       ],
@@ -6035,6 +6089,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Archivia in modo sicuro i dettagli dei tuoi contatti, come numero di telefono, indirizzo, compleanno e note personali. La crittografia ad accesso zero assicura che nemmeno ${ BRAND_NAME } possa accedervi."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Visualizza la disponibilità dei partecipanti alla riunione e risparmia tempo nella pianificazione"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Invia email a grandi gruppi rapidamente e facilmente creando tanti gruppi di contatti quanti ne hai bisogno (fino a 100 contatti per gruppo)"
       ],
@@ -6061,6 +6118,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Carica il logo della tua azienda per personalizzare l'esperienza del tuo team sulle app web ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa gli indirizzi del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
@@ -7651,8 +7711,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Per"
+      "For ${ totalPrice }": [
+        "Per ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8590,6 +8650,9 @@
       "Plans": [
         "Piani"
       ],
+      "Policies": [
+        "Politiche"
+      ],
       "Preview": [
         "Anteprima"
       ],
@@ -8927,6 +8990,11 @@
       ],
       "Primary admin": [
         "Amministratore principale"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
       ]
     },
     "Users table: single sign-on enabled": {

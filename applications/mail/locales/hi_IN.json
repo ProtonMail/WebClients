@@ -416,6 +416,9 @@
       "exclude message content": [
         "संदेश सामग्री को बाहर निकालें"
       ],
+      "Expand": [
+        "बढा़एं"
+      ],
       "Expand composer": [
         "कंपोजर का विस्तार करें"
       ],
@@ -874,6 +877,9 @@
         "उत्तर सुरक्षित रूप से"
       ],
       "Report a problem": [
+        "समस्या रिपोर्ट करें"
+      ],
+      "Report an issue": [
         "समस्या रिपोर्ट करें"
       ],
       "Report phishing": [
@@ -5027,9 +5033,6 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "ब्राउज़र डेटा साफ़ करने से इस उपकरण पर संदेश सामग्री खोज भी निष्क्रिय हो जाती है। उनमें खोजने के लिए सभी संदेशों को फिर से डाउनलोड करना होगा।"
       ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "डाउनलोड किए गए संदेशों सहित संदेश सामग्री खोज से संबंधित ब्राउज़र डेटा साफ़ करता है"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } पर एक नया सत्यापन कोड भेजने के लिए \"नए कोड का अनुरोध करें\" पर क्लिक करें। यदि यह फ़ोन नंबर गलत है, तो इसे ठीक करने के लिए \"संपादित करें\" पर क्लिक करें।"
       ],
@@ -5102,9 +5105,6 @@
       ],
       "Default email application": [
         "डिफ़ॉल्ट ईमेल आवेदन"
-      ],
-      "Disable message content search": [
-        "संदेश सामग्री खोज अक्षम करें"
       ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
@@ -6867,9 +6867,6 @@
       "New password": [
         "नया पासवर्ड"
       ],
-      "New plan": [
-        "नई योजना"
-      ],
       "No label found": [
         "कोई लेबल नहीं मिला"
       ],
@@ -6902,9 +6899,6 @@
       ],
       "Or": [
         "या"
-      ],
-      "Organization size": [
-        "संगठन का साइज़"
       ],
       "Participants": [
         "प्रतिभागियों"
@@ -8374,6 +8368,20 @@
         "सुरक्षित वॉल्ट साझाकरण"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "संगठन कुंजी मौजूद नहीं है।"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
+      ],
+      "The organization key must be activated first.": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "क्रेडिट/डेबिट कार्ड"
@@ -9246,11 +9254,6 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "आपकी योजना को एक iOS ऐप का उपयोग करके खरीदा गया था। इसलिए, अपनी योजना में बदलाव करने या अपने भुगतान विवरण को अपडेट करने के लिए, आपको Apple App Store पर जाना होगा।"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "के लिए"
       ]
     },
     "Subscription reminder": {

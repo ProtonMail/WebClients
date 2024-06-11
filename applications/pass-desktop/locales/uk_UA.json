@@ -606,7 +606,7 @@
         "Не вдалося відкрити оновлене сховище"
       ],
       "Could not resolve share members": [
-        "Не можна вирішити проблему із доступом учасників"
+        "Не вдалось створити спільний доступ для учасників"
       ],
       "Could not validate addresses at the moment.": [
         "Не вдалося перевірити адреси на цей час."
@@ -659,9 +659,6 @@
       "Failed to delete selected items": [
         "Не вдалося видалити вибрані елементи"
       ],
-      "Failed to edit organization settings": [
-        "Не вдалося змінити налаштування організації"
-      ],
       "Failed to edit user's access.": [
         "Не вдалося змінити доступ користувача."
       ],
@@ -696,7 +693,7 @@
         "Не вдалося перевірити витоки для цієї адреси"
       ],
       "Failed to restore items from trash": [
-        "Не вдалося відновити елементи з смітника"
+        "Не вдалося відновити елементи з кошика"
       ],
       "Failed to transfer this vault's ownership.": [
         "Не вдалося передати володіння сховищем."
@@ -909,6 +906,12 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Font face option": {
@@ -1050,9 +1053,6 @@
       ],
       "Built in 2FA authenticator": [
         "Створений у 2FA автентифікатор"
-      ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "За замовчуванням, члени команди можуть експортувати лише ті сховища, власниками яких вони є. Якщо цю опцію увімкнено, вони не зможуть експортувати жодних даних"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
@@ -1321,9 +1321,6 @@
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
       ],
-      "Organization settings successfully updated": [
-        "Налаштування організації успішно оновлено"
-      ],
       "Owner": [
         "Власник"
       ],
@@ -1456,9 +1453,6 @@
       "Syncing your vaults…": [
         "Синхронізація сховищ…"
       ],
-      "Team members can only share vaults within organization": [
-        "Члени команди можуть ділитися сховищами лише в межах організації"
-      ],
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
       ],
@@ -1515,9 +1509,6 @@
       ],
       "Unverified": [
         "Не підтверджено"
-      ],
-      "Updating organization settings": [
-        "Оновлення налаштувань організації"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Оновіться зараз, щоб розблокувати преміум функції"
@@ -1740,12 +1731,6 @@
       "Device": [
         "Пристрій"
       ],
-      "Disable data export for team members": [
-        "Вимкнути експорт даних для членів команди"
-      ],
-      "Disable sharing outside the organization": [
-        "Вимкнути спільний доступ за межами організації"
-      ],
       "Display": [
         "Показувати"
       ],
@@ -1772,9 +1757,6 @@
       ],
       "Export": [
         "Експорт"
-      ],
-      "Exporting policy": [
-        "Політика експорту"
       ],
       "Field name": [
         "Назва поля"
@@ -1979,9 +1961,6 @@
       ],
       "Set PIN code": [
         "Встановити PIN-код"
-      ],
-      "Sharing policy": [
-        "Правила спільного користування"
       ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"

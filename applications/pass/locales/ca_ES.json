@@ -61,6 +61,9 @@
       "Bulk move items to trash": [
         "Mou en massa els elements a la paperera"
       ],
+      "Bulk restore items from trash": [
+        "Restaura un grup d'elements des de la paperera"
+      ],
       "Bulk select items": [
         "Selecciona elements en massa"
       ],
@@ -341,10 +344,13 @@
         "Esborra el membre"
       ],
       "Request a feature": [
-        "Demana una nova característica"
+        "Demaneu una nova característica"
       ],
       "Resend code": [
         "Reenvia el codi"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Reenvia el codi (en ${ remaining } s)"
       ],
       "Resend invitation": [
         "Reenvia la invitació"
@@ -449,10 +455,10 @@
         "Veure l'historial més antic"
       ],
       "Write us on Reddit": [
-        "Escriu-nos a Reddit"
+        "Escriviu-nos a Reddit"
       ],
       "Write us on Twitter": [
-        "Escriu-nos a Twitter"
+        "Escriviu-nos a Twitter"
       ]
     },
     "bf2023: Label": {
@@ -484,6 +490,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
+        "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
+      ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "L'autenticació de doble factor (A2F) afegeix una altra capa de seguretat als vostres inicis de sessió. ${ PASS_APP_NAME } facilita l'A2F emmagatzemant i omplint automàticament els vostres codis d'A2F."
       ],
@@ -491,10 +501,10 @@
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
       "Change your passwords": [
-        "Canviï les seves contrasenyes"
+        "Canvieu les vostres contrasenyes"
       ],
       "Create unique passwords": [
-        "Creï contrasenyes úniques"
+        "Creeu contrasenyes úniques"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
@@ -521,19 +531,22 @@
         "Aquests elements continuen en risc"
       ],
       "This account is vulnerable, visit the service and change your password.": [
-        "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+        "Aquest compte és vulnerable, visiteu el servei i canvieu la contrasenya."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Desbloquegi característiques de seguretat avançades i registres detallats per protegir la seva presència en línia."
+        "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Amb la supervisió de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Les vostres adreces de correu electrònic s'han filtrat en almenys 1 infracció de dades."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
       ]
     },
     "Error": {
@@ -616,9 +629,6 @@
       "Failed to delete selected items": [
         "No s'han pogut suprimir els elements seleccionats"
       ],
-      "Failed to edit organization settings": [
-        "No s'ha pogut editar la configuració de l'organització"
-      ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
       ],
@@ -633,6 +643,9 @@
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
+      ],
+      "Failed to move items to trash": [
+        "No s'ha pogut moure els elements a la paperera."
       ],
       "Failed to pin item": [
         "No s'ha pogut ancorar l'element."
@@ -879,6 +892,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
+      "Access successfully confirmed": [
+        "S'ha confirmat l'accés."
+      ],
       "Add your custom email address to monitor :": [
         "Afegeixi la vostra adreça electrònica personalitzada per supervisar:"
       ],
@@ -900,6 +916,9 @@
       "All items successfully moved": [
         "S'han mogut tots els elements."
       ],
+      "All trashed items permanently deleted": [
+        "S'han eliminat tots els elements a la paperera de manera permanent."
+      ],
       "All trashed items successfully restored": [
         "S'han restaurat tots els elements a la paperera."
       ],
@@ -918,8 +937,8 @@
       "Breaches detected": [
         "S'han detectat infraccions"
       ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Per defecte, els membres de l'equip només poden exportar les caixes fortes de la seva propietat. Si aquesta opció està activada, no podran exportar cap dada"
+      "Built in 2FA authenticator": [
+        "Autenticador 2FA integrat"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -940,7 +959,7 @@
         "Copiat al porta-retalls"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV ofereix un format còmode per visualitzar les seves dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
+        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
       ],
       "Current version": [
         "Versió actual"
@@ -1136,9 +1155,6 @@
       "Offline mode": [
         "Mode fora de línia"
       ],
-      "Organization settings successfully updated": [
-        "La configuració de l'organització s'ha actualitzat correctament"
-      ],
       "Owner": [
         "Propietari"
       ],
@@ -1161,7 +1177,7 @@
         "Ancorant l'element..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Si us plau, comprovi la seva carpeta de correu brossa o provi de tornar a enviar el codi."
+        "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Confirmeu el codi PIN per a desregistrar el bloqueig actual.\nAixí, ${ PASS_APP_NAME } no es bloquejarà mai."
@@ -1232,14 +1248,11 @@
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
       ],
-      "Team members can only share vaults within organization": [
-        "Els membres de l'equip només poden compartir caixes fortes dins de l'organització"
-      ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
       "The export will only contain vaults that you own.": [
-        "L'exportació només contindrà les caixes fortes de la seva propietat."
+        "L'exportació només contindrà les caixes fortes de la vostra propietat."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
@@ -1284,8 +1297,8 @@
       "Unverified": [
         "Sense verificar"
       ],
-      "Updating organization settings": [
-        "Actualització de la configuració de l'organització"
+      "Upgrade Now to Unlock Premium Features": [
+        "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
@@ -1340,7 +1353,7 @@
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Ha arribat al límit de targetes de crèdit que pot crear. Creï un nombre il·limitat de targetes de crèdit quan millori la seva subscripció."
+        "Heu arribat al límit de targetes de crèdit que podeu crear. Creeu un nombre il·limitat de targetes de crèdit quan milloreu la vostra subscripció."
       ],
       "You have reached the limit of vaults you can create.": [
         "Heu arribat al límit de caixes fortes que podeu crear."
@@ -1500,12 +1513,6 @@
       "Device": [
         "Dispositiu"
       ],
-      "Disable data export for team members": [
-        "Desactivar l'exportació de dades per als membres de l'equip"
-      ],
-      "Disable sharing outside the organization": [
-        "Desactiva la compartició fora de l'organització"
-      ],
       "Display": [
         "Mostra"
       ],
@@ -1532,9 +1539,6 @@
       ],
       "Export": [
         "Exporta"
-      ],
-      "Exporting policy": [
-        "Política d'exportació"
       ],
       "Field name": [
         "Nom del camp"
@@ -1692,6 +1696,9 @@
       "Password history": [
         "Historial de les contrasenyes"
       ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON xifrat amb PGP (recomanat)"
+      ],
       "PIN": [
         "Codi PIN"
       ],
@@ -1736,9 +1743,6 @@
       ],
       "Set PIN code": [
         "Establir codi PIN"
-      ],
-      "Sharing policy": [
-        "Política de compartició"
       ],
       "Show website favicons": [
         "Mostra els favicons del lloc web"
@@ -1964,7 +1968,7 @@
         "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Torneu a escriure \"${ vaultName }\" per confirmar la supressió"
+        "Torneu a escriure \"${ vaultName }\" per confirmar l'eliminació"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cerca ${ pluralItemType } a ${ vaultName }"
@@ -2034,7 +2038,7 @@
         "Actualització del bloqueig automàtic"
       ],
       "Breach detected": [
-        "Infracció detectada"
+        "S'ha detectat una violació de les dades"
       ],
       "Breaches": [
         "Infraccions"
@@ -2184,7 +2188,7 @@
         "Contrasenya"
       ],
       "Password Health": [
-        "Salut de la contrasenya"
+        "Salut de les contrasenyes"
       ],
       "Pause monitoring?": [
         "Posar en pausa la supervisió?"
@@ -2230,13 +2234,16 @@
         "Estableix el nivell d`accés"
       ],
       "Set up 2FA for better security": [
-        "Configuri 2FA per a major seguretat"
+        "Configureu A2F per a major seguretat"
       ],
       "Set up 2FA for more security": [
         "Configureu A2F per a més seguretat"
       ],
       "Settings": [
         "Preferències"
+      ],
+      "Share vaults with your team": [
+        "Compartiu caixes fortes amb el vostre equip"
       ],
       "Share with": [
         "Comparteix amb"

@@ -394,6 +394,9 @@
       "Download CSV sample": [
         "Lataa CSV-näyte"
       ],
+      "Download Desktop App": [
+        "Lataa työpöytäsovellus"
+      ],
       "Download ICS": [
         "Lataa ICS-tiedosto"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "Ei kiitos"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3918,6 +3921,9 @@
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
+      "Alias options could not be resolved": [
+        "Aliasvaihtoehtoja ei voitu selvittää"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
       ],
@@ -3959,6 +3965,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
+      "Could not open created vault": [
+        "Luotua holvia ei voitu avata"
+      ],
+      "Could not open updated vault": [
+        "Muuttunutta holvia ei voitu avata"
       ],
       "Could not save preference": [
         "Asetusta ei voitu tallentaa"
@@ -4081,6 +4093,9 @@
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -6030,17 +6045,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -7605,9 +7609,6 @@
       "Single sign-on removed": [
         "Kertakirjautuminen poistettiin"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-lähetys mahdollistaa sähköpostin lähettämisen ulkoisten palvelujen tai laitteiden ${ MAIL_APP_NAME }n avulla omasta verkkotunnuksestasi. Saadaksesi toiminnon käyttöön, ${ createTicket } jossa kuvailet käyttötarpeen, mitä verkkotunnuksia haluat käyttää, sekä arviosi lähetettävistä sähköpostimääristä tunneittain ja päivittäin."
       ],
@@ -8464,6 +8465,17 @@
       ],
       "Zoom meeting": [
         "Zoom-tapaamista"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9485,9 +9497,6 @@
       "New password": [
         "Uusi salasana"
       ],
-      "New plan": [
-        "Uusi tilaus"
-      ],
       "No filter": [
         "Ei suodatusta"
       ],
@@ -9535,9 +9544,6 @@
       ],
       "Organization password": [
         "Organisaation salasana"
-      ],
-      "Organization size": [
-        "Organisaation koko"
       ],
       "Other amount": [
         "Muu summa"
@@ -11454,6 +11460,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Näet kokoukseen osallistujien tavoitettavuuden ja säästät aikaa kokousten suunnittelussa."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Lähetä viestejä suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
@@ -13981,49 +13990,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Hintaan"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
+      "For ${ totalPrice }": [
+        "Käyttöjärjestelmä: ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14106,6 +14074,9 @@
       "Custom schedule send and snooze times": [
         "Mukautetut lähetys- ja torkutusajat"
       ],
+      "Direct contribution to our mission": [
+        "Tukee tehtäväämme suoraan"
+      ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
       ],
@@ -14160,6 +14131,9 @@
       "Reactivate": [
         "Uudelleenaktivoi"
       ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi aktivoimalla uudelleen."
+      ],
       "Read the story": [
         "Lue juttu"
       ],
@@ -14213,6 +14187,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -15370,9 +15385,6 @@
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
-      "Personalise your e-mail footer": [
-        "Mukauta viestiesi alatunnistetta"
-      ],
       "Phone": [
         "Puhelin"
       ],
@@ -16281,6 +16293,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Lokikirjauksen käytöstäpoiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Erääntymisaika ei ole muodossa KK/VV"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jos perut tuonnin, et voi jatkaa sitä. ${ BRAND_NAME } tallensi tilanteen tilillesi. Perutaanko tuonti silti?"

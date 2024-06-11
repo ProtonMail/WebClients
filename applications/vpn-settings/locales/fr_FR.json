@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price } par utilisateur"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture",
+        "${ seats } accès à l'assistant d'écriture"
+      ],
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
@@ -4231,6 +4235,12 @@
       "Would you like to receive a new verification code?": [
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant add-on": [
+        "Extension Assistant d'écriture"
+      ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
       ],
@@ -4420,6 +4430,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Lecture seule"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Invoice state display as badge": {
@@ -4760,9 +4775,6 @@
       "New password": [
         "Nouveau mot de passe"
       ],
-      "New plan": [
-        "Nouvel abonnement"
-      ],
       "No filter": [
         "Aucun filtre"
       ],
@@ -4792,9 +4804,6 @@
       ],
       "Organization password": [
         "Mot de passe de l'organisation"
-      ],
-      "Organization size": [
-        "Taille de l’organisation"
       ],
       "Other amount": [
         "Autre montant"
@@ -5017,6 +5026,9 @@
       ],
       "Add gift code": [
         "Ajouter un code-cadeau"
+      ],
+      "Add to your subscription": [
+        "Ajouter à votre abonnement"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
@@ -5615,6 +5627,9 @@
       "Router support": [
         "Prise en charge des routeurs"
       ],
+      "Save time emailing": [
+        "Gagner du temps lors de l'envoi de vos messages"
+      ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
       ],
@@ -5729,7 +5744,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage des utilisateurs"
+        "Gestion de l'espace de stockage de l'utilisateur"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -7335,7 +7350,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'abonnement"
+        "Passez à Premium"
       ]
     },
     "specialoffer: Offers": {
@@ -7657,8 +7672,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Pour"
+      "For ${ totalPrice }": [
+        "Pour ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8933,6 +8948,11 @@
       ],
       "Primary admin": [
         "Administrateur principal"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
       ]
     },
     "Users table: single sign-on enabled": {

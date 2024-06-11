@@ -385,6 +385,9 @@
       "Download CSV sample": [
         "CSV-voorbeeld downloaden"
       ],
+      "Download Desktop App": [
+        "Desktop-app downloaden"
+      ],
       "Download ICS": [
         "ICS downloaden"
       ],
@@ -679,11 +682,11 @@
       "No, thanks": [
         "Nee, bedankt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -3862,6 +3865,9 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
+      "Alias options could not be resolved": [
+        "Alias-opties konden niet worden opgevraagd"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
@@ -3903,6 +3909,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Kon facturen niet laden, probeer het later nog een keer."
+      ],
+      "Could not open created vault": [
+        "Kon aangemaakte kluis niet openen"
+      ],
+      "Could not open updated vault": [
+        "Kon bijgewerkte kluis niet openen"
       ],
       "Could not save preference": [
         "Kon voorkeuren niet opslaan"
@@ -4025,6 +4037,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Item mag niet groter zijn dan 40KB"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
@@ -5968,17 +5983,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -7528,9 +7532,6 @@
       "Single sign-on removed": [
         "Single sign-on verwijderd"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Versturen via SMTP laat derde partijen of apparaten toe om e-mail te sturen via ${ MAIL_APP_NAME } voor uw eigen domeinnamen. Deze functie is enkel beschikbaar voor ${ BRAND_NAME } voor zakelijke gebruikers met eigen domeinnamen."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Met SMTP-indiening kunnen services of apparaten van derden e-mail verzenden via ${ MAIL_APP_NAME } voor uw aangepaste domeinadressen. Om toegang aan te vragen, ${ createTicket } met een beschrijving van uw gebruiksscenario's, welke aangepaste domeinen u wilt gebruiken en verwachte e-mailvolumes per uur en per dag."
       ],
@@ -8372,6 +8373,17 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9387,9 +9399,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New plan": [
-        "Nieuw plan"
-      ],
       "No filter": [
         "Geen filter"
       ],
@@ -9434,9 +9443,6 @@
       ],
       "Organization password": [
         "Organisatiewachtwoord"
-      ],
-      "Organization size": [
-        "Grootte van de organisatie"
       ],
       "Other amount": [
         "Ander bedrag"
@@ -13799,49 +13805,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Voor"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -13932,6 +13897,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -15086,9 +15092,6 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
-      "Personalise your e-mail footer": [
-        "Personaliseer de voettekst van uw e-mail"
-      ],
       "Phone": [
         "Telefoon"
       ],
@@ -15988,6 +15991,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Door de logboeken uit te schakelen, verwijdert u ook de gehele logboekgeschiedenis. Weet u zeker dat u de logboeken wilt uitschakelen?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Vervaldatum is niet in het formaat MM/JJ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"

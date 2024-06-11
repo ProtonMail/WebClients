@@ -390,6 +390,9 @@
       "New": [
         "Novo"
       ],
+      "New folder": [
+        "Nova mapa"
+      ],
       "New message": [
         "Nova poruka"
       ],
@@ -676,6 +679,11 @@
         "Smanji"
       ]
     },
+    "Action subscription": {
+      "Reactivate": [
+        "Ponovo aktiviraj"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ili ${ importContact }."
@@ -890,6 +898,9 @@
       "enzian": [
         "gorčica"
       ],
+      "fern": [
+        "paprat"
+      ],
       "forest": [
         "šuma"
       ],
@@ -905,6 +916,9 @@
       "pickle": [
         "kiseli krastavac"
       ],
+      "pine": [
+        "bor"
+      ],
       "pink": [
         "ružičasta"
       ],
@@ -914,11 +928,17 @@
       "purple": [
         "ljubičasta"
       ],
+      "reef": [
+        "greben"
+      ],
       "sahara": [
         "sahara"
       ],
       "slateblue": [
         "škriljevac plava"
+      ],
+      "soil": [
+        "tlo"
       ],
       "strawberry": [
         "jagoda"
@@ -1852,6 +1872,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Ažuriranje događaja s početkom ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -3427,9 +3452,6 @@
       "New password": [
         "Nova lozinka"
       ],
-      "New plan": [
-        "Novi plan"
-      ],
       "Note": [
         "Bilješka"
       ],
@@ -3594,6 +3616,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Za: ${ to }"
       ]
     },
     "Link": {
@@ -3633,9 +3658,19 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saznajte više"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Omogući ${ reason }"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Special Offer": [
+        "Posebna ponuda"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -3657,11 +3692,47 @@
       ]
     },
     "Mimetype": {
+      "AAC audio": [
+        "AAC zvuk"
+      ],
+      "Audio file": [
+        "Zvučne datoteke"
+      ],
+      "AVI video": [
+        "AVI video datoteka"
+      ],
       "Image": [
         "Slika"
       ],
+      "MP3 audio": [
+        "MP3 zvuk"
+      ],
+      "MPEG Video": [
+        "MPEG video datoteka"
+      ],
+      "OGG audio": [
+        "OGG zvuk"
+      ],
+      "OGG video": [
+        "OGG video datoteka"
+      ],
+      "Opus audio": [
+        "Opus zvuk"
+      ],
       "Text": [
         "Tekst"
+      ],
+      "Video file": [
+        "Video datoteke"
+      ],
+      "WEBM audio": [
+        "WEBM zvuk"
+      ],
+      "WEBM video": [
+        "WEBM video datoteka"
+      ],
+      "WEBP image": [
+        "WEBP slika"
       ]
     },
     "New Label form": {
@@ -3911,6 +3982,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "Razumijem"
+      ],
       "Next": [
         "Sljedeće"
       ],
@@ -4120,6 +4194,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Stvori pseudonim"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Otvori ${ PASS_APP_NAME }"
       ]
@@ -4367,17 +4444,15 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
-    "Subscription price": {
-      "For": [
-        "Za"
-      ]
-    },
     "Subscription reminder": {
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
       "10 email addresses": [
         "10 adrese e-pošte"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -4389,6 +4464,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ]
     },
     "Subscription renewal state": {
@@ -5030,6 +5108,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
+      ],
+      "Load image": [
+        "Učitaj sliku"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"

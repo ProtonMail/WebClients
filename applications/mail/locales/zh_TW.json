@@ -415,6 +415,9 @@
       "exclude message content": [
         "排除訊息内容"
       ],
+      "Expand": [
+        "展開"
+      ],
       "Expand composer": [
         "展開撰寫工具"
       ],
@@ -453,6 +456,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Generate text": [
+        "生成文本"
       ],
       "Get in touch": [
         "保持聯絡"
@@ -832,6 +838,9 @@
       "Print": [
         "列印"
       ],
+      "Proofread": [
+        "校閱"
+      ],
       "Quit": [
         "退出"
       ],
@@ -898,6 +907,9 @@
       "Report a problem": [
         "回報問題"
       ],
+      "Report an issue": [
+        "回報問題"
+      ],
       "Report phishing": [
         "回報網路釣魚"
       ],
@@ -928,11 +940,17 @@
       "Resume": [
         "繼續"
       ],
+      "Resume downloading": [
+        "繼續下載"
+      ],
       "Retry": [
         "重試"
       ],
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "於伺服器執行${ BRAND_NAME }"
       ],
       "Save": [
         "儲存"
@@ -1348,6 +1366,9 @@
       "${ price } per user": [
         "每使用者${ price }"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats }撰寫幫手就位"
+      ],
       "${ users } user": [
         "${ users } 個使用者"
       ]
@@ -1419,6 +1440,34 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "瀏覽器不支援 "
+      ],
+      "Fast and secure": [
+        "快及安全"
+      ],
+      "Needs compatible hardware": [
+        "須兼容裝置"
+      ],
+      "No logs": [
+        "無紀錄"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "於伺服器執行${ BRAND_NAME }"
+      ],
+      "Runs on all devices": [
+        "於所有裝置皆可使用"
+      ],
+      "Runs on your device": [
+        "於您的裝置執行"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "不支援硬體"
       ]
     },
     "Attached ics file error": {
@@ -1930,6 +1979,11 @@
       ],
       "Cancel expiration": [
         "取消過期"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "重新啟用訂閱"
       ]
     },
     "Checkout row": {
@@ -3887,6 +3941,9 @@
       "Tab closed": [
         "分頁已關閉"
       ],
+      "Thanks for the feedback!": [
+        "感謝您的回饋意見！"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "附件未能解密。\n若您持有對應的私密金鑰，您仍可使用\n像是 GnuPG 的程式來解密檔案。"
       ],
@@ -4875,11 +4932,23 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Hardware not compatible": [
+        "不支援硬體"
+      ],
+      "Resume downloading": [
+        "繼續下載"
+      ],
       "Search": [
         "搜尋"
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Set up the writing assistant": [
+        "設定寫作幫手"
+      ],
+      "Tell us more": [
+        "請詳細說明"
       ]
     },
     "Hint": {
@@ -5511,6 +5580,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
       ],
+      "Browser not supported": [
+        "瀏覽器不支援"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
@@ -5535,6 +5607,9 @@
       "Clear app data": [
         "清除應用程式資料"
       ],
+      "Clear browser data": [
+        "清除瀏覽器資料"
+      ],
       "Clear data": [
         "清除資料"
       ],
@@ -5543,9 +5618,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "清除瀏覽器資料也會停用此裝置上的訊息內容搜尋。所有訊息都將必須再次下載才能搜尋。"
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "清除關於訊息內容搜尋的瀏覽器資料，其中包含已下載的訊息"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -5627,9 +5699,6 @@
       ],
       "Default email application": [
         "預設郵件應用程式"
-      ],
-      "Disable message content search": [
-        "停用郵件內容搜尋"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -5781,8 +5850,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
+      "Free for 14 days": [
+        "免費體驗 14 天"
+      ],
       "From": [
         "寄件人"
+      ],
+      "Generate text": [
+        "生成文本"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "有 ${ numAttachments } 個附件 (${ numAttachmentsSize })"
@@ -5862,6 +5937,9 @@
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
+      "Initializing…": [
+        "正在初始化 ..."
+      ],
       "Insert image": [
         "插入圖像"
       ],
@@ -5903,6 +5981,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Learn more about ${ PrivacyLink }": [
+        "了解更多${ PrivacyLink }"
       ],
       "Left to Right": [
         "由左至右"
@@ -6171,6 +6252,12 @@
       "Print email": [
         "列印電郵"
       ],
+      "Proofread selection": [
+        "校閱段落"
+      ],
+      "Proofread text": [
+        "校閱文字"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
       ],
@@ -6183,8 +6270,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "請刪除這應用程式所有相關數據, 包括已下載訊息"
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "請刪除這應用程式與相關資料(包括已下載訊息…)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
@@ -6278,6 +6365,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
+      ],
+      "Shorten selection": [
+        "縮短段落"
+      ],
+      "Shorten text": [
+        "縮短文字"
       ],
       "Show original message": [
         "顯示原始訊息"
@@ -6704,6 +6797,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "您想要收到新的驗證碼嗎？"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
+      ],
+      "Writing assistant add-on": [
+        "撰寫幫手添加"
       ],
       "Yearly": [
         "每年"
@@ -7359,6 +7458,9 @@
       "Don't ask again": [
         "不要再次詢問"
       ],
+      "Don't like the style": [
+        "不喜歡此風格"
+      ],
       "Don't show this again": [
         "不再顯示此內容"
       ],
@@ -7524,9 +7626,6 @@
       "New password": [
         "新密碼"
       ],
-      "New plan": [
-        "新方案"
-      ],
       "No label found": [
         "找不到標籤"
       ],
@@ -7559,9 +7658,6 @@
       ],
       "Or": [
         "或"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Original link": [
         "原始鏈接"
@@ -8511,6 +8607,9 @@
       "Document editors (docs, sheets, slides)": [
         "文件編輯程式 (圖文檔、工作表、簡報)"
       ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "文件編輯程式 (圖文檔、工作表、簡報)(將至)"
+      ],
       "Double hop": [
         "Double hop"
       ],
@@ -8711,6 +8810,9 @@
       ],
       "User session management": [
         "使用者作業階段管理"
+      ],
+      "User storage management": [
+        "使用者儲存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管共享(每人至多${ n })"
@@ -9095,6 +9197,12 @@
       ],
       "Senders blocked": [
         "寄件者已攔截"
+      ],
+      "The writing assistant is ready to use": [
+        "撰寫幫手已可使用"
+      ],
+      "Trial started": [
+        "試用開始"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9259,6 +9367,17 @@
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "組織金鑰不存在。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "權限被拒，系統管理員權限受限。"
+      ],
+      "The organization key must be activated first.": [
+        "必須先啟用組織金鑰。"
       ]
     },
     "Payment method option": {
@@ -10400,8 +10519,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "為"
+      "For ${ totalPrice }": [
+        "${ totalPrice } 版"
       ]
     },
     "Subscription reminder": {
@@ -10419,6 +10538,9 @@
       ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "Add any new files": [
+        "新增任何檔案"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -10438,6 +10560,9 @@
       "Learn more about our impact": [
         "了解更多我們的影響"
       ],
+      "Manage your calendar": [
+        "管理您的行事曆"
+      ],
       "Online privacy, for your whole family": [
         "您整個家庭的線上隱私"
       ],
@@ -10449,6 +10574,9 @@
       ],
       "Read the story": [
         "已讀的訊息"
+      ],
+      "Sync files on devices": [
+        "於裝置同步"
       ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"

@@ -948,6 +948,10 @@
       "${ price } per user": [
         "${ price } por usuario"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
+      ],
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
@@ -3958,6 +3962,9 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Available": [
+        "Disponible"
+      ],
       "Awaiting transaction": [
         "Esperando la transacción"
       ],
@@ -5131,6 +5138,12 @@
       "Would you like to restore your files?": [
         "¿Quiere restaurar los archivos?"
       ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant add-on": [
+        "Complemento del asistente de escritura"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -5327,6 +5340,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
     "Item": {
@@ -5734,9 +5752,6 @@
       "New password": [
         "Contraseña nueva"
       ],
-      "New plan": [
-        "Plan nuevo"
-      ],
       "Note": [
         "Nota"
       ],
@@ -5754,9 +5769,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Organization size": [
-        "Tamaño de la organización"
       ],
       "Other": [
         "Otro"
@@ -6706,6 +6718,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Generar correos electrónicos solo con una indicación"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -6764,6 +6779,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your texts": [
+        "Corregir y perfeccionar sus textos"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
@@ -6771,11 +6789,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
       ],
+      "Reply to messages": [
+        "Responder a mensajes"
+      ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
       ],
       "Router support": [
         "Soporte para enrutadores"
+      ],
+      "Save time emailing": [
+        "Ahorre tiempo enviando correos electrónicos"
       ],
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
@@ -7095,7 +7119,7 @@
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Increase or reallocate storage for a user": [
-        "Incremente o reasigne almacenamiento para un usuario"
+        "Aumentar o reasignar almacenamiento para un usuario"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenga privados sus planes y los de su familia con un calendario cifrado"
@@ -7546,6 +7570,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "Entendido"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -7556,6 +7583,12 @@
     "Onboarding Info": {
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "¡Comience a usar ${ DRIVE_APP_NAME } y mejoraremos el almacenamiento a 5 GB!"
+      ],
+      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
+        "Invite a otros a través de correo electrónico a ver y editar sus archivos de ${ DRIVE_APP_NAME }"
+      ],
+      "Private Access Sharing": [
+        "Compartición de acceso privado"
       ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
@@ -8580,8 +8613,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Al"
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9468,6 +9501,9 @@
       ],
       "Processing...": [
         "Procesando..."
+      ],
+      "Public shared link status": [
+        "Estado del enlace público compartido"
       ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
