@@ -1,7 +1,7 @@
 export enum OnboardingMessage {
     WELCOME /* welcome to Proton Pass */,
     TRIAL,
-    SECURE_EXTENSION /* ask user to create a PIN */,
+    SECURE_EXTENSION /* ask user to create a lock */,
     UPDATE_AVAILABLE /* update is available - reload required */,
     PERMISSIONS_REQUIRED /* permissions grant is insufficient */,
     USER_RATING /* ask user for a rating */,

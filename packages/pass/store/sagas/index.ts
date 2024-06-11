@@ -4,11 +4,10 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
-import sessionLockDisable from './auth/session-lock-disable.saga';
-import sessionLockEnable from './auth/session-lock-enable.saga';
-import sessionLockImmediate from './auth/session-lock-immediate.saga';
-import sessionUnlock from './auth/session-unlock.saga';
+import lockCreate from './auth/lock-create.saga';
+import lock from './auth/lock.saga';
 import signout from './auth/signout.saga';
+import unlock from './auth/unlock.saga';
 import boot from './client/boot.saga';
 import cache from './client/cache.saga';
 import notification from './client/notification.saga';
@@ -91,14 +90,12 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemsImport,
             itemTrash,
             itemUnpin,
+            lock,
+            lockCreate,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
             reportProblem,
-            sessionLockDisable,
-            sessionLockEnable,
-            sessionLockImmediate,
-            sessionUnlock,
             settings,
             shareAccessOptions,
             shareEditRole,
@@ -108,6 +105,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             sync,
             trashDelete,
             trashRestore,
+            unlock,
             userAccess,
             userSettings,
             vaultCreation,

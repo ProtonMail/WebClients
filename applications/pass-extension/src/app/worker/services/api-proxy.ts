@@ -9,10 +9,10 @@ import {
     cleanCache,
     clearCache,
     getCache,
-    getMaxAgeHeaders,
     shouldRevalidate,
+    withMaxAgeHeaders,
 } from '@proton/pass/lib/api/cache';
-import { fetchController } from '@proton/pass/lib/api/fetch-controller';
+import { createNetworkError, fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
 import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
@@ -20,6 +20,7 @@ import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import noop from '@proton/utils/noop';
 
 export type APIProxyOptions = {
     apiUrl: string;
@@ -37,7 +38,7 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
     const cache = await getCache();
 
     const url = new URL(`${API_URL}${remotePath}`);
-    const cachedResponse = await cache.match(url);
+    const cachedResponse = await cache?.match(url).catch(noop);
 
     if (cachedResponse && !shouldRevalidate(cachedResponse)) {
         logger.debug(`[CacheProxy] Serving GET ${url} from cache without revalidation`);
@@ -51,23 +52,23 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
         output: 'raw',
         method: request.method,
         signal,
+        sideEffects: false,
     })
         .then(async (res) => {
             logger.debug('[CacheProxy] Caching succesful network response', res.url);
-
-            if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
-                void cache.put(url, res.clone());
-                return res;
-            } else if (res.ok) {
+            if (res.ok) {
                 /* max-age is set to 0 on image responses from BE: this is sub-optimal in
                  * the context of the extension -> override the max-age header. */
-                const response = new Response(await res.blob(), {
-                    status: res.status,
-                    statusText: res.statusText,
-                    headers: getMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
-                });
+                const response = new Response(
+                    API_BODYLESS_STATUS_CODES.includes(res.status) ? null : await res.blob(),
+                    {
+                        status: res.status,
+                        statusText: res.statusText,
+                        headers: withMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
+                    }
+                );
 
-                void cache.put(url, response.clone());
+                void cache?.put(url, response.clone())?.catch(noop);
                 return response;
             } else throw new Error();
         })
@@ -82,18 +83,15 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
                 const response = new Response('Unprocessable Content', {
                     status: res.status,
                     statusText: res.statusText,
-                    headers: getMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
+                    headers: withMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
                 });
 
-                void cache.put(url, response.clone());
+                void cache?.put(url, response.clone()).catch(noop);
                 return response;
             }
 
             logger.debug(`[CacheProxy] Network or API error while fetching ${url}`, err);
-            return new Response('Network error', {
-                status: 408,
-                headers: { 'Content-Type': 'text/plain' },
-            });
+            return createNetworkError(408);
         });
 
     /* FIXME: stale-while-revalidate window should be computed */
@@ -110,6 +108,8 @@ export const createApiProxyService = () => {
     const canLoadDomainImages = () => selectCanLoadDomainImages(store.getState());
 
     if (BUILD_TARGET === 'chrome') {
+        const fetchController = fetchControllerFactory();
+
         WorkerMessageBroker.registerMessage(WorkerMessageType.FETCH_ABORT, ({ payload }) => {
             fetchController.abort(payload.requestId);
             return true;

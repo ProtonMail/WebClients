@@ -7,11 +7,16 @@ const FOCUS_CHECK_DELAY = 10;
 export const isDocumentVisible = () => document.visibilityState === 'visible';
 export const isDocumentFocused = () => document.hasFocus();
 
-export const useVisibleEffect = (effect: (visible: boolean) => void) => {
+export const useVisibleEffect = (effect: (visible: boolean) => void, deps: any[] = []) => {
     const timer = useRef<Maybe<NodeJS.Timeout>>();
     const active = useRef<boolean>(false);
 
+    const onVisibilityChange = useRef(effect);
+    onVisibilityChange.current = effect;
+
     useEffect(() => {
+        active.current = false;
+
         const handler = () => {
             clearTimeout(timer.current);
             timer.current = setTimeout(() => {
@@ -20,7 +25,7 @@ export const useVisibleEffect = (effect: (visible: boolean) => void) => {
 
                 if (wasActive !== isActive) {
                     active.current = isActive;
-                    effect(isActive);
+                    onVisibilityChange.current(isActive);
                 }
             }, FOCUS_CHECK_DELAY);
         };
@@ -37,5 +42,5 @@ export const useVisibleEffect = (effect: (visible: boolean) => void) => {
             document.removeEventListener('visibilitychange', handler);
             return clearTimeout(timer.current);
         };
-    }, []);
+    }, deps);
 };

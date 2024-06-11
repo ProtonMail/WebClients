@@ -1,38 +1,30 @@
-import { put, select, takeLatest } from 'redux-saga/effects';
+import { put, select } from 'redux-saga/effects';
 
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
+import { DESKTOP_BUILD } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
-import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
+import { getPassPlan } from '@proton/pass/lib/user/user.plan';
+import { isPaidPlan, userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
-import {
-    cacheCancel,
-    cacheRequest,
-    startEventPolling,
-    stateHydrate,
-    stateSync,
-    stopEventPolling,
-} from '@proton/pass/store/actions';
+import { stateHydrate } from '@proton/pass/store/actions';
 import { migrate } from '@proton/pass/store/migrate';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectLocale } from '@proton/pass/store/selectors';
+import type { SettingsState } from '@proton/pass/store/reducers/settings';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
  * If `true` they will be by-passed - else you can pass a custom error
  * generator function that will be triggered */
 type HydrateCacheOptions = {
     allowFailure: boolean;
-    loginPassword?: string;
     merge: (existing: State, incoming: State) => State;
     onError?: () => Generator;
 };
@@ -43,10 +35,10 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
     try {
         const authStore = getAuthStore();
         const keyPassword = authStore.getPassword();
-        const { loginPassword, allowFailure } = config;
+        const { allowFailure } = config;
 
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
-        const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore, loginPassword);
+        const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore);
 
         const cache: Maybe<PassCache> = cacheKey
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
@@ -68,9 +60,22 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         /** Note: Settings may have been modified offline, thus they might not align
          * with the cached state settings. Since caching requests cannot be triggered
          * when offline, it's essential to synchronize the initial settings accordingly */
-        const settings: Partial<ProxiedSettings> = (yield getSettings()) ?? {};
+        const settings: Partial<SettingsState> = (yield getSettings()) ?? {};
         settings.locale = cache?.state.settings.locale ?? userState.userSettings?.Locale;
         settings.beta = BUILD_TARGET === 'web' && sanitizeBetaSetting(settings.beta);
+        settings.lockTTL = authStore.getLockTTL();
+        settings.lockMode = authStore.getLockMode();
+
+        /** Activate offline mode by default for paid users who
+         * haven't touched the `offlineEnabled` setting yet */
+        if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
+            const supported = DESKTOP_BUILD || (userState.features.PassWebOfflineMode ?? false);
+            const plan = getPassPlan(userState.plan);
+            const paid = isPaidPlan(plan);
+            const hasOfflinePassword = authStore.hasOfflinePassword();
+            const autoEnableOffline = settings.offlineEnabled === undefined && supported && paid && hasOfflinePassword;
+            settings.offlineEnabled = autoEnableOffline || settings.offlineEnabled;
+        }
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
@@ -90,37 +95,4 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         yield config.onError?.();
         return false;
     }
-}
-
-function* hydrateWorker(options: RootSagaOptions) {
-    yield put(stopEventPolling());
-    yield put(cacheCancel());
-
-    /* Throttle the cache hydration in case multiple
-     * requests are made concurrently, e.g., when
-     * the user is rapidly switching tabs. Ideally, we should
-     * implement a real caching mutex via the service worker
-     * to avoid this and the error handling below. */
-    yield wait(500);
-
-    yield hydrate(
-        {
-            allowFailure: false,
-            merge: (_, incoming) => incoming,
-            onError: function* onError() {
-                /** FIXME: If hydrating from cache failed during a state sync : encryption
-                 * scheme may have changed, as such trigger a cache request immediately */
-                yield put(cacheRequest({ throttle: false }));
-            },
-        },
-        options
-    );
-
-    /* locale may have been updated */
-    options.onLocaleUpdated?.(yield select(selectLocale));
-    yield put(startEventPolling());
-}
-
-export default function* watcher(options: RootSagaOptions) {
-    yield takeLatest(stateSync.match, hydrateWorker, options);
 }

@@ -1,7 +1,8 @@
 import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
-import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
+import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
+import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
@@ -22,7 +23,6 @@ import type { TransferableFile } from '@proton/pass/utils/file/transferable-file
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { SessionLockStatus } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, AliasOptions, SelectedItem, UniqueItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -132,8 +132,8 @@ export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { u
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
-export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
-export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
+export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
+export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG };
 export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, AutofillOptions>;
@@ -261,10 +261,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
     [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
-    [WorkerMessageType.AUTH_CHECK]: Result<{ status: SessionLockStatus }, {}>;
+    [WorkerMessageType.AUTH_CHECK]: Result<{ locked: boolean }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
-    [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { canRetry: boolean }>;
+    [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: FormCredentials;

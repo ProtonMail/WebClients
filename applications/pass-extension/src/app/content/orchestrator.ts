@@ -18,13 +18,10 @@ import debounce from '@proton/utils/debounce';
 
 import { DOMCleanUp } from './injections/cleanup';
 
+const probe = createActivityProbe();
 const listeners = createListenerStore();
-let clientLoaded: boolean = false;
 
-const probe = createActivityProbe(
-    async () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING })),
-    25_000
-);
+let clientLoaded: boolean = false;
 
 /* The `unregister` function is responsible for removing all event listeners
  * that are associated with the orchestrator. This may occur when the extension
@@ -51,7 +48,7 @@ const unloadClient = async () => {
  * regulate the execution frequency and avoid starting the script unnecessarily */
 const registerClient = debounce(
     asyncLock(async () => {
-        probe.start();
+        probe.start(() => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING })), 25_000);
 
         clientLoaded = await Promise.resolve(
             clientLoaded ||

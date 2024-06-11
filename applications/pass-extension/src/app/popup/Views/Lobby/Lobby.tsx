@@ -14,6 +14,7 @@ import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 export const Lobby: FC = () => {
     const { openSettings } = usePassCore();
@@ -39,6 +40,7 @@ export const Lobby: FC = () => {
                 status={state.status}
                 onLogin={handleLogin}
                 onLogout={logout}
+                onOffline={noop}
                 onRegister={handleRegister}
                 renderError={() => (
                     <PromptForReload

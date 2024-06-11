@@ -15,12 +15,15 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { clientSessionLocked } from '@proton/pass/lib/client';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -29,7 +32,7 @@ import {
     selectTrialDaysRemaining,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Developer } from './Views/Developer';
@@ -85,62 +88,64 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     if (context.state.loggedIn) {
         return (
-            <>
-                <div className="mb-8">
-                    <div className="flex w-full justify-space-between items-start">
-                        <div className="flex items-start">
-                            <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
-                            <span>
-                                <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
-                                <span className="block text-sm text-ellipsis">{user?.Email}</span>
-                                <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
-                            </span>
-                        </div>
-                        <div className="flex items-end flex-column">
-                            {!isPaidPlan(passPlan) && (
-                                <>
-                                    <span className="block mb-1">
-                                        {planDisplayName}
-                                        <span className="color-weak text-italic text-sm">
-                                            {' '}
-                                            {trialDaysLeft &&
-                                                `(${c('Info').ngettext(
-                                                    msgid`${trialDaysLeft} day left`,
-                                                    `${trialDaysLeft} days left`,
-                                                    trialDaysLeft
-                                                )})`}
+            <PasswordUnlockProvider>
+                <PinUnlockProvider>
+                    <div className="mb-8">
+                        <div className="flex w-full justify-space-between items-start">
+                            <div className="flex items-start">
+                                <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
+                                <span>
+                                    <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
+                                    <span className="block text-sm text-ellipsis">{user?.Email}</span>
+                                    <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
+                                </span>
+                            </div>
+                            <div className="flex items-end flex-column">
+                                {!isPaidPlan(passPlan) && (
+                                    <>
+                                        <span className="block mb-1">
+                                            {planDisplayName}
+                                            <span className="color-weak text-italic text-sm">
+                                                {' '}
+                                                {trialDaysLeft &&
+                                                    `(${c('Info').ngettext(
+                                                        msgid`${trialDaysLeft} day left`,
+                                                        `${trialDaysLeft} days left`,
+                                                        trialDaysLeft
+                                                    )})`}
+                                            </span>
                                         </span>
-                                    </span>
-                                    <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
-                                </>
-                            )}
+                                        <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
+                                    </>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <Tabs
-                    className="w-full"
-                    contentClassName="p-0"
-                    navContainerClassName="mb-6"
-                    onChange={handleOnChange}
-                    tabs={tabs}
-                    value={activeTab}
-                />
+                    <Tabs
+                        className="w-full"
+                        contentClassName="p-0"
+                        navContainerClassName="mb-6"
+                        onChange={handleOnChange}
+                        tabs={tabs}
+                        value={activeTab}
+                    />
 
-                <div className="mt-auto">
-                    <hr />
-                    <span className="block text-sm color-weak text-center">
-                        {PASS_APP_NAME} v{APP_VERSION}
-                    </span>
-                </div>
-            </>
+                    <div className="mt-auto">
+                        <hr />
+                        <span className="block text-sm color-weak text-center">
+                            {PASS_APP_NAME} v{APP_VERSION}
+                        </span>
+                    </div>
+                </PinUnlockProvider>
+            </PasswordUnlockProvider>
         );
     }
 
     return (
         <div className="flex flex-column items-center justify-center my-auto">
             <Icon name="lock-filled" size={10} className="mb-4" />
-            {context.state.status === AppStatus.LOCKED && (
+            {clientSessionLocked(context.state.status) && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>
                     <span className="block text-sm color-weak">{c('Info')
@@ -153,10 +158,11 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
 const SettingsApp: FC = () => {
     const { createNotification } = useNotifications();
+    const enhance = useNotificationEnhancer();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.endpoint === 'page') {
-            createNotification(message.payload.notification);
+            createNotification(enhance(message.payload.notification));
         }
     }, []);
 
@@ -182,13 +188,7 @@ const SettingsApp: FC = () => {
                                     </div>
                                 )}
                             />
-                            <Route
-                                render={({ location: { pathname } }) => (
-                                    <LockConfirmContextProvider>
-                                        <SettingsTabs pathname={pathname} />
-                                    </LockConfirmContextProvider>
-                                )}
-                            />
+                            <Route render={({ location: { pathname } }) => <SettingsTabs pathname={pathname} />} />
                         </Switch>
                     </div>
                 </ExtensionConnect>

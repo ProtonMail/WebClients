@@ -4,10 +4,9 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { ConfirmPasswordModal } from '@proton/pass/components/Confirmation/ConfirmPasswordModal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import type { MaybePromise } from '@proton/pass/types';
@@ -29,7 +28,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const initialValues: ExportFormValues = { format: ExportFormat.PGP, passphrase: '' };
     const [loading, setLoading] = useState(false);
 
-    const passwordConfirmModal = useAsyncModalHandles<string>();
+    const confirmPassword = usePasswordUnlock();
 
     const form = useFormik<ExportFormValues>({
         initialValues: initialValues,
@@ -41,7 +40,9 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
             try {
                 setLoading(true);
 
-                await passwordConfirmModal.handler({
+                await confirmPassword({
+                    message: c('Info')
+                        .t`Please confirm your ${BRAND_NAME} password in order to export your ${PASS_APP_NAME} data`,
                     onSubmit: (password) => onConfirm(password),
                     onError: () => throwError({ name: 'AuthConfirmInvalidError' }),
                     onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
@@ -51,6 +52,8 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                 downloadFile(file, file.name);
 
                 form.resetForm({ values: { ...form.values, passphrase: '' } });
+                void form.validateForm();
+
                 createNotification({ type: 'success', text: c('Info').t`Successfully exported all your items` });
             } catch (error) {
                 const notification = (() => {
@@ -75,16 +78,5 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
         },
     });
 
-    return (
-        <>
-            <ExportForm form={form} loading={loading} />
-            <ConfirmPasswordModal
-                message={c('Info')
-                    .t`Please confirm your ${BRAND_NAME} password in order to export your ${PASS_APP_NAME} data`}
-                onSubmit={passwordConfirmModal.resolver}
-                onClose={passwordConfirmModal.abort}
-                {...passwordConfirmModal.state}
-            />
-        </>
-    );
+    return <ExportForm form={form} loading={loading} />;
 };

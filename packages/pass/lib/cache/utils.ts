@@ -1,5 +1,22 @@
-import { type AuthStore } from '@proton/pass/lib/auth/store';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
-export const canOfflineUnlock = (cache: Partial<EncryptedPassCache>, authStore: AuthStore): boolean =>
-    cache?.encryptedCacheKey !== undefined && cache?.state !== undefined && authStore.getOfflineConfig() !== undefined;
+import type { OfflineConfig } from './crypto';
+
+type PasswordUnlockOptions = {
+    cache: Partial<EncryptedPassCache>;
+    lockMode: LockMode;
+    offline: boolean;
+    offlineConfig: Maybe<OfflineConfig>;
+    offlineEnabled: boolean;
+};
+/** We consider that the user can unlock with his proton
+ * password if we have an encrypted cache key & state and
+ * an offline configuration. If the user is offline, allow
+ * unlocking without checking the LockMode. */
+export const canPasswordUnlock = (options: PasswordUnlockOptions): boolean => {
+    if (!(options.offlineConfig && options.cache.encryptedCacheKey && options.cache.state)) return false;
+    if (options.offline) return OFFLINE_SUPPORTED && options.offlineEnabled;
+    return options.lockMode === LockMode.PASSWORD;
+};

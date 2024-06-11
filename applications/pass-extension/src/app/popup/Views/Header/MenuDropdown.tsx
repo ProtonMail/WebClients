@@ -38,7 +38,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import browser from '@proton/pass/lib/globals/browser';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
-    selectHasRegisteredLock,
+    selectLockEnabled,
     selectPassPlan,
     selectPlanDisplayName,
     selectShare,
@@ -70,7 +70,7 @@ export const MenuDropdown: FC = () => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
-    const canLock = useSelector(selectHasRegisteredLock);
+    const canLock = useSelector(selectLockEnabled);
 
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
     const [notifyMonitor, setNotifyMonitor] = useState(false);

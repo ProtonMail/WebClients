@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
@@ -8,7 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
-import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
+import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -20,6 +20,7 @@ import noop from '@proton/utils/noop';
 import { ExtensionContext, type ExtensionContextType } from '../../context/extension-context';
 
 export const INITIAL_WORKER_STATE: AppState = {
+    booted: false,
     localID: undefined,
     loggedIn: false,
     status: AppStatus.IDLE,
@@ -67,18 +68,6 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
     const ready = !wakeupLoading && clientReady(state.status);
 
-    const logout = useCallback(({ soft }: { soft: boolean }) => {
-        setState(INITIAL_WORKER_STATE);
-        dispatch(signoutIntent({ soft }));
-    }, []);
-
-    const lock = useCallback(() => {
-        setState({ ...INITIAL_WORKER_STATE, status: AppStatus.LOCKED });
-        dispatch(sessionLockIntent());
-    }, []);
-
-    const sync = useCallback(() => dispatch(syncIntent(SyncType.FULL)), []);
-
     useWorkerStateEvents({
         tabId,
         endpoint,
@@ -105,7 +94,20 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     }, []);
 
     const context = useMemo<ExtensionConnectContextValue>(
-        () => ({ context: ExtensionContext.get(), ready, state, lock, logout, sync }),
+        () => ({
+            context: ExtensionContext.get(),
+            ready,
+            state,
+            lock: () => {
+                setState({ ...INITIAL_WORKER_STATE, status: AppStatus.SESSION_LOCKED });
+                dispatch(lock());
+            },
+            logout: ({ soft }) => {
+                setState(INITIAL_WORKER_STATE);
+                dispatch(signoutIntent({ soft }));
+            },
+            sync: () => dispatch(syncIntent(SyncType.FULL)),
+        }),
         [state, ready]
     );
 
