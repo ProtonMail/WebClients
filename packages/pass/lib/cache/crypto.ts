@@ -2,10 +2,12 @@ import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
 import { encryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 export type OfflineConfig = { salt: string; params: Argon2Params };
+export type OfflineComponents = { offlineKD: string; offlineConfig: OfflineConfig };
 
 const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
 export const CACHE_SALT_LENGTH = 32;
@@ -76,4 +78,17 @@ export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uin
     const offlineKey = await getSymmetricKey(offlineKD);
 
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);
+};
+
+export const getOfflineComponents = async (loginPassword: string): Promise<OfflineComponents> => {
+    const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
+    const offlineKD = await getOfflineKeyDerivation(loginPassword, offlineSalt).catch((error) => {
+        captureMessage('Offline: Argon2 error', { level: 'error', extra: { error, context: OFFLINE_ARGON2_PARAMS } });
+        throw error;
+    });
+
+    return {
+        offlineConfig: { salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS },
+        offlineKD: uint8ArrayToString(offlineKD),
+    };
 };

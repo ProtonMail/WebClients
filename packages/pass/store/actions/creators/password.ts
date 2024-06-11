@@ -9,7 +9,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 export const passwordSave = createAction('password::save', (payload: PasswordHistoryEntry) => withCache({ payload }));
 export const passwordDelete = createAction('password::delete', (payload: { id: string }) => withCache({ payload }));
 export const passwordHistoryClear = createAction('password::history::clear', () => withCache({ payload: {} }));
-export const passwordHistoryGarbageCollect = createAction('password::history::gc', () => withCache({ payload: {} }));
+export const passwordHistoryGarbageCollect = createAction('password::history::gc');
 
 export const passwordOptionsEdit = createAction('password::options::edit', (payload: GeneratePasswordConfig) =>
     pipe(withCache, withSettings)({ payload })

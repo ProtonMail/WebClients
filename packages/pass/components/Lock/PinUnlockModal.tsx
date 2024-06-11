@@ -14,18 +14,16 @@ type Props = Omit<ModalProps, 'onSubmit'> & {
     onSubmit: (pin: string) => void;
 };
 
-export const LockPinModal: FC<Props> = ({ title, assistiveText, loading, onSubmit, ...modalProps }) => {
+export const PinUnlockModal: FC<Props> = ({ title, assistiveText, loading, onSubmit, ...modalProps }) => {
     const [value, setValue] = useState<string>('');
     useSessionLockPinSubmitEffect(value, { onSubmit });
 
     useEffect(() => {
-        if (!modalProps.open) {
-            setValue('');
-        }
+        if (!modalProps.open) setValue('');
     }, [modalProps.open]);
 
     return (
-        <PassModal {...modalProps} size="small" className="mt-10">
+        <PassModal {...modalProps} size="small">
             <ModalTwoHeader title={title} />
             <ModalTwoContent className="mb-8">
                 {assistiveText && (

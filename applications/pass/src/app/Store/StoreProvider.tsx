@@ -8,6 +8,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
@@ -16,20 +17,10 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
-import {
-    draftsGarbageCollect,
-    getBreaches,
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    getUserSettings,
-    passwordHistoryGarbageCollect,
-    startEventPolling,
-    stopEventPolling,
-} from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -47,6 +38,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const authService = useAuthService();
     const history = useHistory();
     const { installed } = usePassExtensionLink();
+    const online = useConnectivity();
 
     const client = useClientRef();
     const sw = useServiceWorker();
@@ -68,32 +60,19 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
+                    client.current.setBooted(res.ok);
                     const userID = authStore.getUserID()!;
                     const state = store.getState();
 
                     if (res.ok) {
                         telemetry.start().catch(noop);
-                        void core.i18n.setLocale(selectLocale(state));
+                        core.i18n.setLocale(selectLocale(state)).catch(noop);
 
-                        store.dispatch(draftsGarbageCollect());
-                        store.dispatch(passwordHistoryGarbageCollect());
-                        store.dispatch(withRevalidate(getBreaches.intent()));
+                        if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
-                        if (res.fromCache) {
-                            /** Revalidate user data when booting from cache  */
-                            store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
-                            store.dispatch(withRevalidate(getUserAccessIntent(userID)));
-                            store.dispatch(withRevalidate(getUserSettings.intent(userID)));
-                        }
-
-                        if (isDocumentVisible()) store.dispatch(startEventPolling());
-
-                        if (
-                            selectOnboardingEnabled(installed)(state) &&
-                            (await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING))
-                        ) {
-                            history.replace(getLocalPath('onboarding'));
-                        }
+                        const onboardingEnabled = selectOnboardingEnabled(installed)(state);
+                        const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
+                        if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 
@@ -111,7 +90,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOfflineUnlocked(client.current.state.status)) {
+                    if (notification.type === 'error' && clientOffline(client.current.state.status)) {
                         notification.errorMessage = c('Warning').t`Offline`;
                     }
 
@@ -140,10 +119,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         };
     }, []);
 
-    useVisibleEffect((visible) => {
-        if (visible && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
-        else if (!visible) store.dispatch(stopEventPolling());
-    });
+    useVisibleEffect(
+        (visible: boolean) => {
+            if (visible && online && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
+            else if (!visible || !online) store.dispatch(stopEventPolling());
+        },
+        [online]
+    );
 
     return <ReduxProvider store={store}>{children}</ReduxProvider>;
 };

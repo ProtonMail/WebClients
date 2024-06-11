@@ -5,20 +5,19 @@ import type { MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export class AsyncModalAbortedError extends Error {}
-
-type ModalState<T> = T & Omit<ModalProps, 'onSubmit'>;
+type ModalState<T> = T & Omit<ModalProps, 'onSubmit'> & { loading: boolean };
 type HookOptions<T> = { getInitialModalState?: () => T };
 export type UseAsyncModalHandle<V, T> = (options: UseAsyncModalHandlerOptions<V, T>) => Promise<void>;
 
 type UseAsyncModalHandlerOptions<V, T> = Partial<T> & {
     onError?: (error: unknown) => MaybePromise<void>;
     onAbort?: () => MaybePromise<void>;
-    onSubmit: (value: V) => MaybePromise<void>;
+    onSubmit: (value: V) => MaybePromise<unknown>;
 };
 
 export const useAsyncModalHandles = <V, T = {}>(options?: HookOptions<T>) => {
     const getInitialState = useCallback(
-        (): ModalState<T> => ({ ...(options?.getInitialModalState?.() ?? ({} as T)), open: false, disabled: false }),
+        (): ModalState<T> => ({ ...(options?.getInitialModalState?.() ?? ({} as T)), open: false, loading: false }),
         [options?.getInitialModalState]
     );
     const [state, setState] = useState<ModalState<T>>(getInitialState());
@@ -35,7 +34,7 @@ export const useAsyncModalHandles = <V, T = {}>(options?: HookOptions<T>) => {
     const handler = useCallback<UseAsyncModalHandle<V, T>>(
         async (opts) => {
             const { onSubmit, onError, onAbort, ...modalOptions } = opts;
-            setState((state) => ({ ...state, ...modalOptions, open: true }));
+            setState((state) => ({ ...state, ...modalOptions, open: true, loading: false }));
 
             try {
                 const value = await new Promise<V>((resolve, reject) => {
@@ -43,10 +42,10 @@ export const useAsyncModalHandles = <V, T = {}>(options?: HookOptions<T>) => {
                     rejector.current = reject;
                 });
 
-                setState((state) => ({ ...state, disabled: true }));
+                setState((state) => ({ ...state, loading: true }));
                 await onSubmit(value);
             } catch (error) {
-                setState((state) => ({ ...state, disabled: false }));
+                setState((state) => ({ ...state, loading: false }));
 
                 if (error instanceof AsyncModalAbortedError) await onAbort?.();
                 else await onError?.(error);

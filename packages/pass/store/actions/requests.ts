@@ -4,7 +4,8 @@ export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
 export const channelRequest = (channelId: string) => `worker::channel::${channelId}`;
 export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
-export const offlineSetupRequest = `offline::setup`;
+export const offlineToggleRequest = () => `offline::toggle`;
+export const offlineResumeRequest = () => `offline::resume`;
 
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
@@ -24,9 +25,9 @@ export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transf
 export const trashEmptyRequest = () => `trash::empty`;
 export const trashRestoreRequest = () => `trash::restore`;
 
-export const sessionUnlockRequest = () => `session::unlock`;
-export const sessionLockEnableRequest = () => `session::enable`;
-export const sessionLockDisableRequest = () => `session::disable`;
+export const unlockRequest = () => `auth::unlock`;
+export const lockCreateRequest = () => `auth::lock::create`;
+
 export const settingsEditRequest = (group: string) => `settings::edit::${group}`;
 
 export const aliasOptionsRequest = (shareId: string) => `alias::options::${shareId}`;

@@ -11,6 +11,7 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import {
@@ -35,10 +36,11 @@ import {
     CACHED_IMAGE_DEFAULT_MAX_AGE,
     CACHED_IMAGE_FALLBACK_MAX_AGE,
     getCache,
-    getMaxAgeHeaders,
     shouldRevalidate,
+    withMaxAgeHeaders,
 } from '@proton/pass/lib/api/cache';
 import { createApi } from '@proton/pass/lib/api/factory';
+import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
@@ -52,8 +54,10 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import locales from './locales';
@@ -84,53 +88,49 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
     getApiState: api.getState,
 
+    getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
+
     getDomainImage: async (domain, signal) => {
         const res = await (async () => {
             const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
             const cache = await getCache();
-            const cachedResponse = await cache.match(url);
+            const cachedResponse = await cache?.match(url).catch(noop);
 
             if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
 
-            return api<Response>({ url, output: 'raw', signal })
+            return api<Response>({ url, output: 'raw', signal, sideEffects: false })
                 .then(async (res) => {
-                    if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
-                        void cache.put(url, res.clone());
-                        return res;
-                    } else if (res.status === 422) {
-                        /* When dealing with unprocessable content from the image
-                         * endpoint - cache the error eitherway for now as we want
-                         * to avoid swarming the service-worker with unnecessary
-                         * parallel requests which may block other api calls with
-                         * higher priority */
-                        const response = new Response('Unprocessable Content', {
-                            status: res.status,
-                            statusText: res.statusText,
-                            headers: getMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
-                        });
-
-                        void cache.put(url, response.clone());
-                        return response;
-                    } else if (res.ok) {
+                    if (res.ok) {
                         /* max-age is set to 0 on image responses from BE: this is sub-optimal in
                          * the context of the extension -> override the max-age header. */
-                        const response = new Response(await res.blob(), {
-                            status: res.status,
-                            statusText: res.statusText,
-                            headers: getMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
-                        });
+                        const response = new Response(
+                            API_BODYLESS_STATUS_CODES.includes(res.status) ? null : await res.blob(),
+                            {
+                                status: res.status,
+                                statusText: res.statusText,
+                                headers: withMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
+                            }
+                        );
 
-                        void cache.put(url, response.clone());
+                        cache?.put(url, response.clone()).catch(noop);
                         return response;
                     } else throw new Error();
                 })
-                .catch(
-                    () =>
-                        new Response('Network error', {
-                            status: 408,
-                            headers: { 'Content-Type': 'text/plain' },
-                        })
-                );
+                .catch((err) => {
+                    if (getApiError(err).status === 422) {
+                        const res = err.response as Response;
+                        const response = new Response('Unprocessable Content', {
+                            status: res.status,
+                            statusText: res.statusText,
+                            headers: withMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
+                        });
+
+                        void cache?.put(url, response.clone()).catch(noop);
+                        return response;
+                    }
+
+                    return createNetworkError(408);
+                });
         })();
 
         return imageResponsetoDataURL(res);

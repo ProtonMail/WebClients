@@ -22,6 +22,7 @@ const createMockIFrameContext = (appState: Partial<AppState>, payload?: any): IF
     userEmail: 'john@proton.me',
     visible: true,
     appState: {
+        booted: true,
         localID: undefined,
         loggedIn: true,
         status: AppStatus.READY,

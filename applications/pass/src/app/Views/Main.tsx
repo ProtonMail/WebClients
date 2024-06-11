@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
@@ -26,8 +26,10 @@ import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvi
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
+import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
@@ -40,23 +42,26 @@ import { Menu } from './Sidebar/Menu';
 const MainSwitch: FC = () => {
     const dispatch = useDispatch();
     const client = useClient();
-    const offlineUnlocked = clientOfflineUnlocked(client.state.status);
+    const offline = clientOffline(client.state.status);
+    const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
     const { state: expanded, toggle } = useToggle();
 
     const connectivityBar = useConnectivityBar((online) => ({
-        className: offlineUnlocked ? 'bg-weak border-top' : 'bg-danger',
-        hidden: online && !offlineUnlocked,
-        text: offlineUnlocked ? (
+        className: offline ? 'bg-weak border-top' : 'bg-danger',
+        hidden: online && !offline,
+        text: offline ? (
             <div className="flex items-center gap-2">
                 <span>{c('Info').t`Offline mode`}</span>
 
                 <Button
                     className="text-sm"
-                    onClick={() => dispatch(offlineResume(authStore.getLocalID()))}
+                    onClick={() => dispatch(offlineResume.intent({ localID: authStore.getLocalID() }))}
                     shape="underline"
                     size="small"
+                    loading={offlineResuming}
+                    disabled={offlineResuming}
                 >
-                    ({c('Info').t`Reconnect`})
+                    {offlineResuming ? c('Info').t`Reconnecting` : c('Info').t`Reconnect`}
                 </Button>
             </div>
         ) : undefined,

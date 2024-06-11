@@ -3,9 +3,9 @@ import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/cryp
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
 import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { getCacheEncryptionKey, getOfflineKeyDerivation } from './crypto';
+import { getCacheEncryptionKey } from './crypto';
 
 /** Resolves the cache key using one of two methods based on provided parameters:
  * If a `loginPassword` is provided, the key is derived from the `encryptedCacheKey`
@@ -13,27 +13,20 @@ import { getCacheEncryptionKey, getOfflineKeyDerivation } from './crypto';
  * Otherwise, the cache key is resolved from `keyPassword` and the cache key's salt */
 export const getCacheKey = async (
     { encryptedCacheKey, salt }: Partial<EncryptedPassCache>,
-    authStore: AuthStore,
-    loginPassword?: string
+    authStore: AuthStore
 ): Promise<Maybe<CryptoKey>> => {
     const keyPassword = authStore.getPassword();
     const sessionLockToken = authStore.getLockToken();
-    const offlineConfig = authStore.getOfflineConfig();
+    const offlineKD = authStore.getOfflineKD();
 
-    if (loginPassword) {
-        if (!(encryptedCacheKey && offlineConfig)) throw new Error('Missing offline encryption components');
-
-        const { salt, params } = offlineConfig;
-        const offlineKD = await getOfflineKeyDerivation(loginPassword, stringToUint8Array(salt), params);
-        const offlineKey = await getSymmetricKey(offlineKD);
-
+    if (offlineKD && encryptedCacheKey) {
+        const offlineKey = await getSymmetricKey(stringToUint8Array(offlineKD));
         const rawCacheKey = await decryptData(
             offlineKey,
             stringToUint8Array(encryptedCacheKey),
             PassEncryptionTag.Offline
         );
 
-        authStore.setOfflineKD(uint8ArrayToString(offlineKD));
         return getSymmetricKey(rawCacheKey);
     }
 
