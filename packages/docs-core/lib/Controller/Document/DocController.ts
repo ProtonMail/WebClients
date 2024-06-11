@@ -37,7 +37,6 @@ import {
   DocumentUpdateVersion,
   ClientEventVersion,
 } from '@proton/docs-proto'
-import { PROTON_DOC_FILE_EXTENSION } from '@proton/docs-shared'
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
@@ -525,12 +524,16 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Attempting to create new document before controller is initialized')
     }
 
-    const date = new Date().toLocaleDateString()
+    if (!this.decryptedNode) {
+      throw new Error('Decrypted node not loaded when creating new document')
+    }
+
+    const date = new Date().toLocaleString()
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
     const baseTitle = c('Title').t`Untitled document ${date}`
-    const newName = `${baseTitle}.${PROTON_DOC_FILE_EXTENSION}`
+    const newName = `${baseTitle}`
 
-    const result = await this._createNewDocument.execute(newName, this.nodeMeta)
+    const result = await this._createNewDocument.execute(newName, this.nodeMeta, this.decryptedNode)
 
     if (result.isFailed()) {
       PostApplicationError(
