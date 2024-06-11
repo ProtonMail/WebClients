@@ -126,6 +126,16 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
+    if (payload.serverReason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {
+      metrics.docs_document_updates_save_error_total.increment({
+        type: 'document_too_big',
+      })
+    } else if (payload.serverReason.props.code === ConnectionCloseReason.CODES.MESSAGE_TOO_BIG) {
+      metrics.docs_document_updates_save_error_total.increment({
+        type: 'update_too_big',
+      })
+    }
+
     if (this.editorInvoker) {
       this.logger.info('Changing editing allowance to false after RTS disconnect')
 
