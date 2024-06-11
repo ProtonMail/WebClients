@@ -47,6 +47,9 @@
       "Bulk move items to trash": [
         "Mou en massa els elements a la paperera"
       ],
+      "Bulk restore items from trash": [
+        "Restaura un grup d'elements des de la paperera"
+      ],
       "Bulk select items": [
         "Selecciona elements en massa"
       ],
@@ -157,6 +160,9 @@
       ],
       "Deselect": [
         "Anul·la la selecció"
+      ],
+      "Disable autosave on this website": [
+        "Desactiva el desament automàtic en aquest lloc web"
       ],
       "Discard": [
         "Descarta"
@@ -345,7 +351,7 @@
         "Esborra el membre"
       ],
       "Request a feature": [
-        "Demana una nova característica"
+        "Demaneu una nova característica"
       ],
       "Resend invitation": [
         "Reenvia la invitació"
@@ -462,10 +468,10 @@
         "Veure l'historial més antic"
       ],
       "Write us on Reddit": [
-        "Escriu-nos a Reddit"
+        "Escriviu-nos a Reddit"
       ],
       "Write us on Twitter": [
-        "Escriu-nos a Twitter"
+        "Escriviu-nos a Twitter"
       ]
     },
     "bf2023: Label": {
@@ -497,6 +503,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
+        "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
@@ -504,13 +514,13 @@
         "Llista de dominis on certes funcions automàtiques de ${ PASS_SHORT_APP_NAME } (emplenament, suggeriment i desament automàtics) no s'han d'executar.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
-        "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+        "Aquest compte és vulnerable, visiteu el servei i canvieu la contrasenya."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Desbloquegi característiques de seguretat avançades i registres detallats per protegir la seva presència en línia."
+        "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
       ]
     },
     "Error": {
@@ -599,9 +609,6 @@
       "Failed to delete selected items": [
         "No s'han pogut suprimir els elements seleccionats"
       ],
-      "Failed to edit organization settings": [
-        "No s'ha pogut editar la configuració de l'organització"
-      ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
       ],
@@ -616,6 +623,9 @@
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
+      ],
+      "Failed to move items to trash": [
+        "No s'ha pogut moure els elements a la paperera."
       ],
       "Failed to pin item": [
         "No s'ha pogut ancorar l'element."
@@ -896,6 +906,9 @@
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
         "Es desarà una clau d'accés per a \"${ username }\" i estarà disponible als dispositius on estigui instal·lat ${ PASS_APP_NAME }."
       ],
+      "Access successfully confirmed": [
+        "S'ha confirmat l'accés."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
@@ -910,6 +923,9 @@
       ],
       "All items successfully moved": [
         "S'han mogut tots els elements."
+      ],
+      "All trashed items permanently deleted": [
+        "S'han eliminat tots els elements a la paperera de manera permanent."
       ],
       "All trashed items successfully restored": [
         "S'han restaurat tots els elements a la paperera."
@@ -929,8 +945,8 @@
       "Autosaved on ${ payload.domain }": [
         "S'ha desat automàticament en ${ payload.domain }"
       ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Per defecte, els membres de l'equip només poden exportar les caixes fortes de la seva propietat. Si aquesta opció està activada, no podran exportar cap dada"
+      "Built in 2FA authenticator": [
+        "Autenticador 2FA integrat"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -960,7 +976,7 @@
         "S'està creant un àlies..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV ofereix un format còmode per visualitzar les seves dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
+        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
       ],
       "Current version": [
         "Versió actual"
@@ -1132,9 +1148,6 @@
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
       ],
-      "Organization settings successfully updated": [
-        "La configuració de l'organització s'ha actualitzat correctament"
-      ],
       "Owner": [
         "Propietari"
       ],
@@ -1199,7 +1212,7 @@
         "Seleccioni un element d'inici de sessió existent per actualitzar."
       ],
       "Select an existing login or create a new one.": [
-        "Seleccioni un inici de sessió existent o creï'n un de nou."
+        "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
       ],
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
@@ -1237,14 +1250,11 @@
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
       ],
-      "Team members can only share vaults within organization": [
-        "Els membres de l'equip només poden compartir caixes fortes dins de l'organització"
-      ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
       "The export will only contain vaults that you own.": [
-        "L'exportació només contindrà les caixes fortes de la seva propietat."
+        "L'exportació només contindrà les caixes fortes de la vostra propietat."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
@@ -1292,11 +1302,11 @@
       "Update login": [
         "Actualitza l'inici de sessió"
       ],
-      "Updating organization settings": [
-        "Actualització de la configuració de l'organització"
-      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Millora ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
@@ -1348,7 +1358,7 @@
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Ha arribat al límit de targetes de crèdit que pot crear. Creï un nombre il·limitat de targetes de crèdit quan millori la seva subscripció."
+        "Heu arribat al límit de targetes de crèdit que podeu crear. Creeu un nombre il·limitat de targetes de crèdit quan milloreu la vostra subscripció."
       ],
       "You have reached the limit of vaults you can create.": [
         "Heu arribat al límit de caixes fortes que podeu crear."
@@ -1510,12 +1520,6 @@
       "Device": [
         "Dispositiu"
       ],
-      "Disable data export for team members": [
-        "Desactivar l'exportació de dades per als membres de l'equip"
-      ],
-      "Disable sharing outside the organization": [
-        "Desactiva la compartició fora de l'organització"
-      ],
       "Display": [
         "Mostra"
       ],
@@ -1542,9 +1546,6 @@
       ],
       "Export": [
         "Exporta"
-      ],
-      "Exporting policy": [
-        "Política d'exportació"
       ],
       "Field name": [
         "Nom del camp"
@@ -1702,6 +1703,9 @@
       "Pause list": [
         "Llista de pausa"
       ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON xifrat amb PGP (recomanat)"
+      ],
       "PIN": [
         "Codi PIN"
       ],
@@ -1758,9 +1762,6 @@
       ],
       "Settings": [
         "Preferències"
-      ],
-      "Sharing policy": [
-        "Política de compartició"
       ],
       "Show website favicons": [
         "Mostra els favicons del lloc web"
@@ -1953,7 +1954,7 @@
         "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Torneu a escriure \"${ vaultName }\" per confirmar la supressió"
+        "Torneu a escriure \"${ vaultName }\" per confirmar l'eliminació"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cerca ${ pluralItemType } a ${ vaultName }"

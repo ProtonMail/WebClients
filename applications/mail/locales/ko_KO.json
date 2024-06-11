@@ -29,7 +29,7 @@
         "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+        "사용자의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
       ]
     },
     "Action": {
@@ -434,6 +434,9 @@
       ],
       "exclude message content": [
         "메시지 내용 제외"
+      ],
+      "Expand": [
+        "펼치기"
       ],
       "Expand composer": [
         "전체화면으로 보기"
@@ -917,6 +920,9 @@
       ],
       "Report a problem": [
         "문제 신고"
+      ],
+      "Report an issue": [
+        "문제 보고하기"
       ],
       "Report phishing": [
         "피싱 신고"
@@ -3837,6 +3843,9 @@
       "Please provide either a first name, a last name or a display name": [
         "성, 이름 및 표시되는 이름을 입력하십시오."
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "카테고리와 만들어진 텍스트에 어떤 문제가 있었는지를 선택해 주세요"
+      ],
       "Port is required": [
         "포트가 필요함"
       ],
@@ -3917,6 +3926,9 @@
       ],
       "Tab closed": [
         "탭 닫힘"
+      ],
+      "Thanks for the feedback!": [
+        "의견을 주셔서 감사합니다!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "첨부 파일을 복호화할 수 없습니다.\n해당하는 비밀 키를 가지고 있다면, GnuPG 등의\n프로그램으로 파일을 복호화할 수 있습니다."
@@ -5087,7 +5099,7 @@
         "이메일 주소 및 비밀번호가 올바릅니다."
       ],
       "Your password is correct.": [
-        "당신의 비밀번호가 알맞습니다."
+        "사용자의 비밀번호가 알맞습니다."
       ]
     },
     "Import error emphasis": {
@@ -5566,6 +5578,9 @@
       "Clear app data": [
         "앱 데이터 지우기"
       ],
+      "Clear browser data": [
+        "브라우저 데이터 제거"
+      ],
       "Clear data": [
         "데이터 지우기"
       ],
@@ -5574,9 +5589,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "브라우저 데이터를 지우면 이 기기의 메시지 내용 검색도 비활성화됩니다. 메시지 내에서 검색하려면 모든 메시지를 다시 다운로드해야 합니다."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "다운로드한 메시지를 포함한 메시지 콘텐츠 검색과 관련된 브라우저 데이터를 지웁니다."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -5658,9 +5670,6 @@
       ],
       "Default email application": [
         "기본 이메일 애플리케이션"
-      ],
-      "Disable message content search": [
-        "메시지 콘텐츠 검색 비활성화"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
@@ -6213,9 +6222,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "다운로드된 메시지를 포함한 이 앱과 관련된 모든 데이터를 지웁니다"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 다만, 분석을 위해 Proton에서 메시지의 내용을 전반적으로 확인할 수 있습니다."
@@ -7555,9 +7561,6 @@
       "New password": [
         "새 비밀번호"
       ],
-      "New plan": [
-        "새 플랜"
-      ],
       "No label found": [
         "라벨 발견되지 않음"
       ],
@@ -7590,9 +7593,6 @@
       ],
       "Or": [
         "또는"
-      ],
-      "Organization size": [
-        "조직 크기"
       ],
       "Original link": [
         "원본 링크"
@@ -9249,7 +9249,7 @@
         "건너뛰기"
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "당신을 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
+        "사용자를 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -9347,7 +9347,7 @@
     },
     "Participant name": {
       "You": [
-        "당신"
+        "나"
       ]
     },
     "pass_signup_2023: Info": {
@@ -9359,6 +9359,20 @@
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "조직 키가 존재하지 없습니다."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "권한이 거부되었으며 관리자 권한이 제한되었습니다."
+      ],
+      "The organization key must be activated first.": [
+        "조직 키가 먼저 활성화되어야 합니다."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "이 작업을 수행하려면 조직 키에 접근해야 합니다."
       ]
     },
     "Payment method option": {
@@ -10528,8 +10542,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "가격:"
+      "For ${ totalPrice }": [
+        "${ totalPrice }용"
       ]
     },
     "Subscription reminder": {

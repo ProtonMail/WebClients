@@ -476,11 +476,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -2283,8 +2283,8 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Efter återkommande…"
+      "Ends after…": [
+        "Slutar efter…"
       ],
       "Never": [
         "Aldrig"
@@ -4922,6 +4922,9 @@
       "Would you like to update this event?": [
         "Vill du uppdatera denna händelse?"
       ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ],
       "Yearly": [
         "Årligen"
       ],
@@ -5158,6 +5161,11 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Du kan dela dina kalendrar igen i inställningarna."
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -5491,9 +5499,6 @@
       "New password": [
         "Nytt lösenord"
       ],
-      "New plan": [
-        "Nytt paket"
-      ],
       "Note": [
         "Anteckning"
       ],
@@ -5514,9 +5519,6 @@
       ],
       "Optional": [
         "Valfritt"
-      ],
-      "Organization size": [
-        "Organisationens storlek"
       ],
       "Organizer": [
         "Organisatör"
@@ -6323,6 +6325,9 @@
       "Document editors (docs, sheets, slides)": [
         "Dokumentredigerare (dokument, kalkylark, bildspel)"
       ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentredigerare (dokument, kalkylark, bildspel) (snart)"
+      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6399,6 +6404,9 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
@@ -6438,6 +6446,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-servrar"
+      ],
+      "See team's availability": [
+        "Se teamets tillgänglighet"
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
@@ -6526,6 +6537,9 @@
       ],
       "User session management": [
         "Hantering av användarsession"
+      ],
+      "User storage management": [
+        "Hantering av lagringsutrymme för användare"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
@@ -6734,6 +6748,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-stöd är begränsat till användning av appar för stationära datorer (t.ex. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Molnbaserade IMAP-integreringar stöds för närvarande inte."
       ],
+      "Increase or reallocate storage for a user": [
+        "Öka eller omfördela lagringsutrymme för en användare"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Håll dina planer privata för dig och din familj med en krypterad kalender"
       ],
@@ -6815,6 +6832,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagra dina kontaktdetaljer, såsom telefonnummer, adresser, födelsedagar och personliga anteckningar på ett säkert sätt. Noll-åtkomst-kryptering säkerställer att inte ens ${ BRAND_NAME } kan få tillgång till dem."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se tillgängligheten för mötesdeltagare och spara tid på att schemalägga möten"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Skicka e-post till stora grupper snabbt och enkelt genom att skapa så många kontaktgrupper du behöver (upp till 100 kontakter per grupp)"
       ],
@@ -6841,6 +6861,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Stöd för fildelningsprotokoll som BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Ladda upp ditt företags logga för att anpassa ditt teams upplevelse på webbapparna för ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Använd dina egna anpassade e-postdomänadresser, t.ex. du@dittnamn.com"
@@ -8233,8 +8256,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "För"
+      "For ${ totalPrice }": [
+        "För ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

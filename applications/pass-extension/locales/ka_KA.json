@@ -636,9 +636,6 @@
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
       ],
-      "Failed to edit organization settings": [
-        "ორგანიზაციის პარამეტრების ჩასწორება ჩავარდა"
-      ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
       ],
@@ -692,6 +689,9 @@
       ],
       "Failed updating monitor flag of the item": [
         "ელემენტის მონიტორინგის ალმის განახლება ჩავარდა"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "ამ ელფოსტის მისამართის მონიტორინგის სტატუსის განახლება ჩავარდა"
       ],
       "File could not be parsed": [
         "ფაილის დამუშავება შეუძლებელია"
@@ -946,7 +946,7 @@
         "დარჩენილია ${ trialDaysLeft } დღე"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
+        "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად, მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
@@ -1007,9 +1007,6 @@
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "ნაგულისხმევად გუნდის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
@@ -1073,6 +1070,12 @@
       ],
       "Editor": [
         "რედაქტორი"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "ელფოსტის მისამართიის მონიტორინგიდან წაშლა წარმატებულია"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "ელფოსტის მისამართიის მონიტორინგიდან ამოღება წარმატებულია"
       ],
       "Email address successfully included in monitoring": [
         "ელფოსტის მისამართის მონიტორინგში ჩასმა წარმატებულია"
@@ -1245,9 +1248,6 @@
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
       ],
-      "Organization settings successfully updated": [
-        "ორგანიზაციის პარამეტრები წარმატებით განახლდა"
-      ],
       "Owner": [
         "მფლობელი"
       ],
@@ -1384,9 +1384,6 @@
       "Syncing your vaults…": [
         "თქვენი საცავების სინქრონიზაცია…"
       ],
-      "Team members can only share vaults within organization": [
-        "გუნდის წევრებს საცავების გაზიარება, მხოლოდ, ორგანიზაციის შიგნით შეუძლიათ"
-      ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
       ],
@@ -1416,7 +1413,7 @@
         "ეს პარამეტრი გათიშულია ორგანიზაციის დონეზე"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
+        "ეს საცავი, ამჟამად, გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
       "This version will be added to the history as the newest version.": [
         "ეს ვერსია დაემატება ისტორიაში, როგორც უახლესი ვერსია."
@@ -1447,9 +1444,6 @@
       ],
       "Update login": [
         "შესვლის დეტალების განახლება"
-      ],
-      "Updating organization settings": [
-        "ორგანიზაციის პარამეტრების განახლება"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
@@ -1494,7 +1488,7 @@
         "ახლა შეგიძლიათ, თქვენი ${ BRAND_NAME }-ის პაროლი ${ PASS_SHORT_APP_NAME }-ში შესასვლელად ქსელის გარეშეც გამოიყენოთ"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "შეგიძლიათ, თქვენი ავტორიზაციის დეტალები ავტომატურად შეავსოთ, ${ PASS_APP_NAME }-ის ხატულაზე დაწკაპუნებით."
+        "შეგიძლიათ, თქვენი ავტორიზაციის დეტალები ავტომატურად შეავსოთ ${ PASS_APP_NAME }-ის ხატულაზე დაწკაპუნებით."
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
@@ -1675,12 +1669,6 @@
       "Device": [
         "მოწყობილობა"
       ],
-      "Disable data export for team members": [
-        "მონაცემების გატანის გათიშვა გუნდის წევრებისთვის"
-      ],
-      "Disable sharing outside the organization": [
-        "გაზიარებით გათიშვა ორგანიზაციის გარეთ"
-      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1707,9 +1695,6 @@
       ],
       "Export": [
         "გატანა"
-      ],
-      "Exporting policy": [
-        "გატანის პოლიტიკა"
       ],
       "Field name": [
         "ველის სახელწოდება"
@@ -1926,9 +1911,6 @@
       ],
       "Settings": [
         "მორგება"
-      ],
-      "Sharing policy": [
-        "გაზიარების პოლიტიკა"
       ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"

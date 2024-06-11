@@ -444,6 +444,9 @@
       "exclude message content": [
         "izključite vsebino sporočil"
       ],
+      "Expand": [
+        "Razširi"
+      ],
       "Expand composer": [
         "Razširi urejevalnik"
       ],
@@ -929,6 +932,9 @@
       ],
       "Report a problem": [
         "Prijavite težavo"
+      ],
+      "Report an issue": [
+        "Prijava napake"
       ],
       "Report phishing": [
         "Prijavi lažno predstavljanje"
@@ -5857,6 +5863,9 @@
       "Clear app data": [
         "Izbriši podatke aplikacije"
       ],
+      "Clear browser data": [
+        "Počisti podatke brskalnika"
+      ],
       "Clear data": [
         "Počisti podatke"
       ],
@@ -5865,9 +5874,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Izbris shranjenih podatkov v brskalniku onemogoči iskanje po vsebini sporočil v tej napravi. Če želite omogočiti to možnost, morate ponovno prenesti vsa sporočila."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Počisti podatke brskalnika, povezane z iskanjem vsebine sporočil, vključno s prenesenimi sporočili."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
@@ -5952,9 +5958,6 @@
       ],
       "Default email application": [
         "Privzeta aplikacija za e-pošto"
-      ],
-      "Disable message content search": [
-        "Onemogoči iskanje po vsebini sporočil"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
@@ -6227,7 +6230,7 @@
         "Internetna povezava je spet vzpostavljena."
       ],
       "JCB logo": [
-        "JCB logotip"
+        "Logotip JCB"
       ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Pridružite se programu ${ PROTON_SENTINEL_NAME } za najvišjo stopnjo varnosti računa in podpore."
@@ -6534,9 +6537,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Odstrani vse podatke, povezane z aplikacijo, vključno s prenesenimi sporočili"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "S prijavo lažnega predstavljanja nam boste poslali sporočilo v analizo, s katero bomo izboljšali svoje filtre. To pomeni, da nam bo vsebina sporočila v celoti vidna."
@@ -7951,9 +7951,6 @@
       "New password": [
         "Novo geslo"
       ],
-      "New plan": [
-        "Nov paket"
-      ],
       "No label found": [
         "Ni najdenih oznak"
       ],
@@ -7986,9 +7983,6 @@
       ],
       "Or": [
         "Ali"
-      ],
-      "Organization size": [
-        "Velikost organizacije"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -8974,6 +8968,9 @@
       "Centralized billing": [
         "Centralizirano obračunavanje"
       ],
+      "Collaborate and share large files": [
+        "Sodelovanje in skupna raba velikih datotek"
+      ],
       "Contact groups": [
         "Skupina stikov"
       ],
@@ -8992,6 +8989,9 @@
       "Custom snooze time": [
         "Čas dremeža po meri"
       ],
+      "Custom workspace branding": [
+        "Prilagodite delovni prostor svojemu podjetju"
+      ],
       "Data breach monitoring": [
         "Spremljanje vdorov v podatke"
       ],
@@ -9006,6 +9006,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve) (kmalu na voljo)"
       ],
       "Double hop": [
         "Double hop"
@@ -9085,6 +9088,9 @@
       "Password health": [
         "Kakovost gesla"
       ],
+      "Password manager to secure credentials": [
+        "Upravitelj gesel za varno preverjanje pristnosti"
+      ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
       ],
@@ -9126,6 +9132,9 @@
       ],
       "Secure Core servers": [
         "Strežniki Secure Core"
+      ],
+      "See team's availability": [
+        "Oglejte si razpoložljivost ekipe"
       ],
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
@@ -9217,6 +9226,9 @@
       "User session management": [
         "Upravljanje seje uporabnikov"
       ],
+      "User storage management": [
+        "Upravljanje shrambe uporabnikov"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Delitev trezorja (z do ${ n } osebo)",
         "Delitev trezorja (z do ${ n } osebama)",
@@ -9265,6 +9277,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Vse aplikacije ${ BRAND_NAME } in njihove premijske funkcije"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Vse ${ BRAND_NAME } poslovne aplikacije in premijske funkcije za zaščito celotnega podjetja."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Uporabno dobroimetje, sorazmerna delitev in kuponi se upoštevajo v naslednjem koraku."
       ],
@@ -9273,6 +9288,12 @@
       ],
       "Early access to new apps and features": [
         "Zgodnji dostop do novih aplikacij in funkcij"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Šifriran poštni predal in koledar za začetek."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Izboljšana zaščita in premijske funkcije za ekipe."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Nepogrešljiva zaščita in varno sodelovanje za neomejeno število uporabnikov."
@@ -9423,6 +9444,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Podpora za IMAP je omejena na uporabo namiznih programov (npr. Outlook, Apple Mail, Thunderbird) s pomočjo ${ MAIL_APP_NAME } Bridge. Trenutno niso podprte integracije IMAP rešitve, ki temeljijo na oblaku."
       ],
+      "Increase or reallocate storage for a user": [
+        "Povečanje ali prerazporeditev shrambe za uporabnika"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Ohranite svoje načrte zasebne za vas in vašo družino s šifriranim koledarjem."
       ],
@@ -9504,6 +9528,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Varno shranite podrobnosti vaših stikov, kot so telefonska številka, naslov, rojstni dan in osebni zapiski. Šifriranje na strani odjemalca zagotavlja, da niti ${ BRAND_NAME } nima dostopa do teh podatkov."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Oglejte si razpoložljivost udeležencev in prihranite čas pri načrtovanju sestankov"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Pošiljajte e-pošto velikim skupinam hitro in enostavno tako, da ustvarite toliko skupin stikov, kot jih potrebujete (do 100 stikov na skupino)."
       ],
@@ -9530,6 +9557,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora za protokole za skupno rabo datotek, kot je BitTorrent."
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Prenesite logotip svojega podjetja in prilagodite videz v spletnih aplikacijah ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
@@ -9806,6 +9836,20 @@
       ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ključ organizacije ne obstaja."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Dovoljenje zavrnjeno, skrbniške pravice so bile omejene."
+      ],
+      "The organization key must be activated first.": [
+        "Najprej je treba aktivirati ključ organizacije."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
       ]
     },
     "Payment method option": {
@@ -11080,8 +11124,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Za"
+      "For ${ totalPrice }": [
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

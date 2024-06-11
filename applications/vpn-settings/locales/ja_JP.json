@@ -4523,9 +4523,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New plan": [
-        "新しいプラン"
-      ],
       "No filter": [
         "フィルターなし"
       ],
@@ -4552,9 +4549,6 @@
       ],
       "Organization password": [
         "組織のパスワード"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Other amount": [
         "その他の金額"
@@ -7159,8 +7153,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "価格:"
+      "For ${ totalPrice }": [
+        "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {

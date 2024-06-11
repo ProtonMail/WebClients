@@ -5681,9 +5681,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New plan": [
-        "Nieuw plan"
-      ],
       "Note": [
         "Notitie"
       ],
@@ -5701,9 +5698,6 @@
       ],
       "Optional": [
         "Optioneel"
-      ],
-      "Organization size": [
-        "Grootte van de organisatie"
       ],
       "Other": [
         "Overig"
@@ -8393,8 +8387,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Voor"
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

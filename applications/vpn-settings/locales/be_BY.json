@@ -651,6 +651,12 @@
       "${ price } per user": [
         "${ price } за карыстальніка"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } ліцэнзія памочніка ў напісанні",
+        "${ seats } ліцэнзіі памочніка ў напісанні",
+        "${ seats }ліцэнзій памочніка ў напісанні",
+        "${ seats }ліцэнзій памочніка ў напісанні"
+      ],
       "${ users } user": [
         "${ users } карыстальнік",
         "${ users } карыстальнікі",
@@ -3501,7 +3507,7 @@
         "Запоўніце даныя карыстальніка"
       ],
       "for choosing ${ product }": [
-        "для выбару ${ product }"
+        "за выбар ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
@@ -4307,6 +4313,12 @@
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
       ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant add-on": [
+        "Дадатак памочніка ў напісанні"
+      ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
@@ -4506,6 +4518,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Толькі прагляд"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
       ]
     },
     "Invoice state display as badge": {
@@ -4852,9 +4869,6 @@
       "New password": [
         "Новы пароль"
       ],
-      "New plan": [
-        "Новы тарыфны план"
-      ],
       "No filter": [
         "Не фільтраваць"
       ],
@@ -4884,9 +4898,6 @@
       ],
       "Organization password": [
         "Пароль арганізацыі"
-      ],
-      "Organization size": [
-        "Памер арганізацыі"
       ],
       "Other amount": [
         "Іншая сума"
@@ -5109,6 +5120,9 @@
       ],
       "Add gift code": [
         "Дадаць падарункавы код"
+      ],
+      "Add to your subscription": [
+        "Дадаць да вашай падпіскі"
       ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
@@ -5600,6 +5614,9 @@
       "Custom snooze time": [
         "Карыстальніцкі час адкладання"
       ],
+      "Custom workspace branding": [
+        "Брэндзіраванне карыстальніцкай працоўнай прасторы"
+      ],
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
@@ -5705,6 +5722,9 @@
       "Password health": [
         "Якасць пароля"
       ],
+      "Password manager to secure credentials": [
+        "Менеджар пароляў для бяспекі ўліковых даных"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
@@ -5735,6 +5755,9 @@
       "Router support": [
         "Падтрымка маршрутызатараў"
       ],
+      "Save time emailing": [
+        "Ашчаджайце час на напісанне лістоў"
+      ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
       ],
@@ -5746,6 +5769,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "See team's availability": [
+        "Прагляд даступнасці каманды"
       ],
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
@@ -5903,6 +5929,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
@@ -5911,6 +5940,12 @@
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашыфраваная электронная пошта і каляндар для пачатку працы."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Палепшаная бяспека і прэміяльныя функцыі для каманд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
@@ -6088,6 +6123,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
       ],
+      "Increase or reallocate storage for a user": [
+        "Павялічце або пераразмеркуйце сховішча для карыстальніка"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
       ],
@@ -6169,6 +6207,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Хутка і лёгка адпраўляйце электронныя лісты вялікім групам з дапамогай стварэння неабходнай колькасці груп кантактаў (да 100 кантактаў у кожнай групе)"
       ],
@@ -6195,6 +6236,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -7846,8 +7890,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9132,6 +9176,11 @@
       ],
       "Primary admin": [
         "Асноўны адміністратар"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "ШІ"
       ]
     },
     "Users table: single sign-on enabled": {

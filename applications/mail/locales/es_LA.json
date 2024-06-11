@@ -223,6 +223,9 @@
       "Close & discard": [
         "Cerrar y descartar"
       ],
+      "Close AI refine suggestion": [
+        "Cerrar la sugerencia de refinamiento de IA"
+      ],
       "Close composer": [
         "Cerrar el editor"
       ],
@@ -438,6 +441,9 @@
       "exclude message content": [
         "excluya el contenido del mensaje"
       ],
+      "Expand": [
+        "Expandir"
+      ],
       "Expand composer": [
         "Expandir el editor"
       ],
@@ -474,17 +480,29 @@
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
+      "Formalize": [
+        "Formal"
+      ],
       "Forward as attachment": [
         "Reenviar como adjunto"
       ],
+      "Generate text": [
+        "Generar texto"
+      ],
       "Get in touch": [
         "Contáctenos"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Obténgalo por solo ${ addonPriceWithCurrency }/mes"
       ],
       "Get SimpleLogin extension": [
         "Obtener extensión de SimpleLogin"
       ],
       "Get started": [
         "Comenzar"
+      ],
+      "Get the writing assistant": [
+        "Obtener el asistente de escritura"
       ],
       "Get verification code": [
         "Obtener código de verificación"
@@ -643,6 +661,9 @@
       "Loading${ ellipsis }": [
         "Cargando${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Más amigable"
+      ],
       "Manage folders": [
         "Gestionar carpetas"
       ],
@@ -705,6 +726,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Acciones más refinadas"
       ],
       "More search options": [
         "Más opciones de búsqueda"
@@ -856,6 +880,9 @@
       "Print": [
         "Imprimir"
       ],
+      "Proofread": [
+        "Revisar"
+      ],
       "Quit": [
         "Salir"
       ],
@@ -922,6 +949,9 @@
       "Report a problem": [
         "Reportar un problema"
       ],
+      "Report an issue": [
+        "Notificar un problema"
+      ],
       "Report phishing": [
         "Reportar suplantación de identidad"
       ],
@@ -952,11 +982,17 @@
       "Resume": [
         "Reanudar"
       ],
+      "Resume downloading": [
+        "Reanudar la descarga"
+      ],
       "Retry": [
         "Reintentar"
       ],
       "Revert to original display": [
         "Revertir a la vista original"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Ejecutar en los servidores de ${ BRAND_NAME }"
       ],
       "Save": [
         "Guardar"
@@ -966,6 +1002,9 @@
       ],
       "Schedule message": [
         "Programar mensaje"
+      ],
+      "Scroll to bottom": [
+        "Desplazarse al final"
       ],
       "Search": [
         "Buscar"
@@ -1057,6 +1096,9 @@
       "Sharing options": [
         "Opciones para compartir"
       ],
+      "Shorten": [
+        "Acortar"
+      ],
       "Show": [
         "Mostrar"
       ],
@@ -1116,6 +1158,12 @@
       ],
       "Stay": [
         "Permanecer"
+      ],
+      "Stop downloading the writing assistant": [
+        "Detener la descarga del asistente de escritura"
+      ],
+      "Stop generating result": [
+        "Detener la generación de resultados"
       ],
       "Strikethrough": [
         "Tachar"
@@ -1244,6 +1292,9 @@
       "Use recovery code": [
         "Usar código de recuperación"
       ],
+      "Use this": [
+        "Usar este"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use el ratón para cambiar el tamaño de la vista. Si está usando el teclado, puede usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
       ],
@@ -1307,6 +1358,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Su asistente de escritura de correo"
       ],
       "Zoom in": [
         "Acercar"
@@ -1375,6 +1429,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
       ],
       "${ users } user": [
         "${ users } usuario",
@@ -1448,6 +1506,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Navegador no compatible "
+      ],
+      "Fast and secure": [
+        "Rápido y seguro"
+      ],
+      "Needs compatible hardware": [
+        "Necesita un hardware compatible."
+      ],
+      "No logs": [
+        "Sin registros"
+      ],
+      "Requires one-time download": [
+        "Requiere una sola descarga"
+      ],
+      "Run locally": [
+        "Ejecutar localmente"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Ejecutar en los servidores de ${ BRAND_NAME }"
+      ],
+      "Runs on all devices": [
+        "Funciona en todos los dispositivos"
+      ],
+      "Runs on your device": [
+        "Funciona en su dispositivo"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "Hardware no compatible"
       ]
     },
     "Attached ics file error": {
@@ -3289,6 +3381,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Establezca un método de recuperación para evitar pérdida de acceso a la cuenta."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Para continuar usando el asistente de escritura, añádalo a su suscripción."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Para continuar usando el asistente de escritura, solicite el acceso a su administrador."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3312,6 +3410,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
+      ],
+      "Use the writing assistant to:": [
+        "Use el asistente de escritura para:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "No encontramos ningún rastreador o URL de rastreo conocidos en este correo."
@@ -3683,6 +3784,9 @@
       "Draft could not be saved. Try again.": [
         "No se pudo guardar el borrador. Vuelva a intentarlo."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Debido a un error, no se pudo cancelar la generación de texto"
+      ],
       "Email address disabled": [
         "Dirección de correo desactivada"
       ],
@@ -3730,6 +3834,9 @@
       ],
       "Forward address is required": [
         "Se requiere la dirección de reenvío"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "No puedo continuar con esta solicitud debido a mis pautas éticas. Intente con un prompt diferente."
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -3864,6 +3971,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Proporcione al menos un nombre, apellido o nombre a mostrar"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Seleccione una categoría y lo que salió mal con el texto generado"
+      ],
+      "Please try generating the text again": [
+        "Intente generar el texto de nuevo."
+      ],
       "Port is required": [
         "Puerto requerido"
       ],
@@ -3878,6 +3991,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clave principal recuperada para el usuario de ${ BRAND_NAME }, no es válida para envíos"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Ocurrió un error al descargar el asistente de escritura. Intente de nuevo."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Ocurrió un error al cargar el asistente de escritura en su dispositivo. Intente de nuevo."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Ocurrió un error al descargar datos que no son necesarios cuando el asistente de escritura está inactivo"
       ],
       "Process aborted": [
         "Proceso abortado"
@@ -3945,6 +4067,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "Thanks for the feedback!": [
+        "¡Gracias por los comentarios!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se pudo descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nel archivo con un programa como GnuPG.",
@@ -4945,11 +5070,26 @@
       "Contacts": [
         "Contactos"
       ],
+      "Hardware not compatible": [
+        "Hardware no compatible"
+      ],
+      "Resume downloading": [
+        "Reanudar la descarga"
+      ],
       "Search": [
         "Búsqueda"
       ],
       "Security Center": [
         "Centro de Seguridad"
+      ],
+      "Set up the writing assistant": [
+        "Configurar el asistente de escritura"
+      ],
+      "Tell us more": [
+        "Cuéntenos más"
+      ],
+      "Write faster with the writing assistant": [
+        "Escriba más rápido con el asistente de escritura"
       ]
     },
     "Hint": {
@@ -5639,6 +5779,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
       ],
+      "Browser not supported": [
+        "El navegador no es compatible."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
       ],
@@ -5663,6 +5806,9 @@
       "Clear app data": [
         "Borrar datos de la aplicación"
       ],
+      "Clear browser data": [
+        "Borrar los datos del navegador"
+      ],
       "Clear data": [
         "Limpiar datos"
       ],
@@ -5672,8 +5818,8 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Al borrar los datos del navegador, también se desactiva la búsqueda de contenido de mensajes en este dispositivo. Todos los mensajes deberán descargarse nuevamente para buscar dentro de ellos."
       ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Borra los datos del navegador relacionados con la búsqueda de contenido de mensajes, incluidos los mensajes descargados."
+      "Clears browser data (including downloaded messages, …)": [
+        "Borra todos los datos del navegador (incluyendo los mensajes descargados, etc…)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
@@ -5757,9 +5903,6 @@
       "Default email application": [
         "Aplicación de correo por defecto"
       ],
-      "Disable message content search": [
-        "Desactivar búsqueda de contenido de mensajes"
-      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -5790,6 +5933,12 @@
       ],
       "Downloading paused": [
         "Descarga en pausa"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Descarga pausada: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Descarga del asistente de escritura: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Borrador"
@@ -5916,8 +6065,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para más resultados de búsqueda, intente buscar esta palabra clave en el contenido de los mensajes"
       ],
+      "Free for 14 days": [
+        "Gratis por 14 días"
+      ],
       "From": [
         "De"
+      ],
+      "Generate text": [
+        "Generar texto"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tiene ${ numAttachments } adjunto (${ numAttachmentsSize })",
@@ -5993,11 +6148,17 @@
       "Include Spam/Trash.": [
         "Incluir Spam/Papelera"
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Incluya el prompt y la respuesta para ayudarnos a mejorar la exactitud."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
+      ],
+      "Initializing…": [
+        "Inicializando…"
       ],
       "Insert image": [
         "Insertar imagen"
@@ -6041,8 +6202,14 @@
       "Learn more": [
         "Más información"
       ],
+      "Learn more about ${ PrivacyLink }": [
+        "Más información sobre ${ PrivacyLink }"
+      ],
       "Left to Right": [
         "Izquierda a derecha"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Permita que el asistente de escritura le ayude a escribir y responder a correos y mire cómo aumenta su productividad."
       ],
       "Link type": [
         "Tipo de enlace"
@@ -6133,6 +6300,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Cada mes los ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Acciones más refinadas"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre la carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
@@ -6270,6 +6440,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Comparta lo que esperaba."
+      ],
       "Please try again in a few moments": [
         "Vuelva a intentarlo en un momento"
       ],
@@ -6309,6 +6482,12 @@
       "Print email": [
         "Imprimir correo"
       ],
+      "Proofread selection": [
+        "Revisar la selección"
+      ],
+      "Proofread text": [
+        "Revisar el texto"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Proteja el correo de ser filtrado en listas de correo o spammers con ${ maskMyEmailButton }."
       ],
@@ -6321,8 +6500,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Borra todos los datos asociados con esta aplicación incluyendo los mensajes descargados."
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Borra todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc…)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Al reportar un mensaje como suplantación de identidad, enviará una alerta a nosotros para analizarlo y mejorar nuestros filtros. Significa que podremos ver todo el contenido del mensaje."
@@ -6418,6 +6597,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
+      "Shorten selection": [
+        "Acortar la selección"
+      ],
+      "Shorten text": [
+        "Acortar el texto"
+      ],
       "Show original message": [
         "Mostrar mensaje original"
       ],
@@ -6490,6 +6675,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "La configuración inicial puede tomar unos minutos."
+      ],
       "The local database is being prepared": [
         "La base de datos local está siendo preparada"
       ],
@@ -6514,6 +6702,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "El asistente de escritura necesita terminar descargarse antes de usarse."
       ],
       "Themes can give your inbox a new look.": [
         "Los temas pueden darle un estilo nuevo a el buzón."
@@ -6554,6 +6745,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario desactivado."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Esto está destinado a servir como ayuda para la escritura. Verifique la precisión del texto sugerido. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
@@ -6618,6 +6812,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Este mensaje expirará mañana a las ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Esto necesita hacerse solo una vez."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
@@ -6847,6 +7044,15 @@
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
       ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant add-on": [
+        "Complemento del asistente de escritura"
+      ],
+      "writing assistant iframe": [
+        "marco del asistente de escritura"
+      ],
       "Yearly": [
         "Cada año"
       ],
@@ -6981,6 +7187,9 @@
         "Seleccionó **${ elementsCount } mensaje**.",
         "Seleccionó **${ elementsCount } mensajes**."
       ],
+      "You selected some content:": [
+        "Seleccionó un contenido:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Perderá el acceso a las funciones de Plus en esta fecha."
       ],
@@ -7020,6 +7229,12 @@
       "Your account will be updated once the payment is cleared.": [
         "La cuenta se actualizará una vez que el pago se haya completado."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "El navegador no admite el asistente de escritura. Descargue la aplicación de escritorio ${ MAIL_APP_NAME } o intente con los servidores de ${ BRAND_NAME }."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "El navegador no admite el asistente de escritura. Intente con los servidores de ${ BRAND_NAME }."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
@@ -7034,6 +7249,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "El hardware no admite ejecutar el asistente de escritura. Intente con los servidores de ${ BRAND_NAME }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Los datos fueron encontrados en ${ displayedDate }"
@@ -7101,6 +7319,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
     "Key badge": {
@@ -7519,11 +7742,17 @@
       "Density": [
         "Densidad"
       ],
+      "Did not follow instructions": [
+        "Las instrucciones no fueron seguidas."
+      ],
       "Do you have any suggestions for our team?": [
         "¿Tiene alguna sugerencia para nuestro equipo?"
       ],
       "Don't ask again": [
         "No volver a preguntar"
+      ],
+      "Don't like the style": [
+        "No me gusta el estilo"
       ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
@@ -7690,11 +7919,11 @@
       "New password": [
         "Contraseña nueva"
       ],
-      "New plan": [
-        "Plan nuevo"
-      ],
       "No label found": [
         "Ninguna etiqueta encontrada"
+      ],
+      "Not factually correct": [
+        "Los hechos no son correctos."
       ],
       "Note": [
         "Nota"
@@ -7725,9 +7954,6 @@
       ],
       "Or": [
         "O"
-      ],
-      "Organization size": [
-        "Tamaño de la organización"
       ],
       "Original link": [
         "Enlace original"
@@ -7852,8 +8078,14 @@
       "Type a command...": [
         "Escriba un comando..."
       ],
+      "Type a prompt to generate an output": [
+        "Escriba un prompt para generar una respuesta"
+      ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
+      ],
+      "Unsafe or problematic": [
+        "No seguro o problemático"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -7981,6 +8213,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "La privacidad de vanguardia de ${ BRAND_NAME }"
+      ],
       "Add a gift code": [
         "Añadir código de regalo"
       ],
@@ -8747,6 +8982,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Generar correos electrónicos solo con una indicación"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -8805,6 +9043,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your texts": [
+        "Corregir y perfeccionar sus textos"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
@@ -8812,11 +9053,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
       ],
+      "Reply to messages": [
+        "Responder a mensajes"
+      ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
       ],
       "Router support": [
         "Soporte para enrutadores"
+      ],
+      "Save time emailing": [
+        "Ahorre tiempo enviando correos electrónicos"
       ],
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
@@ -9136,7 +9383,7 @@
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Increase or reallocate storage for a user": [
-        "Incremente o reasigne almacenamiento para un usuario"
+        "Aumentar o reasignar almacenamiento para un usuario"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenga privados sus planes y los de su familia con un calendario cifrado"
@@ -9358,6 +9605,12 @@
       ],
       "Senders blocked": [
         "Remitentes bloqueados"
+      ],
+      "The writing assistant is ready to use": [
+        "El asistente de escritura está listo para usar."
+      ],
+      "Trial started": [
+        "Prueba iniciada"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9525,6 +9778,20 @@
         "Uso compartido seguro de bóvedas"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clave de la organización no existe."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permiso denegado, los privilegios de administrador se han restringido."
+      ],
+      "The organization key must be activated first.": [
+        "La clave de la organización debe activarse primero."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necesita acceso a la clave de la organización para realizar esta acción."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
@@ -9634,6 +9901,9 @@
       "First name": [
         "Nombre"
       ],
+      "Generating...": [
+        "Generando..."
+      ],
       "Gift code": [
         "Código de regalo"
       ],
@@ -9642,6 +9912,9 @@
       ],
       "Hint": [
         "Pista"
+      ],
+      "How do you want the selected text modified?": [
+        "¿Cómo desea modificar el texto seleccionado?"
       ],
       "Image URL": [
         "URL de la imagen"
@@ -9669,6 +9942,12 @@
       ],
       "Please insert link first": [
         "Primero inserte el enlace"
+      ],
+      "Please share what you expected": [
+        "Comparta lo que esperaba."
+      ],
+      "Refining your text...": [
+        "Optimizando el texto..."
       ],
       "Search date, name, email address, or subject line": [
         "Búsqueda por fecha, nombre, dirección de correo electrónico o asunto"
@@ -9711,6 +9990,27 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "To": [
+        "Para"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Pruebe \"Anunciar próximos eventos en un boletín\""
+      ],
+      "Try “Cancel my gym membership”": [
+        "Pruebe «Cancelar mi membresía del gimnasio»"
+      ],
+      "Try “Invite Jane to my party”": [
+        "Pruebe «Invitar a Ana a mi fiesta»"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "Pruebe «Agradecer a mi colega por la ayuda en un proyecto»"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "Pruebe «Escribir una carta de presentación para una pasantía»"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Pruebe «Escribir un correo electrónico de seguimiento para un cliente»"
       ],
       "Type a command…": [
         "Escriba un comando…"
@@ -10727,8 +11027,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Al"
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -12144,6 +12444,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Your free trial has ended": [
+        "Finalizó su prueba gratuita"
       ]
     },
     "Title subscription": {

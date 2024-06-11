@@ -178,6 +178,9 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel add-on": [
+        "Annuler l'extension"
+      ],
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
@@ -393,6 +396,9 @@
       ],
       "Download CSV sample": [
         "Télécharger un modèle CSV"
+      ],
+      "Download Desktop App": [
+        "Télécharger l’application de bureau"
       ],
       "Download ICS": [
         "Télécharger un fichier ICS"
@@ -625,6 +631,9 @@
       "Keep my Plus subscription": [
         "Conserver mon abonnement à Plus"
       ],
+      "Keep the writing assistant": [
+        "Garder l'assistant d'écriture"
+      ],
       "label emails as": [
         "labelliser les messages comme"
       ],
@@ -697,10 +706,10 @@
       "No, thanks": [
         "Non merci"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -855,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "Révoquer cette invitation"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Exécuter sur les serveurs ${ BRAND_NAME }"
       ],
       "Save": [
         "Enregistrer"
@@ -1159,6 +1171,9 @@
       "What do I get?": [
         "Votre abonnement comprend :"
       ],
+      "Why can't the model run locally?": [
+        "Pourquoi est-ce que le modèle ne peut pas être exécuté sur mon appareil ?"
+      ],
       "Wipe": [
         "Effacer"
       ],
@@ -1228,6 +1243,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture",
+        "${ seats } accès à l'assistant d'écriture"
       ],
       "${ users } user": [
         "${ users } utilisateur",
@@ -1370,6 +1389,67 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "applications ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Compatibilité avec plus d'appareils et plus rapide"
+      ],
+      "No data transmitted while using,requires one-time download": [
+        "Aucune donnée n'est transmise lors de son utilisation et un seul téléchargement est nécessaire."
+      ],
+      "Run locally": [
+        "Exécuter sur cet appareil"
+      ],
+      "Run on servers": [
+        "Exécuter sur les serveurs"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/mois"
+      ],
+      "${ price } /year": [
+        "${ price }/an"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Actif jusqu'au ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Ajouter l'assistant d'écriture"
+      ],
+      "Add writing assistant to your plan": [
+        "Ajouter l'assistant d'écriture à votre abonnement"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "L'assigner à des utilisateurs spécifiques dans ${ userAndAddressesButton }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Se renouvelle automatiquement le ${ subscriptionRenewalDate }."
+      ],
+      "Cancel writing assistant add-on": [
+        "Annuler l'extension Assistant d'écriture"
+      ],
+      "Customize plan": [
+        "Personnaliser l'abonnement"
+      ],
+      "from ${ price } /month": [
+        "à partir de ${ price }/mois"
+      ],
+      "New": [
+        "Nouveau"
+      ],
+      "Renew subscription": [
+        "Renouveler l’abonnement"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "La version d'essai arrive à expiration le ${ formattedDate }."
+      ],
+      "Trial in progress": [
+        "La version d'essai est en cours."
       ]
     },
     "Attached ics file error": {
@@ -3918,6 +3998,9 @@
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
+      "Alias options could not be resolved": [
+        "Les options d'alias n'ont pas pu être obtenues."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tout l'espace de stockage est alloué. Nous vous invitons à réduire l'espace de stockage alloué à d'autres utilisateurs."
       ],
@@ -3959,6 +4042,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Les factures n'ont pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Could not open created vault": [
+        "Le coffre-fort créé n'a pas pu être ouvert."
+      ],
+      "Could not open updated vault": [
+        "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Could not save preference": [
         "La préférence n'a pas pu être enregistrée."
@@ -4081,6 +4170,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Item content cannot exceed 40KB": [
+        "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -5549,6 +5641,9 @@
       "Folders": [
         "Dossiers"
       ],
+      "Hardware not compatible": [
+        "Le matérial n'est pas compatible."
+      ],
       "IP address": [
         "Adresse IP"
       ],
@@ -6030,17 +6125,6 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -6501,6 +6585,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
+      "Browser not supported": [
+        "Le navigateur n'est pas pris en charge."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -6889,6 +6976,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Groupez les messages d'une même conversation dans votre boite de réception ou affichez-les séparément."
+      ],
       "here": [
         "ici"
       ],
@@ -7175,6 +7265,9 @@
       ],
       "Merged": [
         "Fusionné"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "MM/YY": [
         "MM/AA"
@@ -7590,6 +7683,9 @@
       "Settings updated": [
         "Les paramètres ont été mis à jour."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Affichez l'image de chaque expéditeur dans la liste des messages. Si aucune photo n'est disponible, les initiales de l'expéditeur seront affichées."
+      ],
       "Show original message": [
         "Afficher le message d'origine"
       ],
@@ -7753,6 +7849,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "L'extension Assistant d'écriture **ne sera pas renouvelée**. Vous pouvez continuer à bénéficier de ce service jusqu'au **${ subscriptionRenewalDate }**."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez quand vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
       ],
@@ -7776,6 +7875,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi pendant un délai choisi."
       ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
@@ -8182,6 +8284,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Si vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Quand vous cliquez sur un lien, cette fonctionnalité contre le phishing/hameçonnage vous demande de confirmer l'URL de la page web."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -8211,6 +8316,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Voulez-vous recevoir un nouveau code de vérification ?"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant add-on": [
+        "Extension Assistant d'écriture"
       ],
       "Yearly": [
         "Chaque année"
@@ -8407,6 +8518,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Téléchargez l'application de bureau ${ MAIL_APP_NAME } ou tentez de l'exécuter depuis des serveurs ${ BRAND_NAME }."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs ${ BRAND_NAME }."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
@@ -8418,6 +8535,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Votre matériel ne prend pas en charge l'exécution de l'assistant d'écriture en local. Essayez de l'exécuter sur des serveurs ${ BRAND_NAME }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Votre importation à partir de ${ accounts } est temporairement retardée.",
@@ -8464,6 +8584,17 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -8525,6 +8656,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Lecture seule"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Input label": {
@@ -9008,11 +9144,20 @@
       "Auto show remote images": [
         "Afficher automatiquement les images distantes"
       ],
+      "Auto-advance": [
+        "Avance automatique"
+      ],
       "Auto-delete unwanted messages": [
         "Supprimer automatiquement les messages indésirables"
       ],
       "Auto-detect primary time zone": [
         "Détecter automatiquement le fuseau horaire principal"
+      ],
+      "Auto-load embedded images": [
+        "Charger automatiquement les images intégrées"
+      ],
+      "Auto-load remote content": [
+        "Charger automatiquement le contenu distant"
       ],
       "Auto-reply": [
         "Réponse automatique"
@@ -9413,6 +9558,9 @@
       "Mail Server (IMAP)": [
         "Serveur de messagerie (IMAP)"
       ],
+      "Mail settings": [
+        "Paramètres de messagerie"
+      ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
       ],
@@ -9485,9 +9633,6 @@
       "New password": [
         "Nouveau mot de passe"
       ],
-      "New plan": [
-        "Nouvel abonnement"
-      ],
       "No filter": [
         "Aucun filtre"
       ],
@@ -9535,9 +9680,6 @@
       ],
       "Organization password": [
         "Mot de passe de l'organisation"
-      ],
-      "Organization size": [
-        "Taille de l’organisation"
       ],
       "Other amount": [
         "Autre montant"
@@ -9994,6 +10136,9 @@
       "Add gift code": [
         "Ajouter un code-cadeau"
       ],
+      "Add to your subscription": [
+        "Ajouter à votre abonnement"
+      ],
       "Apps and extensions": [
         "Applications et extensions"
       ],
@@ -10113,6 +10258,9 @@
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ],
       "View guide": [
         "Voir le guide"
@@ -10966,6 +11114,9 @@
       "Router support": [
         "Prise en charge des routeurs"
       ],
+      "Save time emailing": [
+        "Gagner du temps lors de l'envoi de vos messages"
+      ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
       ],
@@ -11080,7 +11231,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage des utilisateurs"
+        "Gestion de l'espace de stockage de l'utilisateur"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -11620,6 +11771,9 @@
       ],
       "Reminder has been sent": [
         "Le rappel a été envoyé."
+      ],
+      "Trial started": [
+        "La version d'essai a commencé."
       ],
       "Two-factor authentication has been enforced for administrators": [
         "L'authentification à deux facteurs (A2F) a été activée pour les administrateurs."
@@ -13615,7 +13769,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'abonnement"
+        "Passez à Premium"
       ]
     },
     "specialoffer: Offers": {
@@ -13987,49 +14141,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Pour"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
+      "For ${ totalPrice }": [
+        "Pour ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14240,6 +14353,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -14461,6 +14615,15 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
+      ],
+      "Writing assistant disabled": [
+        "L'assistant d'écriture est désactivé."
+      ],
+      "Writing assistant enabled": [
+        "L'assistant d'écriture est activé."
+      ],
+      "Writing assistant setting updated": [
+        "Le paramètre de l'assistant d'écriture a été mis à jour."
       ],
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
@@ -14856,6 +15019,9 @@
       "Cancel subscription?": [
         "Annuler l'abonnement ?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Voulez-vous annuler l'extension Assistant d'écriture ?"
+      ],
       "Card verification": [
         "Vérification de la carte"
       ],
@@ -14970,6 +15136,9 @@
       ],
       "Custom filters": [
         "Filtres personnalisés"
+      ],
+      "Custom folders and labels": [
+        "Dossiers et labels personnalisés"
       ],
       "Custom selection of users": [
         "Sélection personnalisée des utilisateurs"
@@ -15133,6 +15302,9 @@
       ],
       "Email subscriptions": [
         "Newsletters"
+      ],
+      "Enable writing assistant": [
+        "Activer l'assistant d'écriture"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
@@ -15401,7 +15573,7 @@
         "La vérification PayPal n'a pas abouti."
       ],
       "Personalise your e-mail footer": [
-        "Personnaliser le pied de page de vos messages."
+        "Personnalisez le pied de page de vos messages."
       ],
       "Phone": [
         "Téléphone"
@@ -15417,6 +15589,9 @@
       ],
       "Processing...": [
         "Traitement en cours…"
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Recommandé"
@@ -15585,6 +15760,9 @@
       ],
       "Sort labels alphabetically": [
         "Trier les labels par ordre alphabétique"
+      ],
+      "Spam filters": [
+        "Filtres anti-indésirables/spam"
       ],
       "Spam, block, and allow lists": [
         "Indésirables/spam, adresses bloquées et autorisées"
@@ -16144,6 +16322,11 @@
         "Administrateur principal"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "Authentification unique (SSO)"
@@ -16320,6 +16503,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "En désactivant les journaux (logs), vous effacerez aussi l'ensemble de votre historique. Voulez-vous vraiment les désactiver ?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "La date d'expiration n'est pas au format MM/AA."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si vous annulez cette importation, vous ne pourrez pas la reprendre. ${ BRAND_NAME } a sauvegardé toute la progression dans votre compte. Voulez-vous quand même annuler ?"

@@ -409,6 +409,9 @@
       "exclude message content": [
         "メッセージの内容を除外"
       ],
+      "Expand": [
+        "展開"
+      ],
       "Expand composer": [
         "広げる"
       ],
@@ -875,6 +878,9 @@
         "安全に返信"
       ],
       "Report a problem": [
+        "問題を報告"
+      ],
+      "Report an issue": [
         "問題を報告"
       ],
       "Report phishing": [
@@ -5299,6 +5305,9 @@
       "Clear app data": [
         "アプリデータを消去"
       ],
+      "Clear browser data": [
+        "ブラウザーデータをクリア"
+      ],
       "Clear data": [
         "データをクリア"
       ],
@@ -5307,9 +5316,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "ブラウザーデータを削除すると本文検索機能も利用できなくなります。もう一度利用するには、メールをすべてダウンロードしなおす必要があります。"
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "メールの本文が含まれている本文検索用のキャッシュを削除"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -5391,9 +5397,6 @@
       ],
       "Default email application": [
         "既定のメールアプリ"
-      ],
-      "Disable message content search": [
-        "メッセージ内容の検索を無効化"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
@@ -7222,9 +7225,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New plan": [
-        "新しいプラン"
-      ],
       "No label found": [
         "ラベルが見つかりませんでした"
       ],
@@ -7257,9 +7257,6 @@
       ],
       "Or": [
         "または"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Original link": [
         "元のリンク"
@@ -8899,6 +8896,20 @@
         "あなた"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "組織の鍵が存在しません。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "アクセスが拒否されました。管理者権限は制限されています。"
+      ],
+      "The organization key must be activated first.": [
+        "組織の鍵を最初に有効にする必要があります。"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "この操作を実行するには、組織キーにアクセスする必要があります。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "クレジット/デビット カード"
@@ -9945,8 +9956,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "価格:"
+      "For ${ totalPrice }": [
+        "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {

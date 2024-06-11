@@ -178,6 +178,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel add-on": [
+        "Avbryt utökning"
+      ],
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
@@ -393,6 +396,9 @@
       ],
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
+      ],
+      "Download Desktop App": [
+        "Ladda ner appen för stationär dator"
       ],
       "Download ICS": [
         "Ladda ner ICS"
@@ -625,6 +631,9 @@
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
       ],
+      "Keep the writing assistant": [
+        "Behåll skrivassistenten"
+      ],
       "label emails as": [
         "märk e-postmeddelanden som"
       ],
@@ -697,11 +706,11 @@
       "No, thanks": [
         "Nej tack"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -855,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "Återkalla denna inbjudan"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kör på ${ BRAND_NAME }-servrar"
       ],
       "Save": [
         "Spara"
@@ -1159,6 +1171,9 @@
       "What do I get?": [
         "Vad får jag?"
       ],
+      "Why can't the model run locally?": [
+        "Varför kan inte modellen köras lokalt?"
+      ],
       "Wipe": [
         "Rensa"
       ],
@@ -1370,6 +1385,61 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applikationer"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Snabbare, bredare enhetskompatibilitet"
+      ],
+      "Run locally": [
+        "Kör lokalt"
+      ],
+      "Run on servers": [
+        "Kör på servrar"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/månad"
+      ],
+      "${ price } /year": [
+        "${ price }/år"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Aktiv till ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Lägg till skrivassistent"
+      ],
+      "Add writing assistant to your plan": [
+        "Lägg till skrivassistent till din paket"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Tilldela den till specifik användare i ${ userAndAddressesButton }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Förnyas automatiskt den ${ subscriptionRenewalDate }"
+      ],
+      "Customize plan": [
+        "Anpassa paket"
+      ],
+      "from ${ price } /month": [
+        "från ${ price }/månad"
+      ],
+      "New": [
+        "Nytt"
+      ],
+      "Renew subscription": [
+        "Förnya prenumeration"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Provperiod löper ut den ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Provperiod pågår"
       ]
     },
     "Attached ics file error": {
@@ -3911,6 +3981,9 @@
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
+      "Alias options could not be resolved": [
+        "Alternativ för alias kunde inte lösas"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
@@ -3952,6 +4025,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."
+      ],
+      "Could not open created vault": [
+        "Kunde inte öppna skapat valv"
+      ],
+      "Could not open updated vault": [
+        "Kunde inte öppna uppdaterat valv"
       ],
       "Could not save preference": [
         "Kunde inte spara preferens"
@@ -4074,6 +4153,9 @@
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Objektinnehåll får inte överstiga 40 kB"
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
@@ -5547,6 +5629,9 @@
       "Folders": [
         "Mappar"
       ],
+      "Hardware not compatible": [
+        "Hårdvara inte kompatibel"
+      ],
       "IP address": [
         "IP-adress"
       ],
@@ -6034,17 +6119,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -6505,6 +6579,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
+      "Browser not supported": [
+        "Webbläsare stöds inte"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -6893,6 +6970,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
+      ],
       "here": [
         "här"
       ],
@@ -7176,6 +7256,9 @@
       ],
       "Merged": [
         "Sammanslagna"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Meddelanden i mappen \"Skickat\" eller \"Utkast\" kommer att fortsätta att visas i den mappen, även om du flyttar dem till annan mapp."
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -7594,6 +7677,9 @@
       "Settings updated": [
         "Inställningar uppdaterade"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
+      ],
       "Show original message": [
         "Visa originalmeddelande"
       ],
@@ -7608,9 +7694,6 @@
       ],
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för Business-användare med anpassade domäner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
@@ -7713,7 +7796,7 @@
         "Inloggningsuppgifterna från din identitetsleverantör kommer att tas bort."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "”Dark web” är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
+        "Mörka webben är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Länken för e-postverifiering har löpt ut. Logga in för att skicka en verifieringslänk igen."
@@ -8102,6 +8185,9 @@
       "We just sent you a new link.": [
         "Vi har precis skickat en ny länk till dig."
       ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Vi övervakar den mörka webben för tillfällen där din personliga information (som en e-postadress eller ett lösenord som används på en tredjepartswebbplats) läcker ut eller komprometteras."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
       ],
@@ -8171,6 +8257,9 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "När de prenumererar på ett paket erhåller du krediter för att använda i din prenumeration."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "När du klickar på en länk kommer denna funktion mot nätfiske be dig att bekräfta webbsidans URL."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
@@ -8200,6 +8289,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Vill du få en ny verifieringskod?"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ],
       "Yearly": [
         "Årligen"
@@ -8396,6 +8488,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Din webbläsare stöder inte skrivassistenten. Prova att köra det på ${ BRAND_NAME }-servrar."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -8407,6 +8502,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra det på ${ BRAND_NAME }-servrar."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import från ${ accounts } är tillfälligt fördröjd.",
@@ -8453,6 +8551,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8514,6 +8623,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Endast visa"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
     "Input label": {
@@ -9000,6 +9114,12 @@
       "Auto-detect primary time zone": [
         "Upptäckt primär tidszon automatiskt"
       ],
+      "Auto-load embedded images": [
+        "Ladda inbäddade bilder automatiskt"
+      ],
+      "Auto-load remote content": [
+        "Ladda fjärrinnehåll automatiskt"
+      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -9396,6 +9516,9 @@
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
+      "Mail settings": [
+        "Mail-inställningar"
+      ],
       "Mailbox password": [
         "Lösenord för brevlåda"
       ],
@@ -9468,9 +9591,6 @@
       "New password": [
         "Nytt lösenord"
       ],
-      "New plan": [
-        "Nytt paket"
-      ],
       "No filter": [
         "Inget filter"
       ],
@@ -9518,9 +9638,6 @@
       ],
       "Organization password": [
         "Organisationens lösenord"
-      ],
-      "Organization size": [
-        "Organisationens storlek"
       ],
       "Other amount": [
         "Annat belopp"
@@ -9977,6 +10094,9 @@
       "Add gift code": [
         "Lägg till presentkod"
       ],
+      "Add to your subscription": [
+        "Lägg till din prenumeration"
+      ],
       "Apps and extensions": [
         "Appar och utökningar"
       ],
@@ -10096,6 +10216,9 @@
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
       ],
       "View guide": [
         "Visa guide"
@@ -10830,6 +10953,9 @@
       "Document editors (docs, sheets, slides)": [
         "Dokumentredigerare (dokument, kalkylark, bildspel)"
       ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Dokumentredigerare (dokument, kalkylark, bildspel) (snart)"
+      ],
       "Double hop": [
         "Double hop"
       ],
@@ -10912,6 +11038,9 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
@@ -10951,6 +11080,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-servrar"
+      ],
+      "See team's availability": [
+        "Se teamets tillgänglighet"
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
@@ -11049,6 +11181,9 @@
       ],
       "User session management": [
         "Hantering av användarsession"
+      ],
+      "User storage management": [
+        "Hantering av lagringsutrymme för användare"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
@@ -11336,6 +11471,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-stöd är begränsat till användning av appar för stationära datorer (t.ex. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Molnbaserade IMAP-integreringar stöds för närvarande inte."
       ],
+      "Increase or reallocate storage for a user": [
+        "Öka eller omfördela lagringsutrymme för en användare"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Håll dina planer privata för dig och din familj med en krypterad kalender"
       ],
@@ -11417,6 +11555,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagra dina kontaktdetaljer, såsom telefonnummer, adresser, födelsedagar och personliga anteckningar på ett säkert sätt. Noll-åtkomst-kryptering säkerställer att inte ens ${ BRAND_NAME } kan få tillgång till dem."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se tillgängligheten för mötesdeltagare och spara tid på att schemalägga möten"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Skicka e-post till stora grupper snabbt och enkelt genom att skapa så många kontaktgrupper du behöver (upp till 100 kontakter per grupp)"
       ],
@@ -11443,6 +11584,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Stöd för fildelningsprotokoll som BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Ladda upp ditt företags logga för att anpassa ditt teams upplevelse på webbapparna för ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Använd dina egna anpassade e-postdomänadresser, t.ex. du@dittnamn.com"
@@ -11548,10 +11692,10 @@
         "En extern adress kan inte vara standard"
       ],
       "Dark Web Monitoring has been disabled": [
-        "Övervakning av ”Dark web” har inaktiverats"
+        "Övervakning av mörka webben har inaktiverats"
       ],
       "Dark Web Monitoring has been enabled": [
-        "Övervakning av ”Dark web” har aktiverats"
+        "Övervakning av mörka webben har aktiverats"
       ],
       "Invalid code": [
         "Ogiltig kod"
@@ -11573,6 +11717,9 @@
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
+      ],
+      "Trial started": [
+        "Provperiod startad"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Tvåfaktorsautentisering har verkställts för alla administratörer"
@@ -13927,46 +14074,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "För"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Desktop app": [
-        "App för stationär dator"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
+      "For ${ totalPrice }": [
+        "För ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14147,6 +14256,44 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -14368,6 +14515,15 @@
       ],
       "Verification successful": [
         "Verifiering lyckades"
+      ],
+      "Writing assistant disabled": [
+        "Skrivassistent inaktiverad"
+      ],
+      "Writing assistant enabled": [
+        "Skrivassistent aktiverad"
+      ],
+      "Writing assistant setting updated": [
+        "Inställning för skrivassistent uppdaterad"
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
@@ -14881,6 +15037,9 @@
       "Custom filters": [
         "Anpassade filter"
       ],
+      "Custom folders and labels": [
+        "Anpassade mappar och etiketter"
+      ],
       "Custom selection of users": [
         "Anpassat val av användare"
       ],
@@ -15043,6 +15202,9 @@
       ],
       "Email subscriptions": [
         "E-postprenumerationer"
+      ],
+      "Enable writing assistant": [
+        "Aktivera skrivassistent"
       ],
       "Encryption and keys": [
         "Kryptering och nycklar"
@@ -15334,6 +15496,9 @@
       "Processing...": [
         "Bearbetar..."
       ],
+      "Profile": [
+        "Profil"
+      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -15502,6 +15667,9 @@
       "Sort labels alphabetically": [
         "Sortera etiketter alfabetiskt"
       ],
+      "Spam filters": [
+        "Skräppostfilter"
+      ],
       "Spam, block, and allow lists": [
         "Listor för skräppost, blockera och tillåt"
       ],
@@ -15618,7 +15786,7 @@
         "Vad är ett alias?"
       ],
       "What is the dark web?": [
-        "Vad är ”Dark web”?"
+        "Vad är mörka webben?"
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
@@ -16060,6 +16228,11 @@
         "Primär admin"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
@@ -16259,6 +16432,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Genom att inaktivera loggarna kommer du också att rensa hela din logghistorik. Är du säker på att du vill inaktivera loggarna?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"

@@ -4760,9 +4760,6 @@
       "New password": [
         "Uusi salasana"
       ],
-      "New plan": [
-        "Uusi tilaus"
-      ],
       "No filter": [
         "Ei suodatusta"
       ],
@@ -4792,9 +4789,6 @@
       ],
       "Organization password": [
         "Organisaation salasana"
-      ],
-      "Organization size": [
-        "Organisaation koko"
       ],
       "Other amount": [
         "Muu summa"
@@ -6052,6 +6046,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Näet kokoukseen osallistujien tavoitettavuuden ja säästät aikaa kokousten suunnittelussa."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Lähetä viestejä suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
@@ -7651,8 +7648,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Hintaan"
+      "For ${ totalPrice }": [
+        "Käyttöjärjestelmä: ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -7735,6 +7732,9 @@
       "Custom schedule send and snooze times": [
         "Mukautetut lähetys- ja torkutusajat"
       ],
+      "Direct contribution to our mission": [
+        "Tukee tehtäväämme suoraan"
+      ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
       ],
@@ -7788,6 +7788,9 @@
       ],
       "Reactivate": [
         "Uudelleenaktivoi"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi aktivoimalla uudelleen."
       ],
       "Read the story": [
         "Lue juttu"

@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price } por usuário"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } assento de assistente de escrita",
+        "${ seats } assentos de assistente de escrita"
+      ],
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
@@ -4231,6 +4235,12 @@
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
       ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
+      "Writing assistant add-on": [
+        "Complemento de assistente de escrita"
+      ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
@@ -4420,6 +4430,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Somente leitura"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente com tecnologia de IA para ajudar você a criar melhores e-mails de maneira rápida e sem esforço."
       ]
     },
     "Invoice state display as badge": {
@@ -4760,9 +4775,6 @@
       "New password": [
         "Nova senha"
       ],
-      "New plan": [
-        "Novo plano"
-      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -4792,9 +4804,6 @@
       ],
       "Organization password": [
         "Senha da organização"
-      ],
-      "Organization size": [
-        "Tamanho da organização"
       ],
       "Other amount": [
         "Outra quantia"
@@ -5017,6 +5026,9 @@
       ],
       "Add gift code": [
         "Adicionar código de vale-presente"
+      ],
+      "Add to your subscription": [
+        "Adicionar na sua assinatura"
       ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
@@ -5535,6 +5547,9 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Gere e-mail com apenas um prompt"
+      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -5599,6 +5614,9 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
+      "Proofread and refine your texts": [
+        "Revise e otimize seus textos"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
@@ -5606,11 +5624,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Checagens regulares da segurança da sua conta. O alertaremos se você tiver senhas fracas ou reutilizadas que precisem ser atualizadas."
       ],
+      "Reply to messages": [
+        "Responder mensagens"
+      ],
       "Require 2FA for organization": [
         "Requer A2F para a organização"
       ],
       "Router support": [
         "Suporte a roteador"
+      ],
+      "Save time emailing": [
+        "Economize tempo enviando e-mails"
       ],
       "Schedule and snooze emails for any time": [
         "Programe e adie e-mails para qualquer momento"
@@ -6085,6 +6109,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Envie o logotipo da sua empresa para personalizar a experiência da sua equipe nos aplicativos web da ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
@@ -7660,8 +7687,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Por"
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8915,6 +8942,11 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
       ]
     },
     "Users table: single sign-on enabled": {

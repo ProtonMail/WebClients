@@ -476,10 +476,10 @@
       "Not now": [
         "Ikke nu"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -827,6 +827,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruger"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentplads",
+        "${ seats } skriveassistentpladser"
       ],
       "${ users } user": [
         "${ users } bruger",
@@ -2280,8 +2284,8 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Efter gentagelse…"
+      "Ends after…": [
+        "Slutter efter…"
       ],
       "Never": [
         "Aldrig"
@@ -4914,6 +4918,12 @@
       "Would you like to update this event?": [
         "Ønsker du at opdatere denne begivenhed?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tilføjelse"
+      ],
       "Yearly": [
         "Årlig"
       ],
@@ -5150,6 +5160,11 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Du kan gendele dine kalendere i indstillingerne."
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -5477,9 +5492,6 @@
       "New password": [
         "Ny adgangskode"
       ],
-      "New plan": [
-        "Nyt abonnement"
-      ],
       "Note": [
         "Note"
       ],
@@ -5500,9 +5512,6 @@
       ],
       "Optional": [
         "Valgfrit"
-      ],
-      "Organization size": [
-        "Størrelse på organisationen"
       ],
       "Organizer": [
         "Arrangør"
@@ -6354,6 +6363,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Generate emails with only a prompt": [
+        "Generér e-mails med kun en besked"
+      ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
@@ -6412,6 +6424,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturlæs og finpuds dine tekster"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
@@ -6419,11 +6434,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
+      "Reply to messages": [
+        "Svar på beskeder"
+      ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
       ],
       "Router support": [
         "Router support"
+      ],
+      "Save time emailing": [
+        "Spar tid ved at sende e-mail"
       ],
       "Schedule and snooze emails for any time": [
         "Planlæg og snooze e-mails til enhver tid"
@@ -8252,8 +8273,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Til"
+      "For ${ totalPrice }": [
+        "Til ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9358,7 +9379,7 @@
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
       "Change start date to unselect": [
-        "Ændr startdato ved at fjerne markeringen"
+        "Ændr startdato for at fravælge"
       ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"

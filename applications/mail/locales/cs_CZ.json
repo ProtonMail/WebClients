@@ -444,6 +444,9 @@
       "exclude message content": [
         "vyloučit obsah zprávy"
       ],
+      "Expand": [
+        "Rozbalit"
+      ],
       "Expand composer": [
         "Celá obrazovka"
       ],
@@ -928,6 +931,9 @@
         "Odpovědět bezpečně"
       ],
       "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "Report an issue": [
         "Nahlásit problém"
       ],
       "Report phishing": [
@@ -1990,7 +1996,7 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Chcete-li tyto funkce zachovat, aktivujte je znovu do ${ formattedEndDate }:"
+        "Chcete-li tyto funkce zachovat, proveďte opět aktivaci do ${ formattedEndDate }:"
       ],
       "Reactivate subscription": [
         "Znovu aktivovat předplatné"
@@ -5857,6 +5863,9 @@
       "Clear app data": [
         "Vyčistit data aplikace"
       ],
+      "Clear browser data": [
+        "Vymazat data prohlížeče"
+      ],
       "Clear data": [
         "Smazat data"
       ],
@@ -5865,9 +5874,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Vymazání dat prohlížeče také deaktivuje vyhledávání obsahu zpráv v tomto zařízení. Pro vyhledávání ve všech zprávách bude nutné je znovu stáhnout."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Vymaže data prohlížeče související s vyhledáváním obsahu zpráv včetně stažených zpráv"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -5952,9 +5958,6 @@
       ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
-      ],
-      "Disable message content search": [
-        "Zakázat vyhledávání v obsahu zpráv"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -6534,9 +6537,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Odstraní všechna data spojená s touto aplikací, včetně stažených zpráv"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlášení této zprávy jako pokusu o phishing odešle tuto zprávu nám, abychom ji mohli analyzovat a zlepšit tím naše filtry. To znamená, že uvidíme kompletně celý obsah této zprávy."
@@ -7951,9 +7951,6 @@
       "New password": [
         "Nové heslo"
       ],
-      "New plan": [
-        "Nový tarif"
-      ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
@@ -7986,9 +7983,6 @@
       ],
       "Or": [
         "Nebo"
-      ],
-      "Organization size": [
-        "Velikost organizace"
       ],
       "Original link": [
         "Původní odkaz"
@@ -8129,7 +8123,7 @@
         "Co se stalo?"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Jaký je váš hlavní důvod pro zrušení nebo snížení hodnocení?"
+        "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
       ],
       "With attachment": [
         "S přílohami"
@@ -8974,6 +8968,9 @@
       "Centralized billing": [
         "Centrální placení"
       ],
+      "Collaborate and share large files": [
+        "Spolupráce a sdílení velkých souborů"
+      ],
       "Contact groups": [
         "Skupiny kontaktů"
       ],
@@ -8992,6 +8989,9 @@
       "Custom snooze time": [
         "Vlastní čas odložení"
       ],
+      "Custom workspace branding": [
+        "Přizpůsobení pracovního prostoru pro vlastní značku"
+      ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
       ],
@@ -9006,6 +9006,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Editory dokumentů (dokumenty, tabulky, prezentace)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Editory dokumentů (dokumenty, tabulky, prezentace) (již brzy)"
       ],
       "Double hop": [
         "Double hop"
@@ -9085,6 +9088,9 @@
       "Password health": [
         "Síla hesla"
       ],
+      "Password manager to secure credentials": [
+        "Správce hesel pro zabezpečení přihlašovacích údajů"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -9126,6 +9132,9 @@
       ],
       "Secure Core servers": [
         "Servery Secure Core"
+      ],
+      "See team's availability": [
+        "Podívejte se, jaká je dostupnost týmu"
       ],
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
@@ -9217,6 +9226,9 @@
       "User session management": [
         "Správa uživatelských relací"
       ],
+      "User storage management": [
+        "Správa uživatelského úložiště"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Sdílení trezoru (až ${ n } osoba)",
         "Sdílení trezoru (až ${ n } osoby)",
@@ -9265,6 +9277,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
@@ -9273,6 +9288,12 @@
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Šifrovaný e-mail a kalendář na začátek."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Vylepšené zabezpečení a prémiové funkce pro týmy."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Nezbytná ochrana a bezpečná spolupráce neomezeného počtu uživatelů."
@@ -9423,6 +9444,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
       ],
+      "Increase or reallocate storage for a user": [
+        "Navýšení nebo přerozdělení úložiště pro uživatele"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Pomocí šifrovaného kalendáře uchovejte své plány v soukromí pouze pro sebe a svou rodinu"
       ],
@@ -9504,6 +9528,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani ${ BRAND_NAME } si nemůže přečíst tyto údaje."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Zjistěte dostupnost účastníků schůzek a ušetřete čas při jejich plánování"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Odešlete e-maily velkým skupinám rychle a snadno vytvořením kontaktních skupin (až 100 kontaktů na skupinu)"
       ],
@@ -9530,6 +9557,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Nahrajte logo své firmy a přizpůsobte tím prostředí webových aplikací ${ BRAND_NAME }, které používá váš tým"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
@@ -9808,6 +9838,20 @@
         "Zabezpečené sdílení trezorů"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Klíč organizace neexistuje."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Pro provedení této operace potřebujete přístup ke klíči organizace."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
@@ -9981,7 +10025,7 @@
         "Vyberte stav"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
-        "Podělte se o to, co si myslíte, že by mohlo ${ BRAND_NAME } zlepšit"
+        "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
       ],
       "Start date": [
         "Datum zahájení"
@@ -11080,8 +11124,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Pro"
+      "For ${ totalPrice }": [
+        "Pro ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -11131,7 +11175,7 @@
         "Přidávat jakékoliv nové soubory"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po vypršení platnosti vašeho předplatného ${ planName } budete snížení na ${ BRAND_NAME } Free, který nabízí pouze až 1 GB Mail úložiště a až 5 GB Drive úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
+        "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
       "Back up photos from your devices": [
         "Zálohovat fotografie ze svých zařízení"
@@ -11221,19 +11265,19 @@
         "Shlédněte rozhovor"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete sníženi na ${ BRAND_NAME } Free, který nabízí pouze až 1 GB Mail úložiště a až 5 GB Drive úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
+        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete sníženi na ${ BRAND_NAME } Free, který nabízí pouze až 5 GB Drive úložiště na disku a až 1 GB Mail úložiště. Přijdete také o všechny dříve udělené bonusy k úložišti."
+        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "V rámci předplatného ${ planName } vám stále zbývá ${ expiryDate }. Přidáme vám kredity za zbývající dobu k vašemu účtu ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Stále máte předplatné ${ expiryDate } na váš plán ${ planName }. Přidáme vám kredity za zbývající dobu k vašemu účtu ${ BRAND_NAME }. Před zrušením se ujistěte, že jste nepřekročili limity bezplatného tarifu. ${ learnMoreLink }"
+        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Vaše vlastní e-mailová doména"
