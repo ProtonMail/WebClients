@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { ButtonLike, CircleLoader } from '@proton/atoms';
@@ -13,6 +15,7 @@ import {
     useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { DecryptedLink, useUserSettings } from '../../../store';
@@ -51,14 +54,16 @@ const RevisionsSettingsBanner = ({
 const RevisionsModalContent = () => {
     const [{ hasPaidDrive }] = useUser();
     const { revisionRetentionDays } = useUserSettings();
-    const { isLoading, currentRevision, categorizedRevisions } = useRevisionsProvider();
+    const { isLoading, currentRevision, permissions, categorizedRevisions } = useRevisionsProvider();
+    const isOwner = useMemo(() => getIsOwner(permissions), [permissions]);
     return (
         <>
-            {hasPaidDrive ? (
-                <RevisionsSettingsBanner revisionRetentionDays={revisionRetentionDays} />
-            ) : (
-                <RevisionsUpgradeBanner />
-            )}
+            {isOwner &&
+                (hasPaidDrive ? (
+                    <RevisionsSettingsBanner revisionRetentionDays={revisionRetentionDays} />
+                ) : (
+                    <RevisionsUpgradeBanner />
+                ))}
             {isLoading && <CircleLoader className="w-full m-auto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
                 <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
