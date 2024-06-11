@@ -473,10 +473,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -821,6 +821,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } kuota asisten penulisan"
       ],
       "${ users } user": [
         "${ users } pengguna"
@@ -2265,8 +2268,8 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Setelah mengulang…"
+      "Ends after…": [
+        "Berakhir setelah…"
       ],
       "Never": [
         "Tidak pernah"
@@ -4841,6 +4844,12 @@
       "Would you like to update this event?": [
         "Apakah Anda ingin memperbarui acara ini?"
       ],
+      "Writing assistant": [
+        "Asisten penulisan"
+      ],
+      "Writing assistant add-on": [
+        "Pengaya asisten penulisan"
+      ],
       "Yearly": [
         "Tahunan"
       ],
@@ -5073,6 +5082,11 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Anda dapat membagikan ulang kalender Anda melalui menu pengaturan."
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -5398,9 +5412,6 @@
       "New password": [
         "Kata sandi baru"
       ],
-      "New plan": [
-        "Paket baru"
-      ],
       "Note": [
         "Catatan"
       ],
@@ -5421,9 +5432,6 @@
       ],
       "Optional": [
         "Opsional"
-      ],
-      "Organization size": [
-        "Ukuran organisasi"
       ],
       "Organizer": [
         "Penyelenggara"
@@ -6174,6 +6182,9 @@
       "Centralized billing": [
         "Tagihan yang terpusat"
       ],
+      "Collaborate and share large files": [
+        "Kolaborasi dan berbagi file besar"
+      ],
       "Contact groups": [
         "Grup kontak"
       ],
@@ -6192,6 +6203,9 @@
       "Custom snooze time": [
         "Pilih sendiri waktu tunda"
       ],
+      "Custom workspace branding": [
+        "Penjenamaan ruang kerja yang disesuaikan"
+      ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
@@ -6206,6 +6220,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Editor dokumen (doc, sheet, slide)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Penyunting dokumen (dokumen, lembar bentang, salindia) (segera)"
       ],
       "Double hop": [
         "Double hop"
@@ -6282,6 +6299,9 @@
       "Password health": [
         "Kesehatan kata sandi"
       ],
+      "Password manager to secure credentials": [
+        "Manajer kata sandi untuk mengamankan kredensial"
+      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
@@ -6309,6 +6329,9 @@
       "Router support": [
         "Dukungan router"
       ],
+      "Save time emailing": [
+        "Hemat waktu dalam mengirim email"
+      ],
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
@@ -6320,6 +6343,9 @@
       ],
       "Secure Core servers": [
         "Server Secure Core"
+      ],
+      "See team's availability": [
+        "Lihat ketersediaan tim"
       ],
       "Send & receive invitations": [
         "Kirim & terima undangan"
@@ -6408,6 +6434,9 @@
       "User session management": [
         "Pengelolaan sesi pengguna"
       ],
+      "User storage management": [
+        "Manajemen penyimpanan pengguna"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
@@ -6453,6 +6482,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Semua aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi seluruh bisnis. "
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
@@ -6464,6 +6496,9 @@
       ],
       "Encrypted email and calendar to get you started.": [
         "Email dan kalender terenkripsi untuk membantu Anda memulai."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Keamanan mutakhir dan fitur premium untuk tim."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Perlindungan esensial dan kolaborasi aman tanpa batasan jumlah pengguna."
@@ -6611,6 +6646,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
+      "Increase or reallocate storage for a user": [
+        "Tingkatkan atau alokasikan penyimpanan untuk seorang pengguna"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
@@ -6692,6 +6730,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Lihat ketersediaan peserta rapat dan menghemat waktu dalam menjadawalkan rapat"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
       ],
@@ -6718,6 +6759,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Unggah logo bisnismu untuk mengatur pengalaman tim di aplikasi web ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -8056,8 +8100,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Untuk"
+      "For ${ totalPrice }": [
+        "Untuk ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

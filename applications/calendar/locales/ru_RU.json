@@ -20,6 +20,26 @@
         "Пересылка почты остановлена"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка данных ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка из ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка с ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -405,6 +425,9 @@
       "Manage labels": [
         "Управление ярлыками"
       ],
+      "Mark as resolved": [
+        "Отметить как устраненную"
+      ],
       "Mark for deletion": [
         "Отметить для удаления"
       ],
@@ -459,10 +482,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2266,9 +2289,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "После повтора…"
-      ],
       "Never": [
         "Никогда"
       ],
@@ -2523,6 +2543,11 @@
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Описание:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "This event was updated.": [
+        "Это событие было обновлено."
       ]
     },
     "Email body for invitation (date part)": {
@@ -4610,6 +4635,9 @@
       "Organization size": [
         "Размер организации"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Другие пользователи в вашей организации будут видеть ваши занятые часы. Никакие подробности события не сообщаются."
+      ],
       "password": [
         "пароль"
       ],
@@ -5057,6 +5085,9 @@
       "Your email address and password were leaked:": [
         "Ваш адрес электронной почты и пароль подверглись утечке:"
       ],
+      "Your email address was exposed:": [
+        "Ваш адрес электронной почты был опубликован:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
@@ -5483,9 +5514,6 @@
       "New password": [
         "Новый пароль"
       ],
-      "New plan": [
-        "Новый план"
-      ],
       "Note": [
         "Заметка"
       ],
@@ -5506,9 +5534,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Organization size": [
-        "Размер организации"
       ],
       "Organizer": [
         "Организатор"
@@ -6304,6 +6329,9 @@
       "Centralized billing": [
         "Централизованная оплата"
       ],
+      "Collaborate and share large files": [
+        "Работайте вместе и делитесь большими файлами"
+      ],
       "Contact groups": [
         "Группы контактов"
       ],
@@ -6319,6 +6347,9 @@
       "Custom fields": [
         "Настраиваемые поля"
       ],
+      "Custom workspace branding": [
+        "Пользовательское брендирование рабочего пространства"
+      ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
@@ -6333,6 +6364,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редакторы документов (текстовых документов, электронных таблиц, слайдов)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редакторы документов (текстовых документов, электронных таблиц, слайдов) (скоро)"
       ],
       "Double hop": [
         "Двойной перелёт"
@@ -6409,6 +6443,9 @@
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролей для защиты учетных данных"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -6447,6 +6484,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "See team's availability": [
+        "Посмотреть доступность команды"
       ],
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
@@ -6535,6 +6575,9 @@
       "User session management": [
         "Управление сеансом пользователя"
       ],
+      "User storage management": [
+        "Управление хранилищем пользователя"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Совместное использование хранилища (до ${ n } человека)",
         "Совместное использование хранилища (до ${ n } человек)",
@@ -6577,6 +6620,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Все приложения ${ BRAND_NAME } и их платные функции"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
@@ -6585,6 +6631,12 @@
       ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрованная почта и календарь, чтобы начать работу."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Повышенная безопасность и платные функции для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
@@ -6732,6 +6784,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
       ],
+      "Increase or reallocate storage for a user": [
+        "Увеличить или перераспределить хранилище пользователя"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
       ],
@@ -6807,6 +6862,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Узнайте о наличии участников и сэкономьте время на планировании встреч."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
       ],
@@ -6833,6 +6891,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Загрузите логотип вашей компании, чтобы настроить работу команды в веб-приложениях ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
@@ -7253,6 +7314,12 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Безопасный общий доступ с ${ n } хранилищем",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами"
+      ],
       "Secure sharing with multiple vaults": [
         "Безопасное совместное использование с помощью нескольких хранилищ"
       ],
@@ -7568,6 +7635,9 @@
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Получайте уведомления об утечке вашего пароля или других данных из сторонних служб. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передовое средство безопасности на основе искусственного интеллекта, предназначенное для пользователей, желающих обеспечить надежную защиту своих учетных записей. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7608,6 +7678,9 @@
         "${ timeRemaining.inHours } часа",
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Чтобы изменить пароль, зайдите на устройство, с которого осуществлялся вход (в сеансе, где был инициирован запрос)."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
@@ -7664,6 +7737,11 @@
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Отменить сброс пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введите свой текущий пароль, чтобы отменить процесс сброса пароля. Никакие другие изменения не вступят в силу."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -8015,6 +8093,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Раскрашивайте календарь в разные цвета, чтобы лучше организовать свой день, следить за временем и многое другое."
+      ],
+      "Custom event colors": [
+        "Пользовательские цвета событий"
+      ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
@@ -8023,6 +8107,9 @@
       ],
       "No more scheduling conflicts": [
         "Больше никаких конфликтов в расписании"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Теперь вы можете видеть, когда участники могут присутствовать на вашем собрании."
       ]
     },
     "Storage": {
@@ -8185,8 +8272,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8214,6 +8301,12 @@
       "6 users": [
         "6 пользователей"
       ],
+      "Add any new files": [
+        "Добавление любых новых файлов"
+      ],
+      "Back up photos from your devices": [
+        "Резервное копирование фотографий с ваших устройств"
+      ],
       "Calendar sharing": [
         "Совместное использование календаря"
       ],
@@ -8223,6 +8316,9 @@
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
+      "Extra storage and bonuses": [
+        "Дополнительное место в хранилище и бонусы"
+      ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
       ],
@@ -8231,6 +8327,9 @@
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
+      ],
+      "Manage your calendar": [
+        "Управление календарями"
       ],
       "Online privacy, for your whole family": [
         "Конфиденциальность онлайн для всей семьи"
@@ -8243,6 +8342,15 @@
       ],
       "Read the story": [
         "Читать историю"
+      ],
+      "Receive new emails": [
+        "Получать новые электронные письма"
+      ],
+      "Send emails with attachments": [
+        "Отправлять электронные письма с вложениями"
+      ],
+      "Sync files on devices": [
+        "Синхронизация файлов на устройствах"
       ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
