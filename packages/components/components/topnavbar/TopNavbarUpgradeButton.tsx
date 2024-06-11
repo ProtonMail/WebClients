@@ -87,7 +87,12 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         fromApp: app,
     });
 
-    const upgradeText = c('specialoffer: Link').t`Upgrade`;
+    const upgradeText =
+        user.isFree && !isTrial(subscription)
+            ? // translator: this is the upgrade button only for Free users
+              c('specialoffer: Link only for Free users').t`Upgrade`
+            : // translator: regular update button for all other users
+              c('specialoffer: Link').t`Upgrade`;
 
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
 
