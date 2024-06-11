@@ -18,7 +18,7 @@ export const ConnectionStatus = () => {
   const [disconnectReason, setDisconnectReason] = useState<ConnectionCloseReason>()
 
   const showEncryptionError = useCallback((message: string) => {
-    /** @TODO: remove alert: DRVDOC-375 */
+    /** @TODO Replace alert DRVDOC-375 */
     alert(message)
   }, [])
 

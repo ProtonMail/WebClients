@@ -13,7 +13,6 @@ export class GetDocumentMeta implements UseCaseInterface<DocumentMetaInterface> 
 
   async execute(lookup: NodeMeta): Promise<Result<DocumentMetaInterface>> {
     const result = await this.docsApi.getDocumentMeta(lookup)
-
     if (result.isFailed()) {
       return Result.fail(result.getError())
     }
