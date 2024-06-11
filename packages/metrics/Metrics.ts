@@ -22,9 +22,17 @@ import { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/d
 import { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
 import { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
+import { HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson } from './types/drive_sync_erroring_users_total_v1.schema';
+import { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from './types/drive_sync_errors_total_v1.schema';
+import { HttpsProtonMeDriveSyncEventUpdatesTotalV1SchemaJson } from './types/drive_sync_event_updates_total_v1.schema';
+import { HttpsProtonMeDriveSyncEventUpdatesUnecessaryTotalV1SchemaJson } from './types/drive_sync_event_updates_unecessary_total_v1.schema';
+import { HttpsProtonMeDriveSyncItemsTotalV1SchemaJson } from './types/drive_sync_items_total_v1.schema';
+import { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types/drive_sync_resync_items_total_v1.schema';
+import { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
 import { HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson } from './types/drive_upload_erroring_users_total_v1.schema';
 import { HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson } from './types/drive_upload_errors_total_v1.schema';
 import { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
+import { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
 import { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
 import { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
@@ -110,11 +118,27 @@ class Metrics extends MetricsBase {
 
     public docs_users_success_rate_total: Counter<HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson>;
 
+    public drive_sync_erroring_users_total: Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>;
+
+    public drive_sync_errors_total: Counter<HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson>;
+
+    public drive_sync_event_updates_total: Counter<HttpsProtonMeDriveSyncEventUpdatesTotalV1SchemaJson>;
+
+    public drive_sync_event_updates_unecessary_total: Counter<HttpsProtonMeDriveSyncEventUpdatesUnecessaryTotalV1SchemaJson>;
+
+    public drive_sync_items_total: Counter<HttpsProtonMeDriveSyncItemsTotalV1SchemaJson>;
+
+    public drive_sync_resync_items_total: Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>;
+
+    public drive_sync_resync_total: Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>;
+
     public drive_upload_erroring_users_total: Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>;
 
     public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>;
 
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>;
+
+    public drive_volume_events_subscriptions_histogram: Histogram<HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson>;
 
     public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
 
@@ -303,6 +327,42 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_sync_erroring_users_total = new Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>(
+            { name: 'drive_sync_erroring_users_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_errors_total = new Counter<HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson>(
+            { name: 'drive_sync_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_event_updates_total = new Counter<HttpsProtonMeDriveSyncEventUpdatesTotalV1SchemaJson>(
+            { name: 'drive_sync_event_updates_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_event_updates_unecessary_total =
+            new Counter<HttpsProtonMeDriveSyncEventUpdatesUnecessaryTotalV1SchemaJson>(
+                { name: 'drive_sync_event_updates_unecessary_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sync_items_total = new Counter<HttpsProtonMeDriveSyncItemsTotalV1SchemaJson>(
+            { name: 'drive_sync_items_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_resync_items_total = new Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>(
+            { name: 'drive_sync_resync_items_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_resync_total = new Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>(
+            { name: 'drive_sync_resync_total', version: 1 },
+            this.requestService
+        );
+
         this.drive_upload_erroring_users_total = new Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>(
             { name: 'drive_upload_erroring_users_total', version: 1 },
             this.requestService
@@ -317,6 +377,12 @@ class Metrics extends MetricsBase {
             { name: 'drive_upload_success_rate_total', version: 1 },
             this.requestService
         );
+
+        this.drive_volume_events_subscriptions_histogram =
+            new Histogram<HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson>(
+                { name: 'drive_volume_events_subscriptions_histogram', version: 1 },
+                this.requestService
+            );
 
         this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
             { name: 'web_core_delete_account_total', version: 1 },
