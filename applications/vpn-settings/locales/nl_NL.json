@@ -4674,9 +4674,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New plan": [
-        "Nieuw plan"
-      ],
       "No filter": [
         "Geen filter"
       ],
@@ -4703,9 +4700,6 @@
       ],
       "Organization password": [
         "Organisatiewachtwoord"
-      ],
-      "Organization size": [
-        "Grootte van de organisatie"
       ],
       "Other amount": [
         "Ander bedrag"
@@ -7505,8 +7499,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Voor"
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

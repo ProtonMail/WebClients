@@ -957,6 +957,12 @@
       "${ price } per user": [
         "${ price } за користувача"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } сидіння помічника з письма",
+        "${ seats } сидіння помічників з письма",
+        "${ seats } сидінь помічників з письма",
+        "${ seats } сидінь помічників з письма"
+      ],
       "${ users } user": [
         "${ users } користувач",
         "${ users } користувачі",
@@ -1062,6 +1068,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Можливість використання ${ domains } власного домену електронної пошти, ${ addresses } адреси електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
@@ -3352,6 +3364,12 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Filter notification": {
@@ -4899,7 +4917,7 @@
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Підписка автоматично поновлюється кожні ${ cycle } місяців."
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців."
       ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
@@ -5200,6 +5218,12 @@
       ],
       "Would you like to restore your files?": [
         "Відновити ваші файли?"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ],
+      "Writing assistant add-on": [
+        "Доповнення для помічника з написання"
       ],
       "Yes": [
         "Так"
@@ -5807,9 +5831,6 @@
       "New password": [
         "Новий пароль"
       ],
-      "New plan": [
-        "Новий тарифний план"
-      ],
       "Note": [
         "Нотатка"
       ],
@@ -5827,9 +5848,6 @@
       ],
       "Optional": [
         "Необов'язково"
-      ],
-      "Organization size": [
-        "Розмір організації"
       ],
       "Other": [
         "Інше"
@@ -6001,6 +6019,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Яка ваша основна причина скасування чи пониження тарифу?"
       ],
       "Wonderful": [
         "Дивовижно"
@@ -6269,10 +6290,10 @@
     },
     "Mimetype": {
       "3GPP audio/video container": [
-        "Аудіо/відео контейнер 3GPP"
+        "Контейнер аудіо/відео 3GPP"
       ],
       "3GPP2 audio/video container": [
-        "Аудіо/відео контейнер 3GPP2"
+        "Контейнер аудіо/відео 3GPP2"
       ],
       "7-zip archive": [
         "Архів 7-zip"
@@ -6287,16 +6308,16 @@
         "Формат портативного документа Adobe (PDF)"
       ],
       "Amazon Kindle eBook format": [
-        "Формат Amazon Kindle eBook"
+        "Формат електронних книг Amazon Kindle"
       ],
       "Android Package": [
         "Пакунок Android"
       ],
       "Animated Portable Network Graphics": [
-        "Анімована портативна мережева графіка"
+        "Анімована портативна мережева графіка (APNG)"
       ],
       "Apple Installer Package": [
-        "Пакет встановлювача Apple"
+        "Пакунок встановлення Apple"
       ],
       "Archive document": [
         "Архівувати документ"
@@ -6311,10 +6332,10 @@
         "Відео AVI"
       ],
       "Binary data": [
-        "Двійкові дані"
+        "Бінарні дані"
       ],
       "Bourne shell script": [
-        "Bourne shell скрипт"
+        "Скрипт Bourne shell"
       ],
       "BZip archive": [
         "Архів BZip"
@@ -6323,13 +6344,13 @@
         "Архів BZip2"
       ],
       "C-Shell script": [
-        "C-Shell скрипт"
+        "Скрипт C-Shell"
       ],
       "Cascading Style Sheets (CSS)": [
         "Каскадні таблиці стилів (CSS)"
       ],
       "Comma-separated values (CSV)": [
-        "Значення розділені комами (CSV)"
+        "Значення, розділені комами (CSV)"
       ],
       "Electronic publication (EPUB)": [
         "Електронна публікація (EPUB)"
@@ -6338,7 +6359,7 @@
         "Відео Flash"
       ],
       "Graphics Interchange Format (GIF)": [
-        "Формат обміну графікою (GIF)"
+        "Формат обміну зображеннями (GIF)"
       ],
       "GZip Compressed Archive": [
         "Стиснутий архів GZip"
@@ -6347,13 +6368,13 @@
         "Мова розмітки гіпертексту (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
-        "Попередня обробка гіпертексту (Персональна головна сторінка)"
+        "Гіпертекстовий препроцесор (PHP)"
       ],
       "iCalendar format": [
         "Формат iCalendar"
       ],
       "Icon format": [
-        "Формат значка"
+        "Формат піктограм"
       ],
       "Image": [
         "Зображення"
@@ -6365,31 +6386,31 @@
         "Зображення JPEG"
       ],
       "MP3 audio": [
-        "MP3 аудіо"
+        "Аудіо MP3"
       ],
       "MPEG transport stream": [
-        "Передача MPEG"
+        "Транспортний потік (MPEG-TS)"
       ],
       "MPEG Video": [
-        "MPEG відео"
+        "Відео MPEG"
       ],
       "MS Embedded OpenType fonts": [
         "Вбудовані шрифти OpenType MS"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "Музичний інструмент цифрового інтерфейсу (MIDI)"
+        "Цифровий інтерфейс музичних інструментів (MIDI)"
       ],
       "OGG audio": [
-        "OGG аудіо"
+        "Аудіо OGG"
       ],
       "OGG video": [
-        "OGG відео"
+        "Відео OGG"
       ],
       "OpenDocument presentation document": [
-        "Документ презентації OpenDocument"
+        "Презентація OpenDocument"
       ],
       "OpenDocument spreadsheet document": [
-        "Документ електронної таблиці OpenDocument"
+        "Електронна таблиця OpenDocument"
       ],
       "OpenDocument text document": [
         "Текстовий документ OpenDocument"
@@ -6398,7 +6419,7 @@
         "Шрифт OpenType"
       ],
       "Opus audio": [
-        "Opus аудіо"
+        "Аудіо Opus"
       ],
       "Portable Network Graphics": [
         "Портативна мережева графіка (PNG)"
@@ -6407,19 +6428,19 @@
         "Архів RAR"
       ],
       "Rich Text Format (RTF)": [
-        "Розширений текстовий формат (RTF)"
+        "Форматований текстовий формат (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
         "Масштабована векторна графіка (SVG)"
       ],
       "Small web format (SWF)": [
-        "Малий вебформат (SWF)"
+        "Формат мультимедіа SWF"
       ],
       "Tagged Image File Format (TIFF)": [
-        "Формат файлів зображень з тегами (TIFF)"
+        "Графічний формат TIFF"
       ],
       "Tape Archive (TAR)": [
-        "Архів стрічки (TAR)"
+        "Архів TAR"
       ],
       "Text": [
         "Текст"
@@ -6434,10 +6455,10 @@
         "Відеофайл"
       ],
       "Waveform Audio Format": [
-        "Формат аудіосигналу хвильової форми (WAV)"
+        "Формат аудіофайлу WAV"
       ],
       "Web Open Font Format (WOFF)": [
-        "Формат веб відкритого шрифту (WOFF)"
+        "Шрифтовий формат для вебсторінок (WOFF)"
       ],
       "WEBM audio": [
         "Аудіо WEBM"
@@ -6676,6 +6697,9 @@
       "Centralized billing": [
         "Централізоване управління платежами"
       ],
+      "Collaborate and share large files": [
+        "Співпраця та обмін великих файлів"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -6694,6 +6718,9 @@
       "Custom snooze time": [
         "Власний час відкладення"
       ],
+      "Custom workspace branding": [
+        "Брендування власного робочого простору"
+      ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
       ],
@@ -6708,6 +6735,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редактори документів (документи, таблиці, слайди)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редактори документів (документи, таблиці, слайди) (незабаром)"
       ],
       "Double hop": [
         "Double hop"
@@ -6787,6 +6817,9 @@
       "Password health": [
         "Стан паролю"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролів для захисту облікових даних"
+      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
@@ -6817,6 +6850,9 @@
       "Router support": [
         "Підтримка маршрутизатора"
       ],
+      "Save time emailing": [
+        "Економте час надсилання електронною поштою"
+      ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
       ],
@@ -6828,6 +6864,9 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
+      ],
+      "See team's availability": [
+        "Переглянути доступність команди"
       ],
       "Send & receive invitations": [
         "Надсилайте й отримуйте запрошення"
@@ -6919,6 +6958,9 @@
       "User session management": [
         "Керування сеансами користувачів"
       ],
+      "User storage management": [
+        "Керування сховищем користувача"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Спільне використання сховища (до ${ n } особи)",
         "Спільне використання сховища (до ${ n } осіб)",
@@ -6967,6 +7009,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Вся застосунки ${ BRAND_NAME } та преміум функції, щоб захистити ваш бізнес."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
       ],
@@ -6975,6 +7020,12 @@
       ],
       "Early access to new apps and features": [
         "Ранній доступ до нових програм і функцій"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрована пошта та календар для початку роботи."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Покращена безпека та преміум функції для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Необхідний захист і безпечна співпраця для необмеженої кількості користувачів."
@@ -7433,7 +7484,7 @@
         "Доступ оновлено"
       ],
       "Access updated and shared": [
-        "Доступ оновлений і поширений"
+        "Доступ оновлено і поширено"
       ],
       "All items will soon be permanently deleted from trash": [
         "Усі елементи невдовзі будуть остаточно видалені зі смітника"
@@ -7466,7 +7517,7 @@
         "Зашифрований пошук активовано"
       ],
       "Failed to accept share invitation": [
-        "Не вдалося прийняти запрошення"
+        "Не вдалося прийняти запрошення на спільний доступ"
       ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
@@ -7478,7 +7529,7 @@
         "Не вдалося відкрити документ"
       ],
       "Failed to remove the file": [
-        "Не вдалось вилучити файл"
+        "Не вдалося вилучити файл"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -7499,7 +7550,7 @@
         "Файл вилучено"
       ],
       "Invitation email was sent again": [
-        "Лист з запрошенням надіслано знову"
+        "Лист із запрошенням надіслано знову"
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
@@ -7523,10 +7574,10 @@
         "Не вдалося завантажити кореневу теку"
       ],
       "Share invitation accepted successfully": [
-        "Запрошення успішно прийнято"
+        "Запрошення на спільний доступ прийнято"
       ],
       "Stopping to share this item has failed": [
-        "Не вдалося зупинити поширення цього елемента"
+        "Не вдалося припинити спільний доступ для цього елемента"
       ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
@@ -7841,6 +7892,9 @@
       "Set date": [
         "Встановити дату"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Поділіться своїми враженнями, щоб вдосконалити ${ BRAND_NAME }"
+      ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
       ]
@@ -8068,6 +8122,18 @@
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Щоб змінити пароль, перейдіть на авторизований пристрій, з якого було ініційовано запит."
       ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } день",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } дні",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годину",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } години",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин"
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -8076,6 +8142,12 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } дня.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
@@ -8153,8 +8225,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Ще ${ gracePeriodHoursRemaining } година",
+        "Ще ${ gracePeriodHoursRemaining } години",
+        "Ще ${ gracePeriodHoursRemaining } годин",
+        "Ще ${ gracePeriodHoursRemaining } годин"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйте запит, якщо ви не просили скинути пароль."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годину.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } години.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Щоб переконатися, що ви справді намагаєтеся скинути пароль, ми чекаємо 72 години, перш ніж схвалювати запити. Ви можете змінити пароль через ${ boldTimeLeft }. ${ viewRequest }"
@@ -8635,8 +8719,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8705,6 +8789,9 @@
       ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне сховище"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Ви ще маєте ${ expiryDate } у вашому тарифі ${ planName }. Ми додамо кредитів за час, що залишився на вашому обліковому запису ${ BRAND_NAME }. Переконайтеся, що ви не перевищили ліміти безплатного тарифу перед скасуванням. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Ваш власний домен електронної пошти"
@@ -9821,9 +9908,9 @@
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяці.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць."
+        "Ваша передплата автоматично поновиться через ${ cycle } місяці.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {

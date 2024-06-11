@@ -948,6 +948,10 @@
       "${ price } per user": [
         "${ price } per bruger"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentplads",
+        "${ seats } skriveassistentpladser"
+      ],
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
@@ -2836,7 +2840,7 @@
         "Ukendt betalingstokens status"
       ],
       "Upload for this folder is temporarily disabled": [
-        "Overførsel til denne mappe er midlertidigt deaktiveret"
+        "Upload er midlertidigt deaktiveret for denne mappe"
       ],
       "Username must begin with a letter or digit": [
         "Brugernavn skal begynde med et bogstav eller ciffer"
@@ -3957,6 +3961,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Available": [
+        "Tilgængelig"
       ],
       "Awaiting transaction": [
         "Afventer transaktion"
@@ -5131,6 +5138,12 @@
       "Would you like to restore your files?": [
         "Ønsker du at gendanne dine filer?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tilføjelse"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -5327,6 +5340,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Kun visning"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Item": {
@@ -5731,9 +5749,6 @@
       "New password": [
         "Ny adgangskode"
       ],
-      "New plan": [
-        "Nyt abonnement"
-      ],
       "Note": [
         "Note"
       ],
@@ -5751,9 +5766,6 @@
       ],
       "Optional": [
         "Valgfrit"
-      ],
-      "Organization size": [
-        "Størrelse på organisationen"
       ],
       "Other": [
         "Andet"
@@ -6646,6 +6658,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Generate emails with only a prompt": [
+        "Generér e-mails med kun en besked"
+      ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
@@ -6704,6 +6719,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturlæs og finpuds dine tekster"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
@@ -6711,11 +6729,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
+      "Reply to messages": [
+        "Svar på beskeder"
+      ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
       ],
       "Router support": [
         "Router support"
+      ],
+      "Save time emailing": [
+        "Spar tid ved at sende e-mail"
       ],
       "Schedule and snooze emails for any time": [
         "Planlæg og snooze e-mails til enhver tid"
@@ -7486,6 +7510,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "Forstået"
+      ],
       "Next": [
         "Næste"
       ],
@@ -7496,6 +7523,12 @@
     "Onboarding Info": {
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Kom godt i gang med at bruge ${ DRIVE_APP_NAME } og vi vil opgradere din drev lagerplads til 5 GB!"
+      ],
+      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
+        "Inviter andre via e-mail til at se og redigere dine ${ DRIVE_APP_NAME }-filer"
+      ],
+      "Private Access Sharing": [
+        "Privat adgangsdeling"
       ],
       "Set a recovery method": [
         "Indstil en gendannelsesmetode"
@@ -8520,8 +8553,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Til"
+      "For ${ totalPrice }": [
+        "Til ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9408,6 +9441,9 @@
       ],
       "Processing...": [
         "Behandler..."
+      ],
+      "Public shared link status": [
+        "Status på offentligt delt link"
       ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"

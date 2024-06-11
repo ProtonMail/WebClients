@@ -4717,9 +4717,6 @@
       "New password": [
         "새 비밀번호"
       ],
-      "New plan": [
-        "새 플랜"
-      ],
       "No filter": [
         "필터 없음"
       ],
@@ -4749,9 +4746,6 @@
       ],
       "Organization password": [
         "조직 비밀번호"
-      ],
-      "Organization size": [
-        "조직 크기"
       ],
       "Other amount": [
         "다른 금액"
@@ -7576,8 +7570,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "가격:"
+      "For ${ totalPrice }": [
+        "${ totalPrice }용"
       ]
     },
     "Subscription reminder": {
@@ -7928,7 +7922,7 @@
         "청구성 맞춤설정됨"
       ],
       "Invoice paid": [
-        "청구서 결제"
+        "미납 청구서 결제 완료"
       ],
       "Keys updated": [
         "키 업데이트됨"

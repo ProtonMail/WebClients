@@ -176,7 +176,7 @@
         "Redigera valv"
       ],
       "Enable Dark Web Monitoring": [
-        "Aktivera övervakning för ”Dark web”"
+        "Aktivera övervakning för mörka webben"
       ],
       "Exclude from monitoring": [
         "Exkludera från övervakning"
@@ -518,7 +518,7 @@
         "Skapa unika lösenord"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Övervakning av ”Dark web” är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
+        "Övervakning av mörka webben är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Bli aviserad om din e-post, lösenord eller annan personlig data har läckt."
@@ -536,7 +536,7 @@
         "Börja övervaka för dataintrång relaterade till konton som skapats med din e-postadress och dina hide-my-email-alias."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "”Dark web” är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
+        "Mörka webben är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
       ],
       "These items remain at risk": [
         "Dessa objekt är fortfarande i fara"
@@ -649,9 +649,6 @@
       ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
-      ],
-      "Failed to edit organization settings": [
-        "Misslyckades att redigera organisationsinställningar"
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
@@ -835,7 +832,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Övervakning Dark Web"
+        "Övervakning mörka webben"
       ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
@@ -1024,9 +1021,6 @@
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
-      ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Som standard kan teammedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
@@ -1286,9 +1280,6 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
-      "Organization settings successfully updated": [
-        "Organisationsinställningarna har uppdaterats"
-      ],
       "Owner": [
         "Ägare"
       ],
@@ -1419,9 +1410,6 @@
       "Syncing your vaults…": [
         "Synkroniserar dina valv…"
       ],
-      "Team members can only share vaults within organization": [
-        "Teammedlemmar kan endast dela valv inom organisationen"
-      ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
@@ -1476,9 +1464,6 @@
       ],
       "Unverified": [
         "Overifierad"
-      ],
-      "Updating organization settings": [
-        "Uppdaterar organisationsinställningar"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Uppgradera nu för att låsa upp premiumfunktioner"
@@ -1696,12 +1681,6 @@
       "Device": [
         "Enhet"
       ],
-      "Disable data export for team members": [
-        "Inaktivera dataexport för teammedlemmar"
-      ],
-      "Disable sharing outside the organization": [
-        "Inaktivera delning utanför organisationen"
-      ],
       "Display": [
         "Visa"
       ],
@@ -1728,9 +1707,6 @@
       ],
       "Export": [
         "Exportera"
-      ],
-      "Exporting policy": [
-        "Exportpolicy"
       ],
       "Field name": [
         "Fältnamn"
@@ -1938,9 +1914,6 @@
       ],
       "Set PIN code": [
         "Ställ in PIN-kod"
-      ],
-      "Sharing policy": [
-        "Delningspolicy"
       ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
@@ -2278,7 +2251,7 @@
         "Anpassad e-post"
       ],
       "Dark Web Monitoring": [
-        "Övervakning Dark Web"
+        "Övervakning mörka webben"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ta bort “${ vaultName }“?"
@@ -2489,7 +2462,7 @@
         "Vad är ett alias?"
       ],
       "What is the dark web?": [
-        "Vad är ”Dark web”?"
+        "Vad är mörka webben?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Varför ${ PASS_APP_NAME }?"

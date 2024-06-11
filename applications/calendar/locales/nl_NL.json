@@ -467,11 +467,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -2260,9 +2260,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "Na herhaling…"
-      ],
       "Never": [
         "Nooit"
       ],
@@ -5457,9 +5454,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New plan": [
-        "Nieuw plan"
-      ],
       "Note": [
         "Notitie"
       ],
@@ -5480,9 +5474,6 @@
       ],
       "Optional": [
         "Optioneel"
-      ],
-      "Organization size": [
-        "Grootte van de organisatie"
       ],
       "Organizer": [
         "Organisator"
@@ -8178,8 +8169,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Voor"
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

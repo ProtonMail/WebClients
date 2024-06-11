@@ -451,6 +451,9 @@
       "Manage link": [
         "管理連結"
       ],
+      "Manage share": [
+        "管理共享"
+      ],
       "Mark as resolved": [
         "標記為已解決"
       ],
@@ -919,6 +922,9 @@
       "${ price } per user": [
         "每使用者${ price }"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats }撰寫幫手就位"
+      ],
       "${ users } user": [
         "${ users } 個使用者"
       ]
@@ -1166,6 +1172,11 @@
       ],
       "Continue your subscription": [
         "繼續您的訂閱"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "重新啟用訂閱"
       ]
     },
     "Checkout row": {
@@ -3834,6 +3845,9 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Available": [
+        "可用"
+      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -4260,6 +4274,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Invite link copied": [
+        "邀請鏈接已復制"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
       ],
@@ -4448,6 +4465,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
+      ],
+      "People with access": [
+        "具有存取權限的人員"
       ],
       "Permanently delete all files in your locked drive": [
         "永久刪除您已鎖定硬碟中的所有檔案"
@@ -4985,6 +5005,12 @@
       ],
       "Would you like to restore your files?": [
         "您要還原您的檔案嗎？"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
+      ],
+      "Writing assistant add-on": [
+        "撰寫幫手添加"
       ],
       "Yes": [
         "是"
@@ -5544,6 +5570,12 @@
       "Main": [
         "主要"
       ],
+      "Make editor": [
+        "設為編輯者"
+      ],
+      "Make viewer": [
+        "設為檢視者"
+      ],
       "Malware": [
         "惡意軟體"
       ],
@@ -5571,9 +5603,6 @@
       "New password": [
         "新密碼"
       ],
-      "New plan": [
-        "新方案"
-      ],
       "Note": [
         "備註"
       ],
@@ -5591,9 +5620,6 @@
       ],
       "Optional": [
         "自由列席"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Other": [
         "其他"
@@ -5672,6 +5698,9 @@
       ],
       "Set recovery method": [
         "設定備援方法"
+      ],
+      "Share a file": [
+        "分享個檔案"
       ],
       "Shared by": [
         "分享自"
@@ -6416,6 +6445,9 @@
       "Document editors (docs, sheets, slides)": [
         "文件編輯程式 (圖文檔、工作表、簡報)"
       ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "文件編輯程式 (圖文檔、工作表、簡報)(將至)"
+      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6616,6 +6648,9 @@
       ],
       "User session management": [
         "使用者作業階段管理"
+      ],
+      "User storage management": [
+        "使用者儲存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管共享(每人至多${ n })"
@@ -7205,6 +7240,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "瞭解"
+      ],
       "Next": [
         "下一步"
       ],
@@ -7216,8 +7254,14 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
       ],
+      "Private Access Sharing": [
+        "私有存限共享"
+      ],
       "Set a recovery method": [
         "設定備援方法"
+      ],
+      "Share a file": [
+        "分享個檔案"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "只要在接下來的 ${ expiresInDays } 天完成以下任務："
@@ -8017,6 +8061,14 @@
         "正將您的訂購授權取消，請稍候"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "已接受"
+      ],
+      "Pending": [
+        "擱置中"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "取得更多儲存空間"
@@ -8170,8 +8222,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "為"
+      "For ${ totalPrice }": [
+        "${ totalPrice } 版"
       ]
     },
     "Subscription reminder": {
@@ -8189,6 +8241,9 @@
       ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "Add any new files": [
+        "新增任何檔案"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -8208,6 +8263,9 @@
       "Learn more about our impact": [
         "了解更多我們的影響"
       ],
+      "Manage your calendar": [
+        "管理您的行事曆"
+      ],
       "Online privacy, for your whole family": [
         "您整個家庭的線上隱私"
       ],
@@ -8219,6 +8277,9 @@
       ],
       "Read the story": [
         "已讀的訊息"
+      ],
+      "Sync files on devices": [
+        "於裝置同步"
       ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
@@ -8924,6 +8985,9 @@
       ],
       "Processing...": [
         "處理中..."
+      ],
+      "Public shared link status": [
+        "公開共享連結狀態"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"

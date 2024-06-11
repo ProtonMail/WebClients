@@ -438,11 +438,11 @@
       "Not now": [
         "後で"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -2167,9 +2167,6 @@
       ]
     },
     "Custom frequency option": {
-      "After repeating…": [
-        "指定の回数"
-      ],
       "Never": [
         "繰り返し続ける"
       ],
@@ -5120,9 +5117,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New plan": [
-        "新しいプラン"
-      ],
       "Note": [
         "メモ"
       ],
@@ -5143,9 +5137,6 @@
       ],
       "Optional": [
         "任意"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Organizer": [
         "主催者"
@@ -7589,8 +7580,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "価格:"
+      "For ${ totalPrice }": [
+        "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {

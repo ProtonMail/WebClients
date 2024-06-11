@@ -659,11 +659,11 @@
       "No, thanks": [
         "いいえ"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -3686,6 +3686,9 @@
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
+      "Alias options could not be resolved": [
+        "エイリアス オプションを解決できませんでした"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -3727,6 +3730,12 @@
       ],
       "Coudn't load invoices. Please try again later.": [
         "請求書を読み込めませんでした。 後でもう一度試してください。"
+      ],
+      "Could not open created vault": [
+        "作成された保管庫を開けませんでした"
+      ],
+      "Could not open updated vault": [
+        "更新された保管庫を開けませんでした"
       ],
       "Could not save preference": [
         "設定を保存できませんでした"
@@ -3847,6 +3856,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コード"
+      ],
+      "Item content cannot exceed 40KB": [
+        "アイテムの内容が40KBを超えることはできません"
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
@@ -5756,17 +5768,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -7262,9 +7263,6 @@
       "Single sign-on removed": [
         "シングルサインオンが削除されました"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 この機能は、カスタム ドメインを持つビジネス ユーザーの ${ BRAND_NAME } のみが利用できます。"
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとの電子メールの量を説明する ${ createTicket } を送信してください。"
       ],
@@ -8068,6 +8066,17 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9074,9 +9083,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New plan": [
-        "新しいプラン"
-      ],
       "No filter": [
         "フィルターなし"
       ],
@@ -9121,9 +9127,6 @@
       ],
       "Organization password": [
         "組織のパスワード"
-      ],
-      "Organization size": [
-        "組織規模"
       ],
       "Other amount": [
         "その他の金額"
@@ -13255,19 +13258,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "価格:"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Upgrade": [
-        "アップグレード"
+      "For ${ totalPrice }": [
+        "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {
@@ -13357,6 +13349,17 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -15374,6 +15377,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "ログを無効にするには、ログの履歴をクリアする必要があります。ログを無効にしてよろしいですか?"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "このインポートをキャンセルすると、後で再開することはできません。${ BRAND_NAME } は進行状況をすべてアカウントに保存しました。それでもキャンセルしますか？"

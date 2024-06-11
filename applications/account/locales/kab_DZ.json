@@ -2957,6 +2957,9 @@
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
+      "Alias options could not be resolved": [
+        "Tixtiṛiyin n alias ggummant ad ṣegment"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Amḍiq n usekles meṛṛa yettunefk-ak. Ma ulac aɣilif, senɣes amḍiq ittunefken i yiseqdacen-nniḍen."
       ],
@@ -2992,6 +2995,12 @@
       ],
       "Contact signature not verified": [
         "Azmul n unermis ur yettwasenqed ara"
+      ],
+      "Could not open created vault": [
+        "Yugi ad yeldi usenduq yettwarnan"
+      ],
+      "Could not open updated vault": [
+        "Yugi ad yeldi usenduq yettwaleqqmen"
       ],
       "Domain not available, try again later": [
         "Ulac taɣult, ɛreḍ tikkelt-nniḍen ticki"
@@ -3085,6 +3094,9 @@
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Agbur n uferdis ur yezmir ara ad iɛeddi 40KAṬ"
       ],
       "Label name cannot be empty.": [
         "Isem n tebzimt ur ilaq ara ad yili d ilem."
@@ -4556,11 +4568,6 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5912,6 +5919,11 @@
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Mi yermed, ikaramen isnawanen ttawin ini n ukaram agejdan."
@@ -6813,9 +6825,6 @@
       ],
       "Organization password": [
         "Awal uffir n tuddsa"
-      ],
-      "Organization size": [
-        "Teɣzi n tkebbanit"
       ],
       "Other amount": [
         "Tasmekta-nniḍen"
@@ -9290,11 +9299,6 @@
       ],
       "Subscriptions": [
         "Imultaɣen"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "I"
       ]
     },
     "Subscription reminder": {

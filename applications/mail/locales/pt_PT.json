@@ -423,6 +423,9 @@
       "exclude message content": [
         "excluir conteúdo da mensagem"
       ],
+      "Expand": [
+        "Expandir"
+      ],
       "Expand composer": [
         "Expandir compositor"
       ],
@@ -903,6 +906,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Report an issue": [
+        "Reportar um problema"
       ],
       "Report phishing": [
         "Reportar phishing"
@@ -5530,6 +5536,9 @@
       "Clear app data": [
         "Limpar os dados da aplicação"
       ],
+      "Clear browser data": [
+        "Limpar dados do navegador"
+      ],
       "Clear data": [
         "Limpar dados"
       ],
@@ -5538,9 +5547,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "A limpeza dos dados do navegador também desativa a pesquisa de conteúdo das mensagens neste dispositivo. Todas as mensagens terão de ser novamente transferidas para poder pesquisar dentro delas."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Limpa os dados do navegador relacionados com a pesquisa de conteúdo de mensagens, incluindo as mensagens transferidas."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
@@ -5623,9 +5629,6 @@
       ],
       "Default email application": [
         "Aplicação de e-mail padrão"
-      ],
-      "Disable message content search": [
-        "Desativar pesquisa do conteúdo da mensagem"
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -7529,9 +7532,6 @@
       "New password": [
         "Nova palavra-passe"
       ],
-      "New plan": [
-        "Novo plano"
-      ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
       ],
@@ -7564,9 +7564,6 @@
       ],
       "Or": [
         "Ou"
-      ],
-      "Organization size": [
-        "Tamanho da organização"
       ],
       "Original link": [
         "Ligação original"
@@ -9184,6 +9181,14 @@
         "Partilha segura de cofre"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "The organization key must be activated first.": [
+        "Tem de ativar a chave da organização primeiro."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
@@ -10245,11 +10250,6 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "Por"
       ]
     },
     "Subscription reminder": {
