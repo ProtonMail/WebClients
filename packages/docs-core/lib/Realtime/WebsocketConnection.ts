@@ -130,10 +130,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     websocket.onerror = (event) => {
       this.logger.error('Websocket error:', event)
-      metrics.docs_failed_websocket_connections_total.increment({
-        retry: 'false',
-        type: 'network_error',
-      })
     }
 
     websocket.onclose = (event) => {
@@ -145,6 +141,35 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
         code: event.code,
         message: event.reason,
       })
+
+      if (
+        [
+          ConnectionCloseReason.CODES.TLS_HANDSHAKE,
+          ConnectionCloseReason.CODES.TIMEOUT,
+          ConnectionCloseReason.CODES.PROTOCOL_ERROR,
+        ].includes(reason.props.code)
+      ) {
+        metrics.docs_failed_websocket_connections_total.increment({
+          retry: 'false',
+          type: 'network_error',
+        })
+      } else if (
+        [
+          ConnectionCloseReason.CODES.INTERNAL_ERROR,
+          ConnectionCloseReason.CODES.UNAUTHORIZED,
+          ConnectionCloseReason.CODES.BAD_GATEWAY,
+        ].includes(reason.props.code)
+      ) {
+        metrics.docs_failed_websocket_connections_total.increment({
+          retry: 'false',
+          type: 'server_error',
+        })
+      } else {
+        metrics.docs_failed_websocket_connections_total.increment({
+          retry: 'false',
+          type: 'unknown',
+        })
+      }
 
       if (this.state.isConnected) {
         this.callbacks.onClose(reason)
