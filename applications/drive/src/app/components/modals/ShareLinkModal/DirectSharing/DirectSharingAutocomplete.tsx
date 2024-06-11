@@ -1,49 +1,38 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import InputField from '@proton/components/components/v2/field/InputField';
-import {
-    AddressesAutocompleteTwo,
-    AddressesInput,
-    AddressesInputItem,
-    useContactEmails,
-    useContactGroups,
-} from '@proton/components/index';
+import { AddressesAutocompleteTwo, AddressesInput, useContactEmails, useContactGroups } from '@proton/components/index';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
-import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import { ShareInvitee, useDriveSharingFlags } from '../../../../store';
+import { ShareInvitee } from '../../../../store';
+import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
 import { MemberDropdownMenu } from './MemberDropdownMenu';
-import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
 
 interface Props {
+    disabled: boolean;
     invitees: ShareInvitee[];
     existingEmails: string[];
-    hideFormActions: boolean;
+    selectedPermissions: SHARE_MEMBER_PERMISSIONS;
     onAdd: (invitees: ShareInvitee[]) => void;
     onRemove: (email: string) => void;
-    onSubmit: (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => void;
-    onCancel: () => void;
-    isAdding: boolean;
+    onChangePermissions: (permissions: SHARE_MEMBER_PERMISSIONS) => void;
 }
+
 export const DirectSharingAutocomplete = ({
+    disabled,
+    selectedPermissions,
     invitees,
     existingEmails,
-    hideFormActions,
     onAdd,
     onRemove,
-    onSubmit,
-    onCancel,
-    isAdding,
+    onChangePermissions,
 }: Props) => {
-    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
     const addressesInputText = c('Action').t`Add people or groups to share`;
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
 
     const [contactEmails] = useContactEmails();
     const [contactGroups] = useContactGroups();
@@ -54,50 +43,30 @@ export const DirectSharingAutocomplete = ({
 
     const count = invitees.length;
 
-    // Here we check if the email address is already in invited members
-    const isSubmitDisabled = !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error);
-
-    const items = invitees.map((invitee) => {
-        const inputItemAttributes = getAddressInputItemAttributes(invitee);
-
-        return (
-            <AddressesInputItem
-                key={invitee.email}
-                labelTooltipTitle={inputItemAttributes?.labelTooltip}
-                label={invitee.name}
-                labelProps={{
-                    className: 'py-1',
-                }}
-                icon={inputItemAttributes?.icon}
-                iconTooltipTitle={inputItemAttributes?.iconTooltip}
-                onClick={(event) => event.stopPropagation()}
-                onRemove={() => onRemove(invitee.email)}
-                data-testid="submitted-addresses"
-            />
-        );
-    });
     const recipients = useMemo(() => inviteesToRecipients(invitees), [invitees]);
-
-    // This is needed because in other places where we use MemberPermissionsSelect we need to pass handler with return type Promise, to handle loading state
-    const handleSetPermissions = async (value: SHARE_MEMBER_PERMISSIONS) => setPermissions(value);
 
     return (
         <>
-            <div className="flex justify-space-between items-center mt-3 mb-1">
+            <div className="flex justify-space-between items-center flex-nowrap mt-3 mb-6 relative">
                 <InputField
                     as={AddressesInput}
+                    autocompleteContainerProps={{
+                        className: 'max-w-custom max-h-custom overflow-auto',
+                        style: { '--max-w-custom': 'calc(100% - 4.25rem)', '--max-h-custom': '7.75rem' },
+                    }}
                     ref={addressesAutocompleteRef}
                     id={inputId}
-                    disabled={isDirectSharingDisabled} // Kill switch that disable member management
+                    disabled={disabled}
                     onClick={() => {
                         document.getElementById(inputId)?.focus();
                     }}
+                    assistContainerClassName="hidden"
                     autocomplete={
                         <AddressesAutocompleteTwo
                             hasAddOnBlur
                             id={inputId}
                             compact
-                            disabled={isDirectSharingDisabled} // Kill switch that disable member management
+                            disabled={disabled}
                             anchorRef={addressesAutocompleteRef}
                             contactEmails={contactEmails}
                             excludedEmails={existingEmails}
@@ -106,40 +75,25 @@ export const DirectSharingAutocomplete = ({
                             recipients={recipients}
                             onAddRecipients={(newRecipients) => onAdd(recipientsToInvitees(newRecipients))}
                             className="min-w-5 unstyled"
-                            inputClassName={clsx([
-                                (!count || hideFormActions) && 'my-0.5',
-                                !!count && !hideFormActions && 'p-0 rounded-none',
-                            ])}
+                            inputClassName={clsx([!count && 'my-0.5', !!count && 'p-0 rounded-none'])}
                             placeholder={recipients.length && count ? '' : addressesInputText}
                             data-testid="address-input-field"
                         />
                     }
-                    items={items}
+                    items={invitees.map((invitee) => (
+                        <DirectSharingAddressesInputItem invitee={invitee} disabled={disabled} onRemove={onRemove} />
+                    ))}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
-                >
+                />
+                <div className="absolute inset-y-center right-0">
                     <MemberDropdownMenu
+                        disabled={disabled}
                         selectedPermissions={selectedPermissions}
-                        onChangePermissions={handleSetPermissions}
+                        onChangePermissions={onChangePermissions}
                         autocompleteOptions
                     />
-                </InputField>
-            </div>
-            {!hideFormActions ? (
-                <div className="flex justify-space-between mb-4">
-                    <Button onClick={onCancel}>{c('Action').t`Cancel`}</Button>
-                    <Button
-                        type="submit"
-                        color="norm"
-                        disabled={isSubmitDisabled}
-                        loading={isAdding}
-                        onClick={() => {
-                            onSubmit(invitees, selectedPermissions);
-                        }}
-                    >
-                        {c('Action').t`Share`}
-                    </Button>
                 </div>
-            ) : null}
+            </div>
         </>
     );
 };
