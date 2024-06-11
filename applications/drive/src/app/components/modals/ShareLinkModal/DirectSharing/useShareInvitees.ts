@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { ShareInvitee, useDriveSharingFlags } from '../../../../store';
-import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
+import { ShareInvitee, useDriveSharingFlags, useGetPublicKeysForEmail } from '../../../../store';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 
 /**
@@ -20,13 +19,40 @@ import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/
  *
  */
 export const useShareInvitees = (existingEmails: string[]) => {
-    const api = useApi();
+    const { getPrimaryPublicKeyForEmail } = useGetPublicKeysForEmail();
     const [inviteesMap, setInviteesMap] = useState<Map<string, ShareInvitee>>(new Map());
-    const invitees = [...inviteesMap.values()];
+    const invitees = useMemo(
+        () =>
+            // Place error items always at the first place
+            Array.from(inviteesMap.values()).sort((a, b) => {
+                if (a.error) {
+                    return -1;
+                }
+                if (b.error) {
+                    return 1;
+                }
+                return 0;
+            }),
+        [inviteesMap]
+    );
     const { isSharingExternalInviteDisabled, isSharingExternalInviteAvailable } = useDriveSharingFlags();
     const disabledExternalInvite = isSharingExternalInviteDisabled || !isSharingExternalInviteAvailable;
 
     const { createNotification } = useNotifications();
+
+    const abortController = useRef(new AbortController());
+
+    const clean = () => {
+        setInviteesMap(new Map());
+        abortController.current.abort();
+        abortController.current = new AbortController();
+    };
+
+    useEffect(() => {
+        return () => {
+            clean();
+        };
+    }, []);
 
     const canonicalizeCurrentEmails = invitees.map(({ email }) => canonicalizeInternalEmail(email));
     const canonicalizeExistingEmails = existingEmails.map(canonicalizeInternalEmail);
@@ -91,7 +117,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
         setInviteesMap((map) => new Map([...map, ...filteredInvitees, ...badInvitees]));
         for (let [email, filteredInvitee] of filteredInvitees) {
             // We consider a user as external if this one have no public keys
-            const primaryPublicKey = await getPrimaryPublicKeyForEmail(api, email);
+            const primaryPublicKey = await getPrimaryPublicKeyForEmail(email, abortController.current.signal);
             if (!primaryPublicKey) {
                 setInviteesMap((map) => {
                     const copy = new Map(map);
@@ -136,10 +162,6 @@ export const useShareInvitees = (existingEmails: string[]) => {
 
             return copy;
         });
-    };
-
-    const clean = () => {
-        setInviteesMap(new Map());
     };
 
     return {
