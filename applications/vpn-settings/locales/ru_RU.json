@@ -200,6 +200,12 @@
       "Edit name": [
         "Изменить имя"
       ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
+      "Edit organization name": [
+        "Изменить название организации"
+      ],
       "Edit password": [
         "Изменить пароль"
       ],
@@ -235,6 +241,9 @@
       ],
       "Forgot password?": [
         "Забыли пароль?"
+      ],
+      "Forgot recovery method?": [
+        "Забыли метод восстановления?"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -1917,6 +1926,9 @@
       "Are you sure you want to delete this address?": [
         "Вы уверены, что хотите удалить этот адрес?"
       ],
+      "Delete address": [
+        "Удалить адрес"
+      ],
       "Delete address permanently?": [
         "Удалить адрес навсегда?"
       ],
@@ -1941,6 +1953,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "Пожалуйста, обратите внимание, что если вы удалите этот домен ${ domainName }, все адреса, связанные с ним будут отключены."
       ]
     },
     "Delinquent modal title": {
@@ -2173,6 +2188,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
+      "Please upload a square file": [
+        "Загрузите квадратный файл"
+      ],
       "Please upload an xml file": [
         "Загрузите файл xml"
       ],
@@ -2199,6 +2217,12 @@
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Файл слишком большой, максимальный размер должен составлять ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Файл слишком мал, минимальный размер должен составлять ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
@@ -2838,6 +2862,12 @@
       ],
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
+      ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Выберете свое предложение"
       ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
@@ -4549,6 +4579,9 @@
       "Current email": [
         "Текущая электронная почта"
       ],
+      "Current organization identity": [
+        "Текущие личные данные организации"
+      ],
       "Default language": [
         "Язык по умолчанию"
       ],
@@ -4663,14 +4696,14 @@
       "New mailbox password": [
         "Новый пароль почтового ящика"
       ],
+      "New organization identity": [
+        "Новые личные данные организации"
+      ],
       "New organization password": [
         "Новый пароль организации"
       ],
       "New password": [
         "Новый пароль"
-      ],
-      "New plan": [
-        "Новый план"
       ],
       "No filter": [
         "Без фильтра"
@@ -4693,14 +4726,14 @@
       "Optional": [
         "Необязательно"
       ],
+      "Organization identity": [
+        "Личные данные организации"
+      ],
       "Organization name": [
         "Название организации"
       ],
       "Organization password": [
         "Пароль организации"
-      ],
-      "Organization size": [
-        "Размер организации"
       ],
       "Other amount": [
         "Другая сумма"
@@ -4925,6 +4958,9 @@
       "Forgot username?": [
         "Забыли имя пользователя?"
       ],
+      "Help": [
+        "Помощь"
+      ],
       "Help translate": [
         "Помочь с переводом"
       ],
@@ -4948,6 +4984,9 @@
       ],
       "Paypal without credit card": [
         "Paypal без кредитной карты"
+      ],
+      "perform a password reset from your active session": [
+        "выполнить сброс пароля из вашего активного сеанса"
       ],
       "Privacy policy": [
         "Политика конфиденциальности"
@@ -5343,6 +5382,9 @@
       "Centralized settings and billings": [
         "Централизованные настройки и выставление счетов"
       ],
+      "Collaborate and share large files": [
+        "Работайте вместе и делитесь большими файлами"
+      ],
       "Contact groups": [
         "Группы контактов"
       ],
@@ -5357,6 +5399,9 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
+      ],
+      "Custom workspace branding": [
+        "Пользовательское брендирование рабочего пространства"
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
@@ -5375,6 +5420,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редакторы документов (текстовых документов, электронных таблиц, слайдов)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редакторы документов (текстовых документов, электронных таблиц, слайдов) (скоро)"
       ],
       "Double hop": [
         "Двойной перелёт"
@@ -5457,6 +5505,9 @@
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролей для защиты учетных данных"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -5495,6 +5546,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "See team's availability": [
+        "Посмотреть доступность команды"
       ],
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
@@ -5595,6 +5649,9 @@
       "User session management": [
         "Управление сеансом пользователя"
       ],
+      "User storage management": [
+        "Управление хранилищем пользователя"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Совместное использование хранилища (до ${ n } человека)",
         "Совместное использование хранилища (до ${ n } человек)",
@@ -5640,6 +5697,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Все приложения ${ BRAND_NAME } и их платные функции"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
@@ -5648,6 +5708,12 @@
       ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрованная почта и календарь, чтобы начать работу."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Повышенная безопасность и платные функции для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
@@ -5822,6 +5888,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
       ],
+      "Increase or reallocate storage for a user": [
+        "Увеличить или перераспределить хранилище пользователя"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
       ],
@@ -5897,6 +5966,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Узнайте о наличии участников и сэкономьте время на планировании встреч."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
       ],
@@ -5923,6 +5995,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Загрузите логотип вашей компании, чтобы настроить работу команды в веб-приложениях ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
@@ -6159,6 +6234,9 @@
       "File not larger than 30 KB": [
         "Файл не более 30 КБ"
       ],
+      "Square image of at least 128 pixels": [
+        "Квадратное изображение не менее 128 пикселей"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
       ]
@@ -6241,6 +6319,12 @@
       ],
       "Preparing your Recovery Kit": [
         "Подготовка вашего набора для восстановления"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Безопасный общий доступ с ${ n } хранилищем",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами",
+        "Безопасный общий доступ с ${ n } хранилищами"
       ],
       "Secure sharing with multiple vaults": [
         "Безопасное совместное использование с помощью нескольких хранилищ"
@@ -6720,6 +6804,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Чтобы изменить пароль, зайдите на устройство, с которого осуществлялся вход (в сеансе, где был инициирован запрос)."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
@@ -6781,6 +6868,11 @@
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Отменить сброс пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введите свой текущий пароль, чтобы отменить процесс сброса пароля. Никакие другие изменения не вступят в силу."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -7388,8 +7480,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -7417,6 +7509,12 @@
       "6 users": [
         "6 пользователей"
       ],
+      "Add any new files": [
+        "Добавление любых новых файлов"
+      ],
+      "Back up photos from your devices": [
+        "Резервное копирование фотографий с ваших устройств"
+      ],
       "Calendar sharing": [
         "Совместное использование календаря"
       ],
@@ -7435,6 +7533,9 @@
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
+      "Extra storage and bonuses": [
+        "Дополнительное место в хранилище и бонусы"
+      ],
       "Have a question?": [
         "Появились вопросы?"
       ],
@@ -7450,6 +7551,9 @@
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
       ],
+      "Manage your calendar": [
+        "Управление календарями"
+      ],
       "Online privacy, for your whole family": [
         "Конфиденциальность онлайн для всей семьи"
       ],
@@ -7459,11 +7563,23 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Reactivate": [
+        "Возобновить"
+      ],
       "Read the story": [
         "Читать историю"
       ],
+      "Receive new emails": [
+        "Получать новые электронные письма"
+      ],
+      "Send emails with attachments": [
+        "Отправлять электронные письма с вложениями"
+      ],
       "Subscription canceled": [
         "Подписка отменена"
+      ],
+      "Sync files on devices": [
+        "Синхронизация файлов на устройствах"
       ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
@@ -7479,6 +7595,9 @@
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "Ваш ${ planName } был отменен."
       ],
       "Your own custom email domain": [
         "Ваш собственный пользовательский домен электронной почты"
@@ -8068,6 +8187,9 @@
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
       ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
       "Edit servers": [
         "Изменить серверы"
       ],
@@ -8112,6 +8234,9 @@
       ],
       "Find email or username": [
         "Найти адрес электнонной почты или имя пользователя"
+      ],
+      "Forgot recovery method": [
+        "Забыли метод восстановления"
       ],
       "Gateways": [
         "Шлюзы"
@@ -8353,6 +8478,9 @@
       "Upload CSV file to create multiple accounts": [
         "Загрузите файл CSV, чтобы создать множество пользователей"
       ],
+      "Upload your organization’s logo": [
+        "Загрузите логотип вашей организации"
+      ],
       "Users": [
         "Пользователи"
       ],
@@ -8452,6 +8580,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
+      ],
       "Feature in early access": [
         "Функция раннего доступа"
       ],
@@ -8472,6 +8603,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Этот адрес электронной почты будет показан всем членам организации при выполнении операций управления аккаунтом."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."

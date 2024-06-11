@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price } per bruger"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentplads",
+        "${ seats } skriveassistentpladser"
+      ],
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
@@ -4231,6 +4235,12 @@
       "Would you like to receive a new verification code?": [
         "Ønsker du at modtage en ny verifikationskode?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tilføjelse"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -4420,6 +4430,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Kun visning"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Invoice state display as badge": {
@@ -4760,9 +4775,6 @@
       "New password": [
         "Ny adgangskode"
       ],
-      "New plan": [
-        "Nyt abonnement"
-      ],
       "No filter": [
         "Intet filter"
       ],
@@ -4792,9 +4804,6 @@
       ],
       "Organization password": [
         "Oorganisationsadgangskode"
-      ],
-      "Organization size": [
-        "Størrelse på organisationen"
       ],
       "Other amount": [
         "Andet beløb"
@@ -5017,6 +5026,9 @@
       ],
       "Add gift code": [
         "Tilføj gavekode"
+      ],
+      "Add to your subscription": [
+        "Tilføj til dit abonnement"
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
@@ -5538,6 +5550,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Generate emails with only a prompt": [
+        "Generér e-mails med kun en besked"
+      ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
@@ -5602,6 +5617,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturlæs og finpuds dine tekster"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
@@ -5609,11 +5627,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
       ],
+      "Reply to messages": [
+        "Svar på beskeder"
+      ],
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
       ],
       "Router support": [
         "Router support"
+      ],
+      "Save time emailing": [
+        "Spar tid ved at sende e-mail"
       ],
       "Schedule and snooze emails for any time": [
         "Planlæg og snooze e-mails til enhver tid"
@@ -7657,8 +7681,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Til"
+      "For ${ totalPrice }": [
+        "Til ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8596,6 +8620,9 @@
       "Plans": [
         "Abonnementer"
       ],
+      "Policies": [
+        "Retningslinjer"
+      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -8933,6 +8960,11 @@
       ],
       "Primary admin": [
         "Primær admin"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
       ]
     },
     "Users table: single sign-on enabled": {
