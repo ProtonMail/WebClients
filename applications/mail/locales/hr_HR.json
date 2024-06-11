@@ -44,6 +44,9 @@
       "Add note": [
         "Dodaj bilješku"
       ],
+      "Add participant": [
+        "Dodaj sudionika"
+      ],
       "Add phone number": [
         "Dodajte telefonski broj"
       ],
@@ -348,6 +351,9 @@
       "Encryption": [
         "Šifriranje"
       ],
+      "Expand": [
+        "Proširi"
+      ],
       "Expand composer": [
         "Proširi prozor za novu poruku"
       ],
@@ -490,6 +496,9 @@
       ],
       "Later": [
         "Kasnije"
+      ],
+      "Later this week": [
+        "Kasnije ovaj tjedan"
       ],
       "Learn more": [
         "Saznajte više"
@@ -749,6 +758,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Report an issue": [
+        "Prijavite problem"
+      ],
       "Report phishing": [
         "Prijavi krađu identiteta"
       ],
@@ -961,6 +973,9 @@
       "Upgrade": [
         "Nadogradnja"
       ],
+      "Upgrade Now": [
+        "Nadogradi sada"
+      ],
       "Upgrade now": [
         "Nadogradi sada"
       ],
@@ -1031,6 +1046,11 @@
     "action": {
       "Search messages": [
         "Pretraži poruke"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "Ponovo aktiviraj"
       ]
     },
     "Actions message": {
@@ -1491,6 +1511,9 @@
       "enzian": [
         "gorčica"
       ],
+      "fern": [
+        "paprat"
+      ],
       "forest": [
         "šuma"
       ],
@@ -1521,6 +1544,9 @@
       "pickle": [
         "kiseli krastavac"
       ],
+      "pine": [
+        "bor"
+      ],
       "pink": [
         "ružičasta"
       ],
@@ -1533,11 +1559,17 @@
       "purple": [
         "ljubičasta"
       ],
+      "reef": [
+        "greben"
+      ],
       "sahara": [
         "sahara"
       ],
       "slateblue": [
         "škriljevac plava"
+      ],
+      "soil": [
+        "tlo"
       ],
       "strawberry": [
         "jagoda"
@@ -2683,6 +2715,11 @@
         "Šifrirano ime zaglavlja"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
@@ -3416,6 +3453,11 @@
       ],
       "To: ${ toString }": [
         "Za: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "Get started checklist instructions": {
@@ -4968,6 +5010,9 @@
       "Frequency": [
         "Frekvencija"
       ],
+      "From": [
+        "Od"
+      ],
       "From:": [
         "Od:"
       ],
@@ -5054,9 +5099,6 @@
       ],
       "New password": [
         "Nova lozinka"
-      ],
-      "New plan": [
-        "Novi plan"
       ],
       "No label found": [
         "Nema pronađene oznake"
@@ -5215,6 +5257,16 @@
         "Vaša lozinka (administrator)"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Za"
+      ]
+    },
     "Label attach to date input to select a date": {
       "Date": [
         "Datum"
@@ -5270,6 +5322,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Za: ${ to }"
       ]
     },
     "Layout mode": {
@@ -5432,6 +5487,11 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saznajte više"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Omogući ${ reason }"
@@ -5449,6 +5509,11 @@
       ],
       "Trash": [
         "Otpad"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Special Offer": [
+        "Posebna ponuda"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -5930,6 +5995,14 @@
         "Vi"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Pristup odbijen, administratorske ovlasti su ograničene."
+      ],
+      "The organization key must be activated first.": [
+        "Prvo se mora aktivirati organizacijski ključ."
+      ]
+    },
     "Payment method option": {
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
@@ -6182,6 +6255,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Stvori pseudonim"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Otvori ${ PASS_APP_NAME }"
       ]
@@ -6562,17 +6638,15 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
-    "Subscription price": {
-      "For": [
-        "Za"
-      ]
-    },
     "Subscription reminder": {
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
       "10 email addresses": [
         "10 adrese e-pošte"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -6584,6 +6658,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ]
     },
     "Subscription renewal state": {
@@ -7081,6 +7158,9 @@
       "Delete draft": [
         "Obriši skicu"
       ],
+      "Delete label?": [
+        "Izbriši oznaku?"
+      ],
       "Delete message": [
         "Izbriši poruku"
       ],
@@ -7179,6 +7259,9 @@
       ],
       "Merging contacts": [
         "Spajanje kontakta"
+      ],
+      "Message details": [
+        "Detalji poruke"
       ],
       "Message list": [
         "Popis poruka"
@@ -7445,6 +7528,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
+      ],
+      "Load image": [
+        "Učitaj sliku"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"

@@ -444,6 +444,9 @@
       "exclude message content": [
         "виключити вміст повідомлення"
       ],
+      "Expand": [
+        "Розгорнути"
+      ],
       "Expand composer": [
         "Розгорнути редактор"
       ],
@@ -930,6 +933,9 @@
       "Report a problem": [
         "Повідомити про проблему"
       ],
+      "Report an issue": [
+        "Повідомити про проблему"
+      ],
       "Report phishing": [
         "Звіт про шахрайство"
       ],
@@ -1254,6 +1260,9 @@
       "Use recovery code": [
         "Використати код відновлення"
       ],
+      "Use this": [
+        "Використовуй це"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
       ],
@@ -1319,6 +1328,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Ваш помічник з написання електронних листів"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1391,6 +1403,12 @@
       ],
       "${ price } per user": [
         "${ price } за користувача"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } сидіння помічника з письма",
+        "${ seats } сидіння помічників з письма",
+        "${ seats } сидінь помічників з письма",
+        "${ seats } сидінь помічників з письма"
       ],
       "${ users } user": [
         "${ users } користувач",
@@ -1466,6 +1484,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Програми ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Пошуковик не підтримується "
       ]
     },
     "Attached ics file error": {
@@ -1561,6 +1584,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Можливість використання ${ domains } власного домену електронної пошти, ${ addresses } адреси електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей.",
+        "Можливість використання ${ domains } власних доменів електронної пошти, ${ addresses } адрес електронної пошти, необмеженої кількості псевдонімів hide-my-email, спільного доступу до календарів та інших можливостей."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
@@ -3191,11 +3220,23 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Щодня, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Кожен ${ interval } день, ${ timesString }",
+        "Кожні ${ interval } дні, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Щодня, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Кожен ${ interval } день, ${ untilString }",
+        "Кожні ${ interval } дні, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }"
       ]
     },
     "Date label": {
@@ -3694,6 +3735,9 @@
       "Draft could not be saved. Try again.": [
         "Не вдалося зберегти чернетку. Спробуйте знову."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Через помилку не вдалося скасувати створення тексту"
+      ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
@@ -3741,6 +3785,9 @@
       ],
       "Forward address is required": [
         "Необхідно вказати адресу пересилання"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "Я не можу продовжити розгляд цього запиту через свої етичні принципи. Будь ласка, спробуйте інший запит."
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -3883,6 +3930,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
       ],
+      "Please try generating the text again": [
+        "Спробуйте згенерувати текст ще раз"
+      ],
       "Port is required": [
         "Порт обов'язковий"
       ],
@@ -3897,6 +3947,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Для користувача ${ BRAND_NAME } отримано недійсний основний ключ для надсилання"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Проблема із завантаженням помічника з написання. Будь ласка, спробуйте ще раз."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Проблема із завантаженням помічника з написання на ваш пристрій. Будь ласка, спробуйте ще раз."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Проблема з вивантаженням даних, які не потрібні, коли помічник із запису неактивний"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -3966,6 +4025,9 @@
       ],
       "Tab closed": [
         "Вкладку закрито"
+      ],
+      "Thanks for the feedback!": [
+        "Дякуємо за відгук!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
@@ -4614,6 +4676,12 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Filter": {
@@ -5378,6 +5446,12 @@
         "${ currentProgress } з ${ totalProgress }",
         "${ currentProgress } з ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } розмова буде позначена як:",
+        "${ elementsCount } розмови буде позначено як:",
+        "${ elementsCount } розмов буде позначено як:",
+        "${ elementsCount } розмов буде позначено як:"
+      ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } розмову буде позначено прочитаною.",
         "${ elementsCount } розмови будуть позначені прочитаними.",
@@ -5390,11 +5464,47 @@
         "${ elementsCount } розмов будуть позначені непрочитаними.",
         "${ elementsCount } розмов будуть позначені непрочитаними."
       ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } розмову буде переміщено",
+        "${ elementsCount } розмови буде переміщено",
+        "${ elementsCount } розмов буде переміщено",
+        "${ elementsCount } розмов буде переміщено"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "З ${ elementsCount } розмови буде знята позначка:",
+        "З ${ elementsCount } розмов буде знята позначка:",
+        "З ${ elementsCount } розмов буде знята позначка",
+        "З ${ elementsCount } розмов буде знята позначка"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } повідомлення буде позначено як:",
+        "${ elementsCount } повідомлення буде позначено як:",
+        "${ elementsCount } повідомлень буде позначено як:",
+        "${ elementsCount } повідомлень буде позначено як:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } повідомлення буде позначено як прочитане.",
+        "${ elementsCount } повідомлення будуть позначені як прочитані.",
+        "${ elementsCount } повідомлень будуть позначені як прочитані.",
+        "${ elementsCount } повідомлень будуть позначені як прочитані."
+      ],
       "${ elementsCount } message will be marked as unread.": [
         "${ elementsCount } повідомлення буде позначено непрочитаним.",
         "${ elementsCount } повідомлення будуть позначені непрочитаними.",
         "${ elementsCount } повідомлень будуть позначені непрочитаними.",
         "${ elementsCount } повідомлень будуть позначені непрочитаними."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } повідомлення буде переміщено",
+        "${ elementsCount } повідомлення буде переміщено",
+        "${ elementsCount } повідомлень буде переміщено",
+        "${ elementsCount } повідомлень буде переміщено"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "З ${ elementsCount } повідомлення буде знято виділення:",
+        "З ${ elementsCount } повідомлень буде знято виділення:",
+        "З ${ elementsCount } повідомлень буде знято виділення:",
+        "З ${ elementsCount } повідомлень буде знято виділення:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } вбудоване зображення",
@@ -5750,6 +5860,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Підсильте впізнаваність бренду вашої організації та забезпечте зручнішу роботу онлайн для ваших користувачів."
       ],
+      "Browser not supported": [
+        "Пошуковик не підтримується"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
       ],
@@ -5774,6 +5887,9 @@
       "Clear app data": [
         "Очистити дані програми"
       ],
+      "Clear browser data": [
+        "Очистити дані браузера"
+      ],
       "Clear data": [
         "Очистити дані"
       ],
@@ -5783,8 +5899,8 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Очищення даних браузера також деактивує пошук вмісту повідомлень на цьому пристрої. Для пошуку серед них, усі повідомлення потрібно буде завантажити знову."
       ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Очистьте дані браузера, пов'язані з пошуком вмісту повідомлень, включно з завантаженими повідомленнями"
+      "Clears browser data (including downloaded messages, …)": [
+        "Очищає дані пошуковика (включаючи завантажені повідомлення, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
@@ -5869,9 +5985,6 @@
       ],
       "Default email application": [
         "Типова програма електронної пошти"
-      ],
-      "Disable message content search": [
-        "Вимкнути пошук вмісту повідомлення"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -6122,6 +6235,9 @@
       "Include Spam/Trash.": [
         "Включити теки Спам/Смітник."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Додайте підказку та відповідь, щоб допомогти нам підвищити точність."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -6172,6 +6288,9 @@
       ],
       "Left to Right": [
         "Зліва направо"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Дозвольте помічнику з написання допомогти вам писати електронні листи та відповідати на них, і спостерігайте, як ваша продуктивність зростає."
       ],
       "Link type": [
         "Тип посилання"
@@ -6401,6 +6520,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Будь ласка, поділіться тим, що ви очікували"
+      ],
       "Please try again in a few moments": [
         "Будь ласка, спробуйте знову за хвильку"
       ],
@@ -6452,8 +6574,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Видаляє всі дані, пов'язані з цією програмою, зокрема завантажені повідомлення"
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Видаляє всі дані, пов’язані з цією програмою (зокрема завантажені повідомлення, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Звітуючи про спробу шахрайства, ви надішлете це повідомлення нам, щоб ми змогли його проаналізувати та вдосконалити наші фільтри. Це означає, що ми матимемо змогу переглянути весь вміст цього повідомлення."
@@ -6505,6 +6627,12 @@
       ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Вибрати ${ elementsCount } в ${ location }",
+        "Вибрати ${ elementsCount } в ${ location }",
+        "Вибрати ${ elementsCount } в ${ location }",
+        "Вибрати ${ elementsCount } в ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
@@ -6588,7 +6716,7 @@
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Підписка автоматично поновлюється кожні ${ cycle } місяців."
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців."
       ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
@@ -6617,6 +6745,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "Початкове налаштування може зайняти кілька хвилин."
+      ],
       "The local database is being prepared": [
         "Триває підготовка локальної бази даних"
       ],
@@ -6643,6 +6774,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Під час підтвердження відкриється нова вкладка браузера. Будь ласка, вимкніть будь-які активні засоби блокування спливних вікон."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Помічник із написання має завершити завантаження, перш ніж його можна буде використовувати."
       ],
       "Themes can give your inbox a new look.": [
         "Теми можуть змінювати вигляд вашої поштової скриньки."
@@ -6751,6 +6885,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Термін дії цього повідомлення завершиться завтра ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Це потрібно зробити лише один раз."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -6980,6 +7117,12 @@
       "Would you like to receive a new verification code?": [
         "Бажаєте отримати новий код підтвердження?"
       ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ],
+      "Writing assistant add-on": [
+        "Доповнення для помічника з написання"
+      ],
       "Yearly": [
         "Щороку"
       ],
@@ -7118,6 +7261,33 @@
         "Ви вибрали **${ count } повідомлень** з цією міткою",
         "Ви вибрали **${ count } повідомлень** з цією міткою"
       ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Ви вибрали **${ elementsCount } розмову** в ${ location }",
+        "Ви вибрали **${ elementsCount } розмови** в ${ location }",
+        "Ви вибрали **${ elementsCount } розмов** у ${ location }",
+        "Ви вибрали **${ elementsCount } розмов** у ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Ви вибрали **${ elementsCount } розмову**.",
+        "Ви вибрали **${ elementsCount } розмови**.",
+        "Ви вибрали **${ elementsCount } розмов**.",
+        "Ви вибрали **${ elementsCount } розмов**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Ви вибрали **${ elementsCount } повідомлення** в ${ location }",
+        "Ви вибрали **${ elementsCount } повідомлення** в ${ location }",
+        "Ви вибрали **${ elementsCount } повідомлень** в ${ location }",
+        "Ви вибрали **${ elementsCount } повідомлень** в ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Ви вибрали **${ elementsCount } повідомлення**.",
+        "Ви вибрали **${ elementsCount } повідомлення**.",
+        "Ви вибрали **${ elementsCount } повідомлень**.",
+        "Ви вибрали **${ elementsCount } повідомлень**."
+      ],
+      "You selected some content:": [
+        "Ви вибрали певний вміст:"
+      ],
       "You will lose access to Plus features on this date.": [
         "З цієї дати ви втратите доступ до функцій Plus."
       ],
@@ -7157,6 +7327,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Ваш браузер не підтримує помічника з написання. Завантажте ${ MAIL_APP_NAME } настільну програму або спробуйте запустити її на ${ BRAND_NAME } серверах."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Ваш браузер не підтримує помічника з написання. Спробуйте запустити його на ${ BRAND_NAME } серверах."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
@@ -7171,6 +7347,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Ваше обладнання не підтримує локальний запуск помічника з написання. Спробуйте запустити його на ${ BRAND_NAME }серверах."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
@@ -7838,11 +8017,11 @@
       "New password": [
         "Новий пароль"
       ],
-      "New plan": [
-        "Новий тарифний план"
-      ],
       "No label found": [
         "Мітку не знайдено"
+      ],
+      "Not factually correct": [
+        "Фактично не вірно"
       ],
       "Note": [
         "Нотатка"
@@ -7873,9 +8052,6 @@
       ],
       "Or": [
         "Або"
-      ],
-      "Organization size": [
-        "Розмір організації"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -8014,6 +8190,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Яка ваша основна причина скасування чи пониження тарифу?"
       ],
       "With attachment": [
         "Має вкладення"
@@ -8526,11 +8705,23 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Щомісяця ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Щомісяця ${ onDayString }, ${ untilString }"
       ]
@@ -8846,6 +9037,9 @@
       "Centralized billing": [
         "Централізоване управління платежами"
       ],
+      "Collaborate and share large files": [
+        "Співпраця та обмін великих файлів"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -8864,6 +9058,9 @@
       "Custom snooze time": [
         "Власний час відкладення"
       ],
+      "Custom workspace branding": [
+        "Брендування власного робочого простору"
+      ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
       ],
@@ -8878,6 +9075,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "Редактори документів (документи, таблиці, слайди)"
+      ],
+      "Document editors (docs, sheets, slides) (soon)": [
+        "Редактори документів (документи, таблиці, слайди) (незабаром)"
       ],
       "Double hop": [
         "Double hop"
@@ -8957,6 +9157,9 @@
       "Password health": [
         "Стан паролю"
       ],
+      "Password manager to secure credentials": [
+        "Менеджер паролів для захисту облікових даних"
+      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
@@ -8987,6 +9190,9 @@
       "Router support": [
         "Підтримка маршрутизатора"
       ],
+      "Save time emailing": [
+        "Економте час надсилання електронною поштою"
+      ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
       ],
@@ -8998,6 +9204,9 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
+      ],
+      "See team's availability": [
+        "Переглянути доступність команди"
       ],
       "Send & receive invitations": [
         "Надсилайте й отримуйте запрошення"
@@ -9089,6 +9298,9 @@
       "User session management": [
         "Керування сеансами користувачів"
       ],
+      "User storage management": [
+        "Керування сховищем користувача"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "Спільне використання сховища (до ${ n } особи)",
         "Спільне використання сховища (до ${ n } осіб)",
@@ -9137,6 +9349,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Вся застосунки ${ BRAND_NAME } та преміум функції, щоб захистити ваш бізнес."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
       ],
@@ -9145,6 +9360,12 @@
       ],
       "Early access to new apps and features": [
         "Ранній доступ до нових програм і функцій"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Зашифрована пошта та календар для початку роботи."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Покращена безпека та преміум функції для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Необхідний захист і безпечна співпраця для необмеженої кількості користувачів."
@@ -9511,6 +9732,12 @@
       ],
       "Senders blocked": [
         "Відправники заблоковані"
+      ],
+      "The writing assistant is ready to use": [
+        "Помічник з написання готовий до використання"
+      ],
+      "Trial started": [
+        "Пробний період увімкнено"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9680,6 +9907,20 @@
         "Безпечний спільний доступ до сховища"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ключа організації не існує."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Доступ заборонено. Повноваження адміністратора було обмежено."
+      ],
+      "The organization key must be activated first.": [
+        "Спочатку необхідно активувати ключ організації."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Для виконання цієї операції вам потрібен доступ до ключа організації."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банківська картка"
@@ -9789,6 +10030,9 @@
       "First name": [
         "Ім'я"
       ],
+      "Generating...": [
+        "Створення..."
+      ],
       "Gift code": [
         "Подарунковий код"
       ],
@@ -9797,6 +10041,9 @@
       ],
       "Hint": [
         "Підказка"
+      ],
+      "How do you want the selected text modified?": [
+        "Як ви бажаєте змінити виділений текст?"
       ],
       "Image URL": [
         "URL-адреса зображення"
@@ -9825,6 +10072,12 @@
       "Please insert link first": [
         "Спочатку вставте посилання"
       ],
+      "Please share what you expected": [
+        "Будь ласка, поділіться тим, що ви очікували"
+      ],
+      "Refining your text...": [
+        "Уточнення тексту..."
+      ],
       "Search date, name, email address, or subject line": [
         "Пошук за датою, ім'ям, електронною адресою або темою листа"
       ],
@@ -9852,6 +10105,9 @@
       "Select state": [
         "Оберіть країну"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Поділіться своїми враженнями, щоб вдосконалити ${ BRAND_NAME }"
+      ],
       "Start date": [
         "Дата початку"
       ],
@@ -9863,6 +10119,21 @@
       ],
       "Text": [
         "Текст"
+      ],
+      "To": [
+        "До"
+      ],
+      "Try “Cancel my gym membership”": [
+        "Спробуйте «Скасувати членство в спортзалі»"
+      ],
+      "Try “Invite Jane to my party”": [
+        "Спробуйте «Запросити Джейн на мою вечірку»"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "Спробуйте «Дякую моєму колезі за допомогу в проекті»"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Спробуйте «Написати електронний лист для клієнта»"
       ],
       "Type a command…": [
         "Введіть команду…"
@@ -10279,6 +10550,18 @@
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Щоб змінити пароль, перейдіть на авторизований пристрій, з якого було ініційовано запит."
       ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } день",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } дні",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годину",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } години",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин"
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -10287,6 +10570,12 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } дня.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
@@ -10364,8 +10653,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Ще ${ gracePeriodHoursRemaining } година",
+        "Ще ${ gracePeriodHoursRemaining } години",
+        "Ще ${ gracePeriodHoursRemaining } годин",
+        "Ще ${ gracePeriodHoursRemaining } годин"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйте запит, якщо ви не просили скинути пароль."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годину.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } години.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Щоб переконатися, що ви справді намагаєтеся скинути пароль, ми чекаємо 72 години, перш ніж схвалювати запити. Ви можете змінити пароль через ${ boldTimeLeft }. ${ viewRequest }"
@@ -10919,8 +11220,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "За"
+      "For ${ totalPrice }": [
+        "Для ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -10989,6 +11290,9 @@
       ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне сховище"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Ви ще маєте ${ expiryDate } у вашому тарифі ${ planName }. Ми додамо кредитів за час, що залишився на вашому обліковому запису ${ BRAND_NAME }. Переконайтеся, що ви не перевищили ліміти безплатного тарифу перед скасуванням. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Ваш власний домен електронної пошти"
@@ -11149,6 +11453,18 @@
         "${ elementsCount } розмови вилучено з ${ labelName }.",
         "${ elementsCount } розмов вилучено з ${ labelName }.",
         "${ elementsCount } розмов вилучено з ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } розмову відкладено",
+        "${ elementsCount } розмови відкладено",
+        "${ elementsCount } розмов відкладено",
+        "${ elementsCount } розмов відкладено"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "Скасовано відкладення ${ elementsCount } розмови",
+        "Скасовано відкладення ${ elementsCount } розмов",
+        "Скасовано відкладення ${ elementsCount } розмов",
+        "Скасовано відкладення ${ elementsCount } розмов"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } повідомлення додано до ${ labelName }.",
@@ -12301,6 +12617,9 @@
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
+      ],
+      "Your free trial has ended": [
+        "Ваш пробний період закінчився"
       ]
     },
     "Title subscription": {
@@ -12480,9 +12799,9 @@
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяці.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць."
+        "Ваша передплата автоматично поновиться через ${ cycle } місяці.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців.",
+        "Ваша передплата автоматично поновиться через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {
@@ -12712,6 +13031,42 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Кожні ${ interval } тижні щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Кожні ${ interval } тижні у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
+        "Кожні ${ interval } тижні у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у середу, ${ timesString }",
+        "Кожні ${ interval } тижні у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Щотижня ${ multipleDaysString }, ${ timesString }"
       ],
@@ -12741,6 +13096,60 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Кожні ${ interval } тижні щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Кожні ${ interval } тижні у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Кожні ${ interval } тижні у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Кожні ${ interval } тижні у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Кожні ${ interval } тижні у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Щотижня ${ multipleDaysString }, ${ untilString }"
       ],
@@ -12804,6 +13213,12 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожен ${ interval } рік, ${ timesString }",
+        "Кожні ${ interval } роки, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Щороку, ${ timesString }"
       ]

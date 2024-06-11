@@ -438,6 +438,9 @@
       "exclude message content": [
         "jätä viestin sisältö pois"
       ],
+      "Expand": [
+        "Laajenna"
+      ],
       "Expand composer": [
         "Laajenna viestin kirjoitus"
       ],
@@ -920,6 +923,9 @@
         "Vastaa turvallisesti"
       ],
       "Report a problem": [
+        "Ilmoita ongelmasta"
+      ],
+      "Report an issue": [
         "Ilmoita ongelmasta"
       ],
       "Report phishing": [
@@ -5663,6 +5669,9 @@
       "Clear app data": [
         "Tyhjennä sovellustiedot"
       ],
+      "Clear browser data": [
+        "Tyhjennä selaimen välimuisti"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -5671,9 +5680,6 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Selaimen välimuistin tyhjennys poistaa myös viestien sisältöhaun käytöstä tältä laitteelta. Kaikki viestit on ladattava uudelleen, jotta niiden sisällöstä voidaan etsiä."
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        "Tyhjentää viestien sisältöhakuun liittyvät tiedot selaimen välimuistista, ladatut viestit mukaan lukien"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -5756,9 +5762,6 @@
       ],
       "Default email application": [
         "Sähköpostin oletussovellus"
-      ],
-      "Disable message content search": [
-        "Poista sisältöhaku käytöstä"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
@@ -6320,9 +6323,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
-      ],
-      "Removes all data associated with this app, including downloaded messages": [
-        "Poistaa kaikki tähän sovellukseen liittyvät tiedot, mukaan lukien ladatut viestit"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Viestin raportointi tietokalasteluyritykseksi lähettää sen meille, jotta voimme analysoida sen ja parantaa suodattimiamme. Huomioi, että näemme lähettämäsi viestin sisällön."
@@ -7687,9 +7687,6 @@
       "New password": [
         "Uusi salasana"
       ],
-      "New plan": [
-        "Uusi tilaus"
-      ],
       "No label found": [
         "Tunnistetta ei löytynyt"
       ],
@@ -7722,9 +7719,6 @@
       ],
       "Or": [
         "Tai"
-      ],
-      "Organization size": [
-        "Organisaation koko"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -9213,6 +9207,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Näet kokoukseen osallistujien tavoitettavuuden ja säästät aikaa kokousten suunnittelussa."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Lähetä viestejä suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
       ],
@@ -9514,6 +9511,20 @@
       ],
       "Secure vault sharing": [
         "Turvallinen holvien jako"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisaation avainta ei ole olemassa."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+      ],
+      "The organization key must be activated first.": [
+        "Organisaation avain on ensin aktivoitava."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
       ]
     },
     "Payment method option": {
@@ -10718,8 +10729,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Hintaan"
+      "For ${ totalPrice }": [
+        "Käyttöjärjestelmä: ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -10792,6 +10803,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Mukautetut lähetys- ja torkutusajat"
+      ],
+      "Direct contribution to our mission": [
+        "Tukee tehtäväämme suoraan"
       ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"

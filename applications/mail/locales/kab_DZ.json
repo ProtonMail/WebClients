@@ -393,6 +393,9 @@
       "exclude message content": [
         "ḥwi agbur n yiznan"
       ],
+      "Expand": [
+        "Snefli"
+      ],
       "Expand composer": [
         "Snefli amsuddes"
       ],
@@ -846,6 +849,9 @@
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
+      ],
+      "Report an issue": [
+        "Azen aneqqis ɣef ugur"
       ],
       "Report phishing": [
         "Azen aneqqis phishing"
@@ -4679,6 +4685,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
+      "Clear browser data": [
+        "Sfeḍ isefka n yiminig"
+      ],
       "Clear data": [
         "Sfeḍ isefka"
       ],
@@ -4751,9 +4760,6 @@
       ],
       "Default email application": [
         "Asnas amezwer n imayl"
-      ],
-      "Disable message content search": [
-        "Sens anadi n ugbur n yizen"
       ],
       "Discover ProtectBuy logo": [
         "Alugu n Discover ProtectBuy"
@@ -6296,9 +6302,6 @@
       "Or": [
         "Neɣ"
       ],
-      "Organization size": [
-        "Teɣzi n tkebbanit"
-      ],
       "Original link": [
         "Aseɣwen agejdan"
       ],
@@ -7444,6 +7447,14 @@
         "Kečč/kemm"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Anekcum yegdel, tisirag n unebdal sεan tilisa."
+      ],
+      "The organization key must be activated first.": [
+        "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Takarḍa n usmad/n uxelleṣ"
@@ -8147,11 +8158,6 @@
       ],
       "Subscriptions": [
         "Imultaɣen"
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        "I"
       ]
     },
     "Subscription reminder": {
