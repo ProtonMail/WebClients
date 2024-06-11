@@ -5,7 +5,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 
-import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
+import { useGetPublicKeysForEmail } from '../../../../../app/store';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 import { useShareInvitees } from './useShareInvitees';
 
@@ -47,8 +47,12 @@ jest.mocked(useNotifications).mockReturnValue({
 jest.mock('@proton/crypto');
 const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
 
-jest.mock('../../../../utils/getPublicKeysForEmail');
-const mockedGetPrimaryPublicKey = jest.mocked(getPrimaryPublicKeyForEmail);
+jest.mock('../../../../store/_user/useGetPublicKeysForEmail');
+const mockedGetPrimaryPublicKey = jest.fn();
+jest.mocked(useGetPublicKeysForEmail).mockReturnValue({
+    getPrimaryPublicKeyForEmail: mockedGetPrimaryPublicKey,
+    getPublicKeysForEmail: jest.fn(),
+});
 
 jest.mock('../../../../store/_shares/useDriveSharingFlags', () => ({
     useDriveSharingFlags: jest
@@ -66,7 +70,7 @@ const publicKey = {
 describe('useShareInvitees', () => {
     beforeEach(() => {
         when(mockedGetPrimaryPublicKey)
-            .calledWith(expect.anything(), inviteeInternal.email)
+            .calledWith(inviteeInternal.email, new AbortController().signal)
             .mockResolvedValue(primaryPublicKey);
 
         when(mockedImportPublicKey).calledWith({ armoredKey: primaryPublicKey }).mockResolvedValue(publicKey);
@@ -79,7 +83,7 @@ describe('useShareInvitees', () => {
         it('should be able to add proton/non-proton invitee', async () => {
             const { result } = renderHook(() => useShareInvitees([]));
             when(mockedGetPrimaryPublicKey)
-                .calledWith(expect.anything(), inviteeInternal2.email)
+                .calledWith(inviteeInternal2.email, new AbortController().signal)
                 .mockResolvedValueOnce(undefined);
 
             await act(async () => {
@@ -201,7 +205,7 @@ describe('useShareInvitees', () => {
     describe('remove', () => {
         it('should be able to remove an invitee added previously', async () => {
             when(mockedGetPrimaryPublicKey)
-                .calledWith(expect.anything(), inviteeInternal2.email)
+                .calledWith(inviteeInternal2.email, new AbortController().signal)
                 .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
@@ -225,9 +229,11 @@ describe('useShareInvitees', () => {
     });
 
     describe('clean', () => {
-        it('should be able to clean all invitees added previously', async () => {
+        it('should be able to clean all invitees added previously and abort requests', async () => {
+            const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
+            const abortController = new AbortController();
             when(mockedGetPrimaryPublicKey)
-                .calledWith(expect.anything(), inviteeInternal2.email)
+                .calledWith(inviteeInternal2.email, abortController.signal)
                 .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
@@ -242,6 +248,9 @@ describe('useShareInvitees', () => {
             await act(async () => {
                 result.current.clean();
             });
+
+            expect(result.current.invitees).toEqual([]);
+            expect(abortSpy).toHaveBeenCalledTimes(1);
         });
     });
 });

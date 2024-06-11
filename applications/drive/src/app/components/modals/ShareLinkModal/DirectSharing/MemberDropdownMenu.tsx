@@ -45,9 +45,12 @@ interface Props {
     onResendInvitationEmail?: () => void;
     externalInvitationState?: SHARE_EXTERNAL_INVITATION_STATE;
     isLoading?: boolean;
+    disabled?: boolean;
     autocompleteOptions?: boolean;
 }
+
 export const MemberDropdownMenu = ({
+    disabled,
     selectedPermissions,
     onChangePermissions,
     onRemoveAccess,
@@ -102,7 +105,7 @@ export const MemberDropdownMenu = ({
                 }
             >
                 <DropdownButton
-                    disabled={isDirectSharingDisabled} // Kill switch that disable member management
+                    disabled={isDirectSharingDisabled || disabled} // Kill switch that disable member management
                     className="self-center"
                     ref={anchorRef}
                     isOpen={isOpen}
@@ -123,6 +126,7 @@ export const MemberDropdownMenu = ({
                         const label = getPermissionsOptionLabel(permissions);
                         return (
                             <MenuItem
+                                key={permissions}
                                 isSelected={permissions === selectedPermissions}
                                 iconName={memberPermissionsIcons[permissions]}
                                 label={label}
