@@ -27,6 +27,7 @@ export type RequestForkOptions = {
     host?: string;
     localID?: number;
     forkType?: ForkType;
+    prompt?: 'login';
     payloadType?: 'offline';
     payloadVersion?: AuthSessionVersion;
 };
@@ -37,7 +38,8 @@ export const requestFork = ({
     host = getAppHref('/', APPS.PROTONACCOUNT),
     localID,
     forkType,
-    payloadType,
+    prompt = 'login',
+    payloadType = 'offline',
     payloadVersion,
 }: RequestForkOptions): RequestForkResult => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
@@ -46,11 +48,13 @@ export const requestFork = ({
     searchParams.append(ForkSearchParameters.App, app);
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Independent, '0');
-    searchParams.append('prompt', 'login'); /* force re-auth */
-    searchParams.append('promptType', 'offline'); /* compute offline params */
-    searchParams.append('pt', 'offline'); /* offline payload */
-
-    if (payloadType === 'offline') searchParams.append(ForkSearchParameters.PayloadType, payloadType);
+    if (prompt === 'login') {
+        searchParams.append(ForkSearchParameters.Prompt, 'login'); /* force re-auth */
+        searchParams.append(ForkSearchParameters.PromptType, 'offline'); /* compute offline params */
+    }
+    if (payloadType === 'offline') {
+        searchParams.append(ForkSearchParameters.PayloadType, payloadType); /*offline payload */
+    }
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
