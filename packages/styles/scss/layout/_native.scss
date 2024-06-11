@@ -41,7 +41,7 @@
 	}
 
 	.header,
-	.sidebar,
+	.sidebar-header,
 	.loader-page.h-full,
 	.file-preview-header,
 	.sign-layout-bg {
@@ -63,7 +63,7 @@
 	&:has(.eventpopover),
 	&:has(#webpack-dev-server-client-overlay) {
 		.header,
-		.sidebar,
+		.sidebar-header,
 		.loader-page.h-full,
 		.file-preview-header,
 		.sign-layout-bg {
@@ -72,7 +72,6 @@
 		}
 	}
 
-	.sidebar .navigation,
 	dialog {
 		-webkit-app-region: no-drag;
 		user-select: initial;
