@@ -72,7 +72,8 @@
 		}
 	}
 
-	dialog {
+	dialog,
+	[role='dialog'] {
 		-webkit-app-region: no-drag;
 		user-select: initial;
 	}
