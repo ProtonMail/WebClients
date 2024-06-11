@@ -1,5 +1,5 @@
 import { Result, UseCaseInterface } from '@standardnotes/domain-core'
-import { DriveCompat, DocumentNodeMeta, NodeMeta } from '@proton/drive-store'
+import { DriveCompat, DocumentNodeMeta, NodeMeta, DecryptedNode } from '@proton/drive-store'
 import { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 
@@ -12,10 +12,18 @@ export class CreateNewDocument implements UseCaseInterface<DocumentNodeMeta> {
     private getDocumentMeta: GetDocumentMeta,
   ) {}
 
-  async execute(desiredName: string, parent: NodeMeta): Promise<Result<DocumentNodeMeta>> {
+  async execute(
+    desiredName: string,
+    siblingMeta: NodeMeta,
+    siblingNode: DecryptedNode,
+  ): Promise<Result<DocumentNodeMeta>> {
     try {
-      const name = await this.driveCompat.findAvailableNodeName(parent, desiredName)
-      const shellResult = await this.driveCompat.createDocumentNode(parent, name)
+      const parentMeta: NodeMeta = {
+        volumeId: siblingMeta.volumeId,
+        linkId: siblingNode.parentNodeId,
+      }
+      const name = await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
+      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name)
 
       const createResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,
