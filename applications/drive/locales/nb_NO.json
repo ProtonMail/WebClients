@@ -948,6 +948,10 @@
       "${ price } per user": [
         "${ price } per bruker"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentlisens",
+        "${ seats } skriveassistentlisenser"
+      ],
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
@@ -3958,6 +3962,9 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
+      "Available": [
+        "Tilgjengelig"
+      ],
       "Awaiting transaction": [
         "Avventer transaksjon"
       ],
@@ -5131,6 +5138,12 @@
       "Would you like to restore your files?": [
         "Vil du gjenopprette filene dine?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tillegg"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -5327,6 +5340,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vis bare"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
     "Item": {
@@ -5731,9 +5749,6 @@
       "New password": [
         "Nytt passord"
       ],
-      "New plan": [
-        "Ny plan"
-      ],
       "Note": [
         "Notat"
       ],
@@ -5751,9 +5766,6 @@
       ],
       "Optional": [
         "Valgfritt"
-      ],
-      "Organization size": [
-        "Organisasjonsstørrelse"
       ],
       "Other": [
         "Annet"
@@ -6774,6 +6786,9 @@
       "Router support": [
         "Ruterstøtte"
       ],
+      "Save time emailing": [
+        "Spar tid på e-post"
+      ],
       "Schedule and snooze emails for any time": [
         "Planlegg og slumre e-poster når som helst"
       ],
@@ -7543,6 +7558,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "Forstått"
+      ],
       "Next": [
         "Neste"
       ],
@@ -7553,6 +7571,12 @@
     "Onboarding Info": {
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Begynn å bruke ${ DRIVE_APP_NAME } og vi vil oppgradere lagringsplassen din til 5 GB."
+      ],
+      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
+        "Inviter andre via e-post til å se og redigere ${ DRIVE_APP_NAME }-filene dine"
+      ],
+      "Private Access Sharing": [
+        "Privat tilgangsdeling"
       ],
       "Set a recovery method": [
         "Angi en gjenopprettingsmetode"
@@ -8577,8 +8601,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "For"
+      "For ${ totalPrice }": [
+        "For ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9465,6 +9489,9 @@
       ],
       "Processing...": [
         "Behandler..."
+      ],
+      "Public shared link status": [
+        "Status for offentlig delt kobling"
       ],
       "Re-sign all contacts": [
         "Signer alle kontaktene på nytt"

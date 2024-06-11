@@ -948,6 +948,10 @@
       "${ price } per user": [
         "${ price } par utilisateur"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture",
+        "${ seats } accès à l'assistant d'écriture"
+      ],
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
@@ -3958,6 +3962,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Available": [
+        "Disponible"
+      ],
       "Awaiting transaction": [
         "Transaction en attente"
       ],
@@ -4728,7 +4735,7 @@
         "Réessayer maintenant"
       ],
       "Scan issue": [
-        "Problème de scan"
+        "Problème d'analyse"
       ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
@@ -5131,6 +5138,12 @@
       "Would you like to restore your files?": [
         "Voulez-vous restaurer vos fichiers ?"
       ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant add-on": [
+        "Extension Assistant d'écriture"
+      ],
       "Yes": [
         "Oui"
       ],
@@ -5327,6 +5340,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Lecture seule"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Item": {
@@ -5731,9 +5749,6 @@
       "New password": [
         "Nouveau mot de passe"
       ],
-      "New plan": [
-        "Nouvel abonnement"
-      ],
       "Note": [
         "Note"
       ],
@@ -5751,9 +5766,6 @@
       ],
       "Optional": [
         "Facultatif"
-      ],
-      "Organization size": [
-        "Taille de l’organisation"
       ],
       "Other": [
         "Autre"
@@ -6717,6 +6729,9 @@
       "Router support": [
         "Prise en charge des routeurs"
       ],
+      "Save time emailing": [
+        "Gagner du temps lors de l'envoi de vos messages"
+      ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
       ],
@@ -6821,7 +6836,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage des utilisateurs"
+        "Gestion de l'espace de stockage de l'utilisateur"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -7486,6 +7501,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "J'ai compris"
+      ],
       "Next": [
         "Suivant"
       ],
@@ -7496,6 +7514,12 @@
     "Onboarding Info": {
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Commencez à utiliser ${ DRIVE_APP_NAME } et nous augmenterons votre espace de stockage pour atteindre 5 Go !"
+      ],
+      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
+        "Invitez d'autres utilisateurs par e-mail à afficher et éditer vos fichiers ${ DRIVE_APP_NAME }."
+      ],
+      "Private Access Sharing": [
+        "Partage d'accès privé"
       ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
@@ -8219,7 +8243,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'abonnement"
+        "Passez à Premium"
       ]
     },
     "specialoffer: Offers": {
@@ -8520,8 +8544,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "Pour"
+      "For ${ totalPrice }": [
+        "Pour ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -9408,6 +9432,9 @@
       ],
       "Processing...": [
         "Traitement en cours…"
+      ],
+      "Public shared link status": [
+        "État du lien partagé public"
       ],
       "Re-sign all contacts": [
         "Signer à nouveau tous les contacts"
