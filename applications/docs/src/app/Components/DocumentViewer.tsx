@@ -2,10 +2,11 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ClientToEditorBridge,
   DocControllerEvent,
-  DocsClientEvent,
+  ApplicationEvent,
   DocsClientSquashVerificationObjectionMadePayload,
   EditorOrchestratorInterface,
   SquashVerificationObjectionDecision,
+  GeneralUserDisplayableErrorOccurredPayload,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
@@ -79,7 +80,14 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     return application.eventBus.addEventCallback(() => {
       setHasSignatureIssues(true)
     }, DocControllerEvent.SquashVerificationObjectionDecisionRequired)
-  }, [application.eventBus, bridge])
+  }, [application.eventBus])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>((payload) => {
+      /** @TODO Replace alert DRVDOC-375  */
+      window.alert(payload.error)
+    }, ApplicationEvent.GeneralUserDisplayableErrorOccurred)
+  }, [application.eventBus])
 
   const showFailedSignatureModal = useCallback(() => {
     isSignatureFailedModalOpen.current = true
@@ -90,7 +98,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
           decision: SquashVerificationObjectionDecision.AbortSquash,
         }
         application.eventBus.publish({
-          type: DocsClientEvent.SquashVerificationObjectionDecisionMade,
+          type: ApplicationEvent.SquashVerificationObjectionDecisionMade,
           payload,
         })
       },
@@ -102,7 +110,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
           decision: SquashVerificationObjectionDecision.ContinueSquash,
         }
         application.eventBus.publish({
-          type: DocsClientEvent.SquashVerificationObjectionDecisionMade,
+          type: ApplicationEvent.SquashVerificationObjectionDecisionMade,
           payload,
         })
       },

@@ -43,7 +43,7 @@ import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
 import { DocumentKeys } from '@proton/drive-store'
-import { DebugCreateInitialCommit } from '../../UseCase/CreateInitialCommit'
+import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
 import { Result } from '@standardnotes/domain-core'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
@@ -54,7 +54,11 @@ import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketSe
 import { DecryptedMessage } from '../../Models/DecryptedMessage'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './DocControllerEvent'
 import metrics from '@proton/metrics'
-import { DocsClientEvent, DocsClientSquashVerificationObjectionMadePayload } from '../../Application/DocsClientEvent'
+import {
+  ApplicationEvent,
+  DocsClientSquashVerificationObjectionMadePayload,
+  PostApplicationError,
+} from '../../Application/ApplicationEvent'
 import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
 import { LoadCommit } from '../../UseCase/LoadCommit'
 
@@ -86,7 +90,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     userService: UserService,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
-    private _createInitialCommit: DebugCreateInitialCommit,
+    private _createInitialCommit: CreateInitialCommit,
     private _loadDocument: LoadDocument,
     private _loadCommit: LoadCommit,
     private _decryptMessage: DecryptMessage,
@@ -469,7 +473,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         const disposer = this.eventBus.addEventCallback((data: DocsClientSquashVerificationObjectionMadePayload) => {
           disposer()
           resolve(data.decision)
-        }, DocsClientEvent.SquashVerificationObjectionDecisionMade)
+        }, ApplicationEvent.SquashVerificationObjectionDecisionMade)
       })
     }
 
@@ -498,12 +502,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     const newName = `${this.docMeta.name} (copy ${new Date().toLocaleString()})`
-
     const state = await this.editorInvoker.getDocumentState()
-
     const result = await this._duplicateDocument.execute(newName, this.nodeMeta, state)
 
     if (result.isFailed()) {
+      PostApplicationError(
+        this.eventBus,
+        c('Error').t`An error occurred while attempting to duplicate the document. Please try again.`,
+      )
+
       this.logger.error('Failed to duplicate document', result.getError())
       return
     }
@@ -526,6 +533,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const result = await this._createNewDocument.execute(newName, this.nodeMeta)
 
     if (result.isFailed()) {
+      PostApplicationError(
+        this.eventBus,
+        c('Error').t`An error occurred while creating a new document. Please try again.`,
+      )
+
       this.logger.error('Failed to create new document', result.getError())
       return
     }
