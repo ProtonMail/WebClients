@@ -46,8 +46,7 @@ export const rootReducer = combineReducers(reducerMap);
 
 const wrappedRootReducer: Reducer<State> = (previousState, action) => {
     /* Certain actions act as `state` overrides :
-     * - on `stateDestroy` : reset to initial state
-     * - on `stateSync` : merge the incoming state */
+     * - on `stateDestroy` : reset to initial state */
     return rootReducer(
         ((): Maybe<State> => {
             if (stateDestroy.match(action)) {

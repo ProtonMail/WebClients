@@ -6,7 +6,7 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
-    selectHasRegisteredLock,
+    selectLockEnabled,
     selectPassPlan,
     selectUserState,
 } from '@proton/pass/store/selectors';
@@ -98,10 +98,10 @@ export const createSecurityRule = (store: Store<State>) =>
              * message was not previously acknowledged AND user has
              * installed at least one day ago */
             const now = getEpoch();
-            const hasLock = selectHasRegisteredLock(store.getState());
+            const lockEnabled = selectLockEnabled(store.getState());
             const shouldPrompt = !previous && now - installedOn > UNIX_DAY;
 
-            return !hasLock && shouldPrompt;
+            return !lockEnabled && shouldPrompt;
         },
     });
 

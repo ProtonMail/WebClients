@@ -1,9 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { PlanType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
@@ -25,17 +25,7 @@ export const selectUserVerified = ({ user }: State) =>
  * `paid` -> Plan: Plus | Trial: null | Limits: none
  * `trial` -> Plan: Plus | Trial: unix timestamp end | Limits
  * `free` -> Plan: Free | Trial: null | Limits */
-export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
-    switch (plan?.Type) {
-        case PlanType.plus:
-            return plan.TrialEnd && getEpoch() < plan.TrialEnd ? UserPassPlan.TRIAL : UserPassPlan.PLUS;
-        case PlanType.business:
-            return UserPassPlan.BUSINESS;
-        default: {
-            return UserPassPlan.FREE;
-        }
-    }
-};
+export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => getPassPlan(plan);
 
 export const selectPlanDisplayName = createSelector([selectUserPlan, selectPassPlan], (userPlan, passPlan) => {
     switch (passPlan) {

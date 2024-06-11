@@ -5,17 +5,18 @@ import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
+import { bootRequest, offlineResumeRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
 export const stopEventPolling = createAction('events::polling::stop');
 
 export const stateDestroy = createAction('state::destroy');
-export const stateSync = createAction('state::sync');
 export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
     options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
 );
@@ -37,14 +38,14 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', (loginPassword?: string) =>
-    withRequest({ id: bootRequest(), status: 'start' })({ payload: { loginPassword } })
+export const bootIntent = createAction('boot::intent', (payload?: { offline: boolean }) =>
+    withRequest({ id: bootRequest(), status: 'start' })({ payload })
 );
 
-export const bootFailure = createAction('boot::failure', (error: unknown) =>
+export const bootFailure = createAction('boot::failure', (error?: unknown) =>
     pipe(
         withRequest({ id: bootRequest(), status: 'failure' }),
-        withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
+        error ? withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error }) : identity
     )({ payload: {}, error })
 );
 
@@ -80,4 +81,6 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
     )({ payload: {} })
 );
 
-export const offlineResume = createAction('offline::resume', (localID?: number) => ({ payload: { localID } }));
+export const offlineResume = requestActionsFactory<{ localID?: number }, void>('offline::resume')({
+    requestId: offlineResumeRequest,
+});

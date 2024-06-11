@@ -6,28 +6,31 @@ import clsx from '@proton/utils/clsx';
 import './PinCodeInput.scss';
 
 type Props = {
-    value: string;
-    loading?: boolean;
     autoFocus?: boolean;
+    className?: string;
+    disabled?: boolean;
+    loading?: boolean;
+    value: string;
     onValue: (value: string) => void;
 };
 
-export const PinCodeInput: FC<Props> = ({ value, onValue, loading = false, autoFocus = true }) => {
+export const PinCodeInput: FC<Props> = ({ autoFocus = true, className, disabled, loading = false, value, onValue }) => {
     const focusRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autoFocus) focusRef.current?.focus();
-    }, [autoFocus]);
+        if (loading || disabled) focusRef.current?.blur();
+    }, [autoFocus, loading]);
 
     return (
-        <div className={clsx('pass-pin--input', loading && 'opacity-30 pointer-events-none')}>
+        <div className={clsx('pass-pin--input', className, (loading || disabled) && 'opacity-30 pointer-events-none')}>
             <TotpInput
                 ref={focusRef}
                 length={6}
                 value={value}
                 onValue={onValue}
                 inputType="password"
-                disableChange={loading}
+                disableChange={disabled || loading}
                 autoFocus={autoFocus}
             />
         </div>

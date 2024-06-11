@@ -15,7 +15,8 @@ import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { useOfflineSupported } from '@proton/pass/hooks/useOfflineSupported';
-import { selectOfflineEnabled } from '@proton/pass/store/selectors';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
@@ -27,8 +28,9 @@ export const SettingsDropdown: FC = () => {
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
+    const plan = useSelector(selectPassPlan);
     const offlineEnabled = useSelector(selectOfflineEnabled);
-    const offlineSignaled = useOfflineSupported() && !offlineEnabled;
+    const offlineSignaled = useOfflineSupported() && !offlineEnabled && isPaidPlan(plan);
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
@@ -41,8 +43,8 @@ export const SettingsDropdown: FC = () => {
 
     const settings = useMemo<SettingAction[]>(
         () => [
-            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            { key: 'security', label: c('Label').t`Security`, icon: 'locks', signaled: offlineSignaled },
+            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel', signaled: offlineSignaled },
+            { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-up-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
             { key: 'account', label: c('Label').t`Account`, icon: 'arrow-out-square', onClick: navigateToAccount },

@@ -6,13 +6,12 @@ import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
-import { SessionLockStatus } from '@proton/pass/types';
 import type { User } from '@proton/shared/lib/interfaces';
 
 function* syncPlan({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
     try {
         const loggedIn = getAuthStore().hasSession();
-        const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
+        const locked = getAuthStore().getLocked();
         const user: MaybeNull<User> = yield select(selectUser);
         if (!loggedIn || locked || !user) throw new Error('Cannot fetch user plan');
 

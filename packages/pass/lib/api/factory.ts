@@ -31,6 +31,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
+import { PassErrorCode } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
 import { getSilenced } from './utils';
@@ -93,21 +94,30 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
          * should be made if a refresh is ongoing */
         await waitUntil(() => !state.get('refreshing'), 250, DEFAULT_TIMEOUT);
 
-        const { output = 'json', ...rest } = options;
+        const { output = 'json', sideEffects = true, ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
-        const wasOnline = state.get('online');
 
         return apiCall(config)
             .then((response) => {
+                const latestServerTime = state.get('serverTime')?.getTime() ?? 0;
+                const serverTime = getDateHeader(response.headers);
+
                 /* The HTTP Date header is mandatory, so this should never
                  * occur. We need the server time for proper time sync: falling
-                 * back to the local time can result in e.g. unverifiable signatures  */
-                const serverTime = getDateHeader(response.headers);
+                 * back to the local time can result in e.g. unverifiable signatures */
                 if (!serverTime) throw new Error('Could not fetch server time');
 
-                state.set('online', true);
-                state.set('serverTime', updateServerTime(serverTime));
-                state.set('unreachable', false);
+                /** If the server time isn't greater than the last seen
+                 * server time value - then we may be dealing with a cached
+                 * response. In such cases, avoid mutating API state */
+                if (sideEffects && serverTime.getTime() >= latestServerTime) {
+                    state.set('serverTime', updateServerTime(serverTime));
+                    state.set('unreachable', false);
+                    state.set('online', (online) => {
+                        if (!online) pubsub.publish({ type: 'network', online: true });
+                        return true;
+                    });
+                }
 
                 return Promise.resolve(
                     (() => {
@@ -126,18 +136,24 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;
                 const { code } = getApiError(e);
                 const error = getApiErrorMessage(e);
-                const isOffline = getIsOfflineError(e);
-                const isUnreachable = getIsUnreachableError(e);
+
+                const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
+                const offline = getIsOfflineError(e) || networkError;
+                const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
                 const sessionInactive = e.name === 'InactiveSession';
 
                 state.set('appVersionBad', e.name === 'AppVersionBadError');
-                state.set('online', !isOffline);
                 state.set('sessionInactive', sessionInactive);
                 state.set('sessionLocked', sessionLocked);
-                state.set('unreachable', isUnreachable);
+                state.set('unreachable', unreachable);
+                state.set('online', (online) => {
+                    if (online && offline) pubsub.publish({ type: 'network', online: false });
+                    return !offline;
+                });
 
                 if (serverTime) state.set('serverTime', updateServerTime(serverTime));
+
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
                 if (error && !getSilenced(e.config, code)) pubsub.publish({ type: 'error', error });
@@ -145,10 +161,8 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 throw e;
             })
             .finally(() => {
-                const online = state.get('online');
                 state.set('pendingCount', state.get('pendingCount') - 1);
                 state.get('queued').shift()?.resolve();
-                if (online !== wasOnline) pubsub.publish({ type: 'network', online });
             });
     };
 

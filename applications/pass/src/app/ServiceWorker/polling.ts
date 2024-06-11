@@ -1,9 +1,11 @@
 import { getCache } from '@proton/pass/lib/api/cache';
-import { fetchController, getUID } from '@proton/pass/lib/api/fetch-controller';
+import { createNetworkError, getUID } from '@proton/pass/lib/api/fetch-controller';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { globToRegExp } from '@proton/pass/utils/url/glob';
 import noop from '@proton/utils/noop';
+
+import { fetchController } from './fetch-controller';
 
 const POLLING_REQ_MAX_AGE = ACTIVE_POLLING_TIMEOUT;
 const EVENT_ROUTES = ['/api/pass/v1/share/*/event/*', '/api/pass/v1/invite', '/api/core/v4/events/*'].map(globToRegExp);
@@ -25,14 +27,13 @@ export const handlePolling = fetchController.register(
         async (event: FetchEvent, signal: AbortSignal): Promise<Response> => {
             const { url } = event.request;
 
-            const cache = await getCache();
-            const hit = await cache.match(url);
-
+            const cache = await getCache().catch(noop);
+            const hit = await cache?.match(url);
             if (hit && isValidEventCache(hit)) return hit;
-            await cache.delete(url);
 
-            const response = await fetchController.fetch(event.request, signal);
-            if (response.ok && response.status === 200) cache.put(url, response.clone()).catch(noop);
+            await cache?.delete(url).catch(noop);
+            const response = await fetchController.fetch(event.request, signal).catch(() => createNetworkError());
+            if (response.ok && response.status === 200) cache?.put(url, response.clone()).catch(noop);
 
             return response;
         },

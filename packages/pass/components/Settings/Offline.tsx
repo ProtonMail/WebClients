@@ -1,16 +1,17 @@
 import { type FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/index';
-import { ConfirmPasswordModal } from '@proton/pass/components/Confirmation/ConfirmPasswordModal';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { offlineDisable, offlineSetupIntent } from '@proton/pass/store/actions';
+import { offlineToggle } from '@proton/pass/store/actions';
+import { offlineToggleRequest } from '@proton/pass/store/actions/requests';
 import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
@@ -18,27 +19,24 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
-    const dispatch = useDispatch();
-    const passwordConfirmModal = useAsyncModalHandles<string>();
+    const confirmPassword = usePasswordUnlock();
+    const authStore = useAuthStore();
 
-    const supported = useSelector(selectOfflineEnabled);
+    const enabled = useSelector(selectOfflineEnabled);
     const plan = useSelector(selectPassPlan);
-    const pwMode = useSelector(selectUserSettings)?.Password?.Mode;
-    const setup = useActionRequest(offlineSetupIntent);
-
+    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const freeUser = !isPaidPlan(plan);
-    const twoPasswordMode = pwMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
-    const disabled = freeUser || twoPasswordMode;
+    const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+    const canEnableOffline = !freeUser && (!twoPwdMode || (authStore?.hasOfflinePassword() ?? false));
+    const disabled = !canEnableOffline;
 
-    const toggleOffline = async (enable: boolean) => {
-        if (enable) {
-            await passwordConfirmModal.handler({
-                onSubmit: (password) => {
-                    setup.dispatch(password);
-                },
-            });
-        } else dispatch(offlineDisable());
-    };
+    const toggle = useRequest(offlineToggle, { initialRequestId: offlineToggleRequest() });
+
+    const toggleOffline = async (enabled: boolean) =>
+        confirmPassword({
+            onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled }),
+            message: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
+        });
 
     return (
         <>
@@ -65,9 +63,9 @@ export const Offline: FC = () => {
                     : {})}
             >
                 <Checkbox
-                    checked={supported}
-                    disabled={setup.loading || disabled}
-                    loading={setup.loading}
+                    checked={enabled}
+                    disabled={toggle.loading || disabled}
+                    loading={toggle.loading}
                     onChange={(e) => toggleOffline(e.target.checked)}
                 >
                     <span>
@@ -78,12 +76,6 @@ export const Offline: FC = () => {
                         </span>
                     </span>
                 </Checkbox>
-                <ConfirmPasswordModal
-                    message={c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`}
-                    onSubmit={passwordConfirmModal.resolver}
-                    onClose={passwordConfirmModal.abort}
-                    {...passwordConfirmModal.state}
-                />
             </SettingsPanel>
         </>
     );

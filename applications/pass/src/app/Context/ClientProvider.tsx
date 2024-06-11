@@ -1,15 +1,23 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useRef, useState } from 'react';
 
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
+import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientBooted } from '@proton/pass/lib/client';
 import type { AppState } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { ping } from '@proton/shared/lib/api/tests';
 import noop from '@proton/utils/noop';
 
-type ClientContextValue = { state: AppState; setStatus: (status: AppStatus) => void };
+interface ClientContextValue {
+    setBooted: (booted: boolean) => void;
+    setLoggedIn: (loggedIn: boolean) => void;
+    setStatus: (status: AppStatus) => void;
+    state: AppState;
+}
 
 const getInitialAppState = () => ({
+    booted: false,
     localID: undefined,
     loggedIn: false,
     status: AppStatus.IDLE,
@@ -17,8 +25,10 @@ const getInitialAppState = () => ({
 });
 
 export const ClientContext = createContext<ClientContextValue>({
-    state: getInitialAppState(),
+    setBooted: noop,
+    setLoggedIn: noop,
     setStatus: noop,
+    state: getInitialAppState(),
 });
 
 export const useClient = (): ClientContextValue => useContext(ClientContext);
@@ -37,23 +47,34 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <ClientContext.Provider
-            value={useMemo<ClientContextValue>(
-                () => ({
-                    state,
-                    setStatus: (status) =>
-                        setState((prev) => {
-                            logger.info(`[ClientProvider] Status change : ${prev.status} -> ${status}`);
-                            const loggedIn = clientBooted(status);
-                            const localID = authStore.getLocalID();
-                            const UID = authStore.getUID();
+            value={useMemo<ClientContextValue>(() => {
+                const next =
+                    <K extends keyof AppState>(key: K) =>
+                    (value: AppState[K]) => {
+                        if (state[key] !== value) {
+                            setState((prev) => {
+                                logger.info(`[ClientProvider] ${key} change : ${prev[key]} -> ${value}`);
+                                return {
+                                    ...prev,
+                                    [key]: value,
+                                    localID: authStore.getLocalID(),
+                                    UID: authStore.getUID(),
+                                };
+                            });
+                        }
+                    };
 
-                            return { status, loggedIn, localID, UID };
-                        }),
-                }),
-                [state]
-            )}
+                return {
+                    state,
+                    setStatus: next('status'),
+                    setBooted: next('booted'),
+                    setLoggedIn: next('loggedIn'),
+                };
+            }, [state])}
         >
-            {children}
+            <ConnectivityProvider subscribe={api.subscribe} onPing={() => api(ping())}>
+                {children}
+            </ConnectivityProvider>
         </ClientContext.Provider>
     );
 };

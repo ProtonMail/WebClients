@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
@@ -18,6 +19,7 @@ import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/header
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
 
 export type RequestForkOptions = {
@@ -44,6 +46,9 @@ export const requestFork = ({
     searchParams.append(ForkSearchParameters.App, app);
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Independent, '0');
+    searchParams.append('prompt', 'login'); /* force re-auth */
+    searchParams.append('promptType', 'offline'); /* compute offline params */
+    searchParams.append('pt', 'offline'); /* offline payload */
 
     if (payloadType === 'offline') searchParams.append(ForkSearchParameters.PayloadType, payloadType);
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
@@ -98,23 +103,28 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
-    const { keyPassword, payloadVersion } =
+    const data =
         payload.mode === 'secure'
-            ? {
-                  keyPassword: payload.keyPassword,
-                  payloadVersion: SESSION_VERSION,
-              }
+            ? { keyPassword: payload.keyPassword, payloadVersion: SESSION_VERSION }
             : await (async () => {
                   try {
                       const { payloadVersion, key } = payload;
                       const clientKey = await getKey(key!);
                       const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
-
                       if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
 
                       return {
                           keyPassword: decryptedBlob.keyPassword,
                           payloadVersion,
+                          ...(decryptedBlob.type === 'offline'
+                              ? {
+                                    offlineConfig: {
+                                        salt: atob(decryptedBlob.offlineKeySalt),
+                                        params: ARGON2_PARAMS.RECOMMENDED,
+                                    },
+                                    offlineKD: atob(decryptedBlob.offlineKeyPassword),
+                                }
+                              : {}),
                       };
                   } catch (err) {
                       throw new InvalidForkConsumeError(getErrorMessage(err));
@@ -122,10 +132,10 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
               })();
 
     return {
+        ...data,
         AccessToken: refresh.AccessToken,
-        keyPassword,
-        payloadVersion,
         LocalID,
+        lockMode: LockMode.NONE,
         RefreshToken: refresh.RefreshToken,
         UID,
         UserID: User.ID,

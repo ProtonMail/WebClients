@@ -16,7 +16,7 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { clientLocked, clientNeedsSession, clientReady } from '@proton/pass/lib/client';
+import { clientNeedsSession, clientReady, clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -56,7 +56,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         context.service.formManager.sync();
 
         const ready = clientReady(status);
-        const locked = clientLocked(status);
+        const locked = clientSessionLocked(status);
         const loggedOut = clientNeedsSession(status);
 
         if (ready) await context.service.autofill.reconciliate();

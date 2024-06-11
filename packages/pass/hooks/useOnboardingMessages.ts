@@ -67,12 +67,12 @@ export const useOnboardingMessages = () => {
             [OnboardingMessage.SECURE_EXTENSION]: {
                 id: 'pin',
                 title: c('Title').t`Secure your data`,
-                message: c('Info').t`Set up a PIN code to easily lock your data`,
+                message: c('Info').t`Enable auto-locking to secure your data`,
                 className: 'ui-violet',
                 icon: ShieldIcon,
                 onClose: () => acknowledge(OnboardingMessage.SECURE_EXTENSION),
                 action: {
-                    label: c('Label').t`Set PIN code`,
+                    label: c('Label').t`Create lock`,
                     type: 'button',
                     onClick: () => acknowledge(OnboardingMessage.SECURE_EXTENSION, () => openSettings?.('security')),
                 },

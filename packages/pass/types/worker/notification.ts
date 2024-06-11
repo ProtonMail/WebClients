@@ -5,6 +5,6 @@
  * identified by its key. */
 export enum NotificationKey {
     INACTIVE_SHARES = 'INACTIVE_SHARE',
-    SESSION_LOCK = 'SESSION_LOCK',
+    LOCK = 'LOCK',
     AUTH = 'AUTH',
 }

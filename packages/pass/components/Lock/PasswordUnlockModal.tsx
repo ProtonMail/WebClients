@@ -16,14 +16,14 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { MaybePromise } from '@proton/pass/types';
 
 type Props = {
-    disabled?: boolean;
+    loading?: boolean;
     message?: string;
     open?: boolean;
     onClose?: () => void;
     onSubmit?: (password: string) => MaybePromise<void>;
 };
 
-export const ConfirmPasswordModal: FC<Props> = ({ disabled, message, open, onClose, onSubmit }) => {
+export const PasswordUnlockModal: FC<Props> = ({ loading, message, open, onClose, onSubmit }) => {
     const [password, setPassword] = useState('');
 
     useEffect(() => {
@@ -37,9 +37,12 @@ export const ConfirmPasswordModal: FC<Props> = ({ disabled, message, open, onClo
             onReset={onClose}
             onSubmit={() => onSubmit?.(password)}
             open={open}
-            size={'small'}
+            size="small"
         >
-            <ModalTwoHeader title={c('Title').t`Enter your password`} closeButtonProps={{ pill: true, disabled }} />
+            <ModalTwoHeader
+                title={c('Title').t`Enter your password`}
+                closeButtonProps={{ pill: true, disabled: loading }}
+            />
             <ModalTwoContent>
                 {message && (
                     <Card className="mb-4 text-sm" type="primary">
@@ -55,13 +58,14 @@ export const ConfirmPasswordModal: FC<Props> = ({ disabled, message, open, onClo
                     onValue={setPassword}
                     placeholder={c('Placeholder').t`Password`}
                     required
+                    disabled={loading}
                     value={password}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="danger" shape="outline" onClick={onClose} disabled={disabled}>{c('Action')
+                <Button color="danger" shape="outline" onClick={onClose} disabled={loading}>{c('Action')
                     .t`Cancel`}</Button>
-                <Button type="submit" color="norm" loading={disabled}>
+                <Button type="submit" color="norm" loading={loading}>
                     {c('Action').t`Authenticate`}
                 </Button>
             </ModalTwoFooter>
