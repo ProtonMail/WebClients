@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price } per bruker"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentlisens",
+        "${ seats } skriveassistentlisenser"
+      ],
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
@@ -4234,6 +4238,12 @@
       "Would you like to receive a new verification code?": [
         "Ønsker du å motta en ny verifiseringskode?"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant add-on": [
+        "Skriveassistent-tillegg"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -4423,6 +4433,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vis bare"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
     "Invoice state display as badge": {
@@ -4763,9 +4778,6 @@
       "New password": [
         "Nytt passord"
       ],
-      "New plan": [
-        "Ny plan"
-      ],
       "No filter": [
         "Ingen filter"
       ],
@@ -4795,9 +4807,6 @@
       ],
       "Organization password": [
         "Organisasjonspassord"
-      ],
-      "Organization size": [
-        "Organisasjonsstørrelse"
       ],
       "Other amount": [
         "Annet beløp"
@@ -5023,6 +5032,9 @@
       ],
       "Add gift code": [
         "Legg til gavekode"
+      ],
+      "Add to your subscription": [
+        "Legg til abonnementet ditt"
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
@@ -5620,6 +5632,9 @@
       ],
       "Router support": [
         "Ruterstøtte"
+      ],
+      "Save time emailing": [
+        "Spar tid på e-post"
       ],
       "Schedule and snooze emails for any time": [
         "Planlegg og slumre e-poster når som helst"
@@ -7684,8 +7699,8 @@
       ]
     },
     "Subscription price": {
-      "For": [
-        "For"
+      "For ${ totalPrice }": [
+        "For ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8957,6 +8972,11 @@
       ],
       "Primary admin": [
         "Primær administrator"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "KI"
       ]
     },
     "Users table: single sign-on enabled": {
