@@ -639,9 +639,6 @@
       "Failed to delete selected items": [
         "선택한 항목을 지우기 실패했습니다."
       ],
-      "Failed to edit organization settings": [
-        "조직 설정을 수정할 수 없음"
-      ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
       ],
@@ -1004,9 +1001,6 @@
       "Built in 2FA authenticator": [
         "2단계 인증기 내장"
       ],
-      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "기본적으로 팀 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
-      ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
       ],
@@ -1244,9 +1238,6 @@
       "Open the Extensions menu": [
         "확장 메뉴 열기"
       ],
-      "Organization settings successfully updated": [
-        "조직 설정이 성공적으로 업데이트됨"
-      ],
       "Owner": [
         "소유자"
       ],
@@ -1382,9 +1373,6 @@
       "Syncing your vaults…": [
         "금고를 동기화 하는 중..."
       ],
-      "Team members can only share vaults within organization": [
-        "팀 구성원은 조직 내에서만 금고를 공유할 수 있습니다"
-      ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
@@ -1444,9 +1432,6 @@
       ],
       "Update login": [
         "로그인 업데이트"
-      ],
-      "Updating organization settings": [
-        "조직 설정 업데이트 중"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 업그레이드"
@@ -1669,12 +1654,6 @@
       "Device": [
         "기기"
       ],
-      "Disable data export for team members": [
-        "팀 멤버들의 데이터 내보내기 비활성화"
-      ],
-      "Disable sharing outside the organization": [
-        "조직 외부로 공유 비활성화"
-      ],
       "Display": [
         "표시"
       ],
@@ -1701,9 +1680,6 @@
       ],
       "Export": [
         "내보내기"
-      ],
-      "Exporting policy": [
-        "내보내기 정책"
       ],
       "Field name": [
         "필드 이름"
@@ -1920,9 +1896,6 @@
       ],
       "Settings": [
         "설정"
-      ],
-      "Sharing policy": [
-        "공유 정책"
       ],
       "Show website favicons": [
         "웹사이트 아이콘 표시"
