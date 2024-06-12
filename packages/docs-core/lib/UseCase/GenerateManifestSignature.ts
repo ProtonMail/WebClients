@@ -1,5 +1,6 @@
 import { Commit } from '@proton/docs-proto'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DriveCompat, NodeMeta } from '@proton/drive-store'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { getErrorString } from '../Util/GetErrorString'

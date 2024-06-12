@@ -1,6 +1,7 @@
-import { Result, SyncUseCaseInterface } from '@standardnotes/domain-core'
 import { DecryptedMessage } from '../Models/DecryptedMessage'
 import { VersionHistoryBatch } from './VersionHistoryBatch'
+import { Result } from '../Domain/Result/Result'
+import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
 
 /**
  * BatchDocumentUpdates takes a list of DecryptedMessages and creates batches of them
@@ -8,7 +9,7 @@ import { VersionHistoryBatch } from './VersionHistoryBatch'
  * For example, if the threshold is 100, and there are 200 updates, the result will be
  * two batches of 100 updates each.
  */
-export class BatchDocumentUpdates implements SyncUseCaseInterface<void> {
+export class BatchDocumentUpdates implements SyncUseCaseInterface<VersionHistoryBatch[]> {
   execute(updates: DecryptedMessage[], batchThreshold: number): Result<VersionHistoryBatch[]> {
     if (!updates.length) {
       return Result.ok([])

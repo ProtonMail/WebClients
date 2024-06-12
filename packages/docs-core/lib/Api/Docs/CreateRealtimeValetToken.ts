@@ -1,7 +1,8 @@
 import { NodeMeta } from '@proton/drive-store'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 import { DocsApi } from './DocsApi'
 import { RealtimeUrlAndToken } from '@proton/docs-shared'
+import { UseCaseInterface } from '../../Domain/UseCase/UseCaseInterface'
+import { Result } from '../../Domain/Result/Result'
 
 export class GetRealtimeUrlAndToken implements UseCaseInterface<RealtimeUrlAndToken> {
   constructor(private docsApi: DocsApi) {}

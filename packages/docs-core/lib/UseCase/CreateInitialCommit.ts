@@ -1,5 +1,6 @@
 import { CommitVersion, DocumentUpdateVersion, CreateDocumentUpdate, CreateCommit } from '@proton/docs-proto'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DocsApi } from '../Api/Docs/DocsApi'
 import { EncryptMessage } from './EncryptMessage'
 import { DocumentKeys } from '@proton/drive-store'

@@ -12,10 +12,11 @@ import {
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { Comment, CommentThread } from '../Models'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { Result, SyncUseCaseInterface } from '@standardnotes/domain-core'
 import { LiveComments } from '../Realtime/LiveComments/LiveComments'
 import { getErrorString } from '../Util/GetErrorString'
 import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 
 /**
  * Updates the local comment state after receiving a message from the RTS.

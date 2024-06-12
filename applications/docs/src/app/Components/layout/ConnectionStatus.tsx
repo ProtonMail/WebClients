@@ -1,10 +1,9 @@
 import { Icon } from '@proton/components'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   WebsocketConnectionEvent,
   WebsocketConnectionEventStatusChange,
   WebsocketDisconnectedPayload,
-  WebsocketEncryptionErrorPayload,
   WebsocketFailedToConnectPayload,
 } from '@proton/docs-shared'
 import { useApplication } from '../../Containers/ApplicationProvider'
@@ -16,11 +15,6 @@ export const ConnectionStatus = () => {
   const application = useApplication()
   const [status, setStatus] = useState<WebsocketConnectionEventStatusChange>()
   const [disconnectReason, setDisconnectReason] = useState<ConnectionCloseReason>()
-
-  const showEncryptionError = useCallback((message: string) => {
-    /** @TODO Replace alert DRVDOC-375 */
-    alert(message)
-  }, [])
 
   useEffect(() => {
     return mergeRegister(
@@ -38,11 +32,8 @@ export const ConnectionStatus = () => {
         setStatus(WebsocketConnectionEvent.FailedToConnect)
         setDisconnectReason(payload.serverReason)
       }, WebsocketConnectionEvent.FailedToConnect),
-      application.eventBus.addEventCallback((payload: WebsocketEncryptionErrorPayload) => {
-        showEncryptionError(payload.error)
-      }, WebsocketConnectionEvent.EncryptionError),
     )
-  }, [application.eventBus, showEncryptionError])
+  }, [application.eventBus])
 
   const disconnectReasonMessage = disconnectReason ? disconnectReason?.props.message : ''
 

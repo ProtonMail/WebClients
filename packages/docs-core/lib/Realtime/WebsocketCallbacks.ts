@@ -1,6 +1,6 @@
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { RealtimeUrlAndToken } from '@proton/docs-shared'
-import { Result } from '@standardnotes/domain-core'
+import { Result } from '../Domain/Result/Result'
 
 export type WebsocketCallbacks = {
   onClose: (reason: ConnectionCloseReason) => void
