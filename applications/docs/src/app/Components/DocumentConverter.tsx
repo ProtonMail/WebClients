@@ -1,9 +1,8 @@
 import { CircleLoader } from '@proton/atoms'
 import { useCallback, useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
-import { FileToDocConversionResult } from '@proton/docs-core'
+import { FileToDocConversionResult, Result } from '@proton/docs-core'
 import { DecryptedNode, NodeMeta } from '@proton/drive-store'
-import { Result } from '@standardnotes/domain-core'
 import { c } from 'ttag'
 
 type Props = {

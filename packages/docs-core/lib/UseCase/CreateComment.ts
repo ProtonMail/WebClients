@@ -1,4 +1,3 @@
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
 import { CommentInterface, ServerTime } from '@proton/docs-shared'
@@ -6,6 +5,8 @@ import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CommentsApi } from '../Api/Comments/CommentsApi'
+import { Result } from '../Domain/Result/Result'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 
 /**
  * Creates and encrypts a new comment in a thread with the API.

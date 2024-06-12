@@ -43,7 +43,6 @@ import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
 import { DocumentKeys } from '@proton/drive-store'
 import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
-import { Result } from '@standardnotes/domain-core'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
@@ -60,6 +59,8 @@ import {
 } from '../../Application/ApplicationEvent'
 import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
 import { LoadCommit } from '../../UseCase/LoadCommit'
+import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
+import { Result } from '../../Domain/Result/Result'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -505,10 +506,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const result = await this._duplicateDocument.execute(newName, this.nodeMeta, state)
 
     if (result.isFailed()) {
-      PostApplicationError(
-        this.eventBus,
-        c('Error').t`An error occurred while attempting to duplicate the document. Please try again.`,
-      )
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to duplicate the document. Please try again.`,
+      })
 
       this.logger.error('Failed to duplicate document', result.getError())
       return
@@ -536,10 +536,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const result = await this._createNewDocument.execute(newName, this.nodeMeta, this.decryptedNode)
 
     if (result.isFailed()) {
-      PostApplicationError(
-        this.eventBus,
-        c('Error').t`An error occurred while creating a new document. Please try again.`,
-      )
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while creating a new document. Please try again.`,
+      })
 
       this.logger.error('Failed to create new document', result.getError())
       return
@@ -558,10 +557,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return undefined
   }
 
-  public async renameDocument(newName: string): Promise<Result<void>> {
+  public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
     try {
       if (!this.decryptedNode) {
-        return Result.fail('Decrypted node not loaded when renaming document')
+        throw new Error('Decrypted node not loaded when renaming document')
       }
 
       const name = await this.driveCompat.findAvailableNodeName(
@@ -572,9 +571,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         newName,
       )
       await this.driveCompat.renameDocument(this.nodeMeta, name)
-      return Result.ok()
+      return TranslatedResult.ok()
     } catch (e) {
-      return Result.fail(getErrorString(e) ?? 'Failed to rename document')
+      this.logger.error(getErrorString(e) ?? 'Failed to rename document')
+
+      return TranslatedResult.failWithTranslatedError(c('Error').t`Failed to rename document. Please try again later.`)
     }
   }
 

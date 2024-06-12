@@ -1,4 +1,3 @@
-import { Result } from '@standardnotes/domain-core'
 import { CreateDocumentResponse } from '../Types/CreateDocumentResponse'
 import { GetDocumentMetaResponse } from '../Types/GetDocumentMetaResponse'
 import { Api } from '@proton/shared/lib/interfaces'
@@ -16,6 +15,7 @@ import { DocumentMetaInterface } from '@proton/docs-shared'
 import { Commit, SquashCommit } from '@proton/docs-proto'
 import { NodeMeta } from '@proton/drive-store'
 import { getErrorString } from '../../Util/GetErrorString'
+import { Result } from '../../Domain/Result/Result'
 
 export class DocsApi {
   constructor(private protonApi: Api) {}

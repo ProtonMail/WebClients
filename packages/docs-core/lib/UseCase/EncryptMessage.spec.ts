@@ -1,4 +1,4 @@
-import { Result } from '@standardnotes/domain-core'
+import { Result } from '../Domain/Result/Result'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { DocumentKeys } from '@proton/drive-store'

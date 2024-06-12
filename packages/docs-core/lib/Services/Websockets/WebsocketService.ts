@@ -19,8 +19,8 @@ import {
 import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
 import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
-import { Result } from '@standardnotes/domain-core'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
+import { Result } from '../../Domain/Result/Result'
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<string, WebsocketConnectionInterface> = {}

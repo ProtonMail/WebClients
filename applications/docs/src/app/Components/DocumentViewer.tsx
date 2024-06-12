@@ -17,14 +17,17 @@ import {
   FileToDocPendingConversion,
   LiveCommentsEvent,
   LiveCommentsTypeStatusChangeData,
+  WebsocketConnectionEvent,
+  WebsocketEncryptionErrorPayload,
 } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { useTheme } from '@proton/components'
 import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import { mergeRegister } from '@lexical/utils'
-import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
+import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
 import { NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
+import { useGenericAlertModal } from './Modals/GenericAlert'
 
 type Props = {
   lookup: NodeMeta
@@ -37,6 +40,8 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
   const isSignatureFailedModalOpen = useRef(false)
   const [hasSignatureIssues, setHasSignatureIssues] = useState(false)
+
+  const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
 
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
@@ -84,10 +89,21 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>((payload) => {
-      /** @TODO Replace alert DRVDOC-375  */
-      window.alert(payload.error)
+      showGenericAlertModal({
+        title: c('Title').t`An error occurred`,
+        translatedMessage: payload.translatedError,
+      })
     }, ApplicationEvent.GeneralUserDisplayableErrorOccurred)
-  }, [application.eventBus])
+  }, [application.eventBus, showGenericAlertModal])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback((payload: WebsocketEncryptionErrorPayload) => {
+      showGenericAlertModal({
+        title: c('Title').t`An error occurred`,
+        translatedMessage: payload.error,
+      })
+    }, WebsocketConnectionEvent.EncryptionError)
+  }, [application.eventBus, showGenericAlertModal])
 
   const showFailedSignatureModal = useCallback(() => {
     isSignatureFailedModalOpen.current = true
@@ -226,6 +242,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
       <EditorFrame key="docs-editor-iframe" onFrameReady={onFrameReady} />
       {signatureFailedModal}
+      {genericAlertModal}
     </div>
   )
 }
