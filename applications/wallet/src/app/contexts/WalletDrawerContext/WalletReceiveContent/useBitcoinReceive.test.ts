@@ -1,7 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { apiWalletsData } from '@proton/wallet';
+
 import { mockUseBitcoinBlockchainContext } from '../../../tests';
-import { apiWalletsData } from '../../../tests/fixtures/api';
 import { mockUseBitcoinAddressHighestIndexModule } from '../../../tests/mocks/useGetBitcoinAddressHighestIndex';
 import { useBitcoinReceive } from './useBitcoinReceive';
 

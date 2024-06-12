@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { exchangeRate } from '../tests/fixtures/api';
+import { exchangeRate } from '@proton/wallet';
+
 import { BitcoinAmount } from './BitcoinAmount';
 
 describe('BitcoinAmount', () => {
