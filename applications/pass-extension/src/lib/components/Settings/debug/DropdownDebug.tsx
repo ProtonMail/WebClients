@@ -15,14 +15,14 @@ import { MockIFrameContainer } from './MockIFrameContainer';
 const LOGIN_ITEMS: SafeLoginItem[] = [
     {
         name: 'Netflix account',
-        username: 'netflix+nobody@proton.me',
+        userIdentifier: 'netflix+nobody@proton.me',
         shareId: uniqueId(),
         itemId: uniqueId(),
         url: 'https://netflix.com',
     },
     {
         name: 'Proton credentials',
-        username: 'nobody@proton.me',
+        userIdentifier: 'nobody@proton.me',
         shareId: uniqueId(),
         itemId: uniqueId(),
     },

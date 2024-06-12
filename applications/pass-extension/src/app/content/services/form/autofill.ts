@@ -74,8 +74,8 @@ export const createAutofillService = () => {
     };
 
     const autofillLogin = (form: FormHandle, data: FormCredentials) => {
-        first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.username);
-        first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.username);
+        first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
+        first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
         autofillTelemetry('login');

@@ -6,7 +6,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
 import { aliasBreachRequest, customBreachRequest, protonBreachRequest } from '@proton/pass/store/actions/requests';
-import { selectLoginsByUsername } from '@proton/pass/store/selectors';
+import { selectLoginsByUserIdentifier } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 
@@ -31,7 +31,7 @@ export type BreachDetails = {
 export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<T>, email: string) => {
     const [request, initialRequestId] = getRequest(dto);
     const req = useRequest(request, { initialRequestId });
-    const usages = useSelector(selectLoginsByUsername(email));
+    const usages = useSelector(selectLoginsByUserIdentifier(email));
 
     useEffect(() => {
         switch (dto.type) {

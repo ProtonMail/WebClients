@@ -119,6 +119,9 @@ export type ImportReaderPayload = {
     provider: ImportProvider;
     userId?: string;
     passphrase?: string;
+    options?: {
+        importUsername?: boolean;
+    };
 };
 
 export type ImportVault = {

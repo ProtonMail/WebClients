@@ -1,7 +1,7 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
 import type { Item, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
-import { and, invert } from '@proton/pass/utils/fp/predicates';
+import { and, invert, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
@@ -39,8 +39,14 @@ export const isBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
 export const isActiveMonitored = and(isActive, isMonitored);
 export const isExcluded = and(isActive, invert(isMonitored));
 
+export const hasEmail = (email: string) => (item: LoginItem) =>
+    Boolean(item.data.content.itemEmail.v && deobfuscate(item.data.content.itemEmail) === email);
+
 export const hasUsername = (username: string) => (item: LoginItem) =>
-    Boolean(item.data.content.username.v && deobfuscate(item.data.content.username) === username);
+    Boolean(item.data.content.itemUsername.v && deobfuscate(item.data.content.itemUsername) === username);
+
+export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>
+    or(hasEmail(userIdentifier), hasUsername(userIdentifier))(item);
 
 export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 

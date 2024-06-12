@@ -1,6 +1,6 @@
 export type SafeLoginItem = {
     name: string;
-    username: string;
+    userIdentifier: string;
     shareId: string;
     itemId: string;
     url?: string;

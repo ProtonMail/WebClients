@@ -34,36 +34,37 @@ export const prepareImport = async (payload: ImportReaderPayload): Promise<Impor
 export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPayload> => {
     const file = transferableToFile(payload.file);
     const fileExtension = extractFileExtension(payload.file.name);
+    const importUsername = payload.options?.importUsername;
 
     switch (payload.provider) {
         case ImportProvider.BITWARDEN: {
-            return readBitwardenData(await file.text());
+            return readBitwardenData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.BRAVE:
         case ImportProvider.CHROME:
         case ImportProvider.EDGE: {
-            return readChromiumData(await file.text());
+            return readChromiumData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.FIREFOX: {
-            return readFirefoxData(await file.text());
+            return readFirefoxData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.KEEPASS: {
-            return readKeePassData(await file.text());
+            return readKeePassData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.LASTPASS: {
-            return readLastPassData(await file.text());
+            return readLastPassData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.ONEPASSWORD: {
             switch (fileExtension) {
                 case '1pif':
-                    return read1Password1PifData(await file.text());
+                    return read1Password1PifData({ data: await file.text(), importUsername });
                 case '1pux':
-                    return read1Password1PuxData(await file.arrayBuffer());
+                    return read1Password1PuxData({ data: await file.arrayBuffer(), importUsername });
                 default:
                     throw new Error(c('Error').t`Unsupported 1Password file format`);
             }
@@ -72,7 +73,7 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         case ImportProvider.PROTONPASS: {
             switch (fileExtension) {
                 case 'csv':
-                    return readProtonPassCSV(await file.text());
+                    return readProtonPassCSV({ data: await file.text(), importUsername });
                 case 'pgp':
                 case 'zip':
                     return readProtonPassZIP({
@@ -85,31 +86,31 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         case ImportProvider.CSV: {
-            return readProtonPassCSV(await file.text());
+            return readProtonPassCSV({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.DASHLANE: {
-            return readDashlaneData(await file.arrayBuffer());
+            return readDashlaneData({ data: await file.arrayBuffer(), importUsername });
         }
 
         case ImportProvider.SAFARI: {
-            return readSafariData(await file.text());
+            return readSafariData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.KEEPER: {
-            return readKeeperData(await file.text());
+            return readKeeperData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.ROBOFORM: {
-            return readRoboformData(await file.text());
+            return readRoboformData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.NORDPASS: {
-            return readNordPassData(await file.text());
+            return readNordPassData({ data: await file.text(), importUsername });
         }
 
         case ImportProvider.ENPASS: {
-            return readEnpassData(await file.text());
+            return readEnpassData({ data: await file.text(), importUsername });
         }
 
         default:

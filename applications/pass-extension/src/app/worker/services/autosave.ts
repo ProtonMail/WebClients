@@ -4,35 +4,39 @@ import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-en
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import {
     selectAutosaveCandidate,
     selectAutosaveVault,
+    selectFeatureFlag,
     selectItem,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const createAutoSaveService = () => {
     const resolve = ({ type, data, domain, subdomain }: FormEntry): AutosavePrompt => {
         /* If credentials are not valid for the form type : exit early */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
-        const { username, password } = data;
+        const { userIdentifier, password } = data;
         const state = store.getState();
         const shareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
 
         if (type === 'register') {
-            const candidates = selectAutosaveCandidate({ domain, subdomain, username: '', shareIds })(state);
+            const candidates = selectAutosaveCandidate({ domain, subdomain, userIdentifier: '', shareIds })(state);
             const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
-            const fullMatch = username && pwMatch.some((item) => deobfuscate(item.data.content.username) === username);
+            const fullMatch = Boolean(userIdentifier) && pwMatch.some(hasUserIdentifier(userIdentifier));
 
             /* The credentials may have been saved during the password-autosuggest autosave
              * sequence - as such ensure we don't have an exact username/password match */
@@ -47,7 +51,7 @@ export const createAutoSaveService = () => {
 
         /* If no login items found for the current domain & the
          * current username - prompt for autosaving a new entry */
-        const candidates = selectAutosaveCandidate({ domain, subdomain, username, shareIds })(state);
+        const candidates = selectAutosaveCandidate({ domain, subdomain, userIdentifier, shareIds })(state);
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
@@ -75,10 +79,18 @@ export const createAutoSaveService = () => {
                 .set('note', c('Info').t`Autosaved on ${payload.domain}`);
 
             item.get('content')
-                .set('username', payload.username)
                 .set('password', payload.password)
                 .set('urls', valid ? [url] : [])
                 .set('passkeys', payload.passkey ? [payload.passkey] : []);
+
+            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
+
+            // TODO: migrate to use Rust's email validation
+            if (validateEmailAddress(payload.userIdentifier) || !usernameSplitEnabled) {
+                item.get('content').set('itemEmail', payload.userIdentifier);
+            } else {
+                item.get('content').set('itemUsername', payload.userIdentifier);
+            }
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
@@ -108,10 +120,16 @@ export const createAutoSaveService = () => {
             item.get('metadata').set('name', payload.name);
 
             item.get('content')
-                .set('username', (username) => (passkey ? username : payload.username))
                 .set('password', (password) => (passkey ? password : payload.password))
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
+
+            // TODO: migrate to use Rust's email validation
+            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
+            const isEmail = usernameSplitEnabled && validateEmailAddress(payload.userIdentifier);
+            const userIdKey = isEmail ? 'itemEmail' : 'itemUsername';
+
+            item.get('content').set(userIdKey, (value) => (passkey ? value : payload.userIdentifier));
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(

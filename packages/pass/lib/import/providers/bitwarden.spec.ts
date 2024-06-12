@@ -12,19 +12,23 @@ describe('Import bitwarden json', () => {
 
     beforeAll(async () => {
         for (let sourceFile of sourceFiles) {
-            const sourceData = await fs.promises.readFile(sourceFile, 'utf-8');
-            payloads[sourceFile] = await readBitwardenData(sourceData);
+            const data = await fs.promises.readFile(sourceFile, 'utf-8');
+            payloads[sourceFile] = await readBitwardenData({ data, importUsername: true });
         }
     });
 
     it('should throw on encrypted json payload', () => {
-        expect(() => readBitwardenData(JSON.stringify({ encrypted: true, items: [] }))).toThrow();
+        expect(() =>
+            readBitwardenData({ data: JSON.stringify({ encrypted: true, items: [] }), importUsername: true })
+        ).toThrow();
     });
 
     it('should throw on corrupted files', () => {
-        expect(() => readBitwardenData('not-a-json-body')).toThrow();
-        expect(() => readBitwardenData(JSON.stringify({ encrypted: false }))).toThrow();
-        expect(() => readBitwardenData(JSON.stringify({ encrypted: false, items: '[]' }))).toThrow();
+        expect(() => readBitwardenData({ data: 'not-a-json-body', importUsername: true })).toThrow();
+        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false }), importUsername: true })).toThrow();
+        expect(() =>
+            readBitwardenData({ data: JSON.stringify({ encrypted: false, items: '[]' }), importUsername: true })
+        ).toThrow();
     });
 
     it('should correctly parse items', () => {
@@ -46,7 +50,8 @@ describe('Import bitwarden json', () => {
         expect(loginItem1.type).toBe('login');
         expect(loginItem1.metadata.name).toBe('LoginItemMultipleWebsites');
         expect(loginItem1.metadata.note).toBe('login note');
-        expect(loginItem1.content.username).toBe('username');
+        expect(loginItem1.content.itemEmail).toBe('');
+        expect(loginItem1.content.itemUsername).toBe('username');
         expect(loginItem1.content.password).toBe('password');
         expect(loginItem1.content.urls[0]).toBe('https://test.url1/');
         expect(loginItem1.content.urls[1]).toBe('https://test.url2/');
@@ -74,7 +79,8 @@ describe('Import bitwarden json', () => {
         expect(loginItem2.type).toBe('login');
         expect(loginItem2.metadata.name).toBe('LoginItemEmptyFields');
         expect(loginItem2.metadata.note).toBe('login note');
-        expect(loginItem2.content.username).toStrictEqual('');
+        expect(loginItem2.content.itemEmail).toStrictEqual('');
+        expect(loginItem2.content.itemUsername).toStrictEqual('');
         expect(loginItem2.content.password).toStrictEqual('');
         expect(loginItem2.content.urls).toStrictEqual([]);
         expect(loginItem2.content.totpUri).toStrictEqual('');
@@ -84,7 +90,8 @@ describe('Import bitwarden json', () => {
         expect(loginItem3.type).toBe('login');
         expect(loginItem3.metadata.name).toBe('LoginItemBrokenUrl');
         expect(loginItem3.metadata.note).toBe('');
-        expect(loginItem3.content.username).toStrictEqual('');
+        expect(loginItem3.content.itemEmail).toStrictEqual('');
+        expect(loginItem3.content.itemUsername).toStrictEqual('');
         expect(loginItem3.content.password).toStrictEqual('');
         expect(loginItem3.content.urls).toStrictEqual([]);
         expect(loginItem3.content.totpUri).toStrictEqual('');

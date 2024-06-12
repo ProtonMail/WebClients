@@ -5,7 +5,7 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { RoboformItem, RoboformVariadicItem } from './roboform.types';
 
@@ -23,7 +23,13 @@ const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
     return `otpauth://totp/${item.Name}:none?secret=${secret}`;
 };
 
-export const readRoboformData = async (data: string): Promise<ImportPayload> => {
+export const readRoboformData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -77,7 +83,7 @@ export const readRoboformData = async (data: string): Promise<ImportPayload> => 
                     name: item.Name,
                     urls: [item.MatchUrl],
                     note: item.Note,
-                    username: item.Login,
+                    ...(importUsername ? getEmailOrUsername(item.Login) : { email: item.Login }),
                     password: item.Pwd,
                     totp: formatOtpAuthUri(item),
                 });
