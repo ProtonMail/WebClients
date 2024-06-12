@@ -4,6 +4,7 @@ import { App } from './App'
 import './style'
 import ErrorBoundary from './ErrorBoundary'
 import { sendErrorMessage } from './Utils/errorMessage'
+import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
 
 const searchParams = new URLSearchParams(window.location.search)
 
@@ -21,3 +22,11 @@ root.render(
     <App nonInteractiveMode={isViewOnly} />
   </ErrorBoundary>,
 )
+
+window.addEventListener('focus', () => {
+  window.parent.postMessage(EDITOR_IFRAME_FOCUS_EVENT, BridgeOriginProvider.GetClientOrigin())
+})
+
+window.addEventListener('blur', () => {
+  document.dispatchEvent(new CustomEvent('dropdownclose'))
+})
