@@ -22,6 +22,7 @@ import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import { InitDownloadCallback, LinkDownload } from '../interface';
 import { UpdateFilter } from './interface';
+import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
@@ -43,6 +44,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         control.cancelDownloads
     );
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
+    const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
 
     /**
      * download should be considered as main entry point for download files
@@ -142,6 +144,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
                 },
+                onContainsDocument: async (abortSignal: AbortSignal) => {
+                    await handleContainsDocument(abortSignal, nextDownload);
+                },
             },
             (message: string) => log(nextDownload.id, message),
             nextDownload.options
@@ -199,7 +204,12 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         },
         updateWithData: queue.updateWithData,
         downloadDownloadLogs: downloadLogs,
-        downloadIsTooBigModal,
-        signatureIssueModal,
+        modals: (
+            <>
+                {downloadIsTooBigModal}
+                {signatureIssueModal}
+                {containsDocumentModal}
+            </>
+        ),
     };
 }

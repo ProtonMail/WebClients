@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
@@ -13,6 +14,7 @@ import {
     GetChildrenCallback,
     LinkDownload,
     LogCallback,
+    OnContainsDocumentCallback,
     OnProgressCallback,
     OnSignatureIssueCallback,
 } from '../interface';
@@ -48,7 +50,7 @@ export default function initDownloadLinkFolder(
 
     const start = () => {
         folderLoader
-            .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress)
+            .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress, callbacks.onContainsDocument)
             .then(({ size, linkSizes }) => {
                 linkSizes[link.linkId] = size;
                 callbacks.onInit?.(size, linkSizes);
@@ -105,14 +107,16 @@ export class FolderTreeLoader {
     async load(
         getChildren: GetChildrenCallback,
         onSignatureIssue?: OnSignatureIssueCallback,
-        onProgress?: OnProgressCallback
+        onProgress?: OnProgressCallback,
+        onContainsDocument?: OnContainsDocumentCallback
     ): Promise<FolderLoadInfo> {
         const result = await this.loadHelper(
             this.rootLink,
             [this.rootLink.linkId],
             getChildren,
             onSignatureIssue,
-            onProgress
+            onProgress,
+            onContainsDocument
         );
         this.done = true;
         return result;
@@ -124,6 +128,7 @@ export class FolderTreeLoader {
         getChildren: GetChildrenCallback,
         onSignatureIssue?: OnSignatureIssueCallback,
         onProgress?: OnProgressCallback,
+        onContainsDocument?: OnContainsDocumentCallback,
         parent: string[] = []
     ): Promise<FolderLoadInfo> {
         if (this.abortController.signal.aborted) {
@@ -136,7 +141,7 @@ export class FolderTreeLoader {
 
         const shareId = link.shareId;
         this.log(`Fetching children for ${link.linkId}: started`);
-        const children = await getChildren(this.abortController.signal, link.shareId, link.linkId).catch((err) => {
+        let children = await getChildren(this.abortController.signal, link.shareId, link.linkId).catch((err) => {
             if (err?.data?.Code === RESPONSE_CODE.NOT_FOUND) {
                 this.log(`Folder ${link.linkId} was deleted during download`);
                 err = new ValidationError(c('Info').t`Folder "${link.name}" was deleted during download`);
@@ -147,6 +152,13 @@ export class FolderTreeLoader {
         this.log(
             `Folder ${link.linkId} has ${children.length} items including ${children.filter(({ isFile }) => !isFile).length} folders, parent: ${parentLinkIds.at(-2) || 'none'}`
         );
+
+        if (children.find((link) => isProtonDocument(link.mimeType))) {
+            await onContainsDocument?.(this.abortController.signal);
+
+            children = children.filter((link) => !isProtonDocument(link.mimeType));
+        }
+
         this.links = [
             ...this.links,
             ...children.map((link) => ({
@@ -175,6 +187,7 @@ export class FolderTreeLoader {
                         getChildren,
                         onSignatureIssue,
                         onProgress,
+                        onContainsDocument,
                         [...parent, item.name]
                     );
                     result.linkSizes[item.linkId] = result.size;
