@@ -53,24 +53,10 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
     const labelWithFeatureFlag = usernameSplitEnabled ? c('Label').t`Email` : c('Label').t`Username`;
 
-    const addUsernameButton = (
-        <ButtonLike
-            as="div"
-            icon
-            pill
-            size="small"
-            onClick={() => setUsernameExpanded(true)}
-            shape="solid"
-            title={c('Action').t`Add username field`}
-            className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
-            style={{
-                '--top-custom': '8px',
-                '--left-custom': '16px',
-            }}
-        >
-            <Icon name="plus" size={4} className="shrink-0" />
-        </ButtonLike>
-    );
+    const handleAddUsernameClick = () => {
+        setUsernameExpanded(true);
+        if (showUsernameOnboarding) acknowledge(OnboardingMessage.USERNAME_TOOLTIP);
+    };
 
     useEffect(() => {
         (async () => usernameSplitEnabled && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
@@ -120,7 +106,22 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                                 onClose={() => acknowledge(OnboardingMessage.USERNAME_TOOLTIP)}
                                 show={showUsernameOnboarding}
                             >
-                                {addUsernameButton}
+                                <ButtonLike
+                                    as="div"
+                                    icon
+                                    pill
+                                    size="small"
+                                    onClick={handleAddUsernameClick}
+                                    shape="solid"
+                                    title={c('Action').t`Add username field`}
+                                    className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
+                                    style={{
+                                        '--top-custom': '8px',
+                                        '--left-custom': '16px',
+                                    }}
+                                >
+                                    <Icon name="plus" size={4} className="shrink-0" />
+                                </ButtonLike>
                             </Spotlight>
                         )}
                     </>
