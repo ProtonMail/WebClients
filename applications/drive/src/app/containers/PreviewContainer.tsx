@@ -15,19 +15,10 @@ import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLi
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
-import { DecryptedLink, useActions, useFileView } from '../store';
+import { useActions, useDriveSharingFlags, useFileView } from '../store';
 // TODO: ideally not use here
 import useSearchResults from '../store/_search/useSearchResults';
-
-const getSharedStatus = (link?: DecryptedLink) => {
-    if (!link?.isShared) {
-        return '';
-    }
-    if (link?.shareUrl?.isExpired || link?.trashed) {
-        return 'inactive';
-    }
-    return 'shared';
-};
+import { getSharedStatus } from '../utils/share';
 
 export default function PreviewContainer({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) {
     const { shareId, linkId } = match.params;
@@ -44,6 +35,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { query: lastQuery } = useSearchResults();
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
     const { saveFile } = useActions();
 
     const isEditEnabled = useIsEditEnabled();
@@ -186,6 +178,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 contents={contents}
                 fileName={link?.name}
                 mimeType={contentsMimeType}
+                isSharingInviteAvailable={isSharingInviteAvailable}
                 sharedStatus={getSharedStatus(link)}
                 fileSize={link?.size}
                 onClose={navigateToParent}

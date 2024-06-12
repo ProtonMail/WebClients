@@ -6,7 +6,8 @@ import { ModalStateProps } from '@proton/components/components';
 import { Portal } from '@proton/components/components/portal';
 import { FilePreview } from '@proton/components/containers';
 
-import { useFileView } from '../../store';
+import { useDriveSharingFlags, useFileView } from '../../store';
+import { getSharedStatus } from '../../utils/share';
 import { SignatureAlertBody } from '../SignatureAlert';
 import SignatureIcon from '../SignatureIcon';
 
@@ -43,6 +44,7 @@ const PortalPreview = (
         false,
         revisionId
     );
+    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const signatureStatus = useMemo(() => {
         if (!link) {
@@ -85,6 +87,8 @@ const PortalPreview = (
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
                     fileName={link?.name}
                     mimeType={contentsMimeType}
+                    isSharingInviteAvailable={isSharingInviteAvailable}
+                    sharedStatus={getSharedStatus(link)}
                     fileSize={link?.size}
                     contents={contents}
                     onClose={() => {
