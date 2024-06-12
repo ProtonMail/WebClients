@@ -575,12 +575,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
-      "Auto-lock could not be activated": [
-        "자동 잠금을 활성화 할 수 없습니다."
-      ],
-      "Auto-lock could not be disabled": [
-        "자동 잠금을 비활성화 할 수 없습니다."
-      ],
       "Cannot send invitation at the moment": [
         "현재 초대 전송할 수 없습니다."
       ],
@@ -973,9 +967,6 @@
       "Admin": [
         "관리자"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "비활성화 후, ${ PASS_APP_NAME }에 액세스하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
@@ -1014,9 +1005,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
-      ],
-      "Auto-lock successfully disabled": [
-        "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
       "Breaches detected": [
         "침해 사례 감지됨"
@@ -1089,6 +1077,9 @@
       ],
       "Emptying trash...": [
         "휴지통 비우는 중..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } 베타 활성화"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -1222,9 +1213,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 로딩 중"
       ],
-      "Locking your session...": [
-        "세션을 잠그는 중..."
-      ],
       "Logging you out...": [
         "사용자를 로그아웃하는 중..."
       ],
@@ -1321,14 +1309,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "현재 잠금을 해제하기 위해서는 PIN 코드를 확인하세요.\n${ PASS_APP_NAME }가 잠금되지 않습니다."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "자동 잠금 설정 등록을 완료하려면 PIN 코드를 확인하세요."
       ],
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
@@ -1380,12 +1362,6 @@
       ],
       "Session timed out": [
         "세션 시간 초과됨"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "쉽게 데이터를 잠금하도록 PIN 코드를 설정하세요"
-      ],
-      "Setting up offline mode...": [
-        "오프라인 모드로 설정 중..."
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
@@ -1455,6 +1431,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "불러온 데이터를 검토하려면, 브라우저 툴바의 Pass 아이콘을 클릭하십시오."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
@@ -1629,11 +1608,11 @@
       "Application logs": [
         "어플리케이션 로그"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 자동 잠금"
-      ],
       "Auto-lock after": [
         "자동 잠금 시간"
+      ],
+      "Beta Access": [
+        "베타 참여"
       ],
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
@@ -1911,9 +1890,6 @@
       "Session locking": [
         "세션 잠금"
       ],
-      "Set PIN code": [
-        "PIN 코드 설정"
-      ],
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
@@ -2022,9 +1998,6 @@
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "현재 오프라인 상태입니다, ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }를 잠금해제 하세요."
       ]
     },
     "lobby: Title": {

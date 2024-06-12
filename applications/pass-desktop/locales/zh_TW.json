@@ -481,12 +481,6 @@
       "Authentication error": [
         "認證錯誤"
       ],
-      "Auto-lock could not be activated": [
-        "無法啟用自動鎖定"
-      ],
-      "Auto-lock could not be disabled": [
-        "無法停用自動鎖定"
-      ],
       "Cannot send invitation at the moment": [
         "目前無法發送邀請"
       ],
@@ -846,9 +840,6 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "您確定要移動項目至${ name }\" ?"
       ],
-      "Auto-lock successfully disabled": [
-        "自動鎖定停用成功"
-      ],
       "Breaches detected": [
         "已偵測到外洩"
       ],
@@ -1014,9 +1005,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "正在載入 ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "鎖定您的作業階段..."
-      ],
       "Logging you out...": [
         "即將登出帳號..."
       ],
@@ -1086,14 +1074,8 @@
       "Pinning item...": [
         "訂選項目..."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "請確認個人識別數字代碼以取消目前的鎖定。${ PASS_APP_NAME }將永久取消鎖定"
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "請確認於設定編輯個人識別數字代碼"
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "請確認個人以啟用自動鎖定啟用自動鎖定"
       ],
       "Please consider leaving a review.": [
         "請考慮留下評論。"
@@ -1140,9 +1122,6 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
-      "Set up a PIN code to easily lock your data": [
-        "設定個人識別數字代碼以更方便的鎖定資料"
-      ],
       "Settings successfully updated": [
         "設定已成功更新"
       ],
@@ -1187,6 +1166,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "以接收匯入資料，點擊於瀏覽器工具列的Pass標示。"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
@@ -1325,11 +1307,11 @@
       "Application logs": [
         "應用程式紀錄"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "自動鎖定${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "閒置時自動鎖定"
+      ],
+      "Beta Access": [
+        "測試版體驗"
       ],
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
@@ -1588,9 +1570,6 @@
       ],
       "Session locking": [
         "作業階段鎖定"
-      ],
-      "Set PIN code": [
-        "設定 PIN 碼"
       ],
       "Show website favicons": [
         "顯示網站圖示"

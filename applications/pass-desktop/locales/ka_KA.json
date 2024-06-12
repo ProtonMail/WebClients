@@ -529,12 +529,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი ${ BRAND_NAME }-ის, პაროლი, რომ გატანა გაგრძელდეს"
       ],
-      "Auto-lock could not be activated": [
-        "ავტომატური დაბლოკვის ჩართვა შეუძლებელია"
-      ],
-      "Auto-lock could not be disabled": [
-        "ავტომატური დაბლოკვის გამორთვა შეუძლებელია"
-      ],
       "Cannot send invitation at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი",
         "ამჟამად მოსაწვევს ვერ გავაგზავნი"
@@ -939,9 +933,6 @@
       "Admin": [
         "ადმინისტრატორი"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "უქმეობის შემდეგ, განბლოკვისთვის, ${ PASS_APP_NAME }-სთან წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
       ],
@@ -974,9 +965,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
-      ],
-      "Auto-lock successfully disabled": [
-        "ავტომატური დაბლოკვა წარმატებით გამოირთო"
       ],
       "Breaches detected": [
         "აღმოჩენილია გაჟონვები"
@@ -1049,6 +1037,9 @@
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME }-ის ბეტას ჩართვა"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
@@ -1185,9 +1176,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "იტვირთება ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "მიმდინარეობს თქვენი სესიის ჩაკეტვა..."
-      ],
       "Logging you out...": [
         "მიმდინარეობს თქვენი სისტემიდან გაყვანა..."
       ],
@@ -1285,14 +1273,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი PIN-kodi.\n${ PASS_APP_NAME } აღარ დაიბლოკება"
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "პარამეტრის ჩასასწორებლად დაადასტურეთ თქვენი PIN-კოდი"
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "თქვენი ავტომატური დაბლოკვის პარამეტრების რეგისტრაციის დასასრულებლად დაადასტურეთ თქვენი PIN-კოდი."
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
@@ -1344,12 +1326,6 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "დააყენეთ PIN კოდი თქვენი მონაცემების ადვილად დასაბლოკად"
-      ],
-      "Setting up offline mode...": [
-        "ქსელის გარეშე მუშაობის რეჟიმის მორგება..."
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
@@ -1417,6 +1393,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
@@ -1583,11 +1562,11 @@
       "Application logs": [
         "აპლიკაციის ჟურნალი"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }-ის ავტომატური დაბლოკვა"
-      ],
       "Auto-lock after": [
         "ავტომატური დაბლოკვის დრო"
+      ],
+      "Beta Access": [
+        "წვდომა ბეტა ვერსიებზე"
       ],
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
@@ -1865,9 +1844,6 @@
       "Session locking": [
         "სესიის ჩაკეტვა"
       ],
-      "Set PIN code": [
-        "PIN-კოდის დაყენება"
-      ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
       ],
@@ -1976,9 +1952,6 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "ამჟამად ინტერნეტთან დაკავშირებული არ ბრძანდებით. განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {
