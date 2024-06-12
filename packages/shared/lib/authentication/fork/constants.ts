@@ -19,6 +19,7 @@ export const ForkableApps = new Set(
         APPS.PROTONEXTENSION,
         APPS.PROTONPASSBROWSEREXTENSION,
         APPS.PROTONVPNBROWSEREXTENSION,
+        APPS.PROTONWALLET,
     ].filter(Boolean)
 );
 
