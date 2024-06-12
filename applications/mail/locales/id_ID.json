@@ -877,7 +877,7 @@
         "Cetak"
       ],
       "Proofread": [
-        "Koreksi tulisan"
+        "Periksa"
       ],
       "Quit": [
         "Keluar"
@@ -998,6 +998,9 @@
       ],
       "Schedule message": [
         "Jadwalkan pesan"
+      ],
+      "Scroll to bottom": [
+        "Gulir ke bawah"
       ],
       "Search": [
         "Pencarian"
@@ -1152,6 +1155,12 @@
       "Stay": [
         "Tinggal"
       ],
+      "Stop downloading the writing assistant": [
+        "Berhenti mengunduh asisten penulisan"
+      ],
+      "Stop generating result": [
+        "Berhenti menghasilkan"
+      ],
       "Strikethrough": [
         "Coret"
       ],
@@ -1277,6 +1286,9 @@
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
+      ],
+      "Use this": [
+        "Gunakan ini"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
@@ -1490,11 +1502,29 @@
       "Browser not supported ": [
         "Browser tidak didukung "
       ],
+      "Fast and secure": [
+        "Cepat dan aman"
+      ],
+      "Needs compatible hardware": [
+        "Memerlukan perangkat keras yang kompatibel"
+      ],
+      "No logs": [
+        "Tanpa log"
+      ],
+      "Requires one-time download": [
+        "Memerlukan unduhan sekali"
+      ],
       "Run locally": [
         "Jalankan secara lokal"
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Jalankan pada server ${ BRAND_NAME }"
+      ],
+      "Runs on all devices": [
+        "Bekerja pada semua perangkat"
+      ],
+      "Runs on your device": [
+        "Bekerja pada perangkat Anda"
       ]
     },
     "Assistant options": {
@@ -5011,6 +5041,15 @@
       ],
       "Security Center": [
         "Pusat Keamanan"
+      ],
+      "Set up the writing assistant": [
+        "Siapkan asisten penulisan"
+      ],
+      "Tell us more": [
+        "Beri tahu kami lebih lanjut"
+      ],
+      "Write faster with the writing assistant": [
+        "Tulis lebih cepat dengan asisten penulisan"
       ]
     },
     "Hint": {
@@ -6338,6 +6377,9 @@
       "Proofread selection": [
         "Periksa pilihan"
       ],
+      "Proofread text": [
+        "Periksa teks"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Lindungi email Anda agar tidak bocor ke tangan milis atau pengirim spam dengan ${ maskMyEmailButton }."
       ],
@@ -6445,6 +6487,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
+      ],
+      "Shorten selection": [
+        "Persingkat pilihan"
+      ],
+      "Shorten text": [
+        "Persingkat teks"
       ],
       "Show original message": [
         "Tampilkan pesan asli"
@@ -7566,6 +7614,9 @@
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
+      ],
+      "Don't like the style": [
+        "Tidak suka gayanya"
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
@@ -8773,6 +8824,9 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
+      ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
@@ -8830,11 +8884,17 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your texts": [
+        "Periksa dan perbaiki tulisan Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
+      ],
+      "Reply to messages": [
+        "Balas pesan"
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
@@ -9769,6 +9829,9 @@
       "To": [
         "Kepada"
       ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Coba \"Umumkan acara yang akan datang dalam buletin berita\""
+      ],
       "Try “Cancel my gym membership”": [
         "Coba \"Batalkan keanggotaan gym saya\""
       ],
@@ -10448,6 +10511,11 @@
       ],
       "Upgrade": [
         "Tingkatkan akun"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "specialoffer: Offers": {
