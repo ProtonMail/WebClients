@@ -555,12 +555,6 @@
       "Authentication failure: ${ message }": [
         "인증 실패: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "자동 잠금을 활성화 할 수 없습니다."
-      ],
-      "Auto-lock could not be disabled": [
-        "자동 잠금을 비활성화 할 수 없습니다."
-      ],
       "Cannot create alias (${ error }).": [
         "별칭을 생성할 수 없습니다 (${ error })."
       ],
@@ -831,9 +825,6 @@
       "Vault name does not match": [
         "금고 이름이 맞지 않습니다."
       ],
-      "Wrong password": [
-        "잘못된 비밀번호입니다"
-      ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
       ],
@@ -956,9 +947,6 @@
       "Admin": [
         "관리자"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "비활성화 후, ${ PASS_APP_NAME }에 액세스하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
@@ -991,9 +979,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
-      ],
-      "Auto-lock successfully disabled": [
-        "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain }에 자동 저장됨"
@@ -1129,6 +1114,9 @@
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "인터넷 연결이 끊겼습니다. 기기의 연결을 확인해주세요."
       ],
       "Invitation sent": [
         "초대장을 보냈습니다"
@@ -1274,14 +1262,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "현재 잠금을 해제하기 위해서는 PIN 코드를 확인하세요.\n${ PASS_APP_NAME }가 잠금되지 않습니다."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "자동 잠금 설정 등록을 완료하려면 PIN 코드를 확인하세요."
       ],
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
@@ -1339,12 +1321,6 @@
       ],
       "Session timed out": [
         "세션 시간 초과됨"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "쉽게 데이터를 잠금하도록 PIN 코드를 설정하세요"
-      ],
-      "Setting up offline mode...": [
-        "오프라인 모드로 설정 중..."
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
@@ -1588,9 +1564,6 @@
       "Authenticate with passkeys": [
         "패스키로 인증"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 자동 잠금"
-      ],
       "Auto-lock after": [
         "자동 잠금 시간"
       ],
@@ -1801,6 +1774,9 @@
       "No history": [
         "기록 없음"
       ],
+      "None": [
+        "없음"
+      ],
       "Note": [
         "메모"
       ],
@@ -1890,9 +1866,6 @@
       ],
       "Session locking": [
         "세션 잠금"
-      ],
-      "Set PIN code": [
-        "PIN 코드 설정"
       ],
       "Settings": [
         "설정"
@@ -1991,9 +1964,6 @@
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "현재 오프라인 상태입니다, ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }를 잠금해제 하세요."
       ]
     },
     "lobby: Title": {

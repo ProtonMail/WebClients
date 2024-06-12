@@ -536,12 +536,6 @@
       "Authentication failure: ${ message }": [
         "Error d'autenticació: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "No s'ha pogut activar el bloqueig automàtic"
-      ],
-      "Auto-lock could not be disabled": [
-        "No s'ha pogut desactivar el bloqueig automàtic"
-      ],
       "Cannot create alias (${ error }).": [
         "No es pot crear l'àlies (${ error })."
       ],
@@ -789,9 +783,6 @@
       "Vault name does not match": [
         "El nom de la caixa forta no coincideix"
       ],
-      "Wrong password": [
-        "La contrasenya no es correcta."
-      ],
       "Wrong PIN code. Try again.": [
         "Codi PIN incorrecte. Proveu de nou."
       ]
@@ -939,9 +930,6 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Està segur que vol moure l'element a \"${ name }\"?"
       ],
-      "Auto-lock successfully disabled": [
-        "El bloqueig automàtic s'ha desactivat."
-      ],
       "Autosaved on ${ payload.domain }": [
         "S'ha desat automàticament en ${ payload.domain }"
       ],
@@ -1047,6 +1035,9 @@
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
       ],
       "Invitation sent": [
         "S'ha enviat la invitació."
@@ -1175,14 +1166,8 @@
       "Pinning item...": [
         "Ancorant l'element..."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirmeu el codi PIN per a desregistrar el bloqueig actual.\nAixí, ${ PASS_APP_NAME } no es bloquejarà mai."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirmeu el codi PIN per a acabar de registrar les preferències de bloqueig automàtic."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
@@ -1222,12 +1207,6 @@
       ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Configureu un codi PIN per a bloquejar fàcilment les dades"
-      ],
-      "Setting up offline mode...": [
-        "S'està configurant el mode fora de línia..."
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
@@ -1454,9 +1433,6 @@
       "Authenticate with passkeys": [
         "Autenticació amb claus d'accés"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Bloqueja ${ PASS_APP_NAME } automàticament"
-      ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
       ],
@@ -1667,6 +1643,9 @@
       "No history": [
         "Sense historial"
       ],
+      "None": [
+        "Cap"
+      ],
       "Note": [
         "Nota"
       ],
@@ -1756,9 +1735,6 @@
       ],
       "Session locking": [
         "Bloqueig de la sessió"
-      ],
-      "Set PIN code": [
-        "Establir codi PIN"
       ],
       "Settings": [
         "Preferències"
