@@ -42,6 +42,7 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
+import { ShareInvitationEmailDetails } from './interface';
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
@@ -83,6 +84,7 @@ export const useShareInvitation = () => {
             inviter,
             permissions,
             externalInvitationId,
+            emailDetails,
         }: {
             share: {
                 shareId: string;
@@ -92,6 +94,7 @@ export const useShareInvitation = () => {
             inviter: { inviterEmail: string; addressKey: PrivateKeyReference };
             permissions: SHARE_MEMBER_PERMISSIONS;
             externalInvitationId?: string;
+            emailDetails?: ShareInvitationEmailDetails;
         }
     ) => {
         const keyPacket = await CryptoProxy.encryptSessionKey({
@@ -110,12 +113,20 @@ export const useShareInvitation = () => {
 
         return debouncedRequest<{ Code: number; Invitation: ShareInvitationPayload }>(
             queryInviteProtonUser(shareId, {
-                InviteeEmail: invitee.inviteeEmail,
-                InviterEmail: inviter.inviterEmail,
-                Permissions: permissions,
-                KeyPacket: uint8ArrayToBase64String(keyPacket),
-                KeyPacketSignature: uint8ArrayToBase64String(keyPacketSignature),
-                ExternalInvitationID: externalInvitationId,
+                Invitation: {
+                    InviteeEmail: invitee.inviteeEmail,
+                    InviterEmail: inviter.inviterEmail,
+                    Permissions: permissions,
+                    KeyPacket: uint8ArrayToBase64String(keyPacket),
+                    KeyPacketSignature: uint8ArrayToBase64String(keyPacketSignature),
+                    ExternalInvitationID: externalInvitationId,
+                },
+                EmailDetails: emailDetails
+                    ? {
+                          Message: emailDetails.message,
+                          ItemName: emailDetails.itemName,
+                      }
+                    : undefined,
             }),
             abortSignal
         ).then(({ Invitation, Code }) => ({
@@ -132,12 +143,14 @@ export const useShareInvitation = () => {
             inviteeEmail,
             inviter,
             permissions,
+            emailDetails,
         }: {
             shareId: string;
             linkId: string;
             inviteeEmail: string;
             inviter: { inviterEmail: string; addressKey: PrivateKeyReference; addressId: string };
             permissions: SHARE_MEMBER_PERMISSIONS;
+            emailDetails?: ShareInvitationEmailDetails;
         }
     ) => {
         const link = await getLink(abortSignal, shareId, linkId);
@@ -157,10 +170,18 @@ export const useShareInvitation = () => {
 
         return debouncedRequest<{ Code: number; ExternalInvitation: ShareExternalInvitationPayload }>(
             queryInviteExternalUser(shareId, {
-                InviterAddressID: inviter.addressId,
-                InviteeEmail: inviteeEmail,
-                Permissions: permissions,
-                ExternalInvitationSignature: uint8ArrayToBase64String(externalInvitationSignature),
+                ExternalInvitation: {
+                    InviterAddressID: inviter.addressId,
+                    InviteeEmail: inviteeEmail,
+                    Permissions: permissions,
+                    ExternalInvitationSignature: uint8ArrayToBase64String(externalInvitationSignature),
+                },
+                EmailDetails: emailDetails
+                    ? {
+                          Message: emailDetails.message,
+                          ItemName: emailDetails.itemName,
+                      }
+                    : undefined,
             }),
             abortSignal
         )
