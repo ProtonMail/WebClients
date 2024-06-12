@@ -23,6 +23,7 @@ export const lockDocument = (volumeId: string, linkId: string, fetchCommitId?: s
         FetchCommitID: fetchCommitId,
     },
     output: 'raw',
+    silence: true,
 });
 
 export const squashCommit = (volumeId: string, linkId: string, commitId: string, data: Uint8Array) => ({

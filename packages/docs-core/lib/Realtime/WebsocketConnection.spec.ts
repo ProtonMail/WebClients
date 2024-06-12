@@ -3,6 +3,7 @@ import { WebsocketConnection } from './WebsocketConnection'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { EncryptMessage } from '../UseCase/EncryptMessage'
 import { LoggerInterface } from '@proton/utils/logs'
+import { Result } from '../Domain/Result/Result'
 
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
@@ -12,7 +13,9 @@ describe('WebsocketConnection', () => {
       {} as DocumentKeys,
       {} as WebsocketCallbacks,
       {} as EncryptMessage,
-      {} as LoggerInterface,
+      {
+        error: jest.fn(),
+      } as unknown as LoggerInterface,
     )
   })
 
@@ -24,7 +27,7 @@ describe('WebsocketConnection', () => {
   it('should correctly format url without commit id', () => {
     const expectedResult = 'wss://realtime.darwin.proton.black/websockets/?token=123'
 
-    const result = connection.buildUrl({
+    const result = connection.buildConnectionUrl({
       serverUrl: 'wss://realtime.darwin.proton.black/websockets',
       token: '123',
       commitId: undefined,
@@ -36,7 +39,7 @@ describe('WebsocketConnection', () => {
   it('should correctly format url with commit id', () => {
     const expectedResult = 'wss://realtime.darwin.proton.black/websockets/?token=123&commitId=456'
 
-    const result = connection.buildUrl({
+    const result = connection.buildConnectionUrl({
       serverUrl: 'wss://realtime.darwin.proton.black/websockets',
       token: '123',
       commitId: '456',
@@ -65,6 +68,8 @@ describe('WebsocketConnection', () => {
   it('should connect websocket when online browser event is triggered', async () => {
     const fn = (connection.connect = jest.fn())
 
+    connection.state.getBackoff = jest.fn().mockReturnValue(0)
+
     window.dispatchEvent(new Event('online'))
 
     await new Promise<void>((resolve) => {
@@ -77,5 +82,32 @@ describe('WebsocketConnection', () => {
     })
 
     expect(connection.connect).toHaveBeenCalled()
+  })
+
+  describe('getTokenOrFailConnection', () => {
+    it('should call callbacks.onFailToConnect if it fails', async () => {
+      connection.destroy()
+
+      const failToConnect = jest.fn()
+
+      connection = new WebsocketConnection(
+        {} as DocumentKeys,
+        {
+          getUrlAndToken: () => Result.fail('error'),
+          onFailToConnect: failToConnect,
+        } as unknown as WebsocketCallbacks,
+        {} as EncryptMessage,
+        {
+          error: jest.fn(),
+          info: jest.fn(),
+        } as unknown as LoggerInterface,
+      )
+
+      await connection.getTokenOrFailConnection()
+
+      expect(failToConnect).toHaveBeenCalled()
+
+      connection.destroy()
+    })
   })
 })
