@@ -109,6 +109,7 @@ const {
 } = SignupSteps;
 
 interface Props {
+    initialSearchParams?: URLSearchParams;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
     toApp?: APP_NAMES;
@@ -120,6 +121,7 @@ interface Props {
 }
 
 const SignupContainer = ({
+    initialSearchParams,
     metaTags,
     toApp,
     toAppName,
@@ -154,6 +156,9 @@ const SignupContainer = ({
         });
         if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
+        }
+        if (!params.email && initialSearchParams) {
+            params.email = initialSearchParams.get('email') || params.email;
         }
         return params;
     });

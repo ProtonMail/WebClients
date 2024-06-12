@@ -171,6 +171,7 @@ export const defaultSignupModel: SignupModelV2 = {
 };
 
 interface Props {
+    initialSearchParams?: URLSearchParams;
     loader: ReactNode;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
@@ -187,6 +188,7 @@ interface Props {
 let ranPreload = false;
 
 const SingleSignupContainerV2 = ({
+    initialSearchParams,
     paths,
     metaTags,
     fork,
@@ -256,6 +258,9 @@ const SingleSignupContainerV2 = ({
             }
         }
         const result = getSignupSearchParams(location.pathname, searchParams);
+        if (!result.email && initialSearchParams) {
+            result.email = initialSearchParams.get('email') || result.email;
+        }
 
         let localID = Number(searchParams.get('u'));
         let mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
