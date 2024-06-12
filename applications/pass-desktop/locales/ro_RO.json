@@ -577,12 +577,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați-vă parola ${ BRAND_NAME } pentru a continua exportarea."
       ],
-      "Auto-lock could not be activated": [
-        "Autoblocarea nu poate fi activată."
-      ],
-      "Auto-lock could not be disabled": [
-        "Autoblocarea nu poate fi dezactivată."
-      ],
       "Cannot send invitation at the moment": [
         "Invitația nu poate fi trimisă momentan.",
         "Invitațiile nu se pot trimite momentan.",
@@ -999,9 +993,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "După inactivitate, accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
@@ -1040,9 +1031,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sigur doriți să mutați articolul în „${ name }” ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Blocare automată s-a dezactivat."
       ],
       "Breaches detected": [
         "Divulgări detectate"
@@ -1115,6 +1103,9 @@
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Activare ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduceți codul de verificare. ${ digit } cifre."
@@ -1254,9 +1245,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Se încarcă ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Se blochează sesiunea…"
-      ],
       "Logging you out...": [
         "Se deconectează…"
       ],
@@ -1355,14 +1343,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirmați codul PIN pentru anularea înregistrării blocării actuale.\n${ PASS_APP_NAME } nu se va mai bloca."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmați codul PIN pentru a edita această setare."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirmați codul PIN pentru a finaliza înregistrarea setării de autoblocare."
       ],
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
@@ -1414,12 +1396,6 @@
       ],
       "Session timed out": [
         "Sesiunea a expirat"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Setați un cod PIN pentru a vă bloca ușor datele"
-      ],
-      "Setting up offline mode...": [
-        "Se setează modul deconectat..."
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
@@ -1491,6 +1467,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -1673,11 +1652,11 @@
       "Application logs": [
         "Jurnale aplicație"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Autoblocare ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Autoblocare după"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
       ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
@@ -1955,9 +1934,6 @@
       "Session locking": [
         "Blocare sesiune"
       ],
-      "Set PIN code": [
-        "Setare cod PIN"
-      ],
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
@@ -2066,9 +2042,6 @@
       ],
       "Sign in to your account": [
         "Conectare la cont"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Sunteți în mod deconectat. Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {

@@ -578,12 +578,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu"
       ],
-      "Auto-lock could not be activated": [
-        "Automatické zamykání nelze aktivovat"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatické zamykání nelze deaktivovat"
-      ],
       "Cannot send invitation at the moment": [
         "Pozvánku nyní nelze odeslat",
         "Pozvánky nyní nelze odeslat",
@@ -1012,9 +1006,6 @@
       "Admin": [
         "Správce"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Po nečinnosti bude přístup k ${ PASS_APP_NAME } vyžadovat zadání PIN kódu pro odemknutí relace. Po třech neúspěšných pokusech budete odhlášeni."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
@@ -1053,9 +1044,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatické zamykání bylo úspěšně deaktivováno"
       ],
       "Breaches detected": [
         "Zjištěny úniky informací"
@@ -1128,6 +1116,9 @@
       ],
       "Emptying trash...": [
         "Vysypávání koše..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Povolit ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
@@ -1270,9 +1261,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Načítání aplikace ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Zamykání relace..."
-      ],
       "Logging you out...": [
         "Odhlašování..."
       ],
@@ -1372,14 +1360,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Prosím, potvrďte svůj PIN kód, pro zrušení registrace stávajícího zámku.\n${ PASS_APP_NAME } pak nebude zamykán."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Pro úpravu tohoto nastavení potvrďte PIN kód."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Pro dokončení registrace nastavení automatického zamykání potvrďte PIN kód."
       ],
       "Please consider leaving a review.": [
         "Zvažte prosím zanechání hodnocení."
@@ -1431,12 +1413,6 @@
       ],
       "Session timed out": [
         "Relace vypršela"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Nastavte PIN kód pro snadné zamknutí dat"
-      ],
-      "Setting up offline mode...": [
-        "Nastavení režimu offline..."
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
@@ -1509,6 +1485,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
@@ -1695,11 +1674,11 @@
       "Application logs": [
         "Logy aplikace"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Auto uzamčení ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Automaticky zamknout po"
+      ],
+      "Beta Access": [
+        "Beta přístup"
       ],
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
@@ -1977,9 +1956,6 @@
       "Session locking": [
         "Zamykání relace"
       ],
-      "Set PIN code": [
-        "Nastavit PIN kód"
-      ],
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
       ],
@@ -2088,9 +2064,6 @@
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "V současné době jste offline. Odemkněte ${ PASS_SHORT_APP_NAME } pomocí hesla ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
