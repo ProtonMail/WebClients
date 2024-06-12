@@ -6923,6 +6923,9 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Згенерыраваць лісты толькі з запытам"
+      ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
@@ -6983,6 +6986,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your texts": [
+        "Вычытка і ўдасканаленне вашага тэксту"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
@@ -6991,6 +6997,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
+      "Reply to messages": [
+        "Адказ на паведамленні"
       ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
@@ -7822,17 +7831,17 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME } і мы палепшым ваша сховішча да 5 ГБ!"
       ],
-      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
-        "Запрасіце іншых па электроннай пошце праглядаць або рэдагаваць вашы файлы ${ DRIVE_APP_NAME }"
-      ],
-      "Private Access Sharing": [
-        "Абагульванне прыватнага доступу"
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Запрасіце іншых праз электронную пошту, каб праглядаць або рэдагаваць вашы файлы. Вы таксама можаце ствараць публічныя спасылкі для хуткага доступу."
       ],
       "Set a recovery method": [
         "Задаць спосаб аднаўлення"
       ],
       "Share a file": [
         "Абагульванне файла"
+      ],
+      "Share files with one click": [
+        "Абагуліць файлы адным націскам"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дня:",
@@ -8599,6 +8608,11 @@
         "Палепшыць"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } месяц",
@@ -8912,7 +8926,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

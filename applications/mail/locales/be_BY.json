@@ -1000,7 +1000,7 @@
         "Вярнуць арыгінальны выгляд"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Запусціць на серверы ${ BRAND_NAME }"
+        "Выканаць на серверы ${ BRAND_NAME }"
       ],
       "Save": [
         "Захаваць"
@@ -6282,7 +6282,7 @@
         "Ад"
       ],
       "Generate text": [
-        "Згенерыраваць тэкст"
+        "Генерыраваць тэкст"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Мае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
@@ -6924,7 +6924,7 @@
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "The writing assistant needs to finish downloading before it can be used.": [
-        "Неабходна завяршыць спампоўванне памочніка ў выкарыстанні, каб пачаць яго выкарыстоўваць."
+        "Неабходна завяршыць спампоўванне памочніка ў напісанні, каб пачаць яго выкарыстоўваць."
       ],
       "Themes can give your inbox a new look.": [
         "Тэмы могуць змяніць выгляд вашай паштовай скрыні."
@@ -9289,6 +9289,9 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Згенерыраваць лісты толькі з запытам"
+      ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
@@ -9349,6 +9352,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your texts": [
+        "Вычытка і ўдасканаленне вашага тэксту"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
@@ -9357,6 +9363,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
+      "Reply to messages": [
+        "Адказ на паведамленні"
       ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
@@ -10306,6 +10315,9 @@
       "To": [
         "Каму"
       ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Паспрабуйце \"Апавясціць пра надыходзячыя падзеі ў інфармацыйнай рассылцы\""
+      ],
       "Try “Cancel my gym membership”": [
         "Паспрабуйце \"Скасаваць мой абанемент у спартыўную залю\""
       ],
@@ -11071,6 +11083,11 @@
         "Палепшыць"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } месяц",
@@ -11407,7 +11424,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

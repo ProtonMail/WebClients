@@ -1375,6 +1375,11 @@
         "${ BRAND_NAME }-Anwendungen"
       ]
     },
+    "Assistant option": {
+      "Run locally": [
+        "Lokal ausführen"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leere ICS-Datei"
@@ -6045,6 +6050,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -8498,17 +8514,6 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11002,11 +11007,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
+      "Reply to messages": [
+        "Antworte auf Nachrichten"
+      ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
       ],
       "Router support": [
         "Router-Unterstützung"
+      ],
+      "Save time emailing": [
+        "Spare Zeit beim Verfassen von E-Mails"
       ],
       "Schedule and snooze emails for any time": [
         "E-Mails für einen beliebigen Zeitpunkt planen und zurückstellen"

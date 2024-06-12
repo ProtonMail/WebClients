@@ -550,6 +550,9 @@
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
       ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Med ${ PASS_SHORT_APP_NAME }-övervakning kan du ligga steget före hot genom att få omedelbara varningar om dina inloggningsuppgifter är komprometterade. Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
+      ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Dina e-postadresser läckte vid minst 1 dataintrång."
       ],
@@ -569,12 +572,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt lösenord för ${ BRAND_NAME } för att fortsätta med exporten"
-      ],
-      "Auto-lock could not be activated": [
-        "Automatisk låsning kunde inte aktiveras"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatisk låsning kunde inte inaktiveras"
       ],
       "Cannot send invitation at the moment": [
         "Kan inte skicka inbjudan just nu",
@@ -968,9 +965,6 @@
       "Admin": [
         "Admin"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Efter inaktivitet kommer åtkomst till ${ PASS_APP_NAME } att kräva en PIN-kod för att låsa upp din session. Du kommer att loggas ut efter 3 misslyckade försök."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
       ],
@@ -1009,9 +1003,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Är du säker på att du vill flytta objektet till “${ name }“?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatisk låsning inaktiverat"
       ],
       "Breaches detected": [
         "Intrång upptäckta"
@@ -1084,6 +1075,9 @@
       ],
       "Emptying trash...": [
         "Tömmer papperskorg..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktivera ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ange verifieringskod. Siffra ${ digit }."
@@ -1220,9 +1214,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Laddar in ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Låser din session …"
-      ],
       "Logging you out...": [
         "Du loggas ut …"
       ],
@@ -1317,14 +1308,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Bekräfta din PIN-kod för att avregistrera ditt nuvarande lås.\n${ PASS_APP_NAME } kommer då aldrig att låsas."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Bekräfta din PIN-kod för att redigera denna inställning."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Bekräfta din PIN-kod för att slutföra din inställning för automatisk låsning."
       ],
       "Please consider leaving a review.": [
         "Överväg att lämna en recension."
@@ -1376,12 +1361,6 @@
       ],
       "Session timed out": [
         "Session timeout"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Ställ in en PIN-kod för att enkelt låsa din data"
-      ],
-      "Setting up offline mode...": [
-        "Ställer in offlineläge …"
       ],
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
@@ -1452,6 +1431,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -1630,11 +1612,11 @@
       "Application logs": [
         "Applikationsloggar"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Lås ${ PASS_APP_NAME } automatiskt"
-      ],
       "Auto-lock after": [
         "Lås automatiskt efter"
+      ],
+      "Beta Access": [
+        "Beta-åtkomst"
       ],
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
@@ -1912,9 +1894,6 @@
       "Session locking": [
         "Sessionslåsning"
       ],
-      "Set PIN code": [
-        "Ställ in PIN-kod"
-      ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
       ],
@@ -2023,9 +2002,6 @@
       ],
       "Sign in to your account": [
         "Logga in på ditt konto"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Du är för närvarande offline. Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ]
     },
     "lobby: Title": {

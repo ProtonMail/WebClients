@@ -578,12 +578,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
       ],
-      "Auto-lock could not be activated": [
-        "Automatyczna blokada nie mogła zostać włączona"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatyczna blokada nie mogła zostać wyłączona"
-      ],
       "Cannot send invitation at the moment": [
         "Nie można wysłać zaproszenia",
         "Nie można wysłać zaproszeń",
@@ -1009,9 +1003,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Będziesz używać kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji. Wylogowanie nastąpi po 3 nieudanych próbach logowania."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
@@ -1050,9 +1041,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatyczna blokada została wyłączona"
       ],
       "Breaches detected": [
         "Wykryto wycieki"
@@ -1125,6 +1113,9 @@
       ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Włącz ${ PASS_SHORT_APP_NAME } w wersji beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
@@ -1267,9 +1258,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Ładowanie ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Blokowanie sesji..."
-      ],
       "Logging you out...": [
         "Trwa wylogowywanie..."
       ],
@@ -1369,14 +1357,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Potwierdź kod PIN, aby wyłączyć blokadę. Rozszerzenie ${ PASS_APP_NAME } nie będzie już blokowane."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Potwierdź kod PIN, aby edytować ustawienia."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Potwierdź kod PIN, aby włączyć automatyczną blokadę."
       ],
       "Please consider leaving a review.": [
         "Rozważ napisanie recenzji."
@@ -1428,12 +1410,6 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Ustaw kod PIN, aby łatwo zablokować swoje dane"
-      ],
-      "Setting up offline mode...": [
-        "Włączanie trybu offline"
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
@@ -1506,6 +1482,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Kliknij ikonę Proton Pass na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
@@ -1692,11 +1671,11 @@
       "Application logs": [
         "Logi aplikacji"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Automatyczna blokada ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Automatyczna blokada"
+      ],
+      "Beta Access": [
+        "Dostęp beta"
       ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
@@ -1971,9 +1950,6 @@
       "Session locking": [
         "Blokowanie sesji"
       ],
-      "Set PIN code": [
-        "Ustaw kod PIN"
-      ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
       ],
@@ -2082,9 +2058,6 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Jesteś w trybie offline. Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {

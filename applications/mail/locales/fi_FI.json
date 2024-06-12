@@ -477,8 +477,14 @@
       "Forgot password?": [
         "Unohditko salasanasi?"
       ],
+      "Formalize": [
+        "Virallista"
+      ],
       "Forward as attachment": [
         "Välitä liitteenä"
+      ],
+      "Generate text": [
+        "Luo tekstiä"
       ],
       "Get in touch": [
         "Ota yhteyttä"
@@ -488,6 +494,9 @@
       ],
       "Get started": [
         "Aloita"
+      ],
+      "Get the writing assistant": [
+        "Hanki kirjoitusavustaja"
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
@@ -645,6 +654,9 @@
       ],
       "Loading${ ellipsis }": [
         "Ladataan${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "Tee siitä ystävällisempi"
       ],
       "Manage folders": [
         "Hallitse kansioita"
@@ -859,6 +871,9 @@
       "Print": [
         "Tulosta"
       ],
+      "Proofread": [
+        "Oikolue"
+      ],
       "Quit": [
         "Sulje"
       ],
@@ -958,11 +973,17 @@
       "Resume": [
         "Jatka"
       ],
+      "Resume downloading": [
+        "Jatka latausta"
+      ],
       "Retry": [
         "Yritä uudelleen"
       ],
       "Revert to original display": [
         "Palauta alkuperäinen näkymä"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
       ],
       "Save": [
         "Tallenna"
@@ -972,6 +993,9 @@
       ],
       "Schedule message": [
         "Ajoita viesti"
+      ],
+      "Scroll to bottom": [
+        "Siirry loppuun"
       ],
       "Search": [
         "Hae"
@@ -1063,6 +1087,9 @@
       "Sharing options": [
         "Jakovalinnat"
       ],
+      "Shorten": [
+        "Lyhennä"
+      ],
       "Show": [
         "Näytä"
       ],
@@ -1122,6 +1149,12 @@
       ],
       "Stay": [
         "Pysy"
+      ],
+      "Stop downloading the writing assistant": [
+        "Lopeta kirjoitusavustajan lataaminen"
+      ],
+      "Stop generating result": [
+        "Lopeta tuloksen luominen"
       ],
       "Strikethrough": [
         "Yliviivaus"
@@ -1250,6 +1283,9 @@
       "Use recovery code": [
         "Käytä palautuskoodia"
       ],
+      "Use this": [
+        "Käytä tätä"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Muuta näkymän kokoa hiirellä. Jos käytät näppäimistöä, voit muuttaa kokoa vasemmalla ja oikealla nuolipainikkeella."
       ],
@@ -1313,6 +1349,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Sähköpostin kirjoitusavustajasi"
       ],
       "Zoom in": [
         "Lähennä"
@@ -1454,6 +1493,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-sovellukset"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Selainta ei tueta "
+      ],
+      "Fast and secure": [
+        "Nopea ja turvallinen"
+      ],
+      "Needs compatible hardware": [
+        "Vaatii yhteensopivan laitteiston"
+      ],
+      "No logs": [
+        "Ei lokitietoja"
+      ],
+      "Requires one-time download": [
+        "Vaatii kertaluonteisen latauksen"
+      ],
+      "Run locally": [
+        "Suorita paikallisesti"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
+      ],
+      "Runs on all devices": [
+        "Toimii kaikilla laitteilla"
+      ],
+      "Runs on your device": [
+        "Toimii laitteellasi"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "Laitteisto ei ole yhteensopiva"
       ]
     },
     "Attached ics file error": {
@@ -3295,6 +3368,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Aseta palautusmenetelmä, jottet menetä pääsyä tilillesi."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Jos haluat jatkaa kirjoitusavustajan käyttöä, lisää se tilaukseesi."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Jos haluat jatkaa kirjoitusavustajan käyttöä, pyydä käyttöoikeutta ylläpitäjältäsi."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
       ],
@@ -3318,6 +3397,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
+      ],
+      "Use the writing assistant to:": [
+        "Käytä kirjoitusavustajaa:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seurantoja tai seurantaan käytettäviä URL-osoitteita."
@@ -3689,6 +3771,9 @@
       "Draft could not be saved. Try again.": [
         "Luonnosta ei voitu tallentaa. Yritä uudelleen."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Tekstin luomista ei voitu peruuttaa virheen takia"
+      ],
       "Email address disabled": [
         "Sähköpostiosoite ei ole käytössä"
       ],
@@ -3736,6 +3821,9 @@
       ],
       "Forward address is required": [
         "Väitysosoite vaaditaan"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "En voi toteuttaa tätä pyyntöä eettisten ohjeideni takia. Kokeile toista kehotetta."
       ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
@@ -3870,6 +3958,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Syötä ainakin etunimi, sukunimi tai näyttönimi"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Valitse kategoria ja mikä meni pieleen luodussa tekstissä"
+      ],
+      "Please try generating the text again": [
+        "Yritä luoda tekstiä uudelleen"
+      ],
       "Port is required": [
         "Portti vaaditaan"
       ],
@@ -3884,6 +3978,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME }-käyttäjälle noudettu ensisijainen avain ei kelpaa lähetykseen"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Ongelma kirjoitusavustajan lataamisessa. Yritä uudelleen."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Ongelma kirjoitusavustajan lataamisessa laitteellesi. Yritä uudelleen."
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -3951,6 +4051,9 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
+      ],
+      "Thanks for the feedback!": [
+        "Kiitos palautteesta!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Liitteen salausta ei voitu purkaa. Jos sinulla on vastaava yksityinen avain, voit silti purkaa tiedoston salauksen GnuPG:n kaltaisella sovelluksella.",
@@ -4951,11 +5054,26 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Hardware not compatible": [
+        "Laitteisto ei ole yhteensopiva"
+      ],
+      "Resume downloading": [
+        "Jatka latausta"
+      ],
       "Search": [
         "Haku"
       ],
       "Security Center": [
         "Suojauskeskus"
+      ],
+      "Set up the writing assistant": [
+        "Kirjoitusavustajan määrittäminen"
+      ],
+      "Tell us more": [
+        "Kerro meille lisää"
+      ],
+      "Write faster with the writing assistant": [
+        "Kirjoita nopeammin kirjoitusavustajan avulla"
       ]
     },
     "Hint": {
@@ -5645,6 +5763,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
+      "Browser not supported": [
+        "Selainta ei tueta"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -5680,6 +5801,9 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Selaimen välimuistin tyhjennys poistaa myös viestien sisältöhaun käytöstä tältä laitteelta. Kaikki viestit on ladattava uudelleen, jotta niiden sisällöstä voidaan etsiä."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Poistaa selaimen tiedot (mukaan lukien ladatut viestit, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -5793,6 +5917,12 @@
       ],
       "Downloading paused": [
         "Lataus keskeytettiin"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Lataaminen pysäytetty: ${ progressDisplay } Gt"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Ladataan kirjoitusavustajaa: ${ progressDisplay } Gt"
       ],
       "Draft": [
         "Luonnos"
@@ -5919,8 +6049,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
       ],
+      "Free for 14 days": [
+        "Ilmainen 14 päivän ajan"
+      ],
       "From": [
         "Lähettäjä"
+      ],
+      "Generate text": [
+        "Luo tekstiä"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Sisältää ${ numAttachments } liitteen (${ numAttachmentsSize })",
@@ -6002,6 +6138,9 @@
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
+      "Initializing…": [
+        "Valmistellaan…"
+      ],
       "Insert image": [
         "Lisää kuva"
       ],
@@ -6046,6 +6185,9 @@
       ],
       "Left to Right": [
         "Vasemmalta oikealle"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Anna kirjoitusavustajan auttaa sinua sähköpostien kirjoittamisessa ja niihin vastaamisessa, ja katso, miten tuottavuutesi paranee."
       ],
       "Link type": [
         "Linkin tyyppi"
@@ -6273,6 +6415,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
+      "Please share what you expected": [
+        "Kerro, mitä odotit"
+      ],
       "Please try again in a few moments": [
         "Yritä uudelleen hetken kuluttua"
       ],
@@ -6312,6 +6457,12 @@
       "Print email": [
         "Tulosta viesti"
       ],
+      "Proofread selection": [
+        "Oikolue valinta"
+      ],
+      "Proofread text": [
+        "Oikolue tekstiä"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Suojaa sähköpostiosoitettasi vuotamasta postituslistoille tai roskapostittajille ${ maskMyEmailButton }."
       ],
@@ -6323,6 +6474,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Poistaa kaikki tähän sovellukseen liittyvät tiedot (mukaan lukien ladatut viestit, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Viestin raportointi tietokalasteluyritykseksi lähettää sen meille, jotta voimme analysoida sen ja parantaa suodattimiamme. Huomioi, että näemme lähettämäsi viestin sisällön."
@@ -6418,6 +6572,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
+      "Shorten selection": [
+        "Lyhennä valinta"
+      ],
+      "Shorten text": [
+        "Lyhennä tekstiä"
+      ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
       ],
@@ -6490,6 +6650,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "Käyttöönotto voi kestää muutaman minuutin."
+      ],
       "The local database is being prepared": [
         "Paikallista tietokantaa valmistellaan"
       ],
@@ -6514,6 +6677,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Kirjoitusavustajan täytyy olla ladattu ennen kuin sitä voi käyttää."
       ],
       "Themes can give your inbox a new look.": [
         "Teemoilla voit muuttaa postilaatikkosi ulkoasua."
@@ -6618,6 +6784,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Viesti tuhoutuu huomenna klo ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Tämä on tehtävä vain kerran."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
@@ -6847,6 +7016,15 @@
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
       ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
+      ],
+      "Writing assistant add-on": [
+        "Kirjoitusavustaja-lisäosa"
+      ],
+      "writing assistant iframe": [
+        "kirjoitusavustaja-iframe"
+      ],
       "Yearly": [
         "Vuosittain"
       ],
@@ -6981,6 +7159,9 @@
         "Valitsit **${ elementsCount } viestin**.",
         "Valitsit **${ elementsCount } viestiä**."
       ],
+      "You selected some content:": [
+        "Valitsit sisältöä:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
       ],
@@ -7020,6 +7201,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Selaimesi ei tue kirjoitusavustajaa. Lataa ${ MAIL_APP_NAME } -työpöytäsovellus tai kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Selaimesi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
@@ -7034,6 +7221,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
       ],
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
@@ -7101,6 +7291,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vain tarkastelu"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ]
     },
     "Key badge": {
@@ -7516,11 +7711,17 @@
       "Density": [
         "Tiiviys"
       ],
+      "Did not follow instructions": [
+        "Ei seurannut ohjeitani"
+      ],
       "Do you have any suggestions for our team?": [
         "Onko sinulla ehdotuksia tiimillemme?"
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
+      ],
+      "Don't like the style": [
+        "En pidä tyylistä"
       ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
@@ -7690,6 +7891,9 @@
       "No label found": [
         "Tunnistetta ei löytynyt"
       ],
+      "Not factually correct": [
+        "Ei pidä paikkaansa"
+      ],
       "Note": [
         "Muistiinpano"
       ],
@@ -7845,6 +8049,9 @@
       ],
       "Undisclosed Recipients": [
         "Piilotetut vastaanottajat"
+      ],
+      "Unsafe or problematic": [
+        "Epäturvallinen tai ongelmallinen"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -8735,6 +8942,9 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
+      "Generate emails with only a prompt": [
+        "Luo sähköposteja pelkällä kehotteella"
+      ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
@@ -8799,6 +9009,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
+      ],
+      "Reply to messages": [
+        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
@@ -9346,6 +9559,12 @@
       ],
       "Senders blocked": [
         "Lähettäjät estettiin"
+      ],
+      "The writing assistant is ready to use": [
+        "Kirjoitusavustaja on valmis käytettäväksi"
+      ],
+      "Trial started": [
+        "Kokeilujakso on alkanut"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9636,6 +9855,9 @@
       "First name": [
         "Etunimi"
       ],
+      "Generating...": [
+        "Luodaan..."
+      ],
       "Gift code": [
         "Lahjakoodi"
       ],
@@ -9644,6 +9866,9 @@
       ],
       "Hint": [
         "Vihje"
+      ],
+      "How do you want the selected text modified?": [
+        "Miten haluat muuttaa valittua tekstiä?"
       ],
       "Image URL": [
         "Kuvan URL"
@@ -9671,6 +9896,9 @@
       ],
       "Please insert link first": [
         "Lisää linkin osoite ensin"
+      ],
+      "Please share what you expected": [
+        "Kerro, mitä odotit"
       ],
       "Search date, name, email address, or subject line": [
         "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
@@ -9713,6 +9941,21 @@
       ],
       "Text": [
         "Teksti"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Kokeile ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
+      ],
+      "Try “Cancel my gym membership”": [
+        "Kokeile ”Peruuta kuntosalijäsenyyteni”"
+      ],
+      "Try “Invite Jane to my party”": [
+        "Kokeile ”Kutsu Jaana juhliini”"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "Kokeile ”Kiitä työtoveriani avusta projektin kanssa”"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "Kokeile ”Kirjoita saatekirje harjoittelupaikkaa varten”"
       ],
       "Type a command…": [
         "Syötä komento…"
@@ -12131,6 +12374,9 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Your free trial has ended": [
+        "Ilmainen kokeilujaksosi on päättynyt"
       ]
     },
     "Title subscription": {

@@ -557,12 +557,6 @@
       "Authentication failure: ${ message }": [
         "Eșec de autentificare: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "Autoblocarea nu poate fi activată."
-      ],
-      "Auto-lock could not be disabled": [
-        "Autoblocarea nu poate fi dezactivată."
-      ],
       "Cannot create alias (${ error }).": [
         "Nu se poate crea aliasul. ${ error }."
       ],
@@ -837,9 +831,6 @@
       "Vault name does not match": [
         "Numele seifului nu se potrivește."
       ],
-      "Wrong password": [
-        "Parolă greșită"
-      ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
       ],
@@ -982,9 +973,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "După inactivitate, accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
@@ -1017,9 +1005,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sigur doriți să mutați articolul în „${ name }” ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Blocare automată s-a dezactivat."
       ],
       "Autosaved on ${ payload.domain }": [
         "Autosalvat la ${ payload.domain }"
@@ -1159,6 +1144,9 @@
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
       ],
       "Invitation sent": [
         "Invitația a fost trimisă."
@@ -1308,14 +1296,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirmați codul PIN pentru anularea înregistrării blocării actuale.\n${ PASS_APP_NAME } nu se va mai bloca."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmați codul PIN pentru a edita această setare."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirmați codul PIN pentru a finaliza înregistrarea setării de autoblocare."
       ],
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
@@ -1373,12 +1355,6 @@
       ],
       "Session timed out": [
         "Sesiunea a expirat"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Setați un cod PIN pentru a vă bloca ușor datele"
-      ],
-      "Setting up offline mode...": [
-        "Se setează modul deconectat..."
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
@@ -1630,9 +1606,6 @@
       "Authenticate with passkeys": [
         "Autentificare cu chei de acces"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Autoblocare ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Autoblocare după"
       ],
@@ -1843,6 +1816,9 @@
       "No history": [
         "Fără istoric"
       ],
+      "None": [
+        "Niciuna"
+      ],
       "Note": [
         "Notă"
       ],
@@ -1932,9 +1908,6 @@
       ],
       "Session locking": [
         "Blocare sesiune"
-      ],
-      "Set PIN code": [
-        "Setare cod PIN"
       ],
       "Settings": [
         "Setări"
@@ -2033,9 +2006,6 @@
       ],
       "Sign in to your account": [
         "Conectare la cont"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Sunteți în mod deconectat. Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {

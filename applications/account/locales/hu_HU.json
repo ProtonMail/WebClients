@@ -5041,6 +5041,17 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ],
+      "Selected color:": [
+        "A kiválasztott szín:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -6927,17 +6938,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ],
-      "Selected color:": [
-        "A kiválasztott szín:"
       ]
     },
     "Info - folder colouring feature": {

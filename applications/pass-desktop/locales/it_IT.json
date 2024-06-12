@@ -100,6 +100,9 @@
       "Continue": [
         "Continua"
       ],
+      "Continue offline": [
+        "Continua offline"
+      ],
       "Copy and close": [
         "Copia e chiudi"
       ],
@@ -430,6 +433,9 @@
       "Try again.": [
         "Riprova."
       ],
+      "Unlock offline with password": [
+        "Sblocca offline con password"
+      ],
       "Unpin item": [
         "Non fissare l'elemento"
       ],
@@ -575,12 +581,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
-      ],
-      "Auto-lock could not be activated": [
-        "Impossibile attivare il blocco automatico"
-      ],
-      "Auto-lock could not be disabled": [
-        "Il blocco automatico non può essere disattivato"
       ],
       "Cannot send invitation at the moment": [
         "Impossibile spedire l'invito al momento",
@@ -749,6 +749,9 @@
       "Moving item failed": [
         "Spostamento dell'elemento non riuscito"
       ],
+      "Network error": [
+        "Errore di rete"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "L'accesso offline non è attualmente disponibile con la modalità a doppia password."
       ],
@@ -809,6 +812,9 @@
       "Unknown invite": [
         "Invito sconosciuto"
       ],
+      "Unlock failure": [
+        "Sblocco fallito"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato del file ${ PASS_APP_NAME } non supportato"
       ],
@@ -832,6 +838,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN errato. Riprova."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Sei offline. Riattiva la connessione per sbloccare ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
@@ -952,6 +961,9 @@
         "${ n } elemento",
         "${ n } elementi"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sarà sempre accessibile"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrerà la favicon dell'elemento tramite il proxy per le immagini anonimizzato di ${ BRAND_NAME }."
       ],
@@ -980,14 +992,14 @@
       "Access successfully confirmed": [
         "Accesso confermato con successo"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
+      ],
       "Add your custom email address to monitor :": [
         "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
       ],
       "Admin": [
         "Amministratore"
-      ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Dopo il periodo di inattività, l'accesso a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
@@ -1028,8 +1040,8 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sei sicuro di voler spostare l'elemento nella cassaforte \"${ name }\" ?"
       ],
-      "Auto-lock successfully disabled": [
-        "Blocco automatico disabilitato con successo"
+      "Auto-lock successfully disabled.": [
+        "Blocco automatico disabilitato."
       ],
       "Breaches detected": [
         "Violazioni di dati rilevate"
@@ -1079,6 +1091,15 @@
       "Didn't receive the code?": [
         "Non hai ricevuto il codice?"
       ],
+      "Disabling auto-lock": [
+        "Disabilitazione del blocco automatico"
+      ],
+      "Disabling auto-lock failed": [
+        "Impossibile disabilitare il blocco automatico"
+      ],
+      "Disabling offline mode...": [
+        "Disabilitazione della modalità offline..."
+      ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
       ],
@@ -1102,6 +1123,24 @@
       ],
       "Emptying trash...": [
         "Svuotamento del cestino in corso"
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Abilita la versione beta di ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Abilita il blocco automatico per proteggere i tuoi dati"
+      ],
+      "Enabling offline mode...": [
+        "Abilitazione della modalità offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Abilitazione del blocco automatico con password"
+      ],
+      "Enabling password lock failed": [
+        "Impossibile abilitare il blocco con password"
+      ],
+      "Enabling PIN auto-lock": [
+        "Abilitazione del blocco automatico con PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Inserisci il codice di verifica. Digita ${ digit }."
@@ -1238,9 +1277,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Caricamento di ${ PASS_APP_NAME } in corso"
       ],
-      "Locking your session...": [
-        "Blocco della sessione in corso"
-      ],
       "Logging you out...": [
         "Disconnessione in corso"
       ],
@@ -1295,11 +1331,17 @@
       "Offline mode": [
         "Modalità offline"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Impossibile disabilitare la modalità offline al momento"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Impossibile abilitare la modalità offline al momento"
       ],
       "Offline support successfully disabled": [
         "Accesso offline disabilitato"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
       ],
       "Owner": [
         "Proprietario"
@@ -1312,6 +1354,9 @@
       ],
       "password": [
         "password"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blocco con password impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
@@ -1332,20 +1377,29 @@
       "Please check your spam folder or try resending the code.": [
         "Controlla la cartella spam o prova a inviare nuovamente il codice."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Conferma la tua password ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Conferma la tua password ${ BRAND_NAME } per abilitare il blocco automatico con password."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Conferma la password dell'account ${ BRAND_NAME } per abilitare la modalità offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Conferma il tuo codice PIN per disabilitare il blocco attuale.\n${ PASS_APP_NAME } non si bloccherà più."
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Conferma la tua password ${ BRAND_NAME } per disabilitare il blocco attuale."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Conferma la tua password ${ BRAND_NAME } per aggiornare il periodo di blocco automatico."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Conferma il tuo codice PIN per disabilitare il blocco attuale."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Conferma il codice PIN per modificare questa impostazione."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Conferma il tuo PIN per terminare l'attivazione delle funzionalità di blocco automatico."
       ],
       "Please consider leaving a review.": [
         "Considera di lasciare una recensione."
@@ -1367,6 +1421,12 @@
       ],
       "Reconnect": [
         "Riconnetti"
+      ],
+      "Reconnecting": [
+        "Riconnessione"
+      ],
+      "Registering PIN lock failed": [
+        "Impossibile impostare il blocco con PIN"
       ],
       "Restoring items from trash": [
         "Ripristino degli elementi dal cestino"
@@ -1397,12 +1457,6 @@
       ],
       "Session timed out": [
         "Sessione scaduta"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Imposta un codice PIN per bloccare facilmente i tuoi dati"
-      ],
-      "Setting up offline mode...": [
-        "Configurazione della modalità offline in corso"
       ],
       "Settings successfully updated": [
         "Impostazioni aggiornate correttamente"
@@ -1473,6 +1527,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Per controllare i tuoi dati importati, clicca sull'icona di Pass nella barra degli strumenti del tuo browser."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
@@ -1651,11 +1708,11 @@
       "Application logs": [
         "Log dell'applicazione"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Blocco automatico di ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Blocca automaticamente dopo"
+      ],
+      "Beta Access": [
+        "Accesso beta"
       ],
       "Capital letters (A-Z)": [
         "Lettere maiuscole (A-Z)"
@@ -1689,6 +1746,9 @@
       ],
       "Create an encrypted note": [
         "Crea una nota crittografata"
+      ],
+      "Create lock": [
+        "Crea blocco"
       ],
       "Create new vault": [
         "Crea nuova cassaforte"
@@ -1894,6 +1954,9 @@
       "PIN": [
         "Codice PIN"
       ],
+      "PIN code": [
+        "Codice PIN"
+      ],
       "Prefix": [
         "Prefisso"
       ],
@@ -1932,9 +1995,6 @@
       ],
       "Session locking": [
         "Blocco della sessione"
-      ],
-      "Set PIN code": [
-        "Imposta codice PIN"
       ],
       "Show website favicons": [
         "Mostra le icone dei siti web"
@@ -2045,8 +2105,8 @@
       "Sign in to your account": [
         "Effettua l'accesso al tuo account"
       ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Sei offline. Sblocca ${ PASS_SHORT_APP_NAME } con la password dell'account ${ BRAND_NAME }"
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2642,6 +2702,9 @@
       ],
       "Title is required": [
         "Il titolo è obbligatorio"
+      ],
+      "Too many attempts": [
+        "Troppi tentativi"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Trasferire la proprietà di questa cassaforte a ${ email }?"

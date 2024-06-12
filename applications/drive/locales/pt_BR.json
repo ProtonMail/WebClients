@@ -949,8 +949,8 @@
         "${ price } por usuário"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } assento de assistente de escrita",
-        "${ seats } assentos de assistente de escrita"
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } usuário",
@@ -2473,7 +2473,7 @@
         "Quantidade acima do máximo."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Valor total abaixo do mínimo (${ minimumAmount })."
+        "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
@@ -4850,7 +4850,7 @@
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle }."
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -5154,7 +5154,7 @@
         "Assistente de escrita"
       ],
       "Writing assistant add-on": [
-        "Complemento de assistente de escrita"
+        "Extensão do assistente de escrita"
       ],
       "Yes": [
         "Sim"
@@ -7547,17 +7547,14 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Comece a usar o ${ DRIVE_APP_NAME } e atualizaremos seu armazenamento para 5 GB!"
       ],
-      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
-        "Convide outros por e-mail para visualizar e editar seus arquivos do ${ DRIVE_APP_NAME }"
-      ],
-      "Private Access Sharing": [
-        "Compartilhamento de acesso privado"
-      ],
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
       "Share a file": [
         "Compartilhar um arquivo"
+      ],
+      "Share files with one click": [
+        "Compartilhe arquivos com um clique"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Basta preencher o seguinte dentro de ${ expiresInDays } dia:",
@@ -8274,6 +8271,11 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]

@@ -203,6 +203,9 @@
       "Close & discard": [
         "დახურვა და მოცილება"
       ],
+      "Close AI refine suggestion": [
+        "AI-ით ოპტიმიზაციის მინიშნების დახურვა"
+      ],
       "Close composer": [
         "რედაქტორის დახურვა"
       ],
@@ -457,8 +460,14 @@
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
       ],
+      "Formalize": [
+        "ფორმალიზება"
+      ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
+      ],
+      "Generate text": [
+        "ტექსტის გენერაცია"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -468,6 +477,9 @@
       ],
       "Get started": [
         "დაიწყეთ"
+      ],
+      "Get the writing assistant": [
+        "მიიღეთ წერის დამხმარე"
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
@@ -626,6 +638,9 @@
       "Loading${ ellipsis }": [
         "იტვირთება${ ellipsis }"
       ],
+      "Make it friendly": [
+        "გახადეთ მეგობრული"
+      ],
       "Manage folders": [
         "საქაღალდეების მართვა"
       ],
@@ -688,6 +703,9 @@
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "მეტი დახვეწის ქმედებები"
       ],
       "More search options": [
         "მეტი ძებნის პარამეტრი"
@@ -839,6 +857,9 @@
       "Print": [
         "დაბეჭდვა"
       ],
+      "Proofread": [
+        "კორექტირება"
+      ],
       "Quit": [
         "გასვლა"
       ],
@@ -938,11 +959,17 @@
       "Resume": [
         "გაგრძელება"
       ],
+      "Resume downloading": [
+        "გადმოწერის გაგრძელება"
+      ],
       "Retry": [
         "თავიდან"
       ],
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
       ],
       "Save": [
         "შენახვა"
@@ -952,6 +979,9 @@
       ],
       "Schedule message": [
         "შეტყობინებების განრიგი"
+      ],
+      "Scroll to bottom": [
+        "ბოლოში გადახვევა"
       ],
       "Search": [
         "ძებნა"
@@ -1043,6 +1073,9 @@
       "Sharing options": [
         "გაზიარების მორგება"
       ],
+      "Shorten": [
+        "შემოკლება"
+      ],
       "Show": [
         "ჩვენება"
       ],
@@ -1102,6 +1135,12 @@
       ],
       "Stay": [
         "დარჩენა"
+      ],
+      "Stop downloading the writing assistant": [
+        "წერის დამხმარის გადმოწერის გაჩერება"
+      ],
+      "Stop generating result": [
+        "შედეგის გენრაციის გაჩერება"
       ],
       "Strikethrough": [
         "ხაზგადასმული"
@@ -1230,6 +1269,9 @@
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
       ],
+      "Use this": [
+        "ამის გამოყენება"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "ზომის შესაცვლელად გამოიყენეთ თაგუნა. კლავიატურით იმავეს მიღწევა მარცხნივ და მარჯვნივ ისრებით შეგიძლიათ."
       ],
@@ -1293,6 +1335,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "თქვენი ელფოსტის წერის დამხმარე"
       ],
       "Zoom in": [
         "გადიდება"
@@ -1361,6 +1406,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } წერის დამხმარის ლიცენზია",
+        "${ seats } წერის დამხმარის ლიცენზია"
       ],
       "${ users } user": [
         "${ users } მომხმარებელი",
@@ -1434,6 +1483,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-ის აპლიკაციები"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "ბრაუზერი მხარდაუჭერელია "
+      ],
+      "Fast and secure": [
+        "სწრაფი და დაცული"
+      ],
+      "Needs compatible hardware": [
+        "სჭირდება თავსებადი აპარატურა"
+      ],
+      "No logs": [
+        "ჟურნალის გარეშე"
+      ],
+      "Requires one-time download": [
+        "სჭირდება ერთჯერადი გადმოწერა"
+      ],
+      "Run locally": [
+        "ლოკალურად გაშვება"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      ],
+      "Runs on all devices": [
+        "ეშვება ყველა მოწყობილობაზე"
+      ],
+      "Runs on your device": [
+        "ეშვება თქვენს მოწყობილობაზე"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "აპარატურა თავსებადი არაა"
       ]
     },
     "Attached ics file error": {
@@ -3296,6 +3379,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
       ],
+      "Use the writing assistant to:": [
+        "წერის დამხმარის გამოყენება, რომ:"
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "ამ ელფოსტაში ცნობილი ტრეკერები და ტრეკინგის ბმულები აღმოჩენლი არაა."
       ],
@@ -3847,6 +3933,9 @@
       "Please provide either a first name, a last name or a display name": [
         "შეიყვანეთ ან სახელი, ან გვარი, ან საჩვენებელი სახელი"
       ],
+      "Please try generating the text again": [
+        "სცადეთ ტექსტის გენერაცია კიდევ ერთხელ"
+      ],
       "Port is required": [
         "პორტი აუცილებელია"
       ],
@@ -3928,6 +4017,9 @@
       ],
       "Tab closed": [
         "ჩანართი დახურულია"
+      ],
+      "Thanks for the feedback!": [
+        "მადლობა გამოხმაურებისთვის!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "მიმაგრებული ფაილის გაშიფვრა ვერ მოხერხდა.\nთუ თქვენ გაქვთ შესაბამისი პირადი გასაღები, თქვენ მაინც შეძლებთ ფაილების \nგაშიფვრას ისეთი პროგრამით, როგორიცაა GnuPG.",
@@ -4928,11 +5020,26 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Hardware not compatible": [
+        "აპარატურა თავსებადი არაა"
+      ],
+      "Resume downloading": [
+        "გადმოწერის გაგრძელება"
+      ],
       "Search": [
         "ძებნა"
       ],
       "Security Center": [
         "უსაფრთხოების ცენტრი"
+      ],
+      "Set up the writing assistant": [
+        "მოირგეთ წერის დამხმარე"
+      ],
+      "Tell us more": [
+        "გვითხარით მეტი"
+      ],
+      "Write faster with the writing assistant": [
+        "წერეთ უფრო სწრაფად დამხმარესთან ერთად"
       ]
     },
     "Hint": {
@@ -5619,6 +5726,9 @@
       "Body: ": [
         "ტანი: "
       ],
+      "Browser not supported": [
+        "ბრაუზერი მხარდაუჭერელია"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
       ],
@@ -5768,6 +5878,9 @@
       "Downloading paused": [
         "გადმოწერა შეჩერებულია"
       ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "გადმოწერა შეჩერებულია: ${ progressDisplay } გბ"
+      ],
       "Draft": [
         "მონახაზი"
       ],
@@ -5893,8 +6006,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "მეტი ძებნის შედეგისთვის სცადეთ, თქვენი საკვანძო სიტყვა თქვენი ელფოსტის შეტყობინებებში მოძებნოთ."
       ],
+      "Free for 14 days": [
+        "უფასო 14 დღით"
+      ],
       "From": [
         "გამომგზავნელი"
+      ],
+      "Generate text": [
+        "ტექსტის გენერაცია"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "აქვს ${ numAttachments } მიმაგრებული ფაილი (${ numAttachmentsSize })",
@@ -5976,6 +6095,9 @@
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
+      "Initializing…": [
+        "ინიციალიზაცია…"
+      ],
       "Insert image": [
         "გამოსახულების ჩასმა"
       ],
@@ -6017,6 +6139,9 @@
       ],
       "Learn more": [
         "მეტის ნახვა"
+      ],
+      "Learn more about ${ PrivacyLink }": [
+        "გაიგეთ მეტი ${ PrivacyLink }-ის შესახებ"
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
@@ -6107,6 +6232,9 @@
       ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
+      ],
+      "More refine actions": [
+        "მეტი დახვეწის ქმედება"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
@@ -6244,6 +6372,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
       ],
+      "Please share what you expected": [
+        "გაგვიზიარეთ, რას მოელოდით"
+      ],
       "Please try again in a few moments": [
         "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში"
       ],
@@ -6282,6 +6413,12 @@
       ],
       "Print email": [
         "ელფოსტის დაბეჭდვა"
+      ],
+      "Proofread selection": [
+        "მონიშნულის კორექტურა"
+      ],
+      "Proofread text": [
+        "ტექსტის კორექცია"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "დაიცავით თქვენი ელფოსტა გაჟონვისგან და სპამერებისგან ${ maskMyEmailButton }-ით."
@@ -6389,6 +6526,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
       ],
+      "Shorten selection": [
+        "მონიშნულის შემოკლება"
+      ],
+      "Shorten text": [
+        "ტექსტის შემოკლება"
+      ],
       "Show original message": [
         "საწყისი შეტყობინების ჩვენება"
       ],
@@ -6457,6 +6600,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "მონაცემები, რომელიც მონახაზში შეიყვანეთ, სხვა გვერდზე გადასვლის შემთხვევაში შეიძლება, დაიკარგოს."
+      ],
+      "The initial setup may take a few minutes.": [
+        "მორგების დაწყებას სულ რამდენიმე წუთი შეიძლება, დასჭირდეს."
       ],
       "The local database is being prepared": [
         "მიმდინარეობს ლოკალური ბაზის მომზადება"
@@ -6586,6 +6732,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "ამ შეტყობინების ვადაა ხვალ, ${ value }-მდე"
+      ],
+      "This only needs to be done once.": [
+        "ეს, მხოლოდ, ერთხელ უნდა ქნათ."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "ეს საჯარო გასაღები ავტომატურად იქნება გამოყენებული ამ მისამართზე გამოგზავნილი ელფოსტის დასაშიფრად."
@@ -6815,6 +6964,15 @@
       "Would you like to receive a new verification code?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება?"
       ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant add-on": [
+        "წერაში დამხმარის დამატება"
+      ],
+      "writing assistant iframe": [
+        "წერაში დამხმარის iframe"
+      ],
       "Yearly": [
         "წლიურად"
       ],
@@ -6942,6 +7100,9 @@
       "You selected **${ elementsCount } message**.": [
         "მონიშნეთ **${ elementsCount } შეტყობინება**.",
         "მონიშნეთ **${ elementsCount } შეტყობინება**."
+      ],
+      "You selected some content:": [
+        "თქვენ მონიშნეთ გარკვეული შემცველობა:"
       ],
       "You will lose access to Plus features on this date.": [
         "ამ თარიღის დადგომისას Plus-ის თვისებებთან წვდომას დაკარგავთ."
@@ -7478,11 +7639,17 @@
       "Density": [
         "სიმკვირივე"
       ],
+      "Did not follow instructions": [
+        "არ ვიზამ"
+      ],
       "Do you have any suggestions for our team?": [
         "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
       ],
       "Don't ask again": [
         "აღარ მკითხო"
+      ],
+      "Don't like the style": [
+        "არ მომწონს სტილი"
       ],
       "Don't show this again": [
         "აღარ მაჩვენო"
@@ -7652,6 +7819,9 @@
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
       ],
+      "Not factually correct": [
+        "ფაქტიურად სწორი არაა"
+      ],
       "Note": [
         "შენიშვნა"
       ],
@@ -7805,8 +7975,14 @@
       "Type a command...": [
         "აკრიფეთ ბრძანება..."
       ],
+      "Type a prompt to generate an output": [
+        "აკრიფეთ კითხვა, რომ შედეგი მიიღოთ"
+      ],
       "Undisclosed Recipients": [
         "გაუმჟღავნებელი მიმღებები"
+      ],
+      "Unsafe or problematic": [
+        "სახიფათო ან პრობლემატური"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -7934,6 +8110,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "${ BRAND_NAME }-ის საუკეთესო კონფიდენციალობა"
+      ],
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
@@ -8758,15 +8937,24 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Proofread and refine your texts": [
+        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
+      ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Reply to messages": [
+        "პასუხი შეტყობინებებზე"
       ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
+      ],
+      "Save time emailing": [
+        "დაზოგეთ ელფოსტის წერის დრო"
       ],
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
@@ -9293,6 +9481,12 @@
       ],
       "Senders blocked": [
         "გამომგზავნები დაბლოკილია"
+      ],
+      "The writing assistant is ready to use": [
+        "წერის დამხმარე გამოსაყენებლად მზადაა"
+      ],
+      "Trial started": [
+        "საცდელი პერიოდი დაიწყო"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9577,6 +9771,9 @@
       "First name": [
         "სახელი"
       ],
+      "Generating...": [
+        "გენერაცია..."
+      ],
       "Gift code": [
         "სასაჩუქრე კოდი"
       ],
@@ -9612,6 +9809,12 @@
       ],
       "Please insert link first": [
         "ჯერ ჩასვით ბმული"
+      ],
+      "Please share what you expected": [
+        "გაგვიზიარეთ, რას მოელოდით"
+      ],
+      "Refining your text...": [
+        "თქვენი ტექსტის ოპტიმიზაცია..."
       ],
       "Search date, name, email address, or subject line": [
         "მოძებნეთ თარიღით, სახელით, ელფოსტის მისამართით ან თემის ხაზით"
@@ -9654,6 +9857,18 @@
       ],
       "Text": [
         "ტექსტი"
+      ],
+      "To": [
+        "ვის"
+      ],
+      "Try “Cancel my gym membership”": [
+        "სცადეთ \"ჯიმის ბილეთის გაუქმება\""
+      ],
+      "Try “Invite Jane to my party”": [
+        "სცადეთ \"გულნარას ჩემს შარაფზე მოწვევა\""
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "სცადეთ \"კლიენტისთვის ელფოსტის პასუხის გაცემა\""
       ],
       "Type a command…": [
         "აკრიფეთ ბრძანება…"
@@ -11990,6 +12205,9 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your free trial has ended": [
+        "თქვენი გამოსაცდელი პერიოდი დასრულდა"
       ]
     },
     "Title subscription": {

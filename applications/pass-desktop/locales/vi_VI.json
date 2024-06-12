@@ -41,6 +41,9 @@
       "Bulk restore items from trash": [
         "Khôi phục nhiều nội dung từ thùng rác"
       ],
+      "Bulk select items": [
+        "Chọn nhiều nội dung"
+      ],
       "Cancel": [
         "Hủy"
       ],
@@ -122,11 +125,17 @@
       "Delete vault": [
         "Xóa kho lưu trữ"
       ],
+      "Deselect": [
+        "Bỏ chọn"
+      ],
       "Discard": [
         "Bỏ"
       ],
       "Dismiss": [
         "Bỏ qua"
+      ],
+      "Download this CSV template": [
+        "Tải xuống mẫu CSV"
       ],
       "Edit": [
         "Sửa"
@@ -341,6 +350,15 @@
       "Verify": [
         "Xác minh"
       ],
+      "View history": [
+        "Xem lịch sử"
+      ],
+      "View item history": [
+        "Xem lịch sử nội dung"
+      ],
+      "View older history": [
+        "Xem lịch sử cũ hơn"
+      ],
       "Write us on Reddit": [
         "Gửi cho chúng tôi trên Reddit"
       ],
@@ -388,12 +406,6 @@
       ],
       "Authentication error": [
         "Lỗi xác thực"
-      ],
-      "Auto-lock could not be activated": [
-        "Không thể kích hoạt Tự động khóa"
-      ],
-      "Auto-lock could not be disabled": [
-        "Không thể vô hiệu hóa Tự động khóa"
       ],
       "Cannot send invitation at the moment": [
         "Hiện tại không thể gửi lời mời"
@@ -677,9 +689,6 @@
       "Admin": [
         "Quản trị viên"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Khi không hoạt động, việc vào ${ PASS_APP_NAME } sẽ cần mã PIN để mở khóa phiên làm việc của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
       ],
@@ -709,9 +718,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Đã vô hiệu hóa Tự động khóa thành công"
       ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
@@ -845,9 +851,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Đang tải ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Đang khóa phiên làm việc của bạn...."
-      ],
       "Logging you out...": [
         "Đang đăng xuất bạn..."
       ],
@@ -896,14 +899,8 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại.\nLúc đó ${ PASS_APP_NAME } sẽ không bao giờ khóa nữa."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Vui lòng xác nhận lại mã PIN của bạn để hoàn thành thiết lập tính năng tự động khóa."
       ],
       "Please consider leaving a review.": [
         "Vui lòng xem xét việc để lại đánh giá nhé."
@@ -943,9 +940,6 @@
       ],
       "Selected items successfully restored from trash": [
         "Các nội dung được chọn đã được khôi phục từ thùng rác"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Thiết lập mã PIN để dễ dàng khóa dữ liệu của bạn"
       ],
       "Settings successfully updated": [
         "Đã cập nhật cài đặt"
@@ -1078,6 +1072,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } từ"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "phiên bản ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 giờ"
       ],
@@ -1129,9 +1126,6 @@
       "Application logs": [
         "Nhật ký ứng dụng"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Tự động khóa ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Tự động khóa sau"
       ],
@@ -1173,6 +1167,9 @@
       ],
       "Created": [
         "Đã tạo"
+      ],
+      "Created at": [
+        "Đã tạo lúc"
       ],
       "Date": [
         "Ngày"
@@ -1384,9 +1381,6 @@
       "Session locking": [
         "Khóa phiên sử dụng"
       ],
-      "Set PIN code": [
-        "Đặt mã PIN"
-      ],
       "Show website favicons": [
         "Hiển thị biểu tượng trang web"
       ],
@@ -1493,6 +1487,9 @@
     "Message": {
       "${ count } item": [
         "${ count } nội dung"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này"
       ]
     },
     "Option": {
@@ -1622,6 +1619,9 @@
       "Create PIN code": [
         "Tạo mã PIN"
       ],
+      "Created": [
+        "Đã tạo"
+      ],
       "Current version": [
         "Phiên bản hiện tại"
       ],
@@ -1655,6 +1655,12 @@
       "Import to vault(s)": [
         "Nhập vào (các) kho lưu trữ"
       ],
+      "Last autofill": [
+        "Tự động điền mới nhất"
+      ],
+      "Last modified": [
+        "Sửa đổi lần cuối"
+      ],
       "Leave vault ?": [
         "Rời kho lưu trữ ?"
       ],
@@ -1670,11 +1676,20 @@
       "Move all items ?": [
         "Chuyển tất cả nội dung ?"
       ],
+      "Move item?": [
+        "Di chuyển nội dung?"
+      ],
+      "Move items?": [
+        "Di chuyển các nội dung?"
+      ],
       "No items selected": [
         "Không có nội dung nào được chọn"
       ],
       "Our welcome gift to you": [
         "Quà tặng chào mừng của chúng tôi"
+      ],
+      "Passkey": [
+        "Khóa truy cập"
       ],
       "Password": [
         "Mật khẩu"
@@ -1684,6 +1699,9 @@
       ],
       "Permanently remove all items ?": [
         "Xóa vĩnh viễn tất cả nội dung?"
+      ],
+      "Restore this version?": [
+        "Khôi phục phiên bản này?"
       ],
       "Review and share": [
         "Xem lại và chia sẻ"

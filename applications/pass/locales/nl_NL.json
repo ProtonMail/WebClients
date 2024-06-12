@@ -564,12 +564,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
-      "Auto-lock could not be activated": [
-        "Auto-vergrendelen kon niet geactiveerd worden"
-      ],
-      "Auto-lock could not be disabled": [
-        "Auto-vergrendeken kon niet uitgeschakeld worden"
-      ],
       "Cannot send invitation at the moment": [
         "Kan op dit moment geen uitnodiging verzenden",
         "Kan op dit moment geen uitnodigingen verzenden"
@@ -949,9 +943,6 @@
       "Admin": [
         "Beheerder"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Na inactiviteit, heeft toegang tot ${ PASS_APP_NAME } een pincode nodig om uw sessie te ontgrendelen. U wordt uitgelogd na 3 mislukte pogingen."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
       ],
@@ -990,9 +981,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Weet u zeker dat u het item wilt verplaatsen naar \"${ name }\" ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Auto-vergrendelen succesvol ingeschakeld"
       ],
       "Breaches detected": [
         "Inbreuken gedetecteerd"
@@ -1201,9 +1189,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } laden"
       ],
-      "Locking your session...": [
-        "Sessie vergrendelen..."
-      ],
       "Logging you out...": [
         "Afmelden..."
       ],
@@ -1298,14 +1283,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Bevestig uw pincode om uw huidige slot af te melden.\n${ PASS_APP_NAME } wordt dan nooit vergrendeld."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Bevestig uw pincode om deze instelling te wijzigen."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Bevestig uw pincode om het registreren van uw automatische vergrendelingsinstellingen te voltooien."
       ],
       "Please consider leaving a review.": [
         "Overweeg om een review te schrijven."
@@ -1357,12 +1336,6 @@
       ],
       "Session timed out": [
         "Sessie verlopen"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Stel een pincode in om uw data eenvoudig te vergrendelen"
-      ],
-      "Setting up offline mode...": [
-        "Offline modus instellen..."
       ],
       "Settings successfully updated": [
         "Instellingen succesvol bijgewerkt"
@@ -1610,9 +1583,6 @@
       ],
       "Application logs": [
         "Applicatielogboek"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Auto-vergrendel ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
         "Automatisch vergrendelen na"
@@ -1896,9 +1866,6 @@
       "Session locking": [
         "Sessievergendeling"
       ],
-      "Set PIN code": [
-        "Pincode instellen"
-      ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"
       ],
@@ -2007,9 +1974,6 @@
       ],
       "Sign in to your account": [
         "Inloggen bij uw account"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "U bent momenteel offline. Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME }-wachtwoord"
       ]
     },
     "lobby: Title": {
