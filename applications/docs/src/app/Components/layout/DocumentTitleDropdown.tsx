@@ -60,8 +60,19 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
 
   return (
     <>
-      <DropdownButton ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret shape="ghost" size="small">
-        {title}
+      <DropdownButton
+        ref={anchorRef}
+        isOpen={isOpen}
+        onClick={toggle}
+        hasCaret
+        shape="ghost"
+        size="small"
+        className="max-w-custom whitespace-nowrap"
+        style={{
+          '--max-w-custom': '35vw',
+        }}
+      >
+        <span className="text-ellipsis">{title}</span>
       </DropdownButton>
       <Dropdown
         isOpen={isOpen}

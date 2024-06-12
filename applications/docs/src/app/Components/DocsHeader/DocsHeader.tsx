@@ -30,12 +30,12 @@ const DocsHeader = () => {
       <div className="w-2" />
       <ConnectionStatus />
       <div className="mr-auto" />
-      <DocumentActiveUsers className="mr-2" />
+      <DocumentActiveUsers className="mr-2 hidden md:flex" />
       {controller && (
         <>
           <Button
             shape="ghost"
-            className="flex items-center gap-2 text-sm"
+            className="hidden items-center gap-2 text-sm md:flex"
             onClick={() => controller.openDocumentSharingModal()}
           >
             <Icon name="user-plus" />
