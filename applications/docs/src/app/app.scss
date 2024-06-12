@@ -47,3 +47,15 @@ body {
 .user-dropdown-button .user-dropdown-text {
 	display: none;
 }
+
+@media (max-width: 42.5em) {
+	.user-dropdown-button {
+		padding: 0;
+		width: unset;
+		border: 0;
+
+		& > svg {
+			display: none;
+		}
+	}
+}

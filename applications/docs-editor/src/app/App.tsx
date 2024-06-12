@@ -263,7 +263,7 @@ export function App({ nonInteractiveMode = false }: Props) {
 
   if (!initialConfig || !docState) {
     return (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <div className="bg-norm flex h-full w-full flex-col items-center justify-center gap-4">
         <CircleLoader size="large" />
         {c('Info').t`Waiting for editor initialization...`}
       </div>

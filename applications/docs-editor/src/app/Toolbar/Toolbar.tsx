@@ -30,7 +30,6 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   ElementFormatType,
-  FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
   OUTDENT_CONTENT_COMMAND,
@@ -43,9 +42,6 @@ import { getSelectedNode } from '../Utils/getSelectedNode'
 import { blockTypeToBlockName } from '../BlockTypeToBlockName'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components'
 import AlignLeftIcon from '../Icons/AlignLeftIcon'
-import AlignCenterIcon from '../Icons/AlignCenterIcon'
-import AlignJustifyIcon from '../Icons/AlignJustifyIcon'
-import AlignRightIcon from '../Icons/AlignRightIcon'
 import OutdentIcon from '../Icons/OutdentIcon'
 import IndentIcon from '../Icons/IndentIcon'
 import BoldIcon from '../Icons/BoldIcon'
@@ -66,11 +62,13 @@ import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import CheckListIcon from '../Icons/CheckListIcon'
 import clsx from '@proton/utils/clsx'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
-import { DefaultFont, FontOptions } from '../Shared/Fonts'
+import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import { INSERT_TABLE_COMMAND } from '@lexical/table'
 import TableIcon from '../Icons/TableIcon'
 import { PredefinedTextColorOptions, PredefinedHighlightColorOptions } from '../Shared/Color'
+import { useActiveBreakpoint } from '@proton/components'
+import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -98,10 +96,6 @@ export default function DocumentEditorToolbar({
 
   const defaultFontSize = `${rootFontSize()}px`
   const [fontSize, setFontSize] = useState(defaultFontSize)
-  const [inputFontSize, setInputFontSize] = useState(fontSize.slice(0, -2))
-  useEffect(() => {
-    setInputFontSize(fontSize.slice(0, -2))
-  }, [fontSize])
 
   const [fontFamily, setFontFamily] = useState(DefaultFont.id)
   const fontFamilyLabel = useMemo(
@@ -114,6 +108,29 @@ export default function DocumentEditorToolbar({
   const focusEditor = useCallback(() => {
     editor.focus()
   }, [editor])
+
+  const undo = () => {
+    activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
+  }
+
+  const redo = () => {
+    activeEditor.dispatchCommand(REDO_COMMAND, undefined)
+  }
+
+  const formatBold = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
+    focusEditor()
+  }
+
+  const formatItalic = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
+    focusEditor()
+  }
+
+  const formatUnderline = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
+    focusEditor()
+  }
 
   const formatParagraph = () => {
     editor.update(
@@ -210,6 +227,21 @@ export default function DocumentEditorToolbar({
     }
   }
 
+  const editLink = () => {
+    activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
+  }
+
+  const insertImage = () => {
+    imageInputRef.current?.click()
+  }
+
+  const insertTable = () => {
+    activeEditor.dispatchCommand(INSERT_TABLE_COMMAND, {
+      rows: '3',
+      columns: '3',
+    })
+  }
+
   const $updateToolbar = useCallback(() => {
     const selection = $getSelection()
     if ($isRangeSelection(selection)) {
@@ -271,7 +303,8 @@ export default function DocumentEditorToolbar({
         setFontFamily('Arial')
       }
 
-      setElementFormat($isElementNode(node) ? node.getFormatType() : parent?.getFormatType() || 'left')
+      const elementFormat = $isElementNode(node) ? node.getFormatType() : parent?.getFormatType()
+      setElementFormat(elementFormat || 'left')
     }
   }, [activeEditor, defaultFontSize])
 
@@ -463,37 +496,48 @@ export default function DocumentEditorToolbar({
     [activeEditor],
   )
 
+  const { viewportWidth } = useActiveBreakpoint()
+  const viewportMoreThanLarge = viewportWidth['2xlarge'] || viewportWidth.xlarge
+
+  const showUndoRedoInToolbar = !viewportWidth['<=medium']
+  const showTextFormattingOptionsInToolbar = !viewportWidth['<=small']
+  const showAlignmentOptionsInToolbar = !viewportWidth['<=medium']
+  const showListTypeOptionsInToolbar = !viewportWidth['<=medium']
+  const showInsertOptionsInToolbar = viewportMoreThanLarge
+
   return (
-    <div className="flex items-center gap-1.5 overflow-auto border-y border-[--border-weak] bg-[--background-norm] px-3 py-1.5 [grid-column:1_/_3] [grid-row:1] [scrollbar-width:thin]">
-      <div className="mx-auto flex max-w-max items-center gap-1.5">
-        <ToolbarButton
-          label={c('Action').t`Undo`}
-          onClick={() => {
-            activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
-          }}
-          disabled={!isEditable || !canUndo}
-        >
-          <UndoIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Redo`}
-          onClick={() => {
-            if (!isEditable) {
-              return
-            }
-            activeEditor.dispatchCommand(REDO_COMMAND, undefined)
-          }}
-          disabled={!isEditable || !canRedo}
-        >
-          <RedoIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarSeparator />
+    <div
+      className="border-weak bg-norm flex flex-nowrap items-center justify-around gap-1.5 overflow-auto border-y px-3 py-1.5"
+      style={{
+        gridColumn: '1 / 3',
+        gridRow: '1',
+        scrollbarWidth: 'thin',
+        justifyContent: viewportWidth['<=medium'] ? 'space-between' : '',
+      }}
+    >
+      <div
+        className="flex max-w-max flex-nowrap items-center gap-1.5"
+        style={{
+          marginLeft: !viewportWidth['<=medium'] ? 'auto' : '',
+        }}
+      >
+        {showUndoRedoInToolbar && (
+          <>
+            <ToolbarButton label={c('Action').t`Undo`} onClick={undo} disabled={!isEditable || !canUndo}>
+              <UndoIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton label={c('Action').t`Redo`} onClick={redo} disabled={!isEditable || !canRedo}>
+              <RedoIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarSeparator />
+          </>
+        )}
         <SimpleDropdown
           as={Button}
           shape="ghost"
           type="button"
           color="norm"
-          className="color-norm text-left text-sm"
+          className="color-norm px-2 text-left text-sm"
           content={
             <span
               className="w-custom line-clamp-1 break-all"
@@ -509,7 +553,7 @@ export default function DocumentEditorToolbar({
         >
           <DropdownMenu>
             {blockTypes.map(({ type, name, onClick }) => (
-              <DropdownMenuButton key={type} className="text-left" onClick={onClick} disabled={!isEditable}>
+              <DropdownMenuButton key={type} className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
                 {name}
               </DropdownMenuButton>
             ))}
@@ -520,7 +564,7 @@ export default function DocumentEditorToolbar({
           shape="ghost"
           type="button"
           color="norm"
-          className="color-norm text-left text-sm"
+          className="color-norm px-2 text-left text-sm"
           content={
             <span
               className="w-custom line-clamp-1 break-all"
@@ -538,7 +582,7 @@ export default function DocumentEditorToolbar({
             {FontOptions.map(({ id, label, value }) => (
               <DropdownMenuButton
                 key={id}
-                className="text-left"
+                className="text-left text-sm"
                 style={{
                   fontFamily: value,
                 }}
@@ -553,236 +597,179 @@ export default function DocumentEditorToolbar({
           </DropdownMenu>
         </SimpleDropdown>
         <ToolbarSeparator />
-        <ToolbarButton
-          label={c('Action').t`Decrease font size`}
-          disabled={!isEditable}
-          onClick={() => {
-            const currentFontSize = parseInt(fontSize)
-            const newFontSize = Math.max(4, currentFontSize - 1)
-            setFontSizeForSelection(`${newFontSize}px`)
-          }}
-        >
-          <Icon name="minus" className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <input
-          className="max-w-[5ch] rounded-lg p-2 text-sm disabled:opacity-50"
-          type="number"
-          disabled={!isEditable}
-          value={inputFontSize}
-          onChange={(event) => {
-            setInputFontSize(event.target.value)
-          }}
-          onKeyDown={(event) => {
-            const { key } = event
-            if (key !== 'Enter') {
-              return
-            }
-            event.preventDefault()
-            const clampedValue = Math.min(100, Math.max(4, parseInt(inputFontSize)))
-            setFontSizeForSelection(`${clampedValue}px`)
-          }}
-          onBlur={() => {
-            const clampedValue = Math.min(100, Math.max(4, parseInt(inputFontSize)))
-            const newValue = `${clampedValue}px`
-            if (newValue !== fontSize) {
-              setFontSizeForSelection(newValue)
-            }
-          }}
-        />
-        <ToolbarButton
-          label={c('Action').t`Increase font size`}
-          disabled={!isEditable}
-          onClick={() => {
-            const currentFontSize = parseInt(fontSize)
-            const newFontSize = Math.min(100, currentFontSize + 1)
-            setFontSizeForSelection(`${newFontSize}px`)
-          }}
-        >
-          <Icon name="plus" className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarSeparator />
-        <ToolbarButton
-          label={c('Action').t`Bold`}
-          disabled={!isEditable}
-          active={isBold}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
-          }}
-        >
-          <BoldIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Italic`}
-          disabled={!isEditable}
-          active={isItalic}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
-          }}
-        >
-          <ItalicIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Underline`}
-          disabled={!isEditable}
-          active={isUnderline}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
-          }}
-        >
-          <UnderlineIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
         <SimpleDropdown
-          as={ToolbarButton}
+          as={Button}
           shape="ghost"
           type="button"
-          className="text-[--text-norm]"
-          content={<Icon name="palette" />}
-          disabled={!isEditable}
-        >
-          <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Text colour`}</div>
-          <DropdownMenu>
-            {PredefinedTextColorOptions.map(([name, color]) => {
-              const rgbColor = `rgb(${color})`
-              return (
-                <DropdownMenuButton
-                  key={name}
-                  className={'flex items-center gap-2 text-left text-sm'}
-                  onClick={() => {
-                    applyStyleText({ color: rgbColor })
-                  }}
-                  disabled={!isEditable}
-                >
-                  <div className="border-weak flex items-center justify-center rounded border p-1">
-                    <Icon
-                      name="text-bold"
-                      size={4}
-                      style={{
-                        fill: rgbColor,
-                      }}
-                    />
-                  </div>
-                  {name}
-                </DropdownMenuButton>
-              )
-            })}
-          </DropdownMenu>
-          <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Background colour`}</div>
-          <DropdownMenu>
-            {PredefinedHighlightColorOptions.map(([name, color]) => {
-              const rgbColor = `rgba(${color}, 0.15)`
-              return (
-                <DropdownMenuButton
-                  key={name}
-                  className={'flex items-center gap-2 text-left text-sm'}
-                  onClick={() => {
-                    applyStyleText({ 'background-color': rgbColor })
-                  }}
-                  disabled={!isEditable}
-                >
-                  <div
-                    className="border-weak flex items-center justify-center rounded border p-1"
-                    style={{
-                      backgroundColor: rgbColor,
-                    }}
-                  >
-                    <Icon name="text-bold" size={4} />
-                  </div>
-                  {name}
-                </DropdownMenuButton>
-              )
-            })}
-          </DropdownMenu>
-        </SimpleDropdown>
-        <ToolbarSeparator />
-        <ToolbarButton
-          label={c('Action').t`Left align`}
-          disabled={!isEditable}
-          active={elementFormat === 'left'}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
-          }}
-        >
-          <AlignLeftIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Center align`}
-          disabled={!isEditable}
-          active={elementFormat === 'center'}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
-          }}
-        >
-          <AlignCenterIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Right align`}
-          disabled={!isEditable}
-          active={elementFormat === 'right'}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
-          }}
-        >
-          <AlignRightIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Justify align`}
-          disabled={!isEditable}
-          active={elementFormat === 'justify'}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
-          }}
-        >
-          <AlignJustifyIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarSeparator />
-        <ToolbarButton
-          label={c('Action').t`Indent`}
-          disabled={!isEditable}
-          onClick={() => {
-            activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
-          }}
-        >
-          <IndentIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Outdent`}
-          disabled={!isEditable}
-          onClick={() => {
-            activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
-          }}
-        >
-          <OutdentIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarSeparator />
-        <SimpleDropdown
-          as={ToolbarButton}
-          active={listTypes.some(({ type }) => type === listType)}
-          shape="ghost"
-          type="button"
-          className="text-[--text-norm]"
-          content={
-            listTypes.find(({ type }) => type === listType)?.icon || <CheckListIcon className="h-4 w-4 fill-current" />
-          }
+          color="norm"
+          className="color-norm px-2 text-left text-sm"
+          content={<>{fontSize}</>}
           disabled={!isEditable}
         >
           <DropdownMenu>
-            {listTypes.map(({ type, icon, name, onClick }) => (
+            {FontSizes.map((size) => (
               <DropdownMenuButton
-                key={type}
-                className={clsx(
-                  'flex items-center gap-2 text-left text-sm',
-                  type === blockType && 'bg-[--primary-minor-2] font-bold',
-                )}
-                onClick={onClick}
+                key={size}
+                className="text-left text-sm"
+                onClick={() => {
+                  const clampedValue = Math.min(100, Math.max(4, size))
+                  setFontSizeForSelection(`${clampedValue}px`)
+                }}
                 disabled={!isEditable}
               >
-                {icon}
-                {name}
+                {size}px
               </DropdownMenuButton>
             ))}
           </DropdownMenu>
         </SimpleDropdown>
         <ToolbarSeparator />
+        {showTextFormattingOptionsInToolbar && (
+          <>
+            <ToolbarButton label={c('Action').t`Bold`} disabled={!isEditable} active={isBold} onClick={formatBold}>
+              <BoldIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={c('Action').t`Italic`}
+              disabled={!isEditable}
+              active={isItalic}
+              onClick={formatItalic}
+            >
+              <ItalicIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={c('Action').t`Underline`}
+              disabled={!isEditable}
+              active={isUnderline}
+              onClick={formatUnderline}
+            >
+              <UnderlineIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <SimpleDropdown
+              as={ToolbarButton}
+              shape="ghost"
+              type="button"
+              className="text-[--text-norm]"
+              content={<Icon name="palette" />}
+              disabled={!isEditable}
+            >
+              <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Text colour`}</div>
+              <DropdownMenu>
+                {PredefinedTextColorOptions.map(([name, color]) => {
+                  const rgbColor = `rgb(${color})`
+                  return (
+                    <DropdownMenuButton
+                      key={name}
+                      className={'flex items-center gap-2 text-left text-sm'}
+                      onClick={() => {
+                        applyStyleText({ color: rgbColor })
+                      }}
+                      disabled={!isEditable}
+                    >
+                      <div className="border-weak flex items-center justify-center rounded border p-1">
+                        <Icon
+                          name="text-bold"
+                          size={4}
+                          style={{
+                            fill: rgbColor,
+                          }}
+                        />
+                      </div>
+                      {name}
+                    </DropdownMenuButton>
+                  )
+                })}
+              </DropdownMenu>
+              <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Background colour`}</div>
+              <DropdownMenu>
+                {PredefinedHighlightColorOptions.map(([name, color]) => {
+                  const rgbColor = `rgba(${color}, 0.15)`
+                  return (
+                    <DropdownMenuButton
+                      key={name}
+                      className={'flex items-center gap-2 text-left text-sm'}
+                      onClick={() => {
+                        applyStyleText({ 'background-color': rgbColor })
+                      }}
+                      disabled={!isEditable}
+                    >
+                      <div
+                        className="border-weak flex items-center justify-center rounded border p-1"
+                        style={{
+                          backgroundColor: rgbColor,
+                        }}
+                      >
+                        <Icon name="text-bold" size={4} />
+                      </div>
+                      {name}
+                    </DropdownMenuButton>
+                  )
+                })}
+              </DropdownMenu>
+            </SimpleDropdown>
+            <ToolbarSeparator />
+          </>
+        )}
+        {showAlignmentOptionsInToolbar && (
+          <>
+            <SimpleDropdown
+              as={ToolbarButton}
+              active={elementFormat !== 'left'}
+              shape="ghost"
+              type="button"
+              className="text-[--text-norm]"
+              content={
+                AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || (
+                  <AlignLeftIcon className="h-4 w-4 fill-current" />
+                )
+              }
+              disabled={!isEditable}
+            >
+              <DropdownMenu>
+                <AlignmentMenuOptions
+                  activeEditor={activeEditor}
+                  elementFormat={elementFormat}
+                  isEditable={isEditable}
+                />
+              </DropdownMenu>
+            </SimpleDropdown>
+            <ToolbarSeparator />
+          </>
+        )}
+        {showListTypeOptionsInToolbar && (
+          <>
+            <SimpleDropdown
+              as={ToolbarButton}
+              active={listTypes.some(({ type }) => type === listType)}
+              shape="ghost"
+              type="button"
+              className="text-[--text-norm]"
+              content={
+                listTypes.find(({ type }) => type === listType)?.icon || (
+                  <CheckListIcon className="h-4 w-4 fill-current" />
+                )
+              }
+              disabled={!isEditable}
+            >
+              <DropdownMenu>
+                {listTypes.map(({ type, icon, name, onClick }) => (
+                  <DropdownMenuButton
+                    key={type}
+                    className={clsx(
+                      'flex items-center gap-2 text-left text-sm',
+                      type === listType && 'bg-[--primary-minor-2] font-bold',
+                    )}
+                    onClick={onClick}
+                    disabled={!isEditable}
+                  >
+                    {icon}
+                    {name}
+                  </DropdownMenuButton>
+                ))}
+              </DropdownMenu>
+            </SimpleDropdown>
+            <ToolbarSeparator />
+          </>
+        )}
         <input
           ref={imageInputRef}
           className="absolute left-0 top-0 h-px w-px opacity-0"
@@ -805,48 +792,182 @@ export default function DocumentEditorToolbar({
             }
           }}
         />
-        <ToolbarButton
-          label={c('Action').t`Link`}
+        {showInsertOptionsInToolbar && (
+          <>
+            <ToolbarButton label={c('Action').t`Link`} disabled={!isEditable} active={isLink} onClick={editLink}>
+              <Icon name="link" className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton label={c('Action').t`Insert image`} disabled={!isEditable} onClick={insertImage}>
+              <Icon name="image" className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton label={c('Action').t`Insert table`} disabled={!isEditable} onClick={insertTable}>
+              <TableIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarSeparator />
+          </>
+        )}
+        <SimpleDropdown
+          as={ToolbarButton}
+          shape="ghost"
+          type="button"
+          className="text-[--text-norm]"
+          content={<Icon name="three-dots-vertical" />}
           disabled={!isEditable}
-          active={isLink}
-          onClick={() => {
-            activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
-          }}
+          hasCaret={false}
         >
-          <Icon name="link" className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Insert image`}
-          disabled={!isEditable}
-          onClick={() => {
-            imageInputRef.current?.click()
-          }}
-        >
-          <Icon name="image" className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarButton
-          label={c('Action').t`Insert table`}
-          disabled={!isEditable}
-          onClick={() => {
-            editor.dispatchCommand(INSERT_TABLE_COMMAND, {
-              rows: '3',
-              columns: '3',
-            })
-          }}
-        >
-          <TableIcon className="h-4 w-4 fill-current" />
-        </ToolbarButton>
-        <ToolbarSeparator />
-        <ToolbarButton label={c('Action').t`Clear formatting`} disabled={!isEditable} onClick={clearFormatting}>
-          <Icon name="eraser" className="h-4 w-4 fill-current" />
-        </ToolbarButton>
+          <DropdownMenu className="[&>li>hr]:min-h-px">
+            {!showUndoRedoInToolbar && (
+              <>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={undo}
+                  disabled={!isEditable || !canUndo}
+                >
+                  <UndoIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Undo`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={redo}
+                  disabled={!isEditable || !canRedo}
+                >
+                  <RedoIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Redo`}
+                </DropdownMenuButton>
+                <hr className="my-1" />
+              </>
+            )}
+            <DropdownMenuButton
+              className="flex items-center gap-2 text-left text-sm"
+              disabled={!isEditable}
+              onClick={() => {
+                activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
+              }}
+            >
+              <IndentIcon className="h-4 w-4 fill-current" />
+              {c('Action').t`Indent`}
+            </DropdownMenuButton>
+            <DropdownMenuButton
+              className="flex items-center gap-2 text-left text-sm"
+              disabled={!isEditable}
+              onClick={() => {
+                activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+              }}
+            >
+              <OutdentIcon className="h-4 w-4 fill-current" />
+              {c('Action').t`Outdent`}
+            </DropdownMenuButton>
+            {!showAlignmentOptionsInToolbar && (
+              <>
+                <hr className="my-1" />
+                <AlignmentMenuOptions
+                  activeEditor={activeEditor}
+                  elementFormat={elementFormat}
+                  isEditable={isEditable}
+                />
+              </>
+            )}
+            {!showInsertOptionsInToolbar && (
+              <>
+                <hr className="my-1" />
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={insertImage}
+                  disabled={!isEditable}
+                >
+                  <Icon name="image" />
+                  {c('Action').t`Insert image`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={editLink}
+                  disabled={!isEditable}
+                >
+                  <Icon name="link" />
+                  {c('Action').t`Link`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={insertTable}
+                  disabled={!isEditable}
+                >
+                  <TableIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Insert table`}
+                </DropdownMenuButton>
+              </>
+            )}
+            {!showListTypeOptionsInToolbar && (
+              <>
+                <hr className="my-1" />
+                {listTypes.map(({ type, icon, name, onClick }) => (
+                  <DropdownMenuButton
+                    key={type}
+                    className={clsx(
+                      'flex items-center gap-2 text-left text-sm',
+                      type === listType && 'bg-[--primary-minor-2] font-bold',
+                    )}
+                    onClick={onClick}
+                    disabled={!isEditable}
+                  >
+                    {icon}
+                    {name}
+                  </DropdownMenuButton>
+                ))}
+              </>
+            )}
+            {!showTextFormattingOptionsInToolbar && (
+              <>
+                <hr className="my-1" />
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatBold}
+                  disabled={!isEditable}
+                >
+                  <BoldIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Bold`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatItalic}
+                  disabled={!isEditable}
+                >
+                  <ItalicIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Italic`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatUnderline}
+                  disabled={!isEditable}
+                >
+                  <UnderlineIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Underline`}
+                </DropdownMenuButton>
+              </>
+            )}
+            <hr className="my-1" />
+            <DropdownMenuButton
+              className="flex items-center gap-2 text-left text-sm"
+              disabled={!isEditable}
+              onClick={clearFormatting}
+            >
+              <Icon name="eraser" />
+              {c('Action').t`Clear formatting`}
+            </DropdownMenuButton>
+          </DropdownMenu>
+        </SimpleDropdown>
       </div>
       <SimpleDropdown
         as={Button}
         shape="solid"
         type="button"
-        className="ml-auto gap-2 bg-[--primary-minor-1] text-[--text-norm]"
+        className="color-norm ml-auto flex gap-2 py-2"
+        style={{
+          border: '0',
+          backgroundColor: 'var(--primary-minor-1)',
+        }}
+        caretClassName="-ml-1"
         content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
+        hasCaret={!viewportWidth['<=small']}
       >
         <DropdownMenu>
           <DropdownMenuButton
