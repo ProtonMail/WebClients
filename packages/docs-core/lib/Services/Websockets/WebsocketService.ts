@@ -118,6 +118,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         if (options.isStressTestor && this.stressTestorCache.lastToken) {
           return Result.ok(this.stressTestorCache.lastToken)
         }
+
         const result = await this._createRealtimeValetToken.execute(document, options.commitId())
         if (!result.isFailed()) {
           this.stressTestorCache.lastToken = result.getValue()
