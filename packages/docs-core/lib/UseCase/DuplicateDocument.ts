@@ -1,5 +1,6 @@
 import { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 
 import { NodeMeta } from '@proton/drive-store'
 import { CreateInitialCommit } from './CreateInitialCommit'

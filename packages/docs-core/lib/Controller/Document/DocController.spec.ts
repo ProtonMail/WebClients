@@ -14,11 +14,11 @@ import {
   InternalEventBusInterface,
   WebsocketDisconnectedPayload,
 } from '@proton/docs-shared'
-import { Result } from '@standardnotes/domain-core'
 import { LoggerInterface } from '@proton/utils/logs'
 import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ConnectionCloseReason, ServerMessageWithDocumentUpdates } from '@proton/docs-proto'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
+import { Result } from '../../Domain/Result/Result'
 
 describe('DocController', () => {
   let controller: DocController

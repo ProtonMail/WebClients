@@ -1,4 +1,5 @@
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import { VerifyMessages } from './VerifyMessages'
 import { VerificationUsecaseResult } from './VerifyUpdatesResult'

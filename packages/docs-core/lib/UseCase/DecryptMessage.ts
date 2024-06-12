@@ -1,11 +1,12 @@
 import { DocumentUpdate, Event } from '@proton/docs-proto'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 
 export type DecryptMessageDTO = {
   message: DocumentUpdate | Event

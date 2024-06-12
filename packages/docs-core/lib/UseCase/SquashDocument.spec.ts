@@ -1,4 +1,4 @@
-import { Result } from '@standardnotes/domain-core'
+import { Result } from '../Domain/Result/Result'
 import { DocsApi } from '../Api/Docs/DocsApi'
 import { DecryptCommit } from './DecryptCommit'
 import { EncryptMessage } from './EncryptMessage'
