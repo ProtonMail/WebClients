@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import * as H from 'history';
@@ -195,12 +195,18 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const searchParams = new URLSearchParams(location.search);
 
-    const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
-        return getSearchParams(location, searchParams);
-    }, []);
-
-    const [maybeLocalRedirect] = useState(() => {
-        return getLocalRedirect(location);
+    const [
+        {
+            data: { product: maybeQueryAppIntent, productParam },
+            initialSearchParams,
+            maybeLocalRedirect,
+        },
+    ] = useState(() => {
+        return {
+            data: getSearchParams(location, searchParams),
+            initialSearchParams: searchParams,
+            maybeLocalRedirect: getLocalRedirect(location),
+        };
     });
 
     const getPreAppIntent = (forkState: ProduceForkData | undefined) => {
@@ -728,6 +734,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         ) {
                                                             return (
                                                                 <SingleSignupContainerV2
+                                                                    initialSearchParams={initialSearchParams}
                                                                     paths={paths}
                                                                     metaTags={getSignupMeta(maybePreAppIntent)}
                                                                     activeSessions={activeSessions}
@@ -749,6 +756,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         return (
                                                             <UnAuthenticated>
                                                                 <SignupContainer
+                                                                    initialSearchParams={initialSearchParams}
                                                                     metaTags={getSignupMeta(maybePreAppIntent)}
                                                                     loginUrl={paths.login}
                                                                     productParam={productParam}
@@ -768,6 +776,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                 </Route>
                                                 <Route path={[SSO_PATHS.PASS_SIGNUP, SSO_PATHS.PASS_SIGNUP_B2B]}>
                                                     <SingleSignupContainerV2
+                                                        initialSearchParams={initialSearchParams}
                                                         paths={paths}
                                                         metaTags={getSignupMeta(APPS.PROTONPASS)}
                                                         activeSessions={activeSessions}
@@ -851,6 +860,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                 >
                                                     <UnAuthenticated>
                                                         <LoginContainer
+                                                            initialSearchParams={initialSearchParams}
                                                             metaTags={getLoginMeta(maybePreAppIntent)}
                                                             toAppName={toAppName}
                                                             toApp={maybePreAppIntent}
@@ -893,7 +903,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                 )}
                                                 <Redirect
                                                     to={{
-                                                        pathname: paths.login,
+                                                        pathname: hasBackToSwitch ? SSO_PATHS.SWITCH : paths.login,
                                                         state: {
                                                             ...(typeof location.state === 'object'
                                                                 ? location.state
