@@ -1,4 +1,3 @@
-import { Result } from '@standardnotes/domain-core'
 import {
   CryptoProxy,
   MaybeArray,
@@ -15,6 +14,7 @@ import { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { DriveCompat } from '@proton/drive-store'
+import { Result } from '../../Domain/Result/Result'
 
 export class EncryptionService<C extends EncryptionContext> {
   constructor(

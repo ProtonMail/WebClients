@@ -1,4 +1,4 @@
-import { Result } from '@standardnotes/domain-core'
+import { Result } from '../Domain/Result/Result'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
 import { GenerateUUID } from '../Util/GenerateUuid'

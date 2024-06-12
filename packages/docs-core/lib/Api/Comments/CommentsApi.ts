@@ -1,4 +1,3 @@
-import { Result } from '@standardnotes/domain-core'
 import { Api } from '@proton/shared/lib/interfaces'
 import {
   addCommentToThreadInDocument,
@@ -23,6 +22,7 @@ import {
   UnresolveThreadResponse,
 } from './Types'
 import { getErrorString } from '../../Util/GetErrorString'
+import { Result } from '../../Domain/Result/Result'
 
 export class CommentsApi {
   constructor(private protonApi: Api) {}
