@@ -13,5 +13,10 @@ export interface DriveEvents {
 export type DriveEvent = {
     eventType: EVENT_TYPES;
     encryptedLink: EncryptedLink;
+    data?: DriveEventData;
     originShareId?: string;
+};
+
+export type DriveEventData = {
+    externalInvitationSignup?: string;
 };

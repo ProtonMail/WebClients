@@ -83,6 +83,8 @@ export function translateSortField(sortField: string): string {
         linkCreateTime: c('Label').t`Created`,
         linkExpireTime: c('Label').t`Expires`,
         numAccesses: c('Label').t`# of downloads`,
+        sharedOn: c('Label').t`Shared by`,
+        sharedBy: c('Label').t`Shared on`,
         trashed: c('Label').t`Deleted`,
     };
     return translations[sortField];
