@@ -86,7 +86,7 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         case ImportProvider.CSV: {
-            return readProtonPassCSV({ data: await file.text(), importUsername });
+            return readProtonPassCSV({ data: await file.text(), importUsername, isGenericCSV: true });
         }
 
         case ImportProvider.DASHLANE: {

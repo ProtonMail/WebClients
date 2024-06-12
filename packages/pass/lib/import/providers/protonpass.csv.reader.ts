@@ -33,9 +33,11 @@ const processCreditCardItem = (item: ProtonPassCSVItem): ItemImportIntent<'credi
 export const readProtonPassCSV = async ({
     data,
     importUsername,
+    isGenericCSV = false,
 }: {
     data: string;
     importUsername?: boolean;
+    isGenericCSV?: boolean;
 }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
@@ -43,7 +45,7 @@ export const readProtonPassCSV = async ({
     try {
         const result = await readCSV<ProtonPassCSVItem>({
             data,
-            headers: PASS_EXPECTED_HEADERS,
+            headers: isGenericCSV ? undefined : PASS_EXPECTED_HEADERS,
             onError: (error) => warnings.push(error),
         });
 
