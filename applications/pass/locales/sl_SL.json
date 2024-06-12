@@ -575,12 +575,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }"
       ],
-      "Auto-lock could not be activated": [
-        "Samodejnega zaklepanja ni bilo mogoče aktivirati"
-      ],
-      "Auto-lock could not be disabled": [
-        "Samodejnega zaklepanja ni bilo mogoče onemogočiti"
-      ],
       "Cannot send invitation at the moment": [
         "Trenutno ni mogoče poslati povabila",
         "Trenutno ni mogoče poslati povabil\n​",
@@ -984,9 +978,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Po nedejavnosti bo za dostop do ${ PASS_APP_NAME } potrebna koda PIN za odklepanje vaše seje. Po 3 neuspelih poskusih boste odjavljeni."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
       ],
@@ -1025,9 +1016,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Samodejno zaklepanje je onemogočeno"
       ],
       "Breaches detected": [
         "Zaznana kršitev"
@@ -1242,9 +1230,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } se nalaga"
       ],
-      "Locking your session...": [
-        "Zaklepam vašo sejo..."
-      ],
       "Logging you out...": [
         "Izpisujem..."
       ],
@@ -1341,14 +1326,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Za urejanje te nastavitve potrdite kodo PIN."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Potrdite kodo PIN, da dokončate registracijo za nastavitev samodejnega zaklepanja."
       ],
       "Please consider leaving a review.": [
         "Prosimo, razmislite o pisanju ocene."
@@ -1400,12 +1379,6 @@
       ],
       "Session timed out": [
         "Seja je potekla"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Nastavite kodo PIN za enostavno zaklepanje podatkov"
-      ],
-      "Setting up offline mode...": [
-        "Pripravljanje načina brez povezave"
       ],
       "Settings successfully updated": [
         "Nastavitve so bile posodobljene"
@@ -1663,9 +1636,6 @@
       ],
       "Application logs": [
         "Dnevniki aplikacij"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Samodejno zaklepanje ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
         "Samodejno zaklepanje po"
@@ -1949,9 +1919,6 @@
       "Session locking": [
         "Zaklepanje seje"
       ],
-      "Set PIN code": [
-        "Nastavi kodo PIN"
-      ],
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
       ],
@@ -2060,9 +2027,6 @@
       ],
       "Sign in to your account": [
         "Vpišite se v svoj račun"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Trenutno ste brez povezave. Odklenite ${ PASS_SHORT_APP_NAME } z vašim ${ BRAND_NAME } geslom"
       ]
     },
     "lobby: Title": {
