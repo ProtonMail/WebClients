@@ -28,6 +28,7 @@ const getAppContainer = () =>
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
+    const searchParams = new URLSearchParams(window.location.search);
     const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(pathname);
     const isDrawerApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
@@ -45,7 +46,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const run = async () => {
         const appContainerPromise = getAppContainer();
 
-        const session =
+        const sessionResult =
             (isDrawerApp
                 ? await bootstrap.loadDrawerSession({
                       authentication,
@@ -53,11 +54,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                       parentApp,
                       pathname,
                   })
-                : undefined) || (await bootstrap.loadSession({ authentication, api, pathname }));
+                : undefined) || (await bootstrap.loadSession({ authentication, api, pathname, searchParams }));
 
         const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin, config.API_URL);
 
-        const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
+        const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
         extendStore({ config, api, authentication, unleashClient, history, walletApi });
@@ -65,8 +66,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const store = setupStore();
         const dispatch = store.dispatch;
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        if (sessionResult.session?.User) {
+            dispatch(initEvent({ User: sessionResult.session.User }));
         }
 
         const loadUser = async () => {
