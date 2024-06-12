@@ -1,3 +1,29 @@
+### Version 1.18.0
+
+-   Support username & email as separate fields for login items
+-   Take into account username & email in data import/export while keeping backward compatibility with JSON/CSV/PGP exports
+-   Revamp vault picker UI
+
+### Version 1.17.5
+
+-   Safari browser extension release
+
+### Version 1.17.4
+
+-   Don't show read-only passkeys in autosave modal
+-   Handle empty public key params in passkey creation request
+-   Fix incorrect password health display after importing 1k+ items to a vault
+-   Show upgrade screen when enabling Sentinel in Pass Monitor
+
+### Version 1.17.3
+
+-   Pass Monitor minor improvements & bug fixes (translations, data breach counter)
+-   Allow users with edit permissions to use "move all items" button
+
+### Version 1.17.2
+
+-   Pass Monitor release: check for password health, missing 2FA, and data breaches
+
 ### Version 1.16.7
 
 -   Fix autosave regression due to early reconciliation
