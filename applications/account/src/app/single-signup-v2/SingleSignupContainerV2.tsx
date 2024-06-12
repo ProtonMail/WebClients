@@ -283,6 +283,17 @@ const SingleSignupContainerV2 = ({
             result.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
 
+        const externalInvitationID = searchParams.get('externalInvitationID');
+        if (externalInvitationID) {
+            mode = SignupMode.Invite;
+            localID = -1;
+            invite = {
+                type: 'drive',
+                data: { externalInvitationID },
+            };
+            result.preSelectedPlan = PLANS.FREE;
+        }
+
         if (result.referrer) {
             mode = SignupMode.MailReferral;
             localID = -1;
@@ -329,6 +340,7 @@ const SingleSignupContainerV2 = ({
             return getDriveConfiguration({
                 audience,
                 freePlan: model.freePlan,
+                mode: signupParameters.mode,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
