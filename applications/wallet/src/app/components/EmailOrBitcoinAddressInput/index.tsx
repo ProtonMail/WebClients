@@ -63,7 +63,7 @@ interface EmailListItemProps {
     loading?: boolean;
 }
 
-const EmailListItem = ({
+export const EmailListItem = ({
     index,
     chunks = [],
     name,
@@ -114,14 +114,14 @@ const EmailListItem = ({
         return (
             <button
                 onClick={onClick}
-                className="email-select-button flex flex-row flex-nowrap items-center grow p-2 rounded-lg"
+                className="email-select-button flex flex-row w-full flex-nowrap items-center grow p-2 rounded-lg"
             >
                 {inner}
             </button>
         );
     }
 
-    return <div className="flex flex-row flex-nowrap items-center grow py-2 rounded-lg">{inner}</div>;
+    return <div className="flex flex-row w-full flex-nowrap items-center grow py-2 rounded-lg">{inner}</div>;
 };
 
 const validateInput = (input: string, network: WasmNetwork) => {
@@ -279,7 +279,7 @@ export const EmailOrBitcoinAddressInput = ({
                                             <CoreButton
                                                 shape="ghost"
                                                 color="weak"
-                                                className="mr-1 no-shrink"
+                                                className="mr-1 no-shrink rounded-full"
                                                 size="small"
                                                 icon
                                                 onClick={() => onRemoveRecipient(recipient)}
@@ -326,7 +326,7 @@ export const EmailOrBitcoinAddressInput = ({
                     <Input
                         {...rest}
                         label={c('Bitcoin send').t`To`}
-                        placeholder={c('Bitcoin send').t`Email address or BTC address`}
+                        placeholder={c('Bitcoin send').t`Recipient email or BTC address`}
                         dense
                         ref={inputRef}
                         autoFocus

@@ -1,9 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
@@ -23,6 +24,10 @@ export const WalletContainer = () => {
     const history = useHistory();
     const { openDrawer } = useWalletDrawerContext();
 
+    // Used to reset bitcoin send modal at the end of the process
+    const generateBitcoinSendKey = () => generateUID('bitcoin-send');
+    const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
+
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
     const [walletSendModal, setWalletSendModal] = useModalState();
@@ -35,6 +40,7 @@ export const WalletContainer = () => {
     );
 
     const wallet = Number.isFinite(walletIndex) && decryptedApiWalletsData?.[walletIndex as number];
+
     const otherWallets = [
         ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
         ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
@@ -129,10 +135,20 @@ export const WalletContainer = () => {
                             {...walletPreferencesModalState}
                         />
                     )}
-
-                    {firstAccount && <BitcoinSendModal wallet={wallet} account={firstAccount} {...walletSendModal} />}
                 </div>
             </div>
+            {firstAccount && (
+                <BitcoinSendModal
+                    key={bitcoinSendKey}
+                    wallet={wallet}
+                    account={firstAccount}
+                    theme={theme}
+                    modal={walletSendModal}
+                    onDone={() => {
+                        setBitcoinSendKey(generateBitcoinSendKey());
+                    }}
+                />
+            )}
         </>
     );
 };
