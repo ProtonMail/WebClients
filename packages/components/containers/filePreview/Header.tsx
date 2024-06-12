@@ -22,6 +22,7 @@ export type SharedStatus = '' | 'shared' | 'inactive';
 interface Props {
     name?: string;
     mimeType?: string;
+    isSharingInviteAvailable?: boolean; // Feature flag for drive direct sharing
     sharedStatus?: SharedStatus;
     signatureStatus?: ReactNode;
     isDirty?: boolean;
@@ -38,6 +39,7 @@ interface Props {
 const Header = ({
     mimeType,
     name,
+    isSharingInviteAvailable,
     sharedStatus,
     signatureStatus,
     isDirty,
@@ -77,6 +79,8 @@ const Header = ({
                 })
         );
     };
+
+    const shareLinkTitleLEGACY = sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`;
 
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
@@ -164,13 +168,15 @@ const Header = ({
                     <Button
                         icon
                         shape="ghost"
-                        title={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
+                        title={isSharingInviteAvailable ? c('Action').t`Share` : shareLinkTitleLEGACY}
                         onClick={onShare}
                         className="ml-2 md:inline-flex"
                         data-testid="file-preview:actions:share"
                     >
                         <Icon
-                            name="link"
+                            name={
+                                isSharingInviteAvailable ? (sharedStatus === 'shared' ? 'users' : 'user-plus') : 'link'
+                            }
                             size={5}
                             alt={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                             className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
