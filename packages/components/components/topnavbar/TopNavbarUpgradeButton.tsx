@@ -78,11 +78,12 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     }, []);
 
     const { shouldDisplayVariant, variantInfos } = useButtonVariants();
-    const isPillButton = !!variantInfos.additionnalStylesClass;
+    const isPillButton = !!variantInfos?.additionnalStylesClass;
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
-        feature: shouldDisplayVariant ? variantInfos.upsellPath : SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR,
+        feature:
+            shouldDisplayVariant && variantInfos ? variantInfos.upsellPath : SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR,
         component: UPSELL_COMPONENT.BUTTON,
         fromApp: app,
     });
@@ -140,7 +141,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                     pill={isPillButton}
                     icon={viewportWidth['<=medium']}
                     iconGradient={!isPillButton}
-                    className={clsx([shouldDisplayVariant && variantInfos.additionnalStylesClass])}
+                    className={clsx([shouldDisplayVariant && variantInfos?.additionnalStylesClass])}
                 >
                     {upgradeText}
                 </PromotionButton>
