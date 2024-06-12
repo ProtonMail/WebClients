@@ -1,5 +1,6 @@
 import { VERIFICATION_STATUS } from '@proton/crypto'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { DecryptedMessage } from '../Models/DecryptedMessage'

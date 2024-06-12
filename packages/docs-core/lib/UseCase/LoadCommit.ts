@@ -1,5 +1,6 @@
 import { DecryptCommit } from './DecryptCommit'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { GetCommitData } from './GetCommitData'
 import { DecryptedCommit } from '../Models/DecryptedCommit'

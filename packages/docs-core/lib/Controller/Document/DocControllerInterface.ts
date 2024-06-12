@@ -5,10 +5,11 @@ import {
   DocumentMetaInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import { Result } from '@standardnotes/domain-core'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
 import { NativeVersionHistory } from '../../VersionHistory'
+import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
+import { Result } from '../../Domain/Result/Result'
 
 export interface DocControllerInterface {
   username: string
@@ -32,7 +33,7 @@ export interface DocControllerInterface {
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
   openDocumentSharingModal(): Promise<void>
-  renameDocument(newName: string): Promise<Result<void>>
+  renameDocument(newName: string): Promise<TranslatedResult<void>>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
 }

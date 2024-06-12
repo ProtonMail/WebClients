@@ -1,7 +1,8 @@
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { WebsocketConnectionInterface, BroadcastSources } from '@proton/docs-shared'
 import { EventTypeEnum, CreateClientEventMessage, ClientEventVersion } from '@proton/docs-proto'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 
 /**
  * This is a debug utility exposed in development by the Debug menu and allows the client to force the RTS to commit immediately

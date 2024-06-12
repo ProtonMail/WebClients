@@ -9,11 +9,14 @@ import {
   usePopperAnchor,
 } from '@proton/components'
 import { useCallback, useEffect, useState } from 'react'
-import { DocControllerInterface } from '@proton/docs-core'
+import { DocControllerInterface, PostApplicationError } from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
+import { useApplication } from '../../Containers/ApplicationProvider'
 
 const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
+  const application = useApplication()
+
   const [title, setTitle] = useState<string>('Loading document title...')
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
@@ -28,13 +31,13 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
     if (newName) {
       void controller.renameDocument(newName).then((result) => {
         if (result.isFailed()) {
-          alert(result.getError())
+          PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
           setTitle(oldName)
         }
       })
       setTitle(newName)
     }
-  }, [controller])
+  }, [application.eventBus, controller])
 
   const onDuplicate = useCallback(() => {
     void controller?.duplicateDocument()
