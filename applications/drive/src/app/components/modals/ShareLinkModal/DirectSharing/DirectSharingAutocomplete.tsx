@@ -2,8 +2,13 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import InputField from '@proton/components/components/v2/field/InputField';
-import { AddressesAutocompleteTwo, AddressesInput, useContactEmails, useContactGroups } from '@proton/components/index';
+import {
+    AddressesAutocompleteTwo,
+    AddressesInput,
+    InputFieldTwo,
+    useContactEmails,
+    useContactGroups,
+} from '@proton/components/index';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -38,7 +43,7 @@ export const DirectSharingAutocomplete = ({
     const [contactGroups] = useContactGroups();
     const groupsWithContactsMap = getGroupsWithContactsMap(contactEmails || [], contactGroups || []);
 
-    const inputId = 'direct-sharing';
+    const inputId = 'direct-sharing-autocomplete';
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
     const count = invitees.length;
@@ -48,7 +53,7 @@ export const DirectSharingAutocomplete = ({
     return (
         <>
             <div className="flex justify-space-between items-center flex-nowrap mt-3 mb-6 relative">
-                <InputField
+                <InputFieldTwo
                     as={AddressesInput}
                     autocompleteContainerProps={{
                         className: 'max-w-custom max-h-custom overflow-auto',
