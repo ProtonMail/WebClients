@@ -3892,6 +3892,9 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
+      "Available": [
+        "Tersedia"
+      ],
       "Awaiting transaction": [
         "Menunggu transaksi"
       ],
@@ -6605,6 +6608,9 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
+      ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
@@ -6662,11 +6668,17 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your texts": [
+        "Periksa dan perbaiki tulisan Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
+      ],
+      "Reply to messages": [
+        "Balas pesan"
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
@@ -7441,14 +7453,17 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Mulai gunakan ${ DRIVE_APP_NAME } dan kami akan meningkatkan ruang penyimpanan Anda ke 5 GB!"
       ],
-      "Invite others by email to view and edit your ${ DRIVE_APP_NAME } files": [
-        "Undang pengguna lain melalui email untuk melihat dan menyunting berkas ${ DRIVE_APP_NAME } Anda"
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Undang pengguna lain melalui email untuk melihat dan menyunting berkas Anda, atau buat tautan publik untuk akses yang cepat"
       ],
       "Set a recovery method": [
         "Tentukan metode pemulihan"
       ],
       "Share a file": [
         "Bagikan berkas"
+      ],
+      "Share files with one click": [
+        "Bagikan berkas hanya dengan satu klik"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ expiresInDays } hari ke depan:"
@@ -8144,6 +8159,11 @@
       ],
       "Upgrade": [
         "Tingkatkan akun"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "specialoffer: Offers": {
@@ -9305,6 +9325,9 @@
       ],
       "Processing...": [
         "Memproses..."
+      ],
+      "Public shared link status": [
+        "Status tautan terbagi publik"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
