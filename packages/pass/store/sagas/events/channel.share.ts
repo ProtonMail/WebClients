@@ -97,7 +97,7 @@ const onShareEventError = (shareId: string) =>
         const { code } = getApiError(error);
 
         /* share was deleted or user lost access */
-        if (code === PassErrorCode.DISABLED_SHARE) {
+        if (code === PassErrorCode.DISABLED_SHARE || code === PassErrorCode.NOT_EXIST_SHARE) {
             logger.info(`[ServerEvents::Share::${logId(shareId)}] share disabled`);
             channel.close();
 
