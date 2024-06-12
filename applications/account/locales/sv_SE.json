@@ -5763,6 +5763,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Lägg till denna post till din domän i adminpanelen hos din domännamnsregistrator."
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Hittade ${ items.length } förslag, använd tangentbordet för att navigera.",
         "Hittade ${ items.length } förslag, använd tangentbordet för att navigera."
@@ -6117,6 +6120,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info": {
@@ -6582,6 +6596,9 @@
       "Browser not supported": [
         "Webbläsare stöds inte"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan organisationsmedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -6993,6 +7010,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Om detta alternativ är påslaget kommer organisationsmedlemmar endast att kunna dela valv inom organisationen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
@@ -7837,6 +7857,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Skrivassistenttillägget **kommer inte förnyas**. Du kan fortsätta att använda tjänsten fram till **${ subscriptionRenewalDate }**"
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Dessa konfigurationsfiler låter dig välja vilken ${ VPN_APP_NAME }-server du ansluter till när du använder en VPN-app från tredje part eller konfigurerar en VPN-anslutning på en router."
       ],
@@ -7860,6 +7883,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Denna funktion fördröjer sändning av din e-post, vilket ger dig möjlighet att ångra sändningen under den valda tidsramen."
       ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
@@ -8257,6 +8283,12 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "När de prenumererar på ett paket erhåller du krediter för att använda i din prenumeration."
       ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "När du avbryter din nuvarande betalda prenumeration kommer saldot av din prenumeration att returneras som kontokrediter och du kommer att nedgraderas till ${ BRAND_NAME } ${ PLANS.FREE }-paketet."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "När du klickar på en länk kommer denna funktion mot nätfiske be dig att bekräfta webbsidans URL."
       ],
@@ -8327,6 +8359,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan stänga fliken eller webbläsaren under tiden."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Du kan definiera policyerna för ${ PASS_APP_NAME } för organisationsmedlemmarna."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
@@ -8488,6 +8523,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Din webbläsare stöder inte skrivassistenten. Ladda ner ${ MAIL_APP_NAME }-appen för stationär dator eller prova att köra den på ${ BRAND_NAME }-servrar."
+      ],
       "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
         "Din webbläsare stöder inte skrivassistenten. Prova att köra det på ${ BRAND_NAME }-servrar."
       ],
@@ -8551,17 +8589,6 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9329,6 +9356,12 @@
       ],
       "Disable animations": [
         "Inaktivera animeringar"
+      ],
+      "Disable data export for organization members": [
+        "Inaktivera dataexport för organisationsmedlemmar"
+      ],
+      "Disable sharing outside the organization.": [
+        "Inaktivera delning utanför organisationen."
       ],
       "Display name": [
         "Visningsnamn"
@@ -10992,6 +11025,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
       ],
+      "Generate emails with only a prompt": [
+        "Generera e-post med endast en prompt"
+      ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
@@ -11056,6 +11092,9 @@
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturläs och finjustera dina texter"
+      ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
@@ -11063,11 +11102,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
       ],
+      "Reply to messages": [
+        "Svara på meddelanden"
+      ],
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
       ],
       "Router support": [
         "Router-stöd"
+      ],
+      "Save time emailing": [
+        "Spara tid på att skicka e-post"
       ],
       "Schedule and snooze emails for any time": [
         "Schemalägg och snooza e-post när som helst"
@@ -11188,6 +11233,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
     },
     "new_plans: feature info": {
@@ -12548,6 +12596,9 @@
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
         "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med din **återställningsfras** eller ditt ** gamla lösenord**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Alla metoder för **tvåfaktorsautentisering (2FA)** på ditt konto kommer att inaktiveras."
       ]
     },
     "passwordless": {
@@ -13081,6 +13132,12 @@
       ],
       "For security reasons, the token is hidden": [
         "Token är dold av säkerhetsskäl"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Gå till din identitetsleverantör, kopiera och klistra in data nedan och slutför konfigureringen av SCIM för ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gå till din identitetsleverantör, kopiera och klistra in token nedan och återaktivera SCIM för ${ VPN_APP_NAME }."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
@@ -13705,6 +13762,11 @@
         "Uppgradera"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Uppgradera"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } månad",
@@ -14110,6 +14172,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } går utöver grunderna för att hjälpa dig att bli mer produktiv, organiserad och ha kontroll över din inkorg, e-postidentitet och mer."
+      ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
       ],
@@ -14122,6 +14187,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }-program"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } med åtkomst till alla höghastighetsservrar i ${ vpnCountries } länder"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
@@ -14130,6 +14198,12 @@
       ],
       "Add any new files": [
         "Lägg till valfria nya filer"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Efter att din ${ planName }-prenumeration löper ut kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Efter att din ${ planName }-prenumeration löper ut kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
       ],
       "Back up photos from your devices": [
         "Säkerhetskopiera foton från dina enheter"
@@ -14175,6 +14249,9 @@
       ],
       "I still want to cancel": [
         "Jag vill fortfarande avsluta"
+      ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Om du överskrider gränserna för gratispaketet när din ${ planName }-prenumeration löper ut kommer du inte att kunna:"
       ],
       "Keep ${ planName }": [
         "Behåll ${ planName }"
@@ -14250,6 +14327,12 @@
       ],
       "Your ${ planName } has been canceled.": [
         "Ditt ${ planName } har avbrutits."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "Din ${ planName }-prenumeration slutar den ${ expiryDate }. Efter det kommer du att ha ${ BRAND_NAME } Free-paketet. Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Din ${ planName }-prenumeration slutar den ${ expiryDate }. Efter det kommer du att ha ${ BRAND_NAME } Free-paketet. Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Din egen anpassade e-postdomän"
@@ -15483,6 +15566,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Policies": [
+        "Policyer"
       ],
       "Preview": [
         "Förhandsgranska"

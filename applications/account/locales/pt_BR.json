@@ -1245,8 +1245,8 @@
         "${ price } por usuário"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } assento de assistente de escrita",
-        "${ seats } assentos de assistente de escrita"
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } usuário",
@@ -4002,7 +4002,7 @@
         "Quantidade acima do máximo."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Valor total abaixo do mínimo (${ minimumAmount })."
+        "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -6125,6 +6125,17 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -6588,6 +6599,9 @@
       "Browser not supported": [
         "Navegador não suportado"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Por padrão, membros da organização só podem exportar cofres de onde eles forem os proprietários. Se essa opção for ativada, eles não poderão exportar dados"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
@@ -7002,6 +7016,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Se isso for devido a uma redefinição de senha antiga, você poderá impedir que a mensagem seja exibida novamente"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Se essa opção estiver ativada, os membros da organização só poderão compartilhar os cofres de dentro da organização."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -7751,7 +7768,7 @@
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle }."
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -8312,7 +8329,7 @@
         "Assistente de escrita"
       ],
       "Writing assistant add-on": [
-        "Complemento de assistente de escrita"
+        "Extensão do assistente de escrita"
       ],
       "Yearly": [
         "Anualmemnte"
@@ -8348,6 +8365,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Enquanto isso, você pode fechar a aba ou o navegador."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Você pode definir as políticas do ${ PASS_APP_NAME } para a sua organização."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Você pode editar isso uma só vez para garantir o endereço de e-mail coreto para verificar."
@@ -8575,17 +8595,6 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9359,6 +9368,12 @@
       ],
       "Disable animations": [
         "Desativar animações"
+      ],
+      "Disable data export for organization members": [
+        "Desativar exportação de dados para membros da organização"
+      ],
+      "Disable sharing outside the organization.": [
+        "Desativar compartilhamento de fora da organização"
       ],
       "Display name": [
         "Nome de exibição"
@@ -13793,6 +13808,11 @@
         "Fazer upgrade"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -15586,6 +15606,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Policies": [
+        "Políticas"
       ],
       "Preview": [
         "Pré-visualização"
