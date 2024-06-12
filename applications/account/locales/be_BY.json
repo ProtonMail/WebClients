@@ -866,7 +866,7 @@
         "Адклікаць гэта запрашэнне"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Запусціць на серверы ${ BRAND_NAME }"
+        "Выканаць на серверы ${ BRAND_NAME }"
       ],
       "Save": [
         "Захаваць"
@@ -1172,7 +1172,7 @@
         "Што я атрымаю?"
       ],
       "Why can't the model run locally?": [
-        "Чаму нельга запусціць мадэль на маім камп'ютары?"
+        "Чаму нельга выканаць мадэль на маім камп'ютары?"
       ],
       "Wipe": [
         "Сцерці"
@@ -1403,8 +1403,14 @@
       "Faster, broader device compatibility": [
         "Хутчэйшая і больш шырокая сумяшчальнасць прылад"
       ],
+      "No data transmitted while using,requires one-time download": [
+        "Падчас выкарыстання даныя не перададзены. Патрабуецца аднаразовае спампоўванне"
+      ],
       "Run locally": [
         "Выканаць лакальна"
+      ],
+      "Run on servers": [
+        "Выканаць на серверах"
       ]
     },
     "Assistant toggle": {
@@ -1417,11 +1423,23 @@
       "Active until ${ subscriptionRenewalDate }": [
         "Актыўна да ${ subscriptionRenewalDate }"
       ],
+      "Add writing assistant": [
+        "Дадаць памочніка ў напісанні"
+      ],
+      "Add writing assistant to your plan": [
+        "Дадаць памочніка ў напісанні ў ваш тарыфны план"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Прызначыць яго канкрэтным карыстальнікам у ${ userAndAddressesButton }"
+      ],
       "Automatically renews on ${ subscriptionRenewalDate }": [
         "Аўтаматычна падоўжыцца ${ subscriptionRenewalDate }"
       ],
+      "Cancel writing assistant add-on": [
+        "Скасаваць дадатак памочніка ў напісанні"
+      ],
       "Customize plan": [
-        "Наладжванне тарыфнага плана"
+        "Наладзіць тарыфны план"
       ],
       "from ${ price } /month": [
         "ад ${ price }/месяц"
@@ -1432,8 +1450,14 @@
       "Renew subscription": [
         "Падоўжыць падпісу"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў. ${ learnMore }"
+      ],
       "Trial expires on ${ formattedDate }": [
         "Пробны перыяд міне ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Ідзе пробны перыяд"
       ]
     },
     "Attached ics file error": {
@@ -6177,6 +6201,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -6688,6 +6723,9 @@
       "Browser not supported": [
         "Браўзер не падтрымліваецца"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Прадвызначана, удзельнікі арганізацыі могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то магчымасці экспартаваць даныя ў іх не будзе."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -7110,6 +7148,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Калі гэта звязана са скіданнем старога пароля, то вы можаце спыніць паўторны паказ паведамлення"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Удзельнікі арганізацыі змогуць абагульваць сховішчы толькі ў межах арганізацыі, калі гэты параметр будзе ўключаны"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -7819,6 +7860,9 @@
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых адрасоў карыстальніцкага дамена. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
       ],
@@ -8485,6 +8529,9 @@
       "You can close the tab or browser in the meantime.": [
         "Тым часам вы можаце закрыць укладку або браўзер."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Вы можаце вызначыць палітыкі ${ PASS_APP_NAME } для ўдзельнікаў арганізацыі."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
       ],
@@ -8721,17 +8768,6 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9514,6 +9550,12 @@
       ],
       "Disable animations": [
         "Адключыць анімацыю"
+      ],
+      "Disable data export for organization members": [
+        "Адключыць экспартаванне даных для ўдзельнікаў арганізацыі"
+      ],
+      "Disable sharing outside the organization.": [
+        "Адключыць абагульванне па-за межамі арганізацыі."
       ],
       "Display name": [
         "Бачнае імя"
@@ -11233,6 +11275,9 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Згенерыраваць лісты толькі з запытам"
+      ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
@@ -11299,6 +11344,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your texts": [
+        "Вычытка і ўдасканаленне вашага тэксту"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
@@ -11307,6 +11355,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
+      "Reply to messages": [
+        "Адказ на паведамленні"
       ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
@@ -14044,6 +14095,11 @@
         "Палепшыць"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } месяц",
@@ -14444,7 +14500,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14927,7 +14983,7 @@
         "Памочнік у напісанні ўключаны"
       ],
       "Writing assistant setting updated": [
-        "Налады памочніка ў напісанні адключаны"
+        "Налады памочніка ў напісанні абноўлены"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -15896,8 +15952,14 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Персаналізуйце ніжні калонтытул свайго ліста"
+      ],
       "Phone": [
         "Тэлефон"
+      ],
+      "Policies": [
+        "Палітыкі"
       ],
       "Preview": [
         "Папярэдні прагляд"

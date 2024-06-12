@@ -100,6 +100,9 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Continue offline": [
+        "Працягнуць па-за сеткай"
+      ],
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
@@ -430,6 +433,9 @@
       "Try again.": [
         "Паспрабаваць яшчэ раз."
       ],
+      "Unlock offline with password": [
+        "Разблакіраваць па-за сеткай з паролем"
+      ],
       "Unpin item": [
         "Адмацаваць элемент"
       ],
@@ -577,12 +583,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
-      ],
-      "Auto-lock could not be activated": [
-        "Не атрымалася актываваць аўтаблакіроўку"
-      ],
-      "Auto-lock could not be disabled": [
-        "Не атрымалася адключыць аўтаблакіроўку"
       ],
       "Cannot send invitation at the moment": [
         "У цяперашні час немагчыма адправіць запрашэнне",
@@ -755,6 +755,9 @@
       "Moving item failed": [
         "Збой перамяшчэння элемента"
       ],
+      "Network error": [
+        "Памылка сеткі"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Рэжым па-за сеткай у цяперашні момант недаступны для рэжыму двух пароляў."
       ],
@@ -815,6 +818,9 @@
       "Unknown invite": [
         "Невядомае запрашэнне"
       ],
+      "Unlock failure": [
+        "Збой разблакіроўкі"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Фармат файла ${ PASS_APP_NAME } не падтрымліваецца"
       ],
@@ -838,6 +844,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "У цяперашні момант вы па-за сеткай. Аднавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
@@ -976,6 +985,9 @@
         "${ n } элементаў",
         "${ n } элементаў"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } заўсёды будзе даступны"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
       ],
@@ -1006,14 +1018,14 @@
       "Access successfully confirmed": [
         "Доступ паспяхова пацверджаны"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Доступ да ${ PASS_APP_NAME } будзе заўсёды патрабаваць ваш пароль ${ BRAND_NAME }"
+      ],
       "Add your custom email address to monitor :": [
         "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
       ],
       "Admin": [
         "Адміністратар"
-      ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Пасля не актыўнасці, каб атрымаць доступ да ${ PASS_APP_NAME } вам спатрэбіцца ўвесці PIN-код для разблакіроўкі сеанса. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
@@ -1054,8 +1066,8 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Вы ўпэўнены, што хочаце перамясціць элемент у \"${ name }\"?"
       ],
-      "Auto-lock successfully disabled": [
-        "Аўтаблакіроўка паспяхова адключана"
+      "Auto-lock successfully disabled.": [
+        "Аўтаблакіроўка паспяхова адключана."
       ],
       "Breaches detected": [
         "Выяўлены парушэнні"
@@ -1105,6 +1117,15 @@
       "Didn't receive the code?": [
         "Не атрымалі код?"
       ],
+      "Disabling auto-lock": [
+        "Адключэнне аўтаблакіроўкі"
+      ],
+      "Disabling auto-lock failed": [
+        "Збой адключэння аўтаблакіроўкі"
+      ],
+      "Disabling offline mode...": [
+        "Адключэнне рэжыму па-за сеткай..."
+      ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
       ],
@@ -1128,6 +1149,24 @@
       ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Уключыць бэта-версію ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
+      ],
+      "Enabling offline mode...": [
+        "Уключэнне рэжыму па-за сеткай..."
+      ],
+      "Enabling password auto-lock": [
+        "Уключэнне аўтаблакіроўкі паролем"
+      ],
+      "Enabling password lock failed": [
+        "Збой уключэння аўтаблакіроўкі паролем"
+      ],
+      "Enabling PIN auto-lock": [
+        "Уключэнне аўтаблакіроўкі PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -1270,9 +1309,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Загрузка ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Блакіроўка вашага сеанса..."
-      ],
       "Logging you out...": [
         "Адбываецца выхад..."
       ],
@@ -1327,6 +1363,9 @@
       "Offline mode": [
         "Рэжым па-за сеткай"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Рэжым па-за сеткай не можа быць адключаны ў дадзены момант"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Рэжым па-за сеткай не можа быць уключаны ў дадзены момант"
       ],
@@ -1344,6 +1383,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Пароль блакіроўкі паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
@@ -1366,20 +1408,26 @@
       "Please check your spam folder or try resending the code.": [
         "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME }"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі.\nПасля гэтага дзеяння ${ PASS_APP_NAME } ніколі не будзе блакіравацца."
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME }, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Пацвердзіце пароль ${ BRAND_NAME }, каб абнавіць час аўтаматычнага блакіравання."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Пацвердзіце PIN-код для рэдагавання гэтых налад."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Пацвердзіце свой PIN-код, каб завяршыць рэгістрацыю налад аўтаблакіравання"
       ],
       "Please consider leaving a review.": [
         "Падумайце пра тое, каб пакінуць водгук."
@@ -1401,6 +1449,12 @@
       ],
       "Reconnect": [
         "Перападключыцца"
+      ],
+      "Reconnecting": [
+        "Перападключэнне"
+      ],
+      "Registering PIN lock failed": [
+        "Збой рэгістрацыі блакіроўкі PIN"
       ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
@@ -1431,12 +1485,6 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Наладзьце PIN-код, каб лёгка блакіраваць свае даныя"
-      ],
-      "Setting up offline mode...": [
-        "Наладжванне рэжыму па-за сеткай"
       ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
@@ -1509,6 +1557,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Для прагляду імпартаваных даных, націсніце на значок Pass на панэлі інструментаў свайго браўзера."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -1695,11 +1746,11 @@
       "Application logs": [
         "Журналы праграмы"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Аўтаблакіроўка ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Аўтаблакіроўка пасля"
+      ],
+      "Beta Access": [
+        "Бэта-доступ"
       ],
       "Capital letters (A-Z)": [
         "Вялікія літары (А-Я)"
@@ -1938,6 +1989,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN-код"
+      ],
       "Prefix": [
         "Прэфікс"
       ],
@@ -1976,9 +2030,6 @@
       ],
       "Session locking": [
         "Блакіроўка сеанса"
-      ],
-      "Set PIN code": [
-        "Задаць PIN-код"
       ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
@@ -2089,8 +2140,8 @@
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
       ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Вы знаходзіцеся па-за сеткай. Разблакіруйце ${ PASS_SHORT_APP_NAME } з вашым паролем ${ BRAND_NAME }"
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2694,6 +2745,9 @@
       ],
       "Title is required": [
         "Патрабуецца загаловак"
+      ],
+      "Too many attempts": [
+        "Занадта шмат спроб"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Перадаць правы ўласнасці гэтага сховішча ${ email }?"

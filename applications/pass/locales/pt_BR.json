@@ -573,12 +573,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
       ],
-      "Auto-lock could not be activated": [
-        "Não foi possível ativar o bloqueio automático"
-      ],
-      "Auto-lock could not be disabled": [
-        "Não foi possível desativar o bloqueio automático"
-      ],
       "Cannot send invitation at the moment": [
         "Não é possível enviar o convite no momento",
         "Não é possível enviar convites no momento"
@@ -958,9 +952,6 @@
       "Admin": [
         "Administrador"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Após inatividade, o acesso ao ${ PASS_APP_NAME } exigirá um código PIN para desbloquear sua sessão. Você será desconectado após 3 tentativas fracassadas."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
@@ -999,9 +990,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Você tem certeza que deseja mover o item para \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Bloqueio automático desativado"
       ],
       "Breaches detected": [
         "Violações detectadas"
@@ -1210,9 +1198,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Carregando o ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Bloqueando sua sessão..."
-      ],
       "Logging you out...": [
         "Desconectando você..."
       ],
@@ -1307,14 +1292,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirme seu código PIN para cancelar o bloqueio atual.\nO ${ PASS_APP_NAME } nunca irá bloquea-lo."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirme o seu código PIN para editar essa configuração."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirme o seu código PIN para finalizar o registro das suas configurações de bloqueio automático."
       ],
       "Please consider leaving a review.": [
         "Considere deixar uma avaliação"
@@ -1366,12 +1345,6 @@
       ],
       "Session timed out": [
         "Sessão expirada"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Configure um código PIN para bloquear facilmente seus dados"
-      ],
-      "Setting up offline mode...": [
-        "Configurando o modo off-line..."
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
@@ -1619,9 +1592,6 @@
       ],
       "Application logs": [
         "Registros do aplicativo"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Bloquear o ${ PASS_APP_NAME } automaticamente"
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
@@ -1908,9 +1878,6 @@
       "Session locking": [
         "Bloqueio de sessão"
       ],
-      "Set PIN code": [
-        "Definir código PIN"
-      ],
       "Show website favicons": [
         "Mostrar favicons do site"
       ],
@@ -2019,9 +1986,6 @@
       ],
       "Sign in to your account": [
         "Iniciar sessão em sua conta"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Você está atualmente sem internet. Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {

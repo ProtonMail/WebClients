@@ -631,6 +631,9 @@
       "Keep my Plus subscription": [
         "Pertahankan langganan Plus saya"
       ],
+      "Keep the writing assistant": [
+        "Pertahankan asisten penulisan"
+      ],
       "label emails as": [
         "labeli email sebagai"
       ],
@@ -1385,6 +1388,9 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Lebih cepat dan lebih kompatibel dengan berbagai perangkat"
+      ],
       "Run locally": [
         "Jalankan secara lokal"
       ],
@@ -1396,8 +1402,20 @@
       "Active until ${ subscriptionRenewalDate }": [
         "Aktif hingga ${ subscriptionRenewalDate }"
       ],
+      "Add writing assistant": [
+        "Tambah asisten penulisan"
+      ],
+      "Add writing assistant to your plan": [
+        "Tambah asisten penulisan ke dalam paket Anda"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Berikan akses terhadap fitur ini kepada pengguna yang spesifik di ${ userAndAddressesButton }"
+      ],
       "Automatically renews on ${ subscriptionRenewalDate }": [
         "Diperbarui secara otomatis pada ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Batalkan add-on asisten penulisan"
       ],
       "Customize plan": [
         "Sesuaikan paket"
@@ -1408,8 +1426,14 @@
       "Renew subscription": [
         "Perbarui langganan"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan memeriksa isi tulisan email Anda. ${ learnMore }"
+      ],
       "Trial expires on ${ formattedDate }": [
         "Uji coba akan berakhir pada ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Uji coba sedang berlangsung"
       ]
     },
     "Attached ics file error": {
@@ -6051,6 +6075,17 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -6490,6 +6525,9 @@
       "Browser not supported": [
         "Browser tidak didukung"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Secara bawaan, anggota organisasi hanya dapat mengekspor brankas yang mereka miliki. Apabila opsi ini diaktifkan, mereka tidak akan dapat mengekspor data apa pun"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -6900,6 +6938,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Apabila hal ini disebabkan oleh pengaturan ulang kata sandi yang telah lama, Anda dapat mengatur agar pesan ini tidak lagi muncul ke depannya"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Apabila opsi ini diaktifkan, anggota organisasi hanya akan dapat membagikan brankas di dalam organisasi"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
@@ -7576,6 +7617,9 @@
       "Settings updated": [
         "Pengaturan diperbarui"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Menampilkan gambar tampilan masing-masing pengirim pada daftar pesan. Apabila pengirim tidak memiliki gambar tampilan, inisial mereka akan ditampilkan sebagai gantinya."
+      ],
       "Show original message": [
         "Tampilkan pesan asli"
       ],
@@ -7590,6 +7634,9 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } kepada alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
@@ -8239,6 +8286,9 @@
       "You can close the tab or browser in the meantime.": [
         "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Anda dapat menentukan kebijakan ${ PASS_APP_NAME } bagi anggota organisasi."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat email yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
@@ -8460,17 +8510,6 @@
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9229,6 +9268,12 @@
       ],
       "Disable animations": [
         "Nonaktifkan animasi"
+      ],
+      "Disable data export for organization members": [
+        "Nonaktifkan ekspor data bagi anggota organisasi"
+      ],
+      "Disable sharing outside the organization.": [
+        "Nonaktifkan pembagian di luar organisasi."
       ],
       "Display name": [
         "Nama tampilan"
@@ -9996,6 +10041,9 @@
       ],
       "Add gift code": [
         "Tambah kode hadiah"
+      ],
+      "Add to your subscription": [
+        "Tambah ke langganan Anda"
       ],
       "Apps and extensions": [
         "Aplikasi dan ekstensi"
@@ -10867,6 +10915,9 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
+      ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
@@ -10930,11 +10981,17 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your texts": [
+        "Periksa dan perbaiki tulisan Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
+      ],
+      "Reply to messages": [
+        "Balas pesan"
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
@@ -13564,6 +13621,11 @@
         "Tingkatkan akun"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } bulan"
@@ -15335,8 +15397,14 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
+      "Personalise your e-mail footer": [
+        "Sesuaikan footer email Anda"
+      ],
       "Phone": [
         "Telepon"
+      ],
+      "Policies": [
+        "Kebijakan"
       ],
       "Preview": [
         "Pratinjau"

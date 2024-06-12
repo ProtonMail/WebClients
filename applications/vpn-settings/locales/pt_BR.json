@@ -648,8 +648,8 @@
         "${ price } por usuário"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } assento de assistente de escrita",
-        "${ seats } assentos de assistente de escrita"
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } usuário",
@@ -2103,7 +2103,7 @@
         "Quantidade acima do máximo."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Valor total abaixo do mínimo (${ minimumAmount })."
+        "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
@@ -3894,7 +3894,7 @@
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle }."
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -4239,7 +4239,7 @@
         "Assistente de escrita"
       ],
       "Writing assistant add-on": [
-        "Complemento de assistente de escrita"
+        "Extensão do assistente de escrita"
       ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
@@ -7368,6 +7368,11 @@
         "Fazer upgrade"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -8604,6 +8609,9 @@
       ],
       "Plans": [
         "Planos"
+      ],
+      "Policies": [
+        "Políticas"
       ],
       "Preview": [
         "Pré-visualização"

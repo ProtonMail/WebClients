@@ -3683,6 +3683,9 @@
       "Draft could not be saved. Try again.": [
         "無法儲存草稿。再試一次。"
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "因為一個錯誤，沒辦法停止文字生成"
+      ],
       "Email address disabled": [
         "電郵位址已停用"
       ],
@@ -3730,6 +3733,9 @@
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "根據道德準則，我無法處理這請求。請試試其他提示詞。"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -3860,6 +3866,9 @@
       "Please provide either a first name, a last name or a display name": [
         "請提供名字、姓氏或顯示名稱"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "請挑選一個分類以告訴我們生成的文字哪裡錯了。"
+      ],
       "Port is required": [
         "通訊埠為必填"
       ],
@@ -3874,6 +3883,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "下載寫作助手時出現問題。請稍後再試。"
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "在您的裝置載入寫作助手時出現問題。請稍後再試。"
       ],
       "Process aborted": [
         "處理已中止"
@@ -5931,6 +5946,9 @@
       "Include Spam/Trash.": [
         "包含垃圾郵件/垃圾桶。"
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "包含您的提示詞與回應將使我們變的更好"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -6213,6 +6231,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
       ],
+      "Please share what you expected": [
+        "請分享您預期什麼"
+      ],
       "Please try again in a few moments": [
         "請稍候再試"
       ],
@@ -6444,6 +6465,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "初始化程序將花費數分鐘"
+      ],
       "The local database is being prepared": [
         "正在準備本機資料庫"
       ],
@@ -6467,6 +6491,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "在寫作助手就緒前，我們需要先完成下載。"
       ],
       "Themes can give your inbox a new look.": [
         "主題視覺讓您的收件匣煥然一新。"
@@ -6569,6 +6596,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "此郵件將於明天${ value }過期"
+      ],
+      "This only needs to be done once.": [
+        "此程序僅需要完成一次"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
@@ -6963,6 +6993,12 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "您的瀏覽器不支援運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行或下載 ${ MAIL_APP_NAME } 桌面應用程式。"
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "您的瀏覽器無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -6977,6 +7013,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "您的硬體無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -9560,6 +9599,21 @@
       ],
       "Text": [
         "文字"
+      ],
+      "Try “Cancel my gym membership”": [
+        "試試「取消我的健身房會員」"
+      ],
+      "Try “Invite Jane to my party”": [
+        "試試「邀請杰恩來我的派對」"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "試試「寫一封感謝函給我的組員」"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "試試「寫一封申請實習的求職信」"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "試試「寫一封進度追蹤郵件給我的客戶」"
       ],
       "Type a command…": [
         "輸入指令…"

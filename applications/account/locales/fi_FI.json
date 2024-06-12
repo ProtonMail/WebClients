@@ -859,6 +859,9 @@
       "Revoke this invitation": [
         "Mitätöi tämä kutsu"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
+      ],
       "Save": [
         "Tallenna"
       ],
@@ -1373,6 +1376,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-sovellukset"
+      ]
+    },
+    "Assistant option": {
+      "Run locally": [
+        "Suorita paikallisesti"
       ]
     },
     "Attached ics file error": {
@@ -5564,6 +5572,9 @@
       "Folders": [
         "Kansiot"
       ],
+      "Hardware not compatible": [
+        "Laitteisto ei ole yhteensopiva"
+      ],
       "IP address": [
         "IP-osoite"
       ],
@@ -6045,6 +6056,17 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6504,6 +6526,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
+      ],
+      "Browser not supported": [
+        "Selainta ei tueta"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -8213,6 +8238,12 @@
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
       ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
+      ],
+      "Writing assistant add-on": [
+        "Kirjoitusavustaja-lisäosa"
+      ],
       "Yearly": [
         "Vuosittain"
       ],
@@ -8408,6 +8439,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Selaimesi ei tue kirjoitusavustajaa. Lataa ${ MAIL_APP_NAME } -työpöytäsovellus tai kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Selaimesi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
@@ -8419,6 +8456,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tuonti tililtä ${ accounts } on tilapäisesti viivästynyt.",
@@ -8465,17 +8505,6 @@
       ],
       "Zoom meeting": [
         "Zoom-tapaamista"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8537,6 +8566,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vain tarkastelu"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ]
     },
     "Input label": {
@@ -10892,6 +10926,9 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
+      "Generate emails with only a prompt": [
+        "Luo sähköposteja pelkällä kehotteella"
+      ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
@@ -10962,6 +10999,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
+      ],
+      "Reply to messages": [
+        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
@@ -11623,6 +11663,9 @@
       ],
       "Reminder has been sent": [
         "Muistutus on lähetetty"
+      ],
+      "Trial started": [
+        "Kokeilujakso on alkanut"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Kaksivaiheinen tunnistautuminen on pakotettu ylläpitäjille"

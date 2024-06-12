@@ -556,12 +556,6 @@
       "Authentication failure: ${ message }": [
         "Todennusvirhe: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "Automaattilukitusta ei voitu ottaa käyttöön"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automaattilukitusta ei voitu poistaa käytöstä"
-      ],
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
       ],
@@ -834,9 +828,6 @@
       "Vault name does not match": [
         "Holvin nimi ei täsmää"
       ],
-      "Wrong password": [
-        "Väärä salasana"
-      ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
       ],
@@ -969,9 +960,6 @@
       "Admin": [
         "Ylläpito"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Käyttämättömyyden jälkeen ${ PASS_APP_NAME } -istunto on avattava PIN-koodilla. Kolmen epäonnistuneen yrityksen jälkeen tilisi kirjataan ulos."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
@@ -1004,9 +992,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automaattilukitus poistettiin käytöstä"
       ],
       "Autosaved on ${ payload.domain }": [
         "Automaattitallennettiin osoitteesta ${ payload.domain }"
@@ -1144,6 +1129,9 @@
       ],
       "Internet connection lost": [
         "Internet-yhteys katkesi"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Ei yhteyttä. Tarkista laitteesi yhteydet."
       ],
       "Invitation sent": [
         "Kutsu on lähetetty"
@@ -1291,14 +1279,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Viimeistele automaattilukituksen asetus vahvistamalla PIN-koodisi."
       ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
@@ -1356,12 +1338,6 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Suojaa tietosi helposti asettamalla PIN-koodi"
-      ],
-      "Setting up offline mode...": [
-        "Otetaan yhteydetöntä tilaa käyttöön..."
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
@@ -1609,9 +1585,6 @@
       "Authenticate with passkeys": [
         "Tunnistaudu suojausavaimilla"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Lukitse ${ PASS_APP_NAME } automaattisesti"
-      ],
       "Auto-lock after": [
         "Lukitse automaattisesti"
       ],
@@ -1822,6 +1795,9 @@
       "No history": [
         "Historiaa ei ole"
       ],
+      "None": [
+        "Ei mitään"
+      ],
       "Note": [
         "Muistiinpano"
       ],
@@ -1911,9 +1887,6 @@
       ],
       "Session locking": [
         "Istunnon lukitus"
-      ],
-      "Set PIN code": [
-        "Aseta PIN-koodi"
       ],
       "Settings": [
         "Asetukset"
@@ -2012,9 +1985,6 @@
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Olet yhteydettömässä tilassa. Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
       ]
     },
     "lobby: Title": {

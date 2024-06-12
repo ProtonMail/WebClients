@@ -552,12 +552,6 @@
       "Authentication failure: ${ message }": [
         "Помилка автентифікації: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "Не вдалося активувати автоблокування"
-      ],
-      "Auto-lock could not be disabled": [
-        "Не вдалося вимкнути автоблокування"
-      ],
       "Cannot create alias (${ error }).": [
         "Неможливо створити псевдонім (${ error })."
       ],
@@ -834,9 +828,6 @@
       "Vault name does not match": [
         "Назва сховища не збігається"
       ],
-      "Wrong password": [
-        "Неправильний пароль"
-      ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
       ],
@@ -989,9 +980,6 @@
       "Admin": [
         "Адміністратор"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Після бездіяльності, доступ до ${ PASS_APP_NAME } вимагатиме PIN-код для розблокування сесії. Ви вийдете з системи після 3 невдалих спроб."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
       ],
@@ -1024,9 +1012,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ви впевнені, що хочете перемістити елемент до \"${ name }\" ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Автоблокування успішно вимкнено"
       ],
       "Autosaved on ${ payload.domain }": [
         "Автоматично збережено ${ payload.domain }"
@@ -1168,6 +1153,9 @@
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Відсутнє з'єднання з інтернетом. Перевірте доступ свого пристрою до мережі."
       ],
       "Invitation sent": [
         "Запрошення надіслано"
@@ -1319,14 +1307,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Будь ласка, підтвердьте свій пароль ${ BRAND_NAME }, щоб експортувати дані ${ PASS_APP_NAME }."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Введіть свій PIN-код, щоб скасувати реєстрацію поточного блокування.\nПісля цього ${ PASS_APP_NAME } ніколи не блокуватиметься."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Введіть свій PIN-код, щоб змінити це налаштування."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Підтвердьте PIN-код, щоб завершити реєстрацію налаштувань автоблокування."
       ],
       "Please consider leaving a review.": [
         "Напишіть відгук."
@@ -1384,12 +1366,6 @@
       ],
       "Session timed out": [
         "Сеанс завершився"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Налаштуйте PIN-код, щоб легко блокувати дані"
-      ],
-      "Setting up offline mode...": [
-        "Налаштування автономного режиму..."
       ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
@@ -1645,9 +1621,6 @@
       "Authenticate with passkeys": [
         "Автентифікація з ключами доступу"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Автоблокування ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Автоблокування після"
       ],
@@ -1858,6 +1831,9 @@
       "No history": [
         "Немає історії"
       ],
+      "None": [
+        "Нічого"
+      ],
       "Note": [
         "Нотатка"
       ],
@@ -1947,9 +1923,6 @@
       ],
       "Session locking": [
         "Блокування сеансу"
-      ],
-      "Set PIN code": [
-        "Встановити PIN-код"
       ],
       "Settings": [
         "Налаштування"
@@ -2048,9 +2021,6 @@
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "На даний час ви в автономному режимі. Розблокуйте ${ PASS_SHORT_APP_NAME } за допомогою вашого паролю ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {

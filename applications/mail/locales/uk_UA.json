@@ -1405,10 +1405,10 @@
         "${ price } за користувача"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } сидіння помічника з письма",
-        "${ seats } сидіння помічників з письма",
-        "${ seats } сидінь помічників з письма",
-        "${ seats } сидінь помічників з письма"
+        "Помічник з написання для ${ seats } користувача",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів"
       ],
       "${ users } user": [
         "${ users } користувач",
@@ -3649,7 +3649,7 @@
         "Сума перевищує обмеження."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Сума нижче найменшої (${ minimumAmount })."
+        "Сума нижче допустимої (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Під час завантаження параметрів псевдоніма сталася помилка"
@@ -3787,7 +3787,7 @@
         "Необхідно вказати адресу пересилання"
       ],
       "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Я не можу продовжити розгляд цього запиту через свої етичні принципи. Будь ласка, спробуйте інший запит."
+        "Я не можу обробити цей запит, оскільки він суперечить моїм настановам з етики. Будь ласка, спробуйте інший запит."
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -3955,7 +3955,7 @@
         "Проблема із завантаженням помічника з написання на ваш пристрій. Будь ласка, спробуйте ще раз."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Проблема з вивантаженням даних, які не потрібні, коли помічник із запису неактивний"
+        "Проблема з вивантаженням даних, які не потрібні, коли помічник з написання неактивний"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -5447,10 +5447,10 @@
         "${ currentProgress } з ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } розмова буде позначена як:",
-        "${ elementsCount } розмови буде позначено як:",
-        "${ elementsCount } розмов буде позначено як:",
-        "${ elementsCount } розмов буде позначено як:"
+        "${ elementsCount } розмову буде позначено міткою:",
+        "${ elementsCount } розмови будуть позначені міткою:",
+        "${ elementsCount } розмов будуть позначені міткою:",
+        "${ elementsCount } розмов будуть позначені міткою:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } розмову буде позначено прочитаною.",
@@ -5471,22 +5471,22 @@
         "${ elementsCount } розмов буде переміщено"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "З ${ elementsCount } розмови буде знята позначка:",
-        "З ${ elementsCount } розмов буде знята позначка:",
-        "З ${ elementsCount } розмов буде знята позначка",
-        "З ${ elementsCount } розмов буде знята позначка"
+        "З ${ elementsCount } розмови буде знято мітку:",
+        "З ${ elementsCount } розмов буде знято мітку:",
+        "З ${ elementsCount } розмов буде знято мітку:",
+        "З ${ elementsCount } розмов буде знято мітку:"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } повідомлення буде позначено як:",
-        "${ elementsCount } повідомлення буде позначено як:",
-        "${ elementsCount } повідомлень буде позначено як:",
-        "${ elementsCount } повідомлень буде позначено як:"
+        "${ elementsCount } повідомлення буде позначено міткою:",
+        "${ elementsCount } повідомлення будуть позначені міткою:",
+        "${ elementsCount } повідомлень будуть позначені міткою:",
+        "${ elementsCount } повідомлень будуть позначені міткою:"
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } повідомлення буде позначено як прочитане.",
-        "${ elementsCount } повідомлення будуть позначені як прочитані.",
-        "${ elementsCount } повідомлень будуть позначені як прочитані.",
-        "${ elementsCount } повідомлень будуть позначені як прочитані."
+        "${ elementsCount } повідомлення буде позначено прочитаним.",
+        "${ elementsCount } повідомлення будуть позначені прочитаними.",
+        "${ elementsCount } повідомлень будуть позначені прочитаними.",
+        "${ elementsCount } повідомлень будуть позначені прочитаними."
       ],
       "${ elementsCount } message will be marked as unread.": [
         "${ elementsCount } повідомлення буде позначено непрочитаним.",
@@ -5501,10 +5501,10 @@
         "${ elementsCount } повідомлень буде переміщено"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "З ${ elementsCount } повідомлення буде знято виділення:",
-        "З ${ elementsCount } повідомлень буде знято виділення:",
-        "З ${ elementsCount } повідомлень буде знято виділення:",
-        "З ${ elementsCount } повідомлень буде знято виділення:"
+        "З ${ elementsCount } повідомлення буде знято мітку:",
+        "З ${ elementsCount } повідомлень буде знято мітку:",
+        "З ${ elementsCount } повідомлень буде знято мітку:",
+        "З ${ elementsCount } повідомлень буде знято мітку:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } вбудоване зображення",
@@ -6630,9 +6630,9 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Вибрати ${ elementsCount } в ${ location }",
-        "Вибрати ${ elementsCount } в ${ location }",
-        "Вибрати ${ elementsCount } в ${ location }",
-        "Вибрати ${ elementsCount } в ${ location }"
+        "Вибрати всі ${ elementsCount } в ${ location }",
+        "Вибрати всі ${ elementsCount } в ${ location }",
+        "Вибрати всі ${ elementsCount } в ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
@@ -7276,8 +7276,8 @@
       "You selected **${ elementsCount } message** in ${ location }": [
         "Ви вибрали **${ elementsCount } повідомлення** в ${ location }",
         "Ви вибрали **${ elementsCount } повідомлення** в ${ location }",
-        "Ви вибрали **${ elementsCount } повідомлень** в ${ location }",
-        "Ви вибрали **${ elementsCount } повідомлень** в ${ location }"
+        "Ви вибрали **${ elementsCount } повідомлень** у ${ location }",
+        "Ви вибрали **${ elementsCount } повідомлень** у ${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "Ви вибрали **${ elementsCount } повідомлення**.",
