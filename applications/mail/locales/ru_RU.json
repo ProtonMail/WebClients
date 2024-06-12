@@ -10771,20 +10771,41 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }, включая возможность делиться календарем"
+      ],
       "${ dayDiff } day left": [
         "Остался ${ dayDiff } день",
         "Осталось ${ dayDiff } дня",
         "Осталось ${ dayDiff } дней",
         "Осталось ${ dayDiff } дней"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }, включая историю версий"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } и все платные функции для повышения производительности."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }, включая неограниченное количество псевдонимов hide-my-email"
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
       ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } превосходит базовые параметры, чтобы помочь вам повысить продуктивность и организованность, а также управлять своим почтовым ящиком, личными данными электронной почты и многим другим."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Программа ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } с доступом ко всем высокоскоростным серверам в странах ${ vpnCountries }"
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
@@ -10828,6 +10849,12 @@
       "Our fight against censorship in Russia": [
         "Наша борьба с цензурой в России"
       ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Обратите внимание, что ${ planName } больше нельзя приобрести. Если вы переведете свою учетную запись на более дешевую версию, вы потеряете все преимущества тарифа и не сможете подписаться на него повторно."
+      ],
+      "Premium productivity features": [
+        "Платные функции производительности"
+      ],
       "Priority support": [
         "Приоритетная поддержка"
       ],
@@ -10843,6 +10870,9 @@
       "Sync files on devices": [
         "Синхронизация файлов на устройствах"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "Лучшее от ${ BRAND_NAME }"
+      ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
       ],
@@ -10857,6 +10887,9 @@
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Ваша подписка на ${ planName } заканчивается в ${ expiryDate }. После этого вы перейдете на тариф ${ BRAND_NAME } Free. Если ваше потребление превышает лимиты бесплатного тарифов, вы можете получить ограниченный доступ к функциям продукта и своим данным. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Ваш собственный пользовательский домен электронной почты"

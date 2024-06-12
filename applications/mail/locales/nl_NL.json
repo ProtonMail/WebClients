@@ -1447,6 +1447,11 @@
         "${ BRAND_NAME }-applicaties"
       ]
     },
+    "Assistant option": {
+      "No logs": [
+        "Geen logboeken"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leeg ICS-bestand"
@@ -3669,6 +3674,9 @@
       "Draft could not be saved. Try again.": [
         "Concept kon niet worden opgeslagen. Probeer het opnieuw."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Door een fout kon de tekstgeneratie niet worden geannuleerd"
+      ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
@@ -3864,6 +3872,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Probleem bij het downloaden van de schrijfassistent. Probeer het opnieuw."
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -10340,6 +10351,11 @@
         "Upgraden"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } maand",
@@ -10684,6 +10700,9 @@
       ],
       "10 email addresses": [
         "10 e-mailadressen"
+      ],
+      "6 users": [
+        "6 gebruikers"
       ],
       "Calendar sharing": [
         "Agenda-delen"
