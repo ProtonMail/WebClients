@@ -562,12 +562,6 @@
       "Authentication error": [
         "Error d'autenticació"
       ],
-      "Auto-lock could not be activated": [
-        "No s'ha pogut activar el bloqueig automàtic"
-      ],
-      "Auto-lock could not be disabled": [
-        "No s'ha pogut desactivar el bloqueig automàtic"
-      ],
       "Could not leave vault.": [
         "No s'ha pogut deixar la cassa forta."
       ],
@@ -959,9 +953,6 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Està segur que vol moure l'element a \"${ name }\"?"
       ],
-      "Auto-lock successfully disabled": [
-        "El bloqueig automàtic s'ha desactivat."
-      ],
       "Breaches detected": [
         "S'han detectat infraccions"
       ],
@@ -1024,6 +1015,9 @@
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Habiliti ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -1132,9 +1126,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Carregant ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "S'està bloquejant la sessió..."
-      ],
       "Logging you out...": [
         "Desconnectant-vos..."
       ],
@@ -1210,14 +1201,8 @@
       "Please check your spam folder or try resending the code.": [
         "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirmeu el codi PIN per a desregistrar el bloqueig actual.\nAixí, ${ PASS_APP_NAME } no es bloquejarà mai."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirmeu el codi PIN per a acabar de registrar les preferències de bloqueig automàtic."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
@@ -1251,12 +1236,6 @@
       ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Configureu un codi PIN per a bloquejar fàcilment les dades"
-      ],
-      "Setting up offline mode...": [
-        "S'està configurant el mode fora de línia..."
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
@@ -1315,6 +1294,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Aquesta versió s'afegirà a l'historial com a versió més nova."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
@@ -1487,11 +1469,11 @@
       "Application logs": [
         "Registres de l'aplicació"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Bloqueja ${ PASS_APP_NAME } automàticament"
-      ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
+      ],
+      "Beta Access": [
+        "Accés beta"
       ],
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
@@ -1769,9 +1751,6 @@
       "Session locking": [
         "Bloqueig de la sessió"
       ],
-      "Set PIN code": [
-        "Establir codi PIN"
-      ],
       "Show website favicons": [
         "Mostra els favicons del lloc web"
       ],
@@ -1871,7 +1850,7 @@
         "Més informació"
       ],
       "stay safer online": [
-        "millorar la vostra seguretat en línia"
+        "estigueu més segur en línia"
       ]
     },
     "lobby: Info": {
