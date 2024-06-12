@@ -1,4 +1,5 @@
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DocumentMetaInterface } from '@proton/docs-shared'
 import { DocumentKeys, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { GetDocumentMeta } from './GetDocumentMeta'

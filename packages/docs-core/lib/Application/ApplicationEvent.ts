@@ -11,12 +11,12 @@ export type DocsClientSquashVerificationObjectionMadePayload = {
 }
 
 export type GeneralUserDisplayableErrorOccurredPayload = {
-  error: string
+  translatedError: string
 }
 
-export function PostApplicationError(eventBus: InternalEventBusInterface, error: string): void {
+export function PostApplicationError(eventBus: InternalEventBusInterface, params: { translatedError: string }): void {
   const payload: GeneralUserDisplayableErrorOccurredPayload = {
-    error,
+    translatedError: params.translatedError,
   }
   eventBus.publish({
     type: ApplicationEvent.GeneralUserDisplayableErrorOccurred,

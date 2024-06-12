@@ -1,10 +1,11 @@
 import { DecryptedNode, DriveCompat } from '@proton/drive-store'
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
 import { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
 import { GetDocumentMeta } from './GetDocumentMeta'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getErrorString } from '../Util/GetErrorString'
 import { PROTON_DOC_FILE_EXTENSION } from '@proton/docs-shared'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.

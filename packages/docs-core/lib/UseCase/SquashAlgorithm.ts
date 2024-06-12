@@ -1,4 +1,5 @@
-import { Result, UseCaseInterface } from '@standardnotes/domain-core'
+import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { Result } from '../Domain/Result/Result'
 import { DocumentUpdate } from '@proton/docs-proto'
 import { DecryptedMessage } from '../Models/DecryptedMessage'
 import { mergeUpdates } from 'yjs'
