@@ -1354,6 +1354,11 @@
         "${ BRAND_NAME }-applicaties"
       ]
     },
+    "Assistant toggle": {
+      "New": [
+        "Nieuw"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leeg ICS-bestand"
@@ -3138,6 +3143,9 @@
       "Are you sure you want to delete this address?": [
         "Weet u zeker dat u dit adres wil verwijderen?"
       ],
+      "Delete address": [
+        "Verwijder adres"
+      ],
       "Delete address permanently?": [
         "Adres definitief verwijderen?"
       ],
@@ -3167,6 +3175,9 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "Weet u zeker dat u dit domein wilt verwijderen?"
+      ],
+      "Delete": [
+        "Verwijderen"
       ]
     },
     "Delinquent modal title": {
@@ -5983,6 +5994,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -8375,17 +8397,6 @@
         "Zoom meeting"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Indien ingeschakeld, nemen submappen de kleur van de bovenliggende map over."
@@ -9940,6 +9951,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Kies ${ VPN_APP_NAME }"
+      ],
+      "Help": [
+        "Hulp"
       ],
       "Help translate": [
         "Help met vertalen"
@@ -13436,6 +13450,11 @@
         "Upgraden"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } maand",
@@ -13829,6 +13848,9 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "6 users": [
+        "6 gebruikers"
+      ],
       "Calendar sharing": [
         "Agenda-delen"
       ],
@@ -13870,6 +13892,9 @@
       ],
       "Priority support": [
         "Prioriteitsondersteuning"
+      ],
+      "Reactivate": [
+        "Opnieuw activeren"
       ],
       "Read the story": [
         "Lees het verhaal"
@@ -15106,6 +15131,9 @@
       ],
       "Processing...": [
         "Wordt verwerkt..."
+      ],
+      "Profile": [
+        "Profiel"
       ],
       "Recommended": [
         "Aanbevolen"

@@ -1395,8 +1395,14 @@
       "Faster, broader device compatibility": [
         "Raskere, bredere enhetskompatibilitet"
       ],
+      "No data transmitted while using,requires one-time download": [
+        "Ingen data overføres under bruk, krever engangsnedlasting"
+      ],
       "Run locally": [
         "Kjør lokalt"
+      ],
+      "Run on servers": [
+        "Kjør på tjenere"
       ]
     },
     "Assistant toggle": {
@@ -1409,8 +1415,20 @@
       "Active until ${ subscriptionRenewalDate }": [
         "Aktiv til ${ subscriptionRenewalDate }"
       ],
+      "Add writing assistant": [
+        "Legg til skriveassistent"
+      ],
+      "Add writing assistant to your plan": [
+        "Legg til skriveassistent i planen din"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Tilordne den til bestemte brukere i ${ userAndAddressesButton }"
+      ],
       "Automatically renews on ${ subscriptionRenewalDate }": [
         "Fornyes automatisk den ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Avbryt skriveassistenttillegget"
       ],
       "Customize plan": [
         "Tilpass plan"
@@ -1424,8 +1442,14 @@
       "Renew subscription": [
         "Forny abonnement"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine. ${ learnMore }."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Prøveversjon utløper den ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Prøveversjon pågår"
       ]
     },
     "Attached ics file error": {
@@ -6101,6 +6125,17 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -6564,6 +6599,9 @@
       "Browser not supported": [
         "Nettleser ikke støttet"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan organisasjonsmedlemmer bare eksportere hvelv der de er eiere. Hvis dette alternativet er aktivert, kan de ikke eksportere noe data"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -6978,6 +7016,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel tilbakestilling av passord, kan du hindre meldingen fra å vises igjen"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Hvis dette alternativet er aktivert, kan organisasjonsmedlemmer bare dele hvelv innen organisasjonen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
@@ -7680,6 +7721,9 @@
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-innsending tillater 3-partstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, vennligst ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
       ],
@@ -8334,6 +8378,9 @@
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Du kan definere retningslinjene for ${ PASS_APP_NAME } for organisasjonsmedlemmene."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
@@ -8560,17 +8607,6 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9344,6 +9380,12 @@
       ],
       "Disable animations": [
         "Deaktiver animasjoner"
+      ],
+      "Disable data export for organization members": [
+        "Deaktiver dataeksport for organisasjonsmedlemmer"
+      ],
+      "Disable sharing outside the organization.": [
+        "Deaktiver deling utenfor organisasjonen."
       ],
       "Display name": [
         "Visningsnavn"
@@ -11016,6 +11058,9 @@
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
       ],
+      "Generate emails with only a prompt": [
+        "Generer e-postmeldinger med bare en ledetekst"
+      ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
@@ -11080,12 +11125,18 @@
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
       ],
+      "Proofread and refine your texts": [
+        "Korrekturles og finjuster tekstene dine"
+      ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmessige kontroller av kontosikkerheten din. Vi varsler deg hvis du har svake eller gjenbrukte passord som må oppdateres."
+      ],
+      "Reply to messages": [
+        "Svar på meldinger"
       ],
       "Require 2FA for organization": [
         "Krev 2FA for organisasjonen"
@@ -13772,6 +13823,11 @@
         "Oppgrader"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Oppgrader"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } måned",
@@ -15569,8 +15625,14 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
+      "Personalise your e-mail footer": [
+        "Tilpass bunnteksten i e-post"
+      ],
       "Phone": [
         "Telefon"
+      ],
+      "Policies": [
+        "Retningslinjer"
       ],
       "Preview": [
         "Forhåndsvis"

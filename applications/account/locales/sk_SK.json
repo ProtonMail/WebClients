@@ -3201,7 +3201,7 @@
         "Vymazať adresu?"
       ],
       "Once deleted, this address ${ address } can't be used again by anyone else.": [
-        "Po vymazaní adresu ${ address } už nikto iný nebude môcť použiť."
+        "Po vymazaní už nikto nebude môcť adresu ${ address } použiť."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Berte prosím na vedomie, že ak odstránite adresu ${ address }, nebudete už môcť odosielať, ani prijímať emaily pomocou tejto adresy."
@@ -3348,7 +3348,7 @@
         "Naozaj chcete deaktivovať túto adresu?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
-        "Deaktiváciou tejto adresy ${ address } už nebudete môcť odosielať ani prijímať emaily pomocou tejto adresy a všetky prepojené produkty ${ BRAND_NAME } budú deaktivované."
+        "Deaktiváciou tejto adresy ${ address } už nebudete môcť odosielať ani prijímať emaily z tejto adresy a všetky prepojené ${ BRAND_NAME } produkty budú deaktivované."
       ],
       "Disable address": [
         "Deaktivovať adresu"
@@ -6122,6 +6122,17 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -8332,10 +8343,10 @@
         "Keď si predplatia plán, získate kredity, ktoré môžete použiť na svoje predplatné."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Keď zrušíte svoje aktuálne platené predplatné, zostatok vášho predplatného sa vráti ako kredity na účet a dôjde k presunu do ${ BRAND_NAME } ${ PLANS.FREE } plan."
+        "Keď zrušíte svoje aktuálne platené predplatné, zostatok vášho predplatného sa vráti ako kredity na účet a dôjde k zníženiu na ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plan."
+        "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
@@ -8645,17 +8656,6 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9437,7 +9437,7 @@
         "Zobrazované meno"
       ],
       "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tým?"
+        "Máte nejaké návrhy pre náš tím?"
       ],
       "Domain": [
         "Doména"
@@ -10015,7 +10015,7 @@
     },
     "label": {
       "Device-based recovery": [
-        "Obnovenie na základe používaného zariadenia"
+        "Obnova na základe zariadenia"
       ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
@@ -14397,7 +14397,7 @@
         "${ planName } vám pomôže zabezpečiť ochranu každého člena vašej rodiny a jeho údajov vždy, keď je online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } ponúka ${ planMaxSpace } úložného priestoru na vaše emaily, prílohy, udalosti, heslá a súbory. Máte tiež nárok na každoročný bonusový priestor na úložisku."
+        "${ planName } ponúka ${ planMaxSpace } úložného priestoru pre vaše emaily, prílohy, udalosti, heslá a súbory. Máte tiež nárok na každoročný bonusový priestor úložiska."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } ponúka ${ planMaxSpace } úložiska pre vaše súbory a fotografie. Máte tiež nárok na každoročný bonusový priestor na úložisku."
@@ -14415,7 +14415,7 @@
         "6 používateľov"
       ],
       "Add any new files": [
-        "Pridávať akékoľvek nové súbory"
+        "Pridávať žiadne nové súbory"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
@@ -14556,10 +14556,10 @@
         "Vaše predplatné ${ planName } bolo zrušené."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš plán na ${ BRAND_NAME } zmení Free plan. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink }"
+        "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš ${ BRAND_NAME } zmení na bezplatný plán. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš plán na ${ BRAND_NAME } zmení Free plan. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink } ${ unavailablePlan }"
+        "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš ${ BRAND_NAME } plán zmení na bezplatný plán. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Vaša vlastná emailová doména"
