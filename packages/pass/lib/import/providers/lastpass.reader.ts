@@ -11,7 +11,13 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import { type LastPassItem, LastPassNoteType } from './lastpass.types';
 
@@ -32,11 +38,11 @@ const getFieldValue = (extra: LastPassItem['extra'], key: string) => {
     return match && match[1];
 };
 
-const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
+const processLoginItem = (item: LastPassItem, importUsername?: boolean): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.extra,
-        username: item.username,
+        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
         password: item.password,
         urls: [item.url],
         totp: item.totp,
@@ -69,7 +75,13 @@ const processCreditCardItem = (item: LastPassItem): ItemImportIntent<'creditCard
         expirationDate: getCCExpirationDate(item.extra),
     });
 
-export const readLastPassData = async (data: string): Promise<ImportPayload> => {
+export const readLastPassData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -103,7 +115,7 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
                     items: items
                         .map((item) => {
                             const isNote = item.url === 'http://sn';
-                            if (!isNote) return processLoginItem(item);
+                            if (!isNote) return processLoginItem(item, importUsername);
 
                             const noteType = getFieldValue(item.extra, 'NoteType');
 

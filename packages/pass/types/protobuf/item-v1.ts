@@ -100,9 +100,9 @@ export interface Passkey {
  */
 export interface ItemLogin {
     /**
-     * @generated from protobuf field: string username = 1;
+     * @generated from protobuf field: string item_email = 1;
      */
-    username: string;
+    itemEmail: string;
     /**
      * @generated from protobuf field: string password = 2;
      */
@@ -119,6 +119,10 @@ export interface ItemLogin {
      * @generated from protobuf field: repeated proton_pass_item_v1.Passkey passkeys = 5;
      */
     passkeys: Passkey[];
+    /**
+     * @generated from protobuf field: string item_username = 6;
+     */
+    itemUsername: string;
 }
 /**
  * @generated from protobuf message proton_pass_item_v1.ItemAlias
@@ -607,20 +611,22 @@ export const Passkey = new Passkey$Type();
 class ItemLogin$Type extends MessageType<ItemLogin> {
     constructor() {
         super('proton_pass_item_v1.ItemLogin', [
-            { no: 1, name: 'username', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 1, name: 'item_email', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: 'password', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: 'urls', kind: 'scalar', repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: 'totp_uri', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: 'passkeys', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => Passkey },
+            { no: 6, name: 'item_username', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
         ]);
     }
     create(value?: PartialMessage<ItemLogin>): ItemLogin {
         const message = globalThis.Object.create(this.messagePrototype!);
-        message.username = '';
+        message.itemEmail = '';
         message.password = '';
         message.urls = [];
         message.totpUri = '';
         message.passkeys = [];
+        message.itemUsername = '';
         if (value !== undefined) reflectionMergePartial<ItemLogin>(this, message, value);
         return message;
     }
@@ -635,8 +641,8 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string username */ 1:
-                    message.username = reader.string();
+                case /* string item_email */ 1:
+                    message.itemEmail = reader.string();
                     break;
                 case /* string password */ 2:
                     message.password = reader.string();
@@ -649,6 +655,9 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
                     break;
                 case /* repeated proton_pass_item_v1.Passkey passkeys */ 5:
                     message.passkeys.push(Passkey.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* string item_username */ 6:
+                    message.itemUsername = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -664,8 +673,8 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
         return message;
     }
     internalBinaryWrite(message: ItemLogin, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string username = 1; */
-        if (message.username !== '') writer.tag(1, WireType.LengthDelimited).string(message.username);
+        /* string item_email = 1; */
+        if (message.itemEmail !== '') writer.tag(1, WireType.LengthDelimited).string(message.itemEmail);
         /* string password = 2; */
         if (message.password !== '') writer.tag(2, WireType.LengthDelimited).string(message.password);
         /* repeated string urls = 3; */
@@ -679,6 +688,8 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
                 writer.tag(5, WireType.LengthDelimited).fork(),
                 options
             ).join();
+        /* string item_username = 6; */
+        if (message.itemUsername !== '') writer.tag(6, WireType.LengthDelimited).string(message.itemUsername);
         let u = options.writeUnknownFields;
         if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
         return writer;

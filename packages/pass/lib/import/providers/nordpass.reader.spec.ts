@@ -15,13 +15,13 @@ describe('Import NordPass csv', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/nordpass.csv', 'utf8');
-        payload = await readNordPassData(sourceData);
+        payload = await readNordPassData({ data: sourceData, importUsername: true });
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readNordPassData('not-a-csv-file')).rejects.toThrow();
+        await expect(readNordPassData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
     });
 
     it('converts NordPass folders to vaults correctly', () => {
@@ -40,7 +40,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('nobody');
         expect(loginItem1.metadata.note).toEqual('Secure note');
-        expect(loginItem1.content.username).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemEmail).toEqual('');
+        expect(loginItem1.content.itemUsername).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
         expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
 
@@ -70,7 +71,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Admin');
         expect(loginItem2.metadata.note).toEqual('');
-        expect(loginItem2.content.username).toEqual('admin');
+        expect(loginItem2.content.itemEmail).toEqual('');
+        expect(loginItem2.content.itemUsername).toEqual('admin');
         expect(loginItem2.content.password).toEqual('proton123');
         expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
 
@@ -79,7 +81,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('Twitter');
         expect(loginItem3.metadata.note).toEqual('This is a twitter note');
-        expect(loginItem3.content.username).toEqual('@nobody');
+        expect(loginItem3.content.itemEmail).toEqual('');
+        expect(loginItem3.content.itemUsername).toEqual('@nobody');
         expect(loginItem3.content.password).toEqual('proton123');
         expect(loginItem3.content.urls[0]).toEqual('https://twitter.com/login');
         expect(loginItem3.content.totpUri).toEqual('');
@@ -89,7 +92,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.name).toEqual('fb.com');
         expect(loginItem4.metadata.note).toEqual('');
-        expect(loginItem4.content.username).toEqual('@nobody');
+        expect(loginItem4.content.itemEmail).toEqual('');
+        expect(loginItem4.content.itemUsername).toEqual('@nobody');
         expect(loginItem4.content.password).toEqual('proton123');
         expect(loginItem4.content.urls[0]).toEqual('https://fb.com/login');
         expect(loginItem4.content.totpUri).toEqual('');
@@ -99,7 +103,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem5.type).toEqual('login');
         expect(loginItem5.metadata.name).toEqual('htts');
         expect(loginItem5.metadata.note).toEqual('');
-        expect(loginItem5.content.username).toEqual('');
+        expect(loginItem5.content.itemEmail).toEqual('');
+        expect(loginItem5.content.itemUsername).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls).toEqual([]);
     });

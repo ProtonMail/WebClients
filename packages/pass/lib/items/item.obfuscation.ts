@@ -37,7 +37,8 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: UnsafeItem): 
                 ...base,
                 content: {
                     ...item.content,
-                    username: obfuscate(item.content.username),
+                    itemEmail: obfuscate(item.content.itemEmail),
+                    itemUsername: obfuscate(item.content.itemUsername),
                     password: obfuscate(item.content.password),
                     totpUri: obfuscate(item.content.totpUri),
                 },
@@ -74,7 +75,8 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> =
                 ...base,
                 content: {
                     ...item.content,
-                    username: deobfuscate(item.content.username),
+                    itemEmail: deobfuscate(item.content.itemEmail),
+                    itemUsername: deobfuscate(item.content.itemUsername),
                     password: deobfuscate(item.content.password),
                     totpUri: deobfuscate(item.content.totpUri),
                 },

@@ -10,6 +10,7 @@ export enum PassFeature {
     PassRemovePrimaryVault = 'PassRemovePrimaryVault',
     PassSharingNewUsers = 'PassSharingNewUsers',
     PassSharingV1 = 'PassSharingV1',
+    PassUsernameSplit = 'PassUsernameSplit',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
 }

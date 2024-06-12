@@ -34,11 +34,12 @@ const NORDPASS_EXPECTED_HEADERS: (keyof NordPassItem)[] = [
     'type',
 ];
 
-const processLoginItem = (item: NordPassItem): ItemImportIntent<'login'> =>
+const processLoginItem = (item: NordPassItem, importUsername?: boolean): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.note,
-        username: item.username,
+        email: item.email,
+        username: importUsername ? item.username : '',
         password: item.password,
         urls: [item.url],
     });
@@ -65,7 +66,13 @@ const processCreditCardItem = (item: NordPassItem): ItemImportIntent<'creditCard
     });
 };
 
-export const readNordPassData = async (data: string): Promise<ImportPayload> => {
+export const readNordPassData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -91,7 +98,7 @@ export const readNordPassData = async (data: string): Promise<ImportPayload> => 
                                 case NordPassType.CREDIT_CARD:
                                     return processCreditCardItem(item);
                                 case NordPassType.LOGIN:
-                                    return processLoginItem(item);
+                                    return processLoginItem(item, importUsername);
                                 case NordPassType.NOTE:
                                     return processNoteItem(item);
                                 default:
