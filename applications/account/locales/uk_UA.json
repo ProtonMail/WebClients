@@ -1228,10 +1228,10 @@
         "${ price } за користувача"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } сидіння помічника з письма",
-        "${ seats } сидіння помічників з письма",
-        "${ seats } сидінь помічників з письма",
-        "${ seats } сидінь помічників з письма"
+        "Помічник з написання для ${ seats } користувача",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів"
       ],
       "${ users } user": [
         "${ users } користувач",
@@ -3916,7 +3916,7 @@
         "Сума перевищує обмеження."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Сума нижче найменшої (${ minimumAmount })."
+        "Сума нижче допустимої (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -6067,6 +6067,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
       ]
     },
     "Info": {
@@ -8565,17 +8576,6 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {

@@ -1935,6 +1935,9 @@
       "Delete address?": [
         "Удалить адрес?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "После удаления этот адрес ${ address } больше не может быть никем использован."
+      ],
       "You can only delete 1 address per year.": [
         "Вы можете удалить только 1 адрес в год."
       ]
@@ -1966,6 +1969,20 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Вы уверены, что хотите отключить этот адрес?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Отключив этот адрес ${ address }, вы больше не сможете отправлять и получать электронные письма, используя этот адрес, а все связанные с ним продукты ${ BRAND_NAME } будут отключены."
+      ],
+      "Disable address": [
+        "Выключить адрес"
+      ],
+      "Disable address?": [
+        "Отключить адрес?"
       ]
     },
     "Domain label": {
@@ -2488,6 +2505,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Приглашение будет отменено, и пользователь не сможет присоединиться к ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
@@ -3646,6 +3666,9 @@
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Пароль должен состоять из ${ MIN_PASSWORD_LENGTH } или более символов."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
@@ -6228,6 +6251,9 @@
       ]
     },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Для загрузки перетащите сюда файл с изображением или"
+      ],
       "File in PNG or JPEG format": [
         "Файл в формате PNG или JPEG"
       ],
@@ -6413,8 +6439,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Используйте метод восстановления данных, обратитесь к другому администратору или сбросьте ключ организации, чтобы восстановить права администратора."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Мы не смогли проверить подлинность этих личных данных"
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не смогли проверить безопасность ключа адреса этого отправителя. Иногда бывает задержка обновления информации об отправителе. Повторите попытку позже. Если вы не доверяете достоверности этого приглашения или отправителя, обратитесь в Службу Поддержки ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Мы проверили подлинность этих личных данных."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Мы проверили подлинность этого отправителя и приглашения."
@@ -6722,6 +6754,9 @@
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Если вы потеряли или забыли токен SCIM, вы можете сгенерировать новый, но имейте в виду, что настройки поставщика личных данных придется обновить."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Чтобы снова включить синхронизацию с поставщиком личных данных, необходимо снова завершить интеграцию SCIM."
       ]
     },
     "scim: Label": {
@@ -7488,20 +7523,41 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }, включая возможность делиться календарем"
+      ],
       "${ dayDiff } day left": [
         "Остался ${ dayDiff } день",
         "Осталось ${ dayDiff } дня",
         "Осталось ${ dayDiff } дней",
         "Осталось ${ dayDiff } дней"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }, включая историю версий"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } и все платные функции для повышения производительности."
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }, включая неограниченное количество псевдонимов hide-my-email"
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
       ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } превосходит базовые параметры, чтобы помочь вам повысить продуктивность и организованность, а также управлять своим почтовым ящиком, личными данными электронной почты и многим другим."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Программа ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } с доступом ко всем высокоскоростным серверам в странах ${ vpnCountries }"
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
@@ -7560,6 +7616,12 @@
       "Our fight against censorship in Russia": [
         "Наша борьба с цензурой в России"
       ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Обратите внимание, что ${ planName } больше нельзя приобрести. Если вы переведете свою учетную запись на более дешевую версию, вы потеряете все преимущества тарифа и не сможете подписаться на него повторно."
+      ],
+      "Premium productivity features": [
+        "Платные функции производительности"
+      ],
       "Priority support": [
         "Приоритетная поддержка"
       ],
@@ -7581,6 +7643,9 @@
       "Sync files on devices": [
         "Синхронизация файлов на устройствах"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "Лучшее от ${ BRAND_NAME }"
+      ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
       ],
@@ -7598,6 +7663,9 @@
       ],
       "Your ${ planName } has been canceled.": [
         "Ваш ${ planName } был отменен."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Ваша подписка на ${ planName } заканчивается в ${ expiryDate }. После этого вы перейдете на тариф ${ BRAND_NAME } Free. Если ваше потребление превышает лимиты бесплатного тарифов, вы можете получить ограниченный доступ к функциям продукта и своим данным. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Ваш собственный пользовательский домен электронной почты"

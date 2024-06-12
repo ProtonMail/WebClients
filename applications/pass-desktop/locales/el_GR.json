@@ -576,12 +576,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να προχωρήσετε στην εξαγωγή"
       ],
-      "Auto-lock could not be activated": [
-        "Δεν ήταν δυνατή η ενεργοποίηση του αυτόματου κλειδώματος"
-      ],
-      "Auto-lock could not be disabled": [
-        "Δεν ήταν δυνατή η απενεργοποίηση του αυτόματου κλειδώματος"
-      ],
       "Cannot send invitation at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
         "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
@@ -986,9 +980,6 @@
       "Admin": [
         "Διαχειριστής"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Μετά την αδράνεια, η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
@@ -1027,9 +1018,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
-      ],
-      "Auto-lock successfully disabled": [
-        "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
       ],
       "Breaches detected": [
         "Εντοπίστηκαν παραβιάσεις"
@@ -1102,6 +1090,9 @@
       ],
       "Emptying trash...": [
         "Άδειασμα διαγραμμένων..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Ενεργοποίηση ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
@@ -1238,9 +1229,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Φόρτωση ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Κλείδωμα της συνεδρίας σας..."
-      ],
       "Logging you out...": [
         "Αποσύνδεση..."
       ],
@@ -1338,14 +1326,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Επιβεβαιώστε τον κωδικό PIN σας για να καταργήσετε την καταχώρηση της τρέχουσας κλειδαριάς σας.\n${ PASS_APP_NAME } τότε δε θα κλειδώσει ποτέ."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Επιβεβαιώστε τον κωδικό PIN για να επεξεργαστείτε αυτήν τη ρύθμιση."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Επιβεβαιώστε τον κωδικό PIN για να ολοκληρώσετε την καταχώρηση των ρυθμίσεων αυτόματου κλειδώματος."
       ],
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
@@ -1397,12 +1379,6 @@
       ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Ρυθμίστε έναν κωδικό PIN για εύκολο κλείδωμα των δεδομένων σας"
-      ],
-      "Setting up offline mode...": [
-        "Ρύθμιση λειτουργίας εκτός σύνδεσης..."
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
@@ -1473,6 +1449,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο Pass στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
@@ -1651,11 +1630,11 @@
       "Application logs": [
         "Αρχείο καταγραφών"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Αυτόματο κλείδωμα ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"
+      ],
+      "Beta Access": [
+        "Πρόσβαση Beta"
       ],
       "Capital letters (A-Z)": [
         "Κεφαλαία γράμματα (A-Z)"
@@ -1933,9 +1912,6 @@
       "Session locking": [
         "Κλείδωμα περιόδου λειτουργίας"
       ],
-      "Set PIN code": [
-        "Ορισμός κωδικού PIN"
-      ],
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
       ],
@@ -2044,9 +2020,6 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
       ]
     },
     "lobby: Title": {

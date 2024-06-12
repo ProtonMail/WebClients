@@ -573,12 +573,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein ${ BRAND_NAME }-Passwort, um mit dem Export fortzufahren."
       ],
-      "Auto-lock could not be activated": [
-        "Automatisches Sperren konnte nicht aktiviert werden."
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatisches Sperren konnte nicht deaktiviert werden."
-      ],
       "Cannot send invitation at the moment": [
         "Einladung kann aktuell nicht versendet werden",
         "Einladungen können derzeit nicht versendet werden"
@@ -958,9 +952,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Nach Inaktivität ist für den Zugriff auf ${ PASS_APP_NAME } ein PIN-Code erforderlich, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
       ],
@@ -999,9 +990,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bist du sicher, dass du den Eintrag nach \"${ name }\" verschieben willst?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatisches Sperren erfolgreich deaktiviert."
       ],
       "Breaches detected": [
         "Datenlecks entdeckt"
@@ -1210,9 +1198,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird geladen"
       ],
-      "Locking your session...": [
-        "Sitzung wird gesperrt..."
-      ],
       "Logging you out...": [
         "Du wirst abgemeldet..."
       ],
@@ -1307,14 +1292,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben.\n${ PASS_APP_NAME } wird dann nicht mehr gesperrt."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Bitte bestätige deinen PIN-Code, um diese Einstellung zu bearbeiten."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Bitte bestätige deinen PIN-Code, um die Registrierung der Einstellungen für die automatische Sperre abzuschließen."
       ],
       "Please consider leaving a review.": [
         "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
@@ -1366,12 +1345,6 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Richte einen PIN-Code zum einfachen Sperren deiner Daten ein."
-      ],
-      "Setting up offline mode...": [
-        "Offline-Modus wird eingerichtet..."
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
@@ -1619,9 +1592,6 @@
       ],
       "Application logs": [
         "Anwendungsprotokolle"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } automatisch sperren"
       ],
       "Auto-lock after": [
         "Automatisch sperren nach"
@@ -1905,9 +1875,6 @@
       "Session locking": [
         "Sperren der Sitzung"
       ],
-      "Set PIN code": [
-        "PIN-Code festlegen"
-      ],
       "Show website favicons": [
         "Website-Symbole anzeigen"
       ],
@@ -2016,9 +1983,6 @@
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Du bist derzeit offline. Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort."
       ]
     },
     "lobby: Title": {

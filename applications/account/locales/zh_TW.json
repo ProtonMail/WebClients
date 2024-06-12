@@ -5886,6 +5886,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -8134,6 +8145,12 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "您的瀏覽器不支援運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行或下載 ${ MAIL_APP_NAME } 桌面應用程式。"
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "您的瀏覽器無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -8145,6 +8162,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "您的硬體無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
@@ -8190,17 +8210,6 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {

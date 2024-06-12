@@ -478,7 +478,7 @@
         "Esqueceu sua senha?"
       ],
       "Formalize": [
-        "Formal"
+        "Formalizar"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
@@ -1284,7 +1284,7 @@
         "Usar código de recuperação"
       ],
       "Use this": [
-        "Usar esse"
+        "Usar este"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use o mouse para redimensionar a visualização. Se estiver usando o teclado, você pode usar as teclas de seta para a esquerda e para a direita para redimensionar."
@@ -1422,8 +1422,8 @@
         "${ price } por usuário"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } assento de assistente de escrita",
-        "${ seats } assentos de assistente de escrita"
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } usuário",
@@ -3380,6 +3380,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para prevenir a perda de acesso à sua conta."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Para continuar usando o assistente de escrita, adicione-o à sua assinatura."
+      ],
       "To continue to use the writing assistant, request access from your admin.": [
         "Para continuar usando o assistente de escrita, solicite acesso ao seu administrador."
       ],
@@ -3700,7 +3703,7 @@
         "Quantidade acima do máximo."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Valor total abaixo do mínimo (${ minimumAmount })."
+        "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
@@ -3781,7 +3784,7 @@
         "Não foi possível salvar o rascunho. Tente novamente."
       ],
       "Due to an error, text generation couldn’t be canceled": [
-        "Devido algum erro, a geração do texto não pode ser cancelada"
+        "Devido a um erro, não foi possível cancelar a geração de texto"
       ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
@@ -6142,7 +6145,7 @@
         "Incluir Spam/Lixeira."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Inclua seu prompt e a resposta para ajudar a melhorar a precisão."
+        "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6428,7 +6431,7 @@
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please share what you expected": [
-        "Compartilhe o que esperava"
+        "Por favor, compartilhe o que você esperava"
       ],
       "Please try again in a few moments": [
         "Por favor, tente novamente em alguns instantes"
@@ -6585,7 +6588,7 @@
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Shorten selection": [
-        "Encutar seleção"
+        "Encurtar seleção"
       ],
       "Shorten text": [
         "Encurtar texto"
@@ -6633,7 +6636,7 @@
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle }."
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -6691,7 +6694,7 @@
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
       "The writing assistant needs to finish downloading before it can be used.": [
-        "O assistente de escrita precisa terminar de baixar antes que possa ser usado."
+        "O assistente de escrita precisa terminar o download antes de poder ser usado."
       ],
       "Themes can give your inbox a new look.": [
         "Os temas podem dar uma nova aparência à sua caixa de entrada."
@@ -7032,10 +7035,10 @@
         "Assistente de escrita"
       ],
       "Writing assistant add-on": [
-        "Complemento de assistente de escrita"
+        "Extensão do assistente de escrita"
       ],
       "writing assistant iframe": [
-        "Iframe de assistente de escrita"
+        "iframe do assistente de escrita"
       ],
       "Yearly": [
         "Anualmemnte"
@@ -7170,6 +7173,9 @@
       "You selected **${ elementsCount } message**.": [
         "Você selecionou **${ elementsCount } mensagem**.",
         "Você selecionou **${ elementsCount } mensagens**."
+      ],
+      "You selected some content:": [
+        "Você selecionou algum conteúdo:"
       ],
       "You will lose access to Plus features on this date.": [
         "Você perderá o acesso aos recursos do Plus nessa data."
@@ -9593,7 +9599,7 @@
         "Remetentes bloqueados"
       ],
       "The writing assistant is ready to use": [
-        "O assistente de escrita está pronto para uso."
+        "O assistente de escrita está pronto para uso"
       ],
       "Trial started": [
         "Avaliação iniciada"
@@ -10676,6 +10682,11 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]

@@ -575,12 +575,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli pokračovať v exporte"
       ],
-      "Auto-lock could not be activated": [
-        "Automatické uzamknutie nebolo možné aktivovať"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatické uzamknutie nebolo možné deaktivovať"
-      ],
       "Cannot send invitation at the moment": [
         "Momentálne nie je možné odoslať pozvánku",
         "Momentálne nie je možné odoslať pozvánky",
@@ -984,9 +978,6 @@
       "Admin": [
         "Správca"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Po nečinnosti bude prístup k ${ PASS_APP_NAME } vyžadovať PIN kód na odomknutie relácie. Po 3 neúspešných pokusoch budete odhlásení."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
@@ -1025,9 +1016,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Naozaj chcete presunúť položku do \"${ name }\" ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatické uzamknutie bolo úspešne deaktivované"
       ],
       "Breaches detected": [
         "Zistený únik"
@@ -1242,9 +1230,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Načítanie ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Uzamykanie relácie..."
-      ],
       "Logging you out...": [
         "Odhlasovanie..."
       ],
@@ -1341,14 +1326,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Potvrďte svoj PIN kód pre zrušenie registrácie aktuálneho zámku.\n${ PASS_APP_NAME } sa už potom nebude zamykať."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Potvrďte váš PIN kód na úpravu tohto nastavenia"
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Potvrdením PIN kódu dokončite registráciu nastavení automatického uzamykania."
       ],
       "Please consider leaving a review.": [
         "Zvážte napísanie recenzie, prosím."
@@ -1400,12 +1379,6 @@
       ],
       "Session timed out": [
         "Relácia vypršala"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Nastavte si PIN kód na jednoduché uzamknutie údajov"
-      ],
-      "Setting up offline mode...": [
-        "Nastavenie offline režimu..."
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
@@ -1663,9 +1636,6 @@
       ],
       "Application logs": [
         "Záznamy aplikácie"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Automatické uzamknutie ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
         "Automatické uzamknutie po"
@@ -1949,9 +1919,6 @@
       "Session locking": [
         "Uzamknutie relácie"
       ],
-      "Set PIN code": [
-        "Nastaviť PIN kód"
-      ],
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
       ],
@@ -2060,9 +2027,6 @@
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Momentálne ste offline. Odomknite ${ PASS_SHORT_APP_NAME } pomocou svojho ${ BRAND_NAME } hesla"
       ]
     },
     "lobby: Title": {

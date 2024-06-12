@@ -6125,6 +6125,17 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -6587,6 +6598,9 @@
       ],
       "Browser not supported": [
         "Le navigateur n'est pas pris en charge."
+      ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Par défaut, les membres de l'organisation peuvent uniquement exporter les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter des données."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -8318,7 +8332,7 @@
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Writing assistant": [
-        "Assistant d'écriture"
+        "Assistant à la rédaction"
       ],
       "Writing assistant add-on": [
         "Extension Assistant d'écriture"
@@ -8584,17 +8598,6 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -11101,12 +11104,18 @@
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
       ],
+      "Proofread and refine your texts": [
+        "Relisez et peaufinez vos textes."
+      ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
+      ],
+      "Reply to messages": [
+        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -15577,6 +15586,9 @@
       ],
       "Phone": [
         "Téléphone"
+      ],
+      "Policies": [
+        "Politiques"
       ],
       "Preview": [
         "Aperçu"

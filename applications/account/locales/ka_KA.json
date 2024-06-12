@@ -839,6 +839,9 @@
       "Revoke this invitation": [
         "ამ მოსაწვევის გაუქმება"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -1212,6 +1215,10 @@
       "${ price } per user": [
         "${ price }/მომხმარებელი"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } წერის დამხმარის ლიცენზია",
+        "${ seats } წერის დამხმარის ლიცენზია"
+      ],
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
@@ -1353,6 +1360,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-ის აპლიკაციები"
+      ]
+    },
+    "Assistant option": {
+      "Run locally": [
+        "ლოკალურად გაშვება"
       ]
     },
     "Attached ics file error": {
@@ -5520,6 +5532,9 @@
       "Folders": [
         "საქაღალდეები"
       ],
+      "Hardware not compatible": [
+        "აპარატურა თავსებადი არაა"
+      ],
       "IP address": [
         "IP მისამართი"
       ],
@@ -6001,6 +6016,17 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6448,6 +6474,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "გამომგზავნის დაბლოკვა დაინახოს, თუ და როდის გახსენით შეტყობინება."
+      ],
+      "Browser not supported": [
+        "ბრაუზერი მხარდაუჭერელია"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -8103,6 +8132,12 @@
       "Would you like to receive a new verification code?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება?"
       ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant add-on": [
+        "წერაში დამხმარის დამატება"
+      ],
       "Yearly": [
         "წლიურად"
       ],
@@ -8346,17 +8381,6 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10825,15 +10849,24 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Proofread and refine your texts": [
+        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
+      ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Reply to messages": [
+        "პასუხი შეტყობინებებზე"
       ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
+      ],
+      "Save time emailing": [
+        "დაზოგეთ ელფოსტის წერის დრო"
       ],
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
@@ -11474,6 +11507,9 @@
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
+      ],
+      "Trial started": [
+        "საცდელი პერიოდი დაიწყო"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "2FA ავთენტიკაცია აუცილებელია ადმინისტრატორებისთვის"

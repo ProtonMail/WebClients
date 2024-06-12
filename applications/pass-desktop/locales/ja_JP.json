@@ -549,12 +549,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "認証に失敗しました。エクスポートを続行するには、あなたの${ BRAND_NAME }パスワードを確認してください。"
       ],
-      "Auto-lock could not be activated": [
-        "自動ロックを有効に出来ませんでした"
-      ],
-      "Auto-lock could not be disabled": [
-        "自動ロックを無効化出来ませんでした"
-      ],
       "Cannot send invitation at the moment": [
         "現在招待を送ることができません"
       ],
@@ -947,9 +941,6 @@
       "Admin": [
         "管理者"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "一定時間操作されないと、 ${ PASS_APP_NAME } へのアクセスにセッションのロックを解除する PIN コードが必要になります。3 回の間違えるとログアウトします。"
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
@@ -988,9 +979,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "項目を「${ name }」に移動してもよろしいですか?"
-      ],
-      "Auto-lock successfully disabled": [
-        "自動ロックを無効にしました"
       ],
       "Breaches detected": [
         "侵害が検出されました"
@@ -1063,6 +1051,9 @@
       ],
       "Emptying trash...": [
         "ごみ箱を空にしています..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } ベータ版を有効にする"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -1193,9 +1184,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を読み込み中"
       ],
-      "Locking your session...": [
-        "セッションをロックしています…"
-      ],
       "Logging you out...": [
         "ユーザーをログアウト中…"
       ],
@@ -1292,14 +1280,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "現在のロックの登録を解除するには、PINコードを確認してください。\n${ PASS_APP_NAME } はロックされなくなります。"
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "この設定を編集するには、PINコードを確認してください。"
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "PINコードを確認して、自動ロック設定の登録を完了してください。"
       ],
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
@@ -1351,12 +1333,6 @@
       ],
       "Session timed out": [
         "セッションがタイムアウトしました"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "PINコードを設定してデータを簡単にロックする"
-      ],
-      "Setting up offline mode...": [
-        "オフラインモードを設定中..."
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
@@ -1420,6 +1396,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "インポートしたデータを確認するには、ブラウザのツールバーにある Pass アイコンをクリックします。"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
@@ -1591,11 +1570,11 @@
       "Application logs": [
         "アプリケーションのログ"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を自動ロックします"
-      ],
       "Auto-lock after": [
         "自動ロックまで"
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
       ],
       "Capital letters (A-Z)": [
         "大文字のアルファベット (A ～ Z)"
@@ -1870,9 +1849,6 @@
       "Session locking": [
         "セッションロック"
       ],
-      "Set PIN code": [
-        "PIN コードを設定"
-      ],
       "Show website favicons": [
         "ウェブサイトのファビコンを表示する"
       ],
@@ -1975,9 +1951,6 @@
       ],
       "Sign in to your account": [
         "アカウントにサインインする"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "現在オフラインです。 ${ BRAND_NAME } のパスワードを使用して ${ PASS_SHORT_APP_NAME } のロックを解除します"
       ]
     },
     "lobby: Title": {

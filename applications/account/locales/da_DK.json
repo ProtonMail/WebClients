@@ -6125,6 +6125,17 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -8593,17 +8604,6 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13794,6 +13794,11 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Opgrader"
       ]
     },
     "specialoffer: Offers": {

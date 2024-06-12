@@ -6125,6 +6125,17 @@
         "Parte del contenido del calendario es incompatible y no será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -8593,17 +8604,6 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13792,6 +13792,11 @@
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
       ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Mejorar"
       ]

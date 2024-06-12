@@ -556,12 +556,6 @@
       "Authentication failure: ${ message }": [
         "Αποτυχία ελέγχου ταυτότητας: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "Δεν ήταν δυνατή η ενεργοποίηση του αυτόματου κλειδώματος"
-      ],
-      "Auto-lock could not be disabled": [
-        "Δεν ήταν δυνατή η απενεργοποίηση του αυτόματου κλειδώματος"
-      ],
       "Cannot create alias (${ error }).": [
         "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
@@ -834,9 +828,6 @@
       "Vault name does not match": [
         "Το όνομα της κρύπτης δεν ταιριάζει"
       ],
-      "Wrong password": [
-        "Λανθασμένος κωδικός πρόσβασης"
-      ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
       ],
@@ -969,9 +960,6 @@
       "Admin": [
         "Διαχειριστής"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Μετά την αδράνεια, η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
@@ -1004,9 +992,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
-      ],
-      "Auto-lock successfully disabled": [
-        "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
       ],
       "Autosaved on ${ payload.domain }": [
         "Αυτόματη αποθήκευση στο ${ payload.domain }"
@@ -1144,6 +1129,9 @@
       ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Invitation sent": [
         "Η πρόσκληση στάλθηκε"
@@ -1291,14 +1279,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Επιβεβαιώστε τον κωδικό PIN σας για να καταργήσετε την καταχώρηση της τρέχουσας κλειδαριάς σας.\n${ PASS_APP_NAME } τότε δε θα κλειδώσει ποτέ."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Επιβεβαιώστε τον κωδικό PIN για να επεξεργαστείτε αυτήν τη ρύθμιση."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Επιβεβαιώστε τον κωδικό PIN για να ολοκληρώσετε την καταχώρηση των ρυθμίσεων αυτόματου κλειδώματος."
       ],
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
@@ -1356,12 +1338,6 @@
       ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Ρυθμίστε έναν κωδικό PIN για εύκολο κλείδωμα των δεδομένων σας"
-      ],
-      "Setting up offline mode...": [
-        "Ρύθμιση λειτουργίας εκτός σύνδεσης..."
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
@@ -1609,9 +1585,6 @@
       "Authenticate with passkeys": [
         "Έλεγχος ταυτότητας με κλειδιά πρόσβασης"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Αυτόματο κλείδωμα ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"
       ],
@@ -1822,6 +1795,9 @@
       "No history": [
         "Χωρίς ιστορικό"
       ],
+      "None": [
+        "Κανένα"
+      ],
       "Note": [
         "Σημείωση"
       ],
@@ -1911,9 +1887,6 @@
       ],
       "Session locking": [
         "Κλείδωμα περιόδου λειτουργίας"
-      ],
-      "Set PIN code": [
-        "Ορισμός κωδικού PIN"
       ],
       "Settings": [
         "Ρυθμίσεις"
@@ -2012,9 +1985,6 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
       ]
     },
     "lobby: Title": {

@@ -528,12 +528,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
       ],
-      "Auto-lock could not be activated": [
-        "Автоблокировка не может быть активирована"
-      ],
-      "Auto-lock could not be disabled": [
-        "Автоблокировка не может быть выключена"
-      ],
       "Cannot send invitations at the moment": [
         "Не могу отправлять приглашения в данный момент"
       ],
@@ -916,9 +910,6 @@
       "Admin": [
         "Админ"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "При отсутствии активности, доступ к ${ PASS_APP_NAME } потребует PIN-код для разблокировки сессии. Вы выйдите из системы после 3 неудачных попыток."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
       ],
@@ -951,9 +942,6 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Автоблокировка успешно отключена"
       ],
       "Breaches detected": [
         "Обнаружены утечки"
@@ -1141,9 +1129,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Загрузка ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Ваш сеанс блокируется..."
-      ],
       "Logging you out...": [
         "Выполняется выход из системы..."
       ],
@@ -1231,14 +1216,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Пожалуйста, подтвердите свой PIN-код, чтобы снять регистрацию текущей блокировки.\nПриложение ${ PASS_APP_NAME } больше не будет блокироваться."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Пожалуйста, подтвердите ваш PIN-код, чтобы изменить эту настройку."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Пожалуйста, подтвердите ваш PIN-код, чтобы завершить регистрацию настроек автоблокировки вашего устройства."
       ],
       "Please consider leaving a review.": [
         "Пожалуйста, подумайте о том, чтобы оставить отзыв."
@@ -1287,12 +1266,6 @@
       ],
       "Session timed out": [
         "Время сеанса истекло"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Установите PIN-код для удобной блокировки ваших данных."
-      ],
-      "Setting up offline mode...": [
-        "Настройка офлайнового режима..."
       ],
       "Settings successfully updated": [
         "Настройки успешно обновлены"
@@ -1541,9 +1514,6 @@
       ],
       "Application logs": [
         "Журналы приложения"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Авто-блокировка ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
         "Автоблокировка через"
@@ -1809,9 +1779,6 @@
       "Session locking": [
         "Блокировка сеанса"
       ],
-      "Set PIN code": [
-        "Установите PIN-код"
-      ],
       "Show website favicons": [
         "Показать значки сайтов"
       ],
@@ -1920,9 +1887,6 @@
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Вы сейчас офлайн. Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью вашего пароля ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {

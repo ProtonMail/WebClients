@@ -647,6 +647,10 @@
       "${ price } per user": [
         "${ price }/მომხმარებელი"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } წერის დამხმარის ლიცენზია",
+        "${ seats } წერის დამხმარის ლიცენზია"
+      ],
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
@@ -4180,6 +4184,12 @@
       "Would you like to receive a new verification code?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება?"
       ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant add-on": [
+        "წერაში დამხმარის დამატება"
+      ],
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
       ],
@@ -5539,15 +5549,24 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Proofread and refine your texts": [
+        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
+      ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Reply to messages": [
+        "პასუხი შეტყობინებებზე"
       ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
+      ],
+      "Save time emailing": [
+        "დაზოგეთ ელფოსტის წერის დრო"
       ],
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"

@@ -558,12 +558,6 @@
       "Authentication failure: ${ message }": [
         "Błąd uwierzytelniania: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "Automatyczna blokada nie mogła zostać włączona"
-      ],
-      "Auto-lock could not be disabled": [
-        "Automatyczna blokada nie mogła zostać wyłączona"
-      ],
       "Cannot create alias (${ error }).": [
         "Nie można utworzyć aliasu (${ error })."
       ],
@@ -840,9 +834,6 @@
       "Vault name does not match": [
         "Nazwy sejfów nie pasują do siebie"
       ],
-      "Wrong password": [
-        "Hasło jest nieprawidłowe"
-      ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
       ],
@@ -992,9 +983,6 @@
       "Admin": [
         "Administrator"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Będziesz używać kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji. Wylogowanie nastąpi po 3 nieudanych próbach logowania."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
@@ -1027,9 +1015,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Automatyczna blokada została wyłączona"
       ],
       "Autosaved on ${ payload.domain }": [
         "Zapisano na ${ payload.domain }"
@@ -1171,6 +1156,9 @@
       ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
       ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
@@ -1322,14 +1310,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Potwierdź kod PIN, aby wyłączyć blokadę. Rozszerzenie ${ PASS_APP_NAME } nie będzie już blokowane."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Potwierdź kod PIN, aby edytować ustawienia."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Potwierdź kod PIN, aby włączyć automatyczną blokadę."
       ],
       "Please consider leaving a review.": [
         "Rozważ napisanie recenzji."
@@ -1387,12 +1369,6 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Ustaw kod PIN, aby łatwo zablokować swoje dane"
-      ],
-      "Setting up offline mode...": [
-        "Włączanie trybu offline"
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
@@ -1648,9 +1624,6 @@
       "Authenticate with passkeys": [
         "Uwierzytelnij za pomocą kluczy dostępu"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Automatyczna blokada ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Automatyczna blokada"
       ],
@@ -1861,6 +1834,9 @@
       "No history": [
         "Brak historii"
       ],
+      "None": [
+        "Brak"
+      ],
       "Note": [
         "Notatka"
       ],
@@ -1947,9 +1923,6 @@
       ],
       "Session locking": [
         "Blokowanie sesji"
-      ],
-      "Set PIN code": [
-        "Ustaw kod PIN"
       ],
       "Settings": [
         "Ustawienia"
@@ -2048,9 +2021,6 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Jesteś w trybie offline. Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
