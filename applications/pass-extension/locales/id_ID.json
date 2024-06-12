@@ -89,6 +89,9 @@
       "Continue": [
         "Lanjutkan"
       ],
+      "Continue offline": [
+        "Lanjut secara offline"
+      ],
       "Continue without pinning": [
         "Lanjutkan tanpa menyemat"
       ],
@@ -440,6 +443,9 @@
       "Try again": [
         "Coba lagi"
       ],
+      "Unlock offline with password": [
+        "Buka kunci secara offline dengan kata sandi"
+      ],
       "Unpin item": [
         "Lepas sematan item"
       ],
@@ -554,12 +560,6 @@
       ],
       "Authentication failure: ${ message }": [
         "Autentikasi gagal: ${ message }"
-      ],
-      "Auto-lock could not be activated": [
-        "Kunci otomatis tidak dapat diaktifkan"
-      ],
-      "Auto-lock could not be disabled": [
-        "Kunci otomatis tidak dapat dinonaktifkan"
       ],
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dihasilkan (${ error })."
@@ -738,6 +738,9 @@
       "Moving item failed": [
         "Item gagal dipindahkan"
       ],
+      "Network error": [
+        "Kesalahan jaringan"
+      ],
       "Passphrase is incorrect": [
         "Frasa sandi salah"
       ],
@@ -813,6 +816,9 @@
       "Unknown passkey": [
         "Passkey yang tidak diketahui"
       ],
+      "Unlock failure": [
+        "Pembukaan kunci gagal"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Berkas format ${ PASS_APP_NAME } tidak didukung"
       ],
@@ -831,11 +837,11 @@
       "Vault name does not match": [
         "Nama brankas tidak sesuai"
       ],
-      "Wrong password": [
-        "Kata sandi salah"
-      ],
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Anda sedang offline. Silakan hubungkan kembali diri Anda ke jaringan internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kode PIN Anda telah dihapus oleh klien ${ PASS_APP_NAME } lainnya"
@@ -905,6 +911,9 @@
       "${ n } item": [
         "${ n } item"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } akan selalu dapat diakses"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
       ],
@@ -950,14 +959,14 @@
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
       "Admin": [
         "Admin"
-      ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Setelah sekian waktu tanpa aktivitas, akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka kunci sesi saat ini. Anda akan dikeluarkan dari akun setelah 3 percobaan yang gagal."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
@@ -991,9 +1000,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Pengunci otomatis berhasil dinonaktifkan"
       ],
       "Autosaved on ${ payload.domain }": [
         "Tersimpan secara otomatis pada ${ payload.domain }"
@@ -1049,6 +1055,12 @@
       "Deleting \"${ payload.content.name }\"": [
         "Menghapus \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Menonaktifkan kunci otomatis"
+      ],
+      "Disabling offline mode...": [
+        "Menonaktifkan mode offline..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Telusuri Video YouTube ${ PASS_APP_NAME }"
       ],
@@ -1078,6 +1090,12 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktifkan ${ PASS_APP_NAME } dengan menghubungkan akun ${ BRAND_NAME } Anda"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Aktifkan pengucian otomatis untuk mengamankan data Anda"
+      ],
+      "Enabling offline mode...": [
+        "Mengaktifkan mode offline..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -1129,6 +1147,9 @@
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
       ],
       "Invitation sent": [
         "Undangan dikirim"
@@ -1229,11 +1250,17 @@
       "None": [
         "Tidak ada"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Mode offline tidak dapat dinonaktifkan untuk saat ini"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Mode offline tidak dapat diaktifkan pada saat ini"
       ],
       "Offline support successfully disabled": [
         "Dukungan offline berhasil dinonaktifkan"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi saat ini. Anda akan dikeluarkan dari akun setelah 3 percobaan yang gagal."
       ],
       "Open the Extensions menu": [
         "Buka menu Ekstensi"
@@ -1253,6 +1280,9 @@
       "Password copied": [
         "Kata sandi disalin"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Kunci kata sandi berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
       ],
@@ -1271,17 +1301,20 @@
       "Pinning item...": [
         "Menyematkan item..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Mohon konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini.\nSetelahnya, ${ PASS_APP_NAME } tidak akan lagi pernah terkunci."
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan kunci Anda saat ini."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Mohon konfirmasi kode PIN Anda untuk menyunting pengaturan ini."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Silakan konfirmasi kode PIN Anda untuk menyelesaikan pendaftaran pengaturan penguncian otomatis Anda."
       ],
       "Please consider leaving a review.": [
         "Mohon pertimbangkan untuk memberikan ulasan."
@@ -1339,12 +1372,6 @@
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Tentukan kode PIN agar data Anda dapat terkunci dengan mudah"
-      ],
-      "Setting up offline mode...": [
-        "Menyiapkan mode offline..."
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
@@ -1588,9 +1615,6 @@
       "Authenticate with passkeys": [
         "Autentikasi dengan passkey"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Kunci ${ PASS_APP_NAME } secara otomatis"
-      ],
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
       ],
@@ -1801,6 +1825,9 @@
       "No history": [
         "Tidak ada riwayat"
       ],
+      "None": [
+        "Tidak ada"
+      ],
       "Note": [
         "Catatan"
       ],
@@ -1890,9 +1917,6 @@
       ],
       "Session locking": [
         "Penguncian sesi"
-      ],
-      "Set PIN code": [
-        "Tentukan kode PIN"
       ],
       "Settings": [
         "Pengaturan"
@@ -1992,8 +2016,8 @@
       "Sign in to your account": [
         "Masuk ke akun Anda"
       ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Anda sedang offline. Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
       ]
     },
     "lobby: Title": {

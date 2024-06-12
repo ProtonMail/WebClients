@@ -552,12 +552,6 @@
       "Authentication failure: ${ message }": [
         "認証失敗: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "自動ロックを有効に出来ませんでした"
-      ],
-      "Auto-lock could not be disabled": [
-        "自動ロックを無効化出来ませんでした"
-      ],
       "Cannot create alias (${ error }).": [
         "エイリアスを作成できません (${ error })。"
       ],
@@ -828,9 +822,6 @@
       "Vault name does not match": [
         "保管庫名が一致しません"
       ],
-      "Wrong password": [
-        "パスワードが正しくありません"
-      ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
@@ -953,9 +944,6 @@
       "Admin": [
         "管理者"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "一定時間操作されないと、 ${ PASS_APP_NAME } へのアクセスにセッションのロックを解除する PIN コードが必要になります。3 回の間違えるとログアウトします。"
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
@@ -988,9 +976,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "項目を「${ name }」に移動してもよろしいですか?"
-      ],
-      "Auto-lock successfully disabled": [
-        "自動ロックを無効にしました"
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } に自動保存されました"
@@ -1126,6 +1111,9 @@
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "インターネット接続が失われました。デバイスの接続を確認してください。"
       ],
       "Invitation sent": [
         "招待状の送信"
@@ -1271,14 +1259,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "現在のロックの登録を解除するには、PINコードを確認してください。\n${ PASS_APP_NAME } はロックされなくなります。"
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "この設定を編集するには、PINコードを確認してください。"
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "PINコードを確認して、自動ロック設定の登録を完了してください。"
       ],
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
@@ -1336,12 +1318,6 @@
       ],
       "Session timed out": [
         "セッションがタイムアウトしました"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "PINコードを設定してデータを簡単にロックする"
-      ],
-      "Setting up offline mode...": [
-        "オフラインモードを設定中..."
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
@@ -1585,9 +1561,6 @@
       "Authenticate with passkeys": [
         "パスキーによる認証"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を自動ロックします"
-      ],
       "Auto-lock after": [
         "自動ロックまで"
       ],
@@ -1795,6 +1768,9 @@
       "No history": [
         "履歴なし"
       ],
+      "None": [
+        "なし"
+      ],
       "Note": [
         "メモ"
       ],
@@ -1884,9 +1860,6 @@
       ],
       "Session locking": [
         "セッションロック"
-      ],
-      "Set PIN code": [
-        "PIN コードを設定"
       ],
       "Settings": [
         "設定"
@@ -1985,9 +1958,6 @@
       ],
       "Sign in to your account": [
         "アカウントにサインインする"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "現在オフラインです。 ${ BRAND_NAME } のパスワードを使用して ${ PASS_SHORT_APP_NAME } のロックを解除します"
       ]
     },
     "lobby: Title": {

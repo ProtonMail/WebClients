@@ -556,12 +556,6 @@
       "Authentication failure: ${ message }": [
         "Error de la autenticación: ${ message }"
       ],
-      "Auto-lock could not be activated": [
-        "No se ha podido activar el bloqueo automático."
-      ],
-      "Auto-lock could not be disabled": [
-        "No se ha podio desactivar el bloqueo automático."
-      ],
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
@@ -834,9 +828,6 @@
       "Vault name does not match": [
         "El nombre de la caja fuerte no coincide."
       ],
-      "Wrong password": [
-        "La contraseña no es correcta."
-      ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
       ],
@@ -969,9 +960,6 @@
       "Admin": [
         "Administrador"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Después del tiempo de inactividad, para acceder a ${ PASS_APP_NAME } se requerirá un código PIN para desbloquear tu sesión. Se cerrará la sesión después de 3 intentos erróneos."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
       ],
@@ -1004,9 +992,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Se ha desactivado el bloqueo automático"
       ],
       "Autosaved on ${ payload.domain }": [
         "Guardado automáticamente en ${ payload.domain }"
@@ -1144,6 +1129,9 @@
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
       ],
       "Invitation sent": [
         "La invitación ha sido enviada."
@@ -1291,14 +1279,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirma tu código PIN para cancelar el registro de tu bloqueo actual.\n${ PASS_APP_NAME } nunca se bloqueará."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirma tu código PIN para editar este ajuste."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirma tu código PIN para finalizar el registro de tus ajustes de bloqueo automático."
       ],
       "Please consider leaving a review.": [
         "Te invitamos a dejar una reseña."
@@ -1356,12 +1338,6 @@
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Establece un código PIN para bloquear tus datos fácilmente"
-      ],
-      "Setting up offline mode...": [
-        "Configurando el modo sin conexión"
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
@@ -1609,9 +1585,6 @@
       "Authenticate with passkeys": [
         "Autenticación con claves de acceso"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Bloquear ${ PASS_APP_NAME } automáticamente"
-      ],
       "Auto-lock after": [
         "Bloqueo automático después de"
       ],
@@ -1822,6 +1795,9 @@
       "No history": [
         "Sin historial"
       ],
+      "None": [
+        "Ninguna"
+      ],
       "Note": [
         "Nota"
       ],
@@ -1911,9 +1887,6 @@
       ],
       "Session locking": [
         "Bloqueo de sesión"
-      ],
-      "Set PIN code": [
-        "Establecer el código PIN"
       ],
       "Settings": [
         "Configuración"
@@ -2012,9 +1985,6 @@
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Actualmente estás sin conexión. Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
