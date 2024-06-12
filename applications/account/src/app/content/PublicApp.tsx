@@ -903,7 +903,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                 )}
                                                 <Redirect
                                                     to={{
-                                                        pathname: paths.login,
+                                                        pathname: hasBackToSwitch ? SSO_PATHS.SWITCH : paths.login,
                                                         state: {
                                                             ...(typeof location.state === 'object'
                                                                 ? location.state
