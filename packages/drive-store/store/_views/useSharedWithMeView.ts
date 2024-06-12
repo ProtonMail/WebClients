@@ -30,7 +30,7 @@ export default function useSharedWithMeView(shareId: string) {
         await linksListing.loadLinksSharedWithMeLink(signal);
     }, []); //TODO: No deps params as too much work needed in linksListing
 
-    const abortSignal = useAbortSignal([shareId, withLoading, loadSharedWithMeLinks]);
+    const abortSignal = useAbortSignal([]);
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
 
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);

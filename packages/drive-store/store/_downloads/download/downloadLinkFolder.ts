@@ -97,7 +97,7 @@ export class FolderTreeLoader {
         this.done = false;
         this.links = [];
         this.abortController = new AbortController();
-        this.log = log;
+        this.log = (message) => log(`traversal: ${message}`);
     }
 
     async load(
@@ -133,7 +133,7 @@ export class FolderTreeLoader {
         }
 
         const shareId = link.shareId;
-        this.log(`Fetching children for ${link.linkId}`);
+        this.log(`Fetching children for ${link.linkId}: started`);
         const children = await getChildren(this.abortController.signal, link.shareId, link.linkId).catch((err) => {
             if (err?.data?.Code === RESPONSE_CODE.NOT_FOUND) {
                 this.log(`Folder ${link.linkId} was deleted during download`);
@@ -141,8 +141,9 @@ export class FolderTreeLoader {
             }
             throw err;
         });
+        this.log(`Fetching children for ${link.linkId}: finished`);
         this.log(
-            `Folder ${link.linkId} has ${children.length} items including ${children.filter(({ isFile }) => !isFile).length} folders`
+            `Folder ${link.linkId} has ${children.length} items including ${children.filter(({ isFile }) => !isFile).length} folders, parent: ${parentLinkIds.at(-2) || 'none'}`
         );
         this.links = [
             ...this.links,
@@ -177,6 +178,7 @@ export class FolderTreeLoader {
                     result.linkSizes[item.linkId] = result.size;
                     return result;
                 }
+                this.log(`File ${item.linkId}, parent: ${parentLinkIds.at(-1)}`);
                 return { size: item.size, linkSizes: Object.fromEntries([[item.linkId, item.size]]) };
             })
         ).then((results: FolderLoadInfo[]) => {
