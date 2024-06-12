@@ -971,6 +971,7 @@ export default function DocumentEditorToolbar({
       >
         <DropdownMenu>
           <DropdownMenuButton
+            disabled={!isEditable}
             className="flex items-center gap-2 text-left text-sm"
             onClick={() => {
               onEditingAllowanceChange(true)
@@ -980,6 +981,7 @@ export default function DocumentEditorToolbar({
             {c('Info').t`Editing`}
           </DropdownMenuButton>
           <DropdownMenuButton
+            disabled={!isEditable}
             className="flex items-center gap-2 text-left text-sm"
             onClick={() => {
               onEditingAllowanceChange(false)

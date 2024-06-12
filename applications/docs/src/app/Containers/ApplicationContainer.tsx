@@ -12,6 +12,7 @@ import { useDriveCompat, DocumentAction, DriveCompat } from '@proton/drive-store
 import { FileToDocConversionResult } from '@proton/docs-core'
 import { FileToDocPendingConversion } from '@proton/docs-shared'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
 
 function ApplicationContainer() {
   const api = useApi()
@@ -32,7 +33,7 @@ function ApplicationContainer() {
 
   const [isAppReady, setIsAppReady] = useState(false)
 
-  useEffect(() => {
+  useEffectOnce(() => {
     const mode = searchParams.get('mode') ?? 'open'
     const parentLinkId = searchParams.get('parentLinkId')
     const volumeId = searchParams.get('volumeId')
@@ -63,8 +64,7 @@ function ApplicationContainer() {
         parentLinkId,
       } satisfies DocumentAction)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  })
 
   useEffect(() => {
     if (!isAppReady) {
@@ -103,25 +103,23 @@ function ApplicationContainer() {
   }, [])
 
   useEffect(() => {
-    if (!isAppReady) {
+    if (!isAppReady || isCreatingNewDocument) {
       return
     }
 
-    if (openAction && openAction.mode != 'create') {
-      return
+    const isOpeningDocsAtRootPage = !openAction
+    const isOpeningDocsWithCreateAction = openAction && openAction.mode === 'create'
+    const shouldCreateNewRootDoc = isOpeningDocsAtRootPage || isOpeningDocsWithCreateAction
+
+    if (shouldCreateNewRootDoc) {
+      setIsCreatingNewDocument(true)
+
+      void createNewDocInRoot().then((result) => {
+        updateParameters(result.volumeId, result.linkId)
+
+        setIsCreatingNewDocument(false)
+      })
     }
-
-    if (isCreatingNewDocument) {
-      return
-    }
-
-    setIsCreatingNewDocument(true)
-
-    void createNewDocInRoot().then((result) => {
-      updateParameters(result.volumeId, result.linkId)
-
-      setIsCreatingNewDocument(false)
-    })
   }, [createNewDocInRoot, isAppReady, isCreatingNewDocument, openAction, updateParameters])
 
   const onConversionSuccess = useCallback(
