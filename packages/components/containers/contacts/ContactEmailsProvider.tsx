@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useMemo } from 'react';
 
-import { useContactEmails, useContactGroups } from '@proton/components/hooks';
+import { useContactGroups } from '@proton/components/hooks/useCategories';
+import { useContactEmails } from '@proton/components/hooks/useContactEmails';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';

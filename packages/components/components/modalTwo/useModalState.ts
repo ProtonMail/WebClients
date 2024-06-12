@@ -39,13 +39,11 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     }, []);
 
     const handleClose = useCallback(() => {
-        console.log('on close');
         handleSetOpen(false);
         onClose?.();
     }, [handleSetOpen, onClose]);
 
     const handleExit = useCallback(() => {
-        console.log('on exit');
         setRender(false);
         setKey(generateUID());
         onExit?.();

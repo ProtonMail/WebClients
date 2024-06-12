@@ -5,9 +5,9 @@ import { MockedFunction } from 'vitest';
 import { WasmAccount, WasmBlockchainClient, WasmWallet } from '@proton/andromeda';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
+import { apiWalletsData } from '@proton/wallet';
 
 import { mockUseBlockchainClient } from '../../tests';
-import { apiWalletsData } from '../../tests/fixtures/api';
 import { mockUseGetBitcoinNetwork } from '../../tests/mocks/useBitcoinNetwork';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';

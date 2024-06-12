@@ -19,7 +19,11 @@ import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
-import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData, mockUseWalletApiClients } from '../tests';
+import {
+    mockUseBitcoinBlockchainContext,
+    mockUseGetApiWalletTransactionData,
+    mockUseWalletApiClients,
+} from '../tests/';
 import { getAddressKey, getUserKeys } from '../tests/utils/keys';
 import { useWalletTransactions } from './useWalletTransactions';
 
@@ -362,7 +366,6 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
         it('should not fail', async () => {
             const transactions: WasmTransactionDetails[] = [];
             const { result } = renderHook(() => useWalletTransactions({ transactions, wallet, userKeys }));
-
             expect(result.current.transactionDetails).toBeNull();
         });
     });

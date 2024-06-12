@@ -7,7 +7,7 @@ import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import { generateUID } from '../../helpers';
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import Dialog from '../dialog/Dialog';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
