@@ -100,6 +100,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue offline": [
+        "Fortsæt offline"
+      ],
       "Copy and close": [
         "Kopiér og luk"
       ],
@@ -427,6 +430,9 @@
       "Try again.": [
         "Prøv igen."
       ],
+      "Unlock offline with password": [
+        "Lås offline op med adgangskode"
+      ],
       "Unpin item": [
         "Frigør element"
       ],
@@ -572,12 +578,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Godkendelse mislykkedes. Bekræft din ${ BRAND_NAME }-adgangskode for at fortsætte med eksporten."
-      ],
-      "Auto-lock could not be activated": [
-        "Autolås kunne ikke aktiveres"
-      ],
-      "Auto-lock could not be disabled": [
-        "Autolås kunne ikke deaktiveres"
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitation i øjeblikket",
@@ -746,6 +746,9 @@
       "Moving item failed": [
         "Flytning af element mislykkedes"
       ],
+      "Network error": [
+        "Netværksfejl"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Offline-tilstand er i øjeblikket ikke tilgængelig for to-adgangskode-tilstand."
       ],
@@ -806,6 +809,9 @@
       "Unknown invite": [
         "Ukendt invitation"
       ],
+      "Unlock failure": [
+        "Fejl i oplåsning"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ikke-understøttet ${ PASS_APP_NAME } filformat"
       ],
@@ -829,6 +835,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
@@ -924,6 +933,9 @@
         "${ n } element",
         "${ n } elementer"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } vil altid være tilgængelig"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
       ],
@@ -952,14 +964,14 @@
       "Access successfully confirmed": [
         "Adgang bekræftet"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
+      ],
       "Add your custom email address to monitor :": [
         "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
       ],
       "Admin": [
         "Admin"
-      ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Efter inaktivitet vil adgang til ${ PASS_APP_NAME } kræve en pinkode for at låse din session op. Du vil blive logget ud efter 3 mislykkede forsøg."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
@@ -1000,8 +1012,8 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Er du sikker på, at du vil flytte elementet til \"${ name }\" ?"
       ],
-      "Auto-lock successfully disabled": [
-        "Autolås deaktiveret"
+      "Auto-lock successfully disabled.": [
+        "Autolås er blevet deaktiveret."
       ],
       "Breaches detected": [
         "Databrud registreret"
@@ -1051,6 +1063,15 @@
       "Didn't receive the code?": [
         "Modtog du ikke koden?"
       ],
+      "Disabling auto-lock": [
+        "Deaktiverer autolås"
+      ],
+      "Disabling auto-lock failed": [
+        "Deaktivering af autolås mislykkedes"
+      ],
+      "Disabling offline mode...": [
+        "Deaktiverer offline-tilstand..."
+      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
@@ -1077,6 +1098,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Aktivér ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Aktiver autolåsning for at sikre dine data"
+      ],
+      "Enabling offline mode...": [
+        "Aktiverer offline-tilstand..."
+      ],
+      "Enabling password auto-lock": [
+        "Aktiverer autolåsning af adgangskode"
+      ],
+      "Enabling password lock failed": [
+        "Aktivering af adgangskodelås mislykkedes"
+      ],
+      "Enabling PIN auto-lock": [
+        "Aktiverer PIN-autolås"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
@@ -1210,9 +1246,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "Indlæser ${ PASS_APP_NAME }"
       ],
-      "Locking your session...": [
-        "Låser din session..."
-      ],
       "Logging you out...": [
         "Logger dig ud..."
       ],
@@ -1264,11 +1297,17 @@
       "Offline mode": [
         "Offline-tilstand"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Offline-tilstand kunne ikke deaktiveres i øjeblikket"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Offline-tilstand kunne ikke aktiveres i øjeblikket"
       ],
       "Offline support successfully disabled": [
         "Offline-tilstand blev deaktiveret"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Online adgang til ${ PASS_APP_NAME } kræver en pinkode for at låse din session op. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
       "Owner": [
         "Ejer"
@@ -1281,6 +1320,9 @@
       ],
       "password": [
         "adgangskode"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Adgangskodelås er blevet registreret. Brug den til at oplåse ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
@@ -1301,20 +1343,29 @@
       "Please check your spam folder or try resending the code.": [
         "Tjek din spam-mappe, eller prøv at sende koden igen."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Bekræft venligst din ${ BRAND_NAME }-adgangskode"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at autolåse med din adgangskode."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Bekræft venligst din pinkode for at afregistrere din nuværende lås.\n${ PASS_APP_NAME } vil derefter aldrig låse."
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at afregistrere din nuværende lås."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at opdatere den automatiske låsetid."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Bekræft venligst din pinkode for at afregistrere din nuværende lås."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bekræft din pinkode for at ændre denne indstilling."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Bekræft din pinkode for at afslutte registreringen af dine auto-lås indstillinger."
       ],
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
@@ -1336,6 +1387,12 @@
       ],
       "Reconnect": [
         "Genopret forbindelse"
+      ],
+      "Reconnecting": [
+        "Genforbinder"
+      ],
+      "Registering PIN lock failed": [
+        "Registrering af PIN-lås mislykkedes"
       ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
@@ -1366,12 +1423,6 @@
       ],
       "Session timed out": [
         "Session er udløbet"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Konfigurer en pinkode for nemt at låse dine data"
-      ],
-      "Setting up offline mode...": [
-        "Konfigurerer offline-tilstand..."
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
@@ -1620,9 +1671,6 @@
       "Application logs": [
         "Applikationslogs"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Autolås ${ PASS_APP_NAME }"
-      ],
       "Auto-lock after": [
         "Lås automatisk efter"
       ],
@@ -1661,6 +1709,9 @@
       ],
       "Create an encrypted note": [
         "Opret en krypteret note"
+      ],
+      "Create lock": [
+        "Opret lås"
       ],
       "Create new vault": [
         "Opret ny boks"
@@ -1866,6 +1917,9 @@
       "PIN": [
         "Pinkode"
       ],
+      "PIN code": [
+        "Pinkode"
+      ],
       "Prefix": [
         "Præfiks"
       ],
@@ -1904,9 +1958,6 @@
       ],
       "Session locking": [
         "Sessionslåsning"
-      ],
-      "Set PIN code": [
-        "Angiv pinkode"
       ],
       "Show website favicons": [
         "Vis websteders favicon"
@@ -2017,8 +2068,8 @@
       "Sign in to your account": [
         "Log ind på din konto"
       ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Du er i øjeblikket offline. Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }"
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Lås ${ PASS_SHORT_APP_NAME } op med din adgangskode til ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2614,6 +2665,9 @@
       ],
       "Title is required": [
         "Titel er påkrævet"
+      ],
+      "Too many attempts": [
+        "For mange forsøg"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Overdrag ejerskabet af denne boks til ${ email }?"
