@@ -1,4 +1,4 @@
-import { BridgeOriginProvider, EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared'
+import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT, EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type Props = {
@@ -55,6 +55,10 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
 
       if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
         onReady()
+      }
+
+      if (event.data === EDITOR_IFRAME_FOCUS_EVENT) {
+        document.dispatchEvent(new CustomEvent('dropdownclose'))
       }
     }
 
