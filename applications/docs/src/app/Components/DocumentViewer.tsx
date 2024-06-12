@@ -214,11 +214,11 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   }
 
   return (
-    <div className="h-full w-full">
+    <div className="relative h-full w-full">
       {readyToShowDebugMenu && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
 
       {!docOrchestrator && (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+        <div className="bg-norm absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4">
           <CircleLoader size="large" />
           <div className="text-center">{c('Info').t`Loading document...`}</div>
         </div>
