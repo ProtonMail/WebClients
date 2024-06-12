@@ -1,9 +1,9 @@
 import { WasmApiWalletAccount, WasmScriptType } from '@proton/andromeda';
 import { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { apiWalletsData } from '@proton/wallet';
 
-import { apiWalletsData } from '../../tests/fixtures/api';
+import { IWasmApiWalletData } from '../../types';
 import {
     apiWalletsDataReducer,
     selectApiWalletsData,
@@ -24,7 +24,7 @@ describe('apiWalletsData', () => {
         } as unknown as ProtonThunkArguments;
 
         return getTestStore({
-            reducer: { ...apiWalletsDataReducer },
+            reducer: { ...apiWalletsDataReducer } as any,
             preloadedState: {
                 api_wallets_data: { value: data, error: undefined },
             },

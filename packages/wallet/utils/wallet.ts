@@ -1,4 +1,4 @@
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData } from '../types';
 
 export const buildMapFromWallets = (wallets: IWasmApiWalletData[] = []) => {
     return wallets.reduce(

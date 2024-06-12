@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { IWasmApiWalletData } from '@proton/wallet';

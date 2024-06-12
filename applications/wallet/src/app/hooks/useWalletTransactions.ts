@@ -10,7 +10,8 @@ import {
     WasmTransactionDetails,
 } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
-import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
+import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { PrivateKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';

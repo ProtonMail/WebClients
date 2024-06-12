@@ -3,10 +3,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { compact } from 'lodash';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
-import { useGetUserKeys } from '@proton/components/hooks';
+import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData, useApiWalletsData } from '@proton/wallet';
 
+import { useApiWalletsData } from '../store';
+import { IWasmApiWalletData } from '../types';
 import { decryptWalletData, decryptWalletKey } from '../utils/crypto';
 import { buildMapFromWallets } from '../utils/wallet';
 

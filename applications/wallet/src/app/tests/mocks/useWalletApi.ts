@@ -3,6 +3,7 @@ import {
     WasmEmailIntegrationClient,
     WasmExchangeRateClient,
     WasmNetworkClient,
+    WasmPaymentGatewayClient,
     WasmProtonWalletApiClient,
     WasmSettingsClient,
     WasmWalletClient,
@@ -18,6 +19,7 @@ type PartiallyMockedWalletApiClient = Partial<{
     network: Partial<Omit<WasmNetworkClient, 'free'>>;
     settings: Partial<Omit<WasmSettingsClient, 'free'>>;
     wallet: Partial<Omit<WasmWalletClient, 'free'>>;
+    payment_gateway: Partial<Omit<WasmPaymentGatewayClient, 'free'>>;
 }>;
 
 export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): WasmProtonWalletApiClient => {
@@ -67,6 +69,12 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
                         mockedValue?.bitcoin_address?.getBitcoinAddressHighestIndex ?? vi.fn(),
                     addBitcoinAddress: mockedValue?.bitcoin_address?.addBitcoinAddress ?? vi.fn(),
                     updateBitcoinAddress: mockedValue?.bitcoin_address?.updateBitcoinAddress ?? vi.fn(),
+                }),
+                payment_gateway: freeable({
+                    getCountries: mockedValue?.payment_gateway?.getCountries ?? vi.fn(),
+                    getFiatCurrencies: mockedValue?.payment_gateway?.getFiatCurrencies ?? vi.fn(),
+                    getPaymentMethods: mockedValue?.payment_gateway?.getPaymentMethods ?? vi.fn(),
+                    getQuotes: mockedValue?.payment_gateway?.getQuotes ?? vi.fn(),
                 }),
             }),
     });

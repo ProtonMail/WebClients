@@ -6,8 +6,6 @@ import {
     WasmTransactionDetails,
     WasmWallet,
 } from '@proton/andromeda';
-
-import { WalletChainDataByWalletId } from '../../types';
 import {
     apiWalletAccountOneA,
     apiWalletAccountOneB,
@@ -15,7 +13,9 @@ import {
     apiWalletAccountTwoA,
     apiWalletAccountTwoB,
     apiWalletsData,
-} from '../fixtures/api';
+} from '@proton/wallet';
+
+import { WalletChainDataByWalletId } from '../../types';
 import { freeable } from '../utils/wasm';
 import { simpleTransactions } from './transactions';
 

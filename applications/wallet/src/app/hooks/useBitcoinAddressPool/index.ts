@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { compact } from 'lodash';
 
 import { WasmApiBitcoinAddressesCreationPayload } from '@proton/andromeda';
-import { useAddressesKeys } from '@proton/components/hooks';
+import { useAddressesKeys } from '@proton/components/hooks/useAddressesKeys';
 import { IWasmApiWalletData, signData, useWalletApiClients, verifySignedData } from '@proton/wallet';
 
 import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
@@ -57,7 +57,7 @@ export const useBitcoinAddressPool = ({
                 // TODO: interact with useWalletsChainData to do sync
                 const highestNetworkIndexValue = await wasmAccount.account.getLastUnusedAddressIndex();
 
-                let highestIndex = Math.max(highestApiIndex, highestNetworkIndexValue);
+                let highestIndex = Math.max(highestApiIndex, highestNetworkIndexValue ?? 0);
 
                 const unusedBitcoinAddress = await api.bitcoin_address
                     .getBitcoinAddresses(walletId, walletAccountId)

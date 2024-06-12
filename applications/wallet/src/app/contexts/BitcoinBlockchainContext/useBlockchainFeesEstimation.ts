@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useCache } from '@proton/components/hooks';
+import useCache from '@proton/components/hooks/useCache';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 
