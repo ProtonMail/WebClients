@@ -16,4 +16,5 @@ export enum PassErrorCode {
     SERVICE_NETWORK_ERROR = 399999,
     INVALID_VALUE = 2001,
     NOT_ALLOWED = 2011,
+    NOT_EXIST_SHARE = 2501,
 }
