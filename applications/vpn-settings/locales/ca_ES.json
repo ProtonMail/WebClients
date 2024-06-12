@@ -201,10 +201,10 @@
         "Edita el nom"
       ],
       "Edit organization identity": [
-        "Editi la identitat de l'organització"
+        "Edita la identitat de l'organització"
       ],
       "Edit organization name": [
-        "Editi el nom de l’organització"
+        "Edita el nom de l’organització"
       ],
       "Edit password": [
         "Edita la contrasenya"
@@ -243,7 +243,7 @@
         "Heu oblidat la contrasenya?"
       ],
       "Forgot recovery method?": [
-        "Oblideu el mètode de recuperació?"
+        "Heu oblidat el mètode de recuperació?"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -643,6 +643,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } llicència de l'assistent d'escriptura",
+        "${ seats } llicències de l'assistent d'escriptura"
       ],
       "${ users } user": [
         "${ users } usuari",
@@ -2111,7 +2115,7 @@
         "Error al connectar a l'API de Bitcoin."
       ],
       "Failed to process the logo": [
-        "No s'ha pogut processar el logotip"
+        "No s'ha pogut processar el logo"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "El fitxer és massa gran. El logo ha de tenir 30 KB o menys."
@@ -2173,6 +2177,9 @@
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
@@ -2190,6 +2197,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureu un domini personalitzat abans d'afegir adreces."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
@@ -2242,6 +2252,12 @@
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "El fitxer és massa gran, la mida màxima és ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "El fitxer és massa petit, la mida mínima és ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
       ],
@@ -2256,6 +2272,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Per a crear comptes d'usuari no privats i accedir als seus comptes, necessitareu restaurar els vostres privilegis d'administrador."
       ],
       "Try again later": [
         "Torneu-ho a provar més tard"
@@ -3413,6 +3432,9 @@
       "inactive": [
         "inactiva"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Augmenteu la seguretat del vostre compte verificant la vostra adreça electrònica."
       ],
@@ -3827,6 +3849,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "S'eliminarà permanentment el vostre compte i totes les seves dades. No podreu reactivar aquest compte."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Es traurà qualsevol dels mètodes 2FA activats."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
       ],
@@ -4068,6 +4093,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Heu iniciat la sessió al compte ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
@@ -5342,6 +5370,9 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Genera correus electrònics només amb una indicació"
+      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -5406,12 +5437,18 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Proofread and refine your texts": [
+        "Corregiu i refineu els textos"
+      ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
+      ],
+      "Reply to messages": [
+        "Respon als missatges"
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -6510,6 +6547,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrador de la vostra organització necessita accés a la clau d'organtizació.",
+        "${ n } administradors de la vostra organització necessiten accés a la clau d'organització"
+      ],
       "Changing organization keys": [
         "Canviar claus d'organització"
       ],
@@ -7205,6 +7246,10 @@
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Encara disposeu d'**${ daysRemaining }** dia al vostre pla **${ currentPlanName }**.",
+        "Encara disposeu de **${ daysRemaining }** dies al vostre pla **${ currentPlanName }**."
+      ],
       "Your ${ appStorage } is almost full": [
         "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
       ],
@@ -7368,22 +7413,22 @@
         "${ planMaxSpace } d'emmagatzematge total"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } li ofereix accés a totes les aplicacions i funcions prèmium. La privadesa està integrada perquè pugui continuar, sabent que les seves dades i identitat estan segures."
+        "${ planName } us ofereix accés a totes les aplicacions i característiques prèmium. La privacitat està integrada perquè pugueu continuar, sabent que les vostres dades i identitat estan segures."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } li ofereix totes les aplicacions, totes les funcions, accés anticipat a les noves versions i tot el que necessita per tenir el control de les seves dades i la seva seguretat."
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName } va més enllà dels conceptes bàsics per ajudar-lo a ser més productiu, organitzat i controlar la seva safata d'entrada, la seva identitat de correu electrònic i molt més."
+        "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } l'ajuda a assegurar-te que cadascun dels membres de la seva família, i les seves dades, estiguin protegits sempre que estiguin en línia."
+        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, i les seves dades, estiguin protegits sempre que estiguin en línia."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } ofereix emmagatzematge ${ planMaxSpace } per als seus correus electrònics, fitxers adjunts, esdeveniments, contrasenyes i fitxers. També pot optar a bonificacions d'emmagatzematge anuals."
+        "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres correus electrònics, adjunts, esdeveniments, contrasenyes i fitxers. També podeu optar a bonificacions d'emmagatzematge anuals."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } ofereix emmagatzematge ${ planMaxSpace } per als seus fitxers i fotos. També pot optar a bonificacions d'emmagatzematge anuals."
+        "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres fitxers i fotos. També podeu optar a bonificacions d'emmagatzematge anuals."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
@@ -7398,16 +7443,16 @@
         "6 usuaris"
       ],
       "Add any new files": [
-        "Afegeixi fitxers nous"
+        "Afegiu fitxers nous"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Un cop caduqui la seva subscripció a ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Un cop caduqui la seva subscripció a ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
+        "Un cop caduqui la vostra subscripció a ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "Back up photos from your devices": [
-        "Faci una còpia de seguretat de les fotos dels seus dispositius."
+        "Feu una còpia de seguretat de les fotos dels vostres dispositius."
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -7440,7 +7485,7 @@
         "Teniu una pregunta?"
       ],
       "Helping activists in Hong Kong": [
-        "Ajudar els activistes a Hong Kong"
+        "Ajuda per als activistes a Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Com el nostre equip d'atenció al client va posar la nostra aplicació VPN directament en mans de la gent."
@@ -7455,7 +7500,7 @@
         "Encara vull cancel·lar"
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "Si supera els límits del pla gratuït quan caduqui la seva subscripció a ${ planName }, no podrà:"
+        "Si supereu els límits del pla gratuït quan caduqui la vostra subscripció a ${ planName }, no podreu:"
       ],
       "Keep ${ planName }": [
         "Segueix amb ${ planName }"
@@ -7464,13 +7509,13 @@
         "Descobriu més sobre el nostre impacte"
       ],
       "Manage your calendar": [
-        "Gestioni el seu calendari"
+        "Gestioneu el calendari"
       ],
       "Online privacy, for your whole family": [
         "Privacitat en línia per a tota la vostra família"
       ],
       "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
-        "Tingui en compte que ${ planName } ja no està disponible per a la compra. Si baixes de categoria el teu compte, perdrà tots els avantatges del pla i no podrà tornar a subscriure's."
+        "Tingueu en compte que ${ planName } ja no està disponible per a la compra. Si baixeu de categoria el vostre compte, perdreu tots els avantatges del pla i no us podreu tornar a subscriure."
       ],
       "Premium productivity features": [
         "Característiques de productivitat prèmium"
@@ -7482,7 +7527,7 @@
         "Reactiva"
       ],
       "Reactivate to restore access to ${ planName } features.": [
-        "Reactivi per restaurar l'accés a les funcions de ${ planName }."
+        "Reactiveu per a restaurar l'accés a les característiques de ${ planName }."
       ],
       "Read the story": [
         "Llegiu la història"
@@ -7491,19 +7536,19 @@
         "Rebeu nous correus electrònics"
       ],
       "Send emails with attachments": [
-        "Enviï correus electrònics amb adjunts"
+        "Envieu correus electrònics amb adjunts"
       ],
       "Subscription canceled": [
         "La subscripció s'ha cancel·lat."
       ],
       "Sync files on devices": [
-        "Sincronitzi fitxers als seus dispositius"
+        "Sincronitzeu fitxers als vostres dispositius"
       ],
       "The best of ${ BRAND_NAME }": [
         "El millor de ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
-        "Desbloquejar l'accés a Internet a l'Iran"
+        "Desbloqueig de l'accés a Internet a l'Iran"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
@@ -7515,7 +7560,7 @@
         "Mireu l'entrevista"
       ],
       "What you give up when you cancel ${ planName }": [
-        "A què renuncia en cancel·lar ${ planName }"
+        "A què renuncieu en cancel·lar ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Quan cancel·li ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
@@ -7533,13 +7578,13 @@
         "Encara té ${ expiryDate } a la seva subscripció ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
-        "El seu ${ planName } s'ha cancel·lat."
+        "S'ha cancel·lat el vostre ${ planName }."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "La seva subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estarà al pla gratuït de ${ BRAND_NAME }. Si el seu ús supera els límits del pla gratuït, és possible que tingui accés restringit a les funcions del producte i a les seves dades. ${ learnMoreLink }"
+        "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "La seva subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estarà al pla gratuït de ${ BRAND_NAME }. Si el seu ús supera els límits del pla gratuït, és possible que tingui accés restringit a les funcions del producte i a les seves dades. ${ learnMoreLink } ${ unavailablePlan }"
+        "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "El vostre propi domini de correu electrònic personalitzat"
@@ -8401,7 +8446,7 @@
         "Carregueu un fitxer CSV per a crear múltiples comptes"
       ],
       "Upload your organization’s logo": [
-        "Carregueu el logotip de la vostra organització"
+        "Carregueu el logo de la vostra organització"
       ],
       "Users": [
         "Usuaris"
