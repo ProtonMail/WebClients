@@ -43,8 +43,7 @@ export const DownloadProvider = ({
         removeDownloads,
         clearDownloads,
         downloadDownloadLogs,
-        downloadIsTooBigModal,
-        signatureIssueModal,
+        modals,
     } = useDownload(initDownload);
 
     return (
@@ -65,8 +64,7 @@ export const DownloadProvider = ({
             }}
         >
             {children}
-            {downloadIsTooBigModal}
-            {signatureIssueModal}
+            {modals}
         </DownloadContext.Provider>
     );
 };
