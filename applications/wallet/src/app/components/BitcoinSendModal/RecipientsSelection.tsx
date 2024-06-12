@@ -147,6 +147,9 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     return (
         <>
             <div className="flex flex-column max-w-full justify-center">
+                <h2 className="text-center mb-8 text-semibold">{c('Wallet send')
+                    .t`Who are you sending Bitcoin to?`}</h2>
+
                 <EmailOrBitcoinAddressInput
                     disabled={Object.values(loadingBitcoinAddressLookup).some((v) => Boolean(v))}
                     placeholder={'andy.yen@proton.ch / bc1...'}
@@ -165,15 +168,18 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                 />
 
                 {txBuilder.getRecipients().length ? (
-                    <Button
-                        color="norm"
-                        shape="solid"
-                        className="mt-6"
-                        fullWidth
-                        onClick={() => {
-                            onRecipientsConfirm();
-                        }}
-                    >{c('Wallet send').t`Confirm`}</Button>
+                    <div className="px-10">
+                        <Button
+                            color="norm"
+                            shape="solid"
+                            className="mt-6"
+                            fullWidth
+                            shadow
+                            onClick={() => {
+                                onRecipientsConfirm();
+                            }}
+                        >{c('Wallet send').t`Confirm`}</Button>
+                    </div>
                 ) : null}
             </div>
 

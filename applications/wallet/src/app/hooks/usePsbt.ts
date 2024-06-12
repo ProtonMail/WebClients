@@ -19,7 +19,7 @@ interface BroadcastData
     > {
     noteToSelf?: string;
     message?: string;
-    exchangeRateId: string;
+    exchangeRateId?: string;
     signingKeys: PrivateKeyReference[];
     encryptionKeys: PublicKeyReference[];
 }
@@ -45,6 +45,19 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
             }
         }
     }, [txBuilder, network, createNotification]);
+
+    const createMockPsbt = useCallback(
+        async (txBuilder: WasmTxBuilder) => {
+            if (!isUndefined(network)) {
+                try {
+                    return await txBuilder.createPsbt(network);
+                } catch (err) {
+                    console.error('an occured when building PSBT', err);
+                }
+            }
+        },
+        [network]
+    );
 
     const signAndBroadcastPsbt = ({
         apiWalletData: wallet,
@@ -85,10 +98,12 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                     account.ID,
                     {
                         label: encryptedNoteToSelf,
-                        exchange_rate_or_transaction_time: {
-                            key: 'ExchangeRate',
-                            value: exchangeRateId,
-                        },
+                        exchange_rate_or_transaction_time: exchangeRateId
+                            ? {
+                                  key: 'ExchangeRate',
+                                  value: exchangeRateId,
+                              }
+                            : { key: 'TransactionTime', value: Date.now().toString() },
                     },
                     { address_id: account.Addresses[0]?.ID ?? null, subject: null, body: encryptedData }
                 )
@@ -108,5 +123,5 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         setPsbt(undefined);
     }, []);
 
-    return { psbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt };
+    return { psbt, loadingBroadcast, broadcastedTxId, createPsbt, createMockPsbt, erasePsbt, signAndBroadcastPsbt };
 };

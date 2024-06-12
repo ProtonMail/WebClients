@@ -1,9 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
@@ -21,6 +22,10 @@ import { getThemeForWallet } from '../utils';
 export const AccountContainer = () => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
     const history = useHistory();
+
+    // Used to reset bitcoin send modal at the end of the process
+    const generateBitcoinSendKey = () => generateUID('bitcoin-send');
+    const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
@@ -114,7 +119,16 @@ export const AccountContainer = () => {
                     />
 
                     {!isSyncingChainData && (
-                        <BitcoinSendModal wallet={wallet} account={walletAccount} {...walletSendModal} />
+                        <BitcoinSendModal
+                            key={bitcoinSendKey}
+                            wallet={wallet}
+                            account={walletAccount}
+                            theme={theme}
+                            modal={walletSendModal}
+                            onDone={() => {
+                                setBitcoinSendKey(generateBitcoinSendKey());
+                            }}
+                        />
                     )}
                 </div>
             </div>

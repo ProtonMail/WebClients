@@ -1,22 +1,27 @@
 import { useState } from 'react';
 
-import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
-import { getInitials } from '@proton/shared/lib/helpers/string';
+import {
+    WasmApiExchangeRate,
+    WasmApiWalletAccount,
+    WasmBitcoinUnit,
+    WasmRecipient,
+    WasmTxBuilder,
+} from '@proton/andromeda';
+import { Icon, Tooltip } from '@proton/components/components';
+import { useNotifications } from '@proton/components/hooks';
 
 import { Button, CoreButton } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
-import { Price } from '../../atoms/Price';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../store/hooks';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
+import { EmailListItem } from '../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
-import { RecipientListItem } from './RecipientListItem';
 
 interface Props {
     txBuilder: WasmTxBuilder;
@@ -37,14 +42,9 @@ export const AmountInput = ({
     apiAccount,
     onReview,
 }: Props) => {
-    // We disable the single amount input if some recipients have been attributed different amounts
-    const isSingleAmountInputHidden = txBuilder.getRecipients().reduce((acc, current, index, recipients) => {
-        return acc || (index > 0 && current[2] !== recipients[index - 1][2]);
-    }, false);
-
-    const [useDetailledInput, setUseDetailledInput] = useState(isSingleAmountInputHidden);
     const [defaultExchangeRate] = useExchangeRate(apiAccount.FiatCurrency);
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
+    const { createNotification } = useNotifications();
 
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
 
@@ -56,25 +56,46 @@ export const AmountInput = ({
 
     const remainingAmount = accountBalance - totalSentAmount;
 
+    const tryUpdateRecipientAmount = (recipient: WasmRecipient, recipientIndex: number, newAmount: number) => {
+        updateTxBuilder(async (txBuilder) => {
+            const initialAmount = recipient[2];
+            const updated = await txBuilder.updateRecipient(recipientIndex, undefined, BigInt(newAmount));
+            if (updated.getRecipients()[recipientIndex][2] === initialAmount) {
+                createNotification({
+                    type: 'warning',
+                    text: c('Wallet send')
+                        .t`Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.`,
+                });
+            }
+
+            return updated;
+        });
+    };
+
     /**
      * User can update a single amount input, the update amount will be attributed to every recipient
      */
     const handleUpdateSingleAmount = (newAmount: number) => {
-        txBuilder.getRecipients().forEach((_, i) => {
-            updateTxBuilder((txBuilder) => txBuilder.updateRecipient(i, undefined, BigInt(newAmount)));
+        txBuilder.getRecipients().forEach((r, i) => {
+            const amount = r[2];
+            if (Number(amount) !== newAmount) {
+                tryUpdateRecipientAmount(r, i, newAmount);
+            }
         });
     };
 
     const handleSendAllFromSingleAmount = () => {
         const amountPerRecipient = Math.floor(accountBalance / txBuilder.getRecipients().length);
-        txBuilder.getRecipients().forEach((_, i) => {
-            updateTxBuilder((txBuilder) => txBuilder.updateRecipient(i, undefined, BigInt(amountPerRecipient)));
+        txBuilder.getRecipients().forEach((r, i) => {
+            tryUpdateRecipientAmount(r, i, amountPerRecipient);
         });
     };
 
     return (
         <div className="flex flex-column max-w-full">
-            {useDetailledInput ? (
+            <h2 className="text-center mb-8 text-semibold">{c('Wallet send').t`How much are you sending?`}</h2>
+
+            {txBuilder.getRecipients().length > 1 ? (
                 <>
                     <div className="mb-6">
                         <BitcoinAmountInputWithBalanceAndCurrencySelect
@@ -84,69 +105,6 @@ export const AmountInput = ({
                             remainingBalance={remainingAmount}
                         />
                     </div>
-
-                    <div className="w-full mt-4 flex flex-row justify-space-between items-center">
-                        <span className="block color-hint">{c('Wallet balance').t`Split among`}</span>
-
-                        <div>
-                            <CoreButton size="small" shape="ghost" color="norm" onClick={() => onBack()}>
-                                {c('Wallet send').t`Edit recipients`}
-                            </CoreButton>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-column w-full mt-2 mb-4">
-                        {txBuilder.getRecipients().map((txBuilderRecipient, index) => {
-                            const recipientUid = txBuilderRecipient[0];
-                            const btcAddress = txBuilderRecipient[1];
-                            const amount = txBuilderRecipient[2];
-
-                            const recipient = btcAddressMap[btcAddress];
-
-                            // Typeguard, no recipient should be undefined here
-                            if (!recipient) {
-                                return null;
-                            }
-
-                            return (
-                                <div
-                                    key={`${recipientUid}`}
-                                    className="flex flex-row flex-nowrap items-center grow py-2 rounded-lg mt-2 w-full"
-                                >
-                                    <div
-                                        className="ui-orange rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold no-shrink"
-                                        style={{
-                                            '--h-custom': '2rem',
-                                            '--w-custom': '2rem',
-                                            background: 'var(--interaction-norm-minor-1)',
-                                            color: 'var(--interaction-norm)',
-                                        }}
-                                    >
-                                        {getInitials(recipient.recipient.Name ?? recipient.recipient.Address)}
-                                    </div>
-
-                                    <div className="flex flex-column justify-center mr-auto">
-                                        <span className="block w-full text-ellipsis text-left">
-                                            {recipient.recipient.Name}
-                                        </span>
-                                    </div>
-
-                                    <div className="w-custom mr-1 no-shrink" style={{ '--w-custom': '7.5rem' }}>
-                                        <BitcoinAmountInput
-                                            unit={exchangeRate ?? 'BTC'}
-                                            value={Number(amount)}
-                                            onValueChange={(v) => {
-                                                updateTxBuilder((txBuilder) =>
-                                                    txBuilder.updateRecipient(index, undefined, BigInt(v))
-                                                );
-                                            }}
-                                            inputClassName="text-right"
-                                        />
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
                 </>
             ) : (
                 <>
@@ -155,72 +113,102 @@ export const AmountInput = ({
                         const firstTxBuilderRecipient = txBuilderRecipients[0];
                         const firstRecipientAmount = firstTxBuilderRecipient[2];
 
-                        // Typeguard, no recipient should be undefined here
-                        const recipients = compact(txBuilder.getRecipients().map((r) => btcAddressMap[r[1]]));
-                        const [firstRecipient] = recipients;
-
-                        const price = (
-                            <Price
-                                key={'sent-amount-total'}
-                                satsAmount={totalSentAmount}
-                                unit={exchangeRate ?? 'BTC'}
-                            />
-                        );
-
                         return (
-                            <>
-                                <RecipientListItem
-                                    onClickEdit={onBack}
-                                    {...(recipients.length > 1 ? { recipients } : { recipient: firstRecipient })}
-                                />
-
-                                <BitcoinAmountInputWithBalanceAndCurrencySelect
-                                    exchangeRate={exchangeRate}
-                                    value={Number(firstRecipientAmount)}
-                                    onSendAll={handleSendAllFromSingleAmount}
-                                    onAmountChange={(v) => handleUpdateSingleAmount(v)}
-                                    onExchangeRateChange={(e) => setControlledExchangeRate(e)}
-                                    remainingBalance={remainingAmount}
-                                />
-
-                                {txBuilder.getRecipients().length > 1 && (
-                                    <div className="bg-norm mx-auto flex flex-column my-4 w-full text-center py-2 rounded-lg">
-                                        <span>{c('Wallet send').jt`You are sending ${price} in total`}</span>
-                                        {!useDetailledInput && (
-                                            <CoreButton
-                                                size="small"
-                                                shape="ghost"
-                                                color="norm"
-                                                className="mx-auto py-0"
-                                                onClick={() => setUseDetailledInput(true)}
-                                            >
-                                                {c('Wallet send').t`Edit amounts`}
-                                            </CoreButton>
-                                        )}
-                                    </div>
-                                )}
-                            </>
+                            <BitcoinAmountInputWithBalanceAndCurrencySelect
+                                exchangeRate={exchangeRate}
+                                value={Number(firstRecipientAmount)}
+                                onSendAll={handleSendAllFromSingleAmount}
+                                onAmountChange={(v) => handleUpdateSingleAmount(v)}
+                                onExchangeRateChange={(e) => setControlledExchangeRate(e)}
+                                remainingBalance={remainingAmount}
+                            />
                         );
                     })()}
                 </>
             )}
 
-            <Button
-                color="norm"
-                shape="solid"
-                className="mt-6"
-                fullWidth
-                onClick={() => {
-                    txBuilder.getRecipients().forEach((r, i) => {
-                        if (!r[2]) {
-                            updateTxBuilder((txBuilder) => txBuilder.removeRecipient(i));
-                        }
-                    });
+            <div className="w-full mt-4 flex flex-row justify-space-between items-center">
+                <span className="block color-weak">{c('Wallet send').t`Recipients`}</span>
 
-                    onReview(exchangeRate ?? 'BTC');
-                }}
-                disabled={txBuilder.getRecipients().every((r) => !r[2])}
-            >{c('Wallet send').t`Review`}</Button>
+                <div>
+                    <CoreButton size="small" shape="ghost" color="norm" onClick={() => onBack()}>
+                        {c('Wallet send').t`Edit recipients`}
+                    </CoreButton>
+                </div>
+            </div>
+
+            <div className="flex flex-column w-full mt-2 mb-4">
+                {txBuilder.getRecipients().map((txBuilderRecipient, index) => {
+                    const recipientUid = txBuilderRecipient[0];
+                    const btcAddress = txBuilderRecipient[1];
+                    const amount = txBuilderRecipient[2];
+
+                    const recipient = btcAddressMap[btcAddress];
+
+                    // Typeguard, no recipient should be undefined here
+                    if (!recipient) {
+                        return null;
+                    }
+
+                    return (
+                        <EmailListItem
+                            key={recipientUid}
+                            index={index}
+                            name={recipient.recipient.Name ?? recipient.recipient.Address}
+                            address={recipient.recipient.Address}
+                            leftNode={
+                                txBuilder.getRecipients().length > 1 ? (
+                                    <CoreButton
+                                        shape="ghost"
+                                        color="weak"
+                                        className="mr-1 no-shrink rounded-full"
+                                        size="small"
+                                        icon
+                                        onClick={() => updateTxBuilder((txBuilder) => txBuilder.removeRecipient(index))}
+                                    >
+                                        <Tooltip title={c('Wallet send').t`Remove email`}>
+                                            <Icon name="cross" alt={c('Wallet send').t`Remove email`} />
+                                        </Tooltip>
+                                    </CoreButton>
+                                ) : null
+                            }
+                            rightNode={
+                                txBuilder.getRecipients().length > 1 ? (
+                                    <div className="w-custom mr-1 no-shrink" style={{ '--w-custom': '7.5rem' }}>
+                                        <BitcoinAmountInput
+                                            unit={exchangeRate ?? 'BTC'}
+                                            value={Number(amount)}
+                                            onValueChange={(v) => {
+                                                tryUpdateRecipientAmount(txBuilderRecipient, index, v);
+                                            }}
+                                            inputClassName="text-right"
+                                        />
+                                    </div>
+                                ) : null
+                            }
+                        />
+                    );
+                })}
+            </div>
+
+            <div className="px-10">
+                <Button
+                    color="norm"
+                    shape="solid"
+                    className="mt-6"
+                    fullWidth
+                    onClick={() => {
+                        txBuilder.getRecipients().forEach((r, i) => {
+                            if (!r[2]) {
+                                updateTxBuilder((txBuilder) => txBuilder.removeRecipient(i));
+                            }
+                        });
+
+                        onReview(exchangeRate ?? 'BTC');
+                    }}
+                    disabled={txBuilder.getRecipients().every((r) => !r[2])}
+                >{c('Wallet send').t`Review`}</Button>
+            </div>
         </div>
     );
 };
