@@ -31,32 +31,28 @@ const useButtonVariants = () => {
         !hasPaidMail && InboxFreeUserRotatingButtonStyles && InboxFreeUserRotatingButtonStylesVariant;
     // if experiment is ongoing AND for MAIL/CALENDAR Free users only
 
-    const getVariant = (variant: BUTTONS_VARIANTS) => {
+    const getVariant = (variant: BUTTONS_VARIANTS): VariantInfos | undefined => {
         switch (variant) {
             case BUTTONS_VARIANTS.RED:
                 return {
                     additionnalStylesClass: 'button-promotion--red',
                     upsellPath: SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR_RED,
                 };
-                break;
             case BUTTONS_VARIANTS.YELLOW:
                 return {
                     additionnalStylesClass: 'button-promotion--yellow',
                     upsellPath: SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR_YELLOW,
                 };
-                break;
             case BUTTONS_VARIANTS.PINKBLUE:
                 return {
                     additionnalStylesClass: 'button-promotion--pinkblue',
                     upsellPath: SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR_PINKBLUE,
                 };
-                break;
             case BUTTONS_VARIANTS.STANDARD:
                 return {
                     additionnalStylesClass: '',
                     upsellPath: SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR,
                 };
-                break;
         }
     };
 
