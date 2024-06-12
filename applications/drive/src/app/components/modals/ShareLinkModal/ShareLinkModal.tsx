@@ -13,6 +13,7 @@ import {
     ModalTwoHeader,
     Tooltip,
     useModalTwoStatic,
+    useToggle,
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -20,6 +21,7 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { ShareMember, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
+import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
@@ -77,6 +79,12 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
     const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
+    const [inviteMessage, setInviteMessage] = useState('');
+    const {
+        state: includeInviteMessage,
+        toggle: toggleIncludeInviteMessage,
+        set: setIncludeInviteMessage,
+    } = useToggle(true);
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
     // It's important in this order. As if it's hasSharedLink is true, isShared is true as well (even if cache not updated)
@@ -88,9 +96,24 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
     const isDirectSharingAutocompleteDisabled = isAdding || isLoading || isDirectSharingDisabled;
 
-    const handleSubmit = async () => {
-        await addNewMembers(invitees, selectedPermissions);
+    const cleanFields = () => {
+        setInviteMessage('');
+        setIncludeInviteMessage(true);
         cleanInvitees();
+    };
+
+    const handleSubmit = async () => {
+        await addNewMembers({
+            invitees,
+            permissions: selectedPermissions,
+            emailDetails: includeInviteMessage
+                ? {
+                      message: inviteMessage,
+                      itemName: name,
+                  }
+                : undefined,
+        });
+        cleanFields();
     };
 
     // Here we check if the email address is already in invited members
@@ -100,7 +123,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     );
 
     const handleCancel = () => {
-        cleanInvitees();
+        cleanFields();
     };
 
     const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
@@ -217,6 +240,13 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 onRemove={removeInvitee}
                                 onChangePermissions={setPermissions}
                                 selectedPermissions={selectedPermissions}
+                            />
+                            <DirectSharingInviteMessage
+                                isAdding={isAdding}
+                                inviteMessage={inviteMessage}
+                                includeInviteMessage={includeInviteMessage}
+                                onChangeInviteMessage={setInviteMessage}
+                                onToggleIncludeInviteMessage={toggleIncludeInviteMessage}
                             />
                         </ModalTwoContent>
                         <ModalTwoFooter>

@@ -1,19 +1,29 @@
 import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '../../drive/constants';
 
+interface InviteEmailDetailsPayload {
+    Message?: string;
+    ItemName?: string;
+}
 export interface InviteProtonUserPayload {
-    InviterEmail: string;
-    InviteeEmail: string;
-    Permissions: SHARE_MEMBER_PERMISSIONS;
-    KeyPacket: string;
-    KeyPacketSignature: string;
-    ExternalInvitationID?: string;
+    Invitation: {
+        InviterEmail: string;
+        InviteeEmail: string;
+        Permissions: SHARE_MEMBER_PERMISSIONS;
+        KeyPacket: string;
+        KeyPacketSignature: string;
+        ExternalInvitationID?: string;
+    };
+    EmailDetails?: InviteEmailDetailsPayload;
 }
 
 export interface InviteExternalUserPayload {
-    InviterAddressID: string;
-    InviteeEmail: string;
-    Permissions: number;
-    ExternalInvitationSignature: string;
+    ExternalInvitation: {
+        InviterAddressID: string;
+        InviteeEmail: string;
+        Permissions: number;
+        ExternalInvitationSignature: string;
+    };
+    EmailDetails?: InviteEmailDetailsPayload;
 }
 
 export interface ShareInvitationPayload {
