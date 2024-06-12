@@ -476,11 +476,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -829,8 +829,8 @@
         "${ price } por usuário"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } assento de assistente de escrita",
-        "${ seats } assentos de assistente de escrita"
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } usuário",
@@ -2740,7 +2740,7 @@
         "Quantidade acima do máximo."
       ],
       "Amount below minimum (${ minimumAmount }).": [
-        "Valor total abaixo do mínimo (${ minimumAmount })."
+        "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
@@ -4733,7 +4733,7 @@
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle }."
+        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
@@ -4934,7 +4934,7 @@
         "Assistente de escrita"
       ],
       "Writing assistant add-on": [
-        "Complemento de assistente de escrita"
+        "Extensão do assistente de escrita"
       ],
       "Yearly": [
         "Anualmemnte"
@@ -7992,6 +7992,11 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]

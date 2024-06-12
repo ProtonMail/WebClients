@@ -482,10 +482,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6569,6 +6569,9 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Згенерыраваць лісты толькі з запытам"
+      ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
@@ -6629,6 +6632,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your texts": [
+        "Вычытка і ўдасканаленне вашага тэксту"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
@@ -6637,6 +6643,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
+      ],
+      "Reply to messages": [
+        "Адказ на паведамленні"
       ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
@@ -8278,6 +8287,11 @@
         "Палепшыць"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } месяц",
@@ -8593,7 +8607,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
