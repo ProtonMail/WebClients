@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
+import { useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { getPublicKeysForEmail } from '../../utils/getPublicKeysForEmail';
 import { ShareWithKey } from '../_shares';
+import { useGetPublicKeysForEmail } from '../_user';
 import {
     decryptSharePassphraseAsync,
     getOwnAddressAndPrimaryKeysAsync,
@@ -23,7 +23,7 @@ function useDriveCrypto() {
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
     const { UID } = useAuthentication();
-    const api = useApi();
+    const { getPublicKeysForEmail } = useGetPublicKeysForEmail();
 
     const getPrimaryAddress = useCallback(async () => {
         return getPrimaryAddressAsync(getAddresses).catch((error) => {
@@ -72,7 +72,7 @@ function useDriveCrypto() {
             if (result?.publicKeys) {
                 return result.publicKeys;
             }
-            return getPublicKeysForEmail(api, email).then((publicKeys) => {
+            return getPublicKeysForEmail(email).then((publicKeys) => {
                 if (!publicKeys) {
                     return [];
                 }
