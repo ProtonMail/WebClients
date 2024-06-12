@@ -573,12 +573,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
       ],
-      "Auto-lock could not be activated": [
-        "Otomatik kilit özelliği açılamadı"
-      ],
-      "Auto-lock could not be disabled": [
-        "Otomatik kilitleme kapatılamadı"
-      ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
         "Davetiyeler şu anda gönderilemiyor"
@@ -958,9 +952,6 @@
       "Admin": [
         "Yönetici"
       ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Oturumunuz aık değilken ${ PASS_APP_NAME } erişimi için bir PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
-      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
@@ -999,9 +990,6 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
-      ],
-      "Auto-lock successfully disabled": [
-        "Otomatik kilitleme kapatıldı"
       ],
       "Breaches detected": [
         "Veriler ele geçirilmiş"
@@ -1210,9 +1198,6 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } yükleniyor"
       ],
-      "Locking your session...": [
-        "Oturumunuz kilitleniyor..."
-      ],
       "Logging you out...": [
         "Oturumunuz kapatılıyor..."
       ],
@@ -1307,14 +1292,8 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın.\nBu durumda ${ PASS_APP_NAME } asla kilitlenmez."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Otomatik kilitleme ayarlarınızı kaydetmek için lütfen PIN kodunuzu yazın."
       ],
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
@@ -1366,12 +1345,6 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Verilerinizi kolayca kilitlemek için bir PIN kodu ayarlayın"
-      ],
-      "Setting up offline mode...": [
-        "Çevrim dışı kip ayarlanıyor..."
       ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
@@ -1619,9 +1592,6 @@
       ],
       "Application logs": [
         "Uygulama günlükleri"
-      ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } otomatik kilitleme"
       ],
       "Auto-lock after": [
         "Otomatik kilitleme süresi"
@@ -1905,9 +1875,6 @@
       "Session locking": [
         "Oturum kilitleme"
       ],
-      "Set PIN code": [
-        "PIN kodu ayarla"
-      ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
       ],
@@ -2016,9 +1983,6 @@
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
-      ],
-      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Şu anda çevrim dışı durumdasınız. ${ BRAND_NAME } parolanızla ${ PASS_SHORT_APP_NAME } kilidini açın"
       ]
     },
     "lobby: Title": {
