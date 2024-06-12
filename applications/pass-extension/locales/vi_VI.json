@@ -50,6 +50,9 @@
       "Bulk restore items from trash": [
         "Khôi phục nhiều nội dung từ thùng rác"
       ],
+      "Bulk select items": [
+        "Chọn nhiều nội dung"
+      ],
       "Cancel": [
         "Hủy"
       ],
@@ -116,6 +119,9 @@
       "Create login": [
         "Tạo đăng nhập"
       ],
+      "Create new login": [
+        "Tạo đăng nhập mới"
+      ],
       "Create note": [
         "Tạo ghi chú"
       ],
@@ -143,6 +149,9 @@
       "Delete vault": [
         "Xóa kho lưu trữ"
       ],
+      "Deselect": [
+        "Bỏ chọn"
+      ],
       "Disable autosave on this website": [
         "Tắt tự động điền trên trang web này"
       ],
@@ -160,6 +169,9 @@
       ],
       "Done": [
         "Xong"
+      ],
+      "Download this CSV template": [
+        "Tải xuống mẫu CSV"
       ],
       "Edit": [
         "Sửa"
@@ -326,8 +338,14 @@
       "Save": [
         "Lưu"
       ],
+      "Save passkey": [
+        "Lưu khóa truy cập"
+      ],
       "Saving": [
         "Lưu"
+      ],
+      "Saving passkey...": [
+        "Đang lưu khóa truy cập..."
       ],
       "See members": [
         "Xem thành viên"
@@ -404,6 +422,18 @@
       "Upgrade now to share with more people": [
         "Nâng cấp ngay để chia sẻ với nhiều người hơn"
       ],
+      "View app logs": [
+        "Xem nhật ký ứng dụng"
+      ],
+      "View history": [
+        "Xem lịch sử"
+      ],
+      "View item history": [
+        "Xem lịch sử nội dung"
+      ],
+      "View older history": [
+        "Xem lịch sử cũ hơn"
+      ],
       "Write us on Reddit": [
         "Gửi cho chúng tôi trên Reddit"
       ],
@@ -462,12 +492,6 @@
       ],
       "Authentication failure: ${ message }": [
         "Xác thực thất bại: ${ message }"
-      ],
-      "Auto-lock could not be activated": [
-        "Không thể kích hoạt Tự động khóa"
-      ],
-      "Auto-lock could not be disabled": [
-        "Không thể vô hiệu hóa Tự động khóa"
       ],
       "Cannot create alias (${ error }).": [
         "Không thể tạo bí danh (${ error })."
@@ -756,14 +780,23 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } sẽ chỉ nhập các đăng nhập, ghi chú và thẻ."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } sẽ thông báo bạn mỗi khi các mật khẩu mới tạo tự đồng điền vào."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } sẽ đề xuất bạn lưu hoặc cập nhật thông tin đăng nhập."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } sẽ gợi ý xác thực bằng các khóa truy cập đã lưu"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } sẽ gợi ý tạo địa chỉ email bí danh khi đăng ký."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } sẽ gợi ý tạo mật khẩu mạnh khi đăng ký."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } sẽ gợi ý lưu khóa truy cập."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } ngày còn lại"
@@ -785,9 +818,6 @@
       ],
       "Admin": [
         "Quản trị viên"
-      ],
-      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Khi không hoạt động, việc vào ${ PASS_APP_NAME } sẽ cần mã PIN để mở khóa phiên làm việc của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
@@ -819,9 +849,6 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
       ],
-      "Auto-lock successfully disabled": [
-        "Đã vô hiệu hóa Tự động khóa thành công"
-      ],
       "Autosaved on ${ payload.domain }": [
         "Đã tự động lưu trên ${ payload.domain }"
       ],
@@ -845,6 +872,9 @@
       ],
       "Click the icon to open it anytime.": [
         "Nhấn vào biểu tượng để mở nó bất kỳ lúc nào."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Đóng cửa sổ này để dùng một khóa bảo mật hoặc khóa truy cập khác."
       ],
       "Close this window in order to use another passkey manager.": [
         "Đóng cửa sổ này để dùng một trình quản lý khóa truy cập khác."
@@ -926,6 +956,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Để có được trải nghiệm tốt nhất từ ${ PASS_APP_NAME }, vui lòng cấp quyền phần mở rộng cần thiết"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Mất kết nối Internet. Vui lòng kiểm tra tình trạng kết nối của thiết bị."
       ],
       "Invitation sent": [
         "Đã gửi lời mời"
@@ -1044,14 +1077,8 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
       ],
-      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại.\nLúc đó ${ PASS_APP_NAME } sẽ không bao giờ khóa nữa."
-      ],
       "Please confirm your PIN code to edit this setting.": [
         "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
-      ],
-      "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Vui lòng xác nhận lại mã PIN của bạn để hoàn thành thiết lập tính năng tự động khóa."
       ],
       "Please consider leaving a review.": [
         "Vui lòng xem xét việc để lại đánh giá nhé."
@@ -1103,9 +1130,6 @@
       ],
       "Selected items successfully restored from trash": [
         "Các nội dung được chọn đã được khôi phục từ thùng rác"
-      ],
-      "Set up a PIN code to easily lock your data": [
-        "Thiết lập mã PIN để dễ dàng khóa dữ liệu của bạn"
       ],
       "Settings successfully updated": [
         "Đã cập nhật cài đặt"
@@ -1268,6 +1292,12 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } từ"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "quản lý ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "phiên bản ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 giờ"
       ],
@@ -1319,8 +1349,8 @@
       "Application logs": [
         "Nhật ký ứng dụng"
       ],
-      "Auto-lock ${ PASS_APP_NAME }": [
-        "Tự động khóa ${ PASS_APP_NAME }"
+      "Authenticate with passkeys": [
+        "Xác thực bằng khóa truy cập"
       ],
       "Auto-lock after": [
         "Tự động khóa sau"
@@ -1378,6 +1408,9 @@
       ],
       "Created": [
         "Đã tạo"
+      ],
+      "Created at": [
+        "Đã tạo lúc"
       ],
       "Device": [
         "Thiết bị"
@@ -1517,6 +1550,9 @@
       "No history": [
         "Không có lịch sử"
       ],
+      "None": [
+        "Không"
+      ],
       "Note": [
         "Ghi chú"
       ],
@@ -1562,6 +1598,9 @@
       "Prompt for auto-save": [
         "Nhắc nhở tự động lưu"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Thông báo tự lưu khi tạo mật khẩu"
+      ],
       "Rate us": [
         "Đánh giá chúng tôi"
       ],
@@ -1600,9 +1639,6 @@
       ],
       "Session locking": [
         "Khóa phiên sử dụng"
-      ],
-      "Set PIN code": [
-        "Đặt mã PIN"
       ],
       "Settings": [
         "Cài đặt"
@@ -1708,6 +1744,9 @@
     "Message": {
       "${ count } item": [
         "${ count } nội dung"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này"
       ]
     },
     "Onboarding": {
@@ -1845,6 +1884,9 @@
       "Create PIN code": [
         "Tạo mã PIN"
       ],
+      "Created": [
+        "Đã tạo"
+      ],
       "Current version": [
         "Phiên bản hiện tại"
       ],
@@ -1884,6 +1926,12 @@
       "Import to vault(s)": [
         "Nhập vào (các) kho lưu trữ"
       ],
+      "Last autofill": [
+        "Tự động điền mới nhất"
+      ],
+      "Last modified": [
+        "Sửa đổi lần cuối"
+      ],
       "Leave vault ?": [
         "Rời kho lưu trữ ?"
       ],
@@ -1902,11 +1950,20 @@
       "Move all items ?": [
         "Chuyển tất cả nội dung ?"
       ],
+      "Move item?": [
+        "Di chuyển nội dung?"
+      ],
+      "Move items?": [
+        "Di chuyển các nội dung?"
+      ],
       "No items selected": [
         "Không có nội dung nào được chọn"
       ],
       "Our welcome gift to you": [
         "Quà tặng chào mừng của chúng tôi"
+      ],
+      "Passkey": [
+        "Khóa truy cập"
       ],
       "Password": [
         "Mật khẩu"
@@ -1919,6 +1976,9 @@
       ],
       "Pin the extension": [
         "Ghim phần mở rộng"
+      ],
+      "Restore this version?": [
+        "Khôi phục phiên bản này?"
       ],
       "Review and share": [
         "Xem lại và chia sẻ"
