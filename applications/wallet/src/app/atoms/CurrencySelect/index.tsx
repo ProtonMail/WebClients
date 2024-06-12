@@ -70,10 +70,12 @@ export const CurrencySelect = ({
         () =>
             allDropdownChildren.map((option) => {
                 if (option.type === 'option') {
-                    const title = dense ? option.Symbol : `${option.Name}, ${option.Symbol} ${option.Sign}`;
                     return (
-                        <Option key={option.ID} value={getSerialisedOption(option)} title={title}>
-                            <span>{title}</span>
+                        <Option key={option.ID} value={getSerialisedOption(option)} title={option.Symbol}>
+                            <div className="flex flex-row items-center">
+                                <span className="block mr-2">{option.Symbol}</span>
+                                <span className="block color-weak">{option.Name}</span>
+                            </div>
                         </Option>
                     );
                 } else {
@@ -84,7 +86,7 @@ export const CurrencySelect = ({
                     );
                 }
             }),
-        [allDropdownChildren, dense]
+        [allDropdownChildren]
     );
 
     return (
@@ -100,6 +102,17 @@ export const CurrencySelect = ({
             hint={hint}
             data-testid="currency-selector"
             disabled={disabled}
+            renderSelected={(selected) => {
+                const option = onlyOptions.find((o) => getSerialisedOption(o) === selected);
+                return dense ? (
+                    <span className="block mr-2">{option?.Symbol}</span>
+                ) : (
+                    <div className="flex flex-row items-center">
+                        <span className="block mr-2">{option?.Symbol}</span>
+                        <span className="block color-weak">{option?.Name}</span>
+                    </div>
+                );
+            }}
             size={{
                 width: DropdownSizeUnit.Dynamic,
                 maxWidth: DropdownSizeUnit.Viewport,

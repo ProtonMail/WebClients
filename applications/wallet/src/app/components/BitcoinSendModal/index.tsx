@@ -1,47 +1,36 @@
 import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { noop } from 'lodash';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
-import { ModalOwnProps } from '@proton/components/components';
+import { ModalOwnProps, useModalState } from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
-import { getAccountWithChainDataFromManyWallets } from '../../utils';
+import { SubTheme, getAccountWithChainDataFromManyWallets } from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { AmountInput } from './AmountInput';
+import { ModalHeader, StepKey } from './ModalHeader';
 import { useOnChainFeesSelector } from './OnchainTransactionBuilderFooter/OnchainTransactionAdvancedOptions/useOnChainFeesSelector';
 import { RecipientsSelection } from './RecipientsSelection';
 import { TransactionReview } from './TransactionReview';
+import { TransactionSendConfirmationModal } from './TransactionSendConfirmationModal';
 
-interface Props extends ModalOwnProps {
+interface Props {
+    theme?: SubTheme;
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
+    modal: ModalOwnProps;
+    onDone?: () => void;
 }
 
-enum StepKey {
-    RecipientsSelection,
-    AmountInput,
-    ReviewTransaction,
-}
-
-type StepWithData =
-    | {
-          key: StepKey.RecipientsSelection;
-      }
-    | {
-          key: StepKey.AmountInput;
-      }
-    | {
-          key: StepKey.ReviewTransaction;
-          unit: WasmBitcoinUnit | WasmApiExchangeRate;
-      };
-
-export const BitcoinSendModal = ({ wallet, account, ...modalProps }: Props) => {
-    const [stepWithData, setStepWithData] = useState<StepWithData>({ key: StepKey.RecipientsSelection });
+export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Props) => {
+    const [stepKey, setStepKey] = useState<StepKey>(StepKey.RecipientsSelection);
+    const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>('BTC');
     const recipientHelpers = useEmailAndBtcAddressesMaps();
+    const [sendConfirmModal, setSendConfirmModal] = useModalState();
 
     const { walletsChainData } = useBitcoinBlockchainContext();
 
@@ -64,45 +53,76 @@ export const BitcoinSendModal = ({ wallet, account, ...modalProps }: Props) => {
     }, [updateTxBuilder]);
 
     return (
-        <FullscreenModal title={c('Wallet send').t`Send bitcoin`} {...modalProps}>
-            {stepWithData.key === StepKey.RecipientsSelection && (
-                <RecipientsSelection
-                    txBuilder={txBuilder}
-                    updateTxBuilder={updateTxBuilder}
-                    recipientHelpers={recipientHelpers}
-                    onRecipientsConfirm={() => {
-                        setStepWithData({ key: StepKey.AmountInput });
-                    }}
-                />
-            )}
+        <>
+            <FullscreenModal
+                header={
+                    <ModalHeader
+                        onClose={() => {
+                            modal.onClose?.();
+                            onDone?.();
+                        }}
+                        onClickStep={(key) => {
+                            setStepKey(key);
+                        }}
+                        currentStep={stepKey}
+                    />
+                }
+                {...modal}
+            >
+                {stepKey === StepKey.RecipientsSelection && (
+                    <RecipientsSelection
+                        txBuilder={txBuilder}
+                        updateTxBuilder={updateTxBuilder}
+                        recipientHelpers={recipientHelpers}
+                        onRecipientsConfirm={() => {
+                            setStepKey(StepKey.AmountInput);
+                        }}
+                    />
+                )}
 
-            {stepWithData.key === StepKey.AmountInput && wasmAccount?.account && (
-                <AmountInput
-                    apiAccount={account}
-                    account={wasmAccount}
-                    txBuilder={txBuilder}
-                    updateTxBuilder={updateTxBuilder}
-                    btcAddressMap={recipientHelpers.btcAddressMap}
-                    onBack={() => setStepWithData({ key: StepKey.RecipientsSelection })}
-                    onReview={(unit: WasmBitcoinUnit | WasmApiExchangeRate) =>
-                        setStepWithData({ key: StepKey.ReviewTransaction, unit })
-                    }
-                />
-            )}
+                {stepKey === StepKey.AmountInput && wasmAccount?.account && (
+                    <AmountInput
+                        apiAccount={account}
+                        account={wasmAccount}
+                        txBuilder={txBuilder}
+                        updateTxBuilder={updateTxBuilder}
+                        btcAddressMap={recipientHelpers.btcAddressMap}
+                        onBack={() => setStepKey(StepKey.RecipientsSelection)}
+                        onReview={(unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
+                            setUnit(unit);
+                            setStepKey(StepKey.ReviewTransaction);
+                        }}
+                    />
+                )}
 
-            {stepWithData.key === StepKey.ReviewTransaction && (
-                <TransactionReview
-                    wallet={wallet}
-                    account={account}
-                    unit={stepWithData.unit}
-                    txBuilder={txBuilder}
-                    updateTxBuilder={updateTxBuilder}
-                    btcAddressMap={recipientHelpers.btcAddressMap}
-                    onBack={() => setStepWithData({ key: StepKey.AmountInput })}
-                    onSent={() => modalProps.onClose?.()}
-                    onBackToEditRecipients={() => setStepWithData({ key: StepKey.RecipientsSelection })}
-                />
-            )}
-        </FullscreenModal>
+                {stepKey === StepKey.ReviewTransaction && (
+                    <TransactionReview
+                        wallet={wallet}
+                        account={account}
+                        unit={unit}
+                        txBuilder={txBuilder}
+                        updateTxBuilder={updateTxBuilder}
+                        btcAddressMap={recipientHelpers.btcAddressMap}
+                        onBack={() => setStepKey(StepKey.AmountInput)}
+                        onSent={() => {
+                            setStepKey(StepKey.Send);
+                            modal.onClose?.();
+                            setSendConfirmModal(true);
+                        }}
+                        onBackToEditRecipients={() => setStepKey(StepKey.RecipientsSelection)}
+                    />
+                )}
+            </FullscreenModal>
+
+            <TransactionSendConfirmationModal
+                {...sendConfirmModal}
+                theme={theme}
+                onClickDone={() => {
+                    sendConfirmModal.onClose?.();
+                    onDone?.();
+                }}
+                onClickInviteAFriend={noop}
+            />
+        </>
     );
 };

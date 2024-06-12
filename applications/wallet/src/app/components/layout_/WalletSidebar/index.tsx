@@ -10,7 +10,7 @@ import {
     UserDropdown,
     useActiveBreakpoint,
 } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -54,7 +54,7 @@ const WalletSidebar = ({
                     target="_self"
                     className="relative interactive-pseudo-protrude interactive--no-background"
                 >
-                    <img src={protonWalletLogo} alt="Proton wallet logo" />
+                    <img src={protonWalletLogo} alt={WALLET_APP_NAME} />
                 </AppLink>
             }
             version={<AppVersion />}
