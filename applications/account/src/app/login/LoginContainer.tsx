@@ -60,6 +60,7 @@ interface RenderProps {
 
 interface Props {
     defaultUsername?: string;
+    initialSearchParams?: URLSearchParams;
     onLogin: OnLoginCallback;
     toAppName?: string;
     toApp?: APP_NAMES;
@@ -84,7 +85,15 @@ const defaultRender = (data: RenderProps) => {
     );
 };
 
+const getDefaultUsername = (searchParams?: URLSearchParams) => {
+    if (!searchParams) {
+        return;
+    }
+    return searchParams.get('username') || searchParams.get('email');
+};
+
 const LoginContainer = ({
+    initialSearchParams,
     metaTags,
     defaultUsername,
     onLogin,
@@ -125,7 +134,13 @@ const LoginContainer = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
-    const previousUsernameRef = useRef(state?.username || defaultUsername || searchParams.get('username') || '');
+    const previousUsernameRef = useRef(
+        state?.username ||
+            defaultUsername ||
+            getDefaultUsername(searchParams) ||
+            getDefaultUsername(initialSearchParams) ||
+            ''
+    );
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
