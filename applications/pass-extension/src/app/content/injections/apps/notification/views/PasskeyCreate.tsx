@@ -82,7 +82,14 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
 
                     const { response } = result;
                     const passkey = sanitizePasskey(response, config);
-                    const base = { type: AutosaveMode.UPDATE, name, username, password: '', domain, passkey };
+                    const base = {
+                        type: AutosaveMode.UPDATE,
+                        name,
+                        userIdentifier: username,
+                        password: '',
+                        domain,
+                        passkey,
+                    };
 
                     await sendMessage.on(
                         contentScriptMessage({
@@ -146,13 +153,13 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                         </div>
 
                         <Scroll>
-                            {items.map(({ itemId, shareId, url, username, name }) => (
+                            {items.map(({ itemId, shareId, url, userIdentifier, name }) => (
                                 <ListItem
                                     key={`${shareId}-${itemId}`}
                                     className="rounded-xl"
                                     icon="pass-passkey"
                                     title={name}
-                                    subTitle={username}
+                                    subTitle={userIdentifier}
                                     url={url}
                                     onClick={() =>
                                         form

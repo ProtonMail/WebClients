@@ -32,14 +32,14 @@ type PasskeyCreateStep = 'select' | 'edit';
 type AutosaveValues = AutosaveType<SelectedItem> & {
     step: PasskeyCreateStep;
     name: string;
-    username: string;
+    userIdentifier: string;
     password: string;
 };
 
-const getInitialValues = ({ username, password, domain, type }: AutosavePayload): AutosaveValues =>
+const getInitialValues = ({ userIdentifier, password, domain, type }: AutosavePayload): AutosaveValues =>
     type === AutosaveMode.UPDATE
-        ? { type: AutosaveMode.UPDATE, itemId: '', shareId: '', step: 'select', name: domain, username, password }
-        : { type: AutosaveMode.NEW, step: 'edit', name: domain, username, password };
+        ? { type: AutosaveMode.UPDATE, itemId: '', shareId: '', step: 'select', name: domain, userIdentifier, password }
+        : { type: AutosaveMode.NEW, step: 'edit', name: domain, userIdentifier, password };
 
 const getAutosavePayload =
     ({ domain }: AutosavePayload) =>
@@ -135,13 +135,13 @@ export const Autosave: FC<Props> = ({ data }) => {
                         </div>
 
                         <Scroll>
-                            {data.candidates.map(({ itemId, shareId, url, username, name }) => (
+                            {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
                                 <ListItem
                                     key={`${shareId}-${itemId}`}
                                     className="rounded-xl"
                                     icon="user"
                                     title={name}
-                                    subTitle={username}
+                                    subTitle={userIdentifier}
                                     url={url}
                                     onClick={() =>
                                         form.setValues((values) => ({
@@ -151,7 +151,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                                             itemId,
                                             shareId,
                                             name: name || values.name,
-                                            username: username || values.username,
+                                            userIdentifier: userIdentifier || values.userIdentifier,
                                         }))
                                     }
                                 />
@@ -187,7 +187,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                         </div>
 
                         <FieldsetCluster>
-                            <Field name="username" component={TextField} label={c('Label').t`Username`} />
+                            <Field name="userIdentifier" component={TextField} label={c('Label').t`Username/email`} />
                             <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
                         </FieldsetCluster>
                     </div>

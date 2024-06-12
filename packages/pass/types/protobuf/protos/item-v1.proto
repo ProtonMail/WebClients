@@ -31,11 +31,12 @@ message Passkey {
 }
 
 message ItemLogin {
-	string username = 1;
+	string item_email = 1;
 	string password = 2;
 	repeated string urls = 3;
 	string totp_uri = 4;
 	repeated Passkey passkeys = 5;
+	string item_username = 6;
 }
 
 message ItemAlias {

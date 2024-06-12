@@ -8,7 +8,13 @@ import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     OnePass1PuxData,
@@ -136,7 +142,8 @@ const extractLoginFieldFromLoginItem = (
 ): string => lastItem(item.details.loginFields.filter((field) => field.designation === designation))?.value ?? '';
 
 const processLoginItem = (
-    item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
+    item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>,
+    importUsername?: boolean
 ): ItemImportIntent<'login'> => {
     const [totp, extraFields] = extractFirst(
         extractExtraFields(item),
@@ -146,7 +153,9 @@ const processLoginItem = (
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
-        username: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME),
+        ...(importUsername
+            ? getEmailOrUsername(extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME))
+            : { email: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME) }),
         password: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.PASSWORD),
         urls: extractURLs(item),
         totp: totp?.data.totpUri,
@@ -200,7 +209,13 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
     });
 };
 
-export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPayload> => {
+export const read1Password1PuxData = async ({
+    data,
+    importUsername,
+}: {
+    data: ArrayBuffer;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     try {
         const zipFile = await jszip.loadAsync(data);
         const zipObject = zipFile.file('export.data');
@@ -221,7 +236,7 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
                         .map((item): Maybe<ItemImportIntent> => {
                             switch (item.categoryUuid) {
                                 case OnePassCategory.LOGIN:
-                                    return processLoginItem(item);
+                                    return processLoginItem(item, importUsername);
                                 case OnePassCategory.NOTE:
                                     return processNoteItem(item);
                                 case OnePassCategory.CREDIT_CARD:

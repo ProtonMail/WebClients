@@ -15,11 +15,11 @@ describe('Import Chrome CSV', () => {
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readChromiumData('not-a-csv-file')).rejects.toThrow();
+        await expect(readChromiumData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
-        const payload = await readChromiumData(chromeExport);
+        const payload = await readChromiumData({ data: chromeExport, importUsername: true });
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -32,7 +32,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('proton.me');
         expect(deobfuscate(loginItem1.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem1.content.username)).toEqual('nobody@proton.me');
+        expect(deobfuscate(loginItem1.content.itemEmail)).toEqual('nobody@proton.me');
+        expect(deobfuscate(loginItem1.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem1.content.password)).toEqual('proton123');
         expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/switch');
 
@@ -41,7 +42,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('missing url');
         expect(deobfuscate(loginItem2.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem2.content.username)).toEqual('missingurl@proton.me');
+        expect(deobfuscate(loginItem2.content.itemEmail)).toEqual('missingurl@proton.me');
+        expect(deobfuscate(loginItem2.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem2.content.password)).toEqual('proton123');
         expect(loginItem2.content.urls).toStrictEqual([]);
 
@@ -50,7 +52,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('missing password');
         expect(deobfuscate(loginItem3.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem3.content.username)).toEqual('missingpw@proton.me');
+        expect(deobfuscate(loginItem3.content.itemEmail)).toEqual('missingpw@proton.me');
+        expect(deobfuscate(loginItem3.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem3.content.password)).toEqual('');
         expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me/switch');
 
@@ -59,13 +62,14 @@ describe('Import Chrome CSV', () => {
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.name).toEqual('broken url');
         expect(deobfuscate(loginItem4.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem4.content.username)).toEqual('brokenurl@proton.me');
+        expect(deobfuscate(loginItem4.content.itemEmail)).toEqual('brokenurl@proton.me');
+        expect(deobfuscate(loginItem4.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem4.content.password)).toEqual('');
         expect(loginItem4.content.urls).toEqual([]);
     });
 
     it('correctly parse items if .csv has `notes` column', async () => {
-        const payload = await readChromiumData(chromeExportWindows);
+        const payload = await readChromiumData({ data: chromeExportWindows, importUsername: true });
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -78,7 +82,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('proton.me');
         expect(deobfuscate(loginItem1.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem1.content.username)).toEqual('nobody@proton.me');
+        expect(deobfuscate(loginItem1.content.itemEmail)).toEqual('nobody@proton.me');
+        expect(deobfuscate(loginItem1.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem1.content.password)).toEqual('proton123');
         expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/switch');
 
@@ -87,7 +92,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('missing url');
         expect(deobfuscate(loginItem2.metadata.note)).toEqual('somenote');
-        expect(deobfuscate(loginItem2.content.username)).toEqual('missingurl@proton.me');
+        expect(deobfuscate(loginItem2.content.itemEmail)).toEqual('missingurl@proton.me');
+        expect(deobfuscate(loginItem2.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem2.content.password)).toEqual('proton123');
         expect(loginItem2.content.urls).toStrictEqual([]);
 
@@ -96,7 +102,8 @@ describe('Import Chrome CSV', () => {
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('missing password');
         expect(deobfuscate(loginItem3.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem3.content.username)).toEqual('missingpw@proton.me');
+        expect(deobfuscate(loginItem3.content.itemEmail)).toEqual('missingpw@proton.me');
+        expect(deobfuscate(loginItem3.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem3.content.password)).toEqual('');
         expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me/switch');
     });

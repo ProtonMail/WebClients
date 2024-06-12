@@ -3,7 +3,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { SafariItem } from './safari.types';
 
@@ -12,7 +12,13 @@ import type { SafariItem } from './safari.types';
  * so we only expect headers in common and not all of them, to avoid readCSV throwing an error */
 const SAFARI_EXPECTED_HEADERS: (keyof SafariItem)[] = ['Title', 'Username', 'Password'];
 
-export const readSafariData = async (data: string): Promise<ImportPayload> => {
+export const readSafariData = async ({
+    data,
+    importUsername,
+}: {
+    data: string;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -33,7 +39,7 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
                             importLoginItem({
                                 name: item.Title,
                                 note: item.Notes,
-                                username: item.Username,
+                                ...(importUsername ? getEmailOrUsername(item.Username) : { email: item.Username }),
                                 password: item.Password,
                                 urls: [item.URL],
                                 totp: item.OTPAuth,

@@ -6,7 +6,13 @@ import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     DashlaneIdItem,
@@ -38,11 +44,11 @@ const DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS: (keyof DashlanePaymentItem)[] = [
     'expiration_year',
 ];
 
-const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
+const processLoginItem = (item: DashlaneLoginItem, importUsername?: boolean): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
         note: item.note,
-        username: item.username,
+        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
         password: item.password,
         urls: [item.url],
         totp: item.otpSecret,
@@ -89,7 +95,13 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
         : [];
 };
 
-export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload> => {
+export const readDashlaneData = async ({
+    data,
+    importUsername,
+}: {
+    data: ArrayBuffer;
+    importUsername?: boolean;
+}): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -102,7 +114,7 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
                 headers: DASHLANE_LOGINS_EXPECTED_HEADERS,
                 warnings,
             })
-        ).map(processLoginItem);
+        ).map((item) => processLoginItem(item, importUsername));
 
         /* notes */
         const noteItems = (

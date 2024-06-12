@@ -29,16 +29,17 @@ export const createPassExportCSV = (payload: ExportData): string => {
             type: data.type,
             name: data.metadata.name,
             url: 'urls' in data.content ? data.content.urls.join(', ') : '',
-            username: (() => {
+            email: (() => {
                 switch (data.type) {
                     case 'login':
-                        return data.content.username;
+                        return data.content.itemEmail;
                     case 'alias':
                         return aliasEmail ?? '';
                     default:
                         return '';
                 }
             })(),
+            username: data.type === 'login' ? data.content.itemUsername : '',
             password: 'password' in data.content ? data.content.password : '',
             note:
                 data.type === 'creditCard'

@@ -11,11 +11,11 @@ describe('Import Safari CSV', () => {
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/safari.csv', 'utf8');
-        payload = await readSafariData(sourceData);
+        payload = await readSafariData({ data: sourceData, importUsername: true });
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readSafariData('not-a-csv-file')).rejects.toThrow();
+        await expect(readSafariData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
@@ -34,7 +34,8 @@ describe('Import Safari CSV', () => {
         expect(loginItemBrokenUrl.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemBrokenUrl.metadata.name).toEqual('ex:ample.com (brokenurl@example.com)');
         expect(deobfuscate(loginItemBrokenUrl.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItemBrokenUrl.content.username)).toEqual('brokenurl@example.com');
+        expect(deobfuscate(loginItemBrokenUrl.content.itemEmail)).toEqual('brokenurl@example.com');
+        expect(deobfuscate(loginItemBrokenUrl.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemBrokenUrl.content.password)).toEqual('pass');
         expect(deobfuscate(loginItemBrokenUrl.content.totpUri)).toEqual('');
         expect(loginItemBrokenUrl.content.urls).toEqual([]);
@@ -49,7 +50,8 @@ describe('Import Safari CSV', () => {
         expect(loginItem2faScanned.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem2faScanned.metadata.name).toEqual('2fa.example.com (2fa-scanned)');
         expect(deobfuscate(loginItem2faScanned.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem2faScanned.content.username)).toEqual('2fa-scanned');
+        expect(deobfuscate(loginItem2faScanned.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItem2faScanned.content.itemUsername)).toEqual('2fa-scanned');
         expect(deobfuscate(loginItem2faScanned.content.password)).toEqual('pass');
         expect(deobfuscate(loginItem2faScanned.content.totpUri)).toEqual(
             'otpauth://totp/db%40example.com?issuer=Proton&secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&algorithm=SHA1&digits=6&period=30'
@@ -66,7 +68,8 @@ describe('Import Safari CSV', () => {
         expect(loginItemCommaQuote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemCommaQuote.metadata.name).toEqual('account.example.com (username with comma, quotes ")');
         expect(deobfuscate(loginItemCommaQuote.metadata.note)).toEqual('notes with commas, quotes "');
-        expect(deobfuscate(loginItemCommaQuote.content.username)).toEqual('username with comma, quotes "');
+        expect(deobfuscate(loginItemCommaQuote.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItemCommaQuote.content.itemUsername)).toEqual('username with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.password)).toEqual('password with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.totpUri)).toEqual('');
         expect(loginItemCommaQuote.content.urls).toEqual(['https://account.example.com/']);
@@ -81,7 +84,8 @@ describe('Import Safari CSV', () => {
         expect(loginItemMultipleLines.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemMultipleLines.metadata.name).toEqual('localhost (login-with-multiple-lines)');
         expect(deobfuscate(loginItemMultipleLines.metadata.note)).toEqual('notes with\nmultiple\nlines');
-        expect(deobfuscate(loginItemMultipleLines.content.username)).toEqual('login-with-multiple-lines');
+        expect(deobfuscate(loginItemMultipleLines.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItemMultipleLines.content.itemUsername)).toEqual('login-with-multiple-lines');
         expect(deobfuscate(loginItemMultipleLines.content.password)).toEqual('pass');
         expect(deobfuscate(loginItemMultipleLines.content.totpUri)).toEqual('');
         expect(loginItemMultipleLines.content.urls).toEqual(['http://localhost:7777/']);
@@ -98,9 +102,10 @@ describe('Import Safari CSV', () => {
             'account.proton.me (2fa-manually-entered-string@example.com)'
         );
         expect(deobfuscate(loginItem2faManuallyEntered.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem2faManuallyEntered.content.username)).toEqual(
+        expect(deobfuscate(loginItem2faManuallyEntered.content.itemEmail)).toEqual(
             '2fa-manually-entered-string@example.com'
         );
+        expect(deobfuscate(loginItem2faManuallyEntered.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem2faManuallyEntered.content.password)).toEqual('proton123');
         expect(deobfuscate(loginItem2faManuallyEntered.content.totpUri)).toEqual(
             'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30'

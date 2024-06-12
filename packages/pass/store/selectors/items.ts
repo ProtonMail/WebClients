@@ -1,7 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import {
-    hasUsername,
+    hasEmail,
+    hasUserIdentifier,
     isActive,
     isItemType,
     isPasskeyItem,
@@ -12,7 +13,7 @@ import {
 import {
     filterItemsByShareId,
     filterItemsByType,
-    filterItemsByUsername,
+    filterItemsByUserIdentifier,
     flattenItemsByShareId,
     sortItems,
 } from '@proton/pass/lib/items/item.utils';
@@ -75,7 +76,7 @@ export const selectCCItems = selectItemsByType('creditCard');
 /** Filters out all login items which were created from an alias item */
 export const selectNonAliasedLoginItems = createSelector([selectLoginItems, selectAliasItems], (logins, aliases) => {
     const aliasEmails = new Set<string>(aliases.map(prop('aliasEmail')).filter(isTruthy));
-    return logins.filter((item) => isActive(item) && !aliasEmails.has(deobfuscate(item.data.content.username)));
+    return logins.filter((item) => isActive(item) && !aliasEmails.has(deobfuscate(item.data.content.itemEmail)));
 });
 
 export const selectBulkSelection = (dto: BulkSelectionDTO) =>
@@ -155,13 +156,13 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-export const selectLoginsByUsername = (username: string) =>
-    createSelector(selectLoginItems, filterItemsByUsername(username));
+export const selectLoginsByUserIdentifier = (itemEmail: string) =>
+    createSelector(selectLoginItems, filterItemsByUserIdentifier(itemEmail));
 
-export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
+export const selectLoginItemByEmail = (itemEmail?: MaybeNull<string>) =>
     createSelector(selectLoginItems, (items) => {
-        if (!username) return;
-        return items.find(hasUsername(username));
+        if (!itemEmail) return;
+        return items.find(hasEmail(itemEmail));
     });
 
 export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectItemsByDomainOptions) =>
@@ -250,12 +251,12 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
         [
             selectItemsByDomain(options.subdomain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
             selectItemsByDomain(options.domain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
-            () => options.username,
+            () => options.userIdentifier,
         ],
-        (subdomainItems, domainItems, username) => {
+        (subdomainItems, domainItems, userIdentifier) => {
             const candidates = deduplicate(subdomainItems.concat(domainItems), itemEq);
-            if (!username) return candidates;
-            return candidates.filter(({ data }) => deobfuscate(data.content.username) === username);
+            if (!userIdentifier) return candidates;
+            return candidates.filter(hasUserIdentifier(userIdentifier));
         }
     );
 

@@ -14,7 +14,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { selectLoginItemByUsername } from '@proton/pass/store/selectors';
+import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
 
@@ -29,7 +29,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const trashed = isTrashed(revision);
     const modifiedCount = revisionNumber - 1;
 
-    const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail));
+    const relatedLogin = useSelector(selectLoginItemByEmail(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
 
     const [confirmTrash, setConfirmTrash] = useState(false);
@@ -39,7 +39,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         evt.preventDefault();
 
         navigate(getNewItemRoute('login'), {
-            searchParams: { username: aliasEmail },
+            searchParams: { email: aliasEmail },
             filters: { selectedShareId: shareId },
         });
     };
