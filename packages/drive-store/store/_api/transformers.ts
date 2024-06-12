@@ -187,6 +187,11 @@ export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: Dri
         eventId: EventID,
         events: Events.map((event) => ({
             eventType: event.EventType,
+            data: event.Data
+                ? {
+                      externalInvitationSignup: event.Data.ExternalInvitationSignup,
+                  }
+                : undefined,
             // ContextShareID is guaranteed to be on the event for all types
             // besides delete (after link is deleted, it is not possible to
             // find the share it was part of). For delete operation, it is
