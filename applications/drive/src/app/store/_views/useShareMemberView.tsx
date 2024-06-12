@@ -11,6 +11,7 @@ import { useLink } from '../_links';
 import {
     ShareExternalInvitation,
     ShareInvitation,
+    ShareInvitationEmailDetails,
     ShareInvitee,
     ShareMember,
     useShare,
@@ -174,10 +175,15 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         return createShareResult;
     };
 
-    const addNewMember = async (
-        invitee: ShareInvitee,
-        permissions: SHARE_MEMBER_PERMISSIONS
-    ): Promise<{
+    const addNewMember = async ({
+        invitee,
+        permissions,
+        emailDetails,
+    }: {
+        invitee: ShareInvitee;
+        permissions: SHARE_MEMBER_PERMISSIONS;
+        emailDetails?: ShareInvitationEmailDetails;
+    }): Promise<{
         externalInvitation?: ShareExternalInvitation;
         invitation?: ShareInvitation;
         code: number;
@@ -206,6 +212,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                     addressId,
                 },
                 permissions,
+                emailDetails,
             });
         }
 
@@ -222,23 +229,34 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 inviterEmail: primaryAddressKey.address.Email,
                 addressKey: primaryAddressKey.privateKey,
             },
+            emailDetails,
             permissions,
         });
     };
 
-    const addNewMembers = async (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => {
+    const addNewMembers = async ({
+        invitees,
+        permissions,
+        emailDetails,
+    }: {
+        invitees: ShareInvitee[];
+        permissions: SHARE_MEMBER_PERMISSIONS;
+        emailDetails?: ShareInvitationEmailDetails;
+    }) => {
         await withAdding(async () => {
             const abortController = new AbortController();
             const newInvitations: ShareInvitation[] = [];
             const newExternalInvitations: ShareExternalInvitation[] = [];
             for (let invitee of invitees) {
-                await addNewMember(invitee, permissions).then(({ invitation, externalInvitation }) => {
-                    if (invitation) {
-                        newInvitations.push(invitation);
-                    } else if (externalInvitation) {
-                        newExternalInvitations.push(externalInvitation);
+                await addNewMember({ invitee, permissions, emailDetails }).then(
+                    ({ invitation, externalInvitation }) => {
+                        if (invitation) {
+                            newInvitations.push(invitation);
+                        } else if (externalInvitation) {
+                            newExternalInvitations.push(externalInvitation);
+                        }
                     }
-                });
+                );
             }
             await updateIsSharedStatus(abortController.signal);
             setInvitations((oldInvitations: ShareInvitation[]) => [...oldInvitations, ...newInvitations]);

@@ -167,6 +167,11 @@ export interface ShareInvitation {
     state: SHARE_MEMBER_STATE;
 }
 
+export interface ShareInvitationEmailDetails {
+    message?: string;
+    itemName?: string;
+}
+
 export interface ShareExternalInvitation {
     externalInvitationId: string;
     inviterEmail: string;

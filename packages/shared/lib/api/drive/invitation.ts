@@ -1,11 +1,12 @@
 import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
 import { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
 
-export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonUserPayload) => ({
+export const queryInviteProtonUser = (shareID: string, { Invitation, EmailDetails }: InviteProtonUserPayload) => ({
     method: 'post',
     url: `drive/v2/shares/${shareID}/invitations`,
     data: {
-        Invitation: invitation,
+        Invitation,
+        EmailDetails,
     },
 });
 
@@ -74,17 +75,13 @@ export const queryUpdateInvitationPermissions = (
 /** External invitations **/
 export const queryInviteExternalUser = (
     shareID: string,
-    { InviterAddressID, InviteeEmail, Permissions, ExternalInvitationSignature }: InviteExternalUserPayload
+    { ExternalInvitation, EmailDetails }: InviteExternalUserPayload
 ) => ({
     method: 'post',
     url: `drive/v2/shares/${shareID}/external-invitations`,
     data: {
-        ExternalInvitation: {
-            InviterAddressID,
-            InviteeEmail,
-            Permissions,
-            ExternalInvitationSignature,
-        },
+        ExternalInvitation,
+        EmailDetails,
     },
 });
 
