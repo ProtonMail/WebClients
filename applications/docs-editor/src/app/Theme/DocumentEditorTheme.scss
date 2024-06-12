@@ -125,7 +125,7 @@
 	}
 }
 
-.Lexical__cursorsContainer > span {
+.Lexical__cursorsContainer > span:last-child {
 	> :last-child {
 		inline-size: 2px !important;
 
@@ -136,7 +136,7 @@
 			padding-inline: 6px !important;
 			font-size: 11px !important;
 			line-height: 14px !important;
-			font-weight: semibold !important;
+			font-weight: 600 !important;
 			font-family: inherit !important;
 			inset-block-start: -24px !important;
 			inset-inline-start: 0 !important;
