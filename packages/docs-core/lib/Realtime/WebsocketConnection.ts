@@ -17,6 +17,7 @@ import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isDev } from '../Util/isDevOrBlack'
+import { Result } from '../Domain/Result/Result'
 
 const DebugDisableSockets = false
 
@@ -27,8 +28,9 @@ const DebugConnection = {
 
 export class WebsocketConnection implements WebsocketConnectionInterface {
   private socket?: WebSocket
-  private state: WebsocketStateInterface = new WebsocketState()
+  readonly state: WebsocketStateInterface = new WebsocketState()
   private pingTimeout: NodeJS.Timeout | undefined = undefined
+  private reconnectTimeout: NodeJS.Timeout | undefined = undefined
   private destroyed = false
 
   constructor(
@@ -46,7 +48,9 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   handleOnlineConnectionEvent = (): void => {
-    void this.connect()
+    const reconnectDelay = this.state.getBackoff()
+    clearTimeout(this.reconnectTimeout)
+    this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
   }
 
   /**
@@ -67,6 +71,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   destroy(): void {
     this.destroyed = true
     clearInterval(this.pingTimeout)
+    clearTimeout(this.reconnectTimeout)
     window.removeEventListener('offline', this.handleOfflineConnectionEvent)
     window.removeEventListener('online', this.handleOnlineConnectionEvent)
     this.disconnect()
@@ -76,12 +81,38 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.socket?.close()
   }
 
-  buildUrl(params: { serverUrl: string; token: string; commitId: string | undefined }): string {
+  buildConnectionUrl(params: { serverUrl: string; token: string; commitId: string | undefined }): string {
     let url = `${DebugConnection.enabled ? DebugConnection.url : params.serverUrl}/?token=${params.token}`
     if (params.commitId) {
       url += `&commitId=${params.commitId}`
     }
     return url
+  }
+
+  async getTokenOrFailConnection(): Promise<Result<{ token: string; url: string }>> {
+    const urlAndTokenResult = await this.callbacks.getUrlAndToken()
+
+    if (urlAndTokenResult.isFailed()) {
+      this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
+      this.state.didFailToFetchToken()
+
+      const reason = ConnectionCloseReason.create({
+        code: ConnectionCloseReason.CODES.INTERNAL_ERROR,
+        message: c('Error').t`Failed to get connection parameters`,
+      })
+
+      this.callbacks.onFailToConnect(reason)
+
+      const reconnectDelay = this.state.getBackoff()
+      this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
+
+      clearTimeout(this.reconnectTimeout)
+      this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
+
+      return Result.fail(urlAndTokenResult.getError())
+    }
+
+    return Result.ok(urlAndTokenResult.getValue())
   }
 
   async connect(): Promise<void> {
@@ -100,89 +131,49 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.logger.info('Fetching url and token for websocket connection')
 
-    const urlAndTokenResult = await this.callbacks.getUrlAndToken()
+    const urlAndTokenResult = await this.getTokenOrFailConnection()
     if (urlAndTokenResult.isFailed()) {
-      this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
-      this.state.didFailToFetchToken()
-
-      const reconnectDelay = this.state.getBackoff()
-      this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
-
-      setTimeout(() => this.connect(), reconnectDelay)
       return
     }
 
-    const { token, url: serverUrl } = urlAndTokenResult.getValue()
-    const commitId = this.callbacks.getLatestCommitId()
-    const url = this.buildUrl({ serverUrl, token, commitId })
+    const { token, url } = urlAndTokenResult.getValue()
+    const connectionUrl = this.buildConnectionUrl({
+      serverUrl: url,
+      token,
+      commitId: this.callbacks.getLatestCommitId(),
+    })
 
     this.logger.info('Opening websocket connection')
 
-    const websocket = new WebSocket(url)
-    websocket.binaryType = 'arraybuffer'
-
-    this.socket = websocket
+    this.socket = new WebSocket(connectionUrl)
+    this.socket.binaryType = 'arraybuffer'
 
     this.callbacks.onConnecting()
 
-    websocket.onopen = () => {
+    this.socket.onopen = () => {
       this.logger.info('Websocket connection opened')
-
       this.heartbeat()
-
       this.state.didOpen()
-
       this.callbacks.onOpen()
     }
 
-    websocket.onmessage = async (event) => {
+    this.socket.onmessage = async (event) => {
       this.heartbeat()
-
       this.callbacks.onMessage(new Uint8Array(event.data))
     }
 
-    websocket.onerror = (event) => {
+    this.socket.onerror = (event) => {
       this.logger.error('Websocket error:', event)
     }
 
-    websocket.onclose = (event) => {
+    this.socket.onclose = (event) => {
       this.logger.info('Websocket closed:', event.code, event.reason)
-
       this.socket = undefined
 
       const reason = ConnectionCloseReason.create({
         code: event.code,
         message: event.reason,
       })
-
-      if (
-        [
-          ConnectionCloseReason.CODES.TLS_HANDSHAKE,
-          ConnectionCloseReason.CODES.TIMEOUT,
-          ConnectionCloseReason.CODES.PROTOCOL_ERROR,
-        ].includes(reason.props.code)
-      ) {
-        metrics.docs_failed_websocket_connections_total.increment({
-          retry: 'false',
-          type: 'network_error',
-        })
-      } else if (
-        [
-          ConnectionCloseReason.CODES.INTERNAL_ERROR,
-          ConnectionCloseReason.CODES.UNAUTHORIZED,
-          ConnectionCloseReason.CODES.BAD_GATEWAY,
-        ].includes(reason.props.code)
-      ) {
-        metrics.docs_failed_websocket_connections_total.increment({
-          retry: 'false',
-          type: 'server_error',
-        })
-      } else {
-        metrics.docs_failed_websocket_connections_total.increment({
-          retry: 'false',
-          type: 'unknown',
-        })
-      }
 
       if (this.state.isConnected) {
         this.callbacks.onClose(reason)
@@ -192,12 +183,45 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       this.state.didClose()
 
-      const reconnectDelay = this.state.getBackoff()
+      this.logDisconnectMetric(reason)
 
-      this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
       if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED) {
-        setTimeout(() => this.connect(), reconnectDelay)
+        const reconnectDelay = this.state.getBackoff()
+        this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
+        clearTimeout(this.reconnectTimeout)
+        this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
       }
+    }
+  }
+
+  private logDisconnectMetric(reason: ConnectionCloseReason): void {
+    if (
+      [
+        ConnectionCloseReason.CODES.TLS_HANDSHAKE,
+        ConnectionCloseReason.CODES.TIMEOUT,
+        ConnectionCloseReason.CODES.PROTOCOL_ERROR,
+      ].includes(reason.props.code)
+    ) {
+      metrics.docs_failed_websocket_connections_total.increment({
+        retry: 'false',
+        type: 'network_error',
+      })
+    } else if (
+      [
+        ConnectionCloseReason.CODES.INTERNAL_ERROR,
+        ConnectionCloseReason.CODES.UNAUTHORIZED,
+        ConnectionCloseReason.CODES.BAD_GATEWAY,
+      ].includes(reason.props.code)
+    ) {
+      metrics.docs_failed_websocket_connections_total.increment({
+        retry: 'false',
+        type: 'server_error',
+      })
+    } else {
+      metrics.docs_failed_websocket_connections_total.increment({
+        retry: 'false',
+        type: 'unknown',
+      })
     }
   }
 
@@ -236,8 +260,9 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       messageWrapper.eventsMessage = message
     }
 
-    this.logger.info('Broadcasting message from source:', source)
-    this.socket.send(messageWrapper.serializeBinary())
+    const binary = messageWrapper.serializeBinary()
+    this.logger.info(`Broadcasting message from source: ${source} size: ${binary.byteLength} bytes`)
+    this.socket.send(binary)
   }
 
   private async encryptMessage(message: DocumentUpdate | Event): Promise<ArrayBuffer> {
