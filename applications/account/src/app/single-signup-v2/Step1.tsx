@@ -27,7 +27,15 @@ import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, BRAND_NAME, COUPON_CODES, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    COUPON_CODES,
+    CYCLE,
+    DRIVE_APP_NAME,
+    PASS_APP_NAME,
+    PLANS,
+} from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -722,14 +730,26 @@ const Step1 = ({
                         return (
                             <>
                                 <BoxHeader
-                                    {...(signupParameters.invite?.type === 'pass'
-                                        ? {
-                                              title: c('pass_signup_2023: Title').t`Create a ${PASS_APP_NAME} account`,
-                                          }
-                                        : {
-                                              title: c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`,
-                                              step: step++,
-                                          })}
+                                    {...(() => {
+                                        if (signupParameters.invite?.type === 'pass') {
+                                            return {
+                                                title: c('pass_signup_2023: Title')
+                                                    .t`Create a ${PASS_APP_NAME} account`,
+                                            };
+                                        }
+
+                                        if (signupParameters.invite?.type === 'drive') {
+                                            return {
+                                                title: c('drive_signup_2023: Title')
+                                                    .t`Create a free ${DRIVE_APP_NAME} account to securely access the file`,
+                                            };
+                                        }
+
+                                        return {
+                                            title: c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`,
+                                            step: step++,
+                                        };
+                                    })()}
                                 />
                                 <BoxContent>
                                     <div className="flex items-start justify-space-between gap-14">
@@ -840,7 +860,8 @@ const Step1 = ({
                                                                     </Button>
                                                                 </div>
                                                             )}
-                                                            {signupParameters.mode !== SignupMode.Invite &&
+                                                            {(signupParameters.mode !== SignupMode.Invite ||
+                                                                signupParameters.invite?.type === 'drive') &&
                                                                 signupParameters.mode !== SignupMode.MailReferral && (
                                                                     <div className="text-center">
                                                                         <span>

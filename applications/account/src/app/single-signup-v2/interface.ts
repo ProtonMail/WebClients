@@ -178,6 +178,7 @@ export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearc
     mode: SignupMode;
     invite:
         | { type: 'generic'; data: { selector: string; token: string } }
+        | { type: 'drive'; data: { externalInvitationID: string } }
         | { type: 'pass'; data: { inviter: string; invited: string } }
         | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
         | undefined;
