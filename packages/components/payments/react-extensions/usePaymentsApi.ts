@@ -256,6 +256,7 @@ export const usePaymentsApi = (
         return {
             checkWithAutomaticVersion,
             statusExtendedAutomatic,
+            statusExtended,
         };
     };
 

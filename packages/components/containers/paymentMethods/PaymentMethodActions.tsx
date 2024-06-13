@@ -6,13 +6,14 @@ import { Alert } from '../../components/alert';
 import { ErrorButton } from '../../components/button';
 import DropdownActions, { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 import { ConfirmModal } from '../../components/modal';
-import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useModals, useNotifications, useSubscription, useUser } from '../../hooks';
 import {
     CardModel,
     PAYMENT_METHOD_TYPES,
     PaymentMethodCardDetails,
     SavedPaymentMethod,
     isExpired,
+    onSessionMigrationPaymentsVersion,
 } from '../../payments/core';
 import EditCardModal from '../payments/EditCardModal';
 
@@ -38,9 +39,11 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
     const { createModal } = useModals();
     const api = useApi();
     const { call } = useEventManager();
+    const [user] = useUser();
+    const [subscription] = useSubscription();
 
     const deleteMethod = async () => {
-        await api(deletePaymentMethod(method.ID));
+        await api(deletePaymentMethod(method.ID, onSessionMigrationPaymentsVersion(user, subscription)));
         await call();
         createNotification({ text: c('Success').t`Payment method deleted` });
     };
@@ -50,7 +53,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
 
         IDs.splice(index, 1);
         IDs.unshift(method.ID);
-        await api(orderPaymentMethods(IDs));
+        await api(orderPaymentMethods(IDs, onSessionMigrationPaymentsVersion(user, subscription)));
         await call();
         createNotification({ text: c('Success').t`Payment method updated` });
     };

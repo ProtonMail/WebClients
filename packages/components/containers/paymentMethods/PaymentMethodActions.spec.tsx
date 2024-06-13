@@ -2,6 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 
 import { Autopay, PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
+import { mockUseSubscription, mockUseUser } from '@proton/testing/index';
 
 import { DropdownActions } from '../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
@@ -39,6 +40,11 @@ jest.mock('../../components/modal/Confirm', () =>
         </button>
     ))
 );
+
+beforeEach(() => {
+    mockUseUser();
+    mockUseSubscription();
+});
 
 describe('PaymentMethodActions', () => {
     it('should show only delete button if paypal is the first method', () => {
@@ -214,7 +220,7 @@ describe('PaymentMethodActions', () => {
             fireEvent.click(await findByTestId('actionIndex-1'));
 
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'])); // a request to change the order of the payment methods
+                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v4')); // a request to change the order of the payment methods
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
@@ -261,7 +267,7 @@ describe('PaymentMethodActions', () => {
             const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
             await onDelete();
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
+                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v4'));
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();

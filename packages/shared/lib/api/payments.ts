@@ -69,8 +69,8 @@ export interface FeedbackDowngradeData {
     Context?: 'vpn' | 'mail';
 }
 
-export const deleteSubscription = (data: FeedbackDowngradeData) => ({
-    url: `payments/${paymentsVersion}/subscription`,
+export const deleteSubscription = (data: FeedbackDowngradeData, version: PaymentsVersion) => ({
+    url: `payments/${version}/subscription`,
     method: 'delete',
     data,
 });
@@ -220,14 +220,14 @@ export const queryPlans = (params?: QueryPlansParams, forceVersion?: PaymentsVer
     params,
 });
 
-export const getInvoice = (invoiceID: string) => ({
-    url: `payments/${paymentsVersion}/invoices/${invoiceID}`,
+export const getInvoice = (invoiceID: string, version: PaymentsVersion) => ({
+    url: `payments/${version}/invoices/${invoiceID}`,
     method: 'get',
     output: 'arrayBuffer',
 });
 
-export const checkInvoice = (invoiceID: string, GiftCode?: string) => ({
-    url: `payments/${paymentsVersion}/invoices/${invoiceID}/check`,
+export const checkInvoice = (invoiceID: string, version?: PaymentsVersion, GiftCode?: string) => ({
+    url: `payments/${version ?? paymentsVersion}/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
 });
@@ -256,14 +256,14 @@ export interface UpdatePaymentMethodsData {
     Autopay: Autopay;
 }
 
-export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData) => ({
-    url: `payments/${paymentsVersion}/methods/${methodId}`,
+export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData, version: PaymentsVersion) => ({
+    url: `payments/${version}/methods/${methodId}`,
     method: 'put',
     data,
 });
 
-export const deletePaymentMethod = (methodID: string) => ({
-    url: `payments/${paymentsVersion}/methods/${methodID}`,
+export const deletePaymentMethod = (methodID: string, version: PaymentsVersion) => ({
+    url: `payments/${version}/methods/${methodID}`,
     method: 'delete',
 });
 
@@ -272,14 +272,18 @@ export const deletePaymentMethod = (methodID: string) => ({
  * @param data – does not have to include the payment token if user pays from the credits balance. In this case Amount
  * must be set to 0 and payment token must not be supplied.
  */
-export const payInvoice = (invoiceID: string, data: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency) => ({
-    url: `payments/${paymentsVersion}/invoices/${invoiceID}`,
+export const payInvoice = (
+    invoiceID: string,
+    data: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency,
+    version: PaymentsVersion
+) => ({
+    url: `payments/${version}/invoices/${invoiceID}`,
     method: 'post',
     data,
 });
 
-export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
-    url: `payments/${paymentsVersion}/methods/order`,
+export const orderPaymentMethods = (PaymentMethodIDs: string[], version: PaymentsVersion) => ({
+    url: `payments/${version}/methods/order`,
     method: 'put',
     data: { PaymentMethodIDs },
 });
@@ -291,7 +295,7 @@ export interface GiftCodeData {
 
 export const buyCredit = (
     data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters,
-    forceVersion?: PaymentsVersion
+    forceVersion: PaymentsVersion
 ) => ({
     url: `payments/${forceVersion ?? paymentsVersion}/credit`,
     method: 'post',
@@ -302,8 +306,8 @@ export interface ValidateCreditData {
     GiftCode: string;
 }
 
-export const validateCredit = (data: ValidateCreditData) => ({
-    url: `payments/${paymentsVersion}/credit/check`,
+export const validateCredit = (data: ValidateCreditData, version: PaymentsVersion) => ({
+    url: `payments/${version ?? paymentsVersion}/credit/check`,
     method: 'post',
     data,
 });
@@ -345,8 +349,8 @@ export type RenewalStateData =
           CancellationFeedback: FeedbackDowngradeData;
       };
 
-export const changeRenewState = (data: RenewalStateData) => ({
-    url: `payments/${paymentsVersion}/subscription/renew`,
+export const changeRenewState = (data: RenewalStateData, version: PaymentsVersion) => ({
+    url: `payments/${version}/subscription/renew`,
     method: 'put',
     data,
 });
