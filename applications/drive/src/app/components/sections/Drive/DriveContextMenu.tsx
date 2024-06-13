@@ -64,7 +64,7 @@ export function DriveItemContextMenu({
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const { isSharingInviteAvailable } = useDriveSharingFlags();
 
-    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
+    const { showOpenInDocs } = useOpenInDocs(selectedLink);
 
     const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
 
