@@ -112,7 +112,7 @@ export interface SignupModel {
 export type SignupInviteParameters =
     | { type: 'generic'; data: { selector: string; token: string } }
     | { type: 'drive'; data: { invited: string; externalInvitationID: string; preVerifiedAddressToken: string } }
-    | { type: 'pass'; data: { inviter: string; invited: string } }
+    | { type: 'pass'; data: { inviter: string; invited: string; preVerifiedAddressToken?: string } }
     | { type: 'mail'; data: { referrer: string; invite: string | undefined } };
 
 export class HumanVerificationError extends Error {
