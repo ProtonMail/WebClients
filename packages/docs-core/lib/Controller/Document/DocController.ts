@@ -20,21 +20,13 @@ import {
   WebsocketDisconnectedPayload,
   BaseWebsocketPayload,
   assertUnreachable,
-  BroadcastSources,
+  BroadcastSource,
   WebsocketDocumentUpdateMessagePayload,
   WebsocketEventMessagePayload,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
 } from '@proton/docs-shared'
-import {
-  CreateDocumentUpdateMessage,
-  EventType,
-  CreateClientEventMessage,
-  EventTypeEnum,
-  ConnectionCloseReason,
-  DocumentUpdateVersion,
-  ClientEventVersion,
-} from '@proton/docs-proto'
+import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
@@ -401,29 +393,19 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   async editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: BroadcastSources,
+    debugSource: BroadcastSource,
   ): Promise<void> {
     if (!this.keys) {
       throw new Error('Connection not initialized')
     }
 
-    const wrappedMessage =
-      message.type.wrapper === 'du'
-        ? CreateDocumentUpdateMessage({
-            content: message.content,
-            authorAddress: this.keys.userOwnAddress,
-            timestamp: Date.now(),
-            version: DocumentUpdateVersion.V1,
-          })
-        : CreateClientEventMessage({
-            type: message.type.eventType,
-            content: message.content,
-            authorAddress: this.keys.userOwnAddress,
-            version: ClientEventVersion.V1,
-            timestamp: Date.now(),
-          })
-
-    this.websocketService.sendMessageToDocument(this.nodeMeta, wrappedMessage, debugSource)
+    if (message.type.wrapper === 'du') {
+      void this.websocketService.sendDocumentUpdateMessage(this.nodeMeta, message.content, debugSource)
+    } else if (message.type.wrapper === 'events') {
+      void this.websocketService.sendEventMessage(this.nodeMeta, message.content, message.type.eventType, debugSource)
+    } else {
+      throw new Error('Unknown message type')
+    }
   }
 
   public async debugSendCommitCommandToRTS(): Promise<void> {

@@ -1,5 +1,5 @@
 import {
-  BroadcastSources,
+  BroadcastSource,
   ClientRequiresEditorMethods,
   DocChangeObserver,
   DocumentMetaInterface,
@@ -25,7 +25,7 @@ export interface DocControllerInterface {
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: BroadcastSources,
+    debugSource: BroadcastSource,
   ): Promise<void>
   getDocumentClientId(): Promise<number | undefined>
   getSureDocument(): DocumentMetaInterface

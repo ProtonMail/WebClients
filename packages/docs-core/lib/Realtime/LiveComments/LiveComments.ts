@@ -1,9 +1,10 @@
 import { NodeMeta } from '@proton/drive-store'
-import { BeganTypingData, BroadcastSources, CommentsMessageType, StoppedTypingData } from '@proton/docs-shared'
+import { BeganTypingData, BroadcastSource, CommentsMessageType, StoppedTypingData } from '@proton/docs-shared'
 import { LiveCommentsEvent, LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
-import { CreateRealtimeCommentMessage } from '../../Services/Comments/CreateRealtimeCommentMessage'
+import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateRealtimeCommentPayload'
 import { CommentTypers } from './CommentTypers'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import { EventTypeEnum } from '@proton/docs-proto'
 
 export class LiveComments {
   private state: Record<string, CommentTypers> = {}
@@ -12,7 +13,6 @@ export class LiveComments {
     private websocketService: WebsocketServiceInterface,
     private readonly document: NodeMeta,
     private readonly userDisplayName: string,
-    private readonly userAddress: string,
     private readonly eventBus: InternalEventBusInterface,
   ) {}
 
@@ -24,24 +24,21 @@ export class LiveComments {
     }
 
     const message = isTyping
-      ? CreateRealtimeCommentMessage(
-          CommentsMessageType.BeganTyping,
-          {
-            threadID: commentId,
-            userId: this.userDisplayName,
-          },
-          this.userAddress,
-        )
-      : CreateRealtimeCommentMessage(
-          CommentsMessageType.StoppedTyping,
-          {
-            threadID: commentId,
-            userId: this.userDisplayName,
-          },
-          this.userAddress,
-        )
+      ? CreateRealtimeCommentPayload(CommentsMessageType.BeganTyping, {
+          threadID: commentId,
+          userId: this.userDisplayName,
+        })
+      : CreateRealtimeCommentPayload(CommentsMessageType.StoppedTyping, {
+          threadID: commentId,
+          userId: this.userDisplayName,
+        })
 
-    void this.websocketService.sendMessageToDocument(this.document, message, BroadcastSources.TypingStatusChange)
+    void this.websocketService.sendEventMessage(
+      this.document,
+      message,
+      EventTypeEnum.ClientHasSentACommentMessage,
+      BroadcastSource.TypingStatusChange,
+    )
   }
 
   private updateStatusOfTyper(threadId: string, userId: string, isTyping: boolean): { didChange: boolean } {
