@@ -151,11 +151,11 @@ export const intoRevisionID = (item: ItemRevision): ItemRevisionID => ({
 });
 
 export const intoUserIdentifier = (item: ItemRevision<'login'>): string =>
-    deobfuscate(item.data.content.itemEmail) || deobfuscate(item.data.content.itemUsername);
+    /** For autofill we use the username if not empty, otherwise the email */
+    deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail);
 
 export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem => ({
     name: item.data.metadata.name,
-    /** For autofill we use the username if not empty, otherwise the email */
     userIdentifier: intoUserIdentifier(item),
     itemId: item.itemId,
     shareId: item.shareId,
