@@ -58,7 +58,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         amount,
         currency,
         // the override is required for the on-session migration.
-        chargebeeEnabled: invoice.isExternal ? ChargebeeEnabled.CHARGEBEE_FORCED : ChargebeeEnabled.INHOUSE_FORCED,
+        chargebeeEnabled: invoice.IsExternal ? ChargebeeEnabled.CHARGEBEE_FORCED : ChargebeeEnabled.INHOUSE_FORCED,
         onChargeable: (operations) => {
             return withLoading(async () => {
                 await operations.payInvoice(invoice.ID);

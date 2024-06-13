@@ -7,5 +7,5 @@ export function getInvoicePaymentsVersion(invoice?: Invoice): PaymentsVersion {
         return 'v4';
     }
 
-    return invoice.isExternal ? 'v5' : 'v4';
+    return invoice.IsExternal ? 'v5' : 'v4';
 }
