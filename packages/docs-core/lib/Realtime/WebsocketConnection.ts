@@ -1,19 +1,8 @@
 import { c } from 'ttag'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
-import { EncryptMessage } from '../UseCase/EncryptMessage'
 import { LoggerInterface } from '@proton/utils/logs'
-import {
-  ClientMessageWithDocumentUpdates,
-  ClientMessage,
-  ClientMessageWithEvents,
-  DocumentUpdate,
-  Event,
-  ConnectionCloseReason,
-  SERVER_HEARTBEAT_INTERVAL,
-} from '@proton/docs-proto'
+import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { WebsocketConnectionInterface, BroadcastSources } from '@proton/docs-shared'
-import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isDev } from '../Util/isDevOrBlack'
@@ -34,9 +23,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private destroyed = false
 
   constructor(
-    private keys: DocumentKeys,
     private callbacks: WebsocketCallbacks,
-    private _encryptMessage: EncryptMessage,
     private logger: LoggerInterface,
   ) {
     window.addEventListener('offline', this.handleOfflineConnectionEvent)
@@ -225,67 +212,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
   }
 
-  async broadcastMessage(
-    message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: BroadcastSources,
-  ): Promise<void> {
+  async broadcastMessage(data: Uint8Array, source: BroadcastSources): Promise<void> {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
       return
     }
 
-    const messageWrapper = new ClientMessage()
-
-    try {
-      if (message instanceof ClientMessageWithEvents) {
-        for (const event of message.events) {
-          event.content = new Uint8Array(await this.encryptMessage(event))
-        }
-      } else {
-        for (const update of message.updates.documentUpdates) {
-          update.encryptedContent = new Uint8Array(await this.encryptMessage(update))
-        }
-      }
-    } catch (e: unknown) {
-      if (source === BroadcastSources.CommentsController) {
-        metrics.docs_comments_error_total.increment({
-          reason: 'encryption_error',
-        })
-      }
-      throw e
-    }
-
-    if (message instanceof ClientMessageWithDocumentUpdates) {
-      messageWrapper.documentUpdatesMessage = message
-    } else {
-      messageWrapper.eventsMessage = message
-    }
-
-    const binary = messageWrapper.serializeBinary()
-    this.logger.info(`Broadcasting message from source: ${source} size: ${binary.byteLength} bytes`)
-    this.socket.send(binary)
-  }
-
-  private async encryptMessage(message: DocumentUpdate | Event): Promise<ArrayBuffer> {
-    const content = message instanceof DocumentUpdate ? message.encryptedContent : message.content
-    const result = await this._encryptMessage.execute(content, message, this.keys)
-
-    if (result.isFailed()) {
-      const message = c('Error')
-        .t`A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.`
-
-      this.callbacks.onEncryptionError(message)
-
-      traceError('Unable to encrypt message', {
-        extra: {
-          errorInfo: {
-            message: result.getError(),
-          },
-        },
-      })
-
-      throw new Error(`Unable to encrypt message: ${result.getError()}`)
-    }
-
-    return result.getValue()
+    this.logger.info(`Broadcasting message from source: ${source} size: ${data.byteLength} bytes`)
+    this.socket.send(data)
   }
 }

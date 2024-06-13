@@ -29,7 +29,6 @@ export const App_TYPES = {
   LoadCommit: Symbol.for('LoadCommit'),
   GetCommitData: Symbol.for('GetCommitData'),
   DecryptCommit: Symbol.for('DecryptCommit'),
-  SendCommitCommandToRTS: Symbol.for('SendCommitCommandToRTS'),
   VerifyCommit: Symbol.for('VerifyCommit'),
   VerifyMessages: Symbol.for('VerifyMessages'),
   SquashAlgorithm: Symbol.for('SquashAlgorithm'),

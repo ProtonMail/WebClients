@@ -2,7 +2,6 @@ import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { UserService } from '../../Services/User/UserService'
-import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
@@ -20,18 +19,17 @@ import {
   InternalEventInterface,
   WebsocketDisconnectedPayload,
   BaseWebsocketPayload,
-  WebsocketMessagePayload,
   assertUnreachable,
   BroadcastSources,
+  WebsocketDocumentUpdateMessagePayload,
+  WebsocketEventMessagePayload,
+  DecryptedMessage,
+  ProcessedIncomingRealtimeEventMessage,
 } from '@proton/docs-shared'
 import {
-  ServerMessageWithDocumentUpdates,
   CreateDocumentUpdateMessage,
-  ServerMessage,
   EventType,
   CreateClientEventMessage,
-  ServerMessageType,
-  Event,
   EventTypeEnum,
   ConnectionCloseReason,
   DocumentUpdateVersion,
@@ -49,7 +47,6 @@ import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { getErrorString } from '../../Util/GetErrorString'
 import { NativeVersionHistory } from '../../VersionHistory'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import { DecryptedMessage } from '../../Models/DecryptedMessage'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './DocControllerEvent'
 import metrics from '@proton/metrics'
 import {
@@ -81,7 +78,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   realtimeConnectionReady = false
   docsServerConnectionReady = false
   didAlreadyReceiveEditorReadyEvent = false
-  readonly updatesReceivedWhileEditorInvokerWasNotReady: (ServerMessageWithDocumentUpdates | Event)[] = []
+  readonly updatesReceivedWhileEditorInvokerWasNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] =
+    []
 
   public readonly username: string
 
@@ -93,7 +91,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _createInitialCommit: CreateInitialCommit,
     private _loadDocument: LoadDocument,
     private _loadCommit: LoadCommit,
-    private _decryptMessage: DecryptMessage,
     private _duplicateDocument: DuplicateDocument,
     private _createNewDocument: CreateNewDocument,
     private _getDocumentMeta: GetDocumentMeta,
@@ -106,7 +103,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Disconnected)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connected)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.Message)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
   }
 
   handleWebsocketConnectingEvent(): void {
@@ -165,9 +163,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
       this.handleWebsocketConnectingEvent()
-    } else if (event.type === WebsocketConnectionEvent.Message) {
-      const { message } = event.payload as WebsocketMessagePayload
-      void this.handleConnectionMessage(message)
+    } else if (event.type === WebsocketConnectionEvent.DocumentUpdateMessage) {
+      const { message } = event.payload as WebsocketDocumentUpdateMessagePayload
+      void this.handleDocumentUpdatesMessage(message)
+    } else if (event.type === WebsocketConnectionEvent.EventMessage) {
+      const { message } = event.payload as WebsocketEventMessagePayload
+      void this.handleRealtimeServerEvent(message)
     }
   }
 
@@ -194,10 +195,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       )
 
       for (const message of this.updatesReceivedWhileEditorInvokerWasNotReady) {
-        if (message instanceof ServerMessageWithDocumentUpdates) {
-          void this.handleDocumentUpdatesMessage(message, this.keys)
-        } else if (message instanceof Event) {
-          void this.handleRealtimeServerEvent([message], this.keys)
+        if (message instanceof DecryptedMessage) {
+          void this.handleDocumentUpdatesMessage(message)
+        } else if (message instanceof ProcessedIncomingRealtimeEventMessage) {
+          void this.handleRealtimeServerEvent([message])
         } else {
           throw new Error('Attempting to replay unknown message type')
         }
@@ -583,7 +584,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     await this.driveCompat.openDocumentSharingModal(this.nodeMeta)
   }
 
-  private async handleRealtimeServerEvent(events: Event[], keys: DocumentKeys) {
+  private async handleRealtimeServerEvent(events: ProcessedIncomingRealtimeEventMessage[]) {
     if (!this.editorInvoker) {
       this.updatesReceivedWhileEditorInvokerWasNotReady.push(...events)
 
@@ -592,49 +593,33 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const editorInvoker = this.editorInvoker
 
-    const decryptPayload = async (event: Event): Promise<DecryptedMessage | undefined> => {
-      const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
-      if (decryptionResult.isFailed()) {
-        this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
-        return undefined
-      }
-
-      return decryptionResult.getValue()
-    }
-
     for (const event of events) {
-      const type = EventType.create(event.type)
+      this.logger.info('Handling event from RTS:', EventTypeEnum[event.props.type])
 
-      this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
-
-      switch (type.value) {
+      switch (event.props.type) {
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
           await editorInvoker.broadcastPresenceState()
           break
         case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
-          const decodedContent = uint8ArrayToString(event.content)
+          const decodedContent = uint8ArrayToString(event.props.content)
           const parsedMessage = JSON.parse(decodedContent)
           this.lastCommitIdReceivedFromRts = parsedMessage.commitId
           break
         case EventTypeEnum.ClientHasSentACommentMessage: {
-          const decrypted = await decryptPayload(event)
-          if (decrypted) {
-            this.eventBus.publish({
-              type: DocControllerEvent.RealtimeCommentMessageReceived,
-              payload: <RealtimeCommentMessageReceivedPayload>{ message: decrypted },
-            })
-          }
+          this.eventBus.publish({
+            type: DocControllerEvent.RealtimeCommentMessageReceived,
+            payload: <RealtimeCommentMessageReceivedPayload>{ message: event.props.content },
+          })
+
           break
         }
         case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
-          const decrypted = await decryptPayload(event)
-          if (decrypted) {
-            void editorInvoker.receiveMessage({
-              type: { wrapper: 'events', eventType: EventType.create(event.type).value },
-              content: decrypted.content,
-            })
-          }
+          void editorInvoker.receiveMessage({
+            type: { wrapper: 'events', eventType: EventType.create(event.props.type).value },
+            content: event.props.content,
+          })
+
           break
         }
         case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
@@ -644,12 +629,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
           break
         default:
-          assertUnreachable(type.value)
+          assertUnreachable(event.props)
       }
     }
   }
 
-  async handleDocumentUpdatesMessage(message: ServerMessageWithDocumentUpdates, keys: DocumentKeys) {
+  async handleDocumentUpdatesMessage(message: DecryptedMessage) {
     this.logger.info('Received message with document updates')
 
     if (!this.editorInvoker) {
@@ -658,43 +643,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
-    for (const update of message.updates.documentUpdates) {
-      const decryptionResult = await this._decryptMessage.execute({
-        message: update,
-        keys: keys,
-        verify: false,
-      })
-      if (decryptionResult.isFailed()) {
-        metrics.docs_document_updates_decryption_error_total.increment({
-          source: 'realtime',
-        })
-        throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
-      }
-
-      const decrypted = decryptionResult.getValue()
-
-      void this.editorInvoker.receiveMessage({
-        type: { wrapper: 'du' },
-        content: decrypted.content,
-      })
-    }
-  }
-
-  private async handleConnectionMessage(data: Uint8Array): Promise<void> {
-    if (!this.keys) {
-      throw new Error('Keys not initialized')
-    }
-
-    const message = ServerMessage.deserializeBinary(data)
-    const type = ServerMessageType.create(message.type)
-
-    if (type.hasDocumentUpdates()) {
-      await this.handleDocumentUpdatesMessage(message.documentUpdatesMessage, this.keys)
-    } else if (type.hasEvents()) {
-      await this.handleRealtimeServerEvent(message.eventsMessage.events, this.keys)
-    } else {
-      throw new Error('Unknown message type')
-    }
+    void this.editorInvoker.receiveMessage({
+      type: { wrapper: 'du' },
+      content: message.content,
+    })
   }
 
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
