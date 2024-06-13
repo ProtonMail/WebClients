@@ -4,7 +4,7 @@ import { Button, Href } from '@proton/atoms/index';
 import { ModalProps, Prompt, useApi, useEventManager, useSettingsLink } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
-import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -36,26 +36,25 @@ const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
         ? /* translator:
            * Full string for reference: Your browser doesn’t support the writing assistant. Try running it on Proton servers.
            */
-          c('Info').t`Your browser doesn't support the writing assistant. Try running it on ${BRAND_NAME} servers.`
+          c('Info').t`Your browser doesn't support the writing assistant. Try running it on servers.`
         : /* translator:
            * Full string for reference: Your browser doesn’t support the writing assistant. Download the Proton Mail desktop app or try running it on Proton servers.
            */
           c('Info')
-              .t`Your browser doesn't support the writing assistant. Download the ${MAIL_APP_NAME} desktop app or try running it on ${BRAND_NAME} servers.`;
+              .t`Your browser doesn't support the writing assistant. Download the ${MAIL_APP_NAME} desktop app or try running it on servers.`;
 
     const buttons: [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element] = (() => {
         if (isElectronMail) {
             return [
                 <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
-                    .t`Run on ${BRAND_NAME} servers`}</Button>,
+                    .t`Run on servers`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ];
         }
 
         return [
             <Button color="norm" onClick={handleDownloadDesktopApp}>{c('Action').t`Download Desktop App`}</Button>,
-            <Button onClick={handleUpdateSetting} loading={loading}>{c('Action')
-                .t`Run on ${BRAND_NAME} servers`}</Button>,
+            <Button onClick={handleUpdateSetting} loading={loading}>{c('Action').t`Run on servers`}</Button>,
             <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
         ];
     })();

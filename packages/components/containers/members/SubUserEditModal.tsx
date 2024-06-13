@@ -9,11 +9,18 @@ import {
     getMemberEditPayload,
     getPrivateAdminError,
 } from '@proton/account';
-import { Button, Card, Href } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    GIGA,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    MEMBER_SUBSCRIBER,
+    NAME_PLACEHOLDER,
+} from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EnhancedMember } from '@proton/shared/lib/interfaces';
@@ -30,6 +37,7 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
     Prompt,
+    SettingsLink,
     Toggle,
     Tooltip,
     useFormErrors,
@@ -346,8 +354,11 @@ const SubUserEditModal = ({
                                 {c('Info').t`Writing assistant`}
                             </label>
                             {!assistantSeatRemaining && (
-                                <Href target="_blank" href="/dashboard#assistant-toggle">{c('Link')
-                                    .t`Add to your subscription`}</Href>
+                                <SettingsLink
+                                    target="_blank"
+                                    app={APPS.PROTONMAIL}
+                                    path="/mail/dashboard#assistant-toggle"
+                                >{c('Link').t`Add to your subscription`}</SettingsLink>
                             )}
                         </div>
                     )}

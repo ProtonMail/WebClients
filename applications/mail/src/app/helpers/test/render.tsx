@@ -41,6 +41,7 @@ import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/sh
 import { getFeatureFlagsState, registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
+import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 import { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
 import { composersInitialState } from 'proton-mail/store/composers/composersSlice';
@@ -117,17 +118,19 @@ const TestProvider = ({ children, history }: Props) => {
                                                             elementID={undefined}
                                                         >
                                                             <ComposeProvider onCompose={onCompose}>
-                                                                <CheckAllRefProvider>
-                                                                    <Router history={history}>
-                                                                        <Route path={MAIN_ROUTE_PATH}>
-                                                                            <EncryptedSearchProvider>
-                                                                                <LabelActionsContextProvider>
-                                                                                    {children}
-                                                                                </LabelActionsContextProvider>
-                                                                            </EncryptedSearchProvider>
-                                                                        </Route>
-                                                                    </Router>
-                                                                </CheckAllRefProvider>
+                                                                <ComposerAssistantProvider>
+                                                                    <CheckAllRefProvider>
+                                                                        <Router history={history}>
+                                                                            <Route path={MAIN_ROUTE_PATH}>
+                                                                                <EncryptedSearchProvider>
+                                                                                    <LabelActionsContextProvider>
+                                                                                        {children}
+                                                                                    </LabelActionsContextProvider>
+                                                                                </EncryptedSearchProvider>
+                                                                            </Route>
+                                                                        </Router>
+                                                                    </CheckAllRefProvider>
+                                                                </ComposerAssistantProvider>
                                                             </ComposeProvider>
                                                         </MailboxContainerContextProvider>
                                                     </ChecklistsProvider>

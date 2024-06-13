@@ -161,3 +161,4 @@ const modelThunk = (options?: {
 
 export const subscriptionReducer = { [name]: slice.reducer };
 export const subscriptionThunk = modelThunk;
+export * from './startListeningToPlanNameChange';

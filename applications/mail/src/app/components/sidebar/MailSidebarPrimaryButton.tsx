@@ -3,9 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, SidebarPrimaryButton, Tooltip } from '@proton/components';
-import { useAssistant } from '@proton/llm/lib';
-import clsx from '@proton/utils/clsx';
+import { SidebarPrimaryButton, Tooltip } from '@proton/components';
 
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -18,8 +16,6 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
     const { Shortcuts } = useMailModel('MailSettings');
 
-    const { canShowAssistant } = useAssistant();
-
     const titlePrimaryButton = Shortcuts ? (
         <>
             {c('Title').t`New message`}
@@ -31,24 +27,22 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton
-                className={clsx(['hidden md:inline', canShowAssistant && 'relative px-3'])}
+                className="hidden md:inline"
                 onClick={handleCompose}
                 data-testid="sidebar:compose"
                 ref={anchorRef}
             >
-                {c('Action').t`New message`}{' '}
-                {canShowAssistant && <Icon name="pen-sparks" className="absolute right-0 mr-2 inset-y-center" />}
+                {c('Action').t`New message`}
             </SidebarPrimaryButton>
         </Tooltip>
     ) : (
         <SidebarPrimaryButton
-            className={clsx(['hidden md:inline', canShowAssistant && 'relative px-3'])}
+            className="hidden md:inline"
             onClick={handleCompose}
             data-testid="sidebar:compose"
             ref={anchorRef}
         >
-            {c('Action').t`New message`}{' '}
-            {canShowAssistant && <Icon name="pen-sparks" className="absolute right-0 mr-2 inset-y-center" />}
+            {c('Action').t`New message`}
         </SidebarPrimaryButton>
     );
 

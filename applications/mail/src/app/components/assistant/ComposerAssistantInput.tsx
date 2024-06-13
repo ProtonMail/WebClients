@@ -8,6 +8,7 @@ import {
     Dropdown,
     DropdownButton,
     DropdownMenuButton,
+    ErrorZone,
     Icon,
     InputFieldTwo,
     Progress,
@@ -16,7 +17,6 @@ import {
     useModalStateObject,
     usePopperAnchor,
 } from '@proton/components/components';
-import ErrorZone from '@proton/components/components/text/ErrorZone';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
 import {
@@ -29,7 +29,7 @@ import {
     isRefineActionType,
 } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
-import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
+import useAssistantTelemetry, { ERROR_TYPE } from '@proton/llm/lib/useAssistantTelemetry';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
@@ -40,6 +40,7 @@ import { removeLineBreaks } from 'proton-mail/helpers/string';
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
 import { ReplacementStyle } from './ComposerAssistant';
+import AssistantUnsafeErrorFeedbackModal from './modals/AssistantUnsafeErrorFeedbackModal';
 import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import ComposerAssistantInitialSetupSpotlight, {
     ComposerAssistantInitialSetupSpotlightRef,
@@ -83,6 +84,16 @@ const ComposerAssistantInput = ({
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
     const [inputOnFocus, setInputOnFocus] = useState(false);
+    /**
+     * In some conditions, we want to show the refine buttons:
+     * - When the assistant is opened the first time, even though we focus the input by default (init state value)
+     * - When the user just generated a text, and might want to improve the result.
+     *   In that case we still have a prompt, but we want the user to see the refine buttons too
+     *
+     * To resolve those issues, we are forcing the display in certain cases.
+     * However, when the user will type some text, we want to reset the state
+     */
+    const [shouldShowRefineButtons, setShouldShowRefineButtons] = useState(assistantRequest === '');
     const [{ AIAssistantFlags }] = useUserSettings();
     const [isRefiningText, setIsRefiningText] = useState(false);
 
@@ -91,6 +102,7 @@ const ComposerAssistantInput = ({
     const composerAssistantInitialSetupSpotlightRef = useRef<ComposerAssistantInitialSetupSpotlightRef>(null);
     const spotlightAnchorRef = useRef<HTMLDivElement>(null);
     const upsellModal = useModalStateObject();
+    const falsePositiveFeedback = useModalStateObject();
 
     const [resumeDownloadProps, setResumeDownloadModalOpen] = useModalState();
 
@@ -119,7 +131,7 @@ const ComposerAssistantInput = ({
         return !!error && !isModelDownloaded;
     }, [isModelDownloaded, error]);
 
-    const { trialStatus } = useAssistantSubscriptionStatus();
+    const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
 
     function getEmailContentsForRefinement() {
         const composerContent = removeLineBreaks(getContentBeforeBlockquote());
@@ -235,6 +247,7 @@ const ComposerAssistantInput = ({
         if (hasSelection && isRefineAction) {
             await refineWithSelection(actionType as RefineActionType);
             setIsRefiningText(false);
+            setShouldShowRefineButtons(true);
             return;
         }
 
@@ -247,13 +260,21 @@ const ComposerAssistantInput = ({
         // Prepare the action and fire the LLM with it.
         const action = buildAction(actionType);
         if (action) {
+            let trialStarted = false;
             await generateResult({
                 action,
-                callback: (res) => onGenerateResult(res, assistantRequest),
+                callback: (res) => {
+                    if (!trialStarted && trialStatus === 'trial-not-started') {
+                        trialStarted = true;
+                        void startTrial();
+                    }
+                    onGenerateResult(res, assistantRequest);
+                },
             });
         }
 
         setIsRefiningText(false);
+        setShouldShowRefineButtons(true);
     };
 
     const handleGenerateSubmit = async () => {
@@ -267,6 +288,10 @@ const ComposerAssistantInput = ({
 
     const handleKeyDown = async (event: KeyboardEvent<HTMLTextAreaElement>) => {
         composerAssistantInitialSetupSpotlightRef.current?.hideSpotlight();
+
+        if (shouldShowRefineButtons) {
+            setShouldShowRefineButtons(false);
+        }
 
         // Block the submit action when
         // - A generation is going on in the current input
@@ -334,9 +359,14 @@ const ComposerAssistantInput = ({
 
         // The first time the user is opening the composer, the assistant will be opened by default to show the feature
         // Then when the user clicks on the input, we will show a spotlight and start the model init (download + load on GPU)
-        if (isAssistantInitialSetup && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
-            initAssistant?.();
-            composerAssistantInitialSetupSpotlightRef.current?.showSpotlight();
+        if (isAssistantInitialSetup) {
+            if (AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+                initAssistant?.();
+                composerAssistantInitialSetupSpotlightRef.current?.showSpotlight();
+            }
+            if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
+                composerAssistantInitialSetupSpotlightRef.current?.setSpotlightViewed();
+            }
         }
 
         // Reset the input content when the user wants to refine text and clicks on the input, so that he can add a new prompt
@@ -347,19 +377,19 @@ const ComposerAssistantInput = ({
 
     const getLeftIcon = () => {
         if (isGeneratingResult) {
-            return <img src={generatingLoader} alt="" width={20} className="mt-1" />;
+            return <img src={generatingLoader} alt="" width={16} className="mt-1" />;
         }
         if (hasSelection) {
             return (
                 <Icon
                     name="text-quote-filled"
-                    className="composer-assistant-special-color"
-                    size={5}
+                    className="composer-assistant-special-color mt-0.5"
+                    size={4}
                     alt={c('Info').t`You selected some content:`}
                 />
             );
         }
-        return <Icon name="pen-sparks" size={5} className="composer-assistant-special-color" />;
+        return <Icon name="pen-sparks" size={4} className="composer-assistant-special-color mt-0.5" />;
     };
 
     /** Show refine actions when
@@ -367,7 +397,6 @@ const ComposerAssistantInput = ({
      *  - Not downloading the model
      *  - Not loading the model on the GPU
      *  - Some text is selected or present in the editor or generated text present in the assistant (canUseRefineActions)
-     *  - The input is not on focus
      */
     const canShowRefineButtons = useMemo(() => {
         return (
@@ -376,7 +405,6 @@ const ComposerAssistantInput = ({
             !isModelLoadingOnGPU &&
             !downloadPaused &&
             canUseRefineActions &&
-            !inputOnFocus &&
             !hasDownloadError
         );
     }, [
@@ -385,7 +413,6 @@ const ComposerAssistantInput = ({
         isModelLoadingOnGPU,
         downloadPaused,
         canUseRefineActions,
-        inputOnFocus,
         hasDownloadError,
     ]);
 
@@ -416,8 +443,9 @@ const ComposerAssistantInput = ({
         /** real condition is
          * AI assistant expanded AND
          * (no selection OR (selection AND focus in prompt field) => focus in prompt field
+         * Also, if we are forcing the refine buttons display, don't show the submit button
          */
-        if (expanded && (inputOnFocus || assistantRequest)) {
+        if (expanded && (inputOnFocus || assistantRequest) && !shouldShowRefineButtons) {
             return (
                 <Tooltip title={c('Info').t`Generate text`}>
                     <Button
@@ -444,22 +472,44 @@ const ComposerAssistantInput = ({
                 toggle();
             };
 
+            const proofreadButton = (
+                <Tooltip title={hasSelection ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`}>
+                    <Button
+                        onClick={() => {
+                            onClickRefine();
+                            void startGeneratingResult('proofread');
+                        }}
+                        shape="outline"
+                        className="mr-1 mb-auto composer-assistant-refine-button"
+                        size="small"
+                    >
+                        <Icon name="magnifier-check" className="composer-assistant-special-color mr-1" />
+                        {c('Action').t`Proofread`}
+                    </Button>
+                </Tooltip>
+            );
+
+            const expandButton = (
+                <Tooltip title={hasSelection ? c('Info').t`Expand selection` : c('Info').t`Expand text`}>
+                    <Button
+                        onClick={() => {
+                            onClickRefine();
+                            void startGeneratingResult('expand');
+                        }}
+                        shape="outline"
+                        className="mr-1 mb-auto composer-assistant-refine-button"
+                        size="small"
+                    >
+                        <Icon name="arrows-from-center-horizontal" className="composer-assistant-special-color mr-1" />
+                        {c('Action').t`Expand`}
+                    </Button>
+                </Tooltip>
+            );
+
             return (
                 <span className="overflow-hidden flex flex-nowrap">
-                    <Tooltip title={hasSelection ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`}>
-                        <Button
-                            onClick={() => {
-                                onClickRefine();
-                                void startGeneratingResult('proofread');
-                            }}
-                            shape="outline"
-                            className="mr-2 mb-auto composer-assistant-refine-button"
-                            size="small"
-                        >
-                            <Icon name="magnifier-check" className="composer-assistant-special-color mr-1" />
-                            {c('Action').t`Proofread`}
-                        </Button>
-                    </Tooltip>
+                    {/* Show an expand button when acting on a generated text (it should already be correct)*/}
+                    {assistantResult ? expandButton : proofreadButton}
                     <Tooltip title={hasSelection ? c('Info').t`Shorten selection` : c('Info').t`Shorten text`}>
                         <Button
                             onClick={() => {
@@ -467,7 +517,7 @@ const ComposerAssistantInput = ({
                                 void startGeneratingResult('shorten');
                             }}
                             shape="outline"
-                            className="mr-2 mb-auto composer-assistant-refine-button"
+                            className="mr-1 mb-auto composer-assistant-refine-button"
                             size="small"
                         >
                             <Icon name="arrow-to-center-horizontal" className="composer-assistant-special-color mr-1" />
@@ -490,15 +540,17 @@ const ComposerAssistantInput = ({
                         </DropdownButton>
                     </Tooltip>
                     <Dropdown autoClose autoCloseOutside isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                        <DropdownMenuButton
-                            className="text-left flex flex-nowrap items-center"
-                            onClick={() => {
-                                onClickRefine();
-                                void startGeneratingResult('expand');
-                            }}
-                        >
-                            {c('Action').t`Expand`}
-                        </DropdownMenuButton>
+                        {!assistantResult && (
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={() => {
+                                    onClickRefine();
+                                    void startGeneratingResult('expand');
+                                }}
+                            >
+                                {c('Action').t`Expand`}
+                            </DropdownMenuButton>
+                        )}
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap items-center"
                             onClick={() => {
@@ -595,7 +647,21 @@ const ComposerAssistantInput = ({
                     className="text-sm color-hint composer-assistant-hint flex flex-nowrap items-center"
                     id="composer-assistant-hint"
                 >
-                    {hasAssistantError && <ErrorZone>{error}</ErrorZone>}
+                    {hasAssistantError && (
+                        <div className="flex flex-col mt-1">
+                            <ErrorZone className="w-full">{error.error}</ErrorZone>
+                            {error?.errorType === ERROR_TYPE.GENERATION_HARMFUL && (
+                                <Button
+                                    shape="underline"
+                                    size="small"
+                                    className="color-danger"
+                                    onClick={() => falsePositiveFeedback.openModal(true)}
+                                >
+                                    {c('Action').t`Report an issue`}
+                                </Button>
+                            )}
+                        </div>
+                    )}
                     {showDownloadState && (
                         <>
                             {downloadPaused ? (
@@ -644,6 +710,12 @@ const ComposerAssistantInput = ({
                             ...upsellModal.modalProps,
                         }}
                         handleCloseAssistant={() => closeAssistant(assistantID)}
+                    />
+                )}
+                {falsePositiveFeedback.render && (
+                    <AssistantUnsafeErrorFeedbackModal
+                        prompt={assistantRequest}
+                        {...falsePositiveFeedback.modalProps}
                     />
                 )}
             </div>
