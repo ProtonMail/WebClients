@@ -62,7 +62,7 @@ import noop from '@proton/utils/noop';
 import { usePublicTheme } from '../containers/PublicThemeProvider';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
@@ -764,8 +764,19 @@ const Step1 = ({
                                                           disableEmail: true,
                                                       }
                                                     : undefined)}
+                                                {...(signupParameters.invite?.type === 'drive'
+                                                    ? {
+                                                          defaultEmail: signupParameters.invite.data.invited,
+                                                          disableEmail: true,
+                                                      }
+                                                    : undefined)}
                                                 domains={model.domains}
-                                                signupTypes={signupTypes}
+                                                signupTypes={
+                                                    signupParameters.invite?.type === 'drive' ||
+                                                    signupParameters.invite?.type === 'pass'
+                                                        ? [SignupType.Email]
+                                                        : signupTypes
+                                                }
                                                 passwordFields={true}
                                                 model={model}
                                                 measure={measure}

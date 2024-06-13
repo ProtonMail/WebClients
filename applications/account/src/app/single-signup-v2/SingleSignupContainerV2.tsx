@@ -270,12 +270,14 @@ const SingleSignupContainerV2 = ({
         const invited = searchParams.get('invited');
         let invite: SignupParameters2['invite'] = undefined;
 
-        if (invited && inviter) {
+        const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
+
+        if (toApp == APPS.PROTONPASS && invited && inviter) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
                 type: 'pass',
-                data: { inviter, invited },
+                data: { inviter, invited, preVerifiedAddressToken },
             };
         }
 
@@ -284,12 +286,13 @@ const SingleSignupContainerV2 = ({
         }
 
         const externalInvitationID = searchParams.get('externalInvitationID');
-        if (externalInvitationID) {
+        const email = result.email;
+        if (toApp === APPS.PROTONDRIVE && externalInvitationID && email && preVerifiedAddressToken) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
                 type: 'drive',
-                data: { externalInvitationID },
+                data: { invited: email, externalInvitationID, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
         }
@@ -1284,6 +1287,7 @@ const SingleSignupContainerV2 = ({
                                         subscriptionData: getFreeSubscriptionData(subscriptionData),
                                     };
                                     const userCreationResult = await handleCreateUser({
+                                        invite: signupParameters.invite,
                                         cache: tmpCache,
                                         api: silentApi,
                                         mode: 'cro',
@@ -1305,6 +1309,7 @@ const SingleSignupContainerV2 = ({
                                     });
                                 } else {
                                     const result = await handleCreateUser({
+                                        invite: signupParameters.invite,
                                         cache,
                                         api: silentApi,
                                         mode: toApp === APPS.PROTONPASS ? 'ov' : 'cro',
