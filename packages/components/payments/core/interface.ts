@@ -393,6 +393,7 @@ export interface PaymentsApi {
         signal?: AbortSignal
     ) => Promise<SubscriptionCheckResponse>;
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
+    statusExtended: (version: PaymentsVersion) => Promise<PaymentMethodStatusExtended>;
 }
 
 export type ChargebeeKillSwitchData = {

@@ -42,7 +42,7 @@ const createTokenMock = jest.fn((request) => {
     };
 });
 
-const buyCreditUrl = buyCredit({} as any).url;
+const buyCreditUrl = buyCredit({} as any, 'v4').url;
 const buyCreditMock = jest.fn().mockResolvedValue({});
 
 beforeEach(() => {

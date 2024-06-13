@@ -2,6 +2,7 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
+import { onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -211,10 +212,13 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         try {
             await api(
-                changeRenewState({
-                    RenewalState: Renew.Disabled,
-                    CancellationFeedback: feedback,
-                })
+                changeRenewState(
+                    {
+                        RenewalState: Renew.Disabled,
+                        CancellationFeedback: feedback,
+                    },
+                    onSessionMigrationPaymentsVersion(user, subscription)
+                )
             );
             await eventManager.call();
             createNotification({ text: c('Success').t`You have successfully canceled your subscription.` });
@@ -228,7 +232,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
         try {
             showCancellationLoadingModal(true);
-            await api(deleteSubscription(data));
+            await api(deleteSubscription(data, onSessionMigrationPaymentsVersion(user, subscription)));
             await eventManager.call();
             createNotification({ text: c('Success').t`You have successfully unsubscribed` });
             return SUBSCRIPTION_DOWNGRADED;

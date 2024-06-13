@@ -9,6 +9,7 @@ import { DropdownActions } from '../../components';
 import { useModals, useNotifications } from '../../hooks';
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
 import PayInvoiceModal from './PayInvoiceModal';
+import { getInvoicePaymentsVersion } from './helpers';
 import { Invoice } from './interface';
 
 interface Props {
@@ -35,7 +36,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
                     return;
                 }
 
-                const status = await paymentsApi.statusExtendedAutomatic();
+                const status = await paymentsApi.statusExtended(getInvoicePaymentsVersion(invoice));
                 const canPay = status.VendorStates.Card || status.VendorStates.Paypal;
 
                 if (!canPay) {

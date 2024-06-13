@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import { onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
@@ -31,7 +32,7 @@ import {
     Tooltip,
 } from '../../components';
 import { default as Badge, BadgeType } from '../../components/badge/Badge';
-import { useApi, useEventManager, usePlans, useSubscription } from '../../hooks';
+import { useApi, useEventManager, usePlans, useSubscription, useUser } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { subscriptionExpires } from './subscription/helpers';
@@ -46,6 +47,7 @@ const SubscriptionsSection = () => {
     const api = useApi();
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
+    const [user] = useUser();
 
     if (!current || !plans || loadingSubscription || loadingPlans) {
         return <Loader />;
@@ -67,9 +69,12 @@ const SubscriptionsSection = () => {
             onClick: () => {
                 withReactivating(async () => {
                     await api(
-                        changeRenewState({
-                            RenewalState: Renew.Enabled,
-                        })
+                        changeRenewState(
+                            {
+                                RenewalState: Renew.Enabled,
+                            },
+                            onSessionMigrationPaymentsVersion(user, current)
+                        )
                     );
 
                     await eventManager.call();
