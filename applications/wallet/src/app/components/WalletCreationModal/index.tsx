@@ -14,7 +14,8 @@ import {
     useModalState,
 } from '@proton/components/components';
 
-import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
+import { Button, CoreButton, Input, Modal } from '../../atoms';
+import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
@@ -81,20 +82,15 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                     )}
 
                     <div className="mb-4">
-                        <Select
+                        <CurrencySelect
                             disabled={loadingCurrencies || loadingWalletSubmit}
-                            label="Local currency"
+                            label={c('Wallet preferences').t`Local currency`}
+                            placeholder={c('Wallet preferences').t`Select your currency`}
                             value={selectedCurrency}
-                            onChange={(event) => {
-                                setSelectedCurrency(event.value);
+                            onSelect={(value) => {
+                                setSelectedCurrency(value.Symbol);
                             }}
-                            options={
-                                currencies?.map((currency) => ({
-                                    label: currency.Symbol.toString(),
-                                    value: currency.Symbol,
-                                    id: currency.Symbol.toString(),
-                                })) ?? []
-                            }
+                            options={currencies ?? []}
                         />
                     </div>
                 </div>
@@ -163,6 +159,8 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
 
             <WalletImportModal
                 theme={theme}
+                walletName={walletName}
+                currency={selectedCurrency}
                 isFirstCreation={isFirstCreation}
                 {...walletImportModal}
                 onFinish={onSetupFinish}

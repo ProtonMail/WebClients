@@ -1,7 +1,8 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmFiatCurrencySymbol } from '@proton/andromeda';
 import {
     Collapsible,
     CollapsibleContent,
@@ -15,24 +16,38 @@ import {
 } from '@proton/components/components';
 
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
+import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import { SubTheme } from '../../utils';
 import { WalletInformationalModal, WalletInformationalModalOwnProps } from '../WalletInformationalModal';
 
 interface Props extends ModalOwnProps {
     theme?: SubTheme;
+    walletName?: string;
+    currency?: WasmFiatCurrencySymbol;
     isFirstCreation?: boolean;
     onFinish: () => void;
 }
 
-export const WalletImportModal = ({ theme, isFirstCreation, onFinish, ...modalProps }: Props) => {
+export const WalletImportModal = ({
+    theme,
+    walletName: inputWalletName,
+    currency: inputCurrency,
+    isFirstCreation,
+    onFinish,
+    ...modalProps
+}: Props) => {
     const [modal, setModal] = useModalStateWithData<WalletInformationalModalOwnProps>();
 
     const {
         walletName,
         handleWalletNameChange,
+        selectedCurrency,
+        setSelectedCurrency,
         passphrase,
         handlePassphraseChange,
+        currencies,
+        loadingCurrencies,
         mnemonic,
         mnemonicError,
         handleMnemonicChange,
@@ -45,20 +60,47 @@ export const WalletImportModal = ({ theme, isFirstCreation, onFinish, ...modalPr
         },
     });
 
+    useEffect(() => {
+        if (inputCurrency) {
+            setSelectedCurrency(inputCurrency);
+        }
+    }, [setSelectedCurrency, inputCurrency]);
+
+    useEffect(() => {
+        if (inputWalletName) {
+            handleWalletNameChange(inputWalletName);
+        }
+    }, [inputWalletName, handleWalletNameChange]);
+
     return (
         <>
             <Modal title={c('Wallet setup').t`Import wallet`} className={theme} {...modalProps}>
                 <div className="flex flex-column">
+                    {!isFirstCreation && (
+                        <div className="mb-4">
+                            <Input
+                                label={c('Wallet setup').t`Wallet name`}
+                                id="wallet-name-input"
+                                placeholder={c('Wallet setup').t`Give a name to this wallet`}
+                                value={walletName}
+                                disabled={loadingWalletSubmit}
+                                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                                    handleWalletNameChange(event.target.value);
+                                }}
+                            />
+                        </div>
+                    )}
+
                     <div className="mb-4">
-                        <Input
-                            label={c('Wallet setup').t`Name`}
-                            id="wallet-name-input"
-                            placeholder={c('Wallet setup').t`Give a name to this wallet`}
-                            value={walletName}
-                            disabled={loadingWalletSubmit}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                handleWalletNameChange(event.target.value);
+                        <CurrencySelect
+                            disabled={loadingCurrencies || loadingWalletSubmit}
+                            label={c('Wallet preferences').t`Local currency`}
+                            placeholder={c('Wallet preferences').t`Select your currency`}
+                            value={selectedCurrency}
+                            onSelect={(value) => {
+                                setSelectedCurrency(value.Symbol);
                             }}
+                            options={currencies ?? []}
                         />
                     </div>
                 </div>

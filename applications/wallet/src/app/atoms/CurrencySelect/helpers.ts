@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { WasmApiFiatCurrency, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { Props as OptionProps } from '@proton/components/components/option/Option';
 
 export const BITCOIN_CURRENCY = {
@@ -11,7 +10,7 @@ export const BITCOIN_CURRENCY = {
     Cents: 1,
 };
 
-export type CurrencyOption = WasmApiFiatCurrency & {
+export type CurrencyOption<S extends string, T extends { Symbol: S; Name: string }> = T & {
     type: 'option';
 };
 
@@ -20,19 +19,21 @@ interface DividerOption {
     text: string;
 }
 
-export type Option = CurrencyOption | DividerOption;
+export type Option<S extends string, T extends { Symbol: S; Name: string }> = CurrencyOption<S, T> | DividerOption;
 
-export const getIsCurrencyOption = (option: Option): option is CurrencyOption => {
+export const getIsCurrencyOption = <S extends string, T extends { Symbol: S; Name: string }>(
+    option: Option<S, T>
+): option is CurrencyOption<S, T> => {
     return option.type === 'option';
 };
 
-export const getSerialisedOption = (option?: WasmApiFiatCurrency) =>
-    option && `${option.Name}_${option.Symbol}_${option.Sign}`.toLocaleLowerCase();
+export const getSerialisedOption = <S extends string, T extends { Symbol: S; Name: string }>(option?: T) =>
+    option && `${option.Name}_${option.Symbol}`.toLocaleLowerCase();
 
-export const getAllDropdownOptions = (
-    popularSymbols: WasmFiatCurrencySymbol[],
-    options: WasmApiFiatCurrency[]
-): Option[] => {
+export const getAllDropdownOptions = <S extends string, T extends { Symbol: S; Name: string }>(
+    popularSymbols: S[],
+    options: T[]
+): Option<S, T>[] => {
     // We do that to keep the order of popularSymbols
     const popularOptionsIndexes = popularSymbols
         .map((symbol) => options.findIndex((optB) => optB.Symbol === symbol))
@@ -43,11 +44,11 @@ export const getAllDropdownOptions = (
 
     return [
         { type: 'divider', text: c('Currency select').t`Popular` },
-        ...popularOptions.map((opt) => ({ type: 'option', ...opt }) as Option),
+        ...popularOptions.map((opt) => ({ type: 'option', ...opt }) as Option<S, T>),
         { type: 'divider', text: c('Currency select').t`Others` },
         ...[...otherOptions]
             .sort((a, b) => (a.Name < b.Name ? -1 : 1))
-            .map((opt) => ({ type: 'option', ...opt }) as Option),
+            .map((opt) => ({ type: 'option', ...opt }) as Option<S, T>),
     ];
 };
 

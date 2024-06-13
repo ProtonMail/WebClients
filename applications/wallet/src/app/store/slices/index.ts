@@ -5,12 +5,14 @@ import { bitcoinAddressHighestIndexReducer } from './bitcoinAddressHighestIndex'
 import { bitcoinNetworkReducer } from './bitcoinNetwork';
 import { exchangeRateReducer } from './exchangeRate';
 import { fiatCurrenciesReducer } from './fiatCurrencies';
+import { userWalletSettingsReducer } from './userWalletSettings';
 
 export { apiWalletTransactionDataThunk, selectApiWalletTransactionData } from './apiWalletTransactionData';
 export { bitcoinAddressHighestIndexThunk, selectBitcoinAddressHighestIndex } from './bitcoinAddressHighestIndex';
 export { bitcoinNetworkThunk, selectBitcoinNetwork } from './bitcoinNetwork';
 export { exchangeRateThunk, selectExchangeRate } from './exchangeRate';
 export { fiatCurrenciesThunk, selectSortedFiatCurrencies as selectFiatCurrencies } from './fiatCurrencies';
+export { selectUserWalletSettings, userWalletSettingsThunk } from './userWalletSettings';
 
 export const walletReducers = {
     ...bitcoinNetworkReducer,
@@ -19,4 +21,5 @@ export const walletReducers = {
     ...apiWalletTransactionDataReducer,
     ...bitcoinAddressHighestIndexReducer,
     ...fiatCurrenciesReducer,
+    ...userWalletSettingsReducer,
 };
