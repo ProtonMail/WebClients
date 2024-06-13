@@ -3,7 +3,7 @@ import { Commit } from '@proton/docs-proto'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { DocumentKeys } from '@proton/drive-store'
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import metrics from '@proton/metrics'
 

@@ -1,7 +1,7 @@
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { DocumentUpdate } from '@proton/docs-proto'
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { mergeUpdates } from 'yjs'
 
 export type UpdatePair = {

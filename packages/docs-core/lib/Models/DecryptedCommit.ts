@@ -1,4 +1,4 @@
-import { DecryptedMessage } from './DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 

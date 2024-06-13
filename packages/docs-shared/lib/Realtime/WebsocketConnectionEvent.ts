@@ -1,12 +1,15 @@
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { NodeMeta } from '@proton/drive-store'
+import { DecryptedMessage } from './DecryptedMessage'
+import { ProcessedIncomingRealtimeEventMessage } from './ProcessedIncomingRealtimeMessage'
 
 export enum WebsocketConnectionEvent {
   Connecting = 'connecting',
   Connected = 'connected',
   Disconnected = 'disconnected',
   FailedToConnect = 'failed-to-connect',
-  Message = 'message',
+  DocumentUpdateMessage = 'du-message',
+  EventMessage = 'event-message',
   EncryptionError = 'encryption-error',
 }
 
@@ -34,6 +37,10 @@ export type WebsocketEncryptionErrorPayload = BaseWebsocketPayload & {
   error: string
 }
 
-export type WebsocketMessagePayload = BaseWebsocketPayload & {
-  message: Uint8Array
+export type WebsocketDocumentUpdateMessagePayload = BaseWebsocketPayload & {
+  message: DecryptedMessage
+}
+
+export type WebsocketEventMessagePayload = BaseWebsocketPayload & {
+  message: ProcessedIncomingRealtimeEventMessage[]
 }

@@ -14,7 +14,6 @@ import { Comment, CommentThread } from '../Models'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { LiveComments } from '../Realtime/LiveComments/LiveComments'
 import { getErrorString } from '../Util/GetErrorString'
-import { DecryptedMessage } from '../Models/DecryptedMessage'
 import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
@@ -22,13 +21,9 @@ import { Result } from '../Domain/Result/Result'
  * Updates the local comment state after receiving a message from the RTS.
  */
 export class HandleRealtimeCommentsEvent implements SyncUseCaseInterface<void> {
-  execute(
-    localCommentsState: LocalCommentsState,
-    liveComments: LiveComments,
-    payloadData: DecryptedMessage,
-  ): Result<void> {
+  execute(localCommentsState: LocalCommentsState, liveComments: LiveComments, content: Uint8Array): Result<void> {
     try {
-      const jsonString = uint8ArrayToString(payloadData.content)
+      const jsonString = uint8ArrayToString(content)
       const { type, data } = JSON.parse(jsonString) as { type: CommentsMessageType; data: AnyCommentMessageData }
       switch (type) {
         case CommentsMessageType.AddThread: {

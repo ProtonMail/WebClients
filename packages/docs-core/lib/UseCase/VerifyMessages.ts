@@ -3,7 +3,7 @@ import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { VerificationUsecaseResult, SingleMessageVerificationResult } from './VerifyUpdatesResult'
 
 export class VerifyMessages implements UseCaseInterface<VerificationUsecaseResult> {
