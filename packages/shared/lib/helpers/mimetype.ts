@@ -136,4 +136,5 @@ export const isProtonDocsConvertible = (mimeType: string) =>
     mimeType === 'text/markdown' ||
     mimeType === 'text/html';
 
-export const isProtonDocument = (mimeType: string) => mimeType === 'application/vnd.proton.doc';
+export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
+export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
