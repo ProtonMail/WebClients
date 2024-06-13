@@ -37,6 +37,9 @@
       "Add new item": [
         "Pridať novú položku"
       ],
+      "Add username field": [
+        "Pridať pole mena používateľa"
+      ],
       "Admin panel": [
         "Panel správcu"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Pokračovať"
+      ],
+      "Continue offline": [
+        "Pokračovať offline"
       ],
       "Copy and close": [
         "Kopírovať a zatvoriť"
@@ -427,6 +433,9 @@
       "Try again.": [
         "Skúsiť znova."
       ],
+      "Unlock offline with password": [
+        "Odomknúť offline pomocou hesla"
+      ],
       "Unpin item": [
         "Odopnúť položku"
       ],
@@ -746,6 +755,9 @@
       "Moving item failed": [
         "Presun položky zlyhal"
       ],
+      "Network error": [
+        "Chyba siete"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Offline režim momentálne nie je k dispozícii pre režim dvoch hesiel."
       ],
@@ -806,6 +818,9 @@
       "Unknown invite": [
         "Neznáma pozvánka"
       ],
+      "Unlock failure": [
+        "Zlyhanie odomknutia"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nepodporovaný formát súboru ${ PASS_APP_NAME }"
       ],
@@ -829,6 +844,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
@@ -942,6 +960,9 @@
         "${ n } položiek ",
         "${ n } položiek "
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } bude vždy dostupný"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
       ],
@@ -971,6 +992,9 @@
       ],
       "Access successfully confirmed": [
         "Prístup bol úspešne potvrdený"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
       ],
       "Add your custom email address to monitor :": [
         "Pridajte vašu vlastnú emailovú adresu na monitorovanie:"
@@ -1016,6 +1040,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Naozaj chcete presunúť položku do \"${ name }\" ?"
+      ],
+      "Auto-lock successfully disabled.": [
+        "Automatické uzamknutie bolo úspešne deaktivované."
       ],
       "Breaches detected": [
         "Zistený únik"
@@ -1065,6 +1092,15 @@
       "Didn't receive the code?": [
         "Nedostali ste kód?"
       ],
+      "Disabling auto-lock": [
+        "Vypnutie automatického uzamykania"
+      ],
+      "Disabling auto-lock failed": [
+        "Vypnutie automatického uzamykania zlyhalo"
+      ],
+      "Disabling offline mode...": [
+        "Vypínanie offline režimu..."
+      ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
       ],
@@ -1091,6 +1127,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Zapnúť ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Povoľte automatické uzamykanie na zabezpečenie údajov"
+      ],
+      "Enabling offline mode...": [
+        "Zapínanie offline režimu..."
+      ],
+      "Enabling password auto-lock": [
+        "Zapnutie automatického uzamykania pomocou hesla"
+      ],
+      "Enabling password lock failed": [
+        "Zapnutie uzamknutia heslom zlyhalo"
+      ],
+      "Enabling PIN auto-lock": [
+        "Zapnutie automatického uzamykania pomocou PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
@@ -1281,11 +1332,17 @@
       "Offline mode": [
         "Offline režim"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Offline režim momentálne nie je možné vypnúť"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Offline režim nie je možné momentálne povoliť"
       ],
       "Offline support successfully disabled": [
         "Podpora offline bola úspešne vypnutá"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie relácie. Po 3 neúspešných pokusoch dôjde k odhláseniu."
       ],
       "Owner": [
         "Vlastník"
@@ -1298,6 +1355,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Heslo na uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždeň sa automaticky odstránia z histórie.",
@@ -1320,11 +1380,26 @@
       "Please check your spam folder or try resending the code.": [
         "Skontrolujte priečinok so spamom alebo skúste kód poslať znova."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Potvrďte vaše ${ BRAND_NAME } heslo"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre zruenie vášho aktuálneho zámku."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre aktualizáciu času automatického uzamknutia."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Potvrďte, prosím, svoj PIN kód pre zrušenie registrácie aktuálneho zámku."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potvrďte váš PIN kód na úpravu tohto nastavenia"
@@ -1349,6 +1424,12 @@
       ],
       "Reconnect": [
         "Znovu pripojiť"
+      ],
+      "Reconnecting": [
+        "Opätovné pripájanie"
+      ],
+      "Registering PIN lock failed": [
+        "Registrácia uzamknutia pomocou PIN zlyhala"
       ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
@@ -1676,6 +1757,9 @@
       "Create an encrypted note": [
         "Vytvoriť zašifrovanú poznámku"
       ],
+      "Create lock": [
+        "Vytvoriť zámok"
+      ],
       "Create new vault": [
         "Vytvoriť nový trezor"
       ],
@@ -1880,6 +1964,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN kód"
+      ],
       "Prefix": [
         "Predpona"
       ],
@@ -1982,12 +2069,6 @@
       "Username": [
         "Používateľské meno"
       ],
-      "Username (alias)": [
-        "Používateľské meno (alias)"
-      ],
-      "Username (new alias)": [
-        "Používateľské meno (nový alias)"
-      ],
       "Vault ID": [
         "ID trezoru"
       ],
@@ -2027,6 +2108,9 @@
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2488,6 +2572,9 @@
       "Duplicated URL": [
         "Duplicitná URL"
       ],
+      "Email address is invalid": [
+        "Emailová adresa je neplatná"
+      ],
       "Field name is required": [
         "Názov poľa je povinný"
       ],
@@ -2630,6 +2717,9 @@
       ],
       "Title is required": [
         "Názov je povinný"
+      ],
+      "Too many attempts": [
+        "Príliš veľa pokusov"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Preniesť vlastníctvo tohto trezora na ${ email }?"

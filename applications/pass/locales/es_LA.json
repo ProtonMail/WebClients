@@ -37,6 +37,9 @@
       "Add new item": [
         "Añadir elemento nuevo"
       ],
+      "Add username field": [
+        "Añadir un campo de nombre de usuario"
+      ],
       "Admin panel": [
         "Panel de administración"
       ],
@@ -431,7 +434,7 @@
         "Intente nuevamente."
       ],
       "Unlock offline with password": [
-        "Desbloquear sin conexión con contraseña"
+        "Desbloquear el modo sin conexión con contraseña"
       ],
       "Unpin item": [
         "Desanclar elemento"
@@ -965,7 +968,10 @@
         "El acceso fue confirmado."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "El aceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de ${ BRAND_NAME }."
+        "El acceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de ${ BRAND_NAME }."
+      ],
+      "Add a username field": [
+        "Añadir un campo de nombre de usuario"
       ],
       "Add your custom email address to monitor :": [
         "Añada su dirección de correo personalizado para monitorear:"
@@ -1038,6 +1044,9 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Click here to add a field for a username.": [
+        "Haga clic aquí para añadir un campo para el nombre de usuario."
       ],
       "Congratulations, your access has been confirmed": [
         "Felicitaciones, se ha confirmado su acceso"
@@ -1112,7 +1121,7 @@
         "Error al activar el bloqueo por contraseña"
       ],
       "Enabling PIN auto-lock": [
-        "Activando el bloqueo automático por PIN"
+        "Activando el bloqueo automático por código PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ingrese el código de verificación. Digite ${ digit }."
@@ -1307,7 +1316,7 @@
         "El modo sin conexión está desactivado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos fallidos."
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
       ],
       "Owner": [
         "Propietario"
@@ -1322,7 +1331,7 @@
         "contraseña"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Bloqueo por contraseña registrado con éxito. Úsela para desbloquear ${ PASS_APP_NAME }"
+        "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
@@ -1362,7 +1371,7 @@
         "Confirme su contraseña de ${ BRAND_NAME } para actualizar el tiempo del bloqueo automático."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Confirme el código PIN para cancelar el registro de su bloqueo actual."
+        "Confirme el código PIN para cancelar el registro del bloqueo actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirme el código PIN para editar este ajuste."
@@ -1392,7 +1401,7 @@
         "Reconectando"
       ],
       "Registering PIN lock failed": [
-        "Error al registrar el bloqueo por PIN"
+        "Error al registrar el bloqueo por código PIN"
       ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
@@ -1711,7 +1720,7 @@
         "Crear una nota cifrada"
       ],
       "Create lock": [
-        "Crear bloqueo"
+        "Crear un bloqueo"
       ],
       "Create new vault": [
         "Crear bóveda"
@@ -1739,6 +1748,12 @@
       ],
       "Email": [
         "Correo"
+      ],
+      "Email (alias)": [
+        "Correo electrónico (alias)"
+      ],
+      "Email (new alias)": [
+        "Correo electrónico (alias nuevo)"
       ],
       "Email address": [
         "Dirección de correo"
@@ -2022,12 +2037,6 @@
       "Username": [
         "Nombre de usuario"
       ],
-      "Username (alias)": [
-        "Nombre de usuario (alias)"
-      ],
-      "Username (new alias)": [
-        "Nombre de usuario (alias nuevo)"
-      ],
       "Vault ID": [
         "ID de bóveda"
       ],
@@ -2161,11 +2170,17 @@
       "Enter a prefix": [
         "Ingresar un prefijo"
       ],
+      "Enter email": [
+        "Ingresar un correo electrónico"
+      ],
       "Enter email or username": [
         "Ingresar correo o usuario"
       ],
       "Enter password": [
         "Ingresar contraseña"
+      ],
+      "Enter username": [
+        "Ingrese el nombre de usuario"
       ],
       "Full Name": [
         "Nombre completo"
@@ -2525,6 +2540,9 @@
       "Duplicated URL": [
         "La URL es duplicada."
       ],
+      "Email address is invalid": [
+        "Dirección de correo inválida"
+      ],
       "Field name is required": [
         "El nombre del campo es obligatorio."
       ],
@@ -2667,7 +2685,7 @@
         "El título es requerido"
       ],
       "Too many attempts": [
-        "Demasiados intentos"
+        "Hubo demasiados intentos."
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "¿Transferir la propiedad de esta bóveda a ${ email }?"

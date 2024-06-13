@@ -37,6 +37,9 @@
       "Add new item": [
         "Добавить новый элемент"
       ],
+      "Add username field": [
+        "Добавить поле имени пользователя"
+      ],
       "Admin panel": [
         "Панель администратора"
       ],
@@ -943,6 +946,9 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Автоблокировка успешно отключена."
+      ],
       "Breaches detected": [
         "Обнаружены утечки"
       ],
@@ -1842,12 +1848,6 @@
       "Username": [
         "Имя пользователя"
       ],
-      "Username (alias)": [
-        "Имя пользователя (псевдоним)"
-      ],
-      "Username (new alias)": [
-        "Имя пользователя (новый псевдоним)"
-      ],
       "Vault ID": [
         "ID хранилища"
       ],
@@ -2315,6 +2315,9 @@
     "Validation": {
       "Duplicated URL": [
         "Дублированный URL"
+      ],
+      "Email address is invalid": [
+        "Недействительный адрес эл. почты"
       ],
       "Field name is required": [
         "Имя поля является обязательным"

@@ -37,6 +37,9 @@
       "Add new item": [
         "Додати новий елемент"
       ],
+      "Add username field": [
+        "Додати поле імені користувача"
+      ],
       "Admin panel": [
         "Панель адміністратора"
       ],
@@ -1005,6 +1008,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ви впевнені, що хочете перемістити елемент до \"${ name }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Автоблокування успішно вимкнено."
+      ],
       "Breaches detected": [
         "Виявлено витоки"
       ],
@@ -1964,12 +1970,6 @@
       "Username": [
         "Ім'я користувача"
       ],
-      "Username (alias)": [
-        "Ім'я користувача (псевдонім)"
-      ],
-      "Username (new alias)": [
-        "Ім'я користувача (новий псевдонім)"
-      ],
       "Vault ID": [
         "ID сховища"
       ],
@@ -2469,6 +2469,9 @@
     "Validation": {
       "Duplicated URL": [
         "Дублювати посилання"
+      ],
+      "Email address is invalid": [
+        "Недійсна адреса е-пошти"
       ],
       "Field name is required": [
         "Назва поля обов'язкова"
