@@ -1,4 +1,3 @@
-import { sendErrorReport } from '../../../utils/errorHandling';
 import {
     DownloadCallbacks,
     DownloadStreamControls,
@@ -27,7 +26,11 @@ export default function initDownloadLinks(
     const folderLoaders: Map<String, FolderTreeLoader> = new Map();
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
-
+    const cancel = () => {
+        Array.from(folderLoaders.values()).forEach((folderLoader) => folderLoader.cancel());
+        archiveGenerator.cancel();
+        concurrentIterator.cancel();
+    };
     const start = () => {
         // To get link into progresses right away so potentially loader can be displayed.
         callbacks.onProgress?.(
@@ -43,7 +46,11 @@ export default function initDownloadLinks(
             callbacks.onInit,
             callbacks.onSignatureIssue,
             callbacks.onProgress
-        );
+        ).catch((err: Error) => {
+            log(`initDownloadLinks => loadTotalSize failed: ${err}`);
+            callbacks.onError?.(err);
+            cancel();
+        });
         const linksIterator = iterateAllLinks(links, folderLoaders);
         const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, log, options);
         archiveGenerator
@@ -51,9 +58,10 @@ export default function initDownloadLinks(
             .then(() => {
                 callbacks.onFinish?.();
             })
-            .catch((err) => {
+            .catch((err: Error) => {
+                log(`initDownloadLinks => archiveGenerator failed: ${err}`);
                 callbacks.onError?.(err);
-                archiveGenerator.cancel();
+                cancel();
             });
         return archiveGenerator.stream;
     };
@@ -62,11 +70,7 @@ export default function initDownloadLinks(
         start,
         pause: () => concurrentIterator.pause(),
         resume: () => concurrentIterator.resume(),
-        cancel: () => {
-            Array.from(folderLoaders.values()).forEach((folderLoader) => folderLoader.cancel());
-            archiveGenerator.cancel();
-            concurrentIterator.cancel();
-        },
+        cancel,
     };
 }
 
@@ -90,13 +94,11 @@ function loadTotalSize(
         return result;
     });
 
-    Promise.all(sizePromises)
-        .then((results) => {
-            const size = results.reduce((total, { size }) => total + size, 0);
-            const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
-            onInit?.(size, linkSizes);
-        })
-        .catch(sendErrorReport);
+    return Promise.all(sizePromises).then((results) => {
+        const size = results.reduce((total, { size }) => total + size, 0);
+        const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
+        onInit?.(size, linkSizes);
+    });
 }
 
 async function* iterateAllLinks(
