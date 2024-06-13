@@ -9,8 +9,10 @@ import { CoreButton } from '../../atoms';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { satsToBitcoin, satsToFiat } from '../../utils';
+import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {
     AmountDataListItem,
+    LinkToBlockchainItem,
     MessageDataListItem,
     NoteDataListItem,
     RecipientsDataListItem,
@@ -24,6 +26,7 @@ interface Props {
 
 export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Props) => {
     const [showMore, setShowMore] = useState(false);
+    const { network } = useBitcoinBlockchainContext();
     const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
 
     const isSender = transaction.networkData.sent > transaction.networkData.received;
@@ -80,6 +83,8 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
 
                 {showMore ? (
                     <>
+                        <LinkToBlockchainItem tx={transaction} network={network} />
+
                         <AmountDataListItem
                             amount={transaction.networkData.fee}
                             label={c('Wallet transaction').t`Network fee`}

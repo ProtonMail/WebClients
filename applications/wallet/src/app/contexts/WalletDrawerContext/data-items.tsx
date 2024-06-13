@@ -1,12 +1,15 @@
+import { isUndefined } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
 import { Icon, Price, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { CoreButton } from '../../atoms';
+import { CoreButton, CoreButtonLike } from '../../atoms';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
+import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants/explorer';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import {
     getTransactionRecipientHumanReadableName,
@@ -142,5 +145,33 @@ export const AmountDataListItem = ({
             </div>
             <div className="color-weak">{satsToBitcoin(amount ?? 0)} BTC</div>
         </div>
+    );
+};
+
+export const LinkToBlockchainItem = ({ tx, network }: TxDataListItemProps & { network?: WasmNetwork }) => {
+    const url = !isUndefined(network) && BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK[network];
+    if (!url) {
+        return null;
+    }
+
+    return (
+        <>
+            <div className="w-full">
+                <span className="block color-hint text-rg"></span>
+                <p className="my-0 mt-1 text-lg">
+                    <CoreButtonLike
+                        as={Href}
+                        href={`${url}/${tx.networkData.txid}`}
+                        shape="underline"
+                        className="flex flex-row items-center"
+                        color="norm"
+                    >
+                        {c('Link').t`View on blockchain`}
+                        <Icon className="shrink-0 ml-1" name={'arrow-out-from-rectangle'} size={3} />
+                    </CoreButtonLike>
+                </p>
+            </div>
+            <hr className="my-4" />
+        </>
     );
 };
