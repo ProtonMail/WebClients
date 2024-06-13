@@ -8,7 +8,8 @@ import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
 import { readBitwardenData } from './providers/bitwarden.reader';
 import { readChromiumData } from './providers/chromium.reader';
-import { readDashlaneData } from './providers/dashlane.reader';
+import { readDashlaneDataCSV } from './providers/dashlane.csv.reader';
+import { readDashlaneDataZIP } from './providers/dashlane.zip.reader';
 import { readEnpassData } from './providers/enpass.reader';
 import { readFirefoxData } from './providers/firefox.reader';
 import { readKeePassData } from './providers/keepass.reader';
@@ -90,7 +91,14 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         case ImportProvider.DASHLANE: {
-            return readDashlaneData({ data: await file.arrayBuffer(), importUsername });
+            switch (fileExtension) {
+                case 'csv':
+                    return readDashlaneDataCSV({ data: await file.text(), importUsername });
+                case 'zip':
+                    return readDashlaneDataZIP({ data: await file.arrayBuffer(), importUsername });
+                default:
+                    throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
+            }
         }
 
         case ImportProvider.SAFARI: {
