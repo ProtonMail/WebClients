@@ -164,10 +164,6 @@ describe('Import Dashlane CSV', () => {
 
         const { items } = vaultData;
 
-        items.forEach((item: any) => {
-            console.log(deobfuscateItem(item));
-        });
-
         /* Note item with quotes */
         const noteItem1 = deobfuscateItem(items[0] as any) as unknown as ItemImportIntent<'note'>;
         expect(noteItem1.type).toEqual('note');
