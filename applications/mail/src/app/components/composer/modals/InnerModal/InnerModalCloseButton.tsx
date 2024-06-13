@@ -12,7 +12,14 @@ const InnerModalModalCloseButton = ({ closeTextModal, onClose }: InnerModalModal
     const closeText = closeTextModal || c('Action').t`Close`;
 
     return (
-        <Button icon shape="ghost" size="small" className="inner-modal-close" title={closeText} onClick={onClose}>
+        <Button
+            icon
+            shape="ghost"
+            size="small"
+            className="inner-modal-close mt-5 mr-5"
+            title={closeText}
+            onClick={onClose}
+        >
             <Icon className="inner-modal-close-icon" name="cross-big" alt={closeText} />
         </Button>
     );

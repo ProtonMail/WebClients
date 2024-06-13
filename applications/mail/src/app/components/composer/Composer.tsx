@@ -18,7 +18,6 @@ import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
@@ -322,13 +321,8 @@ const Composer = (
      * ATM we don't have a queue mechanism in the assistant in local mode.
      * In that case we want to disable it if another composer has the assistant opened.
      * However, we still want to be able to close it by clicking on the button.
-     *
-     * In server mode, we don't need a queue mechanism so we can display the assistant in all composers.
      */
-    const isRunningAssistantLocally = userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY;
-    const disableAssistantButton = isRunningAssistantLocally
-        ? openedAssistants.length > 0 && !isAssistantOpenedInComposer
-        : false;
+    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
 
     return (
         <div

@@ -246,11 +246,12 @@ const ComposerAssistant = ({
                 isAssistantExpanded && 'composer-assistant-container--expanded',
             ])}
             style={{ '--top-custom': `${composerAssistantTopValue}px` }}
+            onMouseDown={handleMouseDown}
         >
             <div className="composer-assistant rounded-lg flex-nowrap flex flex-column my-2 relative">
                 {displayRefinePopover && (
                     <div
-                        className="absolute composer-assistant-refine-popover rounded-lg border border-weak bg-norm pt-1 pb-2 pl-4 pr-2 flex flex-nowrap shadow-raised items-start"
+                        className="absolute composer-assistant-refine-popover rounded-lg border border-weak bg-norm pt-1 pb-1 pl-4 pr-2 flex flex-nowrap shadow-raised items-start"
                         id="composer-assistant-refine-popover"
                     >
                         <Icon
@@ -295,7 +296,6 @@ const ComposerAssistant = ({
                                 customContainerRef={assistantResultRef}
                                 customChildRef={assistantResultChildRef}
                                 onKeyUp={handleSelectionChange}
-                                onMouseDown={handleMouseDown}
                                 onScroll={checkScrollButtonDisplay}
                             >
                                 <div

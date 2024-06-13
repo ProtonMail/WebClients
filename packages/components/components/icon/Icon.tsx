@@ -56,6 +56,7 @@ export type IconName =
     | 'arrow-up-line'
     | 'arrows-cross'
     | 'arrows-from-center'
+    | 'arrows-from-center-horizontal'
     | 'arrows-left-right'
     | 'arrows-rotate'
     | 'arrows-swap-right'

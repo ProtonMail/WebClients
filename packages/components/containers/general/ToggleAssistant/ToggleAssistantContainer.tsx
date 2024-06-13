@@ -7,6 +7,7 @@ import {
     SettingsLayoutRight,
     useAssistantSubscriptionStatus,
     useFlag,
+    useUser,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -18,6 +19,7 @@ import ToggleAssistantEnvironment from './ToggleAssistantEnvironment';
 const ToggleAssistantContainer = () => {
     const assistantFeatureEnabled = useFlag('ComposerAssistant');
     const { trialStatus } = useAssistantSubscriptionStatus();
+    const [user] = useUser();
 
     if (!assistantFeatureEnabled) {
         return null;
@@ -38,7 +40,7 @@ const ToggleAssistantContainer = () => {
                     <ToggleAssistant id="assistantSelect" />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {trialStatus !== 'trial-ended' && <ToggleAssistantEnvironment />}
+            {(trialStatus === 'trial-ongoing' || user.NumAI > 0) && <ToggleAssistantEnvironment />}
         </>
     );
 };

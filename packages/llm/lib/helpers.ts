@@ -1,7 +1,12 @@
 import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
-import { AssistantStatus, assistantAuthorizedApps } from '@proton/llm/lib/constants';
+import {
+    AssistantStatus,
+    GENERAL_STOP_STRINGS,
+    STOP_STRINGS_WRITE_FULL_EMAIL,
+    assistantAuthorizedApps,
+} from '@proton/llm/lib/constants';
 import {
     Action,
     AssistantEvent,
@@ -102,7 +107,6 @@ export const checkHarmful = (inputText: string) => {
 };
 
 export function removeStopStrings(text: string, customStopStrings?: string[]) {
-    const GENERAL_STOP_STRINGS = ['<|', '[INST]', '[/INST]', '\n\n\n'];
     customStopStrings ||= [];
     const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
     const leftMostStopIdx: number | undefined = stopStrings
@@ -140,7 +144,7 @@ export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: s
     }
 
     // Remove stop strings and anything that come after.
-    text = removeStopStrings(text, ['\n[Your Name]']);
+    text = removeStopStrings(text, STOP_STRINGS_WRITE_FULL_EMAIL);
 
     // Split lines
     let lines = text.split('\n');
@@ -153,9 +157,9 @@ export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: s
     // Drop the subject.
     // The LLM often wants to generates a subject line before the email content. We're not using it at
     // the moment, so we just get rid of this line altogether.
-    lines = lines.filter((line) => !line.startsWith('Subject:'));
+    lines = lines.filter((line) => !line.startsWith('Subject'));
     // Do not show a partially generated line, like "Subj"
-    lines = lines.filter((line, i) => !isLast(i, lines) || !'Subject:'.startsWith(line));
+    lines = lines.filter((line, i) => !isLast(i, lines) || !'Subject'.startsWith(line));
 
     // Drop the signature.
     // It's very difficult to ask the LLM to **not sign**, but dropping [Your Name] seems to work better, so

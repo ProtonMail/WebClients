@@ -22,8 +22,10 @@ export const getMessageContentBeforeBlockquote = (args: GetContentBeforeBlockquo
 
     if ('plaintext' === editorType) {
         const { addressSignature } = args;
-        const signatureIndex = editorContent.indexOf(addressSignature);
-
+        // If no signature is set, the detection will be broken because indexOf will return 0,
+        // and we will end up with an empty string as the message content.
+        // To avoid that, we set the index to -1 if no signature is set.
+        const signatureIndex = addressSignature === '' ? -1 : editorContent.indexOf(addressSignature);
         return signatureIndex === -1 ? editorContent : editorContent.slice(0, signatureIndex);
     }
 

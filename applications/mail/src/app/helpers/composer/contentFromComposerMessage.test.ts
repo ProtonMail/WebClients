@@ -18,7 +18,17 @@ describe('getMessageContentBeforeBlockquote', () => {
         ).toBe('');
     });
 
-    it('should return content before signature', () => {
+    it('should return content if no signature', () => {
+        expect(
+            getMessageContentBeforeBlockquote({
+                editorType: 'plaintext',
+                editorContent: 'Hello this is some plain text content',
+                addressSignature: '',
+            })
+        ).toBe('Hello this is some plain text content');
+    });
+
+    it('should return content before signature if signature', () => {
         expect(
             getMessageContentBeforeBlockquote({
                 editorType: 'plaintext',

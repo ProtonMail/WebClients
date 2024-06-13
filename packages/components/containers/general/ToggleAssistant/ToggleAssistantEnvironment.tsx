@@ -30,7 +30,7 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     return (
         <>
             <h3 className="text-rg mr-2">{c('Assistant option').t`Run locally`}</h3>
-            <Info title={c('Assistant option').t`No data transmitted while using,requires one-time download`} />
+            <Info title={c('Assistant option').t`No data transmitted while using, requires one-time download`} />
         </>
     );
 };
