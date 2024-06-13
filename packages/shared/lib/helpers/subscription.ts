@@ -802,9 +802,11 @@ export const hasNewCancellablePlan = (subscription: Subscription | undefined) =>
         hasNewVisionary,
         hasDrive,
         hasMailPro,
+        hasMailBusiness,
         hasDrivePro,
         hasEnterprise,
         hasBundlePro,
+        hasBundlePro2024,
     ].some((check) => check(subscription));
 };
 
