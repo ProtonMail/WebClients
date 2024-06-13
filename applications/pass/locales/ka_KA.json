@@ -17,6 +17,9 @@
       "Add new item": [
         "ახალი ელემენტის დამატება"
       ],
+      "Add username field": [
+        "მომხმარებლის სახელის ველის დამატება"
+      ],
       "Admin panel": [
         "ადმინისტრატორის პანელი"
       ],
@@ -79,6 +82,9 @@
       ],
       "Continue": [
         "გაგრძელება"
+      ],
+      "Continue offline": [
+        "გაგრძელება ქსელის გარეშე"
       ],
       "Copy and close": [
         "კოპირება და დახურვა"
@@ -693,6 +699,9 @@
       "Moving item failed": [
         "ელემენტის გადატანის შეცდომა"
       ],
+      "Network error": [
+        "ქსელის შეცდომა"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "ინტერნეტის გარეშე მუშაობის რეჟიმი ამჟამად ხელმიუწვდომელია 2 პაროლის რეჟიმში."
       ],
@@ -937,6 +946,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
+      ],
+      "Auto-lock successfully disabled.": [
+        "ავტომატური დაბლოკვა წარმატებით გამოირთო."
       ],
       "Breaches detected": [
         "აღმოჩენილია გაჟონვები"
@@ -1261,6 +1273,9 @@
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
       ],
       "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
+      "Reconnecting": [
         "თავიდან დაკავშირება"
       ],
       "Restoring items from trash": [
@@ -1768,6 +1783,9 @@
       "PIN": [
         "PIN-კოდი"
       ],
+      "PIN code": [
+        "PIN კოდი"
+      ],
       "Prefix": [
         "პრეფიქსი"
       ],
@@ -1869,12 +1887,6 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ],
-      "Username (alias)": [
-        "მომხმარებლის სახელი (ფსევდონიმი)"
-      ],
-      "Username (new alias)": [
-        "მომხმარებლის სახელი (ახალი ფსევდონიმი)"
       ],
       "Vault ID": [
         "საცავის ID"
@@ -2356,6 +2368,9 @@
       "Duplicated URL": [
         "დუბლირებული URL"
       ],
+      "Email address is invalid": [
+        "ელფოსტის მისამართი არასწორია"
+      ],
       "Field name is required": [
         "ველის სახელი აუცილებელია"
       ],
@@ -2493,6 +2508,9 @@
       ],
       "Title is required": [
         "სათაური აუცილებელია"
+      ],
+      "Too many attempts": [
+        "ძალიან ბევრი მცდელობა"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "გადავცე ამ საცავს ფლობის უფლება ${ email }-ს?"

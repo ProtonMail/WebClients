@@ -37,6 +37,9 @@
       "Add new item": [
         "Dodaj nov predmet"
       ],
+      "Add username field": [
+        "Dodajte polje za uporabniško ime"
+      ],
       "Admin panel": [
         "Administratorska plošča"
       ],
@@ -1017,6 +1020,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Samodejno zaklepanje je onemogočeno."
+      ],
       "Breaches detected": [
         "Zaznana kršitev"
       ],
@@ -1982,12 +1988,6 @@
       "Username": [
         "Uporabniško ime"
       ],
-      "Username (alias)": [
-        "Uporabniško ime (vzdevek)"
-      ],
-      "Username (new alias)": [
-        "Uporabniško ime (nov vzdevek)"
-      ],
       "Vault ID": [
         "ID trezorja"
       ],
@@ -2487,6 +2487,9 @@
     "Validation": {
       "Duplicated URL": [
         "Podvojeni URL"
+      ],
+      "Email address is invalid": [
+        "E-poštni naslov ni veljaven"
       ],
       "Field name is required": [
         "Ime polja je obvezno"
