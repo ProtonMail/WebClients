@@ -1,4 +1,4 @@
-export enum BroadcastSources {
+export enum BroadcastSource {
   CommitDocumentUseCase = 'CommitDocumentUseCase',
   CommentsController = 'CommentsController',
   TypingStatusChange = 'TypingStatusChange',

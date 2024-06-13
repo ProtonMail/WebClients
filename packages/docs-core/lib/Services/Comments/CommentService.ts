@@ -9,12 +9,12 @@ import {
   InternalEventBusInterface,
   CommentsEvent,
   CommentMarkNodeChangeData,
-  BroadcastSources,
+  BroadcastSource,
 } from '@proton/docs-shared'
 import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { LoggerInterface } from '@proton/utils/logs'
-import { CreateRealtimeCommentMessage } from './CreateRealtimeCommentMessage'
+import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { LocalCommentsState } from './LocalCommentsState'
 import { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
@@ -25,6 +25,8 @@ import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from '../../Controller/Document/DocControllerEvent'
 import metrics from '@proton/metrics'
+import { EventTypeEnum } from '@proton/docs-proto'
+
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
 
@@ -32,7 +34,6 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     this.websocketService,
     this.document,
     this.userDisplayName,
-    this.keys.userOwnAddress,
     this.eventBus,
   )
 
@@ -63,14 +64,20 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   private broadcastCommentMessage(type: CommentsMessageType, dto: AnyCommentMessageData): void {
-    const message = CreateRealtimeCommentMessage(type, dto, this.keys.userOwnAddress)
+    const data = CreateRealtimeCommentPayload(type, dto)
+
+    void this.websocketService.sendEventMessage(
+      this.document,
+      data,
+      EventTypeEnum.ClientHasSentACommentMessage,
+      BroadcastSource.CommentsController,
+    )
 
     if ([CommentsMessageType.AddThread, CommentsMessageType.AddComment].includes(type)) {
       metrics.docs_comments_total.increment({
         type: CommentsMessageType.AddThread ? 'comment' : 'reply',
       })
     }
-    void this.websocketService.sendMessageToDocument(this.document, message, BroadcastSources.CommentsController)
   }
 
   public getTypersExcludingSelf(threadId: string): string[] {
