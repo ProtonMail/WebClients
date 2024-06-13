@@ -276,7 +276,7 @@ export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return hasPassPro(subscription) || hasPassBusiness(subscription) || hasBundlePro2024(subscription);
+    return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
 
 export const getHasVpnOrPassB2BPlan = (subscription: MaybeFreeSubscription) => {
