@@ -40,6 +40,12 @@ export default function initDownloadLinkFolder(
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
 
+    const cancel = () => {
+        folderLoader.cancel();
+        archiveGenerator.cancel();
+        concurrentIterator.cancel();
+    };
+
     const start = () => {
         folderLoader
             .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress)
@@ -49,7 +55,7 @@ export default function initDownloadLinkFolder(
             })
             .catch((err) => {
                 callbacks.onError?.(err);
-                archiveGenerator.cancel();
+                cancel();
             });
         const childrenIterator = folderLoader.iterateAllChildren();
         const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks, log, options);
@@ -60,7 +66,7 @@ export default function initDownloadLinkFolder(
             })
             .catch((err) => {
                 callbacks.onError?.(err);
-                archiveGenerator.cancel();
+                cancel();
             });
         return archiveGenerator.stream;
     };
@@ -69,11 +75,7 @@ export default function initDownloadLinkFolder(
         start,
         pause: () => concurrentIterator.pause(),
         resume: () => concurrentIterator.resume(),
-        cancel: () => {
-            folderLoader.cancel();
-            archiveGenerator.cancel();
-            concurrentIterator.cancel();
-        },
+        cancel,
     };
 }
 
