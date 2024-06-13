@@ -60,6 +60,8 @@
 		}
 	}
 
+	&.is-drawer-app,
+	.drawer-app-view,
 	&:has(.eventpopover),
 	&:has(#webpack-dev-server-client-overlay) {
 		.header,
