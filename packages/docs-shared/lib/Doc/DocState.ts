@@ -12,7 +12,7 @@ import { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
-import { BroadcastSources } from '../Bridge/BroadcastSources'
+import { BroadcastSource } from '../Bridge/BroadcastSource'
 
 export enum DocUpdateOrigin {
   DocState = 'DocState',
@@ -70,7 +70,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      BroadcastSources.AwarenessWebSocketOpen,
+      BroadcastSource.AwarenessWebSocketOpen,
     )
 
     this.broadcastInitialAwarenessState()
@@ -134,7 +134,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      BroadcastSources.AwarenessWebSocketOpen,
+      BroadcastSource.AwarenessWebSocketOpen,
     )
   }
 
@@ -158,7 +158,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      BroadcastSources.AwarenessUpdateHandler,
+      BroadcastSource.AwarenessUpdateHandler,
     )
   }
 
@@ -171,7 +171,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.callbacks.docStateRequestsPropagationOfUpdate(
       updateMessage,
       DocUpdateOrigin.DocState,
-      BroadcastSources.HandleDocBeingUpdatedByLexical,
+      BroadcastSource.HandleDocBeingUpdatedByLexical,
     )
   }
 
@@ -212,7 +212,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     void this.callbacks.docStateRequestsPropagationOfUpdate(
       message,
       DocUpdateOrigin.DocState,
-      BroadcastSources.DocPresenceState,
+      BroadcastSource.DocPresenceState,
     )
   }
 }

@@ -5,7 +5,7 @@ import {
   ClientRequiresEditorMethods,
   RtsMessagePayload,
   DocumentMetaInterface,
-  BroadcastSources,
+  BroadcastSource,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -16,7 +16,7 @@ export interface EditorOrchestratorInterface {
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: BroadcastSources,
+    debugSource: BroadcastSource,
   ): Promise<void>
 
   getTypersExcludingSelf(threadId: string): string[]

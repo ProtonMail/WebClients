@@ -3,7 +3,7 @@ import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
 import {
   BridgeOriginProvider,
-  BroadcastSources,
+  BroadcastSource,
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
   CommentsEvent,
@@ -207,7 +207,7 @@ export function App({ nonInteractiveMode = false }: Props) {
       docStateRequestsPropagationOfUpdate: (
         message: RtsMessagePayload,
         originator: string,
-        debugSource: BroadcastSources,
+        debugSource: BroadcastSource,
       ) => {
         bridge
           .getClientInvoker()
