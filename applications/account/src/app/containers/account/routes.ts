@@ -68,7 +68,7 @@ export const getAccountAppRoutes = ({
     const hasVPNOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
 
     // This condition is temporary and required to control the launch of the feature. Will be merged with the condition below once the feature is fully launched.
-    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription);
+    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
     const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
