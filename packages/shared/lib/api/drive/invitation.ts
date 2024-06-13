@@ -1,4 +1,5 @@
 import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
 
 export const queryInviteProtonUser = (shareID: string, { Invitation, EmailDetails }: InviteProtonUserPayload) => ({
@@ -23,6 +24,7 @@ export const queryInvitationList = (shareID: string) => ({
 export const queryInvitationDetails = (invitationID: string) => ({
     method: 'get',
     url: `drive/v2/shares/invitations/${invitationID}`,
+    silence: [API_CUSTOM_ERROR_CODES.NOT_FOUND],
 });
 
 export const queryAcceptShareInvite = (
