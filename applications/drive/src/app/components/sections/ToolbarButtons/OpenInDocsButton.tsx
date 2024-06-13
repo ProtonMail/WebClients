@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
@@ -13,7 +14,7 @@ interface Props {
 
 const OpenInDocsButton = ({ selectedLinks, shareId }: Props) => {
     const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
-    const { openInDocsAction, showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
+    const { openInDocsAction, showOpenInDocs } = useOpenInDocs(selectedLink);
 
     if (!showOpenInDocs || isMultiSelect(selectedLinks) || hasFoldersSelected(selectedLinks)) {
         return null;
@@ -21,8 +22,19 @@ const OpenInDocsButton = ({ selectedLinks, shareId }: Props) => {
 
     return (
         <ToolbarButton
-            title={c('Action').t`Open in Docs`}
-            icon={<Icon name="file-arrow-out" alt={c('Action').t`Open in Docs`} />}
+            title={
+                // translator: Open in Docs
+                c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
+            }
+            icon={
+                <Icon
+                    name="file-arrow-out"
+                    alt={
+                        // translator: Open in Docs
+                        c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
+                    }
+                />
+            }
             onClick={() => {
                 if (selectedLink) {
                     openInDocsAction({
