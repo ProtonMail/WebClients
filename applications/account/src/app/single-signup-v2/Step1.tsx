@@ -760,13 +760,13 @@ const Step1 = ({
                                                     : undefined)}
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {
-                                                          defaultEmail: signupParameters.invite.data.invited,
+                                                          defaultEmail: signupParameters.invite.data.invitee,
                                                           disableEmail: true,
                                                       }
                                                     : undefined)}
                                                 {...(signupParameters.invite?.type === 'drive'
                                                     ? {
-                                                          defaultEmail: signupParameters.invite.data.invited,
+                                                          defaultEmail: signupParameters.invite.data.invitee,
                                                           disableEmail: true,
                                                       }
                                                     : undefined)}
