@@ -488,6 +488,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share": [
+        "Paylaş"
+      ],
       "Share via link": [
         "Bağlantı ile paylaş"
       ],
@@ -646,6 +649,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
       ],
       "${ users } user": [
         "${ users } kullanıcı",
@@ -4058,10 +4065,10 @@
         "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola özelliği açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola özelliği açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola özelliğini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola kipi açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
@@ -4230,6 +4237,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant add-on": [
+        "Yazma yardımcısı eklentisi"
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
@@ -4420,6 +4433,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Invoice state display as badge": {
@@ -4875,7 +4893,7 @@
         "Sistem bilgileri"
       ],
       "Two-password mode": [
-        "İki parola özelliği"
+        "İki parola kipi"
       ],
       "Type": [
         "Tür"
@@ -5011,6 +5029,9 @@
       ],
       "Add gift code": [
         "Hediye kodu ekle"
+      ],
+      "Add to your subscription": [
+        "Aboneliğinize ekleyin"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -5532,6 +5553,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with only a prompt": [
+        "Yalnızca isteğinizi yazarak e-postalar oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -5596,6 +5620,9 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your texts": [
+        "Metinleri düzeltin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
@@ -5603,11 +5630,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
+      "Reply to messages": [
+        "İletileri yanıtlayın"
+      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
         "Yöneltici desteği"
+      ],
+      "Save time emailing": [
+        "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
@@ -7332,6 +7365,11 @@
         "Yükselt"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } ay",
@@ -8590,6 +8628,9 @@
       "Plans": [
         "Tarifeler"
       ],
+      "Policies": [
+        "İlkeler"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -8709,7 +8750,7 @@
         "Tek parola kipine geç"
       ],
       "Switch to two-password mode": [
-        "İki parola özelliğini aç"
+        "İki parola kipini aç"
       ],
       "TV sign in": [
         "TV oturumu açma"
@@ -8927,6 +8968,11 @@
       ],
       "Primary admin": [
         "Birincil yönetici"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "Yapay Zeka"
       ]
     },
     "Users table: single sign-on enabled": {
