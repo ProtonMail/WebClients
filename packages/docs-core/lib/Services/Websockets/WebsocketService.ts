@@ -1,6 +1,7 @@
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
+import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import {
@@ -13,28 +14,27 @@ import {
   RealtimeUrlAndToken,
   WebsocketFailedToConnectPayload,
   WebsocketEncryptionErrorPayload,
-  BroadcastSources,
+  BroadcastSource,
   assertUnreachable,
   ProcessedIncomingRealtimeEventMessage,
   WebsocketDocumentUpdateMessagePayload,
   WebsocketEventMessagePayload,
+  WebsocketCollaborationMode,
 } from '@proton/docs-shared'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import { Result } from '../../Domain/Result/Result'
 import metrics from '@proton/metrics'
 import {
-  ClientMessageWithDocumentUpdates,
   ClientMessage,
-  ClientMessageWithEvents,
-  DocumentUpdate,
-  Event,
   ServerMessage,
   ServerMessageType,
   EventTypeEnum,
   EventType,
   CreateClientEventMessage,
   ClientEventVersion,
+  CreateDocumentUpdateMessage,
+  DocumentUpdateVersion,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -44,6 +44,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 type DocumentConnectionRecord = {
   connection: WebsocketConnectionInterface
   keys: DocumentKeys
+  mode: WebsocketCollaborationMode
 }
 
 type LinkID = string
@@ -154,6 +155,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.connections[document.linkId] = {
       connection,
       keys,
+      mode: WebsocketCollaborationMode.Buffered,
     }
 
     this.stressTestorCache.lastKeys = keys
@@ -166,10 +168,38 @@ export class WebsocketService implements WebsocketServiceInterface {
     return this.connections[linkId]
   }
 
-  async sendMessageToDocument(
+  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array, source: BroadcastSource): Promise<void> {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    const { keys, connection } = record
+
+    const metadata: EncryptionMetadata = {
+      authorAddress: keys.userOwnAddress,
+      timestamp: Date.now(),
+      version: DocumentUpdateVersion.V1,
+    }
+
+    const encryptedContent = await this.encryptMessage(rawContent, metadata, document, keys, source)
+
+    const message = CreateDocumentUpdateMessage({
+      content: encryptedContent,
+      ...metadata,
+    })
+
+    const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
+    const binary = messageWrapper.serializeBinary()
+
+    void connection.broadcastMessage(binary, source)
+  }
+
+  async sendEventMessage(
     document: NodeMeta,
-    message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: BroadcastSources,
+    rawContent: Uint8Array,
+    type: EventTypeEnum,
+    source: BroadcastSource,
   ): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
@@ -178,42 +208,33 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const { keys, connection } = record
 
-    const messageWrapper = new ClientMessage()
-
-    try {
-      if (message instanceof ClientMessageWithEvents) {
-        for (const event of message.events) {
-          const encryptedContent = await this.encryptMessage(event, document, keys)
-          event.content = new Uint8Array(encryptedContent)
-        }
-      } else {
-        for (const update of message.updates.documentUpdates) {
-          const encryptedContent = await this.encryptMessage(update, document, keys)
-          update.encryptedContent = new Uint8Array(encryptedContent)
-        }
-      }
-    } catch (e: unknown) {
-      if (source === BroadcastSources.CommentsController) {
-        metrics.docs_comments_error_total.increment({
-          reason: 'encryption_error',
-        })
-      }
-      throw e
+    const metadata: EncryptionMetadata = {
+      authorAddress: keys.userOwnAddress,
+      timestamp: Date.now(),
+      version: ClientEventVersion.V1,
     }
 
-    if (message instanceof ClientMessageWithDocumentUpdates) {
-      messageWrapper.documentUpdatesMessage = message
-    } else {
-      messageWrapper.eventsMessage = message
-    }
+    const encryptedContent = await this.encryptMessage(rawContent, metadata, document, keys, source)
+    const message = CreateClientEventMessage({
+      content: encryptedContent,
+      type: type,
+      ...metadata,
+    })
 
+    const messageWrapper = new ClientMessage({ eventsMessage: message })
     const binary = messageWrapper.serializeBinary()
+
     void connection.broadcastMessage(binary, source)
   }
 
-  async encryptMessage(message: DocumentUpdate | Event, document: NodeMeta, keys: DocumentKeys): Promise<ArrayBuffer> {
-    const content = message instanceof DocumentUpdate ? message.encryptedContent : message.content
-    const result = await this._encryptMessage.execute(content, message, keys)
+  async encryptMessage(
+    content: Uint8Array,
+    metadata: EncryptionMetadata,
+    document: NodeMeta,
+    keys: DocumentKeys,
+    source: BroadcastSource,
+  ): Promise<Uint8Array> {
+    const result = await this._encryptMessage.execute(content, metadata, keys)
 
     if (result.isFailed()) {
       const message = c('Error')
@@ -227,6 +248,12 @@ export class WebsocketService implements WebsocketServiceInterface {
         },
       })
 
+      if (source === BroadcastSource.CommentsController) {
+        metrics.docs_comments_error_total.increment({
+          reason: 'encryption_error',
+        })
+      }
+
       traceError('Unable to encrypt message', {
         extra: {
           errorInfo: {
@@ -238,7 +265,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error(`Unable to encrypt message: ${result.getError()}`)
     }
 
-    return result.getValue()
+    return new Uint8Array(result.getValue())
   }
 
   private async handleConnectionMessage(document: NodeMeta, data: Uint8Array): Promise<void> {
@@ -354,15 +381,12 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const content = new Uint8Array(stringToUint8Array(JSON.stringify({ authorAddress: keys.userOwnAddress })))
 
-    const message = CreateClientEventMessage({
-      type: EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit,
-      content: content,
-      authorAddress: keys.userOwnAddress,
-      version: ClientEventVersion.V1,
-      timestamp: Date.now(),
-    })
-
-    void this.sendMessageToDocument(document, message, BroadcastSources.CommitDocumentUseCase)
+    void this.sendEventMessage(
+      document,
+      content,
+      EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit,
+      BroadcastSource.CommitDocumentUseCase,
+    )
   }
 
   public debugCloseConnection(document: { linkId: string }): void {

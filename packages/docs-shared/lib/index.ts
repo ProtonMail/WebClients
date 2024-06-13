@@ -1,6 +1,6 @@
 export * from './AssertUnreachable'
 export * from './Bridge/BridgeOriginProvider'
-export * from './Bridge/BroadcastSources'
+export * from './Bridge/BroadcastSource'
 export * from './Bridge/ClientRequiresEditorMethods'
 export * from './Bridge/ClientToEditorMessage'
 export * from './Bridge/EditorBridgeMessageType'

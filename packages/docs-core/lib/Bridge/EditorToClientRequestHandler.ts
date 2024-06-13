@@ -1,5 +1,5 @@
 import {
-  BroadcastSources,
+  BroadcastSource,
   CommentInterface,
   CommentThreadInterface,
   EditorRequiresClientMethods,
@@ -17,7 +17,7 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   async editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: BroadcastSources,
+    debugSource: BroadcastSource,
   ): Promise<void> {
     return this.docOrchestrator.editorRequestsPropagationOfUpdate(message, originator, debugSource)
   }

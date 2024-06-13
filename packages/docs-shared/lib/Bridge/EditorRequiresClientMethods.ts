@@ -3,13 +3,13 @@ import { UserState } from '@lexical/yjs'
 import { CommentInterface } from '../CommentInterface'
 import { CommentThreadInterface } from '../CommentThreadInterface'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
-import { BroadcastSources } from './BroadcastSources'
+import { BroadcastSource } from './BroadcastSource'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(
     message: RtsMessagePayload,
     originator: string,
-    debugSource: BroadcastSources,
+    debugSource: BroadcastSource,
   ): Promise<void>
 
   getTypersExcludingSelf(threadId: string): Promise<string[]>

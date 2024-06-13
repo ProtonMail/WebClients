@@ -1,18 +1,14 @@
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import {
-  ClientMessageWithDocumentUpdates,
-  ClientMessageWithEvents,
-  DocumentUpdate,
-  DocumentUpdateArray,
-  Event,
-} from '@proton/docs-proto'
+import { EventTypeEnum } from '@proton/docs-proto'
 import { LoggerInterface } from '@proton/utils/logs'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
-import { BroadcastSources, InternalEventBusInterface, WebsocketConnectionEvent } from '@proton/docs-shared'
+import { BroadcastSource, InternalEventBusInterface, WebsocketConnectionEvent } from '@proton/docs-shared'
 import { Result } from '../../Domain/Result/Result'
+import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 
 describe('WebsocketService', () => {
   let service: WebsocketService
@@ -35,6 +31,9 @@ describe('WebsocketService', () => {
       connection: {
         broadcastMessage: jest.fn(),
       },
+      keys: {
+        userOwnAddress: 'foo',
+      },
     })
   })
 
@@ -42,29 +41,26 @@ describe('WebsocketService', () => {
     jest.resetAllMocks()
   })
 
-  describe('sendMessageToDocument', () => {
+  describe('sendDocumentUpdateMessage', () => {
     it('should encrypt document update message', async () => {
-      const message = new ClientMessageWithDocumentUpdates({
-        updates: new DocumentUpdateArray({
-          documentUpdates: [new DocumentUpdate()],
-        }),
-      })
-
       const encryptMock = (service.encryptMessage = jest.fn())
 
-      await service.sendMessageToDocument({} as NodeMeta, message, BroadcastSources.AwarenessUpdateHandler)
+      await service.sendDocumentUpdateMessage({} as NodeMeta, new Uint8Array(), BroadcastSource.AwarenessUpdateHandler)
 
       expect(encryptMock).toHaveBeenCalled()
     })
+  })
 
+  describe('sendEventMessage', () => {
     it('should encrypt event message', async () => {
-      const message = new ClientMessageWithEvents({
-        events: [new Event()],
-      })
+      const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(stringToUint8Array('123')))
 
-      const encryptMock = (service.encryptMessage = jest.fn())
-
-      await service.sendMessageToDocument({} as NodeMeta, message, BroadcastSources.AwarenessUpdateHandler)
+      await service.sendEventMessage(
+        {} as NodeMeta,
+        stringToUint8Array('123'),
+        EventTypeEnum.ClientHasSentACommentMessage,
+        BroadcastSource.AwarenessUpdateHandler,
+      )
 
       expect(encryptMock).toHaveBeenCalled()
     })
@@ -72,7 +68,6 @@ describe('WebsocketService', () => {
 
   describe('encryptMessage', () => {
     it('should publish encryption error event if failed to encrypt', async () => {
-      const message = new DocumentUpdate()
       const document = {} as NodeMeta
 
       encryptMessage.execute = jest.fn().mockReturnValue(Result.fail('error'))
@@ -80,7 +75,13 @@ describe('WebsocketService', () => {
       const spy = (eventBus.publish = jest.fn())
 
       try {
-        await service.encryptMessage(message, document, {} as DocumentKeys)
+        await service.encryptMessage(
+          stringToUint8Array('123'),
+          {} as EncryptionMetadata,
+          document,
+          {} as DocumentKeys,
+          BroadcastSource.AwarenessUpdateHandler,
+        )
       } catch (error) {}
 
       expect(spy).toHaveBeenCalledWith({
