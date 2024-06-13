@@ -367,9 +367,13 @@ export const getActiveSessions = async ({
             const sessions = await getActiveLocalSession(getUIDApi(session.UID, api));
 
             const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessions.length === 1;
+            // This is technically incorrect, but users have bookmarked sessions with expired local ids, so in the case of 1 session on account
+            // we still autopick the session even if a specific local id is requested.
+            // TODO: We need to improve this, specifically the scenarios when account has lost a session but the session still exists on subdomains.
+            const hasOnlyOneSession = sessions.length === 1;
 
             const type =
-                session && (hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.LocalID)
+                session && (hasOnlyOneSession || hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.LocalID)
                     ? GetActiveSessionType.AutoPick
                     : GetActiveSessionType.Switch;
 
