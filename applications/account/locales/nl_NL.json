@@ -1355,6 +1355,9 @@
       ]
     },
     "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /maand"
+      ],
       "New": [
         "Nieuw"
       ]
@@ -3385,9 +3388,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Versleutelde cloudopslag voor al uw bestanden"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Beveiligde cloudopslag en bestandsdeling die uw gegevens beschermt."
       ]
     },
     "Duration": {
@@ -6853,6 +6853,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } op en importeer deze hier."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Groepeer e-mails in hetzelfde gesprek samen in uw Inbox of geef ze apart weer."
+      ],
       "here": [
         "hier"
       ],
@@ -7136,6 +7139,9 @@
       ],
       "Merged": [
         "Samengevoegd"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Berichten in de map Verzonden of Concepten blijven in die map verschijnen, zelfs als u ze naar een andere map verplaatst."
       ],
       "MM/YY": [
         "MM/JJ"
@@ -7539,6 +7545,9 @@
       "Settings updated": [
         "Instellingen bijgewerkt"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Toon de afbeelding van elke afzender in deze berichtlijst. De afzenders initialen zullen worden getoond als er geen foto beschikbaar is."
+      ],
       "Show original message": [
         "Toon origineel bericht"
       ],
@@ -7722,6 +7731,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Deze functie vertraagt het verzenden van uw e-mails, waardoor u de kans krijgt om het verzenden ongedaan te maken gedurende het geselecteerde tijdsbestek."
       ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
@@ -8115,6 +8127,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "U zal tegoed ontvangen om op uw abonnement te gebruiken wanneer zij zich abonneren."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Wanneer u op een link klikt, zal deze anti-phishing-functie u vragen om de URL van de webpagina te bevestigen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
@@ -8945,6 +8960,12 @@
       "Auto-detect primary time zone": [
         "Automatisch primaire tijdzone detecteren"
       ],
+      "Auto-load embedded images": [
+        "Ingesloten afbeeldingen automatisch laden"
+      ],
+      "Auto-load remote content": [
+        "Externe inhoud automatisch laden"
+      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -9151,6 +9172,9 @@
       ],
       "Disable animations": [
         "Schakel animaties uit"
+      ],
+      "Disable sharing outside the organization.": [
+        "Delen buiten de organisatie uitschakelen."
       ],
       "Display name": [
         "Weergavenaam"
@@ -10020,6 +10044,9 @@
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ],
       "View guide": [
         "Bekijk gids"

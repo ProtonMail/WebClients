@@ -37,6 +37,9 @@
       "Add new item": [
         "Přidat novou položku"
       ],
+      "Add username field": [
+        "Přidat pole uživatelského jména"
+      ],
       "Admin panel": [
         "Panel správce"
       ],
@@ -1045,6 +1048,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automatické zamykání bylo úspěšně deaktivováno."
+      ],
       "Breaches detected": [
         "Zjištěny úniky informací"
       ],
@@ -2019,12 +2025,6 @@
       "Username": [
         "Uživatelské jméno"
       ],
-      "Username (alias)": [
-        "Uživatelské jméno (alias)"
-      ],
-      "Username (new alias)": [
-        "Uživatelské jméno (nový alias)"
-      ],
       "Vault ID": [
         "ID trezoru"
       ],
@@ -2524,6 +2524,9 @@
     "Validation": {
       "Duplicated URL": [
         "Duplicitní URL adresa"
+      ],
+      "Email address is invalid": [
+        "E-mailová adresa je neplatná"
       ],
       "Field name is required": [
         "Název pole je povinný"

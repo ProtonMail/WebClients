@@ -37,6 +37,9 @@
       "Add new item": [
         "Aggiungi elemento"
       ],
+      "Add username field": [
+        "Aggiungi il campo nome utente"
+      ],
       "Admin panel": [
         "Pannello di amministrazione"
       ],
@@ -967,6 +970,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
+      "Add a username field": [
+        "Aggiungi il campo nome utente"
+      ],
       "Add your custom email address to monitor :": [
         "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
       ],
@@ -1038,6 +1044,9 @@
       ],
       "Change your password": [
         "Cambia la password"
+      ],
+      "Click here to add a field for a username.": [
+        "Clicca qui per aggiungere un campo per il nome utente."
       ],
       "Congratulations, your access has been confirmed": [
         "Il tuo accesso è stato confermato"
@@ -1740,6 +1749,12 @@
       "Email": [
         "Email"
       ],
+      "Email (alias)": [
+        "Email (alias)"
+      ],
+      "Email (new alias)": [
+        "Email (nuovo alias)"
+      ],
       "Email address": [
         "Indirizzo email"
       ],
@@ -2022,12 +2037,6 @@
       "Username": [
         "Nome utente"
       ],
-      "Username (alias)": [
-        "Nome utente (alias)"
-      ],
-      "Username (new alias)": [
-        "Nome utente (nuovo alias)"
-      ],
       "Vault ID": [
         "ID cassaforte"
       ],
@@ -2161,11 +2170,17 @@
       "Enter a prefix": [
         "Aggiungi un prefisso"
       ],
+      "Enter email": [
+        "Inserisci l'email"
+      ],
       "Enter email or username": [
         "Inserisci email o nome utente"
       ],
       "Enter password": [
         "Inserisci la password"
+      ],
+      "Enter username": [
+        "Inserisci il nome utente"
       ],
       "Full Name": [
         "Nome completo"
@@ -2524,6 +2539,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL duplicato"
+      ],
+      "Email address is invalid": [
+        "Indirizzo email non valido"
       ],
       "Field name is required": [
         "Il nome campo è obbligatorio"

@@ -1159,6 +1159,11 @@
         "Isnasen n ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /wayyur"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Afaylu ICS ilem"
@@ -5086,6 +5091,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Mudd tasarut-ik·im tazayazt i yimeddukkal-ik·im, neɣ suffeɣ-t-id srid, akka yal yiwen ad yizmir ad ak·am-d-yazen imayl yettwawgelhen seg yixef ɣer yixef!"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Imaylen n ugraw deg udiwenni-nni kan akken akk deg tbewwaḍt-ik·im n yimaylen neɣ sken-iten-id yal yiwen weḥds."
+      ],
       "here": [
         "da"
       ],
@@ -5255,6 +5263,9 @@
       ],
       "Merged": [
         "Ttusmezdin"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Iznan deg Tuzna neɣ deg Ukaram n yirewwayen ad qqimen ttbanen-d deg ukaram-a, ɣas ad ten-terreḍ ɣer ukaram-nniḍen."
       ],
       "MM/YY": [
         "MM/YY"
@@ -5593,6 +5604,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Aya yezmer ad yeṭṭef kra n tasinin neɣ tisdatin akken yella yibenk-ik·im"
       ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Tamahilt-a tsaẓay tuzna n yiamylen-ik·im. Tzemreḍ ad tesfesxeḍ tuzna mi ara tferneḍ akud n tuzna."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aseɣwen-a yettawi ɣer usmel web i yettaɛraḍen ahat ad yaker talɣut-ik, am wawalen uffiren d telqayt n tkarḍa n usmad."
       ],
@@ -5778,6 +5792,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Ticki remden ilɣa, ad k-nazen tangedwit ɣer tansa-inek n yimayl ticki teṭṭfeḍ-d iznan imaynutn deg umiḍan-inek ${ MAIL_APP_NAME }."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Mi ara tsiteḍ ɣef useɣwen, tamahilt-a n mgal takerḍa ad ak·am-d-tsuter ad tesnetmeḍ URL n usebter web."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Mi ara talseḍ tikkelt-nniḍen i umulteɣ-inek·inem, ad nseqdec qbel ayen akk yellan n yisemdan send ad nebdu tarrayin n lexlaṣ ddaw."
@@ -6384,6 +6401,12 @@
       ],
       "Auto-detect primary time zone": [
         "Suter aleqqem n yiẓdi usrid agejdan"
+      ],
+      "Auto-load embedded images": [
+        "Sali tugniwin tusliɣin s wudem awurman"
+      ],
+      "Auto-load remote content": [
+        "Sali-d agbur anmeggag s wudem awurman"
       ],
       "Auto-reply": [
         "Tiririt tawurmant"
@@ -7286,6 +7309,9 @@
       ],
       "Upgrade your plan": [
         "Sali aɣawas-ik"
+      ],
+      "Users and addresses": [
+        "Iseqdacen d tansiwin"
       ],
       "View guide": [
         "Wali amnir"

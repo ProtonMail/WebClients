@@ -37,6 +37,9 @@
       "Add new item": [
         "새 항목 추가"
       ],
+      "Add username field": [
+        "사용자 이름 입력란 추가"
+      ],
       "Admin panel": [
         "관리자 패널"
       ],
@@ -737,6 +740,9 @@
       "Moving item failed": [
         "항목 이동 실패"
       ],
+      "Network error": [
+        "네트워크 오류"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "현재 오프라인 모드에서는 이중 비밀번호 모드를 사용할 수 없습니다."
       ],
@@ -1026,6 +1032,9 @@
       "Didn't receive the code?": [
         "코드를 받지 못하셨나요?"
       ],
+      "Disabling auto-lock": [
+        "자동 잠금 비활성화"
+      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
@@ -1052,6 +1061,9 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "${ PASS_SHORT_APP_NAME } 베타 활성화"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN 자동 잠금 활성화"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -1298,6 +1310,9 @@
       ],
       "Reconnect": [
         "재연결"
+      ],
+      "Reconnecting": [
+        "재연결중"
       ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
@@ -1610,6 +1625,9 @@
       "Create an encrypted note": [
         "암호화된 메모 생성"
       ],
+      "Create lock": [
+        "잠금 생성"
+      ],
       "Create new vault": [
         "새 금고 생성"
       ],
@@ -1814,6 +1832,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN 코드"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -1915,12 +1936,6 @@
       ],
       "Username": [
         "사용자 이름"
-      ],
-      "Username (alias)": [
-        "사용자 이름 (별칭)"
-      ],
-      "Username (new alias)": [
-        "사용자 이름 (새 별칭)"
       ],
       "Vault ID": [
         "금고 ID"
@@ -2413,6 +2428,9 @@
       "Duplicated URL": [
         "URL 복사됨."
       ],
+      "Email address is invalid": [
+        "올바르지 않은 이메일 주소입니다"
+      ],
       "Field name is required": [
         "필드의 이름이 필요합니다."
       ],
@@ -2552,6 +2570,9 @@
       ],
       "Title is required": [
         "필수 필드"
+      ],
+      "Too many attempts": [
+        "너무 많이 시도하였습니다"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "금고의 소유권을 ${ email }으로 이동하시겠어요?"

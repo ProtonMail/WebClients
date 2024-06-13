@@ -26,6 +26,9 @@
       "Add new item": [
         "Tilføj nyt element"
       ],
+      "Add username field": [
+        "Tilføj brugernavn-felt"
+      ],
       "Advanced": [
         "Avanceret"
       ],
@@ -978,6 +981,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
+      "Add a username field": [
+        "Tilføj et brugernavn-felt"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1037,6 +1043,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Klik her for at tilføje et felt til brugernavn."
       ],
       "Click the icon to open it anytime.": [
         "Du kan åbne den når som helst ved at klikke på ikonet."
@@ -1741,6 +1750,15 @@
       "Download logs": [
         "Hent logfiler"
       ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nyt alias)"
+      ],
       "Email aliases": [
         "E-mail-aliasser"
       ],
@@ -2029,11 +2047,8 @@
       "Username": [
         "Brugernavn"
       ],
-      "Username (alias)": [
-        "Brugernavn (alias)"
-      ],
-      "Username (new alias)": [
-        "Brugernavn (nyt alias)"
+      "Username/email": [
+        "Brugernavn/email"
       ],
       "Vault ID": [
         "Boks-ID"
@@ -2144,11 +2159,17 @@
       "Enter a prefix": [
         "Indtast et præfiks"
       ],
+      "Enter email": [
+        "Indtast e-mail"
+      ],
       "Enter email or username": [
         "Indtast e-mail eller brugernavn"
       ],
       "Enter password": [
         "Indtast adgangskode"
+      ],
+      "Enter username": [
+        "Indtast brugernavn"
       ],
       "Full Name": [
         "Fuldt navn"
@@ -2408,6 +2429,9 @@
     "Validation": {
       "Duplicated URL": [
         "Duplikeret URL"
+      ],
+      "Email address is invalid": [
+        "E-mailadressen er ugyldig"
       ],
       "Field name is required": [
         "Feltet skal have et navn"

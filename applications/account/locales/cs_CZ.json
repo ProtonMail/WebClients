@@ -1381,6 +1381,11 @@
         "Aplikace ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /měsíc"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Prázdný soubor ICS"
@@ -3453,9 +3458,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Šifrované cloudové úložiště pro všechny vaše soubory"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
       ]
     },
     "Duration": {
@@ -7028,6 +7030,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Navštivte vašeho poskytovatele identity, stáhněte SAML metadata pro ${ appName } a importujte je sem."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ve vaší doručené poště můžete e-maily stejné konverzace seskupit a nebo je zobrazit samostatně."
+      ],
       "here": [
         "zde"
       ],
@@ -7316,6 +7321,9 @@
       "Merged": [
         "Sloučený"
       ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -7479,7 +7487,7 @@
         "Heslo bylo zkopírováno do schránky"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
-        "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } nebo více znaků"
+        "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } znaků."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -7736,6 +7744,9 @@
       "Settings updated": [
         "Nastavení aktualizováno"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
+      ],
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
@@ -7927,6 +7938,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Toto může nějakou dobu trvat. Nezavírejte prosím tuto stránku ani se neodpojujte od internetu."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Tato funkce zpožďuje odesílání e-mailů a dává vám možnost zrušit odeslání během zvoleného časového rámce."
       ],
       "This file is too large to preview": [
         "Tento soubor je pro náhled příliš velký"
@@ -8326,6 +8340,9 @@
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Když zrušíte své stávající placené předplatné, zůstatek vašeho předplatného bude vrácen jako kredity na účet a tarif se sníží na ${ BRAND_NAME }. ${ PLANS.FREE }."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Po kliknutí na odkaz vás tato funkce proti phishingu požádá o potvrzení adresy webové stránky."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -9185,6 +9202,12 @@
       "Auto-detect primary time zone": [
         "Automaticky rozpoznat primární časové pásmo"
       ],
+      "Auto-load embedded images": [
+        "Automaticky načíst vložené obrázky"
+      ],
+      "Auto-load remote content": [
+        "Automaticky načíst vzdálený obsah"
+      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -9394,6 +9417,9 @@
       ],
       "Disable animations": [
         "Zakázat animace"
+      ],
+      "Disable sharing outside the organization.": [
+        "Zakázat sdílení mimo organizaci."
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -10247,7 +10273,7 @@
         "PayPal bez platební karty"
       ],
       "perform a password reset from your active session": [
-        "resetovat heslo z Vašeho aktuálního přihlášení"
+        "resetujte heslo z vaší aktuální relace"
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
@@ -10278,6 +10304,9 @@
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
       ],
       "View guide": [
         "Zobrazit průvodce"
@@ -14330,7 +14359,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Pro ${ totalPrice }"
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {

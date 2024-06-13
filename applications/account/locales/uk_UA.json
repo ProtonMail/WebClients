@@ -1378,6 +1378,11 @@
         "Програми ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/місяць"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Порожній файл ICS"
@@ -3412,9 +3417,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Зашифроване хмарне сховище для всіх ваших файлів"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Безпечне хмарне сховище та обмін файлами із захистом ваших даних"
       ]
     },
     "Duration": {
@@ -6589,7 +6591,7 @@
         "Підсильте впізнаваність бренду вашої організації та забезпечте зручнішу роботу онлайн для ваших користувачів."
       ],
       "Browser not supported": [
-        "Пошуковик не підтримується"
+        "Браузер не підтримується"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -6987,6 +6989,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Групуйте повідомлення в одній розмові або переглядайте їх окремо."
+      ],
       "here": [
         "тут"
       ],
@@ -7274,6 +7279,9 @@
       ],
       "Merged": [
         "Об'єднано"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."
       ],
       "MM/YY": [
         "ММ/РР"
@@ -7683,6 +7691,9 @@
       "Settings updated": [
         "Налаштування оновлено"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Показувати зображення відправників у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
+      ],
       "Show original message": [
         "Показати оригінальне повідомлення"
       ],
@@ -7874,6 +7885,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Це може тривати деякий час. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Ця функція затримує надсилання ваших листів, дозволяючи скасувати надсилання протягом вказаного проміжку часу."
       ],
       "This file is too large to preview": [
         "Цей файл завеликий для перегляду"
@@ -8268,6 +8282,9 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Якщо вони передплатять тарифний план, ви отримаєте кредити, які можна використати для передплати."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Натискаючи на посилання, ви отримуватимете запит із URL-адресою вебсторінки для підтвердження перш ніж вона відкриється."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
@@ -8302,7 +8319,7 @@
         "Помічник з написання"
       ],
       "Writing assistant add-on": [
-        "Доповнення для помічника з написання"
+        "Додаток – помічник з написання"
       ],
       "Yearly": [
         "Щороку"
@@ -8509,10 +8526,10 @@
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
       "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Ваш браузер не підтримує помічника з написання. Завантажте ${ MAIL_APP_NAME } настільну програму або спробуйте запустити її на ${ BRAND_NAME } серверах."
+        "Ваш браузер не підтримує помічника з написання. Завантажте програму ${ MAIL_APP_NAME } для комп'ютера або спробуйте запустити його на серверах ${ BRAND_NAME }."
       ],
       "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Ваш браузер не підтримує помічника з написання. Спробуйте запустити його на ${ BRAND_NAME } серверах."
+        "Ваш браузер не підтримує помічника з написання. Спробуйте запустити його на серверах ${ BRAND_NAME }."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
@@ -8527,7 +8544,7 @@
         "Ваші файли буде зашифровано, а потім збережено"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Ваше обладнання не підтримує локальний запуск помічника з написання. Спробуйте запустити його на ${ BRAND_NAME }серверах."
+        "Ваше обладнання не підтримує локальний запуск помічника з написання. Спробуйте запустити його на серверах ${ BRAND_NAME }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваше імпортування з ${ accounts } тимчасово затримано.",
@@ -9138,6 +9155,12 @@
       "Auto-detect primary time zone": [
         "Автовизначення основного часового поясу"
       ],
+      "Auto-load embedded images": [
+        "Автозавантаження вбудованих зображень"
+      ],
+      "Auto-load remote content": [
+        "Автозавантаження зовнішнього вмісту"
+      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -9344,6 +9367,9 @@
       ],
       "Disable animations": [
         "Вимкнути анімацію"
+      ],
+      "Disable sharing outside the organization.": [
+        "Вимкнути спільний доступ за межами організації."
       ],
       "Display name": [
         "Ім'я"
@@ -9895,7 +9921,7 @@
         "Яка основна причина видалення вашого облікового запису?"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Яка ваша основна причина скасування чи пониження тарифу?"
+        "Яка ваша основна причина скасування чи переходу на нижчий тарифний план?"
       ],
       "Why would you like to cancel?": [
         "Чому ви хочете скасувати?"
@@ -10213,6 +10239,9 @@
       ],
       "Upgrade your plan": [
         "Покращити тарифний план"
+      ],
+      "Users and addresses": [
+        "Користувачі та адреси"
       ],
       "View guide": [
         "Переглянути посібник"

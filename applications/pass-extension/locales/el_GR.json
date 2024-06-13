@@ -26,6 +26,9 @@
       "Add new item": [
         "Προσθήκη νέου αντικείμενου"
       ],
+      "Add username field": [
+        "Προσθήκη πεδίου ονόματος χρήστη"
+      ],
       "Advanced": [
         "Για προχωρημένους"
       ],
@@ -88,6 +91,9 @@
       ],
       "Continue": [
         "Συνέχεια"
+      ],
+      "Continue offline": [
+        "Συνεχίστε εκτός σύνδεσης"
       ],
       "Continue without pinning": [
         "Συνέχεια χωρίς καρφίτσωμα"
@@ -440,6 +446,9 @@
       "Try again": [
         "Δοκιμάστε ξανά"
       ],
+      "Unlock offline with password": [
+        "Ξεκλείδωμα εκτός σύνδεσης με κωδικό πρόσβασης"
+      ],
       "Unpin item": [
         "Ξεκαρφίτσωμα στοιχείου"
       ],
@@ -735,6 +744,9 @@
       "Moving item failed": [
         "Η μετακίνηση στοιχείου απέτυχε"
       ],
+      "Network error": [
+        "Σφάλμα δικτύου"
+      ],
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
       ],
@@ -810,6 +822,9 @@
       "Unknown passkey": [
         "Άγνωστο κλειδί πρόσβασης"
       ],
+      "Unlock failure": [
+        "Αποτυχία ξεκλειδώματος"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Μη υποστηριζόμενη μορφή αρχείου ${ PASS_APP_NAME }"
       ],
@@ -830,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
@@ -908,6 +926,9 @@
         "${ n } στοιχείο",
         "${ n } στοιχεία"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
       ],
@@ -954,6 +975,9 @@
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας εν κινήσει με τις εφαρμογές μας για κινητά."
       ],
@@ -992,6 +1016,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
+      ],
+      "Auto-lock successfully disabled.": [
+        "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία."
       ],
       "Autosaved on ${ payload.domain }": [
         "Αυτόματη αποθήκευση στο ${ payload.domain }"
@@ -1047,6 +1074,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Διαγραφή του \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Απενεργοποίηση αυτόματου κλειδώματος"
+      ],
+      "Disabling auto-lock failed": [
+        "Η απενεργοποίηση του αυτόματου κλειδώματος απέτυχε"
+      ],
+      "Disabling offline mode...": [
+        "Απενεργοποίηση λειτουργίας εκτός σύνδεσης..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Ανακαλύψτε ${ PASS_APP_NAME } YouTube Video"
       ],
@@ -1076,6 +1112,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ενεργοποιήστε το ${ PASS_APP_NAME }, συνδέοντας τον λογαριασμό σας ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
+      ],
+      "Enabling offline mode...": [
+        "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
+      ],
+      "Enabling password auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος κωδικού πρόσβασης"
+      ],
+      "Enabling password lock failed": [
+        "Η ενεργοποίηση του κλειδώματος κωδικού πρόσβασης απέτυχε"
+      ],
+      "Enabling PIN auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
@@ -1233,11 +1284,17 @@
       "None": [
         "Κανένα"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Δεν ήταν δυνατή η απενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Δεν ήταν δυνατή η ενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
       ],
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
@@ -1256,6 +1313,9 @@
       ],
       "Password copied": [
         "Ο κωδικός πρόσβασης αντιγράφηκε"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Το κλείδωμα με κωδικό πρόσβασης καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
@@ -1276,8 +1336,23 @@
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Επιβεβαιώστε τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να κλειδώσετε αυτόματα με τον κωδικό πρόσβασής σας."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Επιβεβαιώστε τον κωδικό PIN σας για να καταργήσετε την καταχώρηση της τρέχουσας κλειδαριάς σας."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Επιβεβαιώστε τον κωδικό PIN για να επεξεργαστείτε αυτήν τη ρύθμιση."
@@ -1299,6 +1374,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "Registering PIN lock failed": [
+        "Η καταχώρηση κλειδώματος PIN απέτυχε"
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -1636,6 +1714,9 @@
       "Create an encrypted note": [
         "Δημιουργία κρυπτογραφημένης σημείωσης"
       ],
+      "Create lock": [
+        "Δημιουργία κλειδώματος"
+      ],
       "Create new vault": [
         "Δημιουργία νέας κρύπτης"
       ],
@@ -1662,6 +1743,9 @@
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Email aliases": [
         "Ψευδώνυμα email"
@@ -1840,6 +1924,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "Κωδικός PIN"
+      ],
       "Prefix": [
         "Πρόθεμα"
       ],
@@ -1948,12 +2035,6 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
-      "Username (alias)": [
-        "Όνομα χρήστη (ψευδώνυμο)"
-      ],
-      "Username (new alias)": [
-        "Όνομα χρήστη (νέο ψευδώνυμο)"
-      ],
       "Vault ID": [
         "ID Κρύπτης"
       ],
@@ -1985,6 +2066,9 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2324,6 +2408,9 @@
     "Validation": {
       "Duplicated URL": [
         "Διπλότυπη διεύθυνση URL"
+      ],
+      "Email address is invalid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
       ],
       "Field name is required": [
         "Το όνομα πεδίου είναι υποχρεωτικό"

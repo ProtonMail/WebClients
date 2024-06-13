@@ -1322,6 +1322,11 @@
         "${ BRAND_NAME } アプリケーション"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /月"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空の ICS ファイルです"
@@ -3267,9 +3272,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "すべてのファイルを暗号化されたクラウド ストレージに保存"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "データを保護する安全なクラウド ストレージとファイル共有"
       ]
     },
     "Duration": {
@@ -6587,6 +6589,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "ID プロバイダーに移動し、${ appName } の SAML メタデータを取得し、ここにインポートします。"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "同じ会話内のメールを受信トレイにグループ化するか、個別に表示します。"
+      ],
       "here": [
         "こちら"
       ],
@@ -6862,6 +6867,9 @@
       ],
       "Merged": [
         "結合済み"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "[送信済み] フォルダーまたは [下書き] フォルダー内のメッセージは、別のフォルダーに移動した場合でも、引き続きそのフォルダーに表示されます。"
       ],
       "MM/YY": [
         "MM/YY"
@@ -7259,6 +7267,9 @@
       "Settings updated": [
         "設定が更新されました"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "メッセージリストに各送信者の画像を表示します。 写真が利用できない場合は、送信者のイニシャルが表示されます。"
+      ],
       "Show original message": [
         "元のメッセージを表示"
       ],
@@ -7432,6 +7443,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "時間がかかる場合があります。このページを閉じたり、インターネットから切断したりしないでください。"
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "この機能は電子メールの送信を遅らせ、選択した期間内に送信を取り消す機会を与えます。"
       ],
       "This file is too large to preview": [
         "このファイルは、非常に大きいためプレビューできません"
@@ -7819,6 +7833,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "紹介した友達がプランに登録すると、あなたのプランに使用できるクレジットが付与されます。"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "リンクをクリックすると、このフィッシング対策機能により Web ページの URL を確認するよう求められます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
@@ -8618,6 +8635,12 @@
       "Auto-detect primary time zone": [
         "2 つ目のタイムゾーンを自動検出"
       ],
+      "Auto-load embedded images": [
+        "埋め込み画像を自動で読み込む"
+      ],
+      "Auto-load remote content": [
+        "外部コンテンツを自動で読み込む"
+      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -8824,6 +8847,9 @@
       ],
       "Disable animations": [
         "アニメーションを無効にする"
+      ],
+      "Disable sharing outside the organization.": [
+        "組織外との共有を無効にする."
       ],
       "Display name": [
         "表示名"
@@ -9684,6 +9710,9 @@
       ],
       "Upgrade your plan": [
         "プランをアップグレード"
+      ],
+      "Users and addresses": [
+        "ユーザーとアドレス"
       ],
       "View guide": [
         "ガイドを表示"

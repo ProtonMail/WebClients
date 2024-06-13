@@ -37,6 +37,9 @@
       "Add new item": [
         "Προσθήκη νέου αντικείμενου"
       ],
+      "Add username field": [
+        "Προσθήκη πεδίου ονόματος χρήστη"
+      ],
       "Admin panel": [
         "Πίνακας διαχείρισης"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Συνέχεια"
+      ],
+      "Continue offline": [
+        "Συνεχίστε εκτός σύνδεσης"
       ],
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
@@ -427,6 +433,9 @@
       "Try again.": [
         "Δοκιμάστε ξανά."
       ],
+      "Unlock offline with password": [
+        "Ξεκλείδωμα εκτός σύνδεσης με κωδικό πρόσβασης"
+      ],
       "Unpin item": [
         "Ξεκαρφίτσωμα στοιχείου"
       ],
@@ -740,6 +749,9 @@
       "Moving item failed": [
         "Η μετακίνηση στοιχείου απέτυχε"
       ],
+      "Network error": [
+        "Σφάλμα δικτύου"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
       ],
@@ -800,6 +812,9 @@
       "Unknown invite": [
         "Άγνωστη πρόσκληση"
       ],
+      "Unlock failure": [
+        "Αποτυχία ξεκλειδώματος"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Μη υποστηριζόμενη μορφή αρχείου ${ PASS_APP_NAME }"
       ],
@@ -823,6 +838,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
@@ -918,6 +936,9 @@
         "${ n } στοιχείο",
         "${ n } στοιχεία"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
       ],
@@ -945,6 +966,9 @@
       ],
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
       "Add your custom email address to monitor :": [
         "Προσθέστε την προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για παρακολούθηση:"
@@ -990,6 +1014,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
+      ],
+      "Auto-lock successfully disabled.": [
+        "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία."
       ],
       "Breaches detected": [
         "Εντοπίστηκαν παραβιάσεις"
@@ -1039,6 +1066,15 @@
       "Didn't receive the code?": [
         "Δε λάβατε τον κωδικό;"
       ],
+      "Disabling auto-lock": [
+        "Απενεργοποίηση αυτόματου κλειδώματος"
+      ],
+      "Disabling auto-lock failed": [
+        "Η απενεργοποίηση του αυτόματου κλειδώματος απέτυχε"
+      ],
+      "Disabling offline mode...": [
+        "Απενεργοποίηση λειτουργίας εκτός σύνδεσης..."
+      ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
@@ -1065,6 +1101,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Ενεργοποίηση ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
+      ],
+      "Enabling offline mode...": [
+        "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
+      ],
+      "Enabling password auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος κωδικού πρόσβασης"
+      ],
+      "Enabling password lock failed": [
+        "Η ενεργοποίηση του κλειδώματος κωδικού πρόσβασης απέτυχε"
+      ],
+      "Enabling PIN auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
@@ -1249,11 +1300,17 @@
       "Offline mode": [
         "Λειτουργία χωρίς σύνδεση"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Δεν ήταν δυνατή η απενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Δεν ήταν δυνατή η ενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
       ],
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -1266,6 +1323,9 @@
       ],
       "password": [
         "κωδικός πρόσβασης"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Το κλείδωμα με κωδικό πρόσβασης καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
@@ -1286,11 +1346,26 @@
       "Please check your spam folder or try resending the code.": [
         "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Επιβεβαιώστε τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να κλειδώσετε αυτόματα με τον κωδικό πρόσβασής σας."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Επιβεβαιώστε τον κωδικό PIN σας για να καταργήσετε την καταχώρηση της τρέχουσας κλειδαριάς σας."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Επιβεβαιώστε τον κωδικό PIN για να επεξεργαστείτε αυτήν τη ρύθμιση."
@@ -1315,6 +1390,12 @@
       ],
       "Reconnect": [
         "Επανασύνδεση"
+      ],
+      "Reconnecting": [
+        "Επανασύνδεση"
+      ],
+      "Registering PIN lock failed": [
+        "Η καταχώρηση κλειδώματος PIN απέτυχε"
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -1632,6 +1713,9 @@
       "Create an encrypted note": [
         "Δημιουργία κρυπτογραφημένης σημείωσης"
       ],
+      "Create lock": [
+        "Δημιουργία κλειδώματος"
+      ],
       "Create new vault": [
         "Δημιουργία νέας κρύπτης"
       ],
@@ -1836,6 +1920,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "Κωδικός PIN"
+      ],
       "Prefix": [
         "Πρόθεμα"
       ],
@@ -1938,12 +2025,6 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
-      "Username (alias)": [
-        "Όνομα χρήστη (ψευδώνυμο)"
-      ],
-      "Username (new alias)": [
-        "Όνομα χρήστη (νέο ψευδώνυμο)"
-      ],
       "Vault ID": [
         "ID Κρύπτης"
       ],
@@ -1983,6 +2064,9 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2438,6 +2522,9 @@
       "Duplicated URL": [
         "Διπλότυπη διεύθυνση URL"
       ],
+      "Email address is invalid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Field name is required": [
         "Το όνομα πεδίου είναι υποχρεωτικό"
       ],
@@ -2578,6 +2665,9 @@
       ],
       "Title is required": [
         "Απαιτείται τίτλος"
+      ],
+      "Too many attempts": [
+        "Πάρα πολλές προσπάθειες"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Μεταφέρετε την ιδιοκτησία αυτής της κρύπτης στο ${ email };"

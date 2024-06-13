@@ -3507,9 +3507,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Almacenamiento cifrado en la nube para todos los archivos"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Almacenamiento en la nube e intercambio de archivos sin riesgos que protegen los datos."
       ]
     },
     "Duration": {
@@ -7719,7 +7716,7 @@
         "Inicio de sesión único eliminado"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para las direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
@@ -9379,10 +9376,10 @@
         "Desactivar las animaciones"
       ],
       "Disable data export for organization members": [
-        "Desactivar exportación de datos para miembros de la organización"
+        "Desactivar la exportación de datos para los miembros de la organización"
       ],
       "Disable sharing outside the organization.": [
-        "Desactivar intercambio fuera de la organización."
+        "Desactivar el intercambio fuera de la organización."
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -11053,7 +11050,7 @@
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
       "Generate emails with only a prompt": [
-        "Generar correos electrónicos solo con una indicación"
+        "Generar correos electrónicos con un solo prompt"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -11120,7 +11117,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Proofread and refine your texts": [
-        "Corregir y perfeccionar sus textos"
+        "Revisar y perfeccionar sus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
@@ -15602,7 +15599,7 @@
         "Error con la verificación de PayPal"
       ],
       "Personalise your e-mail footer": [
-        "Personalice su pie de correo electrónico"
+        "Personalice su pie de correo."
       ],
       "Phone": [
         "Teléfono"

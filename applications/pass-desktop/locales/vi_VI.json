@@ -17,6 +17,9 @@
       "Add new item": [
         "Thêm nội dung mới"
       ],
+      "Add username field": [
+        "Thêm trường tùy chỉnh tên tài khoản"
+      ],
       "Advanced": [
         "Nâng cao"
       ],
@@ -176,6 +179,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Làm sao để tôi xuất dữ liệu của mình từ ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Cách cập nhật ${ PASS_APP_NAME } trên Linux"
+      ],
       "Import": [
         "Nhập"
       ],
@@ -238,6 +244,9 @@
       ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
+      ],
+      "Multiple select": [
+        "Lựa chọn nhiều nội dung"
       ],
       "OK": [
         "Đồng ý"
@@ -530,6 +539,9 @@
       "Moving item failed": [
         "Dời nội dung thất bại"
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Truy cập ngoại tuyến không có hiệu lực với gói người dùng của bạn cũng như không phù hợp với chế độ 2 mật khẩu."
+      ],
       "Passphrase is incorrect": [
         "Đăng nhập không chính xác"
       ],
@@ -598,6 +610,9 @@
       ],
       "Vault name does not match": [
         "Tên kho lưu trữ không khớp"
+      ],
+      "Wrong password": [
+        "Sai mật khẩu"
       ],
       "Wrong PIN code. Try again.": [
         "Sai mã PIN. Hãy thử lại."
@@ -677,6 +692,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } sẽ chỉ nhập các đăng nhập, ghi chú và thẻ."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } sẽ hỏi mật khẩu ${ BRAND_NAME } để có thể truy cập dữ liệu ngoại tuyến."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu của bạn với ${ BRAND_NAME }"
       ],
@@ -718,6 +736,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
+      ],
+      "Auto-lock successfully disabled.": [
+        "Đã vô hiệu hóa Tự động khóa thành công."
       ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
@@ -878,8 +899,23 @@
       "Never": [
         "Không bao giờ"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Đã có phiên bản mới ${ latestVersion }."
+      ],
+      "No network connection": [
+        "Không có kết nối mạng"
+      ],
       "None": [
         "Không"
+      ],
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Truy cập ngoại tuyến không thể được bật lúc này"
+      ],
+      "Offline support successfully disabled": [
+        "Truy cập ngoại tuyến đã được tắt"
       ],
       "Owner": [
         "Chủ sở hữu"
@@ -898,6 +934,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để bật tính năng truy cập ngoại tuyến"
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
@@ -919,6 +958,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Được bảo vệ bởi ${ PROTON_SENTINEL_LINK }, phần mềm bảo vệ tài khoản nâng cao của chúng tôi"
+      ],
+      "Reconnect": [
+        "Kết nối lại"
       ],
       "Restoring items from trash": [
         "Đang khôi phục nội dung từ thùng rác"
@@ -967,6 +1009,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Cảm ơn bạn, vấn đề này đã được báo cáo"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "Các thay đổi có thể được tìm thấy ở ${ changelogLink }."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Tệp xuất của bạn được mã hóa bằng PGP và cần một mật khẩu mạnh."
@@ -1036,6 +1081,9 @@
       ],
       "You are about to create:": [
         "Bạn đang chuẩn bị tạo:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Bạn có thể sử dụng mật khẩu ${ BRAND_NAME } để truy cập ngoại tuyến ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
@@ -1195,6 +1243,9 @@
       "Empty trash": [
         "Làm trống thùng rác"
       ],
+      "Enable offline access": [
+        "Bật tính năng truy cập ngoại tuyến"
+      ],
       "Expiration date": [
         "Ngày hết hạn"
       ],
@@ -1318,6 +1369,9 @@
       "Notes": [
         "Ghi chú"
       ],
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
+      ],
       "Old-New": [
         "Cũ-Mới"
       ],
@@ -1434,12 +1488,6 @@
       ],
       "Username": [
         "Tên người dùng"
-      ],
-      "Username (alias)": [
-        "Tên đăng nhập (bí danh)"
-      ],
-      "Username (new alias)": [
-        "Tên đăng nhập (bí danh)"
       ],
       "Vault ID": [
         "ID kho lưu trữ"
@@ -1649,6 +1697,9 @@
       "Grant permissions": [
         "Cấp quyền"
       ],
+      "Hide-my-email aliases": [
+        "Bí danh Hide-my-email"
+      ],
       "Import - ${ date }": [
         "Nhập - ${ date }"
       ],
@@ -1669,6 +1720,9 @@
       ],
       "Member limit": [
         "Giới hạn thành viên"
+      ],
+      "Members": [
+        "Thành viên"
       ],
       "Modified": [
         "Đã chỉnh sửa"
@@ -1730,6 +1784,9 @@
       "Upgrade to Unlock Premium Features": [
         "Nâng cấp để mở khóa các tính năng cao cấp"
       ],
+      "Vault": [
+        "Kho lưu trữ"
+      ],
       "Vault shared with you": [
         "Kho lưu trữ được chia sẽ với bạn"
       ],
@@ -1749,6 +1806,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL bị trùng lập"
+      ],
+      "Email address is invalid": [
+        "Địa chỉ email không hợp lệ"
       ],
       "Field name is required": [
         "Tên trường là bắt buộc"
@@ -1794,11 +1854,17 @@
       "Empty note": [
         "Ghi chú trống"
       ],
+      "Encryption password is required": [
+        "Mật khẩu mã hóa là bắt buộc"
+      ],
       "Invalid alias prefix": [
         "Tiền tố bí danh không hợp lệ"
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Không được mời các địa chỉ bên ngoài tổ chức."
+      ],
+      "item was imported without custom fields": [
+        "Nội dung đã được nhập nhưng không có các trường tùy chỉnh"
       ],
       "Maximum length is ${ maxLength } character": [
         "Độ dài tối đa là ${ maxLength } ký tự"
@@ -1820,6 +1886,9 @@
       ],
       "No password manager selected": [
         "Không có trình quản lý mật khẩu nào được chọn"
+      ],
+      "Offline": [
+        "Ngoại tuyến"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Chỉ các ký tự chữ và số, dấu chấm, dấu gạch ngang và dấu gạch dưới được cho phép"

@@ -1090,6 +1090,9 @@
       "Settings": [
         "Ajustes"
       ],
+      "Share": [
+        "Compartir"
+      ],
       "Share via link": [
         "Compartir con un enlace"
       ],
@@ -7036,7 +7039,7 @@
         "Cuando has activado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -8982,6 +8985,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Generar correos electrónicos con un solo prompt"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -9040,12 +9046,18 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your texts": [
+        "Revisar y perfeccionar tus textos"
+      ],
       "Protect ${ n } device at a time": [
         "Protege ${ n } dispositivo a la vez",
         "Protege ${ n } dispositivos a la vez"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
+      ],
+      "Reply to messages": [
+        "Responder a mensajes"
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -9099,7 +9111,7 @@
         "Tor sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticación de doble factor"
+        "Autenticación de dos factores"
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
@@ -9446,7 +9458,7 @@
         "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté comprometida."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Cambia las contraseñas de los usuarios y restablece la autenticación de doble factor en sus cuentas."
+        "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Asigna el tráfico de internet a la red Tor con un solo clic."
@@ -9984,6 +9996,9 @@
       ],
       "To": [
         "Para"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Prueba «Anunciar próximos eventos en un boletín»"
       ],
       "Try “Cancel my gym membership”": [
         "Prueba «Cancelar mi membresía del gimnasio»"
@@ -10690,6 +10705,11 @@
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
       ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Mejorar"
       ]

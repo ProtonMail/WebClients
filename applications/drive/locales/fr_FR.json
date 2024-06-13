@@ -6658,6 +6658,9 @@
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Générez des messages à partir d'un seul prompt."
+      ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
       ],
@@ -7521,11 +7524,17 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Commencez à utiliser ${ DRIVE_APP_NAME } et nous augmenterons votre espace de stockage pour atteindre 5 Go !"
       ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Invitez d'autres personnes par e-mail pour afficher et modifier vos fichiers ou créer un lien public pour un accès rapide."
+      ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
       ],
       "Share a file": [
         "Partager un fichier"
+      ],
+      "Share files with one click": [
+        "Partagez des fichiers avec un lien"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jour :",
@@ -8242,6 +8251,11 @@
       "Go to subscription plans": [
         "Voir les abonnements"
       ],
+      "Upgrade": [
+        "Passez à Premium"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Passez à Premium"
       ]

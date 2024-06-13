@@ -868,6 +868,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "您確定要移動項目至${ name }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "自動鎖定停用成功."
+      ],
       "Autosaved on ${ payload.domain }": [
         "於${ payload.domain }自動存取"
       ],
@@ -1425,6 +1428,9 @@
       "Download logs": [
         "下載記錄檔"
       ],
+      "Email": [
+        "電郵"
+      ],
       "Email aliases": [
         "電子郵件別名"
       ],
@@ -1694,12 +1700,6 @@
       ],
       "Username": [
         "使用者名稱"
-      ],
-      "Username (alias)": [
-        "使用者名稱(別名)"
-      ],
-      "Username (new alias)": [
-        "使用者名稱(新別名)"
       ],
       "Vault ID": [
         "保管庫 ID"
@@ -2069,6 +2069,9 @@
     "Validation": {
       "Duplicated URL": [
         "複製網址"
+      ],
+      "Email address is invalid": [
+        "電子郵件位址無效"
       ],
       "Field name is required": [
         "欄位名稱必填"
