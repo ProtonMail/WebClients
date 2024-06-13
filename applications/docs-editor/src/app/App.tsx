@@ -108,11 +108,11 @@ export function App({ nonInteractiveMode = false }: Props) {
           return newDocState.getClientId()
         },
 
-        async performClosingCeremony() {
+        async performOpeningCeremony() {
           void newDocState.performOpeningCeremony()
         },
 
-        async performOpeningCeremony() {
+        async performClosingCeremony() {
           void newDocState.performClosingCeremony()
         },
 
