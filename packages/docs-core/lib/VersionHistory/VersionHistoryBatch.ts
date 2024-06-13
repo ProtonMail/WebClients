@@ -1,3 +1,3 @@
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 
 export type VersionHistoryBatch = DecryptedMessage[]

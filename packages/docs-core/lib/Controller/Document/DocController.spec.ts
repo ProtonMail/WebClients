@@ -4,19 +4,19 @@ import { UserService } from '../../Services/User/UserService'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
 import { LoadDocument } from '../../UseCase/LoadDocument'
-import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import {
   ClientRequiresEditorMethods,
+  DecryptedMessage,
   InternalEventBusInterface,
   WebsocketDisconnectedPayload,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { LoadCommit } from '../../UseCase/LoadCommit'
-import { ConnectionCloseReason, ServerMessageWithDocumentUpdates } from '@proton/docs-proto'
+import { ConnectionCloseReason } from '@proton/docs-proto'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
 
@@ -38,9 +38,6 @@ describe('DocController', () => {
       {
         execute: jest.fn().mockReturnValue(Result.ok({ numberOfUpdates: jest.fn() })),
       } as unknown as jest.Mocked<LoadCommit>,
-      {
-        execute: jest.fn().mockReturnValue(Result.ok({ content: '' })),
-      } as unknown as jest.Mocked<DecryptMessage>,
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
       {} as jest.Mocked<GetDocumentMeta>,
@@ -76,7 +73,7 @@ describe('DocController', () => {
   it('should queue updates received while editor was not yet ready', async () => {
     controller.editorInvoker = undefined
 
-    await controller.handleDocumentUpdatesMessage({} as ServerMessageWithDocumentUpdates, {} as DocumentKeys)
+    await controller.handleDocumentUpdatesMessage({} as DecryptedMessage)
 
     expect(controller.updatesReceivedWhileEditorInvokerWasNotReady).toHaveLength(1)
   })
@@ -84,7 +81,15 @@ describe('DocController', () => {
   it('should replay queued updates as soon as editor is ready, and clear the queue', async () => {
     controller.editorInvoker = undefined
 
-    await controller.handleDocumentUpdatesMessage(new ServerMessageWithDocumentUpdates(), {} as DocumentKeys)
+    await controller.handleDocumentUpdatesMessage(
+      new DecryptedMessage({
+        content: new Uint8Array(),
+        signature: new Uint8Array(),
+        authorAddress: '123',
+        aad: '123',
+        timestamp: 0,
+      }),
+    )
 
     controller.handleDocumentUpdatesMessage = jest.fn()
 

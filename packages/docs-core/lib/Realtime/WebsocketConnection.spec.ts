@@ -1,7 +1,5 @@
-import { DocumentKeys } from '@proton/drive-store'
 import { WebsocketConnection } from './WebsocketConnection'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
-import { EncryptMessage } from '../UseCase/EncryptMessage'
 import { LoggerInterface } from '@proton/utils/logs'
 import { Result } from '../Domain/Result/Result'
 
@@ -10,9 +8,7 @@ describe('WebsocketConnection', () => {
 
   beforeEach(() => {
     connection = new WebsocketConnection(
-      {} as DocumentKeys,
       {} as WebsocketCallbacks,
-      {} as EncryptMessage,
       {
         error: jest.fn(),
       } as unknown as LoggerInterface,
@@ -91,12 +87,10 @@ describe('WebsocketConnection', () => {
       const failToConnect = jest.fn()
 
       connection = new WebsocketConnection(
-        {} as DocumentKeys,
         {
           getUrlAndToken: () => Result.fail('error'),
           onFailToConnect: failToConnect,
         } as unknown as WebsocketCallbacks,
-        {} as EncryptMessage,
         {
           error: jest.fn(),
           info: jest.fn(),
