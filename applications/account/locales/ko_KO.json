@@ -1372,6 +1372,28 @@
         "${ BRAND_NAME } 애플리케이션"
       ]
     },
+    "Assistant option": {
+      "Run locally": [
+        "로컬에서 실행"
+      ],
+      "Run on servers": [
+        "서버에서 실행"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } / 개월"
+      ],
+      "${ price } /year": [
+        "${ price } /년"
+      ],
+      "from ${ price } /month": [
+        "${ price } /월 부터"
+      ],
+      "New": [
+        "신규"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "비어있는 ICS 파일"
@@ -3417,9 +3439,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "모든 파일에 대한 암호화된 클라우드 스토리지"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
       ]
     },
     "Duration": {
@@ -6455,6 +6474,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
+      "Browser not supported": [
+        "지원하지 않는 브라우저"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -6839,6 +6861,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "받은 편지함에 있는 동일한 메일을 함께 그룹화하거나 별도로 표시합니다."
+      ],
       "here": [
         "여기"
       ],
@@ -7123,6 +7148,9 @@
       ],
       "Merged": [
         "합쳤음"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
       ],
       "MM/YY": [
         "MM/YY"
@@ -7538,6 +7566,9 @@
       "Settings updated": [
         "설정 업데이트 완료"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "메시지 목록에서 각 보낸 이의 프로필 사진를 확인하십시오. 사진을 사용할 수 없는 경우 보낸 이의 이니셜이 표시됩니다."
+      ],
       "Show original message": [
         "처음 메시지 보기"
       ],
@@ -7717,6 +7748,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "이 기능은 이메일 전송을 지연시켜 설정된 시간내에 전송을 취소할 수 있도록 도와줍니다."
       ],
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
@@ -8123,6 +8157,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "취소시 사용자의 구독이 갱신되지 않지만 여전히 구독 종료 기간시 까지 플랜 혜택을 계속 누릴 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 플랜으로 자동 다운그레이드 될 예정입니다."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "링크를 클릭하면, 안티 피싱 기능이 해당 웹 페이지의 URL을 확인할지 묻습니다."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
       ],
@@ -8152,6 +8189,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "새 인증 코드를 받으실래요?"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ],
+      "Writing assistant add-on": [
+        "글쓰기 도우미 애드온"
       ],
       "Yearly": [
         "년간"
@@ -8353,6 +8396,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "귀하의 하드웨어는 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. ${ BRAND_NAME } 서버에서 실행해 보세요."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } 의 가져오기 작업이 일시적으로 지연되었습니다."
@@ -8942,6 +8988,12 @@
       "Auto-detect primary time zone": [
         "시간대 자동 감지"
       ],
+      "Auto-load embedded images": [
+        "자동으로 삽입된 이미지 불러오기"
+      ],
+      "Auto-load remote content": [
+        "자동으로 외부 콘텐츠 불러오기"
+      ],
       "Auto-reply": [
         "자동 응답"
       ],
@@ -9152,6 +9204,9 @@
       "Disable animations": [
         "애니메이션 비활성화"
       ],
+      "Disable sharing outside the organization.": [
+        "조직 외부로 공유 비활성화."
+      ],
       "Display name": [
         "표시되는 이름"
       ],
@@ -9340,6 +9395,9 @@
       ],
       "Mail Server (IMAP)": [
         "메일 서버 (IMAP)"
+      ],
+      "Mail settings": [
+        "메일 설정"
       ],
       "Mailbox password": [
         "메일함 비밀번호"
@@ -10038,6 +10096,9 @@
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
+      ],
+      "Users and addresses": [
+        "사용자 및 주소"
       ],
       "View guide": [
         "가이드 보기"
@@ -11513,6 +11574,9 @@
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
+      ],
+      "Trial started": [
+        "페험판 시작 성공"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "이중 인증이 관리자로 부터 활성화 되었습니다."
@@ -13501,6 +13565,11 @@
         "업그레이드"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "업그레이드"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }개월"
@@ -14990,6 +15059,9 @@
       "Email subscriptions": [
         "이메일 구독"
       ],
+      "Enable writing assistant": [
+        "글쓰기 도우미 활성화"
+      ],
       "Encryption and keys": [
         "암호화 및 키"
       ],
@@ -15257,6 +15329,9 @@
       "Phone": [
         "전화"
       ],
+      "Policies": [
+        "정책"
+      ],
       "Preview": [
         "미리 보기"
       ],
@@ -15268,6 +15343,9 @@
       ],
       "Processing...": [
         "처리 중..."
+      ],
+      "Profile": [
+        "프로필"
       ],
       "Recommended": [
         "추천됨"
@@ -15436,6 +15514,9 @@
       ],
       "Sort labels alphabetically": [
         "라벨을 알파벳 순으로 정렬합니다."
+      ],
+      "Spam filters": [
+        "스팸 필터"
       ],
       "Spam, block, and allow lists": [
         "스팸, 차단 및 허용 리스트"
@@ -15991,6 +16072,11 @@
       ],
       "Primary admin": [
         "기본 관리자"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
       ]
     },
     "Users table: single sign-on enabled": {

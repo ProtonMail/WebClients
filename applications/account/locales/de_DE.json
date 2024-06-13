@@ -628,6 +628,9 @@
       "Keep my Plus subscription": [
         "Plus-Abonnement behalten"
       ],
+      "Keep the writing assistant": [
+        "Behalte den Schreibassistenten"
+      ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
       ],
@@ -1232,6 +1235,10 @@
       "${ price } per user": [
         "${ price } pro Benutzer"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } Lizenz für den Schreibassistenten",
+        "${ seats } Lizenzen für den Schreibassistenten"
+      ],
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
@@ -1378,6 +1385,11 @@
     "Assistant option": {
       "Run locally": [
         "Lokal ausführen"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/Monat"
       ]
     },
     "Attached ics file error": {
@@ -3435,9 +3447,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Verschlüsselter Cloud-Speicher für alle deine Dateien"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Sichere Cloud-Speicherung und Dateifreigabe zum Schutz deiner Daten"
       ]
     },
     "Duration": {
@@ -9064,6 +9073,12 @@
       "Auto-detect primary time zone": [
         "Primäre Zeitzone automatisch erkennen"
       ],
+      "Auto-load embedded images": [
+        "Eingebettete Grafiken automatisch laden"
+      ],
+      "Auto-load remote content": [
+        "Inhalte aus externen Quellen automatisch laden"
+      ],
       "Auto-reply": [
         "Automatische Antworten"
       ],
@@ -9273,6 +9288,9 @@
       ],
       "Disable animations": [
         "Animationen deaktivieren"
+      ],
+      "Disable sharing outside the organization.": [
+        "Freigabe außerhalb des Unternehmens deaktivieren."
       ],
       "Display name": [
         "Anzeigename"
@@ -10041,6 +10059,9 @@
       "Add gift code": [
         "Gutscheincode hinzufügen"
       ],
+      "Add to your subscription": [
+        "Deinem Abonnement hinzufügen"
+      ],
       "Apps and extensions": [
         "Apps und Erweiterungen"
       ],
@@ -10160,6 +10181,9 @@
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
+      ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
       ],
       "View guide": [
         "Anleitung anzeigen"

@@ -3498,9 +3498,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Armazenamento na nuvem criptografado para todos os seus arquivos"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Armazenamento seguro na nuvem e compartilhamento de arquivos que protege seus dados"
       ]
     },
     "Duration": {
@@ -13208,6 +13205,9 @@
       ]
     },
     "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Chave da API do conector SCIM o qual seu Agente de Provisionamento do Provedor de Identidade encaminha os dados do SCIM"
+      ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL do conector SCIM o qual seu Agente de Provisionamento do Provedor de Identidade encaminha os dados do SCIM"
       ]
@@ -15600,9 +15600,6 @@
       ],
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"

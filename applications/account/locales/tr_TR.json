@@ -178,6 +178,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel add-on": [
+        "Eklentiyi iptal et"
+      ],
       "Cancel subscription": [
         "Aboneliği iptal et"
       ],
@@ -628,6 +631,9 @@
       "Keep my Plus subscription": [
         "Plus aboneliğimi koru"
       ],
+      "Keep the writing assistant": [
+        "Yazma yardımcısını tut"
+      ],
       "label emails as": [
         "e-postalar şöyle etiketlensin"
       ],
@@ -858,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "Bu daveti geri çek"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } sunucularında çalışır"
       ],
       "Save": [
         "Kaydet"
@@ -1162,6 +1171,9 @@
       "What do I get?": [
         "Ne alacağım?"
       ],
+      "Why can't the model run locally?": [
+        "Model neden yerel olarak çalıştırılamıyor?"
+      ],
       "Wipe": [
         "Yok et"
       ],
@@ -1231,6 +1243,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
       ],
       "${ users } user": [
         "${ users } kullanıcı",
@@ -1373,6 +1389,67 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } uygulamaları"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Daha hızlı, daha geniş aygıt uyumluluğu"
+      ],
+      "No data transmitted while using,requires one-time download": [
+        "Kullanırken veri aktarılmaz, tek seferlik indirme gerekir"
+      ],
+      "Run locally": [
+        "Yerel olarak çalışır"
+      ],
+      "Run on servers": [
+        "Sunucular üzerinde çalışır"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /ay"
+      ],
+      "${ price } /year": [
+        "${ price } /yıl"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "${ subscriptionRenewalDate } tarihine kadar kullanılabilir"
+      ],
+      "Add writing assistant": [
+        "Yazma yardımcısı ekle"
+      ],
+      "Add writing assistant to your plan": [
+        "Yazma yardımcısını tarifenize ekleyin"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "${ userAndAddressesButton } içindeki belirli kullanıcılara atayın"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "${ subscriptionRenewalDate } tarihinde otomatik olarak yenilenir"
+      ],
+      "Cancel writing assistant add-on": [
+        "Yazma yardımcısı eklentisini iptal et"
+      ],
+      "Customize plan": [
+        "Tarifeyi özelleştir"
+      ],
+      "from ${ price } /month": [
+        "${ price } /ay ile"
+      ],
+      "New": [
+        "Yeni"
+      ],
+      "Renew subscription": [
+        "Aboneliği yenile"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Deneme süresi ${ formattedDate } tarihinde bitecek"
+      ],
+      "Trial in progress": [
+        "Deneme devam ediyor"
       ]
     },
     "Attached ics file error": {
@@ -3430,9 +3507,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Tüm dosyalarınız için şifrelenmiş bulut depolama alanı"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Verilerinizi koruyan güvenli bulut depolama alanı ve dosya paylaşımı"
       ]
     },
     "Duration": {
@@ -5564,6 +5638,9 @@
       "Folders": [
         "Klasörler"
       ],
+      "Hardware not compatible": [
+        "Donanım uyumlu değil"
+      ],
       "IP address": [
         "IP adresi"
       ],
@@ -6516,6 +6593,12 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
+      "Browser not supported": [
+        "Tarayıcı desteklenmiyor"
+      ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Varsayılan olarak kuruluş üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, hiçbir veriyi dışa aktaramazlar"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -6904,6 +6987,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Aynı yazışmadaki e-postaları Gelen kutunuzda gruplayın ya da ayrı ayrı görüntüleyin."
+      ],
       "here": [
         "buraya"
       ],
@@ -6927,6 +7013,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Bu durum eski bir parola sıfırlamasından kaynaklanıyorsa iletinin yeniden görüntülenmesini engelleyebilirsiniz"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Bu seçenek açıksa, kuruluş üyeleri yalnızca kuruluş içinde kasaları paylaşabilir"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -7190,6 +7279,9 @@
       ],
       "Merged": [
         "Birleştirilmiş"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
       "MM/YY": [
         "AA/YY"
@@ -7605,6 +7697,9 @@
       "Settings updated": [
         "Ayarlar güncellendi"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "İleti listesinde her göndericinin görseli görüntülenir. Göndericinin görseli yoksa adı ve soyadının baş harfleri görüntülenir."
+      ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
       ],
@@ -7765,6 +7860,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Yazma yardımcısı eklentisi **yenilenmeyecek**. **${ subscriptionRenewalDate }.** tarihine kadar hizmetin tadını çıkarmayı sürdürebilirsiniz."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
       ],
@@ -7788,6 +7886,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Bu özellik, e-postalarınızı göndermeyi geciktirerek belirtilen süre içinde göndermeyi geri alma olanağı sağlar."
       ],
       "This file is too large to preview": [
         "Bu dosya ön izleme için çok büyük"
@@ -7958,10 +8059,10 @@
         "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola özelliği açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola özelliği açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola özelliğini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola kipi açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
@@ -8194,6 +8295,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Bir bağlantıya tıkladığınızda, bu kimlik avı girişimi önleme özelliği, site sayfasının adresini onaylamanızı ister."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -8223,6 +8327,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant add-on": [
+        "Yazma yardımcısı eklentisi"
       ],
       "Yearly": [
         "Yıllık"
@@ -8258,6 +8368,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Kuruluş üyeleri için ${ PASS_APP_NAME } ilkeleri tanımlayabilirsiniz."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
@@ -8419,6 +8532,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ MAIL_APP_NAME } masaüstü uygulamasını indirin ya da ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -8430,6 +8549,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
@@ -8537,6 +8659,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Input label": {
@@ -9020,11 +9147,20 @@
       "Auto show remote images": [
         "Uzak görseller otomatik olarak görüntülensin"
       ],
+      "Auto-advance": [
+        "Otomatik ilerle"
+      ],
       "Auto-delete unwanted messages": [
         "İstenmeyen iletiler otomatik olarak silinsin"
       ],
       "Auto-detect primary time zone": [
         "Birincil saat dilimi otomatik algılansın"
+      ],
+      "Auto-load embedded images": [
+        "Gömülü görseller otomatik olarak yüklensin"
+      ],
+      "Auto-load remote content": [
+        "Uzak içerik otomatik olarak yüklensin"
       ],
       "Auto-reply": [
         "Otomatik yanıt"
@@ -9236,6 +9372,12 @@
       "Disable animations": [
         "Canlandırmaları kapat"
       ],
+      "Disable data export for organization members": [
+        "Kuruluş üyelerinin verileri dışa aktarmasını kapat"
+      ],
+      "Disable sharing outside the organization.": [
+        "Kuruluş dışına paylaşımı kapat."
+      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
@@ -9424,6 +9566,9 @@
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
+      ],
+      "Mail settings": [
+        "Mail ayarları"
       ],
       "Mailbox password": [
         "Posta kutusu parolası"
@@ -9738,7 +9883,7 @@
         "Kod adı"
       ],
       "Two-password mode": [
-        "İki parola özelliği"
+        "İki parola kipi"
       ],
       "Type": [
         "Tür"
@@ -10000,6 +10145,9 @@
       "Add gift code": [
         "Hediye kodu ekle"
       ],
+      "Add to your subscription": [
+        "Aboneliğinize ekleyin"
+      ],
       "Apps and extensions": [
         "Uygulamalar ve eklentiler"
       ],
@@ -10119,6 +10267,9 @@
       ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ],
       "View guide": [
         "Rehberi görüntüle"
@@ -10895,6 +11046,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with only a prompt": [
+        "Yalnızca isteğinizi yazarak e-postalar oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -10959,6 +11113,9 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your texts": [
+        "Metinleri düzeltin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
@@ -10966,11 +11123,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
+      "Reply to messages": [
+        "İletileri yanıtlayın"
+      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
         "Yöneltici desteği"
+      ],
+      "Save time emailing": [
+        "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
@@ -11626,6 +11789,9 @@
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
+      ],
+      "Trial started": [
+        "Deneme süresi başladı"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Yöneticilerin iki adımlı doğrulama kullanması zorunludur"
@@ -13624,6 +13790,11 @@
         "Yükselt"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } ay",
@@ -14468,6 +14639,15 @@
       "Verification successful": [
         "Doğrulandı"
       ],
+      "Writing assistant disabled": [
+        "Yazma yardımcısı kapalı"
+      ],
+      "Writing assistant enabled": [
+        "Yazma yardımcısı açık"
+      ],
+      "Writing assistant setting updated": [
+        "Yazma yardımcısı ayarları güncellendi"
+      ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
       ],
@@ -14862,6 +15042,9 @@
       "Cancel subscription?": [
         "Abonelik iptal edilsin mi?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Yazma yardımcısı eklentisi iptal edilsin mi?"
+      ],
       "Card verification": [
         "Kart doğrulama"
       ],
@@ -14976,6 +15159,9 @@
       ],
       "Custom filters": [
         "Özel süzgeçler"
+      ],
+      "Custom folders and labels": [
+        "Özel klasörler ve etiketler"
       ],
       "Custom selection of users": [
         "Özel kullanıcı seçimi"
@@ -15139,6 +15325,9 @@
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
+      ],
+      "Enable writing assistant": [
+        "Yazma yardımcısını aç"
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
@@ -15409,6 +15598,9 @@
       "Phone": [
         "Telefon"
       ],
+      "Policies": [
+        "İlkeler"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -15420,6 +15612,9 @@
       ],
       "Processing...": [
         "İşleniyor..."
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Önerilen"
@@ -15589,6 +15784,9 @@
       "Sort labels alphabetically": [
         "Etiketler alfabetik olarak sıralansın"
       ],
+      "Spam filters": [
+        "İstenmeyen süzgeçleri"
+      ],
       "Spam, block, and allow lists": [
         "Engellenen ve izin verilen adresler listesi"
       ],
@@ -15621,7 +15819,7 @@
         "Tek parola kipine geç"
       ],
       "Switch to two-password mode": [
-        "İki parola özelliğini aç"
+        "İki parola kipini aç"
       ],
       "Take precautions to avoid data loss!": [
         "Verilerin kaybolmasına karşı önlem alın!"
@@ -16145,6 +16343,11 @@
       ],
       "Primary admin": [
         "Birincil yönetici"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "Yapay Zeka"
       ]
     },
     "Users table: single sign-on enabled": {
