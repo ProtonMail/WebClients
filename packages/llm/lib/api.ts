@@ -3,8 +3,18 @@ export const getAssistantModels = () => ({
     method: 'get',
 });
 
-export const sendAssistantRequest = (Prompt: string, DecodeLine = false) => ({
-    url: 'ai/v1/assist',
-    method: 'post',
-    data: { Prompt, DecodeLine },
-});
+type AssistantRequestProps = {
+    prompt: string;
+    stopStrings?: string[];
+    decodeLine?: boolean;
+};
+export const sendAssistantRequest = (props: AssistantRequestProps) => {
+    const Prompt = props.prompt;
+    const Stop = props.stopStrings;
+    const DecodeLine = props.decodeLine ?? false;
+    return {
+        url: 'ai/v1/assist',
+        method: 'post',
+        data: { Prompt, Stop, DecodeLine },
+    };
+};

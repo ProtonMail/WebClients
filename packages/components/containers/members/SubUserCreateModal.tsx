@@ -3,11 +3,11 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { createMember, getPrivateAdminError } from '@proton/account';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -33,6 +33,7 @@ import {
     Option,
     PasswordInputTwo,
     SelectTwo,
+    SettingsLink,
     Toggle,
     Tooltip,
     useFormErrors,
@@ -379,7 +380,11 @@ const SubUserCreateModal = ({
                             {c('Info').t`Writing assistant`}
                         </label>
                         {!assistantSeatRemaining && (
-                            <Href href="/dashboard#assistant-toggle">{c('Link').t`Add to your subscription`}</Href>
+                            <SettingsLink
+                                target="_blank"
+                                app={APPS.PROTONMAIL}
+                                path="/mail/dashboard#assistant-toggle"
+                            >{c('Link').t`Add to your subscription`}</SettingsLink>
                         )}
                     </div>
                 )}

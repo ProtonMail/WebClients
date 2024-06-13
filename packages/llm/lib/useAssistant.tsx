@@ -140,6 +140,7 @@ export const AssistantContext = createContext<{
      * Config of the model used by the assistant
      */
     assistantConfig?: AssistantConfig;
+    resetAssistantState: () => void;
 } | null>(null);
 
 export const useAssistant = (assistantID?: string) => {
@@ -173,6 +174,7 @@ export const useAssistant = (assistantID?: string) => {
         generateResult,
         cancelRunningAction,
         runningActionResolvers,
+        resetAssistantState,
     } = assistantContext;
 
     const isGeneratingResult = useMemo(() => {
@@ -193,7 +195,7 @@ export const useAssistant = (assistantID?: string) => {
             return error.type === AssistantErrorTypes.globalError;
         });
 
-        return specificError?.error || globalError?.error;
+        return specificError || globalError;
     }, [assistantID, errors]);
 
     const handleCancelRunningAction = () => {
@@ -233,5 +235,6 @@ export const useAssistant = (assistantID?: string) => {
         generateResult: handleGenerateResult,
         cancelRunningAction: handleCancelRunningAction,
         assistantConfig: assistantContext.assistantConfig,
+        resetAssistantState,
     };
 };

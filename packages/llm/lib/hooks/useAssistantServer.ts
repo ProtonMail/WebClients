@@ -15,6 +15,7 @@ import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
 
 import useAssistantTelemetry, { ASSISTANT_TYPE, ERROR_TYPE } from '../useAssistantTelemetry';
@@ -81,10 +82,19 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
 
         try {
             const ingestionStart = performance.now();
-            const { rawLlmPrompt: prompt, transformCallback: transform } = prepareServerAssistantInteraction(action);
+            const {
+                rawLlmPrompt: prompt,
+                transformCallback: transform,
+                stopStrings,
+            } = prepareServerAssistantInteraction(action);
+
+            // Set the running actions directly with a fake resolver so that the UI gets updated directly
+            // Then, when we'll have access to the resolver we will set the running actions again
+            const runningActions = runningActionResolvers;
+            setRunningActionResolvers([...runningActions, { assistantID, resolver: noop }]);
 
             const response = await api({
-                ...sendAssistantRequest(prompt),
+                ...sendAssistantRequest({ prompt, stopStrings }),
                 output: 'stream',
             });
             const reader = response.getReader();
@@ -93,7 +103,7 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
                 reader.cancel();
             };
 
-            setRunningActionResolvers([...runningActionResolvers, { assistantID, resolver }]);
+            setRunningActionResolvers([...runningActions, { assistantID, resolver }]);
 
             if (assistantSubscriptionStatus.trialStatus === 'trial-not-started') {
                 await assistantSubscriptionStatus.start();
@@ -159,19 +169,19 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
             }
             if (e.name === 'PromptRejectedError') {
                 const errorMessage = c('Error')
-                    .t`I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.`;
+                    .t`The writing assistant cannot proceed with your request. Please try a different prompt.`;
                 sendAssistantErrorReport({
                     assistantType: ASSISTANT_TYPE.SERVER,
                     errorType: ERROR_TYPE.GENERATION_HARMFUL,
                 });
-                addSpecificError({ assistantID, errorMessage });
+                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
             } else {
                 const errorMessage = c('Error').t`Please try generating the text again`;
                 sendAssistantErrorReport({
                     assistantType: ASSISTANT_TYPE.SERVER,
                     errorType: ERROR_TYPE.GENERATION_FAIL,
                 });
-                addSpecificError({ assistantID, errorMessage });
+                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_FAIL });
             }
             traceInitiativeError('assistant', e);
             console.error(e);
@@ -202,5 +212,6 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
         generateResult,
         cancelRunningAction,
         runningActionResolvers,
+        resetAssistantState: noop,
     };
 };

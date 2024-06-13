@@ -11,8 +11,10 @@ import { useAssistant } from '@proton/llm/lib';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
+import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerInnerModal from 'proton-mail/components/composer/modals/ComposerInnerModal';
 import { ASSISTANT_INPUT_ID } from 'proton-mail/constants';
 
@@ -22,28 +24,24 @@ interface Props {
     onClose: () => void;
 }
 
-const InnerModalAssistantSetting = ({ onClose }: Props) => {
+const ComposerAssistantSettingModal = ({ onClose }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { hasCompatibleBrowser, hasCompatibleHardware } = useAssistant();
     const [loading, withLoading] = useLoading();
     const [{ AIAssistantFlags }] = useUserSettings();
-    const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
+    const { trialStatus } = useAssistantSubscriptionStatus();
+    const { hasCompatibleBrowser, hasCompatibleHardware } = useAssistant();
+    const { displayAssistantModal } = useComposerAssistantProvider();
 
     // Default to server only if unset
     const [inputValue, setInputValue] = useState<AI_ASSISTANT_ACCESS>(
         UNSET === AIAssistantFlags ? SERVER_ONLY : AIAssistantFlags
     );
-    const canRunLocally = hasCompatibleBrowser && hasCompatibleHardware;
 
-    const onSubmit = async () => {
+    const handleSubmit = async () => {
         if (AIAssistantFlags !== inputValue) {
             await api(updateAIAssistant(inputValue));
             await call();
-        }
-
-        if (trialStatus === 'trial-not-started') {
-            await startTrial();
         }
 
         // TODO: This is a workaround to avoid failure with sending the assistant input click event
@@ -52,13 +50,26 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
 
         onClose();
 
-        // trigger click on input to continue the assistant flow
-        const input = document.getElementById(ASSISTANT_INPUT_ID);
-        input?.click();
+        // Avoid showing the composer tooltip if the user has incompatible hardware or browser
+        if (hasCompatibleBrowser && hasCompatibleHardware) {
+            // trigger click on input to continue the assistant flow
+            const input = document.getElementById(ASSISTANT_INPUT_ID);
+            input?.click();
+        }
+
+        if (!hasCompatibleHardware) {
+            displayAssistantModal('incompatibleHardware');
+            return;
+        }
+
+        if (!hasCompatibleBrowser) {
+            displayAssistantModal('incompatibleBrowser');
+            return;
+        }
     };
 
     const PrivacyLink = (
-        <Href href="https://protonmail.com/privacy-policy">{
+        <Href href={getStaticURL('/blog/building-private-ai-email-assistant')}>{
             // translator: full sentence => Learn more about <Proton's industry-leading privacy>`
             c('Link').t`${BRAND_NAME}'s industry-leading privacy`
         }</Href>
@@ -68,10 +79,11 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
         <ComposerInnerModal
             title={c('Header').t`Set up the writing assistant`}
             onCancel={onClose}
+            displayCloseButton
             displayCancel={false}
             submitActions={
                 <>
-                    <Button fullWidth color="norm" onClick={() => withLoading(onSubmit)} loading={loading}>
+                    <Button fullWidth color="norm" onClick={() => withLoading(handleSubmit)} loading={loading}>
                         {c('Action').t`Get started`}
                     </Button>
                     {trialStatus === 'trial-not-started' && (
@@ -94,7 +106,7 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
                             value: SERVER_ONLY,
                             label: (
                                 <div>
-                                    <h2 className="text-rg">{c('Assistant option').t`Run on ${BRAND_NAME} servers`}</h2>
+                                    <h2 className="text-rg">{c('Assistant option').t`Run on servers`}</h2>
                                     <ul className="m-0 mt-1 pl-4 color-weak">
                                         <li>{c('Assistant option').t`Fast and secure`}</li>
                                         <li>{c('Assistant option').t`No logs`}</li>
@@ -105,25 +117,13 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
                         },
                         {
                             value: CLIENT_ONLY,
-                            disabled: !canRunLocally,
                             label: (
                                 <div>
                                     <h2 className="text-rg">{c('Assistant option').t`Run locally`}</h2>
                                     <ul className="m-0 mt-1 pl-4 color-weak">
                                         <li>{c('Assistant option').t`Runs on your device`}</li>
                                         <li>{c('Assistant option').t`Requires one-time download`}</li>
-
-                                        {hasCompatibleHardware ? (
-                                            <li>{c('Assistant option').t`Needs compatible hardware`}</li>
-                                        ) : (
-                                            <li className="color-danger">{c('Assistant options')
-                                                .t`Hardware not compatible`}</li>
-                                        )}
-
-                                        {!hasCompatibleBrowser && (
-                                            <li className="color-danger">{c('Assistant option')
-                                                .t`Browser not supported `}</li>
-                                        )}
+                                        <li>{c('Assistant option').t`Needs compatible hardware`}</li>
                                     </ul>
                                 </div>
                             ),
@@ -141,4 +141,4 @@ const InnerModalAssistantSetting = ({ onClose }: Props) => {
     );
 };
 
-export default InnerModalAssistantSetting;
+export default ComposerAssistantSettingModal;
