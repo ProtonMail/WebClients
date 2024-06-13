@@ -26,6 +26,9 @@
       "Add new item": [
         "새 항목 추가"
       ],
+      "Add username field": [
+        "사용자 이름 입력란 추가"
+      ],
       "Advanced": [
         "고급"
       ],
@@ -732,6 +735,9 @@
       "Moving item failed": [
         "항목 이동 실패"
       ],
+      "Network error": [
+        "네트워크 오류"
+      ],
       "Passphrase is incorrect": [
         "비밀번호가 올바르지 않습니다."
       ],
@@ -1034,6 +1040,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 삭세 중"
       ],
+      "Disabling auto-lock": [
+        "자동 잠금 비활성화"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } YouTube 비디오 살펴보기"
       ],
@@ -1063,6 +1072,9 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정에 연결해 ${ PASS_APP_NAME }를 활성화 하세요."
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN 자동 잠금 활성화"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -1615,6 +1627,9 @@
       "Create an encrypted note": [
         "암호화된 메모 생성"
       ],
+      "Create lock": [
+        "잠금 생성"
+      ],
       "Create new vault": [
         "새 금고 생성"
       ],
@@ -1641,6 +1656,9 @@
       ],
       "Download logs": [
         "로그 다운로드"
+      ],
+      "Email": [
+        "이메일"
       ],
       "Email aliases": [
         "이메일 별칭"
@@ -1819,6 +1837,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN 코드"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -1926,12 +1947,6 @@
       ],
       "Username": [
         "사용자 이름"
-      ],
-      "Username (alias)": [
-        "사용자 이름 (별칭)"
-      ],
-      "Username (new alias)": [
-        "사용자 이름 (새 별칭)"
       ],
       "Vault ID": [
         "금고 ID"
@@ -2301,6 +2316,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL 복사됨."
+      ],
+      "Email address is invalid": [
+        "올바르지 않은 이메일 주소입니다"
       ],
       "Field name is required": [
         "필드의 이름이 필요합니다."

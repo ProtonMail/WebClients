@@ -26,6 +26,9 @@
       "Add new item": [
         "Yeni öge ekle"
       ],
+      "Add username field": [
+        "Kullanıcı adı alanı ekle"
+      ],
       "Advanced": [
         "Gelişmiş"
       ],
@@ -88,6 +91,9 @@
       ],
       "Continue": [
         "İlerle"
+      ],
+      "Continue offline": [
+        "Çevrim dışı kal"
       ],
       "Continue without pinning": [
         "Sabitlemeden ilerle"
@@ -440,6 +446,9 @@
       "Try again": [
         "Yeniden dene"
       ],
+      "Unlock offline with password": [
+        "Parola ile çevrim dışı kilidi aç"
+      ],
       "Unpin item": [
         "Ögenin sabitlemesini kaldır"
       ],
@@ -735,6 +744,9 @@
       "Moving item failed": [
         "Öge taşınamadı"
       ],
+      "Network error": [
+        "Ağ sorunu"
+      ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
       ],
@@ -810,6 +822,9 @@
       "Unknown passkey": [
         "Geçiş anahtarı bilinmiyor"
       ],
+      "Unlock failure": [
+        "Kilit açılamadı"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
       ],
@@ -830,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Şu anda çevrim dışısınız. ${ PASS_SHORT_APP_NAME } kilidini açmak için lütfen yeniden bağlanın."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
@@ -908,6 +926,9 @@
         "${ n } öge",
         "${ n } öge"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } her zaman erişilebilir olacak"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
       ],
@@ -954,8 +975,14 @@
       "Access successfully confirmed": [
         "Erişim onaylandı"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
+      ],
+      "Add a username field": [
+        "Bir kullanıcı adı alanı ekleyin"
       ],
       "Admin": [
         "Yönetici"
@@ -993,6 +1020,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Otomatik kilitleme kapatıldı."
+      ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } üzerinden otomatik olarak kaydedildi"
       ],
@@ -1013,6 +1043,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
+      ],
+      "Click here to add a field for a username.": [
+        "Kullanıcı adı alanı eklemek için buraya tıklayın."
       ],
       "Click the icon to open it anytime.": [
         "İstediğiniz zaman açmak için simgeye tıklayın."
@@ -1047,6 +1080,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" siliniyor"
       ],
+      "Disabling auto-lock": [
+        "Otomatik kilitleme kapatılıyor"
+      ],
+      "Disabling auto-lock failed": [
+        "Otomatik kilitleme kapatılamadı"
+      ],
+      "Disabling offline mode...": [
+        "Çevrim dışı kip kapatılıyor..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } YouTube bölümüne bakın"
       ],
@@ -1076,6 +1118,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Verilerinizi korumak için otomatik kilitlemeyi açın"
+      ],
+      "Enabling offline mode...": [
+        "Çevrim dışı kip açılıyor..."
+      ],
+      "Enabling password auto-lock": [
+        "Parola ile otomatik kilitleme açılıyor"
+      ],
+      "Enabling password lock failed": [
+        "Parola ile kilitleme açılamadı"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN ile otomatik kilitleme açılıyor"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
@@ -1233,11 +1290,17 @@
       "None": [
         "Yok"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Çevrim dışı kip şu anda kapatılamaz"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Çevrim dışı kip şu anda kullanıma alınamadı"
       ],
       "Offline support successfully disabled": [
         "Çevrim dışı desteği kullanımdan kaldırıldı"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak ve oturumunuzu açmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
       ],
       "Open the Extensions menu": [
         "Eklenti menüsünü açın"
@@ -1256,6 +1319,9 @@
       ],
       "Password copied": [
         "Parola kopyalandı"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Parola ile kilitleme kaydedildi. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
@@ -1276,8 +1342,23 @@
       "Pinning item...": [
         "Öge sabitleniyor..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Lütfen ${ BRAND_NAME } parolanızı onaylayın"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitleme için lütfen ${ BRAND_NAME } parolanızı yazın"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için ${ BRAND_NAME } parolanızı yazın."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen ${ BRAND_NAME } parolanızı yazın."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
@@ -1299,6 +1380,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
+      ],
+      "Registering PIN lock failed": [
+        "PIN ile kilitleme kaydedilemedi"
       ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
@@ -1636,6 +1720,9 @@
       "Create an encrypted note": [
         "Şifrelenmiş bir not oluştur"
       ],
+      "Create lock": [
+        "Kilit oluştur"
+      ],
       "Create new vault": [
         "Yeni kasa oluştur"
       ],
@@ -1662,6 +1749,15 @@
       ],
       "Download logs": [
         "Günlükleri indir"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Email (alias)": [
+        "E-posta (takma ad)"
+      ],
+      "Email (new alias)": [
+        "E-posta (yeni takma ad)"
       ],
       "Email aliases": [
         "E-posta takma adları"
@@ -1840,6 +1936,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN kodu"
+      ],
       "Prefix": [
         "Ön ek"
       ],
@@ -1948,11 +2047,8 @@
       "Username": [
         "Kullanıcı adı"
       ],
-      "Username (alias)": [
-        "Kullanıcı adı (takma ad)"
-      ],
-      "Username (new alias)": [
-        "Kullanıcı adı (yeni takma ad)"
+      "Username/email": [
+        "Kullanıcı adı/e-posta adresi"
       ],
       "Vault ID": [
         "Kasa kimliği"
@@ -1985,6 +2081,9 @@
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
       ]
     },
     "lobby: Title": {
@@ -2060,11 +2159,17 @@
       "Enter a prefix": [
         "Bir ön ek yazın"
       ],
+      "Enter email": [
+        "E-posta adresini yazın"
+      ],
       "Enter email or username": [
         "E-posta adresi ya da kullanıcı adı yazın"
       ],
       "Enter password": [
         "Parolayı yazın"
+      ],
+      "Enter username": [
+        "Kullanıcı adını yazın"
       ],
       "Full Name": [
         "Ad Soyad"
@@ -2324,6 +2429,9 @@
     "Validation": {
       "Duplicated URL": [
         "Çift adres"
+      ],
+      "Email address is invalid": [
+        "E-posta adresi geçersiz"
       ],
       "Field name is required": [
         "Alan adının yazılması zorunludur"
