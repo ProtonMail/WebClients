@@ -1,6 +1,6 @@
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { BroadcastSources, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
+import { BroadcastSource, WebsocketConnectionInterface } from '@proton/docs-shared'
+import { EventTypeEnum } from '@proton/docs-proto'
 
 export interface WebsocketServiceInterface {
   createConnection(
@@ -9,11 +9,13 @@ export interface WebsocketServiceInterface {
     options: { commitId: () => string | undefined; isStressTestor?: boolean },
   ): WebsocketConnectionInterface
 
-  sendMessageToDocument(
+  sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array, source: BroadcastSource): Promise<void>
+  sendEventMessage(
     document: NodeMeta,
-    message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
-    source: BroadcastSources,
-  ): void
+    rawContent: Uint8Array,
+    type: EventTypeEnum,
+    source: BroadcastSource,
+  ): Promise<void>
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
   debugCloseConnection(document: { linkId: string }): void
