@@ -267,17 +267,17 @@ const SingleSignupContainerV2 = ({
 
         // pass new user invite
         const inviter = searchParams.get('inviter');
-        const invited = searchParams.get('invited');
+        const invitee = searchParams.get('invitee') || searchParams.get('invited');
         let invite: SignupParameters2['invite'] = undefined;
 
         const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
 
-        if (toApp == APPS.PROTONPASS && invited && inviter) {
+        if (toApp == APPS.PROTONPASS && invitee && inviter) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
                 type: 'pass',
-                data: { inviter, invited, preVerifiedAddressToken },
+                data: { inviter, invitee, preVerifiedAddressToken },
             };
         }
 
@@ -292,7 +292,7 @@ const SingleSignupContainerV2 = ({
             localID = -1;
             invite = {
                 type: 'drive',
-                data: { invited: email, externalInvitationID, preVerifiedAddressToken },
+                data: { invitee: email, externalInvitationID, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
         }
