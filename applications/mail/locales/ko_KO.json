@@ -222,6 +222,9 @@
       "Close & discard": [
         "취소 & 닫기"
       ],
+      "Close AI refine suggestion": [
+        "AI 개선 제안 닫기"
+      ],
       "Close composer": [
         "작성기 닫기"
       ],
@@ -476,6 +479,9 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
+      ],
+      "Generate text": [
+        "텍스트 생성"
       ],
       "Get in touch": [
         "연락하기"
@@ -1053,6 +1059,9 @@
       "Settings": [
         "설정"
       ],
+      "Share": [
+        "공유"
+      ],
       "Share via link": [
         "링크로 공유"
       ],
@@ -1244,6 +1253,9 @@
       ],
       "Use recovery code": [
         "복구코드 사용"
+      ],
+      "Use this": [
+        "사용하기"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "마우스를 이용해 크기를 조절합니다. 마우스 대신 키보드의 왼쪽, 오른쪽 방향키를 이용하여 조절할 수 있습니다."
@@ -1445,6 +1457,31 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 애플리케이션"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "지원하지 않는 브라우저 "
+      ],
+      "Fast and secure": [
+        "빠르고 안전"
+      ],
+      "No logs": [
+        "노-로그"
+      ],
+      "Run locally": [
+        "로컬에서 실행"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } 서버에서 실행"
+      ],
+      "Runs on all devices": [
+        "모든 디바이스에서 실행"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "하드웨어가 호환되지 않음"
       ]
     },
     "Attached ics file error": {
@@ -4918,6 +4955,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Resume downloading": [
+        "다운로드 재개"
+      ],
       "Search": [
         "검색"
       ],
@@ -5554,6 +5594,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
+      "Browser not supported": [
+        "지원하지 않는 브라우저"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -5824,6 +5867,9 @@
       "From": [
         "보낸 사람"
       ],
+      "Generate text": [
+        "텍스트 생성"
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 개 첨부 파일이 있음 (${ numAttachmentsSize })"
       ],
@@ -5902,6 +5948,9 @@
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
       ],
+      "Initializing…": [
+        "초기화 중…"
+      ],
       "Insert image": [
         "이미지 삽입"
       ],
@@ -5943,6 +5992,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Learn more about ${ PrivacyLink }": [
+        "${ PrivacyLink }에 대해 더 알아보기"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -6315,6 +6367,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
+      ],
+      "Shorten text": [
+        "텍스트 줄이기"
       ],
       "Show original message": [
         "처음 메시지 보기"
@@ -6742,6 +6797,15 @@
       "Would you like to receive a new verification code?": [
         "새 인증 코드를 받으실래요?"
       ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ],
+      "Writing assistant add-on": [
+        "글쓰기 도우미 애드온"
+      ],
+      "writing assistant iframe": [
+        "글쓰기 도우미 iframe"
+      ],
       "Yearly": [
         "년간"
       ],
@@ -6915,6 +6979,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "귀하의 하드웨어는 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. ${ BRAND_NAME } 서버에서 실행해 보세요."
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
@@ -9195,6 +9262,12 @@
       ],
       "Senders blocked": [
         "전송자 차단됨"
+      ],
+      "The writing assistant is ready to use": [
+        "글쓰기 도우미를 사용할 준비가 되었습니다."
+      ],
+      "Trial started": [
+        "페험판 시작 성공"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9483,6 +9556,9 @@
       ],
       "First name": [
         "이름"
+      ],
+      "Generating...": [
+        "생성 중..."
       ],
       "Gift code": [
         "기프트 코드"
@@ -10224,6 +10300,11 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
+      "Upgrade": [
+        "업그레이드"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "업그레이드"
       ]

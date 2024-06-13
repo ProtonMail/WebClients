@@ -26,6 +26,9 @@
       "Add new item": [
         "Thêm nội dung mới"
       ],
+      "Add username field": [
+        "Thêm trường tùy chỉnh tên tài khoản"
+      ],
       "Advanced": [
         "Nâng cao"
       ],
@@ -280,6 +283,9 @@
       ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
+      ],
+      "Multiple select": [
+        "Lựa chọn nhiều nội dung"
       ],
       "Not now": [
         "Để sau"
@@ -849,6 +855,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Đã vô hiệu hóa Tự động khóa thành công."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Đã tự động lưu trên ${ payload.domain }"
       ],
@@ -1046,6 +1055,12 @@
       ],
       "None": [
         "Không"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Truy cập ngoại tuyến không thể được bật lúc này"
+      ],
+      "Offline support successfully disabled": [
+        "Truy cập ngoại tuyến đã được tắt"
       ],
       "Open the Extensions menu": [
         "Mở danh sách tùy chọn của các tiện ích mở rộng"
@@ -1248,6 +1263,9 @@
       "You are about to create:": [
         "Bạn đang chuẩn bị tạo:"
       ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Bạn có thể sử dụng mật khẩu ${ BRAND_NAME } để truy cập ngoại tuyến ${ PASS_SHORT_APP_NAME }"
+      ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Bạn có thể tự động điền thông tin của mình khi nhấn vào biểu tượng ${ PASS_APP_NAME }."
       ],
@@ -1429,6 +1447,9 @@
       ],
       "Download logs": [
         "Tải xuống nhật ký"
+      ],
+      "Email": [
+        "Email"
       ],
       "Email aliases": [
         "Email bí danh"
@@ -1697,12 +1718,6 @@
       "Username": [
         "Tên người dùng"
       ],
-      "Username (alias)": [
-        "Tên đăng nhập (bí danh)"
-      ],
-      "Username (new alias)": [
-        "Tên đăng nhập (bí danh)"
-      ],
       "Vault ID": [
         "ID kho lưu trữ"
       ],
@@ -1944,6 +1959,9 @@
       "Member limit": [
         "Giới hạn thành viên"
       ],
+      "Members": [
+        "Thành viên"
+      ],
       "Modified": [
         "Đã chỉnh sửa"
       ],
@@ -2019,6 +2037,9 @@
       "Use my email": [
         "Sử dụng email của mình"
       ],
+      "Vault": [
+        "Kho lưu trữ"
+      ],
       "Vault shared with you": [
         "Kho lưu trữ được chia sẽ với bạn"
       ],
@@ -2038,6 +2059,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL bị trùng lập"
+      ],
+      "Email address is invalid": [
+        "Địa chỉ email không hợp lệ"
       ],
       "Field name is required": [
         "Tên trường là bắt buộc"
@@ -2083,11 +2107,17 @@
       "Empty note": [
         "Ghi chú trống"
       ],
+      "Encryption password is required": [
+        "Mật khẩu mã hóa là bắt buộc"
+      ],
       "Invalid alias prefix": [
         "Tiền tố bí danh không hợp lệ"
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Không được mời các địa chỉ bên ngoài tổ chức."
+      ],
+      "item was imported without custom fields": [
+        "Nội dung đã được nhập nhưng không có các trường tùy chỉnh"
       ],
       "Maximum length is ${ maxLength } character": [
         "Độ dài tối đa là ${ maxLength } ký tự"

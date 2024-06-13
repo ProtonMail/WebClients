@@ -178,6 +178,9 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel add-on": [
+        "Zrušiť doplnok"
+      ],
       "Cancel subscription": [
         "Zrušiť predplatné"
       ],
@@ -627,6 +630,9 @@
       ],
       "Keep my Plus subscription": [
         "Ponechať moje predplatné Plus"
+      ],
+      "Keep the writing assistant": [
+        "Ponechať asistenta písania"
       ],
       "label emails as": [
         "označiť emaily ako"
@@ -1165,6 +1171,9 @@
       "What do I get?": [
         "Čo získam?"
       ],
+      "Why can't the model run locally?": [
+        "Prečo model nemôže fungovať lokálne?"
+      ],
       "Wipe": [
         "Vyčistiť"
       ],
@@ -1382,6 +1391,67 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikácia ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Rýchlejší a väčšia kompatibilita so zariadeniami"
+      ],
+      "No data transmitted while using,requires one-time download": [
+        "Počas používania sa neprenášajú žiadne údaje, vyžaduje jednorazové stiahnutie"
+      ],
+      "Run locally": [
+        "Funguje lokálne"
+      ],
+      "Run on servers": [
+        "Beží na serveroch"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } mesačne"
+      ],
+      "${ price } /year": [
+        "${ price } /rok"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Aktívne do ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Pridať asistenta písania"
+      ],
+      "Add writing assistant to your plan": [
+        "Pridajte asistenta písania do svojho plánu"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Priradiť konkrétnym používateľom v ${ userAndAddressesButton }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Automatické obnovenie dňa ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Zrušiť doplnok asistenta písania"
+      ],
+      "Customize plan": [
+        "Prispôsobiť plán"
+      ],
+      "from ${ price } /month": [
+        "od ${ price } /mesiac"
+      ],
+      "New": [
+        "Nový"
+      ],
+      "Renew subscription": [
+        "Obnoviť predplatné"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Skúšobná doba skončí ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Prebieha skúšobná doba"
       ]
     },
     "Attached ics file error": {
@@ -3434,7 +3504,7 @@
         "Prechádzam na inú službu"
       ],
       "Temporary need, may come back in the future": [
-        "Dočasná potreba, môže sa v budúcnosti vrátiť"
+        "Dočasné riešenie, možný návrat späť v budúcnosti"
       ],
       "The VPN is too slow": [
         "VPN je príliš pomalá"
@@ -3459,9 +3529,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Šifrované cloudové úložisko pre všetky vaše súbory"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Bezpečné cloudové úložisko a zdieľanie súborov, ktoré chráni vaše údaje"
       ]
     },
     "Duration": {
@@ -5625,6 +5692,9 @@
       "Folders": [
         "Priečinky"
       ],
+      "Hardware not compatible": [
+        "Hardvér nie je kompatibilný"
+      ],
       "IP address": [
         "IP adresa"
       ],
@@ -6644,6 +6714,9 @@
       "Browser not supported": [
         "Prehliadač nie je podporovaný"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "V predvolenom nastavení môžu členovia organizácie exportovať len tie trezory, ktorých sú vlastníkmi. Ak je táto možnosť zapnutá, nebudú môcť exportovať žiadne údaje"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
       ],
@@ -7040,6 +7113,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Emaily v rovnakej konverzácii môžete v priečinku Doručená pošta zoskupiť alebo zobraziť samostatne."
+      ],
       "here": [
         "tu"
       ],
@@ -7063,6 +7139,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ak je to spôsobené resetovaním starého hesla, môžete zastaviť opätovné zobrazovanie správy"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Ak je táto možnosť zapnutá, členovia organizácie budú môcť zdieľať trezory len v rámci organizácie."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
@@ -7330,6 +7409,9 @@
       ],
       "Merged": [
         "Zlúčený"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Správy v priečinku Odoslané alebo Koncepty sa budú naďalej zobrazovať v tomto priečinku, aj keď ich presuniete do iného priečinka."
       ],
       "MM/YY": [
         "MM/RR"
@@ -7751,6 +7833,9 @@
       "Settings updated": [
         "Nastavenie aktualizované"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Zobrazí obrázok každého odosielateľa. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
+      ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
       ],
@@ -7919,6 +8004,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces overenia otvorí novú kartu prehliadača. Vypnite všetky aktívne blokovania automaticky otváraných okien."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Doplnok asistenta písania sa **neobnoví**. Službu môžete naďalej využívať do **${ subscriptionRenewalDate }.**"
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tieto konfiguračné súbory vám umožňujú vybrať, ku ktorému serveru ${ VPN_APP_NAME } sa pripojíte, keď používate aplikáciu VPN tretej strany alebo nastavujete pripojenie VPN na smerovači."
       ],
@@ -7942,6 +8030,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Táto funkcia oneskoruje posielanie Vašich emailov, dáva možnosť prerušiť zasielanie správy, ktorá už bola na ceste a vrátiť ju späť."
       ],
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
@@ -8348,6 +8439,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Keď kliknete na odkaz, táto funkcia proti phishingu vás požiada o potvrdenie adresy URL webovej stránky."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
@@ -8380,6 +8474,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "Writing assistant add-on": [
+        "Doplnok asistenta písania"
       ],
       "Yearly": [
         "Ročne"
@@ -8419,6 +8516,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Môžete definovať zásady ${ PASS_APP_NAME } pre členov organizácie."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
@@ -9223,6 +9323,12 @@
       "Auto-detect primary time zone": [
         "Automaticky zistiť primárne časové pásmo"
       ],
+      "Auto-load embedded images": [
+        "Automaticky načítať vložené obrázky"
+      ],
+      "Auto-load remote content": [
+        "Automaticky načítať vzdialený obsah"
+      ],
       "Auto-reply": [
         "Automatická odpoveď"
       ],
@@ -9433,6 +9539,12 @@
       "Disable animations": [
         "Vypnúť animácie"
       ],
+      "Disable data export for organization members": [
+        "Zakázať export údajov členom organizácie"
+      ],
+      "Disable sharing outside the organization.": [
+        "Zakázať zdieľanie mimo organizácie."
+      ],
       "Display name": [
         "Zobrazované meno"
       ],
@@ -9621,6 +9733,9 @@
       ],
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
+      ],
+      "Mail settings": [
+        "Nastavenia emailu"
       ],
       "Mailbox password": [
         "Heslo k poštovej schránke"
@@ -10197,6 +10312,9 @@
       "Add gift code": [
         "Pridať darčekový kód"
       ],
+      "Add to your subscription": [
+        "Pridať do vášho preplatného"
+      ],
       "Apps and extensions": [
         "Aplikácie a rozšírenia"
       ],
@@ -10316,6 +10434,9 @@
       ],
       "Upgrade your plan": [
         "Prejsť na vyšší plán"
+      ],
+      "Users and addresses": [
+        "Uživatelia a adresy"
       ],
       "View guide": [
         "Zobraziť sprievodcu"
@@ -11142,6 +11263,9 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Generovať emaily len pomocou podnetu"
+      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -11208,6 +11332,9 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
+      "Proofread and refine your texts": [
+        "Korigovať a zdokonaľovať svoje texty"
+      ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
         "Chráňte súčasne ${ n } zariadenia",
@@ -11216,6 +11343,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
+      ],
+      "Reply to messages": [
+        "Odpovedať na správy"
       ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
@@ -13953,6 +14083,11 @@
         "Inovovať"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mesiac",
@@ -14418,7 +14553,7 @@
         "Pridávať žiadne nové súbory"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
+        "Po vypršaní vášho ${ planName } predplatného bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 5 GB Drive úložiska a maximálne 1 GB Mail úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
@@ -14547,10 +14682,10 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Na svojom ${ planName } pláne máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na svojom ${ planName } pláne máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
+        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Vaše predplatné ${ planName } bolo zrušené."
@@ -14828,6 +14963,15 @@
       ],
       "Verification successful": [
         "Overenie prebehlo úspešne"
+      ],
+      "Writing assistant disabled": [
+        "Asistent písania vypnutý"
+      ],
+      "Writing assistant enabled": [
+        "Asistent písania zapnutý"
+      ],
+      "Writing assistant setting updated": [
+        "Nastavenia asistenta písania aktualizované"
       ],
       "You have successfully canceled your subscription.": [
         "Úspešne ste zrušili svoje predplatné."
@@ -15235,6 +15379,9 @@
       "Cancel subscription?": [
         "Zrušiť predplatné?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Zrušiť doplnok asistenta písania?"
+      ],
       "Card verification": [
         "Overenie karty"
       ],
@@ -15351,6 +15498,9 @@
       ],
       "Custom filters": [
         "Vlastné filtre"
+      ],
+      "Custom folders and labels": [
+        "Vlastné priečinky a štítky"
       ],
       "Custom selection of users": [
         "Vlastný výber používateľov"
@@ -15516,6 +15666,9 @@
       ],
       "Email subscriptions": [
         "Zasielanie pravidelných emailov"
+      ],
+      "Enable writing assistant": [
+        "Zapnúť asistenta písania"
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
@@ -15790,6 +15943,9 @@
       "Phone": [
         "Telefón"
       ],
+      "Policies": [
+        "Pravidlá"
+      ],
       "Preview": [
         "Náhľad"
       ],
@@ -15801,6 +15957,9 @@
       ],
       "Processing...": [
         "Prebieha spracovanie..."
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Odporúčané"
@@ -15969,6 +16128,9 @@
       ],
       "Sort labels alphabetically": [
         "Zoradiť štítky abecedne"
+      ],
+      "Spam filters": [
+        "Filtre nevyžiadanej pošty"
       ],
       "Spam, block, and allow lists": [
         "Spam, blokované a povolené"
@@ -16530,6 +16692,11 @@
       ],
       "Primary admin": [
         "Hlavný správca"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
       ]
     },
     "Users table: single sign-on enabled": {

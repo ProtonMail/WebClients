@@ -1211,6 +1211,11 @@
         "${ BRAND_NAME } 应用"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /月"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ICS 文件为空"
@@ -6053,6 +6058,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "在收件箱中将同一对话中的电子邮件组合在一起或单独显示"
+      ],
       "here": [
         "此处"
       ],
@@ -6307,6 +6315,9 @@
       ],
       "Merged": [
         "已合并"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
       ],
       "MM/YY": [
         "月/年"
@@ -6665,6 +6676,9 @@
       "Settings updated": [
         "设置已更新"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
+      ],
       "Show original message": [
         "显示原始邮件"
       ],
@@ -6820,6 +6834,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "这可能需要一些时间。请不要关闭此页面或断开与互联网的连接。"
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "此功能会延迟发送邮件，让您有机会在选定的时间范围内撤消发送。"
       ],
       "This file is too large to preview": [
         "此文件太大，无法预览"
@@ -7177,6 +7194,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "好友开通付费账户后，您也将获得余额奖励。"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "点击链接后向您确认要打开的网址，谨防欺诈网站。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
@@ -7924,6 +7944,12 @@
       ],
       "Auto-detect primary time zone": [
         "自动检测主要时区"
+      ],
+      "Auto-load embedded images": [
+        "自动加载嵌入图像"
+      ],
+      "Auto-load remote content": [
+        "自动加载外链内容"
       ],
       "Auto-reply": [
         "自动回复"
@@ -8945,6 +8971,9 @@
       ],
       "Upgrade your plan": [
         "升级套餐"
+      ],
+      "Users and addresses": [
+        "用户和地址"
       ],
       "View guide": [
         "查看指南"

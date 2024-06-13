@@ -3507,9 +3507,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Almacenamiento cifrado en la nube para todos tus archivos"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Almacenamiento en la nube e intercambio de archivos sin riesgos que protegen tus datos."
       ]
     },
     "Duration": {
@@ -5247,7 +5244,7 @@
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Tu llave de autenticación de doble factor está lista."
+        "Tu llave de autenticación de dos factores está lista."
       ]
     },
     "fido2: Label": {
@@ -6368,7 +6365,7 @@
         "Añadir un número de teléfono de recuperación"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de doble factor cada vez que inicies sesión."
+        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de dos factores cada vez que inicies sesión."
       ],
       "Add domain": [
         "Añadir un dominio"
@@ -6501,7 +6498,7 @@
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Estás seguro de que quieres desactivar la autenticación de doble factor?"
+        "¿Estás seguro de que quieres desactivar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -7017,6 +7014,9 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si esto se debe a un restablecimiento de contraseña anterior, puedes evitar que el mensaje se vuelva a mostrar."
       ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Si esta opción está activada, los miembros de la organización solo podrán compartir cajas fuertes dentro de la organización."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
@@ -7039,7 +7039,7 @@
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si nunca has utilizado la autenticación de doble factor anteriormente, te recomendamos encarecidamente ${ guideButton }."
+        "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
@@ -7048,7 +7048,7 @@
         "Si pierdes tu contraseña y necesitas restablecer tu cuenta, es ${ boldImperative } que tengas una ${ boldAccountAndRecovery } configurada, de lo contrario es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si pierdes tu dispositivo activado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
+        "Si pierdes tu dispositivo activado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -7100,7 +7100,7 @@
         "IMPORTANTE: Si tu panel de DNS no permite que los valores CNAME terminen con un punto, puedes eliminar el último punto de los valores CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de doble factor."
+        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
@@ -7266,7 +7266,7 @@
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduce manualmente esta información en tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
+        "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -7563,7 +7563,7 @@
         "comprar almacenamiento adicional"
       ],
       "read our two-factor authentication guide first": [
-        "lee primero nuestra guía de autenticación de doble factor"
+        "lee primero nuestra guía de autenticación de dos factores"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
@@ -7644,7 +7644,7 @@
         "Escanear código QR en su lugar"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
+        "Escanea este código con tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integración SCIM desactivada"
@@ -7716,7 +7716,7 @@
         "El inicio de sesión único ha sido eliminado."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para las direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo tus casos de uso, cuáles dominios personalizados te gustaría utilizar y los volúmenes de correo electrónico esperados por hora y por día."
@@ -7846,7 +7846,7 @@
         "No se han creado las siguientes direcciones."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Los siguientes miembros recibirán un correo electrónico solicitándoles que activen la autenticación de doble factor tan pronto como sea posible."
+        "Los siguientes miembros recibirán un correo electrónico solicitándoles que activen la autenticación de dos factores tan pronto como sea posible."
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
@@ -7972,10 +7972,10 @@
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Esto cerrará cualquier sesión activa y desactivará la autenticación de doble factor."
+        "Esto cerrará cualquier sesión activa y desactivará la autenticación de dos factores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este asistente activará la autenticación de doble factor (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos activarla."
+        "Este asistente activará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos activarla."
       ],
       "to ${ product } Business": [
         "a ${ product }·Business"
@@ -8056,10 +8056,10 @@
         "Conexiones VPN totales"
       ],
       "Two-factor authentication disabled": [
-        "Autenticación de doble factor desactivada"
+        "Autenticación de dos factores desactivada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticación de doble factor activada"
+        "Autenticación de dos factores activada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "El modo de doble contraseña requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
@@ -8302,7 +8302,7 @@
         "Al hacer clic en un enlace, esta función contra la suplantación de identidad te pedirá que confirmes la URL de la página web."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
@@ -8371,6 +8371,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Mientras tanto, puedes cerrar esta pestaña o navegador."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Puedes definir las políticas de ${ PASS_APP_NAME } para los miembros de la organización."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puedes editar esto una vez para asegurarte de la dirección de correo correcta para verificar."
@@ -9372,6 +9375,12 @@
       "Disable animations": [
         "Desactivar las animaciones"
       ],
+      "Disable data export for organization members": [
+        "Desactivar la exportación de datos para los miembros de la organización"
+      ],
+      "Disable sharing outside the organization.": [
+        "Desactivar el intercambio fuera de la organización."
+      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -10283,8 +10292,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } para el miembro de tu organización que utiliza la autenticación de doble factor.",
-        "${ twoFAMembers.length }/${ members.length } para los miembros de tu organización que utilizan la autenticación de doble factor."
+        "${ twoFAMembers.length }/${ members.length } para el miembro de tu organización que utiliza la autenticación de dos factores.",
+        "${ twoFAMembers.length }/${ members.length } para los miembros de tu organización que utilizan la autenticación de dos factores."
       ],
       "Almost there": [
         "¡Ya casi está!"
@@ -11040,6 +11049,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
+      "Generate emails with only a prompt": [
+        "Generar correos electrónicos con un solo prompt"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -11104,12 +11116,18 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your texts": [
+        "Revisar y perfeccionar tus textos"
+      ],
       "Protect ${ n } device at a time": [
         "Protege ${ n } dispositivo a la vez",
         "Protege ${ n } dispositivos a la vez"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
+      ],
+      "Reply to messages": [
+        "Responder a mensajes"
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -11173,7 +11191,7 @@
         "Tor sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticación de doble factor"
+        "Autenticación de dos factores"
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
@@ -11601,7 +11619,7 @@
         "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté comprometida."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Cambia las contraseñas de los usuarios y restablece la autenticación de doble factor en sus cuentas."
+        "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Asigna el tráfico de internet a la red Tor con un solo clic."
@@ -11779,13 +11797,13 @@
         "La prueba ha iniciado."
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "La autenticación de doble factor ha sido requerida para los administradores."
+        "La autenticación de dos factores ha sido requerida para los administradores."
       ],
       "Two-factor authentication has been enforced for all members": [
-        "La autenticación de doble factor ha sido requerida para todos los miembros."
+        "La autenticación de dos factores ha sido requerida para todos los miembros."
       ],
       "Two-factor authentication is not required anymore": [
-        "La autenticación de doble factor ya no es requerida."
+        "La autenticación de dos factores ya no es requerida."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13775,6 +13793,11 @@
         "Mejorar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -15220,7 +15243,7 @@
         "Detalles"
       ],
       "Disable two-factor authentication": [
-        "Desactivar la autenticación de doble factor"
+        "Desactivar la autenticación de dos factores"
       ],
       "Display name and signature": [
         "Nombre a mostrar y firma"
@@ -15575,6 +15598,9 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personaliza tu pie de correo."
+      ],
       "Phone": [
         "Teléfono"
       ],
@@ -15714,7 +15740,7 @@
         "Configurar el reenvío"
       ],
       "Set up two-factor authentication": [
-        "Configurar autenticación de doble factor"
+        "Configurar autenticación de dos factores"
       ],
       "Set your password": [
         "Establece tu contraseña"
@@ -15820,13 +15846,13 @@
         "Mis referidos"
       ],
       "Two-factor authentication": [
-        "Autenticación de doble factor"
+        "Autenticación de dos factores"
       ],
       "Two-factor authentication enforcement": [
-        "Autenticación de doble factor requerida"
+        "Autenticación de dos factores requerida"
       ],
       "Two-factor authentication reminders": [
-        "Recordatorios de autenticación de doble factor"
+        "Recordatorios de autenticación de dos factores"
       ],
       "Type": [
         "Tipo"

@@ -828,6 +828,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
+      ],
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
@@ -2280,6 +2284,9 @@
       ]
     },
     "Custom frequency option": {
+      "Ends after…": [
+        "Şu kadar sonra sona erer…"
+      ],
       "Never": [
         "Asla"
       ],
@@ -4911,6 +4918,12 @@
       "Would you like to update this event?": [
         "Bu etkinliği güncellemek ister misiniz?"
       ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant add-on": [
+        "Yazma yardımcısı eklentisi"
+      ],
       "Yearly": [
         "Yıllık"
       ],
@@ -5147,6 +5160,11 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Takvimlerinizi ayarlar bölümünden yeniden paylaşabilirsiniz."
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -6345,6 +6363,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with only a prompt": [
+        "Yalnızca isteğinizi yazarak e-postalar oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -6403,6 +6424,9 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your texts": [
+        "Metinleri düzeltin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
@@ -6410,11 +6434,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
+      "Reply to messages": [
+        "İletileri yanıtlayın"
+      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
         "Yöneltici desteği"
+      ],
+      "Save time emailing": [
+        "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
@@ -7939,6 +7969,11 @@
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
       ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Yükselt"
       ]

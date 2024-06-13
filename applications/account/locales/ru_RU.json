@@ -1372,6 +1372,20 @@
         "Приложения ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /месяц"
+      ],
+      "Add writing assistant to your plan": [
+        "Добавить помощника по написанию к вашему тарифу"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Автоматические обновляется ${ subscriptionRenewalDate }"
+      ],
+      "Customize plan": [
+        "Настроить тариф"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Пустой файл ICS"
@@ -3406,9 +3420,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Зашифрованное облачное хранилище для всех ваших файлов"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Защищенное облачное хранилище и общий доступ к файлам, защищающие ваши данные"
       ]
     },
     "Duration": {
@@ -6919,6 +6930,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдите к своему провайдеру идентификации, получите метаданные SAML для ${ appName } и импортируйте их сюда."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Группировать сообщения из одной цепочки в папке Входящие или отображать их отдельно."
+      ],
       "here": [
         "здесь"
       ],
@@ -9016,6 +9030,9 @@
       "Auto-load embedded images": [
         "Авто-показ встроенных изображений"
       ],
+      "Auto-load remote content": [
+        "Автозагрузка внешнего содержимого"
+      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -9414,6 +9431,9 @@
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
+      ],
+      "Mail settings": [
+        "Настройки почты"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
@@ -10086,6 +10106,9 @@
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
+      ],
+      "Users and addresses": [
+        "Пользователи и адреса"
       ],
       "View guide": [
         "Посмотреть руководство"
@@ -14992,6 +15015,9 @@
       ],
       "Email subscriptions": [
         "Подписки на рассылки"
+      ],
+      "Enable writing assistant": [
+        "Включить помощника по написанию текстов"
       ],
       "Encryption and keys": [
         "Шифрование и ключи"

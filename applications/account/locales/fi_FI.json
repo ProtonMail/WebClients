@@ -178,6 +178,9 @@
       "Cancel": [
         "Peruuta"
       ],
+      "Cancel add-on": [
+        "Peruuta lisäosa"
+      ],
       "Cancel subscription": [
         "Peru tilaus"
       ],
@@ -627,6 +630,9 @@
       ],
       "Keep my Plus subscription": [
         "Säilytä Plus-tilaukseni"
+      ],
+      "Keep the writing assistant": [
+        "Pidä kirjoitusavustaja"
       ],
       "label emails as": [
         "merkitse viestit tunnisteilla"
@@ -1381,6 +1387,44 @@
     "Assistant option": {
       "Run locally": [
         "Suorita paikallisesti"
+      ],
+      "Run on servers": [
+        "Suorita palvelimilla"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/kuukausi"
+      ],
+      "${ price } /year": [
+        "${ price }/vuosi"
+      ],
+      "Add writing assistant": [
+        "Lisää kirjoitusavustaja"
+      ],
+      "Add writing assistant to your plan": [
+        "Lisää kirjoitusavustaja tilaukseesi"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Uusiutuu automaattisesti ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Peruuta kirjoitusavustaja-lisäosa"
+      ],
+      "Customize plan": [
+        "Mukauta tilausta"
+      ],
+      "from ${ price } /month": [
+        "alkaen ${ price }/kuukausi"
+      ],
+      "New": [
+        "Uusi"
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Kokeilujakso päättyy ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Kokeilujakso on kesken"
       ]
     },
     "Attached ics file error": {
@@ -3438,9 +3482,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Salattu pilvitallennus kaikille tiedostoillesi"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Turvallinen pilvitallennustila ja tietojasi suojaava tiedostojen jakaminen"
       ]
     },
     "Duration": {
@@ -6918,6 +6959,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
+      ],
       "here": [
         "tässä"
       ],
@@ -7204,6 +7248,9 @@
       ],
       "Merged": [
         "Yhdistetty"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
       ],
       "MM/YY": [
         "KK/VV"
@@ -7619,6 +7666,9 @@
       "Settings updated": [
         "Asetukset on muutettu"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Näytä viestilistauksessa jokaisen lähettäjän kuva. Jos kuvaa ei ole saatavilla, näytetään lähettäjän nimen alkukirjain."
+      ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
       ],
@@ -7802,6 +7852,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Ominaisuus viivästyttää sähköpostiesi lähetystä mahdollistaen lähetyksen kumoamiseen valitun ajan sisällä."
       ],
       "This file is too large to preview": [
         "Tämä tiedosto on liian suuri esikatseltavaksi"
@@ -8207,6 +8260,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat tilauksesi, sitä ei uusita, mutta voit silti nauttia tilauksen eduista tilausjakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Linkkiä painettaessa tämä tietojenkalastelusuojaustoiminto pyytää vahvistamaan verkkosivuston URL-osoitteen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
@@ -9060,6 +9116,12 @@
       "Auto-detect primary time zone": [
         "Tunnista ensisijainen aikavyöhyke automaattisesti"
       ],
+      "Auto-load embedded images": [
+        "Lataa upotetut kuvat automaattisesti"
+      ],
+      "Auto-load remote content": [
+        "Lataa ulkoinen sisältö automaattisesti"
+      ],
       "Auto-reply": [
         "Automaattivastaus"
       ],
@@ -9270,6 +9332,9 @@
       "Disable animations": [
         "Poista animaatiot käytöstä"
       ],
+      "Disable sharing outside the organization.": [
+        "Poista organisaation ulkopuolinen jakaminen käytöstä."
+      ],
       "Display name": [
         "Näyttönimi"
       ],
@@ -9458,6 +9523,9 @@
       ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
+      ],
+      "Mail settings": [
+        "Mail-asetukset"
       ],
       "Mailbox password": [
         "Postilaatikon salasana"
@@ -10034,6 +10102,9 @@
       "Add gift code": [
         "Lisää lahjakoodi"
       ],
+      "Add to your subscription": [
+        "Lisää tilaukseesi"
+      ],
       "Apps and extensions": [
         "Sovellukset ja laajennukset"
       ],
@@ -10153,6 +10224,9 @@
       ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "View guide": [
         "Näytä opas"
@@ -13664,6 +13738,11 @@
         "Päivitä tilaus"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Päivitä tilaus"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } kuukausi",
@@ -14493,6 +14572,15 @@
       "Verification successful": [
         "Vahvistus onnistui"
       ],
+      "Writing assistant disabled": [
+        "Kirjoitusavustaja ei ole käytössä"
+      ],
+      "Writing assistant enabled": [
+        "Kirjoitusavustaja on käytössä"
+      ],
+      "Writing assistant setting updated": [
+        "Kirjoitusavustajan asetukset päivitettiin"
+      ],
       "You have successfully canceled your subscription.": [
         "Olet onnistuneesti perunut tilauksesi."
       ],
@@ -14887,6 +14975,9 @@
       "Cancel subscription?": [
         "Perutaanko tilaus?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Peruuta kirjoitusavustaja-lisäosa?"
+      ],
       "Card verification": [
         "Kortin vahvistus"
       ],
@@ -15164,6 +15255,9 @@
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
+      ],
+      "Enable writing assistant": [
+        "Ota kirjoitusavustaja käyttöön"
       ],
       "Encryption and keys": [
         "Salaus ja avaimet"
@@ -15443,6 +15537,9 @@
       "Processing...": [
         "Käsitellään..."
       ],
+      "Profile": [
+        "Profiili"
+      ],
       "Recommended": [
         "Suositus"
       ],
@@ -15610,6 +15707,9 @@
       ],
       "Sort labels alphabetically": [
         "Jätjestä tunnisteet aakkosellisesti"
+      ],
+      "Spam filters": [
+        "Roskapostisuodattimet"
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"

@@ -178,6 +178,9 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel add-on": [
+        "Ακύρωση πρόσθετου"
+      ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
@@ -627,6 +630,9 @@
       ],
       "Keep my Plus subscription": [
         "Διατηρήστε την Plus συνδρομή μου"
+      ],
+      "Keep the writing assistant": [
+        "Διατήρηση του βοηθού γραφής"
       ],
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
@@ -1165,6 +1171,9 @@
       "What do I get?": [
         "Τι θα αποκτήσω;"
       ],
+      "Why can't the model run locally?": [
+        "Γιατί δεν μπορεί το μοντέλο να τρέξει τοπικά;"
+      ],
       "Wipe": [
         "Εκκαθάριση"
       ],
@@ -1383,8 +1392,64 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Ταχύτερη, ευρύτερη συμβατότητα συσκευών"
+      ],
+      "No data transmitted while using,requires one-time download": [
+        "Δε μεταδίδονται δεδομένα κατά τη χρήση, απαιτεί εφάπαξ λήψη"
+      ],
       "Run locally": [
         "Εκτέλεση τοπικά"
+      ],
+      "Run on servers": [
+        "Εκτέλεση σε διακομιστές"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /μήνα"
+      ],
+      "${ price } /year": [
+        "${ price } /έτος"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Ενεργό μέχρι ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Προσθήκη βοηθού γραφής"
+      ],
+      "Add writing assistant to your plan": [
+        "Προσθήκη βοηθού γραφής στο πλάνο σας"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Αντιστοιχίστε το σε συγκεκριμένους χρήστες στο ${ userAndAddressesButton }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Ανανεώνεται αυτόματα στις ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Ακύρωση πρόσθετου βοηθού γραφής"
+      ],
+      "Customize plan": [
+        "Προσαρμογή πλάνου"
+      ],
+      "from ${ price } /month": [
+        "για ${ price } /μήνα"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "Renew subscription": [
+        "Ανανέωση συνδρομής"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Η δοκιμαστική έκδοση λήγει στις ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Δοκιμή σε εξέλιξη"
       ]
     },
     "Attached ics file error": {
@@ -2765,7 +2830,7 @@
         "Νεπάλ"
       ],
       "Netherlands": [
-        "Ολλανδία"
+        "Κάτω Χώρες"
       ],
       "New Caledonia": [
         "Νέα Καληδονία"
@@ -3442,9 +3507,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για όλα τα αρχεία σας"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Ασφαλής αποθήκευση στο cloud και κοινή χρήση αρχείων που προστατεύει τα δεδομένα σας"
       ]
     },
     "Duration": {
@@ -6534,6 +6596,9 @@
       "Browser not supported": [
         "Το πρόγραμμα περιήγησης δεν υποστηρίζεται"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Από προεπιλογή, τα μέλη του οργανισμού μπορούν να εξάγουν θυρίδες αποθήκευσης μόνο όπου είναι οι κάτοχοι. Εάν αυτή η επιλογή είναι ενεργοποιημένη, δε θα μπορούν να εξάγουν δεδομένα"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -6922,6 +6987,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
+      ],
       "here": [
         "εδώ"
       ],
@@ -6945,6 +7013,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Εάν αυτό είναι εξαιτίας μιας παλιάς επαναφοράς κωδικού, μπορείτε να σταματήσετε την επανεμφάνιση του μηνύματος"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κάνουν κοινή χρήση θυρίδων αποθήκευσης μόνο εντός του οργανισμού"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
@@ -7208,6 +7279,9 @@
       ],
       "Merged": [
         "Συγχωνευμένα"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
       ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
@@ -7623,6 +7697,9 @@
       "Settings updated": [
         "Οι ρυθμίσεις ενημερώθηκαν"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Εμφανίστε την εικόνα κάθε αποστολέα στη λίστα μηνυμάτων. Τα αρχικά του αποστολέα θα εμφανίζονται εάν μια φωτογραφία δεν είναι διαθέσιμη."
+      ],
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
       ],
@@ -7783,6 +7860,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Το πρόσθετο βοηθού γραφής **δε θα ανανεωθεί**. Μπορείτε να συνεχίσετε να απολαμβάνετε την υπηρεσία μέχρι **${ subscriptionRenewalDate }.**"
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Αυτά τα αρχεία παραμετροποίησης επιτρέπουν την επιλογή διακομιστή σύνδεσης ${ VPN_APP_NAME } για χρήση από εφαρμογές VPN τρίτων ή ρύθμιση σύνδεσης VPN σε δρομολογητή."
       ],
@@ -7806,6 +7886,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Αυτή η λειτουργία καθυστερεί την αποστολή των μηνυμάτων σας, δίνοντάς σας την δυνατότητα να αναιρέσετε την αποστολή κατά τη διάρκεια του επιλεγμένου χρονικού πλαισίου."
       ],
       "This file is too large to preview": [
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
@@ -8212,6 +8295,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
@@ -8282,6 +8368,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Μπορείτε να ορίσετε τις πολιτικές του ${ PASS_APP_NAME } για τα μέλη του οργανισμού."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
@@ -9058,11 +9147,20 @@
       "Auto show remote images": [
         "Αυτόματη εμφάνιση απομακρυσμένων εικόνων"
       ],
+      "Auto-advance": [
+        "Αυτομ. εμφάνιση"
+      ],
       "Auto-delete unwanted messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων μηνυμάτων"
       ],
       "Auto-detect primary time zone": [
         "Αυτόματη ανίχνευση κύριας ζώνης ώρας"
+      ],
+      "Auto-load embedded images": [
+        "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
+      ],
+      "Auto-load remote content": [
+        "Αυτόματη φόρτωση απομακρυσμένου περιεχομένου"
       ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
@@ -9274,6 +9372,12 @@
       "Disable animations": [
         "Απενεργοποιήστε τα εφέ"
       ],
+      "Disable data export for organization members": [
+        "Απενεργοποίηση εξαγωγής δεδομένων για μέλη του οργανισμού"
+      ],
+      "Disable sharing outside the organization.": [
+        "Απενεργοποίηση κοινής χρήσης εκτός του οργανισμού."
+      ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
@@ -9462,6 +9566,9 @@
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
+      ],
+      "Mail settings": [
+        "Ρυθμίσεις Mail"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -10038,6 +10145,9 @@
       "Add gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
+      "Add to your subscription": [
+        "Προσθήκη στη συνδρομή σας"
+      ],
       "Apps and extensions": [
         "Εφαρμογές και προεκτάσεις"
       ],
@@ -10157,6 +10267,9 @@
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πλάνο σας"
+      ],
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ],
       "View guide": [
         "Προβολή οδηγού"
@@ -13677,6 +13790,11 @@
         "Αναβάθμιση"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } μήνα",
@@ -14521,6 +14639,15 @@
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
       ],
+      "Writing assistant disabled": [
+        "Απενεργοποιημένος βοηθός γραφής"
+      ],
+      "Writing assistant enabled": [
+        "Ενεργοποιημένος βοηθός γραφής"
+      ],
+      "Writing assistant setting updated": [
+        "Η ρύθμιση του βοηθού γραφής ενημερώθηκε"
+      ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
@@ -14912,6 +15039,9 @@
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Ακυρώστε το πρόσθετο βοηθού γραφής;"
+      ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
@@ -15026,6 +15156,9 @@
       ],
       "Custom filters": [
         "Προσαρμοσμένα φίλτρα"
+      ],
+      "Custom folders and labels": [
+        "Προσαρμοσμένοι φάκελοι και ετικέτες"
       ],
       "Custom selection of users": [
         "Προσαρμοσμένη επιλογή χρηστών"
@@ -15189,6 +15322,9 @@
       ],
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
+      ],
+      "Enable writing assistant": [
+        "Ενεργοποίηση βοηθού γραφής"
       ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
@@ -15459,6 +15595,9 @@
       "Phone": [
         "Τηλέφωνο"
       ],
+      "Policies": [
+        "Πολιτικές"
+      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -15470,6 +15609,9 @@
       ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
+      ],
+      "Profile": [
+        "Προφίλ"
       ],
       "Recommended": [
         "Προτεινόμενο"
@@ -15638,6 +15780,9 @@
       ],
       "Sort labels alphabetically": [
         "Ταξινόμηση ετικετών αλφαβητικά"
+      ],
+      "Spam filters": [
+        "Φίλτρα Ανεπιθύμητων"
       ],
       "Spam, block, and allow lists": [
         "Λίστες ανεπιθύμητης αλληλογραφίας, αποκλεισμού και αποδοχής"
@@ -16195,6 +16340,11 @@
       ],
       "Primary admin": [
         "Κύριος διαχειριστής"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "Τεχνητή Νοημοσύνη"
       ]
     },
     "Users table: single sign-on enabled": {

@@ -37,6 +37,9 @@
       "Add new item": [
         "Afegir un nou element"
       ],
+      "Add username field": [
+        "Afegeixi un camp de nom d'usuari"
+      ],
       "Admin panel": [
         "Panell d'administració"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Continua"
+      ],
+      "Continue offline": [
+        "Continuar fora de línia"
       ],
       "Copy and close": [
         "Copia i tanca"
@@ -427,6 +433,9 @@
       "Try again.": [
         "Torni-ho a intentar."
       ],
+      "Unlock offline with password": [
+        "Continuar sense connexió"
+      ],
       "Unpin item": [
         "Desancora l'element"
       ],
@@ -704,6 +713,9 @@
       "Moving item failed": [
         "No s'ha pogut moure l'element"
       ],
+      "Network error": [
+        "Error de xarxa"
+      ],
       "Passphrase is incorrect": [
         "La frase de pas és incorrecta"
       ],
@@ -755,6 +767,9 @@
       "Unknown invite": [
         "Invitació desconeguda"
       ],
+      "Unlock failure": [
+        "Error de desbloqueig"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format de fitxer de ${ PASS_APP_NAME } no admès"
       ],
@@ -778,6 +793,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Codi PIN incorrecte. Proveu de nou."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Actualment està fora de línia. Reprèn la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -867,6 +885,9 @@
         "${ n } element",
         "${ n } elements"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sempre serà accessible"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
       ],
@@ -888,6 +909,9 @@
       ],
       "Access successfully confirmed": [
         "S'ha confirmat l'accés."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la seva contrasenya de ${ BRAND_NAME }."
       ],
       "Add your custom email address to monitor :": [
         "Afegeixi la vostra adreça electrònica personalitzada per supervisar:"
@@ -924,6 +948,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Està segur que vol moure l'element a \"${ name }\"?"
+      ],
+      "Auto-lock successfully disabled.": [
+        "El bloqueig automàtic s'ha desactivat correctament."
       ],
       "Breaches detected": [
         "S'han detectat infraccions"
@@ -964,6 +991,15 @@
       "Didn't receive the code?": [
         "No ha rebut el codi?"
       ],
+      "Disabling auto-lock": [
+        "S'està desactivant el bloqueig automàtic"
+      ],
+      "Disabling auto-lock failed": [
+        "No s'ha pogut desactivar el bloqueig automàtic"
+      ],
+      "Disabling offline mode...": [
+        "S'està desactivant el mode fora de línia..."
+      ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
@@ -990,6 +1026,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Habiliti ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activi el bloqueig automàtic per protegir les seves dades"
+      ],
+      "Enabling offline mode...": [
+        "S'està activant el mode fora de línia..."
+      ],
+      "Enabling password auto-lock": [
+        "Habilitant el bloqueig automàtic de la contrasenya"
+      ],
+      "Enabling password lock failed": [
+        "No s'ha pogut activar el bloqueig amb contrasenya"
+      ],
+      "Enabling PIN auto-lock": [
+        "S'està habilitant el bloqueig automàtic del PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -1143,6 +1194,12 @@
       "Offline mode": [
         "Mode fora de línia"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "El mode fora de línia no s'ha pogut desactivar en aquest moment"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se li tancarà la sessió després de 3 intents fallits."
+      ],
       "Owner": [
         "Propietari"
       ],
@@ -1155,6 +1212,9 @@
       "password": [
         "contrasenya"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzi'l per desbloquejar ${ PASS_APP_NAME }"
+      ],
       "Paused": [
         "Pausat"
       ],
@@ -1166,6 +1226,21 @@
       ],
       "Please check your spam folder or try resending the code.": [
         "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
+      ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la seva contrasenya"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Confirmi la seva contrasenya de ${ BRAND_NAME } per anul·lar el registre del seu bloqueig actual."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per actualitzar l'hora de bloqueig automàtic."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Si us plau, confirmi el seu codi PIN per tal d'anul·lar el registre del seu bloqueig actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
@@ -1184,6 +1259,12 @@
       ],
       "Reconnect": [
         "Torna a connectar"
+      ],
+      "Reconnecting": [
+        "Reconnectant"
+      ],
+      "Registering PIN lock failed": [
+        "No s'ha pogut registrar el bloqueig del PIN"
       ],
       "Restoring items from trash": [
         "S'estan restaurant els elements de la paperera"
@@ -1471,6 +1552,9 @@
       "Create an encrypted note": [
         "Crea una nota xifrada"
       ],
+      "Create lock": [
+        "Crear bloqueig"
+      ],
       "Create new vault": [
         "Crea una caixa forta nova"
       ],
@@ -1675,6 +1759,9 @@
       "PIN": [
         "Codi PIN"
       ],
+      "PIN code": [
+        "Codi PIN"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -1777,12 +1864,6 @@
       "Username": [
         "Nom d'usuari"
       ],
-      "Username (alias)": [
-        "Nom d'usuari (àlies)"
-      ],
-      "Username (new alias)": [
-        "Nom d'usuari (àlies nou)"
-      ],
       "Vault ID": [
         "ID de la caixa forta"
       ],
@@ -1813,7 +1894,7 @@
         "Més informació"
       ],
       "stay safer online": [
-        "estigueu més segur en línia"
+        "millorar la vostra seguretat en línia"
       ]
     },
     "lobby: Info": {
@@ -1822,6 +1903,9 @@
       ],
       "Sign in to your account": [
         "Inicieu sessió al vostre compte"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquegi ${ PASS_SHORT_APP_NAME } amb la seva contrasenya ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2271,6 +2355,9 @@
       "Duplicated URL": [
         "L'URL està duplicat."
       ],
+      "Email address is invalid": [
+        "L'adreça de correu electrònic no és vàlida."
+      ],
       "Field name is required": [
         "Es requereix el nom del camp."
       ],
@@ -2396,6 +2483,9 @@
       ],
       "Title is required": [
         "El títol és obligatori"
+      ],
+      "Too many attempts": [
+        "Massa intents"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir la propietat d'aquesta caixa forta a ${ email }?"

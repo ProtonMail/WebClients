@@ -26,6 +26,9 @@
       "Add new item": [
         "Añadir un elemento"
       ],
+      "Add username field": [
+        "Añadir un campo de nombre de usuario"
+      ],
       "Advanced": [
         "Avanzado"
       ],
@@ -88,6 +91,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue offline": [
+        "Continuar sin conexión"
       ],
       "Continue without pinning": [
         "Continuar sin fijar"
@@ -440,6 +446,9 @@
       "Try again": [
         "Inténtalo de nuevo"
       ],
+      "Unlock offline with password": [
+        "Desbloquear el modo sin conexión con contraseña"
+      ],
       "Unpin item": [
         "Desanclar elemento"
       ],
@@ -735,6 +744,9 @@
       "Moving item failed": [
         "Error al mover el elemento"
       ],
+      "Network error": [
+        "Error de red"
+      ],
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta."
       ],
@@ -810,6 +822,9 @@
       "Unknown passkey": [
         "Clave de acceso desconocida"
       ],
+      "Unlock failure": [
+        "Error de desbloqueo"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "${ PASS_APP_NAME } no soporta este formato de archivo."
       ],
@@ -830,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "No hay conexión. Reanuda la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Tu código PIN ha sido eliminado por otro cliente de ${ PASS_APP_NAME }"
@@ -908,6 +926,9 @@
         "${ n } elemento",
         "${ n } elementos"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } siempre será accesible."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
@@ -954,8 +975,14 @@
       "Access successfully confirmed": [
         "El acceso ha sido confirmado."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accede a tus contraseñas sobre la marcha con nuestras aplicaciones móviles."
+      ],
+      "Add a username field": [
+        "Añadir un campo de nombre de usuario"
       ],
       "Admin": [
         "Administrador"
@@ -993,6 +1020,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Se ha desactivado el bloqueo automático."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Guardado automáticamente en ${ payload.domain }"
       ],
@@ -1013,6 +1043,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Selecciona una clave de acceso guardada para iniciar sesión en ${ domain }."
+      ],
+      "Click here to add a field for a username.": [
+        "Haz clic aquí para añadir un campo para el nombre de usuario."
       ],
       "Click the icon to open it anytime.": [
         "Pulsa el ícono para abrirlo en cualquier momento."
@@ -1047,6 +1080,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Eliminando \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Desactivando el bloqueo automático"
+      ],
+      "Disabling auto-lock failed": [
+        "Error al desactivar el bloqueo automático"
+      ],
+      "Disabling offline mode...": [
+        "Desactivando el modo sin conexión..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Descubre el vídeo de ${ PASS_APP_NAME } en YouTube"
       ],
@@ -1076,6 +1118,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activa ${ PASS_APP_NAME } al conectar tu cuenta de ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activa el bloqueo automático para asegurar tus datos"
+      ],
+      "Enabling offline mode...": [
+        "Activando el modo sin conexión..."
+      ],
+      "Enabling password auto-lock": [
+        "Activando el bloqueo automático por contraseña"
+      ],
+      "Enabling password lock failed": [
+        "Error al activar el bloqueo por contraseña"
+      ],
+      "Enabling PIN auto-lock": [
+        "Activando el bloqueo automático por código PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduce el código de verificación. Dígito ${ digit }."
@@ -1233,11 +1290,17 @@
       "None": [
         "Ninguno"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "No se ha podido desactivar el modo sin conexión por ahora."
+      ],
       "Offline mode could not be enabled at the moment": [
         "No se ha podido activar el modo sin conexión por ahora."
       ],
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
       ],
       "Open the Extensions menu": [
         "Abre el menú de extensiones"
@@ -1256,6 +1319,9 @@
       ],
       "Password copied": [
         "La contraseña ha sido copiada."
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Se ha registrado el bloqueo por contraseña. Utilízalo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
@@ -1276,8 +1342,23 @@
       "Pinning item...": [
         "Anclando el elemento..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Confirma tu contraseña de ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para bloquear automáticamente con tu contraseña."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para cancelar el registro de tu bloqueo actual."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para actualizar el tiempo del bloqueo automático."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirma el código PIN para cancelar el registro del bloqueo actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirma tu código PIN para editar este ajuste."
@@ -1299,6 +1380,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
+      "Registering PIN lock failed": [
+        "Error al registrar el bloqueo por código PIN"
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1636,6 +1720,9 @@
       "Create an encrypted note": [
         "Crear una nota cifrada"
       ],
+      "Create lock": [
+        "Crear un bloqueo"
+      ],
       "Create new vault": [
         "Crear caja fuerte nueva"
       ],
@@ -1662,6 +1749,15 @@
       ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Email": [
+        "Correo electrónico"
+      ],
+      "Email (alias)": [
+        "Correo electrónico (alias)"
+      ],
+      "Email (new alias)": [
+        "Correo electrónico (nuevo alias)"
       ],
       "Email aliases": [
         "Alias de correo"
@@ -1840,6 +1936,9 @@
       "PIN": [
         "Código PIN"
       ],
+      "PIN code": [
+        "Código PIN"
+      ],
       "Prefix": [
         "Prefijo"
       ],
@@ -1948,11 +2047,8 @@
       "Username": [
         "Nombre de usuario"
       ],
-      "Username (alias)": [
-        "Nombre de usuario (alias)"
-      ],
-      "Username (new alias)": [
-        "Nombre de usuario (alias nuevo)"
+      "Username/email": [
+        "Nombre de usuario/correo electrónico"
       ],
       "Vault ID": [
         "ID de caja fuerte"
@@ -1985,6 +2081,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2060,11 +2159,17 @@
       "Enter a prefix": [
         "Introducir un prefijo"
       ],
+      "Enter email": [
+        "Ingresar un correo electrónico"
+      ],
       "Enter email or username": [
         "Introducir un correo o un nombre de usuario"
       ],
       "Enter password": [
         "Introducir una contraseña"
+      ],
+      "Enter username": [
+        "Ingresa el nombre de usuario"
       ],
       "Full Name": [
         "Nombre completo"
@@ -2324,6 +2429,9 @@
     "Validation": {
       "Duplicated URL": [
         "La URL es duplicada."
+      ],
+      "Email address is invalid": [
+        "La dirección de correo electrónico no es válida."
       ],
       "Field name is required": [
         "El nombre del campo es obligatorio."

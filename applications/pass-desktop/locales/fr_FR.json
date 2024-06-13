@@ -37,6 +37,9 @@
       "Add new item": [
         "Ajouter un nouvel élément"
       ],
+      "Add username field": [
+        "Ajouter un champ Nom d’utilisateur"
+      ],
       "Admin panel": [
         "Panneau d'administration"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Continuer"
+      ],
+      "Continue offline": [
+        "Continuer hors-ligne"
       ],
       "Copy and close": [
         "Copier et fermer"
@@ -430,6 +436,9 @@
       "Try again.": [
         "Nous vous invitons à réessayer."
       ],
+      "Unlock offline with password": [
+        "Débloquer le mode hors-ligne par mot de passe"
+      ],
       "Unpin item": [
         "Désépingler l'élément"
       ],
@@ -743,6 +752,9 @@
       "Moving item failed": [
         "Le déplacement de l'élément n'a pas abouti."
       ],
+      "Network error": [
+        "Erreur de réseau "
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Le mode hors ligne n'est actuellement pas disponible pour le mode deux mots de passe."
       ],
@@ -803,6 +815,9 @@
       "Unknown invite": [
         "Invitation inconnue"
       ],
+      "Unlock failure": [
+        "Erreur de déverrouillage"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format de fichier ${ PASS_APP_NAME } non pris en charge"
       ],
@@ -826,6 +841,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Vous êtes hors ligne. Veuillez vous reconnecter afin de débloquer ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
@@ -946,6 +964,9 @@
         "${ n } élément",
         "${ n } éléments"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sera toujours accessible."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
@@ -973,6 +994,12 @@
       ],
       "Access successfully confirmed": [
         "L'accès a été confirmé."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "L'accès à ${ PASS_APP_NAME } nécessitera votre mot de passe ${ BRAND_NAME }."
+      ],
+      "Add a username field": [
+        "Ajouter un champ Nom d’utilisateur"
       ],
       "Add your custom email address to monitor :": [
         "Ajoutez votre adresse e-mail personnalisée à surveiller :"
@@ -1019,6 +1046,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Voulez-vous vraiment déplacer l'élément vers « ${ name } » ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Le verrouillage automatique a été désactivé."
+      ],
       "Breaches detected": [
         "Des fuites de données ont été détectées."
       ],
@@ -1043,6 +1073,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Click here to add a field for a username.": [
+        "Cliquez ici pour ajouter un champ pour un nom d'utilisateur."
+      ],
       "Congratulations, your access has been confirmed": [
         "Votre accès a été confirmé."
       ],
@@ -1066,6 +1099,15 @@
       ],
       "Didn't receive the code?": [
         "Vous n’avez pas reçu le code ?"
+      ],
+      "Disabling auto-lock": [
+        "Désactiver le verrouillage automatique"
+      ],
+      "Disabling auto-lock failed": [
+        "La désactivation du verrouillage automatique n'a pas abouti."
+      ],
+      "Disabling offline mode...": [
+        "Désactivation du mode hors-ligne..."
       ],
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
@@ -1093,6 +1135,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Activez la version bêta de ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activez le verrouillage automatique pour sécuriser vos données."
+      ],
+      "Enabling offline mode...": [
+        "Activation du mode hors-ligne..."
+      ],
+      "Enabling password auto-lock": [
+        "Activation du verrouillage automatique par mot de passe"
+      ],
+      "Enabling password lock failed": [
+        "L'activation du verrouillage par mot de passe n'a pas abouti."
+      ],
+      "Enabling PIN auto-lock": [
+        "Activation du verrouillage automatique par code PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Enter verification code. Digit ${ digit }."
@@ -1283,11 +1340,17 @@
       "Offline mode": [
         "Mode hors ligne"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Le mode hors ligne n'a pas pu être désactivé pour le moment."
+      ],
       "Offline mode could not be enabled at the moment": [
         "Le mode hors ligne n'a pas pu être activé pour le moment."
       ],
       "Offline support successfully disabled": [
         "L'accès hors ligne est désactivé."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN pour débloquer votre session. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
       ],
       "Owner": [
         "Propriétaire"
@@ -1300,6 +1363,9 @@
       ],
       "password": [
         "mot de passe"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Le verrouillage par mot de passe a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Les mots de passe datant de plus de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine sont automatiquement supprimés de l'historique.",
@@ -1320,11 +1386,26 @@
       "Please check your spam folder or try resending the code.": [
         "Vérifiez le dossier indésirables/spam ou essayez de renvoyer le code."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Veuillez confirmer votre mot de passe ${ BRAND_NAME }."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Veuillez confirmer votre mot de passe ${ BRAND_NAME } afin de verrouiller automatiquement avec votre mot de passe."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Veuillez confirmer votre mot de passe ${ BRAND_NAME } afin d'enlever votre verrouillage actuel."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Veuillez confirmer votre mot de passe pour ${ BRAND_NAME } afin de modifier le verrouillage automatique."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirmez votre code PIN pour annuler l'enregistrement de votre verrouillage actuel."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmez votre code PIN pour modifier les paramètres."
@@ -1349,6 +1430,12 @@
       ],
       "Reconnect": [
         "Se reconnecter"
+      ],
+      "Reconnecting": [
+        "Reconnexion"
+      ],
+      "Registering PIN lock failed": [
+        "L'enregistrement du verrouillage par code PIN n'a pas abouti."
       ],
       "Restoring items from trash": [
         "Restauration des éléments depuis la corbeille"
@@ -1669,6 +1756,9 @@
       "Create an encrypted note": [
         "Créer une note chiffrée"
       ],
+      "Create lock": [
+        "Créer un verrouillage"
+      ],
       "Create new vault": [
         "Créer un coffre-fort"
       ],
@@ -1695,6 +1785,12 @@
       ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Email (alias)": [
+        "Adresse e-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "Adresse e-mail (nouvel alias)"
       ],
       "Email address": [
         "Adresse e-mail"
@@ -1873,6 +1969,9 @@
       "PIN": [
         "Code PIN"
       ],
+      "PIN code": [
+        "Code PIN"
+      ],
       "Prefix": [
         "Préfixe"
       ],
@@ -1975,12 +2074,6 @@
       "Username": [
         "Nom d'utilisateur"
       ],
-      "Username (alias)": [
-        "Nom d’utilisateur (alias)"
-      ],
-      "Username (new alias)": [
-        "Nom d’utilisateur (nouvel alias)"
-      ],
       "Vault ID": [
         "ID du coffre-fort"
       ],
@@ -2020,6 +2113,9 @@
       ],
       "Sign in to your account": [
         "Connectez-vous à votre compte"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2111,11 +2207,17 @@
       "Enter a prefix": [
         "Saisissez un préfixe."
       ],
+      "Enter email": [
+        "Saisir une adresse e-mail"
+      ],
       "Enter email or username": [
         "Saisissez un e-mail ou un nom d’utilisateur."
       ],
       "Enter password": [
         "Saisissez le mot de passe."
+      ],
+      "Enter username": [
+        "Saisir un nom d'utilisateur"
       ],
       "Full Name": [
         "Nom complet"
@@ -2475,6 +2577,9 @@
       "Duplicated URL": [
         "L'URL est dupliquée."
       ],
+      "Email address is invalid": [
+        "L'adresse e-mail n'est pas valide."
+      ],
       "Field name is required": [
         "Le nom du champ est nécessaire."
       ],
@@ -2615,6 +2720,9 @@
       ],
       "Title is required": [
         "Le titre est nécessaire."
+      ],
+      "Too many attempts": [
+        "Il y a eu trop de tentatives."
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transférer la propriété de ce coffre-fort à ${ email } ?"
