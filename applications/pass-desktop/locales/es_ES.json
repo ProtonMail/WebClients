@@ -37,6 +37,9 @@
       "Add new item": [
         "Añadir un elemento"
       ],
+      "Add username field": [
+        "Añadir un campo de nombre de usuario"
+      ],
       "Admin panel": [
         "Panel de administración"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue offline": [
+        "Continuar sin conexión"
       ],
       "Copy and close": [
         "Copiar y cerrar"
@@ -430,6 +436,9 @@
       "Try again.": [
         "Vuelva a intentarlo."
       ],
+      "Unlock offline with password": [
+        "Desbloquear el modo sin conexión con contraseña"
+      ],
       "Unpin item": [
         "Desanclar elemento"
       ],
@@ -743,6 +752,9 @@
       "Moving item failed": [
         "Error al mover el elemento"
       ],
+      "Network error": [
+        "Error de red"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "El modo sin conexión no está disponible actualmente para el modo de dos contraseñas."
       ],
@@ -803,6 +815,9 @@
       "Unknown invite": [
         "Invitación desconocida"
       ],
+      "Unlock failure": [
+        "Error de desbloqueo"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "${ PASS_APP_NAME } no soporta este formato de archivo."
       ],
@@ -826,6 +841,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "No hay conexión. Reanuda la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Tu código PIN ha sido eliminado por otro cliente de ${ PASS_APP_NAME }"
@@ -946,6 +964,9 @@
         "${ n } elemento",
         "${ n } elementos"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } siempre será accesible."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
@@ -973,6 +994,12 @@
       ],
       "Access successfully confirmed": [
         "El acceso ha sido confirmado."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
+      ],
+      "Add a username field": [
+        "Añadir un campo de nombre de usuario"
       ],
       "Add your custom email address to monitor :": [
         "Añade tu dirección de correo personalizado para monitorear:"
@@ -1019,6 +1046,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Se ha desactivado el bloqueo automático."
+      ],
       "Breaches detected": [
         "Vulneraciones detectadas"
       ],
@@ -1043,6 +1073,9 @@
       "Change your password": [
         "Cambia tu contraseña"
       ],
+      "Click here to add a field for a username.": [
+        "Haz clic aquí para añadir un campo para el nombre de usuario."
+      ],
       "Congratulations, your access has been confirmed": [
         "Felicitaciones. Se ha confirmado tu acceso."
       ],
@@ -1066,6 +1099,15 @@
       ],
       "Didn't receive the code?": [
         "¿No has recibido el código?"
+      ],
+      "Disabling auto-lock": [
+        "Desactivando el bloqueo automático"
+      ],
+      "Disabling auto-lock failed": [
+        "Error al desactivar el bloqueo automático"
+      ],
+      "Disabling offline mode...": [
+        "Desactivando el modo sin conexión..."
       ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
@@ -1093,6 +1135,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Activa la versión beta de ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activa el bloqueo automático para asegurar tus datos"
+      ],
+      "Enabling offline mode...": [
+        "Activando el modo sin conexión..."
+      ],
+      "Enabling password auto-lock": [
+        "Activando el bloqueo automático por contraseña"
+      ],
+      "Enabling password lock failed": [
+        "Error al activar el bloqueo por contraseña"
+      ],
+      "Enabling PIN auto-lock": [
+        "Activando el bloqueo automático por código PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduce el código de verificación. Dígito ${ digit }."
@@ -1283,11 +1340,17 @@
       "Offline mode": [
         "Modo sin conexión"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "No se ha podido desactivar el modo sin conexión por ahora."
+      ],
       "Offline mode could not be enabled at the moment": [
         "No se ha podido activar el modo sin conexión por ahora."
       ],
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
       ],
       "Owner": [
         "Propietario"
@@ -1300,6 +1363,9 @@
       ],
       "password": [
         "contraseña"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Se ha registrado el bloqueo por contraseña. Utilízalo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
@@ -1320,11 +1386,26 @@
       "Please check your spam folder or try resending the code.": [
         "Comprueba la carpeta de spam o intenta reenviar el código."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Confirma tu contraseña de ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para bloquear automáticamente con tu contraseña."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirma tu contraseña de ${ BRAND_NAME } para activar el modo sin conexión."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para cancelar el registro de tu bloqueo actual."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para actualizar el tiempo del bloqueo automático."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirma el código PIN para cancelar el registro del bloqueo actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirma tu código PIN para editar este ajuste."
@@ -1349,6 +1430,12 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnecting": [
+        "Reconectando"
+      ],
+      "Registering PIN lock failed": [
+        "Error al registrar el bloqueo por código PIN"
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1669,6 +1756,9 @@
       "Create an encrypted note": [
         "Crear una nota cifrada"
       ],
+      "Create lock": [
+        "Crear un bloqueo"
+      ],
       "Create new vault": [
         "Crear caja fuerte nueva"
       ],
@@ -1695,6 +1785,12 @@
       ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Email (alias)": [
+        "Correo electrónico (alias)"
+      ],
+      "Email (new alias)": [
+        "Correo electrónico (nuevo alias)"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -1873,6 +1969,9 @@
       "PIN": [
         "Código PIN"
       ],
+      "PIN code": [
+        "Código PIN"
+      ],
       "Prefix": [
         "Prefijo"
       ],
@@ -1975,12 +2074,6 @@
       "Username": [
         "Nombre de usuario"
       ],
-      "Username (alias)": [
-        "Nombre de usuario (alias)"
-      ],
-      "Username (new alias)": [
-        "Nombre de usuario (alias nuevo)"
-      ],
       "Vault ID": [
         "ID de caja fuerte"
       ],
@@ -2020,6 +2113,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2111,11 +2207,17 @@
       "Enter a prefix": [
         "Introducir un prefijo"
       ],
+      "Enter email": [
+        "Ingresar un correo electrónico"
+      ],
       "Enter email or username": [
         "Introducir un correo o un nombre de usuario"
       ],
       "Enter password": [
         "Introducir una contraseña"
+      ],
+      "Enter username": [
+        "Ingresa el nombre de usuario"
       ],
       "Full Name": [
         "Nombre completo"
@@ -2475,6 +2577,9 @@
       "Duplicated URL": [
         "La URL es duplicada."
       ],
+      "Email address is invalid": [
+        "La dirección de correo electrónico no es válida."
+      ],
       "Field name is required": [
         "El nombre del campo es obligatorio."
       ],
@@ -2615,6 +2720,9 @@
       ],
       "Title is required": [
         "Título no puede estar vacío"
+      ],
+      "Too many attempts": [
+        "Hubo demasiados intentos."
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "¿Transferir la propiedad de esta caja fuerte a ${ email }?"
