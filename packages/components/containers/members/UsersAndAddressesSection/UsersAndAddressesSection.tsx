@@ -560,7 +560,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const isInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
 
                         const memberName = member.Name || memberAddresses[0]?.Email;
-                        const canAddAddress = memberAddresses.length === 0;
+                        const canAddAddress = !member.SSO && memberAddresses.length === 0;
 
                         return (
                             <TableRow
