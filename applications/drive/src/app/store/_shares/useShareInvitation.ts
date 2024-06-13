@@ -26,23 +26,23 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/err
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     ShareExternalInvitationPayload,
-    ShareInvitationLinkPayload,
+    ShareInvitationDetailsPayload,
     ShareInvitationListingPayload,
     ShareInvitationPayload,
-    ShareInvitationSharePayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import {
     shareExternalInvitationPayloadToShareExternalInvitation,
+    shareInvitationDetailsPayloadToShareInvitationDetails,
     shareInvitationPayloadToShareInvitation,
     useDebouncedRequest,
 } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
-import { ShareInvitationEmailDetails } from './interface';
+import { ShareInvitationDetails,ShareInvitationEmailDetails } from './interface';
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
@@ -269,7 +269,7 @@ export const useShareInvitation = () => {
         return debouncedRequest<{ Code: number }>(queryResendInvitation(shareId, invitationId), abortSignal);
     };
 
-    const acceptInvitation = async (
+    const getInvitationDetails = async (
         abortSignal: AbortSignal,
         params: {
             invitationId: string;
@@ -277,26 +277,36 @@ export const useShareInvitation = () => {
             linkId: string;
         }
     ) => {
-        const invitationDetails = await debouncedRequest<{
-            Code: number;
-            Invitation: ShareInvitationPayload;
-            Share: ShareInvitationSharePayload;
-            Link: ShareInvitationLinkPayload;
-        }>(queryInvitationDetails(params.invitationId), abortSignal);
-        const keys = await getOwnAddressKeysWithEmailAsync(
-            invitationDetails.Invitation.InviteeEmail,
-            getAddresses,
-            getAddressKeys
+        const invitationDetails = await debouncedRequest<
+            {
+                Code: number;
+            } & ShareInvitationDetailsPayload
+        >(queryInvitationDetails(params.invitationId), abortSignal).then(({ Invitation, Share, Link }) =>
+            shareInvitationDetailsPayloadToShareInvitationDetails({
+                Invitation,
+                Share,
+                Link,
+            })
         );
+        return invitationDetails;
+    };
+
+    const acceptInvitation = async (abortSignal: AbortSignal, { invitation, share, link }: ShareInvitationDetails) => {
+        const keys = await getOwnAddressKeysWithEmailAsync(invitation.inviteeEmail, getAddresses, getAddressKeys);
 
         if (!keys) {
             throw new EnrichedError('Address key for accepting invitation is not available', {
-                tags: params,
+                tags: {
+                    invitationId: invitation.invitationId,
+                    shareId: share.shareId,
+                    linkId: link.linkId,
+                    volumeId: share.volumeId,
+                },
             });
         }
 
         const sessionKey = await getDecryptedSessionKey({
-            data: base64StringToUint8Array(invitationDetails.Invitation.KeyPacket),
+            data: base64StringToUint8Array(invitation.keyPacket),
             privateKeys: keys?.privateKeys,
         });
 
@@ -309,7 +319,7 @@ export const useShareInvitation = () => {
         });
 
         return debouncedRequest<{ Code: number }>(
-            queryAcceptShareInvite(params.invitationId, {
+            queryAcceptShareInvite(invitation.invitationId, {
                 SessionKeySignature: uint8ArrayToBase64String(sessionKeySignature),
             }),
             abortSignal
@@ -432,6 +442,7 @@ export const useShareInvitation = () => {
         );
 
     return {
+        getInvitationDetails,
         convertExternalInvitation,
         getShareInvitations,
         inviteProtonUser,
