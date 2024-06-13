@@ -48,6 +48,7 @@ export const queryCreateUserExternal = (
         Type: CLIENT_TYPES; // 1 = mail, 2 = VPN
         Referrer?: string;
         TokenPayment?: string;
+        TokenPreVerifiedAddress?: string;
         Payload?: {
             [key: string]: string;
         };

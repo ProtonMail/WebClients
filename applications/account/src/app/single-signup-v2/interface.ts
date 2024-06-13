@@ -19,11 +19,12 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import type {
+import {
     InviteData,
     ReferralData,
     SessionData,
     SignupActionDoneResponse,
+    SignupInviteParameters,
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
@@ -176,10 +177,5 @@ export interface PlanParameters {
 export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite'> {
     localID: number | undefined;
     mode: SignupMode;
-    invite:
-        | { type: 'generic'; data: { selector: string; token: string } }
-        | { type: 'drive'; data: { externalInvitationID: string } }
-        | { type: 'pass'; data: { inviter: string; invited: string } }
-        | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
-        | undefined;
+    invite?: SignupInviteParameters;
 }

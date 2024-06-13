@@ -284,12 +284,14 @@ const SingleSignupContainerV2 = ({
         }
 
         const externalInvitationID = searchParams.get('externalInvitationID');
-        if (externalInvitationID) {
+        const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken');
+        const email = result.email;
+        if (toApp === APPS.PROTONDRIVE && externalInvitationID && email && preVerifiedAddressToken) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
                 type: 'drive',
-                data: { externalInvitationID },
+                data: { invited: email, externalInvitationID, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
         }
@@ -1284,6 +1286,7 @@ const SingleSignupContainerV2 = ({
                                         subscriptionData: getFreeSubscriptionData(subscriptionData),
                                     };
                                     const userCreationResult = await handleCreateUser({
+                                        invite: signupParameters.invite,
                                         cache: tmpCache,
                                         api: silentApi,
                                         mode: 'cro',
@@ -1305,6 +1308,7 @@ const SingleSignupContainerV2 = ({
                                     });
                                 } else {
                                     const result = await handleCreateUser({
+                                        invite: signupParameters.invite,
                                         cache,
                                         api: silentApi,
                                         mode: toApp === APPS.PROTONPASS ? 'ov' : 'cro',
