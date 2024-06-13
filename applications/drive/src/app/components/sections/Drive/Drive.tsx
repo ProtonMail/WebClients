@@ -105,6 +105,7 @@ function Drive({ activeFolder, folderView }: Props) {
         key: 'drive-sharing',
         featureFlagsEnabled: isSharingInviteAvailable && !isDirectSharingDisabled,
         shouldWelcomeFlowBeDone: true,
+        expirationDate: '2024-06-23',
     });
 
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
