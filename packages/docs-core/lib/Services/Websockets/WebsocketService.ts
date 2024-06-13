@@ -10,20 +10,46 @@ import {
   WebsocketConnectedPayload,
   BaseWebsocketPayload,
   WebsocketDisconnectedPayload,
-  WebsocketMessagePayload,
   RealtimeUrlAndToken,
   WebsocketFailedToConnectPayload,
   WebsocketEncryptionErrorPayload,
   BroadcastSources,
+  assertUnreachable,
+  ProcessedIncomingRealtimeEventMessage,
+  WebsocketDocumentUpdateMessagePayload,
+  WebsocketEventMessagePayload,
 } from '@proton/docs-shared'
-import { ClientMessageWithDocumentUpdates, ClientMessageWithEvents } from '@proton/docs-proto'
-import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import { Result } from '../../Domain/Result/Result'
+import metrics from '@proton/metrics'
+import {
+  ClientMessageWithDocumentUpdates,
+  ClientMessage,
+  ClientMessageWithEvents,
+  DocumentUpdate,
+  Event,
+  ServerMessage,
+  ServerMessageType,
+  EventTypeEnum,
+  EventType,
+  CreateClientEventMessage,
+  ClientEventVersion,
+} from '@proton/docs-proto'
+import { c } from 'ttag'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
+import { DecryptMessage } from '../../UseCase/DecryptMessage'
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
+
+type DocumentConnectionRecord = {
+  connection: WebsocketConnectionInterface
+  keys: DocumentKeys
+}
+
+type LinkID = string
 
 export class WebsocketService implements WebsocketServiceInterface {
-  private connections: Record<string, WebsocketConnectionInterface> = {}
+  private connections: Record<LinkID, DocumentConnectionRecord> = {}
   private stressTestorCache: {
     lastToken?: RealtimeUrlAndToken
     lastKeys?: DocumentKeys
@@ -33,7 +59,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   constructor(
     private _createRealtimeValetToken: GetRealtimeUrlAndToken,
     private _encryptMessage: EncryptMessage,
-    private _sendCommitCommandToRTS: DebugSendCommitCommandToRTS,
+    private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
   ) {}
@@ -94,13 +120,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       onMessage: (message) => {
         if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketMessagePayload>({
-            type: WebsocketConnectionEvent.Message,
-            payload: {
-              document,
-              message: message,
-            },
-          })
+          void this.handleConnectionMessage(document, message)
         }
       },
 
@@ -129,9 +149,12 @@ export class WebsocketService implements WebsocketServiceInterface {
       getLatestCommitId: options.commitId,
     }
 
-    const connection = new WebsocketConnection(keys, callbacks, this._encryptMessage, this.logger)
+    const connection = new WebsocketConnection(callbacks, this.logger)
 
-    this.connections[document.linkId] = connection
+    this.connections[document.linkId] = {
+      connection,
+      keys,
+    }
 
     this.stressTestorCache.lastKeys = keys
     this.stressTestorCache.lastDocument = document
@@ -139,40 +162,218 @@ export class WebsocketService implements WebsocketServiceInterface {
     return connection
   }
 
-  sendMessageToDocument(
+  getConnectionRecord(linkId: LinkID): DocumentConnectionRecord | undefined {
+    return this.connections[linkId]
+  }
+
+  async sendMessageToDocument(
     document: NodeMeta,
     message: ClientMessageWithDocumentUpdates | ClientMessageWithEvents,
     source: BroadcastSources,
-  ): void {
-    const connection = this.connections[document.linkId]
-    if (!connection) {
+  ): Promise<void> {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
       throw new Error('Connection not found')
     }
 
-    void connection.broadcastMessage(message, source)
+    const { keys, connection } = record
+
+    const messageWrapper = new ClientMessage()
+
+    try {
+      if (message instanceof ClientMessageWithEvents) {
+        for (const event of message.events) {
+          const encryptedContent = await this.encryptMessage(event, document, keys)
+          event.content = new Uint8Array(encryptedContent)
+        }
+      } else {
+        for (const update of message.updates.documentUpdates) {
+          const encryptedContent = await this.encryptMessage(update, document, keys)
+          update.encryptedContent = new Uint8Array(encryptedContent)
+        }
+      }
+    } catch (e: unknown) {
+      if (source === BroadcastSources.CommentsController) {
+        metrics.docs_comments_error_total.increment({
+          reason: 'encryption_error',
+        })
+      }
+      throw e
+    }
+
+    if (message instanceof ClientMessageWithDocumentUpdates) {
+      messageWrapper.documentUpdatesMessage = message
+    } else {
+      messageWrapper.eventsMessage = message
+    }
+
+    const binary = messageWrapper.serializeBinary()
+    void connection.broadcastMessage(binary, source)
   }
 
+  async encryptMessage(message: DocumentUpdate | Event, document: NodeMeta, keys: DocumentKeys): Promise<ArrayBuffer> {
+    const content = message instanceof DocumentUpdate ? message.encryptedContent : message.content
+    const result = await this._encryptMessage.execute(content, message, keys)
+
+    if (result.isFailed()) {
+      const message = c('Error')
+        .t`A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.`
+
+      this.eventBus.publish<WebsocketEncryptionErrorPayload>({
+        type: WebsocketConnectionEvent.EncryptionError,
+        payload: {
+          document,
+          error: message,
+        },
+      })
+
+      traceError('Unable to encrypt message', {
+        extra: {
+          errorInfo: {
+            message: result.getError(),
+          },
+        },
+      })
+
+      throw new Error(`Unable to encrypt message: ${result.getError()}`)
+    }
+
+    return result.getValue()
+  }
+
+  private async handleConnectionMessage(document: NodeMeta, data: Uint8Array): Promise<void> {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    const { keys } = record
+
+    const message = ServerMessage.deserializeBinary(data)
+    const type = ServerMessageType.create(message.type)
+
+    if (type.hasDocumentUpdates()) {
+      for (const update of message.documentUpdatesMessage.updates.documentUpdates) {
+        const decryptionResult = await this._decryptMessage.execute({
+          message: update,
+          keys: keys,
+          verify: false,
+        })
+        if (decryptionResult.isFailed()) {
+          metrics.docs_document_updates_decryption_error_total.increment({
+            source: 'realtime',
+          })
+          throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
+        }
+
+        const decrypted = decryptionResult.getValue()
+
+        this.eventBus.publish<WebsocketDocumentUpdateMessagePayload>({
+          type: WebsocketConnectionEvent.DocumentUpdateMessage,
+          payload: {
+            document,
+            message: decrypted,
+          },
+        })
+      }
+    } else if (type.hasEvents()) {
+      const processedMessages: ProcessedIncomingRealtimeEventMessage[] = []
+
+      for (const event of message.eventsMessage.events) {
+        const type = EventType.create(event.type)
+
+        this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
+
+        switch (type.value) {
+          case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
+          case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
+          case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
+          case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
+          case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
+            processedMessages.push(
+              new ProcessedIncomingRealtimeEventMessage({
+                type: type.value,
+              }),
+            )
+            break
+          case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
+            processedMessages.push(
+              new ProcessedIncomingRealtimeEventMessage({
+                type: type.value,
+                content: event.content,
+              }),
+            )
+            break
+          case EventTypeEnum.ClientHasSentACommentMessage:
+          case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
+            const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
+            if (decryptionResult.isFailed()) {
+              this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
+              return undefined
+            }
+
+            const decrypted = decryptionResult.getValue()
+            if (decrypted) {
+              processedMessages.push(
+                new ProcessedIncomingRealtimeEventMessage({
+                  type: type.value,
+                  content: decrypted.content,
+                }),
+              )
+            }
+            break
+          }
+          default:
+            assertUnreachable(type.value)
+        }
+      }
+
+      this.eventBus.publish<WebsocketEventMessagePayload>({
+        type: WebsocketConnectionEvent.EventMessage,
+        payload: {
+          document,
+          message: processedMessages,
+        },
+      })
+    } else {
+      throw new Error('Unknown message type')
+    }
+  }
+
+  /**
+   * This is a debug utility exposed in development by the Debug menu and allows the client to force the RTS to commit immediately
+   * (rather than waiting for the next scheduled commit cycle)
+   */
   public async debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void> {
     this.logger.info('Sending commit command to RTS')
 
-    const connection = this.connections[document.linkId]
-
-    if (!connection) {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
       throw new Error('Connection not found')
     }
 
-    await this._sendCommitCommandToRTS.execute(connection, keys.userOwnAddress)
+    const content = new Uint8Array(stringToUint8Array(JSON.stringify({ authorAddress: keys.userOwnAddress })))
+
+    const message = CreateClientEventMessage({
+      type: EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit,
+      content: content,
+      authorAddress: keys.userOwnAddress,
+      version: ClientEventVersion.V1,
+      timestamp: Date.now(),
+    })
+
+    void this.sendMessageToDocument(document, message, BroadcastSources.CommitDocumentUseCase)
   }
 
   public debugCloseConnection(document: { linkId: string }): void {
     this.logger.info('Closing connection')
 
-    const connection = this.connections[document.linkId]
-    if (!connection) {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
       throw new Error('Connection not found')
     }
 
-    void connection.disconnect()
+    void record.connection.disconnect()
   }
 
   public createStressTestConnections(count: number): void {
