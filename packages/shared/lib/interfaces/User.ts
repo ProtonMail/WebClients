@@ -97,7 +97,7 @@ export interface User {
         Reason: SessionRecoveryReason | null;
         UID: string;
     } | null;
-    ChargebeeUser?: ChargebeeEnabled;
+    ChargebeeUser: ChargebeeEnabled;
     LockedFlags?: number;
 }
 

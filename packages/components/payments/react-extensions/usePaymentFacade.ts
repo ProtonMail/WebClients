@@ -81,7 +81,7 @@ function getOperations(
             return api(buyCredit(params, paymentsVersion)).then(wrappedAfterOperation);
         },
         payInvoice: async (invoiceId: string) => {
-            return api(payInvoice(invoiceId, params)).then(wrappedAfterOperation);
+            return api(payInvoice(invoiceId, params, paymentsVersion)).then(wrappedAfterOperation);
         },
         subscribe: async (operationsDataParam?: OperationsSubscriptionData) => {
             if (!operationsData?.subscription && !operationsDataParam) {

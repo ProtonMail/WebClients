@@ -10,13 +10,14 @@ import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payment
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
 import { useApiResult, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
+import { getInvoicePaymentsVersion } from './helpers';
 import { Invoice } from './interface';
 
 interface CheckInvoiceResponse {
@@ -38,8 +39,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
+
     const { result, loading: amountLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
-        () => checkInvoice(invoice.ID),
+        () => checkInvoice(invoice.ID, getInvoicePaymentsVersion(invoice)),
         []
     );
     const [subscription] = useSubscription();
@@ -55,6 +57,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
+        // the override is required for the on-session migration.
+        chargebeeEnabled: invoice.isExternal ? ChargebeeEnabled.CHARGEBEE_FORCED : ChargebeeEnabled.INHOUSE_FORCED,
         onChargeable: (operations) => {
             return withLoading(async () => {
                 await operations.payInvoice(invoice.ID);

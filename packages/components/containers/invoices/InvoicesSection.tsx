@@ -31,6 +31,7 @@ import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
 import InvoicesPreview, { InvoicesPreviewControls } from './InvoicesPreview';
+import { getInvoicePaymentsVersion } from './helpers';
 import { Invoice } from './interface';
 import useInvoices, { ELEMENTS_PER_PAGE } from './useInvoices';
 
@@ -48,7 +49,7 @@ const InvoiceGroup = ({ invoices, loading, error, page, requestInvoices }: Invoi
         `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
 
     const handleDownload = async (invoice: Invoice) => {
-        const buffer = await api(getInvoice(invoice.ID));
+        const buffer = await api(getInvoice(invoice.ID, getInvoicePaymentsVersion(invoice)));
         const blob = new Blob([buffer], { type: 'application/pdf' });
         downloadFile(blob, getFilename(invoice));
     };
