@@ -13,9 +13,21 @@ interface Props {
 }
 
 export interface ComposerAssistantInitialSetupSpotlightRef {
+    /**
+     * Display spotlight and update
+     * it's server value to consider it as viewed
+     */
     showSpotlight: () => void;
+    /** Hide spotlight */
     hideSpotlight: () => void;
+    /**
+     * Don't show spotlight but update
+     * it's server value to consider it as viewed
+     */
+    setSpotlightViewed: () => void;
 }
+
+let displayed = false;
 
 const ComposerAssistantInitialSetupSpotlight = forwardRef<ComposerAssistantInitialSetupSpotlightRef, Props>(
     ({ children, anchorRef }, ref) => {
@@ -26,6 +38,14 @@ const ComposerAssistantInitialSetupSpotlight = forwardRef<ComposerAssistantIniti
         const [showSpotlight, setShowSpotlight] = useState(false);
 
         useImperativeHandle(ref, () => ({
+            setSpotlightViewed: () => {
+                if (!show || displayed) {
+                    return;
+                }
+
+                onDisplayedComposerSpotlight();
+                displayed = true;
+            },
             showSpotlight: () => {
                 if (!show) {
                     return;

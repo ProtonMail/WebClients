@@ -8,6 +8,7 @@ interface Props {
 const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedText, onResetRequest }: Props) => {
     // Selected text in the composer or assistant result that the user might want to refine
     const [selectedText, setSelectedText] = useState(inputSelectedText);
+    const prevSelectionRef = useRef<string>('');
 
     const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
 
@@ -22,8 +23,10 @@ const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedTex
                 const selectionInAssistant =
                     assistantResultRef.current.contains(selection.anchorNode) &&
                     assistantResultRef.current.contains(selection.focusNode);
-                if (selectionInAssistant) {
-                    setSelectedText(selection.toString().trim());
+                const selectionText = selection.toString().trim();
+
+                if (selectionInAssistant && prevSelectionRef.current !== selectionText) {
+                    setSelectedText(selectionText);
                     onResetRequest?.();
                     return;
                 }

@@ -1,5 +1,9 @@
-import { organizationKeysManagementListener, startPersistListener } from '@proton/account';
-import { authenticationListener } from '@proton/account';
+import {
+    authenticationListener,
+    organizationKeysManagementListener,
+    startListeningToPlanNameChange,
+    startPersistListener,
+} from '@proton/account';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
@@ -20,6 +24,7 @@ export const start = ({
         startHolidaysDirectoryListener(startListening);
         startPersistListener(startListening, persistTransformer);
         organizationKeysManagementListener(startListening);
+        startListeningToPlanNameChange(startListening);
     }
 
     if (mode === 'lite') {
