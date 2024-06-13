@@ -1,4 +1,5 @@
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { BillingPlatform, ChargebeeEnabled, Subscription, User } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
 import { TokenPaymentMethod, V5PaymentToken } from './interface';
@@ -35,4 +36,18 @@ export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
         chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED ||
         chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED
     );
+}
+
+export function onSessionMigrationChargebeeStatus(
+    user: User,
+    subscription: Subscription | undefined
+): ChargebeeEnabled {
+    return user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED &&
+        subscription?.BillingPlatform === BillingPlatform.Proton
+        ? ChargebeeEnabled.INHOUSE_FORCED
+        : user.ChargebeeUser;
+}
+
+export function onSessionMigrationPaymentsVersion(user: User, subscription: Subscription | undefined): PaymentsVersion {
+    return onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.INHOUSE_FORCED ? 'v4' : 'v5';
 }

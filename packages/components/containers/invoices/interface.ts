@@ -12,6 +12,7 @@ export interface Invoice {
     ModifyTime: number;
     AttemptTime: number;
     Attempts: number;
+    isExternal: boolean;
 }
 
 export interface InvoiceResponse {
