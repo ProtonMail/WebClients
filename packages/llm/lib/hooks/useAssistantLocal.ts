@@ -39,6 +39,8 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
     const llmModel = useRef<LlmModel | null>(null);
 
     const assistantConfigRef = useRef<AssistantConfig>();
+    /** In order to be able to wait for config to be set */
+    const assistantConfigPromiseRef = useRef<Promise<void>>();
 
     const [isModelDownloaded, setIsModelDownloaded] = useState(false);
     const [isModelDownloading, setIsModelDownloading] = useState(false);
@@ -126,7 +128,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             const errorMessage = c('Error').t`Due to an error, text generation couldn’t be canceled`;
-            addSpecificError({ assistantID, errorMessage });
+            addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_CANCEL_FAIL });
             sendAssistantErrorReport({
                 assistantType: ASSISTANT_TYPE.LOCAL,
                 errorType: ERROR_TYPE.GENERATION_CANCEL_FAIL,
@@ -135,11 +137,16 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
     };
 
     const handleGetAssistantModels = () => {
-        void queryAssistantModels(api).then((models) => {
-            const config = buildMLCConfig(models);
-            if (config) {
-                assistantConfigRef.current = config;
-            }
+        assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
+            void queryAssistantModels(api)
+                .then((models) => {
+                    const config = buildMLCConfig(models);
+                    if (config) {
+                        assistantConfigRef.current = config;
+                    }
+                    resolve();
+                })
+                .catch(reject);
         });
     };
 
@@ -183,7 +190,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             traceInitiativeError('assistant', e);
             console.error(e);
             const errorMessage = c('Error').t`Problem downloading the writing assistant. Please try again.`;
-            addGlobalError(errorMessage);
+            addGlobalError(errorMessage, ERROR_TYPE.DOWNLOAD_FAIL);
             setIsModelDownloading(false);
             sendAssistantErrorReport({
                 assistantType: ASSISTANT_TYPE.LOCAL,
@@ -215,7 +222,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             traceInitiativeError('assistant', e);
             console.error(e);
             const errorMessage = c('Error').t`Problem loading the writing assistant to your device. Please try again.`;
-            addGlobalError(errorMessage);
+            addGlobalError(errorMessage, ERROR_TYPE.LOADGPU_FAIL);
             setIsModelLoadingOnGPU(false);
             setIsModelLoadedOnGPU(false);
             sendAssistantErrorReport({
@@ -242,7 +249,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 assistantType: ASSISTANT_TYPE.LOCAL,
                 errorType: ERROR_TYPE.UNLOAD_FAIL,
             });
-            addGlobalError(errorMessage);
+            addGlobalError(errorMessage, ERROR_TYPE.UNLOAD_FAIL);
         }
     };
 
@@ -268,6 +275,12 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             // Use try catch in case one of the steps fails, so that we don't run the next step
             try {
                 let completedDownload;
+
+                // Ensure config is set before starting init
+                if (assistantConfigPromiseRef.current) {
+                    await assistantConfigPromiseRef.current;
+                }
+
                 if (!isModelDownloaded && !isModelDownloading) {
                     completedDownload = await downloadModel();
                 }
@@ -395,19 +408,19 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             } catch (e: any) {
                 if (e.name === 'PromptRejectedError') {
                     const errorMessage = c('Error')
-                        .t`I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.`;
+                        .t`The writing assistant cannot proceed with your request. Please try a different prompt.`;
                     sendAssistantErrorReport({
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         errorType: ERROR_TYPE.GENERATION_HARMFUL,
                     });
-                    addSpecificError({ assistantID, errorMessage });
+                    addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
                 } else {
                     const errorMessage = c('Error').t`Please try generating the text again`;
                     sendAssistantErrorReport({
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         errorType: ERROR_TYPE.GENERATION_FAIL,
                     });
-                    addSpecificError({ assistantID, errorMessage });
+                    addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_FAIL });
                 }
                 traceInitiativeError('assistant', e);
 
@@ -418,6 +431,31 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             cleanAssistantRunningAction(assistantID);
             cleanRunningActionPromises(assistantID);
         });
+    };
+
+    const resetAssistantState = () => {
+        // Cancel model downloading
+        if (initPromise.current) {
+            void cancelDownloadModel();
+        }
+        // Unload model from GPU
+        if (isModelLoadedOnGPU) {
+            void unloadModelOnGPU();
+        }
+        // Cancel all running actions
+        if (runningActionResolvers) {
+            runningActionsRef.current = [];
+            runningActionResolvers.forEach((resolver) => resolver.resolver());
+        }
+
+        // Reset all states
+        setIsModelDownloaded(false);
+        setIsModelDownloading(false);
+        setIsModelLoadedOnGPU(false);
+        setIsModelLoadingOnGPU(false);
+        setDownloadPaused(false);
+        setDownloadModelSize(0);
+        setDownloadReceivedBytes(0);
     };
 
     // Unload the model after some time of non usage
@@ -469,5 +507,6 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         cancelRunningAction,
         runningActionResolvers,
         assistantConfig: assistantConfigRef.current,
+        resetAssistantState,
     };
 };

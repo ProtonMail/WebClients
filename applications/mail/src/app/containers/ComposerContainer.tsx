@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Breakpoints, useBeforeUnload, useDrawerWidth } from '@proton/components';
 
+import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
@@ -73,21 +74,23 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     return (
         <ComposeProvider onCompose={handleCompose}>
             {children}
-            <div>
-                {composerIDs.map((composerID, i) => (
-                    <ComposerFrame
-                        key={composerID}
-                        index={i}
-                        composerID={composerID}
-                        count={composerIDs.length}
-                        focus={composerID === focusedComposerID}
-                        breakpoints={breakpoints}
-                        onFocus={handleFocus(composerID)}
-                        onClose={handleClose(composerID)}
-                        drawerOffset={drawerOffset}
-                    />
-                ))}
-            </div>
+            <ComposerAssistantProvider>
+                <div>
+                    {composerIDs.map((composerID, i) => (
+                        <ComposerFrame
+                            key={composerID}
+                            index={i}
+                            composerID={composerID}
+                            count={composerIDs.length}
+                            focus={composerID === focusedComposerID}
+                            breakpoints={breakpoints}
+                            onFocus={handleFocus(composerID)}
+                            onClose={handleClose(composerID)}
+                            drawerOffset={drawerOffset}
+                        />
+                    ))}
+                </div>
+            </ComposerAssistantProvider>
             {sendingFromDefaultAddressModal}
             {sendingOriginalMessageModal}
             {storageCapacityModal}

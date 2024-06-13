@@ -10,7 +10,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HT
 const InnerModalTitle = ({ children, className, ...rest }: Props) => {
     return (
         <h1
-            className={clsx(['inner-modal-title outline-none', className])}
+            className={clsx(['inner-modal-title outline-none pr-4', className])}
             data-focus-trap-fallback="0"
             tabIndex={-1}
             {...rest}

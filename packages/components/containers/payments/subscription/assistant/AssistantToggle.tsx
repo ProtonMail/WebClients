@@ -1,9 +1,15 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { Badge, Icon, useModalState } from '@proton/components/components';
-import { useAssistantSubscriptionStatus, useAssistantUpsellConfig, useSubscription } from '@proton/components/hooks';
+import {
+    Badge,
+    Icon,
+    useAssistantSubscriptionStatus,
+    useAssistantUpsellConfig,
+    useFlag,
+    useModalState,
+    useSubscription,
+} from '@proton/components';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

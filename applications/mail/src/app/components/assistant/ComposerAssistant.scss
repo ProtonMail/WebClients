@@ -56,6 +56,26 @@
 			overflow: hidden;
 		}
 
+		&[rows='1'] {
+			block-size: rem(26);
+		}
+
+		&[rows='2'] {
+			block-size: rem(46);
+		}
+
+		&[rows='3'] {
+			block-size: rem(66);
+		}
+
+		&[rows='4'] {
+			block-size: rem(86);
+		}
+
+		&[rows='5'] {
+			block-size: rem(106);
+		}
+
 		&:focus {
 			color: inherit;
 		}
@@ -76,6 +96,9 @@
 	}
 
 	&-refine-button {
+		font-size: em(12);
+		block-size: em(28, 12);
+
 		--padding-inline: #{em(8)};
 	}
 

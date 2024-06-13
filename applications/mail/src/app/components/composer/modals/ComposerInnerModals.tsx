@@ -9,12 +9,12 @@ import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
 import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
+import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerInnerModal from './ComposerInnerModal';
 import ComposerInsertImageModal from './ComposerInsertImageModal';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerScheduleSendModal from './ComposerScheduleSendModal';
-import InnerModalAssistantSetting from './InnerModal/InnerModalAssistantSetting';
 
 interface Props {
     innerModal: ComposerInnerModalStates;
@@ -119,7 +119,7 @@ const ComposerInnerModals = ({
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.AssistantSettings && (
-                <InnerModalAssistantSetting onClose={handleCloseInnerModal} />
+                <ComposerAssistantSettingModal onClose={handleCloseInnerModal} />
             )}
         </>
     );

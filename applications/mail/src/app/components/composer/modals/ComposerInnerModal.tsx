@@ -21,6 +21,7 @@ interface Props {
     submit?: ReactNode;
     submitActions?: ReactNode;
     displayCancel?: boolean;
+    displayCloseButton?: boolean;
 }
 
 const ComposerInnerModal = ({
@@ -32,6 +33,7 @@ const ComposerInnerModal = ({
     submit,
     submitActions,
     displayCancel = true,
+    displayCloseButton = false,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -57,7 +59,7 @@ const ComposerInnerModal = ({
             {...rest}
         >
             <div className="inner-modal">
-                <InnerModalHeader modalTitleID="" noEllipsis hasClose={false} onClose={onCancel}>
+                <InnerModalHeader modalTitleID="" noEllipsis hasClose={displayCloseButton} onClose={onCancel}>
                     {title}
                 </InnerModalHeader>
                 <InnerModalContent onSubmit={onSubmit} onReset={onCancel}>
