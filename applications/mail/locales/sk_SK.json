@@ -225,6 +225,9 @@
       "Close & discard": [
         "Zatvoriť a zahodiť"
       ],
+      "Close AI refine suggestion": [
+        "Zatvoriť návrh spresnenia od AI"
+      ],
       "Close composer": [
         "Zavrieť editor správy"
       ],
@@ -483,6 +486,9 @@
       "Forgot password?": [
         "Zabudnuté heslo?"
       ],
+      "Formalize": [
+        "Formalizovať"
+      ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
       ],
@@ -492,11 +498,17 @@
       "Get in touch": [
         "Skontaktovať sa"
       ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Dostanete ho len za ${ addonPriceWithCurrency } /mesiac"
+      ],
       "Get SimpleLogin extension": [
         "Získať rozšírenie SimpleLogin"
       ],
       "Get started": [
         "Začíname"
+      ],
+      "Get the writing assistant": [
+        "Získajte asistenta písania"
       ],
       "Get verification code": [
         "Odoslať overovací kód"
@@ -657,6 +669,9 @@
       "Loading${ ellipsis }": [
         "Načítava sa ${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Urobiť to priateľské"
+      ],
       "Manage folders": [
         "Spravovať priečinky"
       ],
@@ -719,6 +734,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Ďalšie spresnenie akcií"
       ],
       "More search options": [
         "Viac možností vyhľadávania"
@@ -1080,6 +1098,9 @@
       "Settings": [
         "Nastavenia"
       ],
+      "Share": [
+        "Zdieľať"
+      ],
       "Share via link": [
         "Zdieľať cez odkaz"
       ],
@@ -1148,6 +1169,12 @@
       ],
       "Stay": [
         "Zostať"
+      ],
+      "Stop downloading the writing assistant": [
+        "Zastaviť sťahovanie asistenta písania"
+      ],
+      "Stop generating result": [
+        "Zastaviť generovanie výsledku"
       ],
       "Strikethrough": [
         "Prečiarknúť"
@@ -1277,6 +1304,9 @@
       ],
       "Use recovery code": [
         "Použiť kód pre obnovenie"
+      ],
+      "Use this": [
+        "Použiť tento"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocou myši môžete zmeniť veľkosť zobrazenia. Ak používate klávesnicu, môžete na zmenu veľkosti použiť klávesy so šípkami vľavo a vpravo."
@@ -1499,11 +1529,29 @@
       "Browser not supported ": [
         "Prehliadač nie je podporovaný "
       ],
+      "Fast and secure": [
+        "Rýchlo a bezpečne"
+      ],
+      "Needs compatible hardware": [
+        "Vyžaduje kompatibilný hardvér"
+      ],
+      "No logs": [
+        "Žiadne záznamy"
+      ],
+      "Requires one-time download": [
+        "Vyžaduje jednorazové stiahnutie"
+      ],
+      "Run locally": [
+        "Funguje lokálne"
+      ],
       "Run on ${ BRAND_NAME } servers": [
         "Spustiť na ${ BRAND_NAME } serveroch"
       ],
       "Runs on all devices": [
         "Funguje na všetkých zariadeniach"
+      ],
+      "Runs on your device": [
+        "Funguje na vašom zariadení"
       ]
     },
     "Assistant options": {
@@ -2039,7 +2087,7 @@
         "Obnoviť predplatné"
       ],
       "Your subscription is ending soon": [
-        "Vaše preplatné čoskoro skončí"
+        "Vaše predplatné čoskoro skončí"
       ]
     },
     "Checkout row": {
@@ -3370,6 +3418,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metódu obnovenia, aby ste predišli strate prístupu k vášmu účtu."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Ak chcete naďalej používať asistenta písania, pridajte si ho k predplatnému."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Ak chcete naďalej používať asistenta písania, požiadajte správcu o prístup."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
@@ -3393,6 +3447,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
+      ],
+      "Use the writing assistant to:": [
+        "Pomocou asistenta písania môžete:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto emaily sme nenašli žiadne známe sledovače ani sledovacie URL adresy."
@@ -3474,7 +3531,7 @@
         "Prechádzam na inú službu"
       ],
       "Temporary need, may come back in the future": [
-        "Dočasná potreba, môže sa v budúcnosti vrátiť"
+        "Dočasné riešenie, možný návrat späť v budúcnosti"
       ],
       "The VPN is too slow": [
         "VPN je príliš pomalá"
@@ -3772,6 +3829,9 @@
       "Draft could not be saved. Try again.": [
         "Koncept sa nepodarilo uložiť, skúste to znova."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Z dôvodu chyby nebolo možné zrušiť generovanie textu"
+      ],
       "Email address disabled": [
         "Emailová adresa je deaktivovaná"
       ],
@@ -3819,6 +3879,9 @@
       ],
       "Forward address is required": [
         "Adresa preposielania je povinná"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "V tejto žiadosti nemôžem pokračovať z dôvodu mojich etických zásad. Skúste inú požiadavku, prosím."
       ],
       "Image upload failed": [
         "Nahrávanie obrázka zlyhalo"
@@ -3981,6 +4044,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primárny kľúč pre používateľov ${ BRAND_NAME } nie je možné použiť na odosielanie"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Problém so stiahnutím asistenta písania. Skúste to znova, prosím."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Problém s načítaním asistenta písania do zariadenia. Skúste to znova, prosím."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Problém s načítaním údajov, ktoré nie sú potrebné, keď je asistent zápisu neaktívny"
       ],
       "Process aborted": [
         "Proces prerušený"
@@ -5075,6 +5147,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Hardware not compatible": [
+        "Hardvér nie je kompatibilný"
+      ],
       "Resume downloading": [
         "Obnoviť sťahovanie"
       ],
@@ -5936,6 +6011,9 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Vymazanie dát prehliadača tiež deaktivuje vyhľadávanie obsahu správ v tomto zariadení. Pre vyhľadávanie vo všetkých správach bude nutné ich znovu stiahnuť."
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Vymaže údaje prehliadača (vrátane stiahnutých správ, ...)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -6341,6 +6419,9 @@
       "Left to Right": [
         "Zľava Doprava"
       ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Nechajte asistenta písania, aby vám pomáhal písať a odpovedať na emaily a sledujte, ako stúpa vaša produktivita."
+      ],
       "Link type": [
         "Typ odkazu"
       ],
@@ -6430,6 +6511,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Ďalšie spresnenie akcií"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
@@ -6628,6 +6712,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, ...)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlásenie tejto správy ako pokusu o phishing odošle túto správu Nám, aby sme ju mohli analyzovať a zlepšiť tým Naše filtre. To znamená, že uvidíme kompletne celý obsah tejto správy."
@@ -6877,6 +6964,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Táto pozvánka je uložená v zakázanom kalendári."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Tento dokument je určený ako pomôcka na písanie. Skontrolujte správnosť navrhovaného textu. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
@@ -7178,6 +7268,12 @@
       "Writing assistant": [
         "Asistent písania"
       ],
+      "Writing assistant add-on": [
+        "Doplnok asistenta písania"
+      ],
+      "writing assistant iframe": [
+        "iframe asistenta písania"
+      ],
       "Yearly": [
         "Ročne"
       ],
@@ -7339,6 +7435,9 @@
         "Vybrali ste **${ elementsCount } správy**.",
         "Vybrali ste **${ elementsCount } správ**.",
         "Vybrali ste **${ elementsCount } správ**."
+      ],
+      "You selected some content:": [
+        "Vybrali ste určitý obsah:"
       ],
       "You will lose access to Plus features on this date.": [
         "V tento deň stratíte prístup k funkciám Plus."
@@ -8239,6 +8338,9 @@
       "Type a command...": [
         "Zadajte príkaz…"
       ],
+      "Type a prompt to generate an output": [
+        "Napíšte podnet na vygenerovanie výstupu"
+      ],
       "Undisclosed Recipients": [
         "Skrytí príjemcovia"
       ],
@@ -8371,6 +8473,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "Špičková ochrana osobných údajov spoločnosti ${ BRAND_NAME }"
+      ],
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
@@ -9181,6 +9286,9 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Generovať emaily len pomocou podnetu"
+      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -9241,6 +9349,9 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
+      "Proofread and refine your texts": [
+        "Korigovať a zdokonaľovať svoje texty"
+      ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
         "Chráňte súčasne ${ n } zariadenia",
@@ -9249,6 +9360,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
+      ],
+      "Reply to messages": [
+        "Odpovedať na správy"
       ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
@@ -10117,6 +10231,9 @@
       "Hint": [
         "Pomocník"
       ],
+      "How do you want the selected text modified?": [
+        "Ako chcete upraviť vybraný text?"
+      ],
       "Image URL": [
         "URL adresa obrázku"
       ],
@@ -10146,6 +10263,9 @@
       ],
       "Please share what you expected": [
         "Zdieľajte vaše očakávania, prosím"
+      ],
+      "Refining your text...": [
+        "Spresňovanie vášho textu..."
       ],
       "Search date, name, email address, or subject line": [
         "Vyhľadávanie podľa dátumu, mena, emailovej adresy alebo predmetu správy"
@@ -10188,6 +10308,27 @@
       ],
       "Text": [
         "Text"
+      ],
+      "To": [
+        "Pre"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Skúste “Informuj o nadchádzajúcich podujatiach v informačnom bulletine”"
+      ],
+      "Try “Cancel my gym membership”": [
+        "Skúste “Zruš moje členstvo v posilňovni”"
+      ],
+      "Try “Invite Jane to my party”": [
+        "Skúste “Pozvi Jane na moju párty”"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "Skúste “Poďakuj môjmu kolegovi za pomoc s projektom”"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "Skúste “Napíš motivačný list na stáž”"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Skúste “Napíš následný email klientovi”"
       ],
       "Type a command…": [
         "Zadajte príkaz…"
@@ -10939,6 +11080,11 @@
         "Inovovať"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mesiac",
@@ -11340,7 +11486,7 @@
         "Pridávať žiadne nové súbory"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
+        "Po vypršaní vášho ${ planName } predplatného bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 5 GB Drive úložiska a maximálne 1 GB Mail úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
@@ -11445,10 +11591,10 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Na svojom ${ planName } pláne máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na svojom ${ planName } pláne máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
+        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš ${ BRAND_NAME } zmení na bezplatný plán. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink }"
