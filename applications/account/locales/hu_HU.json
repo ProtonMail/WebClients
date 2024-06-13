@@ -1149,6 +1149,11 @@
         "${ BRAND_NAME } alkalmazások"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /hónap"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Üres ICS fájl"
@@ -5713,6 +5718,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Adja meg a publikus kulcsát a barátainak vagy tegye közzé az interneten, hogy mindenki tudjon magának végpontok között titkosított email-t küldeni!"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
+      ],
       "here": [
         "ide"
       ],
@@ -5942,6 +5950,9 @@
       ],
       "Merged": [
         "Egyesítve"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
       ],
       "MM/YY": [
         "HH/ÉÉ"
@@ -6397,6 +6408,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ez eltarthat egy ideig. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
       ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
+      ],
       "This file is too large to preview": [
         "Ez a fájl túl nagy az előnézethez"
       ],
@@ -6717,6 +6731,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Ha előfizetnek a csomagra, krediteket fog kapni, amelyeket felhasználhat az előfizetéséhez."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
@@ -7429,6 +7446,12 @@
       ],
       "Auto-detect primary time zone": [
         "Az elsődleges időzóna automatikus detektálása"
+      ],
+      "Auto-load embedded images": [
+        "Beágyazott képek automatikus betöltése"
+      ],
+      "Auto-load remote content": [
+        "Távoli tartalom automatikus betöltése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
@@ -8398,6 +8421,9 @@
       ],
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
+      ],
+      "Users and addresses": [
+        "Felhasználók és címek"
       ],
       "View guide": [
         "Útmutató megtekintése"

@@ -179,7 +179,7 @@
         "Batal"
       ],
       "Cancel add-on": [
-        "Batalkan add-on"
+        "Batalkan pengaya"
       ],
       "Cancel subscription": [
         "Batalkan langganan"
@@ -1399,6 +1399,9 @@
       ]
     },
     "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /bulan"
+      ],
       "Active until ${ subscriptionRenewalDate }": [
         "Aktif hingga ${ subscriptionRenewalDate }"
       ],
@@ -1415,7 +1418,7 @@
         "Diperbarui secara otomatis pada ${ subscriptionRenewalDate }"
       ],
       "Cancel writing assistant add-on": [
-        "Batalkan add-on asisten penulisan"
+        "Batalkan pengaya asisten penulisan"
       ],
       "Customize plan": [
         "Sesuaikan paket"
@@ -3481,9 +3484,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Penyimpanan cloud terenkripsi untuk seluruh berkas Anda"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Layanan penyimpanan cloud dan file-sharing aman yang melindungi data Anda"
       ]
     },
     "Duration": {
@@ -7780,7 +7780,7 @@
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
       "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Add-on asisten penulisan **tidak akan diperbarui**. Anda akan dapat tetap menikmati layanan ini hingga **${ subscriptionRenewalDate }.**"
+        "Pengaya asisten penulisan **tidak akan diperbarui**. Anda akan dapat tetap menikmati layanan ini hingga **${ subscriptionRenewalDate }.**"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
@@ -9058,6 +9058,12 @@
       ],
       "Auto-detect primary time zone": [
         "Deteksi zona waktu utama secara otomatis"
+      ],
+      "Auto-load embedded images": [
+        "Muat gambar yang tersemat secara otomatis"
+      ],
+      "Auto-load remote content": [
+        "Muat remote content secara otomatis"
       ],
       "Auto-reply": [
         "Balasan otomatis"
@@ -14852,7 +14858,7 @@
         "Batalkan langganan?"
       ],
       "Cancel the writing assistant add-on?": [
-        "Batalkan add-on asisten penulisan?"
+        "Batalkan pengaya asisten penulisan?"
       ],
       "Card verification": [
         "Verifikasi kartu"
