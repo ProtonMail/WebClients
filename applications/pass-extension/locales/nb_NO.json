@@ -26,6 +26,9 @@
       "Add new item": [
         "Legg til nytt element"
       ],
+      "Add username field": [
+        "Legg til brukernavnfelt"
+      ],
       "Advanced": [
         "Avansert"
       ],
@@ -1741,6 +1744,9 @@
       "Download logs": [
         "Last ned logger"
       ],
+      "Email": [
+        "E-post"
+      ],
       "Email aliases": [
         "E-postaliaser"
       ],
@@ -2028,12 +2034,6 @@
       ],
       "Username": [
         "Brukernavn"
-      ],
-      "Username (alias)": [
-        "Brukernavn (alias)"
-      ],
-      "Username (new alias)": [
-        "Brukernavn (nytt alias)"
       ],
       "Vault ID": [
         "Hvelv ID"
@@ -2408,6 +2408,9 @@
     "Validation": {
       "Duplicated URL": [
         "Duplisert nettadresse"
+      ],
+      "Email address is invalid": [
+        "E-postadresse er ugyldig"
       ],
       "Field name is required": [
         "Feltnavn er obligatorisk"

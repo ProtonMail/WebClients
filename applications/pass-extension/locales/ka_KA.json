@@ -26,6 +26,9 @@
       "Add new item": [
         "ახალი ელემენტის დამატება"
       ],
+      "Add username field": [
+        "მომხმარებლის სახელის ველის დამატება"
+      ],
       "Advanced": [
         "დამატებით"
       ],
@@ -88,6 +91,9 @@
       ],
       "Continue": [
         "გაგრძელება"
+      ],
+      "Continue offline": [
+        "გაგრძელება ქსელის გარეშე"
       ],
       "Continue without pinning": [
         "მიმაგრების გარეშე გაგრძელება"
@@ -729,6 +735,9 @@
       "Moving item failed": [
         "ელემენტის გადატანის შეცდომა"
       ],
+      "Network error": [
+        "ქსელის შეცდომა"
+      ],
       "Passphrase is incorrect": [
         "საკვანძო ფრაზა არასწორია"
       ],
@@ -986,6 +995,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
+      ],
+      "Auto-lock successfully disabled.": [
+        "ავტომატური დაბლოკვა წარმატებით გამოირთო."
       ],
       "Autosaved on ${ payload.domain }": [
         "ავტომატურად შენახულია ბმულზე ${ payload.domain }"
@@ -1657,6 +1669,9 @@
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
+      "Email": [
+        "ელფოსტა"
+      ],
       "Email aliases": [
         "ელფოსტის ფსევდონიმები"
       ],
@@ -1834,6 +1849,9 @@
       "PIN": [
         "PIN-კოდი"
       ],
+      "PIN code": [
+        "PIN კოდი"
+      ],
       "Prefix": [
         "პრეფიქსი"
       ],
@@ -1941,12 +1959,6 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ],
-      "Username (alias)": [
-        "მომხმარებლის სახელი (ფსევდონიმი)"
-      ],
-      "Username (new alias)": [
-        "მომხმარებლის სახელი (ახალი ფსევდონიმი)"
       ],
       "Vault ID": [
         "საცავის ID"
@@ -2318,6 +2330,9 @@
     "Validation": {
       "Duplicated URL": [
         "დუბლირებული URL"
+      ],
+      "Email address is invalid": [
+        "ელფოსტის მისამართი არასწორია"
       ],
       "Field name is required": [
         "ველის სახელი აუცილებელია"

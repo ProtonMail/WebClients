@@ -26,6 +26,9 @@
       "Add new item": [
         "Aggiungi elemento"
       ],
+      "Add username field": [
+        "Aggiungi il campo nome utente"
+      ],
       "Advanced": [
         "Avanzate"
       ],
@@ -978,6 +981,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accedi alle tue password in movimento grazie alle nostre applicazioni mobili."
       ],
+      "Add a username field": [
+        "Aggiungi il campo nome utente"
+      ],
       "Admin": [
         "Amministratore"
       ],
@@ -1037,6 +1043,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Scegli una passkey salvata per accedere a ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Clicca qui per aggiungere un campo per il nome utente."
       ],
       "Click the icon to open it anytime.": [
         "Clicca sull'icona per aprirlo in qualsiasi momento."
@@ -1741,6 +1750,15 @@
       "Download logs": [
         "Scarica i log"
       ],
+      "Email": [
+        "Email"
+      ],
+      "Email (alias)": [
+        "Email (alias)"
+      ],
+      "Email (new alias)": [
+        "Email (nuovo alias)"
+      ],
       "Email aliases": [
         "Alias email"
       ],
@@ -2029,11 +2047,8 @@
       "Username": [
         "Nome utente"
       ],
-      "Username (alias)": [
-        "Nome utente (alias)"
-      ],
-      "Username (new alias)": [
-        "Nome utente (nuovo alias)"
+      "Username/email": [
+        "Nome utente/email"
       ],
       "Vault ID": [
         "ID cassaforte"
@@ -2144,11 +2159,17 @@
       "Enter a prefix": [
         "Aggiungi un prefisso"
       ],
+      "Enter email": [
+        "Inserisci l'email"
+      ],
       "Enter email or username": [
         "Inserisci email o nome utente"
       ],
       "Enter password": [
         "Inserisci la password"
+      ],
+      "Enter username": [
+        "Inserisci il nome utente"
       ],
       "Full Name": [
         "Nome completo"
@@ -2408,6 +2429,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL duplicato"
+      ],
+      "Email address is invalid": [
+        "Indirizzo email non valido"
       ],
       "Field name is required": [
         "Il nome campo è obbligatorio"

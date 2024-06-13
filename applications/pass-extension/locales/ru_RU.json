@@ -26,6 +26,9 @@
       "Add new item": [
         "Добавить новый элемент"
       ],
+      "Add username field": [
+        "Добавить поле имени пользователя"
+      ],
       "Advanced": [
         "Продвинутые"
       ],
@@ -921,6 +924,9 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Автоблокировка успешно отключена."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Автосохранено ${ payload.domain }"
       ],
@@ -1550,6 +1556,9 @@
       "Download logs": [
         "Скачать журналы"
       ],
+      "Email": [
+        "Электронная почта"
+      ],
       "Email aliases": [
         "Псевдонимы электронной почты"
       ],
@@ -1807,12 +1816,6 @@
       ],
       "Username": [
         "Имя пользователя"
-      ],
-      "Username (alias)": [
-        "Имя пользователя (псевдоним)"
-      ],
-      "Username (new alias)": [
-        "Имя пользователя (новый псевдоним)"
       ],
       "Vault ID": [
         "ID хранилища"
@@ -2179,6 +2182,9 @@
     "Validation": {
       "Duplicated URL": [
         "Дублированный URL"
+      ],
+      "Email address is invalid": [
+        "Недействительный адрес эл. почты"
       ],
       "Field name is required": [
         "Имя поля является обязательным"
