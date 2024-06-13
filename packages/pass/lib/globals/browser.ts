@@ -4,7 +4,7 @@
  * could cause unexpected behavior or security issues. By hiding these globals,
  * we ensure that the extension's messaging system is only accessed through the
  * provided APIs, and not directly through the devtools console or other means */
-import browser from 'webextension-polyfill';
+import browser, { type Browser } from 'webextension-polyfill';
 
 import { logger } from '@proton/pass/utils/logger';
 
@@ -24,33 +24,33 @@ export const disableBrowserProxyTrap = () => (context.allowProxy = false);
  * wrap the proxy initialization in a setTimeout function, which
  * delays the initialization until the next tick after our apps load.
  * ⚠️ Make sure Sentry is always initialized on app boot. */
-export default (() => {
+export default ((): Browser => {
+    if (BUILD_TARGET === 'safari') return self.browser;
+
     const polyfill = browser;
 
-    if (BUILD_TARGET !== 'safari') {
-        setTimeout(
-            () =>
-                context.allowProxy &&
-                Object.entries(context.globals)
-                    .filter(([, value]) => value)
-                    .forEach(([key, value]) => {
-                        self[key] = new Proxy(value, {
-                            get(target, prop, receiver) {
-                                if (process.env.NODE_ENV !== 'development') {
-                                    return logger.error(`[Extension::Error] extension API is protected`);
-                                }
+    setTimeout(
+        () =>
+            context.allowProxy &&
+            Object.entries(context.globals)
+                .filter(([, value]) => value)
+                .forEach(([key, value]) => {
+                    self[key] = new Proxy(value, {
+                        get(target, prop, receiver) {
+                            if (process.env.NODE_ENV !== 'development') {
+                                return logger.error(`[Extension::Error] extension API is protected`);
+                            }
 
-                                return Reflect.get(target, prop, receiver);
-                            },
-                            set() {
-                                logger.error(`[Extension::Error] extension API is read-only`);
-                                return false;
-                            },
-                        });
-                    }),
-            0
-        );
-    }
+                            return Reflect.get(target, prop, receiver);
+                        },
+                        set() {
+                            logger.error(`[Extension::Error] extension API is read-only`);
+                            return false;
+                        },
+                    });
+                }),
+        0
+    );
 
     return polyfill;
 })();
