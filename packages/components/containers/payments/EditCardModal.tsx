@@ -9,6 +9,7 @@ import {
     Autopay,
     PAYMENT_METHOD_TYPES,
     isV5PaymentToken,
+    onSessionMigrationPaymentsVersion,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
@@ -23,7 +24,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
@@ -47,6 +48,7 @@ const EditCardModal = ({
 }: Props) => {
     const api = useApi();
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
     const { call } = useEventManager();
     const [processing, withProcessing] = useLoading();
@@ -173,9 +175,13 @@ const EditCardModal = ({
                         void withProcessing(async () => {
                             try {
                                 await api(
-                                    updatePaymentMethod(paymentMethodId, {
-                                        Autopay: result,
-                                    })
+                                    updatePaymentMethod(
+                                        paymentMethodId,
+                                        {
+                                            Autopay: result,
+                                        },
+                                        onSessionMigrationPaymentsVersion(user, subscription)
+                                    )
                                 );
 
                                 await call().catch(noop);

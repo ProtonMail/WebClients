@@ -6,7 +6,7 @@ import { Button, ButtonLike, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
@@ -70,6 +70,7 @@ const CreditsModal = (props: ModalProps) => {
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
         currency,
+        chargebeeEnabled: onSessionMigrationChargebeeStatus(user, subscription),
         onChargeable: (operations) => {
             const run = async () => {
                 await operations.buyCredit();

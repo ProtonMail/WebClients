@@ -237,9 +237,12 @@ describe('SubscriptionsSection', () => {
         });
         getByText('Reactivate').click();
         expect(apiMock).toHaveBeenCalledWith(
-            changeRenewState({
-                RenewalState: Renew.Enabled,
-            })
+            changeRenewState(
+                {
+                    RenewalState: Renew.Enabled,
+                },
+                'v5'
+            )
         );
     });
 });
