@@ -5689,6 +5689,9 @@
       "Import to:": [
         "Importar a:"
       ],
+      "Include message and file name in invite email": [
+        "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
       "Keep both": [
         "Mantener ambos"
       ],
@@ -6719,7 +6722,7 @@
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
       "Generate emails with only a prompt": [
-        "Generar correos electrónicos solo con una indicación"
+        "Generar correos electrónicos con un solo prompt"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -6780,7 +6783,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Proofread and refine your texts": [
-        "Corregir y perfeccionar sus textos"
+        "Revisar y perfeccionar sus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
@@ -7585,7 +7588,7 @@
         "¡Comience a usar ${ DRIVE_APP_NAME } y mejoraremos el almacenamiento a 5 GB!"
       ],
       "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Invite a otras personas a través de correo electrónico para que vean y editen sus archivos, o cree un enlace público para un rápido acceso."
+        "Invite a otras personas a través de correo electrónico para que vean y editen sus archivos o cree un enlace público para un rápido acceso."
       ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
@@ -7797,6 +7800,9 @@
       ],
       "Last name": [
         "Apellido"
+      ],
+      "Message": [
+        "Mensaje"
       ],
       "Name": [
         "Nombre"
@@ -9782,6 +9788,9 @@
       ],
       "Load image": [
         "Cargar imagen"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
