@@ -25,6 +25,7 @@ interface Arguments {
     showThemeSelection: boolean;
     isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
+    canDisplayB2BLogsPass: boolean;
 }
 
 export const getRoutes = ({
@@ -41,6 +42,7 @@ export const getRoutes = ({
     showThemeSelection,
     isNewCancellationFlowExtended,
     assistantKillSwitch,
+    canDisplayB2BLogsPass,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -67,7 +69,7 @@ export const getRoutes = ({
         calendar: getCalendarAppRoutes({ app }),
         drive: getDriveAppRoutes({ app }),
         docs: getDocsAppRoutes(),
-        pass: getPassAppRoutes({ app }),
+        pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass }),
         organization: getOrganizationAppRoutes({
             app,
             user,

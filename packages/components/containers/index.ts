@@ -68,3 +68,4 @@ export * from './unleash';
 export * from './verification';
 export * from './vpn';
 export * from './credentialLeak';
+export * from './b2bDashboard';
