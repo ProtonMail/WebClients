@@ -488,6 +488,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "Share": [
+        "Sdílet"
+      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -3744,7 +3747,7 @@
         "Heslo bylo zkopírováno do schránky"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
-        "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } nebo více znaků"
+        "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } znaků."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -5144,7 +5147,7 @@
         "PayPal bez platební karty"
       ],
       "perform a password reset from your active session": [
-        "resetovat heslo z Vašeho aktuálního přihlášení"
+        "resetujte heslo z vaší aktuální relace"
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
@@ -7877,7 +7880,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Pro ${ totalPrice }"
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
