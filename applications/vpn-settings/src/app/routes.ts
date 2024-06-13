@@ -17,7 +17,7 @@ interface Arguments {
 export const getRoutes = ({ user, subscription, organization, isNewCancellationFlowExtended }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
-    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription);
+    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
     const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
