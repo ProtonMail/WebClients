@@ -40,8 +40,3 @@ export const notIn =
     <T extends any>(haystack: T[]) =>
     (item: T): boolean =>
         !haystack.includes(item);
-
-export const everyIn =
-    <T extends any>(haystack: T[]) =>
-    (items: T[]) =>
-        items.every((h) => haystack.includes(h));
