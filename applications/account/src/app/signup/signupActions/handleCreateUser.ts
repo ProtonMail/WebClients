@@ -16,6 +16,7 @@ import {
     HumanVerificationTrigger,
     SignupActionResponse,
     SignupCacheResult,
+    SignupInviteParameters,
     SignupSteps,
     SignupType,
 } from '../interfaces';
@@ -44,10 +45,12 @@ export const handleCreateUser = async ({
     cache,
     api,
     mode,
+    invite,
 }: {
     cache: SignupCacheResult;
     api: Api;
     mode?: 'cro' | 'ov';
+    invite?: SignupInviteParameters;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
@@ -163,6 +166,13 @@ export const handleCreateUser = async ({
                             Type: clientType,
                             Email: email,
                             Payload: payload,
+                            ...(() => {
+                                if (invite?.type === 'drive') {
+                                    return {
+                                        TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken,
+                                    };
+                                }
+                            })(),
                             ...(() => {
                                 if (mode === 'cro' && paymentToken) {
                                     return {
