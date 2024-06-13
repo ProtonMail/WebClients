@@ -37,6 +37,9 @@
       "Add new item": [
         "Lisää uusi kohde"
       ],
+      "Add username field": [
+        "Lisää käyttäjätunnus-kenttä"
+      ],
       "Admin panel": [
         "Hallintapaneeli"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Jatka"
+      ],
+      "Continue offline": [
+        "Jatka yhteydettömässä tilassa"
       ],
       "Copy and close": [
         "Kopioi ja sulje"
@@ -743,6 +749,9 @@
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
       ],
+      "Network error": [
+        "Verkkovirhe"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Yhteydetön tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
       ],
@@ -802,6 +811,9 @@
       ],
       "Unknown invite": [
         "Tuntematon kutsu"
+      ],
+      "Unlock failure": [
+        "Lukituksen avaamisen epäonnistui"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -1019,6 +1031,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automaattilukitus poistettiin käytöstä."
+      ],
       "Breaches detected": [
         "Tietovuotoja havaittiin"
       ],
@@ -1067,6 +1082,15 @@
       "Didn't receive the code?": [
         "Etkö saanut koodia?"
       ],
+      "Disabling auto-lock": [
+        "Poistetaan automaattilukitusta käytöstä"
+      ],
+      "Disabling auto-lock failed": [
+        "Automaattilukituksen poistaminen käytöstä epäonnistui"
+      ],
+      "Disabling offline mode...": [
+        "Yhteydetöntä tilaa poistetaan käytöstä..."
+      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -1093,6 +1117,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Ota ${ PASS_SHORT_APP_NAME } -betaversio käyttöön"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Ota automaattilukitus käyttöön tietojesi suojaamiseksi"
+      ],
+      "Enabling offline mode...": [
+        "Yhteydetöntä tilaa otetaan käyttöön..."
+      ],
+      "Enabling password auto-lock": [
+        "Salasanallista automaattilukitusta otetaan käyttöön"
+      ],
+      "Enabling password lock failed": [
+        "Salasanalukituksen käyttöönotto epäonnistui"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN-koodillista automaattilukitusta otetaan käyttöön"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -1283,6 +1322,9 @@
       "Offline mode": [
         "Yhteydetön tila"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Yhteydetöntä tilaa ei voi poistaa käytöstä tällä hetkellä"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Yhteydetöntä tilaa ei voitu nyt ottaa käyttöön"
       ],
@@ -1320,6 +1362,9 @@
       "Please check your spam folder or try resending the code.": [
         "Tarkasta roskapostikansiosi tai kokeile koodin uudelleenlähetystä."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Vahvista ${ BRAND_NAME } -salasanasi"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
       ],
@@ -1349,6 +1394,12 @@
       ],
       "Reconnect": [
         "Uudelleenyhdistä"
+      ],
+      "Reconnecting": [
+        "Yhdistetään uudelleen"
+      ],
+      "Registering PIN lock failed": [
+        "PIN-lukituksen rekisteröinti epäonnistui"
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1873,6 +1924,9 @@
       "PIN": [
         "PIN-koodi"
       ],
+      "PIN code": [
+        "PIN-koodi"
+      ],
       "Prefix": [
         "Etuliite"
       ],
@@ -1974,12 +2028,6 @@
       ],
       "Username": [
         "Käyttäjätunnus"
-      ],
-      "Username (alias)": [
-        "Käyttäjätunnus (alias)"
-      ],
-      "Username (new alias)": [
-        "Käyttäjätunnus (uusi alias)"
       ],
       "Vault ID": [
         "Holvin ID"
@@ -2475,6 +2523,9 @@
       "Duplicated URL": [
         "Kahdennettu URL"
       ],
+      "Email address is invalid": [
+        "Sähköpostiosoite on virheellinen"
+      ],
       "Field name is required": [
         "Kentän nimi vaaditaan"
       ],
@@ -2615,6 +2666,9 @@
       ],
       "Title is required": [
         "Otsikko vaaditaan"
+      ],
+      "Too many attempts": [
+        "Liian monta yritystä"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Siirretäänkö holvin omistajuus tunnukselle ${ email }?"
