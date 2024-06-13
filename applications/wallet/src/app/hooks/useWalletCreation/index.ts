@@ -17,9 +17,9 @@ import useLoading from '@proton/hooks/useLoading';
 import { WalletType, encryptWalletData, useWalletApiClients, walletCreation } from '@proton/wallet';
 
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
-import { DEFAULT_CURRENCY } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies, useWalletDispatch } from '../../store/hooks';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { isUndefined } from '../../utils';
 import { getDefaultWalletName } from '../../utils/wallet';
 
@@ -57,6 +57,7 @@ interface Props {
 
 export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const history = useHistory();
+    const [userWalletSettings] = useUserWalletSettings();
 
     const [addresses] = useAddresses();
 
@@ -71,7 +72,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const [walletName, setWalletName] = useState<string>('');
 
     const [currencies, loadingCurrencies] = useFiatCurrencies();
-    const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol>(DEFAULT_CURRENCY);
+    const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol>();
 
     const [userKeys] = useUserKeys();
 
@@ -107,7 +108,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         isImported?: boolean;
     }) => {
         // Typeguard
-        if (!userKeys || isUndefined(network)) {
+        if (!userKeys || isUndefined(network) || !selectedCurrency) {
             return;
         }
 
@@ -201,6 +202,12 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });
             });
     };
+
+    useEffect(() => {
+        if (userWalletSettings?.FiatCurrency && !selectedCurrency) {
+            setSelectedCurrency(userWalletSettings.FiatCurrency);
+        }
+    }, [selectedCurrency, userWalletSettings?.FiatCurrency]);
 
     return {
         currencies,
