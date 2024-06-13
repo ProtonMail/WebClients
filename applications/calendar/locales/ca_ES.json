@@ -1310,13 +1310,13 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Reactivi abans de ${ formattedEndDate } per mantenir aquestes funcions:"
+        "Reactiveu abans de ${ formattedEndDate } per a mantenir aquestes característiques:"
       ],
       "Reactivate subscription": [
         "Reactiva la subscripció"
       ],
       "Your subscription is ending soon": [
-        "La seva subscripció finalitzarà aviat"
+        "La subscripció finalitzarà aviat"
       ]
     },
     "Checkout row": {
@@ -2390,7 +2390,7 @@
         "Se'n desconeix la disponibilitat"
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organitzeu millor el dia, feu un seguiment del vostre temps, i prioritzeu tasques. Codifiqueu amb colors el vostre calendari amb colors d'esdeveniment personalitzats."
+        "Organitzeu millor el dia, feu un seguiment del vostre temps i prioritzeu tasques. Codifiqueu el vostre calendari amb colors d'esdeveniment personalitzats."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
@@ -5158,7 +5158,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistent amb intel·ligència artificial per ajudar-lo a crear millors correus electrònics, de manera ràpida i sense esforç."
+        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -5740,7 +5740,7 @@
         "Demana una invitació"
       ],
       "stay safer online": [
-        "estigueu més segur en línia"
+        "millorar la vostra seguretat en línia"
       ],
       "What’s this?": [
         "Què és això?"
@@ -6593,7 +6593,7 @@
         "Totes les aplicacions de ${ BRAND_NAME } i les seves característiques prèmium"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Totes les aplicacions empresarials i funcions prèmium de ${ BRAND_NAME } per protegir tota la seva empresa."
+        "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
@@ -6608,7 +6608,7 @@
         "Per començar, correu electrònic i calendari xifrats."
       ],
       "Enhanced security and premium features for teams.": [
-        "Millora de la seguretat i característiques prèmium per als equips."
+        "Seguretat millorada i característiques prèmium per als equips."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Protecció essencial i col·laboració segura per a usuaris il·limitats."
@@ -6746,7 +6746,7 @@
         "El suport IMAP es limita a l'ús d'aplicacions d'escriptori (p. ex., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Actualment, no s'admeten les integracions IMAP basades en el núvol."
       ],
       "Increase or reallocate storage for a user": [
-        "Augmenti o reassigni l'emmagatzematge per a un usuari"
+        "Augmenteu o reassigneu l'emmagatzematge per a un usuari"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Manteniu els vostres plans en privat amb la vostra família amb un calendari xifrat."
@@ -6827,7 +6827,7 @@
         "Emmagatzemeu amb seguretat els detalls dels vostres contactes, com el número de telèfon, l'adreça, l'aniversari i les notes personals. El xifratge d'accés zero assegura que fins i tot ${ BRAND_NAME } no hi pugui accedir."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Consulti la disponibilitat dels participants en la reunió i estalviï temps a les reunions de planificació"
+        "Consulteu la disponibilitat dels participants en les reunions i estalvieu temps programant-les."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envieu correus electrònics a grups grans de manera ràpida i fàcil creant tants grups de contactes com necessiteu (fins a 100 contactes per grup)"
@@ -6854,7 +6854,7 @@
         "Suport per a protocols de compartició fitxers com BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Carregui el logotip de la seva empresa per personalitzar l'experiència dels seus equips a les aplicacions web ${ BRAND_NAME }"
+        "Carregueu el logo de la vostra empresa per personalitzar l'experiència dels vostres equips a les aplicacions web de ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilitzeu les vostres pròpies adreces de domini de correu electrònic personalitzat, p. ex., vos@elvostrenom.com"
@@ -7946,6 +7946,11 @@
         "Millora"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Millora"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -8051,7 +8056,7 @@
     },
     "Spotlight": {
       "Color-code your calendar to better organize your day, track your time, and more.": [
-        "Codifiqueu amb colors el vostre calendari per a organitzar millor el dia, fer un seguiment del vostre temps, i més."
+        "Codifiqueu amb colors el vostre calendari per a organitzar millor el dia, fer un seguiment del vostre temps, etc."
       ],
       "Custom event colors": [
         "Colors d'esdeveniments personalitzats"
@@ -8289,7 +8294,7 @@
         "Afegiu fitxers nous"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Un cop caduqui la seva subscripció a ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
+        "Un cop caduqui la vostra subscripció a ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Un cop caduqui la vostra subscripció a ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -8382,19 +8387,19 @@
         "A què renuncieu en cancel·lar ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Quan cancel·li ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
+        "Quan cancel·leu ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Quan cancel·li ${ planName }, passarà a la categoria ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de Mail. També perdrà les bonificacions d'emmagatzematge concedides anteriorment."
+        "Quan cancel·leu ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "Yearly free storage bonuses": [
         "Bonificacions anuals d'emmagatzematge gratuïtes"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Encara li queden ${ expiryDate } a la seva subscripció a ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo. ${ learnMoreLink } ${ unavailablePlan }"
+        "Encara us queden ${ expiryDate } a la vostra subscripció de ${ planName }. Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }. Assegureu-vos que no supereu els límits del pla gratuït abans de cancel·lar-la. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Encara té ${ expiryDate } a la seva subscripció ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo. ${ learnMoreLink }"
+        "Encara teniu ${ expiryDate } a la vostra subscripció ${ planName }. Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }. Assegureu-vos que no supereu els límits del pla gratuït abans de cancel·lar-la. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink }"
