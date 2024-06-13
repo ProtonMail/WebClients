@@ -4,6 +4,7 @@ import { getInvoice } from '@proton/shared/lib/api/payments';
 
 import { useApi } from '../../hooks';
 import { FilePreview, NavigationControl } from '../filePreview';
+import { getInvoicePaymentsVersion } from './helpers';
 import { Invoice } from './interface';
 
 export interface InvoicesPreviewControls {
@@ -32,7 +33,7 @@ const InvoicesPreview = (
 
     const handlePreview = async (invoice: Invoice) => {
         setPreviewing({ invoice });
-        const buffer = await api<Uint8Array>(getInvoice(invoice.ID));
+        const buffer = await api<Uint8Array>(getInvoice(invoice.ID, getInvoicePaymentsVersion(invoice)));
         setPreviewing((previewing) => {
             // Preview can be closed or changed during download;
             if (previewing === undefined || previewing.invoice !== invoice) {

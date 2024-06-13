@@ -17,6 +17,7 @@ it('should render', () => {
         ModifyTime: 1707417619,
         AttemptTime: 0,
         Attempts: 0,
+        isExternal: false,
     };
 
     const { container } = render(<InvoiceType invoice={invoice} />);
@@ -35,6 +36,7 @@ it('should return Currency Conversion type', () => {
         ModifyTime: 1707417619,
         AttemptTime: 0,
         Attempts: 0,
+        isExternal: false,
     };
 
     render(<InvoiceType invoice={invoice} />);
@@ -55,6 +57,7 @@ it('should return "Credit" type', () => {
         ModifyTime: 1707417619,
         AttemptTime: 0,
         Attempts: 0,
+        isExternal: false,
     };
 
     render(<InvoiceType invoice={invoice} />);
@@ -76,6 +79,7 @@ it('should return "Credit note" type', () => {
         ModifyTime: 1707417619,
         AttemptTime: 0,
         Attempts: 0,
+        isExternal: false,
     };
 
     render(<InvoiceType invoice={invoice} />);
