@@ -120,8 +120,8 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
 
             if (isDocsEnabled && isProtonDocument(item.mimeType)) {
                 openDocument({
-                    linkId: id,
-                    shareId,
+                    linkId: item.id,
+                    shareId: item.rootShareId,
                 });
                 return;
             }
