@@ -14,6 +14,9 @@ export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 
 export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid';
 
+// Prevent multiple starts in case of multiple start calls
+let started = false;
+
 const useAssistantSubscriptionStatus = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
@@ -22,9 +25,9 @@ const useAssistantSubscriptionStatus = () => {
     const { sendFreeTrialStart } = useAssistantTelemetry();
     const nowDate = new Date();
 
-    const hasAiAssistantAddon = hasAIAssistant(subscription);
-    // B2B admins and sub users has AI without requiring a subscription
-    const userHasAI = organization && !!user.NumAI;
+    const hasAiAssistantAddon = user.isAdmin ? !!user.NumAI : hasAIAssistant(subscription);
+    // B2B sub users has AI without requiring a subscription
+    const userHasAI = organization && user.isSubUser && !!user.NumAI;
 
     const trialStartDateFeat = useFeature(FeatureCode.ComposerAssistantTrialStartDate);
     const trialStartDate =
@@ -51,7 +54,8 @@ const useAssistantSubscriptionStatus = () => {
     })();
 
     const start = async () => {
-        if (!trialStartDate && !hasAiAssistantAddon) {
+        if (!started && !trialStartDate && !hasAiAssistantAddon) {
+            started = true;
             await trialStartDateFeat.update(getUnixTime(new Date()));
             createNotification({
                 text: c('Notification').t`Trial started`,

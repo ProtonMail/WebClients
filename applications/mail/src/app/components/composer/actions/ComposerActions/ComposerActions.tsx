@@ -3,23 +3,15 @@ import { MutableRefObject, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    AssistantIncompatibleBrowserModal,
-    AssistantIncompatibleHardwareModal,
-    EditorMetadata,
-    FeatureCode,
-    Icon,
-    Tooltip,
-    useFeature,
-    useModalState,
-    useUserSettings,
-} from '@proton/components';
+import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature, useUserSettings } from '@proton/components';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { MessageState } from '../../../../store/messages/messagesTypes';
@@ -108,33 +100,28 @@ const ComposerActions = ({
 
     const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants } = useAssistant(composerID);
 
-    const [assistantIncompatibleHardwareProps, setAssistantIncompatibleHardwareModalOpen] = useModalState();
-    const [assistantIncompatibleBrowserProps, setAssistantIncompatibleBrowserModalOpen] = useModalState();
+    const { displayAssistantModal } = useComposerAssistantProvider();
 
     const isAssistantOpened = useMemo(() => {
         return getIsAssistantOpened(openedAssistants, composerID);
     }, [composerID, openedAssistants]);
 
     const handleToggleAssistant = () => {
-        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+        if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             if (!hasCompatibleHardware) {
-                setAssistantIncompatibleHardwareModalOpen(true);
+                displayAssistantModal('incompatibleHardware');
                 sendShowAssistantReport();
                 return;
             }
 
             if (!hasCompatibleBrowser) {
-                setAssistantIncompatibleBrowserModalOpen(true);
+                displayAssistantModal('incompatibleBrowser');
                 sendShowAssistantReport();
                 return;
             }
 
             // Start initializing the Assistant when opening it if able to
-            const shouldInitAssistant = !isAssistantOpened;
-
-            if (shouldInitAssistant) {
-                void initAssistant?.();
-            }
+            void initAssistant?.();
         }
 
         onToggleAssistant();
@@ -212,27 +199,33 @@ const ComposerActions = ({
                                 data-testid="composer:attachment-button"
                             />
                         </Tooltip>
-                        <span className="vr border-weak mx-1 sm:mx-2 hidden sm:flex" aria-hidden="true"></span>
                         {showAssistantButton && (
                             <>
-                                <Tooltip title={c('Action').t`Your email writing assistant`}>
-                                    <Button
-                                        icon
-                                        disabled={disabled || disableAssistant}
-                                        onClick={handleToggleAssistant}
-                                        shape="ghost"
-                                        data-testid="composer:use-assistant-button"
-                                        aria-expanded={isAssistantOpened}
-                                        className="hidden sm:flex"
-                                    >
-                                        <Icon
-                                            name="pen-sparks"
-                                            alt={c('Action').t`Your email writing assistant`}
-                                            style={{ color: '#D132EA' }}
-                                        />
-                                    </Button>
+                                <Tooltip
+                                    title={
+                                        disableAssistant
+                                            ? c('Info').t`You can open only one writing assistant at a time`
+                                            : c('Action').t`Your email writing assistant`
+                                    }
+                                >
+                                    <div>
+                                        <Button
+                                            icon
+                                            disabled={disabled || disableAssistant}
+                                            onClick={handleToggleAssistant}
+                                            shape="ghost"
+                                            data-testid="composer:use-assistant-button"
+                                            aria-expanded={isAssistantOpened}
+                                            className="hidden sm:flex sm:mx-2"
+                                        >
+                                            <Icon
+                                                name="pen-sparks"
+                                                alt={c('Action').t`Your email writing assistant`}
+                                                style={{ color: '#D132EA' }}
+                                            />
+                                        </Button>
+                                    </div>
                                 </Tooltip>
-                                <span className="vr border-weak mx-2 hidden sm:flex" aria-hidden="true"></span>
                             </>
                         )}
                         <ComposerMoreActions
@@ -251,8 +244,6 @@ const ComposerActions = ({
                     </div>
                 </div>
             </div>
-            <AssistantIncompatibleHardwareModal modalProps={assistantIncompatibleHardwareProps} />
-            <AssistantIncompatibleBrowserModal modalProps={assistantIncompatibleBrowserProps} />
         </footer>
     );
 };

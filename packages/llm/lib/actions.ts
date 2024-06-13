@@ -1,7 +1,12 @@
 import '@mlc-ai/web-llm';
 import { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
-import { IFRAME_COMMUNICATION_TIMEOUT } from './constants';
+import {
+    GENERAL_STOP_STRINGS,
+    IFRAME_COMMUNICATION_TIMEOUT,
+    STOP_STRINGS_REFINE,
+    STOP_STRINGS_WRITE_FULL_EMAIL,
+} from './constants';
 import { AppCaches, CacheId, getCachedFiles, storeInCache } from './downloader';
 import {
     isAssistantPostMessage,
@@ -29,7 +34,7 @@ import type {
 import { AssistantEvent } from './types';
 
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
-    "You're a harmless email generator.",
+    "You're a harmless email generator. The user asks you to write emails, and you write emails that they can send.",
     "You're given a list of toxic content categories as below:",
     '- illegal',
     '- child abuse: child sexual abuse material or any content that exploits or harms children.',
@@ -55,13 +60,13 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
         'You do not use emojis.',
         'There should be no subject, directly write the body of the message.',
         'You sign as "[Your Name]".',
+        'The user is asking you to write an email, not to answer his questions.',
         'Be mindful to direct the message to the recipient as indicated by the user.',
         'Who is the recipient? Write their name in the opening.',
     ].join(' '),
 ].join('\n');
 
-const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX =
-    'Turn the following sentence into a complete email, properly formatted:';
+const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX = 'Write an email, the content of which is about to ';
 
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
@@ -70,13 +75,27 @@ const INSTRUCTIONS_SHORTEN = [
     'Only summarize the part below and do not add anything else.',
 ].join(' ');
 
-const INSTRUCTIONS_REFINE = [
-    'The user wants you to modify a part of the email identified by the span tags (class "to-modify").',
-    'You write a revised version of this part of the email, under a span tag with class "modified".',
+const INSTRUCTIONS_REFINE_SPAN = [
+    'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
+    'You write a revised version of this part of the text, under a span tag with class "modified".',
+    "If the user's request is unethical or harmful, you do not replace the part to modify.",
+].join(' ');
+const INSTRUCTIONS_REFINE_DIV = [
+    'The user wants you to modify a part of the text identified by the div tags (class "to-modify").',
+    'You write a revised version of this part of the text, under a div tag with class "modified".',
+    'Write the rest of the email outside of the div tag.',
+    "If the user's request is unethical or harmful, you do not replace the part to modify.",
+].join(' ');
+const INSTRUCTIONS_REFINE_WHOLE = [
+    'The user wants you to modify the email.',
+    'You write a revised version of this email.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 
-let INSTRUCTIONS_REFINE_USER_PREFIX = 'In the span that has the class "modified", please do the following changes: ';
+let INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
+    'In the span that has the class "modified", please do the following changes: ';
+let INSTRUCTIONS_REFINE_USER_PREFIX_DIV = 'In the div that has the class "modified", please do the following changes: ';
+let INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes: ';
 
 const MODEL_VARIANT = 'Mistral-7B-Instruct-v0.2-q4f16_1';
 
@@ -109,12 +128,44 @@ export type TransformCallback = (rawResponse: string) => string | undefined;
 export type ServerAssistantInteraction = {
     rawLlmPrompt: string;
     transformCallback: TransformCallback;
+    stopStrings?: string[];
 };
+
+function convertToDoubleNewlines(input: string): string {
+    const lines = input.split('\n');
+
+    let paragraphs: string[][] = [];
+    let paragraph: string[] = [];
+
+    for (let line of lines) {
+        line = line.trim();
+        if (!line) {
+            paragraphs.push(paragraph);
+            paragraph = [];
+            continue;
+        }
+        const isListLine = /^(\d+[\.\)]|\-|\*|\•|[a-zA-Z][\.\)]) /.test(line);
+        if (!isListLine) {
+            paragraphs.push(paragraph);
+            paragraph = [];
+        }
+        paragraph.push(line);
+    }
+    if (paragraph) {
+        paragraphs.push(paragraph);
+    }
+
+    return paragraphs
+        .map((lines) => lines.join('\n'))
+        .join('\n\n')
+        .replace(/\n{3,}/g, '\n\n');
+}
 
 const genericCleanup: TransformCallback = (fulltext: string) => {
     let fulltext2 = fulltext;
     fulltext2 = removeStopStrings(fulltext2);
     fulltext2 = fulltext2.replaceAll(/<\/?[a-z][^>]*>/gi, '');
+    fulltext2 = convertToDoubleNewlines(fulltext2);
     fulltext2 = fulltext2.trim();
     fulltext2 = removePartialSubstringAtEnd(fulltext2, '</span>');
     return fulltext2.trimEnd();
@@ -204,7 +255,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
         },
         {
             role: 'user',
-            contents: `${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX}\n\n${action.prompt}`,
+            contents: `${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX} ${action.prompt}`,
         },
         {
             role: 'assistant',
@@ -213,30 +264,74 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
     ]);
 }
 
-function formatPromptCustomRefine(action: CustomRefineAction): string {
+type SelectionSplitInfo = {
+    pre: string;
+    mid: string;
+    end: string;
+    isParagraph: boolean;
+    isEntireEmail: boolean;
+};
+
+function splitSelection(action: CustomRefineAction): SelectionSplitInfo {
     const pre = action.fullEmail.slice(0, action.idxStart);
     const mid = action.fullEmail.slice(action.idxStart, action.idxEnd);
     const end = action.fullEmail.slice(action.idxEnd);
-    const fullEmail = `${pre}<span class="to-modify"> ${mid}</span>${end}`;
-    const newEmailStart = `${pre}<span class="modified">`;
-    const prompt = makePromptFromTurns([
+    const newlinesAtEndOfPre = pre.endsWith('\n\n') ? 2 : pre.endsWith('\n') ? 1 : 0;
+    const newlinesAtStartOfMid = mid.startsWith('\n\n') ? 2 : mid.startsWith('\n') ? 1 : 0;
+    const newlinesAtEndOfMid = mid.endsWith('\n\n') ? 2 : mid.endsWith('\n') ? 1 : 0;
+    const newlinesAtStartOfEnd = end.startsWith('\n\n') ? 2 : end.startsWith('\n') ? 1 : 0;
+    const newlinesBefore = newlinesAtEndOfPre + newlinesAtStartOfMid;
+    const newlinesAfter = newlinesAtEndOfMid + newlinesAtStartOfEnd;
+    const isParagraph = newlinesBefore >= 2 && newlinesAfter >= 2;
+    const isEntireEmail = pre.trim() === '' && end.trim() === '';
+    return { pre, mid, end, isParagraph, isEntireEmail };
+}
+
+function formatPromptCustomRefine(action: CustomRefineAction): string {
+    const { pre, mid, end, isParagraph, isEntireEmail } = splitSelection(action);
+
+    let oldEmail: string;
+    let system: string;
+    let user: string;
+    let newEmailStart: string;
+
+    if (isEntireEmail) {
+        oldEmail = mid.trim();
+        system = INSTRUCTIONS_REFINE_WHOLE;
+        user = `${INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE}${action.prompt}`;
+        newEmailStart = '';
+    } else if (isParagraph) {
+        oldEmail = `${pre.trim()}\n\n<div class="to-modify">\n${mid.trim()}\n</div>\n\n${end.trim()}`;
+        newEmailStart = `${pre.trim()}\n\n<div class="modified">\n`;
+        user = `${INSTRUCTIONS_REFINE_USER_PREFIX_DIV}${action.prompt}`;
+        system = INSTRUCTIONS_REFINE_DIV;
+    } else {
+        oldEmail = `${pre}<span class="to-modify"> ${mid}</span>${end}`;
+        newEmailStart = `${pre}<span class="modified">`;
+        user = `${INSTRUCTIONS_REFINE_USER_PREFIX_SPAN}${action.prompt}`;
+        system = INSTRUCTIONS_REFINE_SPAN;
+    }
+
+    const turns = [
         {
             role: 'email',
-            contents: fullEmail,
+            contents: oldEmail,
         },
         {
             role: 'system',
-            contents: INSTRUCTIONS_REFINE,
+            contents: system,
         },
         {
             role: 'user',
-            contents: `${INSTRUCTIONS_REFINE_USER_PREFIX}${action.prompt}`,
+            contents: user,
         },
         {
             role: 'email',
             contents: newEmailStart,
         },
-    ]);
+    ];
+
+    const prompt = makePromptFromTurns(turns);
     return prompt;
 }
 
@@ -496,7 +591,7 @@ export class GpuLlmManager implements LlmManager {
             const chatOpts: ChatOptions = {
                 conv_template: 'empty',
                 conv_config: {
-                    stop_str: ['</s>', '[INST]', '[/INST]'],
+                    stop_str: GENERAL_STOP_STRINGS,
                     stop_token_ids: [2],
                     role_empty_sep: ' ',
                 },
@@ -588,12 +683,24 @@ export function getTransformForAction(action: Action): TransformCallback {
     }
 }
 
+function getCustomStopStringsForAction(action: Action): string[] {
+    switch (action.type) {
+        case 'writeFullEmail':
+            return STOP_STRINGS_WRITE_FULL_EMAIL;
+        default:
+            return STOP_STRINGS_REFINE;
+    }
+}
+
 export function prepareServerAssistantInteraction(action: Action): ServerAssistantInteraction {
     const rawLlmPrompt = getPromptForAction(action);
     const transformCallback = getTransformForAction(action);
+    const customStopStrings = getCustomStopStringsForAction(action);
+    const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
 
     return {
         rawLlmPrompt,
         transformCallback,
+        stopStrings,
     };
 }

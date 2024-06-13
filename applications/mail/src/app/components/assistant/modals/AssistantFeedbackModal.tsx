@@ -113,8 +113,14 @@ const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
     return (
         <>
             <Tooltip title={c('Action').t`Report an issue`}>
-                <Button icon shape="ghost" disabled={disabled} onClick={() => feedbackModal.openModal(true)}>
-                    <Icon name="thumb-down" alt={c('Action').t`Report an issue`} />
+                <Button
+                    icon
+                    shape="ghost"
+                    style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
+                    disabled={disabled}
+                    onClick={() => feedbackModal.openModal(true)}
+                >
+                    <Icon name="thumb-down" size={6} alt={c('Action').t`Report an issue`} />
                 </Button>
             </Tooltip>
             <ModalTwo as="form" onSubmit={(e) => withLoading(handleSubmit(e))} {...feedbackModal.modalProps}>

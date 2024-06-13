@@ -3,27 +3,27 @@ import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 export const enum ASSISTANT_TYPE {
-    SERVER, // 0
-    LOCAL, // 1
+    SERVER = 'SERVER',
+    LOCAL = 'LOCAL',
 }
 
 export const enum GENERATION_TYPE {
-    WRITE_FULL_EMAIL, // 0
-    SHORTEN, // 1
-    PROOFREAD, // 2
-    EXPAND, // 3
-    FORMALIZE, // 4
-    FRIENDLY, // 5
-    CUSTOM_REFINE, // 6
+    WRITE_FULL_EMAIL = 'WRITE_FULL_EMAIL',
+    SHORTEN = 'SHORTEN',
+    PROOFREAD = 'PROOFREAD',
+    EXPAND = 'EXPAND',
+    FORMALIZE = 'FORMALIZE',
+    FRIENDLY = 'FRIENDLY',
+    CUSTOM_REFINE = 'CUSTOM_REFINE',
 }
 
 export const enum ERROR_TYPE {
-    GENERATION_HARMFUL, // 0
-    GENERATION_FAIL, // 1
-    LOADGPU_FAIL, // 2
-    DOWNLOAD_FAIL, // 3
-    UNLOAD_FAIL, // 4
-    GENERATION_CANCEL_FAIL, // 5
+    GENERATION_HARMFUL = 'GENERATION_HARMFUL',
+    GENERATION_FAIL = 'GENERATION_FAIL',
+    LOADGPU_FAIL = 'LOADGPU_FAIL',
+    DOWNLOAD_FAIL = 'DOWNLOAD_FAIL',
+    UNLOAD_FAIL = 'UNLOAD_FAIL',
+    GENERATION_CANCEL_FAIL = 'GENERATION_CANCEL_FAIL',
 }
 
 const useAssistantTelemetry = () => {
@@ -90,11 +90,13 @@ const useAssistantTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.request_assistant,
             values: {
-                assistant_type: assistantType,
-                generation_type: generationType,
                 ingestion_time: ingestionTime,
                 generation_time: generationTime,
                 tokens_generated: tokensGenerated,
+            },
+            dimensions: {
+                assistant_type: assistantType,
+                generation_type: generationType,
             },
         });
     };
@@ -110,7 +112,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.assistant_error,
-            values: {
+            dimensions: {
                 assistant_type: assistantType,
                 error_type: errorType,
             },

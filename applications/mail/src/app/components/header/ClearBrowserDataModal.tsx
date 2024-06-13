@@ -14,7 +14,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
     const { onClose } = rest;
     const { esDelete } = useEncryptedSearchContext();
 
-    const { openedAssistants, closeAssistant } = useAssistant();
+    const { openedAssistants, closeAssistant, resetAssistantState } = useAssistant();
     const [userSettings] = useUserSettings();
 
     const handleClear = () => {
@@ -27,6 +27,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
                         closeAssistant(id);
                     }
                 }
+                resetAssistantState();
             });
             void esDelete();
             onClose?.();

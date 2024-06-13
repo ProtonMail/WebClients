@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { ERROR_TYPE } from '../useAssistantTelemetry';
+
 export enum AssistantErrorTypes {
     globalError,
     specificError,
@@ -16,25 +18,36 @@ export interface AssistantSpecificError {
 
 export type AssistantError = (AssistantGlobalError | AssistantSpecificError) & {
     error: string;
+    errorType?: ERROR_TYPE;
 };
 
 const useAssistantErrors = () => {
     const [errors, setErrors] = useState<AssistantError[]>([]);
 
-    const addSpecificError = ({ assistantID, errorMessage }: { assistantID: string; errorMessage: string }) => {
+    const addSpecificError = ({
+        assistantID,
+        errorMessage,
+        errorType,
+    }: {
+        assistantID: string;
+        errorMessage: string;
+        errorType: ERROR_TYPE;
+    }) => {
         const newError: AssistantError = {
             type: AssistantErrorTypes.specificError,
             assistantID,
             error: errorMessage,
+            errorType,
         };
 
         setErrors([...errors, newError]);
     };
 
-    const addGlobalError = (errorMessage: string) => {
+    const addGlobalError = (errorMessage: string, errorType: ERROR_TYPE) => {
         const newError: AssistantError = {
             type: AssistantErrorTypes.globalError,
             error: errorMessage,
+            errorType,
         };
 
         setErrors([...errors, newError]);
