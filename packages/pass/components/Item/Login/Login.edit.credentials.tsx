@@ -46,7 +46,8 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
 
     const [usernameExpanded, setUsernameExpanded] = useState(false);
     const [showUsernameOnboarding, setShowUsernameOnboarding] = useState(false);
-    const showUsername = usernameExpanded || form.values.itemUsername.length > 0;
+    const [itemHasUsername, setItemHasUsername] = useState(false);
+    const showUsername = usernameExpanded || itemHasUsername;
 
     const { acknowledge } = useSpotlight();
 
@@ -65,6 +66,10 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     }, [usernameSplitEnabled]);
 
     useEffect(() => {
+        if (form.values.itemUsername.length > 0) {
+            setItemHasUsername(true);
+        }
+
         return () => {
             if (!isNew) return;
             searchParams.delete('email');
