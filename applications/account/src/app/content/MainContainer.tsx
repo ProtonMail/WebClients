@@ -133,6 +133,7 @@ const MainContainer = () => {
     const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
+    const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false);
@@ -165,6 +166,7 @@ const MainContainer = () => {
         showThemeSelection,
         isNewCancellationFlowExtended,
         assistantKillSwitch,
+        canDisplayB2BLogsPass,
     });
 
     useEffect(() => {
