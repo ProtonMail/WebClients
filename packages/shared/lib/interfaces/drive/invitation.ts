@@ -1,4 +1,5 @@
 import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '../../drive/constants';
+import { LinkType } from './link';
 
 interface InviteEmailDetailsPayload {
     Message?: string;
@@ -46,10 +47,16 @@ export interface ShareInvitationSharePayload {
 }
 
 export interface ShareInvitationLinkPayload {
-    Type: number;
+    Type: LinkType;
     LinkID: string;
     Name: string;
     MIMEType: string;
+}
+
+export interface ShareInvitationDetailsPayload {
+    Invitation: ShareInvitationPayload;
+    Share: ShareInvitationSharePayload;
+    Link: ShareInvitationLinkPayload;
 }
 
 export interface ShareInvitationListingPayload {
