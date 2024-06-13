@@ -1,4 +1,4 @@
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { VersionHistoryBatch } from './VersionHistoryBatch'
 import { Result } from '../Domain/Result/Result'
 import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'

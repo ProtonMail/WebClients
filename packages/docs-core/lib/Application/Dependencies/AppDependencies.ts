@@ -20,7 +20,6 @@ import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { GetCommitData } from '../../UseCase/GetCommitData'
-import { DebugSendCommitCommandToRTS } from '../../UseCase/SendCommitCommandToRTS'
 import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
 import { GenerateManifestSignature } from '../../UseCase/GenerateManifestSignature'
 import { EncryptionContext } from '../../Services/Encryption/EncryptionContext'
@@ -66,10 +65,6 @@ export class AppDependencies extends DependencyContainer {
       return new DecryptComment(
         this.get<EncryptionService<EncryptionContext.PersistentComment>>(App_TYPES.CommentsEncryptionService),
       )
-    })
-
-    this.bind(App_TYPES.SendCommitCommandToRTS, () => {
-      return new DebugSendCommitCommandToRTS()
     })
 
     this.bind(App_TYPES.DocsApi, () => {
@@ -177,7 +172,6 @@ export class AppDependencies extends DependencyContainer {
         this.get<CreateInitialCommit>(App_TYPES.CreateInitialCommit),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
         this.get<LoadCommit>(App_TYPES.LoadCommit),
-        this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<EncryptComment>(App_TYPES.EncryptComment),
         this.get<CreateComment>(App_TYPES.CreateComment),
         this.get<CreateThread>(App_TYPES.CreateThread),
@@ -195,7 +189,7 @@ export class AppDependencies extends DependencyContainer {
       return new WebsocketService(
         this.get<GetRealtimeUrlAndToken>(App_TYPES.CreateRealtimeValetToken),
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
-        this.get<DebugSendCommitCommandToRTS>(App_TYPES.SendCommitCommandToRTS),
+        this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
       )

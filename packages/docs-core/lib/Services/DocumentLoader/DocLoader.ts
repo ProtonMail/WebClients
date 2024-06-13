@@ -4,7 +4,6 @@ import { DocController } from '../../Controller/Document/DocController'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { InternalEventBusInterface, CommentServiceInterface } from '@proton/docs-shared'
 import { CommentsApi } from '../../Api/Comments/CommentsApi'
-import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
@@ -44,7 +43,6 @@ export class DocLoader implements DocLoaderInterface {
     private createInitialCommit: CreateInitialCommit,
     private loadDocument: LoadDocument,
     private loadCommit: LoadCommit,
-    private decryptMessage: DecryptMessage,
     private encryptComment: EncryptComment,
     private createComment: CreateComment,
     private createThread: CreateThread,
@@ -70,7 +68,6 @@ export class DocLoader implements DocLoaderInterface {
       this.createInitialCommit,
       this.loadDocument,
       this.loadCommit,
-      this.decryptMessage,
       this.duplicateDocument,
       this.createNewDocument,
       this.getDocumentMeta,

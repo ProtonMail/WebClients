@@ -4,7 +4,7 @@ import { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { VERIFICATION_STATUS } from '@proton/crypto'
-import { DecryptedMessage } from '../Models/DecryptedMessage'
+import { DecryptedMessage } from '@proton/docs-shared'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
