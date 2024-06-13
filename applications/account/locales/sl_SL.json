@@ -1381,6 +1381,14 @@
         "Aplikacije ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } na mesec"
+      ],
+      "Renew subscription": [
+        "Obnovite naročnino"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Prazna datoteka ICS"
@@ -3456,9 +3464,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Šifrirana shramba v oblaku za vse vaše datoteke"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Varna shramba v oblaku in delitev datotek, ki varuje vaše podatke"
       ]
     },
     "Duration": {
@@ -9431,6 +9436,9 @@
       "Disable animations": [
         "Onemogoči animacije"
       ],
+      "Disable sharing outside the organization.": [
+        "Onemogočite skupno rabo izven organizacije."
+      ],
       "Display name": [
         "Prikazno ime"
       ],
@@ -10317,6 +10325,9 @@
       ],
       "Upgrade your plan": [
         "Nadgradite trenutni paket"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
       ],
       "View guide": [
         "Ogled vodnika."

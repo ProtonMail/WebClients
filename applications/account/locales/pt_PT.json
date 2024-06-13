@@ -1336,6 +1336,11 @@
         "Aplicações ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /mês"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Arquivo ICS vazio"
@@ -6508,6 +6513,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dê a sua chave pública aos seus amigos, ou publique-a online para que todos lhe possam enviar e-mails encriptados de ponta a ponta."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Agrupe e-mails na mesma conversa na sua caixa de entrada ou veja-os separadamente."
+      ],
       "here": [
         "aqui"
       ],
@@ -6761,6 +6769,9 @@
       ],
       "Merged": [
         "Unido"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "As mensagens da pasta Enviado ou Rascunhos continuarão a aparecer nesta pasta, mesmo que as mova para outra pasta."
       ],
       "MM/YY": [
         "MM/AA"
@@ -7152,6 +7163,9 @@
       "Settings updated": [
         "As definições foram atualizadas."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
+      ],
       "Show original message": [
         "Mostrar mensagem original"
       ],
@@ -7308,6 +7322,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isto pode demorar algum tempo. Não feche esta página nem se desligue da internet."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Esta funcionalidade atrasa o envio do correio, dando-lhe a oportunidade de cancelar o envio durante o período de tempo selecionado."
       ],
       "This file is too large to preview": [
         "Este ficheiro é demasiado grande para pré-visualizar"
@@ -7668,6 +7685,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Quando eles subscreverem um plano, receberá créditos para utilizar na sua subscrição."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Quando clica numa ligação, a funcionalidade anti-phishing pede-lhe a confirmação do URL da página web."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
@@ -8458,6 +8478,12 @@
       ],
       "Auto-detect primary time zone": [
         "Auto detetar o fuso horário primário"
+      ],
+      "Auto-load embedded images": [
+        "Carregar automaticamente as imagens incorporadas"
+      ],
+      "Auto-load remote content": [
+        "Carregar automaticamente o conteúdo remoto"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -9517,6 +9543,9 @@
       ],
       "Upgrade your plan": [
         "Atualize o seu plano"
+      ],
+      "Users and addresses": [
+        "Utilizadores e endereços"
       ],
       "View guide": [
         "Ver guia"

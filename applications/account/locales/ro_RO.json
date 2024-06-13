@@ -178,6 +178,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel add-on": [
+        "Anulare modul"
+      ],
       "Cancel subscription": [
         "Anulare abonament"
       ],
@@ -627,6 +630,9 @@
       ],
       "Keep my Plus subscription": [
         "Păstrez abonamentul Plus"
+      ],
+      "Keep the writing assistant": [
+        "Păstrare asistent de scriere"
       ],
       "label emails as": [
         "etichetare mesaje ca"
@@ -1165,6 +1171,9 @@
       "What do I get?": [
         "Ce primesc?"
       ],
+      "Why can't the model run locally?": [
+        "De ce nu poate rula modelul local?"
+      ],
       "Wipe": [
         "Golire"
       ],
@@ -1389,6 +1398,11 @@
     "Assistant option": {
       "Run locally": [
         "Rulare locală"
+      ]
+    },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice }/lună"
       ]
     },
     "Attached ics file error": {
@@ -3456,9 +3470,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Stocare în cloud criptată pentru toate fișierele personale"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Stocare securizată în cloud și partajare de fișiere care vă protejează datele"
       ]
     },
     "Duration": {
@@ -6596,6 +6607,9 @@
       "Browser not supported": [
         "Navigator web neacceptat"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "În mod implicit, membrii organizației pot exporta doar seifurile care le aparțin. Dacă această opțiune este activată, aceștia nu vor putea exporta date."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
@@ -6988,6 +7002,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Grupare mesaje din aceeași conversație sau afișare separată."
+      ],
       "here": [
         "aici"
       ],
@@ -7011,6 +7028,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Dacă aceasta se datorează unei resetări anterioare a parolei, puteți opri afișarea din nou a mesajului."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Dacă această opțiune este activată, membrii organizației vor putea partaja doar seifuri în cadrul organizației."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -7276,6 +7296,9 @@
       ],
       "Merged": [
         "Îmbinat"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
       ],
       "MM/YY": [
         "LL/AA"
@@ -7697,6 +7720,9 @@
       "Settings updated": [
         "Setările s-au actualizat."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Se afișează imaginea fiecărui expeditor în lista de mesaje. Dacă nu este disponibilă o imagine, se va afișa inițiala numelui expeditorului."
+      ],
       "Show original message": [
         "Afișare mesaj original"
       ],
@@ -7861,6 +7887,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Modulul asistentului de scriere **nu se va reînnoi**. Puteți continua să vă bucurați de serviciu până la **${ subscriptionRenewalDate }**."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ${ VPN_APP_NAME } vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
       ],
@@ -7884,6 +7913,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Această funcție întârzie trimiterea mesajelor, permițându-vă să anulați trimiterea în intervalul de timp selectat."
       ],
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
@@ -8290,6 +8322,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
       ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Când faceți clic pe o legătură web, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
@@ -8362,6 +8397,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Puteți defini politicile ${ PASS_APP_NAME } pentru membrii organizației."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
@@ -9155,6 +9193,12 @@
       "Auto-detect primary time zone": [
         "Detectare automată fus orar primar"
       ],
+      "Auto-load embedded images": [
+        "Autoîncărcare imagini incluse"
+      ],
+      "Auto-load remote content": [
+        "Autoîncărcare conținut extern"
+      ],
       "Auto-reply": [
         "Răspuns automat"
       ],
@@ -9291,7 +9335,7 @@
         "Ați putea să ne spuneți care furnizor?"
       ],
       "Could you please specify which streaming service?": [
-        "Ați putea preciza ce serviciu de trasmisie în flux?"
+        "Ați putea preciza ce serviciu de transmisie în flux?"
       ],
       "Could you please specify?": [
         "Puteți să precizați?"
@@ -9364,6 +9408,9 @@
       ],
       "Disable animations": [
         "Dezactivare animații"
+      ],
+      "Disable sharing outside the organization.": [
+        "Dezactivare partajare în afara organizației."
       ],
       "Display name": [
         "Nume afișat"
@@ -13855,6 +13902,11 @@
         "Modificare"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Modificare"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } lună",
@@ -15115,6 +15167,9 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "Anulați modulul asistentului de scriere?"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -15230,6 +15285,9 @@
       ],
       "Custom filters": [
         "Filtre proprii"
+      ],
+      "Custom folders and labels": [
+        "Foldere și etichete personale"
       ],
       "Custom selection of users": [
         "Selectare utilizatori preferați"
@@ -15394,6 +15452,9 @@
       ],
       "Email subscriptions": [
         "Abonamente pe e-mail"
+      ],
+      "Enable writing assistant": [
+        "Activare asistent de scriere"
       ],
       "Encryption and keys": [
         "Criptare și chei"
@@ -15666,6 +15727,9 @@
       "Phone": [
         "Telefon"
       ],
+      "Policies": [
+        "Politici"
+      ],
       "Preview": [
         "Examinare"
       ],
@@ -15677,6 +15741,9 @@
       ],
       "Processing...": [
         "Se procesează..."
+      ],
+      "Profile": [
+        "Profil"
       ],
       "Recommended": [
         "Recomandat"
@@ -15845,6 +15912,9 @@
       ],
       "Sort labels alphabetically": [
         "Sortare alfabetică etichete"
+      ],
+      "Spam filters": [
+        "Filtre mesaje nedorite"
       ],
       "Spam, block, and allow lists": [
         "Listă adrese blocate și permise"

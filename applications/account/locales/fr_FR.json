@@ -3507,9 +3507,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Stockage cloud chiffré pour tous vos fichiers"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Stockage cloud et partage de fichiers sécurisés qui protègent vos données"
       ]
     },
     "Duration": {
@@ -7017,6 +7014,9 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si cela est lié à une ancienne réinitialisation du mot de passe, vous pouvez empêcher le message de s'afficher à nouveau."
       ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Lors de l'activation de cette option, les membres de l'organisation peuvent uniquement partager des coffres-forts au sein de l'organisation."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
@@ -8372,6 +8372,9 @@
       "You can close the tab or browser in the meantime.": [
         "En attendant, vous pouvez fermer l'onglet ou le navigateur."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Vous pouvez définir les règles de ${ PASS_APP_NAME } pour les membres de votre organisation."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
@@ -9371,6 +9374,12 @@
       ],
       "Disable animations": [
         "Désactiver les animations"
+      ],
+      "Disable data export for organization members": [
+        "Désactiver l'exportation des données pour les membres de l'organisation"
+      ],
+      "Disable sharing outside the organization.": [
+        "Désactivez le partage en dehors de l'organisation."
       ],
       "Display name": [
         "Nom d'affichage"
@@ -11039,6 +11048,9 @@
       ],
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
+      ],
+      "Generate emails with only a prompt": [
+        "Générez des messages à partir d'un seul prompt."
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
@@ -13777,6 +13789,11 @@
       "Go to subscription plans": [
         "Voir les abonnements"
       ],
+      "Upgrade": [
+        "Passez à Premium"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Passez à Premium"
       ]
