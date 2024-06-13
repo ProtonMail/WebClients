@@ -1,4 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 
 export type DashlaneLoginItem = {
     username: Maybe<string>;
@@ -76,3 +76,12 @@ export type DashlaneItem =
     | DashlaneIdItem
     | DashlanePaymentItem
     | DashlanePersonalInfoItem;
+
+export type ValidDashlaneItemKeys =
+    | keyof DashlaneLoginItem
+    | keyof DashlaneNoteItem
+    | keyof DashlanePaymentItem
+    | keyof DashlaneIdItem
+    | keyof DashlanePersonalInfoItem;
+
+export type ParserFunction = (item: DashlaneItem, importUsername?: boolean) => ItemImportIntent | string;
