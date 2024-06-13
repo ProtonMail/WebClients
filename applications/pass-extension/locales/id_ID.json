@@ -26,6 +26,9 @@
       "Add new item": [
         "Tambahkan item baru"
       ],
+      "Add username field": [
+        "Tambahkan kolom nama pengguna"
+      ],
       "Advanced": [
         "Opsi lanjutan"
       ],
@@ -965,6 +968,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
+      "Add a username field": [
+        "Tambah kolom nama pengguna"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1001,6 +1007,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Pengunci otomatis berhasil dinonaktifkan."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Tersimpan secara otomatis pada ${ payload.domain }"
       ],
@@ -1021,6 +1030,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Pilih passkey yang tersimpan untuk masuk ke ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Klik di sini untuk menambahkan kolom bagi nama pengguna."
       ],
       "Click the icon to open it anytime.": [
         "Klik pada ikon untuk membukanya kapan pun."
@@ -1304,11 +1316,17 @@
       "Please confirm your ${ BRAND_NAME } password": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan kunci Anda saat ini."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk memperbarui waktu penguncian otomatis."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
@@ -1666,6 +1684,9 @@
       "Create an encrypted note": [
         "Buat catatan yang terenkripsi"
       ],
+      "Create lock": [
+        "Buat kunci"
+      ],
       "Create new vault": [
         "Buat brankas baru"
       ],
@@ -1692,6 +1713,15 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Email (alias)": [
+        "Email (alias)"
+      ],
+      "Email (new alias)": [
+        "Email (alias baru)"
       ],
       "Email aliases": [
         "Alias email"
@@ -1870,6 +1900,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "Kode PIN"
+      ],
       "Prefix": [
         "Awalan"
       ],
@@ -1978,11 +2011,8 @@
       "Username": [
         "Nama pengguna"
       ],
-      "Username (alias)": [
-        "Nama pengguna (alias)"
-      ],
-      "Username (new alias)": [
-        "Nama pengguna (alias baru)"
+      "Username/email": [
+        "Nama pengguna/email"
       ],
       "Vault ID": [
         "ID Brankas"
@@ -2092,11 +2122,17 @@
       "Enter a prefix": [
         "Masukkan awalan"
       ],
+      "Enter email": [
+        "Masukkan email"
+      ],
       "Enter email or username": [
         "Masukkan email atau nama pengguna"
       ],
       "Enter password": [
         "Masukkan kata sandi"
+      ],
+      "Enter username": [
+        "Masukkan nama pengguna"
       ],
       "Full Name": [
         "Nama Lengkap"
@@ -2355,6 +2391,9 @@
     "Validation": {
       "Duplicated URL": [
         "URL terduplikat"
+      ],
+      "Email address is invalid": [
+        "Alamat surel tidak valid"
       ],
       "Field name is required": [
         "Nama kolom wajib diisi"

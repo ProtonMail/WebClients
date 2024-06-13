@@ -26,6 +26,9 @@
       "Add new item": [
         "新しいアイテムを追加"
       ],
+      "Add username field": [
+        "ユーザー名フィールドを追加"
+      ],
       "Advanced": [
         "高度な"
       ],
@@ -977,6 +980,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "項目を「${ name }」に移動してもよろしいですか?"
       ],
+      "Auto-lock successfully disabled.": [
+        "自動ロックを無効にしました."
+      ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } に自動保存されました"
       ],
@@ -1636,6 +1642,9 @@
       "Download logs": [
         "過去ログのダウンロード"
       ],
+      "Email": [
+        "メールアドレス"
+      ],
       "Email aliases": [
         "メールエイリアス"
       ],
@@ -1920,12 +1929,6 @@
       ],
       "Username": [
         "ユーザー名"
-      ],
-      "Username (alias)": [
-        "ユーザー名 (エイリアス)"
-      ],
-      "Username (new alias)": [
-        "ユーザー名 (新しいエイリアス)"
       ],
       "Vault ID": [
         "保管庫 ID"
@@ -2295,6 +2298,9 @@
     "Validation": {
       "Duplicated URL": [
         "重複した URL"
+      ],
+      "Email address is invalid": [
+        "メールアドレスが無効です"
       ],
       "Field name is required": [
         "フィールド名は必須です"
