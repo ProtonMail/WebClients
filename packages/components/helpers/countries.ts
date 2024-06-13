@@ -158,7 +158,6 @@ const COUNTRIES = [
     { value: 'NR', label: 'Nauru' },
     { value: 'NP', label: 'Nepal' },
     { value: 'NL', label: 'Netherlands' },
-    { value: 'AN', label: 'Netherlands Antilles' },
     { value: 'NC', label: 'New Caledonia' },
     { value: 'NZ', label: 'New Zealand' },
     { value: 'NI', label: 'Nicaragua' },
