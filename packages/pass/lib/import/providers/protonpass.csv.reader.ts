@@ -45,7 +45,9 @@ export const readProtonPassCSV = async ({
     try {
         const result = await readCSV<ProtonPassCSVItem>({
             data,
-            headers: isGenericCSV ? ['password'] : PASS_EXPECTED_HEADERS,
+            /* Don't verify headers of Generic CSV */
+            headers: isGenericCSV ? undefined : PASS_EXPECTED_HEADERS,
+            hasHeader: true,
             onError: (error) => warnings.push(error),
         });
 

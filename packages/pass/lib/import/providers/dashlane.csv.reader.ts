@@ -6,7 +6,7 @@ import {
     processNoteItem,
 } from '@proton/pass/lib/import/providers/dashlane.zip.reader';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { everyIn, oneOf } from '@proton/pass/utils/fp/predicates';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
 
@@ -14,27 +14,7 @@ import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import type {
-    DashlaneIdItem,
-    DashlaneItem,
-    DashlanePersonalInfoItem,
-    ParserFunction,
-    ValidDashlaneItemKeys,
-} from './dashlane.types';
-
-const preParser = (item: string[][]): DashlaneItem[] => {
-    const [header, ...data] = item;
-
-    return data.map((row) =>
-        header.reduce(
-            (acc, key, index) => {
-                acc[key as ValidDashlaneItemKeys] = row[index]; // Map header key to corresponding row value
-                return acc;
-            },
-            {} as Record<ValidDashlaneItemKeys, string>
-        )
-    );
-};
+import type { DashlaneIdItem, DashlaneItem, DashlanePersonalInfoItem, ParserFunction } from './dashlane.types';
 
 const processIdsItem = ({ name, type }: DashlaneIdItem): string =>
     `[${capitalize(type ?? 'ID')}] ${name || 'Unknown ID'}`;
@@ -73,13 +53,13 @@ const Criteria = {
     },
 };
 
-const getParser = (headers: string[]): [ParserFunction, FileKey] => {
-    const matches = everyIn(headers);
-
+const getParser = (item: DashlaneItem): [ParserFunction, FileKey] => {
     for (const key in Criteria) {
         const { keys, parser } = Criteria[key as FileKey];
 
-        if (matches(keys)) return [parser, key as FileKey];
+        if (keys.every((k) => k in item)) {
+            return [parser, key as FileKey];
+        }
     }
 
     throw new Error(c('Error').t`Unknown item`);
@@ -104,16 +84,16 @@ export const readDashlaneDataCSV = async ({
     const warnings: string[] = [];
 
     try {
-        const { items } = await readCSV<string[]>({
+        const { items } = await readCSV<DashlaneItem>({
             data,
-            headers: undefined,
+            hasHeader: true,
             throwOnEmpty: false,
             onError: (error) => warnings?.push(error),
         });
 
-        const [parser, itemKey] = getParser(items[0] as unknown as string[]);
+        const [parser, itemKey] = getParser(items[0]);
 
-        const item = preParser(items).map((item) => parser(item, importUsername));
+        const item = items.map((item) => parser(item, importUsername));
 
         const { vaultItems, ignored } = groupItem(item, itemKey);
 
