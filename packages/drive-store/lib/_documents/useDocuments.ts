@@ -1,5 +1,4 @@
 import { useAuthentication } from '@proton/components/hooks';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -98,9 +97,8 @@ export const useDocuments = () => {
             sessionKey: contentKey,
         } = await generateContentKeys(privateKey);
 
-        const content = stringToUtf8Array('');
-        const manifest = await generateContentHash(content);
-        const ManifestSignature = await sign(manifest.BlockHash, addressKey);
+        // Documents do not have any blocks, so we sign an empty array.
+        const ManifestSignature = await sign(new Uint8Array([]), addressKey);
 
         const { Document } = await debouncedRequest<CreateDocumentResult>(
             queryCreateDocument(shareId, {
