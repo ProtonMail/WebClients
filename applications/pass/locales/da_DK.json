@@ -37,6 +37,9 @@
       "Add new item": [
         "Tilføj nyt element"
       ],
+      "Add username field": [
+        "Tilføj brugernavn-felt"
+      ],
       "Admin panel": [
         "Admin-panel"
       ],
@@ -967,6 +970,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
       ],
+      "Add a username field": [
+        "Tilføj et brugernavn-felt"
+      ],
       "Add your custom email address to monitor :": [
         "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
       ],
@@ -1038,6 +1044,9 @@
       ],
       "Change your password": [
         "Skift din adgangskode"
+      ],
+      "Click here to add a field for a username.": [
+        "Klik her for at tilføje et felt til brugernavn."
       ],
       "Congratulations, your access has been confirmed": [
         "Tillykke, din adgang er blevet bekræftet"
@@ -1740,6 +1749,12 @@
       "Email": [
         "E-mail"
       ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nyt alias)"
+      ],
       "Email address": [
         "E-mail"
       ],
@@ -2022,12 +2037,6 @@
       "Username": [
         "Brugernavn"
       ],
-      "Username (alias)": [
-        "Brugernavn (alias)"
-      ],
-      "Username (new alias)": [
-        "Brugernavn (nyt alias)"
-      ],
       "Vault ID": [
         "Boks-ID"
       ],
@@ -2161,11 +2170,17 @@
       "Enter a prefix": [
         "Indtast et præfiks"
       ],
+      "Enter email": [
+        "Indtast e-mail"
+      ],
       "Enter email or username": [
         "Indtast e-mail eller brugernavn"
       ],
       "Enter password": [
         "Indtast adgangskode"
+      ],
+      "Enter username": [
+        "Indtast brugernavn"
       ],
       "Full Name": [
         "Fuldt navn"
@@ -2524,6 +2539,9 @@
     "Validation": {
       "Duplicated URL": [
         "Duplikeret URL"
+      ],
+      "Email address is invalid": [
+        "E-mailadressen er ugyldig"
       ],
       "Field name is required": [
         "Feltet skal have et navn"

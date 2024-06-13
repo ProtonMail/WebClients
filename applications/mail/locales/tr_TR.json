@@ -223,6 +223,9 @@
       "Close & discard": [
         "Kapat ve sil"
       ],
+      "Close AI refine suggestion": [
+        "Yapay Zeka düzeltme önerisini kapat"
+      ],
       "Close composer": [
         "Oluşturucuyu kapat"
       ],
@@ -477,17 +480,29 @@
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
+      "Formalize": [
+        "Resmileştir"
+      ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
       ],
+      "Generate text": [
+        "Metin oluştur"
+      ],
       "Get in touch": [
         "Bizimle görüşün"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "${ addonPriceWithCurrency } /ay tutarla alın"
       ],
       "Get SimpleLogin extension": [
         "SimpleLogin eklentisini edinin"
       ],
       "Get started": [
         "Başlayalım"
+      ],
+      "Get the writing assistant": [
+        "Yazma yardımcısını alın"
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
@@ -646,6 +661,9 @@
       "Loading${ ellipsis }": [
         "Yükleniyor${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Samimileştir"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -708,6 +726,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Diğer düzeltme işlemleri"
       ],
       "More search options": [
         "Daha fazla arama seçeneği"
@@ -859,6 +880,9 @@
       "Print": [
         "Yazdır"
       ],
+      "Proofread": [
+        "Düzelt"
+      ],
       "Quit": [
         "Çıkış"
       ],
@@ -958,11 +982,17 @@
       "Resume": [
         "Sürdür"
       ],
+      "Resume downloading": [
+        "İndirmeyi sürdür"
+      ],
       "Retry": [
         "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } sunucularında çalışır"
       ],
       "Save": [
         "Kaydet"
@@ -972,6 +1002,9 @@
       ],
       "Schedule message": [
         "İletiyi zamanla"
+      ],
+      "Scroll to bottom": [
+        "En alta kaydır"
       ],
       "Search": [
         "Arama"
@@ -1057,11 +1090,17 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share": [
+        "Paylaş"
+      ],
       "Share via link": [
         "Bağlantı ile paylaş"
       ],
       "Sharing options": [
         "Paylaşım seçenekleri"
+      ],
+      "Shorten": [
+        "Kısalt"
       ],
       "Show": [
         "Görüntüle"
@@ -1122,6 +1161,12 @@
       ],
       "Stay": [
         "Kal"
+      ],
+      "Stop downloading the writing assistant": [
+        "Yazdırma yardımcısını indirmeyi durdur"
+      ],
+      "Stop generating result": [
+        "Sonuç oluşturmayı bırak"
       ],
       "Strikethrough": [
         "Üstü çizili"
@@ -1250,6 +1295,9 @@
       "Use recovery code": [
         "Kurtarma kodunu kullan"
       ],
+      "Use this": [
+        "Bunu kullan"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Fareyi ya da klavyedeki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
       ],
@@ -1313,6 +1361,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masaüstü uygulaması ücretsiz deneme sürümünüz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "E-posta yazma yardımcınız"
       ],
       "Zoom in": [
         "Yakınlaştır"
@@ -1381,6 +1432,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
       ],
       "${ users } user": [
         "${ users } kullanıcı",
@@ -1454,6 +1509,40 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } uygulamaları"
+      ]
+    },
+    "Assistant option": {
+      "Browser not supported ": [
+        "Tarayıcı desteklenmiyor "
+      ],
+      "Fast and secure": [
+        "Hızlı ve güvenli"
+      ],
+      "Needs compatible hardware": [
+        "Uyumlu donanıma gerek duyar"
+      ],
+      "No logs": [
+        "Kayıt tutmaz"
+      ],
+      "Requires one-time download": [
+        "Bir kerelik indirmeniz gerekir"
+      ],
+      "Run locally": [
+        "Yerel olarak çalışır"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } sunucularında çalışır"
+      ],
+      "Runs on all devices": [
+        "Tüm aygıtlarda çalışır"
+      ],
+      "Runs on your device": [
+        "Aygıtınızda çalışır"
+      ]
+    },
+    "Assistant options": {
+      "Hardware not compatible": [
+        "Donanım uyumlu değil"
       ]
     },
     "Attached ics file error": {
@@ -3295,6 +3384,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Yazma yardımcısını kullanmayı sürdürmek için yöneticinizden erişim isteğinde bulunun."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
@@ -3318,6 +3413,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
+      ],
+      "Use the writing assistant to:": [
+        "Yazma yardımcısını şunun için kullanın:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Bu e-postada bilinen herhangi bir izleyici veya izleme adresi bulamadık."
@@ -3689,6 +3787,9 @@
       "Draft could not be saved. Try again.": [
         "Taslak kaydedilemedi. Yeniden deneyin."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Bir sorun nedeniyle metin oluşturma işlemi iptal edilemedi"
+      ],
       "Email address disabled": [
         "E-posta adresi kullanım dışı"
       ],
@@ -3736,6 +3837,9 @@
       ],
       "Forward address is required": [
         "İletilecek adresin yazılması zorunludur"
+      ],
+      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
+        "Etik kurallarım nedeniyle bu isteği yerine getiremiyorum. Lütfen farklı bir istekte bulunun."
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -3870,6 +3974,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Lütfen bir ad, bir soyad ya da bir görüntülenecek ad yazın."
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Lütfen bir kategori seçin ve oluşturulan metinde neyin yanlış olduğunu belirtin"
+      ],
+      "Please try generating the text again": [
+        "Lütfen metni yeniden oluşturmayı deneyin"
+      ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
@@ -3884,6 +3994,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Yazma yardımcısı indirilirken sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Yazma yardımcısı aygıtınıza kurulurken sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Yazma yardımcısı etkin olmadığında gerek duyulmayan veriler kaldırılırken sorun çıktı"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -3951,6 +4070,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "Thanks for the feedback!": [
+        "Geri bildiriminiz için teşekkürler!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
@@ -4951,11 +5073,26 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Hardware not compatible": [
+        "Donanım uyumlu değil"
+      ],
+      "Resume downloading": [
+        "İndirmeyi sürdür"
+      ],
       "Search": [
         "Ara"
       ],
       "Security Center": [
         "Güvenlik merkezi"
+      ],
+      "Set up the writing assistant": [
+        "Yazma yardımcısını kurun"
+      ],
+      "Tell us more": [
+        "Bize daha fazla bilgi verin"
+      ],
+      "Write faster with the writing assistant": [
+        "Yazma yardımcısı ile daha hızlı yazın"
       ]
     },
     "Hint": {
@@ -5645,6 +5782,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
+      "Browser not supported": [
+        "Tarayıcı desteklenmiyor"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -5680,6 +5820,9 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Bu aygıtta tarayıcı verilerini temizlemek, ileti içeriği arama özelliğini de kapatır. İçerik araması yapabilmek için tüm iletilerin yeniden indirilmesi gerekir."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Tarayıcı verilerini (ve indirilmiş iletileri, …) siler"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -5793,6 +5936,12 @@
       ],
       "Downloading paused": [
         "İndirme duraklatıldı"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "İndirme duraklatıldı: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Yazma yardımcısı indiriliyor: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Taslak"
@@ -5919,8 +6068,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
       ],
+      "Free for 14 days": [
+        "14 gün boyunca ücretsiz."
+      ],
       "From": [
         "Kimden"
+      ],
+      "Generate text": [
+        "Metin oluştur"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
@@ -5996,11 +6151,17 @@
       "Include Spam/Trash.": [
         "İstenmeyen/Çöp katılsın"
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Doğruluğu artırmamıza yardımcı olmak için isteğinizi ve yanıtını ekleyin."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
+      ],
+      "Initializing…": [
+        "Hazırlanıyor…"
       ],
       "Insert image": [
         "Görsel ekle"
@@ -6044,8 +6205,14 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Learn more about ${ PrivacyLink }": [
+        "${ PrivacyLink } ile ilgili ayrıntılı bilgi alın"
+      ],
       "Left to Right": [
         "Soldan sağa"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Yazma yardımcısının e-postalarınızı yazmanıza ve yanıtlamanıza yardımcı olmasına izin verin ve üretkenliğinizin nasıl arttığını görün."
       ],
       "Link type": [
         "Bağlantı türü"
@@ -6136,6 +6303,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Diğer düzeltme işlemleri"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -6273,6 +6443,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please share what you expected": [
+        "Lütfen ne beklediğinizi paylaşın"
+      ],
       "Please try again in a few moments": [
         "Lütfen biraz sonra yeniden deneyin"
       ],
@@ -6312,6 +6485,12 @@
       "Print email": [
         "E-postayı yazdır"
       ],
+      "Proofread selection": [
+        "Seçimi düzelt"
+      ],
+      "Proofread text": [
+        "Metni düzelt"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta göndericilere sızmasından korunun."
       ],
@@ -6323,6 +6502,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Bu uygulama ile ilgili tüm verileri (ve indirilmiş iletileri, …) siler"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi kimlik avı girişimi olarak bildirdiğinizde, ileti bize gönderilir. Böylece onu inceleyebilir ve süzgeçlerimizi geliştirebiliriz. Bu durum iletinin tüm içeriğini görebileceğimi anlamına gelir."
@@ -6418,6 +6600,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
+      "Shorten selection": [
+        "Seçimi kısalt"
+      ],
+      "Shorten text": [
+        "Metni kısalt"
+      ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
       ],
@@ -6490,6 +6678,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "İlk kurulum birkaç dakika sürebilir."
+      ],
       "The local database is being prepared": [
         "Yerel veri tabanı hazırlanıyor"
       ],
@@ -6514,6 +6705,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Yazma yardımcısının kullanılabilmesi için öncelikle indirilmesi gerekiyor."
       ],
       "Themes can give your inbox a new look.": [
         "Temalar, e-posta kutunuza yeni bir görünüm verebilir."
@@ -6554,6 +6748,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Bu bir yazma yardımcısı olarak tasarlanmıştır. Önerilen metnin doğruluğunu kontrol edin. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -6618,6 +6815,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Bu iletinin geçerlilik süresi yarın ${ value } saatinde dolacak"
+      ],
+      "This only needs to be done once.": [
+        "Bu işlemin yalnızca bir kez yapılması yeterlidir."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
@@ -6847,6 +7047,15 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant add-on": [
+        "Yazma yardımcısı eklentisi"
+      ],
+      "writing assistant iframe": [
+        "yazma yardımcısı iFrame"
+      ],
       "Yearly": [
         "Yıllık"
       ],
@@ -6981,6 +7190,9 @@
         "**${ elementsCount } iletiyi** seçtiniz.",
         "**${ elementsCount } iletiyi** seçtiniz."
       ],
+      "You selected some content:": [
+        "Bazı içerikleri seçtiniz:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Bu tarihte Plus özelliklerine erişiminizi kaybedeceksiniz."
       ],
@@ -7020,6 +7232,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
+        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ MAIL_APP_NAME } masaüstü uygulamasını indirin ya da ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
+        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -7034,6 +7252,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
+        "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -7101,6 +7322,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Key badge": {
@@ -7516,11 +7742,17 @@
       "Density": [
         "Yoğunluk"
       ],
+      "Did not follow instructions": [
+        "Yönergeleri izlemedi"
+      ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
       "Don't ask again": [
         "Bir daha sorma"
+      ],
+      "Don't like the style": [
+        "Tarzını beğenmedim"
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
@@ -7690,6 +7922,9 @@
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
+      "Not factually correct": [
+        "Aslında doğru değil"
+      ],
       "Note": [
         "Not"
       ],
@@ -7843,8 +8078,14 @@
       "Type a command...": [
         "Bir komut yazın..."
       ],
+      "Type a prompt to generate an output": [
+        "Bir metin oluşturmak için bir istek yazın"
+      ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
+      ],
+      "Unsafe or problematic": [
+        "Güvenli değil ya da sorunlu"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -7972,6 +8213,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "${ BRAND_NAME } ile sektör lideri gizlilik"
+      ],
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
       ],
@@ -8738,6 +8982,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with only a prompt": [
+        "Yalnızca isteğinizi yazarak e-postalar oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -8796,6 +9043,9 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your texts": [
+        "Metinleri düzeltin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
@@ -8803,11 +9053,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
+      "Reply to messages": [
+        "İletileri yanıtlayın"
+      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
         "Yöneltici desteği"
+      ],
+      "Save time emailing": [
+        "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
@@ -9349,6 +9605,12 @@
       ],
       "Senders blocked": [
         "Göndericiler engellendi"
+      ],
+      "The writing assistant is ready to use": [
+        "Yazma yardımcısı kullanılmaya hazır"
+      ],
+      "Trial started": [
+        "Deneme süresi başladı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9639,6 +9901,9 @@
       "First name": [
         "Ad"
       ],
+      "Generating...": [
+        "Oluşturuluyor..."
+      ],
       "Gift code": [
         "Hediye kodu"
       ],
@@ -9647,6 +9912,9 @@
       ],
       "Hint": [
         "İpucu"
+      ],
+      "How do you want the selected text modified?": [
+        "Seçilmiş metnin nasıl düzeltilmesini istiyorsunuz?"
       ],
       "Image URL": [
         "Görsel adresi"
@@ -9674,6 +9942,12 @@
       ],
       "Please insert link first": [
         "Lütfen önce bağlantıyı ekleyin"
+      ],
+      "Please share what you expected": [
+        "Lütfen ne beklediğinizi paylaşın"
+      ],
+      "Refining your text...": [
+        "Metniniz düzeltiliyor..."
       ],
       "Search date, name, email address, or subject line": [
         "Tarihe, ada, e-posta adresine veya konu satırına göre arama yapın"
@@ -9716,6 +9990,27 @@
       ],
       "Text": [
         "Metin"
+      ],
+      "To": [
+        "Kime"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "“Yaklaşan etkinlikleri e-posta ile duyur” yazmayı deneyin"
+      ],
+      "Try “Cancel my gym membership”": [
+        "“Spor salonu üyeliğimi iptal et” yazmayı deneyin"
+      ],
+      "Try “Invite Jane to my party”": [
+        "“Partime Sevgi'yi davet et” yazmayı deneyin"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "“İş arkadaşıma bir projedeki yardımı için teşekkür et” yazmayı deneyin"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "“Staj başvurusu yaz” yazmayı deneyin"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "“Bir müşteri için takip e-postası yaz” yazmayı deneyin"
       ],
       "Type a command…": [
         "Bir komut yazın…"
@@ -10407,6 +10702,11 @@
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
       ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Yükselt"
       ]
@@ -12149,6 +12449,9 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
+      ],
+      "Your free trial has ended": [
+        "Ücretsiz deneme süreniz sona erdi"
       ]
     },
     "Title subscription": {

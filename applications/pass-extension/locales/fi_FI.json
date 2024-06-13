@@ -26,6 +26,9 @@
       "Add new item": [
         "Lisää uusi kohde"
       ],
+      "Add username field": [
+        "Lisää käyttäjätunnus-kenttä"
+      ],
       "Advanced": [
         "Lisätoiminnot"
       ],
@@ -88,6 +91,9 @@
       ],
       "Continue": [
         "Jatka"
+      ],
+      "Continue offline": [
+        "Jatka yhteydettömässä tilassa"
       ],
       "Continue without pinning": [
         "Jatka kiinnittämättä"
@@ -735,6 +741,9 @@
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
       ],
+      "Network error": [
+        "Verkkovirhe"
+      ],
       "Passphrase is incorrect": [
         "Tunnuslauseke on virheellinen"
       ],
@@ -809,6 +818,9 @@
       ],
       "Unknown passkey": [
         "Tuntematon suojausavain"
+      ],
+      "Unlock failure": [
+        "Lukituksen avaamisen epäonnistui"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -993,6 +1005,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automaattilukitus poistettiin käytöstä."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Automaattitallennettiin osoitteesta ${ payload.domain }"
       ],
@@ -1047,6 +1062,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Poistetaan kohdetta \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Poistetaan automaattilukitusta käytöstä"
+      ],
+      "Disabling auto-lock failed": [
+        "Automaattilukituksen poistaminen käytöstä epäonnistui"
+      ],
+      "Disabling offline mode...": [
+        "Yhteydetöntä tilaa poistetaan käytöstä..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Tutustu ${ PASS_APP_NAME }-YouTube-videoon"
       ],
@@ -1076,6 +1100,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Ota automaattilukitus käyttöön tietojesi suojaamiseksi"
+      ],
+      "Enabling offline mode...": [
+        "Yhteydetöntä tilaa otetaan käyttöön..."
+      ],
+      "Enabling password auto-lock": [
+        "Salasanallista automaattilukitusta otetaan käyttöön"
+      ],
+      "Enabling password lock failed": [
+        "Salasanalukituksen käyttöönotto epäonnistui"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN-koodillista automaattilukitusta otetaan käyttöön"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -1233,6 +1272,9 @@
       "None": [
         "Ei mitään"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Yhteydetöntä tilaa ei voi poistaa käytöstä tällä hetkellä"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Yhteydetöntä tilaa ei voitu nyt ottaa käyttöön"
       ],
@@ -1276,6 +1318,9 @@
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Vahvista ${ BRAND_NAME } -salasanasi"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
@@ -1299,6 +1344,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
+      ],
+      "Registering PIN lock failed": [
+        "PIN-lukituksen rekisteröinti epäonnistui"
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1663,6 +1711,9 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
+      "Email": [
+        "Sähköposti"
+      ],
       "Email aliases": [
         "Sähköpostialiakset"
       ],
@@ -1840,6 +1891,9 @@
       "PIN": [
         "PIN-koodi"
       ],
+      "PIN code": [
+        "PIN-koodi"
+      ],
       "Prefix": [
         "Etuliite"
       ],
@@ -1947,12 +2001,6 @@
       ],
       "Username": [
         "Käyttäjätunnus"
-      ],
-      "Username (alias)": [
-        "Käyttäjätunnus (alias)"
-      ],
-      "Username (new alias)": [
-        "Käyttäjätunnus (uusi alias)"
       ],
       "Vault ID": [
         "Holvin ID"
@@ -2324,6 +2372,9 @@
     "Validation": {
       "Duplicated URL": [
         "Kahdennettu URL"
+      ],
+      "Email address is invalid": [
+        "Sähköpostiosoite on virheellinen"
       ],
       "Field name is required": [
         "Kentän nimi vaaditaan"

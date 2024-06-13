@@ -1343,6 +1343,11 @@
         "${ BRAND_NAME } 應用程式"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /月"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空的 ICS 檔案"
@@ -3335,9 +3340,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "加密的雲端儲存您的檔案"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "安全雲端儲存和檔案共享保護您的資料"
       ]
     },
     "Duration": {
@@ -6693,6 +6695,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "將同一往來對話中的電郵在 [收件匣] 分組顯示，還是獨立顯示。"
+      ],
       "here": [
         "這裡"
       ],
@@ -6965,6 +6970,9 @@
       ],
       "Merged": [
         "合併的"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
       ],
       "MM/YY": [
         "月月/年年"
@@ -7368,6 +7376,9 @@
       "Settings updated": [
         "已更新設定"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "郵件列表裡顯示每一寄件者的圖像。如無可用圖像，則將顯示寄件者的姓名首字母。"
+      ],
       "Show original message": [
         "顯示原始訊息"
       ],
@@ -7538,6 +7549,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "可能需要等候一段時間，請勿關閉此頁面或中斷網路連線。"
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "此項功能延遲傳送您的電郵，讓您有機會在選定的時間內取消傳送。"
       ],
       "This file is too large to preview": [
         "此檔案太大無法預覽"
@@ -7922,6 +7936,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "當他們訂購了一個方案。您會得到點數可使用在您的訂購授權上。"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -8730,6 +8747,12 @@
       ],
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
+      ],
+      "Auto-load embedded images": [
+        "自動載入嵌入圖像"
+      ],
+      "Auto-load remote content": [
+        "自動載入遠端內容"
       ],
       "Auto-reply": [
         "自動回覆"
@@ -9806,6 +9829,9 @@
       ],
       "Upgrade your plan": [
         "升級您的方案"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
       ],
       "View guide": [
         "查看指南"

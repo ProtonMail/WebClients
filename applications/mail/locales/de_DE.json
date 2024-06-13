@@ -1069,6 +1069,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Share": [
+        "Teilen"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -1399,6 +1402,10 @@
       ],
       "${ price } per user": [
         "${ price } pro Benutzer"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } Lizenz für den Schreibassistenten",
+        "${ seats } Lizenzen für den Schreibassistenten"
       ],
       "${ users } user": [
         "${ users } Benutzer",
@@ -3958,6 +3965,9 @@
       "Problem loading the writing assistant to your device. Please try again.": [
         "Fehler beim Laden des Schreibassistenten auf dein Gerät. Bitte versuche es erneut."
       ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Problem beim Bereinigen nicht benötigter Daten, wenn der Schreibassistent inaktiv ist."
+      ],
       "Process aborted": [
         "Prozess abgebrochen"
       ],
@@ -6252,6 +6262,9 @@
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ],
+      "More refine actions": [
+        "Verbesserte Aktionen"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
@@ -6693,6 +6706,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Diese Einladung wurde in einem deaktivierten Kalender gespeichert."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Dies ist als Schreibhilfe gedacht. Überprüfe den vorgeschlagenen Text auf seine Richtigkeit. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."

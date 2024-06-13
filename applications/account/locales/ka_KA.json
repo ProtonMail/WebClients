@@ -1367,6 +1367,11 @@
         "ლოკალურად გაშვება"
       ]
     },
+    "Assistant toggle": {
+      "${ localPrice } /month": [
+        "${ localPrice } /თვეში"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ცარიელი ICS ფაილი"
@@ -3407,9 +3412,6 @@
       ],
       "Encrypted cloud storage for all your files": [
         "დაშიფრული ღრუბლოვანი საცავი ყველა თქვენი ფაილისთვის"
-      ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "დაცული ღრუბლოვანი საცავი და ფაილების გაზიარება, რომელიც თქვენს მონაცემებს იცავს"
       ]
     },
     "Duration": {
@@ -6863,6 +6865,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "ელფოსტების ერთ საუბრად და ცალ-ცალკე ჩვენებას შორის გადართვა."
+      ],
       "here": [
         "აქ"
       ],
@@ -7134,6 +7139,9 @@
       ],
       "Merged": [
         "შერწყმული"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "შეტყობინებები მონახაზებისა და გაგზავნილი ელფოსტების საქაღალდიდან მაინც გამოჩნდებიან თავის ადგილას, მიუხედავად იმისა, გადაიტანთ თუ არა მათ სხვა საქაღალდეში."
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -7540,6 +7548,9 @@
       "Settings updated": [
         "პარამეტრები განახლებულია"
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "შეტყობინებების სიაში თითოეული გამომზავნის გამოსახულების ჩვენება. თუ სურათი ხელმისაწვდომი არაა, გამომგზავნის ინიციალებს გაჩვენებთ."
+      ],
       "Show original message": [
         "საწყისი შეტყობინების ჩვენება"
       ],
@@ -7714,6 +7725,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "ეს ფუნქცია დააყოვნებს თქვენი ელფოსტის გაგზავნას, რაც გაძლევთ შესაძლებლობას, დროის არჩეული მონაკვეთის განმავლობაში გაგზავნა გააუქმოთ."
       ],
       "This file is too large to preview": [
         "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
@@ -8101,6 +8115,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "როცა გამოიწერთ სატარიფო გეგმას, ქულებს მიიღებთ, რომელიც შეგიძლიათ გამოწერისას გამოიყენოთ."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "როცა ბმულზე დააწკაპუნებთ, ფიშინგის საწინააღმდეგო ეს ფუნქცია გკითხავთ, მართლა გნებავთ თუ არა ამ ბმულის გახსნა."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
@@ -8916,6 +8933,12 @@
       "Auto-detect primary time zone": [
         "ძირითადი დროის სარტყლის ავტომატური გამოცნობა"
       ],
+      "Auto-load embedded images": [
+        "ჩადგმული გამოსახულებების ავტომატური ჩატვირთვა"
+      ],
+      "Auto-load remote content": [
+        "სხვა სერვერებიდან შემცველობის ავტომატური ჩვენება"
+      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -9125,6 +9148,9 @@
       ],
       "Disable animations": [
         "ანიმაციების გამორთვა"
+      ],
+      "Disable sharing outside the organization.": [
+        "გაზიარებით გათიშვა ორგანიზაციის გარეთ."
       ],
       "Display name": [
         "საჩვენებელი სახელი"
@@ -10009,6 +10035,9 @@
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
+      ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
       ],
       "View guide": [
         "სახელმძღვანელოს ნახვა"
@@ -15881,6 +15910,11 @@
       ],
       "Primary admin": [
         "ძირითადი ადმინისტრატორი"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "AI"
       ]
     },
     "Users table: single sign-on enabled": {

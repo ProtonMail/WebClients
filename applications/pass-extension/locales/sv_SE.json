@@ -26,6 +26,9 @@
       "Add new item": [
         "Lägg till nytt objekt"
       ],
+      "Add username field": [
+        "Lägg till fält för användarnamn"
+      ],
       "Advanced": [
         "Avancerad"
       ],
@@ -85,6 +88,9 @@
       ],
       "Continue": [
         "Fortsätt"
+      ],
+      "Continue offline": [
+        "Fortsätt offline"
       ],
       "Continue without pinning": [
         "Fortsätt utan att fästa"
@@ -437,6 +443,9 @@
       "Try again": [
         "Försök igen"
       ],
+      "Unlock offline with password": [
+        "Lås upp offline med lösenord"
+      ],
       "Unpin item": [
         "Lossa objekt"
       ],
@@ -726,6 +735,9 @@
       "Moving item failed": [
         "Misslyckades att flytta objekt"
       ],
+      "Network error": [
+        "Nätverksfel"
+      ],
       "Passphrase is incorrect": [
         "Lösenfras är fel"
       ],
@@ -801,6 +813,9 @@
       "Unknown passkey": [
         "Okänd passkey"
       ],
+      "Unlock failure": [
+        "Upplåsningsfel"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Filformat ${ PASS_APP_NAME } stöds inte"
       ],
@@ -821,6 +836,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Fel PIN-kod. Försök igen."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
@@ -899,6 +917,9 @@
         "${ n } objekt",
         "${ n } objekt"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } kommer alltid vara åtkomlig"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
       ],
@@ -942,8 +963,14 @@
       "Access successfully confirmed": [
         "Åtkomst bekräftad"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt ${ BRAND_NAME }-lösenord."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
+      ],
+      "Add a username field": [
+        "Lägg till ett fält för användarnamn"
       ],
       "Admin": [
         "Admin"
@@ -981,6 +1008,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Är du säker på att du vill flytta objektet till “${ name }“?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automatisk låsning inaktiverat."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Autosparad på ${ payload.domain }"
       ],
@@ -1001,6 +1031,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Välj en sparad passkey för att logga in på ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Klicka här för att lägga till ett fält för ett användarnamn."
       ],
       "Click the icon to open it anytime.": [
         "Klicka på ikonen för att öppna den när som helst."
@@ -1035,6 +1068,12 @@
       "Deleting \"${ payload.content.name }\"": [
         "Tar bort “${ payload.content.name }“"
       ],
+      "Disabling auto-lock": [
+        "Inaktiverar automatiskt lås"
+      ],
+      "Disabling offline mode...": [
+        "Inaktiverar offlineläge …"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Upptäck ${ PASS_APP_NAME } YouTube-video"
       ],
@@ -1064,6 +1103,12 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktivera ${ PASS_APP_NAME } genom att ansluta ditt ${ BRAND_NAME }-konto"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Aktivera automatisk låsning för att säkra din data"
+      ],
+      "Enabling offline mode...": [
+        "Aktiverar offlineläge …"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ange verifieringskod. Siffra ${ digit }."
@@ -1221,8 +1266,14 @@
       "None": [
         "Ingen"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Offlineläge kunde inte inaktiveras just nu"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod för att låsa upp din session. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
       "Open the Extensions menu": [
         "Öppna tilläggsmenyn"
@@ -1241,6 +1292,9 @@
       ],
       "Password copied": [
         "Lösenord kopierat"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Lösenordslås har registrerats. Använd den för att låsa upp ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
@@ -1261,8 +1315,23 @@
       "Pinning item...": [
         "Fäster objekt..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att låsa automatiskt med ditt lösenord."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att avregistrera ditt nuvarande lås."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att uppdatera tiden för automatisk låsning."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Bekräfta din PIN-kod för att avregistrera ditt nuvarande lås."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bekräfta din PIN-kod för att redigera denna inställning."
@@ -1621,6 +1690,9 @@
       "Create an encrypted note": [
         "Skapa en krypterad anteckning"
       ],
+      "Create lock": [
+        "Skapa lås"
+      ],
       "Create new vault": [
         "Skapa nytt valv"
       ],
@@ -1644,6 +1716,15 @@
       ],
       "Download logs": [
         "Ladda ner loggar"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Email (alias)": [
+        "E-post (alias)"
+      ],
+      "Email (new alias)": [
+        "E-post (nytt alias)"
       ],
       "Email aliases": [
         "E-postalias"
@@ -1825,6 +1906,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN-kod"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -1930,11 +2014,8 @@
       "Username": [
         "Användarnamn"
       ],
-      "Username (alias)": [
-        "Användarnamn (alias)"
-      ],
-      "Username (new alias)": [
-        "Användarnamn (nytt alias)"
+      "Username/email": [
+        "Användarnamn/e-post"
       ],
       "Vault ID": [
         "Valv-ID"
@@ -1967,6 +2048,9 @@
       ],
       "Sign in to your account": [
         "Logga in på ditt konto"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ]
     },
     "lobby: Title": {
@@ -2042,11 +2126,17 @@
       "Enter a prefix": [
         "Ange ett prefix"
       ],
+      "Enter email": [
+        "Ange e-post"
+      ],
       "Enter email or username": [
         "Ange e-post eller användarnamn"
       ],
       "Enter password": [
         "Ange lösenord"
+      ],
+      "Enter username": [
+        "Ange användarnamn"
       ],
       "Full Name": [
         "Fullständigt namn"
@@ -2306,6 +2396,9 @@
     "Validation": {
       "Duplicated URL": [
         "Duplicerad URL"
+      ],
+      "Email address is invalid": [
+        "E-postadress är ogiltig"
       ],
       "Field name is required": [
         "Fältnamn är obligatoriskt"

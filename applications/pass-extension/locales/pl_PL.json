@@ -26,6 +26,9 @@
       "Add new item": [
         "Dodaj nowy element"
       ],
+      "Add username field": [
+        "Dodaj pole nazwy użytkownika"
+      ],
       "Advanced": [
         "Zaawansowane"
       ],
@@ -1016,6 +1019,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automatyczna blokada została wyłączona."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Zapisano na ${ payload.domain }"
       ],
@@ -1702,6 +1708,9 @@
       "Download logs": [
         "Pobierz logi"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Email aliases": [
         "Aliasy"
       ],
@@ -1983,12 +1992,6 @@
       ],
       "Username": [
         "Nazwa użytkownika"
-      ],
-      "Username (alias)": [
-        "Nazwa użytkownika (alias)"
-      ],
-      "Username (new alias)": [
-        "Nazwa użytkownika (nowy alias)"
       ],
       "Vault ID": [
         "Identyfikator sejfu"
@@ -2364,6 +2367,9 @@
     "Validation": {
       "Duplicated URL": [
         "Adres URL został zduplikowany"
+      ],
+      "Email address is invalid": [
+        "Adres e-mail jest nieprawidłowy"
       ],
       "Field name is required": [
         "Nazwa pola jest wymagana"
