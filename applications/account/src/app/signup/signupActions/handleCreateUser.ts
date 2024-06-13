@@ -167,7 +167,10 @@ export const handleCreateUser = async ({
                             Email: email,
                             Payload: payload,
                             ...(() => {
-                                if (invite?.type === 'drive') {
+                                if (
+                                    (invite?.type === 'drive' && invite.data.preVerifiedAddressToken) ||
+                                    (invite?.type === 'pass' && invite.data.preVerifiedAddressToken)
+                                ) {
                                     return {
                                         TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken,
                                     };

@@ -772,7 +772,8 @@ const Step1 = ({
                                                     : undefined)}
                                                 domains={model.domains}
                                                 signupTypes={
-                                                    signupParameters.invite?.type === 'drive'
+                                                    signupParameters.invite?.type === 'drive' ||
+                                                    signupParameters.invite?.type === 'pass'
                                                         ? [SignupType.Email]
                                                         : signupTypes
                                                 }

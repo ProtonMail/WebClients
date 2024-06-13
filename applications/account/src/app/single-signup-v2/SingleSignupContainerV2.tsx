@@ -270,12 +270,14 @@ const SingleSignupContainerV2 = ({
         const invited = searchParams.get('invited');
         let invite: SignupParameters2['invite'] = undefined;
 
-        if (invited && inviter) {
+        const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
+
+        if (toApp == APPS.PROTONPASS && invited && inviter) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
                 type: 'pass',
-                data: { inviter, invited },
+                data: { inviter, invited, preVerifiedAddressToken },
             };
         }
 
@@ -284,7 +286,6 @@ const SingleSignupContainerV2 = ({
         }
 
         const externalInvitationID = searchParams.get('externalInvitationID');
-        const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken');
         const email = result.email;
         if (toApp === APPS.PROTONDRIVE && externalInvitationID && email && preVerifiedAddressToken) {
             mode = SignupMode.Invite;
