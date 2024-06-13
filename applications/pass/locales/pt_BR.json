@@ -37,6 +37,9 @@
       "Add new item": [
         "Adicionar novo item"
       ],
+      "Add username field": [
+        "Adicionar um campo de nome de usuário"
+      ],
       "Admin panel": [
         "Painel de administração"
       ],
@@ -99,6 +102,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue offline": [
+        "Continuar off-line"
       ],
       "Copy and close": [
         "Copiar e fechar"
@@ -427,6 +433,9 @@
       "Try again.": [
         "Tente novamente."
       ],
+      "Unlock offline with password": [
+        "Desbloquear o modo off-line com a senha"
+      ],
       "Unpin item": [
         "Desafixar item"
       ],
@@ -740,6 +749,9 @@
       "Moving item failed": [
         "Erro ao mover o item"
       ],
+      "Network error": [
+        "Erro de rede"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Modo off-line está temporariamente indisponível para o modo de duas senhas."
       ],
@@ -918,6 +930,9 @@
         "${ n } item",
         "${ n } itens"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sempre será acessível."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
       ],
@@ -945,6 +960,9 @@
       ],
       "Access successfully confirmed": [
         "Acesso confirmado com sucesso"
+      ],
+      "Add a username field": [
+        "Adicionar um campo de nome de usuário"
       ],
       "Add your custom email address to monitor :": [
         "Adicione seu endereço de e-mail personalizado para monitoramento:"
@@ -991,6 +1009,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Você tem certeza que deseja mover o item para \"${ name }\"?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Bloqueio automático desativado."
+      ],
       "Breaches detected": [
         "Violações detectadas"
       ],
@@ -1015,6 +1036,9 @@
       "Change your password": [
         "Alterar sua senha"
       ],
+      "Click here to add a field for a username.": [
+        "Clique aqui para adicionar um campo para um nome de usuário."
+      ],
       "Congratulations, your access has been confirmed": [
         "Parabéns, seu acesso foi confirmado."
       ],
@@ -1038,6 +1062,12 @@
       ],
       "Didn't receive the code?": [
         "Não recebeu o código?"
+      ],
+      "Disabling auto-lock": [
+        "Desativar bloqueio automático"
+      ],
+      "Disabling offline mode...": [
+        "Desativando modo off-line..."
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
@@ -1065,6 +1095,18 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Ativar ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Ative o bloqueio automático para proteger seus dados."
+      ],
+      "Enabling offline mode...": [
+        "Ativando modo off-line..."
+      ],
+      "Enabling password auto-lock": [
+        "Ativando bloqueio automático por senha"
+      ],
+      "Enabling PIN auto-lock": [
+        "Ativando bloqueio automático por PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
@@ -1249,11 +1291,17 @@
       "Offline mode": [
         "Modo off-line"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "O modo off-line não pôde ser desativado no momento"
+      ],
       "Offline mode could not be enabled at the moment": [
         "O modo off-line não pôde ser ativado no momento"
       ],
       "Offline support successfully disabled": [
         "Modo off-line desativado com sucesso"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN para desbloquear sua sessão. Você será desconectado após 3 tentativas fracassadas."
       ],
       "Owner": [
         "Proprietário"
@@ -1286,11 +1334,26 @@
       "Please check your spam folder or try resending the code.": [
         "Por favor, verifique sua pasta de spam ou tente reenviar o código."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Confirme sua senha da ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Confirme sua senha da ${ BRAND_NAME } para bloquear automáticamente com a sua senha."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Confirme sua senha da ${ BRAND_NAME } para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Confirme sua senha da ${ BRAND_NAME } para atualizar o tempo do bloqueio automático."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirme seu código PIN para cancelar o bloqueio atual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirme o seu código PIN para editar essa configuração."
@@ -1315,6 +1378,9 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnecting": [
+        "Reconectando"
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
@@ -1632,6 +1698,9 @@
       "Create an encrypted note": [
         "Criar uma nota criptografada"
       ],
+      "Create lock": [
+        "Criar bloqueio"
+      ],
       "Create new vault": [
         "Criar novo cofre"
       ],
@@ -1658,6 +1727,12 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (novo alias)"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -1839,6 +1914,9 @@
       "PIN": [
         "Código PIN"
       ],
+      "PIN code": [
+        "Código PIN"
+      ],
       "Prefix": [
         "Prefixo"
       ],
@@ -1941,12 +2019,6 @@
       "Username": [
         "Nome de usuário"
       ],
-      "Username (alias)": [
-        "Nome de usuário (alias)"
-      ],
-      "Username (new alias)": [
-        "Nome de usuário (novo alias)"
-      ],
       "Vault ID": [
         "ID do cofre"
       ],
@@ -1986,6 +2058,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sessão em sua conta"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2077,11 +2152,17 @@
       "Enter a prefix": [
         "Digite um prefixo"
       ],
+      "Enter email": [
+        "Digitar e-mail"
+      ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
       ],
       "Enter password": [
         "Insira a senha"
+      ],
+      "Enter username": [
+        "Digitar nome do usuário"
       ],
       "Full Name": [
         "Nome completo"
@@ -2441,6 +2522,9 @@
       "Duplicated URL": [
         "URL duplicado"
       ],
+      "Email address is invalid": [
+        "O endereço de e-mail não é válido."
+      ],
       "Field name is required": [
         "O nome do campo é obrigatório"
       ],
@@ -2581,6 +2665,9 @@
       ],
       "Title is required": [
         "O título é obrigatório"
+      ],
+      "Too many attempts": [
+        "Muitas tentativas"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir propriedade deste cofre para ${ email }?"

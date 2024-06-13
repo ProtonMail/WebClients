@@ -28,6 +28,9 @@
       "Add new item": [
         "Nieuw item toevoegen"
       ],
+      "Add username field": [
+        "Veld gebruikersnaam toevoegen"
+      ],
       "Admin panel": [
         "Beheerderspaneel"
       ],
@@ -982,6 +985,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Weet u zeker dat u het item wilt verplaatsen naar \"${ name }\" ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Auto-vergrendelen succesvol ingeschakeld."
+      ],
       "Breaches detected": [
         "Inbreuken gedetecteerd"
       ],
@@ -1929,12 +1935,6 @@
       "Username": [
         "Gebruikersnaam"
       ],
-      "Username (alias)": [
-        "Gebruikersnaam (alias)"
-      ],
-      "Username (new alias)": [
-        "Gebruikersnaam (nieuwe alias)"
-      ],
       "Vault ID": [
         "Kluis ID"
       ],
@@ -2428,6 +2428,9 @@
     "Validation": {
       "Duplicated URL": [
         "Dubbele URL"
+      ],
+      "Email address is invalid": [
+        "E-mailadres is ongeldig"
       ],
       "Field name is required": [
         "Veldnaam is verplicht"
