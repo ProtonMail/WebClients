@@ -1,8 +1,7 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiFiatCurrency, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
@@ -10,17 +9,17 @@ import Option from '@proton/components/components/option/Option';
 import { SearchableSelect } from '../Select';
 import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';
 
-interface Props {
+interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     /**
      * Popular currency options
      */
-    popularSymbols?: WasmFiatCurrencySymbol[];
+    popularSymbols?: S[];
     /**
      * Other currency options
      */
-    options: WasmApiFiatCurrency[];
-    value?: WasmFiatCurrencySymbol;
-    onSelect?: (value: WasmApiFiatCurrency) => void;
+    options: T[];
+    value?: S;
+    onSelect?: (value: T) => void;
     error?: string;
     hint?: string;
     disabled?: boolean;
@@ -31,8 +30,8 @@ interface Props {
     dense?: boolean;
 }
 
-export const CurrencySelect = ({
-    popularSymbols = ['USD', 'CHF', 'EUR', 'GBP', 'CAD', 'CNY'],
+export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
+    popularSymbols = ['USD', 'CHF', 'EUR', 'GBP', 'CAD', 'CNY'] as S[],
     options,
     value,
     onSelect,
@@ -42,8 +41,14 @@ export const CurrencySelect = ({
     label,
     placeholder,
     dense,
-}: Props) => {
-    const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol | undefined>(value);
+}: Props<S, T>) => {
+    const [selectedCurrency, setSelectedCurrency] = useState<S | undefined>(value);
+
+    useEffect(() => {
+        if (selectedCurrency !== value) {
+            setSelectedCurrency(value);
+        }
+    }, [selectedCurrency, value]);
 
     const detailledValue = options.find((opt) => opt.Symbol === selectedCurrency);
 
@@ -59,7 +64,7 @@ export const CurrencySelect = ({
             const selectedOption = onlyOptions.find((o) => getSerialisedOption(o) === value);
 
             if (selectedOption) {
-                setSelectedCurrency(selectedOption.Symbol);
+                // no need to `setSelectedCurrency`, will be set in the useEffect above
                 onSelect?.(selectedOption);
             }
         },
@@ -70,8 +75,10 @@ export const CurrencySelect = ({
         () =>
             allDropdownChildren.map((option) => {
                 if (option.type === 'option') {
+                    const serialised = getSerialisedOption(option);
+
                     return (
-                        <Option key={option.ID} value={getSerialisedOption(option)} title={option.Symbol}>
+                        <Option key={serialised} value={serialised} title={option.Symbol}>
                             <div className="flex flex-row items-center">
                                 <span className="block mr-2">{option.Symbol}</span>
                                 <span className="block color-weak">{option.Name}</span>
