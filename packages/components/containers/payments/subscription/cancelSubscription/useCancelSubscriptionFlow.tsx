@@ -319,7 +319,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 return SUBSCRIPTION_KEPT;
             }
 
-            if (hasCancellablePlan(subscription) || (isCancellationExtended && hasNewCancellablePlan(subscription))) {
+            if (
+                hasCancellablePlan(subscription) ||
+                (isCancellationExtended && hasNewCancellablePlan(subscription, user))
+            ) {
                 if (subscription.Renew === Renew.Disabled) {
                     return SUBSCRIPTION_KEPT;
                 }

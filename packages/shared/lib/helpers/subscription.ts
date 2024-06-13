@@ -1,5 +1,6 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
+import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 
@@ -17,6 +18,7 @@ import {
 } from '../constants';
 import {
     Audience,
+    ChargebeeEnabled,
     External,
     Organization,
     Plan,
@@ -27,6 +29,7 @@ import {
     Subscription,
     SubscriptionModel,
     SubscriptionPlan,
+    UserModel,
 } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -794,7 +797,11 @@ export const hasCancellablePlan = (subscription: Subscription | undefined) => {
  * This is separated because we want to control the release of this feature with a feature flag.
  * It will be merged with the method above once the feature is released.
  */
-export const hasNewCancellablePlan = (subscription: Subscription | undefined) => {
+export const hasNewCancellablePlan = (subscription: Subscription | undefined, user: UserModel) => {
+    if (onSessionMigrationChargebeeStatus(user, subscription) !== ChargebeeEnabled.CHARGEBEE_FORCED) {
+        return false;
+    }
+
     return [
         hasMail,
         hasBundle,
