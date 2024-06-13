@@ -97,11 +97,7 @@ export const createMessageBroker = (options: {
 
                 if (isInternal) assertMessageVersion(message);
 
-                if (
-                    isInternal &&
-                    options.strictOriginCheck.includes(message.type) &&
-                    sender.id !== browser.runtime.id
-                ) {
+                if (BUILD_TARGET !== 'safari' && isInternal && options.strictOriginCheck.includes(message.type)) {
                     const origin = new URL((sender as any).origin ?? sender.url).origin;
                     if (origin !== extensionOrigin) {
                         logger.warn('[MessageBroker::Message] unauthorized message origin');
