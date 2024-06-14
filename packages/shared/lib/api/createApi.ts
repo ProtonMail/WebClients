@@ -149,6 +149,8 @@ const createApi = ({
         onVerification: handleVerification,
     }) as any;
 
+    const offlineSet = new Set<string>();
+
     const callback: Api = ({ output = 'json', ...rest }: any) => {
         // Only need to send locale headers in public app
         const config = sendLocaleHeaders ? withLocaleHeaders(localeCode, rest) : rest;
@@ -170,6 +172,7 @@ const createApi = ({
                     type: 'status',
                     payload: defaultApiStatus,
                 });
+                offlineSet.clear();
 
                 if (output === 'stream') {
                     return response.body;
@@ -191,30 +194,30 @@ const createApi = ({
                 const { code } = getApiError(e);
                 const errorMessage = getApiErrorMessage(e);
 
+                const isSilenced = getSilenced(e.config, code);
+
                 const handleErrorNotification = () => {
-                    if (errorMessage) {
-                        const isSilenced = getSilenced(e.config, code);
-                        if (!isSilenced) {
-                            const codeExpirations = {
-                                [API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE]: 10_000,
-                            };
-                            notify({
-                                type: 'notification',
-                                payload: {
-                                    type: 'error',
-                                    text: errorMessage,
-                                    ...(code in codeExpirations
-                                        ? {
-                                              key: code,
-                                              expiration: codeExpirations[code],
-                                          }
-                                        : {
-                                              expiration: config?.notificationExpiration,
-                                          }),
-                                },
-                            });
-                        }
+                    if (!errorMessage || isSilenced) {
+                        return;
                     }
+                    const codeExpirations = {
+                        [API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE]: 10_000,
+                    };
+                    notify({
+                        type: 'notification',
+                        payload: {
+                            type: 'error',
+                            text: errorMessage,
+                            ...(code in codeExpirations
+                                ? {
+                                      key: code,
+                                      expiration: codeExpirations[code],
+                                  }
+                                : {
+                                      expiration: config?.notificationExpiration,
+                                  }),
+                        },
+                    });
                 };
 
                 // Intended for the verify app where we always want to pass an error notification
@@ -226,12 +229,19 @@ const createApi = ({
                 const isOffline = getIsOfflineError(e);
                 const isUnreachable = getIsUnreachableError(e);
 
+                if (isOffline) {
+                    offlineSet.add(e?.config?.url || '');
+                } else {
+                    offlineSet.clear();
+                }
+
                 if (isOffline || isUnreachable) {
                     notify({
                         type: 'status',
                         payload: {
                             apiUnreachable: isUnreachable ? errorMessage || '' : '',
-                            offline: isOffline,
+                            // We wait to notify offline until at least 2 unique urls have been seen as offline
+                            offline: isOffline && offlineSet.size > 1,
                         },
                     });
                     throw e;
