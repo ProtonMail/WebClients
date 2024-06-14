@@ -36,4 +36,5 @@ export const App_TYPES = {
   CreateThread: Symbol.for('CreateThread'),
   LoadThreads: Symbol.for('LoadThreads'),
   HandleRealtimeCommentsEvent: Symbol.for('HandleRealtimeCommentsEvent'),
+  ExportAndDownload: Symbol.for('ExportAndDownload'),
 }
