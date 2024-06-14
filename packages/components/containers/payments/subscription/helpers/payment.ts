@@ -134,6 +134,7 @@ type SubscriptionResult = {
 export function subscriptionExpires(): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: undefined | null): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: FreeSubscription): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: SubscriptionModel | undefined): SubscriptionResult;
 export function subscriptionExpires(subscription: SubscriptionModel): SubscriptionResult;
 export function subscriptionExpires(
     subscription?: SubscriptionModel | FreeSubscription | null

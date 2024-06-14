@@ -175,6 +175,7 @@ export enum SubscriptionMode {
     Regular = 0,
     CustomBillings = 1,
     Upcoming = 2,
+    AddonDowngrade = 3,
 }
 
 export type Coupon = Nullable<{

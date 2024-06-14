@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { buildSubscription } from '@proton/testing/builders';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
 
@@ -48,6 +49,8 @@ describe('SubscriptionCheckout', () => {
                 isProration={true}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
             ></SubscriptionCheckout>
         );
 
@@ -72,6 +75,8 @@ describe('SubscriptionCheckout', () => {
                 isProration={true}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
             ></SubscriptionCheckout>
         );
 
@@ -96,6 +101,8 @@ describe('SubscriptionCheckout', () => {
                 isProration={false}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
             ></SubscriptionCheckout>
         );
 
@@ -117,10 +124,13 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                nextSubscriptionStart={1668868986}
                 isProration={false}
                 isCustomBilling={false}
                 isScheduledSubscription={true}
+                isAddonDowngrade={false}
+                subscription={buildSubscription({
+                    PeriodEnd: 1668868986,
+                })}
             ></SubscriptionCheckout>
         );
 
@@ -154,10 +164,13 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                nextSubscriptionStart={1668868986}
                 isProration={true}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription({
+                    PeriodEnd: 1668868986,
+                })}
             ></SubscriptionCheckout>
         );
 
@@ -198,10 +211,13 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                nextSubscriptionStart={1668868986}
                 isProration={false}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription({
+                    PeriodEnd: 1668868986,
+                })}
             ></SubscriptionCheckout>
         );
 
@@ -242,10 +258,13 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                nextSubscriptionStart={1668868986}
                 isProration={false}
                 isCustomBilling={false}
                 isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription({
+                    PeriodEnd: 1668868986,
+                })}
             ></SubscriptionCheckout>
         );
 
