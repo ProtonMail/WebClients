@@ -1,4 +1,4 @@
-import { WebsocketConnection } from './WebsocketConnection'
+import { DebugConnection, WebsocketConnection } from './WebsocketConnection'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { LoggerInterface } from '@proton/utils/logs'
 import { Result } from '../Domain/Result/Result'
@@ -18,6 +18,12 @@ describe('WebsocketConnection', () => {
   afterEach(() => {
     connection.destroy()
     jest.clearAllMocks()
+  })
+
+  describe('DebugConnection', () => {
+    it('should not be enabled', () => {
+      expect(DebugConnection.enabled).toBe(false)
+    })
   })
 
   it('should correctly format url without commit id', () => {

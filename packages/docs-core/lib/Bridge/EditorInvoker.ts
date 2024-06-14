@@ -106,6 +106,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     functionName: K,
     args: ParamsExcludingFunctions<Parameters<ClientRequiresEditorMethods[K]>>,
   ): Promise<ReturnType<ClientRequiresEditorMethods[K]>> {
+    if (!this.editorFrame.contentWindow) {
+      throw new Error('Editor frame contentWindow is not ready')
+    }
+
     const messageId = GenerateUUID()
 
     const message: ClientToEditorInvokationMessage<K> = {
@@ -117,7 +121,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
     this.logger.debug('Sending message to editor', message)
 
-    this.editorFrame.contentWindow?.postMessage(message, BridgeOriginProvider.GetEditorOrigin())
+    this.editorFrame.contentWindow.postMessage(message, BridgeOriginProvider.GetEditorOrigin())
 
     return new Promise<ReturnType<ClientRequiresEditorMethods[K]>>((resolve) => {
       this.pendingMessages.push({
