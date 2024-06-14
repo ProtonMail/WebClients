@@ -97,6 +97,7 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
     if (planIDs[BUNDLE_PRO_2024]) {
         supported[ADDON_NAMES.MEMBER_BUNDLE_PRO_2024] = true;
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024] = true;
+        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024] = true;
     }
 
     if (planIDs[ENTERPRISE]) {
