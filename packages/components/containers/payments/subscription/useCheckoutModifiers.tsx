@@ -15,6 +15,7 @@ export interface CheckoutModifiers {
     isProration: boolean;
     isScheduledSubscription: boolean;
     isCustomBilling: boolean;
+    isAddonDowngrade: boolean;
 }
 
 export const useCheckoutModifiers = (
@@ -60,6 +61,7 @@ export const useCheckoutModifiers = (
             isProration: checkResult.SubscriptionMode === SubscriptionMode.Regular,
             isScheduledSubscription: checkResult.SubscriptionMode === SubscriptionMode.Upcoming,
             isCustomBilling: checkResult.SubscriptionMode === SubscriptionMode.CustomBillings,
+            isAddonDowngrade: checkResult.SubscriptionMode === SubscriptionMode.AddonDowngrade,
         };
     }
 
@@ -67,9 +69,11 @@ export const useCheckoutModifiers = (
 
     const isScheduledSubscription = !isProration && !isCustomBilling;
 
+    // fallback. It will be removed after CB migration is done.
     return {
         isProration,
         isScheduledSubscription,
         isCustomBilling,
+        isAddonDowngrade: false,
     };
 };
