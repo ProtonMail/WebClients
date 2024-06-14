@@ -1,7 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { DocStateInterface, FileToDocPendingConversion } from '@proton/docs-shared'
 import { useEffect, useRef } from 'react'
-import { $importDataIntoEditor } from '../../Tools/Conversion'
+import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 
 type Props = {

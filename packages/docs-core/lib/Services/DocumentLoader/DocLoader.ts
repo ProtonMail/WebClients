@@ -22,6 +22,7 @@ import { DocControllerInterface } from '../../Controller/Document/DocControllerI
 import { CommentService } from '../Comments/CommentService'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { LoadCommit } from '../../UseCase/LoadCommit'
+import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -51,6 +52,7 @@ export class DocLoader implements DocLoaderInterface {
     private duplicateDocument: DuplicateDocument,
     private createNewDocument: CreateNewDocument,
     private getDocumentMeta: GetDocumentMeta,
+    private exportAndDownload: ExportAndDownload,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {}
@@ -71,6 +73,7 @@ export class DocLoader implements DocLoaderInterface {
       this.duplicateDocument,
       this.createNewDocument,
       this.getDocumentMeta,
+      this.exportAndDownload,
       this.websocketSerivce,
       this.eventBus,
       this.logger,
