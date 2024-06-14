@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { getApiErrorMessage, getIsUnreachableError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import useNotifications from './useNotifications';
 
-const ignoreErrors = ['InactiveSession', 'AppVersionBadError', 'OfflineError', 'AbortError'];
+const ignoreErrors = ['InactiveSession', 'AppVersionBadError', 'AbortError'];
 
 const useErrorHandler = () => {
     const { createNotification } = useNotifications();
@@ -21,8 +21,7 @@ const useErrorHandler = () => {
         const errorMessage = error.message || c('Error').t`Unknown error`;
 
         // Bad app version and unreachable errors are handled in a top banner
-        const shouldNotify =
-            notify && !error.cancel && !ignoreErrors.includes(error.name) && !getIsUnreachableError(error);
+        const shouldNotify = notify && !error.cancel && !ignoreErrors.includes(error.name);
         if (shouldNotify) {
             createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
         }
