@@ -11,13 +11,12 @@ import { Coupon, Currency, PlanIDs, PlansMap, Subscription } from '@proton/share
 import Price from '../../components/price/Price';
 import Time from '../../components/time/Time';
 import { getMonths } from './SubscriptionsSection';
+import { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 
 export type RenewalNoticeProps = {
     cycle: number;
-    isCustomBilling?: boolean;
-    isScheduledSubscription?: boolean;
     subscription?: Subscription;
-};
+} & Partial<CheckoutModifiers>;
 
 export const getBlackFridayRenewalNoticeText = ({
     price,
@@ -71,10 +70,17 @@ export const getRegularRenewalNoticeText = ({
     cycle,
     isCustomBilling,
     isScheduledSubscription,
+    isAddonDowngrade,
     subscription,
 }: RenewalNoticeProps) => {
     let unixRenewalTime: number = +addMonths(new Date(), cycle) / 1000;
-    if (isCustomBilling && subscription) {
+    // custom billings are renewed at the end of the current subscription.
+    // addon downgrades are more tricky. On the first glance they behave like scheduled subscriptions,
+    // because they indeed create an upcoming subscription. But when subscription/check returns addon
+    // downgrade then user pays nothing now, and the scheduled subscription will still be created.
+    // The payment happens when the upcoming subscription becomes the current one. So the next billing date is still
+    // the end of the current subscription.
+    if ((isCustomBilling || isAddonDowngrade) && subscription) {
         unixRenewalTime = subscription.PeriodEnd;
     }
 
