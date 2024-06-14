@@ -6,4 +6,5 @@ export enum BroadcastSource {
   AwarenessUpdateHandler = 'AwarenessUpdateHandler',
   HandleDocBeingUpdatedByLexical = 'HandleDocBeingUpdatedByLexical',
   DocPresenceState = 'DocPresenceState',
+  DocumentBufferFlush = 'DocumentBufferFlush',
 }
