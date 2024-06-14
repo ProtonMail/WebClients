@@ -119,4 +119,5 @@ export enum FeatureCode {
     WelcomeImportModalShown = 'WelcomeImportModalShown',
     PassOnboardingSpotlights = 'PassOnboardingSpotlights',
     SeenLightLabellingFeatureModal = 'SeenLightLabellingFeatureModal',
+    UpgradeButtonExpiration = 'UpgradeButtonExpiration',
 }
