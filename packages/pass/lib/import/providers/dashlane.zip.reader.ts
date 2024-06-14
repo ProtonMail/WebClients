@@ -23,7 +23,7 @@ import type {
     DashlanePersonalInfoItem,
 } from './dashlane.types';
 
-const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
+export const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
     'username',
     'title',
     'password',
@@ -44,7 +44,7 @@ const DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS: (keyof DashlanePaymentItem)[] = [
     'expiration_year',
 ];
 
-const processLoginItem = (item: DashlaneLoginItem, importUsername?: boolean): ItemImportIntent<'login'> =>
+export const processLoginItem = (item: DashlaneLoginItem, importUsername?: boolean): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
         note: item.note,
@@ -59,13 +59,13 @@ const processLoginItem = (item: DashlaneLoginItem, importUsername?: boolean): It
         })),
     });
 
-const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
+export const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.title,
         note: item.note,
     });
 
-const processCreditCardItem = (item: DashlanePaymentItem): ItemImportIntent<'creditCard'> =>
+export const processCreditCardItem = (item: DashlanePaymentItem): ItemImportIntent<'creditCard'> =>
     importCreditCardItem({
         name: item.name,
         note: item.note,
@@ -95,7 +95,7 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
         : [];
 };
 
-export const readDashlaneData = async ({
+export const readDashlaneDataZIP = async ({
     data,
     importUsername,
 }: {
@@ -148,7 +148,7 @@ export const readDashlaneData = async ({
 
         ignored.push(
             ...ids.map(({ type, name }) => `[${capitalize(type ?? 'ID')}] ${name || 'Unknown ID'}`),
-            ...personalInfos.map(({ title }) => `[${'Personal Info'}] ${title || 'Unnamed'}`)
+            ...personalInfos.map(({ title }) => `[Personal Info] ${title || 'Unnamed'}`)
         );
 
         const vaults: ImportVault[] = [
