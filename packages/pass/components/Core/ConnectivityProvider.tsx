@@ -8,6 +8,7 @@ import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
 import type { ApiSubscriptionEvent } from '@proton/pass/types';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
+import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import { usePassCore } from './PassCoreProvider';
@@ -36,11 +37,14 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         []
     );
 
+    /* Debounce to avoid showing the offline message unnecessarily e.g. during a page refresh */
+    const debouncedSetApiOnline = useCallback(debounce(setApiOnline, 2_000), []);
+
     useEffect(
         () =>
             subscribe?.((event) => {
                 if (event.type === 'network') {
-                    setApiOnline(event.online);
+                    debouncedSetApiOnline(event.online);
                 }
             }),
         []
