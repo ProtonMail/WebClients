@@ -13,8 +13,8 @@ import {
   TextFormatType,
 } from 'lexical'
 
-import { $createImageNode } from '../../Plugins/Image/ImageNode'
-import { sendErrorMessage } from '../errorMessage'
+import { $createImageNode } from '../Plugins/Image/ImageNode'
+import { sendErrorMessage } from '../Utils/errorMessage'
 
 type ParsedNode = (
   | {
