@@ -26,6 +26,8 @@ import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 import { LexicalEditor } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
+import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
+import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -194,6 +196,11 @@ export function App({ nonInteractiveMode = false }: Props) {
 
         async broadcastPresenceState() {
           newDocState.broadcastPresenceState()
+        },
+
+        async exportData(format): Promise<Uint8Array | Blob> {
+          const editorState = generateEditorStatefromYDoc(newDocState.getDoc())
+          return exportDataFromEditorState(editorState, format)
         },
       }
 

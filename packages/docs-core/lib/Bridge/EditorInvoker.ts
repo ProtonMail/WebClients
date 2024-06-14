@@ -8,6 +8,7 @@ import {
   ConvertibleDataType,
   RtsMessagePayload,
   BridgeOriginProvider,
+  DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
@@ -83,6 +84,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
   async showCommentsPanel(): Promise<void> {
     return this.invokeEditorMethod('showCommentsPanel', [])
+  }
+
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob> {
+    return this.invokeEditorMethod('exportData', [format])
   }
 
   async initializeEditor(

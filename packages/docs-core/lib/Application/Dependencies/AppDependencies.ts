@@ -34,6 +34,7 @@ import { LoadThreads } from '../../UseCase/LoadThreads'
 import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 import { VerifyMessages } from '../../UseCase/VerifyMessages'
 import { LoadCommit } from '../../UseCase/LoadCommit'
+import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 
 export class AppDependencies extends DependencyContainer {
   constructor(api: Api, user: UserModel, driveCompat: DriveCompat) {
@@ -162,6 +163,10 @@ export class AppDependencies extends DependencyContainer {
       return new GetRealtimeUrlAndToken(this.get<DocsApi>(App_TYPES.DocsApi))
     })
 
+    this.bind(App_TYPES.ExportAndDownload, () => {
+      return new ExportAndDownload()
+    })
+
     this.bind(App_TYPES.DocLoader, () => {
       return new DocLoader(
         this.get<UserService>(App_TYPES.UserService),
@@ -180,6 +185,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DuplicateDocument>(App_TYPES.DuplicateDocument),
         this.get<CreateNewDocument>(App_TYPES.CreateNewDocument),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
       )

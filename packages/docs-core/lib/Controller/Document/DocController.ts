@@ -25,6 +25,7 @@ import {
   WebsocketEventMessagePayload,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
+  DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
 import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
@@ -50,6 +51,7 @@ import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificat
 import { LoadCommit } from '../../UseCase/LoadCommit'
 import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
+import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -86,6 +88,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _duplicateDocument: DuplicateDocument,
     private _createNewDocument: CreateNewDocument,
     private _getDocumentMeta: GetDocumentMeta,
+    private _exportAndDownload: ExportAndDownload,
+
     private websocketService: WebsocketServiceInterface,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -643,6 +647,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
     void this.editorInvoker.showCommentsPanel()
+  }
+
+  async exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs) {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+    void this._exportAndDownload.execute(this.editorInvoker, this.getSureDocument(), format)
   }
 
   deinit() {}
