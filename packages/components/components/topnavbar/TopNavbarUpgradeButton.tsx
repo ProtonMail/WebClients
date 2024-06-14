@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { addDays } from 'date-fns';
+import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import {
+    FeatureCode,
     SUBSCRIPTION_STEPS,
     useActiveBreakpoint,
     useConfig,
+    useFeature,
     useSettingsLink,
     useSubscription,
     useUpsellConfig,
@@ -19,11 +21,9 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
 import useButtonVariants from '@proton/components/hooks/useButtonVariants';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import PromotionButton from '../button/PromotionButton/PromotionButton';
@@ -33,13 +33,21 @@ interface Props {
     app?: APP_NAMES;
 }
 
-const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
-const IS_UPGRADE_BUTTON_HIDDEN = 'is-upgrade-button-hidden';
+const useUpgradeButtonExpirationDate = () => {
+    const expirationDateFeature = useFeature(FeatureCode.UpgradeButtonExpiration);
+    const expirationDate = expirationDateFeature.feature?.Value || 0;
 
-const getCookieExpiration = () => {
-    const cookieButtonHidden = getCookie(IS_UPGRADE_BUTTON_HIDDEN);
+    const setExpirationDate = () => {
+        const unixTime = getUnixTime(addDays(new Date(), 2));
+        void expirationDateFeature.update(unixTime);
+    };
 
-    return cookieButtonHidden !== '1';
+    const isExpired = useCallback(() => {
+        const now = getUnixTime(new Date());
+        return expirationDate < now;
+    }, [expirationDate]);
+
+    return { isExpired, setExpirationDate };
 };
 
 const TopNavbarUpgradeButton = ({ app }: Props) => {
@@ -48,18 +56,15 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const location = useLocation();
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
+    const { isExpired, setExpirationDate } = useUpgradeButtonExpirationDate();
 
     const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const check = () => {
-        return (
-            (user.isFree || isTrial(subscription)) &&
-            !location.pathname.endsWith(upgradePathname) &&
-            getCookieExpiration()
-        );
-    };
+    const check = useCallback(() => {
+        return (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname) && isExpired();
+    }, [isExpired]);
 
     const [displayUpgradeButton, setDisplayUpgradeButton] = useState(() => {
         // We want to have metrics from where the user has clicked on the upgrade button
@@ -75,7 +80,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         return () => {
             clearInterval(intervalID);
         };
-    }, []);
+    }, [check]);
 
     const { shouldDisplayVariant, variantInfos } = useButtonVariants();
     const isPillButton = !!variantInfos?.additionnalStylesClass;
@@ -108,13 +113,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                     as={ButtonLike}
                     onClick={() => {
                         // hide it for 2 days once clicked
-                        setCookie({
-                            cookieName: IS_UPGRADE_BUTTON_HIDDEN,
-                            cookieValue: '1',
-                            cookieDomain,
-                            expirationDate: addDays(new Date(), 2).toUTCString(),
-                            path: '/',
-                        });
+                        setExpirationDate();
                         setDisplayUpgradeButton(false);
 
                         if (isElectronApp && !hasInboxDesktopInAppPayments) {
