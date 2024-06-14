@@ -84,6 +84,7 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
 import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
+import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionCycleSelector, { SubscriptionCheckoutCycleItem } from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
@@ -259,8 +260,10 @@ const SubscriptionContainer = ({
 
     const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
+    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
+
     const planIDs = useMemo(() => {
-        const subscriptionPlanIDs = getPlanIDs(subscription);
+        const subscriptionPlanIDs = getPlanIDs(latestSubscription);
 
         if (plan) {
             return switchPlan({
@@ -579,7 +582,10 @@ const SubscriptionContainer = ({
         }
 
         const isInhouseForcedUser = chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED;
-        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.cycle) && !isInhouseForcedUser) {
+        if (
+            isSubscriptionUnchanged(latestSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
+            !isInhouseForcedUser
+        ) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
@@ -852,7 +858,6 @@ const SubscriptionContainer = ({
         cycle: model.cycle,
         planIDs: model.planIDs,
         onChangeCurrency: handleChangeCurrency,
-        nextSubscriptionStart: subscription.PeriodEnd,
         showTaxCountry: paymentFacade.showTaxCountry,
         statusExtended: paymentFacade.statusExtended,
         onBillingAddressChange: handleBillingAddressChange,
@@ -936,7 +941,7 @@ const SubscriptionContainer = ({
                                                     }, 300)}
                                                     forceHideDescriptions
                                                     showUsersTooltip={false}
-                                                    currentSubscription={subscription}
+                                                    latestSubscription={latestSubscription}
                                                     className="mb-8"
                                                 />
                                             </>
@@ -996,6 +1001,7 @@ const SubscriptionContainer = ({
                                 subscription={subscription}
                                 hasPaymentMethod={hasPaymentMethod}
                             />
+                            <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
                         </div>
                     </div>
                     <div className="subscriptionCheckout-column bg-weak rounded">

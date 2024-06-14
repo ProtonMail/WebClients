@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PlanIDs, PlansMap, PriceType } from '@proton/shared/lib/interfaces';
+import { PlanIDs, PlansMap, PriceType, Subscription } from '@proton/shared/lib/interfaces';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
 
@@ -200,7 +200,7 @@ const getProps = ({
         checkout,
         plansMap,
         coupon: checkResult?.Coupon || null,
-        currency: 'CHF',
+        currency: 'CHF' as const,
     };
 };
 
@@ -293,6 +293,290 @@ describe('<RenewalNotice />', () => {
 
             expect(container).toHaveTextContent(
                 `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}.`
+            );
+        });
+
+        it('should user the end of current subscription period if addon downgrade is enabled', () => {
+            // while addon downgrading also schedules subscription, it doesn't charge user immediately.
+            // User will be charged when the scheduled subscription starts.
+            // That's significant difference from scheduled subscription that charges user immediately.
+
+            const subscription: Subscription = {
+                ID: 'Z1AOQDZSqE_rZEC01CXGl5fEy2JDRmT0M6WjSOtbvPep5lufR30jNAOKCcYavLK6rdOr_Wo4oID7UCskLdz0lw==',
+                InvoiceID: 'HwphVYhz2wbcT2yQJGyumBEmSe5DJqagrgv-WfC4B9nhuUanbGgwGrVeydqE-e3KdpbkfAFrJ5-T5VF-_pTxyg==',
+                Cycle: CYCLE.YEARLY,
+                PeriodStart: 1718200044,
+                PeriodEnd: 1749736044,
+                CreateTime: 1718200044,
+                CouponCode: null,
+                Currency: 'CHF',
+                Amount: 82443,
+                Discount: -19485,
+                RenewDiscount: 0,
+                RenewAmount: 101928,
+                Plans: [
+                    {
+                        ID: 'sId6XkzULCEzDPTuidkwWOgPInKjmzYJrw4nUYKnZHIwnlkiFqQjg_uHvzGrByCB99th0dfcVW-K5lK0E5tZmg==',
+                        Type: 1,
+                        Name: PLANS.BUNDLE_PRO_2024,
+                        Title: 'Proton Business Suite',
+                        MaxDomains: 15,
+                        MaxAddresses: 20,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxVPN: 10,
+                        MaxAI: 0,
+                        MaxTier: 2,
+                        Services: 15,
+                        Features: 1,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                    },
+                    {
+                        ID: 'vJF3r_xo_gpr-YfwAvEMwg3z1ZX7b4cTYHez1upZzszN3YWfQYjCdXQTnG4_WvXo7PJh-cIo1TGOBBKFrsFVoQ==',
+                        Type: 0,
+                        Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                        Title: '+1 Domain for Proton Business Suite',
+                        MaxDomains: 1,
+                        MaxAddresses: 0,
+                        MaxCalendars: 0,
+                        MaxSpace: 0,
+                        MaxMembers: 0,
+                        MaxVPN: 0,
+                        MaxAI: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 1680,
+                        Quantity: 1,
+                    },
+                    {
+                        ID: 'vJF3r_xo_gpr-YfwAvEMwg3z1ZX7b4cTYHez1upZzszN3YWfQYjCdXQTnG4_WvXo7PJh-cIo1TGOBBKFrsFVoQ==',
+                        Type: 0,
+                        Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                        Title: '+1 Domain for Proton Business Suite',
+                        MaxDomains: 1,
+                        MaxAddresses: 0,
+                        MaxCalendars: 0,
+                        MaxSpace: 0,
+                        MaxMembers: 0,
+                        MaxVPN: 0,
+                        MaxAI: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 1680,
+                        Quantity: 1,
+                    },
+                    {
+                        ID: 'vJF3r_xo_gpr-YfwAvEMwg3z1ZX7b4cTYHez1upZzszN3YWfQYjCdXQTnG4_WvXo7PJh-cIo1TGOBBKFrsFVoQ==',
+                        Type: 0,
+                        Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                        Title: '+1 Domain for Proton Business Suite',
+                        MaxDomains: 1,
+                        MaxAddresses: 0,
+                        MaxCalendars: 0,
+                        MaxSpace: 0,
+                        MaxMembers: 0,
+                        MaxVPN: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 1680,
+                        MaxAI: 0,
+                        Quantity: 1,
+                    },
+                    {
+                        ID: 'vJF3r_xo_gpr-YfwAvEMwg3z1ZX7b4cTYHez1upZzszN3YWfQYjCdXQTnG4_WvXo7PJh-cIo1TGOBBKFrsFVoQ==',
+                        Type: 0,
+                        Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                        Title: '+1 Domain for Proton Business Suite',
+                        MaxDomains: 1,
+                        MaxAddresses: 0,
+                        MaxCalendars: 0,
+                        MaxSpace: 0,
+                        MaxMembers: 0,
+                        MaxVPN: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 1680,
+                        MaxAI: 0,
+                        Quantity: 1,
+                    },
+                    {
+                        ID: 'vJF3r_xo_gpr-YfwAvEMwg3z1ZX7b4cTYHez1upZzszN3YWfQYjCdXQTnG4_WvXo7PJh-cIo1TGOBBKFrsFVoQ==',
+                        Type: 0,
+                        Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                        Title: '+1 Domain for Proton Business Suite',
+                        MaxDomains: 1,
+                        MaxAddresses: 0,
+                        MaxCalendars: 0,
+                        MaxAI: 0,
+                        MaxSpace: 0,
+                        MaxMembers: 0,
+                        MaxVPN: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 1680,
+                        Quantity: 1,
+                    },
+                    {
+                        ID: '4bSUpHmMPr1NvKnJIIQQ_ZkhKqWe5TROcR_IFD0HhZxHaHJQrOZ7nw7H8eoLBbfhTWgw08BD4x5A81i3qJfgIA==',
+                        Type: 0,
+                        Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                        Title: '+1 User for Proton Business Suite',
+                        MaxDomains: 0,
+                        MaxAddresses: 15,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxAI: 0,
+                        MaxVPN: 10,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                    },
+                    {
+                        ID: '4bSUpHmMPr1NvKnJIIQQ_ZkhKqWe5TROcR_IFD0HhZxHaHJQrOZ7nw7H8eoLBbfhTWgw08BD4x5A81i3qJfgIA==',
+                        Type: 0,
+                        Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                        Title: '+1 User for Proton Business Suite',
+                        MaxDomains: 0,
+                        MaxAddresses: 15,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxAI: 0,
+                        MaxVPN: 10,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                    },
+                    {
+                        ID: '4bSUpHmMPr1NvKnJIIQQ_ZkhKqWe5TROcR_IFD0HhZxHaHJQrOZ7nw7H8eoLBbfhTWgw08BD4x5A81i3qJfgIA==',
+                        Type: 0,
+                        Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                        Title: '+1 User for Proton Business Suite',
+                        MaxDomains: 0,
+                        MaxAddresses: 15,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxVPN: 10,
+                        MaxAI: 0,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                    },
+                    {
+                        ID: '4bSUpHmMPr1NvKnJIIQQ_ZkhKqWe5TROcR_IFD0HhZxHaHJQrOZ7nw7H8eoLBbfhTWgw08BD4x5A81i3qJfgIA==',
+                        Type: 0,
+                        Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                        Title: '+1 User for Proton Business Suite',
+                        MaxDomains: 0,
+                        MaxAddresses: 15,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxVPN: 10,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                        MaxAI: 0,
+                    },
+                    {
+                        ID: '4bSUpHmMPr1NvKnJIIQQ_ZkhKqWe5TROcR_IFD0HhZxHaHJQrOZ7nw7H8eoLBbfhTWgw08BD4x5A81i3qJfgIA==',
+                        Type: 0,
+                        Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                        Title: '+1 User for Proton Business Suite',
+                        MaxDomains: 0,
+                        MaxAddresses: 15,
+                        MaxCalendars: 25,
+                        MaxSpace: 536870912000,
+                        MaxMembers: 1,
+                        MaxVPN: 10,
+                        MaxTier: 0,
+                        Services: 15,
+                        Features: 0,
+                        State: 1,
+                        Cycle: 12,
+                        Currency: 'CHF',
+                        Amount: 15588,
+                        Offer: 'default',
+                        Quantity: 1,
+                        MaxAI: 0,
+                    },
+                ],
+                Renew: 1,
+                External: 0,
+                BillingPlatform: 1,
+                IsTrial: false,
+            };
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps()}
+                    cycle={CYCLE.YEARLY}
+                    isCustomBilling={false}
+                    isScheduledSubscription={false}
+                    isAddonDowngrade={true}
+                    isProration={false}
+                    planIDs={{ bundlepro2024: 1, '1domain-bundlepro2024': 5, '1member-bundlepro2024': 5 }}
+                    subscription={subscription}
+                />
+            );
+
+            // end of the current subscription, NOT upcoming that will be created when user accepts the terms of AddonDowngrade subscription
+            const expectedDateString = '06/12/2025';
+
+            expect(container).toHaveTextContent(
+                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
             );
         });
     });
