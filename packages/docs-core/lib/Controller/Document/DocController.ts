@@ -576,8 +576,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const editorInvoker = this.editorInvoker
 
     for (const event of events) {
-      this.logger.info('Handling event from RTS:', EventTypeEnum[event.props.type])
-
       switch (event.props.type) {
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
