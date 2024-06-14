@@ -51,7 +51,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     mode?: CustomiserMode;
     forceHideDescriptions?: boolean;
     showUsersTooltip?: boolean;
-    currentSubscription?: Subscription;
+    latestSubscription?: Subscription;
 }
 
 const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
@@ -374,7 +374,7 @@ const ProtonPlanCustomizer = ({
     className,
     forceHideDescriptions,
     showUsersTooltip,
-    currentSubscription,
+    latestSubscription,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -444,8 +444,8 @@ const ProtonPlanCustomizer = ({
                 );
 
                 const getDisplayMin = () => {
-                    if (addonMaxKey === 'MaxIPs' && hasVpnBusiness(currentSubscription)) {
-                        return getVPNDedicatedIPs(currentSubscription);
+                    if (addonMaxKey === 'MaxIPs' && hasVpnBusiness(latestSubscription)) {
+                        return getVPNDedicatedIPs(latestSubscription);
                     }
 
                     if (addonMaxKey === 'MaxAI') {

@@ -84,6 +84,13 @@ const SubscriptionsSection = () => {
     ].filter(isTruthy);
 
     const latestSubscription = upcoming ?? current;
+    // That's the case for AddonDowngrade subscription mode. If user with addons decreases the number of addons
+    // then in might fall under the AddonDowngrade subscription mode. In this case, user doesn't immediately.
+    // The upcoming subscription will be created, it will have the same cycle as the current subscription
+    // and user will be charged  at the beginning of the upcoming subscription.
+    // see PAY-2060 and PAY-2080
+    const isUpcomingSubscriptionUnpaid = !!current && !!upcoming && current.Cycle === upcoming.Cycle;
+
     const { renewPrice, renewalLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
         if (
@@ -128,6 +135,17 @@ const SubscriptionsSection = () => {
             };
         }
 
+        if (isUpcomingSubscriptionUnpaid) {
+            return {
+                renewPrice: (
+                    <Price key="renewal-price" currency={upcoming.Currency}>
+                        {upcoming.Amount}
+                    </Price>
+                ),
+                renewalLength: getMonths(upcoming.Cycle),
+            };
+        }
+
         return {
             renewPrice: (
                 <Price key="renewal-price" currency={latestSubscription.Currency}>
@@ -149,6 +167,8 @@ const SubscriptionsSection = () => {
               label: c('Subscription status').t`Expiring`,
           }
         : { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
+
+    const renewalDate = isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 
     return (
         <SettingsSectionWide>
@@ -172,7 +192,7 @@ const SubscriptionsSection = () => {
                             </TableCell>
                             <TableCell label={c('Title subscription').t`End date`}>
                                 <Time format="PP" sameDayFormat={false} data-testid="planEndTimeId">
-                                    {latestSubscription.PeriodEnd}
+                                    {renewalDate}
                                 </Time>
                                 {subscriptionExpiresSoon && (
                                     <Tooltip

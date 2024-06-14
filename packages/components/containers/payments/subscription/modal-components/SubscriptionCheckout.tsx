@@ -14,7 +14,7 @@ import {
     FreePlanDefault,
     PlanIDs,
     PlansMap,
-    Subscription,
+    SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
@@ -45,11 +45,10 @@ type Props = {
     onChangeCurrency: (currency: Currency) => void;
     planIDs: PlanIDs;
     isOptimistic?: boolean;
-    nextSubscriptionStart?: number;
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
-    subscription?: Subscription;
+    subscription: SubscriptionModel;
     showTaxCountry?: boolean;
     statusExtended?: PaymentMethodStatusExtended;
     onBillingAddressChange?: OnBillingAddressChange;
@@ -69,11 +68,11 @@ const SubscriptionCheckout = ({
     checkResult,
     loading,
     subscription,
-    nextSubscriptionStart,
     showDiscount = true,
     enableDetailedAddons = true,
     showPlanDescription = true,
     isScheduledSubscription,
+    isAddonDowngrade,
     isProration,
     isCustomBilling,
     showTaxCountry,
@@ -165,6 +164,8 @@ const SubscriptionCheckout = ({
                           subscription,
                           isCustomBilling,
                           isScheduledSubscription,
+                          isAddonDowngrade,
+                          isProration,
                           coupon: checkResult.Coupon,
                       })
                     : undefined
@@ -271,8 +272,8 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
-            {isScheduledSubscription && nextSubscriptionStart && (
-                <StartDateCheckoutRow nextSubscriptionStart={nextSubscriptionStart} />
+            {(isScheduledSubscription || isAddonDowngrade) && (
+                <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
             )}
             {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
