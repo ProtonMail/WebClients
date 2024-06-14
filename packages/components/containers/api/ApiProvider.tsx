@@ -3,6 +3,7 @@ import { ReactNode, useEffect, useReducer, useState } from 'react';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import { UNPAID_STATE } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { useAuthentication, useConfig, useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
@@ -18,12 +19,7 @@ const reducer = (oldState: typeof defaultApiStatus, diff: Partial<typeof default
         ...oldState,
         ...diff,
     };
-    if (
-        Object.keys(newState).every((key) => {
-            const k = key as keyof typeof defaultApiStatus;
-            return oldState[k] === newState[k];
-        })
-    ) {
+    if (isDeepEqual(oldState, newState)) {
         return oldState;
     }
     return newState;
