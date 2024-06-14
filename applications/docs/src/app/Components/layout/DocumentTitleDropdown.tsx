@@ -5,6 +5,7 @@ import {
   DropdownMenuButton,
   DropdownSizeUnit,
   Icon,
+  SimpleDropdown,
   useAppTitle,
   usePopperAnchor,
 } from '@proton/components'
@@ -117,16 +118,66 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
             {c('Action').t`New document`}
           </DropdownMenuButton>
 
-          {/* <DropdownMenuButton
-            className="flex items-center text-left"
-            // onClick={startDownload}
-            // @TODO DRVDOC-316
-          >
-            <Icon name="arrow-down-to-square" className="color-weak mr-2" />
-            Download
-          </DropdownMenuButton> */}
+          {controller && (
+            <SimpleDropdown
+              as={DropdownMenuButton}
+              className="flex items-center text-left"
+              content={
+                <>
+                  <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+                  {c('Action').t`Download`}
+                  <Icon name="chevron-right-filled" className="ml-auto" />
+                </>
+              }
+              hasCaret={false}
+              onClick={(event: MouseEvent) => {
+                event.preventDefault()
+                event.stopPropagation()
+              }}
+              originalPlacement="right-start"
+              contentProps={{
+                offset: 0,
+              }}
+            >
+              <DropdownMenu className="text-sm">
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void controller.exportAndDownload('docx')
+                  }}
+                >
+                  {c('Action').t`Microsoft Word (.docx)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void controller.exportAndDownload('html')
+                  }}
+                >
+                  {c('Action').t`Web page (.html)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void controller.exportAndDownload('txt')
+                  }}
+                >
+                  {c('Action').t`Plain Text (.txt)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void controller.exportAndDownload('md')
+                  }}
+                >
+                  {c('Action').t`Markdown (.md)`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            </SimpleDropdown>
+          )}
         </DropdownMenu>
       </Dropdown>
+
       {historyModal}
     </>
   )

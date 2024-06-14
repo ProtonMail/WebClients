@@ -4,6 +4,7 @@ import {
   DocChangeObserver,
   DocumentMetaInterface,
   RtsMessagePayload,
+  DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
@@ -36,4 +37,5 @@ export interface DocControllerInterface {
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
+  exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
 }

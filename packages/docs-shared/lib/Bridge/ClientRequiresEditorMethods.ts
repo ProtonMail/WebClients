@@ -1,5 +1,6 @@
 import { ConvertibleDataType } from '../ConvertibleDataType'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
+import { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -24,4 +25,5 @@ export interface ClientRequiresEditorMethods {
   handleUnresolveCommentMarkNode(markID: string): Promise<void>
   changeEditingAllowance(allow: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
 }
