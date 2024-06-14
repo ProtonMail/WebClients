@@ -36,7 +36,7 @@ export const Lobby: FC = () => {
                         ? authService.init({ forceLock: true })
                         : authService.requestFork({ host, app })
                 }
-                onLogout={() => authService.logout({ soft: true })}
+                onLogout={() => authService.logout({ soft: false })}
                 onOffline={() => client.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
