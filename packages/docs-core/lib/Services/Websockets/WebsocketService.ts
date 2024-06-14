@@ -19,7 +19,6 @@ import {
   ProcessedIncomingRealtimeEventMessage,
   WebsocketDocumentUpdateMessagePayload,
   WebsocketEventMessagePayload,
-  WebsocketCollaborationMode,
 } from '@proton/docs-shared'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -35,17 +34,15 @@ import {
   ClientEventVersion,
   CreateDocumentUpdateMessage,
   DocumentUpdateVersion,
+  ServerMessageWithEvents,
+  ServerMessageWithDocumentUpdates,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
-
-type DocumentConnectionRecord = {
-  connection: WebsocketConnectionInterface
-  keys: DocumentKeys
-  mode: WebsocketCollaborationMode
-}
+import { DocumentConnectionRecord } from './DocumentConnectionRecord'
+import { DocumentUpdateBuffer } from './DocumentUpdateBuffer'
 
 type LinkID = string
 
@@ -63,7 +60,30 @@ export class WebsocketService implements WebsocketServiceInterface {
     private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
-  ) {}
+  ) {
+    window.addEventListener('beforeunload', this.handleWindowUnload)
+  }
+
+  handleWindowUnload = (event: BeforeUnloadEvent): void => {
+    const connections = Object.values(this.connections)
+
+    for (const { buffer } of connections) {
+      if (buffer.hasPendingUpdates()) {
+        buffer.flush()
+
+        event.preventDefault()
+        event.returnValue = c('Info').t`Recent changes are still being saved. Do not leave this page yet.`
+      }
+    }
+  }
+
+  destroy(): void {
+    window.removeEventListener('beforeunload', this.handleWindowUnload)
+
+    for (const { buffer } of Object.values(this.connections)) {
+      buffer.destroy()
+    }
+  }
 
   createConnection(
     document: NodeMeta,
@@ -152,10 +172,15 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const connection = new WebsocketConnection(callbacks, this.logger)
 
+    const buffer = new DocumentUpdateBuffer(document, this.logger, (mergedUpdate) => {
+      void this.handleDocumentUpdateBufferFlush(document, mergedUpdate)
+    })
+
     this.connections[document.linkId] = {
+      document,
       connection,
       keys,
-      mode: WebsocketCollaborationMode.Buffered,
+      buffer,
     }
 
     this.stressTestorCache.lastKeys = keys
@@ -168,7 +193,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     return this.connections[linkId]
   }
 
-  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array, source: BroadcastSource): Promise<void> {
+  async handleDocumentUpdateBufferFlush(document: NodeMeta, mergedUpdate: Uint8Array): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -182,7 +207,13 @@ export class WebsocketService implements WebsocketServiceInterface {
       version: DocumentUpdateVersion.V1,
     }
 
-    const encryptedContent = await this.encryptMessage(rawContent, metadata, document, keys, source)
+    const encryptedContent = await this.encryptMessage(
+      mergedUpdate,
+      metadata,
+      document,
+      keys,
+      BroadcastSource.DocumentBufferFlush,
+    )
 
     const message = CreateDocumentUpdateMessage({
       content: encryptedContent,
@@ -192,7 +223,20 @@ export class WebsocketService implements WebsocketServiceInterface {
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
     const binary = messageWrapper.serializeBinary()
 
-    void connection.broadcastMessage(binary, source)
+    this.logger.info(`Broadcasting document update of size: ${binary.byteLength} bytes`)
+
+    void connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
+  }
+
+  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array): Promise<void> {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    const { buffer } = record
+
+    buffer.addUpdate(rawContent)
   }
 
   async sendEventMessage(
@@ -206,7 +250,18 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const { keys, connection } = record
+    const { keys, connection, buffer } = record
+
+    if (buffer.isBufferEnabled) {
+      const eventsThatShouldNotBeSentIfNotInRealtimeMode: EventTypeEnum[] = [
+        EventTypeEnum.ClientIsBroadcastingItsPresenceState,
+      ]
+
+      if (eventsThatShouldNotBeSentIfNotInRealtimeMode.includes(type)) {
+        this.logger.info('Not in real time mode. Not sending event:', EventTypeEnum[type])
+        return
+      }
+    }
 
     const metadata: EncryptionMetadata = {
       authorAddress: keys.userOwnAddress,
@@ -223,6 +278,10 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const messageWrapper = new ClientMessage({ eventsMessage: message })
     const binary = messageWrapper.serializeBinary()
+
+    this.logger.info(
+      `Broadcasting event message of type: ${EventTypeEnum[type]} from source: ${source} size: ${binary.byteLength} bytes`,
+    )
 
     void connection.broadcastMessage(binary, source)
   }
@@ -274,97 +333,139 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const { keys } = record
-
     const message = ServerMessage.deserializeBinary(data)
     const type = ServerMessageType.create(message.type)
 
     if (type.hasDocumentUpdates()) {
-      for (const update of message.documentUpdatesMessage.updates.documentUpdates) {
-        const decryptionResult = await this._decryptMessage.execute({
-          message: update,
-          keys: keys,
-          verify: false,
-        })
-        if (decryptionResult.isFailed()) {
-          metrics.docs_document_updates_decryption_error_total.increment({
-            source: 'realtime',
-          })
-          throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
-        }
-
-        const decrypted = decryptionResult.getValue()
-
-        this.eventBus.publish<WebsocketDocumentUpdateMessagePayload>({
-          type: WebsocketConnectionEvent.DocumentUpdateMessage,
-          payload: {
-            document,
-            message: decrypted,
-          },
-        })
-      }
+      await this.handleIncomingDocumentUpdatesMessage(record, message.documentUpdatesMessage)
     } else if (type.hasEvents()) {
-      const processedMessages: ProcessedIncomingRealtimeEventMessage[] = []
-
-      for (const event of message.eventsMessage.events) {
-        const type = EventType.create(event.type)
-
-        this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
-
-        switch (type.value) {
-          case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
-          case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
-          case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
-          case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
-          case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
-            processedMessages.push(
-              new ProcessedIncomingRealtimeEventMessage({
-                type: type.value,
-              }),
-            )
-            break
-          case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
-            processedMessages.push(
-              new ProcessedIncomingRealtimeEventMessage({
-                type: type.value,
-                content: event.content,
-              }),
-            )
-            break
-          case EventTypeEnum.ClientHasSentACommentMessage:
-          case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
-            const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
-            if (decryptionResult.isFailed()) {
-              this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
-              return undefined
-            }
-
-            const decrypted = decryptionResult.getValue()
-            if (decrypted) {
-              processedMessages.push(
-                new ProcessedIncomingRealtimeEventMessage({
-                  type: type.value,
-                  content: decrypted.content,
-                }),
-              )
-            }
-            break
-          }
-          default:
-            assertUnreachable(type.value)
-        }
-      }
-
-      this.eventBus.publish<WebsocketEventMessagePayload>({
-        type: WebsocketConnectionEvent.EventMessage,
-        payload: {
-          document,
-          message: processedMessages,
-        },
-      })
+      await this.handleIncomingEventsMessage(record, message.eventsMessage)
     } else {
       throw new Error('Unknown message type')
     }
+  }
+
+  async handleIncomingDocumentUpdatesMessage(
+    record: DocumentConnectionRecord,
+    message: ServerMessageWithDocumentUpdates,
+  ): Promise<void> {
+    if (message.updates.documentUpdates.length === 0) {
+      return
+    }
+
+    const { keys, buffer, document } = record
+
+    for (const update of message.updates.documentUpdates) {
+      if (update.authorAddress !== keys.userOwnAddress) {
+        this.switchToRealtimeMode(buffer)
+      }
+
+      const decryptionResult = await this._decryptMessage.execute({
+        message: update,
+        keys: keys,
+        verify: false,
+      })
+      if (decryptionResult.isFailed()) {
+        metrics.docs_document_updates_decryption_error_total.increment({
+          source: 'realtime',
+        })
+        throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
+      }
+
+      const decrypted = decryptionResult.getValue()
+
+      this.eventBus.publish<WebsocketDocumentUpdateMessagePayload>({
+        type: WebsocketConnectionEvent.DocumentUpdateMessage,
+        payload: {
+          document,
+          message: decrypted,
+        },
+      })
+    }
+  }
+
+  switchToRealtimeMode(buffer: DocumentUpdateBuffer): void {
+    if (!buffer.isBufferEnabled) {
+      return
+    }
+
+    this.logger.info('Switching to realtime mode')
+
+    buffer.flush()
+    buffer.setBufferEnabled(false)
+  }
+
+  async handleIncomingEventsMessage(record: DocumentConnectionRecord, message: ServerMessageWithEvents): Promise<void> {
+    const { keys, buffer, document } = record
+
+    const processedMessages: ProcessedIncomingRealtimeEventMessage[] = []
+
+    const eventsThatTakeUsIntoRealtimeMode: EventTypeEnum[] = [
+      EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState,
+      EventTypeEnum.ClientIsBroadcastingItsPresenceState,
+    ]
+
+    for (const event of message.events) {
+      if (eventsThatTakeUsIntoRealtimeMode.includes(event.type)) {
+        this.switchToRealtimeMode(buffer)
+      }
+
+      const type = EventType.create(event.type)
+
+      this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
+
+      switch (type.value) {
+        case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
+        case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
+          break
+        case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
+        case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
+        case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
+          processedMessages.push(
+            new ProcessedIncomingRealtimeEventMessage({
+              type: type.value,
+            }),
+          )
+          break
+        case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
+          processedMessages.push(
+            new ProcessedIncomingRealtimeEventMessage({
+              type: type.value,
+              content: event.content,
+            }),
+          )
+          break
+        case EventTypeEnum.ClientHasSentACommentMessage:
+        case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
+          const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
+          if (decryptionResult.isFailed()) {
+            this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
+            return undefined
+          }
+
+          const decrypted = decryptionResult.getValue()
+          if (decrypted) {
+            processedMessages.push(
+              new ProcessedIncomingRealtimeEventMessage({
+                type: type.value,
+                content: decrypted.content,
+              }),
+            )
+          }
+          break
+        }
+        default:
+          assertUnreachable(type.value)
+      }
+    }
+
+    this.eventBus.publish<WebsocketEventMessagePayload>({
+      type: WebsocketConnectionEvent.EventMessage,
+      payload: {
+        document,
+        message: processedMessages,
+      },
+    })
   }
 
   /**

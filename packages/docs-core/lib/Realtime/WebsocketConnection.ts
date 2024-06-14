@@ -10,7 +10,7 @@ import { Result } from '../Domain/Result/Result'
 
 const DebugDisableSockets = false
 
-const DebugConnection = {
+export const DebugConnection = {
   enabled: isDev() && false,
   url: 'ws://localhost:4000/websockets',
 }
@@ -217,7 +217,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    this.logger.info(`Broadcasting message from source: ${source} size: ${data.byteLength} bytes`)
     this.socket.send(data)
   }
 }
