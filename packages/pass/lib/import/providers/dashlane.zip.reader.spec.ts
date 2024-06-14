@@ -4,7 +4,7 @@ import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
 
 import type { ImportPayload } from '../types';
-import { readDashlaneData } from './dashlane.reader';
+import { readDashlaneDataZIP } from './dashlane.zip.reader';
 
 describe('Import Dashlane ZIP', () => {
     let sourceData: ArrayBuffer;
@@ -12,11 +12,11 @@ describe('Import Dashlane ZIP', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/dashlane.zip');
-        payload = await readDashlaneData({ data: sourceData, importUsername: true });
+        payload = await readDashlaneDataZIP({ data: sourceData, importUsername: true });
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(readDashlaneData({ data: new ArrayBuffer(1), importUsername: true })).rejects.toThrow();
+        await expect(readDashlaneDataZIP({ data: new ArrayBuffer(1), importUsername: true })).rejects.toThrow();
     });
 
     test('should correctly parse items', () => {
