@@ -98,6 +98,8 @@ export const paidUserAssistantAddonName = (planName?: PLANS) => {
             return ADDON_NAMES.MEMBER_SCRIBE_VPN_PASS_BUNDLE;
         case PLANS.BUNDLE_PRO:
             return ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO;
+        case PLANS.BUNDLE_PRO_2024:
+            return ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024;
         case PLANS.MAIL_PRO:
             return ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO;
         case PLANS.MAIL_BUSINESS:
