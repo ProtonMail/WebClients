@@ -10734,12 +10734,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^20.12.13, @types/node@npm:^20.12.4, @types/node@npm:^20.12.7, @types/node@npm:^20.9.0":
-  version: 20.12.13
-  resolution: "@types/node@npm:20.12.13"
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^20.12.13, @types/node@npm:^20.12.4, @types/node@npm:^20.12.7, @types/node@npm:^20.3.1, @types/node@npm:^20.9.0":
+  version: 20.14.2
+  resolution: "@types/node@npm:20.14.2"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/2ac92bb631dbddfb560eb3ba4eedbb1c688044a0130bc1ef032f5c0f20148ac7c9aa3c5aaa5a9787b6c4c6299847d754b96ee8c9def951481ba6628c46b683f5
+  checksum: 10c0/2d86e5f2227aaa42212e82ea0affe72799111b888ff900916376450b02b09b963ca888b20d9c332d8d2b833ed4781987867a38eaa2e4863fa8439071468b0a6f
   languageName: node
   linkType: hard
 
@@ -18574,6 +18574,19 @@ __metadata:
   dependencies:
     jszip: "npm:>=3.0.0"
   checksum: 10c0/0ce6108ef9fe07aac1165cb653c2cb630b1d2c58ff49bb2ff4e7719065f20be3e5606c958d39b41dceafbe3b9f6f622318fd11b1a21afbb13397ef1a1ade8c1d
+  languageName: node
+  linkType: hard
+
+"docx@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "docx@npm:8.5.0"
+  dependencies:
+    "@types/node": "npm:^20.3.1"
+    jszip: "npm:^3.10.1"
+    nanoid: "npm:^5.0.4"
+    xml: "npm:^1.0.1"
+    xml-js: "npm:^1.6.8"
+  checksum: 10c0/265a23e3a639e9d96c9144bf820628f2c2bf93d4c621c5e655bd458cb9395e66384f2cae09ae7206afa2de07d6079d032d3fb12c514f9d8ea9135ac912e00aa5
   languageName: node
   linkType: hard
 
@@ -32691,6 +32704,7 @@ __metadata:
     babel-plugin-transform-class-properties: "npm:^6.24.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
+    docx: "npm:^8.5.0"
     docx-preview-cjs: "npm:^0.3.0"
     eslint: "npm:^8.57.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
@@ -36097,10 +36111,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sax@npm:>=0.6.0":
-  version: 1.2.4
-  resolution: "sax@npm:1.2.4"
-  checksum: 10c0/6e9b05ff443ee5e5096ce92d31c0740a20d33002fad714ebcb8fc7a664d9ee159103ebe8f7aef0a1f7c5ecacdd01f177f510dff95611c589399baf76437d3fe3
+"sax@npm:>=0.6.0, sax@npm:^1.2.4":
+  version: 1.4.1
+  resolution: "sax@npm:1.4.1"
+  checksum: 10c0/6bf86318a254c5d898ede6bd3ded15daf68ae08a5495a2739564eb265cd13bcc64a07ab466fb204f67ce472bb534eb8612dac587435515169593f4fffa11de7c
   languageName: node
   linkType: hard
 
@@ -42014,6 +42028,17 @@ __metadata:
   version: 5.1.0
   resolution: "xdg-basedir@npm:5.1.0"
   checksum: 10c0/c88efabc71ffd996ba9ad8923a8cc1c7c020a03e2c59f0ffa72e06be9e724ad2a0fccef488757bc6ed3d8849d753dd25082d1035d95cb179e79eae4d034d0b80
+  languageName: node
+  linkType: hard
+
+"xml-js@npm:^1.6.8":
+  version: 1.6.11
+  resolution: "xml-js@npm:1.6.11"
+  dependencies:
+    sax: "npm:^1.2.4"
+  bin:
+    xml-js: ./bin/cli.js
+  checksum: 10c0/c83631057f10bf90ea785cee434a8a1a0030c7314fe737ad9bf568a281083b565b28b14c9e9ba82f11fc9dc582a3a907904956af60beb725be1c9ad4b030bc5a
   languageName: node
   linkType: hard
 
