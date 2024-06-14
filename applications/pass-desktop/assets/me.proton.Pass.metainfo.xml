@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>me.proton.Pass</id>
+
+    <name>Proton Pass</name>
+    <summary>Password manager created by the scientists who met at CERN behind Proton Mail</summary>
+
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <developer_name>Proton AG</developer_name>
+
+    <description>
+        <p>Get the password manager created by the scientists who met at CERN behind Proton Mail, the
+            world’s largest encrypted email provider. Proton Pass is open source, end-to-end encrypted, and
+            protected by Swiss privacy laws.</p>
+        
+        <p>Pass offers more than other free password managers and has no ads or data collection. You can use
+            it for free forever on all your devices to create and store unlimited passwords, autofill
+            logins, generate 2FA codes, create email aliases, secure your notes, and more.</p>
+        
+        <p>How can Proton Pass be free forever?</p>
+        <p>We offer Pass for free because everyone deserves online privacy and security. This is possible
+            thanks to our supportive community on paid plans. If you would like to support our work and get
+            access to premium features, consider upgrading your plan.</p>
+        
+        <p>Protect more than just your passwords.</p>
+        <p>Join over 100 million people who have signed up for Proton’s privacy ecosystem, which includes
+        Proton Mail, Proton Drive, Proton Calendar, Proton VPN, and more. Take back control of your
+        privacy online with our encrypted email, calendar, file storage, and VPN.
+        </p>
+        
+        <p>Protect your logins and their metadata with battle-tested end-to-end encryption</p>
+        <p>While many other password managers only encrypt your password, Proton Pass uses end-to-end
+            encryption on all your stored login details (including your username, the website address, and
+            more). Pass protects your information with the same battle-tested encryption libraries all
+            Proton services use.</p>
+        
+        <p>Audit Pass’s open-source code</p>
+        <p>Like all other Proton services, Pass is open source and built on the principle of trust through
+            transparency. As scientists, we know that transparency and peer review lead to better security.
+            All Proton Pass apps are open source, meaning anyone can verify our security claims for
+            themselves.</p>
+        
+        <p>With Proton Pass, you can:</p>
+        <ul>
+            <li>Store and auto-sync unlimited logins on unlimited devices: You can create, store, and manage
+                your credentials from anywhere with our browser extensions and apps for Android and
+                iPhone/iPad.
+            </li>
+            <li>Sign in faster with Proton Pass autofill: You no longer need to copy and paste your username
+                and password. Easily and securely log in with Proton Pass autofill technology.
+            </li>
+            <li>Avoid weak passwords: With our built-in secure password generator, you can easily generate
+                strong, unique, and random passwords based on the security requirements for every website
+                you sign up to.
+            </li>
+            <li>Safely store encrypted notes: You can save private notes in Pass and access them on all your
+                devices.
+            </li>
+            <li>Protect Proton Pass with biometric login access: You can add an extra layer of protection to
+                Proton Pass by using your fingerprint or face to unlock the app.
+            </li>
+            <li>Create unique email addresses with hide-my-email aliases: Proton Pass helps you hide your
+                personal email address with email aliases. Keep spam out of your inbox, avoid being tracked
+                everywhere, and protect yourself from data breaches.
+            </li>
+            <li>Make 2FA easy with our built-in authenticator: With Pass’s integrated 2FA authenticator,
+                using 2FA is finally fast and convenient. Easily add a 2FA code for any website and autofill
+                it when you log in.
+            </li>
+            <li>Easily organize and share your sensitive data with vaults: Manage your logins, secure notes,
+                and email aliases with vaults. In the next version of Pass, you’ll be able to share
+                individual items or an entire vault with your family, friends, or colleagues.
+            </li>
+            <li>Quick offline access to your login data: Access your stored passwords and notes in Pass from
+                wherever you are, even when your phone has no internet connection.
+            </li>
+            <li>Secure your Pass account with additional security measures: Protect all your data with
+                another layer of protection, either with TOTP or U2F/FIDO2 security keys.
+            </li>
+            <li>Get unlimited email forwards: There’s no limit on the number of emails you can have
+                forwarded from your alias to your inbox.</li>
+        </ul>
+    </description>
+
+    <url type="homepage">https://proton.me/pass</url>
+    <url type="vcs-browser">https://raw.githubusercontent.com/ProtonMail/WebClients</url>
+    <url type="contact">https://proton.me/support/troubleshooting?product=pass</url>
+    <url type="help">https://proton.me/support/pass</url>
+
+    <launchable type="desktop-id">me.proton.Pass.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>
+                https://res.cloudinary.com/dbulfrlrz/images/w_1024,h_658,c_scale/f_auto,q_auto/v1707558912/wp-pme/proton-pass-web-app-overview/proton-pass-web-app-overview.png</image>
+        </screenshot>
+    </screenshots>
+
+    <content_rating type="oars-1.1" />
+
+    <releases>
+        <release version="1.16.1" date="2024-03-21" />
+    </releases>
+</component>
