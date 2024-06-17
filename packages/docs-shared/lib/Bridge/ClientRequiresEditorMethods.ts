@@ -1,4 +1,5 @@
 import { ConvertibleDataType } from '../ConvertibleDataType'
+import { DocumentRoleType } from '../Doc/DocumentRole'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 
@@ -14,6 +15,7 @@ export interface ClientRequiresEditorMethods {
   initializeEditor(
     documentId: string,
     username: string,
+    role: DocumentRoleType,
     initialData?: Uint8Array,
     initialDataType?: ConvertibleDataType,
   ): Promise<void>

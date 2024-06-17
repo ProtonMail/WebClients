@@ -26,13 +26,13 @@ import {
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
   DataTypesThatDocumentCanBeExportedAs,
+  DocumentRole,
 } from '@proton/docs-shared'
 import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
-import { DocumentKeys } from '@proton/drive-store'
 import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
@@ -52,6 +52,7 @@ import { LoadCommit } from '../../UseCase/LoadCommit'
 import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -60,7 +61,7 @@ const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
  * Controls the lifecycle of a single document.
  */
 export class DocController implements DocControllerInterface, InternalEventHandlerInterface {
-  keys: DocumentKeys | null = null
+  entitlements: DocumentEntitlements | null = null
   private decryptedNode?: DecryptedNode
   private changeObservers: DocChangeObserver[] = []
   editorInvoker?: ClientRequiresEditorMethods
@@ -103,6 +104,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
   }
 
+  public get role(): DocumentRole {
+    if (!this.entitlements) {
+      return new DocumentRole('Viewer')
+    }
+
+    return this.entitlements.role
+  }
+
   handleWebsocketConnectingEvent(): void {
     if (this.editorInvoker) {
       this.logger.info('Changing editing allowance to false while connecting to RTS')
@@ -119,7 +128,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     if (this.editorInvoker) {
-      void this.editorInvoker.changeEditingAllowance(true)
+      void this.editorInvoker.changeEditingAllowance(this.doesUserHaveEditingPermissions())
     }
   }
 
@@ -182,7 +191,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.showEditorIfAllConnectionsReady()
 
     if (this.updatesReceivedWhileEditorInvokerWasNotReady.length > 0) {
-      if (!this.keys) {
+      if (!this.entitlements) {
         throw new Error('Attepting to play back pending updates before keys are initialized')
       }
 
@@ -227,13 +236,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return Result.fail(loadResult.getError())
     }
 
-    const { keys, meta, lastCommitId } = loadResult.getValue()
+    const { entitlements, meta, lastCommitId } = loadResult.getValue()
     this.logger.info(`Loaded document meta with last commit id ${lastCommitId}`)
 
-    this.keys = keys
+    this.entitlements = entitlements
     this.docMeta = meta
 
-    const connection = this.websocketService.createConnection(this.nodeMeta, keys, {
+    const connection = this.websocketService.createConnection(this.nodeMeta, entitlements.keys, {
       commitId: () => this.commitId ?? lastCommitId,
     })
 
@@ -242,7 +251,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.beginInitialConnectionTimer()
 
     if (lastCommitId) {
-      const decryptResult = await this._loadCommit.execute(this.nodeMeta, lastCommitId, keys)
+      const decryptResult = await this._loadCommit.execute(this.nodeMeta, lastCommitId, entitlements.keys)
       if (decryptResult.isFailed()) {
         this.logger.error('Failed to load commit', decryptResult.getError())
         connection.destroy()
@@ -261,7 +270,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     void this.loadDecryptedNode()
 
     return Result.ok({
-      keys: this.keys,
+      entitlements: this.entitlements,
     })
   }
 
@@ -315,7 +324,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     void this.editorInvoker.showEditor()
     void this.editorInvoker.performOpeningCeremony()
-    void this.editorInvoker.changeEditingAllowance(true)
+    void this.editorInvoker.changeEditingAllowance(this.doesUserHaveEditingPermissions())
+  }
+
+  doesUserHaveEditingPermissions(): boolean {
+    if (!this.entitlements) {
+      return false
+    }
+
+    return this.entitlements.role.canEdit()
   }
 
   get commitId(): string | undefined {
@@ -394,12 +411,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  async editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void> {
-    if (!this.keys) {
+  async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
+    if (!this.entitlements) {
       throw new Error('Connection not initialized')
     }
 
@@ -413,15 +426,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async debugSendCommitCommandToRTS(): Promise<void> {
-    if (!this.keys) {
+    if (!this.entitlements) {
       throw new Error('Connection not initialized')
     }
 
-    await this.websocketService.debugSendCommitCommandToRTS(this.nodeMeta, this.keys)
+    await this.websocketService.debugSendCommitCommandToRTS(this.nodeMeta, this.entitlements.keys)
   }
 
   public async createInitialCommit(): Promise<void> {
-    if (!this.keys) {
+    if (!this.entitlements) {
       throw new Error('Connection not initialized')
     }
 
@@ -431,7 +444,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const state = await this.editorInvoker.getDocumentState()
 
-    const result = await this._createInitialCommit.execute(this.docMeta, state, this.keys)
+    const result = await this._createInitialCommit.execute(this.docMeta, state, this.entitlements.keys)
 
     if (result.isFailed()) {
       this.logger.error('Failed to create initial commit', result.getError())
@@ -439,7 +452,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async squashDocument(): Promise<void> {
-    if (!this.docMeta || !this.keys) {
+    if (!this.docMeta || !this.entitlements) {
       throw new Error('Cannot squash document before document and keys are available')
     }
 
@@ -467,7 +480,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const result = await this._squashDocument.execute({
       docMeta: this.docMeta,
       commitId: this.lastCommitIdReceivedFromRts ?? this.initialCommit.commitId,
-      keys: this.keys,
+      keys: this.entitlements.keys,
       handleVerificationObjection,
     })
 
@@ -507,7 +520,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async createNewDocument(): Promise<void> {
-    if (!this.docMeta || !this.keys) {
+    if (!this.docMeta || !this.entitlements) {
       throw new Error('Attempting to create new document before controller is initialized')
     }
 
