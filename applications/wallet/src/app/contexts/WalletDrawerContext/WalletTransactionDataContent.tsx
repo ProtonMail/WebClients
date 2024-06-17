@@ -83,8 +83,6 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
 
                 {showMore ? (
                     <>
-                        <LinkToBlockchainItem tx={transaction} network={network} />
-
                         <AmountDataListItem
                             amount={transaction.networkData.fee}
                             label={c('Wallet transaction').t`Network fee`}
@@ -98,6 +96,8 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
                             label={c('Wallet transaction').t`Total (sent amount + fee)`}
                             exchangeRate={exchangeRate}
                         />
+
+                        <LinkToBlockchainItem tx={transaction} network={network} />
                     </>
                 ) : (
                     <div>

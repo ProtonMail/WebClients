@@ -7,10 +7,10 @@ import { Icon, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { CoreButton, CoreButtonLike } from '../../atoms';
+import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
-import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants/explorer';
+import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import {
     getTransactionRecipientHumanReadableName,
@@ -154,22 +154,23 @@ export const LinkToBlockchainItem = ({ tx, network }: TxDataListItemProps & { ne
 
     return (
         <>
-            <div className="w-full">
+            <hr className="my-4" />
+            <div className="flex w-full justify-center">
                 <span className="block color-hint text-rg"></span>
                 <p className="my-0 mt-1 text-lg">
-                    <CoreButtonLike
+                    <ButtonLike
                         as={Href}
                         href={`${url}/${tx.networkData.txid}`}
-                        shape="underline"
-                        className="flex flex-row items-center"
+                        target="_blank"
+                        fullWidth
+                        shape="solid"
                         color="norm"
+                        style={{ 'padding-left': '4rem', 'padding-right': '4rem' }}
                     >
                         {c('Link').t`View on blockchain`}
-                        <Icon className="shrink-0 ml-1" name={'arrow-out-from-rectangle'} size={3} />
-                    </CoreButtonLike>
+                    </ButtonLike>
                 </p>
             </div>
-            <hr className="my-4" />
         </>
     );
 };
