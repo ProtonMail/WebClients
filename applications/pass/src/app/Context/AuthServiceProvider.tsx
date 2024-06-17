@@ -129,7 +129,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 authStore.setOfflineKD(undefined);
 
                 const passwordUnlockable = canPasswordUnlock({
-                    cache: await getDBCache(authStore.getUserID()!),
+                    cache: await getDBCache(authStore.getUserID()),
                     lockMode: authStore.getLockMode(),
                     offline: !online.current,
                     offlineConfig: authStore.getOfflineConfig(),
