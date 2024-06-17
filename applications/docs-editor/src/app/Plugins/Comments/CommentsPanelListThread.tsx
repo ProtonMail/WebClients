@@ -1,5 +1,5 @@
 import { $getNodeByKey } from 'lexical'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
@@ -19,7 +19,7 @@ import { $isCommentThreadMarkNode, CommentThreadMarkNode } from './CommentThread
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
-  const { controller, markNodeMap, activeIDs, setActiveIDs, threadToFocus, setThreadToFocus } = useCommentsContext()
+  const { controller, markNodeMap, activeIDs } = useCommentsContext()
 
   const application = useApplication()
   const [isDeleting, setIsDeleting] = useState(false)
@@ -56,37 +56,9 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
 
   const handleClickThread = () => {
     controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
-    const markNodeKeys = markNodeMap.get(markID)
-    if (!markNodeKeys) {
-      setActiveIDs([])
-      return
-    }
-    if (activeIDs === null || activeIDs.indexOf(markID) === -1) {
-      const activeElement = document.activeElement
-      // Move selection to the start of the mark, so that we
-      // update the UI with the selected thread.
-      editor.update(
-        () => {
-          const markNodeKey = Array.from(markNodeKeys)[0]
-          const markNode = $getNodeByKey<CommentThreadMarkNode>(markNodeKey)
-          if ($isCommentThreadMarkNode(markNode)) {
-            markNode.selectStart()
-          }
-        },
-        {
-          onUpdate() {
-            // Restore selection to the previous element
-            if (activeElement !== null) {
-              ;(activeElement as HTMLElement).focus()
-            }
-          },
-        },
-      )
-    }
   }
 
   const isActive = activeIDs.includes(markID)
-  const canSelect = markNodeMap.has(markID) && !isActive
 
   const isResolved = thread.state === CommentThreadState.Resolved
 
@@ -96,34 +68,20 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   // translator: list of names (eg: "Tom, John and Henry")
   const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
 
-  const focusThread = useCallback(
-    (threadElement: HTMLLIElement | null) => {
-      const shouldFocus = threadToFocus === thread.id
-      if (!threadElement || !shouldFocus) {
-        return
-      }
-      threadElement.focus()
-      setThreadToFocus(null)
-    },
-    [setThreadToFocus, thread.id, threadToFocus],
-  )
-
   const canShowReplyBox = application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved
 
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
     <li
-      ref={focusThread}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
       data-thread-mark-id={markID}
       onClick={handleClickThread}
       className={clsx(
-        'group/thread border-weak bg-norm mb-3.5 overflow-hidden rounded border last:mb-0',
+        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded border last:mb-0 focus:outline-none',
         isActive
           ? 'shadow-raised'
           : 'focus-within:[box-shadow:_var(--shadow-raised-offset)_rgb(var(--shadow-color,_var(--shadow-default-color))/var(--shadow-raised-opacity))]',
-        canSelect && 'hover:border-[--primary]',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
       )}
     >

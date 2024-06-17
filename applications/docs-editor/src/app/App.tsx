@@ -287,7 +287,14 @@ export function App({ nonInteractiveMode = false }: Props) {
   }
 
   return (
-    <div className="relative grid h-full w-full grid-cols-[3fr_max(20vw,300px)] grid-rows-[min-content_1fr] overflow-hidden bg-[white]">
+    <div
+      className="relative grid h-full w-full overflow-hidden bg-[white]"
+      style={{
+        '--comments-width': 'max(20.5vw, 300px)',
+        gridTemplateRows: 'min-content 1fr',
+        gridTemplateColumns: '3fr var(--comments-width)',
+      }}
+    >
       <ApplicationProvider application={application}>
         <Editor
           clientInvoker={bridge.getClientInvoker()}
