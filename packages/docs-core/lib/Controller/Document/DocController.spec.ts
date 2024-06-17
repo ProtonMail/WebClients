@@ -2,7 +2,7 @@ import { DocumentKeys, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DocController } from './DocController'
 import { UserService } from '../../Services/User/UserService'
 import { SquashDocument } from '../../UseCase/SquashDocument'
-import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
+import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
@@ -32,7 +32,7 @@ describe('DocController', () => {
       } as jest.Mocked<UserService>,
       {} as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
-      {} as jest.Mocked<CreateInitialCommit>,
+      {} as jest.Mocked<SeedInitialCommit>,
       {
         execute: jest.fn().mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommitId: '123' })),
       } as unknown as jest.Mocked<LoadDocument>,

@@ -6,7 +6,7 @@ import {
   createRealtimeValetToken,
   getDocumentMeta,
   getCommitData,
-  createCommit,
+  seedInitialCommit,
   squashCommit,
   lockDocument,
 } from '@proton/shared/lib/api/docs'
@@ -47,13 +47,13 @@ export class DocsApi {
     }
   }
 
-  async createCommit(docMeta: DocumentMetaInterface, commit: Commit): Promise<Result<Uint8Array>> {
+  async seedInitialCommit(docMeta: DocumentMetaInterface, commit: Commit): Promise<Result<Uint8Array>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
     try {
-      const response = await this.protonApi(createCommit(docMeta.volumeId, docMeta.linkId, commit.serializeBinary()))
+      const response = await this.protonApi(seedInitialCommit(docMeta.volumeId, docMeta.linkId, commit.serializeBinary()))
       return Result.ok(response)
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Unknown error')

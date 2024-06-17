@@ -10,7 +10,7 @@ import { DocumentMetaInterface } from '@proton/docs-shared'
  * Allows the client to create an initial commit. This used by the Duplicate function to allow us to seed the document
  * with an initial commit value equaling the source document's.
  */
-export class CreateInitialCommit implements UseCaseInterface<boolean> {
+export class SeedInitialCommit implements UseCaseInterface<boolean> {
   constructor(
     private docsApi: DocsApi,
     private encryptMessage: EncryptMessage,
@@ -40,7 +40,7 @@ export class CreateInitialCommit implements UseCaseInterface<boolean> {
       lockId: '',
     })
 
-    const commitResult = await this.docsApi.createCommit(docMeta, commit)
+    const commitResult = await this.docsApi.seedInitialCommit(docMeta, commit)
     if (commitResult.isFailed()) {
       return Result.fail(commitResult.getError())
     }
