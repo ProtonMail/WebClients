@@ -7,17 +7,8 @@ import { c } from 'ttag'
 import { Icon, ToolbarButton } from '@proton/components'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
-import { flushSync } from 'react-dom'
 
-export function CommentInputBox({
-  editor,
-  setShowCommentsPanel,
-  cancelAddComment,
-}: {
-  editor: LexicalEditor
-  setShowCommentsPanel: (show: boolean) => void
-  cancelAddComment: () => void
-}) {
+export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const { controller, setThreadToFocus } = useCommentsContext()
 
   const boxRef = useRef<HTMLDivElement>(null)
@@ -103,7 +94,6 @@ export function CommentInputBox({
   const onSubmit = useCallback(
     (content: string) => {
       if (selectionRef.current) {
-        flushSync(() => setShowCommentsPanel(true))
         controller
           .createThread(content)
           .then((thread) => {
@@ -115,7 +105,7 @@ export function CommentInputBox({
         selectionRef.current = null
       }
     },
-    [controller, setShowCommentsPanel, setThreadToFocus],
+    [controller, setThreadToFocus],
   )
 
   return (

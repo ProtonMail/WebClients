@@ -20,10 +20,11 @@ export function FloatingAddCommentButton({
     const anchorElement = editor.getElementByKey(anchorKey)
 
     if (boxElem !== null && rootElement !== null && anchorElement !== null && rootElementParent) {
+      const paddingRight = parseFloat(getComputedStyle(rootElementParent).paddingRight)
       const { right } = rootElement.getBoundingClientRect()
       const { top } = anchorElement.getBoundingClientRect()
       const { top: rootTop } = rootElementParent.getBoundingClientRect()
-      boxElem.style.left = `${right}px`
+      boxElem.style.left = `${right - (paddingRight || 0)}px`
       boxElem.style.top = `${top - rootTop + rootElementParent.scrollTop}px`
     }
   }, [anchorKey, editor])

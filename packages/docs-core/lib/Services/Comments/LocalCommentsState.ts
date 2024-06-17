@@ -23,8 +23,10 @@ export class LocalCommentsState {
   }
 
   markThreadAsRead(id: string): void {
-    this.unreadThreadIDs.delete(id)
-    this.notifyLocalListeners()
+    if (this.unreadThreadIDs.has(id)) {
+      this.unreadThreadIDs.delete(id)
+      this.notifyLocalListeners()
+    }
   }
 
   findThreadById(threadId: string): CommentThreadInterface | undefined {

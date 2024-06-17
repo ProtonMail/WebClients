@@ -3,9 +3,8 @@
 @import 'code';
 
 .DocumentEditor {
-	margin: auto;
-	max-inline-size: 700px;
-	max-inline-size: clamp(700px, 50vw, 800px);
+	inline-size: 50vw;
+	max-inline-size: 816px;
 	min-block-size: 80vh;
 	padding: 2rem;
 	background: white;
@@ -29,6 +28,11 @@
 	&:focus {
 		outline: none;
 		box-shadow: none;
+	}
+
+	::selection {
+		background: var(--primary-minor-1);
+		color: var(--text-norm);
 	}
 }
 
