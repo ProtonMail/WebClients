@@ -19,7 +19,7 @@ import CommentsPanel from './CommentsPanel'
 import { CommentMarkNodeChangeData, CommentThreadInterface, CommentsEvent } from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { useInternalEventBus } from '../../InternalEventBusProvider'
+import { useApplication } from '../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
@@ -31,7 +31,7 @@ export default function CommentPlugin({
   controller: EditorRequiresClientMethods
   username: string
 }): JSX.Element {
-  const eventBus = useInternalEventBus()
+  const application = useApplication()
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
@@ -309,27 +309,27 @@ export default function CommentPlugin({
 
   useEffect(() => {
     return mergeRegister(
-      eventBus.addEventCallback(() => {
+      application.eventBus.addEventCallback(() => {
         controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
       }, CommentsEvent.CommentsChanged),
-      eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
+      application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
         createMarkNodeForCurrentSelection(markID)
       }, CommentsEvent.CreateMarkNode),
-      eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
+      application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
         removeMarkNode(markID)
       }, CommentsEvent.RemoveMarkNode),
-      eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
+      application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
         resolveMarkNode(markID)
       }, CommentsEvent.ResolveMarkNode),
-      eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
+      application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
         unresolveMarkNode(markID)
       }, CommentsEvent.UnresolveMarkNode),
     )
-  }, [controller, eventBus, createMarkNodeForCurrentSelection, removeMarkNode, resolveMarkNode, unresolveMarkNode])
+  }, [controller, application, createMarkNodeForCurrentSelection, removeMarkNode, resolveMarkNode, unresolveMarkNode])
 
   const containerElement = editor.getRootElement()?.parentElement
 

@@ -13,11 +13,11 @@ import {
   LiveCommentsEvent,
   RtsMessagePayload,
   YDocMap,
+  DocumentRoleType,
 } from '@proton/docs-shared'
 import { Doc as YDoc } from 'yjs'
 import { Icons } from '@proton/components'
-import { InternalEventBus } from '@proton/docs-shared'
-import { InternalEventBusProvider } from './InternalEventBusProvider'
+import { ApplicationProvider } from './ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { c } from 'ttag'
 import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
@@ -28,6 +28,7 @@ import { LexicalEditor } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
 import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
+import { Application } from './Application'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -55,7 +56,7 @@ export function App({ nonInteractiveMode = false }: Props) {
   )
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
-  const [eventBus] = useState(() => new InternalEventBus())
+  const [application] = useState(() => new Application())
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingAllowed, setEditingAllowed] = useState(false)
 
@@ -123,14 +124,14 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
 
         async handleCommentsChange() {
-          eventBus.publish({
+          application.eventBus.publish({
             type: CommentsEvent.CommentsChanged,
             payload: undefined,
           })
         },
 
         async handleTypingStatusChange(threadId: string) {
-          eventBus.publish({
+          application.eventBus.publish({
             type: LiveCommentsEvent.TypingStatusChange,
             payload: {
               threadId,
@@ -139,7 +140,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
 
         async handleCreateCommentMarkNode(markID: string) {
-          eventBus.publish<CommentMarkNodeChangeData>({
+          application.eventBus.publish<CommentMarkNodeChangeData>({
             type: CommentsEvent.CreateMarkNode,
             payload: {
               markID,
@@ -148,7 +149,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
 
         async handleRemoveCommentMarkNode(markID: string) {
-          eventBus.publish<CommentMarkNodeChangeData>({
+          application.eventBus.publish<CommentMarkNodeChangeData>({
             type: CommentsEvent.RemoveMarkNode,
             payload: {
               markID,
@@ -157,7 +158,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
 
         async handleResolveCommentMarkNode(markID: string) {
-          eventBus.publish<CommentMarkNodeChangeData>({
+          application.eventBus.publish<CommentMarkNodeChangeData>({
             type: CommentsEvent.ResolveMarkNode,
             payload: {
               markID,
@@ -166,7 +167,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         },
 
         async handleUnresolveCommentMarkNode(markID: string) {
-          eventBus.publish<CommentMarkNodeChangeData>({
+          application.eventBus.publish<CommentMarkNodeChangeData>({
             type: CommentsEvent.UnresolveMarkNode,
             payload: {
               markID,
@@ -176,16 +177,24 @@ export function App({ nonInteractiveMode = false }: Props) {
 
         async changeEditingAllowance(allow) {
           newDocState.canBeEditable = allow
-          setEditingAllowed(allow)
+          if (allow) {
+            if (application.getRole().canEdit()) {
+              setEditingAllowed(true)
+            }
+          } else {
+            setEditingAllowed(false)
+          }
         },
 
         async initializeEditor(
           documentId: string,
           username: string,
+          role: DocumentRoleType,
           initialData?: Uint8Array,
           initialDataType?: ConvertibleDataType,
         ) {
           docMap.set(documentId, newDocState.getDoc())
+          application.setRole(role)
 
           if (initialData && initialDataType) {
             setInitialConfig({ documentId, username, initialData: { data: initialData, type: initialDataType } })
@@ -206,19 +215,15 @@ export function App({ nonInteractiveMode = false }: Props) {
 
       bridge.setClientRequestHandler(requestHandler)
     },
-    [bridge, docMap, eventBus],
+    [bridge, docMap, application],
   )
 
   const createInitialDocState = useCallback(() => {
     const newDocState = new DocState({
-      docStateRequestsPropagationOfUpdate: (
-        message: RtsMessagePayload,
-        originator: string,
-        debugSource: BroadcastSource,
-      ) => {
+      docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
         bridge
           .getClientInvoker()
-          .editorRequestsPropagationOfUpdate(message, originator, debugSource)
+          .editorRequestsPropagationOfUpdate(message, debugSource)
           .catch((e: Error) => {
             void bridge.getClientInvoker().reportError(e)
           })
@@ -263,9 +268,13 @@ export function App({ nonInteractiveMode = false }: Props) {
 
   const onEditingAllowanceChange = useCallback(
     (editable: boolean) => {
+      if (editable && !application.getRole().canEdit()) {
+        return
+      }
+
       setEditingAllowed(editable)
     },
-    [setEditingAllowed],
+    [setEditingAllowed, application],
   )
 
   if (!initialConfig || !docState) {
@@ -279,7 +288,7 @@ export function App({ nonInteractiveMode = false }: Props) {
 
   return (
     <div className="relative grid h-full w-full grid-cols-[3fr_max(20vw,300px)] grid-rows-[min-content_1fr] overflow-hidden bg-[white]">
-      <InternalEventBusProvider eventBus={eventBus}>
+      <ApplicationProvider application={application}>
         <Editor
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
@@ -296,7 +305,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           }}
           setEditorRef={setEditorRef}
         />
-      </InternalEventBusProvider>
+      </ApplicationProvider>
       <Icons />
     </div>
   )

@@ -11,6 +11,12 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
 
   useEffect(() => {
     return application.eventBus.addEventCallback<DocsAwarenessStateChangeData>((data) => {
+      for (const state of data.states) {
+        if (!state.name) {
+          console.error('User state missing name', state)
+          state.name = '?'
+        }
+      }
       setStates(data.states)
     }, DocAwarenessEvent.AwarenessStateChange)
   }, [application.eventBus])

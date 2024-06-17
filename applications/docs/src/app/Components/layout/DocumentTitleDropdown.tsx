@@ -119,10 +119,12 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
             {c('Action').t`History`}
           </DropdownMenuButton>
 
-          <DropdownMenuButton className="flex items-center text-left" onClick={onRename}>
-            <Icon name="pencil" className="color-weak mr-2" />
-            {c('Action').t`Rename document`}
-          </DropdownMenuButton>
+          {controller?.role.isAdmin() && (
+            <DropdownMenuButton className="flex items-center text-left" onClick={onRename}>
+              <Icon name="pencil" className="color-weak mr-2" />
+              {c('Action').t`Rename`}
+            </DropdownMenuButton>
+          )}
 
           <DropdownMenuButton disabled={isDuplicating} className="flex items-center text-left" onClick={onDuplicate}>
             <Icon name="squares" className="color-weak mr-2" />

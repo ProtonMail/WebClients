@@ -1,4 +1,4 @@
-import { Awareness, outdatedTimeout, removeAwarenessStates } from 'y-protocols/awareness'
+import { Awareness } from 'y-protocols/awareness'
 import { UserState } from '@lexical/yjs'
 
 export type DocsUserState = UserState & {
@@ -13,38 +13,39 @@ export class DocsAwareness extends Awareness {
     return super.getLocalState() as DocsUserState
   }
 
-  renewLocalClock(): void {
-    const now = Date.now()
-    if (!this.getLocalState()) {
-      return
-    }
-    const state = this.meta.get(this.clientID)
-    if (!state) {
-      return
-    }
-    if (outdatedTimeout / 2 <= now - state.lastUpdated) {
-      this.setLocalState(this.getLocalState())
-    }
-  }
-
-  refreshPresenceState(outdatedThreshold: number = outdatedTimeout): void {
-    this.renewLocalClock()
-    const now = Date.now()
-    const statesToRemove: number[] = []
-    this.meta.forEach((meta, clientID) => {
-      const isNotThisClient = clientID !== this.clientID
-      const isOutdated = outdatedThreshold <= now - meta.lastUpdated
-      if (isNotThisClient && isOutdated && this.states.has(clientID)) {
-        statesToRemove.push(clientID)
-      }
-    })
-    if (statesToRemove.length > 0) {
-      removeAwarenessStates(this, statesToRemove, 'timeout')
-    }
-  }
-
   getStates(): Map<number, DocsUserState> {
     return super.getStates() as Map<number, DocsUserState>
+  }
+
+  /**
+   * When a single client refreshes their page, they may not have the chance to propagate their own removal
+   * This means that when the user comes back to the page after the refresh, they will see their old user avatar.
+   * (Other users will also see the old avatar). This function looks for duplicates based on the username (email)
+   * and if there are more than one state entries for an email, it will delete the one that has the older lastUpdated.
+   */
+  removeDuplicateClients(): void {
+    const states = this.getStates()
+
+    const alreadyBrowsedEntries: Map<string, number> = new Map()
+
+    for (const [clientId, userState] of states) {
+      const username = userState.name
+
+      if (alreadyBrowsedEntries.has(username)) {
+        const previousClientId = alreadyBrowsedEntries.get(username) as number
+
+        const currentLastUpdated = this.meta.get(clientId)?.lastUpdated ?? 0
+        const previousLastUpdated = this.meta.get(previousClientId)?.lastUpdated ?? 0
+
+        if (currentLastUpdated > previousLastUpdated) {
+          this.states.delete(previousClientId)
+        } else if (currentLastUpdated < previousLastUpdated) {
+          this.states.delete(clientId)
+        }
+      }
+
+      alreadyBrowsedEntries.set(username, clientId)
+    }
   }
 
   getClientIds(): number[] {

@@ -1,4 +1,4 @@
-import { DocumentKeys, DriveCompat, NodeMeta } from '@proton/drive-store'
+import { DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DocController } from './DocController'
 import { UserService } from '../../Services/User/UserService'
 import { SquashDocument } from '../../UseCase/SquashDocument'
@@ -20,6 +20,7 @@ import { ConnectionCloseReason } from '@proton/docs-proto'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 describe('DocController', () => {
   let controller: DocController
@@ -58,7 +59,7 @@ describe('DocController', () => {
       } as unknown as jest.Mocked<LoggerInterface>,
     )
 
-    controller.keys = {} as DocumentKeys
+    controller.entitlements = {} as DocumentEntitlements
 
     controller.beginInitialSyncTimer = jest.fn()
     controller.beginInitialConnectionTimer = jest.fn()

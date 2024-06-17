@@ -6,6 +6,7 @@ import {
   RtsMessagePayload,
   DocumentMetaInterface,
   BroadcastSource,
+  DocumentRole,
 } from '@proton/docs-shared'
 import { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
@@ -29,12 +30,12 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.docs.getSureDocument()
   }
 
-  async editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    origin: string,
-    updateSource: BroadcastSource,
-  ): Promise<void> {
-    return this.docs.editorRequestsPropagationOfUpdate(message, origin, updateSource)
+  get role(): DocumentRole {
+    return this.docs.role
+  }
+
+  async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {
+    return this.docs.editorRequestsPropagationOfUpdate(message, updateSource)
   }
 
   public provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
