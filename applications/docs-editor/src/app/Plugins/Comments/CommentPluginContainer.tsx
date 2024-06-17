@@ -16,13 +16,19 @@ import { createPortal } from 'react-dom'
 import { CommentInputBox } from './CommentInputBox'
 import { FloatingAddCommentButton } from './FloatingAddCommentButton'
 import CommentsPanel from './CommentsPanel'
-import { CommentMarkNodeChangeData, CommentThreadInterface, CommentsEvent } from '@proton/docs-shared'
+import {
+  CommentMarkNodeChangeData,
+  CommentThreadInterface,
+  CommentThreadState,
+  CommentsEvent,
+} from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
+import { ContextualComments } from './ContextualComments'
 
 export default function CommentPlugin({
   controller,
@@ -35,6 +41,9 @@ export default function CommentPlugin({
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
+  const activeThreads = useMemo(() => {
+    return threads.filter((thread) => thread.state === CommentThreadState.Active)
+  }, [threads])
 
   useEffect(() => {
     controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
@@ -80,7 +89,6 @@ export default function CommentPlugin({
           if (elem !== null) {
             elem.classList.add('selected')
             changedElems.push(elem)
-            setShowCommentsPanel(true)
           }
         }
       }
@@ -209,22 +217,6 @@ export default function CommentPlugin({
     editor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
   }
 
-  useEffect(() => {
-    if (!showCommentsPanel) {
-      return
-    }
-    if (!activeIDs.length) {
-      return
-    }
-    const id = activeIDs[0]
-    const element = document.querySelector(`[data-thread-mark-id="${id}"]`)
-    if (!element) {
-      return
-    }
-    // eslint-disable-next-line custom-rules/deprecate-classes
-    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }, [activeIDs, showCommentsPanel])
-
   const createMarkNodeForCurrentSelection = useCallback(
     (id: string) => {
       editor.update(() => {
@@ -348,11 +340,7 @@ export default function CommentPlugin({
     >
       {showCommentInput &&
         createPortal(
-          <CommentInputBox
-            editor={editor}
-            cancelAddComment={cancelAddComment}
-            setShowCommentsPanel={setShowCommentsPanel}
-          />,
+          <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />,
           containerElement || document.body,
         )}
       {activeAnchorKey !== null &&
@@ -364,6 +352,8 @@ export default function CommentPlugin({
           containerElement || document.body,
         )}
       {showCommentsPanel && <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />}
+      {activeThreads.length > 0 &&
+        createPortal(<ContextualComments activeThreads={activeThreads} />, containerElement || document.body)}
     </CommentsProvider>
   )
 }
