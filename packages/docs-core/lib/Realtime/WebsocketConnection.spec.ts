@@ -1,7 +1,12 @@
-import { DebugConnection, WebsocketConnection } from './WebsocketConnection'
+import { DebugConnection, WebsocketConnection, getWebSocketServerURL } from './WebsocketConnection'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { LoggerInterface } from '@proton/utils/logs'
 import { Result } from '../Domain/Result/Result'
+
+const setWindowLocationHref = (href: string) => {
+  delete (window as any).location
+  ;(window as any).location = new URL(href)
+}
 
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
@@ -108,6 +113,23 @@ describe('WebsocketConnection', () => {
       expect(failToConnect).toHaveBeenCalled()
 
       connection.destroy()
+    })
+  })
+
+  describe('getWebSocketServerURL', () => {
+    test('should add docs-rts subdomain if there is no subdomain', () => {
+      setWindowLocationHref('https://proton.me')
+      expect(getWebSocketServerURL()).toBe('wss://docs-rts.proton.me/websockets')
+    })
+
+    test('should replace first subdomain with docs-rts', () => {
+      setWindowLocationHref('https://docs-editor.proton.me')
+      expect(getWebSocketServerURL()).toBe('wss://docs-rts.proton.me/websockets')
+    })
+
+    test('should replace first subdomain with docs-rts for multiple subdomains', () => {
+      setWindowLocationHref('https://docs.hutton.proton.black')
+      expect(getWebSocketServerURL()).toBe('wss://docs-rts.hutton.proton.black/websockets')
     })
   })
 })

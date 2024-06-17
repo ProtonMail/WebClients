@@ -19,6 +19,7 @@ import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
+import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 
 describe('DocController', () => {
   let controller: DocController
@@ -41,6 +42,7 @@ describe('DocController', () => {
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
       {} as jest.Mocked<GetDocumentMeta>,
+      {} as jest.Mocked<ExportAndDownload>,
       {
         createConnection: jest.fn().mockReturnValue({ connect: jest.fn().mockResolvedValue(true) }),
       } as unknown as jest.Mocked<WebsocketServiceInterface>,
