@@ -1,7 +1,9 @@
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useDownload } from '../../store/_downloads';
 import { useLink, validateLinkName } from '../../store/_links';
+import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper';
 import { useAbortSignal } from '../../store/_views/utils';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
@@ -12,6 +14,7 @@ import { decryptedLinkToNode } from './utils';
 
 export const useNode = () => {
     const { getLink } = useLink();
+    const { getSharePermissions } = useDirectSharingInfo();
     const { downloadStream } = useDownload();
     const { findAvailableName } = useUploadHelper();
     const abortSignal = useAbortSignal([]);
@@ -51,7 +54,14 @@ export const useNode = () => {
         };
     };
 
-    const findAvailableNodeName = async ({ shareId, linkId: parentLinkId }: LegacyNodeMeta, filename: string) => {
+    const getNodePermissions = async ({ shareId }: LegacyNodeMeta): Promise<SHARE_MEMBER_PERMISSIONS> => {
+        return getSharePermissions(abortSignal, shareId);
+    };
+
+    const findAvailableNodeName = async (
+        { shareId, linkId: parentLinkId }: LegacyNodeMeta,
+        filename: string
+    ): Promise<string> => {
         const error = validateLinkName(filename);
 
         if (error) {
@@ -66,6 +76,7 @@ export const useNode = () => {
     return {
         getNode,
         getNodeContents,
+        getNodePermissions,
         findAvailableNodeName,
     };
 };

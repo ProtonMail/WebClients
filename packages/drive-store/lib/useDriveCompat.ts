@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto/lib';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useDriveCrypto } from '../store/_crypto';
 import { useOpenDocument } from '../store/_documents';
@@ -18,6 +19,11 @@ export interface DriveCompat {
      * Gets the contents of a node.
      */
     getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>;
+
+    /**
+     * Gets permissions associated to a specific node.
+     */
+    getNodePermissions: (meta: NodeMeta) => Promise<SHARE_MEMBER_PERMISSIONS>;
 
     /**
      * Finds an available name for a new node.
@@ -95,7 +101,7 @@ export const useDriveCompat = (): DriveCompat => {
         signDocumentData,
         openDocumentSharingModal,
     } = useDocuments();
-    const { getNode, getNodeContents, findAvailableNodeName } = useNode();
+    const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
@@ -107,6 +113,7 @@ export const useDriveCompat = (): DriveCompat => {
         getDocumentKeys: withResolve(getDocumentKeys),
         getNode: withResolve(getNode),
         getNodeContents: withResolve(getNodeContents),
+        getNodePermissions: withResolve(getNodePermissions),
         findAvailableNodeName: withResolve(findAvailableNodeName),
         renameDocument: withResolve(renameDocument),
         getDocumentUrl,
