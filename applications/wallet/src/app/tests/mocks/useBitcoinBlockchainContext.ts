@@ -31,6 +31,9 @@ export const mockUseBitcoinBlockchainContext = (
         feesEstimation: getFeesEstimationMap(),
         loadingFeesEstimation: false,
 
+        fillBitcoinAddressPools: vi.fn(),
+        fillBitcoinAddressPoolForAccount: vi.fn(),
+
         ...mockedValue,
     });
 
