@@ -14,11 +14,13 @@ import { DocControllerInterface, PostApplicationError } from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
+import { CircleLoader } from '@proton/atoms/CircleLoader'
 
 const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
   const application = useApplication()
 
   const [title, setTitle] = useState<string>('Loading document title...')
+  const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
   useAppTitle(title)
@@ -40,9 +42,23 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
     }
   }, [application.eventBus, controller])
 
-  const onDuplicate = useCallback(() => {
-    void controller?.duplicateDocument()
-  }, [controller])
+  const onDuplicate = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (!controller) {
+        throw new Error('Primary controller not found')
+      }
+
+      event.preventDefault()
+      event.stopPropagation()
+
+      setIsDuplicating(true)
+
+      void controller.duplicateDocument().then(() => {
+        setIsDuplicating(false)
+      })
+    },
+    [controller],
+  )
 
   const onNewDocument = useCallback(() => {
     void controller?.createNewDocument()
@@ -108,9 +124,10 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
             {c('Action').t`Rename document`}
           </DropdownMenuButton>
 
-          <DropdownMenuButton className="flex items-center text-left" onClick={onDuplicate}>
+          <DropdownMenuButton disabled={isDuplicating} className="flex items-center text-left" onClick={onDuplicate}>
             <Icon name="squares" className="color-weak mr-2" />
             {c('Action').t`Duplicate`}
+            {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
           </DropdownMenuButton>
 
           <DropdownMenuButton className="flex items-center text-left" onClick={onNewDocument}>
