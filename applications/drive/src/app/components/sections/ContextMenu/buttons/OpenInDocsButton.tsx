@@ -12,7 +12,7 @@ interface Props {
     close: () => void;
 }
 
-const OpenInDocsButton = ({ shareId, link }: Props) => {
+const OpenInDocsButton = ({ shareId, link, close }: Props) => {
     const { openInDocsAction } = useOpenInDocs(link);
 
     return (
