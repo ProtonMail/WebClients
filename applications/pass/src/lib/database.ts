@@ -19,7 +19,10 @@ export const CACHE_DB_VERSION = 1;
 /** DB is created for each userID for future-proofing account switching
  * capabilities. */
 export const getPassDBName = (userID: string) => `pass:db::${userID}`;
-export const deletePassDB = async (userID: string) => deleteDB(getPassDBName(userID)).catch(noop);
+
+export const deletePassDB = async (userID: Maybe<string>) => {
+    if (userID) await deleteDB(getPassDBName(userID)).catch(noop);
+};
 
 /** Opens the database for a specific UserID. Will create the database
  * when called for the first time. If opening the database fails for any
@@ -52,14 +55,14 @@ export const writeDBCache = async (userID: string, cache: EncryptedPassCache, ve
 
         db.close();
     } catch (err) {
-        logger.error('[PassDB] Could not write cache', err);
+        logger.warn('[PassDB] Could not write cache', err);
     }
 };
 
 /** Retrieves the cached state blobs from the cache object store.  */
-export const getDBCache = async (userID: string): Promise<Partial<EncryptedPassCache>> => {
+export const getDBCache = async (userID: Maybe<string>): Promise<Partial<EncryptedPassCache>> => {
     try {
-        const db = await openPassDB(userID);
+        const db = userID ? await openPassDB(userID) : null;
         if (!db) throw new Error('No database found');
         const tx = db.transaction('cache', 'readwrite');
 
@@ -76,12 +79,12 @@ export const getDBCache = async (userID: string): Promise<Partial<EncryptedPassC
 
         return { encryptedCacheKey, salt, snapshot, state, version };
     } catch (err) {
-        logger.error('[PassDB] Could not resolve cache', err);
+        logger.warn('[PassDB] Could not resolve cache', err);
         return {};
     }
 };
 
-export const getEncryptedCacheKey = async (userID: string): Promise<Maybe<string>> => {
+export const getEncryptedCacheKey = async (userID: Maybe<string>): Promise<Maybe<string>> => {
     try {
         const cache = await getDBCache(userID);
         return cache.encryptedCacheKey;
