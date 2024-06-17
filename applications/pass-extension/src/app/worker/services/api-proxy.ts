@@ -1,6 +1,5 @@
 import { API_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import store from 'proton-pass-extension/app/worker/store';
 
 import { api } from '@proton/pass/lib/api/api';
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
@@ -8,7 +7,6 @@ import { fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
-import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -24,8 +22,6 @@ export const API_PROXY_URL = browser.runtime.getURL(API_PROXY_PATH);
 export const API_PROXY_IMAGE_ENDPOINT = '/core/v4/images/logo';
 
 export const createApiProxyService = () => {
-    const canLoadDomainImages = () => selectCanLoadDomainImages(store.getState());
-
     if (BUILD_TARGET === 'chrome') {
         const fetchController = fetchControllerFactory();
         const imageProxy = createImageProxyHandler(api);
@@ -65,12 +61,7 @@ export const createApiProxyService = () => {
                 const UID = authStore.getUID();
                 const AccessToken = authStore.getAccessToken();
 
-                if (
-                    UID &&
-                    AccessToken &&
-                    canLoadDomainImages() &&
-                    details.url.startsWith(`${API_URL}${API_PROXY_IMAGE_ENDPOINT}`)
-                ) {
+                if (UID && AccessToken && details.url.startsWith(`${API_URL}${API_PROXY_IMAGE_ENDPOINT}`)) {
                     details.requestHeaders?.push({ name: 'x-pm-uid', value: UID });
                     details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${AccessToken}` });
                 }
