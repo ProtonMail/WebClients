@@ -3,7 +3,6 @@ import { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
 import { GetDocumentMeta } from './GetDocumentMeta'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getErrorString } from '../Util/GetErrorString'
-import { PROTON_DOC_FILE_EXTENSION } from '@proton/docs-shared'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
@@ -29,10 +28,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
         linkId: node.parentNodeId,
       }
 
-      const newDocName = await this.driveCompat.findAvailableNodeName(
-        parentMeta,
-        `${node.name}.${PROTON_DOC_FILE_EXTENSION}`,
-      )
+      const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, node.name)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
