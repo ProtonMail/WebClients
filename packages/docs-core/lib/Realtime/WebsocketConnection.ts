@@ -15,6 +15,21 @@ export const DebugConnection = {
   url: 'ws://localhost:4000/websockets',
 }
 
+const WebSocketServerSubdomain = 'docs-rts'
+export const getWebSocketServerURL = () => {
+  const url = new URL(window.location.href)
+  const hostnameParts = url.hostname.split('.')
+
+  if (hostnameParts.length === 2) {
+    hostnameParts.unshift(WebSocketServerSubdomain)
+  } else {
+    hostnameParts[0] = WebSocketServerSubdomain
+  }
+
+  const newHostname = hostnameParts.join('.')
+  return `wss://${newHostname}/websockets`
+}
+
 export class WebsocketConnection implements WebsocketConnectionInterface {
   private socket?: WebSocket
   readonly state: WebsocketStateInterface = new WebsocketState()
@@ -76,7 +91,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     return url
   }
 
-  async getTokenOrFailConnection(): Promise<Result<{ token: string; url: string }>> {
+  async getTokenOrFailConnection(): Promise<Result<{ token: string }>> {
     const urlAndTokenResult = await this.callbacks.getUrlAndToken()
 
     if (urlAndTokenResult.isFailed()) {
@@ -123,7 +138,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    const { token, url } = urlAndTokenResult.getValue()
+    const { token } = urlAndTokenResult.getValue()
+    const url = getWebSocketServerURL()
     const connectionUrl = this.buildConnectionUrl({
       serverUrl: url,
       token,
