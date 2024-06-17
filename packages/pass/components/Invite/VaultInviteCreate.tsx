@@ -105,6 +105,10 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     });
 
     useEffect(() => {
+        if (org) org.settings.sync();
+    }, []);
+
+    useEffect(() => {
         if (validateAddresses) {
             addressValidator
                 .validate(form.values.members.map(({ value }) => value.email))

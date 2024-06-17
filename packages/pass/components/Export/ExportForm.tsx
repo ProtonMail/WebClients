@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
@@ -21,6 +21,10 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
     const org = useOrganization();
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
+
+    useEffect(() => {
+        if (org) org.settings.sync();
+    }, []);
 
     const warnings = useMemo(
         () =>
