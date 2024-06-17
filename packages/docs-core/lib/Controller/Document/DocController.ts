@@ -33,7 +33,7 @@ import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
 import { DocumentKeys } from '@proton/drive-store'
-import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
+import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
@@ -82,7 +82,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     userService: UserService,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
-    private _createInitialCommit: CreateInitialCommit,
+    private _createInitialCommit: SeedInitialCommit,
     private _loadDocument: LoadDocument,
     private _loadCommit: LoadCommit,
     private _duplicateDocument: DuplicateDocument,
