@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
-import type { OnLoginCallback } from '@proton/components/containers';
+import {
+    DropdownMenu,
+    Icon,
+    InputFieldTwo,
+    PasswordInputTwo,
+    SimpleDropdown,
+    useFormErrors,
+} from '@proton/components/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -26,6 +34,7 @@ import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
+import PublicUserItem from './PublicUserItem';
 import SupportDropdown from './SupportDropdown';
 
 export type ReAuthState = {
@@ -42,7 +51,17 @@ export type ReAuthState = {
     reAuthType: 'offline' | 'offline-bypass' | 'default';
 };
 
-const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnLoginCallback; state: ReAuthState }) => {
+const ReAuthContainer = ({
+    paths,
+    onLogin,
+    onSwitch,
+    state,
+}: {
+    paths: Paths;
+    onLogin: OnLoginCallback;
+    onSwitch: () => void;
+    state: ReAuthState;
+}) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [submitting, withSubmitting] = useLoading();
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -57,6 +76,10 @@ const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnL
     const nameToDisplay = User.DisplayName || User.Name || User.Email || '';
     const initials = getInitials(nameToDisplay);
 
+    const handleFinalizeLogin = (session: OnLoginCallbackArguments) => {
+        return onLogin({ ...session, prompt: null, flow: 'reauth' });
+    };
+
     const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[]) => {
         const session = await handleReAuthKeyPassword({
             authSession: state.session,
@@ -65,7 +88,7 @@ const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnL
             clearKeyPassword: password,
             salts,
         });
-        return onLogin(session);
+        return handleFinalizeLogin(session);
     };
 
     const handleSubmitSRP = async () => {
@@ -76,7 +99,7 @@ const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnL
         });
 
         if (state.reAuthType === 'default' || !!state.session.offlineKey || !state.session.User.Keys.length) {
-            return onLogin({ ...state.session, prompt: null });
+            return handleFinalizeLogin(state.session);
         }
 
         const [{ UserSettings }, salts] = await Promise.all([
@@ -174,7 +197,27 @@ const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnL
     );
 
     return (
-        <Layout hasDecoration={false}>
+        <Layout
+            topRight={
+                <SimpleDropdown
+                    as={PublicUserItem}
+                    originalPlacement="bottom-end"
+                    title={c('Action').t`Switch or add account`}
+                    User={User}
+                >
+                    <DropdownMenu>
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center gap-2 text-left"
+                            onClick={onSwitch}
+                        >
+                            <Icon name="plus" />
+                            {c('Action').t`Switch or add account`}
+                        </DropdownMenuButton>
+                    </DropdownMenu>
+                </SimpleDropdown>
+            }
+            hasDecoration={false}
+        >
             <Main>
                 <Header title={c('Action').t`Sign in`} />
                 <Content className="text-center">
