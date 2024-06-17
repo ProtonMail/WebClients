@@ -25,7 +25,7 @@ import {
     getDefaultReminder,
     getDefaultTBStorageWarning,
     getDefaultTestimonial,
-} from './commonConfig';
+} from './b2cCommonConfig';
 
 export const getFamilyConfig = (
     subscription: SubscriptionModel,
@@ -33,7 +33,8 @@ export const getFamilyConfig = (
     vpnCountries: number,
     newCancellationPolicy?: boolean
 ): PlanConfig => {
-    const planName = PLAN_NAMES[PLANS.FAMILY];
+    const currentPlan = PLANS.FAMILY;
+    const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
 
     const reminder = getDefaultReminder(planName);
@@ -93,12 +94,11 @@ export const getFamilyConfig = (
 
     return {
         planName,
-        plan: PLANS.FAMILY,
         reminder,
         testimonials,
         features,
         storage,
         confirmationModal,
-        keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
+        plan: currentPlan,
     };
 };

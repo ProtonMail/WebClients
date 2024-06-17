@@ -47,7 +47,6 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
-import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -55,7 +54,7 @@ import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
-import { useB2CCancellationFlow } from './b2cCancellationFlow';
+import { useCancellationFlow } from './cancellationFlow';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
 
@@ -219,11 +218,9 @@ const PlanSelection = ({
     ];
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
 
-    const { hasAccess, redirectToCancellationFlow } = useB2CCancellationFlow();
+    const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
-
-    const isNewCancellationFlowEnabled = useFlag('NewCancellationFlow');
 
     let maximumCycle: Cycle | undefined = maybeMaximumCycle;
     if (audience === Audience.B2B) {
@@ -397,7 +394,7 @@ const PlanSelection = ({
                 features={featuresElement}
                 onSelect={(planName) => {
                     // Mail plus users selecting free plan are redirected to the cancellation reminder flow
-                    if (planName === PLANS.FREE && hasAccess && isNewCancellationFlowEnabled) {
+                    if (planName === PLANS.FREE && (b2bAccess || b2cAccess)) {
                         redirectToCancellationFlow();
                         return;
                     }

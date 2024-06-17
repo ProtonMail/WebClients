@@ -5,14 +5,15 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
-import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './commonConfig';
+import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './b2cCommonConfig';
 
 export const getDrivePlusConfig = (
     subscription: SubscriptionModel,
     plan: SubscriptionPlan & { Name: PLANS },
     newCancellationPolicy?: boolean
 ): PlanConfig => {
-    const planName = PLAN_NAMES[PLANS.DRIVE];
+    const currentPlan = PLANS.DRIVE;
+    const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
 
     const reminder = getDefaultReminder(planName);
@@ -60,11 +61,10 @@ export const getDrivePlusConfig = (
 
     return {
         planName,
-        plan: PLANS.DRIVE,
         reminder,
         testimonials,
         features,
         confirmationModal,
-        keepPlanCTA: c('Subscription reminder').t`Keep ${planName}`,
+        plan: currentPlan,
     };
 };
