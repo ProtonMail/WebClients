@@ -9,9 +9,9 @@ export const getCommitData = (volumeId: string, linkId: string, commitId: string
     output: 'raw',
 });
 
-export const createCommit = (volumeId: string, linkId: string, data: Uint8Array) => ({
+export const seedInitialCommit = (volumeId: string, linkId: string, data: Uint8Array) => ({
     method: 'post',
-    url: `docs/volumes/${volumeId}/documents/${linkId}/commits`,
+    url: `docs/volumes/${volumeId}/documents/${linkId}/seed-initial-commit`,
     input: 'protobuf',
     data,
 });

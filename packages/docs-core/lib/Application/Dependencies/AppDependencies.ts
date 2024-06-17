@@ -20,7 +20,7 @@ import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { GetCommitData } from '../../UseCase/GetCommitData'
-import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
+import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { GenerateManifestSignature } from '../../UseCase/GenerateManifestSignature'
 import { EncryptionContext } from '../../Services/Encryption/EncryptionContext'
 import { VerifyCommit } from '../../UseCase/VerifyCommit'
@@ -144,12 +144,12 @@ export class AppDependencies extends DependencyContainer {
       return new DuplicateDocument(
         driveCompat,
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
-        this.get<CreateInitialCommit>(App_TYPES.CreateInitialCommit),
+        this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
       )
     })
 
     this.bind(App_TYPES.CreateInitialCommit, () => {
-      return new CreateInitialCommit(
+      return new SeedInitialCommit(
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
       )
@@ -174,7 +174,7 @@ export class AppDependencies extends DependencyContainer {
         driveCompat,
         this.get<CommentsApi>(App_TYPES.CommentsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
-        this.get<CreateInitialCommit>(App_TYPES.CreateInitialCommit),
+        this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
         this.get<LoadCommit>(App_TYPES.LoadCommit),
         this.get<EncryptComment>(App_TYPES.EncryptComment),

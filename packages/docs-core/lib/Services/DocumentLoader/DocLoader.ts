@@ -9,7 +9,7 @@ import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { LoadDocument } from '../../UseCase/LoadDocument'
-import { CreateInitialCommit } from '../../UseCase/CreateInitialCommit'
+import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { DriveCompat, NodeMeta } from '@proton/drive-store'
 import { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
@@ -41,7 +41,7 @@ export class DocLoader implements DocLoaderInterface {
     private driveCompat: DriveCompat,
     private commentsApi: CommentsApi,
     private squashDoc: SquashDocument,
-    private createInitialCommit: CreateInitialCommit,
+    private createInitialCommit: SeedInitialCommit,
     private loadDocument: LoadDocument,
     private loadCommit: LoadCommit,
     private encryptComment: EncryptComment,

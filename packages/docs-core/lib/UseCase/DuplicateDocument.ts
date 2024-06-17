@@ -3,7 +3,7 @@ import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
 import { NodeMeta } from '@proton/drive-store'
-import { CreateInitialCommit } from './CreateInitialCommit'
+import { SeedInitialCommit } from './SeedInitialCommit'
 import { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 
@@ -11,7 +11,7 @@ export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {
   constructor(
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
-    private createCommit: CreateInitialCommit,
+    private seedInitialCommit: SeedInitialCommit,
   ) {}
 
   async execute(newName: string, lookup: NodeMeta, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
@@ -36,7 +36,7 @@ export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {
 
       const newDoc = documentMetaResult.getValue()
 
-      const commitResult = await this.createCommit.execute(newDoc, state, shellResult.keys)
+      const commitResult = await this.seedInitialCommit.execute(newDoc, state, shellResult.keys)
       if (commitResult.isFailed()) {
         return Result.fail(commitResult.getError())
       }
