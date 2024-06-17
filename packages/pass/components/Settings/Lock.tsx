@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -127,6 +127,21 @@ export const LockSettings: FC = () => {
                 });
         }
     };
+
+    useEffect(() => {
+        /** Block reload/navigation if a lock request is on-going.
+         * Custom `beforeunload` messages are now deprecated */
+        const onBeforeUnload = (evt: BeforeUnloadEvent) => {
+            if (createLock.loading) {
+                evt.preventDefault();
+                evt.returnValue = '';
+                return '';
+            }
+        };
+
+        window.addEventListener('beforeunload', onBeforeUnload);
+        return () => window.removeEventListener('beforeunload', onBeforeUnload);
+    }, [createLock.loading]);
 
     return (
         <SettingsPanel title={c('Label').t`Session locking`}>
