@@ -43,7 +43,7 @@ export const useOpenDocument = () => {
             url.searchParams.append('parentLinkId', parentLinkId);
         }
 
-        window.open(url);
+        window.open(url, '_blank');
     };
 
     return {
