@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Api, BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import {
     AvailablePaymentMethod,
@@ -36,6 +36,7 @@ export interface Props {
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     enableChargebeeB2B: boolean;
     bitcoinChargebeeEnabled: boolean;
+    billingPlatform?: BillingPlatform;
 }
 
 interface Dependencies {
@@ -154,6 +155,7 @@ export const useMethods = (
         selectedPlanName,
         enableChargebeeB2B,
         bitcoinChargebeeEnabled,
+        billingPlatform,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -165,6 +167,7 @@ export const useMethods = (
         pendingChargebee?: ChargebeeEnabled;
         pendingSelectedPlanName?: PLANS | ADDON_NAMES;
         pendingBitcoinChargebeeEnabled?: boolean;
+        pendingBillingPlatform?: BillingPlatform;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -215,7 +218,8 @@ export const useMethods = (
                 bitcoinChargebeeEnabled,
                 paymentsApi,
                 selectedPlanName,
-                enableChargebeeB2B
+                enableChargebeeB2B,
+                billingPlatform
             );
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -231,6 +235,7 @@ export const useMethods = (
                     pendingChargebee,
                     pendingSelectedPlanName,
                     pendingBitcoinChargebeeEnabled,
+                    pendingBillingPlatform,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -258,6 +263,10 @@ export const useMethods = (
                 if (pendingBitcoinChargebeeEnabled !== undefined) {
                     paymentMethodsRef.current.bitcoinChargebeeEnabled = pendingBitcoinChargebeeEnabled;
                 }
+
+                if (pendingBillingPlatform !== undefined) {
+                    paymentMethodsRef.current.billingPlatform = pendingBillingPlatform;
+                }
             }
 
             setStatus(paymentMethodsRef.current.statusExtended);
@@ -282,6 +291,7 @@ export const useMethods = (
                 pendingChargebee: isChargebeeEnabled(),
                 pendingBitcoinChargebeeEnabled: bitcoinChargebeeEnabled,
                 pendingSelectedPlanName: selectedPlanName,
+                pendingBillingPlatform: billingPlatform,
             };
             return;
         }
@@ -292,6 +302,7 @@ export const useMethods = (
         paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
         paymentMethodsRef.current.bitcoinChargebeeEnabled = bitcoinChargebeeEnabled;
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
+        paymentMethodsRef.current.billingPlatform = billingPlatform;
 
         updateMethods();
     }, [amount, coupon, flow, isChargebeeEnabled(), selectedPlanName, bitcoinChargebeeEnabled]);

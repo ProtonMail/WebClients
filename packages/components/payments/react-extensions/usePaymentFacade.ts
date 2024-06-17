@@ -3,7 +3,7 @@ import { useMemo, useRef } from 'react';
 import { PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Api, ChargebeeEnabled, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Api, BillingPlatform, ChargebeeEnabled, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 
 import {
     AmountAndCurrency,
@@ -172,6 +172,7 @@ export const usePaymentFacade = (
         enableChargebeeB2B,
         billingAddress,
         bitcoinChargebeeEnabled,
+        billingPlatform,
     }: {
         amount: number;
         currency: Currency;
@@ -200,6 +201,7 @@ export const usePaymentFacade = (
         enableChargebeeB2B: boolean;
         billingAddress?: BillingAddress;
         bitcoinChargebeeEnabled: boolean;
+        billingPlatform?: BillingPlatform;
     },
     {
         api,
@@ -245,6 +247,7 @@ export const usePaymentFacade = (
             selectedPlanName,
             enableChargebeeB2B,
             bitcoinChargebeeEnabled,
+            billingPlatform,
         },
         {
             api,
