@@ -70,6 +70,5 @@ export const encodeFilters = (filters: ItemFilters): string => encodeUtf8Base64(
 
 export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
     const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);
-    appUrl.pathname = getLocalPath();
     return appUrl.toString() + subPath;
 };
