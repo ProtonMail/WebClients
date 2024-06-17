@@ -4,7 +4,6 @@ import { sub } from 'date-fns';
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
-import { Price } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
@@ -12,10 +11,9 @@ import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../atoms/Button';
-import { useBitcoinBlockchainContext } from '../../contexts';
+import { CorePrice } from '../../atoms/Price';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useGetExchangeRate } from '../../store/hooks';
-import { satsToFiat } from '../../utils';
 
 interface Props {
     apiWalletData: IWasmApiWalletData;
@@ -32,7 +30,6 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
 
     const [twentyFourHourChange, setTwentyFourHourChange] = useState<number>();
-    const { feesEstimation, loadingFeesEstimation } = useBitcoinBlockchainContext();
 
     const getExchangeRate = useGetExchangeRate();
 
@@ -72,7 +69,9 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
                         <div className="w-full grow">
                             <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
                                 {exchangeRate && (
-                                    <Price currency={exchangeRate.FiatCurrency}>{exchangeRate?.ExchangeRate}</Price>
+                                    <CorePrice currency={exchangeRate.FiatCurrency} divisor={exchangeRate.Cents}>
+                                        {exchangeRate?.ExchangeRate}
+                                    </CorePrice>
                                 )}
                             </span>
                         </div>
@@ -94,24 +93,6 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
                                 )}
                             </span>
                         </div>
-                    </div>
-
-                    <div className="flex flex-column mx-1">
-                        <span className="block color-hint mb-1">{c('Wallet dashboard').t`Next block fees`}</span>
-                        <div className="w-full grow">
-                            <span className={clsx('block', loadingFeesEstimation && 'skeleton-loader')}>
-                                {exchangeRate && (
-                                    <Price currency={exchangeRate.FiatCurrency} divisor={1}>
-                                        {satsToFiat((feesEstimation.get('1') ?? 1) * 141, exchangeRate)}
-                                    </Price>
-                                )}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-column mx-1">
-                        <span className="block color-hint mb-1">{c('Wallet dashboard').t`Next block`}</span>
-                        <span className="block">-</span>
                     </div>
                 </div>
             </div>

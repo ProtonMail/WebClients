@@ -1,9 +1,11 @@
+import { round } from 'lodash';
+
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 
 import { bitcoinToSats, satsToBitcoin } from '.';
 
 export const bitcoinToFiat = (bitcoin: number, exchangeRate: WasmApiExchangeRate) => {
-    return bitcoin * (exchangeRate.ExchangeRate / exchangeRate.Cents);
+    return round(bitcoin * (exchangeRate.ExchangeRate / exchangeRate.Cents), Math.log10(exchangeRate.Cents));
 };
 
 export const fiatToBitcoin = (fiat: number, exchangeRate: WasmApiExchangeRate) => {

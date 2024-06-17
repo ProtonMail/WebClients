@@ -3,11 +3,12 @@ import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
-import { Icon, Price, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton, CoreButtonLike } from '../../atoms';
+import { Price } from '../../atoms/Price';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants/explorer';
 import { TransactionData } from '../../hooks/useWalletTransactions';
@@ -15,7 +16,6 @@ import {
     getTransactionRecipientHumanReadableName,
     getTransactionSenderHumanReadableName,
     satsToBitcoin,
-    satsToFiat,
 } from '../../utils';
 import { multilineStrToMultilineJsx } from '../../utils/string';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
@@ -138,12 +138,10 @@ export const AmountDataListItem = ({
             <span className="block color-hint text-rg">{label}</span>
             <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
                 <div className={clsx('text-semibold', !exchangeRate && 'skeleton-loader')}>
-                    <Price currency={exchangeRate?.FiatCurrency}>
-                        {exchangeRate ? satsToFiat(amount ?? 0, exchangeRate).toFixed(2) : '-'}
-                    </Price>
+                    <Price unit={exchangeRate ?? 'BTC'} satsAmount={amount ?? 0} />
                 </div>
             </div>
-            <div className="color-weak">{satsToBitcoin(amount ?? 0)} BTC</div>
+            {exchangeRate && <div className="color-weak">{satsToBitcoin(amount ?? 0)} BTC</div>}
         </div>
     );
 };

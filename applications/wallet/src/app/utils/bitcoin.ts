@@ -58,7 +58,7 @@ export const convertAmount = (
 
     if (typeof to === 'object' && 'FiatCurrency' in to) {
         const sats = convertAmount(value, from, 'SATS');
-        return roundFloat(satsToFiat(sats, to), 2);
+        return satsToFiat(sats, to);
     }
 
     switch (from) {
