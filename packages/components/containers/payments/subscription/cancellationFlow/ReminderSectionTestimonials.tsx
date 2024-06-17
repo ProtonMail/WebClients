@@ -23,9 +23,13 @@ const ReminderSectionTestimonials = ({
                 <SettingsParagraph>
                     <>
                         {description}
-                        <a className="block mt-3" href={learMoreLink} target="_blank" rel="noopener noreferrer">
-                            {learnMoreCTA}
-                        </a>
+                        {learnMoreCTA && learMoreLink && (
+                            <>
+                                <a className="block mt-3" href={learMoreLink} target="_blank" rel="noopener noreferrer">
+                                    {learnMoreCTA}
+                                </a>
+                            </>
+                        )}
                     </>
                 </SettingsParagraph>
             </SettingsSection>

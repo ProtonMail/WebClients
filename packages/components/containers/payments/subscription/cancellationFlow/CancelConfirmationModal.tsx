@@ -31,7 +31,7 @@ const CancelConfirmationModal = ({
     return (
         <ModalTwo {...modalProps} data-testid="cancellation-reminder-confirmation">
             <ModalTwoHeader title={c('Subscription reminder').t`Cancel subscription?`} />
-            <ModalTwoContent>
+            <ModalTwoContent className="mb-6">
                 <p className="m-0 mb-1">{description}</p>
                 <p className="mb-4 mt-6 text-lg text-bold">{warningTitle}</p>
                 <StripedList alternate="odd" className="mt-0">
