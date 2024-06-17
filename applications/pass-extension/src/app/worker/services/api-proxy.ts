@@ -5,7 +5,7 @@ import store from 'proton-pass-extension/app/worker/store';
 import { api } from '@proton/pass/lib/api/api';
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
 import { fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
-import { createImageProxyHandler } from '@proton/pass/lib/api/images';
+import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
@@ -81,6 +81,17 @@ export const createApiProxyService = () => {
             ['blocking', 'requestHeaders']
         );
     }
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.FETCH_DOMAINIMAGE, async ({ payload: { url } }) => {
+        const UID = authStore.getUID();
+        const AccessToken = authStore.getAccessToken();
+        const headers = {
+            'x-pm-uid': UID!,
+            Authorization: `Bearer ${AccessToken}`,
+        };
+        const response = await fetch(url, { headers }).then(imageResponsetoDataURL);
+        return { result: response };
+    });
 
     return {};
 };
