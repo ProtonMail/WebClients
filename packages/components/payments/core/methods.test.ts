@@ -36,7 +36,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
@@ -54,7 +55,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
@@ -71,7 +73,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -87,7 +90,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -115,7 +119,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -131,7 +136,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -147,7 +153,8 @@ describe('getNewMethods()', () => {
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -165,7 +172,8 @@ describe('getNewMethods()', () => {
                 '',
                 flow,
                 undefined,
-                true
+                true,
+                undefined
             );
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -182,7 +190,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -198,7 +207,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
@@ -214,7 +224,8 @@ describe('getNewMethods()', () => {
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -232,7 +243,8 @@ describe('getNewMethods()', () => {
                 '',
                 flow,
                 undefined,
-                true
+                true,
+                undefined
             );
 
             expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -249,7 +261,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -270,7 +283,8 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -338,7 +352,8 @@ describe('getUsedMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -405,7 +420,8 @@ describe('getAvailablePaymentMethods()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         const availableMethods = methods.getAvailablePaymentMethods();
@@ -478,7 +494,8 @@ describe('getLastUsedMethod()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         const lastUsedMethod = methods.getLastUsedMethod();
@@ -566,7 +583,8 @@ describe('getSavedMethodById()', () => {
             '',
             'subscription',
             undefined,
-            true
+            true,
+            undefined
         );
 
         const savedMethod = methods.getSavedMethodById('2');

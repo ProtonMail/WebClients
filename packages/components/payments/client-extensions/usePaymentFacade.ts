@@ -5,7 +5,7 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, APPS, PLANS } from '@proton/shared/lib/constants';
 import { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { Api, ChargebeeEnabled, Currency, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { Api, BillingPlatform, ChargebeeEnabled, Currency, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
@@ -91,6 +91,7 @@ type PaymentFacadeProps = {
     checkResult?: RequiredCheckResponse;
     theme?: ThemeLike;
     billingAddress?: BillingAddress;
+    billingPlatform?: BillingPlatform;
 };
 
 /**
@@ -116,6 +117,7 @@ export const usePaymentFacade = ({
     checkResult,
     theme,
     billingAddress,
+    billingPlatform,
 }: PaymentFacadeProps) => {
     const bitcoinChargebeeEnabled = useFlag('ChargebeeBitcoinFrontend');
 
@@ -185,6 +187,7 @@ export const usePaymentFacade = ({
                 }
             },
             enableChargebeeB2B,
+            billingPlatform,
         },
         {
             api,

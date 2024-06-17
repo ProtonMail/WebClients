@@ -7,10 +7,10 @@ import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments
 import useLoading from '@proton/hooks/useLoading';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader, useModalState } from '../../components';
-import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
+import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
@@ -35,6 +35,7 @@ const PaymentMethodsSection = () => {
     const [paypalV4ModalProps, setPaypalV4ModalOpen, renderPaypalV4Modal] = useModalState();
     const [paypalV5ModalProps, setPaypalV5ModalOpen, renderPaypalV5Modal] = useModalState();
     const isChargebeeEnabled = useChargebeeEnabledCache();
+    const [subscription] = useSubscription();
     const pollPaymentMethodsCreate = usePollEvents({
         subscribeToProperty: 'PaymentMethods',
         action: EVENT_ACTIONS.CREATE,
@@ -55,7 +56,9 @@ const PaymentMethodsSection = () => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const canAddV4 = isChargebeeEnabled() !== ChargebeeEnabled.CHARGEBEE_FORCED;
+    const canAddV4 =
+        isChargebeeEnabled() !== ChargebeeEnabled.CHARGEBEE_FORCED ||
+        subscription?.BillingPlatform === BillingPlatform.Proton;
 
     const canAddPaypalV4 =
         !paymentMethods.some(

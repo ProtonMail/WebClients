@@ -69,6 +69,7 @@ const EditCardModal = ({
         amount: 0,
         currency: user.Currency,
         flow: 'add-card',
+        billingPlatform: subscription?.BillingPlatform,
         onChargeable: async (_, { chargeablePaymentParameters, sourceType }) => {
             withProcessing(async () => {
                 if (!isV5PaymentToken(chargeablePaymentParameters)) {
