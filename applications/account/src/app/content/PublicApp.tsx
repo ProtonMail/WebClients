@@ -881,6 +881,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                     <Route path={SSO_PATHS.REAUTH}>
                                                         <UnAuthenticated>
                                                             <ReAuthContainer
+                                                                onSwitch={() => {
+                                                                    history.push(SSO_PATHS.SWITCH);
+                                                                }}
                                                                 paths={paths}
                                                                 onLogin={handleLogin}
                                                                 state={locationState.payload}
