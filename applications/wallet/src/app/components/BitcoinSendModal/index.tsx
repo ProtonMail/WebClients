@@ -4,6 +4,7 @@ import { noop } from 'lodash';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
 import { ModalOwnProps, useModalState } from '@proton/components/components';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
@@ -37,6 +38,10 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
     const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, wallet?.Wallet.ID, account?.ID);
 
     const { txBuilder, updateTxBuilder } = useTxBuilder();
+
+    const isUsingBitcoinViaEmail = Object.values(recipientHelpers.recipientEmailMap).some(
+        (recipient) => recipient?.recipient.Address && validateEmailAddress(recipient?.recipient.Address)
+    );
 
     // TODO: use this later with fee selector, for now it only set default fees for 5th next block
     useOnChainFeesSelector(txBuilder, updateTxBuilder);
@@ -97,6 +102,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
 
                 {stepKey === StepKey.ReviewTransaction && (
                     <TransactionReview
+                        isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
                         wallet={wallet}
                         account={account}
                         unit={unit}

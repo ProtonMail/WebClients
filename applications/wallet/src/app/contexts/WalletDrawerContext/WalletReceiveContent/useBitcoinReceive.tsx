@@ -34,7 +34,8 @@ export const useBitcoinReceive = (isOpen: boolean, account: WasmApiWalletAccount
     const { walletsChainData } = useBitcoinBlockchainContext();
 
     const [index, setIndex] = useState(0);
-    const baseIndex = useRef(0);
+    // This is used to check that user don't create too much gap between indexes
+    const initialIndex = useRef(0);
     const [amount, setAmount] = useState(0);
     const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
@@ -47,10 +48,10 @@ export const useBitcoinReceive = (isOpen: boolean, account: WasmApiWalletAccount
             const apiHighestIndex = await getBitcoinAddressHighestIndex(account.WalletID, account.ID);
             const clientHighestIndex = await wasmAccount?.account.getLastUnusedAddressIndex();
 
-            const highestIndex = Math.max(clientHighestIndex ?? 0, apiHighestIndex);
+            const nextIndex = Math.max(clientHighestIndex ?? 0, apiHighestIndex) + 1;
 
-            baseIndex.current = highestIndex;
-            setIndex(highestIndex);
+            initialIndex.current = nextIndex;
+            setIndex(nextIndex);
         };
 
         void withLoadingPaymentLink(getIndex());
@@ -80,7 +81,7 @@ export const useBitcoinReceive = (isOpen: boolean, account: WasmApiWalletAccount
         setIndex((prev) => prev + 1);
     };
 
-    const isIndexAboveGap = index - baseIndex.current > BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING;
+    const isIndexAboveGap = index - initialIndex.current > BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING;
 
     return {
         loadingPaymentLink,

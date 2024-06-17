@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { WasmApiEmailAddress } from '@proton/andromeda';
@@ -18,16 +16,29 @@ import {
 import { CoreButton } from '../../atoms';
 
 interface Props {
+    /**
+     * Expected to have only one element
+     */
     value: WasmApiEmailAddress[];
     options: (readonly [WasmApiEmailAddress, boolean])[];
     loading: boolean;
+
     onRemoveAddress: (addressId: string) => void;
-    onAddAddresses: (addressIds: string[]) => void;
+    onAddAddress: (addressId: string) => void;
+    onReplaceAddress: (oldAddressId: string, addressId: string) => void;
 }
 
-export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress, onAddAddresses }: Props) => {
-    const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
-    const [selectedAddresses, setSelectedAddresses] = useState<string[]>([]);
+export const EmailIntegrationInput = ({
+    value,
+    options,
+    loading,
+    onRemoveAddress,
+    onAddAddress,
+    onReplaceAddress,
+}: Props) => {
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const emailId: string | undefined = value?.[0]?.ID;
 
     return (
         <div className="px-6 py-5">
@@ -80,46 +91,37 @@ export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress
                 <Icon name="plus-circle" size={4} />
                 <span className="block ml-1">{c('Wallet preferences').t`Add`}</span>
             </DropdownButton>
-            <Dropdown
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={() => {
-                    if (selectedAddresses.length) {
-                        onAddAddresses(selectedAddresses);
-                    }
-
-                    close();
-                }}
-                autoClose={false}
-                originalPlacement="bottom-start"
-            >
+            <Dropdown isOpen={isOpen} onClose={close} anchorRef={anchorRef} originalPlacement="bottom-start">
                 <DropdownMenu>
                     {options.map(([opt, isAvailable]) => {
-                        const isSelected = selectedAddresses.includes(opt.ID);
+                        const isSelected = emailId === opt.ID;
 
                         return (
                             <DropdownMenuButton
                                 onClick={() => {
                                     if (isAvailable) {
-                                        setSelectedAddresses((prev) =>
-                                            isSelected ? prev.filter((IDb) => IDb !== opt.ID) : [...prev, opt.ID]
-                                        );
+                                        if (emailId) {
+                                            onReplaceAddress(emailId, opt.ID);
+                                        } else {
+                                            onAddAddress(opt.ID);
+                                        }
                                     }
+
+                                    close();
                                 }}
-                                className="flex flex-row justify-space-between p-2"
+                                className="flex flex-row items-center justify-space-between p-2"
                                 key={opt.ID}
-                                isSelected={isSelected}
                                 disabled={!isAvailable || loading}
                             >
                                 <div>{opt.Email}</div>
-                                <div className="flex flex-row items-center">
+                                <div className="flex flex-row flex-nowrap items-center">
                                     {(() => {
                                         if (isSelected || value.some(({ ID }) => ID === opt.ID)) {
                                             return (
                                                 <Icon
                                                     size={4}
                                                     name="checkmark-circle-filled"
-                                                    className="color-success"
+                                                    className="color-success no-shrink"
                                                 />
                                             );
                                         }
@@ -128,14 +130,20 @@ export const EmailIntegrationInput = ({ value, options, loading, onRemoveAddress
                                             return null;
                                         }
 
-                                        return <Icon size={4} name="cross-circle-filled" className="color-danger" />;
+                                        return (
+                                            <Icon
+                                                size={4}
+                                                name="cross-circle-filled"
+                                                className="color-danger no-shrink"
+                                            />
+                                        );
                                     })()}
                                 </div>
                             </DropdownMenuButton>
                         );
                     })}
                 </DropdownMenu>
-                <div className="m-auto px-2 mt-2">
+                <div className="m-auto px-2 my-1">
                     <Button disabled={loading} className="w-full flex flex-row items-center" shape="ghost" color="norm">
                         <Icon name="plus-circle" size={4} />
                         <span className="block ml-1">{c('Wallet preferences').t`Add a new email address`}</span>

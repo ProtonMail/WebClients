@@ -15,7 +15,7 @@ import {
 import { CryptoProxy } from '@proton/crypto/lib';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
 import { verifySignedData } from '@proton/wallet';
 
 import { useBitcoinAddressPool } from '.';
@@ -215,7 +215,7 @@ describe('useBitcoinAddressPool', () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
         addressKey = await getAddressKey();
-        mockUseAddressKeys([[addressKey]]);
+        mockUseGetAddressKeys(vi.fn(async () => addressKey.keys));
     });
 
     afterAll(async () => {
@@ -280,7 +280,7 @@ describe('useBitcoinAddressPool', () => {
         wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(7);
 
         const { result } = renderHook(() => useBitcoinAddressPool(baseArgs));
-        await result.current.fillPool();
+        await result.current.fillBitcoinAddressPools();
 
         expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(1);
         expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledWith('01', '001');
@@ -310,7 +310,7 @@ describe('useBitcoinAddressPool', () => {
     describe('when pool is full and no address needs update', () => {
         it('should not perform any update/create call', async () => {
             const { result, waitFor } = renderHook(() => useBitcoinAddressPool(baseArgs));
-            await result.current.fillPool();
+            await result.current.fillBitcoinAddressPools();
 
             await waitFor(() => !result.current.isLoading);
 
@@ -343,7 +343,7 @@ describe('useBitcoinAddressPool', () => {
             it('should update them with correct addresses, starting at correct index', async () => {
                 const [primaryKey] = addressKey.keys;
                 const { result, waitFor } = renderHook(() => useBitcoinAddressPool(baseArgs));
-                await result.current.fillPool();
+                await result.current.fillBitcoinAddressPools();
 
                 await waitFor(() => !result.current.isLoading);
 
@@ -396,7 +396,7 @@ describe('useBitcoinAddressPool', () => {
             it('should update them with correct addresses, starting at correct index', async () => {
                 const [primaryKey] = addressKey.keys;
                 const { result, waitFor } = renderHook(() => useBitcoinAddressPool(baseArgs));
-                await result.current.fillPool();
+                await result.current.fillBitcoinAddressPools();
 
                 await waitFor(() => !result.current.isLoading);
 
@@ -455,7 +455,7 @@ describe('useBitcoinAddressPool', () => {
             it('should update them with correct addresses, starting at correct index', async () => {
                 const [primaryKey] = addressKey.keys;
                 const { result, waitFor } = renderHook(() => useBitcoinAddressPool(baseArgs));
-                await result.current.fillPool();
+                await result.current.fillBitcoinAddressPools();
 
                 await waitFor(() => !result.current.isLoading);
 
@@ -516,7 +516,7 @@ describe('useBitcoinAddressPool', () => {
             it('should update them with correct addresses, starting at correct index', async () => {
                 const [primaryKey] = addressKey.keys;
                 const { result, waitFor } = renderHook(() => useBitcoinAddressPool(baseArgs));
-                await result.current.fillPool();
+                await result.current.fillBitcoinAddressPools();
 
                 await waitFor(() => !result.current.isLoading);
 

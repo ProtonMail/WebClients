@@ -24,6 +24,7 @@ import { useFeesInput } from './useFeesInput';
 import './TransactionReview.scss';
 
 interface Props {
+    isUsingBitcoinViaEmail: boolean;
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
@@ -36,6 +37,7 @@ interface Props {
 }
 
 export const TransactionReview = ({
+    isUsingBitcoinViaEmail,
     wallet,
     account,
     unit,
@@ -84,15 +86,18 @@ export const TransactionReview = ({
             const signingKeys = accountPrimaryAddressesKeys.map((k) => k.privateKey);
             const senderEncryptionKeys = accountPrimaryAddressesKeys.map((k) => k.publicKey);
 
-            await signAndBroadcastPsbt({
-                apiAccount: account,
-                apiWalletData: wallet,
-                exchangeRateId: isExchangeRate(unit) ? unit?.ID : undefined,
-                noteToSelf: noteToSelf || undefined,
-                message: message || undefined,
-                signingKeys,
-                encryptionKeys: [...senderEncryptionKeys, ...compact(recipients.map((r) => r.addressKey))],
-            });
+            await signAndBroadcastPsbt(
+                {
+                    apiAccount: account,
+                    apiWalletData: wallet,
+                    exchangeRateId: isExchangeRate(unit) ? unit?.ID : undefined,
+                    noteToSelf: noteToSelf || undefined,
+                    message: message || undefined,
+                    signingKeys,
+                    encryptionKeys: [...senderEncryptionKeys, ...compact(recipients.map((r) => r.addressKey))],
+                },
+                isUsingBitcoinViaEmail
+            );
 
             onSent();
 
@@ -329,25 +334,32 @@ export const TransactionReview = ({
                 </div>
 
                 {/* Message/Note */}
-                <div className="mt-2">
-                    <CoreInput
-                        bigger
-                        dense
-                        inputClassName="rounded-full pl-2"
-                        className="rounded-xl"
-                        placeholder={c('Wallet send').t`Add Message to recipient`}
-                        value={message}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
-                        prefix={
-                            <div
-                                className="rounded-full bg-norm flex"
-                                style={{ background: 'var(--interaction-weak-major-2)', width: '2rem', height: '2rem' }}
-                            >
-                                <Icon name="speech-bubble" className="m-auto" />
-                            </div>
-                        }
-                    />
-                </div>
+                {isUsingBitcoinViaEmail && (
+                    <div className="mt-2">
+                        <CoreInput
+                            bigger
+                            dense
+                            inputClassName="rounded-full pl-2"
+                            className="rounded-xl"
+                            placeholder={c('Wallet send').t`Add Message to recipient`}
+                            value={message}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
+                            prefix={
+                                <div
+                                    className="rounded-full bg-norm flex"
+                                    style={{
+                                        background: 'var(--interaction-weak-major-2)',
+                                        width: '2rem',
+                                        height: '2rem',
+                                    }}
+                                >
+                                    <Icon name="speech-bubble" className="m-auto" />
+                                </div>
+                            }
+                        />
+                    </div>
+                )}
+
                 <div className="mt-2">
                     <CoreInput
                         bigger

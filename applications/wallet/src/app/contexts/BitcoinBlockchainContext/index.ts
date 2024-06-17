@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { WasmNetwork } from '@proton/andromeda';
+import { WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
 import { IWasmApiWalletData, WalletMap } from '@proton/wallet';
 
 import {
@@ -33,6 +33,12 @@ export interface BitcoinBlockchainContextValue {
 
     feesEstimation: Map<string, number>;
     loadingFeesEstimation: boolean;
+
+    fillBitcoinAddressPools: (data?: { walletAccountIds: string[] }) => void;
+    fillBitcoinAddressPoolForAccount: (
+        walletAccount: WasmApiWalletAccount,
+        walletWithChainData: WalletWithChainData
+    ) => Promise<void>;
 }
 
 export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextValue>({
@@ -55,6 +61,9 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
 
     feesEstimation: new Map(),
     loadingFeesEstimation: false,
+
+    fillBitcoinAddressPools: () => {},
+    fillBitcoinAddressPoolForAccount: async () => {},
 });
 
 export const useBitcoinBlockchainContext = () => useContext(BitcoinBlockchainContext);
