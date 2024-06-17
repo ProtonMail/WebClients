@@ -25,7 +25,7 @@ export const lockCreateIntent = createAction('auth::lock::create::intent', (lock
         withNotification({
             key: NotificationKey.LOCK,
             loading: true,
-            text: (() => {
+            text: `${(() => {
                 switch (lock.mode) {
                     case LockMode.NONE:
                         return c('Info').t`Disabling auto-lock`;
@@ -34,7 +34,7 @@ export const lockCreateIntent = createAction('auth::lock::create::intent', (lock
                     case LockMode.PASSWORD:
                         return c('Info').t`Enabling password auto-lock`;
                 }
-            })(),
+            })()} (${c('Info').t`Please do not close this window`})`,
             type: 'info',
         })
     )({ payload: { lock } })
