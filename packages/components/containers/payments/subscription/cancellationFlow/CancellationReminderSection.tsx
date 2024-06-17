@@ -4,9 +4,15 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, SettingsLink, useModalState } from '@proton/components/components';
-import { SettingsSection } from '@proton/components/containers/account';
-import { useAppTitle, useVPNServersCount } from '@proton/components/hooks';
+import {
+    Icon,
+    SettingsLink,
+    SettingsSection,
+    useAppTitle,
+    useCancellationFlow,
+    useModalState,
+    useVPNServersCount,
+} from '@proton/components';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -18,7 +24,6 @@ import ReminderSectionPlan from './ReminderSectionPlan';
 import ReminderSectionStorage from './ReminderSectionStorage';
 import ReminderSectionTestimonials from './ReminderSectionTestimonials';
 import { getReminderPageConfig } from './reminderPageConfig';
-import useB2CCancellationFlow from './useB2CCancellationFlow';
 
 interface Props {
     app: APP_NAMES;
@@ -27,7 +32,7 @@ interface Props {
 export const CancellationReminderSection = ({ app }: Props) => {
     const [{ paid }] = useVPNServersCount();
     const newCancellationPolicy = useFlag('ExtendCancellationProcess');
-    const { hasAccess, redirectToDashboard, subscription, setStartedCancellation } = useB2CCancellationFlow();
+    const { b2bAccess, b2cAccess, redirectToDashboard, subscription, setStartedCancellation } = useCancellationFlow();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
@@ -42,11 +47,11 @@ export const CancellationReminderSection = ({ app }: Props) => {
     useEffect(() => {
         const config = getReminderPageConfig({ subscription, vpnCountries: paid.countries, newCancellationPolicy });
         setConfig(config);
-    }, [hasAccess, paid]);
+    }, [b2bAccess, b2cAccess, paid]);
 
     useAppTitle(c('Subscription reminder').t`Cancel subscription`);
 
-    if (!hasAccess || !config) {
+    if ((!b2bAccess && !b2cAccess) || !config) {
         redirectToDashboard();
         return;
     }
@@ -82,7 +87,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                                 className="flex flex-nowrap items-center justify-center"
                             >
                                 <Icon name="upgrade" size={5} className="mr-1" />
-                                {config.keepPlanCTA}
+                                {c('Subscription reminder').t`Keep ${config.planName}`}
                             </ButtonLike>
                             <ButtonLike
                                 as="a"
@@ -105,7 +110,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
             {cancelRenderModal && (
                 <CancelConfirmationModal
                     {...cancelModalProps}
-                    ctaText={config.keepPlanCTA}
+                    ctaText={c('Subscription reminder').t`Keep ${config.planName}`}
                     cancelSubscription={handleCancelSubscription}
                     {...config.confirmationModal}
                 />
