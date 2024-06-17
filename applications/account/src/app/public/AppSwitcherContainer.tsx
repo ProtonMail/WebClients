@@ -37,7 +37,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                 <SimpleDropdown
                     as={PublicUserItem}
                     originalPlacement="bottom-end"
-                    title={c('Title').t`Open actions dropdown`}
+                    title={c('Action').t`Switch or add account`}
                     User={User}
                 >
                     <DropdownMenu>

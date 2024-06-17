@@ -55,7 +55,7 @@ export interface AuthCacheResult {
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }
 
-export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | undefined;
+export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | 'reauth' | undefined;
 
 export interface AppIntent {
     app: APP_NAMES;
