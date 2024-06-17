@@ -37,6 +37,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
+    BillingPlatform,
     ChargebeeEnabled,
     Currency,
     Cycle,
@@ -581,7 +582,10 @@ const SubscriptionContainer = ({
             return true;
         }
 
-        const isInhouseForcedUser = chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED;
+        const isInhouseForcedUser =
+            chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED ||
+            subscription.BillingPlatform === BillingPlatform.Proton;
+
         if (
             isSubscriptionUnchanged(latestSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
             !isInhouseForcedUser

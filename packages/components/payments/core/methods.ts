@@ -7,9 +7,8 @@ import {
     MIN_PAYPAL_AMOUNT_INHOUSE,
     PLANS,
 } from '@proton/shared/lib/constants';
-import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import { Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Api, BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { isExpired as getIsExpired } from './cardDetails';
 import { PAYMENT_METHOD_TYPES } from './constants';
@@ -75,7 +74,8 @@ export class PaymentMethods {
         private _coupon: string,
         private _flow: PaymentMethodFlows,
         private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
-        public enableChargebeeB2B: boolean
+        public enableChargebeeB2B: boolean,
+        public billingPlatform: BillingPlatform | undefined
     ) {
         this._statusExtended = extendStatus(paymentMethodStatus);
     }
@@ -259,7 +259,10 @@ export class PaymentMethods {
     }
 
     private isChargebeeCardAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
+        const isAddCard = this.flow === 'add-card';
+        const disableCBCreditCard = isAddCard && this.isOnSessionMigration();
+
+        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || disableCBCreditCard) {
             return false;
         }
 
@@ -273,7 +276,7 @@ export class PaymentMethods {
             this.flow === 'signup-pass' ||
             this.flow === 'signup-pass-upgrade' ||
             this.flow === 'signup-vpn';
-        const isAddCard = this.flow === 'add-card' && !isProduction(window.location.host);
+
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSignup || isAddCard || isSubscription || isCredit;
@@ -330,6 +333,13 @@ export class PaymentMethods {
         const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
         return isB2BPlan && !this.enableChargebeeB2B;
     }
+
+    private isOnSessionMigration() {
+        return (
+            this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED &&
+            this.billingPlatform === BillingPlatform.Proton
+        );
+    }
 }
 
 async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
@@ -352,7 +362,8 @@ export async function initializePaymentMethods(
     bitcoinChargebeeEnabled: boolean,
     paymentsApi: PaymentsApi,
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
-    enableChargebeeB2B: boolean
+    enableChargebeeB2B: boolean,
+    billingPlatform?: BillingPlatform
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -399,6 +410,7 @@ export async function initializePaymentMethods(
         coupon,
         flow,
         selectedPlanName,
-        enableChargebeeB2B
+        enableChargebeeB2B,
+        billingPlatform
     );
 }
