@@ -3,6 +3,7 @@ import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/cryp
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
 import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import { logger } from '@proton/pass/utils/logger';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { getCacheEncryptionKey } from './crypto';
@@ -15,20 +16,26 @@ export const getCacheKey = async (
     { encryptedCacheKey, salt }: Partial<EncryptedPassCache>,
     authStore: AuthStore
 ): Promise<Maybe<CryptoKey>> => {
-    const keyPassword = authStore.getPassword();
-    const sessionLockToken = authStore.getLockToken();
-    const offlineKD = authStore.getOfflineKD();
+    try {
+        const keyPassword = authStore.getPassword();
+        const sessionLockToken = authStore.getLockToken();
+        const offlineKD = authStore.getOfflineKD();
 
-    if (offlineKD && encryptedCacheKey) {
-        const offlineKey = await getSymmetricKey(stringToUint8Array(offlineKD));
-        const rawCacheKey = await decryptData(
-            offlineKey,
-            stringToUint8Array(encryptedCacheKey),
-            PassEncryptionTag.Offline
-        );
+        if (offlineKD && encryptedCacheKey) {
+            const offlineKey = await getSymmetricKey(stringToUint8Array(offlineKD));
+            const rawCacheKey = await decryptData(
+                offlineKey,
+                stringToUint8Array(encryptedCacheKey),
+                PassEncryptionTag.Offline
+            );
 
-        return getSymmetricKey(rawCacheKey);
+            return await getSymmetricKey(rawCacheKey);
+        }
+
+        if (keyPassword && salt) {
+            return await getCacheEncryptionKey(keyPassword, stringToUint8Array(salt), sessionLockToken);
+        }
+    } catch (err) {
+        logger.warn(`[Cache] cache key could not be resolved`);
     }
-
-    if (keyPassword && salt) return getCacheEncryptionKey(keyPassword, stringToUint8Array(salt), sessionLockToken);
 };

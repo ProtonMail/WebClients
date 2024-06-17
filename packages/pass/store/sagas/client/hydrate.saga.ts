@@ -18,6 +18,7 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
@@ -91,7 +92,8 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
 
         yield put(stateHydrate(state));
         return cache?.state !== undefined && cache?.snapshot !== undefined;
-    } catch {
+    } catch (err) {
+        logger.warn(`[Boot] Hydration error`, err);
         yield config.onError?.();
         return false;
     }
