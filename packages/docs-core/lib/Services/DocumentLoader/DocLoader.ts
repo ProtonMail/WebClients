@@ -88,13 +88,13 @@ export class DocLoader implements DocLoaderInterface {
       return
     }
 
-    const { keys } = result.getValue()
+    const { entitlements } = result.getValue()
 
     const username = this.userService.user.Email || this.userService.getUserId()
 
     this.commentsController = new CommentService(
       lookup,
-      keys,
+      entitlements.keys,
       this.websocketSerivce,
       username,
       this.commentsApi,

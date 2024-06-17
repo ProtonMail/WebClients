@@ -6,11 +6,7 @@ import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import { BroadcastSource } from './BroadcastSource'
 
 export interface EditorRequiresClientMethods {
-  editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void>
+  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
 
   getTypersExcludingSelf(threadId: string): Promise<string[]>
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>

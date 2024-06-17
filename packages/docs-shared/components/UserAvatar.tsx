@@ -22,12 +22,18 @@ export const UserAvatar = forwardRef(function UserAvatar(
   { name, className, color, ...rest }: UserAvatarProps,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
+  if (!name) {
+    throw new Error('UserAvatar requires a name prop')
+  }
+
   const hue = useMemo(() => {
     if (color) {
       if ('hsl' in color) {
-        const parsed = parseHueFromHSLstring(color.hsl)
-        if (parsed && !isNaN(parsed)) {
-          return parsed
+        if (color.hsl) {
+          const parsed = parseHueFromHSLstring(color.hsl)
+          if (parsed && !isNaN(parsed)) {
+            return parsed
+          }
         }
       } else if (!isNaN(color.hue)) {
         return color.hue

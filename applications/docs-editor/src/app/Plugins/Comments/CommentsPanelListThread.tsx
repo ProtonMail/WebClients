@@ -10,7 +10,7 @@ import {
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
 import { Icon, ToolbarButton } from '@proton/components'
-import { useInternalEventBus } from '../../InternalEventBusProvider'
+import { useApplication } from '../../ApplicationProvider'
 import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
@@ -21,21 +21,21 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   const [editor] = useLexicalComposerContext()
   const { controller, markNodeMap, activeIDs, setActiveIDs, threadToFocus, setThreadToFocus } = useCommentsContext()
 
-  const eventBus = useInternalEventBus()
+  const application = useApplication()
   const [isDeleting, setIsDeleting] = useState(false)
 
   const [typers, setTypers] = useState<string[]>([])
 
   useEffect(() => {
     controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
-    return eventBus.addEventCallback((data) => {
+    return application.eventBus.addEventCallback((data) => {
       const eventData = data as LiveCommentsTypeStatusChangeData
       const { threadId } = eventData
       if (threadId === thread.id) {
         controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
       }
     }, LiveCommentsEvent.TypingStatusChange)
-  }, [controller, eventBus, thread.id])
+  }, [controller, application, thread.id])
 
   const markID = thread.markID
 
@@ -108,7 +108,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     [setThreadToFocus, thread.id, threadToFocus],
   )
 
-  const canShowReplyBox = !thread.isPlaceholder && !isDeleting && !isResolved
+  const canShowReplyBox = application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved
 
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
