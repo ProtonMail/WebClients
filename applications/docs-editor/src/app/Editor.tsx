@@ -105,11 +105,23 @@ export function Editor({
         {!nonInteractiveMode && <Toolbar onEditingAllowanceChange={onEditingAllowanceChange} />}
         <RichTextPlugin
           contentEditable={
-            <div className="relative overflow-auto [grid-column:1_/_3] [grid-row:2]">
+            <div
+              className="relative overflow-auto"
+              style={{
+                gridColumn: '1 / 3',
+                gridRow: '2',
+
+                display: 'grid',
+                gridTemplateRows: '1fr',
+              }}
+            >
               <ContentEditable
                 className="DocumentEditor"
                 style={{
                   fontFamily: DefaultFont.value,
+                  gridRow: 1,
+                  gridColumn: 1,
+                  justifySelf: 'center',
                 }}
               />
             </div>
