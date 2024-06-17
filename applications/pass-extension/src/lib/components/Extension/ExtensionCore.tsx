@@ -58,9 +58,20 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
             ),
 
         getDomainImage: async (domain, signal) => {
-            const basePath = BUILD_TARGET === 'firefox' ? config.API_URL : API_PROXY_URL;
+            const basePath = BUILD_TARGET === 'firefox' || BUILD_TARGET === 'safari' ? config.API_URL : API_PROXY_URL;
             const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
             const requestUrl = `${basePath}/${url}`;
+
+            if (BUILD_TARGET === 'safari') {
+                return sendMessage.on(
+                    messageFactory({ type: WorkerMessageType.FETCH_DOMAINIMAGE, payload: { url: requestUrl } }),
+                    (res) => {
+                        if (res.type === 'error') throw new Error(res.error);
+                        return res.result;
+                    }
+                );
+            }
+
             const [headers, requestId] = BUILD_TARGET === 'chrome' ? getRequestIDHeaders() : [];
 
             if (BUILD_TARGET === 'chrome') {
