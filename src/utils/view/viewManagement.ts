@@ -10,7 +10,7 @@ import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { getLocalID, isHostAllowed, isSameURL } from "../urls/urlTests";
+import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL } from "../urls/urlTests";
 
 const config = getConfig();
 const settings = getSettings();
@@ -123,7 +123,7 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
 };
 
 async function updateLocalID(urlString: string) {
-    if (!isHostAllowed(urlString)) {
+    if (!isHostAllowed(urlString) || isAccountSwitch(urlString)) {
         return urlString;
     }
 
