@@ -18,7 +18,7 @@ import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useSubscription } from '@proton/components/hooks';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 
-import { getReminderPageConfig } from '../b2cCancellationFlow/reminderPageConfig';
+import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
 import { ReminderFlag, markRemindersAsSeen } from './cancellationReminderHelper';
 
 const CancellationReminderModal = (props: ModalProps) => {

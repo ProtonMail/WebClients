@@ -8,8 +8,8 @@ export interface PlanConfigReminder {
 export interface PlanConfigTestimonial {
     title: string;
     description: string;
-    learMoreLink: string;
-    learnMoreCTA: string;
+    learMoreLink?: string;
+    learnMoreCTA?: string;
     testimonials: {
         title: string;
         description: string;
@@ -49,5 +49,4 @@ export interface PlanConfig {
     features: PlanConfigFeatures;
     storage?: PlanConfigStorage;
     confirmationModal: ConfirmationModal;
-    keepPlanCTA: string;
 }

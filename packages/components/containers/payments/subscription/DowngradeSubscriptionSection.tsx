@@ -6,22 +6,19 @@ import { APP_NAMES, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { useFlag } from '../../unleash';
-import { useB2CCancellationFlow } from './b2cCancellationFlow';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
+import { useCancellationFlow } from './cancellationFlow';
 
 const DowngradeSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [submitting, withSubmitting] = useLoading();
 
-    const isNewCancellationFlowEnabled = useFlag('NewCancellationFlow');
-
-    const { redirectToCancellationFlow, hasAccess: hasAccessToNewCancellationFlow } = useB2CCancellationFlow();
+    const { redirectToCancellationFlow, b2cAccess, b2bAccess } = useCancellationFlow();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
 
     const handleCancelClick = () => {
-        if (hasAccessToNewCancellationFlow && isNewCancellationFlowEnabled) {
+        if (b2bAccess || b2cAccess) {
             redirectToCancellationFlow();
         } else {
             void withSubmitting(cancelSubscription().catch(noop));

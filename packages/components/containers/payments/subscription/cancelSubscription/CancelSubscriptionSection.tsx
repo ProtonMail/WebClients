@@ -5,12 +5,12 @@ import { Button } from '@proton/atoms/Button';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsParagraph, SettingsSection } from '../../../account';
-import { useB2CCancellationFlow } from '../b2cCancellationFlow';
+import { useCancellationFlow } from '../cancellationFlow';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const newCancellationPolicy = useFlag('ExtendCancellationProcess');
-    const { redirectToCancellationFlow, hasAccess: hasAccessToNewCancellationFlow } = useB2CCancellationFlow();
+    const { redirectToCancellationFlow, b2bAccess, b2cAccess } = useCancellationFlow();
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
@@ -20,10 +20,10 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     }
 
     const handleContinueClick = () => {
-        if (hasAccessToNewCancellationFlow) {
+        if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
         } else {
-            cancelSubscription();
+            void cancelSubscription();
         }
     };
 

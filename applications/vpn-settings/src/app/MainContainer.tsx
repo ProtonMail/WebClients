@@ -71,7 +71,7 @@ import {
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/b2cCancellationFlow/helper';
+import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
     ZendeskRef,
