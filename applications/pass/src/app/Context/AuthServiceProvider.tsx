@@ -59,6 +59,19 @@ const getDefaultLocalID = (): Maybe<number> => {
     if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
 };
 
+const getPersistedSessionsForUserID = (UserID: string): string[] =>
+    Object.keys(localStorage).filter((key) => {
+        if (!key.startsWith(STORAGE_PREFIX)) return false;
+        try {
+            const data = localStorage.getItem(key);
+            if (!data) return false;
+            const session = JSON.parse(data);
+            return session.UserID === UserID;
+        } catch {
+            return false;
+        }
+    });
+
 export const AuthServiceContext = createContext<Maybe<AuthService>>(undefined);
 
 export const useAuthService = (): AuthService => {
@@ -195,7 +208,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onForkConsumed: async (session, state) => {
-                const { offlineConfig, offlineKD } = session;
+                const { offlineConfig, offlineKD, UserID, LocalID } = session;
                 history.replace({ hash: '' }); /** removes selector from hash */
 
                 try {
@@ -204,6 +217,19 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 } catch {
                     setRedirectPath('/');
                 }
+
+                /** If any on-going persisted sessions are present for the forked
+                 * UserID session : delete them and wipe the local database. This
+                 * ensures incoming forks always take precedence */
+                const sessionsForUserID = getPersistedSessionsForUserID(UserID);
+
+                if (sessionsForUserID.length > 0) {
+                    logger.info(`[AuthServiceProvider] clearing sessions for user ${UserID}`);
+                    sessionsForUserID.forEach((key) => localStorage.removeItem(key));
+                    await deletePassDB(UserID).catch(noop);
+                }
+
+                sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
 
                 if (Boolean(offlineConfig && offlineKD)) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
@@ -353,8 +379,16 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             } else return authService.init({ forceLock: false });
         };
 
-        /* setup listeners on the service worker's broadcasting channel in order to
-         * sync the current client if any authentication changes happened in another tab */
+        /** If a fork for the same UserID has been consumed in another tab - clear
+         * the auth store and reload the page silently to avoid maintaing a stale
+         * local session alive. This edge-case can happen when the pass web-app is
+         * opened on new a localID which may trigger a re-auth for the same UserID. */
+        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID }) => {
+            if (authStore.getUserID() === userID) {
+                authStore.clear();
+                window.location.href = '/';
+            }
+        };
 
         const handleUnauthorized: ServiceWorkerMessageHandler<'unauthorized'> = ({ localID }) => {
             if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
@@ -393,6 +427,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
+        sw?.on('fork', handleFork);
         sw?.on('unauthorized', handleUnauthorized);
         sw?.on('locked', handleLocked);
         sw?.on('lock_deleted', handleLockDeleted);
@@ -401,9 +436,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         run().catch(noop);
 
         return () => {
-            sw?.off('unauthorized', handleUnauthorized);
+            sw?.off('fork', handleFork);
+            sw?.off('lock_deleted', handleLockDeleted);
             sw?.off('locked', handleLocked);
             sw?.off('refresh', handleRefresh);
+            sw?.off('unauthorized', handleUnauthorized);
         };
     }, []);
 
