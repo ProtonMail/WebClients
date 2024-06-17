@@ -28,7 +28,9 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
 export const restartApp = (timeout = 300) => {
     Logger.info("Restarting app in", timeout, "ms");
     setTimeout(() => {
-        app.relaunch();
+        // Since the app can crash under some circunstances when being restarted
+        // We are just keeping it closed after clearing data.
+        // app.relaunch();
         app.exit();
     }, timeout);
 };
