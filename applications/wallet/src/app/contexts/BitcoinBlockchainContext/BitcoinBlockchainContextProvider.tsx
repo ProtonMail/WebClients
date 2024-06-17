@@ -35,13 +35,16 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
-    const { fillPool } = useBitcoinAddressPool({ decryptedApiWalletsData, walletsChainData });
+    const { fillBitcoinAddressPools, fillBitcoinAddressPoolForAccount } = useBitcoinAddressPool({
+        decryptedApiWalletsData,
+        walletsChainData,
+    });
 
     useDebounceEffect(
         () => {
-            void fillPool();
+            void fillBitcoinAddressPools();
         },
-        [fillPool],
+        [fillBitcoinAddressPools],
         3000
     );
 
@@ -67,6 +70,9 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
 
                 feesEstimation,
                 loadingFeesEstimation,
+
+                fillBitcoinAddressPools,
+                fillBitcoinAddressPoolForAccount,
             }}
         >
             {children}

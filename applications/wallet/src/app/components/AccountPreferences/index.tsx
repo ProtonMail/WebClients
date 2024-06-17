@@ -42,8 +42,10 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
 
         addressesWithAvailability,
         isLoadingEmailUpdate,
-        onAddEmailAddresses,
+
+        onAddEmailAddress,
         onRemoveEmailAddress,
+        onReplaceEmailAddress,
     } = useAccountPreferences(wallet, walletAccount, otherWallets);
 
     return (
@@ -115,11 +117,14 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     value={walletAccount.Addresses}
                     options={addressesWithAvailability}
                     loading={isLoadingEmailUpdate}
-                    onAddAddresses={(addresses) => {
-                        void onAddEmailAddresses(addresses);
+                    onAddAddress={(address) => {
+                        void onAddEmailAddress(address);
                     }}
                     onRemoveAddress={(address) => {
                         void onRemoveEmailAddress(address);
+                    }}
+                    onReplaceAddress={(oldAddress, address) => {
+                        void onReplaceEmailAddress(oldAddress, address);
                     }}
                 />
             </div>

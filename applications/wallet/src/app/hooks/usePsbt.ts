@@ -59,15 +59,18 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         [network]
     );
 
-    const signAndBroadcastPsbt = ({
-        apiWalletData: wallet,
-        apiAccount: account,
-        exchangeRateId,
-        noteToSelf,
-        message,
-        signingKeys,
-        encryptionKeys,
-    }: BroadcastData) => {
+    const signAndBroadcastPsbt = (
+        {
+            apiWalletData: wallet,
+            apiAccount: account,
+            exchangeRateId,
+            noteToSelf,
+            message,
+            signingKeys,
+            encryptionKeys,
+        }: BroadcastData,
+        isUsingBitcoinViaEmail: boolean
+    ) => {
         return withLoadingBroadcast(async () => {
             const wasmAccount = getAccountWithChainDataFromManyWallets(
                 walletsChainData,
@@ -105,7 +108,13 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                               }
                             : { key: 'TransactionTime', value: Date.now().toString() },
                     },
-                    { address_id: account.Addresses[0]?.ID ?? null, subject: null, body: encryptedData }
+                    isUsingBitcoinViaEmail
+                        ? {
+                              address_id: account.Addresses[0]?.ID ?? null,
+                              subject: null,
+                              body: encryptedData,
+                          }
+                        : undefined
                 )
                 .catch(() => {
                     throw new Error(c('Wallet Send').t`Could not broadcast transaction`);

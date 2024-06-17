@@ -3,13 +3,13 @@ import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 export const mockUseAddressKeys = (value: [{ address: Address; keys: DecryptedAddressKey[] }[]?, boolean?] = []) => {
     const [keys, cached = false] = value;
-    const mockedUseUser = vi.spyOn(useAddressKeysModule, 'useAddressesKeys');
-    mockedUseUser.mockReturnValue([keys ?? [], Boolean(cached)]);
-    return mockedUseUser;
+    const mockedUseAddressKeys = vi.spyOn(useAddressKeysModule, 'useAddressesKeys');
+    mockedUseAddressKeys.mockReturnValue([keys ?? [], Boolean(cached)]);
+    return mockedUseAddressKeys;
 };
 
 export const mockUseGetAddressKeys = (value?: ReturnType<typeof useAddressKeysModule.useGetAddressKeys>) => {
-    const mockedUseUser = vi.spyOn(useAddressKeysModule, 'useGetAddressKeys');
-    mockedUseUser.mockReturnValue(value ?? vi.fn());
-    return mockedUseUser;
+    const mockedUseGetAddressKeys = vi.spyOn(useAddressKeysModule, 'useGetAddressKeys');
+    mockedUseGetAddressKeys.mockReturnValue(value ?? vi.fn());
+    return mockedUseGetAddressKeys;
 };

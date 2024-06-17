@@ -14,6 +14,7 @@ import {
     walletAccountUpdate,
 } from '@proton/wallet';
 
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies } from '../../store/hooks';
 
 export const useAccountPreferences = (
@@ -29,6 +30,7 @@ export const useAccountPreferences = (
     const { createNotification } = useNotifications();
     const [userKeys] = useUserKeys();
 
+    const { fillBitcoinAddressPoolForAccount, walletsChainData } = useBitcoinBlockchainContext();
     const api = useWalletApiClients();
     const dispatch = useDispatch();
 
@@ -119,24 +121,31 @@ export const useAccountPreferences = (
         return withLoadingFiatCurrencyUpdate(promise());
     };
 
-    const onAddEmailAddresses = async (emailAddressIds: string[]) => {
+    const onAddEmailAddress = async (emailAddressId: string) => {
         const promise = async () => {
-            let updatedAccount = walletAccount;
-            for (const emailAddressId of emailAddressIds) {
-                try {
-                    const { Data } = await api.wallet.addEmailAddress(
-                        wallet.Wallet.ID,
-                        walletAccount.ID,
-                        emailAddressId
-                    );
-                    updatedAccount = Data;
-                } catch {
-                    createNotification({ type: 'error', text: c('Wallet Settings').t`Could not add email address` });
-                }
-            }
+            try {
+                const { Data: updatedAccount } = await api.wallet.addEmailAddress(
+                    wallet.Wallet.ID,
+                    walletAccount.ID,
+                    emailAddressId
+                );
 
-            createNotification({ text: c('Wallet Settings').t`Email addresses were added` });
-            dispatch(walletAccountUpdate(updatedAccount));
+                const walletWithChainData = walletsChainData[wallet.Wallet.ID];
+
+                if (walletWithChainData) {
+                    await fillBitcoinAddressPoolForAccount(updatedAccount, walletWithChainData).catch(() => {
+                        createNotification({
+                            type: 'error',
+                            text: c('Wallet Settings').t`Could not fill the pool after email address adition`,
+                        });
+                    });
+                }
+
+                createNotification({ text: c('Wallet Settings').t`Email address has been added` });
+                dispatch(walletAccountUpdate(updatedAccount));
+            } catch {
+                createNotification({ type: 'error', text: c('Wallet Settings').t`Could not add email address` });
+            }
         };
 
         return withLoadingEmailUpdate(promise());
@@ -161,6 +170,39 @@ export const useAccountPreferences = (
         return withLoadingEmailUpdate(promise());
     };
 
+    const onReplaceEmailAddress = async (previousEmailAddressId: string, emailAddressId: string) => {
+        const promise = async () => {
+            try {
+                // remove old email address
+                await api.wallet.removeEmailAddress(wallet.Wallet.ID, walletAccount.ID, previousEmailAddressId);
+
+                const { Data: updatedAccount } = await api.wallet.addEmailAddress(
+                    wallet.Wallet.ID,
+                    walletAccount.ID,
+                    emailAddressId
+                );
+
+                const walletWithChainData = walletsChainData[wallet.Wallet.ID];
+
+                if (walletWithChainData) {
+                    await fillBitcoinAddressPoolForAccount(updatedAccount, walletWithChainData).catch(() => {
+                        createNotification({
+                            type: 'error',
+                            text: c('Wallet Settings').t`Could not fill the pool after email address replacement`,
+                        });
+                    });
+                }
+
+                dispatch(walletAccountUpdate(updatedAccount));
+                createNotification({ text: c('Wallet Settings').t`Email address has been replaced` });
+            } catch (e) {
+                createNotification({ type: 'error', text: c('Wallet Settings').t`Could not be replaced` });
+            }
+        };
+
+        return withLoadingEmailUpdate(promise());
+    };
+
     return {
         label,
         isLoadingLabelUpdate,
@@ -177,7 +219,9 @@ export const useAccountPreferences = (
 
         addressesWithAvailability,
         isLoadingEmailUpdate,
-        onAddEmailAddresses,
+
+        onAddEmailAddress,
         onRemoveEmailAddress,
+        onReplaceEmailAddress,
     };
 };
