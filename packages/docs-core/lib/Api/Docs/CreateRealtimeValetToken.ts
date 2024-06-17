@@ -18,7 +18,6 @@ export class GetRealtimeUrlAndToken implements UseCaseInterface<RealtimeUrlAndTo
 
     return Result.ok({
       token: value.Token,
-      url: value.RtsApiUrl,
     })
   }
 }
