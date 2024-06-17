@@ -1,7 +1,7 @@
-export function isDevOrBlack() {
-  return window.location.host.endsWith('proton.local') || window.location.host.endsWith('proton.black')
+export function isLocalEnvironment() {
+  return window.location.host.includes('proton.local')
 }
 
-export function isDev() {
-  return window.location.host.endsWith('proton.local')
+export function isDevOrBlack() {
+  return isLocalEnvironment() || window.location.host.endsWith('proton.black')
 }

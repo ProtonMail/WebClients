@@ -5,13 +5,13 @@ import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { WebsocketConnectionInterface } from '@proton/docs-shared'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
-import { isDev } from '../Util/isDevOrBlack'
+import { isLocalEnvironment } from '../Util/isDevOrBlack'
 import { Result } from '../Domain/Result/Result'
 
 const DebugDisableSockets = false
 
 export const DebugConnection = {
-  enabled: isDev() && true,
+  enabled: isLocalEnvironment() && false,
   url: 'ws://localhost:4000/websockets',
 }
 
