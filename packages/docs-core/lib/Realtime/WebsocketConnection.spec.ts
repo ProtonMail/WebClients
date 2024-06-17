@@ -32,10 +32,10 @@ describe('WebsocketConnection', () => {
   })
 
   it('should correctly format url without commit id', () => {
-    const expectedResult = 'wss://realtime.darwin.proton.black/websockets/?token=123'
+    const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123'
 
     const result = connection.buildConnectionUrl({
-      serverUrl: 'wss://realtime.darwin.proton.black/websockets',
+      serverUrl: 'wss://docs-rts.darwin.proton.black/websockets',
       token: '123',
       commitId: undefined,
     })
@@ -44,10 +44,10 @@ describe('WebsocketConnection', () => {
   })
 
   it('should correctly format url with commit id', () => {
-    const expectedResult = 'wss://realtime.darwin.proton.black/websockets/?token=123&commitId=456'
+    const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123&commitId=456'
 
     const result = connection.buildConnectionUrl({
-      serverUrl: 'wss://realtime.darwin.proton.black/websockets',
+      serverUrl: 'wss://docs-rts.darwin.proton.black/websockets',
       token: '123',
       commitId: '456',
     })
