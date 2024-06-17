@@ -2,13 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Price } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
+import { Price } from '../../atoms/Price';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { satsToBitcoin, satsToFiat } from '../../utils';
+import { satsToBitcoin } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {
     AmountDataListItem,
@@ -45,15 +46,14 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
                     <div className="flex flex-row flex-nowrap items-center my-1">
                         <div className={clsx('text-semibold')}>
                             <Price
-                                currency={exchangeRate?.FiatCurrency}
+                                unit={exchangeRate ?? 'BTC'}
                                 className="h1 text-semibold"
                                 wrapperClassName="contrast"
-                            >
-                                {exchangeRate ? satsToFiat(value, exchangeRate).toFixed(2) : '-'}
-                            </Price>
+                                satsAmount={value}
+                            />
                         </div>
                     </div>
-                    <div className="text-lg color-hint">{satsToBitcoin(value)} BTC</div>
+                    {exchangeRate && <div className="text-lg color-hint">{satsToBitcoin(value)} BTC</div>}
                 </div>
 
                 <ConfirmationTimeDataListItem tx={transaction} />

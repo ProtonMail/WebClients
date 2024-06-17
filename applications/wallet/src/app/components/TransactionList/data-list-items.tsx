@@ -2,7 +2,6 @@ import { c, msgid } from 'ttag';
 
 import { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Price } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
@@ -10,13 +9,13 @@ import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
+import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import {
     getFormattedPeriodSinceConfirmation,
     getTransactionRecipientsHumanReadableName,
     getTransactionSenderHumanReadableName,
-    satsToFiat,
 } from '../../utils';
 import { DataListItem } from '../DataList';
 
@@ -144,11 +143,9 @@ export const AmountDataListItem = ({
             label={
                 <div className={clsx('ml-auto', loadingLabel && 'skeleton-loader')}>
                     {exchangeRate ? (
-                        <Price currency={exchangeRate.FiatCurrency} divisor={1}>
-                            {satsToFiat(value, exchangeRate)}
-                        </Price>
+                        <Price unit={exchangeRate} satsAmount={value} />
                     ) : (
-                        <span>Loading</span>
+                        <span>{c('Wallet transaction').t`Loading`}</span>
                     )}
                 </div>
             }

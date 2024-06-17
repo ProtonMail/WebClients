@@ -2,10 +2,10 @@ import { ReactNode, useMemo } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import Info from '@proton/components/components/link/Info';
-import Price from '@proton/components/components/price/Price';
 import clsx from '@proton/utils/clsx';
 
-import { getLabelByUnit, satsToBitcoin, satsToFiat, satsToMBitcoin } from '../utils';
+import { getLabelByUnit, satsToBitcoin, satsToMBitcoin } from '../utils';
+import { Price } from './Price';
 
 interface Props {
     /**
@@ -104,11 +104,10 @@ export const BitcoinAmount = ({
                             secondClassName,
                             exchangeRate.loading && 'skeleton-loader'
                         )}
-                        currency={exchangeRate.value?.FiatCurrency}
                         prefix={sign}
-                    >
-                        {exchangeRate.value ? satsToFiat(bitcoin, exchangeRate.value).toFixed(2) : '-'}
-                    </Price>
+                        unit={exchangeRate.value ?? 'BTC'}
+                        satsAmount={bitcoin}
+                    />
                 )}
             </>
         );
@@ -124,11 +123,10 @@ export const BitcoinAmount = ({
                     showColor && colorClassName,
                     exchangeRate?.loading && 'skeleton-loader'
                 )}
-                currency={exchangeRate?.value?.FiatCurrency}
                 prefix={sign}
-            >
-                {exchangeRate?.value ? satsToFiat(bitcoin, exchangeRate.value).toFixed(2) : '-'}
-            </Price>
+                unit={exchangeRate?.value ?? 'BTC'}
+                satsAmount={bitcoin}
+            />
 
             {info && <Info title={info} />}
             {unit && (
