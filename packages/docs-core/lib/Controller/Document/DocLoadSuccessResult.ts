@@ -1,5 +1,5 @@
-import { DocumentKeys } from '@proton/drive-store'
+import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 export type DocLoadSuccessResult = {
-  keys: DocumentKeys
+  entitlements: DocumentEntitlements
 }
