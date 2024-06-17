@@ -5,6 +5,7 @@ import {
   DocumentMetaInterface,
   RtsMessagePayload,
   DataTypesThatDocumentCanBeExportedAs,
+  DocumentRole,
 } from '@proton/docs-shared'
 import { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import { UserState } from '@lexical/yjs'
@@ -14,6 +15,7 @@ import { Result } from '../../Domain/Result/Result'
 
 export interface DocControllerInterface {
   username: string
+  role: DocumentRole
 
   addChangeObserver(observer: DocChangeObserver): () => void
   createInitialCommit(): Promise<void>
@@ -23,11 +25,7 @@ export interface DocControllerInterface {
   deinit(): void
   duplicateDocument(): Promise<void>
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
-  editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void>
+  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   getDocumentClientId(): Promise<number | undefined>
   getSureDocument(): DocumentMetaInterface
   getVersionHistory(): NativeVersionHistory | undefined

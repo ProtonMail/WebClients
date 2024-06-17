@@ -9,6 +9,7 @@ import {
   RtsMessagePayload,
   BridgeOriginProvider,
   DataTypesThatDocumentCanBeExportedAs,
+  DocumentRoleType,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
@@ -93,10 +94,17 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
   async initializeEditor(
     documentId: string,
     username: string,
+    documentRole: DocumentRoleType,
     initialData?: Uint8Array,
     initialDataType?: ConvertibleDataType,
   ): Promise<void> {
-    return this.invokeEditorMethod('initializeEditor', [documentId, username, initialData, initialDataType])
+    return this.invokeEditorMethod('initializeEditor', [
+      documentId,
+      username,
+      documentRole,
+      initialData,
+      initialDataType,
+    ])
   }
 
   public handleReplyFromEditor(message: EditorToClientReplyMessage): void {

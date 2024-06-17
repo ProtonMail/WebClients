@@ -2,7 +2,7 @@ import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
-import { WebsocketConnectionInterface, BroadcastSource } from '@proton/docs-shared'
+import { WebsocketConnectionInterface } from '@proton/docs-shared'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isDev } from '../Util/isDevOrBlack'
@@ -11,7 +11,7 @@ import { Result } from '../Domain/Result/Result'
 const DebugDisableSockets = false
 
 export const DebugConnection = {
-  enabled: isDev() && false,
+  enabled: isDev() && true,
   url: 'ws://localhost:4000/websockets',
 }
 
@@ -228,7 +228,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
   }
 
-  async broadcastMessage(data: Uint8Array, source: BroadcastSource): Promise<void> {
+  async broadcastMessage(data: Uint8Array): Promise<void> {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
       return
     }

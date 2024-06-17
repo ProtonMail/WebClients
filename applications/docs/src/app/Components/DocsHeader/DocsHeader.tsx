@@ -31,7 +31,7 @@ const DocsHeader = () => {
       <ConnectionStatus />
       <div className="mr-auto" />
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
-      {controller && (
+      {controller?.role.isAdmin() && (
         <>
           <Button
             shape="ghost"

@@ -24,12 +24,8 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     private readonly logger: LoggerInterface,
   ) {}
 
-  editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void> {
-    return this.invokeClientMethod('editorRequestsPropagationOfUpdate', [message, originator, debugSource])
+  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
+    return this.invokeClientMethod('editorRequestsPropagationOfUpdate', [message, debugSource])
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {
