@@ -1,29 +1,26 @@
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import { Price as CorePrice } from '@proton/components/components';
+import CorePrice, { Props as PriceOwnProps } from '@proton/components/components/price/Price';
 
 import { convertAmount } from '../../utils';
 
-interface Props {
+interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'> {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
     satsAmount: number;
 }
 
-export const Price = ({ unit, satsAmount }: Props) => {
-    const strUnit = typeof unit === 'object' ? unit.FiatCurrency : unit;
+export { CorePrice };
 
+export const Price = ({ unit, satsAmount, ...props }: Props) => {
     const converted = convertAmount(satsAmount, 'SATS', unit);
 
-    if (['USD', 'EUR', 'CHF'].includes(strUnit)) {
-        return (
-            <CorePrice
-                key={`price-${converted}`}
-                divisor={1}
-                currency={typeof unit === 'object' ? unit.FiatCurrency : unit}
-            >
-                {converted}
-            </CorePrice>
-        );
-    }
-
-    return `${converted} ${strUnit}`;
+    return (
+        <CorePrice
+            key={`price-${converted}`}
+            divisor={1}
+            currency={typeof unit === 'object' ? unit.FiatCurrency : unit}
+            {...props}
+        >
+            {converted.toString()}
+        </CorePrice>
+    );
 };

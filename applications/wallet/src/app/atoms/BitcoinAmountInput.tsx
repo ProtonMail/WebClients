@@ -20,7 +20,7 @@ interface Props extends InputFieldOwnProps, InputProps {
 
 const getStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
     if (typeof unit === 'object') {
-        return 0.1;
+        return 1 / unit.Cents;
     }
 
     switch (unit) {

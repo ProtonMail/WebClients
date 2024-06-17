@@ -5,15 +5,16 @@ import { ChartOptions } from 'chart.js';
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
-import { Icon, Price } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import { useToggle } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
+import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { satsToBitcoin, satsToFiat } from '../../utils';
+import { satsToBitcoin } from '../../utils';
 import { useBalance } from './useBalance';
 
 import './Balance.scss';
@@ -71,13 +72,12 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         )}
                     >
                         <Price
-                            currency={exchangeRate?.FiatCurrency}
                             className="h1 text-semibold"
                             amountClassName={clsx(!showBalance && 'blurred')}
                             wrapperClassName="contrast"
-                        >
-                            {exchangeRate ? satsToFiat(totalBalance, exchangeRate).toFixed(2) : '-'}
-                        </Price>
+                            unit={exchangeRate ?? 'BTC'}
+                            satsAmount={totalBalance}
+                        />
                     </div>
 
                     <CoreButton shape="ghost" className="ml-2">
