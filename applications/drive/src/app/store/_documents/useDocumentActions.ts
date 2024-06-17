@@ -51,9 +51,18 @@ export const useDocumentActions = () => {
         });
     };
 
+    const downloadDocument = ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+        openDocumentWindow({
+            mode: 'download',
+            volumeId: findVolume(shareId),
+            linkId,
+        });
+    };
+
     return {
         openDocument,
         createDocument,
         convertDocument,
+        downloadDocument,
     };
 };
