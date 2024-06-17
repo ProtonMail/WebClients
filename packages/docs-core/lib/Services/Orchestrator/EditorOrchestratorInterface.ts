@@ -6,18 +6,16 @@ import {
   RtsMessagePayload,
   DocumentMetaInterface,
   BroadcastSource,
+  DocumentRole,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
   username: string
   docMeta: DocumentMetaInterface
+  role: DocumentRole
 
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
-  editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void>
+  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
 
   getTypersExcludingSelf(threadId: string): string[]
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>

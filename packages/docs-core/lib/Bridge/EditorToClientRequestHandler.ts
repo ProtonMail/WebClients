@@ -14,12 +14,8 @@ import { ErrorInfo } from 'react'
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
   constructor(private readonly docOrchestrator: EditorOrchestratorInterface) {}
 
-  async editorRequestsPropagationOfUpdate(
-    message: RtsMessagePayload,
-    originator: string,
-    debugSource: BroadcastSource,
-  ): Promise<void> {
-    return this.docOrchestrator.editorRequestsPropagationOfUpdate(message, originator, debugSource)
+  async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
+    return this.docOrchestrator.editorRequestsPropagationOfUpdate(message, debugSource)
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {

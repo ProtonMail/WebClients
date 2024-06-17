@@ -180,6 +180,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
       void clientToEditorBridge.editorInvoker.initializeEditor(
         orchestrator.docMeta.uniqueIdentifier,
         orchestrator.username,
+        orchestrator.role.roleType,
         injectWithNewContent?.data,
         injectWithNewContent?.type,
       )
