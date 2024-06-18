@@ -17,6 +17,7 @@ import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../store/hooks';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
@@ -43,6 +44,8 @@ export const AmountInput = ({
     onReview,
 }: Props) => {
     const [defaultExchangeRate] = useExchangeRate(apiAccount.FiatCurrency);
+    const [settings] = useUserWalletSettings();
+
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
     const { createNotification } = useNotifications();
 
@@ -176,7 +179,7 @@ export const AmountInput = ({
                                 txBuilder.getRecipients().length > 1 ? (
                                     <div className="w-custom mr-1 no-shrink" style={{ '--w-custom': '7.5rem' }}>
                                         <BitcoinAmountInput
-                                            unit={exchangeRate ?? 'BTC'}
+                                            unit={exchangeRate ?? settings.BitcoinUnit}
                                             value={Number(amount)}
                                             onValueChange={(v) => {
                                                 tryUpdateRecipientAmount(txBuilderRecipient, index, v);
@@ -204,7 +207,7 @@ export const AmountInput = ({
                             }
                         });
 
-                        onReview(exchangeRate ?? 'BTC');
+                        onReview(exchangeRate ?? settings.BitcoinUnit);
                     }}
                     disabled={txBuilder.getRecipients().every((r) => !r[2])}
                 >{c('Wallet send').t`Review`}</Button>

@@ -1,8 +1,22 @@
+import { WasmUserSettings } from '@proton/andromeda';
 import { createHooks } from '@proton/redux-utilities';
 
+import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants';
 import { selectUserWalletSettings, userWalletSettingsThunk } from '../slices';
 
 const hooks = createHooks(userWalletSettingsThunk, selectUserWalletSettings);
 
-export const useUserWalletSettings = hooks.useValue;
 export const useGetUserWalletSettings = hooks.useGet;
+
+const DEFAULT_STATE: WasmUserSettings = {
+    BitcoinUnit: DEFAULT_DISPLAY_BITCOIN_UNIT,
+    FiatCurrency: DEFAULT_FIAT_CURRENCY,
+    HideEmptyUsedAddresses: 0,
+    ShowWalletRecovery: 0,
+    TwoFactorAmountThreshold: null,
+};
+
+export const useUserWalletSettings = (): [WasmUserSettings, boolean] => {
+    const [value, loadingValue] = hooks.useValue();
+    return [value ?? DEFAULT_STATE, loadingValue];
+};

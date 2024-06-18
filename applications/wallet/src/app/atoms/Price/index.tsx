@@ -1,6 +1,7 @@
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import CorePrice, { Props as PriceOwnProps } from '@proton/components/components/price/Price';
 
+import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { convertAmount } from '../../utils';
 
 interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'> {
@@ -11,7 +12,7 @@ interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'>
 export { CorePrice };
 
 export const Price = ({ unit, satsAmount, ...props }: Props) => {
-    const converted = convertAmount(satsAmount, 'SATS', unit);
+    const converted = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
 
     return (
         <CorePrice

@@ -4,12 +4,14 @@ import { apiWalletsData } from '@proton/wallet';
 
 import { mockUseBitcoinBlockchainContext } from '../../../tests';
 import { mockUseBitcoinAddressHighestIndexModule } from '../../../tests/mocks/useGetBitcoinAddressHighestIndex';
+import { mockUseUserWalletSettings } from '../../../tests/mocks/useUserWalletSettings';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 describe('useBitcoinReceive', () => {
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
         mockUseBitcoinAddressHighestIndexModule();
+        mockUseUserWalletSettings();
     });
 
     describe('handleChangeAmount', () => {

@@ -4,6 +4,7 @@ import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 
+import { DEFAULT_DISPLAY_BITCOIN_UNIT } from '../constants';
 import { getLabelByUnit, satsToBitcoin, satsToMBitcoin } from '../utils';
 import { Price } from './Price';
 
@@ -105,7 +106,7 @@ export const BitcoinAmount = ({
                             exchangeRate.loading && 'skeleton-loader'
                         )}
                         prefix={sign}
-                        unit={exchangeRate.value ?? 'BTC'}
+                        unit={exchangeRate.value ?? DEFAULT_DISPLAY_BITCOIN_UNIT}
                         satsAmount={bitcoin}
                     />
                 )}
@@ -124,7 +125,7 @@ export const BitcoinAmount = ({
                     exchangeRate?.loading && 'skeleton-loader'
                 )}
                 prefix={sign}
-                unit={exchangeRate?.value ?? 'BTC'}
+                unit={exchangeRate?.value ?? DEFAULT_DISPLAY_BITCOIN_UNIT}
                 satsAmount={bitcoin}
             />
 
