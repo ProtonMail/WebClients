@@ -68,6 +68,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         updateMemberPermissions,
         removeInvitation,
         resendInvitation,
+        resendExternalInvitation,
         updateInvitePermissions,
         removeExternalInvitation,
         updateExternalInvitePermissions,
@@ -128,10 +129,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
         await updateMemberPermissions({ ...member, permissions });
-    };
-
-    const handleResendInvitationEmail = async (invitationId: string) => {
-        await resendInvitation(invitationId);
     };
 
     const handleDeleteLink = async () => {
@@ -216,7 +213,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 onInvitationPermissionsChange={updateInvitePermissions}
                                 onExternalInvitationRemove={removeExternalInvitation}
                                 onExternalInvitationPermissionsChange={updateExternalInvitePermissions}
-                                onResendInvitationEmail={handleResendInvitationEmail}
+                                onResendInvitationEmail={resendInvitation}
+                                onResendExternalInvitationEmail={resendExternalInvitation}
                             />
                         </ModalTwoContent>
                         <hr className="mb-0.5" />
@@ -251,7 +249,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                         </ModalTwoContent>
                         <ModalTwoFooter>
                             <div className="w-full flex justify-space-between mb-4">
-                                <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                                <Button disabled={isAdding} onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                                 <Button
                                     type="submit"
                                     color="norm"
