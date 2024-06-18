@@ -217,6 +217,12 @@
       "Clear all formatting": [
         "Hapus seluruh format"
       ],
+      "Clear filter": [
+        "Hapus filter"
+      ],
+      "Clear filters": [
+        "Hapus filter"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -865,8 +871,8 @@
       "Revoke this invitation": [
         "Anulir undangan ini"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Jalankan pada server ${ BRAND_NAME }"
+      "Run on servers": [
+        "Jalankan pada server"
       ],
       "Save": [
         "Simpan"
@@ -1402,6 +1408,9 @@
       "${ localPrice } /month": [
         "${ localPrice } /bulan"
       ],
+      "${ price } /year": [
+        "${ price }/tahun"
+      ],
       "Active until ${ subscriptionRenewalDate }": [
         "Aktif hingga ${ subscriptionRenewalDate }"
       ],
@@ -1422,6 +1431,9 @@
       ],
       "Customize plan": [
         "Sesuaikan paket"
+      ],
+      "from ${ price } /month": [
+        "mulai dari ${ price }/bulan"
       ],
       "New": [
         "Baru"
@@ -3478,12 +3490,37 @@
         ".rpm untuk Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "Ruang penyimpanan ${ totalStorageSize } secara cuma-cuma"
+      ],
+      "End-to-end encrypted": [
+        "Terenkripsi secara end-to-end"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Keamanan berbagi berkas mutakhir"
       ],
       "Encrypted cloud storage for all your files": [
         "Penyimpanan cloud terenkripsi untuk seluruh berkas Anda"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Dilindungi oleh undang-undang privasi Swiss"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "Buat akun ${ DRIVE_APP_NAME } gratis untuk mengakses berkas ini secara aman"
+      ],
+      "Free, encrypted, and secure cloud storage": [
+        "Penyimpanan cloud yang gratis, terenkripsi, dan aman"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Layanan penyimpanan cloud dan file-sharing aman yang melindungi data Anda"
+      ],
+      "You're invited to access a file in ${ DRIVE_APP_NAME }": [
+        "Anda diundang untuk mengakses berkas di ${ DRIVE_APP_NAME }"
       ]
     },
     "Duration": {
@@ -4241,6 +4278,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Mohon tentukan email pemulihan/notifikasi terlebih dahulu"
+      ],
+      "Please try again in a few moments.": [
+        "Silakan coba lagi dalam beberapa saat."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat menggunakan fitur dukungan multi-pengguna"
@@ -6348,6 +6388,9 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All Events ": [
+        "Semua Acara "
+      ],
       "All keys successfully reactivated": [
         "Seluruh kunci berhasil diaktifkan ulang"
       ],
@@ -7080,6 +7123,9 @@
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
       ],
+      "Item Changed Flags": [
+        "Bendera Item Diubah"
+      ],
       "it’s imperative": [
         "sangat penting"
       ],
@@ -7423,7 +7469,7 @@
         "silakan buka tiket layanan dukungan"
       ],
       "Please select the folders you would like to import:": [
-        "Harap pilih folder-folder yang hendak Anda impor:"
+        "Silakan pilih folder mana saja yang ingin Anda impor:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
@@ -8073,6 +8119,12 @@
       "Users": [
         "Pengguna"
       ],
+      "Vault shared with email": [
+        "Brankas dibagikan dengan email"
+      ],
+      "Vault Updated": [
+        "Brankas Diperbarui"
+      ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
       ],
@@ -8445,11 +8497,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
@@ -8463,8 +8515,8 @@
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Impor Anda dari ${ accounts } ditunda sementara."
@@ -9052,6 +9104,9 @@
       ],
       "Auto show remote images": [
         "Tampilkan gambar jarak jauh secara otomatis"
+      ],
+      "Auto-advance": [
+        "Lanjut otomatis"
       ],
       "Auto-delete unwanted messages": [
         "Hapus pesan yang tidak diinginkan secara otomatis"
@@ -10042,6 +10097,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Log aktivitas"
+      ],
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
@@ -11640,6 +11698,9 @@
       "Invalid code": [
         "Kode tidak valid"
       ],
+      "Invalid input. Search an email or IP address.": [
+        "Input tidak valid. Silakan cari alamat email atau IP."
+      ],
       "IP Address copied to clipboard": [
         "Alamat IP disalin ke papan klip"
       ],
@@ -12564,6 +12625,9 @@
       "Card number": [
         "Nomor kartu"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -12676,6 +12740,12 @@
       "Email address": [
         "Alamat email"
       ],
+      "Email or IP": [
+        "Email atau IP"
+      ],
+      "End date": [
+        "Tanggal berakhir"
+      ],
       "example@domain.com": [
         "contoh@domain.com"
       ],
@@ -12738,6 +12808,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ],
       "Text": [
         "Teks"
@@ -14009,8 +14082,14 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } alamat email per pengguna"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } yang meliputi alias hide-my-email tanpa batasan jumlah"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } dengan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
@@ -14033,11 +14112,17 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi berkas dan foto Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, berkas, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } dengan akses ke seluruh server berkecepatan tinggi di ${ vpnCountries } negara"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } dengan pemblokir malware dan iklan"
       ],
       "10 email addresses": [
         "10 alamat email"
@@ -14104,9 +14189,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Apabila Anda melebihi batas paket gratis pada saat langganan ${ planName } Anda berakhir, Anda tidak akan dapat:"
-      ],
-      "Keep ${ planName }": [
-        "Pertahankan paket ${ planName }"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
@@ -14974,6 +15056,9 @@
       "Custom filters": [
         "Filter khusus"
       ],
+      "Custom folders and labels": [
+        "Folder dan label baru"
+      ],
       "Custom selection of users": [
         "Pengguna yang dipilih secara tertentu"
       ],
@@ -15294,6 +15379,9 @@
       ],
       "Invoices": [
         "Faktur"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "Tetap kotak masuk Anda teratur"

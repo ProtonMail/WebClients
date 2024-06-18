@@ -865,9 +865,6 @@
       "Revoke this invitation": [
         "Refuzare această invitație"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Rulați-l pe serverele ${ BRAND_NAME }"
-      ],
       "Save": [
         "Salvare"
       ],
@@ -1396,13 +1393,61 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Compatibilitate cu mai multe dispozitive și mai rapid."
+      ],
       "Run locally": [
         "Rulare locală"
+      ],
+      "Run on servers": [
+        "Rulare pe servere."
       ]
     },
     "Assistant toggle": {
       "${ localPrice } /month": [
         "${ localPrice }/lună"
+      ],
+      "${ price } /year": [
+        "${ price }/an"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Activ până la ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "Adăugare asistent de scriere"
+      ],
+      "Add writing assistant to your plan": [
+        "Adăugare asistent de scriere la plan"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Asociați-l utilizatorilor specificați în ${ userAndAddressesButton }"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "Reînnoire automată la ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Anulare modul asistent de scriere"
+      ],
+      "Customize plan": [
+        "Personalizare plan"
+      ],
+      "from ${ price } /month": [
+        "de la ${ price }/lună"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "Renew subscription": [
+        "Reînnoire abonament"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "Perioada de probare expiră la ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "Perioadă de probă în desfășurare"
       ]
     },
     "Attached ics file error": {
@@ -3944,7 +3989,7 @@
         "${ BRAND_NAME } nu se poate conecta la contul extern."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+        "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
@@ -7703,7 +7748,7 @@
         "Solicitare server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
+        "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
       "Session timed out": [
         "Sesiunea a expirat"
@@ -8565,12 +8610,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Descărcați aplicația ${ MAIL_APP_NAME } pentru desktop sau încercați să-l rulați pe serverele ${ BRAND_NAME }."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe serverele ${ BRAND_NAME }."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
@@ -8582,9 +8621,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe serverele ${ BRAND_NAME }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importarea din ${ accounts } este temporar întârziată.",
@@ -9187,6 +9223,9 @@
       "Auto show remote images": [
         "Afișare automată imagini externe"
       ],
+      "Auto-advance": [
+        "Avansare automată"
+      ],
       "Auto-delete unwanted messages": [
         "Ștergere automată mesaje nedorite"
       ],
@@ -9409,6 +9448,9 @@
       "Disable animations": [
         "Dezactivare animații"
       ],
+      "Disable data export for organization members": [
+        "Dezactivare exportare date pentru membrii organizației"
+      ],
       "Disable sharing outside the organization.": [
         "Dezactivare partajare în afara organizației."
       ],
@@ -9600,6 +9642,9 @@
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
+      ],
+      "Mail settings": [
+        "Setări e-mail"
       ],
       "Mailbox password": [
         "Parolă mesaje"
@@ -10179,6 +10224,9 @@
       "Add gift code": [
         "Adăugare cod cadou"
       ],
+      "Add to your subscription": [
+        "Adăugare la abonament"
+      ],
       "Apps and extensions": [
         "Aplicații și extensii"
       ],
@@ -10298,6 +10346,9 @@
       ],
       "Upgrade your plan": [
         "Treceți la alt plan"
+      ],
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ],
       "View guide": [
         "Consultare ghid"
@@ -12907,6 +12958,9 @@
       "Email address": [
         "Adresă e-mail"
       ],
+      "End date": [
+        "Data sfârșit"
+      ],
       "example@domain.com": [
         "exemplu@domeniu.com"
       ],
@@ -12969,6 +13023,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Dată început"
       ],
       "Text": [
         "Text"
@@ -14412,9 +14469,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Dacă depășiți limitele planului gratuit când vă expiră abonamentul ${ planName }, nu veți putea să:"
       ],
-      "Keep ${ planName }": [
-        "Păstrare ${ planName }"
-      ],
       "Learn more about our impact": [
         "Aflați mai multe despre impactul nostru"
       ],
@@ -14766,6 +14820,15 @@
       ],
       "Verification successful": [
         "Verificare reușită"
+      ],
+      "Writing assistant disabled": [
+        "Asistent de scriere dezactivat"
+      ],
+      "Writing assistant enabled": [
+        "Asistent de scriere activat"
+      ],
+      "Writing assistant setting updated": [
+        "Setări asistent de scriere actualizate"
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
@@ -16474,6 +16537,11 @@
       ],
       "Primary admin": [
         "Administrator principal"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
       ]
     },
     "Users table: single sign-on enabled": {
