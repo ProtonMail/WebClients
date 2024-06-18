@@ -37,6 +37,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
         walletDeletionConfirmationModal,
         openWalletDeletionConfirmationModal,
         openBackupModal,
+        clearBrowserStorage,
     } = useWalletPreferences(wallet);
 
     return (
@@ -133,6 +134,14 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                                     onClick={() => openWalletDeletionConfirmationModal()}
                                     className="mt-2"
                                 >{c('Wallet preference').t`Delete wallet`}</Button>
+
+                                <Button
+                                    fullWidth
+                                    shape="underline"
+                                    color="weak"
+                                    onClick={() => clearBrowserStorage()}
+                                    className="mt-2"
+                                >{c('Wallet preference').t`Clear browser storage`}</Button>
                             </div>
                         </CollapsibleContent>
                     </Collapsible>
