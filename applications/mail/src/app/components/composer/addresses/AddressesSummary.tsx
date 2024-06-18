@@ -36,7 +36,7 @@ const AddressesSummary = ({
 }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const composer = useMailSelector((store) => selectComposer(store, composerID));
-    const recipients = getRecipients(composer.recipients);
+    const recipients = getRecipients(composer?.recipients);
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
@@ -56,6 +56,7 @@ const AddressesSummary = ({
                 ])}
                 data-testid="composer:address"
             >
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
                 <span
                     className="text-ellipsis flex-1 composer-addresses-fakefield-inner pr-4"
                     title={title}
