@@ -446,6 +446,9 @@
       "Try again": [
         "კიდევ ცდა"
       ],
+      "Unlock offline with password": [
+        "განბლოკვა ქსელგარეშე, პაროლით"
+      ],
       "Unpin item": [
         "ელემენტის მოხსნა"
       ],
@@ -813,6 +816,9 @@
       "Unknown passkey": [
         "უცნობი წვდომის გასაღები"
       ],
+      "Unlock failure": [
+        "განბლოკვა ჩავარდა"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
       ],
@@ -911,6 +917,9 @@
         "${ n } ელემენტი",
         "${ n } ელემენტი"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } ყოველთვის ხელმისაწვდომი იქნება"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
       ],
@@ -959,6 +968,9 @@
       ],
       "Access your passwords on the go with our mobile apps.": [
         "იქონიეთ წვდომა თქვენს პაროლებთან, ჩვენი მობილური აპლიკაციებით, მგზავრობის დროსაც."
+      ],
+      "Add a username field": [
+        "მომხმარებლის სახელის ველის დამატება"
       ],
       "Admin": [
         "ადმინისტრატორი"
@@ -1020,6 +1032,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "აირჩიეთ შენახული წვდომის გასაღები ${ domain }-ში შესასვლელად"
       ],
+      "Click here to add a field for a username.": [
+        "დააწკაპუნეთ აქ მომხმარებლის სახელისთვის ველის დასამატებლად."
+      ],
       "Click the icon to open it anytime.": [
         "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
       ],
@@ -1053,6 +1068,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "იშლება \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "ავტოდაბლოკვის გათიშვა"
+      ],
+      "Disabling auto-lock failed": [
+        "ავტოდაბლოკვის გათიშვა ჩავარდა"
+      ],
+      "Disabling offline mode...": [
+        "უქსელო რეჟიმის გათიშვა..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "აღმოაჩინეთ ${ PASS_APP_NAME }-ის ვიდეო Youtube-ზე"
       ],
@@ -1082,6 +1106,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "ჩართეთ ${ PASS_APP_NAME } ${ BRAND_NAME }-ის ანგარიშის მიმაგრებით"
+      ],
+      "Enable auto-locking to secure your data": [
+        "ჩართეთ ავტოდაბლოკვა თქვენი მონაცემების დასაცავად"
+      ],
+      "Enabling offline mode...": [
+        "უქსელო რეჟიმის ჩართვა..."
+      ],
+      "Enabling password auto-lock": [
+        "ავტოდაბლოკვა პაროლით"
+      ],
+      "Enabling password lock failed": [
+        "პაროლით დაბლოკვის ჩართვა ჩავარდა"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN-კოდის ავტომატური დაბლოკვის ჩართვა"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
@@ -1239,6 +1278,9 @@
       "None": [
         "არცერთი"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის გამორთვა ამჟამად შეუძლებელია"
+      ],
       "Offline mode could not be enabled at the moment": [
         "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
       ],
@@ -1282,8 +1324,14 @@
       "Pinning item...": [
         "ელემენტის მიმაგრება..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "დაადასტურეთ თქვენი ${ BRAND_NAME }-ის პაროლი"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი PIN-კოდი."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "პარამეტრის ჩასასწორებლად დაადასტურეთ თქვენი PIN-კოდი"
@@ -1305,6 +1353,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
+      "Registering PIN lock failed": [
+        "PIN-კოდით დაბლოკვის რეგისტრაცია ჩავარდა"
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -1642,6 +1693,9 @@
       "Create an encrypted note": [
         "დაშიფრული შენიშვნის შექმნა"
       ],
+      "Create lock": [
+        "ბლოკის შექმნა"
+      ],
       "Create new vault": [
         "ახალი საცავის შექმნა"
       ],
@@ -1671,6 +1725,12 @@
       ],
       "Email": [
         "ელფოსტა"
+      ],
+      "Email (alias)": [
+        "ელფოსტა (ფსევდონიმი)"
+      ],
+      "Email (new alias)": [
+        "ელფოსტა (ახალი ფსევდონიმი)"
       ],
       "Email aliases": [
         "ელფოსტის ფსევდონიმები"
@@ -1960,6 +2020,9 @@
       "Username": [
         "მომხმარებლის სახელი"
       ],
+      "Username/email": [
+        "მომხმარებლის სახელი/ელფოსტა"
+      ],
       "Vault ID": [
         "საცავის ID"
       ],
@@ -2066,11 +2129,17 @@
       "Enter a prefix": [
         "შეიყვანეთ პრეფიქსი"
       ],
+      "Enter email": [
+        "შეიყვანეთ ელფოსტა"
+      ],
       "Enter email or username": [
         "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
       ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
+      ],
+      "Enter username": [
+        "შეიყვანეთ მომხმარებლის სახელი"
       ],
       "Full Name": [
         "სახელი და გვარი"
