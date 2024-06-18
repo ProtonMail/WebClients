@@ -17,7 +17,6 @@ const useInboxDesktopElementId = ({ isSearch }: { isSearch: boolean }) => {
         }
 
         const { hash } = location;
-        console.log(hash);
 
         try {
             const decodedHash = decodeURIComponent(hash);
