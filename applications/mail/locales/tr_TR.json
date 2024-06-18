@@ -991,9 +991,6 @@
       "Revert to original display": [
         "Özgün görünüme geri dön"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalışır"
-      ],
       "Save": [
         "Kaydet"
       ],
@@ -1512,9 +1509,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "Tarayıcı desteklenmiyor "
-      ],
       "Fast and secure": [
         "Hızlı ve güvenli"
       ],
@@ -1530,19 +1524,14 @@
       "Run locally": [
         "Yerel olarak çalışır"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalışır"
+      "Run on servers": [
+        "Sunucular üzerinde çalışır"
       ],
       "Runs on all devices": [
         "Tüm aygıtlarda çalışır"
       ],
       "Runs on your device": [
         "Aygıtınızda çalışır"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Donanım uyumlu değil"
       ]
     },
     "Attached ics file error": {
@@ -3837,9 +3826,6 @@
       ],
       "Forward address is required": [
         "İletilecek adresin yazılması zorunludur"
-      ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Etik kurallarım nedeniyle bu isteği yerine getiremiyorum. Lütfen farklı bir istekte bulunun."
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -7232,12 +7218,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ MAIL_APP_NAME } masaüstü uygulamasını indirin ya da ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -7252,9 +7232,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -11136,9 +11113,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } aboneliğiniz sona erdiğinde Free tarifesi sınırlarını aşarsanız şunları yapamazsınız:"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } tarifesinde kal"
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"

@@ -991,9 +991,6 @@
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
-      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -1512,9 +1509,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "Το πρόγραμμα περιήγησης δεν υποστηρίζεται "
-      ],
       "Fast and secure": [
         "Γρήγορα και με ασφάλεια"
       ],
@@ -1530,19 +1524,14 @@
       "Run locally": [
         "Εκτέλεση τοπικά"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
+      "Run on servers": [
+        "Εκτέλεση σε διακομιστές"
       ],
       "Runs on all devices": [
         "Τρέχει σε όλες τις συσκευές"
       ],
       "Runs on your device": [
         "Εκτελείται στη συσκευή σας"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Το υλικό δεν είναι συμβατό"
       ]
     },
     "Attached ics file error": {
@@ -3837,9 +3826,6 @@
       ],
       "Forward address is required": [
         "Απαιτείται η διεύθυνση προώθησης"
-      ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Δεν μπορώ να προχωρήσω με αυτό το αίτημα λόγω των δεοντολογικών κατευθυντήριων γραμμών μου. Δοκιμάστε μια διαφορετική προτροπή."
       ],
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
@@ -7232,12 +7218,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Κατεβάστε την εφαρμογή επιφάνειας εργασίας ${ MAIL_APP_NAME } ή δοκιμάστε να το εκτελέσετε σε διακομιστές ${ BRAND_NAME }."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Δοκιμάστε να το εκτελέσετε σε διακομιστές ${ BRAND_NAME }."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -7252,9 +7232,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Το υλικό σας δεν υποστηρίζει την εκτέλεση του βοηθού γραφής τοπικά. Δοκιμάστε να το εκτελέσετε σε διακομιστές ${ BRAND_NAME }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
@@ -11136,9 +11113,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Εάν υπερβείτε τα όρια του δωρεάν προγράμματος όταν λήξει η συνδρομή σας ${ planName }, δε θα μπορείτε να:"
-      ],
-      "Keep ${ planName }": [
-        "Διατήρηση ${ planName }"
       ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
