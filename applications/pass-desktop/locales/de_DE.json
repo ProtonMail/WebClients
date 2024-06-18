@@ -103,6 +103,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue offline": [
+        "Offline fortsetzen"
+      ],
       "Copy and close": [
         "Kopieren und schließen"
       ],
@@ -433,6 +436,9 @@
       "Try again.": [
         "Bitte versuche es erneut."
       ],
+      "Unlock offline with password": [
+        "Offline mit Passwort entsperren"
+      ],
       "Unpin item": [
         "Eintrag loslösen"
       ],
@@ -746,6 +752,9 @@
       "Moving item failed": [
         "Fehler beim Verschieben des Eintrags."
       ],
+      "Network error": [
+        "Netzwerkfehler"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Der Offlinemodus ist derzeit nicht für den Zwei-Passwort-Modus verfügbar."
       ],
@@ -806,6 +815,12 @@
       "Unknown invite": [
         "Unbekannte Einladung"
       ],
+      "Unknown item": [
+        "Unbekannter Eintrag"
+      ],
+      "Unlock failure": [
+        "Fehler beim Entsperren."
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
       ],
@@ -829,6 +844,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
@@ -949,6 +967,9 @@
         "${ n } Eintrag",
         "${ n } Einträge"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } wird immer zugänglich sein"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
       ],
@@ -976,6 +997,12 @@
       ],
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Der Zugang zu ${ PASS_APP_NAME } erfordert immer dein ${ BRAND_NAME }-Passwort."
+      ],
+      "Add a username field": [
+        "Benutzername-Feld hinzufügen"
       ],
       "Add your custom email address to monitor :": [
         "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
@@ -1046,6 +1073,9 @@
       "Change your password": [
         "Passwort ändern"
       ],
+      "Click here to add a field for a username.": [
+        "Klicke hier, um ein Feld für einen Benutzernamen hinzuzufügen."
+      ],
       "Congratulations, your access has been confirmed": [
         "Gratulation, dein Zugriff wurde bestätigt."
       ],
@@ -1069,6 +1099,9 @@
       ],
       "Didn't receive the code?": [
         "Code nicht erhalten?"
+      ],
+      "Disabling offline mode...": [
+        "Offline-Modus wird deaktiviert..."
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
@@ -1096,6 +1129,12 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "${ PASS_SHORT_APP_NAME } Beta aktivieren"
+      ],
+      "Enabling offline mode...": [
+        "Offline-Modus wird aktiviert..."
+      ],
+      "Enabling password lock failed": [
+        "Fehler beim Aktivieren der Passwortsperre."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -1286,11 +1325,17 @@
       "Offline mode": [
         "Offline-Modus"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Fehler beim Deaktivieren des Offline-Modus."
+      ],
       "Offline mode could not be enabled at the moment": [
         "Fehler beim Aktivieren des Offline-Modus."
       ],
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Der Online-Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
       ],
       "Owner": [
         "Besitzer"
@@ -1323,11 +1368,20 @@
       "Please check your spam folder or try resending the code.": [
         "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um die aktuelle Sperre aufzuheben."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bitte bestätige deinen PIN-Code, um diese Einstellung zu bearbeiten."
@@ -1672,6 +1726,9 @@
       "Create an encrypted note": [
         "Eine verschlüsselte Notiz erstellen"
       ],
+      "Create lock": [
+        "Sperre einrichten"
+      ],
       "Create new vault": [
         "Neuen Tresor erstellen"
       ],
@@ -1698,6 +1755,12 @@
       ],
       "Email": [
         "E-Mail-Adresse"
+      ],
+      "Email (alias)": [
+        "E-Mail (Alias)"
+      ],
+      "Email (new alias)": [
+        "E-Mail (neuer Alias)"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -1876,6 +1939,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN-Code"
+      ],
       "Prefix": [
         "Präfix"
       ],
@@ -2017,6 +2083,9 @@
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ]
     },
     "lobby: Title": {
@@ -2108,11 +2177,17 @@
       "Enter a prefix": [
         "Präfix eingeben"
       ],
+      "Enter email": [
+        "E-Mail-Adresse eingeben"
+      ],
       "Enter email or username": [
         "E-Mail-Adresse oder Benutzername eingeben"
       ],
       "Enter password": [
         "Passwort eingeben"
+      ],
+      "Enter username": [
+        "Benutzername eingeben"
       ],
       "Full Name": [
         "Vollständiger Name"
@@ -2615,6 +2690,9 @@
       ],
       "Title is required": [
         "Titel ist erforderlich"
+      ],
+      "Too many attempts": [
+        "Zu viele Versuche"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Inhaberschaft dieses Tresors auf ${ email } übertragen?"

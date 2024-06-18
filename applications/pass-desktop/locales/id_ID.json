@@ -812,6 +812,9 @@
       "Unknown invite": [
         "Undangan tidak dikenal"
       ],
+      "Unknown item": [
+        "Item yang tidak diketahui"
+      ],
       "Unlock failure": [
         "Pembukaan kunci gagal"
       ],
@@ -1090,6 +1093,9 @@
       "Disabling auto-lock": [
         "Menonaktifkan kunci otomatis"
       ],
+      "Disabling auto-lock failed": [
+        "Gagal menonaktifkan penguncian otomatis"
+      ],
       "Disabling offline mode...": [
         "Menonaktifkan mode offline..."
       ],
@@ -1125,6 +1131,15 @@
       ],
       "Enabling offline mode...": [
         "Mengaktifkan mode offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Mengaktifkan penguncian kata sandi otomatis"
+      ],
+      "Enabling password lock failed": [
+        "Gagal mengaktifkan penguncian kata sandi"
+      ],
+      "Enabling PIN auto-lock": [
+        "Mengaktifkan penguncian PIN otomatis"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -1401,6 +1416,12 @@
       ],
       "Reconnect": [
         "Hubungkan ulang"
+      ],
+      "Reconnecting": [
+        "Menghubungkan ulang"
+      ],
+      "Registering PIN lock failed": [
+        "Pendaftaran kunci PIN gagal"
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
@@ -2676,6 +2697,9 @@
       ],
       "Title is required": [
         "Judul dibutuhkan"
+      ],
+      "Too many attempts": [
+        "Terlalu banyak percobaan"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transfer kepemilikan brankas ini ke ${ email }?"
