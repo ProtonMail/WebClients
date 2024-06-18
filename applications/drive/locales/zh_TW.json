@@ -523,9 +523,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
-      "Open in Docs": [
-        "於Docs開起"
-      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -1177,6 +1174,9 @@
     "Cancellation reminder": {
       "Reactivate subscription": [
         "重新啟用訂閱"
+      ],
+      "Your subscription is ending soon": [
+        "您的訂閱即將結束"
       ]
     },
     "Checkout row": {
@@ -2709,6 +2709,9 @@
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請選擇其它名稱。"
       ],
+      "The invitation doesn't exist anymore": [
+        "此邀請函已經不存在"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
@@ -3913,9 +3916,6 @@
       ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
-      ],
-      "Coming soon": [
-        "即將推出"
       ],
       "Conflict": [
         "衝突"
@@ -6412,6 +6412,9 @@
       "Centralized billing": [
         "集中式計費"
       ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
       "Contact groups": [
         "聯絡人群組"
       ],
@@ -6429,6 +6432,9 @@
       ],
       "Custom snooze time": [
         "自訂延遲時間"
+      ],
+      "Custom workspace branding": [
+        "自訂工作空間的品牌"
       ],
       "Data breach monitoring": [
         "資料外洩監測"
@@ -6484,6 +6490,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Generate emails with only a prompt": [
+        "只要提示便可生成電子郵件"
+      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
@@ -6523,6 +6532,9 @@
       "Password health": [
         "密碼穩固性"
       ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -6544,11 +6556,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
+      "Reply to messages": [
+        "回覆訊息"
+      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
       "Router support": [
         "路由器支援"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
       ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
@@ -7099,6 +7117,9 @@
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
       ],
+      "An invitation has been sent": [
+        "邀請函已寄出"
+      ],
       "Cannot load link": [
         "無法載入連結"
       ],
@@ -7126,8 +7147,14 @@
       "Encrypted search activated": [
         "已啟用加密搜索"
       ],
+      "External invitation removed from the share": [
+        "內部邀請函已從共享移除"
+      ],
       "Failed to accept share invitation": [
         "失敗接受加入邀請"
+      ],
+      "Failed to convert external invitation": [
+        "轉換內部邀請函失敗"
       ],
       "Failed to download files: ${ err }": [
         "無法下載檔案： ${ err }"
@@ -7259,6 +7286,9 @@
       ],
       "Share a file": [
         "分享個檔案"
+      ],
+      "Share files with one click": [
+        "單擊便可分享檔案"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "只要在接下來的 ${ expiresInDays } 天完成以下任務："
@@ -7937,6 +7967,11 @@
         "升級"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }個月"
@@ -8239,6 +8274,9 @@
       "10 email addresses": [
         "10 個電子信箱"
       ],
+      "6 users": [
+        "6 位使用者"
+      ],
       "Add any new files": [
         "新增任何檔案"
       ],
@@ -8253,9 +8291,6 @@
       ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
-      ],
-      "Keep ${ planName }": [
-        "保留 ${ planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"

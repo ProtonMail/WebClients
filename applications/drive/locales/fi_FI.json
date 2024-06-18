@@ -14,22 +14,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ]
     },
     "Action": {
@@ -70,7 +70,7 @@
         "Lisää muistiinpano"
       ],
       "Add people or groups to share": [
-        "Lisää henkilöitä tai ryhmiä jakoon"
+        "Lisää jakoon henkilöitä tai ryhmiä"
       ],
       "Add phone number": [
         "Lisää puhelinnumero"
@@ -546,8 +546,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open in Docs": [
-        "Avaa Docsissa"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -819,6 +819,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
       ],
+      "Understood": [
+        "Ymmärrän"
+      ],
       "Undo": [
         "Kumoa"
       ],
@@ -947,6 +950,10 @@
       ],
       "${ price } per user": [
         "${ price } per käyttäjä"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } kirjoitusavustajalisenssi",
+        "${ seats } kirjoitusavustajalisenssiä"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -2543,7 +2550,7 @@
         "Ulkoisia tilejä ei vielä tueta"
       ],
       "External invitations are not available yet.": [
-        "Ulkoisia kutsuja eivät ole vielä mahdollisia."
+        "Ulkoiset kutsut eivät ole vielä mahdollisia."
       ],
       "External invitations are temporarily disabled.": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä."
@@ -2649,7 +2656,7 @@
         "Kelvollista osoitetta ei löytynyt"
       ],
       "Not a valid number": [
-        "Virheellinen puhelinnumero"
+        "Virheellinen numero"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Yhdellä yhteystiedolla ei ole sähköpostiosoitetta: ${ noEmailsContactNamesList }",
@@ -2725,7 +2732,7 @@
         "Joitakin yhteystietoja ei voitu poistaa"
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "Joitakin tiedostoja ei huomioitu, koska Proton ei tue niitä."
+        "Joitakin tiedostoja ei huomioitu, koska Kuvat eivät tue niitä."
       ],
       "Some groups could not be deleted": [
         "Joitakin ryhmiä ei voitu poistaa"
@@ -3995,7 +4002,7 @@
         "Linkkien lataus epäonnistui"
       ],
       "Cannot load shared link": [
-        "Jakolinkkiä ei voida ladata"
+        "Jakolinkin lataus ei onnistu"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -4026,9 +4033,6 @@
       ],
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
-      ],
-      "Coming soon": [
-        "Tulossa pian"
       ],
       "Conflict": [
         "Ristiriita"
@@ -4111,7 +4115,7 @@
         "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Kansion sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
+        "Sähköinen allekirjoitus vahvistettiin ja kansion tallensi turvallisesti ${ emailAddress }."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
@@ -4152,6 +4156,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Lataus keskeytyi yhteysongelman vuoksi, mutta jatkuu automaattisesti"
       ],
+      "Download was canceled": [
+        "Lataus peruttiin"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
       ],
@@ -4160,6 +4167,9 @@
       ],
       "Downloading": [
         "Ladataan"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "${ DOCS_APP_NAME } -tiedostojen latausta ${ DRIVE_APP_NAME }esta ei tällä hetkellä tueta — näitä ei sisällytetä lataukseesi."
       ],
       "Downloading all encrypted files": [
         "Ladataan kaikki salatut tiedostot"
@@ -4198,7 +4208,7 @@
         "Tyhjä kansio"
       ],
       "Enabling drive search": [
-        "Hakua otetaan käyttöön"
+        "Levyhakua otetaan käyttöön"
       ],
       "Encrypted search is here": [
         "Salattu haku on tässä"
@@ -4219,7 +4229,7 @@
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
       "Enter the device name to confirm removal.": [
-        "Vahvista poisto syöttämällä laitteesi nimi."
+        "Vahvista poisto syöttämällä laitteen nimi."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
@@ -4392,7 +4402,7 @@
         "Internet-yhteys on palautettu."
       ],
       "Invite link copied": [
-        "Kutsulinkki on kopioitu"
+        "Kutsulinkki kopioitiin"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
@@ -4522,7 +4532,7 @@
         "Maksua ei nyt vaadita."
       ],
       "No results found": [
-        "Tuloksia ei löytynyt"
+        "Ei tuloksia"
       ],
       "No synced folders": [
         "Synkronoituja kansioita ei ole"
@@ -4586,7 +4596,7 @@
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
       "People with access": [
-        "Ihmiset, joilla on pääsy"
+        "Käyttöoikeuden omaavat henkilöt"
       ],
       "Permanently delete all files in your locked drive": [
         "Poista kaikki lukitun levysi tiedostot"
@@ -4608,6 +4618,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Syötä salasana purkaaksesi salauksen ja nähdäksesi sisällön."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Jos haluat ladata niitä, vie ne suoraan ${ DOCS_APP_NAME } -sovelluksesta."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Huomioi, että ryhmiin lisättyjä osoitteita EI poisteta."
@@ -4834,7 +4847,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -4852,10 +4865,10 @@
         "Sovelluksen on purettava yhteystietojesi salaus paikallisesti ennen niiden vientiä. Käsittelyn lopuksi luodaan ladattava VCF-tiedosto."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Latausmäärä sisältää sekä todelliset lataukset että tapaukset, jolloin tiedostoja esikatsellaan."
+        "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Salatut tiedot vaativat hieman enemmän tallennustilaa tietojesi suojauksen takaavan salauksen ja allekirjoitusten vuoksi."
+        "Salatut tiedot varaavat tietojasi suojaavan salauksen ja allekirjoitusten vuoksi hieman enemmän tallennustilaa."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
@@ -4876,7 +4889,7 @@
         "Täällä ei ole mitään nähtävää"
       ],
       "This action will delete the link and revoke access for all users.": [
-        "Tämä poistaa linkin ja mitätöi kaikkien käyttäjien käyttöoikeudet."
+        "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -4888,7 +4901,7 @@
         "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "Tiedosto on saatettu poistaa, siirtää tai poistaa käytettävistä. Ota yhteyttä sen haltijaan."
+        "Tiedosto on saatettu poistaa, siirtää tai poistaa käytettävistä. Ota yhteyttä sen omistajaan."
       ],
       "This item already exists in your library": [
         "Kohde löytyy jo kirjastostasi"
@@ -4940,7 +4953,7 @@
         "Aidosti yksityistä hakua varten, ${ DRIVE_APP_NAME }n on indeksoitava tiedostosi paikallisesti."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Aidosti yksityistä hakua varten tiedostosi on indeksoitava paikallisesti. Voit jatkaa ${ DRIVE_APP_NAME }n käyttämistä normaalisti – saat ilmoituksen kun indeksointi on valmis."
+        "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -5391,7 +5404,7 @@
     },
     "Label": {
       "# of downloads": [
-        "Latausmäärä"
+        "Latausten määrä"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -5424,10 +5437,10 @@
         "Lisää ryhmään"
       ],
       "Anyone on the Internet with the link can view": [
-        "Kuka tahansa Internetissä, jolla on linkki, voi katsella"
+        "Linkin välityksellä kuka tahansa Internetissä voi tarkastella"
       ],
       "Anyone with the link": [
-        "Kuka tahansa, jolla on linkki"
+        "Kuka tahansa linkin omaava"
       ],
       "App password": [
         "Sovellussalasana"
@@ -5584,7 +5597,7 @@
         "esim. Amazon, eBay, Etsy"
       ],
       "Editor": [
-        "Muokkaaja"
+        "Muokkaus"
       ],
       "Email": [
         "Sähköposti"
@@ -5617,7 +5630,7 @@
         "Syötä laitteen nimi"
       ],
       "Erase this link and remove everyone with access": [
-        "Poista tämä linkki ja kaikki, joilla on pääsy siihen"
+        "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
       ],
       "Expiration (${ patternExpiration })": [
         "Voimassaolon päättymisaika (${ patternExpiration })"
@@ -5681,6 +5694,9 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
+      ],
+      "Include message and file name in invite email": [
+        "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
       ],
       "Keep both": [
         "Säilytä molemmat"
@@ -5932,7 +5948,7 @@
         "Vahvistuskoodi"
       ],
       "Viewer": [
-        "Katsoja"
+        "Tarkastelu"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -6712,6 +6728,9 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
+      "Proofread and refine your texts": [
+        "Oikolue ja paranna tekstiäsi"
+      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -6727,6 +6746,9 @@
       ],
       "Router support": [
         "Reititintuki"
+      ],
+      "Save time emailing": [
+        "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
         "Ajoita ja torkuta sähköpostit milloin tahansa"
@@ -7085,7 +7107,7 @@
         "Palvelintemme kiintolevyt on salattu täysin useilla salasanakerroksilla, jotta tietosi pysyvät suojassa, vaikka laitteistomme vaarantuisi"
       ],
       "Password management and identity protection": [
-        "Salasanojen hallinta ja henkilöllisyyden suojaus"
+        "Salasanahallinta ja identiteettisuojaus"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
@@ -7511,6 +7533,9 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin korotamme ilmaisen tallennustilasi 5 gigatavuun!"
       ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Kutsu muita sähköpostilla katselemaan ja muokkaamaan tiedostojasi, tai luo julkinen linkki nopeaa pääsyä varten"
+      ],
       "Set a recovery method": [
         "Määritä palautustapa"
       ],
@@ -7722,6 +7747,9 @@
       "Last name": [
         "Sukunimi"
       ],
+      "Message": [
+        "Viesti"
+      ],
       "Name": [
         "Nimi"
       ],
@@ -7756,7 +7784,7 @@
         "Valitse osavaltio"
       ],
       "Set date": [
-        "Aseta päivämäärä"
+        "Valitse päivämäärä"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
@@ -7912,13 +7940,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut ulkopuolisesta palvelusta. ${ learnMoreLink }"
@@ -7930,7 +7958,7 @@
         "Sentinel on **käytössä** ja suojaa tiliäsi."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "Select files": {
@@ -8572,8 +8600,14 @@
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
@@ -8640,9 +8674,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jos ylität ilmaisen tilauksen rajat ${ planName } -tilauksesi päättyessä, et voi:"
-      ],
-      "Keep ${ planName }": [
-        "Pidä ${ planName }"
       ],
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
@@ -8869,7 +8900,7 @@
         "Palautus on aloitettu"
       ],
       "Secure link copied": [
-        "Turvallinen linkki on kopioitu"
+        "Turvallinen linkki kopioitiin"
       ],
       "The link to your file was successfully copied": [
         "Tiedoston linkki on kopioitu"
@@ -9018,7 +9049,7 @@
     },
     "Title": {
       "# of downloads": [
-        "Latausmäärä"
+        "Latausten määrä"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
@@ -9170,7 +9201,7 @@
         "Tietojen palautus"
       ],
       "Date": [
-        "Päivämäärä"
+        "Päiväys"
       ],
       "Day theme": [
         "Päiväteema"
@@ -9196,7 +9227,7 @@
         "Lisätiedot"
       ],
       "Discard": [
-        "Hylkää"
+        "Hylätään"
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -9366,7 +9397,7 @@
         "Tietomurtoja ei ole havaittu"
       ],
       "No results found": [
-        "Tuloksia ei löytynyt"
+        "Ei tuloksia"
       ],
       "Notes": [
         "Muistiinpanot"
@@ -9415,6 +9446,9 @@
       ],
       "Processing...": [
         "Käsitellään..."
+      ],
+      "Public shared link status": [
+        "Julkisen jakolinkin tila"
       ],
       "Re-sign all contacts": [
         "Allekirjoita kaikki yhteystiedot uudelleen"
@@ -9540,7 +9574,7 @@
         "Linkkiä ei ole olemassa tai se on vanhentunut"
       ],
       "The link expired": [
-        "Linkki on vanhentunut"
+        "Linkki on erääntynyt"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tiedoston allekirjoitus puuttuu tai se on virheellinen. Näytä tiedot valitsemalla Valikko (⋮) → Tietoja."
@@ -9617,6 +9651,9 @@
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Latauksesi sisältää ${ DOCS_APP_NAME } -tiedoston"
+      ],
       "Your exposed information": [
         "Paljastuneet tietosi"
       ],
@@ -9688,6 +9725,9 @@
       ],
       "Load image": [
         "Lataa kuva"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Viestin teksti ja tiedoston nimi säilytetään sähköpostiviestissä zero access -salauksella"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
