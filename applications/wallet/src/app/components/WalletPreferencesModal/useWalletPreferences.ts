@@ -119,6 +119,11 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
         setWalletDeletionConfirmationModal(true);
     };
 
+    const clearBrowserStorage = () => {
+        window.localStorage.clear();
+        createNotification({ text: c('Wallet Settings').t`Local storage cleared` });
+    };
+
     return {
         walletName,
 
@@ -134,5 +139,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
 
         walletDeletionConfirmationModal,
         openWalletDeletionConfirmationModal,
+
+        clearBrowserStorage,
     };
 };
