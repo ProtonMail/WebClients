@@ -8,7 +8,7 @@ import { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/inte
 import isTruthy from '@proton/utils/isTruthy';
 
 import Fido2Form from './Fido2Form';
-import TOTPForm from './TOTPForm';
+import LoginTOTPForm from './LoginTOTPForm';
 
 interface Props {
     onSubmit: (data: { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data }) => Promise<void>;
@@ -33,7 +33,7 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes }: Props) => {
                     },
                 authTypes.totp && {
                     title: c('Label').t`Authenticator app`,
-                    content: <TOTPForm onSubmit={(payload) => onSubmit({ type: 'code', payload })} />,
+                    content: <LoginTOTPForm onSubmit={(payload) => onSubmit({ type: 'code', payload })} />,
                 },
             ].filter(isTruthy)}
         />
