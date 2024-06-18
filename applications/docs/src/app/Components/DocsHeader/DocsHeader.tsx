@@ -9,6 +9,7 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
+import { c } from 'ttag'
 
 const DocsHeader = () => {
   const application = useApplication()
@@ -40,7 +41,7 @@ const DocsHeader = () => {
             onClick={() => controller.openDocumentSharingModal()}
           >
             <Icon name="user-plus" />
-            Share
+            {c('Action').t`Share`}
           </Button>
           <CommentsButton controller={controller} />
         </>
