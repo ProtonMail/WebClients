@@ -543,8 +543,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
-      "Open in Docs": [
-        "Buka di Docs"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Buka di ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -815,6 +815,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
+      ],
+      "Understood": [
+        "Mengerti"
       ],
       "Undo": [
         "Urungkan"
@@ -3961,9 +3964,6 @@
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
       ],
-      "Coming soon": [
-        "Segera hadir"
-      ],
       "Conflict": [
         "Konflik"
       ],
@@ -4084,6 +4084,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Unduhan dijeda karena masalah koneksi; unduhan akan berlanjut secara otomatis ketika koneksi pulih"
       ],
+      "Download was canceled": [
+        "Unduhan dibatalkan"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
@@ -4092,6 +4095,9 @@
       ],
       "Downloading": [
         "Mengunduh"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Pengunduhan ${ DOCS_APP_NAME } berkas dari ${ DRIVE_APP_NAME } saat ini belum didukung — rangkaian berkas ini tidak akan disertakan dalam unduhan Anda"
       ],
       "Downloading all encrypted files": [
         "Mengunduh seluruh berkas terenkripsi"
@@ -4537,6 +4543,9 @@
       "Please enter the password to decrypt and view content.": [
         "Silakan masukkan kata sandi untuk mendekripsi dan melihat isi konten."
       ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Silakan ekspor rangkaian berkas ini secara langsung dari aplikasi ${ DOCS_APP_NAME } apabila Anda ingin mengunduh."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
       ],
@@ -4553,7 +4562,7 @@
         "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
       "Please select the folders you would like to import:": [
-        "Harap pilih folder-folder yang hendak Anda impor:"
+        "Silakan pilih folder mana saja yang ingin Anda impor:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupCount } grup."
@@ -7559,6 +7568,9 @@
       "Card number": [
         "Nomor kartu"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -7667,6 +7679,9 @@
       ],
       "Last name": [
         "Nama belakang"
+      ],
+      "Message": [
+        "Pesan"
       ],
       "Name": [
         "Nama"
@@ -8483,8 +8498,14 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } alamat email per pengguna"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } yang meliputi alias hide-my-email tanpa batasan jumlah"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } dengan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
@@ -8507,11 +8528,17 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi berkas dan foto Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, berkas, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } dengan akses ke seluruh server berkecepatan tinggi di ${ vpnCountries } negara"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } dengan pemblokir malware dan iklan"
       ],
       "10 email addresses": [
         "10 alamat email"
@@ -8563,9 +8590,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Apabila Anda melebihi batas paket gratis pada saat langganan ${ planName } Anda berakhir, Anda tidak akan dapat:"
-      ],
-      "Keep ${ planName }": [
-        "Pertahankan paket ${ planName }"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
@@ -9532,6 +9556,9 @@
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Unduhan Anda memiliki berkas ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
