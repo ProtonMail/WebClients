@@ -11,10 +11,13 @@ import {
     useAppTitle,
     useCancellationFlow,
     useModalState,
+    useUser,
     useVPNServersCount,
 } from '@proton/components';
+import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { useCancelSubscriptionFlow } from '../cancelSubscription';
 import CancelConfirmationModal from './CancelConfirmationModal';
@@ -30,9 +33,12 @@ interface Props {
 }
 
 export const CancellationReminderSection = ({ app }: Props) => {
+    const [user] = useUser();
     const [{ paid }] = useVPNServersCount();
-    const newCancellationPolicy = useFlag('ExtendCancellationProcess');
     const { b2bAccess, b2cAccess, redirectToDashboard, subscription, setStartedCancellation } = useCancellationFlow();
+    const isChargeBeeUser = onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.CHARGEBEE_FORCED;
+    const newCancellationPolicy = useFlag('ExtendCancellationProcess') && isChargeBeeUser;
+
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
