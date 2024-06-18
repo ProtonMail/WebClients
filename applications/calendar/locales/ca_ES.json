@@ -974,6 +974,9 @@
       "the first month": [
         "el primer mes"
       ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant ${ discountedMonths }. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ nextMonths }. Podeu cancel·lar en qualsevol moment."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
@@ -983,7 +986,7 @@
         "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 3.000 servidors en més de 65 països, velocitats de VPN més altes, accés a serveis de transmissió en línia a tot el món, bloqueig de programari maliciós i d'anuncis, descàrregues ràpides de BitTorrent, etc."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
+        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
@@ -1018,6 +1021,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Es renova automàticament a ${ renewPrice } durant ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3606,7 +3612,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en línia en tot el món, bloquejador de programari maliciós i d'anuncis, etc."
+        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis d'estríming en tot el món, bloquejador de programari maliciós i d'anuncis, etc."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide-my-email, compartició de calendari i més."
@@ -6223,7 +6229,7 @@
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
-        "${ size } en arxius adjunts"
+        "${ size } en fitxers adjunts"
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
@@ -6367,7 +6373,7 @@
         "Àlies hide-my-email"
       ],
       "High-speed streaming": [
-        "Transmissió en línia d'alta velocitat"
+        "Estríming d'alta velocitat"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat en ${ n } dispositiu",
@@ -6435,7 +6441,7 @@
         "Requereix A2F per a l'organització"
       ],
       "Router support": [
-        "Suport per a router"
+        "Suport per a rúter"
       ],
       "Save time emailing": [
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
@@ -6694,10 +6700,13 @@
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis de transmissió en línia de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
+        "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis d'estríming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Accediu a ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME } des de la comoditat de l'escriptori"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
+        "Accediu al contingut dels serveis de transmissió en continu, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Les adreces tenen capacitat completa d'enviament i recepció. Un usuari pot tenir múltiples adreces assignades; tanmateix, una sola adreça no pot ser assignada a múltiples usuaris."
@@ -6711,8 +6720,14 @@
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Netegeu automàticament els missatges amb més de 30 dies de la paperera i el correu brossa."
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Reenvieu automàticament els correus electrònics enviats al vostre compte de ${ MAIL_APP_NAME } a qualsevol altra adreça de correu electrònic."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'enviament massiu de correus electrònics promocionals o programàtics no està suportat actualment. Recomanem utilitzar un proveïdor de serveis de correu electrònic dedicat per a aquesta finalitat."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Trieu horaris personalitzats per a rebre recordatoris d'un correu electrònic o perquè arribi el vostre missatge"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controleu l'accés als vostres fitxers compartits afegint protecció per contrasenya i dates d'expiració d'enllaços."
@@ -6726,6 +6741,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -6768,6 +6786,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "En dies laborables, rebeu suport del servei d'atenció al client de ${ BRAND_NAME } en les 24 hores següents a la sol·licitud"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Una connexió VPN permet a un dispositiu connectar a ${ VPN_APP_NAME } en qualsevol moment. Per exemple, per a connectar un telèfon i un portàtil a ${ VPN_APP_NAME } al mateix temps, necessiteu dues connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
@@ -6849,6 +6870,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "L'espai d'emmagatzematge es comparteix entre usuaris per a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } i ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
@@ -7927,7 +7951,7 @@
         "Emmagatzematge al núvol segur"
       ],
       "Secure streaming": [
-        "Transmissió en línia segura"
+        "Transmissió en continu segura"
       ],
       "Support online privacy": [
         "Doneu suport a la privacitat en línia"
@@ -8033,7 +8057,7 @@
         "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis, etc."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis, etc."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis d'estríming a tot el món, bloquejador de programari maliciós i anuncis, etc."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
@@ -8093,6 +8117,9 @@
       ]
     },
     "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Emmagatzematge per a dades generades per ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ],
       "Up to ${ totalStorageSize } Drive storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge per a Drive"
       ],
@@ -8125,6 +8152,9 @@
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
       ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Afegirem els crèdits del temps resant al vostre compte de ${ BRAND_NAME }."
+      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Encara disposeu d'**${ daysRemaining }** dia al vostre pla **${ currentPlanName }**.",
         "Encara disposeu de **${ daysRemaining }** dies al vostre pla **${ currentPlanName }**."
@@ -8149,6 +8179,18 @@
       ],
       "Your storage is full. ${ cta }.": [
         "L'emmagatzematge és ple. ${ cta }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Perdreu l'accés a ${ gb } d'emmagatzematge i al suport prioritari."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Perdreu l'accés a l'emmagatzematge addicional, adreces de correu electrònic, àlies, calendaris, així com al suport prioritari."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Perdreu accés a la velocitat VPN més alta, protecció per a 10 dispositius, transmissió en continu d'alta velocitat, bloqueig d'anuncis i protecció contra programari maliciós, així com suport prioritari."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Perdreu l'accés a les notes i als inicis de sessió il·limitats, als àlies il·limitats de hide-my-email, a 20 caixes fortes, així com al suport prioritari."
       ]
     },
     "Subscribe to calendar modal": {
@@ -8172,10 +8214,10 @@
         "Facturació per 15 mesos"
       ],
       "Billed for 18 months": [
-        "Facturat per a 18 mesos"
+        "Facturació per 18 mesos"
       ],
       "Billed for 3 months": [
-        "Facturat per a 3 mesos"
+        "Facturació trimestral"
       ],
       "Billed for 30 months": [
         "Facturació per 30 mesos"
@@ -8238,6 +8280,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Les úniques fonts de finançament de ${ BRAND_NAME } són les subscripcions d'usuari. El vostre suport ens permet continuar sent independents, avançar en la nostra missió de fer de la privacitat la norma a internet i continuar donant suport a activistes i organitzacions que lluiten per la privacitat i la llibertat."
+      ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } inclòs l'ús compartit del calendari"
       ],
@@ -8335,9 +8380,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si supereu els límits del pla gratuït quan caduqui la vostra subscripció a ${ planName }, no podreu:"
       ],
-      "Keep ${ planName }": [
-        "Segueix amb ${ planName }"
-      ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
       ],
@@ -8346,6 +8388,9 @@
       ],
       "Online privacy, for your whole family": [
         "Privacitat en línia per a tota la vostra família"
+      ],
+      "Our fight against censorship in Russia": [
+        "La nostra lluita contra la censura a Rússia"
       ],
       "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
         "Tingueu en compte que ${ planName } ja no està disponible per a la compra. Si baixeu de categoria el vostre compte, perdreu tots els avantatges del pla i no us podreu tornar a subscriure."
@@ -9402,6 +9447,11 @@
         "No teniu cap contacte per exportar"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Compartit amb xifratge d'extrem a extrem"
@@ -9452,6 +9502,15 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ]
+    },
+    "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Després se us facturarà cada 12 mesos a ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "La vostra subscripció es renovarà automàticament en ${ cycle } mes.",
+        "La vostra subscripció es renovarà automàticament en ${ cycle } mesos."
       ]
     },
     "vpn_2step: feature": {

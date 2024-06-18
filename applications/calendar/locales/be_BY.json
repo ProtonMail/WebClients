@@ -576,7 +576,7 @@
         "Скінуць да прадвызначаных"
       ],
       "Resume indexing": [
-        "Працягнуць індэксаванне"
+        "Узнавіць індэксаванне"
       ],
       "Retry": [
         "Паўтарыць"
@@ -5181,7 +5181,7 @@
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
+        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -6729,7 +6729,7 @@
         "Неабмежаваная колькасць паведамленняў у дзень"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Неабмежаваная колькасць абагуленых сховішчаў з правамі доступу"
+        "Неабмежаваная колькасць абагуленых сховішчаў з дазволамі доступу"
       ],
       "Unlimited vault sharing": [
         "Неабмежаваная колькасць абагуленых сховішчаў"
@@ -7553,6 +7553,9 @@
       ],
       "Card number": [
         "Нумар карткі"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
       ],
       "CVC": [
         "CVC"
@@ -8632,8 +8635,32 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Настольная праграма ${ MAIL_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } каляндар на карыстальніка",
+        "${ MaxCalendars } календары на карыстальніка",
+        "${ MaxCalendars } календароў на карыстальніка",
+        "${ MaxCalendars } календароў на карыстальніка"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } карыстальніцкі дамен электроннай пошты",
+        "${ maxDomainNames } карыстальніцкія дамены электроннай пошты",
+        "${ maxDomainNames } карыстальніцкіх даменаў электроннай пошты",
+        "${ maxDomainNames } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адрас электроннай пошты на карыстальніка",
+        "${ maxEmails } адрасы электроннай пошты на карыстальніка",
+        "${ maxEmails } адрасоў электроннай пошты на карыстальніка",
+        "${ maxEmails } адрасоў электроннай пошты на карыстальніка"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
       ],
       "${ planMaxSpace } total storage": [
         "Агульны аб'ём сховішча: ${ planMaxSpace }"
@@ -8643,6 +8670,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай, арганізаванай і кантраляваць сваю паштовую скрыню, расклад і іншыя рэчы."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } выходзіць за рамкі асноў, каб вы заставаліся прадукцыйнымі, арганізаванымі і кантралявалі сваю паштовую скрыню, ідэнтычнасць электроннай пошты і іншыя рэчы."
@@ -8665,6 +8695,9 @@
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
       ],
+      "25 calendars per user": [
+        "25 календароў на карыстальніка"
+      ],
       "6 users": [
         "6 карыстальнікаў"
       ],
@@ -8677,11 +8710,26 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
       ],
+      "All you need for your business": [
+        "Усё неабходнае для вашага бізнесу"
+      ],
+      "Any custom email domains will be disabled": [
+        "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
+      ],
+      "Automatic email forwarding": [
+        "Аўтаматычная перасылка электроннай пошты"
+      ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+      ],
       "Calendar sharing": [
         "Абагульванне календара"
+      ],
+      "Catch-all email address": [
+        "Адрас для ўсёй пошты дамена"
       ],
       "Comprehensive privacy and security": [
         "Комплексная прыватнасць і бяспека"
@@ -8689,11 +8737,17 @@
       "Custom schedule send and snooze times": [
         "Карыстальніцкае планаванне адпраўкі і адкладанне"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+      ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
+      ],
+      "Email productivity features": [
+        "Функцыі прадукцыйнасці электроннай пошты"
       ],
       "Extra storage and bonuses": [
         "Дадатковае сховішча і бонусы"
@@ -8713,17 +8767,29 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Калі вы перавысіце абмежаванні вашага бясплатнага тарыфнага плана пасля таго, як ваша падпіска ${ planName } міне, то вы больш не зможаце:"
       ],
-      "Keep ${ planName }": [
-        "Пакінуць ${ planName }"
+      "Invited members will be removed from your organization": [
+        "Запрошаныя ўдзельнікі будуць выдалены з вашай арганізацыі"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Забяспечвайце бяспеку сваёй каманды дзе б яны не былі з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
+      ],
+      "Learn more": [
+        "Даведацца больш"
       ],
       "Learn more about our impact": [
         "Даведацца больш аб нашым уплыве"
+      ],
+      "Make your business stand out": [
+        "Вылучыце свой бізнес"
       ],
       "Manage your calendar": [
         "Кіраваць сваім календаром"
       ],
       "Online privacy, for your whole family": [
         "Прыватнасць у інтэрнэце для ўсёй вашай сям'і"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Арганізацыі, дадатковыя карыстальнікі і карыстальніцкія дамены электроннай пошты не падтрымліваюцца на бясплатным тарыфным плане. Гэта азначае, што:"
       ],
       "Our fight against censorship in Russia": [
         "Наша барацьба супраць цэнзуры ў Расіі"
@@ -8743,8 +8809,17 @@
       "Receive new emails": [
         "Атрымліваць новыя лісты"
       ],
+      "See your colleagues’ availability": [
+        "Прагляд даступнасці вашых калег"
+      ],
       "Send emails with attachments": [
         "Адпраўляць лісты з далучэннямі"
+      ],
+      "Stay secure and connected anywhere": [
+        "Заставайцеся ў бяспецы і падключаным у любым месцы"
+      ],
+      "Support your compliance objectives": [
+        "Падтрымка выканання вашых патрабаванняў"
       ],
       "Sync files on devices": [
         "Сінхранізаваць файлы на прыладзе"
@@ -8755,8 +8830,20 @@
       "Unblocking internet access in Iran": [
         "Разблакіроўка інтэрнэту ў Іране"
       ],
+      "Unlimited folders and labels": [
+        "Неабмежаваная колькасць папак і метак"
+      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"
+      ],
+      "Users won’t be able to send emails": [
+        "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "У карыстальнікаў не будзе магчыма сінхранізаваць файлы на сваіх прыладах"
       ],
       "Version history": [
         "Гісторыя версій"
@@ -8781,6 +8868,9 @@
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Ваша падпіска ${ planName } завершыцца ${ expiryDate }. Пасля гэтага, вы будзе пераведзены на тарыфны план ${ BRAND_NAME } Free. Вам можа быць забаронены доступ да функцый прадукту і вашых даных у выпадку, калі абмежаванні бясплатнага тарыфнага плана будуць перавышаны. ${ learnMoreLink }"

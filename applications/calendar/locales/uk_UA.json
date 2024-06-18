@@ -2560,7 +2560,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Допоможіть нам вдосконалитися"
+        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
       ]
     },
     "Dropdown action icon tooltip": {
@@ -6467,7 +6467,7 @@
         "Централізоване управління платежами"
       ],
       "Collaborate and share large files": [
-        "Співпраця та обмін великих файлів"
+        "Співпраця та обмін великими файлами"
       ],
       "Contact groups": [
         "Групи контактів"
@@ -6488,7 +6488,7 @@
         "Власний час відкладення"
       ],
       "Custom workspace branding": [
-        "Брендування власного робочого простору"
+        "Брендинг робочого середовища"
       ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
@@ -6506,7 +6506,7 @@
         "Редактори документів (документи, таблиці, слайди)"
       ],
       "Document editors (docs, sheets, slides) (soon)": [
-        "Редактори документів (документи, таблиці, слайди) (незабаром)"
+        "Засоби редагування (документи, електронні таблиці, слайди) (незабаром)"
       ],
       "Double hop": [
         "Double hop"
@@ -6584,7 +6584,7 @@
         "Підтримуються ключі доступу"
       ],
       "Password health": [
-        "Стан паролю"
+        "Якість пароля"
       ],
       "Password manager to secure credentials": [
         "Менеджер паролів для захисту облікових даних"
@@ -6611,7 +6611,7 @@
         "Захист ${ n } пристроїв"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Регулярна перевірка безпеки вашого облікового запису. Ми попередимо вас, якщо у вас слабкі або повторно використані паролі, які потрібно оновити."
+        "Регулярна перевірка безпеки вашого облікового запису. Ми попередимо вас, якщо виявимо слабкі або повторно використані паролі, які потрібно оновити."
       ],
       "Require 2FA for organization": [
         "Вимагати двоетапну автентифікацію для організації"
@@ -6620,7 +6620,7 @@
         "Підтримка маршрутизатора"
       ],
       "Save time emailing": [
-        "Економте час надсилання електронною поштою"
+        "Заощаджуйте час з електронною поштою"
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
@@ -6635,7 +6635,7 @@
         "Сервери Secure Core"
       ],
       "See team's availability": [
-        "Переглянути доступність команди"
+        "Огляд зайнятості команди"
       ],
       "Send & receive invitations": [
         "Надсилайте й отримуйте запрошення"
@@ -6779,7 +6779,7 @@
         "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Вся застосунки ${ BRAND_NAME } та преміум функції, щоб захистити ваш бізнес."
+        "Усі програми та преміальні функції ${ BRAND_NAME } для захисту вашого бізнесу."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -6791,10 +6791,10 @@
         "Ранній доступ до нових програм і функцій"
       ],
       "Encrypted email and calendar to get you started.": [
-        "Зашифрована пошта та календар для початку роботи."
+        "Зашифрована пошта й календар для початку роботи."
       ],
       "Enhanced security and premium features for teams.": [
-        "Покращена безпека та преміум функції для команд."
+        "Покращена безпека та преміальні функції для команд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Необхідний захист і безпечна співпраця для необмеженої кількості користувачів."
@@ -8371,7 +8371,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Скасування вашої підписки, будь ласка, зачекайте"
+        "Скасування передплати. Будь ласка, зачекайте"
       ]
     },
     "Storage": {
@@ -8559,7 +8559,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8596,9 +8596,6 @@
       "Helping activists in Hong Kong": [
         "Допомога активістам у Гонконзі"
       ],
-      "Keep ${ planName }": [
-        "Залишити ${ planName }"
-      ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
       ],
@@ -8630,7 +8627,7 @@
         "Щорічні бонуси на безплатне сховище"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ви ще маєте ${ expiryDate } у вашому тарифі ${ planName }. Ми додамо кредитів за час, що залишився на вашому обліковому запису ${ BRAND_NAME }. Переконайтеся, що ви не перевищили ліміти безплатного тарифу перед скасуванням. ${ learnMoreLink }"
+        "У вашій передплаті ${ planName } ще залишилося ${ expiryDate }. Ми додамо кредити за невикористаний залишок часу до вашого облікового запису ${ BRAND_NAME }. Перш ніж скасовувати передплату перевірте обмеження безплатного тарифного плану. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "Ваш власний домен електронної пошти"

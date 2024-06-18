@@ -1283,6 +1283,9 @@
     "Cancellation reminder": {
       "Reactivate subscription": [
         "重新啟用訂閱"
+      ],
+      "Your subscription is ending soon": [
+        "您的訂閱即將結束"
       ]
     },
     "Checkout row": {
@@ -2242,6 +2245,9 @@
       ]
     },
     "Custom frequency option": {
+      "Ends after…": [
+        "於…後結束"
+      ],
       "Never": [
         "從不"
       ],
@@ -6139,6 +6145,9 @@
       "Centralized billing": [
         "集中式計費"
       ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
       "Contact groups": [
         "聯絡人群組"
       ],
@@ -6156,6 +6165,9 @@
       ],
       "Custom snooze time": [
         "自訂延遲時間"
+      ],
+      "Custom workspace branding": [
+        "自訂工作空間的品牌"
       ],
       "Data breach monitoring": [
         "資料外洩監測"
@@ -6211,6 +6223,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Generate emails with only a prompt": [
+        "只要提示便可生成電子郵件"
+      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
@@ -6250,6 +6265,9 @@
       "Password health": [
         "密碼穩固性"
       ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -6271,11 +6289,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
+      "Reply to messages": [
+        "回覆訊息"
+      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
       "Router support": [
         "路由器支援"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
       ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
@@ -7682,6 +7706,11 @@
         "升級"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }個月"
@@ -7983,6 +8012,9 @@
       "10 email addresses": [
         "10 個電子信箱"
       ],
+      "6 users": [
+        "6 位使用者"
+      ],
       "Add any new files": [
         "新增任何檔案"
       ],
@@ -7997,9 +8029,6 @@
       ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
-      ],
-      "Keep ${ planName }": [
-        "保留 ${ planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
