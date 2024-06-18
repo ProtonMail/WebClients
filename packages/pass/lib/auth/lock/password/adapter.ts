@@ -19,7 +19,7 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
  * SRP flow. Booting offline should rely on this lock adapter */
 export const passwordLockAdapterFactory = (
     auth: AuthService,
-    options: { getEncryptedCacheKey: (userID: string) => Promise<Maybe<string>> }
+    options: { getEncryptedCacheKey: (userID: Maybe<string>) => Promise<Maybe<string>> }
 ): LockAdapter => {
     const { authStore, getPersistedSession, onSessionPersist } = auth.config;
 
@@ -119,7 +119,7 @@ export const passwordLockAdapterFactory = (
 
                 const offlineConfig = authStore.getOfflineConfig();
                 const userID = authStore.getUserID();
-                const encryptedCacheKey = await options.getEncryptedCacheKey(userID!);
+                const encryptedCacheKey = await options.getEncryptedCacheKey(userID);
                 if (!(offlineConfig && encryptedCacheKey)) throw new Error('Invalid password lock');
 
                 const { salt, params } = offlineConfig;

@@ -37,7 +37,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         const online = !payload?.offline;
         const authStore = options.getAuthStore();
-        const userID = authStore.getUserID();
+        const userID = authStore.getUserID()!;
 
         options.setAppStatus(AppStatus.BOOTING);
         yield put(stopEventPolling());
@@ -62,9 +62,9 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             yield put(withRevalidate(getBreaches.intent()));
 
             if (fromCache) {
-                yield put(withRevalidate(getUserFeaturesIntent(userID!)));
-                yield put(withRevalidate(getUserAccessIntent(userID!)));
-                yield put(withRevalidate(getUserSettings.intent(userID!)));
+                yield put(withRevalidate(getUserFeaturesIntent(userID)));
+                yield put(withRevalidate(getUserAccessIntent(userID)));
+                yield put(withRevalidate(getUserSettings.intent(userID)));
             }
         }
 
