@@ -194,6 +194,18 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
               </DropdownMenu>
             </SimpleDropdown>
           )}
+
+          {controller && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => {
+                void controller.printAsPDF()
+              }}
+            >
+              <Icon name="printer" className="color-weak mr-2" />
+              {c('Action').t`Print as PDF`}
+            </DropdownMenuButton>
+          )}
         </DropdownMenu>
       </Dropdown>
 

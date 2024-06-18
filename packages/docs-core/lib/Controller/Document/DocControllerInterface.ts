@@ -36,4 +36,5 @@ export interface DocControllerInterface {
   showCommentsPanel(): void
   squashDocument(): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
+  printAsPDF(): Promise<void>
 }
