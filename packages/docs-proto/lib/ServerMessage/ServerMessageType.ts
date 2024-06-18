@@ -25,6 +25,10 @@ export class ServerMessageType extends ValueObject<ServerMessageTypeProps> {
     return this.props.type === ServerMessageType.TYPES.RelayClientEvents
   }
 
+  isMessageAck(): boolean {
+    return this.props.type === ServerMessageType.TYPES.MessageAck
+  }
+
   get name(): string {
     const keys = Object.keys(ServerMessageType.TYPES)
     const values = Object.values(ServerMessageType.TYPES)
