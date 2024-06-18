@@ -17,6 +17,7 @@ import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { Tip } from '../../../atoms/Tip';
 import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
 import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
+import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 interface Props {
@@ -25,6 +26,7 @@ interface Props {
 
 export const WalletReceiveContent = ({ account }: Props) => {
     const [defaultExchangeRate] = useWalletAccountExchangeRate(account);
+    const [settings] = useUserWalletSettings();
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
     const getExchangeRate = useGetExchangeRate();
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
@@ -138,7 +140,7 @@ export const WalletReceiveContent = ({ account }: Props) => {
                                                     placeholder={c('Wallet Receive').t`Amount to receive`}
                                                     value={amount}
                                                     onValueChange={(amount: number) => handleChangeAmount(amount)}
-                                                    unit={exchangeRate ?? 'SATS'}
+                                                    unit={exchangeRate ?? settings.BitcoinUnit}
                                                     assistiveText={c('Wallet Receive')
                                                         .t`Leave empty to let the sender choose the amount`}
                                                 />

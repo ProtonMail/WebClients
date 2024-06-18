@@ -13,9 +13,11 @@ import { IWasmApiWalletData } from '@proton/wallet';
 import { BitcoinAmount, Button, CoreButton, CoreInput, Modal } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
+import { COMPUTE_BITCOIN_UNIT } from '../../../constants';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
-import { convertAmount, isExchangeRate } from '../../../utils';
+import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
+import { convertAmount, getLabelByUnit, isExchangeRate } from '../../../utils';
 import { useAsyncValue } from '../../../utils/hooks/useAsyncValue';
 import { EmailListItem } from '../../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
@@ -50,6 +52,7 @@ export const TransactionReview = ({
     const [showMore, setShowMore] = useState(false);
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
+    const [settings] = useUserWalletSettings();
     const [feesModal, setFeesModal] = useModalState();
     const { getFeesByBlockTarget } = useFeesInput(txBuilder);
     const [loadingSend, withLoadingSend] = useLoading();
@@ -182,7 +185,12 @@ export const TransactionReview = ({
                             prefix={typeof unit === 'object' ? unit.FiatCurrency : unit}
                         />
                     </div>
-                    <span className="block color-weak">{convertAmount(totalSentAmount, 'SATS', 'BTC')} BTC</span>
+                    {isExchangeRate(unit) && (
+                        <span className="block color-weak">
+                            {convertAmount(totalSentAmount, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {getLabelByUnit(settings.BitcoinUnit)}
+                        </span>
+                    )}
                 </div>
 
                 <div className="w-full mt-4 flex flex-row justify-space-between items-center">
@@ -222,7 +230,7 @@ export const TransactionReview = ({
                                         >
                                             <BitcoinAmount
                                                 bitcoin={Number(amount)}
-                                                unit={{ value: 'BTC' }}
+                                                unit={{ value: settings.BitcoinUnit }}
                                                 exchangeRate={isExchangeRate(unit) ? { value: unit } : undefined}
                                                 firstClassName="text-right"
                                                 secondClassName="text-right"
@@ -259,7 +267,7 @@ export const TransactionReview = ({
 
                         {isExchangeRate(unit) && (
                             <div className="color-hint">
-                                <Price satsAmount={totalFees} unit={'BTC'} />
+                                <Price satsAmount={totalFees} unit={settings.BitcoinUnit} />
                             </div>
                         )}
 
@@ -304,7 +312,7 @@ export const TransactionReview = ({
                                         <div className="flex flex-column items-end ml-auto">
                                             <BitcoinAmount
                                                 bitcoin={feesAtFeeRate}
-                                                unit={{ value: 'BTC' }}
+                                                unit={{ value: settings.BitcoinUnit }}
                                                 exchangeRate={isExchangeRate(unit) ? { value: unit } : undefined}
                                                 firstClassName="text-right"
                                                 secondClassName="text-right"
@@ -327,7 +335,7 @@ export const TransactionReview = ({
 
                         {isExchangeRate(unit) && (
                             <div className="color-hint">
-                                <Price satsAmount={totalAmount} unit={'BTC'} />
+                                <Price satsAmount={totalAmount} unit={settings.BitcoinUnit} />
                             </div>
                         )}
                     </div>

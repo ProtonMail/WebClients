@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { WasmAddress, WasmApiExchangeRate, WasmBitcoinUnit, WasmNetwork, WasmScriptType } from '@proton/andromeda';
 
 import { fiatToSats, satsToFiat } from '.';
-import { BITCOIN, SATOSHI, mBITCOIN } from '../constants';
+import { BITCOIN, COMPUTE_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '../constants';
 
 export const bitcoinToSats = (btc: number) => {
     return btc * BITCOIN;
@@ -24,7 +24,7 @@ export const getLabelByUnit = (unit: WasmBitcoinUnit) => {
         case 'MBTC':
             return c('Bitcoin Unit').t`mBTC`;
         case 'SATS':
-            return c('Bitcoin Unit').t`SATs`;
+            return c('Bitcoin Unit').t`Sats`;
     }
 };
 
@@ -53,11 +53,11 @@ export const convertAmount = (
 ): number => {
     if (typeof from === 'object' && 'FiatCurrency' in from) {
         const sats = fiatToSats(value, from);
-        return convertAmount(sats, 'SATS', to);
+        return convertAmount(sats, COMPUTE_BITCOIN_UNIT, to);
     }
 
     if (typeof to === 'object' && 'FiatCurrency' in to) {
-        const sats = convertAmount(value, from, 'SATS');
+        const sats = convertAmount(value, from, COMPUTE_BITCOIN_UNIT);
         return satsToFiat(sats, to);
     }
 
@@ -92,6 +92,21 @@ export const convertAmount = (
     }
 };
 
+export const getDecimalStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
+    if (typeof unit === 'object') {
+        return 1 / unit.Cents;
+    }
+
+    switch (unit) {
+        case 'BTC':
+            return 1 / BITCOIN;
+        case 'MBTC':
+            return 1 / mBITCOIN;
+        case 'SATS':
+            return 1;
+    }
+};
+
 export const isValidBitcoinAddress = (address: string, network: WasmNetwork) => {
     try {
         new WasmAddress(address, network);
@@ -100,3 +115,9 @@ export const isValidBitcoinAddress = (address: string, network: WasmNetwork) => 
         return false;
     }
 };
+
+export const getBitcoinUnitOptions: () => { unit: WasmBitcoinUnit; label: string }[] = () => [
+    { unit: 'BTC', label: getLabelByUnit('BTC') },
+    { unit: 'MBTC', label: getLabelByUnit('MBTC') },
+    { unit: 'SATS', label: getLabelByUnit('SATS') },
+];

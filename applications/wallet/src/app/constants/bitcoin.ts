@@ -8,7 +8,16 @@ export const CENTS_IN_ONE_DOLLAR = 100;
 
 export const DEFAULT_INDEX = 0;
 
-export const DEFAULT_BITCOIN_UNIT: WasmBitcoinUnit = 'SATS';
+/**
+ * Bitcoin unit used for amount compute
+ */
+export const COMPUTE_BITCOIN_UNIT: WasmBitcoinUnit = 'SATS';
+/**
+ * Default bitcoin to be displayed to the user
+ */
+export const DEFAULT_DISPLAY_BITCOIN_UNIT: WasmBitcoinUnit = 'BTC';
+
+export const DEFAULT_FIAT_CURRENCY = 'USD';
 
 export const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
 export const DEFAULT_SCRIPT_TYPE = WasmScriptType.NativeSegwit;

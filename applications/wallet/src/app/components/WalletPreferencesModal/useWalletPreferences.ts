@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit } from '@proton/andromeda';
 import { useModalState } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -15,10 +16,15 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
+import { userWalletSettingsChange } from '../../store/slices/userWalletSettings';
 import { getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
+    const [userWalletSettings, loadingGetUserWalletSettings] = useUserWalletSettings();
+    const [loadingSetUserWalletSettings, withLoadingSetUserWalletSettings] = useLoading();
+    const loadingUserWalletSettings = loadingGetUserWalletSettings || loadingSetUserWalletSettings;
 
     const [walletDeletionConfirmationModal, setWalletDeletionConfirmationModal] = useModalState();
 
@@ -64,7 +70,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
                     })
                 );
             } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Wallet name could not be change` });
+                createNotification({ type: 'error', text: c('Wallet Settings').t`Wallet name could not be changed` });
             }
         };
 
@@ -81,12 +87,45 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
         dispatch,
     ]);
 
+    const updateBitcoinUnit = useCallback(
+        (bitcoinUnit: WasmBitcoinUnit) => {
+            const promise = async () => {
+                try {
+                    await api.settings.setBitcoinUnit(bitcoinUnit);
+
+                    dispatch(
+                        userWalletSettingsChange({
+                            bitcoinUnit,
+                        })
+                    );
+
+                    createNotification({
+                        text: c('Wallet Settings').t`Preferred bitcoin unit was changed`,
+                    });
+                } catch {
+                    createNotification({
+                        type: 'error',
+                        text: c('Wallet Settings').t`Preferred bitcoin unit could not be changed`,
+                    });
+                }
+            };
+
+            void withLoadingSetUserWalletSettings(promise());
+        },
+        [api.settings, createNotification, dispatch, withLoadingSetUserWalletSettings]
+    );
+
     const openWalletDeletionConfirmationModal = () => {
         setWalletDeletionConfirmationModal(true);
     };
 
     return {
         walletName,
+
+        userWalletSettings,
+        loadingUserWalletSettings,
+        updateBitcoinUnit,
+
         loadingWalletNameUpdate,
         setWalletName,
         updateWalletName,

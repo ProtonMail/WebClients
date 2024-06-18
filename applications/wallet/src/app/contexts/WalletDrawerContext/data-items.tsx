@@ -11,11 +11,14 @@ import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
+import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
+    convertAmount,
+    getLabelByUnit,
     getTransactionRecipientHumanReadableName,
     getTransactionSenderHumanReadableName,
-    satsToBitcoin,
 } from '../../utils';
 import { multilineStrToMultilineJsx } from '../../utils/string';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
@@ -133,15 +136,22 @@ export const AmountDataListItem = ({
     label?: string;
     exchangeRate?: WasmApiExchangeRate;
 }) => {
+    const [settings] = useUserWalletSettings();
+
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{label}</span>
             <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
                 <div className={clsx('text-semibold', !exchangeRate && 'skeleton-loader')}>
-                    <Price unit={exchangeRate ?? 'BTC'} satsAmount={amount ?? 0} />
+                    <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
                 </div>
             </div>
-            {exchangeRate && <div className="color-weak">{satsToBitcoin(amount ?? 0)} BTC</div>}
+            {exchangeRate && (
+                <div className="color-weak">
+                    {convertAmount(amount ?? 0, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {getLabelByUnit(settings.BitcoinUnit)}
+                </div>
+            )}
         </div>
     );
 };

@@ -7,6 +7,7 @@ import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';
 import { mockUseFiatCurrencies } from '../../../tests/mocks/useFiatCurrencies';
 import { mockUseGetExchangeRate } from '../../../tests/mocks/useGetExchangeRate';
+import { mockUseUserWalletSettings } from '../../../tests/mocks/useUserWalletSettings';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
 describe('WalletReceiveContent', () => {
@@ -22,6 +23,7 @@ describe('WalletReceiveContent', () => {
         mockUseWalletAccountExchangeRate(null);
         mockUseGetExchangeRate();
         mockUseFiatCurrencies();
+        mockUseUserWalletSettings();
 
         const bitcoinURI = WasmPaymentLink.tryParse(
             'bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h?amount=0.005',
@@ -131,7 +133,7 @@ describe('WalletReceiveContent', () => {
                 await fireEvent.change(input, { target: { value: 124 } });
 
                 expect(helper.handleChangeAmount).toHaveBeenCalledTimes(1);
-                expect(helper.handleChangeAmount).toHaveBeenNthCalledWith(1, 124);
+                expect(helper.handleChangeAmount).toHaveBeenNthCalledWith(1, 12400000000);
             });
         });
     });

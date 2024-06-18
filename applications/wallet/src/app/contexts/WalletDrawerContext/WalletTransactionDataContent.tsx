@@ -8,8 +8,10 @@ import clsx from '@proton/utils/clsx';
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { ConfirmationTimeDataListItem } from '../../components/TransactionList/data-list-items';
+import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { satsToBitcoin } from '../../utils';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
+import { convertAmount, getLabelByUnit } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {
     AmountDataListItem,
@@ -30,6 +32,8 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
     const { network } = useBitcoinBlockchainContext();
     const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
 
+    const [settings] = useUserWalletSettings();
+
     const isSender = transaction.networkData.sent > transaction.networkData.received;
     /**
      * If user is sender, we want to display what the amount he actually sent, without change output amount and feees
@@ -46,14 +50,19 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
                     <div className="flex flex-row flex-nowrap items-center my-1">
                         <div className={clsx('text-semibold')}>
                             <Price
-                                unit={exchangeRate ?? 'BTC'}
+                                unit={exchangeRate ?? settings.BitcoinUnit}
                                 className="h1 text-semibold"
                                 wrapperClassName="contrast"
                                 satsAmount={value}
                             />
                         </div>
                     </div>
-                    {exchangeRate && <div className="text-lg color-hint">{satsToBitcoin(value)} BTC</div>}
+                    {exchangeRate && (
+                        <div className="text-lg color-hint">
+                            {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {getLabelByUnit(settings.BitcoinUnit)}
+                        </div>
+                    )}
                 </div>
 
                 <ConfirmationTimeDataListItem tx={transaction} />

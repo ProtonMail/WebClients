@@ -13,7 +13,7 @@ describe('BitcoinAmount', () => {
         expect(screen.getByText('5.001 mBTC')).toBeInTheDocument();
 
         render(<BitcoinAmount bitcoin={500100} unit={{ value: 'SATS' }} />);
-        expect(screen.getByText('500100 SATs')).toBeInTheDocument();
+        expect(screen.getByText('500100 Sats')).toBeInTheDocument();
     });
 
     it('should change precision', () => {

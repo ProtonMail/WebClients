@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
 
+import { COMPUTE_BITCOIN_UNIT } from '../constants';
 import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
-import { convertAmount } from '../utils';
+import { useUserWalletSettings } from '../store/hooks/useUserWalletSettings';
+import { convertAmount, getLabelByUnit } from '../utils';
 import { BitcoinAmountInput } from './BitcoinAmountInput';
 import { CoreButton } from './Button';
 import { CurrencySelect } from './CurrencySelect';
@@ -30,6 +32,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     onSendAll,
 }: Props) => {
     const [currencies] = useFiatCurrencies();
+    const [settings] = useUserWalletSettings();
     const getExchangeRate = useGetExchangeRate();
 
     const handleChange = async (currency?: WasmApiFiatCurrency) => {
@@ -43,7 +46,9 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
         }
     };
 
-    const price = <Price key={'available-amount'} satsAmount={remainingBalance} unit={exchangeRate ?? 'BTC'} />;
+    const price = (
+        <Price key={'available-amount'} satsAmount={remainingBalance} unit={exchangeRate ?? settings.BitcoinUnit} />
+    );
 
     return (
         <div className="mt-12 mb-4">
@@ -69,7 +74,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         onValueChange={(v) => {
                             onAmountChange?.(v);
                         }}
-                        unit={exchangeRate ?? 'BTC'}
+                        unit={exchangeRate ?? settings.BitcoinUnit}
                         unstyled
                         className="h1 invisible-number-input-arrow"
                         inputClassName="p-0"
@@ -90,7 +95,12 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                 </div>
             </div>
 
-            {!!exchangeRate && <span className="block color-weak">{convertAmount(value, 'SATS', 'BTC')} BTC</span>}
+            {!!exchangeRate && (
+                <span className="block color-weak">
+                    {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {getLabelByUnit(settings.BitcoinUnit)}
+                </span>
+            )}
         </div>
     );
 };

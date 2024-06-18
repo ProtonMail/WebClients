@@ -10,10 +10,14 @@ import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
+import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { TransactionData } from '../../hooks/useWalletTransactions';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
+    convertAmount,
     getFormattedPeriodSinceConfirmation,
+    getLabelByUnit,
     getTransactionRecipientsHumanReadableName,
     getTransactionSenderHumanReadableName,
 } from '../../utils';
@@ -135,6 +139,7 @@ export const AmountDataListItem = ({
     loadingLabel,
     exchangeRate,
 }: TxDataWithExchangeRateListItemProps & { loadingLabel?: boolean }) => {
+    const [settings] = useUserWalletSettings();
     const value = tx.networkData.received - tx.networkData.sent;
 
     return (
@@ -154,7 +159,8 @@ export const AmountDataListItem = ({
                     className={clsx('block ml-auto color-hint', loading && 'skeleton-loader')}
                     style={{ height: '1.5rem' }}
                 >
-                    {value} SATS
+                    {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             }
         />
