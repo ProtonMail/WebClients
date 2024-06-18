@@ -199,8 +199,12 @@ $container-to-width: 4em !default;
 
 	.message-header-from-container {
 		.message-recipient-item-lock-icon {
-			transform: translateY(#{em(2)}); // Magic number for visual alignment
+			transform: translateY(#{em(1.5)}); // Magic number for visual alignment
 			vertical-align: baseline;
+
+			&:has(a) {
+				transform: translateY(0); // case where there is a link inside
+			}
 		}
 
 		.message-recipient-item-label-address {
