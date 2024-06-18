@@ -46,7 +46,8 @@ private extension MainView {
             LoggedOutView()
         case let .loggedIn(environment, credentials):
             LoggedInView(viewModel: .init(environment: environment,
-                                          credentials: credentials))
+                                          credentials: credentials,
+                                          onLogOut: { viewModel.handleLogOut() }))
         case let .error(error):
             RetryableErrorView(error: error,
                                onRetry: { Task { await viewModel.refreshState() } })
