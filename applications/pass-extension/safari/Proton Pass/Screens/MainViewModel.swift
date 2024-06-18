@@ -58,6 +58,10 @@ extension MainViewModel {
             state = .error(error)
         }
     }
+
+    func handleLogOut() {
+        state = .loggedOut
+    }
 }
 
 extension MainViewModelState: Equatable {
