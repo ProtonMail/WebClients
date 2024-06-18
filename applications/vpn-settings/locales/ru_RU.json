@@ -1960,6 +1960,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete domain?": [
+        "Удалить домен?"
+      ],
       "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
         "Пожалуйста, обратите внимание, что если вы удалите этот домен ${ domainName }, все адреса, связанные с ним будут отключены."
       ]
@@ -3562,6 +3565,9 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
+      "Live chat": [
+        "Чат онлайн"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -3679,6 +3685,9 @@
       "per month": [
         "в месяц"
       ],
+      "per month, billed at ${ price }": [
+        "в месяц, оплачивается ${ price }"
+      ],
       "per month, billed every 12 months": [
         "в месяц, оплачивается каждые 12 месяцев"
       ],
@@ -3714,6 +3723,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
+      ],
+      "please open a support ticket": [
+        "откройте заявку в службу поддержки"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
@@ -3799,6 +3811,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Интеграция SCIM отключена"
+      ],
+      "SCIM token active": [
+        "Токен SCIM активен"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Защитите свой аккаунт ${ BRAND_NAME }"
       ],
@@ -3866,7 +3884,7 @@
         "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
-        "Подписка автоматически продлевается каждый месяц."
+        "Подписка автоматически обновляется каждый месяц."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
@@ -3946,6 +3964,9 @@
       "This file is too large to preview": [
         "Этот файл слишком большой для предпросмотра"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Это сообщение не дойдет до службы поддержки, если у вас возникнут проблемы с нашей службой или потребуются дальнейшие действия с нашей стороны ${ supportLink }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
       ],
@@ -3963,6 +3984,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
+      ],
+      "This will remove any enabled 2FA methods.": [
+        "Это приведет к удалению всех включенных методов 2FA."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Это удалит SSO для ${ boldDomainName }."
@@ -4198,6 +4222,12 @@
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
       ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ],
+      "Writing assistant add-on": [
+        "Расширение для помощника по написанию"
+      ],
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
       ],
@@ -4335,9 +4365,6 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Your next billing date is ${ renewalTime }."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
@@ -4866,6 +4893,9 @@
       "What is the main reason you are deleting your account?": [
         "Какова основная причина, по которой вы удаляете свой аккаунт?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
+      ],
       "Why would you like to cancel?": [
         "Почему вы хотите отменить?"
       ],
@@ -4959,6 +4989,9 @@
       ],
       "Add gift code": [
         "Добавить подарочный код"
+      ],
+      "Add to your subscription": [
+        "Добавить к подписке"
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
@@ -5486,6 +5519,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Генерировать письма только с запросом"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -5549,11 +5585,17 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Proofread and refine your texts": [
+        "Вычитывайте и дорабатывайте свои тексты"
+      ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Reply to messages": [
+        "Ответить на сообщения"
       ],
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
@@ -5644,6 +5686,9 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Неограниченное количество совместно используемых хранилищ с правами доступа"
       ],
       "Unlimited vault sharing": [
         "Неограниченный общий доступ к хранилищу"
@@ -6309,6 +6354,15 @@
     "pass_signup_2023: Info": {
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } в месяц"
+      ],
+      "/month /user": [
+        "в месяц за пользователя"
+      ],
+      "/month /user, billed annually": [
+        "в месяц за пользователя в год"
+      ],
+      "/month /user, billed biennially": [
+        "в месяц за пользователя раз в два года"
       ],
       "Creating your account": [
         "Создание вашего аккаунта"
@@ -7198,6 +7252,11 @@
         "Сменить тариф"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "первый ${ n } месяц",
@@ -7339,6 +7398,9 @@
       "${ app } storage": [
         "${ app } хранилища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } заполнено на ${ percentage }%"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
       ],
@@ -7362,6 +7424,15 @@
         "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } почти заполнено"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } заполнено"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } заполнено. ${ cta }"
       ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
@@ -7589,6 +7660,9 @@
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
       ],
+      "Direct contribution to our mission": [
+        "Прямой вклад в нашу миссию"
+      ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
@@ -7603,9 +7677,6 @@
       ],
       "I still want to cancel": [
         "Я все еще хочу отменить"
-      ],
-      "Keep ${ planName }": [
-        "Сохранить ${ planName }"
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
@@ -7630,6 +7701,9 @@
       ],
       "Reactivate": [
         "Возобновить"
+      ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "Повторно активируйте, чтобы восстановить доступ к функциям ${ planName }."
       ],
       "Read the story": [
         "Читать историю"
@@ -8402,6 +8476,9 @@
       "Plans": [
         "Тарифы"
       ],
+      "Policies": [
+        "Политики"
+      ],
       "Preview": [
         "Предварительный просмотр"
       ],
@@ -8800,7 +8877,7 @@
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
