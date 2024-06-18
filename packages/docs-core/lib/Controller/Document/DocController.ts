@@ -669,5 +669,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     void this._exportAndDownload.execute(this.editorInvoker, this.getSureDocument(), format)
   }
 
+  async printAsPDF() {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+    void this.editorInvoker.printAsPDF()
+  }
+
   deinit() {}
 }

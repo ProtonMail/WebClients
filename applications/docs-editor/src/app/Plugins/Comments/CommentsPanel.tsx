@@ -23,7 +23,7 @@ function CommentsPanel({
   const resolved = useMemo(() => threads.filter((thread) => thread.state === CommentThreadState.Resolved), [threads])
 
   return (
-    <div className="z-30 flex flex-col flex-nowrap overflow-hidden border-l border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2]">
+    <div className="z-30 flex flex-col flex-nowrap overflow-hidden border-l border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2] print:hidden">
       <div className="flex flex-shrink-0 items-center justify-between gap-2 px-4 py-2.5">
         <h2 className="text-base font-semibold">{c('Info').t`Comments`}</h2>
         <button
