@@ -22,7 +22,6 @@
 import Foundation
 import ProtonCoreAuthentication
 import ProtonCoreChallenge
-import ProtonCoreCryptoGoInterface
 import ProtonCoreDoh
 import ProtonCoreEnvironment
 import ProtonCoreForceUpgrade
@@ -113,9 +112,7 @@ extension ApiManager: AuthHelperDelegate {
 extension ApiManager: APIServiceDelegate {
     public func onDohTroubleshot() {}
 
-    public func onUpdate(serverTime: Int64) {
-        CryptoGo.CryptoUpdateTime(serverTime)
-    }
+    public func onUpdate(serverTime: Int64) {}
 
     public func isReachable() -> Bool {
         true
