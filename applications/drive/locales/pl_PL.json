@@ -552,8 +552,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
       ],
-      "Open in Docs": [
-        "Otwórz w Docs"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otwórz w ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otwórz nawigację"
@@ -4165,9 +4165,6 @@
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
       ],
-      "Coming soon": [
-        "Wkrótce"
-      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -4293,6 +4290,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Pobieranie zostało wstrzymane z powodu problemu z połączeniem. Proces zostanie automatycznie wznowiony"
+      ],
+      "Download was canceled": [
+        "Pobranie zostało anulowane"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -7828,6 +7828,9 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Skorzystaj z dysku ${ DRIVE_APP_NAME }, a zwiększymy Twoją przestrzeń dyskową do 5 GB!"
       ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Zaproś inne osoby za pośrednictwem poczty e-mail do przeglądania i edytowania plików lub utwórz łącze publiczne, aby uzyskać szybki dostęp."
+      ],
       "Set a recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
@@ -8039,6 +8042,9 @@
       ],
       "Last name": [
         "Nazwisko"
+      ],
+      "Message": [
+        "Wiadomość"
       ],
       "Name": [
         "Nazwa"
@@ -9022,9 +9028,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jeśli po wygaśnięciu subskrypcji ${ planName } przekroczysz limity darmowego planu, stracisz możliwości:"
-      ],
-      "Keep ${ planName }": [
-        "Zachowaj plan ${ planName }"
       ],
       "Learn more about our impact": [
         "Dowiedz się więcej o naszym wpływie"

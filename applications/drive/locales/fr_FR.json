@@ -546,8 +546,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
-      "Open in Docs": [
-        "Ouvrir dans Docs"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -818,6 +818,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
+      ],
+      "Understood": [
+        "J'ai compris"
       ],
       "Undo": [
         "Annuler"
@@ -4031,9 +4034,6 @@
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
       ],
-      "Coming soon": [
-        "Bientôt disponible"
-      ],
       "Conflict": [
         "Conflit"
       ],
@@ -4156,6 +4156,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Le téléchargement a été interrompu à cause d'un problème de connexion. Il reprendra automatiquement."
       ],
+      "Download was canceled": [
+        "Le téléchargement a été annulé."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
       ],
@@ -4164,6 +4167,9 @@
       ],
       "Downloading": [
         "Téléchargement en cours"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Le téléchargement de fichiers ${ DOCS_APP_NAME } depuis ${ DRIVE_APP_NAME } n'est actuellement pas pris en charge. Ces derniers ne serot pas inclus dans votre téléchargement."
       ],
       "Downloading all encrypted files": [
         "Téléchargement de tous les fichiers chiffrés"
@@ -4612,6 +4618,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Saisissez le mot de passe pour déchiffrer et voir le contenu."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Exportez-les plutôt depuis l'application ${ DOCS_APP_NAME } si vous souhaitez les télécharger."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -5685,6 +5694,9 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Include message and file name in invite email": [
+        "Inclure le nom du fichier et le message dans l'e-mail d'invitation"
       ],
       "Keep both": [
         "Garder les deux"
@@ -7629,6 +7641,9 @@
       "Card number": [
         "Numéro de la carte"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Le renouvellement automatique de l'abonnement est actuellement désactivé. Si vous modifiez l'abonnement maintenant, le renouvellement automatique sera réactivé."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -7737,6 +7752,9 @@
       ],
       "Last name": [
         "Nom"
+      ],
+      "Message": [
+        "Message"
       ],
       "Name": [
         "Nom"
@@ -8662,9 +8680,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si vous dépassez les limites de l'abonnement gratuit lorsque votre abonnement ${ planName } arrive à expiration, vous ne pourrez plus effectuer les actions suivantes :"
-      ],
-      "Keep ${ planName }": [
-        "Conserver ${ planName }"
       ],
       "Learn more about our impact": [
         "En savoir plus sur notre impact"
@@ -9651,6 +9666,9 @@
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Votre téléchargement contient un fichier ${ DOCS_APP_NAME }."
+      ],
       "Your exposed information": [
         "Vos informations exposées"
       ],
@@ -9722,6 +9740,9 @@
       ],
       "Load image": [
         "Charger l'image"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Le message et le nom de fichier sont stockés avec un chiffrement zéro accès lorsqu'ils sont inclus dans l'e-mail."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
