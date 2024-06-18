@@ -28,6 +28,9 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     LEFT: 3006,
     TRAFFIC_ABUSE_MAX_BANDWIDTH: 3007,
     TRAFFIC_ABUSE_MAX_DU_SIZE: 3008,
+    KILL_SWITCH_ENABLED: 3009,
+    DOCUMENT_CAPACITY_REACHED: 3010,
+    DOCUMENT_RECREATING: 3011,
   }
 
   static messages: Record<number, string> = {
@@ -55,6 +58,9 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.LEFT]: 'User left the room',
     [ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_BANDWIDTH]: 'Traffic abuse: max bandwidth exceeded',
     [ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE]: 'Traffic abuse: max DU size exceeded',
+    [ConnectionCloseReason.CODES.KILL_SWITCH_ENABLED]: 'Server is not accepting new connection.',
+    [ConnectionCloseReason.CODES.DOCUMENT_CAPACITY_REACHED]: 'Document capacity reached',
+    [ConnectionCloseReason.CODES.DOCUMENT_RECREATING]: 'Document is being recreated',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {

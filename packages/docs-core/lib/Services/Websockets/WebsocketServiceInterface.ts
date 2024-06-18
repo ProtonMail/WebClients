@@ -17,6 +17,8 @@ export interface WebsocketServiceInterface {
     source: BroadcastSource,
   ): Promise<void>
 
+  flushPendingUpdates(): void
+
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
   debugCloseConnection(document: { linkId: string }): void
   createStressTestConnections(count: number): void
