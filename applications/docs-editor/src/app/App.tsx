@@ -211,6 +211,10 @@ export function App({ nonInteractiveMode = false }: Props) {
           const editorState = generateEditorStatefromYDoc(newDocState.getDoc())
           return exportDataFromEditorState(editorState, format)
         },
+
+        async printAsPDF(): Promise<void> {
+          window.print()
+        },
       }
 
       bridge.setClientRequestHandler(requestHandler)

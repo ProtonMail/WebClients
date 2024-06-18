@@ -21,8 +21,9 @@ function GetEditorUrl(isViewOnly = false) {
  * allow-same-origin: required for the editor to load CSS
  * allow-forms: required for the editor to submit forms
  * allow-downloads: required for downloading customer support logs
+ * allow-modals: required for the editor to open modals (e.g. print dialog)
  */
-const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downloads'
+const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downloads allow-modals'
 
 export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)

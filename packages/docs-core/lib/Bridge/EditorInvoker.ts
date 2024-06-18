@@ -91,6 +91,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('exportData', [format])
   }
 
+  async printAsPDF(): Promise<void> {
+    return this.invokeEditorMethod('printAsPDF', [])
+  }
+
   async initializeEditor(
     documentId: string,
     username: string,
