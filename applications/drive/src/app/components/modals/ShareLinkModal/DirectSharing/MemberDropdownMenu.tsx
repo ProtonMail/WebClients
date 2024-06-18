@@ -134,13 +134,15 @@ export const MemberDropdownMenu = ({
                             />
                         );
                     })}
-                    {onResendInvitationEmail && (
-                        <MenuItem
-                            iconName="paper-plane-horizontal"
-                            label={c('Action').t`Resend invite`}
-                            onClick={onResendInvitationEmail}
-                        />
-                    )}
+                    {onResendInvitationEmail &&
+                        (!externalInvitationState ||
+                            externalInvitationState === SHARE_EXTERNAL_INVITATION_STATE.PENDING) && (
+                            <MenuItem
+                                iconName="paper-plane-horizontal"
+                                label={c('Action').t`Resend invite`}
+                                onClick={onResendInvitationEmail}
+                            />
+                        )}
                     {onCopyShareInviteLink && (
                         <MenuItem
                             iconName="link"

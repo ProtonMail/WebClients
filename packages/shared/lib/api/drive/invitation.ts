@@ -87,6 +87,11 @@ export const queryInviteExternalUser = (
     },
 });
 
+export const queryResendExternalInvitation = (shareID: string, externalInvitationId: string) => ({
+    method: 'post',
+    url: `drive/v2/shares/${shareID}/external-invitations/${externalInvitationId}/sendemail`,
+});
+
 export const queryExternalInvitationList = (shareID: string) => ({
     method: 'get',
     url: `drive/v2/shares/${shareID}/external-invitations`,

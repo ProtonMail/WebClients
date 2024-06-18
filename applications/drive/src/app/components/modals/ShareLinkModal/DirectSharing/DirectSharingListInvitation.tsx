@@ -21,7 +21,7 @@ interface Props {
     selectedPermissions: SHARE_MEMBER_PERMISSIONS;
     onInvitationRemove: (invitationId: string) => Promise<void>;
     onInvitationPermissionsChange: (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
-    onResendInvitationEmail?: (invitationId: string) => Promise<void>;
+    onResendInvitationEmail: (invitationId: string) => Promise<void>;
 }
 
 export const DirectSharingListInvitation = ({
@@ -54,7 +54,7 @@ export const DirectSharingListInvitation = ({
     const handleInvitationPermissionsChange = (permissions: SHARE_MEMBER_PERMISSIONS) =>
         withIsLoading(onInvitationPermissionsChange(invitationId, permissions));
 
-    const handleResendInvitationEmail = () => withIsLoading(onResendInvitationEmail?.(invitationId));
+    const handleResendInvitationEmail = () => withIsLoading(onResendInvitationEmail(invitationId));
 
     return (
         <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
@@ -74,7 +74,7 @@ export const DirectSharingListInvitation = ({
                 selectedPermissions={selectedPermissions}
                 onCopyShareInviteLink={isExternalInvitation ? undefined : copyShareInviteLinkUrl} // TODO: Add support copy invite link for external invtations
                 onRemoveAccess={handleInviteRemove}
-                onResendInvitationEmail={onResendInvitationEmail ? handleResendInvitationEmail : undefined}
+                onResendInvitationEmail={handleResendInvitationEmail}
             />
         </div>
     );
