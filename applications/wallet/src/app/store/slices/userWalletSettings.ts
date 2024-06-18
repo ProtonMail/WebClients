@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmUserSettings } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmUserSettings } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
 import { WalletThunkArguments } from '../thunk';
@@ -14,6 +14,13 @@ export interface UserWalletSettingsState {
 
 type SliceState = UserWalletSettingsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
+
+export const userWalletSettingsChange = createAction(
+    'settings change',
+    (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
+        payload,
+    })
+);
 
 export const selectUserWalletSettings = (state: UserWalletSettingsState) => state[name];
 
@@ -37,6 +44,13 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
+        builder.addCase(userWalletSettingsChange, (state, action) => {
+            if (state.value) {
+                if (action.payload.bitcoinUnit) {
+                    state.value.BitcoinUnit = action.payload.bitcoinUnit;
+                }
+            }
+        });
     },
 });
 

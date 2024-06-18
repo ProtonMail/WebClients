@@ -12,9 +12,11 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
+import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { satsToBitcoin } from '../../utils';
+import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
+import { convertAmount, getLabelByUnit } from '../../utils';
 import { useBalance } from './useBalance';
 
 import './Balance.scss';
@@ -37,6 +39,7 @@ interface Props {
 }
 
 export const Balance = ({ apiWalletData, apiAccount }: Props) => {
+    const [settings] = useUserWalletSettings();
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
         apiAccount ?? apiWalletData.WalletAccounts[0]
     );
@@ -75,7 +78,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                             className="h1 text-semibold"
                             amountClassName={clsx(!showBalance && 'blurred')}
                             wrapperClassName="contrast"
-                            unit={exchangeRate ?? 'BTC'}
+                            unit={exchangeRate ?? settings.BitcoinUnit}
                             satsAmount={totalBalance}
                         />
                     </div>
@@ -85,7 +88,8 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     </CoreButton>
                 </div>
                 <div className={clsx('text-lg color-hint', syncingData?.syncing && !totalBalance && 'skeleton-loader')}>
-                    {satsToBitcoin(totalBalance)} BTC
+                    {convertAmount(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             </div>
             <div

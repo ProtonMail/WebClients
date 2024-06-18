@@ -57,7 +57,7 @@ interface Props {
 
 export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const history = useHistory();
-    const [userWalletSettings] = useUserWalletSettings();
+    const [settings, loadingSettings] = useUserWalletSettings();
 
     const [addresses] = useAddresses();
 
@@ -204,10 +204,10 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     };
 
     useEffect(() => {
-        if (userWalletSettings?.FiatCurrency && !selectedCurrency) {
-            setSelectedCurrency(userWalletSettings.FiatCurrency);
+        if (settings.FiatCurrency && loadingSettings && !selectedCurrency) {
+            setSelectedCurrency(settings.FiatCurrency);
         }
-    }, [selectedCurrency, userWalletSettings?.FiatCurrency]);
+    }, [loadingSettings, selectedCurrency, settings.FiatCurrency]);
 
     return {
         currencies,

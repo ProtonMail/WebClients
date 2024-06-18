@@ -5,6 +5,7 @@ import {
     WasmApiWalletKey,
     WasmApiWalletSettings,
     WasmScriptType,
+    WasmUserSettings,
 } from '@proton/andromeda';
 
 import {
@@ -256,4 +257,12 @@ export const exchangeRate: WasmApiExchangeRate = {
     ExchangeRateTime: '2024-03-07T07:01:06+00:00',
     ExchangeRate: 365760,
     Cents: 100,
+};
+
+export const userWalletSettings: WasmUserSettings = {
+    BitcoinUnit: 'BTC',
+    FiatCurrency: 'USD',
+    HideEmptyUsedAddresses: 0,
+    ShowWalletRecovery: 0,
+    TwoFactorAmountThreshold: null,
 };

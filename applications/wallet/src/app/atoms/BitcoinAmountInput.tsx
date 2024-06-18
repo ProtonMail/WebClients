@@ -4,8 +4,8 @@ import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
 import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
-import { BITCOIN, mBITCOIN } from '../constants';
-import { convertAmount } from '../utils';
+import { COMPUTE_BITCOIN_UNIT } from '../constants';
+import { convertAmount, getDecimalStepByUnit } from '../utils';
 import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
@@ -17,21 +17,6 @@ interface Props extends InputFieldOwnProps, InputProps {
 
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
 }
-
-const getStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
-    if (typeof unit === 'object') {
-        return 1 / unit.Cents;
-    }
-
-    switch (unit) {
-        case 'BTC':
-            return 1 / BITCOIN;
-        case 'MBTC':
-            return 1 / mBITCOIN;
-        case 'SATS':
-            return 1;
-    }
-};
 
 export const BitcoinAmountInput = ({
     value,
@@ -48,10 +33,10 @@ export const BitcoinAmountInput = ({
         const amount = parseFloat(event.target.value);
         const safeAmount = Number.isFinite(amount) ? amount : 0;
 
-        onValueChange?.(convertAmount(safeAmount, unit, 'SATS'));
+        onValueChange?.(convertAmount(safeAmount, unit, COMPUTE_BITCOIN_UNIT));
     };
 
-    const fValue = convertAmount(value, 'SATS', unit);
+    const fValue = convertAmount(value, COMPUTE_BITCOIN_UNIT, unit);
     const constrainedMin = Math.max(0, Number(min));
 
     return (
@@ -60,7 +45,7 @@ export const BitcoinAmountInput = ({
             type="number"
             value={fValue}
             min={constrainedMin}
-            step={getStepByUnit(unit)}
+            step={getDecimalStepByUnit(unit)}
             onChange={onChange}
             className="invisible-number-input-arrow"
             inputClassName={inputClassName}

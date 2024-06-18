@@ -8,11 +8,13 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
+    Info,
     ModalOwnProps,
 } from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Input, Modal } from '../../atoms';
+import { Button, Input, Modal, Select } from '../../atoms';
+import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
 import { WalletDeletionModal } from '../WalletDeletionModal';
 import { useWalletPreferences } from './useWalletPreferences';
@@ -24,6 +26,10 @@ interface Props extends ModalOwnProps {
 
 export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: Props) => {
     const {
+        userWalletSettings,
+        loadingUserWalletSettings,
+        updateBitcoinUnit,
+
         walletName,
         setWalletName,
         loadingWalletNameUpdate,
@@ -42,20 +48,43 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                 {...modalProps}
             >
                 <div className="flex flex-column">
-                    <Input
-                        label={c('Wallet preference').t`Wallet name`}
-                        placeholder={c('Wallet preference').t`My super wallet`}
-                        value={walletName}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                            setWalletName(e.target.value);
-                        }}
-                        onBlur={() => {
-                            if (walletName) {
-                                updateWalletName();
+                    <div className="flex flex-column my-4 bg-weak rounded-xl">
+                        <Input
+                            label={c('Wallet preference').t`Wallet name`}
+                            placeholder={c('Wallet preference').t`My super wallet`}
+                            value={walletName}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                                setWalletName(e.target.value);
+                            }}
+                            onBlur={() => {
+                                if (walletName) {
+                                    updateWalletName();
+                                }
+                            }}
+                            disabled={loadingWalletNameUpdate}
+                        />
+
+                        <Select
+                            label={
+                                <div className="flex flex-row">
+                                    <span className="block mr-1">{c('Wallet settings').t`Bitcoin unit`}</span>
+                                    <Info title={c('Wallet settings').t`Unit in which bitcoin will be displayed`} />
+                                </div>
                             }
-                        }}
-                        disabled={loadingWalletNameUpdate}
-                    />
+                            id="bitcoin-unit-selector"
+                            aria-describedby="label-bitcoin-unit"
+                            value={userWalletSettings?.BitcoinUnit}
+                            disabled={loadingUserWalletSettings}
+                            onChange={(event) => {
+                                void updateBitcoinUnit(event.value);
+                            }}
+                            options={getBitcoinUnitOptions().map((option) => ({
+                                label: option.label,
+                                value: option.unit,
+                                id: option.unit,
+                            }))}
+                        />
+                    </div>
 
                     <div className="flex flex-column my-3">
                         <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
