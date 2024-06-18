@@ -416,6 +416,9 @@
       "Try again.": [
         "კიდევ სცადეთ."
       ],
+      "Unlock offline with password": [
+        "განბლოკვა ქსელგარეშე, პაროლით"
+      ],
       "Unpin item": [
         "ელემენტის მოხსნა"
       ],
@@ -765,6 +768,12 @@
       "Unknown invite": [
         "უცნობი მოწვევა"
       ],
+      "Unknown item": [
+        "უცნობი ელემენტი"
+      ],
+      "Unlock failure": [
+        "განბლოკვა ჩავარდა"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
       ],
@@ -908,6 +917,9 @@
         "${ n } ელემენტი",
         "${ n } ელემენტი"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } ყოველთვის ხელმისაწვდომი იქნება"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
       ],
@@ -935,6 +947,9 @@
       ],
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
+      ],
+      "Add a username field": [
+        "მომხმარებლის სახელის ველის დამატება"
       ],
       "Add your custom email address to monitor :": [
         "დაამატეთ თქვენი ელფოსტის მისამართი მონიტორინგისთვის :"
@@ -1002,6 +1017,9 @@
       "Change your password": [
         "შეცვალეთ თქვენი პაროლი"
       ],
+      "Click here to add a field for a username.": [
+        "დააწკაპუნეთ აქ მომხმარებლის სახელისთვის ველის დასამატებლად."
+      ],
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
       ],
@@ -1025,6 +1043,15 @@
       ],
       "Didn't receive the code?": [
         "კოდი არ მიგიღიათ?"
+      ],
+      "Disabling auto-lock": [
+        "ავტოდაბლოკვის გათიშვა"
+      ],
+      "Disabling auto-lock failed": [
+        "ავტოდაბლოკვის გათიშვა ჩავარდა"
+      ],
+      "Disabling offline mode...": [
+        "უქსელო რეჟიმის გათიშვა..."
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
@@ -1052,6 +1079,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "${ PASS_SHORT_APP_NAME }-ის ბეტას ჩართვა"
+      ],
+      "Enable auto-locking to secure your data": [
+        "ჩართეთ ავტოდაბლოკვა თქვენი მონაცემების დასაცავად"
+      ],
+      "Enabling offline mode...": [
+        "უქსელო რეჟიმის ჩართვა..."
+      ],
+      "Enabling password auto-lock": [
+        "ავტოდაბლოკვა პაროლით"
+      ],
+      "Enabling password lock failed": [
+        "პაროლით დაბლოკვის ჩართვა ჩავარდა"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN-კოდის ავტომატური დაბლოკვის ჩართვა"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
@@ -1242,6 +1284,9 @@
       "Offline mode": [
         "კავშირგარეშე რეჟიმი"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის გამორთვა ამჟამად შეუძლებელია"
+      ],
       "Offline mode could not be enabled at the moment": [
         "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
       ],
@@ -1279,11 +1324,17 @@
       "Please check your spam folder or try resending the code.": [
         "შეამოწმეთ თქვენი სპამის საქაღალდე, ან სცადეთ,, კოდი თავიდან გააგზავნოთ"
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "დაადასტურეთ თქვენი ${ BRAND_NAME }-ის პაროლი"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი PIN-კოდი."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "პარამეტრის ჩასასწორებლად დაადასტურეთ თქვენი PIN-კოდი"
@@ -1311,6 +1362,9 @@
       ],
       "Reconnecting": [
         "თავიდან დაკავშირება"
+      ],
+      "Registering PIN lock failed": [
+        "PIN-კოდით დაბლოკვის რეგისტრაცია ჩავარდა"
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -1494,6 +1548,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება მოგივათ."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "როცა ${ PASS_APP_NAME } არააქტიურობის გამო თვითდაიბლოკება, ეს PIN-კოდი შეგიძლიათ, მის განსაბლოკად გამოიყენოთ."
       ],
@@ -1616,6 +1673,9 @@
       "Create an encrypted note": [
         "დაშიფრული შენიშვნის შექმნა"
       ],
+      "Create lock": [
+        "ბლოკის შექმნა"
+      ],
       "Create new vault": [
         "ახალი საცავის შექმნა"
       ],
@@ -1642,6 +1702,12 @@
       ],
       "Email": [
         "ელფოსტა"
+      ],
+      "Email (alias)": [
+        "ელფოსტა (ფსევდონიმი)"
+      ],
+      "Email (new alias)": [
+        "ელფოსტა (ახალი ფსევდონიმი)"
       ],
       "Email address": [
         "ელფოსტის მისამართი"
@@ -2055,11 +2121,17 @@
       "Enter a prefix": [
         "შეიყვანეთ პრეფიქსი"
       ],
+      "Enter email": [
+        "შეიყვანეთ ელფოსტა"
+      ],
       "Enter email or username": [
         "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
       ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
+      ],
+      "Enter username": [
+        "შეიყვანეთ მომხმარებლის სახელი"
       ],
       "Full Name": [
         "სახელი და გვარი"
