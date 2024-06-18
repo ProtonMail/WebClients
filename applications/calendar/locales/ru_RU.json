@@ -2451,6 +2451,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Ваш аккаунт и методы восстановления данных настроены, а двухфакторная идентификация включена."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Ваш аккаунт и методы восстановления данных настроены."
       ]
     },
     "description": {
@@ -2546,8 +2552,32 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } было отменено."
+      ],
+      "All events in this series were updated.": [
+        "Все события в этой серии были обновлены."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Все события в этой серии были обновлены. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Частота этого события была отменена"
+      ],
+      "This event occurrence was updated.": [
+        "Частота этого события была обновлена"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Это событие было обновлено."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вы приглашены на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2569,6 +2599,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "Местоположение:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3714,6 +3755,9 @@
       ],
       "Search": [
         "Поиск"
+      ],
+      "Security Center": [
+        "Центр безопасности"
       ]
     },
     "Hint": {
@@ -4449,6 +4493,9 @@
       "Expired": [
         "Истёкший"
       ],
+      "finance": [
+        "финансы"
+      ],
       "Frequency modifications will be lost.": [
         "Изменения повторов событий будут утеряны."
       ],
@@ -4753,7 +4800,7 @@
         "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
-        "Подписка автоматически продлевается каждый месяц."
+        "Подписка автоматически обновляется каждый месяц."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
@@ -4947,6 +4994,12 @@
       "Would you like to update this event?": [
         "Вы хотите изменить это событие?"
       ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ],
+      "Writing assistant add-on": [
+        "Расширение для помощника по написанию"
+      ],
       "Yearly": [
         "Ежегодно"
       ],
@@ -5102,9 +5155,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Your next billing date is ${ renewalTime }."
       ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
@@ -5381,6 +5431,9 @@
       ],
       "Don't ask again": [
         "Больше не спрашивать"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "например, Amazon, eBay, Etsy"
       ],
       "Email": [
         "Электронная почта"
@@ -5660,6 +5713,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
       ],
       "Wonderful": [
         "Прекрасно"
@@ -6404,6 +6460,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Генерировать письма только с запросом"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -6461,11 +6520,17 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Proofread and refine your texts": [
+        "Вычитывайте и дорабатывайте свои тексты"
+      ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Reply to messages": [
+        "Ответить на сообщения"
       ],
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
@@ -6544,6 +6609,9 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Неограниченное количество совместно используемых хранилищ с правами доступа"
       ],
       "Unlimited vault sharing": [
         "Неограниченный общий доступ к хранилищу"
@@ -7987,6 +8055,11 @@
         "Сменить тариф"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "первый ${ n } месяц",
@@ -8140,6 +8213,9 @@
       "${ app } storage": [
         "${ app } хранилища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } заполнено на ${ percentage }%"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
       ],
@@ -8163,6 +8239,15 @@
         "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } почти заполнено"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } заполнено"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } заполнено. ${ cta }"
       ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
@@ -8334,6 +8419,9 @@
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
       ],
+      "Direct contribution to our mission": [
+        "Прямой вклад в нашу миссию"
+      ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
@@ -8342,9 +8430,6 @@
       ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
-      ],
-      "Keep ${ planName }": [
-        "Сохранить ${ planName }"
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
@@ -9497,7 +9582,7 @@
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
