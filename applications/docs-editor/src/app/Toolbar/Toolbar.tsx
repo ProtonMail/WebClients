@@ -507,7 +507,7 @@ export default function DocumentEditorToolbar({
 
   return (
     <div
-      className="border-weak bg-norm flex flex-nowrap items-center justify-around gap-1.5 overflow-auto border-y px-3 py-1.5"
+      className="border-weak bg-norm flex flex-nowrap items-center justify-around gap-1.5 overflow-auto border-y px-3 py-1.5 print:hidden"
       style={{
         gridColumn: '1 / 3',
         gridRow: '1',
