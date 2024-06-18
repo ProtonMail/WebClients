@@ -2,17 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { TotpInputs, useFormErrors } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { TotpInputs, useFlag, useFormErrors } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;
 }
 
-const TOTPForm = ({ onSubmit }: Props) => {
+const LoginTOTPForm = ({ onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
     const [code, setCode] = useState('');
     const [type, setType] = useState<'totp' | 'recovery-code'>('totp');
@@ -22,6 +23,8 @@ const TOTPForm = ({ onSubmit }: Props) => {
 
     const safeCode = code.replaceAll(/\s+/g, '');
     const requiredError = requiredValidator(safeCode);
+
+    const showSignedOutForgot2FAFlow = useFlag('SignedOutForgot2FAFlow');
 
     useEffect(() => {
         if (type !== 'totp' || loading || requiredError || hasBeenAutoSubmitted.current) {
@@ -76,8 +79,19 @@ const TOTPForm = ({ onSubmit }: Props) => {
             >
                 {type === 'totp' ? c('Action').t`Use recovery code` : c('Action').t`Use authentication code`}
             </Button>
+
+            {showSignedOutForgot2FAFlow ? (
+                <>
+                    <hr className="my-4" />
+                    <div className="text-center">
+                        <Href href={getKnowledgeBaseUrl('/lost-two-factor-authentication-2fa')}>
+                            {c('Link').t`Don't have access to your 2FA?`}
+                        </Href>
+                    </div>
+                </>
+            ) : null}
         </form>
     );
 };
 
-export default TOTPForm;
+export default LoginTOTPForm;

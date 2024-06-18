@@ -45,6 +45,7 @@ enum AccountFlag {
     ForgotRecoveryMethodStep = 'ForgotRecoveryMethodStep',
     ExtendCancellationProcess = 'ExtendCancellationProcess',
     B2BLogsPass = 'B2BLogsPass',
+    SignedOutForgot2FAFlow = 'SignedOutForgot2FAFlow',
 }
 
 enum CalendarFeatureFlag {
