@@ -1295,6 +1295,9 @@
       ]
     },
     "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "გაააქტიურეთ თავიდან ${ formattedEndDate }-მდე, რომ შეინარჩუნოთ შემდეგი ფუნქციები:"
+      ],
       "Reactivate subscription": [
         "გამოწერის ხელახლა გააქტიურება"
       ],
@@ -6314,6 +6317,9 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
+      "Generate emails with only a prompt": [
+        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
+      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -7872,6 +7878,11 @@
         "ტარიფის აწევა"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } თვე",
@@ -8190,6 +8201,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
@@ -8228,9 +8242,6 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
-      ],
-      "Keep ${ planName }": [
-        "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"

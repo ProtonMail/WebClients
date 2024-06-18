@@ -546,8 +546,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
-      "Open in Docs": [
-        "In Docs öffnen"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "In ${ DOCS_SHORT_APP_NAME } öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -818,6 +818,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
+      ],
+      "Understood": [
+        "Verstanden"
       ],
       "Undo": [
         "Rückgängig"
@@ -4031,9 +4034,6 @@
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
       ],
-      "Coming soon": [
-        "Demnächst verfügbar"
-      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -4155,6 +4155,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Download wurde aufgrund eines Verbindungsproblems angehalten; er wird automatisch fortgesetzt"
+      ],
+      "Download was canceled": [
+        "Download wurde abgebrochen"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überall hin mit."
@@ -5342,6 +5345,11 @@
         "Nur anzeigen"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
+      ]
+    },
     "Item": {
       "file attributes": [
         "Dateiattribute"
@@ -5680,6 +5688,9 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Include message and file name in invite email": [
+        "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
       ],
       "Keep both": [
         "Beide behalten"
@@ -6710,6 +6721,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Generate emails with only a prompt": [
+        "Generiere E-Mails durch nur eine Eingabe"
+      ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
@@ -6767,6 +6781,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Proofread and refine your texts": [
+        "Korrekturlesen und Verbessern deiner Texte"
       ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
@@ -7570,11 +7587,17 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Fange an, ${ DRIVE_APP_NAME } zu nutzen und wir upgraden deinen kostenlosen Speicherplatz auf 5 GB!"
       ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Lade andere per E-Mail ein, um deine Dateien zu sehen und zu bearbeiten, oder erstelle einen öffentlichen Link für Schnellzugriffe"
+      ],
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
       "Share a file": [
         "Teile eine Datei"
+      ],
+      "Share files with one click": [
+        "Teile Dateien mit einem Klick"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Führe einfach die folgenden Schritte in ${ expiresInDays } Tag aus:",
@@ -7777,6 +7800,9 @@
       ],
       "Last name": [
         "Nachname"
+      ],
+      "Message": [
+        "Nachricht"
       ],
       "Name": [
         "Name"
@@ -8295,6 +8321,11 @@
         "Upgrade durchführen"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgrade"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } Monat",
@@ -8697,9 +8728,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Wenn du die Grenzen des kostenlosen Abonnements überschreitest, wenn dein ${ planName }-Abonnement ausläuft, kannst du Folgendes nicht mehr tun:"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } behalten"
       ],
       "Learn more about our impact": [
         "Erfahre mehr über unsere Wirkung"
@@ -9757,6 +9785,9 @@
       ],
       "Load image": [
         "Bild laden"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Nachricht und Dateiname werden mit Null-Zugriff-Verschlüsselung gespeichert, wenn sie in der E-Mail enthalten sind."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."

@@ -92,6 +92,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Continue offline": [
+        "Kontynuuj offline"
+      ],
       "Continue without pinning": [
         "Kontynuuj bez przypinania"
       ],
@@ -443,6 +446,9 @@
       "Try again": [
         "Spróbuj ponownie"
       ],
+      "Unlock offline with password": [
+        "Odblokowanie w trybie offline za pomocą hasła"
+      ],
       "Unpin item": [
         "Odepnij element"
       ],
@@ -744,6 +750,9 @@
       "Moving item failed": [
         "Przenoszenie elementu nie powiodło się"
       ],
+      "Network error": [
+        "Błąd sieci"
+      ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
       ],
@@ -819,6 +828,9 @@
       "Unknown passkey": [
         "Klucz dostępu jest nieznany"
       ],
+      "Unlock failure": [
+        "Odblokowanie nie powiodło się"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format pliku ${ PASS_APP_NAME } jest nieobsługiwany"
       ],
@@ -839,6 +851,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Jesteś obecnie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
@@ -932,6 +947,9 @@
         "${ n } elementów",
         "${ n } elementów"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } będzie zawsze dostępne."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
       ],
@@ -980,8 +998,14 @@
       "Access successfully confirmed": [
         "Dostęp został potwierdzony"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania hasła ${ BRAND_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Dostęp do haseł z aplikacji mobilnej."
+      ],
+      "Add a username field": [
+        "Dodaj pole nazwa użytkownika"
       ],
       "Admin": [
         "Administrator"
@@ -1043,6 +1067,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
       ],
+      "Click here to add a field for a username.": [
+        "Kliknij tutaj, aby dodać pole nazwa użytkownika."
+      ],
       "Click the icon to open it anytime.": [
         "Kliknij ikonę, aby otworzyć."
       ],
@@ -1076,6 +1103,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Usuwanie \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Wyłączenie automatycznej blokady"
+      ],
+      "Disabling auto-lock failed": [
+        "Wyłączenie automatycznej blokady nie powiodło się"
+      ],
+      "Disabling offline mode...": [
+        "Wyłączenie trybu offline..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Zobacz filmy ${ PASS_APP_NAME } na YouTube"
       ],
@@ -1105,6 +1141,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Włącz automatyczne blokowanie w celu zabezpieczenia danych"
+      ],
+      "Enabling offline mode...": [
+        "Włączanie trybu offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Włączanie automatycznej blokady hasła"
+      ],
+      "Enabling password lock failed": [
+        "Włączenie blokady hasłem nie powiodło się"
+      ],
+      "Enabling PIN auto-lock": [
+        "Włączanie automatycznej blokady PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
@@ -1268,11 +1319,17 @@
       "None": [
         "Brak"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Tryb offline nie może być obecnie wyłączony"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Tryb offline nie może zostać włączony"
       ],
       "Offline support successfully disabled": [
         "Tryb offline został wyłączony"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał podania kodu PIN w celu odblokowania sesji. Użytkownik zostanie wylogowany po 3 nieudanych próbach."
       ],
       "Open the Extensions menu": [
         "Otwórz menu rozszerzenia"
@@ -1291,6 +1348,9 @@
       ],
       "Password copied": [
         "Hasło zostało skopiowane"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Hasło blokady zostało pomyślnie zarejestrowane. Użyj go, aby odblokować ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
@@ -1313,8 +1373,23 @@
       "Pinning item...": [
         "Przypinanie elementu..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Potwierdź swoje hasło ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby automatycznie zablokować konto hasłem."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby wyrejestrować bieżącą blokadę."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby zaktualizować czas automatycznej blokady."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Potwierdź kod PIN, aby wyrejestrować bieżącą blokadę."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potwierdź kod PIN, aby edytować ustawienia."
@@ -1336,6 +1411,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
+      ],
+      "Registering PIN lock failed": [
+        "Rejestracja blokady PIN nie powiodła się"
       ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
@@ -1681,6 +1759,9 @@
       "Create an encrypted note": [
         "Utwórz zaszyfrowaną notatkę"
       ],
+      "Create lock": [
+        "Utwórz blokadę"
+      ],
       "Create new vault": [
         "Utwórz nowy sejf"
       ],
@@ -1710,6 +1791,12 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nowy alias)"
       ],
       "Email aliases": [
         "Aliasy"
@@ -1888,6 +1975,9 @@
       "PIN": [
         "Kod PIN"
       ],
+      "PIN code": [
+        "Kod PIN"
+      ],
       "Prefix": [
         "Przedrostek"
       ],
@@ -1993,6 +2083,9 @@
       "Username": [
         "Nazwa użytkownika"
       ],
+      "Username/email": [
+        "Nazwa użytkownika/adres e-mail"
+      ],
       "Vault ID": [
         "Identyfikator sejfu"
       ],
@@ -2024,6 +2117,9 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2101,11 +2197,17 @@
       "Enter a prefix": [
         "Wpisz przedrostek"
       ],
+      "Enter email": [
+        "Podaj adres e-mail"
+      ],
       "Enter email or username": [
         "Wpisz adres e-mail lub nazwę użytkownika"
       ],
       "Enter password": [
         "Wpisz hasło"
+      ],
+      "Enter username": [
+        "Podaj nazwę użytkownika"
       ],
       "Full Name": [
         "Właściciel karty"

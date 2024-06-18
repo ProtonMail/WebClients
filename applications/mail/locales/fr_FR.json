@@ -991,8 +991,8 @@
       "Revert to original display": [
         "Revenir à l'affichage d'origine"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Exécuter sur les serveurs ${ BRAND_NAME }"
+      "Run on servers": [
+        "Exécuter sur les serveurs"
       ],
       "Save": [
         "Enregistrer"
@@ -1511,10 +1511,12 @@
         "applications ${ BRAND_NAME }"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "En envoyant vos commentaires, l'équipe de modération de ${ BRAND_NAME } pourront voir le prompt et vos notes."
+      ]
+    },
     "Assistant option": {
-      "Browser not supported ": [
-        "Le navigateur n'est pas pris en charge."
-      ],
       "Fast and secure": [
         "Rapide et sécurisé"
       ],
@@ -1530,19 +1532,14 @@
       "Run locally": [
         "Exécuter sur cet appareil"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Exécuter sur les serveurs ${ BRAND_NAME }"
+      "Run on servers": [
+        "Exécuter sur les serveurs"
       ],
       "Runs on all devices": [
         "Fonctionne sur tous les appareils"
       ],
       "Runs on your device": [
         "Fonctionne sur votre appareil"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Le matérial n'est pas compatible."
       ]
     },
     "Attached ics file error": {
@@ -3838,9 +3835,6 @@
       "Forward address is required": [
         "L'adresse de transfert est nécessaire."
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Je ne peux pas donner suite à cette demande en raison de mes directives en matière d'éthique. Veuillez essayer une autre demande."
-      ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
       ],
@@ -4107,6 +4101,9 @@
       ],
       "The sending key is not valid": [
         "La clé d'envoi n'est pas valide."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "L'assistant d'écriture ne peut pas traiter votre demande. Veuillez essayer un autre prompt."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
@@ -5076,6 +5073,9 @@
       "Hardware not compatible": [
         "Le matérial n'est pas compatible."
       ],
+      "Report an issue": [
+        "Signaler un problème"
+      ],
       "Resume downloading": [
         "Reprendre le téléchargement"
       ],
@@ -6032,6 +6032,12 @@
       "Estimating time remaining...": [
         "Estimation du temps restant en cours"
       ],
+      "Expand selection": [
+        "Étendre la sélection"
+      ],
+      "Expand text": [
+        "Agrandir le texte"
+      ],
       "Expiration time": [
         "Délai d’expiration"
       ],
@@ -6442,6 +6448,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Veuillez indiquer le problème."
       ],
       "Please share what you expected": [
         "Veuillez partager ce à quoi vous vous attendiez."
@@ -7103,6 +7112,9 @@
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
+      "You can open only one writing assistant at a time": [
+        "Vous ne pouvez ouvrir qu'un seul assistant d'écriture à la fois."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
@@ -7232,11 +7244,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Téléchargez l'application de bureau ${ MAIL_APP_NAME } ou tentez de l'exécuter depuis des serveurs ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Téléchargez l'application de bureau ${ MAIL_APP_NAME } ou tentez de l'exécuter depuis des serveurs."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs ."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -7253,8 +7265,8 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Votre matériel ne prend pas en charge l'exécution de l'assistant d'écriture en local. Essayez de l'exécuter sur des serveurs ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Votre matériel ne prend pas en charge l'exécution de l'assistant d'écriture en local. Essayez de l'exécuter sur des serveurs."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -9807,6 +9819,9 @@
       "Card number": [
         "Numéro de la carte"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Le renouvellement automatique de l'abonnement est actuellement désactivé. Si vous modifiez l'abonnement maintenant, le renouvellement automatique sera réactivé."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -11136,9 +11151,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si vous dépassez les limites de l'abonnement gratuit lorsque votre abonnement ${ planName } arrive à expiration, vous ne pourrez plus effectuer les actions suivantes :"
-      ],
-      "Keep ${ planName }": [
-        "Conserver ${ planName }"
       ],
       "Learn more about our impact": [
         "En savoir plus sur notre impact"

@@ -865,9 +865,6 @@
       "Revoke this invitation": [
         "Odvolať túto pozvánku"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Spustiť na ${ BRAND_NAME } serveroch"
-      ],
       "Save": [
         "Uložiť"
       ],
@@ -1248,6 +1245,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia asistenta písania",
+        "${ seats } licencie asistentov písania",
+        "${ seats } licencií asistentov písania",
+        "${ seats } licencií asistentov písania"
+      ],
       "${ users } user": [
         "${ users } používateľ",
         "${ users } používatelia",
@@ -1396,9 +1399,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Rýchlejší a väčšia kompatibilita so zariadeniami"
-      ],
-      "No data transmitted while using,requires one-time download": [
-        "Počas používania sa neprenášajú žiadne údaje, vyžaduje jednorazové stiahnutie"
       ],
       "Run locally": [
         "Funguje lokálne"
@@ -8688,12 +8688,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Váš účet bude aktualizovaný po zúčtovaní platby."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Váš prehliadač nepodporuje asistenta písania. Stiahnite si ${ MAIL_APP_NAME } desktopovú aplikáciu alebo ho skúste spustiť na ${ BRAND_NAME } serveroch."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Váš prehliadač nepodporuje asistenta písania. Skúste ho spustiť na ${ BRAND_NAME } serveroch."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
@@ -8705,9 +8699,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Váš hardvér nepodporuje lokálne spustenie asistenta písania. Skúste ho spustiť na ${ BRAND_NAME } serveroch."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasne oneskorený.",
@@ -8825,7 +8816,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI poháňaný asistent vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
     "Input label": {
@@ -11354,7 +11345,7 @@
         "Podpora routeru"
       ],
       "Save time emailing": [
-        "Ušetrite čas pri emailovaní"
+        "Ušetriť čas pri emailovaní"
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
@@ -13066,6 +13057,9 @@
       "Email address": [
         "Emailová adresa"
       ],
+      "End date": [
+        "Dátum ukončenia"
+      ],
       "example@domain.com": [
         "priklad@domena.sk"
       ],
@@ -13128,6 +13122,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Dátum zahájenia"
       ],
       "Text": [
         "Text"
@@ -14488,7 +14485,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Pre ${ totalPrice }"
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -14609,9 +14606,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Keď vaše predplatné ${ planName } vyprší a prekročíte limity bezplatného plánu, nebudete môcť:"
       ],
-      "Keep ${ planName }": [
-        "Ponechať ${ planName }"
-      ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
       ],
@@ -14682,10 +14676,10 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } has been canceled.": [
         "Vaše predplatné ${ planName } bolo zrušené."

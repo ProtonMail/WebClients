@@ -446,6 +446,9 @@
       "Try again": [
         "Yritä uudelleen"
       ],
+      "Unlock offline with password": [
+        "Avaa salasanalla yhteydettömässä tilassa"
+      ],
       "Unpin item": [
         "Irrota kohde"
       ],
@@ -543,7 +546,7 @@
         "Palvelu mahdollistaa kaksivaiheisen tunnistautumisen. Paranna tilin suojausta ottamalla se käyttöön."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Avaa edistyneet tietoturvaominaisuudet ja yksityiskohtaiset lokit verkkoläsnäolosi suojaamiseksi."
+        "Avaa edistyneet suojausominaisuudet ja yksityiskohtaiset lokit verkkonäkyvyytesi suojaamiseksi."
       ]
     },
     "Error": {
@@ -820,7 +823,7 @@
         "Tuntematon suojausavain"
       ],
       "Unlock failure": [
-        "Lukituksen avaamisen epäonnistui"
+        "Lukituksen avaus epäonnistui"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -842,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
@@ -920,6 +926,9 @@
         "${ n } kohde",
         "${ n } kohdetta"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } on aina saatavilla"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
       ],
@@ -966,8 +975,14 @@
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME }ssin avaus vaatii aina ${ BRAND_NAME }-salasanasi."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
+      ],
+      "Add a username field": [
+        "Lisää käyttäjätunnus-kenttä"
       ],
       "Admin": [
         "Ylläpito"
@@ -1029,6 +1044,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Valitse tallennettu suojausavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
+      "Click here to add a field for a username.": [
+        "Lisää kenttä käyttäjätunnukselle klikkaamalla tästä."
+      ],
       "Click the icon to open it anytime.": [
         "Avaa se koska tahansa klikkaamalla kuvaketta."
       ],
@@ -1063,10 +1081,10 @@
         "Poistetaan kohdetta \"${ payload.content.name }\""
       ],
       "Disabling auto-lock": [
-        "Poistetaan automaattilukitusta käytöstä"
+        "Automaattilukitusta poistetaan käytöstä"
       ],
       "Disabling auto-lock failed": [
-        "Automaattilukituksen poistaminen käytöstä epäonnistui"
+        "Automaattilukituksen käytöstäpoisto epäonnistui"
       ],
       "Disabling offline mode...": [
         "Yhteydetöntä tilaa poistetaan käytöstä..."
@@ -1102,19 +1120,19 @@
         "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
       ],
       "Enable auto-locking to secure your data": [
-        "Ota automaattilukitus käyttöön tietojesi suojaamiseksi"
+        "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
       ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
       ],
       "Enabling password auto-lock": [
-        "Salasanallista automaattilukitusta otetaan käyttöön"
+        "Automaattista salasanalukitusta otetaan käyttöön"
       ],
       "Enabling password lock failed": [
         "Salasanalukituksen käyttöönotto epäonnistui"
       ],
       "Enabling PIN auto-lock": [
-        "PIN-koodillista automaattilukitusta otetaan käyttöön"
+        "Automaattista PIN-lukitusta otetaan käyttöön"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -1252,7 +1270,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its history": [
-        "Kohteen siirtäminen toiseen holviin poistaa sen historian"
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot"
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -1281,6 +1299,9 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila poistettiin käytöstä"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Yhteydellistä käyttöä varten ${ PASS_APP_NAME } -istuntosi on avattava PIN-koodillasi. Kolmen epäonnistuneen yrityksen jälkeen tilisi kirjataan ulos."
+      ],
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
       ],
@@ -1299,6 +1320,9 @@
       "Password copied": [
         "Salasana kopioitiin"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
@@ -1313,7 +1337,7 @@
         "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
+        "PIN-lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in PIN-koodillasi."
       ],
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
@@ -1321,8 +1345,20 @@
       "Please confirm your ${ BRAND_NAME } password": [
         "Vahvista ${ BRAND_NAME } -salasanasi"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Vahvista ${ BRAND_NAME }-salasanasi käyttääksesi automaattista salasanalukitusta."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla ${ BRAND_NAME }-salasanasi."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Vahvista ${ BRAND_NAME }-salasanasi muuttaaksesi automaattilukituksen viivettä."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
@@ -1346,7 +1382,7 @@
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
       ],
       "Registering PIN lock failed": [
-        "PIN-lukituksen rekisteröinti epäonnistui"
+        "PIN-lukituksen käyttöönotto epäonnistui"
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1684,6 +1720,9 @@
       "Create an encrypted note": [
         "Luo salattu muistiinpano"
       ],
+      "Create lock": [
+        "Luo lukitus"
+      ],
       "Create new vault": [
         "Luo uusi holvi"
       ],
@@ -1713,6 +1752,12 @@
       ],
       "Email": [
         "Sähköposti"
+      ],
+      "Email (alias)": [
+        "Sähköposti (alias)"
+      ],
+      "Email (new alias)": [
+        "Sähköposti (uusi alias)"
       ],
       "Email aliases": [
         "Sähköpostialiakset"
@@ -2002,6 +2047,9 @@
       "Username": [
         "Käyttäjätunnus"
       ],
+      "Username/email": [
+        "Käyttäjätunnus/sähköposti"
+      ],
       "Vault ID": [
         "Holvin ID"
       ],
@@ -2033,6 +2081,9 @@
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
       ]
     },
     "lobby: Title": {
@@ -2108,11 +2159,17 @@
       "Enter a prefix": [
         "Syötä etuliite"
       ],
+      "Enter email": [
+        "Syötä sähköposti"
+      ],
       "Enter email or username": [
         "Syötä sähköpostiosoite tai käyttäjätunnus"
       ],
       "Enter password": [
         "Syötä salasana"
+      ],
+      "Enter username": [
+        "Syötä käyttäjätunnus"
       ],
       "Full Name": [
         "Koko nimi"
@@ -2240,10 +2297,10 @@
         "Tuo holviin/holveihin"
       ],
       "Last autofill": [
-        "Viimeksi automaattitäytetty"
+        "Automaattitäytetty viimeksi"
       ],
       "Last modified": [
-        "Viimeksi muokattu"
+        "Muokattu viimeksi"
       ],
       "Leave vault ?": [
         "Poistutaanko holvista?"
@@ -2267,7 +2324,7 @@
         "Siirretäänkö kaikki kohteet?"
       ],
       "Move item?": [
-        "Siirrä kohde?"
+        "Siirretäänkö kohde?"
       ],
       "Move items?": [
         "Siirrä kohteet?"

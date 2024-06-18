@@ -92,6 +92,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue offline": [
+        "Offline fortsetzen"
+      ],
       "Continue without pinning": [
         "Ohne Anheften fortfahren"
       ],
@@ -443,6 +446,9 @@
       "Try again": [
         "Erneut versuchen"
       ],
+      "Unlock offline with password": [
+        "Offline mit Passwort entsperren"
+      ],
       "Unpin item": [
         "Eintrag loslösen"
       ],
@@ -738,6 +744,9 @@
       "Moving item failed": [
         "Fehler beim Verschieben des Eintrags."
       ],
+      "Network error": [
+        "Netzwerkfehler"
+      ],
       "Passphrase is incorrect": [
         "Passphrase ist falsch"
       ],
@@ -813,6 +822,9 @@
       "Unknown passkey": [
         "Unbekannter Passkey"
       ],
+      "Unlock failure": [
+        "Fehler beim Entsperren."
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
       ],
@@ -833,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
@@ -911,6 +926,9 @@
         "${ n } Eintrag",
         "${ n } Einträge"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } wird immer zugänglich sein"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
       ],
@@ -957,8 +975,14 @@
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Der Zugang zu ${ PASS_APP_NAME } erfordert immer dein ${ BRAND_NAME }-Passwort."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Greife mit unseren mobilen Apps auch unterwegs auf deine Passwörter zu."
+      ],
+      "Add a username field": [
+        "Benutzername-Feld hinzufügen"
       ],
       "Admin": [
         "Administrator"
@@ -1017,6 +1041,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wähle einen gespeicherten Passkey für die Anmeldung bei ${ domain }"
       ],
+      "Click here to add a field for a username.": [
+        "Klicke hier, um ein Feld für einen Benutzernamen hinzuzufügen."
+      ],
       "Click the icon to open it anytime.": [
         "Klicke auf das Symbol, um es jederzeit zu öffnen."
       ],
@@ -1050,6 +1077,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "„${ payload.content.name }“ wird gelöscht"
       ],
+      "Disabling offline mode...": [
+        "Offline-Modus wird deaktiviert..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Entdecke ${ PASS_APP_NAME }"
       ],
@@ -1079,6 +1109,12 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktiviere ${ PASS_APP_NAME }, indem du dein ${ BRAND_NAME }-Konto verbindest."
+      ],
+      "Enabling offline mode...": [
+        "Offline-Modus wird aktiviert..."
+      ],
+      "Enabling password lock failed": [
+        "Fehler beim Aktivieren der Passwortsperre."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -1236,11 +1272,17 @@
       "None": [
         "Keine Sperre"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Fehler beim Deaktivieren des Offline-Modus."
+      ],
       "Offline mode could not be enabled at the moment": [
         "Fehler beim Aktivieren des Offline-Modus."
       ],
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Der Online-Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
       ],
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
@@ -1279,8 +1321,17 @@
       "Pinning item...": [
         "Eintrag wird angeheftet..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um die aktuelle Sperre aufzuheben."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bitte bestätige deinen PIN-Code, um diese Einstellung zu bearbeiten."
@@ -1639,6 +1690,9 @@
       "Create an encrypted note": [
         "Eine verschlüsselte Notiz erstellen"
       ],
+      "Create lock": [
+        "Sperre einrichten"
+      ],
       "Create new vault": [
         "Neuen Tresor erstellen"
       ],
@@ -1668,6 +1722,12 @@
       ],
       "Email": [
         "E-Mail-Adresse"
+      ],
+      "Email (alias)": [
+        "E-Mail (Alias)"
+      ],
+      "Email (new alias)": [
+        "E-Mail (neuer Alias)"
       ],
       "Email aliases": [
         "E-Mail-Aliasse"
@@ -1846,6 +1906,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN-Code"
+      ],
       "Prefix": [
         "Präfix"
       ],
@@ -1954,6 +2017,9 @@
       "Username": [
         "Benutzername"
       ],
+      "Username/email": [
+        "Benutzername/E-Mail"
+      ],
       "Vault ID": [
         "Tresor-ID"
       ],
@@ -1985,6 +2051,9 @@
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ]
     },
     "lobby: Title": {
@@ -2060,11 +2129,17 @@
       "Enter a prefix": [
         "Präfix eingeben"
       ],
+      "Enter email": [
+        "E-Mail-Adresse eingeben"
+      ],
       "Enter email or username": [
         "E-Mail-Adresse oder Benutzername eingeben"
       ],
       "Enter password": [
         "Passwort eingeben"
+      ],
+      "Enter username": [
+        "Benutzername eingeben"
       ],
       "Full Name": [
         "Vollständiger Name"

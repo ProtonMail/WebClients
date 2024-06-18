@@ -865,8 +865,8 @@
       "Revoke this invitation": [
         "Unieważnij zaproszenie"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Uruchom na serwerach ${ BRAND_NAME }"
+      "Run on servers": [
+        "Uruchom na serwerach"
       ],
       "Save": [
         "Zapisz"
@@ -1402,9 +1402,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Szybsza i większa kompatybilność urządzeń"
-      ],
-      "No data transmitted while using,requires one-time download": [
-        "Działa offline, wymaga jednorazowego pobrania"
       ],
       "Run locally": [
         "Uruchom lokalnie"
@@ -4299,6 +4296,9 @@
       "Please set a recovery/notification email first": [
         "Ustaw adres pomocniczy / powiadomień"
       ],
+      "Please try again in a few moments.": [
+        "Spróbuj ponownie za kilka chwil."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby uzyskać obsługę wielu użytkowników"
       ],
@@ -6534,6 +6534,9 @@
         "Wszystkie (${ totalFoldersCount } etykiet)",
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
+      "All Events ": [
+        "Wszystkie wydarzenia "
+      ],
       "All keys successfully reactivated": [
         "Wszystkie klucze zostały reaktywowane"
       ],
@@ -7278,6 +7281,21 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Invite Created": [
+        "Utworzenie zaproszenia"
+      ],
+      "Invite deleted": [
+        "Usunięcie zaproszenia"
+      ],
+      "Invite Deleted": [
+        "Usunięcie zaproszenia"
+      ],
+      "Invite for organization created": [
+        "Utworzenie zaproszenia do organizacji"
+      ],
+      "Invite rejected": [
+        "Odrzucenie zaproszenia"
+      ],
       "Invite successfully sent": [
         "Zaproszenie zostało wysłane",
         "Zaproszenia zostały wysłane",
@@ -7286,6 +7304,39 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Niektóre dane są zaszyfrowane i zablokowane."
+      ],
+      "Item Autofilled": [
+        "Autouzupełnienie elementu"
+      ],
+      "Item Created": [
+        "Utworzenie elementu"
+      ],
+      "Item created in vault": [
+        "Utworzenie elementu w sejfie"
+      ],
+      "Item Deleted": [
+        "Usunięcie elementu"
+      ],
+      "Item deleted in vault": [
+        "Usunięcie elementu z sejfu"
+      ],
+      "Item Read": [
+        "Odczytanie elementu"
+      ],
+      "Item Trashed": [
+        "Przeniesienie elementu do Kosza"
+      ],
+      "Item trashed in vault": [
+        "Przeniesienie elementu sejfu do Kosza"
+      ],
+      "Item Untrashed": [
+        "Przywrócenie elementu z Kosza"
+      ],
+      "Item Updated": [
+        "Zaktualizowanie elementu"
+      ],
+      "Item updated in vault": [
+        "Zaktualizowanie elementu w sejfie"
       ],
       "it’s imperative": [
         "jest konieczna"
@@ -8289,11 +8340,32 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
+      "User invited to organization": [
+        "Zaproszenie użytkownika do organizacji"
+      ],
       "username": [
         "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
+      ],
+      "Vault created": [
+        "Utworzenie sejfu"
+      ],
+      "Vault Created": [
+        "Utworzenie sejfu"
+      ],
+      "Vault deleted": [
+        "Usunięcie sejfu"
+      ],
+      "Vault Deleted": [
+        "Usunięcie sejfu"
+      ],
+      "Vault updated": [
+        "Zaktualizowanie sejfu"
+      ],
+      "Vault Updated": [
+        "Zaktualizowanie sejfu"
       ],
       "Verification can take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
@@ -8685,11 +8757,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Pobierz aplikację desktopową ${ MAIL_APP_NAME } lub uruchom go na serwerach ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Pobierz aplikację desktopową ${ MAIL_APP_NAME } lub uruchom go na serwerach."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
@@ -8703,8 +8775,8 @@
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Twój sprzęt nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Twój sprzęt nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
@@ -13060,6 +13132,12 @@
       "Email address": [
         "Adres e-mail"
       ],
+      "Email or IP": [
+        "Adres e-mail lub adres IP"
+      ],
+      "End date": [
+        "Zakres dat do"
+      ],
       "example@domain.com": [
         "przyklad@domena.pl"
       ],
@@ -13122,6 +13200,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Zakres dat od"
       ],
       "Text": [
         "Tekst"
@@ -14603,9 +14684,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jeśli po wygaśnięciu subskrypcji ${ planName } przekroczysz limity darmowego planu, stracisz możliwości:"
       ],
-      "Keep ${ planName }": [
-        "Zachowaj plan ${ planName }"
-      ],
       "Learn more about our impact": [
         "Dowiedz się więcej o naszym wpływie"
       ],
@@ -15571,6 +15649,9 @@
       "Delete version history?": [
         "Usunąć historię wersji?"
       ],
+      "Description": [
+        "Opis"
+      ],
       "Details": [
         "Szczegóły"
       ],
@@ -15681,6 +15762,9 @@
       ],
       "Error": [
         "Błąd"
+      ],
+      "Event": [
+        "Zdarzenie"
       ],
       "Every member of the organization can access": [
         "Wszyscy użytkownicy organizacji"
@@ -15825,6 +15909,9 @@
       ],
       "Invoices": [
         "Faktury"
+      ],
+      "IP": [
+        "Adres IP"
       ],
       "Keep your inbox organized": [
         "Zachowaj porządek w skrzynce odbiorczej"
@@ -16177,6 +16264,9 @@
       "This field cannot contain only spaces": [
         "Pole nie może zawierać tylko spacji"
       ],
+      "Time": [
+        "Czas"
+      ],
       "Time zone": [
         "Strefa czasu"
       ],
@@ -16206,6 +16296,9 @@
       ],
       "Upload your organization’s logo": [
         "Prześlij logo organizacji"
+      ],
+      "User": [
+        "Użytkownik"
       ],
       "Users": [
         "Użytkownicy"

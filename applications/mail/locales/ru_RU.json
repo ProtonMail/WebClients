@@ -483,8 +483,14 @@
       "Forgot password?": [
         "Забыли пароль?"
       ],
+      "Formalize": [
+        "Формализовать"
+      ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Generate text": [
+        "Сгенерировать текст"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -654,6 +660,9 @@
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Сделать его дружественным"
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -716,6 +725,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Более точные действия"
       ],
       "More search options": [
         "Больше настроек поиска"
@@ -867,6 +879,9 @@
       "Print": [
         "Печать"
       ],
+      "Proofread": [
+        "Корректировать"
+      ],
       "Quit": [
         "Выход"
       ],
@@ -981,6 +996,9 @@
       "Schedule message": [
         "Запланировать сообщение"
       ],
+      "Scroll to bottom": [
+        "Прокрутить до самого низа"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -1074,6 +1092,9 @@
       "Sharing options": [
         "Параметры совместного доступа"
       ],
+      "Shorten": [
+        "Сократить"
+      ],
       "Show": [
         "Показать"
       ],
@@ -1133,6 +1154,9 @@
       ],
       "Stay": [
         "Остаться"
+      ],
+      "Stop downloading the writing assistant": [
+        "Прекратить загрузку помощника по написанию"
       ],
       "Strikethrough": [
         "Зачеркивание"
@@ -1263,6 +1287,9 @@
       "Use recovery code": [
         "Использовать код восстановления"
       ],
+      "Use this": [
+        "Использовать это"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
       ],
@@ -1328,6 +1355,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Ваш помощник по написанию электронных писем"
       ],
       "Zoom in": [
         "Увеличить масштаб"
@@ -1475,6 +1505,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Run on servers": [
+        "Выполнять на серверах"
       ]
     },
     "Attached ics file error": {
@@ -3335,6 +3370,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Ваш аккаунт и методы восстановления данных настроены, а двухфакторная идентификация включена."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Ваш аккаунт и методы восстановления данных настроены."
       ]
     },
     "description": {
@@ -3396,8 +3437,32 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } было отменено."
+      ],
+      "All events in this series were updated.": [
+        "Все события в этой серии были обновлены."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Все события в этой серии были обновлены. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Частота этого события была отменена"
+      ],
+      "This event occurrence was updated.": [
+        "Частота этого события была обновлена"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Это событие было обновлено."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вы приглашены на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3419,6 +3484,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "Местоположение:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3632,6 +3708,9 @@
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте ещё раз."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Из-за ошибки генерирование текста не может быть отменено"
+      ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
       ],
@@ -3821,6 +3900,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Пожалуйста, укажите имя, фамилию или отображаемое имя"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Пожалуйста, выберите категорию и укажите, что пошло не так в сгенерированном тексте"
+      ],
+      "Please try generating the text again": [
+        "Попробуйте сгенерировать текст еще раз"
+      ],
       "Port is required": [
         "Нужно указать порт"
       ],
@@ -3835,6 +3920,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Ошибка при загрузке помощника по написанию. Попробуйте еще раз."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Проблема с загрузкой помощника по написанию на ваше устройство. Попробуйте еще раз."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Проблема загрузки данных, которые не нужны, когда помощник по написанию неактивен"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -3904,6 +3998,9 @@
       ],
       "Tab closed": [
         "Вкладка закрыта"
+      ],
+      "Thanks for the feedback!": [
+        "Спасибо за отзыв!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не удается расшифровать вложение.\nЕсли у вас есть подходящий секретный ключ, вы сможете расшифровать\nфайл при помощи специальной программы, например GnuPG.",
@@ -4726,6 +4823,9 @@
       "No credit card required.": [
         "Кредитная карта не требуется."
       ],
+      "Start free trial": [
+        "Начать бесплатный пробный период"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -4896,8 +4996,23 @@
       "Contacts": [
         "Контакты"
       ],
+      "Hardware not compatible": [
+        "Оборудование несовместимо"
+      ],
+      "Resume downloading": [
+        "Возобновить скачивание"
+      ],
       "Search": [
         "Поиск"
+      ],
+      "Security Center": [
+        "Центр безопасности"
+      ],
+      "Tell us more": [
+        "Расскажи подробнее"
+      ],
+      "Write faster with the writing assistant": [
+        "Пишите быстрее с помощью помощника по написанию"
       ]
     },
     "Hint": {
@@ -5697,6 +5812,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
+      "Browser not supported": [
+        "Браузер не поддерживается"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -5732,6 +5850,9 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Очистка данных браузера также отключает поиск содержимого сообщений на этом устройстве. Для поиска в сообщениях необходимо будет снова скачать все сообщения."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Очищает данные браузера (включая скачанные сообщения, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
@@ -5973,6 +6094,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
       ],
+      "finance": [
+        "финансы"
+      ],
       "Folder": [
         "Папка"
       ],
@@ -5982,8 +6106,14 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
       ],
+      "Free for 14 days": [
+        "Бесплатно 14 дней"
+      ],
       "From": [
         "От"
+      ],
+      "Generate text": [
+        "Сгенерировать текст"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Есть ${ numAttachments } вложение (${ numAttachmentsSize })",
@@ -6069,6 +6199,9 @@
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
       ],
+      "Initializing…": [
+        "Инициализация…"
+      ],
       "Insert image": [
         "Вставить изображение"
       ],
@@ -6110,6 +6243,9 @@
       ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "Learn more about ${ PrivacyLink }": [
+        "Подробнее о ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Слева направо"
@@ -6342,6 +6478,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Поделитесь тем, что вы ожидали"
+      ],
       "Please try again in a few moments": [
         "Пожалуйста, попробуйте еще раз чуть позже"
       ],
@@ -6392,6 +6531,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Удаляет все данные, связанные с этим приложением (включая скачанные сообщения, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Сообщение о попытке фишинга отправит сообщение нам, чтобы мы смогли проанализировать его и улучшить наши фильтры. Это означает, что мы будем способны увидеть содержимое сообщения полностью."
@@ -6535,7 +6677,7 @@
         "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
-        "Подписка автоматически продлевается каждый месяц."
+        "Подписка автоматически обновляется каждый месяц."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
@@ -6560,6 +6702,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
+      ],
+      "The initial setup may take a few minutes.": [
+        "Первоначальная настройка может занять несколько минут."
       ],
       "The local database is being prepared": [
         "Локальная база данных в процессе подготовки"
@@ -6587,6 +6732,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Прежде чем использовать помощник, необходимо завершить его загрузку."
       ],
       "Themes can give your inbox a new look.": [
         "Темы могут придать вашему почтовому ящику новый вид."
@@ -6695,6 +6843,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Срок действия этого сообщения истекает завтра в ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Это нужно сделать только один раз."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
@@ -6923,6 +7074,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
+      ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ],
+      "Writing assistant add-on": [
+        "Расширение для помощника по написанию"
       ],
       "Yearly": [
         "Ежегодно"
@@ -7157,9 +7314,6 @@
       ],
       "Your message will expire tomorrow.": [
         "Срок действия вашего сообщения истекает завтра."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Your next billing date is ${ renewalTime }."
       ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
@@ -7632,14 +7786,23 @@
       "Density": [
         "Плотность"
       ],
+      "Did not follow instructions": [
+        "Не следовал инструкциям"
+      ],
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
       "Don't ask again": [
         "Больше не спрашивать"
       ],
+      "Don't like the style": [
+        "Не нравится стиль"
+      ],
       "Don't show this again": [
         "Больше не показывать"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "например, Amazon, eBay, Etsy"
       ],
       "Email": [
         "Электронная почта"
@@ -7803,6 +7966,9 @@
       "No label found": [
         "Ярлыки не найдены"
       ],
+      "Not factually correct": [
+        "Фактически неверно"
+      ],
       "Note": [
         "Заметка"
       ],
@@ -7959,6 +8125,9 @@
       "Undisclosed Recipients": [
         "Скрытые получатели"
       ],
+      "Unsafe or problematic": [
+        "Небезопасный или проблематичный"
+      ],
       "Upload picture": [
         "Загрузить изображение"
       ],
@@ -7970,6 +8139,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
       ],
       "With attachment": [
         "С вложением"
@@ -8868,6 +9040,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Генерировать письма только с запросом"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -8925,11 +9100,17 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Proofread and refine your texts": [
+        "Вычитывайте и дорабатывайте свои тексты"
+      ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Reply to messages": [
+        "Ответить на сообщения"
       ],
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
@@ -9008,6 +9189,9 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Неограниченное количество совместно используемых хранилищ с правами доступа"
       ],
       "Unlimited vault sharing": [
         "Неограниченный общий доступ к хранилищу"
@@ -9467,6 +9651,9 @@
       ],
       "Senders blocked": [
         "Отправители заблокированы"
+      ],
+      "Trial started": [
+        "Начат пробный период"
       ]
     },
     "Oauth instructions": {
@@ -9730,6 +9917,9 @@
       "First name": [
         "Имя"
       ],
+      "Generating...": [
+        "Генерирование..."
+      ],
       "Gift code": [
         "Подарочный код"
       ],
@@ -9801,6 +9991,9 @@
       ],
       "To": [
         "Кому"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Попробуйте \"Объявить о предстоящих событиях в информационном бюллетене\"."
       ],
       "Type a command…": [
         "Введите команду…"
@@ -10469,6 +10662,11 @@
         "Сменить тариф"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "первый ${ n } месяц",
@@ -10647,6 +10845,9 @@
       "${ app } storage": [
         "${ app } хранилища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } заполнено на ${ percentage }%"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
       ],
@@ -10656,8 +10857,14 @@
       "For all ${ BRAND_NAME } services": [
         "Для всех служб ${ BRAND_NAME }"
       ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Чтобы продолжить загрузку и синхронизацию файлов, освободите место или улучшите тариф для увеличения объема хранилища."
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Чтобы отправлять или получать электронные письма, освободите место или улучшите тариф для получения большего места в хранилище."
       ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
@@ -10670,6 +10877,15 @@
         "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } почти заполнено"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } заполнено"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } заполнено. ${ cta }"
       ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
@@ -10828,6 +11044,9 @@
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
       ],
+      "Direct contribution to our mission": [
+        "Прямой вклад в нашу миссию"
+      ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
@@ -10836,9 +11055,6 @@
       ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
-      ],
-      "Keep ${ planName }": [
-        "Сохранить ${ planName }"
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
@@ -12214,6 +12430,9 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Your free trial has ended": [
+        "Ваш бесплатный пробный период истек"
       ]
     },
     "Title subscription": {
@@ -12392,7 +12611,7 @@
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."

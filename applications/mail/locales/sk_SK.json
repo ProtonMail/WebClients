@@ -499,7 +499,7 @@
         "Skontaktovať sa"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Dostanete ho len za ${ addonPriceWithCurrency } /mesiac"
+        "Získať len za ${ addonPriceWithCurrency } /mesiac"
       ],
       "Get SimpleLogin extension": [
         "Získať rozšírenie SimpleLogin"
@@ -670,7 +670,7 @@
         "Načítava sa ${ ellipsis }"
       ],
       "Make it friendly": [
-        "Urobiť to priateľské"
+        "Priateľská forma"
       ],
       "Manage folders": [
         "Spravovať priečinky"
@@ -998,9 +998,6 @@
       ],
       "Revert to original display": [
         "Návrat na pôvodné zobrazenie"
-      ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Spustiť na ${ BRAND_NAME } serveroch"
       ],
       "Save": [
         "Uložiť"
@@ -1449,6 +1446,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia asistenta písania",
+        "${ seats } licencie asistentov písania",
+        "${ seats } licencií asistentov písania",
+        "${ seats } licencií asistentov písania"
+      ],
       "${ users } user": [
         "${ users } používateľ",
         "${ users } používatelia",
@@ -1526,9 +1529,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "Prehliadač nie je podporovaný "
-      ],
       "Fast and secure": [
         "Rýchlo a bezpečne"
       ],
@@ -1544,19 +1544,14 @@
       "Run locally": [
         "Funguje lokálne"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Spustiť na ${ BRAND_NAME } serveroch"
+      "Run on servers": [
+        "Beží na serveroch"
       ],
       "Runs on all devices": [
         "Funguje na všetkých zariadeniach"
       ],
       "Runs on your device": [
         "Funguje na vašom zariadení"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Hardvér nie je kompatibilný"
       ]
     },
     "Attached ics file error": {
@@ -2081,7 +2076,7 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Obnovte do ${ formattedEndDate } na ponechanie týchto funkcií:"
+        "Obnovte do ${ formattedEndDate } pre zachovanie týchto funkcií:"
       ],
       "Reactivate subscription": [
         "Obnoviť predplatné"
@@ -3879,9 +3874,6 @@
       ],
       "Forward address is required": [
         "Adresa preposielania je povinná"
-      ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "V tejto žiadosti nemôžem pokračovať z dôvodu mojich etických zásad. Skúste inú požiadavku, prosím."
       ],
       "Image upload failed": [
         "Nahrávanie obrázka zlyhalo"
@@ -6012,7 +6004,7 @@
         "Vymazanie dát prehliadača tiež deaktivuje vyhľadávanie obsahu správ v tomto zariadení. Pre vyhľadávanie vo všetkých správach bude nutné ich znovu stiahnuť."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Vymaže údaje prehliadača (vrátane stiahnutých správ, ...)"
+        "Vymaže údaje prehliadača (vrátane stiahnutých správ, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -6714,7 +6706,7 @@
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, ...)"
+        "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlásenie tejto správy ako pokusu o phishing odošle túto správu Nám, aby sme ju mohli analyzovať a zlepšiť tým Naše filtre. To znamená, že uvidíme kompletne celý obsah tejto správy."
@@ -7478,12 +7470,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Váš účet bude aktualizovaný po zúčtovaní platby."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Váš prehliadač nepodporuje asistenta písania. Stiahnite si ${ MAIL_APP_NAME } desktopovú aplikáciu alebo ho skúste spustiť na ${ BRAND_NAME } serveroch."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Váš prehliadač nepodporuje asistenta písania. Skúste ho spustiť na ${ BRAND_NAME } serveroch."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
@@ -7498,9 +7484,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Váš hardvér nepodporuje lokálne spustenie asistenta písania. Skúste ho spustiť na ${ BRAND_NAME } serveroch."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
@@ -7580,7 +7563,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI poháňaný asistent vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
     "Key badge": {
@@ -9371,7 +9354,7 @@
         "Podpora routeru"
       ],
       "Save time emailing": [
-        "Ušetrite čas pri emailovaní"
+        "Ušetriť čas pri emailovaní"
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
@@ -10313,22 +10296,22 @@
         "Pre"
       ],
       "Try “Announce upcoming events in a newsletter”": [
-        "Skúste “Informuj o nadchádzajúcich podujatiach v informačnom bulletine”"
+        "Skúste “Oznámiť o nadchádzajúcich podujatiach v informačnom bulletine”"
       ],
       "Try “Cancel my gym membership”": [
-        "Skúste “Zruš moje členstvo v posilňovni”"
+        "Skúste “Zrušiť moje členstvo v posilňovni”"
       ],
       "Try “Invite Jane to my party”": [
-        "Skúste “Pozvi Jane na moju párty”"
+        "Skúste “Pozvať Janu na moju párty”"
       ],
       "Try “Thank my coworker for help on a project”": [
-        "Skúste “Poďakuj môjmu kolegovi za pomoc s projektom”"
+        "Skúste “Poďakovať môjmu kolegovi za pomoc s projektom”"
       ],
       "Try “Write a cover letter for an internship”": [
-        "Skúste “Napíš motivačný list na stáž”"
+        "Skúste “Napísať motivačný list na stáž”"
       ],
       "Try “Write a follow-up email to a client”": [
-        "Skúste “Napíš následný email klientovi”"
+        "Skúste “Napísať následný email klientovi”"
       ],
       "Type a command…": [
         "Zadajte príkaz…"
@@ -11421,7 +11404,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Pre ${ totalPrice }"
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -11527,9 +11510,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Keď vaše predplatné ${ planName } vyprší a prekročíte limity bezplatného plánu, nebudete môcť:"
       ],
-      "Keep ${ planName }": [
-        "Ponechať ${ planName }"
-      ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
       ],
@@ -11591,10 +11571,10 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš ${ BRAND_NAME } zmení na bezplatný plán. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink }"

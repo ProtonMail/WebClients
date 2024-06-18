@@ -6507,6 +6507,9 @@
       "Card number": [
         "Nomor kartu"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -7600,8 +7603,14 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } alamat email per pengguna"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } yang meliputi alias hide-my-email tanpa batasan jumlah"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } dengan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
@@ -7624,11 +7633,17 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi berkas dan foto Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, berkas, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } dengan akses ke seluruh server berkecepatan tinggi di ${ vpnCountries } negara"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } dengan pemblokir malware dan iklan"
       ],
       "10 email addresses": [
         "10 alamat email"
@@ -7695,9 +7710,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Apabila Anda melebihi batas paket gratis pada saat langganan ${ planName } Anda berakhir, Anda tidak akan dapat:"
-      ],
-      "Keep ${ planName }": [
-        "Pertahankan paket ${ planName }"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"

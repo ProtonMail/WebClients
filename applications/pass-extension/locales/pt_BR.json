@@ -822,6 +822,9 @@
       "Unknown passkey": [
         "Chave de acesso desconhecida"
       ],
+      "Unlock failure": [
+        "Erro ao desbloquear"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de arquivo do ${ PASS_APP_NAME } não suportado"
       ],
@@ -842,6 +845,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Você está atualizando sem conexão. Retome a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
@@ -1074,6 +1080,9 @@
       "Disabling auto-lock": [
         "Desativar bloqueio automático"
       ],
+      "Disabling auto-lock failed": [
+        "Erro ao desativar o bloqueio automático"
+      ],
       "Disabling offline mode...": [
         "Desativando modo off-line..."
       ],
@@ -1115,6 +1124,9 @@
       ],
       "Enabling password auto-lock": [
         "Ativando bloqueio automático por senha"
+      ],
+      "Enabling password lock failed": [
+        "Erro ao ativar o bloqueio por senha"
       ],
       "Enabling PIN auto-lock": [
         "Ativando bloqueio automático por PIN"
@@ -1348,6 +1360,9 @@
       "Please consider leaving a review.": [
         "Considere deixar uma avaliação"
       ],
+      "Please do not close this window": [
+        "Não feche esta janela."
+      ],
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
       ],
@@ -1362,6 +1377,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
+      "Registering PIN lock failed": [
+        "Erro ao registrar o bloqueio por PIN"
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"

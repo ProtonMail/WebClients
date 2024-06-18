@@ -865,9 +865,6 @@
       "Revoke this invitation": [
         "Bu daveti geri çek"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalışır"
-      ],
       "Save": [
         "Kaydet"
       ],
@@ -1394,9 +1391,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Daha hızlı, daha geniş aygıt uyumluluğu"
-      ],
-      "No data transmitted while using,requires one-time download": [
-        "Kullanırken veri aktarılmaz, tek seferlik indirme gerekir"
       ],
       "Run locally": [
         "Yerel olarak çalışır"
@@ -8532,12 +8526,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ MAIL_APP_NAME } masaüstü uygulamasını indirin ya da ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Tarayıcınız yazma yardımcısını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -8549,9 +8537,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. ${ BRAND_NAME } sunucularında çalıştırmayı deneyin."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
@@ -12817,6 +12802,9 @@
       "Email address": [
         "E-posta adresi"
       ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
       "example@domain.com": [
         "ornek@etkialani.com"
       ],
@@ -12879,6 +12867,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
       ],
       "Text": [
         "Metin"
@@ -14283,9 +14274,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } aboneliğiniz sona erdiğinde Free tarifesi sınırlarını aşarsanız şunları yapamazsınız:"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } tarifesinde kal"
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"

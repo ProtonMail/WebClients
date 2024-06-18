@@ -217,6 +217,12 @@
       "Clear all formatting": [
         "Borrar todo el formato"
       ],
+      "Clear filter": [
+        "Borrar el filtro"
+      ],
+      "Clear filters": [
+        "Borrar los filtros"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -865,8 +871,8 @@
       "Revoke this invitation": [
         "Cancelar esta invitación"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Ejecutar en los servidores de ${ BRAND_NAME }"
+      "Run on servers": [
+        "Ejecutar en los servidores"
       ],
       "Save": [
         "Guardar"
@@ -1395,7 +1401,7 @@
       "Faster, broader device compatibility": [
         "Compatibilidad con dispositivos más rápida y amplia"
       ],
-      "No data transmitted while using,requires one-time download": [
+      "No data transmitted while using, requires one-time download": [
         "No se transmiten datos durante el uso. Requiere una descarga única."
       ],
       "Run locally": [
@@ -3501,12 +3507,37 @@
         ".rpm para Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "${ totalStorageSize } de almacenamiento gratuito"
+      ],
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Seguridad avanzada al compartir archivos"
       ],
       "Encrypted cloud storage for all your files": [
         "Almacenamiento cifrado en la nube para todos tus archivos"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Bajo la protección de las leyes de privacidad suizas"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "Crea una cuenta gratuita en ${ DRIVE_APP_NAME } para acceder al archivo de forma segura."
+      ],
+      "Free, encrypted, and secure cloud storage": [
+        "Almacenamiento en la nube gratis, cifrado y seguro"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Almacenamiento en la nube e intercambio de archivos sin riesgos que protegen tus datos."
+      ],
+      "You're invited to access a file in ${ DRIVE_APP_NAME }": [
+        "Estás invitado a acceder a un archivo en ${ DRIVE_APP_NAME }."
       ]
     },
     "Duration": {
@@ -4268,6 +4299,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Establece primero un correo electrónico de recuperación/notificación."
+      ],
+      "Please try again in a few moments.": [
+        "Vuelve a intentarlo en un momento."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Pasa a un plan para empresa con más de 1 usuario para un soporte multiusuario."
@@ -6418,6 +6452,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All Events ": [
+        "Todos los eventos"
+      ],
       "All keys successfully reactivated": [
         "Se han reactivado todas las claves."
       ],
@@ -7150,12 +7187,87 @@
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
       ],
+      "Invite Accepted": [
+        "La invitación ha sido acceptada."
+      ],
+      "Invite Created": [
+        "La invitación ha sido creada."
+      ],
+      "Invite deleted": [
+        "La invitación ha sido eliminada."
+      ],
+      "Invite Deleted": [
+        "La invitación ha sido eliminada."
+      ],
+      "Invite for organization accepted": [
+        "La invitación para la organización ha sido aceptada."
+      ],
+      "Invite for organization created": [
+        "La invitación ha sido creada para la organización."
+      ],
+      "Invite for User deleted": [
+        "La invitación para el usuario ha sido eliminada."
+      ],
+      "Invite rejected": [
+        "La invitación ha sido rechazada."
+      ],
+      "Invite Rejected": [
+        "La invitación ha sido rechazada."
+      ],
       "Invite successfully sent": [
         "Invitación enviada",
         "Invitaciones enviadas"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de tus datos están cifrados y bloqueados."
+      ],
+      "Item Autofilled": [
+        "El elemento ha sido rellenado automaticamente."
+      ],
+      "Item autofilled in vault": [
+        "El elemento en la caja fuerte ha sido rellenado automaticamente."
+      ],
+      "Item Changed Flags": [
+        "Los marcadores del elemento han sido cambiados."
+      ],
+      "Item Created": [
+        "El elemento ha sido creado."
+      ],
+      "Item created in vault": [
+        "El elemento en la caja fuerte ha sido creado."
+      ],
+      "Item Deleted": [
+        "El elemento ha sido eliminado."
+      ],
+      "Item deleted in vault": [
+        "El elemento en la caja fuerte ha sido eliminado."
+      ],
+      "Item flags changed in vault": [
+        "Los marcadores del elemento en la caja fuerte han sido cambiados."
+      ],
+      "Item in vault untrashed": [
+        "El elemento en la caja fuerte ha sido restaurado."
+      ],
+      "Item Read": [
+        "Elemento leído"
+      ],
+      "Item read in vault": [
+        "El elemento en la caja fuerte ha sido leído."
+      ],
+      "Item Trashed": [
+        "El elemento está en la papelera."
+      ],
+      "Item trashed in vault": [
+        "El elemento en la caja fuerte ha sido eliminado."
+      ],
+      "Item Untrashed": [
+        "El elemento está restaurado."
+      ],
+      "Item Updated": [
+        "El elemento ha sido actualizado."
+      ],
+      "Item updated in vault": [
+        "El elemento en la caja fuerte ha sido actualizado."
       ],
       "it’s imperative": [
         "es obligatorio"
@@ -7315,6 +7427,12 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "New User Invite Created": [
+        "La invitación para el usuario nuevo ha sido creada."
+      ],
+      "New User Invite Deleted": [
+        "La invitación para el usuario nuevo ha sido eliminada."
       ],
       "No account keys exist": [
         "No existen claves para la cuenta."
@@ -7697,6 +7815,21 @@
       "Settings updated": [
         "Se han actualizado los ajustes."
       ],
+      "Share Created": [
+        "El elemento compartido ha sido creado."
+      ],
+      "Share Deleted": [
+        "El elemento compartido ha sido eliminado."
+      ],
+      "Share Updated": [
+        "El elemento compartido ha sido actualizado."
+      ],
+      "Shared vault deleted": [
+        "La caja fuerte compartida ha sido eliminada."
+      ],
+      "Shared vault updated": [
+        "La caja fuerte compartida ha sido actualizada."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Muestra la imagen de cada remitente en la lista de mensajes. Si no hay una foto disponible se mostrarán las iniciales."
       ],
@@ -8076,6 +8209,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID único generado por tu proveedor de identidad, generalmente en forma de URL que contiene el nombre del proveedor de identidad (por ejemplo, https://idp.ejemplo.es/XXXXX)."
       ],
+      "Unknown event type": [
+        "Tipo de evento desconocido"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A menos que cierres la sesión o cambies tu contraseña, la sesión permanecerá activa. Las sesiones expiran después de 60 días de inactividad."
       ],
@@ -8151,11 +8287,35 @@
       "User activated": [
         "El usuario ha sido activado."
       ],
+      "User invited to organization": [
+        "El usuario está invitado a la organización."
+      ],
       "username": [
         "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
+      ],
+      "Vault created": [
+        "La caja fuerte ha sido creada."
+      ],
+      "Vault Created": [
+        "La caja fuerte ha sido creada."
+      ],
+      "Vault deleted": [
+        "La caja fuerte ha sido eliminada."
+      ],
+      "Vault Deleted": [
+        "La caja fuerte ha sido eliminada."
+      ],
+      "Vault shared with email": [
+        "Caja fuerte compartida por correo electrónico"
+      ],
+      "Vault updated": [
+        "La caja fuerte ha sido actualizada."
+      ],
+      "Vault Updated": [
+        "La caja fuerte ha sido actualizada."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -8535,11 +8695,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Tu cuenta se actualizará una vez que el pago se haya completado."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "El navegador no admite el asistente de escritura. Descarga la aplicación de escritorio ${ MAIL_APP_NAME } o intenta con los servidores de ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "El navegador no admite el asistente de escritura. Descarga la aplicación de escritorio ${ MAIL_APP_NAME } o intenta ejecutarlo en los servidores."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "El navegador no admite el asistente de escritura. Intenta con los servidores de ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "El navegador no admite el asistente de escritura. Intenta ejecutarlo en los servidores."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -8553,8 +8713,8 @@
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "El hardware no admite ejecutar el asistente de escritura. Intenta con los servidores de ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "El hardware no admite ejecutar el asistente de escritura. Intenta ejecutarlo en los servidores."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
@@ -10142,6 +10302,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Registro de actividad"
+      ],
       "Add a gift code": [
         "Añadir código promocional"
       ],
@@ -11775,6 +11938,9 @@
       "Invalid code": [
         "Código no válido"
       ],
+      "Invalid input. Search an email or IP address.": [
+        "La entrada no es válida. Busca por correo electrónico dirección IP."
+      ],
       "IP Address copied to clipboard": [
         "La dirección IP ha sido copiada al portapapeles."
       ],
@@ -12708,6 +12874,9 @@
       "Card number": [
         "Número de tarjeta"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Actualmente la renovación automática de la suscripción está desactivada. Si deseas cambiar la suscripción ahora, la renovación automática volverá a activarse."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -12820,6 +12989,12 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email or IP": [
+        "Correo o IP"
+      ],
+      "End date": [
+        "Fecha de fin"
+      ],
       "example@domain.com": [
         "ejemplo@dominio.es"
       ],
@@ -12882,6 +13057,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Fecha de inicio"
       ],
       "Text": [
         "Texto"
@@ -14287,9 +14465,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si excedes los límites del plan gratuito cuando la suscripción de ${ planName } expire, no podrás:"
       ],
-      "Keep ${ planName }": [
-        "Seguir con ${ planName }"
-      ],
       "Learn more about our impact": [
         "Más información acerca de nuestro impacto"
       ],
@@ -15239,6 +15414,9 @@
       "Delete version history?": [
         "¿Eliminar el historial de versiones?"
       ],
+      "Description": [
+        "Descripción"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -15349,6 +15527,9 @@
       ],
       "Error": [
         "Error"
+      ],
+      "Event": [
+        "Evento"
       ],
       "Every member of the organization can access": [
         "Cada miembro de la organización puede acceder"
@@ -15489,6 +15670,9 @@
       ],
       "Invoices": [
         "Facturas"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "Mantén tu bandeja de entrada organizada."
@@ -15839,6 +16023,9 @@
       "This field cannot contain only spaces": [
         "Este campo no puede contener solo espacios."
       ],
+      "Time": [
+        "Hora"
+      ],
       "Time zone": [
         "Zona horaria"
       ],
@@ -15868,6 +16055,9 @@
       ],
       "Upload your organization’s logo": [
         "Carga el logo de tu organización"
+      ],
+      "User": [
+        "Usuario"
       ],
       "Users": [
         "Usuarios"
