@@ -822,6 +822,9 @@
       "${ price } per user": [
         "사용자당 ${ price }"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 글쓰기 도우미 이용 권한"
+      ],
       "${ users } user": [
         "${ users }명 사용자"
       ]
@@ -2265,6 +2268,9 @@
       ]
     },
     "Custom frequency option": {
+      "Ends after…": [
+        "이 이후 종료됨…"
+      ],
       "Never": [
         "절대"
       ],
@@ -5078,6 +5084,11 @@
         "설정이서 캘린더를 다시 공유할 수 있습니다."
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ]
+    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "참가자는 초대마다 최대 ${ maxAttendees }명까지만 허용됩니다"
@@ -6249,6 +6260,9 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
+      "Generate emails with only a prompt": [
+        "프롬포트만으로 이메일을 생성하세요"
+      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -6306,17 +6320,26 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your texts": [
+        "문장 교정 및 다듬기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
+      "Reply to messages": [
+        "메시지에 답장하기"
+      ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
+      ],
+      "Save time emailing": [
+        "이메일 작성 시간 줄이기"
       ],
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
@@ -8194,9 +8217,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } 구독 만료 후 무료 요금제의 한도를 초과하게 된다면,"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } 유지하기"
       ],
       "Learn more about our impact": [
         "저희의 영향력에 대해 더 알아보기"
