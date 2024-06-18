@@ -15,6 +15,7 @@ import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
+import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg'
 
 const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
   const application = useApplication()
@@ -87,13 +88,14 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
         hasCaret
         shape="ghost"
         size="small"
-        className="max-w-custom whitespace-nowrap"
+        className="max-w-custom whitespace-nowrap px-1.5 py-1.5"
         style={{
           '--max-w-custom': '35vw',
         }}
         data-testid="document-name-dropdown"
       >
-        <span className="text-ellipsis">{title}</span>
+        <img className="pointer-events-none mr-2 h-5 w-5" src={documentIcon} alt="" aria-hidden="true" />
+        <span className="text-ellipsis text-sm">{title}</span>
       </DropdownButton>
       <Dropdown
         isOpen={isOpen}
