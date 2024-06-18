@@ -312,7 +312,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
                                         type: 'text/plain;charset=utf-8',
                                     });
-                                    const filename = 'proton_recovery_codes.txt';
+                                    const filename = 'proton_2FA_recovery_codes.txt';
                                     downloadFile(blob, filename);
                                 }}
                             >
