@@ -217,6 +217,12 @@
       "Clear all formatting": [
         "Limpar toda a formatação"
       ],
+      "Clear filter": [
+        "Limpar filtro"
+      ],
+      "Clear filters": [
+        "Limpar filtros"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -865,8 +871,8 @@
       "Revoke this invitation": [
         "Revogar esse convite"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Executar nos servidores da ${ BRAND_NAME }"
+      "Run on servers": [
+        "Executar nos servidores"
       ],
       "Save": [
         "Salvar"
@@ -1392,9 +1398,6 @@
       ]
     },
     "Assistant option": {
-      "No data transmitted while using,requires one-time download": [
-        "Nenhuma transmissão de dados durante o uso, requer download único"
-      ],
       "Run locally": [
         "Executar localmente"
       ],
@@ -3492,12 +3495,28 @@
         ".rpm para Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "${ totalStorageSize } de armazenamento gratuitamente"
+      ],
+      "End-to-end encrypted": [
+        "Criptografado de ponta a ponta"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
       ],
       "Encrypted cloud storage for all your files": [
         "Armazenamento na nuvem criptografado para todos os seus arquivos"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por leis de privacidade da Suíça"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Armazenamento seguro na nuvem e compartilhamento de arquivos que protege seus dados"
       ]
     },
     "Duration": {
@@ -4259,6 +4278,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Defina um e-mail para recuperação/notificação primeiro"
+      ],
+      "Please try again in a few moments.": [
+        "Tente novamente em alguns instantes."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Atualize para um plano de negócios com mais de 1 usuário para obter suporte multiusuário"
@@ -6418,6 +6440,9 @@
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
       ],
+      "All Events ": [
+        "Todos os eventos "
+      ],
       "All keys successfully reactivated": [
         "Todas as chaves foram reativadas"
       ],
@@ -7147,12 +7172,63 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "Invite Accepted": [
+        "Convite aceito"
+      ],
+      "Invite Created": [
+        "Convite criado"
+      ],
+      "Invite deleted": [
+        "Convite excluído"
+      ],
+      "Invite Deleted": [
+        "Convite excluído"
+      ],
+      "Invite for organization accepted": [
+        "Convite aceito para a organização"
+      ],
+      "Invite for organization created": [
+        "Convite criado para a organização"
+      ],
+      "Invite for User deleted": [
+        "Convite para o usuário excluído"
+      ],
+      "Invite rejected": [
+        "Convite rejeitado"
+      ],
+      "Invite Rejected": [
+        "Convite rejeitado"
+      ],
       "Invite successfully sent": [
         "Convite enviado",
         "Convites enviados"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns de seus dados estão criptografados e bloqueados."
+      ],
+      "Item Created": [
+        "Item criado"
+      ],
+      "Item created in vault": [
+        "Item criado no cofre"
+      ],
+      "Item Deleted": [
+        "Item excluído"
+      ],
+      "Item deleted in vault": [
+        "Item excluído no cofre"
+      ],
+      "Item Read": [
+        "Item lido"
+      ],
+      "Item read in vault": [
+        "Item lido no cofre"
+      ],
+      "Item Updated": [
+        "Item atualizado"
+      ],
+      "Item updated in vault": [
+        "Item atualizado no cofre"
       ],
       "it’s imperative": [
         "é obrigatório"
@@ -7312,6 +7388,12 @@
       ],
       "New": [
         "Novo"
+      ],
+      "New User Invite Created": [
+        "Convite de novo usuário criado"
+      ],
+      "New User Invite Deleted": [
+        "Convite de novo usuário excluído"
       ],
       "No account keys exist": [
         "Não existem chaves de conta"
@@ -7697,6 +7779,21 @@
       "Settings updated": [
         "Configurações atualizadas"
       ],
+      "Share Created": [
+        "Compartilhamento criado"
+      ],
+      "Share Deleted": [
+        "Compartilhamento excluído"
+      ],
+      "Share Updated": [
+        "Compartilhamento atualizado"
+      ],
+      "Shared vault deleted": [
+        "Cofre compartilhado excluído"
+      ],
+      "Shared vault updated": [
+        "Cofre compartilhado atualizado"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. Em seguida, as iniciais do remetente será mostrada se uma foto não estiver disponível."
       ],
@@ -7714,6 +7811,9 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails por meio do ${ MAIL_APP_NAME } para seus endereços de domínio personalizados. Este recurso está disponível apenas para usuários ${ BRAND_NAME } for Business com domínios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
@@ -8070,6 +8170,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID único gerado pelo seu provedor de identidade, geralmente gerado na forma de URL que contém o nome do provedor de identidade (por exemplo, https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Tipo de evento desconhecido"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A menos que você encerre sessão de sua conta ou mude a senha, sua sessão permanecerá ativa. Sessões expiram após 60 dias de inatividade."
       ],
@@ -8145,11 +8248,32 @@
       "User activated": [
         "Usuário ativado"
       ],
+      "User invited to organization": [
+        "Usuário convidado para a organização"
+      ],
       "username": [
         "Nome de usuário"
       ],
       "Users": [
         "Usuários"
+      ],
+      "Vault created": [
+        "Cofre criado"
+      ],
+      "Vault Created": [
+        "Cofre criado"
+      ],
+      "Vault deleted": [
+        "Cofre excluído"
+      ],
+      "Vault Deleted": [
+        "Cofre excluído"
+      ],
+      "Vault updated": [
+        "Cofre atualizado"
+      ],
+      "Vault Updated": [
+        "Cofre atualizado"
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -8526,11 +8650,11 @@
       "Your account will be updated once the payment is cleared.": [
         "A sua conta será atualizada assim que o pagamento for aprovado."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "O seu navegador não suporta o assistente de escrita. Baixe o aplicativo para computador do ${ MAIL_APP_NAME } ou tente executar nos servidores da ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "O seu navegador não suporta o assistente de escrita. Baixe o aplicativo para computador do ${ MAIL_APP_NAME } ou tente executar nos servidores da ."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "O seu navegador não suporta o assistente de escrita. Tente executar nos servidores da ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "O seu navegador não suporta o assistente de escrita. Tente executar nos servidores da ."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
@@ -8544,8 +8668,8 @@
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executar nos servidores da ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executar nos servidores da ."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Sua importação de ${ accounts } está temporariamente atrasada.",
@@ -10136,6 +10260,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Registro de atividade"
+      ],
       "Add a gift code": [
         "Adicionar código de vale-presente"
       ],
@@ -12838,6 +12965,12 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email or IP": [
+        "E-mail ou IP"
+      ],
+      "End date": [
+        "Data de término"
+      ],
       "example@domain.com": [
         "exemplo@dominio.com"
       ],
@@ -12897,6 +13030,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "Start date": [
+        "Data de início"
       ],
       "Text": [
         "Texto"
@@ -14200,14 +14336,38 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } com histórico de versões"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } e todos os recursos premium"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } com encaminhamento de e-mail automático"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por usuário",
+        "${ MaxCalendars } calendários por usuário"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por usuário",
+        "${ maxEmails } endereços de e-mail por usuário"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } incluindo aliases de hide-my-email ilimitados"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } com ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
       ],
       "${ planMaxSpace } total storage": [
         "Armazenamento total de ${ planMaxSpace }"
@@ -14224,14 +14384,26 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus de armazenamento anualmente."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } com acesso a todos os servidores de alta velocidade em ${ vpnCountries } países"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } com bloqueio de malware e anúncios"
+      ],
       "10 email addresses": [
         "10 endereços de e-mail"
+      ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por usuário"
+      ],
+      "25 calendars per user": [
+        "25 calendários por usuário"
       ],
       "6 users": [
         "6 usuários"
@@ -14241,6 +14413,18 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura do ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Depois que ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Sua equipe experimentará interrupções no trabalho devido a usuários adicionais que não estão suportados no plano gratuito."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "Depois que sua assinatura do ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 5 GB para armazenamento do Drive e até 1 GB para armazenamento do Mail. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "Any custom email domains will be disabled": [
+        "Qualquer domínio de e-mail personalizado será desativado"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento de e-mail automático"
       ],
       "Back up photos from your devices": [
         "Faça backup de fotos de seus dispositivos"
@@ -14254,6 +14438,9 @@
       "Cancel subscription?": [
         "Cancelar assinatura?"
       ],
+      "Catch-all email address": [
+        "Endereço de e-mail catch-all"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -14263,14 +14450,23 @@
       "Custom schedule send and snooze times": [
         "Programação personalizada de envio e adiamento"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "Suporte ao aplicativo para computador e cliente de e-mail (via IMAP)"
+      ],
       "Direct contribution to our mission": [
         "Contribuição direta para a nossa missão"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novos aplicativos e recursos"
       ],
+      "Email productivity features": [
+        "Recursos de produtividade de e-mail"
+      ],
       "Extra storage and bonuses": [
         "Armazenamento extra e bônus"
+      ],
+      "Extra storage and users": [
+        "Armazenamento extra e usuários"
       ],
       "Have a question?": [
         "Tem alguma pergunta?"
@@ -14293,8 +14489,14 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Se você exceder os limites do plano gratuito quando sua assinatura ${ planName } expirar, você não poderá:"
       ],
-      "Keep ${ planName }": [
-        "Manter o ${ planName }"
+      "Invited members will be removed from your organization": [
+        "Usuários convidados serão removidos da sua organização"
+      ],
+      "Keep ${ config.planName }": [
+        "Manter o ${ config.planName }"
+      ],
+      "Learn more": [
+        "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre nosso impacto"
@@ -14304,6 +14506,9 @@
       ],
       "Online privacy, for your whole family": [
         "Privacidade online para toda sua família"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Organizações, usuários adicionais, e domínios de e-mail personalizados não serão suportados no plano gratuito."
       ],
       "Our fight against censorship in Russia": [
         "Nossa luta contra a censura na Rússia"
@@ -14317,6 +14522,9 @@
       "Priority support": [
         "Suporte prioritário"
       ],
+      "Productivity features": [
+        "Recursos de produtividade"
+      ],
       "Reactivate": [
         "Reativar"
       ],
@@ -14328,6 +14536,9 @@
       ],
       "Receive new emails": [
         "Receba novos e-mais"
+      ],
+      "See your colleagues’ availability": [
+        "Veja a disponibilidade dos seus colegas"
       ],
       "Send emails with attachments": [
         "Envie e-mails com anexos"
@@ -14344,8 +14555,20 @@
       "Unblocking internet access in Iran": [
         "Desbloqueio de acesso à internet no Irã"
       ],
+      "Unlimited folders and labels": [
+        "Pastas e marcadores ilimitados"
+      ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "Usuários não poderão gerenciar seus calendários"
+      ],
+      "Users won’t be able to send emails": [
+        "Usuário não poderão enviar e-mails"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "Usuários não poderão sincronizar arquivos em seus dispositivos"
       ],
       "Version history": [
         "Histórico de versões"
@@ -14358,6 +14581,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ao cancelar o ${ planName }. Você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Ao cancelar o ${ planName }. Você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Sua equipe experimentará interrupções no trabalho devido a usuários adicionais que não estão suportados no plano gratuito."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Ao cancelar o ${ planName }. Você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 5 GB para armazenamento do Drive e até 1 GB para armazenamento do Mail. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
@@ -15236,6 +15462,9 @@
       "Delete version history?": [
         "Excluir histórico de versões?"
       ],
+      "Description": [
+        "Descrição"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -15346,6 +15575,9 @@
       ],
       "Error": [
         "Erro"
+      ],
+      "Event": [
+        "Evento"
       ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem acessar"
@@ -15490,6 +15722,9 @@
       "Invoices": [
         "Faturas"
       ],
+      "IP": [
+        "IP"
+      ],
       "Keep your inbox organized": [
         "Mantenha sua caixa de entrada organizada"
       ],
@@ -15600,6 +15835,9 @@
       ],
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
+      ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"
@@ -15839,6 +16077,9 @@
       "This field cannot contain only spaces": [
         "Este campo não pode conter apenas espaços"
       ],
+      "Time": [
+        "Hora"
+      ],
       "Time zone": [
         "Fuso horário"
       ],
@@ -15868,6 +16109,9 @@
       ],
       "Upload your organization’s logo": [
         "Envie o logotipo da sua organização"
+      ],
+      "User": [
+        "Usuário"
       ],
       "Users": [
         "Usuários"
