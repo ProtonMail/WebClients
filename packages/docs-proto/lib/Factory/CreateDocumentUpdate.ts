@@ -6,12 +6,14 @@ export function CreateDocumentUpdate(dto: {
   authorAddress: string
   timestamp: number
   version: DocumentUpdateVersion
+  uuid: string
 }): DocumentUpdate {
   const documentUpdate = new DocumentUpdate({
     authorAddress: dto.authorAddress,
     encryptedContent: dto.content,
     timestamp: dto.timestamp,
     version: dto.version,
+    uuid: dto.uuid,
   })
 
   return documentUpdate

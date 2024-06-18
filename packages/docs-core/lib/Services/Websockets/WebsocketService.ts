@@ -43,6 +43,7 @@ import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { DocumentUpdateBuffer } from './DocumentUpdateBuffer'
+import { GenerateUUID } from '../../Util/GenerateUuid'
 
 type LinkID = string
 
@@ -70,9 +71,18 @@ export class WebsocketService implements WebsocketServiceInterface {
     for (const { buffer } of connections) {
       if (buffer.hasPendingUpdates()) {
         buffer.flush()
-
         event.preventDefault()
         event.returnValue = c('Info').t`Recent changes are still being saved. Do not leave this page yet.`
+      }
+    }
+  }
+
+  flushPendingUpdates(): void {
+    const connections = Object.values(this.connections)
+
+    for (const { buffer } of connections) {
+      if (buffer.hasPendingUpdates()) {
+        buffer.flush()
       }
     }
   }
@@ -217,6 +227,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const message = CreateDocumentUpdateMessage({
       content: encryptedContent,
+      uuid: GenerateUUID(),
       ...metadata,
     })
 
@@ -340,6 +351,8 @@ export class WebsocketService implements WebsocketServiceInterface {
       await this.handleIncomingDocumentUpdatesMessage(record, message.documentUpdatesMessage)
     } else if (type.hasEvents()) {
       await this.handleIncomingEventsMessage(record, message.eventsMessage)
+    } else if (type.isMessageAck()) {
+      this.logger.info('Received message ack')
     } else {
       throw new Error('Unknown message type')
     }
@@ -415,6 +428,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
 
       switch (type.value) {
+        case EventTypeEnum.ServerIsDisconnectingAllClientsFromTheStream:
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
           break
