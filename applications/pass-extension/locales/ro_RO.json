@@ -92,6 +92,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue offline": [
+        "Continuare în mod deconectat"
+      ],
       "Continue without pinning": [
         "Continuare fără fixare"
       ],
@@ -443,6 +446,9 @@
       "Try again": [
         "Reîncercați"
       ],
+      "Unlock offline with password": [
+        "Deblocare mod deconectat cu parolă"
+      ],
       "Unpin item": [
         "Anulare fixare"
       ],
@@ -741,6 +747,9 @@
       "Moving item failed": [
         "Mutarea articolelor a eșuat."
       ],
+      "Network error": [
+        "Eroare de rețea."
+      ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
       ],
@@ -816,6 +825,9 @@
       "Unknown passkey": [
         "Cheie de acces necunoscută"
       ],
+      "Unlock failure": [
+        "Eșuare deblocare."
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
       ],
@@ -836,6 +848,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
@@ -923,6 +938,9 @@
         "${ n } articole",
         "${ n } de articole"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } va fi disponibil oricând"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
       ],
@@ -970,8 +988,14 @@
       "Access successfully confirmed": [
         "Acces confirmat."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola ${ BRAND_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accesați parolele din mers cu aplicațiile mobile."
+      ],
+      "Add a username field": [
+        "Adăugare câmp nume utilizator"
       ],
       "Admin": [
         "Administrator"
@@ -1009,6 +1033,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sigur doriți să mutați articolul în „${ name }” ?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Blocarea automată s-a dezactivat."
+      ],
       "Autosaved on ${ payload.domain }": [
         "Autosalvat la ${ payload.domain }"
       ],
@@ -1029,6 +1056,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Faceți clic aici pentru a adăuga un câmp pentru nume de utilizator."
       ],
       "Click the icon to open it anytime.": [
         "Faceți clic pe pictogramă pentru a-l deschide."
@@ -1063,6 +1093,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Se șterge ”${ payload.content.name }”"
       ],
+      "Disabling auto-lock": [
+        "Se dezactivează autoblocarea."
+      ],
+      "Disabling auto-lock failed": [
+        "Dezactivarea autoblocării a eșuat."
+      ],
+      "Disabling offline mode...": [
+        "Se dezactivează modul fără conexiune..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Descoperiți videoclipurile ${ PASS_APP_NAME } pe Youtube"
       ],
@@ -1092,6 +1131,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activați ${ PASS_APP_NAME } conectându-vă contul ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activați autoblocarea pentru a securiza datele."
+      ],
+      "Enabling offline mode...": [
+        "Se activează modul fără conexiune..."
+      ],
+      "Enabling password auto-lock": [
+        "Se activează autoblocarea cu parolă."
+      ],
+      "Enabling password lock failed": [
+        "Activarea blocării cu parolă a eșuat."
+      ],
+      "Enabling PIN auto-lock": [
+        "Se activează autoblocarea cu PIN."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduceți codul de verificare. ${ digit } cifre."
@@ -1252,11 +1306,17 @@
       "None": [
         "Fără"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Modul fără conexiune nu a putut fi dezactivat momentan."
+      ],
       "Offline mode could not be enabled at the moment": [
         "Modul deconectat nu a putut fi activat momentan."
       ],
       "Offline support successfully disabled": [
         "Accesul deconectat a fost dezactivat."
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Accesul la online la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
       ],
       "Open the Extensions menu": [
         "Deschideți meniul de extensii"
@@ -1275,6 +1335,9 @@
       ],
       "Password copied": [
         "Parola a fost copiată."
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blocarea cu parolă s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
@@ -1296,8 +1359,23 @@
       "Pinning item...": [
         "Se fixează articolul..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Confirmați parola ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Confirmați parola ${ BRAND_NAME } pentru a bloca automat cu parolă."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Confirmați parola ${ BRAND_NAME } pentru a anula blocarea curentă."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Confirmați parola ${ BRAND_NAME } pentru a actualiza timpul de autoblocare."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirmați codul PIN pentru a anula blocarea curentă."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmați codul PIN pentru a edita această setare."
@@ -1319,6 +1397,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
+      "Registering PIN lock failed": [
+        "Înregistrarea blocării cu PIN a eșuat."
       ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
@@ -1354,7 +1435,7 @@
         "Articolele selectate s-au restaurat din gunoi."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
+        "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
       "Session timed out": [
         "Sesiunea a expirat"
@@ -1660,6 +1741,9 @@
       "Create an encrypted note": [
         "Creare notă criptată"
       ],
+      "Create lock": [
+        "Creare blocare"
+      ],
       "Create new vault": [
         "Creare seif"
       ],
@@ -1689,6 +1773,12 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (alias nou)"
       ],
       "Email aliases": [
         "Aliasuri de e-mail"
@@ -1867,6 +1957,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "Cod PIN"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -1975,6 +2068,9 @@
       "Username": [
         "Nume utilizator"
       ],
+      "Username/email": [
+        "Nume de utilizator/E-mail"
+      ],
       "Vault ID": [
         "ID seif"
       ],
@@ -2006,6 +2102,9 @@
       ],
       "Sign in to your account": [
         "Conectare la cont"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2082,11 +2181,17 @@
       "Enter a prefix": [
         "Introduceți un prefix"
       ],
+      "Enter email": [
+        "Introduceți adresa de e-mail"
+      ],
       "Enter email or username": [
         "Introduceți e-mail sau utilizator"
       ],
       "Enter password": [
         "Introduceți parola"
+      ],
+      "Enter username": [
+        "Introduceți numele de utilizator"
       ],
       "Full Name": [
         "Numele complet"

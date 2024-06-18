@@ -350,7 +350,7 @@
         "Odebrat člena"
       ],
       "Request a feature": [
-        "Požádejte o funkci"
+        "Požádat o funkci"
       ],
       "Resend code": [
         "Znovu odeslat kód"
@@ -752,6 +752,9 @@
       "Moving item failed": [
         "Přesouvání položky selhalo"
       ],
+      "Network error": [
+        "Chyba sítě"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Offline režim není v současnosti k dispozici pro režim dvou hesel."
       ],
@@ -812,6 +815,12 @@
       "Unknown invite": [
         "Neznámá pozvánka"
       ],
+      "Unknown item": [
+        "Neznámá položka"
+      ],
+      "Unlock failure": [
+        "Selhání odemčení"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nepodporovaný formát souboru ${ PASS_APP_NAME }"
       ],
@@ -835,6 +844,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Momentálně jste offline. Prosím obnovte připojení pro odemčení ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
@@ -1099,6 +1111,15 @@
       "Didn't receive the code?": [
         "Nedostali jste kód?"
       ],
+      "Disabling auto-lock": [
+        "Deaktivace automatického zamykání"
+      ],
+      "Disabling auto-lock failed": [
+        "Deaktivace automatického zamykání selhala"
+      ],
+      "Disabling offline mode...": [
+        "Deaktivace režimu offline..."
+      ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
       ],
@@ -1125,6 +1146,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Povolit ${ PASS_SHORT_APP_NAME } beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Povolte automatické zamykání pro ochranu vašich dat"
+      ],
+      "Enabling offline mode...": [
+        "Povolování režimu offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Povolování automatického zamykání heslem"
+      ],
+      "Enabling password lock failed": [
+        "Povolování zamykání heslem selhalo"
+      ],
+      "Enabling PIN auto-lock": [
+        "Povolování zamykání PIN kódem"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
@@ -1321,6 +1357,9 @@
       "Offline mode": [
         "Režim offline"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Režim offline nemohl být v tuto chvíli deaktivován"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Offline režim nelze v tuto chvíli povolit"
       ],
@@ -1338,6 +1377,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Zamykání heslem bylo úspěšně registrováno. Použijte jej k odemknutí ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týden budou z historie automaticky smazána.",
@@ -1359,6 +1401,9 @@
       ],
       "Please check your spam folder or try resending the code.": [
         "Zkontrolujte prosím složku se spamem nebo zkuste kód odeslat znovu."
+      ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Prosím potvrďte vaše heslo ${ BRAND_NAME }"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
@@ -1389,6 +1434,9 @@
       ],
       "Reconnect": [
         "Znovu připojit"
+      ],
+      "Registering PIN lock failed": [
+        "Registrace zamykání PIN kódem selhala"
       ],
       "Restoring items from trash": [
         "Obnovují se položky z koše"

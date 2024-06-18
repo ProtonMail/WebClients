@@ -6,22 +6,22 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ]
     },
     "Action": {
@@ -185,7 +185,7 @@
         "Muokkaa holvia"
       ],
       "Enable Dark Web Monitoring": [
-        "Ota Pimeän verkon valvonta käyttöön"
+        "Käytä Pimeän verkon valvontaa"
       ],
       "Exclude from monitoring": [
         "Poissulje valvonnasta"
@@ -436,6 +436,9 @@
       "Try again.": [
         "Yritä uudelleen."
       ],
+      "Unlock offline with password": [
+        "Avaa salasanalla yhteydettömässä tilassa"
+      ],
       "Unpin item": [
         "Irrota kohde"
       ],
@@ -557,7 +560,7 @@
         "Palvelu mahdollistaa kaksivaiheisen tunnistautumisen. Paranna tilin suojausta ottamalla se käyttöön."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Avaa edistyneet tietoturvaominaisuudet ja yksityiskohtaiset lokit verkkoläsnäolosi suojaamiseksi."
+        "Avaa edistyneet suojausominaisuudet ja yksityiskohtaiset lokit verkkonäkyvyytesi suojaamiseksi."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "${ PASS_SHORT_APP_NAME }-valvonnalla pysyt uhkien edellä vastaanottamalla välittömät ilmoitukset käyttäjätietojesi vaarantumisesta. Suojaa verkkoidentiteettiäsi avaamalla edistyneet suojausominaisuudet ja yksityiskohtaiset lokitiedot."
@@ -812,8 +815,11 @@
       "Unknown invite": [
         "Tuntematon kutsu"
       ],
+      "Unknown item": [
+        "Tuntematon kohde"
+      ],
       "Unlock failure": [
-        "Lukituksen avaamisen epäonnistui"
+        "Lukituksen avaus epäonnistui"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -838,6 +844,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
@@ -958,6 +967,9 @@
         "${ n } kohde",
         "${ n } kohdetta"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } on aina saatavilla"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
       ],
@@ -985,6 +997,12 @@
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME }ssin avaus vaatii aina ${ BRAND_NAME }-salasanasi."
+      ],
+      "Add a username field": [
+        "Lisää käyttäjätunnus-kenttä"
       ],
       "Add your custom email address to monitor :": [
         "Lisää ulkoinen sähköpostiosoitteesi valvontaan:"
@@ -1058,6 +1076,9 @@
       "Change your password": [
         "Vaihda salasanasi"
       ],
+      "Click here to add a field for a username.": [
+        "Lisää kenttä käyttäjätunnukselle klikkaamalla tästä."
+      ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
       ],
@@ -1083,10 +1104,10 @@
         "Etkö saanut koodia?"
       ],
       "Disabling auto-lock": [
-        "Poistetaan automaattilukitusta käytöstä"
+        "Automaattilukitusta poistetaan käytöstä"
       ],
       "Disabling auto-lock failed": [
-        "Automaattilukituksen poistaminen käytöstä epäonnistui"
+        "Automaattilukituksen käytöstäpoisto epäonnistui"
       ],
       "Disabling offline mode...": [
         "Yhteydetöntä tilaa poistetaan käytöstä..."
@@ -1119,19 +1140,19 @@
         "Ota ${ PASS_SHORT_APP_NAME } -betaversio käyttöön"
       ],
       "Enable auto-locking to secure your data": [
-        "Ota automaattilukitus käyttöön tietojesi suojaamiseksi"
+        "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
       ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
       ],
       "Enabling password auto-lock": [
-        "Salasanallista automaattilukitusta otetaan käyttöön"
+        "Automaattista salasanalukitusta otetaan käyttöön"
       ],
       "Enabling password lock failed": [
         "Salasanalukituksen käyttöönotto epäonnistui"
       ],
       "Enabling PIN auto-lock": [
-        "PIN-koodillista automaattilukitusta otetaan käyttöön"
+        "Automaattista PIN-lukitusta otetaan käyttöön"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -1293,7 +1314,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its history": [
-        "Kohteen siirtäminen toiseen holviin poistaa sen historian"
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot"
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -1331,6 +1352,9 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila poistettiin käytöstä"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Yhteydellistä käyttöä varten ${ PASS_APP_NAME } -istuntosi on avattava PIN-koodillasi. Kolmen epäonnistuneen yrityksen jälkeen tilisi kirjataan ulos."
+      ],
       "Owner": [
         "Omistaja"
       ],
@@ -1343,6 +1367,9 @@
       "password": [
         "salasana"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
@@ -1354,7 +1381,7 @@
         "Valittuja kohteita poistetaan pysyvästi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
+        "PIN-lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in PIN-koodillasi."
       ],
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
@@ -1365,11 +1392,23 @@
       "Please confirm your ${ BRAND_NAME } password": [
         "Vahvista ${ BRAND_NAME } -salasanasi"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Vahvista ${ BRAND_NAME }-salasanasi käyttääksesi automaattista salasanalukitusta."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla ${ BRAND_NAME }-salasanasi."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Vahvista ${ BRAND_NAME }-salasanasi muuttaaksesi automaattilukituksen viivettä."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
@@ -1399,7 +1438,7 @@
         "Yhdistetään uudelleen"
       ],
       "Registering PIN lock failed": [
-        "PIN-lukituksen rekisteröinti epäonnistui"
+        "PIN-lukituksen käyttöönotto epäonnistui"
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1720,6 +1759,9 @@
       "Create an encrypted note": [
         "Luo salattu muistiinpano"
       ],
+      "Create lock": [
+        "Luo lukitus"
+      ],
       "Create new vault": [
         "Luo uusi holvi"
       ],
@@ -1746,6 +1788,12 @@
       ],
       "Email": [
         "Sähköposti"
+      ],
+      "Email (alias)": [
+        "Sähköposti (alias)"
+      ],
+      "Email (new alias)": [
+        "Sähköposti (uusi alias)"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -1826,7 +1874,7 @@
         "Neljän viikon aikana"
       ],
       "Last updated": [
-        "Edellinen päivitys"
+        "Päivitetty viimeksi"
       ],
       "Last week": [
         "Viikon aikana"
@@ -2068,6 +2116,9 @@
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
       ]
     },
     "lobby: Title": {
@@ -2159,11 +2210,17 @@
       "Enter a prefix": [
         "Syötä etuliite"
       ],
+      "Enter email": [
+        "Syötä sähköposti"
+      ],
       "Enter email or username": [
         "Syötä sähköpostiosoite tai käyttäjätunnus"
       ],
       "Enter password": [
         "Syötä salasana"
+      ],
+      "Enter username": [
+        "Syötä käyttäjätunnus"
       ],
       "Full Name": [
         "Koko nimi"
@@ -2225,16 +2282,16 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "Success": {
@@ -2347,10 +2404,10 @@
         "Asenna laajennus"
       ],
       "Last autofill": [
-        "Viimeksi automaattitäytetty"
+        "Automaattitäytetty viimeksi"
       ],
       "Last modified": [
-        "Viimeksi muokattu"
+        "Muokattu viimeksi"
       ],
       "Leave vault ?": [
         "Poistutaanko holvista?"
@@ -2377,7 +2434,7 @@
         "Siirretäänkö kaikki kohteet?"
       ],
       "Move item?": [
-        "Siirrä kohde?"
+        "Siirretäänkö kohde?"
       ],
       "Move items?": [
         "Siirrä kohteet?"

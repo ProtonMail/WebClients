@@ -840,6 +840,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia asistenta písania",
+        "${ seats } licencie asistentov písania",
+        "${ seats } licencií asistentov písania",
+        "${ seats } licencií asistentov písania"
+      ],
       "${ users } user": [
         "${ users } používateľ",
         "${ users } používatelia",
@@ -1338,7 +1344,7 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Obnovte do ${ formattedEndDate } na ponechanie týchto funkcií:"
+        "Obnovte do ${ formattedEndDate } pre zachovanie týchto funkcií:"
       ],
       "Reactivate subscription": [
         "Obnoviť predplatné"
@@ -5314,7 +5320,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI poháňaný asistent vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -6648,7 +6654,7 @@
         "Podpora routeru"
       ],
       "Save time emailing": [
-        "Ušetrite čas pri emailovaní"
+        "Ušetriť čas pri emailovaní"
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
@@ -8601,7 +8607,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Pre ${ totalPrice }"
+        "Za ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8707,9 +8713,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Keď vaše predplatné ${ planName } vyprší a prekročíte limity bezplatného plánu, nebudete môcť:"
       ],
-      "Keep ${ planName }": [
-        "Ponechať ${ planName }"
-      ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
       ],
@@ -8771,10 +8774,10 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na svojom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
+        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Vaše predplatné ${ planName } končí ${ expiryDate }. Potom sa váš ${ BRAND_NAME } zmení na bezplatný plán. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom. ${ learnMoreLink }"

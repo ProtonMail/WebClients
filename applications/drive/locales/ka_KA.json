@@ -526,9 +526,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open in Docs": [
-        "Docs-ში გახსნა"
-      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -1186,6 +1183,9 @@
       ]
     },
     "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "გაააქტიურეთ თავიდან ${ formattedEndDate }-მდე, რომ შეინარჩუნოთ შემდეგი ფუნქციები:"
+      ],
       "Reactivate subscription": [
         "გამოწერის ხელახლა გააქტიურება"
       ],
@@ -3999,9 +3999,6 @@
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
       ],
-      "Coming soon": [
-        "სულ მალე"
-      ],
       "Conflict": [
         "კონფლიქტი"
       ],
@@ -4526,6 +4523,9 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }",
         "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }"
+      ],
+      "Only the owner of the share will be able to invite you again.": [
+        "თქვენი თავიდან მოწვევა, მხოლოდ, ზიარის მფლობელს შეუძლია."
       ],
       "Only the people with the link and the password can access this file.": [
         "ამ ფაილთან წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
@@ -6603,6 +6603,9 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
+      "Generate emails with only a prompt": [
+        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
+      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -7454,6 +7457,9 @@
       "Share a file": [
         "ფაილის გაზიარება"
       ],
+      "Share files with one click": [
+        "გააზიარეთ ფაილები ერთი წკაპით"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:",
         "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:"
@@ -8142,6 +8148,11 @@
         "ტარიფის აწევა"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } თვე",
@@ -8461,6 +8472,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
@@ -8499,9 +8513,6 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
-      ],
-      "Keep ${ planName }": [
-        "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"

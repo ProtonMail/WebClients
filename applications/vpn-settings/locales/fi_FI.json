@@ -650,6 +650,10 @@
       "${ price } per user": [
         "${ price } per käyttäjä"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } kirjoitusavustajalisenssi",
+        "${ seats } kirjoitusavustajalisenssiä"
+      ],
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
@@ -737,7 +741,7 @@
         "Pidä aikataulusi yksityisenä"
       ],
       "Protect your passwords and identity": [
-        "Suojaa salasanasi ja henkilöllisyytesi"
+        "Suojaa salasanasi ja identiteettisi"
       ],
       "Safeguard your files and photos": [
         "Turvaa tietostosi ja valokuvasi"
@@ -2192,7 +2196,7 @@
         "Kuvaa ei ole valittu"
       ],
       "Not a valid number": [
-        "Virheellinen puhelinnumero"
+        "Virheellinen numero"
       ],
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
@@ -2737,7 +2741,7 @@
         "Käyttääksesi kaksivaiheista tunnistautumista todennuslaitteella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-todennuslaitteella"
+        "Vahvista identiteettisi fyysisellä U2F- tai FIDO2-todennuslaitteella"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Todennuslaitteesi on valmis käyttöön."
@@ -3374,7 +3378,7 @@
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
       ],
       "Emailing preference saved": [
-        "Sähköpostiasetukset tallennettiin"
+        "Sähköpostitilausten asetukset tallennettiin"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -3644,7 +3648,7 @@
         "Maksua ei nyt vaadita."
       ],
       "No results found": [
-        "Tuloksia ei löytynyt"
+        "Ei tuloksia"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
         "Kertakirjautumisen ulkopuoliset, manuaalisesti luodut käyttäjät, jotka eivät ole peräisin identiteettitoimitajasi, voivat edelleen kirjautua organisaatioosi."
@@ -3890,7 +3894,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5613,6 +5617,9 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
+      "Proofread and refine your texts": [
+        "Oikolue ja paranna tekstiäsi"
+      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -5628,6 +5635,9 @@
       ],
       "Router support": [
         "Reititintuki"
+      ],
+      "Save time emailing": [
+        "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
         "Ajoita ja torkuta sähköpostit milloin tahansa"
@@ -6026,7 +6036,7 @@
         "Palvelintemme kiintolevyt on salattu täysin useilla salasanakerroksilla, jotta tietosi pysyvät suojassa, vaikka laitteistomme vaarantuisi"
       ],
       "Password management and identity protection": [
-        "Salasanojen hallinta ja henkilöllisyyden suojaus"
+        "Salasanahallinta ja identiteettisuojaus"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
@@ -7706,8 +7716,14 @@
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
@@ -7789,9 +7805,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jos ylität ilmaisen tilauksen rajat ${ planName } -tilauksesi päättyessä, et voi:"
-      ],
-      "Keep ${ planName }": [
-        "Pidä ${ planName }"
       ],
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
@@ -8020,7 +8033,7 @@
         "Avaimet päivitettiin"
       ],
       "Link copied to clipboard": [
-        "Linkki kopioitu leikepöydälle"
+        "Linkki kopioitiin leikepöydälle"
       ],
       "Locale updated": [
         "Kieliasetus vaihdettiin"
@@ -8395,7 +8408,7 @@
         "Muuta tilauksesi IP-osoitemäärää"
       ],
       "Date": [
-        "Päivämäärä"
+        "Päiväys"
       ],
       "Day theme": [
         "Päiväteema"
@@ -8599,6 +8612,9 @@
       ],
       "Plans": [
         "Tilaukset"
+      ],
+      "Policies": [
+        "Käytännöt"
       ],
       "Preview": [
         "Esikatselu"
@@ -8939,6 +8955,11 @@
         "Ensisijainen ylläpitäjä"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "Tekoäly"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
@@ -9032,6 +9053,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Hanki ${ discount } alennus ${ billingCycle } tilauksella"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Saat ${ plan } -tilauksen ensimmäisen vuoden ilmaiseksi!"
+      ],
       "monthly": [
         "kuukausittain"
       ]
@@ -9053,6 +9077,9 @@
         "${ n } vuosi",
         "${ n } vuotta"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Sisältää ${ plan } (ilmainen ensimmäisen vuoden ajan)"
+      ],
       "Includes ${ plan }, our premium password manager, free for the first year!": [
         "Sisältää ${ plan }, premium-salasanahallintamme, ilmaiseksi ensimmäisen vuoden ajan!"
       ],
@@ -9061,6 +9088,9 @@
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Sinun ${ a } ja ${ b } -pakettisi"
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"

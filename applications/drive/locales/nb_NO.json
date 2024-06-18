@@ -546,8 +546,8 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
-      "Open in Docs": [
-        "Åpne i Docs"
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åpne i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
@@ -818,6 +818,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
+      ],
+      "Understood": [
+        "Forstått"
       ],
       "Undo": [
         "Angre"
@@ -4031,9 +4034,6 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
-      "Coming soon": [
-        "Kommer snart"
-      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -4156,6 +4156,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Nedlastingen satt på pause på grunn av tilkoblingsproblem; den gjenopptas automatisk"
       ],
+      "Download was canceled": [
+        "Nedlastingen ble kansellert"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
       ],
@@ -4164,6 +4167,9 @@
       ],
       "Downloading": [
         "Laster ned"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Nedlasting av ${ DOCS_APP_NAME }-filer fra ${ DRIVE_APP_NAME } støttes for øyeblikket ikke – disse vil ikke bli inkludert i nedlastingen."
       ],
       "Downloading all encrypted files": [
         "Laster ned alle krypterte filer"
@@ -4612,6 +4618,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Vennligst skriv inn passordet for å dekryptere og vise innhold."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Vennligst eksporter dem direkte fra ${ DOCS_APP_NAME }-applikasjonen i stedet hvis du ønsker å laste dem ned."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Vennligst legg merke til at adressene tildelt disse gruppene IKKE vil bli slettet."
@@ -5685,6 +5694,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Include message and file name in invite email": [
+        "Inkluder melding og filnavn i invitasjons-e-post"
       ],
       "Keep both": [
         "Behold begge"
@@ -7686,6 +7698,9 @@
       "Card number": [
         "Kortnummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "For øyeblikket er automatisk fornyelse av abonnementet deaktivert. Hvis du endrer abonnementet nå, aktiveres den automatiske fornyelsen på nytt."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -7794,6 +7809,9 @@
       ],
       "Last name": [
         "Etternavn"
+      ],
+      "Message": [
+        "Melding"
       ],
       "Name": [
         "Navn"
@@ -8719,9 +8737,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Hvis du overskrider gratisplangrensene når abonnementet på ${ planName } utløper, vil du ikke kunne:"
-      ],
-      "Keep ${ planName }": [
-        "Behold ${ planName }"
       ],
       "Learn more about our impact": [
         "Finn ut mer om innvirkningen vår"
@@ -9708,6 +9723,9 @@
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Nedlastingen har en ${ DOCS_APP_NAME }-fil"
+      ],
       "Your exposed information": [
         "Din eksponerte informasjon"
       ],
@@ -9779,6 +9797,9 @@
       ],
       "Load image": [
         "Last inn bilde"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Meldings- og filnavn lagres med null tilgangskryptering når det er inkludert i e-posten"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."

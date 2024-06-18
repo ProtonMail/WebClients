@@ -158,6 +158,9 @@
       "Cancel": [
         "გაუქმება"
       ],
+      "Cancel add-on": [
+        "დამატების გაუქმება"
+      ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
@@ -608,6 +611,9 @@
       "Keep my Plus subscription": [
         "ჩემი Plus გამოწერის შენარჩუნება"
       ],
+      "Keep the writing assistant": [
+        "წერის დამხმარის შენარჩუნება"
+      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
@@ -838,9 +844,6 @@
       ],
       "Revoke this invitation": [
         "ამ მოსაწვევის გაუქმება"
-      ],
-      "Run on ${ BRAND_NAME } servers": [
-        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
       ],
       "Save": [
         "შენახვა"
@@ -1145,6 +1148,9 @@
       "What do I get?": [
         "რას მივიღებ?"
       ],
+      "Why can't the model run locally?": [
+        "რატომ არ შეუძლია მოდელს, ლოკალურად გაეშვას?"
+      ],
       "Wipe": [
         "წაშლა"
       ],
@@ -1363,13 +1369,58 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "უფრო სწრაფი, თავსებადი უფრო მეტ მოწყობილობასთან"
+      ],
       "Run locally": [
         "ლოკალურად გაშვება"
+      ],
+      "Run on servers": [
+        "გაშვება სერვერებზე"
       ]
     },
     "Assistant toggle": {
       "${ localPrice } /month": [
         "${ localPrice } /თვეში"
+      ],
+      "${ price } /year": [
+        "${ price } /წელიწადში"
+      ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "აქტიურია თარიღამდე ${ subscriptionRenewalDate }"
+      ],
+      "Add writing assistant": [
+        "წერაში დამხმარის დამატება"
+      ],
+      "Add writing assistant to your plan": [
+        "დაამატეთ წერის დამხმარე თქვენს სატარიფო გეგმას"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "მიანიჭეთ ის სასურველ მომხმარებლებს ${ userAndAddressesButton }-ში"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "ავტომატურად განახლდება ${ subscriptionRenewalDate }"
+      ],
+      "Cancel writing assistant add-on": [
+        "წერაში დამხმარის დამატების გაუქმება"
+      ],
+      "Customize plan": [
+        "გეგმის მორგება"
+      ],
+      "from ${ price } /month": [
+        "${ price }-დან თვეში"
+      ],
+      "New": [
+        "ახალი"
+      ],
+      "Renew subscription": [
+        "გამოწერის განახლება"
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "სატესტო ვერსიის ვადის ამოწურვის დროა ${ formattedDate }"
+      ],
+      "Trial in progress": [
+        "სატესტო პერიოდი მიმდინარეობს"
       ]
     },
     "Attached ics file error": {
@@ -7294,6 +7345,9 @@
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } ან მეტი სიმბოლოსგან უნდა შედგებოდეს."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
@@ -8927,6 +8981,9 @@
       "Auto show remote images": [
         "გარე გამოსახულებების ავტომატური ჩვენება"
       ],
+      "Auto-advance": [
+        "ავტომატური გადასვლა"
+      ],
       "Auto-delete unwanted messages": [
         "არასასურველი შეტყობინებების ავტომატური წაშლა"
       ],
@@ -9149,6 +9206,9 @@
       "Disable animations": [
         "ანიმაციების გამორთვა"
       ],
+      "Disable data export for organization members": [
+        "მონაცემების გატანის გათიშვა ორგანიზაციის წევრებისთვის"
+      ],
       "Disable sharing outside the organization.": [
         "გაზიარებით გათიშვა ორგანიზაციის გარეთ."
       ],
@@ -9340,6 +9400,9 @@
       ],
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
+      ],
+      "Mail settings": [
+        "ელფოსტის მორგება"
       ],
       "Mailbox password": [
         "საფოსტო ყუთის პაროლი"
@@ -9915,6 +9978,9 @@
       ],
       "Add gift code": [
         "ჩასვით სასაჩუქრე კოდი"
+      ],
+      "Add to your subscription": [
+        "დაამატეთ თქვენს გამოწერაში"
       ],
       "Apps and extensions": [
         "აპები და გაფართოებები"
@@ -10813,6 +10879,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
+      ],
+      "Generate emails with only a prompt": [
+        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
@@ -12555,6 +12624,9 @@
       "Email address": [
         "ელ-ფოსტის მისამართი"
       ],
+      "End date": [
+        "დასასრულის დრო"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -12617,6 +12689,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "გაგვიზიარეთ, როგორ შეგვიძლია, ${ BRAND_NAME } უკეთესი გავხადოთ"
+      ],
+      "Start date": [
+        "საწყისი თარიღი"
       ],
       "Text": [
         "ტექსტი"
@@ -13464,6 +13539,11 @@
         "ტარიფის აწევა"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } თვე",
@@ -13854,6 +13934,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
@@ -13907,9 +13990,6 @@
       ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
-      ],
-      "Keep ${ planName }": [
-        "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
@@ -14238,6 +14318,15 @@
       ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
+      ],
+      "Writing assistant disabled": [
+        "წერის დამხმარე გათიშულია"
+      ],
+      "Writing assistant enabled": [
+        "წერაში დამხმარე ჩართულია"
+      ],
+      "Writing assistant setting updated": [
+        "წერის დამხმარის პარამეტრი განახლდა"
       ],
       "You have successfully canceled your subscription.": [
         "ტარიფი წარმატებით გააუქმეთ."
@@ -14633,6 +14722,9 @@
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "გავაუქმო წერაში დამხმარის დამატება?"
+      ],
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
@@ -14747,6 +14839,9 @@
       ],
       "Custom filters": [
         "მორგებული ფილტრები"
+      ],
+      "Custom folders and labels": [
+        "მორგებული საქაღალდეები და ჭდეები"
       ],
       "Custom selection of users": [
         "ხელით მითითებული მომხმარებლები"
@@ -14910,6 +15005,9 @@
       ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
+      ],
+      "Enable writing assistant": [
+        "წერაში დამხმარის ჩართვა"
       ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
@@ -15180,6 +15278,9 @@
       "Phone": [
         "ტელეფონი"
       ],
+      "Policies": [
+        "პოლიტიკები"
+      ],
       "Preview": [
         "გადახედვა"
       ],
@@ -15191,6 +15292,9 @@
       ],
       "Processing...": [
         "დამუშავება..."
+      ],
+      "Profile": [
+        "პროფილი"
       ],
       "Recommended": [
         "რეკომენდებულია"
@@ -15359,6 +15463,9 @@
       ],
       "Sort labels alphabetically": [
         "ჭდეების ანბანით დალაგება"
+      ],
+      "Spam filters": [
+        "სპამის ფილტრები"
       ],
       "Spam, block, and allow lists": [
         "სპამი, დაბლოკვა და დაშვებული სიები"

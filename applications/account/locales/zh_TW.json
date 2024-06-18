@@ -158,6 +158,9 @@
       "Cancel": [
         "取消"
       ],
+      "Cancel add-on": [
+        "Cancel 添加"
+      ],
       "Cancel subscription": [
         "取消訂購授權"
       ],
@@ -608,6 +611,9 @@
       "Keep my Plus subscription": [
         "保持進階版訂購授權"
       ],
+      "Keep the writing assistant": [
+        "保持撰寫工具"
+      ],
       "label emails as": [
         "將電郵加上標籤"
       ],
@@ -838,9 +844,6 @@
       ],
       "Revoke this invitation": [
         "撤銷此邀請"
-      ],
-      "Run on ${ BRAND_NAME } servers": [
-        "於伺服器執行${ BRAND_NAME }"
       ],
       "Save": [
         "儲存"
@@ -1343,9 +1346,41 @@
         "${ BRAND_NAME } 應用程式"
       ]
     },
+    "Assistant option": {
+      "Run on servers": [
+        "於伺服器執行"
+      ]
+    },
     "Assistant toggle": {
       "${ localPrice } /month": [
         "${ localPrice } /月"
+      ],
+      "${ price } /year": [
+        "${ price } 年"
+      ],
+      "Add writing assistant": [
+        "添加撰寫幫手"
+      ],
+      "Cancel writing assistant add-on": [
+        "取消撰寫幫手添加"
+      ],
+      "Customize plan": [
+        "客製化方案"
+      ],
+      "from ${ price } /month": [
+        "從${ price }月"
+      ],
+      "New": [
+        "新版"
+      ],
+      "Renew subscription": [
+        "續訂"
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "適用將於${ formattedDate }過期"
+      ],
+      "Trial in progress": [
+        "試用進行中"
       ]
     },
     "Attached ics file error": {
@@ -8162,12 +8197,6 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "您的瀏覽器不支援運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行或下載 ${ MAIL_APP_NAME } 桌面應用程式。"
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "您的瀏覽器無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -8179,9 +8208,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "您的硬體無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
@@ -8913,6 +8939,9 @@
       "Current email": [
         "目前的電子郵件"
       ],
+      "Current organization identity": [
+        "目前組織機構身分"
+      ],
       "Daily email notifications": [
         "每日電子郵件通知"
       ],
@@ -9150,6 +9179,9 @@
       "Mail Server (IMAP)": [
         "郵件伺服器 (IMAP)"
       ],
+      "Mail settings": [
+        "郵件設定"
+      ],
       "Mailbox password": [
         "信箱密碼"
       ],
@@ -9213,6 +9245,9 @@
       "New mailbox password": [
         "新的信箱密碼"
       ],
+      "New organization identity": [
+        "新組織機構身分"
+      ],
       "New organization password": [
         "新的組織密碼"
       ],
@@ -9257,6 +9292,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Organization identity": [
+        "組織機構身分"
       ],
       "Organization name": [
         "組織名稱"
@@ -9712,6 +9750,9 @@
       ],
       "Add gift code": [
         "加入禮品代碼"
+      ],
+      "Add to your subscription": [
+        "添加您的訂閱"
       ],
       "Apps and extensions": [
         "應用程式與延伸套件"
@@ -10288,6 +10329,9 @@
       "Back to calendar": [
         "返回行事曆"
       ],
+      "Back to documents": [
+        "返回到文件"
+      ],
       "Back to files": [
         "返回檔案"
       ],
@@ -10302,6 +10346,9 @@
       ],
       "Calendar": [
         "行事曆"
+      ],
+      "Documents": [
+        "文件"
       ],
       "Inbox": [
         "收件匣"
@@ -10496,6 +10543,9 @@
       "Centralized settings and billings": [
         "集中的設定與帳單"
       ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
       "Contact groups": [
         "聯絡人群組"
       ],
@@ -10513,6 +10563,9 @@
       ],
       "Custom snooze time": [
         "自訂延遲時間"
+      ],
+      "Custom workspace branding": [
+        "自訂工作空間的品牌"
       ],
       "Data breach monitoring": [
         "資料外洩監測"
@@ -10571,6 +10624,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Generate emails with only a prompt": [
+        "只要提示便可生成電子郵件"
+      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
@@ -10616,6 +10672,9 @@
       "Password health": [
         "密碼穩固性"
       ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -10637,11 +10696,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
+      "Reply to messages": [
+        "回覆訊息"
+      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
       "Router support": [
         "路由器支援"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
       ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
@@ -12135,6 +12200,9 @@
       "Email address": [
         "電郵位址"
       ],
+      "End date": [
+        "結束日期"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -12194,6 +12262,9 @@
       ],
       "Select state": [
         "請選州"
+      ],
+      "Start date": [
+        "開始日期"
       ],
       "Text": [
         "文字"
@@ -12995,6 +13066,11 @@
         "升級"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }個月"
@@ -13357,6 +13433,9 @@
       "10 email addresses": [
         "10 個電子信箱"
       ],
+      "6 users": [
+        "6 位使用者"
+      ],
       "Add any new files": [
         "新增任何檔案"
       ],
@@ -13386,9 +13465,6 @@
       ],
       "I still want to cancel": [
         "我還想取消"
-      ],
-      "Keep ${ planName }": [
-        "保留 ${ planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
@@ -13699,6 +13775,9 @@
       ],
       "Verification successful": [
         "驗證成功"
+      ],
+      "Writing assistant setting updated": [
+        "撰寫幫手設定已更新"
       ],
       "You have successfully canceled your subscription.": [
         "您已完成取消訂購授權。"
@@ -14364,6 +14443,9 @@
       "Email subscriptions": [
         "電子報訂閱"
       ],
+      "Enable writing assistant": [
+        "啟用撰寫工具"
+      ],
       "Encryption and keys": [
         "加密和金鑰"
       ],
@@ -14628,6 +14710,9 @@
       "Phone": [
         "電話"
       ],
+      "Policies": [
+        "政策"
+      ],
       "Preview": [
         "預覽"
       ],
@@ -14639,6 +14724,9 @@
       ],
       "Processing...": [
         "處理中..."
+      ],
+      "Profile": [
+        "個人檔案"
       ],
       "Recommended": [
         "推薦"
@@ -14807,6 +14895,9 @@
       ],
       "Sort labels alphabetically": [
         "依照字母排序標籤"
+      ],
+      "Spam filters": [
+        "垃圾郵件篩選器"
       ],
       "Spam, block, and allow lists": [
         "垃圾郵件、攔截和允許清單"
