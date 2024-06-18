@@ -6,6 +6,7 @@ import { Button, CircleLoader } from '@proton/atoms';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import {
@@ -24,6 +25,7 @@ import './LobbyContent.scss';
 const ERROR_TIMEOUT = 60_000;
 
 type Props = {
+    error?: string;
     status: AppStatus;
     onLogin: () => void;
     onLogout: (options: { soft: boolean }) => void;
@@ -34,6 +36,7 @@ type Props = {
 };
 
 export const LobbyContent: FC<Props> = ({
+    error,
     status,
     onLogin,
     onLogout,
@@ -130,6 +133,12 @@ export const LobbyContent: FC<Props> = ({
                 </span>
             </div>
 
+            {error && (
+                <Card type="danger" className="mt-6 text-sm">
+                    {error}
+                </Card>
+            )}
+
             <div className="flex-1 mt-8 flex flex-column gap-2">
                 {(() => {
                     switch (status) {
@@ -161,7 +170,6 @@ export const LobbyContent: FC<Props> = ({
                             );
                     }
                 })()}
-
                 {!(busy || unlocking) &&
                     (canSignOut ? (
                         <Button
