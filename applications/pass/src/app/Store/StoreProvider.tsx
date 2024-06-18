@@ -54,14 +54,14 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 setAppStatus: client.current.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
-                getCache: () => getDBCache(authStore.getUserID()!),
+                getCache: () => getDBCache(authStore.getUserID()),
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: settings.resolve,
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
                     client.current.setBooted(res.ok);
-                    const userID = authStore.getUserID()!;
+                    const userID = authStore.getUserID();
                     const state = store.getState();
 
                     if (res.ok) {
@@ -100,7 +100,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 setCache: async (encryptedCache) => {
                     const userID = authStore.getUserID();
-                    if (userID) return writeDBCache(userID, encryptedCache, config.APP_VERSION);
+                    if (userID) return writeDBCache(userID, encryptedCache, config.APP_VERSION).catch(noop);
                 },
             })
         );
