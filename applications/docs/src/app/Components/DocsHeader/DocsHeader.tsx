@@ -36,6 +36,7 @@ const DocsHeader = () => {
           <Button
             shape="ghost"
             className="hidden items-center gap-2 text-sm md:flex"
+            data-testid="share-button"
             onClick={() => controller.openDocumentSharingModal()}
           >
             <Icon name="user-plus" />

@@ -26,7 +26,7 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
   }
 
   return (
-    <div className={clsx('flex items-center gap-2', className)}>
+    <div className={clsx('flex items-center gap-2', className)} data-testid="active-users">
       {states.map(({ name, color, focusing }, index) => {
         return (
           <Tooltip title={name} key={index}>
