@@ -1,4 +1,4 @@
-import { AppsDropdown, Icon, QuickSettingsAppButton, UserDropdown } from '@proton/components'
+import { Icon, QuickSettingsAppButton, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
@@ -26,7 +26,6 @@ const DocsHeader = () => {
 
   return (
     <div className="flex items-center px-4 py-2">
-      <AppsDropdown app={APPS.PROTONDOCS} />
       <DocumentTitleDropdown controller={controller} />
       <div className="w-2" />
       <ConnectionStatus />
