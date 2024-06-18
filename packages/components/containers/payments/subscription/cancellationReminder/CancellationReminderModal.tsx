@@ -15,15 +15,21 @@ import {
     StripedList,
 } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers/features';
-import { useFeature, useSubscription } from '@proton/components/hooks';
+import { useFeature, useSubscription, useUser } from '@proton/components/hooks';
+import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
 import { ReminderFlag, markRemindersAsSeen } from './cancellationReminderHelper';
 
 const CancellationReminderModal = (props: ModalProps) => {
+    const [user] = useUser();
     const [subscription, subscriptionLoading] = useSubscription();
-    const newCancellationPolicy = useFlag('ExtendCancellationProcess');
+
+    const isChargeBeeUser = onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.CHARGEBEE_FORCED;
+    const newCancellationPolicy = useFlag('ExtendCancellationProcess') && isChargeBeeUser;
+
     const { feature, update } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
 
     const config = getReminderPageConfig({ subscription, newCancellationPolicy });
@@ -34,7 +40,7 @@ const CancellationReminderModal = (props: ModalProps) => {
         }
 
         const newValue = markRemindersAsSeen(feature.Value);
-        update(newValue);
+        void update(newValue);
         props?.onClose?.();
     };
 
