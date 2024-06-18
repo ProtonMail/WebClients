@@ -9,9 +9,11 @@ import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import {
+  BroadcastSource,
   ClientRequiresEditorMethods,
   DecryptedMessage,
   InternalEventBusInterface,
+  RtsMessagePayload,
   WebsocketDisconnectedPayload,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
@@ -35,7 +37,9 @@ describe('DocController', () => {
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
       {
-        execute: jest.fn().mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommitId: '123' })),
+        execute: jest
+          .fn()
+          .mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommitId: '123', entitlements: { keys: {} } })),
       } as unknown as jest.Mocked<LoadDocument>,
       {
         execute: jest.fn().mockReturnValue(Result.ok({ numberOfUpdates: jest.fn() })),
@@ -46,6 +50,8 @@ describe('DocController', () => {
       {} as jest.Mocked<ExportAndDownload>,
       {
         createConnection: jest.fn().mockReturnValue({ connect: jest.fn().mockResolvedValue(true) }),
+        sendDocumentUpdateMessage: jest.fn(),
+        flushPendingUpdates: jest.fn(),
       } as unknown as jest.Mocked<WebsocketServiceInterface>,
       {
         addEventHandler: jest.fn(),
@@ -59,7 +65,12 @@ describe('DocController', () => {
       } as unknown as jest.Mocked<LoggerInterface>,
     )
 
-    controller.entitlements = {} as DocumentEntitlements
+    controller.entitlements = {
+      role: {
+        canEdit: () => true,
+      },
+      keys: {},
+    } as unknown as DocumentEntitlements
 
     controller.beginInitialSyncTimer = jest.fn()
     controller.beginInitialConnectionTimer = jest.fn()
@@ -216,6 +227,43 @@ describe('DocController', () => {
       controller.handleWebsocketConnectedEvent()
 
       expect(controller.editorInvoker!.changeEditingAllowance).toHaveBeenCalledWith(true)
+    })
+  })
+
+  describe('editorRequestsPropagationOfUpdate', () => {
+    it('Should propagate update', () => {
+      controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'du',
+          },
+          content: {
+            byteLength: 123,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+
+      // @ts-ignore: accessing private property
+      expect(controller.websocketService.sendDocumentUpdateMessage).toHaveBeenCalled()
+    })
+
+    it('Should not propagate update if message is above MAX_DU_SIZE', () => {
+      controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'du',
+          },
+          content: {
+            byteLength: 123123123,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+      // @ts-ignore: accessing private property
+      expect(controller.websocketService.sendDocumentUpdateMessage).not.toHaveBeenCalled()
+      // @ts-ignore: accessing private property
+      expect(controller.websocketService.flushPendingUpdates).toHaveBeenCalled()
     })
   })
 })

@@ -14,6 +14,7 @@ export class DocumentUpdate extends pb_1.Message {
           version?: number
           timestamp?: number
           authorAddress?: string
+          uuid?: string
         },
   ) {
     super()
@@ -30,6 +31,9 @@ export class DocumentUpdate extends pb_1.Message {
       }
       if ('authorAddress' in data && data.authorAddress != undefined) {
         this.authorAddress = data.authorAddress
+      }
+      if ('uuid' in data && data.uuid != undefined) {
+        this.uuid = data.uuid
       }
     }
   }
@@ -57,11 +61,18 @@ export class DocumentUpdate extends pb_1.Message {
   set authorAddress(value: string) {
     pb_1.Message.setField(this, 4, value)
   }
+  get uuid() {
+    return pb_1.Message.getFieldWithDefault(this, 5, '') as string
+  }
+  set uuid(value: string) {
+    pb_1.Message.setField(this, 5, value)
+  }
   static fromObject(data: {
     encryptedContent?: Uint8Array
     version?: number
     timestamp?: number
     authorAddress?: string
+    uuid?: string
   }): DocumentUpdate {
     const message = new DocumentUpdate({})
     if (data.encryptedContent != null) {
@@ -76,6 +87,9 @@ export class DocumentUpdate extends pb_1.Message {
     if (data.authorAddress != null) {
       message.authorAddress = data.authorAddress
     }
+    if (data.uuid != null) {
+      message.uuid = data.uuid
+    }
     return message
   }
   toObject() {
@@ -84,6 +98,7 @@ export class DocumentUpdate extends pb_1.Message {
       version?: number
       timestamp?: number
       authorAddress?: string
+      uuid?: string
     } = {}
     if (this.encryptedContent != null) {
       data.encryptedContent = this.encryptedContent
@@ -97,23 +112,27 @@ export class DocumentUpdate extends pb_1.Message {
     if (this.authorAddress != null) {
       data.authorAddress = this.authorAddress
     }
+    if (this.uuid != null) {
+      data.uuid = this.uuid
+    }
     return data
   }
   serialize(): Uint8Array
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.encryptedContent.length) writer.writeBytes(1, this.encryptedContent)
-    if (this.version != 0) writer.writeInt32(2, this.version)
-    if (this.timestamp != 0) writer.writeUint64(3, this.timestamp)
-    if (this.authorAddress.length) writer.writeString(4, this.authorAddress)
-    if (!w) return writer.getResultBuffer()
+    if (this.encryptedContent.length) {writer.writeBytes(1, this.encryptedContent)}
+    if (this.version != 0) {writer.writeInt32(2, this.version)}
+    if (this.timestamp != 0) {writer.writeUint64(3, this.timestamp)}
+    if (this.authorAddress.length) {writer.writeString(4, this.authorAddress)}
+    if (this.uuid.length) {writer.writeString(5, this.uuid)}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): DocumentUpdate {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new DocumentUpdate()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           message.encryptedContent = reader.readBytes()
@@ -126,6 +145,9 @@ export class DocumentUpdate extends pb_1.Message {
           break
         case 4:
           message.authorAddress = reader.readString()
+          break
+        case 5:
+          message.uuid = reader.readString()
           break
         default:
           reader.skipField()
@@ -200,15 +222,15 @@ export class SignedPlaintextContent extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.content.length) writer.writeBytes(1, this.content)
-    if (this.signature.length) writer.writeBytes(2, this.signature)
-    if (!w) return writer.getResultBuffer()
+    if (this.content.length) {writer.writeBytes(1, this.content)}
+    if (this.signature.length) {writer.writeBytes(2, this.signature)}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): SignedPlaintextContent {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new SignedPlaintextContent()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           message.content = reader.readBytes()
@@ -275,14 +297,14 @@ export class DocumentUpdateArray extends pb_1.Message {
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
     if (this.documentUpdates.length)
-      writer.writeRepeatedMessage(1, this.documentUpdates, (item: DocumentUpdate) => item.serialize(writer))
-    if (!w) return writer.getResultBuffer()
+      {writer.writeRepeatedMessage(1, this.documentUpdates, (item: DocumentUpdate) => item.serialize(writer))}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): DocumentUpdateArray {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new DocumentUpdateArray()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(message.documentUpdates, () =>
