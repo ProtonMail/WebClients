@@ -8,12 +8,14 @@ export function CreateDocumentUpdateMessage(dto: {
   authorAddress: string
   timestamp: number
   version: DocumentUpdateVersion
+  uuid: string
 }): ClientMessageWithDocumentUpdates {
   const documentUpdate = CreateDocumentUpdate({
     content: dto.content,
     authorAddress: dto.authorAddress,
     timestamp: dto.timestamp,
     version: dto.version,
+    uuid: dto.uuid,
   })
 
   const updates = CreateDocumentUpdateArray({ updates: [documentUpdate] })
