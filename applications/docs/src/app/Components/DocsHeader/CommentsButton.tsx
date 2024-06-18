@@ -20,6 +20,7 @@ export function CommentsButton({ controller }: { controller: DocControllerInterf
     <Button
       icon
       shape="ghost"
+      data-testid="comments-button"
       className="flex items-center justify-center gap-2 text-sm"
       onClick={() => controller.showCommentsPanel()}
     >
