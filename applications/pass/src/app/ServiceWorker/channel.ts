@@ -20,6 +20,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'check'; hash: string }
         | { type: 'claim' }
         | { type: 'connect' }
+        | { type: 'fork'; userID: string }
         | { type: 'lock_deleted'; mode: LockMode }
         | { type: 'locked'; mode: LockMode }
         | { type: 'refresh'; data: RefreshSessionData }

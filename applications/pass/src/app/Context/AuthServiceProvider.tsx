@@ -17,6 +17,7 @@ import { useConnectivityRef } from '@proton/pass/components/Core/ConnectivityPro
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { type RouteErrorState, getRouteError } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
 import { isOnline } from '@proton/pass/lib/api/utils';
@@ -30,7 +31,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe } from '@proton/pass/types';
+import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
@@ -59,6 +60,19 @@ const getDefaultLocalID = (): Maybe<number> => {
     if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
 };
 
+const getPersistedSessionsForUserID = (UserID: string): string[] =>
+    Object.keys(localStorage).filter((key) => {
+        if (!key.startsWith(STORAGE_PREFIX)) return false;
+        try {
+            const data = localStorage.getItem(key);
+            if (!data) return false;
+            const session = JSON.parse(data);
+            return session.UserID === UserID;
+        } catch {
+            return false;
+        }
+    });
+
 export const AuthServiceContext = createContext<Maybe<AuthService>>(undefined);
 
 export const useAuthService = (): AuthService => {
@@ -75,7 +89,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getOfflineEnabled } = usePassCore();
     const sw = useServiceWorker();
     const client = useClientRef();
-    const history = useHistory();
+    const history = useHistory<MaybeNull<RouteErrorState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
 
@@ -100,6 +114,14 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onInit: async () => {
+                const error = getRouteError(history.location.search);
+
+                if (error !== null) {
+                    client.current.setStatus(AppStatus.ERROR);
+                    history.replace({ search: '', pathname: '/', state: { error } });
+                    return false;
+                } else history.replace({ state: null });
+
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
                 const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const persistedSession = await auth.config.getPersistedSession(initialLocalID);
@@ -116,7 +138,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 authStore.setOfflineKD(undefined);
 
                 const passwordUnlockable = canPasswordUnlock({
-                    cache: await getDBCache(authStore.getUserID()!),
+                    cache: await getDBCache(authStore.getUserID()),
                     lockMode: authStore.getLockMode(),
                     offline: !online.current,
                     offlineConfig: authStore.getOfflineConfig(),
@@ -191,11 +213,12 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
+
                 history.replace('/');
             },
 
             onForkConsumed: async (session, state) => {
-                const { offlineConfig, offlineKD } = session;
+                const { offlineConfig, offlineKD, UserID, LocalID } = session;
                 history.replace({ hash: '' }); /** removes selector from hash */
 
                 try {
@@ -204,6 +227,19 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 } catch {
                     setRedirectPath('/');
                 }
+
+                /** If any on-going persisted sessions are present for the forked
+                 * UserID session : delete them and wipe the local database. This
+                 * ensures incoming forks always take precedence */
+                const sessionsForUserID = getPersistedSessionsForUserID(UserID);
+
+                if (sessionsForUserID.length > 0) {
+                    logger.info(`[AuthServiceProvider] clearing sessions for user ${UserID}`);
+                    sessionsForUserID.forEach((key) => localStorage.removeItem(key));
+                    await deletePassDB(UserID).catch(noop);
+                }
+
+                sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
 
                 if (Boolean(offlineConfig && offlineKD)) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
@@ -353,8 +389,16 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             } else return authService.init({ forceLock: false });
         };
 
-        /* setup listeners on the service worker's broadcasting channel in order to
-         * sync the current client if any authentication changes happened in another tab */
+        /** If a fork for the same UserID has been consumed in another tab - clear
+         * the auth store and reload the page silently to avoid maintaing a stale
+         * local session alive. This edge-case can happen when the pass web-app is
+         * opened on new a localID which may trigger a re-auth for the same UserID. */
+        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID }) => {
+            if (authStore.getUserID() === userID) {
+                authStore.clear();
+                window.location.href = '/?error=fork';
+            }
+        };
 
         const handleUnauthorized: ServiceWorkerMessageHandler<'unauthorized'> = ({ localID }) => {
             if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
@@ -393,6 +437,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
+        sw?.on('fork', handleFork);
         sw?.on('unauthorized', handleUnauthorized);
         sw?.on('locked', handleLocked);
         sw?.on('lock_deleted', handleLockDeleted);
@@ -401,9 +446,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         run().catch(noop);
 
         return () => {
-            sw?.off('unauthorized', handleUnauthorized);
+            sw?.off('fork', handleFork);
+            sw?.off('lock_deleted', handleLockDeleted);
             sw?.off('locked', handleLocked);
             sw?.off('refresh', handleRefresh);
+            sw?.off('unauthorized', handleUnauthorized);
         };
     }, []);
 
