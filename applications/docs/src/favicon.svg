@@ -1,41 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-    <path
-        fill="url(#a)"
-        fill-rule="evenodd"
-        d="M0 3v9a2 2 0 0 0 2 2h11V6a2 2 0 0 0-2-2H5.606a1.5 1.5 0 0 1-.832-.252L4.28 3.42A2.5 2.5 0 0 0 2.894 3H0Z"
-        clip-rule="evenodd"
-    />
-    <path
-        fill="url(#b)"
-        fill-rule="evenodd"
-        d="M0 3v9a2 2 0 0 0 2 2h11V6a2 2 0 0 0-2-2H5.606a1.5 1.5 0 0 1-.832-.252L4.28 3.42A2.5 2.5 0 0 0 2.894 3H0Z"
-        clip-rule="evenodd"
-    />
-    <path
-        fill="url(#c)"
-        fill-rule="evenodd"
-        d="M2 1a2 2 0 0 0-2 2h2.894a2.5 2.5 0 0 1 1.387.42l.493.328A1.5 1.5 0 0 0 5.606 4H11a2 2 0 0 1 2 2v8h1a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6.715a1.25 1.25 0 0 1-.62-.165l-.943-.539A2.25 2.25 0 0 0 4.035 1H2Z"
-        clip-rule="evenodd"
-    />
-    <defs>
-        <linearGradient id="a" x1="8.011" x2="9.207" y1="-5.58" y2="11.556" gradientUnits="userSpaceOnUse">
-            <stop offset=".989" stop-color="#6D4AFF" />
-        </linearGradient>
-        <linearGradient id="c" x1="-5.379" x2="14.219" y1="-1.167" y2="20.769" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#6D4AFF" />
-            <stop offset=".359" stop-color="#AE8CFF" />
-            <stop offset="1" stop-color="#F8CCFF" />
-        </linearGradient>
-        <radialGradient
-            id="b"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="matrix(-10.14204 20.34623 -32.01015 -15.95619 13.13 -4.699)"
-            gradientUnits="userSpaceOnUse"
-        >
-            <stop offset=".556" stop-color="#FF62C0" stop-opacity="0" />
-            <stop offset=".994" stop-color="#FF62C0" />
-        </radialGradient>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+	<g>
+		<path d="M240 41v158c0 18-11.7 33.4-27.9 38.8-4.1 1.4-8.5 2.2-13.1 2.2H41c-4.6 0-9-.8-13.2-2.2-.6-.2-1.3-.5-1.9-.7s-1.2-.5-1.8-.8c-.9-.4-1.8-.9-2.7-1.3-1.2-.6-2.3-1.3-3.4-2-.3-.2-.6-.4-.8-.6C6.8 225 0 212.8 0 199V41C0 27.2 6.8 15 17.2 7.6c.3-.2.5-.4.8-.6 1.1-.7 2.2-1.4 3.4-2 .9-.5 1.8-.9 2.7-1.3.6-.3 1.2-.5 1.8-.8.6-.2 1.2-.5 1.9-.7C32 .8 36.4 0 41 0h158c4.6 0 9 .8 13.1 2.1 15.8 5.3 27.3 20.1 27.8 37.5v1.3Z" fill="#34b8ee" stroke-width="0" />
+		<path d="M43.7 107.7c0-5.6 4.5-10.1 10.1-10.1h42.7c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1M43.7 146.9c0-5.6 4.5-10.1 10.1-10.1h70.5c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1M43.7 186.2c0-5.6 4.5-10.1 10.1-10.1h70.5c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1" fill="#fff" fill-rule="evenodd" stroke-width="0" />
+		<path d="M121.9 0h59v59h-59z" stroke-width="0" fill="#85d4f5" />
+		<path d="M240 39.7V59h-59V0h18.1c4.6 0 9 .8 13.1 2.1C228 7.4 239.5 22.2 240 39.6Z" stroke-width="0" fill="#d6f1fc" />
+		<path d="M181 59h59v59h-59z" stroke-width="0" fill="#85d4f5" />
+	</g>
 </svg>

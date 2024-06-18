@@ -23,7 +23,8 @@ export type MimeName =
     | 'video'
     | 'xls'
     | 'xml'
-    | 'zip';
+    | 'zip'
+    | 'proton-doc';
 
 const viewboxMap = {
     sm: 16,

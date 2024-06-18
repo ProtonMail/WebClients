@@ -14,7 +14,7 @@ const CreateDocumentButton = ({ onClick }: Props) => {
             onClick={onClick}
             data-testid="dropdown-create-document"
         >
-            <span>
+            <span className="flex items-center">
                 <img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />
                 {
                     // translator: Action button in sidebar dropdown to create a new Proton Document
