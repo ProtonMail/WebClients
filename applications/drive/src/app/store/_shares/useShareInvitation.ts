@@ -11,6 +11,7 @@ import {
     queryInvitationList,
     queryInviteExternalUser,
     queryInviteProtonUser,
+    queryResendExternalInvitation,
     queryResendInvitation,
     queryShareInvitationDetails,
     queryShareInvitationsListing,
@@ -269,6 +270,16 @@ export const useShareInvitation = () => {
         return debouncedRequest<{ Code: number }>(queryResendInvitation(shareId, invitationId), abortSignal);
     };
 
+    const resendExternalInvitationEmail = async (
+        abortSignal: AbortSignal,
+        { shareId, externalInvitationId }: { shareId: string; externalInvitationId: string }
+    ) => {
+        return debouncedRequest<{ Code: number }>(
+            queryResendExternalInvitation(shareId, externalInvitationId),
+            abortSignal
+        );
+    };
+
     const getInvitationDetails = async (
         abortSignal: AbortSignal,
         params: {
@@ -452,6 +463,7 @@ export const useShareInvitation = () => {
         deleteInvitation,
         acceptInvitation,
         resendInvitationEmail,
+        resendExternalInvitationEmail,
         updateInvitationPermissions,
         deleteExternalInvitation,
         updateExternalInvitationPermissions,
