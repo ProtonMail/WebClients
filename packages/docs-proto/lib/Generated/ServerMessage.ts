@@ -5,9 +5,10 @@
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from './DocumentUpdate'
 import * as dependency_2 from './Event'
+import * as dependency_3 from './MessageAck'
 import * as pb_1 from 'google-protobuf'
 export class ServerMessage extends pb_1.Message {
-  #one_of_decls: number[][] = [[2, 3]]
+  #one_of_decls: number[][] = [[2, 3, 4]]
   constructor(
     data?:
       | any[]
@@ -17,10 +18,17 @@ export class ServerMessage extends pb_1.Message {
           | {
               documentUpdatesMessage?: ServerMessageWithDocumentUpdates
               eventsMessage?: never
+              acksMessage?: never
             }
           | {
               documentUpdatesMessage?: never
               eventsMessage?: ServerMessageWithEvents
+              acksMessage?: never
+            }
+          | {
+              documentUpdatesMessage?: never
+              eventsMessage?: never
+              acksMessage?: ServerMessageWithMessageAcks
             }
         )),
   ) {
@@ -35,6 +43,9 @@ export class ServerMessage extends pb_1.Message {
       }
       if ('eventsMessage' in data && data.eventsMessage != undefined) {
         this.eventsMessage = data.eventsMessage
+      }
+      if ('acksMessage' in data && data.acksMessage != undefined) {
+        this.acksMessage = data.acksMessage
       }
     }
   }
@@ -62,20 +73,31 @@ export class ServerMessage extends pb_1.Message {
   get has_eventsMessage() {
     return pb_1.Message.getField(this, 3) != null
   }
+  get acksMessage() {
+    return pb_1.Message.getWrapperField(this, ServerMessageWithMessageAcks, 4) as ServerMessageWithMessageAcks
+  }
+  set acksMessage(value: ServerMessageWithMessageAcks) {
+    pb_1.Message.setOneofWrapperField(this, 4, this.#one_of_decls[0], value)
+  }
+  get has_acksMessage() {
+    return pb_1.Message.getField(this, 4) != null
+  }
   get message() {
     const cases: {
-      [index: number]: 'none' | 'documentUpdatesMessage' | 'eventsMessage'
+      [index: number]: 'none' | 'documentUpdatesMessage' | 'eventsMessage' | 'acksMessage'
     } = {
       0: 'none',
       2: 'documentUpdatesMessage',
       3: 'eventsMessage',
+      4: 'acksMessage',
     }
-    return cases[pb_1.Message.computeOneofCase(this, [2, 3])]
+    return cases[pb_1.Message.computeOneofCase(this, [2, 3, 4])]
   }
   static fromObject(data: {
     type?: number
     documentUpdatesMessage?: ReturnType<typeof ServerMessageWithDocumentUpdates.prototype.toObject>
     eventsMessage?: ReturnType<typeof ServerMessageWithEvents.prototype.toObject>
+    acksMessage?: ReturnType<typeof ServerMessageWithMessageAcks.prototype.toObject>
   }): ServerMessage {
     const message = new ServerMessage({})
     if (data.type != null) {
@@ -87,6 +109,9 @@ export class ServerMessage extends pb_1.Message {
     if (data.eventsMessage != null) {
       message.eventsMessage = ServerMessageWithEvents.fromObject(data.eventsMessage)
     }
+    if (data.acksMessage != null) {
+      message.acksMessage = ServerMessageWithMessageAcks.fromObject(data.acksMessage)
+    }
     return message
   }
   toObject() {
@@ -94,6 +119,7 @@ export class ServerMessage extends pb_1.Message {
       type?: number
       documentUpdatesMessage?: ReturnType<typeof ServerMessageWithDocumentUpdates.prototype.toObject>
       eventsMessage?: ReturnType<typeof ServerMessageWithEvents.prototype.toObject>
+      acksMessage?: ReturnType<typeof ServerMessageWithMessageAcks.prototype.toObject>
     } = {}
     if (this.type != null) {
       data.type = this.type
@@ -104,23 +130,27 @@ export class ServerMessage extends pb_1.Message {
     if (this.eventsMessage != null) {
       data.eventsMessage = this.eventsMessage.toObject()
     }
+    if (this.acksMessage != null) {
+      data.acksMessage = this.acksMessage.toObject()
+    }
     return data
   }
   serialize(): Uint8Array
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.type != 0) writer.writeInt32(1, this.type)
+    if (this.type != 0) {writer.writeInt32(1, this.type)}
     if (this.has_documentUpdatesMessage)
-      writer.writeMessage(2, this.documentUpdatesMessage, () => this.documentUpdatesMessage.serialize(writer))
-    if (this.has_eventsMessage) writer.writeMessage(3, this.eventsMessage, () => this.eventsMessage.serialize(writer))
-    if (!w) return writer.getResultBuffer()
+      {writer.writeMessage(2, this.documentUpdatesMessage, () => this.documentUpdatesMessage.serialize(writer))}
+    if (this.has_eventsMessage) {writer.writeMessage(3, this.eventsMessage, () => this.eventsMessage.serialize(writer))}
+    if (this.has_acksMessage) {writer.writeMessage(4, this.acksMessage, () => this.acksMessage.serialize(writer))}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessage {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessage()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           message.type = reader.readInt32()
@@ -135,6 +165,12 @@ export class ServerMessage extends pb_1.Message {
           reader.readMessage(
             message.eventsMessage,
             () => (message.eventsMessage = ServerMessageWithEvents.deserialize(reader)),
+          )
+          break
+        case 4:
+          reader.readMessage(
+            message.acksMessage,
+            () => (message.acksMessage = ServerMessageWithMessageAcks.deserialize(reader)),
           )
           break
         default:
@@ -198,14 +234,14 @@ export class ServerMessageWithDocumentUpdates extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.has_updates) writer.writeMessage(1, this.updates, () => this.updates.serialize(writer))
-    if (!w) return writer.getResultBuffer()
+    if (this.has_updates) {writer.writeMessage(1, this.updates, () => this.updates.serialize(writer))}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithDocumentUpdates {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessageWithDocumentUpdates()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(
@@ -272,14 +308,14 @@ export class ServerMessageWithEvents extends pb_1.Message {
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
     if (this.events.length)
-      writer.writeRepeatedMessage(1, this.events, (item: dependency_2.Event) => item.serialize(writer))
-    if (!w) return writer.getResultBuffer()
+      {writer.writeRepeatedMessage(1, this.events, (item: dependency_2.Event) => item.serialize(writer))}
+    if (!w) {return writer.getResultBuffer()}
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithEvents {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessageWithEvents()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) break
+      if (reader.isEndGroup()) {break}
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(message.events, () =>
@@ -302,5 +338,83 @@ export class ServerMessageWithEvents extends pb_1.Message {
   }
   static deserializeBinary(bytes: Uint8Array): ServerMessageWithEvents {
     return ServerMessageWithEvents.deserialize(bytes)
+  }
+}
+export class ServerMessageWithMessageAcks extends pb_1.Message {
+  #one_of_decls: number[][] = []
+  constructor(
+    data?:
+      | any[]
+      | {
+          acks?: dependency_3.MessageAck[]
+        },
+  ) {
+    super()
+    pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls)
+    if (!Array.isArray(data) && typeof data == 'object') {
+      if ('acks' in data && data.acks != undefined) {
+        this.acks = data.acks
+      }
+    }
+  }
+  get acks() {
+    return pb_1.Message.getRepeatedWrapperField(this, dependency_3.MessageAck, 1) as dependency_3.MessageAck[]
+  }
+  set acks(value: dependency_3.MessageAck[]) {
+    pb_1.Message.setRepeatedWrapperField(this, 1, value)
+  }
+  static fromObject(data: {
+    acks?: ReturnType<typeof dependency_3.MessageAck.prototype.toObject>[]
+  }): ServerMessageWithMessageAcks {
+    const message = new ServerMessageWithMessageAcks({})
+    if (data.acks != null) {
+      message.acks = data.acks.map((item) => dependency_3.MessageAck.fromObject(item))
+    }
+    return message
+  }
+  toObject() {
+    const data: {
+      acks?: ReturnType<typeof dependency_3.MessageAck.prototype.toObject>[]
+    } = {}
+    if (this.acks != null) {
+      data.acks = this.acks.map((item: dependency_3.MessageAck) => item.toObject())
+    }
+    return data
+  }
+  serialize(): Uint8Array
+  serialize(w: pb_1.BinaryWriter): void
+  serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+    const writer = w || new pb_1.BinaryWriter()
+    if (this.acks.length)
+      {writer.writeRepeatedMessage(1, this.acks, (item: dependency_3.MessageAck) => item.serialize(writer))}
+    if (!w) {return writer.getResultBuffer()}
+  }
+  static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithMessageAcks {
+    const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
+      message = new ServerMessageWithMessageAcks()
+    while (reader.nextField()) {
+      if (reader.isEndGroup()) {break}
+      switch (reader.getFieldNumber()) {
+        case 1:
+          reader.readMessage(message.acks, () =>
+            pb_1.Message.addToRepeatedWrapperField(
+              message,
+              1,
+              dependency_3.MessageAck.deserialize(reader),
+              dependency_3.MessageAck,
+            ),
+          )
+          break
+        default:
+          reader.skipField()
+      }
+    }
+    return message
+  }
+  serializeBinary(): Uint8Array {
+    return this.serialize()
+  }
+  static deserializeBinary(bytes: Uint8Array): ServerMessageWithMessageAcks {
+    return ServerMessageWithMessageAcks.deserialize(bytes)
   }
 }

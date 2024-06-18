@@ -5,6 +5,7 @@ import { DocsApi } from '../Api/Docs/DocsApi'
 import { EncryptMessage } from './EncryptMessage'
 import { DocumentKeys } from '@proton/drive-store'
 import { DocumentMetaInterface } from '@proton/docs-shared'
+import { GenerateUUID } from '../Util/GenerateUuid'
 
 /**
  * Allows the client to create an initial commit. This used by the Duplicate function to allow us to seed the document
@@ -32,6 +33,7 @@ export class SeedInitialCommit implements UseCaseInterface<boolean> {
       authorAddress: metadata.authorAddress,
       timestamp: metadata.timestamp,
       version: metadata.version,
+      uuid: GenerateUUID(),
     })
 
     const commit = CreateCommit({

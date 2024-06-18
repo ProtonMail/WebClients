@@ -25,6 +25,7 @@ import {
   SquashVerificationObjectionCallback,
   SquashVerificationObjectionDecision,
 } from '../Types/SquashVerificationObjection'
+import { GenerateUUID } from '../Util/GenerateUuid'
 
 export type SquashDocumentDTO = {
   docMeta: DocumentMetaInterface
@@ -188,6 +189,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
         authorAddress: metadata.authorAddress,
         timestamp: metadata.timestamp,
         version: metadata.version,
+        uuid: GenerateUUID(),
       })
 
       resultingUpdates.push(update)

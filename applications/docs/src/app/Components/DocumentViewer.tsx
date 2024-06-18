@@ -90,8 +90,9 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>((payload) => {
       showGenericAlertModal({
-        title: c('Title').t`An error occurred`,
+        title: payload.translatedErrorTitle || c('Title').t`An error occurred`,
         translatedMessage: payload.translatedError,
+        onClose: payload.onClose,
       })
     }, ApplicationEvent.GeneralUserDisplayableErrorOccurred)
   }, [application.eventBus, showGenericAlertModal])

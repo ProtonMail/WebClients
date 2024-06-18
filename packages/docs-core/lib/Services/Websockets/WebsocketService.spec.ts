@@ -142,6 +142,28 @@ describe('WebsocketService', () => {
     })
   })
 
+  describe('flushPendingUpdates', () => {
+    beforeEach(() => {
+      service.destroy()
+
+      createService()
+
+      service.createConnection({ linkId: '123' } as NodeMeta, {} as DocumentKeys, { commitId: () => undefined })
+
+      buffer = service.getConnectionRecord('123')!.buffer
+    })
+
+    it('should immediately flush a buffer that has pending changes', async () => {
+      buffer.flush = jest.fn()
+
+      buffer.addUpdate(new Uint8Array())
+
+      service.flushPendingUpdates()
+
+      expect(buffer.flush).toHaveBeenCalled()
+    })
+  })
+
   describe('sendEventMessage', () => {
     it('should encrypt event message', async () => {
       const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(stringToUint8Array('123')))

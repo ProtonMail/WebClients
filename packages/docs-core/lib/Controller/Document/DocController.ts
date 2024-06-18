@@ -28,7 +28,7 @@ import {
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
 } from '@proton/docs-shared'
-import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
+import { EventType, EventTypeEnum, ConnectionCloseReason, RTSConfig } from '@proton/docs-proto'
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
@@ -417,6 +417,20 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     if (message.type.wrapper === 'du') {
+      if (message.content.byteLength > RTSConfig.MAX_DU_SIZE) {
+        void this.websocketService.flushPendingUpdates()
+        this.logger.error(new Error('Error: Update Too Large'))
+        PostApplicationError(this.eventBus, {
+          translatedErrorTitle: c('Error').t`Error: Update Too Large`,
+          translatedError: c('Error')
+            .t`It looks like the text document you're trying to paste exceeds the allowed limit.`,
+          onClose: () => {
+            this.logger.debug('Reloading document due to DU being too large')
+            window.location.reload()
+          },
+        })
+        return
+      }
       void this.websocketService.sendDocumentUpdateMessage(this.nodeMeta, message.content, debugSource)
     } else if (message.type.wrapper === 'events') {
       void this.websocketService.sendEventMessage(this.nodeMeta, message.content, message.type.eventType, debugSource)
