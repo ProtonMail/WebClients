@@ -1,5 +1,5 @@
 import { DecryptedMessage } from '@proton/docs-shared'
-// import { GetCommitDULimit } from '../Types/SquashingConstants'
+import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 
 export class DecryptedCommit {
@@ -13,11 +13,7 @@ export class DecryptedCommit {
   }
 
   needsSquash(): boolean {
-    /**
-     * Temporarily disable squashing until DRVDOC-513 is deployed.
-     */
-    // return this.numberOfUpdates() > GetCommitDULimit()
-    return false
+    return this.numberOfUpdates() > GetCommitDULimit()
   }
 
   squashedRepresentation(): Uint8Array {
