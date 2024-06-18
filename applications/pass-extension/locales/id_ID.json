@@ -1070,6 +1070,9 @@
       "Disabling auto-lock": [
         "Menonaktifkan kunci otomatis"
       ],
+      "Disabling auto-lock failed": [
+        "Gagal menonaktifkan penguncian otomatis"
+      ],
       "Disabling offline mode...": [
         "Menonaktifkan mode offline..."
       ],
@@ -1108,6 +1111,15 @@
       ],
       "Enabling offline mode...": [
         "Mengaktifkan mode offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Mengaktifkan penguncian kata sandi otomatis"
+      ],
+      "Enabling password lock failed": [
+        "Gagal mengaktifkan penguncian kata sandi"
+      ],
+      "Enabling PIN auto-lock": [
+        "Mengaktifkan penguncian PIN otomatis"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -1351,6 +1363,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+      ],
+      "Registering PIN lock failed": [
+        "Pendaftaran kunci PIN gagal"
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
