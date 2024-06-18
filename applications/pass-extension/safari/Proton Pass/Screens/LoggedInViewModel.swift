@@ -21,6 +21,7 @@
 
 import Factory
 import Foundation
+import ProtonCoreNetworking
 import ProtonCoreServices
 import Shared
 
@@ -46,12 +47,16 @@ final class LoggedInViewModel: ObservableObject {
     private let createPaymentsManager = resolve(\SharedUseCaseContainer.createPaymentsManager)
 
     private var apiService: any APIService { apiManager.apiService }
+    private let onLogOut: () -> Void
 
-    init(environment: PassEnvironment, credentials: Credentials) {
+    init(environment: PassEnvironment,
+         credentials: Credentials,
+         onLogOut: @escaping () -> Void) {
         apiManager = createApiManager(environment: environment,
                                       credentials: credentials)
         self.environment = environment
         self.credentials = credentials
+        self.onLogOut = onLogOut
         setCoreLoggerEnvironment(environment)
     }
 }
@@ -67,7 +72,12 @@ extension LoggedInViewModel {
             let (access, user) = try await (accessRequest, userRequest)
             userAndPlanObject = .fetched(.init(plan: access.plan, user: user))
         } catch {
-            userAndPlanObject = .error(error)
+            if let responseError = error as? ResponseError,
+               responseError.httpCode == 401 {
+                onLogOut()
+            } else {
+                userAndPlanObject = .error(error)
+            }
         }
     }
 
