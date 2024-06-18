@@ -259,7 +259,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   return (
     <div
       ref={setContainer}
-      className="relative"
+      className="relative print:hidden"
       style={{
         gridRow: 1,
         gridColumn: 1,

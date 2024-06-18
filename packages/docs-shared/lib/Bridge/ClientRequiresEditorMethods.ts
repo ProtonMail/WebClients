@@ -28,4 +28,5 @@ export interface ClientRequiresEditorMethods {
   changeEditingAllowance(allow: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
+  printAsPDF(): Promise<void>
 }
