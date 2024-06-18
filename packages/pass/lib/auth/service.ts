@@ -12,9 +12,12 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { revoke } from '@proton/shared/lib/api/auth';
+import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
+import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
+import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -33,8 +36,10 @@ import type { ResumeSessionResult } from './session';
 import {
     type AuthSession,
     type EncryptedAuthSession,
-    encryptPersistedSession,
+    encryptPersistedSessionWithKey,
+    getPersistedSessionKey,
     isValidSession,
+    mergeSessionTokens,
     resumeSession,
 } from './session';
 import { type AuthStore } from './store';
@@ -218,7 +223,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                  * locked, persist eitherway to avoid requiring a new fork consumption if
                  * user does not unlock immediately (reset api state for persisting). */
                 if (locked) await api.reset();
-                if (loggedIn || locked) await authService.persistSession();
+                if (loggedIn || locked) await authService.persistSession({ regenerateClientKey: true });
 
                 return loggedIn;
             } catch (error: unknown) {
@@ -320,10 +325,33 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return lock;
         },
 
-        persistSession: async () => {
+        /** Passing the `regenerateClientKey` option will generate
+         * a new local key and update it back-end side. Ideally, this
+         * should only happen after consuming a fork. */
+        persistSession: async (options?: { regenerateClientKey: boolean }) => {
             try {
+                const session = authStore.getSession();
+                const { UID, AccessToken } = session;
+
+                if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
+
+                const clientKey = await (async () => {
+                    if (options?.regenerateClientKey) {
+                        const { serializedData, key } = await generateClientKey();
+                        await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, setLocalKey(serializedData)));
+                        return key;
+                    }
+
+                    return getPersistedSessionKey(api);
+                })();
+
                 logger.info('[AuthService] Persisting session');
-                const encryptedSession = await encryptPersistedSession({ api, authStore });
+
+                /* If the clientKey resolution sequence triggered a refresh,
+                 * make sure we persist the session with the new tokens */
+                const mergedSession = mergeSessionTokens(session, authStore);
+                const encryptedSession = await encryptPersistedSessionWithKey(mergedSession, clientKey);
+
                 await config.onSessionPersist?.(encryptedSession);
             } catch (error) {
                 logger.warn(`[AuthService] Persisting session failure`, error);
