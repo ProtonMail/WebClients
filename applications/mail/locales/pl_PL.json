@@ -999,8 +999,8 @@
       "Revert to original display": [
         "Przywróć oryginalny widok"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Uruchom na serwerach ${ BRAND_NAME }"
+      "Run on servers": [
+        "Uruchom na serwerach"
       ],
       "Save": [
         "Zapisz"
@@ -1532,9 +1532,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "Przeglądarka nie jest obsługiwana"
-      ],
       "Fast and secure": [
         "Szybki i bezpieczny"
       ],
@@ -1550,19 +1547,14 @@
       "Run locally": [
         "Uruchom lokalnie"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Włącz na serwerach ${ BRAND_NAME }"
+      "Run on servers": [
+        "Uruchom na serwerach"
       ],
       "Runs on all devices": [
         "Uruchom na wszystkich urządzeniach"
       ],
       "Runs on your device": [
         "Uruchom na urządzeniu"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Twój sprzęt nie jest obsługiwany"
       ]
     },
     "Attached ics file error": {
@@ -3880,9 +3872,6 @@
       "Forward address is required": [
         "Adres przekierowania jest wymagany"
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Nie mogę przetworzyć tego żądania ze względu na moje zasady etyki. Spróbuj innego zadania."
-      ],
       "Image upload failed": [
         "Przesłanie zdjęcia nie powiodło się"
       ],
@@ -5149,6 +5138,9 @@
       ],
       "Hardware not compatible": [
         "Twój sprzęt nie jest obsługiwany"
+      ],
+      "Report an issue": [
+        "Zgłoś problem"
       ],
       "Resume downloading": [
         "Wznów pobieranie"
@@ -7475,11 +7467,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Pobierz aplikację desktopową ${ MAIL_APP_NAME } lub uruchom go na serwerach ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Pobierz aplikację desktopową ${ MAIL_APP_NAME } lub uruchom go na serwerach."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
@@ -7496,8 +7488,8 @@
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Twój sprzęt nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Twój sprzęt nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
       ],
       "Your information was found on ${ displayedDate }": [
         "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
@@ -11520,9 +11512,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jeśli po wygaśnięciu subskrypcji ${ planName } przekroczysz limity darmowego planu, stracisz możliwości:"
-      ],
-      "Keep ${ planName }": [
-        "Zachowaj plan ${ planName }"
       ],
       "Learn more about our impact": [
         "Dowiedz się więcej o naszym wpływie"

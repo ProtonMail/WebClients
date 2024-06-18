@@ -103,6 +103,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Continue offline": [
+        "Kontynuuj offline"
+      ],
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
@@ -433,6 +436,9 @@
       "Try again.": [
         "Spróbuj ponownie."
       ],
+      "Unlock offline with password": [
+        "Odblokowanie w trybie offline za pomocą hasła"
+      ],
       "Unpin item": [
         "Odepnij element"
       ],
@@ -752,6 +758,9 @@
       "Moving item failed": [
         "Przenoszenie elementu nie powiodło się"
       ],
+      "Network error": [
+        "Błąd sieci"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Tryb offline nie jest dostępny w trybie podwójnego hasła."
       ],
@@ -812,6 +821,12 @@
       "Unknown invite": [
         "Nieznane zaproszenie"
       ],
+      "Unknown item": [
+        "Element jest nieznany"
+      ],
+      "Unlock failure": [
+        "Odblokowanie nie powiodło się"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format pliku ${ PASS_APP_NAME } jest nieobsługiwany"
       ],
@@ -835,6 +850,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Jesteś obecnie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
@@ -970,6 +988,9 @@
         "${ n } elementów",
         "${ n } elementów"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } będzie zawsze dostępne."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
       ],
@@ -999,6 +1020,12 @@
       ],
       "Access successfully confirmed": [
         "Dostęp został potwierdzony"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania hasła ${ BRAND_NAME }."
+      ],
+      "Add a username field": [
+        "Dodaj pole nazwa użytkownika"
       ],
       "Add your custom email address to monitor :": [
         "Dodaj niestandardowy adres e-mail do monitoringu:"
@@ -1072,6 +1099,9 @@
       "Change your password": [
         "Zmień hasło"
       ],
+      "Click here to add a field for a username.": [
+        "Kliknij tutaj, aby dodać pole nazwa użytkownika."
+      ],
       "Congratulations, your access has been confirmed": [
         "Gratulacje. Dostęp został potwierdzony"
       ],
@@ -1095,6 +1125,15 @@
       ],
       "Didn't receive the code?": [
         "Nie otrzymano kodu?"
+      ],
+      "Disabling auto-lock": [
+        "Wyłączenie automatycznej blokady"
+      ],
+      "Disabling auto-lock failed": [
+        "Wyłączenie automatycznej blokady nie powiodło się"
+      ],
+      "Disabling offline mode...": [
+        "Wyłączenie trybu offline..."
       ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
@@ -1122,6 +1161,21 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Włącz ${ PASS_SHORT_APP_NAME } w wersji beta"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Włącz automatyczne blokowanie w celu zabezpieczenia danych"
+      ],
+      "Enabling offline mode...": [
+        "Włączanie trybu offline..."
+      ],
+      "Enabling password auto-lock": [
+        "Włączanie automatycznej blokady hasła"
+      ],
+      "Enabling password lock failed": [
+        "Włączenie blokady hasłem nie powiodło się"
+      ],
+      "Enabling PIN auto-lock": [
+        "Włączanie automatycznej blokady PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
@@ -1318,11 +1372,17 @@
       "Offline mode": [
         "Tryb offline"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Tryb offline nie może być obecnie wyłączony"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Tryb offline nie może zostać włączony"
       ],
       "Offline support successfully disabled": [
         "Tryb offline został wyłączony"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał podania kodu PIN w celu odblokowania sesji. Użytkownik zostanie wylogowany po 3 nieudanych próbach."
       ],
       "Owner": [
         "Właściciel"
@@ -1335,6 +1395,9 @@
       ],
       "password": [
         "hasło"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Hasło blokady zostało pomyślnie zarejestrowane. Użyj go, aby odblokować ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
@@ -1357,11 +1420,26 @@
       "Please check your spam folder or try resending the code.": [
         "Sprawdź folder Spam lub wyślij ponownie kod."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Potwierdź swoje hasło ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby automatycznie zablokować konto hasłem."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby wyrejestrować bieżącą blokadę."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby zaktualizować czas automatycznej blokady."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Potwierdź kod PIN, aby wyrejestrować bieżącą blokadę."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potwierdź kod PIN, aby edytować ustawienia."
@@ -1386,6 +1464,12 @@
       ],
       "Reconnect": [
         "Połącz ponownie"
+      ],
+      "Reconnecting": [
+        "Ponowne łączenie"
+      ],
+      "Registering PIN lock failed": [
+        "Rejestracja blokady PIN nie powiodła się"
       ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
@@ -1716,6 +1800,9 @@
       "Create an encrypted note": [
         "Utwórz zaszyfrowaną notatkę"
       ],
+      "Create lock": [
+        "Utwórz blokadę"
+      ],
       "Create new vault": [
         "Utwórz nowy sejf"
       ],
@@ -1742,6 +1829,12 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nowy alias)"
       ],
       "Email address": [
         "Adres e-mail"
@@ -1920,6 +2013,9 @@
       "PIN": [
         "Kod PIN"
       ],
+      "PIN code": [
+        "Kod PIN"
+      ],
       "Prefix": [
         "Przedrostek"
       ],
@@ -2058,6 +2154,9 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2151,11 +2250,17 @@
       "Enter a prefix": [
         "Wpisz przedrostek"
       ],
+      "Enter email": [
+        "Podaj adres e-mail"
+      ],
       "Enter email or username": [
         "Wpisz adres e-mail lub nazwę użytkownika"
       ],
       "Enter password": [
         "Wpisz hasło"
+      ],
+      "Enter username": [
+        "Podaj nazwę użytkownika"
       ],
       "Full Name": [
         "Właściciel karty"
@@ -2664,6 +2769,9 @@
       ],
       "Title is required": [
         "Tytuł jest wymagany"
+      ],
+      "Too many attempts": [
+        "Zbyt wiele prób"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Zmienić właściciela sejfu na ${ email }?"

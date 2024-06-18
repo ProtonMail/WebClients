@@ -45,22 +45,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ]
     },
     "Action": {
@@ -216,6 +216,12 @@
       ],
       "Clear all formatting": [
         "Poista kaikki muotoilut"
+      ],
+      "Clear filter": [
+        "Tyhjennä suodatin"
+      ],
+      "Clear filters": [
+        "Tyhjennä suodattimet"
       ],
       "Close": [
         "Sulje"
@@ -865,9 +871,6 @@
       "Revoke this invitation": [
         "Mitätöi tämä kutsu"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Suorita ${ BRAND_NAME } -palvelimilla"
-      ],
       "Save": [
         "Tallenna"
       ],
@@ -1076,7 +1079,7 @@
         "Järjestämätön lista"
       ],
       "Unsubscribe": [
-        "Peru tilaus"
+        "Lopeta tilaus"
       ],
       "Update": [
         "Päivitä"
@@ -1171,6 +1174,9 @@
       "What do I get?": [
         "Mitä saan?"
       ],
+      "Why can't the model run locally?": [
+        "Miksei mallia voi suorittaa paikallisesti?"
+      ],
       "Wipe": [
         "Tyhjennä"
       ],
@@ -1240,6 +1246,10 @@
       ],
       "${ price } per user": [
         "${ price } per käyttäjä"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } kirjoitusavustajalisenssi",
+        "${ seats } kirjoitusavustajalisenssiä"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -1370,7 +1380,7 @@
         "Pidä aikataulusi yksityisenä"
       ],
       "Protect your passwords and identity": [
-        "Suojaa salasanasi ja henkilöllisyytesi"
+        "Suojaa salasanasi ja identiteettisi"
       ],
       "Safeguard your files and photos": [
         "Turvaa tietostosi ja valokuvasi"
@@ -1385,6 +1395,9 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Nopeampi ja kattavampi laiteyhteensopivuus"
+      ],
       "Run locally": [
         "Suorita paikallisesti"
       ],
@@ -1399,11 +1412,17 @@
       "${ price } /year": [
         "${ price }/vuosi"
       ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "Aktiivinen ${ subscriptionRenewalDate } asti"
+      ],
       "Add writing assistant": [
         "Lisää kirjoitusavustaja"
       ],
       "Add writing assistant to your plan": [
         "Lisää kirjoitusavustaja tilaukseesi"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Aseta se tietyille käyttäjille: ${ userAndAddressesButton }"
       ],
       "Automatically renews on ${ subscriptionRenewalDate }": [
         "Uusiutuu automaattisesti ${ subscriptionRenewalDate }"
@@ -1419,6 +1438,12 @@
       ],
       "New": [
         "Uusi"
+      ],
+      "Renew subscription": [
+        "Uudista tilaus"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi. ${ learnMore }."
       ],
       "Trial expires on ${ formattedDate }": [
         "Kokeilujakso päättyy ${ formattedDate }"
@@ -3279,10 +3304,10 @@
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
       ],
       "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Käytä näitä ominaisuuksia ottamalla laaja lokikirjaus ja ${ PROTON_SENTINEL_NAME } käyttöön"
+        "Käytä näitä ominaisuuksia aktivoimalla laaja lokikirjaus ja ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs to access these features": [
-        "Käytä näitä ominaisuuksia ottamalla laaja lokikirjaus käyttöön"
+        "Käytä näitä ominaisuuksia aktivoimalla laaja lokikirjaus"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
@@ -3476,6 +3501,11 @@
         ".rpm Fedoralle/Red Hatille"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Edistynyt jakamisen suojaus"
@@ -3635,7 +3665,7 @@
         "Tilasit seuraavat sähköpostit uudelleen: ${ categoriesJsx }."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Lopetit seuraavat sähköpostit: ${ categoriesJsx }."
+        "Lopetit seuraavien sähköpostien tilaukset: ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -4190,7 +4220,7 @@
         "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
       "Not a valid number": [
-        "Virheellinen puhelinnumero"
+        "Virheellinen numero"
       ],
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
@@ -4243,6 +4273,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Aseta ensin palautuksen/ilmoitusten sähköpostiosoite"
+      ],
+      "Please try again in a few moments.": [
+        "Yritä uudelleen hetken kuluttua."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Saadaksesi usean käyttäjän tuen, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
@@ -4721,7 +4754,7 @@
         "kirjautumalla sisään"
       ],
       "There was a problem unsubscribing you.": [
-        "Tilausta peruttaessa ilmeni ongelma."
+        "Tilausta lopetettaessa ilmeni ongelma."
       ]
     },
     "Error notification": {
@@ -5216,7 +5249,7 @@
         "Käyttääksesi kaksivaiheista tunnistautumista todennuslaitteella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-todennuslaitteella"
+        "Vahvista identiteettisi fyysisellä U2F- tai FIDO2-todennuslaitteella"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Todennuslaitteesi on valmis käyttöön."
@@ -6304,7 +6337,7 @@
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Käytä salasanojasi ja suojaa verkkohenkilöllisyytesi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
+        "Käytä salasanojasi ja suojaa verkkoidentiteettisi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
@@ -6392,6 +6425,9 @@
       "All (${ totalFoldersCount } label)": [
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
+      ],
+      "All Events ": [
+        "Kaikki tapahtumat"
       ],
       "All keys successfully reactivated": [
         "Kaikki avaimet aktivoitiin uudelleen"
@@ -6570,6 +6606,9 @@
       ],
       "Browser not supported": [
         "Selainta ei tueta"
+      ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Oletusarvoisesti organisaation jäsenet voivat viedä vain holveja, joiden omistajia he ovat. Jos tämä asetus on käytössä, he eivät voi viedä mitään tietoja"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -6819,7 +6858,7 @@
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
       ],
       "Emailing preference saved": [
-        "Sähköpostiasetukset tallennettiin"
+        "Sähköpostitilausten asetukset tallennettiin"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tällä ${ nameDeleted } -tunnisteella merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
@@ -6986,6 +7025,9 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan uudelleenasetuksesta, voit estää viestiä näkymästä uudelleen"
       ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Jos tämä asetus on käytössä, organisaation jäsenet voivat jakaa holveja vain organisaation sisällä"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
@@ -7119,12 +7161,87 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invite Accepted": [
+        "Kutsu hyväksyttiin"
+      ],
+      "Invite Created": [
+        "Kutsu luotiin"
+      ],
+      "Invite deleted": [
+        "Kutsu poistettiin"
+      ],
+      "Invite Deleted": [
+        "Kutsu poistettiin"
+      ],
+      "Invite for organization accepted": [
+        "Kutsu organisaatioon hyväksyttiin"
+      ],
+      "Invite for organization created": [
+        "Kutsu organisaatioon luotiin"
+      ],
+      "Invite for User deleted": [
+        "Käyttäjän kutsu poistettiin"
+      ],
+      "Invite rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
+      "Invite Rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
       "Invite successfully sent": [
         "Kutsu lähetettiin",
         "Kutsut lähetettiin"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Osa tiedoistasi näyttää olevan salattu ja lukittu."
+      ],
+      "Item Autofilled": [
+        "Kohde automaattitäytettiin"
+      ],
+      "Item autofilled in vault": [
+        "Holvin kohde automaattitäytettiin"
+      ],
+      "Item Changed Flags": [
+        "Kohteen liput muuttuivat"
+      ],
+      "Item Created": [
+        "Kohde luotiin"
+      ],
+      "Item created in vault": [
+        "Holviin luotiin kohde"
+      ],
+      "Item Deleted": [
+        "Kohde poistettiin"
+      ],
+      "Item deleted in vault": [
+        "Holvin kohde poistettiin"
+      ],
+      "Item flags changed in vault": [
+        "Holvin kohteen liput muuttuivat"
+      ],
+      "Item in vault untrashed": [
+        "Holvin kohde palautettiin roskakorista"
+      ],
+      "Item Read": [
+        "Kohdetta tarkasteltiin"
+      ],
+      "Item read in vault": [
+        "Holvin kohdetta tarkasteltiin"
+      ],
+      "Item Trashed": [
+        "Kohde siirrettiin roskakoriin"
+      ],
+      "Item trashed in vault": [
+        "Holvin kohde siirrettiin roskakoriin"
+      ],
+      "Item Untrashed": [
+        "Kohde palautettiin roskakorista"
+      ],
+      "Item Updated": [
+        "Kohdetta muokattiin"
+      ],
+      "Item updated in vault": [
+        "Holvin kohdetta muokattiin"
       ],
       "it’s imperative": [
         "on erittäin tärkeää"
@@ -7285,6 +7402,12 @@
       "New": [
         "Uusi"
       ],
+      "New User Invite Created": [
+        "Uuden käyttäjän kutsu luotiin"
+      ],
+      "New User Invite Deleted": [
+        "Uuden käyttäjän kutsu poistettiin"
+      ],
       "No account keys exist": [
         "Tiliavaimia ei ole olemassa"
       ],
@@ -7325,7 +7448,7 @@
         "Maksua ei nyt vaadita."
       ],
       "No results found": [
-        "Tuloksia ei löytynyt"
+        "Ei tuloksia"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
         "Kertakirjautumisen ulkopuoliset, manuaalisesti luodut käyttäjät, jotka eivät ole peräisin identiteettitoimitajasi, voivat edelleen kirjautua organisaatioosi."
@@ -7547,7 +7670,7 @@
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
       "Recovery kit copied to clipboard": [
-        "Palautuspakkaus kopioitu leikepöydälle"
+        "Palautuspaketti kopioitiin leikepöydälle"
       ],
       "Recovery phrase copied to clipboard": [
         "Palautuslauseke kopioitiin leikepöydälle"
@@ -7666,6 +7789,21 @@
       "Settings updated": [
         "Asetukset on muutettu"
       ],
+      "Share Created": [
+        "Jako luotiin"
+      ],
+      "Share Deleted": [
+        "Jako poistettiin"
+      ],
+      "Share Updated": [
+        "Jakoa muokattiin"
+      ],
+      "Shared vault deleted": [
+        "Jaettu holvi poistettiin"
+      ],
+      "Shared vault updated": [
+        "Jaettua holvia muokattiin"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Näytä viestilistauksessa jokaisen lähettäjän kuva. Jos kuvaa ei ole saatavilla, näytetään lähettäjän nimen alkukirjain."
       ],
@@ -7734,7 +7872,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -7749,7 +7887,7 @@
         "Tuki yhdelle omalle sähköpostiverkkotunnukselle"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
-        "Tuki omien verkkotunnusten ja muiden kuin ${ BRAND_NAME }-sähköpostiosoitteiden valvonnalle on tulossa pian."
+        "Tuki omien verkkotunnusten ja muiden kuin ${ BRAND_NAME }-osoitteiden valvonnalle on tulossa pian."
       ],
       "support team": [
         "tukeemme"
@@ -7829,6 +7967,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "Kirjoitusavustaja-lisäosaa **ei uusita**. Voit jatkaa palvelun käyttöä **${ subscriptionRenewalDate }** asti."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Näiden määritystiedostojen avulla voit valita mihin ${ VPN_APP_NAME } -palvelimeen yhteys muodostetaan kun käytetään muiden tahojen VPN-sovelluksia tai määritetään reitittimen VPN-asetuksia."
       ],
@@ -7890,7 +8031,7 @@
         "Tunniste ei ole ikkunan sulkeuduttua käytettävissä, eikä sitä tulisi jakaa kenellekään."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Tilauksen peruutuslinkki on vanhentunut. Avaa uudempi viesti tältä postituslistalta."
+        "Tilauksen lopetuslinkki on vanhentunut. Avaa uudempi viesti tältä postituslistalta."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
@@ -8039,6 +8180,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Identiteetin tarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteetin tarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
       ],
+      "Unknown event type": [
+        "Tuntematon tapahtumatyyppi"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Jollet kirjaudu tililtäsi ulos tai vaihda salasanaasi, istuntosi pysyy aktiivisena. Istunnot erääntyvät niiden oltua toimettomana 60 päivää."
       ],
@@ -8052,7 +8196,7 @@
         "Tallentamattomia muutoksia"
       ],
       "Unsubscribe link expired": [
-        "Tilauksen peruutuslinkki on erääntynyt."
+        "Tilauksen lopetuslinkki on vanhentunut."
       ],
       "Unsupported file": [
         "Tiedostoa ei tueta"
@@ -8114,11 +8258,35 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
+      "User invited to organization": [
+        "Käyttäjä kutsuttiin organisaatioon"
+      ],
       "username": [
         "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Vault created": [
+        "Holvi luotiin"
+      ],
+      "Vault Created": [
+        "Holvi luotiin"
+      ],
+      "Vault deleted": [
+        "Holvi poistettiin"
+      ],
+      "Vault Deleted": [
+        "Holvi poistettiin"
+      ],
+      "Vault shared with email": [
+        "Holvi jaettiin sähköpostitse"
+      ],
+      "Vault updated": [
+        "Holvia muokattiin"
+      ],
+      "Vault Updated": [
+        "Holvia muokattiin"
       ],
       "Verification can take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
@@ -8181,7 +8349,7 @@
         "Lähetimme sinulle juuri uuden linkin."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
-        "Valvomme pimeää verkkoa sellaisten tapahtumien varalta, joissa henkilökohtaisia tietojasi, kuten sähköpostiosoitteita tai muiden verkkopalveluiden salasanoja, on vuotanut tai vaarantunut."
+        "Valvomme pimeää verkkoa sellaisten tapahtumien varalta, joissa sähköpostiosoitteitasi tai muiden verkkopalveluiden salasanojen kaltaisia henkilökohtaisia tietojasi on vuotanut tai vaarantunut."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -8334,6 +8502,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Voit sulkea välilehden tai selaimen sillä välin."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Voit määrittää ${ PASS_APP_NAME } -käytännöt organisaation jäsenille."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
@@ -8495,12 +8666,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Selaimesi ei tue kirjoitusavustajaa. Lataa ${ MAIL_APP_NAME } -työpöytäsovellus tai kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Selaimesi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
@@ -8512,9 +8677,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista ${ BRAND_NAME } -palvelimilla."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tuonti tililtä ${ accounts } on tilapäisesti viivästynyt.",
@@ -8970,7 +9132,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Näin voit tehdä sen"
+        "Näin se onnistuu"
       ],
       "Learn more": [
         "Lue lisää"
@@ -9126,7 +9288,7 @@
         "Automaattivastaus"
       ],
       "Auto-unsubscribe": [
-        "Automaattinen irtisanominen"
+        "Automaattinen lopetus"
       ],
       "Awarded": [
         "Palkittu"
@@ -9331,6 +9493,9 @@
       ],
       "Disable animations": [
         "Poista animaatiot käytöstä"
+      ],
+      "Disable data export for organization members": [
+        "Poista tietojen vienti käytöstä organisaation jäseniltä"
       ],
       "Disable sharing outside the organization.": [
         "Poista organisaation ulkopuolinen jakaminen käytöstä."
@@ -10096,6 +10261,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Tapahtumaloki"
+      ],
       "Add a gift code": [
         "Lisää lahjakoodi"
       ],
@@ -11067,6 +11235,9 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
+      "Proofread and refine your texts": [
+        "Oikolue ja paranna tekstiäsi"
+      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -11082,6 +11253,9 @@
       ],
       "Router support": [
         "Reititintuki"
+      ],
+      "Save time emailing": [
+        "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
         "Ajoita ja torkuta sähköpostit milloin tahansa"
@@ -11531,7 +11705,7 @@
         "Palvelintemme kiintolevyt on salattu täysin useilla salasanakerroksilla, jotta tietosi pysyvät suojassa, vaikka laitteistomme vaarantuisi"
       ],
       "Password management and identity protection": [
-        "Salasanojen hallinta ja henkilöllisyyden suojaus"
+        "Salasanahallinta ja identiteettisuojaus"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
@@ -11775,8 +11949,8 @@
         "Kutsu mitätöitiin"
       ],
       "Member added": [
-        "Jäsen lisätty",
-        "Jäsenet lisätty"
+        "Jäsen lisättiin",
+        "Jäseniä lisättiin"
       ],
       "Member deleted": [
         "Jäsen poistettiin"
@@ -11828,7 +12002,7 @@
         "samana päivänä"
       ],
       "week before": [
-        "viikko aiemmin",
+        "viikkoa aiemmin",
         "viikkoa aiemmin"
       ]
     },
@@ -12347,7 +12521,7 @@
         "Lataa ja asenna ${ PASS_APP_NAME } -sovellus App Storesta aloittaaksesi ${ PASS_APP_NAME2 }in käyttämisen puhelimellasi."
       ],
       "Encrypted password manager that also protects your identity": [
-        "Salattu salasanahallinta, joka suojaa myös henkilöllisyytesi"
+        "Salattu salasanahallinta, joka suojaa myös identiteettisi"
       ],
       "End-to-end encrypted notes": [
         "Päästä päähän -salatut muistiinpanot"
@@ -12395,7 +12569,7 @@
         "Ymmärrän, että kadottaessani palautustiedot, voin menettää pääsyn tililleni pysyvästi."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Jos et pääse sisään ${ BRAND_NAME } -tilillesi, **Palautuspaketin** avulla voit kirjautua sisään ja palauttaa tietosi."
+        "Jos et pääse ${ BRAND_NAME }-tilillesi, voit kirjautua **Palautuspakettisi** avulla ja palauttaa tietosi."
       ],
       "Includes:": [
         "Sisältää:"
@@ -12765,6 +12939,12 @@
       "Email address": [
         "Sähköpostiosoite"
       ],
+      "Email or IP": [
+        "Sähköposti- tai IP-osoite"
+      ],
+      "End date": [
+        "Päättymispäivä"
+      ],
       "example@domain.com": [
         "esimerkki@verkkotunnus.fi"
       ],
@@ -12827,6 +13007,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
+      ],
+      "Start date": [
+        "Aloituspäivä"
       ],
       "Text": [
         "Teksti"
@@ -13014,7 +13197,7 @@
         "Poista kalenteri"
       ],
       "Unsubscribe?": [
-        "Peru tilaus?"
+        "Lopetetaanko tilaus?"
       ]
     },
     "Remove organization logo": {
@@ -13144,16 +13327,16 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } sekä 1 muusta lähteestä havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Palvelusta ${ name } havaittiin mahdollinen vuoto. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "Select file": {
@@ -14142,8 +14325,14 @@
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
@@ -14225,9 +14414,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jos ylität ilmaisen tilauksen rajat ${ planName } -tilauksesi päättyessä, et voi:"
-      ],
-      "Keep ${ planName }": [
-        "Pidä ${ planName }"
       ],
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
@@ -14495,7 +14681,7 @@
         "Avaimet päivitettiin"
       ],
       "Link copied to clipboard": [
-        "Linkki kopioitu leikepöydälle"
+        "Linkki kopioitiin leikepöydälle"
       ],
       "Locale updated": [
         "Kieliasetus vaihdettiin"
@@ -15093,6 +15279,9 @@
       "Custom filters": [
         "Omat suodattimet"
       ],
+      "Custom folders and labels": [
+        "Omat kansiot ja tunnisteet"
+      ],
       "Custom selection of users": [
         "Mukautettu käyttäjävalinta"
       ],
@@ -15121,7 +15310,7 @@
         "Tietojen palautus"
       ],
       "Date": [
-        "Päivämäärä"
+        "Päiväys"
       ],
       "Day theme": [
         "Päiväteema"
@@ -15165,6 +15354,9 @@
       ],
       "Delete version history?": [
         "Poistetaanko versiohistoria?"
+      ],
+      "Description": [
+        "Kuvaus"
       ],
       "Details": [
         "Lisätiedot"
@@ -15276,6 +15468,9 @@
       ],
       "Error": [
         "Virhe"
+      ],
+      "Event": [
+        "Tapahtuma"
       ],
       "Every member of the organization can access": [
         "Organisaation kaikki käyttäjät voivat käyttää"
@@ -15417,6 +15612,9 @@
       "Invoices": [
         "Laskut"
       ],
+      "IP": [
+        "IP-osoite"
+      ],
       "Keep your inbox organized": [
         "Pidä postilaatikkosi järjestyksessä"
       ],
@@ -15507,6 +15705,9 @@
       "Password reset settings": [
         "Salasanan uudelleenasetuksen asetukset"
       ],
+      "Passwords made easy": [
+        "Salasanojen hallinta on nyt helppoa"
+      ],
       "Pay invoice": [
         "Maksa lasku"
       ],
@@ -15522,8 +15723,14 @@
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
+      "Personalise your e-mail footer": [
+        "Mukauta viestiesi alatunnistetta"
+      ],
       "Phone": [
         "Puhelin"
+      ],
+      "Policies": [
+        "Käytännöt"
       ],
       "Preview": [
         "Esikatselu"
@@ -15757,6 +15964,9 @@
       "This field cannot contain only spaces": [
         "Kenttä ei voi sisältää pelkkiä välilyöntejä"
       ],
+      "Time": [
+        "Aika"
+      ],
       "Time zone": [
         "Aikavyöhyke"
       ],
@@ -15786,6 +15996,9 @@
       ],
       "Upload your organization’s logo": [
         "Lähetä organisaatiosi logo"
+      ],
+      "User": [
+        "Käyttäjä"
       ],
       "Users": [
         "Käyttäjät"
@@ -16010,7 +16223,7 @@
         "Vähennä tunnisteiden määrää mukauttamalla tuontia"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Poista roskakori- ja roskapostiviestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo oleville viestien poistopäiväksi päivän, jona ne siirrettiin sinne."
+        "Poista roskakorin ja roskapostin viestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo olevien viestien poistopäivän niiden siirtopäivän perusteella."
       ],
       "Device information such as operating system": [
         "Tietoja laitteesta, kuten mm. käyttöjärjestelmä"
@@ -16028,7 +16241,7 @@
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Laajan lokikirjauksen ollessa käytössä, kirjataan suojauslokiin jokaisen tapahtuman IP-osoite."
+        "Laajaa lokikirjausta käytettässä suojauslokiin kirjataan jokaisen tapahtuman IP-osoite."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
@@ -16154,7 +16367,7 @@
         "Linkkiä painettaessa tämä tietojenkalastelusuojaustoiminto pyytää vahvistamaan verkkosivuston URL-osoitteen."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Kun viesti siirretään roskapostiin, irtisanotaan kyseisen lähettäjän uutiskirjetilaus automaattisesti."
+        "Kun siirrät viestin roskapostiin, lopetetaan kyseinen sähköpostitilaus automaattisesti."
       ],
       "You have locally decrypted this key": [
         "Olet purkanut tämän avaimen salauksen paikallisesti"
@@ -16269,6 +16482,11 @@
         "Ensisijainen ylläpitäjä"
       ]
     },
+    "Users table: AI-powered": {
+      "AI": [
+        "Tekoäly"
+      ]
+    },
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
@@ -16370,6 +16588,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Hanki ${ discount } alennus ${ billingCycle } tilauksella"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "Saat ${ plan } -tilauksen ensimmäisen vuoden ilmaiseksi!"
+      ],
       "monthly": [
         "kuukausittain"
       ]
@@ -16391,6 +16612,9 @@
         "${ n } vuosi",
         "${ n } vuotta"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Sisältää ${ plan } (ilmainen ensimmäisen vuoden ajan)"
+      ],
       "Includes ${ plan }, our premium password manager, free for the first year!": [
         "Sisältää ${ plan }, premium-salasanahallintamme, ilmaiseksi ensimmäisen vuoden ajan!"
       ],
@@ -16399,6 +16623,9 @@
       ],
       "Try ${ upsellPlanName } risk-free": [
         "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Sinun ${ a } ja ${ b } -pakettisi"
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"

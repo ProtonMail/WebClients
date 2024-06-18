@@ -472,6 +472,9 @@
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "მიიღეთ ტარიფი, მხოლოდ, ${ addonPriceWithCurrency }-ად თვეში"
+      ],
       "Get SimpleLogin extension": [
         "SimpleLogin-ის გაფართოების მიღება"
       ],
@@ -967,9 +970,6 @@
       ],
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
-      ],
-      "Run on ${ BRAND_NAME } servers": [
-        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
       ],
       "Save": [
         "შენახვა"
@@ -1489,9 +1489,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "ბრაუზერი მხარდაუჭერელია "
-      ],
       "Fast and secure": [
         "სწრაფი და დაცული"
       ],
@@ -1507,19 +1504,14 @@
       "Run locally": [
         "ლოკალურად გაშვება"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      "Run on servers": [
+        "გაშვება სერვერებზე"
       ],
       "Runs on all devices": [
         "ეშვება ყველა მოწყობილობაზე"
       ],
       "Runs on your device": [
         "ეშვება თქვენს მოწყობილობაზე"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "აპარატურა თავსებადი არაა"
       ]
     },
     "Attached ics file error": {
@@ -2037,6 +2029,9 @@
       ]
     },
     "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "გაააქტიურეთ თავიდან ${ formattedEndDate }-მდე, რომ შეინარჩუნოთ შემდეგი ფუნქციები:"
+      ],
       "Reactivate subscription": [
         "გამოწერის ხელახლა გააქტიურება"
       ],
@@ -3755,6 +3750,9 @@
       "Draft could not be saved. Try again.": [
         "მონახაზის შენახვის შეცდომა. თავიდან სცადეთ."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "შეცდომის გამო ტექსტის გენერაციას ვერ გააუქმებთ"
+      ],
       "Email address disabled": [
         "ელფოსტის მისამართი გათიშულია"
       ],
@@ -3953,6 +3951,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME }-ის მომხმარებლისთვის მიღებული ძირითადი გასაღები გასაგზავნად გამოსადეგი არაა"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "წერის დამხმარის გადმოწერის პრობლემა. გთხოვთ, თავიდან სცადეთ."
       ],
       "Process aborted": [
         "პროცესი გაჩერდა"
@@ -5768,6 +5769,9 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "ბრაუზერის ქეშის გაწმენდა ასევე გამორთავს შეტყობინებების შემცველობაში ძებნასაც. ძებნის თავიდან ჩასართავად საჭირო იქნება ყველა შეტყობინების თავიდან გადმოწერა."
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "გაასუფთავებს ბრაუზერის მონაცემებს (გადმოწერილი შეტყობინებების… და ა.შ. ჩათვლით)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -5883,6 +5887,9 @@
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "გადმოწერა შეჩერებულია: ${ progressDisplay } გბ"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "მიმდინარეობს წერის დამხმარის გადმოწერა: ${ progressDisplay } გბ"
       ],
       "Draft": [
         "მონახაზი"
@@ -8882,6 +8889,9 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
+      "Generate emails with only a prompt": [
+        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
+      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -9786,6 +9796,9 @@
       "Hint": [
         "მინიშნება"
       ],
+      "How do you want the selected text modified?": [
+        "როგორ გნებავთ მონიშნული ტექსტის შეცვლა?"
+      ],
       "Image URL": [
         "გამოსახულების ბმული"
       ],
@@ -9864,11 +9877,20 @@
       "To": [
         "ვის"
       ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "სცადეთ \"მომავალი მოვლენების გამოცხადება საინფორმაციო დაგზავნაში\""
+      ],
       "Try “Cancel my gym membership”": [
         "სცადეთ \"ჯიმის ბილეთის გაუქმება\""
       ],
       "Try “Invite Jane to my party”": [
         "სცადეთ \"გულნარას ჩემს შარაფზე მოწვევა\""
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "სცადეთ \"მადლობა თანამშრომელს პროექტზე დახმარებისთვის\""
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "სცადეთ \"თანმხლები წერილის დაწერა ინტერნატურისთვის\""
       ],
       "Try “Write a follow-up email to a client”": [
         "სცადეთ \"კლიენტისთვის ელფოსტის პასუხის გაცემა\""
@@ -10542,6 +10564,11 @@
         "ტარიფის აწევა"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } თვე",
@@ -10881,6 +10908,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
@@ -10919,9 +10949,6 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
-      ],
-      "Keep ${ planName }": [
-        "${ planName }-ის დატოვება"
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"

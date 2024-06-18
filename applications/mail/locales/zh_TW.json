@@ -454,6 +454,9 @@
       "Forgot password?": [
         "忘記密碼?"
       ],
+      "Formalize": [
+        "正式化"
+      ],
       "Forward as attachment": [
         "以附件形式轉寄"
       ],
@@ -468,6 +471,9 @@
       ],
       "Get started": [
         "開始使用"
+      ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -624,6 +630,9 @@
       ],
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "使其更友善"
       ],
       "Manage folders": [
         "管理資料夾"
@@ -949,9 +958,6 @@
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "於伺服器執行${ BRAND_NAME }"
-      ],
       "Save": [
         "儲存"
       ],
@@ -960,6 +966,9 @@
       ],
       "Schedule message": [
         "排程訊息"
+      ],
+      "Scroll to bottom": [
+        "捲動到最底部"
       ],
       "Search": [
         "搜尋"
@@ -1054,6 +1063,9 @@
       "Sharing options": [
         "分享可用選項"
       ],
+      "Shorten": [
+        "更短"
+      ],
       "Show": [
         "顯示"
       ],
@@ -1113,6 +1125,12 @@
       ],
       "Stay": [
         "停留"
+      ],
+      "Stop downloading the writing assistant": [
+        "停止下載撰寫幫手"
+      ],
+      "Stop generating result": [
+        "停止產生結果"
       ],
       "Strikethrough": [
         "刪除線"
@@ -1240,6 +1258,9 @@
       "Use recovery code": [
         "使用復原代碼"
       ],
+      "Use this": [
+        "使用這個"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用您的滑鼠調整檢視大小。若您使用鍵盤，您也可以使用左右方向鍵來調整。"
       ],
@@ -1302,6 +1323,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Your email writing assistant": [
+        "您電子郵件的撰寫幫手"
       ],
       "Zoom in": [
         "放大"
@@ -1446,9 +1470,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "瀏覽器不支援 "
-      ],
       "Fast and secure": [
         "快及安全"
       ],
@@ -1458,19 +1479,14 @@
       "No logs": [
         "無紀錄"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "於伺服器執行${ BRAND_NAME }"
+      "Run on servers": [
+        "於伺服器執行"
       ],
       "Runs on all devices": [
         "於所有裝置皆可使用"
       ],
       "Runs on your device": [
         "於您的裝置執行"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "不支援硬體"
       ]
     },
     "Attached ics file error": {
@@ -1987,6 +2003,9 @@
     "Cancellation reminder": {
       "Reactivate subscription": [
         "重新啟用訂閱"
+      ],
+      "Your subscription is ending soon": [
+        "您的訂閱即將結束"
       ]
     },
     "Checkout row": {
@@ -3320,6 +3339,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
+      "Use the writing assistant to:": [
+        "使用寫作幫手:"
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
@@ -3736,9 +3758,6 @@
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
-      ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "根據道德準則，我無法處理這請求。請試試其他提示詞。"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -4967,6 +4986,9 @@
       ],
       "Tell us more": [
         "請詳細說明"
+      ],
+      "Write faster with the writing assistant": [
+        "使用撰寫幫手更快速寫作"
       ]
     },
     "Hint": {
@@ -5637,6 +5659,9 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "清除瀏覽器資料也會停用此裝置上的訊息內容搜尋。所有訊息都將必須再次下載才能搜尋。"
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "清除瀏覽器資料(包含已下載的訊息，…)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -5747,6 +5772,9 @@
       ],
       "Downloading paused": [
         "下載已暫停"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "暫停下載: ${ progressDisplay } GB"
       ],
       "Draft": [
         "草稿"
@@ -6957,6 +6985,9 @@
       "You selected **${ elementsCount } message**.": [
         "您選擇**${ elementsCount }則訊息**。"
       ],
+      "You selected some content:": [
+        "您已選取一些內容："
+      ],
       "You will lose access to Plus features on this date.": [
         "您將於此更新失去存取進階功能。"
       ],
@@ -6996,12 +7027,6 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "您的瀏覽器不支援運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行或下載 ${ MAIL_APP_NAME } 桌面應用程式。"
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "您的瀏覽器無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -7016,9 +7041,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "您的硬體無法在本地運行寫作助手。試試在 ${ BRAND_NAME } 伺服器執行。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -7494,6 +7516,9 @@
       "Density": [
         "密度"
       ],
+      "Did not follow instructions": [
+        "未遵循指示"
+      ],
       "Do you have any suggestions for our team?": [
         "您對我們的團隊有什麼建議嗎？"
       ],
@@ -7824,8 +7849,14 @@
       "Type a command...": [
         "輸入指令…"
       ],
+      "Type a prompt to generate an output": [
+        "輸入提示生成輸出"
+      ],
       "Undisclosed Recipients": [
         "非公開收件者"
+      ],
+      "Unsafe or problematic": [
+        "不安全或有問題的"
       ],
       "Upload picture": [
         "上載圖像"
@@ -8616,6 +8647,9 @@
       "Centralized billing": [
         "集中式計費"
       ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
       "Contact groups": [
         "聯絡人群組"
       ],
@@ -8633,6 +8667,9 @@
       ],
       "Custom snooze time": [
         "自訂延遲時間"
+      ],
+      "Custom workspace branding": [
+        "自訂工作空間的品牌"
       ],
       "Data breach monitoring": [
         "資料外洩監測"
@@ -8688,6 +8725,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Generate emails with only a prompt": [
+        "只要提示便可生成電子郵件"
+      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
@@ -8727,6 +8767,9 @@
       "Password health": [
         "密碼穩固性"
       ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -8748,11 +8791,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
+      "Reply to messages": [
+        "回覆訊息"
+      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
       "Router support": [
         "路由器支援"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
       ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
@@ -9528,6 +9577,9 @@
       "First name": [
         "名字"
       ],
+      "Generating...": [
+        "正在產生..."
+      ],
       "Gift code": [
         "禮品代碼"
       ],
@@ -9563,6 +9615,9 @@
       ],
       "Please insert link first": [
         "請先插入連結"
+      ],
+      "Please share what you expected": [
+        "請分享您預期什麼"
       ],
       "Search date, name, email address, or subject line": [
         "搜尋日期、名稱、電子郵件位址或主旨"
@@ -9602,6 +9657,9 @@
       ],
       "Text": [
         "文字"
+      ],
+      "To": [
+        "收件者"
       ],
       "Try “Cancel my gym membership”": [
         "試試「取消我的健身房會員」"
@@ -10271,6 +10329,11 @@
         "升級"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }個月"
@@ -10596,6 +10659,9 @@
       "10 email addresses": [
         "10 個電子信箱"
       ],
+      "6 users": [
+        "6 位使用者"
+      ],
       "Add any new files": [
         "新增任何檔案"
       ],
@@ -10610,9 +10676,6 @@
       ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
-      ],
-      "Keep ${ planName }": [
-        "保留 ${ planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
@@ -11844,6 +11907,9 @@
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
+      ],
+      "Your free trial has ended": [
+        "您的免費試用已結束"
       ]
     },
     "Title subscription": {

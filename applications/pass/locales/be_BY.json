@@ -368,7 +368,7 @@
         "Аднавіць элемент"
       ],
       "Resume monitoring": [
-        "Аднавіць назіранне"
+        "Узнавіць назіранне"
       ],
       "Retry": [
         "Паўтарыць"
@@ -818,6 +818,9 @@
       "Unknown invite": [
         "Невядомае запрашэнне"
       ],
+      "Unknown item": [
+        "Невядомы элемент"
+      ],
       "Unlock failure": [
         "Збой разблакіроўкі"
       ],
@@ -996,6 +999,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Доступ да ${ PASS_APP_NAME } будзе заўсёды патрабаваць ваш пароль ${ BRAND_NAME }"
       ],
+      "Add a username field": [
+        "Дадаць поле імя карыстальніка"
+      ],
       "Add your custom email address to monitor :": [
         "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
       ],
@@ -1067,6 +1073,9 @@
       ],
       "Change your password": [
         "Змяніць свой пароль"
+      ],
+      "Click here to add a field for a username.": [
+        "Націсніце тут, каб дадаць поле для імя карыстальніка."
       ],
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
@@ -1341,6 +1350,9 @@
       "Offline support successfully disabled": [
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Вам спатрэбіцца ўвесці PIN-код для разблакіроўкі сеанса. Гэта дазволіць атрымаць доступу да ${ PASS_APP_NAME } праз інтэрнэт. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+      ],
       "Owner": [
         "Уладальнік"
       ],
@@ -1380,6 +1392,9 @@
       "Please confirm your ${ BRAND_NAME } password": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME } для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
@@ -1400,6 +1415,9 @@
       ],
       "Please consider leaving a review.": [
         "Падумайце пра тое, каб пакінуць водгук."
+      ],
+      "Please do not close this window": [
+        "Не закрывайце акно"
       ],
       "Please enter your current PIN code to continue": [
         "Увядзіце свой бягучы PIN-код для працягу"
@@ -1751,6 +1769,9 @@
       "Create an encrypted note": [
         "Стварыць зашыфраваную нататку"
       ],
+      "Create lock": [
+        "Стварыць блакіроўку"
+      ],
       "Create new vault": [
         "Стварыць новае сховішча"
       ],
@@ -1777,6 +1798,12 @@
       ],
       "Email": [
         "Электронная пошта"
+      ],
+      "Email (alias)": [
+        "Электроннай пошта (псеўданім)"
+      ],
+      "Email (new alias)": [
+        "Электронная пошта (новы псеўданім)"
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -2195,11 +2222,17 @@
       "Enter a prefix": [
         "Увядзіце прэфікс"
       ],
+      "Enter email": [
+        "Увядзіце электронную пошту"
+      ],
       "Enter email or username": [
         "Увядзіце электронную пошту або імя карыстальніка"
       ],
       "Enter password": [
         "Увядзіце пароль"
+      ],
+      "Enter username": [
+        "Увядзіце імя карыстальніка"
       ],
       "Full Name": [
         "Поўнае імя"
@@ -2472,7 +2505,7 @@
         "Аднавіць гэту версію?"
       ],
       "Resume monitoring?": [
-        "Аднавіць назіранне?"
+        "Узнавіць назіранне?"
       ],
       "Reused ${ count } time": [
         "Паўторна выкарыстаны ${ count } раз",

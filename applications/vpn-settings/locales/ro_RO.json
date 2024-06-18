@@ -2106,7 +2106,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+        "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
@@ -3883,7 +3883,7 @@
         "Solicitare server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
+        "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
       "Session timed out": [
         "Sesiunea a expirat"
@@ -5082,6 +5082,9 @@
       ],
       "Add gift code": [
         "Adăugare cod cadou"
+      ],
+      "Add to your subscription": [
+        "Adăugare la abonament"
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului"
@@ -7943,9 +7946,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Dacă depășiți limitele planului gratuit când vă expiră abonamentul ${ planName }, nu veți putea să:"
       ],
-      "Keep ${ planName }": [
-        "Păstrare ${ planName }"
-      ],
       "Learn more about our impact": [
         "Aflați mai multe despre impactul nostru"
       ],
@@ -9106,6 +9106,11 @@
       ],
       "Primary admin": [
         "Administrator principal"
+      ]
+    },
+    "Users table: AI-powered": {
+      "AI": [
+        "IA"
       ]
     },
     "Users table: single sign-on enabled": {

@@ -202,6 +202,9 @@
       "Close & discard": [
         "閉じて破棄"
       ],
+      "Close AI refine suggestion": [
+        "AI 修正提案を閉じる"
+      ],
       "Close composer": [
         "閉じる"
       ],
@@ -258,6 +261,9 @@
       ],
       "Copy password to clipboard": [
         "パスワードをコピー"
+      ],
+      "Copy version number to clipboard": [
+        "バージョン番号をクリップボードにコピー"
       ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
@@ -355,6 +361,9 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } をダウンロード"
       ],
+      "Download Desktop App": [
+        "デスクトップアプリをダウンロード"
+      ],
       "Download now": [
         "今すぐダウンロード"
       ],
@@ -448,8 +457,14 @@
       "Forgot password?": [
         "パスワードを忘れた?"
       ],
+      "Formalize": [
+        "フォーマルにする"
+      ],
       "Forward as attachment": [
         "添付ファイルとして送信"
+      ],
+      "Generate text": [
+        "テキストを生成"
       ],
       "Get in touch": [
         "連絡する"
@@ -459,6 +474,9 @@
       ],
       "Get started": [
         "利用開始"
+      ],
+      "Get the writing assistant": [
+        "執筆アシスタントを入手"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -583,6 +601,9 @@
       "label emails as": [
         "メールにラベル付け"
       ],
+      "Later": [
+        "後で"
+      ],
       "Learn more": [
         "詳細"
       ],
@@ -606,6 +627,9 @@
       ],
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "フレンドリーにする"
       ],
       "Manage folders": [
         "フォルダーを管理"
@@ -663,6 +687,9 @@
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "その他の修正操作"
       ],
       "More search options": [
         "検索オプションを表示"
@@ -814,6 +841,9 @@
       "Print": [
         "印刷"
       ],
+      "Proofread": [
+        "校正する"
+      ],
       "Quit": [
         "終了"
       ],
@@ -909,6 +939,9 @@
       ],
       "Resume": [
         "再開"
+      ],
+      "Resume downloading": [
+        "ダウンロードを再開"
       ],
       "Retry": [
         "再試行"
@@ -1018,6 +1051,9 @@
       "Sharing options": [
         "共有オプション"
       ],
+      "Shorten": [
+        "短縮する"
+      ],
       "Show": [
         "表示"
       ],
@@ -1077,6 +1113,12 @@
       ],
       "Stay": [
         "終了しない"
+      ],
+      "Stop downloading the writing assistant": [
+        "執筆アシスタントのダウンロードを停止"
+      ],
+      "Stop generating result": [
+        "結果の生成を停止"
       ],
       "Strikethrough": [
         "取り消し線"
@@ -1201,6 +1243,9 @@
       "Use recovery code": [
         "回復用コードを使用"
       ],
+      "Use this": [
+        "これを使用"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
       ],
@@ -1260,6 +1305,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "メール執筆アシスタント"
       ],
       "Zoom in": [
         "拡大"
@@ -4663,11 +4711,17 @@
       "Contacts": [
         "連絡先"
       ],
+      "Resume downloading": [
+        "ダウンロードを再開"
+      ],
       "Search": [
         "検索"
       ],
       "Security Center": [
         "セキュリティセンター"
+      ],
+      "Write faster with the writing assistant": [
+        "執筆アシスタントでより素早く書く"
       ]
     },
     "Hint": {
@@ -5554,6 +5608,9 @@
       "From": [
         "差出人"
       ],
+      "Generate text": [
+        "テキストを生成"
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
       ],
@@ -5631,6 +5688,9 @@
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
+      ],
+      "Initializing…": [
+        "初期化中…"
       ],
       "Insert image": [
         "画像の挿入"
@@ -5760,6 +5820,9 @@
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
+      ],
+      "More refine actions": [
+        "その他の修正操作"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -5932,6 +5995,12 @@
       "Print email": [
         "メールを印刷"
       ],
+      "Proofread selection": [
+        "選択範囲を校正する"
+      ],
+      "Proofread text": [
+        "テキストを校正する"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "ニュースレターや迷惑メールの配信リストから、${ maskMyEmailButton }で自分のアドレスを守りましょう。"
       ],
@@ -6033,6 +6102,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
+      ],
+      "Shorten selection": [
+        "選択範囲を短縮する"
+      ],
+      "Shorten text": [
+        "テキストを短縮する"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -7057,11 +7132,17 @@
       "Density": [
         "密度"
       ],
+      "Did not follow instructions": [
+        "指示に従っていない"
+      ],
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
       ],
       "Don't ask again": [
         "今後表示しない"
+      ],
+      "Don't like the style": [
+        "スタイルが気に入らない"
       ],
       "Don't show this again": [
         "次回から表示しない"
@@ -7231,6 +7312,9 @@
       "No label found": [
         "ラベルが見つかりませんでした"
       ],
+      "Not factually correct": [
+        "正しくない"
+      ],
       "Note": [
         "メモ"
       ],
@@ -7386,6 +7470,9 @@
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
+      ],
+      "Unsafe or problematic": [
+        "安全でない、または問題がある"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -9013,6 +9100,9 @@
       "First name": [
         "名"
       ],
+      "Generating...": [
+        "生成中..."
+      ],
       "Gift code": [
         "ギフトコード"
       ],
@@ -9049,6 +9139,9 @@
       "Please insert link first": [
         "最初にリンクを挿入してください"
       ],
+      "Refining your text...": [
+        "テキストを修正中..."
+      ],
       "Search date, name, email address, or subject line": [
         "日付、名前、メールアドレス、件名で検索"
       ],
@@ -9084,6 +9177,24 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "「ニュースレターで今後のイベントをお知らせ」を試す"
+      ],
+      "Try “Cancel my gym membership”": [
+        "「ジムのメンバーシップをキャンセル」を試す"
+      ],
+      "Try “Invite Jane to my party”": [
+        "「パーティーにジェーンを招待」を試す"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "「プロジェクトを手伝ってくれた同僚にお礼を言う」を試す"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "「インターンシップの送付状を書く」を試す"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "「顧客にフォローアップメールを書く」を試す"
       ],
       "Type a command…": [
         "コマンドを入力…"
@@ -9993,9 +10104,6 @@
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } を使い続ける"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"

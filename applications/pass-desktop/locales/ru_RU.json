@@ -427,6 +427,9 @@
       "View details": [
         "Просмотреть информацию"
       ],
+      "View history": [
+        "Посмотреть историю"
+      ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
       ],
@@ -744,6 +747,9 @@
       "Unknown invite": [
         "Неизвестное приглашение"
       ],
+      "Unknown item": [
+        "Неизвестный элемент"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Неподдерживаемый формат файла ${ PASS_APP_NAME }"
       ],
@@ -932,6 +938,9 @@
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
       ],
+      "Add a username field": [
+        "Добавить поле имени пользователя"
+      ],
       "Add your custom email address to monitor :": [
         "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
       ],
@@ -995,6 +1004,9 @@
       "Change your password": [
         "Измените пароль"
       ],
+      "Click here to add a field for a username.": [
+        "Нажмите здесь, чтобы добавить поле для имени пользователя."
+      ],
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
       ],
@@ -1048,6 +1060,9 @@
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
+      ],
+      "finance": [
+        "финансы"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Выполните эти шаги для импорта ваших данных из произвольного CSV:"
@@ -1273,6 +1288,9 @@
       ],
       "Reconnect": [
         "Возобновить соединение"
+      ],
+      "Reconnecting": [
+        "Переподключение"
       ],
       "Restoring items from trash": [
         "Восстановление элементов из Корзины"
@@ -1615,6 +1633,12 @@
       "Email": [
         "Электронная почта"
       ],
+      "Email (alias)": [
+        "Электронная почта (псевдоним)"
+      ],
+      "Email (new alias)": [
+        "Электронная почта (новый псевдоним)"
+      ],
       "Email address": [
         "Адрес эл. почты"
       ],
@@ -1632,6 +1656,9 @@
       ],
       "Field name": [
         "Название поля"
+      ],
+      "File format": [
+        "Формат файла"
       ],
       "Forwards to": [
         "Переслать"
@@ -1773,6 +1800,9 @@
       ],
       "PIN": [
         "PIN"
+      ],
+      "PIN code": [
+        "PIN-код"
       ],
       "Prefix": [
         "Префикс"
@@ -2005,11 +2035,17 @@
       "Enter a prefix": [
         "Введите префикс"
       ],
+      "Enter email": [
+        "Введите адрес электронной почты"
+      ],
       "Enter email or username": [
         "Введите эл. почту или имя пользователя"
       ],
       "Enter password": [
         "Введите пароль"
+      ],
+      "Enter username": [
+        "Введите имя пользователя"
       ],
       "Full Name": [
         "Полное имя"
