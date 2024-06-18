@@ -4,14 +4,13 @@ import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { isObject } from '@proton/pass/utils/object/is-object';
-import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
+import { getLocalKey } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
-import { generateClientKey, getClientKey } from '@proton/shared/lib/authentication/clientKey';
+import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
 import type { LockMode } from './lock/types';
@@ -107,21 +106,6 @@ export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): 
     RefreshToken: authStore.getRefreshToken() ?? session.RefreshToken,
     UID: authStore.getUID() ?? session.UID,
 });
-
-type EncryptSessionOptions = { api: Api; authStore: AuthStore };
-
-/** Encrypts the `AuthSession` with a new encryption key. Will throw if local
- * key cannot be registered back-end side. Merge session tokens if the call to
- * `setLocalKey` triggered a refresh sequence. */
-export const encryptPersistedSession = async ({ api, authStore }: EncryptSessionOptions): Promise<string> => {
-    const session = authStore.getSession();
-    if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
-
-    const { serializedData, key } = await generateClientKey();
-
-    await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(serializedData)));
-    return encryptPersistedSessionWithKey(mergeSessionTokens(session, authStore), key);
-};
 
 /** Retrieves the current local key to decrypt the persisted session */
 export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
