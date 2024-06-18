@@ -17,6 +17,7 @@ import { useConnectivityRef } from '@proton/pass/components/Core/ConnectivityPro
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { type RouteErrorState, getRouteError } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
 import { isOnline } from '@proton/pass/lib/api/utils';
@@ -30,7 +31,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe } from '@proton/pass/types';
+import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
@@ -88,7 +89,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getOfflineEnabled } = usePassCore();
     const sw = useServiceWorker();
     const client = useClientRef();
-    const history = useHistory();
+    const history = useHistory<MaybeNull<RouteErrorState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
 
@@ -113,6 +114,14 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onInit: async () => {
+                const error = getRouteError(history.location.search);
+
+                if (error !== null) {
+                    client.current.setStatus(AppStatus.ERROR);
+                    history.replace({ search: '', pathname: '/', state: { error } });
+                    return false;
+                } else history.replace({ state: null });
+
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
                 const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const persistedSession = await auth.config.getPersistedSession(initialLocalID);
@@ -204,6 +213,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
+
                 history.replace('/');
             },
 
@@ -386,7 +396,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID }) => {
             if (authStore.getUserID() === userID) {
                 authStore.clear();
-                window.location.href = '/';
+                window.location.href = '/?error=fork';
             }
         };
 
