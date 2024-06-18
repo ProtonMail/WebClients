@@ -991,8 +991,8 @@
       "Revert to original display": [
         "Vend tilbake til opprinnelig visning"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Kjør på ${ BRAND_NAME }-tjenere"
+      "Run on servers": [
+        "Kjør på tjenere"
       ],
       "Save": [
         "Lagre"
@@ -1511,10 +1511,12 @@
         "${ BRAND_NAME }-applikasjoner"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Ved å sende inn denne tilbakemeldingen, vil ledeteksten og kommentarene dine være synlige for modereringsteamet til ${ BRAND_NAME }."
+      ]
+    },
     "Assistant option": {
-      "Browser not supported ": [
-        "Nettleser ikke støttet "
-      ],
       "Fast and secure": [
         "Rask og sikker"
       ],
@@ -1530,19 +1532,14 @@
       "Run locally": [
         "Kjør lokalt"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Kjør på ${ BRAND_NAME }-tjenere"
+      "Run on servers": [
+        "Kjør på tjenere"
       ],
       "Runs on all devices": [
         "Kjører på alle enheter"
       ],
       "Runs on your device": [
         "Kjører på enheten din"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Maskinvare ikke kompatibel"
       ]
     },
     "Attached ics file error": {
@@ -3838,9 +3835,6 @@
       "Forward address is required": [
         "Videresendingsadresse kreves"
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Jeg kan ikke gå videre med denne forespørselen på grunn av mine etiske retningslinjer. Vennligst prøv en annen ledetekst."
-      ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
       ],
@@ -4107,6 +4101,9 @@
       ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Skriveassistenten kan ikke gå videre med forespørselen din. Prøv en annen ledetekst."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Vennligst tilpass importen for å slette noen mapper."
@@ -5076,6 +5073,9 @@
       "Hardware not compatible": [
         "Maskinvare ikke kompatibel"
       ],
+      "Report an issue": [
+        "Rapporter et problem"
+      ],
       "Resume downloading": [
         "Gjenoppta nedlasting"
       ],
@@ -6032,6 +6032,12 @@
       "Estimating time remaining...": [
         "Beregner gjenstående tid…"
       ],
+      "Expand selection": [
+        "Utvid utvalget"
+      ],
+      "Expand text": [
+        "Utvid tekst"
+      ],
       "Expiration time": [
         "Utløpstid"
       ],
@@ -6442,6 +6448,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Vennligst del hva problemet er"
       ],
       "Please share what you expected": [
         "Vennligst del hva du forventet"
@@ -7103,6 +7112,9 @@
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
+      "You can open only one writing assistant at a time": [
+        "Du kan bare åpne én skriveassistent om gangen"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -7232,11 +7244,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil bli oppdatert så snart betalingen er klarert."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på tjenere."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på tjenere."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -7253,8 +7265,8 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Maskinvaren støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Maskinvaren din støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på tjenere."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -9807,6 +9819,9 @@
       "Card number": [
         "Kortnummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "For øyeblikket er automatisk fornyelse av abonnementet deaktivert. Hvis du endrer abonnementet nå, aktiveres den automatiske fornyelsen på nytt."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -11136,9 +11151,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Hvis du overskrider gratisplangrensene når abonnementet på ${ planName } utløper, vil du ikke kunne:"
-      ],
-      "Keep ${ planName }": [
-        "Behold ${ planName }"
       ],
       "Learn more about our impact": [
         "Finn ut mer om innvirkningen vår"

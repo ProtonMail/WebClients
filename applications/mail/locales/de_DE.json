@@ -223,6 +223,9 @@
       "Close & discard": [
         "Schließen & verwerfen"
       ],
+      "Close AI refine suggestion": [
+        "KI-Verbesserungsvorschlag schließen"
+      ],
       "Close composer": [
         "Verfassen-Fenster schließen"
       ],
@@ -477,6 +480,9 @@
       "Forgot password?": [
         "Passwort vergessen?"
       ],
+      "Formalize": [
+        "Formalisieren"
+      ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
       ],
@@ -486,11 +492,17 @@
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Hol ihn dir ab ${ addonPriceWithCurrency } / Monat"
+      ],
       "Get SimpleLogin extension": [
         "Erweiterung SimpleLogin abrufen"
       ],
       "Get started": [
         "Erste Schritte"
+      ],
+      "Get the writing assistant": [
+        "Hol dir den Schreibassistenten"
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
@@ -715,6 +727,9 @@
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
+      "More refine actions": [
+        "Weitere Verbesserungsaktionen"
+      ],
       "More search options": [
         "Mehr Sucheinstellungen"
       ],
@@ -865,6 +880,9 @@
       "Print": [
         "Drucken"
       ],
+      "Proofread": [
+        "Korrekturlesen"
+      ],
       "Quit": [
         "Beenden"
       ],
@@ -972,6 +990,9 @@
       ],
       "Revert to original display": [
         "Zurück zur ursprünglichen Darstellung"
+      ],
+      "Run on servers": [
+        "Auf Servern ausführen"
       ],
       "Save": [
         "Speichern"
@@ -1141,6 +1162,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Stop downloading the writing assistant": [
+        "Download des Schreibassistenten abbrechen"
+      ],
       "Stop generating result": [
         "Aufhören das Ergebnis zu generieren"
       ],
@@ -1271,6 +1295,9 @@
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
       ],
+      "Use this": [
+        "Dies verwenden"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Verwende deine Maus, um die Größe der Ansicht zu ändern. Wenn du deine Tastatur verwendest, kannst du die Größe mit den Pfeiltasten „Pfeil links“ und „Pfeil rechts“ ändern."
       ],
@@ -1334,6 +1361,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Dein E-Mail Schreibeisstent"
       ],
       "Zoom in": [
         "Vergrößern"
@@ -1481,10 +1511,12 @@
         "${ BRAND_NAME }-Anwendungen"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Durch das Absenden dieses Feedbacks sind die Eingabeaufforderung und deine Kommentare für das Moderationsteam von ${ BRAND_NAME } sichtbar."
+      ]
+    },
     "Assistant option": {
-      "Browser not supported ": [
-        "Browser nicht unterstützt "
-      ],
       "Fast and secure": [
         "Schnell und sicher"
       ],
@@ -1500,19 +1532,14 @@
       "Run locally": [
         "Lokal ausführen"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Auf ${ BRAND_NAME }-Servern ausführen"
+      "Run on servers": [
+        "Auf Servern ausführen"
       ],
       "Runs on all devices": [
         "Funktioniert auf allen Geräten"
       ],
       "Runs on your device": [
         "Läuft auf deinem Gerät"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Hardware ist nicht kompatibel"
       ]
     },
     "Attached ics file error": {
@@ -3354,6 +3381,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Lege eine Wiederherstellungsmethode fest, um zu verhindern, dass du den Zugriff auf dein Konto verlierst."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Wenn du den Schreibassistenten weiterhin nutzen möchtest, füge ihn zu deinem Abonnement hinzu."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Wenn du den Schreibassistenten weiterhin nutzen möchtest, beantrage den Zugang bei deinem Administrator."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
       ],
@@ -3802,9 +3835,6 @@
       "Forward address is required": [
         "Weiterleitungsadresse ist erforderlich"
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Aufgrund meiner ethischen Richtlinien kann ich mit dieser Anforderung nicht fortfahren. Bitte probiere eine andere Eingabe aus."
-      ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
       ],
@@ -4071,6 +4101,9 @@
       ],
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Der Schreibassistent kann deine Anfrage nicht bearbeiten. Bitte versuche eine andere Eingabeaufforderung."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
@@ -5037,6 +5070,12 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Hardware not compatible": [
+        "Hardware ist nicht kompatibel."
+      ],
+      "Report an issue": [
+        "Ein Problem melden"
+      ],
       "Resume downloading": [
         "Download fortsetzten"
       ],
@@ -5045,6 +5084,9 @@
       ],
       "Security Center": [
         "Sicherheitszentrum"
+      ],
+      "Set up the writing assistant": [
+        "Richte den Schreibassistenten ein"
       ],
       "Tell us more": [
         "Erzähl uns mehr"
@@ -5705,7 +5747,7 @@
         "Möchtest du diesen Entwurf wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Möchtest du diese Nachricht wirklich löschen?"
+        "Möchtest du diese Nachricht wirklich dauerhaft löschen?"
       ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
@@ -5989,6 +6031,12 @@
       ],
       "Estimating time remaining...": [
         "Verbleibende Zeit wird ermittelt..."
+      ],
+      "Expand selection": [
+        "Auswahl erweitern"
+      ],
+      "Expand text": [
+        "Text erweitern"
       ],
       "Expiration time": [
         "Verfallszeit"
@@ -6400,6 +6448,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
+      ],
+      "Please share what the issue is": [
+        "Bitte teile uns mit, was das Problem ist"
       ],
       "Please share what you expected": [
         "Bitte teil was du erwartet hast"
@@ -7011,6 +7062,9 @@
       "Writing assistant add-on": [
         "Schreibassistent Add-on"
       ],
+      "writing assistant iframe": [
+        "Schreibassistent-iFrame"
+      ],
       "Yearly": [
         "Jährlich"
       ],
@@ -7057,6 +7111,9 @@
       ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
+      ],
+      "You can open only one writing assistant at a time": [
+        "Du kannst immer nur einen Schreibassistenten gleichzeitig öffnen."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
@@ -7187,11 +7244,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Dein Browser unterstützt den Schreibassistenten nicht. Lade dir die ${ MAIL_APP_NAME } Desktop-Version herunter oder versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Dein Browser unterstützt den Schreibassistenten nicht. Lade dir die ${ MAIL_APP_NAME } Desktop-Version herunter oder versuche ihn auf Servern auszuführen."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Dein Browser unterstützt den Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
@@ -7208,8 +7265,8 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuche ihn über ${ BRAND_NAME } Server laufen zu lassen."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
       ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
@@ -7277,6 +7334,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Nur anzeigen"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ]
     },
     "Key badge": {
@@ -7692,11 +7754,17 @@
       "Density": [
         "Dichte"
       ],
+      "Did not follow instructions": [
+        "Hat die Anweisungen nicht befolgt"
+      ],
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
+      ],
+      "Don't like the style": [
+        "Mir gefällt der Stil nicht"
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
@@ -8021,6 +8089,9 @@
       ],
       "Type a command...": [
         "Befehl eingeben..."
+      ],
+      "Type a prompt to generate an output": [
+        "Gib eine Eingabeaufforderung ein, um eine Ausgabe zu erzeugen."
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
@@ -8923,6 +8994,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Generate emails with only a prompt": [
+        "Generiere E-Mails durch nur eine Eingabe"
+      ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
@@ -8980,6 +9054,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Proofread and refine your texts": [
+        "Korrekturlesen und Verbessern deiner Texte"
       ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
@@ -9881,6 +9958,9 @@
       "Please share what you expected": [
         "Bitte teile deine Erwartungen"
       ],
+      "Refining your text...": [
+        "Text wird verbessert..."
+      ],
       "Search date, name, email address, or subject line": [
         "Suche nach Datum, Name, E-Mail-Adresse oder Betreff"
       ],
@@ -9925,6 +10005,9 @@
       ],
       "To": [
         "An"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "Probiere \"Anstehende Veranstaltungen in einem Newsletter ankündigen\""
       ],
       "Try “Cancel my gym membership”": [
         "Versuche es mit \"Meine Fitnessstudio-Mitgliedschaft beenden\""
@@ -10635,6 +10718,11 @@
         "Upgrade durchführen"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Upgrade"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } Monat",
@@ -11060,9 +11148,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Wenn du die Grenzen des kostenlosen Abonnements überschreitest, wenn dein ${ planName }-Abonnement ausläuft, kannst du Folgendes nicht mehr tun:"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } behalten"
       ],
       "Learn more about our impact": [
         "Erfahre mehr über unsere Wirkung"
@@ -12373,6 +12458,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your free trial has ended": [
+        "Deine kostenlose Testversion ist abgelaufen."
       ]
     },
     "Title subscription": {
