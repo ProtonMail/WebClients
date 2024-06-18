@@ -178,6 +178,9 @@
       "Cancel": [
         "취소"
       ],
+      "Cancel add-on": [
+        "애드온 취소"
+      ],
       "Cancel subscription": [
         "구독 취소"
       ],
@@ -628,6 +631,9 @@
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
       ],
+      "Keep the writing assistant": [
+        "글쓰기 도우미 유지"
+      ],
       "label emails as": [
         "다음으로 라벨 지정"
       ],
@@ -858,6 +864,9 @@
       ],
       "Revoke this invitation": [
         "초대 무효화"
+      ],
+      "Run on servers": [
+        "서버에서 실행"
       ],
       "Save": [
         "저장"
@@ -1162,6 +1171,9 @@
       "What do I get?": [
         "무엇을 받게 되나요?"
       ],
+      "Why can't the model run locally?": [
+        "왜 하드웨어상에서 모델링할 수 없나요?"
+      ],
       "Wipe": [
         "지우기"
       ],
@@ -1229,6 +1241,9 @@
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -1373,6 +1388,9 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "더 빠른, 더 다양한 기기 호환성"
+      ],
       "Run locally": [
         "로컬에서 실행"
       ],
@@ -1387,11 +1405,44 @@
       "${ price } /year": [
         "${ price } /년"
       ],
+      "Active until ${ subscriptionRenewalDate }": [
+        "${ subscriptionRenewalDate }까지 활성화됨"
+      ],
+      "Add writing assistant": [
+        "글쓰기 도우미 추가"
+      ],
+      "Add writing assistant to your plan": [
+        "내 플랜에 글쓰기 도우미 추가"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "${ userAndAddressesButton }에 특정 사용자를 할당하십시오"
+      ],
+      "Automatically renews on ${ subscriptionRenewalDate }": [
+        "${ subscriptionRenewalDate }에 자동으로 갱신됩니다."
+      ],
+      "Cancel writing assistant add-on": [
+        "글쓰기 도우미 애드온 취소"
+      ],
+      "Customize plan": [
+        "플랜 고급 설정"
+      ],
       "from ${ price } /month": [
         "${ price } /월 부터"
       ],
       "New": [
         "신규"
+      ],
+      "Renew subscription": [
+        "구독 갱신"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다. ${ learnMore }."
+      ],
+      "Trial expires on ${ formattedDate }": [
+        "체험이 ${ formattedDate }에 만료됩니다."
+      ],
+      "Trial in progress": [
+        "체험판 진행 중"
       ]
     },
     "Attached ics file error": {
@@ -4911,7 +4962,7 @@
         "구독이 Visionary 및 가족 요금제의 관리자에게 결제됩니다."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "원할한 전환을 해서 ${ BRAND_NAME } Unlimited*의 30일간의 무료 체험판을 제공합니다."
+        "원활한 플랜 전환을 위해 ${ BRAND_NAME } Unlimited*의 30일간의 무료 체험판을 제공해 드립니다."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary 및 가족 요금제가 현재 외부 계정을 지원하지 않습니다. 가입 전에 ${ BRAND_NAME } 주소를 생성하세요. ${ addressSettingsLink }"
@@ -4947,7 +4998,7 @@
         "새 사용자를 생성하기 전 지정 도메인 구성이 필요합니다."
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "${ BRAND_NAME } 가족을 포함한 모든 프리미엄 기능 및 저장 공간을 잃게됩니다."
+        "${ BRAND_NAME } Family 플랜에 포함되는 모든 프리미엄 기능 및 저장 공간을 잃게됩니다."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
@@ -4979,7 +5030,7 @@
         "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
+        "구성원에서 삭제할 사용자의 계정이 30일 무료 체험판 버전의 ${ BRAND_NAME } Unlimited 플랜으로 자동 전환됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
         "새 계정을 생성하려면, 지정 도메인 구성이 권장됩니다."
@@ -5553,6 +5604,9 @@
       ],
       "Folders": [
         "폴더"
+      ],
+      "Hardware not compatible": [
+        "하드웨어가 호환되지 않음"
       ],
       "IP address": [
         "IP 주소"
@@ -6477,6 +6531,9 @@
       "Browser not supported": [
         "지원하지 않는 브라우저"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "기본적으로 조직의 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -6887,6 +6944,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "이 옵션이 켜져 있다면, 조직 구성원이 오직 조직 내에서만 금고 공유가 가능해집니다."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -7725,11 +7785,14 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "글쓰기 도우미 애드온이 **갱신되지 않습니다.** 글쓰기 도우미 서비스를 **${ subscriptionRenewalDate }**까지 계속 누리실 수 있습니다."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "이 구성 파일을 사용하면 타사 VPN 앱을 사용하거나 라우터에서 VPN 연결을 설정할 때 연결할 ${ VPN_APP_NAME } 서버를 선택할 수 있어요."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "이러한 구성은 WireGuard 라우터 및 공식 클라이언트와 함께 작동하도록 제공되요."
+        "WireGuard 구성은 WireGuard 라우터 및 공식 클라이언트와 함께 작동하도록 제공됩니다."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
@@ -8229,6 +8292,9 @@
       "You can close the tab or browser in the meantime.": [
         "도중에 탭이나 브라우저를 닫으셔도 됩니다."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "조직 구성원을 위해 ${ PASS_APP_NAME } 정책을 설정하실 수 있습니다."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "인증을 위해 올바른 이메일 주소를 사용할 수 있도록 한 번 편집할 수 있습니다."
       ],
@@ -8385,6 +8451,12 @@
       "Your account will be updated once the payment is cleared.": [
         "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "브라우저가 글쓰기 도우미를 지원하지 않습니다. ${ MAIL_APP_NAME } 데스크톱 앱을 다운로드 하거나 서버에서 실행해 보세요."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
@@ -8397,8 +8469,8 @@
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "귀하의 하드웨어는 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. ${ BRAND_NAME } 서버에서 실행해 보세요."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "하드웨어가 글쓰기 도우미를 로컬에서 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } 의 가져오기 작업이 일시적으로 지연되었습니다."
@@ -8503,6 +8575,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ]
     },
     "Input label": {
@@ -8982,6 +9059,9 @@
       "Auto show remote images": [
         "자동으로 삽입된 이미지 보이기"
       ],
+      "Auto-advance": [
+        "자동 진행"
+      ],
       "Auto-delete unwanted messages": [
         "원치 않는 메시지 자동 삭제"
       ],
@@ -9203,6 +9283,9 @@
       ],
       "Disable animations": [
         "애니메이션 비활성화"
+      ],
+      "Disable data export for organization members": [
+        "조직 구성원에 대한 데이터 내보내기 비활성화"
       ],
       "Disable sharing outside the organization.": [
         "조직 외부로 공유 비활성화."
@@ -9976,6 +10059,9 @@
       ],
       "Add gift code": [
         "기프트 코드 추가"
+      ],
+      "Add to your subscription": [
+        "내 구독에 추가"
       ],
       "Apps and extensions": [
         "앱 및 확장 프로그램"
@@ -10850,6 +10936,9 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
+      "Generate emails with only a prompt": [
+        "프롬포트만으로 이메일을 생성하세요"
+      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -10913,17 +11002,26 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your texts": [
+        "문장 교정 및 다듬기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
+      "Reply to messages": [
+        "메시지에 답장하기"
+      ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
+      ],
+      "Save time emailing": [
+        "이메일 작성 시간 줄이기"
       ],
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
@@ -11576,7 +11674,7 @@
         "알리미가 전송되었습니다."
       ],
       "Trial started": [
-        "페험판 시작 성공"
+        "체험기간이 시작되었습니다"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "이중 인증이 관리자로 부터 활성화 되었습니다."
@@ -12614,6 +12712,9 @@
       "Email address": [
         "이메일 주소"
       ],
+      "End date": [
+        "종료일"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -12676,6 +12777,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
+      ],
+      "Start date": [
+        "시작일"
       ],
       "Text": [
         "텍스트"
@@ -14043,9 +14147,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } 구독 만료 후 무료 요금제의 한도를 초과하게 된다면,"
       ],
-      "Keep ${ planName }": [
-        "${ planName } 유지하기"
-      ],
       "Learn more about our impact": [
         "저희의 영향력에 대해 더 알아보기"
       ],
@@ -14397,6 +14498,15 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "Writing assistant disabled": [
+        "글쓰기 도우미가 비활성화 되었습니다."
+      ],
+      "Writing assistant enabled": [
+        "글쓰기 도우미가 활성화 되었습니다."
+      ],
+      "Writing assistant setting updated": [
+        "글쓰기 도우미 설정이 업데이트 되었습니다."
       ],
       "You have successfully canceled your subscription.": [
         "구독을 성공적으로 취소하셨습니다."
@@ -14783,6 +14893,9 @@
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
       ],
+      "Cancel the writing assistant add-on?": [
+        "글쓰기 도우미 애드온을 취소할까요?"
+      ],
       "Card verification": [
         "카드 확인"
       ],
@@ -14896,6 +15009,9 @@
       ],
       "Custom filters": [
         "사용자 정의 필터"
+      ],
+      "Custom folders and labels": [
+        "사용자 지정 폴더 및 라벨"
       ],
       "Custom selection of users": [
         "사용자 지정 선택"

@@ -217,6 +217,12 @@
       "Clear all formatting": [
         "Fjern all formattering"
       ],
+      "Clear filter": [
+        "Tøm filter"
+      ],
+      "Clear filters": [
+        "Tøm filtre"
+      ],
       "Close": [
         "Lukk"
       ],
@@ -865,8 +871,8 @@
       "Revoke this invitation": [
         "Tilbakekall denne invitasjonen"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Kjør på ${ BRAND_NAME }-tjenere"
+      "Run on servers": [
+        "Kjør på tjenere"
       ],
       "Save": [
         "Lagre"
@@ -1395,7 +1401,7 @@
       "Faster, broader device compatibility": [
         "Raskere, bredere enhetskompatibilitet"
       ],
-      "No data transmitted while using,requires one-time download": [
+      "No data transmitted while using, requires one-time download": [
         "Ingen data overføres under bruk, krever engangsnedlasting"
       ],
       "Run locally": [
@@ -3501,12 +3507,37 @@
         ".rpm for Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "${ totalStorageSize } gratis lagringsplass"
+      ],
+      "End-to-end encrypted": [
+        "Ende-til-ende kryptert"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Avansert delingssikkerhet"
       ],
       "Encrypted cloud storage for all your files": [
         "Kryptert skylagring for alle filene dine"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet av sveitsiske personvernlover"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "Opprett en gratis ${ DRIVE_APP_NAME }-konto for sikker tilgang til filen"
+      ],
+      "Free, encrypted, and secure cloud storage": [
+        "Gratis, kryptert og sikker skylagring"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Sikker skylagring og fildeling som beskytter dataene dine"
+      ],
+      "You're invited to access a file in ${ DRIVE_APP_NAME }": [
+        "Du er invitert til å få tilgang til en fil i ${ DRIVE_APP_NAME }"
       ]
     },
     "Duration": {
@@ -4268,6 +4299,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Vennligst angi en gjenopprettings-/varslings-e-post først"
+      ],
+      "Please try again in a few moments.": [
+        "Vennligst prøv igjen om få øyeblikk."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
@@ -6418,6 +6452,9 @@
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All Events ": [
+        "Alle hendelser "
+      ],
       "All keys successfully reactivated": [
         "Alle nøkler aktivert på nytt"
       ],
@@ -7150,12 +7187,87 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
+      "Invite Accepted": [
+        "Invitasjon akseptert"
+      ],
+      "Invite Created": [
+        "Invitasjon opprettet"
+      ],
+      "Invite deleted": [
+        "Invitasjon slettet"
+      ],
+      "Invite Deleted": [
+        "Invitasjon slettet"
+      ],
+      "Invite for organization accepted": [
+        "Invitasjon til organisasjon akseptert"
+      ],
+      "Invite for organization created": [
+        "Invitasjon til organisasjon opprettet"
+      ],
+      "Invite for User deleted": [
+        "Invitasjon for bruker slettet"
+      ],
+      "Invite rejected": [
+        "Invitasjon avslått"
+      ],
+      "Invite Rejected": [
+        "Invitasjon avslått"
+      ],
       "Invite successfully sent": [
         "Invitasjon ble sendt",
         "Invitasjonene ble sendt"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ut til at noe av dataene dine er kryptert og låst."
+      ],
+      "Item Autofilled": [
+        "Element autofyllt"
+      ],
+      "Item autofilled in vault": [
+        "Element automatisk utfylt i hvelv"
+      ],
+      "Item Changed Flags": [
+        "Element endret flagg"
+      ],
+      "Item Created": [
+        "Element opprettet"
+      ],
+      "Item created in vault": [
+        "Element opprettet i hvelv"
+      ],
+      "Item Deleted": [
+        "Element slettet"
+      ],
+      "Item deleted in vault": [
+        "Element slettet i hvelv"
+      ],
+      "Item flags changed in vault": [
+        "Elementflagg endret i hvelv"
+      ],
+      "Item in vault untrashed": [
+        "Element flyttet fra papirkurv i hvelv"
+      ],
+      "Item Read": [
+        "Element lest"
+      ],
+      "Item read in vault": [
+        "Element lest i hvelv"
+      ],
+      "Item Trashed": [
+        "Element flyttet til papirkurv"
+      ],
+      "Item trashed in vault": [
+        "Element slettet til papirkurv i hvelv"
+      ],
+      "Item Untrashed": [
+        "Element fjernet fra papirkurv"
+      ],
+      "Item Updated": [
+        "Element oppdatert"
+      ],
+      "Item updated in vault": [
+        "Element oppdatert i hvelv"
       ],
       "it’s imperative": [
         "er det avgjørende"
@@ -7315,6 +7427,12 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New User Invite Created": [
+        "Ny brukerinvitasjon opprettet"
+      ],
+      "New User Invite Deleted": [
+        "Ny brukerinvitasjon slettet"
       ],
       "No account keys exist": [
         "Ingen kontonøkler eksisterer"
@@ -7700,6 +7818,21 @@
       "Settings updated": [
         "Innstillinger oppdatert"
       ],
+      "Share Created": [
+        "Delt ressurs opprettet"
+      ],
+      "Share Deleted": [
+        "Delt ressurs slettet"
+      ],
+      "Share Updated": [
+        "Delt ressurs oppdatert"
+      ],
+      "Shared vault deleted": [
+        "Delt hvelv slettet"
+      ],
+      "Shared vault updated": [
+        "Delt hvelv oppdatert"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
       ],
@@ -7717,6 +7850,9 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-innsending tillater 3-partstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, vennligst ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
@@ -8076,6 +8212,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unik ID generert av identitetsleverandøren din, vanligvis i form av en URL som inneholder identitetsleverandørens navn (f.eks. https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Ukjent hendelsestype"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Med mindre du logger av kontoen din eller endrer passordet ditt, vil økten din forbli aktiv. Økter utløper etter 60 dager med inaktivitet."
       ],
@@ -8151,11 +8290,35 @@
       "User activated": [
         "Bruker aktivert"
       ],
+      "User invited to organization": [
+        "Bruker invitert til organisasjon"
+      ],
       "username": [
         "brukernavn"
       ],
       "Users": [
         "Brukere"
+      ],
+      "Vault created": [
+        "Hvelv opprettet"
+      ],
+      "Vault Created": [
+        "Hvelv opprettet"
+      ],
+      "Vault deleted": [
+        "Hvelv slettet"
+      ],
+      "Vault Deleted": [
+        "Hvelv slettet"
+      ],
+      "Vault shared with email": [
+        "Hvelv delt med e-post"
+      ],
+      "Vault updated": [
+        "Hvelv oppdatert"
+      ],
+      "Vault Updated": [
+        "Hvelv oppdatert"
       ],
       "Verification can take a few minutes.": [
         "Verifisering kan ta noen minutter."
@@ -8535,11 +8698,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil bli oppdatert så snart betalingen er klarert."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på tjenere."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på tjenere."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -8553,8 +8716,8 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Maskinvaren støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på ${ BRAND_NAME }-tjenere."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Maskinvaren din støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på tjenere."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importen fra ${ accounts } er midlertidig forsinket.",
@@ -10145,6 +10308,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Aktivitetslogg"
+      ],
       "Add a gift code": [
         "Legg til gavekode"
       ],
@@ -11778,6 +11944,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "Invalid input. Search an email or IP address.": [
+        "Ugyldige inndata. Søk i en e-post eller IP-adresse."
+      ],
       "IP Address copied to clipboard": [
         "IP-Adresse kopiert til utklippstavlen"
       ],
@@ -12732,6 +12901,9 @@
       "Card number": [
         "Kortnummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "For øyeblikket er automatisk fornyelse av abonnementet deaktivert. Hvis du endrer abonnementet nå, aktiveres den automatiske fornyelsen på nytt."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -12844,6 +13016,12 @@
       "Email address": [
         "E-postadresse"
       ],
+      "Email or IP": [
+        "E-post eller IP"
+      ],
+      "End date": [
+        "Sluttdato"
+      ],
       "example@domain.com": [
         "eksempel@domain.no"
       ],
@@ -12906,6 +13084,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "Text": [
         "Tekst"
@@ -14311,9 +14492,6 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Hvis du overskrider gratisplangrensene når abonnementet på ${ planName } utløper, vil du ikke kunne:"
       ],
-      "Keep ${ planName }": [
-        "Behold ${ planName }"
-      ],
       "Learn more about our impact": [
         "Finn ut mer om innvirkningen vår"
       ],
@@ -15260,6 +15438,9 @@
       "Delete version history?": [
         "Slette versjonshistorikk?"
       ],
+      "Description": [
+        "Beskrivelse"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -15370,6 +15551,9 @@
       ],
       "Error": [
         "Feil"
+      ],
+      "Event": [
+        "Hendelse"
       ],
       "Every member of the organization can access": [
         "Hvert medlem av organisasjonen har tilgang"
@@ -15511,6 +15695,9 @@
       "Invoices": [
         "Fakturaer"
       ],
+      "IP": [
+        "IP"
+      ],
       "Keep your inbox organized": [
         "Hold innboksen din organisert"
       ],
@@ -15618,6 +15805,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
+      ],
+      "Personalise your e-mail footer": [
+        "Tilpass bunnteksten i e-post"
       ],
       "Phone": [
         "Telefon"
@@ -15857,6 +16047,9 @@
       "This field cannot contain only spaces": [
         "Feltet kan ikke kun innholde mellomrom"
       ],
+      "Time": [
+        "Tidspunkt"
+      ],
       "Time zone": [
         "Tidssone"
       ],
@@ -15886,6 +16079,9 @@
       ],
       "Upload your organization’s logo": [
         "Last opp organisasjonens logo"
+      ],
+      "User": [
+        "Bruker"
       ],
       "Users": [
         "Brukere"
