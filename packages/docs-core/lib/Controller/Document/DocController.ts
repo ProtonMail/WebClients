@@ -413,7 +413,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
     if (!this.entitlements) {
-      throw new Error('Connection not initialized')
+      throw new Error('Attempting to propagate update before entitlements are initialized')
     }
 
     if (message.type.wrapper === 'du') {
@@ -427,7 +427,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   public async debugSendCommitCommandToRTS(): Promise<void> {
     if (!this.entitlements) {
-      throw new Error('Connection not initialized')
+      throw new Error('Attempting to send commit command before entitlements are initialized')
     }
 
     await this.websocketService.debugSendCommitCommandToRTS(this.nodeMeta, this.entitlements.keys)
@@ -435,7 +435,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   public async createInitialCommit(): Promise<void> {
     if (!this.entitlements) {
-      throw new Error('Connection not initialized')
+      throw new Error('Cannot create initial commit before entitlements are initialized')
     }
 
     if (!this.editorInvoker) {
@@ -453,7 +453,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   public async squashDocument(): Promise<void> {
     if (!this.docMeta || !this.entitlements) {
-      throw new Error('Cannot squash document before document and keys are available')
+      throw new Error('Cannot squash document before document and entitlements are available')
     }
 
     if (!this.initialCommit) {
@@ -659,6 +659,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.editorInvoker) {
       return
     }
+
     void this.editorInvoker.showCommentsPanel()
   }
 
@@ -666,6 +667,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
+
     void this._exportAndDownload.execute(this.editorInvoker, this.getSureDocument(), format)
   }
 
@@ -673,6 +675,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
+
     void this.editorInvoker.printAsPDF()
   }
 
