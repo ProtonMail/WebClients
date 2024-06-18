@@ -5639,6 +5639,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
       ],
+      "Browser not supported": [
+        "Browser niet ondersteund"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -5788,6 +5791,9 @@
       "Downloading paused": [
         "Downloaden gepauzeerd"
       ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Downloaden gepauzeerd: ${ progressDisplay } GB"
+      ],
       "Draft": [
         "Concept"
       ],
@@ -5916,6 +5922,9 @@
       "From": [
         "Afzender"
       ],
+      "Generate text": [
+        "Genereer tekst"
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
         "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
@@ -5990,6 +5999,9 @@
       "Include Spam/Trash.": [
         "Includeer Spam/Prullenbak"
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Voeg uw prompt en het antwoord toe om ons te helpen de nauwkeurigheid te verbeteren."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -6040,6 +6052,9 @@
       ],
       "Left to Right": [
         "Van links naar rechts"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Laat de schrijfassistent u helpen met het schrijven en beantwoorden van e-mails, en zie uw productiviteit toenemen."
       ],
       "Link type": [
         "Soort"
@@ -6130,6 +6145,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Meer verfijnacties"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
@@ -6267,6 +6285,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please share what you expected": [
+        "Deel alstublieft wat u verwachtte"
+      ],
       "Please try again in a few moments": [
         "Probeer het opnieuw in enkele ogenblikken"
       ],
@@ -6305,6 +6326,12 @@
       ],
       "Print email": [
         "E-mail afdrukken"
+      ],
+      "Proofread selection": [
+        "Selectie proeflezen"
+      ],
+      "Proofread text": [
+        "Tekst proeflezen"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
@@ -6412,6 +6439,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
+      "Shorten selection": [
+        "Selectie verkorten"
+      ],
+      "Shorten text": [
+        "Tekst verkorten"
+      ],
       "Show original message": [
         "Toon origineel bericht"
       ],
@@ -6484,6 +6517,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "De eerste configuratie kan een paar minuten duren."
+      ],
       "The local database is being prepared": [
         "De lokale database wordt voorbereid"
       ],
@@ -6508,6 +6544,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "De schrijfassistent moet volledig gedownload zijn voordat die gebruikt kan worden."
       ],
       "Themes can give your inbox a new look.": [
         "Thema's kunnen uw inbox een nieuwe look geven."
@@ -6612,6 +6651,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "Dit bericht verloopt morgen om ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Dit hoeft slechts één keer gedaan te worden."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
@@ -6841,6 +6883,12 @@
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "Writing assistant add-on": [
+        "Schrijfassistent add-on"
+      ],
       "Yearly": [
         "Jaarlijks"
       ],
@@ -6974,6 +7022,9 @@
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
+      ],
+      "You selected some content:": [
+        "U heeft wat inhoud geselecteerd:"
       ],
       "You will lose access to Plus features on this date.": [
         "U zult toegang verliezen tot Plus-functies op deze datum."
@@ -10718,9 +10769,6 @@
       ],
       "Helping activists in Hong Kong": [
         "Activisten helpen in Hongkong"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } behouden"
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"

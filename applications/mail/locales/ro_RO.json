@@ -995,9 +995,6 @@
       "Revert to original display": [
         "Revenire la afișarea inițială"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Rulați-l pe serverele ${ BRAND_NAME }"
-      ],
       "Save": [
         "Salvare"
       ],
@@ -1522,9 +1519,6 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "Navigator web neacceptat"
-      ],
       "Fast and secure": [
         "Rapid și sigur"
       ],
@@ -1540,19 +1534,14 @@
       "Run locally": [
         "Rulare locală"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Rulare pe serverele ${ BRAND_NAME }"
+      "Run on servers": [
+        "Rulare pe servere."
       ],
       "Runs on all devices": [
         "Rulează pe orice dispozitiv"
       ],
       "Runs on your device": [
         "Rulare pe dispozitiv"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Dispozitiv necompatibil"
       ]
     },
     "Attached ics file error": {
@@ -3701,7 +3690,7 @@
         "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+        "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -3861,9 +3850,6 @@
       ],
       "Forward address is required": [
         "Adresa de redirecționare este obligatorie."
-      ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Nu pot continua cu această solicitare din cauza îndrumărilor mele etice. Încercați o altă solicitare."
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
@@ -6698,7 +6684,7 @@
         "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
+        "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
       "Session timed out": [
         "Sesiunea a expirat"
@@ -7358,12 +7344,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Descărcați aplicația ${ MAIL_APP_NAME } pentru desktop sau încercați să-l rulați pe serverele ${ BRAND_NAME }."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe serverele ${ BRAND_NAME }."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
@@ -7378,9 +7358,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe serverele ${ BRAND_NAME }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -11334,9 +11311,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Dacă depășiți limitele planului gratuit când vă expiră abonamentul ${ planName }, nu veți putea să:"
-      ],
-      "Keep ${ planName }": [
-        "Păstrare ${ planName }"
       ],
       "Learn more about our impact": [
         "Aflați mai multe despre impactul nostru"

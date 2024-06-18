@@ -991,8 +991,8 @@
       "Revert to original display": [
         "Revertir a la vista original"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Ejecutar en los servidores de ${ BRAND_NAME }"
+      "Run on servers": [
+        "Ejecutar en los servidores"
       ],
       "Save": [
         "Guardar"
@@ -1511,10 +1511,12 @@
         "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Al enviar este comentario, el prompt y tus notas también serán visibles al equipo de moderación de ${ BRAND_NAME }."
+      ]
+    },
     "Assistant option": {
-      "Browser not supported ": [
-        "El navegador no es compatible."
-      ],
       "Fast and secure": [
         "Rápido y seguro"
       ],
@@ -1530,19 +1532,14 @@
       "Run locally": [
         "Ejecutar localmente"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Ejecutar en los servidores de ${ BRAND_NAME }"
+      "Run on servers": [
+        "Ejecutar en los servidores"
       ],
       "Runs on all devices": [
         "Funciona en todos los dispositivos"
       ],
       "Runs on your device": [
         "Funciona en tu dispositivo"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "El hardware no es compatible."
       ]
     },
     "Attached ics file error": {
@@ -3838,9 +3835,6 @@
       "Forward address is required": [
         "Se requiere una dirección de reenvío."
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "No puedo continuar con esta solicitud debido a mis directrices éticas. Intenta con un prompt diferente."
-      ],
       "Image upload failed": [
         "Error al cargar la imagen"
       ],
@@ -4107,6 +4101,9 @@
       ],
       "The sending key is not valid": [
         "La clave de envío no es válida."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "El asistente de escritura no puede proceder con la solicitud. Intenta con otro prompt."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
@@ -5076,6 +5073,9 @@
       "Hardware not compatible": [
         "El hardware no es compatible."
       ],
+      "Report an issue": [
+        "Notificar un problema"
+      ],
       "Resume downloading": [
         "Reanudar la descarga"
       ],
@@ -6032,6 +6032,12 @@
       "Estimating time remaining...": [
         "Tiempo restante estimado..."
       ],
+      "Expand selection": [
+        "Expandir la selección"
+      ],
+      "Expand text": [
+        "Expandir el texto"
+      ],
       "Expiration time": [
         "Tiempo de expiración"
       ],
@@ -6442,6 +6448,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecciona qué dirección o direcciones de correo añadir a ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Indícanos cuál es el problema."
       ],
       "Please share what you expected": [
         "Comparte lo que esperabas."
@@ -7103,6 +7112,9 @@
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
       ],
+      "You can open only one writing assistant at a time": [
+        "Solo puedes abrir un asistente de escritura a la vez"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
@@ -7232,11 +7244,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Tu cuenta se actualizará una vez que el pago se haya completado."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "El navegador no admite el asistente de escritura. Descarga la aplicación de escritorio ${ MAIL_APP_NAME } o intenta con los servidores de ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "El navegador no admite el asistente de escritura. Descarga la aplicación de escritorio ${ MAIL_APP_NAME } o intenta ejecutarlo en los servidores."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "El navegador no admite el asistente de escritura. Intenta con los servidores de ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "El navegador no admite el asistente de escritura. Intenta ejecutarlo en los servidores."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -7253,8 +7265,8 @@
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "El hardware no admite ejecutar el asistente de escritura. Intenta con los servidores de ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "El hardware no admite ejecutar el asistente de escritura. Intenta ejecutarlo en los servidores."
       ],
       "Your information was found on ${ displayedDate }": [
         "Tus datos han sido encontrados el ${ displayedDate }"
@@ -9810,6 +9822,9 @@
       "Card number": [
         "Número de tarjeta"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Actualmente la renovación automática de la suscripción está desactivada. Si deseas cambiar la suscripción ahora, la renovación automática volverá a activarse."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -11139,9 +11154,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si excedes los límites del plan gratuito cuando la suscripción de ${ planName } expire, no podrás:"
-      ],
-      "Keep ${ planName }": [
-        "Seguir con ${ planName }"
       ],
       "Learn more about our impact": [
         "Más información acerca de nuestro impacto"

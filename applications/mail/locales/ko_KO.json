@@ -477,6 +477,9 @@
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
       ],
+      "Formalize": [
+        "형식화"
+      ],
       "Forward as attachment": [
         "첨부 파일로 전달"
       ],
@@ -486,11 +489,17 @@
       "Get in touch": [
         "연락하기"
       ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "단 매월 ${ addonPriceWithCurrency }에 시작해 보세요"
+      ],
       "Get SimpleLogin extension": [
         "간단 로그인 확장 가져오기"
       ],
       "Get started": [
         "시작하기"
+      ],
+      "Get the writing assistant": [
+        "글쓰기 도우미 시작하기"
       ],
       "Get verification code": [
         "인증코드 전송"
@@ -648,6 +657,9 @@
       "Loading${ ellipsis }": [
         "${ ellipsis } 불러오는 중"
       ],
+      "Make it friendly": [
+        "친근하게 만들기"
+      ],
       "Manage folders": [
         "폴더 관리"
       ],
@@ -710,6 +722,9 @@
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "더 다듬기"
       ],
       "More search options": [
         "검색 옵션 더보기"
@@ -861,6 +876,9 @@
       "Print": [
         "인쇄"
       ],
+      "Proofread": [
+        "교정"
+      ],
       "Quit": [
         "나가기"
       ],
@@ -960,11 +978,17 @@
       "Resume": [
         "재시작"
       ],
+      "Resume downloading": [
+        "다운로드 재개"
+      ],
       "Retry": [
         "재시도"
       ],
       "Revert to original display": [
         "원래 모양으로 되돌리기"
+      ],
+      "Run on servers": [
+        "서버에서 실행"
       ],
       "Save": [
         "저장"
@@ -974,6 +998,9 @@
       ],
       "Schedule message": [
         "예약 메시지"
+      ],
+      "Scroll to bottom": [
+        "맨 아래로 스크롤"
       ],
       "Search": [
         "검색"
@@ -1068,6 +1095,9 @@
       "Sharing options": [
         "공유 옵션"
       ],
+      "Shorten": [
+        "단축화"
+      ],
       "Show": [
         "보기"
       ],
@@ -1127,6 +1157,12 @@
       ],
       "Stay": [
         "기다리기"
+      ],
+      "Stop downloading the writing assistant": [
+        "글쓰기 도우미 다운로드 중단"
+      ],
+      "Stop generating result": [
+        "생성 중단"
       ],
       "Strikethrough": [
         "취소선"
@@ -1320,6 +1356,9 @@
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ],
+      "Your email writing assistant": [
+        "나의 이메일 작성 도우미"
+      ],
       "Zoom in": [
         "확대"
       ],
@@ -1385,6 +1424,9 @@
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -1460,28 +1502,29 @@
       ]
     },
     "Assistant option": {
-      "Browser not supported ": [
-        "지원하지 않는 브라우저 "
-      ],
       "Fast and secure": [
         "빠르고 안전"
+      ],
+      "Needs compatible hardware": [
+        "호환되는 하드웨어 필요"
       ],
       "No logs": [
         "노-로그"
       ],
+      "Requires one-time download": [
+        "1회 다운로드 필요"
+      ],
       "Run locally": [
         "로컬에서 실행"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } 서버에서 실행"
+      "Run on servers": [
+        "서버에서 실행"
       ],
       "Runs on all devices": [
         "모든 디바이스에서 실행"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "하드웨어가 호환되지 않음"
+      ],
+      "Runs on your device": [
+        "내 기기에서 동작"
       ]
     },
     "Attached ics file error": {
@@ -3313,6 +3356,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "계정 접근 불가 상황을 막기 위해선 복구 방법을 설정하십시오."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "글쓰기 도우미를 계속 사용하기 위해, 구독에 추가해 주세요."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "글쓰기 도우미를 계속 사용하기 위해, 관리자로 부터 접근 권한을 요청해 주세요."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
       ],
@@ -3336,6 +3385,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
+      ],
+      "Use the writing assistant to:": [
+        "다음으로 글쓰기 도우미 사용하기:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "이 이메일에서 알려진 추적기와 추적 URL을 찾지 못했습니다."
@@ -3703,6 +3755,9 @@
       "Draft could not be saved. Try again.": [
         "임시 보관함에 저장할 수 없음. 다시 시도하세요."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "오류로 인해 문장 생성이 취소되었습니다."
+      ],
       "Email address disabled": [
         "이메일 주소가 유효하지 않습니다."
       ],
@@ -3883,6 +3938,9 @@
       "Please select a category and what went wrong with the generated text": [
         "카테고리와 만들어진 텍스트에 어떤 문제가 있었는지를 선택해 주세요"
       ],
+      "Please try generating the text again": [
+        "문장 생성을 다시 시도해 보세요."
+      ],
       "Port is required": [
         "포트가 필요함"
       ],
@@ -3897,6 +3955,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } 사용자를 불러오기 위한 기본 키가 전송에 유효하지 않습니다"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "글쓰기 도우미 다운로드 중 문제 발생. 다시 시도하세요."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "회원님의 기기에 글쓰기 도우미 로드 중 오류가 발생했습니다. 다시 시도하세요."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "글쓰기 도우미가 비활성 상태일 때 데이터 언로딩 문제가 필요하지 않습니다."
       ],
       "Process aborted": [
         "과정 중단됨"
@@ -3999,6 +4066,9 @@
       ],
       "The sending key is not valid": [
         "전송 키가 유효하지 않음"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "글쓰기 도우미가 요청을 처리할 수 없습니다. 다른 프롬포트를 시도해 주세요."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
@@ -4955,6 +5025,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Hardware not compatible": [
+        "하드웨어가 호환되지 않음"
+      ],
       "Resume downloading": [
         "다운로드 재개"
       ],
@@ -4963,6 +5036,15 @@
       ],
       "Security Center": [
         "보안 센터"
+      ],
+      "Set up the writing assistant": [
+        "글쓰기 도우미 설정"
+      ],
+      "Tell us more": [
+        "더 알려주세요"
+      ],
+      "Write faster with the writing assistant": [
+        "글쓰기 도우미로 더 빠르게 작성하세요"
       ]
     },
     "Hint": {
@@ -5633,6 +5715,9 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "브라우저 데이터를 지우면 이 기기의 메시지 내용 검색도 비활성화됩니다. 메시지 내에서 검색하려면 모든 메시지를 다시 다운로드해야 합니다."
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "브라우저 데이터 삭제 (다운로드된 메시지 포함)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -5743,6 +5828,12 @@
       ],
       "Downloading paused": [
         "다운로드 일시정지됨"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "다운로드 중단됨: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "글쓰기 도우미 다운로드 중: ${ progressDisplay } GB"
       ],
       "Draft": [
         "초안"
@@ -5864,6 +5955,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "더 많은 검색 결과를 보려면 이메일 내용에서 이 단어를 검색해 보세요."
       ],
+      "Free for 14 days": [
+        "14일 무료"
+      ],
       "From": [
         "보낸 사람"
       ],
@@ -5942,6 +6036,9 @@
       "Include Spam/Trash.": [
         "스팸 및 휴지통 포함."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "프롬포트와 응답을 포함하시면 정확도 개선에 도움이 됩니다."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
@@ -5998,6 +6095,9 @@
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "글쓰기 도우미가 이메일 작성과 회신을 돕도록 하여 생산성이 솟구치는 것을 확인하세요."
       ],
       "Link type": [
         "링크 형식"
@@ -6088,6 +6188,9 @@
       ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
+      ],
+      "More refine actions": [
+        "더 많은 세련 작업"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
@@ -6224,6 +6327,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
       ],
+      "Please share what you expected": [
+        "기대했던 것을 공유해 주세요"
+      ],
       "Please try again in a few moments": [
         "잠시 후 다시 시도하십시오"
       ],
@@ -6263,6 +6369,12 @@
       "Print email": [
         "이메일 출력"
       ],
+      "Proofread selection": [
+        "단락 교정"
+      ],
+      "Proofread text": [
+        "문장 교정"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } 로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
       ],
@@ -6274,6 +6386,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "이 앱과 연관된 모든 데이터 삭제 (다운로드된 메시지 포함)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 다만, 분석을 위해 Proton에서 메시지의 내용을 전반적으로 확인할 수 있습니다."
@@ -6368,6 +6483,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
+      "Shorten selection": [
+        "단락 단축"
+      ],
       "Shorten text": [
         "텍스트 줄이기"
       ],
@@ -6443,6 +6561,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "초기화 절차가 몇 분 소요될 수 있습니다."
+      ],
       "The local database is being prepared": [
         "로컬 데이터베이스를 불러오는 중입니다"
       ],
@@ -6466,6 +6587,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "글쓰기 도우미를 사용하기 전에 다운로드가 완료되어야 합니다."
       ],
       "Themes can give your inbox a new look.": [
         "테마가 받은 편지함을 더 멋지게 보여줄거에요."
@@ -6505,6 +6629,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "이 초대가 비활성화된 캘린더에 저장되어 있습니다."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "글을 쓰는데 도움을 주기 위한 것입니다. 정확성을 위해 제안된 문장을 확인해 주세요. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
@@ -6568,6 +6695,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "이 메시지는 내일 ${ value }에 만료됩니다"
+      ],
+      "This only needs to be done once.": [
+        "이 작업은 한 번이면 됩니다."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "이 공개 키는 이 주소에 암호화된 이메일을 전송할 때 자동으로 사용됩니다."
@@ -6851,6 +6981,9 @@
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
+      "You can open only one writing assistant at a time": [
+        "한 번에 하나의 글쓰기 도우미를 열어놓을 수 있습니다."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -6926,6 +7059,9 @@
       "You selected **${ elementsCount } message**.": [
         "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
+      "You selected some content:": [
+        "몇 가지 콘텐츠를 선택하셨습니다:"
+      ],
       "You will lose access to Plus features on this date.": [
         "오늘 부터 Plus 기능을 잃게 됩니다."
       ],
@@ -6965,6 +7101,12 @@
       "Your account will be updated once the payment is cleared.": [
         "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "브라우저가 글쓰기 도우미를 지원하지 않습니다. ${ MAIL_APP_NAME } 데스크톱 앱을 다운로드 하거나 서버에서 실행해 보세요."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
@@ -6980,8 +7122,8 @@
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "귀하의 하드웨어는 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. ${ BRAND_NAME } 서버에서 실행해 보세요."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "하드웨어가 글쓰기 도우미를 로컬에서 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
@@ -7045,6 +7187,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ]
     },
     "Key badge": {
@@ -7457,11 +7604,17 @@
       "Density": [
         "형식"
       ],
+      "Did not follow instructions": [
+        "지시사항을 따르지 않습니다"
+      ],
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
+      ],
+      "Don't like the style": [
+        "스타일이 마음에 들지 않습니다"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -7631,6 +7784,9 @@
       "No label found": [
         "라벨 발견되지 않음"
       ],
+      "Not factually correct": [
+        "별로 정확하지 않습니다"
+      ],
       "Note": [
         "메모"
       ],
@@ -7784,8 +7940,14 @@
       "Type a command...": [
         "명령 입력..."
       ],
+      "Type a prompt to generate an output": [
+        "문장을 생성하기 위해 프롬프트를 입력해 주세요"
+      ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
+      ],
+      "Unsafe or problematic": [
+        "안전하지 않거나 문제의 여지가 있습니다"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -7913,6 +8075,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "${ BRAND_NAME }의 업계 최대 수준 개인정보 보호"
+      ],
       "Add a gift code": [
         "기프트 코드 추가"
       ],
@@ -8657,6 +8822,9 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
+      "Generate emails with only a prompt": [
+        "프롬포트만으로 이메일을 생성하세요"
+      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -8714,17 +8882,26 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your texts": [
+        "문장 교정 및 다듬기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
+      "Reply to messages": [
+        "메시지에 답장하기"
+      ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
+      ],
+      "Save time emailing": [
+        "이메일 작성 시간 줄이기"
       ],
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
@@ -9267,7 +9444,7 @@
         "글쓰기 도우미를 사용할 준비가 되었습니다."
       ],
       "Trial started": [
-        "페험판 시작 성공"
+        "체험기간이 시작되었습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9569,6 +9746,9 @@
       "Hint": [
         "힌트"
       ],
+      "How do you want the selected text modified?": [
+        "선택한 문장을 어떻게 수정했으면 하시나요?"
+      ],
       "Image URL": [
         "이미지 URL"
       ],
@@ -9595,6 +9775,12 @@
       ],
       "Please insert link first": [
         "처음으로 링크를 입력해주세요"
+      ],
+      "Please share what you expected": [
+        "기대했던 것을 공유해 주세요"
+      ],
+      "Refining your text...": [
+        "문장을 다듬는 중..."
       ],
       "Search date, name, email address, or subject line": [
         "날짜, 이름, 이메일 주소 및 제목 제목을 입력하세요"
@@ -9637,6 +9823,27 @@
       ],
       "Text": [
         "텍스트"
+      ],
+      "To": [
+        "받는 사람:"
+      ],
+      "Try “Announce upcoming events in a newsletter”": [
+        "\"뉴스레터에 다가오는 이벤트를 발표해 줘\"를 시도해 보세요"
+      ],
+      "Try “Cancel my gym membership”": [
+        "\"체육관 멤버십을 취소해 줘\"를 시도해 보세요"
+      ],
+      "Try “Invite Jane to my party”": [
+        "\"철수를 내 파티에 초대해 줘\"를 시도해 보세요"
+      ],
+      "Try “Thank my coworker for help on a project”": [
+        "\"프로젝트에 도움을 준 동료에게 감사하다고 보내줘\"를 시도해 보세요"
+      ],
+      "Try “Write a cover letter for an internship”": [
+        "\"인턴십에 쓸 자기 소개서를 작성해 줘\"를 시도해 보세요"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "\"고객에게 보낼 후속 이메일을 작성해 줘\"를 시도해 보세요"
       ],
       "Type a command…": [
         "명령 입력..."
@@ -10726,9 +10933,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } 구독 만료 후 무료 요금제의 한도를 초과하게 된다면,"
-      ],
-      "Keep ${ planName }": [
-        "${ planName } 유지하기"
       ],
       "Learn more about our impact": [
         "저희의 영향력에 대해 더 알아보기"
@@ -11996,6 +12200,9 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Your free trial has ended": [
+        "무료 체험 기간이 종료되었습니다."
       ]
     },
     "Title subscription": {

@@ -987,8 +987,8 @@
       "Revert to original display": [
         "Kembalikan ke mode tampilan semula"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Jalankan pada server ${ BRAND_NAME }"
+      "Run on servers": [
+        "Jalankan pada server"
       ],
       "Save": [
         "Simpan"
@@ -1501,10 +1501,12 @@
         "Aplikasi ${ BRAND_NAME }"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Dengan mengirimkan tanggapan ini, perintah dan komentar Anda akan dapat dilihat oleh tim moderasi ${ BRAND_NAME }."
+      ]
+    },
     "Assistant option": {
-      "Browser not supported ": [
-        "Browser tidak didukung "
-      ],
       "Fast and secure": [
         "Cepat dan aman"
       ],
@@ -1520,19 +1522,14 @@
       "Run locally": [
         "Jalankan secara lokal"
       ],
-      "Run on ${ BRAND_NAME } servers": [
-        "Jalankan pada server ${ BRAND_NAME }"
+      "Run on servers": [
+        "Jalankan pada server"
       ],
       "Runs on all devices": [
         "Bekerja pada semua perangkat"
       ],
       "Runs on your device": [
         "Bekerja pada perangkat Anda"
-      ]
-    },
-    "Assistant options": {
-      "Hardware not compatible": [
-        "Perangkat keras tidak kompatibel"
       ]
     },
     "Attached ics file error": {
@@ -3814,9 +3811,6 @@
       "Forward address is required": [
         "Alamat penerusan dibutuhkan"
       ],
-      "I cannot proceed with this request due to my ethical guidelines. Please try a different prompt.": [
-        "Saya tidak dapat menjawab permintaan ini karena pedoman etis saya. Silakan coba perintah yang berbeda."
-      ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
       ],
@@ -4077,6 +4071,9 @@
       ],
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Asisten penulisan tidak dapat memproses permintaan Anda. Silakan coba perintah yang berbeda."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
@@ -5035,6 +5032,9 @@
       ],
       "Hardware not compatible": [
         "Perangkat keras tidak kompatibel"
+      ],
+      "Report an issue": [
+        "Laporkan masalah"
       ],
       "Resume downloading": [
         "Lanjutkan unduhan"
@@ -6324,7 +6324,7 @@
         "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
       "Please select the folders you would like to import:": [
-        "Harap pilih folder-folder yang hendak Anda impor:"
+        "Silakan pilih folder mana saja yang ingin Anda impor:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
@@ -6334,6 +6334,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Mohon uraikan masalah apa yang Anda hadapi"
       ],
       "Please share what you expected": [
         "Silakan bagikan hal seperti apa yang Anda harapkan"
@@ -6708,7 +6711,7 @@
         "Proses ini hanya perlu dilangsungkan satu kali."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email yang dikirim ke alamat ini."
+        "Kunci publik ini akan secara otomatis digunakan untuk mengenkripsi email yang dikirim ke alamat ini."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
         "Tindakan ini akan menghapus seluruh data yang terhubung dengan akun ini, termasuk pesan yang diunduh. Aplikasi akan dimulai ulang dan Anda harus masuk kembali untuk dapat menggunakan aplikasi."
@@ -6768,7 +6771,7 @@
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Nonaktifkan pilihan ini agar pencarian pesan hanya didasarkan pada tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan dan menghapus pesan yang telah diunduh, tuju menu pengaturan."
+        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), tuju menu Pengaturan."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
@@ -6989,6 +6992,9 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
+      "You can open only one writing assistant at a time": [
+        "Anda hanya dapat membuka satu asisten penulisan dalam satu waktu"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -7106,11 +7112,11 @@
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on ${ BRAND_NAME } servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on ${ BRAND_NAME } servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
@@ -7127,8 +7133,8 @@
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on ${ BRAND_NAME } servers.": [
-        "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server ${ BRAND_NAME }."
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
@@ -9645,6 +9651,9 @@
       "Card number": [
         "Nomor kartu"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -10128,7 +10137,7 @@
         "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat terkirim ke alamat yang Anda tuju atas alasan-alasan berikut:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat terkirim ke satu atau lebih alamat yang Anda tuju atas alasan-alasan berikut:"
+        "Kami telah mendeteksi terdapatnya beberapa kesalahan. Email Anda tidak akan dapat dikirim kepada satu atau lebih alamat yang dituju atas rangkaian alasan berikut:"
       ]
     },
     "Send email with warnings": {
@@ -10858,8 +10867,14 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } alamat email per pengguna"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } yang meliputi alias hide-my-email tanpa batasan jumlah"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } dengan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
@@ -10882,11 +10897,17 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi berkas dan foto Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, berkas, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } dengan akses ke seluruh server berkecepatan tinggi di ${ vpnCountries } negara"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } dengan pemblokir malware dan iklan"
       ],
       "10 email addresses": [
         "10 alamat email"
@@ -10938,9 +10959,6 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Apabila Anda melebihi batas paket gratis pada saat langganan ${ planName } Anda berakhir, Anda tidak akan dapat:"
-      ],
-      "Keep ${ planName }": [
-        "Pertahankan paket ${ planName }"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
