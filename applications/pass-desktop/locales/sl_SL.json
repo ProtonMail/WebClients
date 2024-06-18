@@ -752,6 +752,9 @@
       "Moving item failed": [
         "Premikanje predmeta ni uspelo"
       ],
+      "Network error": [
+        "Omrežna napaka"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
       ],
@@ -811,6 +814,12 @@
       ],
       "Unknown invite": [
         "Neznano povabilo"
+      ],
+      "Unknown item": [
+        "Neznan predmet"
+      ],
+      "Unlock failure": [
+        "Napaka odklepanja"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nepodprta oblika datoteke ${ PASS_APP_NAME }"
@@ -1389,6 +1398,9 @@
       ],
       "Reconnect": [
         "Ponovno vzpostavite povezavo"
+      ],
+      "Reconnecting": [
+        "Ponovno povezovanje"
       ],
       "Restoring items from trash": [
         "Obnavljanje predmetov iz smetnjaka"
@@ -2157,6 +2169,9 @@
       "Enter a prefix": [
         "Vnesite pripono"
       ],
+      "Enter email": [
+        "Vnesite e-mail"
+      ],
       "Enter email or username": [
         "Vnesite e-pošto ali uporabniško ime"
       ],
@@ -2670,6 +2685,9 @@
       ],
       "Title is required": [
         "Naslov je obvezen"
+      ],
+      "Too many attempts": [
+        "Preveč poskusov"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Želite prenesti lastništvo tega trezorja na ${ email }?"

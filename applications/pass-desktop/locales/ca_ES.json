@@ -38,7 +38,7 @@
         "Afegir un nou element"
       ],
       "Add username field": [
-        "Afegeixi un camp de nom d'usuari"
+        "Afegiu un camp de nom d'usuari"
       ],
       "Admin panel": [
         "Panell d'administració"
@@ -62,7 +62,7 @@
         "Mou els elements en massa a una altra caixa forta"
       ],
       "Bulk move items to trash": [
-        "Mou en massa els elements a la paperera"
+        "Mou diversos elements a la paperera"
       ],
       "Bulk restore items from trash": [
         "Restaura un grup d'elements des de la paperera"
@@ -665,6 +665,9 @@
       "Failed to resolve breaches for this address": [
         "No s'han pogut resoldre les infraccions d'aquesta adreça"
       ],
+      "Failed to restore items from trash": [
+        "No s'han pogut restaurar els elements de la paperera"
+      ],
       "Failed to transfer this vault's ownership.": [
         "No s'ha pogut transferir la propietat de la caixa forta."
       ],
@@ -688,6 +691,9 @@
       ],
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
+      ],
+      "File does not match expected format": [
+        "El fitxer no coincideix amb el format esperat"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "No s'ha pogut importar la caixa forta \"${ vaultData.name }\": ${ description }"
@@ -734,6 +740,9 @@
       "Restoring item failed": [
         "No s'ha pogut restaurar l'element"
       ],
+      "Restoring trashed items failed": [
+        "Ha fallat la restauració dels elements de la paperera"
+      ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
       ],
@@ -769,6 +778,9 @@
       ],
       "Unknown invite": [
         "Invitació desconeguda"
+      ],
+      "Unknown item": [
+        "Element desconegut"
       ],
       "Unlock failure": [
         "Error de desbloqueig"
@@ -941,6 +953,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la seva contrasenya de ${ BRAND_NAME }."
       ],
+      "Add a username field": [
+        "Afegiu un camp de nom d'usuari"
+      ],
       "Add your custom email address to monitor :": [
         "Afegeixi la vostra adreça electrònica personalitzada per supervisar:"
       ],
@@ -1000,6 +1015,9 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
+      ],
+      "Click here to add a field for a username.": [
+        "Feu clic aquí per afegir un camp per a un nom d'usuari."
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -1072,6 +1090,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Fill in the CSV with your data": [
+        "Empleneu el CSV amb les vostres dades"
       ],
       "finance": [
         "finances"
@@ -1252,6 +1273,9 @@
       "Paused": [
         "Pausat"
       ],
+      "Permanently deleting selected items": [
+        "S'estan suprimint permanentment els elements seleccionats"
+      ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El codi PIN s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
       ],
@@ -1311,6 +1335,9 @@
       ],
       "Select vault to share": [
         "Seleccioneu la caixa forta per compartir"
+      ],
+      "Selected items permanently deleted": [
+        "Els elements seleccionats s'han suprimit permanentment"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -1509,10 +1536,10 @@
         "15 minuts"
       ],
       "2FA secret key (TOTP)": [
-        "Clau secreta A2F (TOTP)"
+        "Clau secreta d'A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Token 2FA (TOTP)"
+        "Testimoni d'A2F (TOTP)"
       ],
       "30 minutes": [
         "30 minuts"
@@ -1618,6 +1645,12 @@
       ],
       "Email": [
         "Correu electrònic"
+      ],
+      "Email (alias)": [
+        "Correu electrònic (àlies)"
+      ],
+      "Email (new alias)": [
+        "Correu electrònic (nou àlies)"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -2011,7 +2044,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Afegeix una clau secreta A2F"
+        "Afegeix una clau secreta d'A2F"
       ],
       "Add hidden text": [
         "Afegeix text amagat"
@@ -2031,11 +2064,17 @@
       "Enter a prefix": [
         "Introduïu un prefix"
       ],
+      "Enter email": [
+        "Introduïu el correu electrònic"
+      ],
       "Enter email or username": [
         "Introduïu el correu electrònic o el nom d’usuari"
       ],
       "Enter password": [
         "Introduïu la contrasenya"
+      ],
+      "Enter username": [
+        "Introduïu el nom d'usuari"
       ],
       "Full Name": [
         "Nom complert"
@@ -2354,6 +2393,9 @@
       "Update available": [
         "Hi ha una actualització disponible"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Actualitzeu per a desbloquejar les característiques prèmium"
+      ],
       "Vault": [
         "Caixa forta"
       ],
@@ -2429,6 +2471,9 @@
       ],
       "An error occured while exporting your data": [
         "S'ha produït un error en exportar les dades"
+      ],
+      "At least one email address is required": [
+        "Es requereix almenys una adreça de correu electrònic"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No es poden recuperar les bústies d'aquest àlies ara mateix"

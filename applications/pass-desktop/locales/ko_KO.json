@@ -103,6 +103,9 @@
       "Continue": [
         "계속"
       ],
+      "Continue offline": [
+        "오프라인으로 계속하기"
+      ],
       "Copy and close": [
         "복사 및 닫기"
       ],
@@ -432,6 +435,9 @@
       ],
       "Try again.": [
         "다시 시도하세요."
+      ],
+      "Unlock offline with password": [
+        "비밀번호로 오프라인 잠금 해제"
       ],
       "Unpin item": [
         "항목 고정 해제"
@@ -806,6 +812,12 @@
       "Unknown invite": [
         "알 수 없는 초대"
       ],
+      "Unknown item": [
+        "알 수 없는 항목"
+      ],
+      "Unlock failure": [
+        "잠금 해제 실패"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "지원되지 않는 ${ PASS_APP_NAME } 파일 포맷"
       ],
@@ -829,6 +841,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "현재 오프라인 상태입니다. ${ PASS_SHORT_APP_NAME }를 잠금 해제하려면 인터넷에 연결하세요."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "타 ${ PASS_APP_NAME } 클라이언트로 인해 사용자의 PIN 코드가 삭제되었습니다."
@@ -940,6 +955,9 @@
       "${ n } item": [
         "${ n }개 항목"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME }에 항상 접근할 수 있습니다."
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
       ],
@@ -966,6 +984,12 @@
       ],
       "Access successfully confirmed": [
         "접근을 성공적으로 수락했습니다."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME }에 대한 접근이 항상 ${ BRAND_NAME } 비밀번호를 요구하게 됩니다."
+      ],
+      "Add a username field": [
+        "사용자 이름 입력란 추가"
       ],
       "Add your custom email address to monitor :": [
         "모니터링할 사용자 지정 이메일 주소를 추가하세요 :"
@@ -1012,6 +1036,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
       ],
+      "Auto-lock successfully disabled.": [
+        "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
       "Breaches detected": [
         "침해 사례 감지됨"
       ],
@@ -1035,6 +1062,9 @@
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
+      ],
+      "Click here to add a field for a username.": [
+        "사용자 이름에 대한 입력란을 추가하려면 여기를 탭하세요."
       ],
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
@@ -1063,6 +1093,12 @@
       "Disabling auto-lock": [
         "자동 잠금 비활성화"
       ],
+      "Disabling auto-lock failed": [
+        "자동 잠금 비활성화 실패"
+      ],
+      "Disabling offline mode...": [
+        "오프라인 모드 비활성화 중..."
+      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
@@ -1089,6 +1125,18 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "${ PASS_SHORT_APP_NAME } 베타 활성화"
+      ],
+      "Enable auto-locking to secure your data": [
+        "데이터를 보호하려면 자동 잠금을 활성화 하세요."
+      ],
+      "Enabling offline mode...": [
+        "오프라인 모드 활성화 중..."
+      ],
+      "Enabling password auto-lock": [
+        "비밀번호 자동 잠금을 활성화 하는 중"
+      ],
+      "Enabling password lock failed": [
+        "비밀번호 잠금 활성화 실패"
       ],
       "Enabling PIN auto-lock": [
         "PIN 자동 잠금 활성화"
@@ -1279,11 +1327,17 @@
       "Offline mode": [
         "오프라인 모드"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "오프라인 모드를 현재 비활성화 할 수 없습니다."
+      ],
       "Offline mode could not be enabled at the moment": [
         "지금은 오프라인 모드를 활성화할 수 없습니다."
       ],
       "Offline support successfully disabled": [
         "오프라인 지원이 비활성화되었습니다"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }이 온라인에 접근하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
       ],
       "Owner": [
         "소유자"
@@ -1296,6 +1350,9 @@
       ],
       "password": [
         "비밀번호"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "비밀번호 잠금이 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
@@ -1315,11 +1372,26 @@
       "Please check your spam folder or try resending the code.": [
         "스팸 폴더를 확인하거나 코드를 다시 전송해 보세요."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호를 확인해주세요"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "비밀번호를 사용하는 자동 잠금을 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "오프라인 모드를 활성화하려면 ${ BRAND_NAME } 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "지금의 잠금을 등록 해제하기 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "자동 잠금 시간을 업데이트하기 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "지금의 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
@@ -1347,6 +1419,9 @@
       ],
       "Reconnecting": [
         "재연결중"
+      ],
+      "Registering PIN lock failed": [
+        "PIN 잠금 설정 실패"
       ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
@@ -1692,6 +1767,12 @@
       "Email": [
         "이메일"
       ],
+      "Email (alias)": [
+        "이메일 (별칭)"
+      ],
+      "Email (new alias)": [
+        "이메일 (새 별칭)"
+      ],
       "Email address": [
         "이메일 주소"
       ],
@@ -2013,6 +2094,9 @@
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
       ]
     },
     "lobby: Title": {
@@ -2103,11 +2187,17 @@
       "Enter a prefix": [
         "접두어 입력"
       ],
+      "Enter email": [
+        "이메일 입력"
+      ],
       "Enter email or username": [
         "이메일 및 사용자 이름 입력"
       ],
       "Enter password": [
         "비밀번호 입력"
+      ],
+      "Enter username": [
+        "사용자명 입력"
       ],
       "Full Name": [
         "성명"
