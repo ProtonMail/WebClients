@@ -10,8 +10,16 @@ import { Result } from '../Domain/Result/Result'
 
 const DebugDisableSockets = false
 
+/**
+ * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
+ * a "ping" from the client as these messages are not exposed to our app—they are handled transparently by the browser.
+ * The solution is to transition to a manual ping/pong mechanism.
+ * See DRVDOC-535
+ */
+const HeartbeatEnabled: false = false
+
 export const DebugConnection = {
-  enabled: isLocalEnvironment() && false,
+  enabled: isLocalEnvironment() && true,
   url: 'ws://localhost:4000/websockets',
 }
 
@@ -62,6 +70,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
    * https://github.com/websockets/ws?tab=readme-ov-file#how-to-detect-and-close-broken-connections
    * */
   private heartbeat(): void {
+    if (!HeartbeatEnabled) {
+      return
+    }
+
     clearTimeout(this.pingTimeout)
 
     this.pingTimeout = setTimeout(() => {
