@@ -91,6 +91,7 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
         style={{
           '--max-w-custom': '35vw',
         }}
+        data-testid="document-name-dropdown"
       >
         <span className="text-ellipsis">{title}</span>
       </DropdownButton>
@@ -114,25 +115,39 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
                 versionHistory: controller.getVersionHistory(),
               })
             }}
+            data-testid="dropdown-versioning"
           >
             <Icon name="clock-rotate-left" className="color-weak mr-2" />
             {c('Action').t`History`}
           </DropdownMenuButton>
 
           {controller?.role.isAdmin() && (
-            <DropdownMenuButton className="flex items-center text-left" onClick={onRename}>
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={onRename}
+              data-testid="dropdown-rename"
+            >
               <Icon name="pencil" className="color-weak mr-2" />
               {c('Action').t`Rename`}
             </DropdownMenuButton>
           )}
 
-          <DropdownMenuButton disabled={isDuplicating} className="flex items-center text-left" onClick={onDuplicate}>
+          <DropdownMenuButton
+            disabled={isDuplicating}
+            className="flex items-center text-left"
+            onClick={onDuplicate}
+            data-testid="dropdown-duplicate"
+          >
             <Icon name="squares" className="color-weak mr-2" />
             {c('Action').t`Duplicate`}
             {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
           </DropdownMenuButton>
 
-          <DropdownMenuButton className="flex items-center text-left" onClick={onNewDocument}>
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={onNewDocument}
+            data-testid="dropdown-new-document"
+          >
             <Icon name="folder-plus" className="color-weak mr-2" />
             {c('Action').t`New document`}
           </DropdownMenuButton>
