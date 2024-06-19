@@ -38,38 +38,41 @@ import { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { sendErrorMessage } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
+import { DocumentInteractionMode } from './DocumentInteractionMode'
 
 const TypingBotEnabled = false
 
 type Props = {
-  docMap: YDocMap
-  documentId: string
-  username: string
-  docState: DocStateInterface
   clientInvoker: EditorRequiresClientMethods
-  editingAllowed: boolean
+  docMap: YDocMap
+  docState: DocStateInterface
+  documentId: string
+  editingLocked: boolean
+  hasEditAccess: boolean
+  hidden: boolean
+  injectWithNewContent?: FileToDocPendingConversion
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
   nonInteractiveMode: boolean
-  hidden: boolean
   onEditorReadyToReceiveUpdates: () => void
+  onInteractionModeChange: (mode: DocumentInteractionMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
-  injectWithNewContent?: FileToDocPendingConversion
-  onEditingAllowanceChange: (editable: boolean) => void
+  username: string
 }
 
 export function Editor({
   clientInvoker,
-  injectWithNewContent,
+  docMap,
   docState,
   documentId,
-  username,
-  docMap,
-  editingAllowed,
-  nonInteractiveMode: nonInteractiveMode,
+  editingLocked,
+  hasEditAccess,
   hidden,
+  injectWithNewContent,
+  nonInteractiveMode: nonInteractiveMode,
   onEditorReadyToReceiveUpdates,
+  onInteractionModeChange,
   setEditorRef,
-  onEditingAllowanceChange,
+  username,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -102,7 +105,9 @@ export function Editor({
         </div>
       )}
       <LexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
-        {!nonInteractiveMode && <Toolbar onEditingAllowanceChange={onEditingAllowanceChange} />}
+        {!nonInteractiveMode && (
+          <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />
+        )}
         <RichTextPlugin
           contentEditable={
             <div
@@ -150,7 +155,7 @@ export function Editor({
         <CodeHighlightPlugin />
         <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
-        {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={editingAllowed} />}
+        {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
       </LexicalComposer>

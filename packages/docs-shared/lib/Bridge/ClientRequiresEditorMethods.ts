@@ -24,7 +24,7 @@ export interface ClientRequiresEditorMethods {
   handleRemoveCommentMarkNode(markID: string): Promise<void>
   handleResolveCommentMarkNode(markID: string): Promise<void>
   handleUnresolveCommentMarkNode(markID: string): Promise<void>
-  changeEditingAllowance(allow: boolean): Promise<void>
+  changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
   printAsPDF(): Promise<void>

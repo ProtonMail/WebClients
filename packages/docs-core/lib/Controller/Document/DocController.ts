@@ -7,7 +7,6 @@ import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
 import {
   DocChangeObserver,
-  WebsocketConnectionEvent,
   InternalEventBusInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
@@ -17,12 +16,8 @@ import {
   DocUpdateOrigin,
   InternalEventHandlerInterface,
   InternalEventInterface,
-  WebsocketDisconnectedPayload,
-  BaseWebsocketPayload,
   assertUnreachable,
   BroadcastSource,
-  WebsocketDocumentUpdateMessagePayload,
-  WebsocketEventMessagePayload,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
   DataTypesThatDocumentCanBeExportedAs,
@@ -53,6 +48,13 @@ import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import {
+  WebsocketAckStatusChangePayload,
+  WebsocketDisconnectedPayload,
+  WebsocketDocumentUpdateMessagePayload,
+  WebsocketEventMessagePayload,
+} from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -70,11 +72,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private lastCommitIdReceivedFromRts?: string
   private initialSyncTimer: NodeJS.Timeout | null = null
   private initialConnectionTimer: NodeJS.Timeout | null = null
+  isExperiencingErroredSync = false
   realtimeConnectionReady = false
   docsServerConnectionReady = false
   didAlreadyReceiveEditorReadyEvent = false
   readonly updatesReceivedWhileEditorInvokerWasNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] =
     []
+  websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
 
   public readonly username: string
 
@@ -90,7 +94,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _createNewDocument: CreateNewDocument,
     private _getDocumentMeta: GetDocumentMeta,
     private _exportAndDownload: ExportAndDownload,
-
     private websocketService: WebsocketServiceInterface,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -102,6 +105,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
   }
 
   public get role(): DocumentRole {
@@ -113,23 +117,23 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   handleWebsocketConnectingEvent(): void {
-    if (this.editorInvoker) {
-      this.logger.info('Changing editing allowance to false while connecting to RTS')
+    this.logger.info('Changing editing allowance to false while connecting to RTS')
 
-      this.editorInvoker.changeEditingAllowance(false).catch(console.error)
-    }
+    this.websocketStatus = 'connecting'
+
+    this.reloadEditingLockedState()
   }
 
   handleWebsocketConnectedEvent(): void {
+    this.websocketStatus = 'connected'
+
     this.beginInitialSyncTimer()
 
     if (this.initialConnectionTimer) {
       clearTimeout(this.initialConnectionTimer)
     }
 
-    if (this.editorInvoker) {
-      void this.editorInvoker.changeEditingAllowance(this.doesUserHaveEditingPermissions())
-    }
+    this.reloadEditingLockedState()
   }
 
   handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
@@ -147,7 +151,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.logger.info('Changing editing allowance to false after RTS disconnect')
 
       void this.editorInvoker.performClosingCeremony()
-      void this.editorInvoker.changeEditingAllowance(false)
+      this.websocketStatus = 'disconnected'
+      this.reloadEditingLockedState()
     }
 
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
@@ -156,12 +161,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   async handleEvent(event: InternalEventInterface<unknown>): Promise<void> {
-    const { document } = event.payload as BaseWebsocketPayload
-
-    if (document.linkId !== this.nodeMeta.linkId || document.volumeId !== this.nodeMeta.volumeId) {
-      return
-    }
-
     if (event.type === WebsocketConnectionEvent.Disconnected) {
       this.handleWebsocketDisconnectedEvent(event.payload as WebsocketDisconnectedPayload)
     } else if (event.type === WebsocketConnectionEvent.Connected) {
@@ -174,7 +173,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     } else if (event.type === WebsocketConnectionEvent.EventMessage) {
       const { message } = event.payload as WebsocketEventMessagePayload
       void this.handleRealtimeServerEvent(message)
+    } else if (event.type === WebsocketConnectionEvent.AckStatusChange) {
+      this.handleWebsocketAckStatusChangeEvent(event.payload as WebsocketAckStatusChangePayload)
     }
+  }
+
+  handleWebsocketAckStatusChangeEvent(event: WebsocketAckStatusChangePayload): void {
+    this.isExperiencingErroredSync = event.ledger.hasErroredMessages()
+
+    this.reloadEditingLockedState()
   }
 
   async editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void> {
@@ -324,7 +331,24 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     void this.editorInvoker.showEditor()
     void this.editorInvoker.performOpeningCeremony()
-    void this.editorInvoker.changeEditingAllowance(this.doesUserHaveEditingPermissions())
+
+    this.reloadEditingLockedState()
+  }
+
+  reloadEditingLockedState(): void {
+    if (!this.editorInvoker) {
+      return
+    }
+
+    if (
+      this.doesUserHaveEditingPermissions() &&
+      !this.isExperiencingErroredSync &&
+      this.websocketStatus === 'connected'
+    ) {
+      void this.editorInvoker.changeLockedState(false)
+    } else {
+      void this.editorInvoker.changeLockedState(true)
+    }
   }
 
   doesUserHaveEditingPermissions(): boolean {
