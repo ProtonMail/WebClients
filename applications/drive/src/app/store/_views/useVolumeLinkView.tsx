@@ -7,7 +7,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
-import { useLink } from '../_links';
+import { DecryptedLink, useLink } from '../_links';
 import { ShareInvitationDetails, useShareInvitation } from '../_shares';
 
 export const useVolumeLinkView = () => {
@@ -38,7 +38,7 @@ export const useVolumeLinkView = () => {
             volumeId: string;
             linkId: string;
         }
-    ): Promise<{ linkId: string; shareId: string; isFile: boolean } | undefined> => {
+    ): Promise<{ linkId: string; shareId: string; isFile: boolean; mimeType: string } | undefined> => {
         try {
             const invitationDetails: ShareInvitationDetails | undefined = await getInvitationDetails(abortSignal, {
                 invitationId,
@@ -52,16 +52,24 @@ export const useVolumeLinkView = () => {
             });
 
             if (!invitationDetails) {
-                const link = await getInvitationLinkDetails(abortSignal, { volumeId, linkId }).catch((error) => {
+                const link: DecryptedLink | undefined = await getInvitationLinkDetails(abortSignal, {
+                    volumeId,
+                    linkId,
+                }).catch((error) => {
                     if (error.data.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
                         return undefined;
                     }
                     return error;
                 });
                 if (link?.shareId) {
-                    return { linkId: link.linkId, shareId: link.shareId, isFile: link.isFile };
+                    return {
+                        linkId: link.linkId,
+                        shareId: link.shareId,
+                        isFile: link.isFile,
+                        mimeType: link.mimeType,
+                    };
                 }
-                // This will happend if we can't find the invite and the file/folder does not exist
+                // This will happen if we can't find the invite and the file/folder does not exist
                 return;
             }
 
@@ -75,6 +83,7 @@ export const useVolumeLinkView = () => {
                     linkId: invitationDetails.link.linkId,
                     shareId: invitationDetails.share.shareId,
                     isFile: invitationDetails.link.isFile,
+                    mimeType: invitationDetails.link.mimeType,
                 };
             } else {
                 throw new EnrichedError(c('Notification').t`Failed to accept share invitation`, {
