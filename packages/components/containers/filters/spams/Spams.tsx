@@ -134,7 +134,7 @@ const Spams = ({ isOrganization }: Props) => {
 
     return (
         <>
-            <div className="mb-8">
+            <div className="mb-8 spam-add-address">
                 <SpamsButtonDropdown
                     title={c('Action').t`Add address or domain`}
                     actions={getActions().map(({ getName, type }) => ({
@@ -153,7 +153,7 @@ const Spams = ({ isOrganization }: Props) => {
 
             {globalTotal > 0 && (
                 <>
-                    <div className="mb-8">
+                    <div className="mb-8 spam-search-input">
                         <SearchInput
                             onChange={(nextSearch) => {
                                 if (nextSearch !== search) {

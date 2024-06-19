@@ -22,7 +22,7 @@ function LabelSortableList({ items, ...rest }: Props) {
                 <OrderableTableHeader>
                     <tr>
                         <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
-                            <Icon name="arrows-cross" />
+                            <Icon name="arrows-cross" alt={c('Settings/labels - table').t`Drag to reorder`} />
                         </th>
                         <th scope="col">{c('Settings/labels - table').t`Labels`}</th>
                         <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>{c(

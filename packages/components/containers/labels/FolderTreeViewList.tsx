@@ -25,7 +25,7 @@ interface HeaderProps {
 
 const Header = ({ isSmallViewport }: HeaderProps) => {
     return (
-        <div className="flex flex-nowrap w-full border-bottom pb-2">
+        <div className="flex flex-nowrap w-full border-bottom pb-2 treeview-header">
             <span className="text-bold flex-1">
                 {isSmallViewport ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
@@ -168,7 +168,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                         <ToggleNotify label={item} />
                                     </div>
                                     <div
-                                        className="w-custom md:w-custom flex flex-column items-end"
+                                        className="w-custom md:w-custom flex flex-column items-end treeview-actions"
                                         style={{ '--w-custom': '6.25rem', '--md-w-custom': '10em' }}
                                     >
                                         <div className="my-auto">
