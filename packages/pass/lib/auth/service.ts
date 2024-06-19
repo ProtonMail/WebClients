@@ -182,7 +182,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 }
             } catch (err) {
                 logger.warn(`[AuthService] Logging in session failed`, err);
-                config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` });
+                config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.`, type: 'error' });
                 await config?.onSessionFailure?.({ forceLock: true, retryable: true });
                 return false;
             }
@@ -228,7 +228,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 return loggedIn;
             } catch (error: unknown) {
                 const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
-                config.onNotification?.({ text: c('Warning').t`Your session could not be authorized.` + reason });
+
+                config.onNotification?.({
+                    text: c('Warning').t`Your session could not be authorized.` + reason,
+                    type: 'error',
+                });
+
                 config.onForkInvalid?.();
                 await authService.logout({ soft: true, broadcast: false });
 
@@ -398,7 +403,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             const reason = message ? ` (${message})` : '';
                             const text = c('Warning').t`Your session could not be resumed.` + reason;
                             logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                            config.onNotification?.({ text });
+                            config.onNotification?.({ text, type: 'error' });
                         }
 
                         /** If a session fails to resume due to reasons other than being locked,
@@ -458,7 +463,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             switch (event.type) {
                 case 'session': {
                     if (event.status === 'inactive') {
-                        config.onNotification?.({ text: c('Warning').t`Your session is inactive.` });
+                        config.onNotification?.({ text: c('Warning').t`Your session is inactive.`, type: 'error' });
                         await authService.logout({ soft: true, broadcast: true });
                     }
 

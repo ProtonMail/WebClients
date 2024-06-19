@@ -240,7 +240,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 const additionalMessage = error instanceof Error ? error.message : '';
                 const text = c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`;
-                authService.config.onNotification?.({ text });
+                authService.config.onNotification?.({ text, type: 'error' });
 
                 throw getAccountForkResponsePayload(AccountForkResponse.ERROR, error);
             }
