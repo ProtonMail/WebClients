@@ -117,6 +117,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const error = getRouteError(history.location.search);
 
                 if (error !== null) {
+                    setRedirectPath('/');
                     client.current.setStatus(AppStatus.ERROR);
                     history.replace({ search: '', pathname: '/', state: { error } });
                     return false;
