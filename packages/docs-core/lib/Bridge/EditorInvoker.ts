@@ -43,10 +43,6 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('receiveMessage', [message])
   }
 
-  async receiveThemeChanges(theme: string): Promise<void> {
-    return this.invokeEditorMethod('receiveThemeChanges', [theme])
-  }
-
   async getDocumentState(): Promise<Uint8Array> {
     return this.invokeEditorMethod('getDocumentState', [])
   }

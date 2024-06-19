@@ -32,6 +32,7 @@ import locales from './locales'
 import { DocsStore } from './ReduxStore/store'
 import { extraThunkArguments } from './ReduxStore/thunk'
 import { Availability, AvailabilityReport, AvailabilityTypes } from '@proton/utils/availability'
+import { DocsThemeProvider } from './DocsThemeProvider'
 
 setTtagLocales(locales)
 setupGuestCrossStorage()
@@ -57,11 +58,11 @@ const App = () => {
     void (async () => {
       try {
         /*
-          Availability will report every 5 minutes the user status:
-          - if an error occured and was reported to Sentry
-          - if an error occured and was explicitely marked as an error
-          - if an error occurred and was explicitely marked as critical
-        */
+                  Availability will report every 5 minutes the user status:
+                  - if an error occured and was reported to Sentry
+                  - if an error occured and was explicitely marked as an error
+                  - if an error occurred and was explicitely marked as critical
+                */
         Availability.init((report: AvailabilityReport) => {
           metrics.docs_users_success_rate_total.increment({
             plan: state.initialUser?.isFree ? 'free' : 'paid',
@@ -92,7 +93,7 @@ const App = () => {
   })
 
   return (
-    <ProtonApp config={config}>
+    <ProtonApp config={config} ThemeProvider={DocsThemeProvider}>
       {(() => {
         if (state.error) {
           return <StandardLoadErrorPage errorMessage={state.error.message} />
