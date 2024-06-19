@@ -21,6 +21,7 @@ import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText, useFlag } 
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BillingAddress } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -390,6 +391,8 @@ const Step1 = ({
         />
     ) : undefined;
 
+    const boxWidth = { '--max-w-custom': planCards[audience].length === 4 && hasPlanSelector ? '74rem' : '57rem' };
+
     return (
         <Layout
             afterLogo={audienceTabs}
@@ -398,6 +401,7 @@ const Step1 = ({
             hasDecoration
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
+            footerWidth={boxWidth}
         >
             {renderUpsellMailTrialModal && (
                 <MailTrial2024UpsellModal
@@ -469,6 +473,20 @@ const Step1 = ({
                         return wrap('hourglass', textLaunchOffer);
                     }
 
+                    const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
+
+                    const businessYearlyCycle =
+                        model.subscriptionDataCycleMapping[options.plan?.Name as PLANS]?.[CYCLE.YEARLY];
+                    if (
+                        mailOfferPlans.includes(options.plan?.Name as PLANS) &&
+                        !!businessYearlyCycle?.checkResult.Coupon?.Code
+                    ) {
+                        const textLaunchOffer = getBoldFormattedText(
+                            c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
+                        );
+                        return wrap('hourglass', textLaunchOffer);
+                    }
+
                     if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
                         return null;
                     }
@@ -526,7 +544,7 @@ const Step1 = ({
                 })()}
                 {hasPlanSelector && (
                     <>
-                        <Box className="mt-8 w-full">
+                        <Box className="mt-8 w-full max-w-custom" style={boxWidth}>
                             <BoxHeader
                                 step={step++}
                                 title={
@@ -629,7 +647,10 @@ const Step1 = ({
                         </Box>
                     </>
                 )}
-                <Box className={clsx('mt-12 w-full', isOnboardingMode && !hasSelectedFree && 'hidden')}>
+                <Box
+                    className={clsx('mt-12 w-full max-w-custom', isOnboardingMode && !hasSelectedFree && 'hidden')}
+                    style={boxWidth}
+                >
                     {(() => {
                         const step2Summary = isOnboardingMode ? (
                             <RightSummary variant="gradientBorder" className="mx-auto md:mx-0 rounded-xl">
@@ -899,7 +920,7 @@ const Step1 = ({
                     })()}
                 </Box>
                 {!hasSelectedFree && (
-                    <Box className="mt-12 w-full">
+                    <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment

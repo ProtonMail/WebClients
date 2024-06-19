@@ -123,10 +123,10 @@ export const getSignupSearchParams = (
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
 export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
-    if (location.pathname === SSO_PATHS.PASS_SIGNUP) {
+    if (location.pathname === SSO_PATHS.PASS_SIGNUP || location.pathname === SSO_PATHS.MAIL_SIGNUP) {
         return { themeType: ThemeTypes.Storefront, className: 'signup-v2-account-gradient' };
     }
-    if (location.pathname === SSO_PATHS.PASS_SIGNUP_B2B) {
+    if (location.pathname === SSO_PATHS.PASS_SIGNUP_B2B || location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B) {
         return {
             themeType: ThemeTypes.Storefront,
             className: 'ui-prominent signup-v2-account-gradient',
