@@ -57,6 +57,7 @@ function SharedPagePreviewContainer({
     return (
         <FilePreview
             colorUi="standard"
+            isPublic
             isMetaLoading={isLinkLoading}
             isLoading={isContentLoading}
             error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
