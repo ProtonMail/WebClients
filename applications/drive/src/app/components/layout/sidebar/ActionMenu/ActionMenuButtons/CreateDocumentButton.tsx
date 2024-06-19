@@ -21,7 +21,8 @@ const CreateDocumentButton = ({ onClick }: Props) => {
                     c('Action').t`New document`
                 }
             </span>
-            <NewFeatureTag featureKey="documents" className="text-sm" />
+            {/* TODO: Remove New tag when expired */}
+            <NewFeatureTag featureKey="documents" endDate={new Date('2024-07-15')} />
         </DropdownMenuButton>
     );
 };
