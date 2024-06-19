@@ -62,7 +62,6 @@ import {
     APPS,
     APP_NAMES,
     CLIENT_TYPES,
-    PLANS,
     SETUP_ADDRESS_PATH,
     SSO_PATHS,
     UNPAID_STATE,
@@ -100,17 +99,16 @@ import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
-import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams, getThemeFromLocation } from '../signup/searchParams';
 import { getSignupMeta } from '../signup/signupPagesJson';
-import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extendStore, setupStore } from '../store/store';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
+import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { UNAUTHENTICATED_ROUTES, getLocalRedirect, getPaths } from './helper';
 import { addSession } from './session';
 
@@ -723,71 +721,28 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.TRIAL,
                                                         SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,
+                                                        SSO_PATHS.CALENDAR_SIGNUP_B2B,
                                                         SSO_PATHS.MAIL_SIGNUP,
+                                                        SSO_PATHS.MAIL_SIGNUP_B2B,
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                         SSO_PATHS.DOCS_SIGNUP,
+                                                        SSO_PATHS.PASS_SIGNUP,
+                                                        SSO_PATHS.PASS_SIGNUP_B2B,
                                                     ]}
                                                 >
-                                                    {(() => {
-                                                        if (
-                                                            hasBFCoupon ||
-                                                            maybePreAppIntent === APPS.PROTONDRIVE ||
-                                                            searchParams.get('mode') === 'sps' ||
-                                                            searchParams.get('plan') === PLANS.NEW_VISIONARY
-                                                        ) {
-                                                            return (
-                                                                <SingleSignupContainerV2
-                                                                    initialSearchParams={initialSearchParams}
-                                                                    paths={paths}
-                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
-                                                                    activeSessions={activeSessions}
-                                                                    loader={loader}
-                                                                    productParam={productParam}
-                                                                    clientType={clientType}
-                                                                    toApp={maybePreAppIntent}
-                                                                    toAppName={toAppName}
-                                                                    onLogin={handleLogin}
-                                                                    fork={!!forkState}
-                                                                    onBack={
-                                                                        hasBackToSwitch
-                                                                            ? () => history.push(paths.login)
-                                                                            : undefined
-                                                                    }
-                                                                />
-                                                            );
-                                                        }
-                                                        return (
-                                                            <UnAuthenticated>
-                                                                <SignupContainer
-                                                                    initialSearchParams={initialSearchParams}
-                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
-                                                                    loginUrl={paths.login}
-                                                                    productParam={productParam}
-                                                                    clientType={clientType}
-                                                                    toApp={maybePreAppIntent}
-                                                                    toAppName={toAppName}
-                                                                    onLogin={handleLogin}
-                                                                    onBack={
-                                                                        hasBackToSwitch
-                                                                            ? () => history.push(paths.login)
-                                                                            : undefined
-                                                                    }
-                                                                />
-                                                            </UnAuthenticated>
-                                                        );
-                                                    })()}
-                                                </Route>
-                                                <Route path={[SSO_PATHS.PASS_SIGNUP, SSO_PATHS.PASS_SIGNUP_B2B]}>
-                                                    <SingleSignupContainerV2
+                                                    <SingleSignupSwitchContainer
+                                                        hasBFCoupon={hasBFCoupon}
+                                                        maybePreAppIntent={maybePreAppIntent}
                                                         initialSearchParams={initialSearchParams}
                                                         paths={paths}
-                                                        metaTags={getSignupMeta(APPS.PROTONPASS)}
+                                                        metaTags={getSignupMeta(maybePreAppIntent)}
                                                         activeSessions={activeSessions}
                                                         loader={loader}
-                                                        productParam={APPS.PROTONPASS}
-                                                        clientType={CLIENT_TYPES.PASS}
-                                                        toApp={APPS.PROTONPASS}
-                                                        toAppName={getToAppName(APPS.PROTONPASS)}
+                                                        productParam={productParam}
+                                                        clientType={clientType}
+                                                        toApp={maybePreAppIntent}
+                                                        toAppName={toAppName}
+                                                        searchParams={searchParams}
                                                         onLogin={handleLogin}
                                                         fork={!!forkState}
                                                         onBack={

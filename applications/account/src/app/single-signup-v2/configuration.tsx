@@ -11,7 +11,9 @@ import {
     getDrivePlan,
     getEarlyAccessFeature,
     getFamilyPlan,
+    getMailBusinessPlan,
     getMailPlan,
+    getMailProPlan,
     getNewVisionaryPlan,
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
@@ -197,6 +199,26 @@ export const getSummaryPlan = ({
                 getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
             ],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.MAIL_PRO) {
+        const shortPlan = getMailProPlan(plan);
+        return {
+            logo: <MailLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [getMailAppFeature(), getCalendarAppFeature()],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.MAIL_BUSINESS) {
+        const shortPlan = getMailBusinessPlan(plan);
+        return {
+            logo: <MailLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [getMailAppFeature(), getCalendarAppFeature()],
         };
     }
 };
