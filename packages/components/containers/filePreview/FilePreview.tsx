@@ -9,6 +9,7 @@ import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/bro
 import {
     isAudio,
     isPDF,
+    isProtonDocument,
     isSupportedImage,
     isSupportedText,
     isVideo,
@@ -39,6 +40,8 @@ interface Props {
     imgThumbnailUrl?: string;
     fileName?: string;
     fileSize?: number;
+    /** Whether or not we are in a public Drive URL context. */
+    isPublic?: boolean;
 
     contents?: Uint8Array[];
     isSharingInviteAvailable?: boolean; // Feature flag for drive direct sharing
@@ -67,6 +70,7 @@ export const FilePreviewContent = ({
     imgThumbnailUrl,
     fileSize,
     fileName,
+    isPublic,
 
     contents,
 
@@ -84,6 +88,7 @@ export const FilePreviewContent = ({
     imgThumbnailUrl?: string;
     fileName?: string;
     fileSize?: number;
+    isPublic?: boolean;
 
     contents?: Uint8Array[];
 
@@ -120,6 +125,14 @@ export const FilePreviewContent = ({
             return (
                 <div className="file-preview-container">
                     <UnsupportedPreview onDownload={onDownload} tooLarge={isPreviewTooLarge(mimeType, fileSize)} />
+                </div>
+            );
+        }
+
+        if (isProtonDocument(mimeType)) {
+            return (
+                <div className="file-preview-container">
+                    <UnsupportedPreview isDocument isPublic={isPublic} />
                 </div>
             );
         }
@@ -173,6 +186,7 @@ const FilePreview = (
         mimeType,
         imgThumbnailUrl,
         fileSize,
+        isPublic,
 
         contents,
         navigationControls,
@@ -288,6 +302,7 @@ const FilePreview = (
                 imgThumbnailUrl={imgThumbnailUrl}
                 fileSize={fileSize}
                 fileName={fileName}
+                isPublic={isPublic}
                 contents={contents}
                 onDownload={onDownload}
                 onNewContents={
