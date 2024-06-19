@@ -83,7 +83,7 @@ describe('useWalletsChainData', () => {
 
         // one for each account
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
         expect(result.current.walletsChainData).toStrictEqual(accounts);
 
         // After 10 minutes, it should run a new sync loop
@@ -91,7 +91,7 @@ describe('useWalletsChainData', () => {
         vitest.advanceTimersByTime(10 * MINUTE);
 
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
         vi.clearAllMocks();
     });
 
@@ -111,7 +111,7 @@ describe('useWalletsChainData', () => {
             await result.current.syncSingleWalletAccount({ walletId: '0', accountId: '8' });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(1));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
 
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
@@ -131,7 +131,7 @@ describe('useWalletsChainData', () => {
             await result.current.syncSingleWallet({ walletId: '0', manual: true });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(2));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
 
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
@@ -148,14 +148,14 @@ describe('useWalletsChainData', () => {
 
             // one for each account
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
 
             // After 10 minutes, it should run a new sync loop
             vi.clearAllMocks();
             vitest.advanceTimersByTime(10 * MINUTE);
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 33);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
 
             vi.clearAllMocks();
             unmount();
