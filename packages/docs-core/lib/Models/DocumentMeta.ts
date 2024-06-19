@@ -1,6 +1,6 @@
 import { DocumentMetaInterface } from '@proton/docs-shared'
 
-export class DocumentMeta {
+export class DocumentMeta implements DocumentMetaInterface {
   constructor(
     public volumeId: string,
     public linkId: string,
@@ -23,6 +23,10 @@ export class DocumentMeta {
       newValues.modifyTime ?? this.modifyTime,
       newValues.name ?? this.name,
     )
+  }
+
+  latestCommitId(): string | undefined {
+    return this.commitIds[this.commitIds.length - 1]
   }
 
   public get uniqueIdentifier(): string {

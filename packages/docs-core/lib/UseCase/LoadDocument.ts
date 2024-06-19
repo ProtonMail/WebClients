@@ -43,8 +43,6 @@ export class LoadDocument implements UseCaseInterface<LoadDocumentResult> {
         return Result.fail('Document meta not found')
       }
 
-      const lastCommitId = meta.commitIds[meta.commitIds.length - 1]
-
       if (!keysResult || !permissionsResult) {
         return Result.fail('Unable to load all necessary data')
       }
@@ -54,7 +52,7 @@ export class LoadDocument implements UseCaseInterface<LoadDocumentResult> {
         role: rawPermissionToRole(permissionsResult),
       }
 
-      return Result.ok({ entitlements, meta, lastCommitId })
+      return Result.ok({ entitlements, meta, lastCommitId: meta.latestCommitId() })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }

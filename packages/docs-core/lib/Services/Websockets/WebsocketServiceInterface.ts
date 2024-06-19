@@ -18,6 +18,7 @@ export interface WebsocketServiceInterface {
   ): Promise<void>
 
   flushPendingUpdates(): void
+  reconnectToDocumentWithoutDelay(document: NodeMeta): Promise<void>
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
   debugCloseConnection(document: { linkId: string }): void

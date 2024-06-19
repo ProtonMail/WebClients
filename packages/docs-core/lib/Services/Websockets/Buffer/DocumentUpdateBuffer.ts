@@ -63,7 +63,7 @@ export class DocumentUpdateBuffer {
     }
 
     this.idleTimeout = setTimeout(() => {
-      this.logger.info('Committing due to inactivity')
+      this.logger.info('Flushing due to inactivity')
       this.flush()
     }, this.idlePeriod)
 
