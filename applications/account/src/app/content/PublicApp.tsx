@@ -67,6 +67,7 @@ import {
     SSO_PATHS,
     UNPAID_STATE,
 } from '@proton/shared/lib/constants';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -291,6 +292,8 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const handleLogin: OnLoginCallback = async (session) => {
         const { loginPassword, clientKey, LocalID, User: user, appIntent } = session;
+
+        invokeInboxDesktopIPC({ type: 'userLogin' });
 
         const maybeToApp = appIntent?.app || maybePreAppIntent;
 
@@ -614,6 +617,11 @@ const BasePublicApp = ({ onLogin }: Props) => {
                         <DisableAccountContainer />
                     </UnAuthenticated>
                 </Route>
+                <Route path={UNAUTHENTICATED_ROUTES.TRIAL_ENDED}>
+                    <UnAuthenticated>
+                        <InboxDesktopFreeTrialEnded />
+                    </UnAuthenticated>
+                </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <SSOForkProducer
                         type={SSOType.OAuth}
@@ -693,11 +701,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                                 })
                                                             }
                                                         />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path="/trial-ended">
-                                                    <UnAuthenticated>
-                                                        <InboxDesktopFreeTrialEnded />
                                                     </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
