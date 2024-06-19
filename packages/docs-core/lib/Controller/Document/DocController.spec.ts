@@ -14,7 +14,6 @@ import {
   DecryptedMessage,
   InternalEventBusInterface,
   RtsMessagePayload,
-  WebsocketDisconnectedPayload,
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { LoadCommit } from '../../UseCase/LoadCommit'
@@ -23,6 +22,7 @@ import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import { WebsocketAckStatusChangePayload, WebsocketDisconnectedPayload } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 
 describe('DocController', () => {
   let controller: DocController
@@ -79,7 +79,7 @@ describe('DocController', () => {
       receiveMessage: jest.fn(),
       showEditor: jest.fn(),
       performOpeningCeremony: jest.fn(),
-      changeEditingAllowance: jest.fn().mockResolvedValue(true),
+      changeLockedState: jest.fn().mockResolvedValue(false),
       performClosingCeremony: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>
   })
@@ -111,7 +111,7 @@ describe('DocController', () => {
       receiveMessage: jest.fn(),
       showEditor: jest.fn(),
       performOpeningCeremony: jest.fn(),
-      changeEditingAllowance: jest.fn(),
+      changeLockedState: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>)
 
     expect(controller.handleDocumentUpdatesMessage).toHaveBeenCalled()
@@ -196,11 +196,55 @@ describe('DocController', () => {
     })
   })
 
+  describe('reloadEditingLockedState', () => {
+    it('should lock if user does not have editing permissions', () => {
+      controller.doesUserHaveEditingPermissions = jest.fn().mockReturnValue(false)
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if experiencing errored sync', () => {
+      controller.isExperiencingErroredSync = true
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if websocket status is connecting', () => {
+      controller.websocketStatus = 'connecting'
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if websocket status is disconnected', () => {
+      controller.websocketStatus = 'disconnected'
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should unlock if all flags are green', () => {
+      controller.doesUserHaveEditingPermissions = jest.fn().mockReturnValue(true)
+      controller.isExperiencingErroredSync = false
+      controller.websocketStatus = 'connected'
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(false)
+    })
+  })
+
   describe('websocket lifecycle', () => {
-    it('should prevent editing when websocket is still connecting', () => {
+    it('should lock document when websocket is still connecting', () => {
       controller.handleWebsocketConnectingEvent()
 
-      expect(controller.editorInvoker!.changeEditingAllowance).toHaveBeenCalledWith(false)
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
 
     it('should prevent editing when websocket is closed', () => {
@@ -210,7 +254,7 @@ describe('DocController', () => {
       }
       controller.handleWebsocketDisconnectedEvent(payload)
 
-      expect(controller.editorInvoker!.changeEditingAllowance).toHaveBeenCalledWith(false)
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
 
     it('should begin initial sync timer on connected event', () => {
@@ -226,13 +270,25 @@ describe('DocController', () => {
     it('should allow editing', () => {
       controller.handleWebsocketConnectedEvent()
 
-      expect(controller.editorInvoker!.changeEditingAllowance).toHaveBeenCalledWith(true)
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(false)
+    })
+  })
+
+  describe('handleWebsocketAckStatusChangeEvent', () => {
+    it('should reload editing locked state', () => {
+      controller.reloadEditingLockedState = jest.fn()
+
+      controller.handleWebsocketAckStatusChangeEvent({
+        ledger: { hasErroredMessages: jest.fn() },
+      } as unknown as WebsocketAckStatusChangePayload)
+
+      expect(controller.reloadEditingLockedState).toHaveBeenCalled()
     })
   })
 
   describe('editorRequestsPropagationOfUpdate', () => {
     it('Should propagate update', () => {
-      controller.editorRequestsPropagationOfUpdate(
+      void controller.editorRequestsPropagationOfUpdate(
         {
           type: {
             wrapper: 'du',
@@ -249,7 +305,7 @@ describe('DocController', () => {
     })
 
     it('Should not propagate update if message is above MAX_DU_SIZE', () => {
-      controller.editorRequestsPropagationOfUpdate(
+      void controller.editorRequestsPropagationOfUpdate(
         {
           type: {
             wrapper: 'du',
