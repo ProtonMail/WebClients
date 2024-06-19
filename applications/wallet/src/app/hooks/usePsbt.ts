@@ -6,7 +6,6 @@ import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda
 import { useUserKeys } from '@proton/components/hooks';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
-import { SECOND } from '@proton/shared/lib/constants';
 import { IWasmApiWalletData, encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
@@ -27,7 +26,7 @@ interface BroadcastData
 export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
 
-    const { syncSingleWalletAccount, walletsChainData, network } = useBitcoinBlockchainContext();
+    const { incrementSyncKey, walletsChainData, network } = useBitcoinBlockchainContext();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
     const [psbt, setPsbt] = useState<WasmPsbt>();
     const [broadcastedTxId, setBroadcastedTxId] = useState<string>();
@@ -127,12 +126,10 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                     throw new Error(c('Wallet Send').t`Could not broadcast transaction`);
                 });
 
-            void wasmAccount.account.insertUnconfirmedTransaction(psbt);
-            setBroadcastedTxId(txId);
+            await wasmAccount.account.insertUnconfirmedTransaction(psbt);
+            incrementSyncKey(account.WalletID, account.ID);
 
-            setTimeout(() => {
-                void syncSingleWalletAccount({ walletId: wallet.Wallet.ID, accountId: account.ID });
-            }, 1 * SECOND);
+            setBroadcastedTxId(txId);
         });
     };
 

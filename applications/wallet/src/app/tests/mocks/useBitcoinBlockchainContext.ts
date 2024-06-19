@@ -19,6 +19,7 @@ export const mockUseBitcoinBlockchainContext = (
         syncSingleWalletAccount: vi.fn(),
         syncSingleWallet: vi.fn(),
         syncManyWallets: vi.fn(),
+        incrementSyncKey: vi.fn(),
 
         decryptedApiWalletsData: apiWalletsData,
         walletMap: buildMapFromWallets(apiWalletsData),
