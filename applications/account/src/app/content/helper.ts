@@ -137,6 +137,7 @@ export const UNAUTHENTICATED_ROUTES = {
     DISABLE_ACCOUNT: '/disable-account',
     EMAIL_FORWARDING: '/email-forwarding',
     CLOSE_TICKET: '/close-ticket',
+    TRIAL_ENDED: '/trial-ended',
 };
 
 const getCleanPath = (location: H.Location) => {

@@ -51,7 +51,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     if (isElectronMail) {
-        listenFreeTrialSessionExpiration(api);
+        listenFreeTrialSessionExpiration(appName, authentication, api);
     }
     startLogoutListener();
 
