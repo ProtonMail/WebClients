@@ -15,6 +15,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
@@ -55,7 +56,12 @@ const InboxDesktopFreeTrialEnded = () => {
 
     const backToLogin = () => {
         resetEndOfTrialIPCCall();
-        history.replace('/login');
+
+        if (hasInboxDesktopFeature('MultiAccount')) {
+            history.replace('/switch');
+        } else {
+            history.replace('/login');
+        }
     };
 
     const webAppMessage = <WebAppLink key="web-app" />;
