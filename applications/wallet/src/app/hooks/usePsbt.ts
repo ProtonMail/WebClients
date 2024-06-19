@@ -127,6 +127,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                     throw new Error(c('Wallet Send').t`Could not broadcast transaction`);
                 });
 
+            void wasmAccount.account.insertUnconfirmedTransaction(psbt);
             setBroadcastedTxId(txId);
 
             setTimeout(() => {
