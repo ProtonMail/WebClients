@@ -1,5 +1,5 @@
 import { Fragment, ReactNode, useMemo, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import {
@@ -69,7 +69,11 @@ const bootstrapApp = ({ appVersion }: { appVersion: string | null }) => {
 };
 
 const App = () => {
-    const searchParams = new URLSearchParams(window.location.search);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const [initialSearchParams] = useState(() => {
+        return new URLSearchParams(location.search);
+    });
     const appVersion = searchParams.get('app-version');
     const { api, config, store, authentication, cache } = useInstance(() => bootstrapApp({ appVersion }));
 
@@ -86,8 +90,8 @@ const App = () => {
             },
         }[client || ''] || {};
 
-    const redirect = getRedirect(searchParams.get('redirect') || defaultValues.redirect || undefined);
-    const app = getApp({ app: searchParams.get('app'), plan: searchParams.get('plan'), redirect });
+    const redirect = getRedirect(initialSearchParams.get('redirect') || defaultValues.redirect || undefined);
+    const app = getApp({ app: initialSearchParams.get('app'), plan: initialSearchParams.get('plan'), redirect });
 
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
@@ -145,45 +149,43 @@ const App = () => {
                 <RightToLeftProvider>
                     <Fragment key={UID}>
                         <ThemeProvider appName={config.APP_NAME}>
-                            <BrowserRouter>
-                                <PreventLeaveProvider>
-                                    <NotificationsProvider>
-                                        <NotificationsHijack
-                                            onCreate={
-                                                redirect || action === SupportedActions.SubscribeAccountLink
-                                                    ? undefined
-                                                    : handleNotificationCreate
-                                            }
-                                        >
-                                            <ModalsProvider>
-                                                <AuthenticationProvider store={authenticationValue}>
-                                                    <CacheProvider cache={cache}>
-                                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                            {isLogout ? null : (
-                                                                <Setup
-                                                                    api={api}
-                                                                    UID={UID}
-                                                                    onLogin={handleLogin}
+                            <PreventLeaveProvider>
+                                <NotificationsProvider>
+                                    <NotificationsHijack
+                                        onCreate={
+                                            redirect || action === SupportedActions.SubscribeAccountLink
+                                                ? undefined
+                                                : handleNotificationCreate
+                                        }
+                                    >
+                                        <ModalsProvider>
+                                            <AuthenticationProvider store={authenticationValue}>
+                                                <CacheProvider cache={cache}>
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        {isLogout ? null : (
+                                                            <Setup
+                                                                api={api}
+                                                                UID={UID}
+                                                                onLogin={handleLogin}
+                                                                loader={loader}
+                                                            >
+                                                                <MainContainer
+                                                                    layout={layout}
                                                                     loader={loader}
-                                                                >
-                                                                    <MainContainer
-                                                                        layout={layout}
-                                                                        loader={loader}
-                                                                        action={action}
-                                                                        redirect={redirect}
-                                                                        app={app}
-                                                                        searchParams={searchParams}
-                                                                    />
-                                                                </Setup>
-                                                            )}
-                                                        </ErrorBoundary>
-                                                    </CacheProvider>
-                                                </AuthenticationProvider>
-                                            </ModalsProvider>
-                                        </NotificationsHijack>
-                                    </NotificationsProvider>
-                                </PreventLeaveProvider>
-                            </BrowserRouter>
+                                                                    action={action}
+                                                                    redirect={redirect}
+                                                                    app={app}
+                                                                    searchParams={searchParams}
+                                                                />
+                                                            </Setup>
+                                                        )}
+                                                    </ErrorBoundary>
+                                                </CacheProvider>
+                                            </AuthenticationProvider>
+                                        </ModalsProvider>
+                                    </NotificationsHijack>
+                                </NotificationsProvider>
+                            </PreventLeaveProvider>
                         </ThemeProvider>
                     </Fragment>
                 </RightToLeftProvider>
@@ -192,4 +194,12 @@ const App = () => {
     );
 };
 
-export default App;
+const WrappedApp = () => {
+    return (
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    );
+};
+
+export default WrappedApp;
