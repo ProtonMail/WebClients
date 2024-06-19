@@ -142,7 +142,7 @@ export const AmountDataListItem = ({
         <div className="w-full">
             <span className="block color-hint text-rg">{label}</span>
             <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
-                <div className={clsx('text-semibold', !exchangeRate && 'skeleton-loader')}>
+                <div className={clsx('text-semibold')}>
                     <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
                 </div>
             </div>
