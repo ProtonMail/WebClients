@@ -8,6 +8,7 @@ import useLoading from '@proton/hooks/useLoading';
 
 import { useApiWalletsData } from '../store';
 import { IWasmApiWalletData } from '../types';
+import { getPassphraseLocalStorageKey } from '../utils';
 import { decryptWalletData, decryptWalletKey } from '../utils/crypto';
 import { buildMapFromWallets } from '../utils/wallet';
 
@@ -42,17 +43,26 @@ export const useDecryptedApiWalletsData = () => {
                         userKeys
                     );
 
-                    const [decryptedMnemonic, decryptedWalletName, decryptedPublickey, ...decryptedLabels] =
-                        await decryptWalletData(
-                            [Wallet.Mnemonic, Wallet.Name, Wallet.PublicKey, ...encryptedLabels],
-                            decryptedWalletKey
-                        );
+                    const encryptedPassphrase = Wallet.Fingerprint
+                        ? localStorage.getItem(getPassphraseLocalStorageKey(Wallet.Fingerprint))
+                        : null;
+                    const [
+                        decryptedMnemonic,
+                        decryptedWalletName,
+                        decryptedPublickey,
+                        decryptedPassphrase,
+                        ...decryptedLabels
+                    ] = await decryptWalletData(
+                        [Wallet.Mnemonic, Wallet.Name, Wallet.PublicKey, encryptedPassphrase, ...encryptedLabels],
+                        decryptedWalletKey
+                    );
 
                     const decryptedWallet = {
                         ...Wallet,
                         ...(decryptedWalletName && { Name: decryptedWalletName }),
                         ...(decryptedMnemonic && { Mnemonic: decryptedMnemonic }),
                         ...(decryptedPublickey && { PublicKey: decryptedPublickey }),
+                        ...(decryptedPassphrase && { Passphrase: decryptedPassphrase }),
                     };
 
                     const decryptedAccounts = WalletAccounts.map((account, index) => {
