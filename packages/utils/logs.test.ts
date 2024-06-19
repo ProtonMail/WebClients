@@ -101,6 +101,18 @@ describe('Logger', () => {
         expect(logs).toContain('Second message');
     });
 
+    test('should save logs until limit is reached', () => {
+        logger = new Logger('test-logger', undefined, 2);
+        logger.info('First message');
+        logger.info('Second message');
+        logger.info('Third message');
+
+        const logs = logger.getLogs();
+        expect(logs).not.toContain('First message');
+        expect(logs).toContain('Second message');
+        expect(logs).toContain('Third message');
+    });
+
     test('should save logs with objects', () => {
         const obj = { hello: 'world', test: true, docs: 123 };
         logger.info('First message');
