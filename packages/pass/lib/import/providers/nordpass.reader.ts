@@ -7,7 +7,13 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import { type NordPassItem, NordPassType } from './nordpass.types';
 
@@ -25,7 +31,7 @@ const NORDPASS_EXPECTED_HEADERS: (keyof NordPassItem)[] = [
     'folder',
     'full_name',
     'phone_number',
-    'email',
+    'email', // not used for "Login" items, maybe for "Personal Info" items instead
     'address1',
     'address2',
     'city',
@@ -38,8 +44,7 @@ const processLoginItem = (item: NordPassItem, importUsername?: boolean): ItemImp
     importLoginItem({
         name: item.name,
         note: item.note,
-        email: item.email,
-        username: importUsername ? item.username : '',
+        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
         password: item.password,
         urls: [item.url],
     });
