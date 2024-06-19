@@ -204,7 +204,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     };
 
     useEffect(() => {
-        if (settings.FiatCurrency && loadingSettings && !selectedCurrency) {
+        if (settings.FiatCurrency && !loadingSettings && !selectedCurrency) {
             setSelectedCurrency(settings.FiatCurrency);
         }
     }, [loadingSettings, selectedCurrency, settings.FiatCurrency]);
