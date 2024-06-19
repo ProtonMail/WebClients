@@ -509,7 +509,7 @@ const ProtonPlanCustomizer = ({
                     );
                 }
 
-                if (isDomainAddon(addonNameKey) && mode !== 'signup') {
+                if (isDomainAddon(addonNameKey)) {
                     return (
                         <AdditionalOptionsCustomiser
                             key={`${addon.Name}-options`}

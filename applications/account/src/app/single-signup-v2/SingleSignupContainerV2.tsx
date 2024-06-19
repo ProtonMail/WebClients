@@ -205,7 +205,17 @@ const SingleSignupContainerV2 = ({
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
-    const audience = location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ? Audience.B2B : Audience.B2C;
+    const audience = (() => {
+        if (
+            productParam === 'business' ||
+            [SSO_PATHS.PASS_SIGNUP_B2B, SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B].includes(
+                location.pathname as any
+            )
+        ) {
+            return Audience.B2B;
+        }
+        return Audience.B2C;
+    })();
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
     useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
@@ -1398,6 +1408,8 @@ const SingleSignupContainerV2 = ({
                 )}
                 {model.step === Steps.Custom && (
                     <CustomStep
+                        product={product}
+                        signupParameters={signupParameters}
                         audience={audience}
                         measure={measure}
                         fork={fork}

@@ -133,6 +133,8 @@ export interface SignupDefaults {
 }
 
 export interface SignupCustomStepProps {
+    product: APP_NAMES;
+    signupParameters: SignupParameters2;
     audience?: Audience;
     logo: ReactNode;
     onSetup: (cache: { type: 'signup'; payload: SignupActionDoneResponse } | UserCacheResult) => Promise<void>;
