@@ -1,9 +1,9 @@
-import Logger from "electron-log";
 import { getMailView, showView } from "../view/viewManagement";
 import { addHashToCurrentURL } from "./urlHelpers";
+import { mainLogger } from "../log";
 
 export const handleMailToUrls = (url: string) => {
-    Logger.info("Open mailto url and adding it to path");
+    mainLogger.info("Open mailto url and adding it to path");
 
     if (!url.startsWith("mailto:")) return;
 

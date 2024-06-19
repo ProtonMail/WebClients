@@ -3,10 +3,10 @@ import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
 import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
-import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import { getConfig } from "../utils/config";
+import { ipcLogger } from "../utils/log";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -23,14 +23,14 @@ export const handleIPCCalls = () => {
                 event.returnValue = getTheme();
                 break;
             default:
-                Logger.error(`Invalid getInfo message: ${message}`);
+                ipcLogger.error(`Invalid getInfo message: ${message}`);
                 break;
         }
     });
 
     ipcMain.on("clientUpdate", (_e, message: unknown) => {
         if (!isValidClientUpdateMessage(message)) {
-            Logger.error(`Invalid clientUpdate message: ${message}`);
+            ipcLogger.error(`Invalid clientUpdate message: ${message}`);
             return;
         }
 
@@ -85,7 +85,7 @@ export const handleIPCCalls = () => {
                 break;
             }
             default:
-                Logger.error(`unknown message type: ${type}`);
+                ipcLogger.error(`unknown message type: ${type}`);
                 break;
         }
     });

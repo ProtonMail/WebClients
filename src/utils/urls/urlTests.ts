@@ -1,5 +1,5 @@
-import Logger from "electron-log";
 import { getConfig } from "../config";
+import { mainLogger } from "../log";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getLocalID = (url?: string) => {
@@ -18,7 +18,7 @@ export const getLocalID = (url?: string) => {
 
         return localID;
     } catch (error) {
-        Logger.error("getLocalID", error);
+        mainLogger.error("getLocalID", error);
         return null;
     }
 };
@@ -123,7 +123,7 @@ export const isAccoutLite = (host: string) => {
         const hostURl = new URL(host);
         return hostURl.pathname.includes("/lite");
     } catch (error) {
-        Logger.error("isAccoutLite", error);
+        mainLogger.error("isAccoutLite", error);
         return false;
     }
 };
@@ -133,7 +133,7 @@ export const isUpgradeURL = (host: string) => {
         const hostURL = new URL(host);
         return hostURL.pathname.includes("/upgrade") && hostURL.searchParams.size > 0;
     } catch (error) {
-        Logger.error("isUpgradeURL", error);
+        mainLogger.error("isUpgradeURL", error);
         return false;
     }
 };
@@ -147,7 +147,7 @@ export const isUpsellURL = (host: string) => {
         const coupon = hostURl.searchParams.get("coupon");
         return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
     } catch (error) {
-        Logger.error("isUpsellURL", error);
+        mainLogger.error("isUpsellURL", error);
         return false;
     }
 };
@@ -168,7 +168,7 @@ export const isHostAllowed = (host: string) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
-        Logger.error("isHostAllowed", error);
+        mainLogger.error("isHostAllowed", error);
         return false;
     }
 };

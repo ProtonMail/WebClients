@@ -1,5 +1,4 @@
 import { WebContents, app, shell } from "electron";
-import Logger from "electron-log";
 import {
     isAccount,
     isAccountAuthorize,
@@ -20,11 +19,17 @@ import {
     showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
+import { mainLogger, viewLogger } from "../log";
 
 export function handleWebContents(contents: WebContents) {
     const log = (eventName: string, ...args: unknown[]) => {
         const viewName = getWebContentsViewName(contents);
-        return Logger.info(`${viewName}(${eventName})`, ...args);
+
+        if (viewName) {
+            viewLogger(viewName).info(eventName, ...args);
+        } else {
+            mainLogger.info(eventName, ...args);
+        }
     };
 
     const preventDefault = (ev: Electron.Event) => {

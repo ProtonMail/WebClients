@@ -1,7 +1,7 @@
-import Logger from "electron-log";
 import Store from "electron-store";
 import { z } from "zod";
 import { getSettings, saveSettings } from "./settingsStore";
+import { mainLogger } from "../utils/log";
 
 const store = new Store();
 
@@ -39,7 +39,7 @@ const validateURL = (override?: unknown): null | URLConfig => {
     try {
         return urlSchema.parse(override);
     } catch (error) {
-        Logger.error("Invalid URL override", error);
+        mainLogger.error("Invalid URL override", error);
         saveSettings({ ...settings, overrideError: true });
 
         return null;

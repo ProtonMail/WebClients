@@ -1,5 +1,4 @@
 import { autoUpdater, session, app } from "electron";
-import Logger from "electron-log";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
 import { getPlatform, DESKTOP_PLATFORMS, semver } from "./utils/helpers";
@@ -7,6 +6,7 @@ import { RELEASE_CATEGORIES } from "./constants";
 import { getSettings } from "./store/settingsStore";
 import { z } from "zod";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
+import { updateLogger } from "./utils/log";
 
 const releaseInfoSchema = z.object({
     Version: z.string(),
@@ -35,7 +35,7 @@ autoUpdater.on("before-quit-for-update", () => {
  * it will trigger the update.
  */
 export function initializeUpdateChecks() {
-    Logger.info("Initialization of update checks.");
+    updateLogger.info("Initialization of update checks.");
 
     const ses = session.fromPartition("persistent:update", { cache: false });
     ses.setCertificateVerifyProc(verifyDownloadCertificate);
@@ -47,7 +47,7 @@ export function initializeUpdateChecks() {
 const validUpdate = {} as ReleaseInfo;
 
 async function checkForValidUpdates() {
-    Logger.info("Checking for new valid version.");
+    updateLogger.info("Checking for new valid version.");
 
     const platform = getPlatform();
     const settings = getSettings();
@@ -58,7 +58,7 @@ async function checkForValidUpdates() {
     };
 
     if (validUpdate.Version) {
-        Logger.info("Electron update already initialized, valid update available:", validUpdate, "local:", local);
+        updateLogger.info("Electron update already initialized, valid update available:", validUpdate, "local:", local);
         return;
     }
 
@@ -82,17 +82,17 @@ async function checkForValidUpdates() {
     })();
 
     if (!latest) {
-        Logger.warn(`Check update: failed to find latest versions for "${local.CategoryName}"`);
+        updateLogger.warn(`Check update: failed to find latest versions for "${local.CategoryName}"`);
         return;
     }
 
     if (!isANewerThanB(latest.Version, local.Version)) {
-        Logger.info("Skipping update: no newer version avaiable, local:", local, "latest:", latest);
+        updateLogger.info("Skipping update: no newer version avaiable, local:", local, "latest:", latest);
         return;
     }
 
     if (local.RolloutProportion > latest.RolloutProportion) {
-        Logger.info(
+        updateLogger.info(
             "Skipping update: a newer version is available",
             latest,
             `but rollout is low, local:${local.RolloutProportion * 100}%`,
@@ -100,7 +100,7 @@ async function checkForValidUpdates() {
         return;
     }
 
-    Logger.info("New valid update found! Latest:", latest, "local:", local);
+    updateLogger.info("New valid update found! Latest:", latest, "local:", local);
 
     validUpdate.Version = latest.Version;
     validUpdate.CategoryName = latest.CategoryName;
@@ -112,7 +112,7 @@ async function checkForValidUpdates() {
             baseUrl: `https://github.com/${pkg.config.githubUser}/${pkg.config.githubRepo}/releases/download/${latest.Version}`,
         },
         updateInterval: "5 min", // minimal
-        logger: Logger,
+        logger: updateLogger,
     });
 }
 
@@ -139,7 +139,7 @@ function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList 
             };
         })
         .catch((e) => {
-            Logger.warn("Check update: failed to get available versions:", e);
+            updateLogger.warn("Check update: failed to get available versions:", e);
             return undefined;
         });
 }

@@ -1,6 +1,6 @@
 import { app } from "electron";
-import Logger from "electron-log";
 import { getCalendarView, getMailView } from "./view/viewManagement";
+import { clearLogs, mainLogger } from "./log";
 
 // TODO import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 export enum DESKTOP_PLATFORMS {
@@ -26,7 +26,7 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
 };
 
 export const restartApp = (timeout = 300) => {
-    Logger.info("Restarting app in", timeout, "ms");
+    mainLogger.info("Restarting app in", timeout, "ms");
     setTimeout(() => {
         // Since the app can crash under some circunstances when being restarted
         // We are just keeping it closed after clearing data.
@@ -53,8 +53,7 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
         clear(calendaView);
     }
 
-    // Clear logs
-    Logger.transports.file.getFile().clear();
+    clearLogs();
 
     if (restart) {
         restartApp(timeout);

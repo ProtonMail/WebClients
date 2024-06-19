@@ -1,6 +1,7 @@
 import { BrowserView, app, dialog } from "electron";
-import Logger from "electron-log";
+import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { c } from "ttag";
+import { viewLogger } from "../log";
 
 const beforeUnloadChoice = () => {
     return dialog.showMessageBoxSync({
@@ -14,9 +15,9 @@ const beforeUnloadChoice = () => {
     });
 };
 
-export const handleBeforeHandle = (view: BrowserView) => {
+export const handleBeforeHandle = (viewID: VIEW_TARGET, view: BrowserView) => {
     view.webContents.on("will-prevent-unload", (ev) => {
-        Logger.info("will-prevent-unload");
+        viewLogger(viewID).info("will-prevent-unload");
         const choice = beforeUnloadChoice();
         const leave = choice === 0;
         if (leave) {

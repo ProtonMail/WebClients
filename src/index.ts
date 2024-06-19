@@ -1,5 +1,4 @@
 import { Notification, app, session } from "electron";
-import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
@@ -18,12 +17,11 @@ import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
-import { initializeNetLogger } from "./utils/log";
+import { initializeNetLogger, mainLogger } from "./utils/log";
 
 (async function () {
     // Log initialization
-    Logger.initialize({ preload: true });
-    Logger.info(
+    mainLogger.info(
         "App start is mac:",
         isMac,
         "is windows:",
@@ -34,7 +32,7 @@ import { initializeNetLogger } from "./utils/log";
         app.getVersion(),
     );
 
-    Logger.info(
+    mainLogger.info(
         "Desktop features:",
         Object.entries(DESKTOP_FEATURES)
             .map(([key, value]) => `${key}:${value}`)
@@ -67,20 +65,20 @@ import { initializeNetLogger } from "./utils/log";
 
     // Detects if the application is default handler for mailto, works on macOS for now
     if (app.isDefaultProtocolClient("mailto")) {
-        Logger.info("App is default mailto client");
+        mainLogger.info("App is default mailto client");
     } else {
-        Logger.info("App is not default mailto client");
+        mainLogger.info("App is not default mailto client");
     }
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
     const gotTheLock = app.requestSingleInstanceLock();
     if (!gotTheLock) {
-        Logger.info("App is already running");
+        mainLogger.info("App is already running");
         app.quit();
     } else {
         app.on("second-instance", (_ev, commandLine) => {
-            Logger.info("Second instance called");
+            mainLogger.info("Second instance called");
             const mainWindow = getMainWindow();
             if (mainWindow) {
                 if (mainWindow.isMinimized()) {
@@ -148,10 +146,10 @@ import { initializeNetLogger } from "./utils/log";
                         return callback(true);
                     }
 
-                    Logger.info("Permission request rejected", permission);
+                    mainLogger.info("Permission request rejected", permission);
                     callback(false);
                 } catch (error) {
-                    Logger.error("Permission request error", error);
+                    mainLogger.error("Permission request error", error);
                     callback(false);
                 }
             });

@@ -1,5 +1,4 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
-import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
@@ -11,6 +10,7 @@ import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL } from "../urls/urlTests";
+import { mainLogger, viewLogger } from "../log";
 
 const config = getConfig();
 const settings = getSettings();
@@ -49,10 +49,10 @@ export const viewCreationAppStartup = (session: Session) => {
     return mainWindow;
 };
 
-const createView = (session: Session) => {
+const createView = (viewID: ViewID, session: Session) => {
     const view = new BrowserView(getWindowConfig(session));
 
-    handleBeforeHandle(view);
+    handleBeforeHandle(viewID, view);
 
     view.webContents.on("context-menu", (_e, props) => {
         createContextMenu(props, view)?.popup();
@@ -67,10 +67,10 @@ const createView = (session: Session) => {
 };
 
 const createViews = (session: Session) => {
-    Logger.info("Creating views");
-    browserViewMap.mail = createView(session);
-    browserViewMap.calendar = createView(session);
-    browserViewMap.account = createView(session);
+    mainLogger.info("Creating views");
+    browserViewMap.mail = createView("mail", session);
+    browserViewMap.calendar = createView("calendar", session);
+    browserViewMap.account = createView("account", session);
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
@@ -141,12 +141,11 @@ async function updateLocalID(urlString: string) {
     const url = new URL(urlString);
     url.pathname = `/u/${currentLocalID}`;
 
-    Logger.warn("Rewriting URL to include local id", app.isPackaged ? "" : url.toString());
+    mainLogger.warn("Rewriting URL to include local id", app.isPackaged ? "" : url.toString());
     return url.toString();
 }
 
 export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
-    const logPrefix = `${viewID}(showView)`;
     const url = targetURL ? await updateLocalID(targetURL) : targetURL;
 
     if (!mainWindow) {
@@ -159,7 +158,7 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
         view.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
 
         if (viewID === currentViewID) {
-            Logger.info(logPrefix, "loading in current view", url);
+            viewLogger(viewID).info("showView loading in current view", url);
             await loadURL(viewID, url);
             return;
         }
@@ -168,13 +167,13 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
         mainWindow!.title = windowTitle;
 
         if (url && !isSameURL(url, await getViewURL(viewID))) {
-            Logger.info(logPrefix, "loading", url);
+            viewLogger(viewID).info("showView loading", url);
             await loadURL(viewID, "about:blank");
             const loadPromise = loadURL(viewID, url);
             mainWindow!.setBrowserView(view);
             await loadPromise;
         } else {
-            Logger.info(logPrefix, "showing view");
+            viewLogger(viewID).info("showView showing view");
             mainWindow!.setBrowserView(view);
         }
     };
@@ -190,21 +189,20 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
             await internalShowView("Proton");
             break;
         default:
-            Logger.error(logPrefix, "unsupported view");
+            viewLogger(viewID).error("showView unsupported view");
             break;
     }
 }
 
 export async function loadURL(viewID: ViewID, url: string) {
     const view = browserViewMap[viewID]!;
-    const logPrefix = `${viewID}(loadURL)`;
 
     if (isSameURL(await getViewURL(viewID), url)) {
-        Logger.info(logPrefix, "already in given url", url);
+        viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
 
-    Logger.info(logPrefix, "loading", url);
+    viewLogger(viewID).info("loadURL loading", url);
 
     if (view.webContents.isLoadingMainFrame()) {
         view.webContents.stop();
@@ -214,13 +212,13 @@ export async function loadURL(viewID: ViewID, url: string) {
         let loadingTimeoutID: NodeJS.Timeout | undefined = undefined;
 
         const handleLoadingTimeout = () => {
-            Logger.error(logPrefix, "timeout", url);
+            viewLogger(viewID).error("loadURL timeout", url);
             clearTimeout(loadingTimeoutID);
             reject();
         };
 
         const handleStopLoading = () => {
-            Logger.info(logPrefix, "loaded", url);
+            viewLogger(viewID).info("loadURL loaded", url);
             clearTimeout(loadingTimeoutID);
             view.webContents.off("did-stop-loading", handleStopLoading);
             resolve();
@@ -244,7 +242,7 @@ export async function reloadHiddenViews() {
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            Logger.info("Reloading hidden view", viewID);
+            viewLogger(viewID as ViewID).info("Reloading hidden view");
             loadPromises.push(loadURL(viewID as ViewID, await getViewURL(viewID as ViewID)));
         }
     }
@@ -255,7 +253,7 @@ export async function resetHiddenViews() {
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            Logger.info(`${viewID}(reset)`);
+            viewLogger(viewID as ViewID).info("reset");
             loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
         }
     }
@@ -298,12 +296,12 @@ export function getCurrentView() {
     return browserViewMap[currentViewID];
 }
 
-export function getWebContentsViewName(webContents: WebContents) {
+export function getWebContentsViewName(webContents: WebContents): ViewID | null {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (view?.webContents === webContents) {
-            return viewID;
+            return viewID as ViewID;
         }
     }
 
-    return "unknown";
+    return null;
 }

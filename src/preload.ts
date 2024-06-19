@@ -1,11 +1,11 @@
 import { contextBridge, ipcRenderer } from "electron";
-import Logger from "electron-log";
 import {
     DESKTOP_FEATURES,
     IPCClientUpdateMessagePayload,
     IPCClientUpdateMessageType,
     IPCGetInfoMessage,
 } from "./ipc/ipcConstants";
+import { ipcLogger } from "./utils/log";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     hasFeature: (feature: keyof typeof DESKTOP_FEATURES) => {
@@ -20,7 +20,7 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         type: IPCClientUpdateMessageType,
         payload: IPCClientUpdateMessagePayload<T>,
     ) => {
-        Logger.info(`Sending IPC message: ${type}`);
+        ipcLogger.info(`Sending message: ${type}`);
         ipcRenderer.send("clientUpdate", { type, payload });
     },
 });

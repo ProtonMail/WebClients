@@ -1,12 +1,12 @@
 import { Notification, app } from "electron";
-import Logger from "electron-log";
 import { isWindows } from "../utils/helpers";
 import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
 import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
 import { ElectronNotification } from "./ipcConstants";
+import { ipcLogger } from "../utils/log";
 
 export const handleIPCBadge = (count: number) => {
-    Logger.info("Update badge value", count);
+    ipcLogger.info("Update badge value", count);
     if (isWindows) {
         return;
     }
@@ -19,7 +19,7 @@ export const handleIPCBadge = (count: number) => {
 };
 
 export const resetBadge = () => {
-    Logger.info("Reset badge value");
+    ipcLogger.info("Reset badge value");
     app.setBadgeCount(0);
 };
 

@@ -1,8 +1,8 @@
 import { app } from "electron";
-import Logger from "electron-log";
 import { spawn } from "node:child_process";
 import { appendFileSync, copyFileSync, existsSync, openSync } from "node:fs";
 import { resolve } from "node:path";
+import { squirrelLogger } from "../utils/log";
 
 async function spawnUninstallProcess() {
     const uninstallLogPath = resolve(app.getPath("temp"), "proton-mail-uninstall.log");
@@ -64,24 +64,24 @@ export async function handleSquirrelEvents() {
     const squirrelStartup: boolean = require("electron-squirrel-startup");
 
     if (squirrelStartup) {
-        Logger.info("Squirrel startup");
+        squirrelLogger.info("startup");
 
         const squirrelCommand = process.argv[1] ?? null;
 
         switch (squirrelCommand) {
             case "--squirrel-install":
-                Logger.info("Squirrel install");
+                squirrelLogger.info("install");
                 break;
             case "--squirrel-updated":
-                Logger.info("Squirrel updated");
+                squirrelLogger.info("updated");
                 break;
             case "--squirrel-uninstall": {
-                Logger.info("Squirrel uninstall");
+                squirrelLogger.info("uninstall");
                 await spawnUninstallProcess();
                 break;
             }
             case "--squirrel-obsolete":
-                Logger.info("Squirrel obsolete");
+                squirrelLogger.info("obsolete");
                 break;
         }
 
