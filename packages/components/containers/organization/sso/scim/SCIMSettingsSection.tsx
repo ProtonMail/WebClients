@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { type ProtonThunkArguments, baseUseDispatch } from '@proton/redux-shared-store';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
 
 import { Icon, Info, useModalState } from '../../../../components';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
@@ -28,12 +29,26 @@ import RegenerateSCIMConfirmModal from './RegenerateSCIMConfirmModal';
 import SetupSCIMModal, { SCIMConfiguration } from './SetupSCIMModal';
 
 interface Props {
+    domain?: Domain;
     onConfigureSaml: () => void;
+    onShowVerifyDomain: () => void;
     hasSsoConfig: boolean;
     scimInfo: NonNullable<SamlState['sso']['value']>['scimInfo'];
 }
 
-const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props) => {
+const PreReq = ({ data, action }: { data: ReactNode; action: ReactNode }) => {
+    return (
+        <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center lg:flex-nowrap">
+            <div className="flex gap-2 items-start flex-nowrap">
+                <Icon name="info-circle" className="shrink-0" />
+                <p className="m-0">{data}</p>
+            </div>
+            {action}
+        </div>
+    );
+};
+
+const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
     const api = useApi();
     const isScimEnabled = useFlag('ScimTenantCreation');
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
@@ -66,55 +81,74 @@ const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props)
                     {(() => {
                         if (!hasSsoConfig) {
                             return (
-                                <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center lg:flex-nowrap">
-                                    <div className="flex gap-2 items-start flex-nowrap">
-                                        <Icon name="info-circle" className="shrink-0" />
-                                        <p className="m-0">
-                                            {getBoldFormattedText(
-                                                c('scim: Info')
-                                                    .t`**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.`
-                                            )}
-                                        </p>
-                                    </div>
-                                    <Button
-                                        color="weak"
-                                        shape="solid"
-                                        size="small"
-                                        className="shrink-0"
-                                        onClick={onConfigureSaml}
-                                    >
-                                        {c('Action').t`Configure SAML`}
-                                    </Button>
-                                </div>
+                                <PreReq
+                                    data={getBoldFormattedText(
+                                        c('scim: Info')
+                                            .t`**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.`
+                                    )}
+                                    action={
+                                        <Button
+                                            color="weak"
+                                            shape="solid"
+                                            size="small"
+                                            className="shrink-0"
+                                            onClick={onConfigureSaml}
+                                        >
+                                            {c('Action').t`Configure SAML`}
+                                        </Button>
+                                    }
+                                />
                             );
                         }
 
                         if (!scimInfo.state) {
+                            const domainName = domain?.DomainName || '';
+                            const isVerified = domain?.State !== DOMAIN_STATE.DOMAIN_STATE_DEFAULT;
                             return (
                                 <>
                                     <SettingsLayout>
-                                        <Button
-                                            color="norm"
-                                            shape="outline"
-                                            className="shrink-0 grow-0"
-                                            onClick={() => {
-                                                const run = async () => {
-                                                    const result = await dispatch(
-                                                        setupSCIMAction({
-                                                            type: 'setup',
-                                                            api,
-                                                        })
-                                                    );
-                                                    setLocalSCIMConfiguration({ ...result, type: 'setup' });
-                                                    setSetupSCIMModalOpen(true);
-                                                    createNotification({ text: c('Info').t`SCIM token active` });
-                                                };
-                                                void withLoadingSCIM(run());
-                                            }}
-                                            loading={loadingSCIM}
-                                        >
-                                            {c('scim: Action').t`Configure SCIM`}
-                                        </Button>
+                                        {!isVerified ? (
+                                            <PreReq
+                                                data={getBoldFormattedText(
+                                                    c('scim: Info')
+                                                        .t`**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${domainName}**. This verification can take up to one hour.`
+                                                )}
+                                                action={
+                                                    <Button
+                                                        color="weak"
+                                                        shape="solid"
+                                                        size="small"
+                                                        className="shrink-0"
+                                                        onClick={onShowVerifyDomain}
+                                                    >
+                                                        {c('Action').t`Verify domain`}
+                                                    </Button>
+                                                }
+                                            />
+                                        ) : (
+                                            <Button
+                                                color="norm"
+                                                shape="outline"
+                                                className="shrink-0 grow-0"
+                                                onClick={() => {
+                                                    const run = async () => {
+                                                        const result = await dispatch(
+                                                            setupSCIMAction({
+                                                                type: 'setup',
+                                                                api,
+                                                            })
+                                                        );
+                                                        setLocalSCIMConfiguration({ ...result, type: 'setup' });
+                                                        setSetupSCIMModalOpen(true);
+                                                        createNotification({ text: c('Info').t`SCIM token active` });
+                                                    };
+                                                    void withLoadingSCIM(run());
+                                                }}
+                                                loading={loadingSCIM}
+                                            >
+                                                {c('scim: Action').t`Configure SCIM`}
+                                            </Button>
+                                        )}
                                     </SettingsLayout>
                                 </>
                             );

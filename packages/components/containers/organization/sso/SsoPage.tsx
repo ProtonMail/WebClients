@@ -25,6 +25,7 @@ import RemoveSSODomain from './RemoveSSODomain';
 import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
+import TXTRecordModal from './TXTRecordModal';
 import SCIMSettingsSection from './scim/SCIMSettingsSection';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
@@ -139,6 +140,7 @@ const SsoPage = () => {
     const [openSubscriptionModal] = useSubscriptionModal();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
+    const [verifySSODOmainModalProps, setVerifySSODomainModalOpen, renderVerifySSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
 
     if (!customDomains || !samlSSO || !organization) {
@@ -193,6 +195,7 @@ const SsoPage = () => {
 
     const hasSsoDomain = customDomains.length > 0;
     const hasSsoConfig = samlSSO.configs.length > 0;
+    const domain = customDomains[0];
 
     return (
         <>
@@ -205,6 +208,7 @@ const SsoPage = () => {
                     {...setupSSODomainModalProps}
                 />
             )}
+            {renderVerifySSODomainModal && domain && <TXTRecordModal domain={domain} {...verifySSODOmainModalProps} />}
 
             <SubSettingsSection
                 id="saml-authentication"
@@ -220,7 +224,7 @@ const SsoPage = () => {
 
                     {hasSsoDomain ? (
                         <ConfigureSamlContent
-                            domain={customDomains[0]}
+                            domain={domain}
                             ssoConfigs={samlSSO.configs}
                             configureSamlModalProps={configureSamlModalProps}
                             setConfigureSamlModalOpen={setConfigureSamlModalOpen}
@@ -244,8 +248,12 @@ const SsoPage = () => {
             </SubSettingsSection>
 
             <SCIMSettingsSection
+                domain={domain}
                 hasSsoConfig={hasSsoConfig}
                 scimInfo={samlSSO.scimInfo}
+                onShowVerifyDomain={() => {
+                    setVerifySSODomainModalOpen(true);
+                }}
                 onConfigureSaml={() => {
                     if (hasSsoDomain) {
                         setConfigureSamlModalOpen(true);
@@ -255,9 +263,7 @@ const SsoPage = () => {
                 }}
             />
 
-            {hasSsoDomain && hasSsoConfig && (
-                <RemoveSSOSettingsSection domain={customDomains[0]} ssoConfigs={samlSSO.configs} />
-            )}
+            {hasSsoDomain && hasSsoConfig && <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} />}
         </>
     );
 };
