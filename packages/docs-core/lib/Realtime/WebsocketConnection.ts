@@ -1,4 +1,3 @@
-import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
@@ -6,7 +5,7 @@ import { WebsocketConnectionInterface } from '@proton/docs-shared'
 import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
-import { Result } from '../Domain/Result/Result'
+import { ApiResult } from '../Domain/Result/ApiResult'
 
 const DebugDisableSockets = false
 
@@ -103,19 +102,14 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     return url
   }
 
-  async getTokenOrFailConnection(): Promise<Result<{ token: string }>> {
+  async getTokenOrFailConnection(): Promise<ApiResult<{ token: string }>> {
     const urlAndTokenResult = await this.callbacks.getUrlAndToken()
 
     if (urlAndTokenResult.isFailed()) {
       this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
       this.state.didFailToFetchToken()
 
-      const reason = ConnectionCloseReason.create({
-        code: ConnectionCloseReason.CODES.INTERNAL_ERROR,
-        message: c('Error').t`Failed to get connection parameters`,
-      })
-
-      this.callbacks.onFailToConnect(reason)
+      this.callbacks.onFailToGetToken(urlAndTokenResult.getError().code)
 
       const reconnectDelay = this.state.getBackoff()
       this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
@@ -123,10 +117,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       clearTimeout(this.reconnectTimeout)
       this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
 
-      return Result.fail(urlAndTokenResult.getError())
+      return ApiResult.fail(urlAndTokenResult.getError())
     }
 
-    return Result.ok(urlAndTokenResult.getValue())
+    return ApiResult.ok(urlAndTokenResult.getValue())
   }
 
   async connect(): Promise<void> {
@@ -140,8 +134,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     if (this.state.isConnected || this.socket) {
+      this.logger.error('Attempted to connect while already connected')
       return
     }
+
+    clearTimeout(this.reconnectTimeout)
 
     this.logger.info('Fetching url and token for websocket connection')
 
@@ -166,10 +163,21 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.callbacks.onConnecting()
 
     this.socket.onopen = () => {
-      this.logger.info('Websocket connection opened')
+      this.logger.info(
+        `Websocket connection opened; readyState: ${this.socket?.readyState} bufferAmount: ${this.socket?.bufferedAmount}`,
+      )
       this.heartbeat()
       this.state.didOpen()
-      this.callbacks.onOpen()
+
+      /**
+       * There is an issue with the current RTS where it needs to do some config before it's ready to receive messages,
+       * even though the connection is opened immediately.
+       *
+       * In the future it will send us a message once it's ready (DRVDOC-559). For now, we do an arbitrary timeout.
+       */
+      setTimeout(() => {
+        this.callbacks.onOpen()
+      }, 50)
     }
 
     this.socket.onmessage = async (event) => {
@@ -184,6 +192,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.socket.onclose = (event) => {
       this.logger.info('Websocket closed:', event.code, event.reason)
       this.socket = undefined
+      this.state.didClose()
 
       const reason = ConnectionCloseReason.create({
         code: event.code,
@@ -195,8 +204,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       } else {
         this.callbacks.onFailToConnect(reason)
       }
-
-      this.state.didClose()
 
       this.logDisconnectMetric(reason)
 
@@ -242,6 +249,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   async broadcastMessage(data: Uint8Array): Promise<void> {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
+      this.logger.error('Cannot send message, socket is not open')
       return
     }
 

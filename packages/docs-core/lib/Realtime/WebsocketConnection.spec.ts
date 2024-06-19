@@ -13,7 +13,9 @@ describe('WebsocketConnection', () => {
 
   beforeEach(() => {
     connection = new WebsocketConnection(
-      {} as WebsocketCallbacks,
+      {
+        onFailToGetToken: jest.fn(),
+      } as unknown as WebsocketCallbacks,
       {
         error: jest.fn(),
       } as unknown as LoggerInterface,
@@ -92,15 +94,15 @@ describe('WebsocketConnection', () => {
   })
 
   describe('getTokenOrFailConnection', () => {
-    it('should call callbacks.onFailToConnect if it fails', async () => {
+    it('should call callbacks.onFailToGetToken if it fails', async () => {
       connection.destroy()
 
-      const failToConnect = jest.fn()
+      const onFailToGetToken = jest.fn()
 
       connection = new WebsocketConnection(
         {
           getUrlAndToken: () => Result.fail('error'),
-          onFailToConnect: failToConnect,
+          onFailToGetToken: onFailToGetToken,
         } as unknown as WebsocketCallbacks,
         {
           error: jest.fn(),
@@ -110,7 +112,7 @@ describe('WebsocketConnection', () => {
 
       await connection.getTokenOrFailConnection()
 
-      expect(failToConnect).toHaveBeenCalled()
+      expect(onFailToGetToken).toHaveBeenCalled()
 
       connection.destroy()
     })

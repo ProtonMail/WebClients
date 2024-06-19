@@ -40,6 +40,10 @@ export class AckLedger implements AckLedgerInterface {
     return this.erroredMessages.size > 0
   }
 
+  getUnacknowledgedUpdates(): DocumentUpdate[] {
+    return Array.from(this.unconfirmedMessages.values()).map((entry) => entry.message)
+  }
+
   beginCheckingForUnackedMessages(): void {
     this.checkerTimer = setInterval(() => {
       this.checkForUnackedMessages()
@@ -112,7 +116,10 @@ export class AckLedger implements AckLedgerInterface {
   }
 
   messageAcknowledgementReceived(message: ServerMessageWithMessageAcks): void {
-    this.logger.info('Received ack message')
+    this.logger.info(
+      'Received ack message',
+      message.acks.map((ack) => ack.uuid),
+    )
 
     for (const ack of message.acks) {
       const update = this.unconfirmedMessages.get(ack.uuid)

@@ -1,3 +1,7 @@
+export enum DocsApiErrorCode {
+    CommitIdOutOfSync = 250_000,
+}
+
 export const getDocumentMeta = (volumeId: string, linkId: string) => ({
     method: 'get',
     url: `docs/volumes/${volumeId}/documents/${linkId}/meta`,
@@ -114,6 +118,7 @@ export const deleteCommentInThreadInDocument = (
 export const createRealtimeValetToken = (volumeId: string, linkId: string, commitId?: string) => ({
     method: 'post',
     url: `docs/volumes/${volumeId}/documents/${linkId}/tokens`,
+    silence: true,
     data: {
         LastCommitID: commitId ?? null,
     },

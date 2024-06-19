@@ -9,6 +9,7 @@ import {
   seedInitialCommit,
   squashCommit,
   lockDocument,
+  DocsApiErrorCode,
 } from '@proton/shared/lib/api/docs'
 import { CreateValetTokenResponse } from '../Types/CreateValetTokenResponse'
 import { DocumentMetaInterface } from '@proton/docs-shared'
@@ -16,6 +17,8 @@ import { Commit, SquashCommit } from '@proton/docs-proto'
 import { NodeMeta } from '@proton/drive-store'
 import { getErrorString } from '../../Util/GetErrorString'
 import { Result } from '../../Domain/Result/Result'
+import { ApiResult } from '../../Domain/Result/ApiResult'
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 
 export class DocsApi {
   constructor(private protonApi: Api) {}
@@ -29,7 +32,7 @@ export class DocsApi {
       const response = await this.protonApi(getDocumentMeta(lookup.volumeId, lookup.linkId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -43,7 +46,7 @@ export class DocsApi {
       const buffer = await response.arrayBuffer()
       return Result.ok(new Uint8Array(buffer))
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -53,10 +56,12 @@ export class DocsApi {
     }
 
     try {
-      const response = await this.protonApi(seedInitialCommit(docMeta.volumeId, docMeta.linkId, commit.serializeBinary()))
+      const response = await this.protonApi(
+        seedInitialCommit(docMeta.volumeId, docMeta.linkId, commit.serializeBinary()),
+      )
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -70,7 +75,7 @@ export class DocsApi {
       const buffer = await response.arrayBuffer()
       return Result.ok(new Uint8Array(buffer))
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -89,7 +94,7 @@ export class DocsApi {
       )
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -102,20 +107,25 @@ export class DocsApi {
       const response = await this.protonApi(createDocument(lookup.volumeId, lookup.linkId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
-  async createRealtimeValetToken(lookup: NodeMeta, commitId?: string): Promise<Result<CreateValetTokenResponse>> {
+  async createRealtimeValetToken(lookup: NodeMeta, commitId?: string): Promise<ApiResult<CreateValetTokenResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
     try {
       const response = await this.protonApi(createRealtimeValetToken(lookup.volumeId, lookup.linkId, commitId))
-      return Result.ok(response)
+      return ApiResult.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      const errorCode = getApiError(error).code
+      return ApiResult.fail({
+        /** @TODO Remove hardcoded code once new API is deployed which has the right error code */
+        code: errorCode > 0 ? errorCode : DocsApiErrorCode.CommitIdOutOfSync,
+        message: getErrorString(error) || 'Unknown error',
+      })
     }
   }
 }

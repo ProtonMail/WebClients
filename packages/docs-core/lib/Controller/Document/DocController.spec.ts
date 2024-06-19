@@ -22,7 +22,9 @@ import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import { WebsocketAckStatusChangePayload, WebsocketDisconnectedPayload } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import { DocControllerEvent } from './DocControllerEvent'
 
 describe('DocController', () => {
   let controller: DocController
@@ -46,12 +48,19 @@ describe('DocController', () => {
       } as unknown as jest.Mocked<LoadCommit>,
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
-      {} as jest.Mocked<GetDocumentMeta>,
+      {
+        execute: jest.fn().mockReturnValue(
+          Result.ok({
+            latestCommitId: jest.fn().mockReturnValue('123'),
+          }),
+        ),
+      } as unknown as jest.Mocked<GetDocumentMeta>,
       {} as jest.Mocked<ExportAndDownload>,
       {
         createConnection: jest.fn().mockReturnValue({ connect: jest.fn().mockResolvedValue(true) }),
         sendDocumentUpdateMessage: jest.fn(),
         flushPendingUpdates: jest.fn(),
+        reconnectToDocumentWithoutDelay: jest.fn(),
       } as unknown as jest.Mocked<WebsocketServiceInterface>,
       {
         addEventHandler: jest.fn(),
@@ -150,6 +159,15 @@ describe('DocController', () => {
 
       expect(controller.sendInitialCommitToEditor).toHaveBeenCalled()
     })
+
+    it('should set last commit id property', async () => {
+      controller.setInitialCommit({
+        needsSquash: jest.fn(),
+        commitId: '456',
+      } as unknown as jest.Mocked<DecryptedCommit>)
+
+      expect(controller.lastCommitIdReceivedFromRtsOrApi).toBe('456')
+    })
   })
 
   describe('showEditorIfAllConnectionsReady', () => {
@@ -247,8 +265,18 @@ describe('DocController', () => {
       expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
 
+    it('should begin initial sync timer on connected event', () => {
+      controller.beginInitialSyncTimer = jest.fn()
+
+      controller.handleWebsocketConnectedEvent()
+
+      expect(controller.beginInitialSyncTimer).toHaveBeenCalled()
+    })
+  })
+
+  describe('handleWebsocketDisconnectedEvent', () => {
     it('should prevent editing when websocket is closed', () => {
-      const payload: WebsocketDisconnectedPayload = {
+      const payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected] = {
         document: {} as NodeMeta,
         serverReason: ConnectionCloseReason.create({ code: ConnectionCloseReason.CODES.NORMAL_CLOSURE }),
       }
@@ -257,12 +285,68 @@ describe('DocController', () => {
       expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
 
-    it('should begin initial sync timer on connected event', () => {
-      controller.beginInitialSyncTimer = jest.fn()
+    it('should refetch commit if disconnect reason is stale commit id', () => {
+      const payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected] = {
+        document: {} as NodeMeta,
+        serverReason: ConnectionCloseReason.create({ code: ConnectionCloseReason.CODES.STALE_COMMIT_ID }),
+      }
+      controller.refetchCommitDueToStaleContents = jest.fn()
 
-      controller.handleWebsocketConnectedEvent()
+      controller.handleWebsocketDisconnectedEvent(payload)
 
-      expect(controller.beginInitialSyncTimer).toHaveBeenCalled()
+      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
+    })
+  })
+
+  describe('handleCommitIdOutOfSyncEvent', () => {
+    it('should refetch commit', () => {
+      controller.refetchCommitDueToStaleContents = jest.fn()
+
+      controller.handleCommitIdOutOfSyncEvent()
+
+      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
+    })
+  })
+
+  describe('refetchCommitDueToStaleContents', () => {
+    it('should post UnableToResolveCommitIdConflict error if unable to resolve', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+
+      await controller.refetchCommitDueToStaleContents()
+
+      expect(controller.eventBus.publish).toHaveBeenCalledWith({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
+    })
+
+    it('should re-set the initial commit if commit is successfully resolved', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(
+        Result.ok({
+          numberOfUpdates: jest.fn().mockReturnValue(0),
+          needsSquash: jest.fn().mockReturnValue(false),
+        }),
+      )
+
+      controller.setInitialCommit = jest.fn()
+
+      await controller.refetchCommitDueToStaleContents()
+
+      expect(controller.setInitialCommit).toHaveBeenCalled()
+    })
+
+    it('should reconnect websocket without delay if commit is successfully resolved', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(
+        Result.ok({
+          numberOfUpdates: jest.fn().mockReturnValue(0),
+          needsSquash: jest.fn().mockReturnValue(false),
+        }),
+      )
+
+      await controller.refetchCommitDueToStaleContents()
+
+      expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalled()
     })
   })
 
@@ -280,7 +364,7 @@ describe('DocController', () => {
 
       controller.handleWebsocketAckStatusChangeEvent({
         ledger: { hasErroredMessages: jest.fn() },
-      } as unknown as WebsocketAckStatusChangePayload)
+      } as unknown as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange])
 
       expect(controller.reloadEditingLockedState).toHaveBeenCalled()
     })
