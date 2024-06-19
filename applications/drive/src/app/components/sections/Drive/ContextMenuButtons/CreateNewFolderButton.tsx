@@ -10,9 +10,9 @@ interface Props {
 const CreateNewFolderButton = ({ close, action }: Props) => {
     return (
         <ContextMenuButton
-            testId="toolbar-new-folder"
+            testId="context-menu-new-folder"
             icon="folder-plus"
-            name={c('Action').t`Create new folder`}
+            name={c('Action').t`New folder`}
             action={action}
             close={close}
         />

@@ -1,10 +1,10 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactElement } from 'react';
 
 import { DropdownMenuButton, Icon, IconName } from '@proton/components';
 
 interface Props {
     name: string;
-    icon: IconName;
+    icon: IconName | ReactElement<any>;
     testId: string;
     action: () => void;
     close: () => void;
@@ -15,7 +15,7 @@ const ContextMenuButton = ({ name, icon, testId, action, close, children }: Prop
         <DropdownMenuButton
             key={name}
             onContextMenu={(e) => e.stopPropagation()}
-            className="flex items-center flex-nowrap text-left"
+            className="flex items-center justify-space-between flex-nowrap"
             onClick={(e) => {
                 e.stopPropagation();
                 action();
@@ -23,8 +23,10 @@ const ContextMenuButton = ({ name, icon, testId, action, close, children }: Prop
             }}
             data-testid={testId}
         >
-            <Icon className="mr-2 shrink-0" name={icon} />
-            {name}
+            <div className="flex items-center flex-nowrap text-left shrink-0">
+                {typeof icon === 'string' ? <Icon className="mr-2 shrink-0" name={icon} /> : icon}
+                {name}
+            </div>
             {children}
         </DropdownMenuButton>
     );
