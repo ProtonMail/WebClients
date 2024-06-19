@@ -29,6 +29,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         syncManyWallets,
         syncSingleWallet,
         syncSingleWalletAccount,
+        incrementSyncKey,
         isSyncing,
         getSyncingData,
     } = useWalletsChainData(decryptedApiWalletsData);
@@ -64,6 +65,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
                 syncManyWallets,
                 syncSingleWallet,
                 syncSingleWalletAccount,
+                incrementSyncKey,
 
                 isSyncing,
                 getSyncingData,
