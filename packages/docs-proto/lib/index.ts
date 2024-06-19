@@ -10,6 +10,7 @@ export * from './Factory/CreateEvent'
 export * from './Factory/CreateMessageAck'
 export * from './Factory/CreateServerMessageWithMessageAcks'
 export * from './Factory/CreateSquashCommit'
+export * from './Factory/CreateClientMessageWithDocumentUpdates'
 
 export * from './Generated'
 

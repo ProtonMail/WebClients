@@ -35,6 +35,20 @@ describe('AckLedger', () => {
     })
   })
 
+  describe('getUnacknowledgedUpdates', () => {
+    it('should return unconfirmed messages', () => {
+      const message = {
+        updates: {
+          documentUpdates: [{ uuid: '1' }, { uuid: '2' }],
+        },
+      } as ClientMessageWithDocumentUpdates
+
+      ledger.messagePosted(message)
+
+      expect(ledger.getUnacknowledgedUpdates().length).toBe(2)
+    })
+  })
+
   describe('messageAcknowledgementReceived', () => {
     it('should remove from unconfirmed messages', () => {
       const message = {
