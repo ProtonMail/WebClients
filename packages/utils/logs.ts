@@ -104,7 +104,11 @@ export class Logger implements LoggerInterface {
 
     private verbose: boolean = false;
 
-    constructor(identifier: string, debugKey?: string) {
+    constructor(
+        identifier: string,
+        debugKey?: string,
+        private limit = 10_000
+    ) {
         this.identifier = identifier;
         this.verbose = typeof debugKey !== 'undefined' && localStorage.getItem(debugKey) === 'true';
         this.listen();
@@ -180,6 +184,10 @@ export class Logger implements LoggerInterface {
                     times: [time],
                 },
             ]);
+        }
+
+        if (this.stack.length > this.limit) {
+            this.stack.shift();
         }
     }
 
