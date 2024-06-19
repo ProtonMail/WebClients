@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 export type DocumentAction =
     | {
-          mode: 'open' | 'convert' | 'download';
+          mode: 'open' | 'convert' | 'download' | 'history';
           linkId: string;
           volumeId: string;
           parentLinkId?: never;
