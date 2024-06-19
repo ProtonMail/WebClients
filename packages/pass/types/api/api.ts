@@ -68,4 +68,4 @@ export type ApiSubscriptionEvent =
     | { type: 'error'; error: string }
     | { type: 'network'; online: boolean }
     | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
-    | { type: 'session'; status: 'inactive' | 'locked' };
+    | { type: 'session'; status: 'inactive' | 'locked' | 'not-allowed'; error?: string };

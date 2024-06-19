@@ -481,6 +481,15 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         await authService.lock(LockMode.SESSION, { soft: true, broadcast: true });
                     }
 
+                    if (event.status === 'not-allowed') {
+                        config.onNotification?.({
+                            text: event.error ?? c('Error').t`Something went wrong`,
+                            type: 'error',
+                        });
+
+                        await authService.logout({ soft: true, broadcast: true });
+                    }
+
                     break;
                 }
 
@@ -495,6 +504,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         await config.onSessionRefresh?.(authStore.getLocalID(), data, true);
                         authStore.setSession(data);
                     }
+
+                    break;
                 }
             }
         }
