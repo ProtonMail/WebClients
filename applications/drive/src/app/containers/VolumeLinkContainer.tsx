@@ -2,8 +2,10 @@ import { FC, useEffect } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { Loader } from '@proton/components/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../hooks/drive/useNavigate';
+import { useDocumentActions } from '../store/_documents';
 import { useVolumeLinkView } from '../store/_views/useVolumeLinkView';
 
 export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; linkId: string }>> = ({ match }) => {
@@ -14,6 +16,7 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
     const { volumeId, linkId } = match.params;
     const { handleRedirectOrAcceptInvitation, handleConvertExternalInvitation } = useVolumeLinkView();
     const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess } = useNavigate();
+    const { openDocument } = useDocumentActions();
 
     useEffect(() => {
         if (!invitationId) {
@@ -26,7 +29,11 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
             linkId,
         })
             .then((linkInfo) => {
-                if (linkInfo?.shareId) {
+                if (linkInfo && isProtonDocument(linkInfo?.mimeType)) {
+                    openDocument({ shareId: linkInfo.shareId, linkId: linkInfo.linkId });
+                    // Open document will open in a new window, so let's navigate the tab to Shared with me
+                    navigateToSharedWithMe();
+                } else if (linkInfo?.shareId) {
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');
                 } else {
                     navigateToNoAccess();
