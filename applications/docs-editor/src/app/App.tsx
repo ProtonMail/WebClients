@@ -29,6 +29,7 @@ import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFro
 import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
 import { Application } from './Application'
 import { ThemeStyles } from './Theme'
+import { DocumentInteractionMode } from './DocumentInteractionMode'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -58,7 +59,8 @@ export function App({ nonInteractiveMode = false }: Props) {
   const [docState, setDocState] = useState<DocState | null>(null)
   const [application] = useState(() => new Application())
   const [editorHidden, setEditorHidden] = useState(true)
-  const [editingAllowed, setEditingAllowed] = useState(false)
+  const [editingLocked, setEditingLocked] = useState(true)
+  const [interactionMode, setInteractionMode] = useState<DocumentInteractionMode>('edit')
 
   useEffectOnce(() => {
     setTtagLocales(locales)
@@ -165,15 +167,8 @@ export function App({ nonInteractiveMode = false }: Props) {
           })
         },
 
-        async changeEditingAllowance(allow) {
-          newDocState.canBeEditable = allow
-          if (allow) {
-            if (application.getRole().canEdit()) {
-              setEditingAllowed(true)
-            }
-          } else {
-            setEditingAllowed(false)
-          }
+        async changeLockedState(locked) {
+          setEditingLocked(locked)
         },
 
         async initializeEditor(
@@ -260,15 +255,15 @@ export function App({ nonInteractiveMode = false }: Props) {
     viewOnlyDocumentId,
   ])
 
-  const onEditingAllowanceChange = useCallback(
-    (editable: boolean) => {
-      if (editable && !application.getRole().canEdit()) {
+  const onInteractionModeChange = useCallback(
+    (mode: DocumentInteractionMode) => {
+      if (mode === 'edit' && !application.getRole().canEdit()) {
         return
       }
 
-      setEditingAllowed(editable)
+      setInteractionMode(mode)
     },
-    [setEditingAllowed, application],
+    [setInteractionMode, application],
   )
 
   if (!initialConfig || !docState) {
@@ -295,17 +290,18 @@ export function App({ nonInteractiveMode = false }: Props) {
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
           docState={docState}
-          hidden={editorHidden}
           documentId={initialConfig.documentId}
+          editingLocked={editingLocked || interactionMode === 'view'}
+          hasEditAccess={application.getRole().canEdit()}
+          hidden={editorHidden}
           injectWithNewContent={initialConfig.initialData}
-          username={initialConfig.username}
-          editingAllowed={editingAllowed}
           nonInteractiveMode={nonInteractiveMode}
-          onEditingAllowanceChange={onEditingAllowanceChange}
           onEditorReadyToReceiveUpdates={() => {
             docState.onEditorReadyToReceiveUpdates()
           }}
+          onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}
+          username={initialConfig.username}
         />
       </ApplicationProvider>
       <Icons />
