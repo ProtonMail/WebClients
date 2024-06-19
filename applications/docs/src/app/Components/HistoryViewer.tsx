@@ -16,7 +16,6 @@ import { c } from 'ttag'
 import { EditorFrame } from './EditorFrame'
 import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
 import { Logger } from '@proton/utils/logs'
-import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 
 function HistoryViewerModalContent({
@@ -40,10 +39,6 @@ function HistoryViewerModalContent({
   const onFrameReady = useCallback(
     (frame: HTMLIFrameElement) => {
       const editorInvoker = new EditorInvoker(frame, new Logger('ViewOnlyEditorInvoker', DOCS_DEBUG_KEY))
-      const initialThemeStyles = document.getElementById(THEME_ID)?.innerHTML
-      if (initialThemeStyles) {
-        void editorInvoker.receiveThemeChanges(initialThemeStyles)
-      }
       editorInvoker
         .receiveMessage({
           content: mergedUpdate,

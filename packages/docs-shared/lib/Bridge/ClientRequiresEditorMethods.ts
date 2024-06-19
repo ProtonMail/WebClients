@@ -9,7 +9,6 @@ export interface ClientRequiresEditorMethods {
   performClosingCeremony(): Promise<void>
   getDocumentState(): Promise<Uint8Array>
   getClientId(): Promise<number>
-  receiveThemeChanges(theme: string): Promise<void>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>
   initializeEditor(
