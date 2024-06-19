@@ -290,6 +290,7 @@ export const SSO_PATHS = {
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
     TRIAL: '/trial',
+    JOIN_MAGIC_LINK: '/join',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
@@ -300,6 +301,7 @@ export enum HTTP_STATUS_CODE {
     BAD_REQUEST = 400,
     FORBIDDEN = 403,
     NOT_FOUND = 404,
+    CONFLICT = 409,
     UNPROCESSABLE_ENTITY = 422,
     TOO_MANY_REQUESTS = 429,
     INTERNAL_SERVER_ERROR = 500,

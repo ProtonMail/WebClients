@@ -1,5 +1,6 @@
 import { serverTime } from '@proton/crypto';
 import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport, ktSentryReportError } from '@proton/key-transparency';
+
 import {
     Address,
     Api,
@@ -8,8 +9,8 @@ import {
     PreAuthKTVerifier,
     PreAuthKTVerify,
     SignedKeyList,
-} from '@proton/shared/lib/interfaces';
-import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
+} from '../interfaces';
+import { getDefaultKTLS } from './defaults';
 
 /**
  * Return a KT verifier for when getSignedKeyList is called before apps are properly mounted,
@@ -23,6 +24,7 @@ const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation, api: A
         signedKeyList: SignedKeyList;
         creationTimestamp: number;
     }
+
     var createdSKLs: CreatedSKL[] = [];
 
     const ktLSAPI = getDefaultKTLS();

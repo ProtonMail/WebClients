@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
+import { createKeyMigrationKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     activateMemberAddressKeys,
     generateAllPrivateMemberKeys,
@@ -26,7 +27,7 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
-import { useKTVerifier, useKeyMigrationKTVerifier } from '../keyTransparency';
+import { useKTActivation, useKTVerifier } from '../keyTransparency';
 import useFlag from '../unleash/useFlag';
 
 interface Props {
@@ -50,7 +51,7 @@ const KeyBackgroundManager = ({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
-    const { keyMigrationKTVerifier } = useKeyMigrationKTVerifier();
+    const ktActivation = useKTActivation();
     const runActiveKeysCheckFlag = useFlag('CryptoDisableUndecryptableKeys');
 
     useEffect(() => {
@@ -118,6 +119,7 @@ const KeyBackgroundManager = ({
 
             const keyPassword = authentication.getPassword();
             let hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
+            const keyMigrationKTVerifier = createKeyMigrationKTVerifier(ktActivation, silentApi);
 
             const hasDoneMigration = await migrateUser({
                 api: silentApi,

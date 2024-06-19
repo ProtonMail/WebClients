@@ -93,6 +93,7 @@ import EmailForwardingContainer, { EmailForwardingRequest } from '../public/Emai
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
+import JoinMagicLinkContainer from '../public/JoinMagicLinkContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import ReAuthContainer, { ReAuthState } from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
@@ -661,6 +662,16 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
                                             <Switch location={location}>
+                                                <Route path={`${SSO_PATHS.JOIN_MAGIC_LINK}`}>
+                                                    <UnAuthenticated>
+                                                        <JoinMagicLinkContainer
+                                                            onLogin={handleLogin}
+                                                            productParam={productParam}
+                                                            toAppName={toAppName}
+                                                            toApp={maybePreAppIntent}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
                                                 {confirmForkData && toAppName && (
                                                     <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                         <UnAuthenticated>

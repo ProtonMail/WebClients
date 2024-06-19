@@ -13,6 +13,7 @@ describe('reset keys v2', () => {
             preAuthKTVerify: () => async () => {},
         });
         expect(result).toEqual({
+            privateKeys: undefined,
             userKeyPayload: undefined,
             addressKeysPayload: undefined,
             onSKLPublishSuccess: undefined,
