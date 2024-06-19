@@ -81,7 +81,7 @@ export default function FoldersSection() {
                         </SettingsLayout>
                     ) : null}
 
-                    <div className="flex gap-4 my-7">
+                    <div className="flex gap-4 my-7 folders-action">
                         {canCreateFolder ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add folder`}

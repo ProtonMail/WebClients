@@ -19,7 +19,7 @@ const getNav = (): [type: SpamNavItem, getName: () => string][] => {
 };
 
 const SpamFiltersNav = ({ selected, onChange }: Props) => (
-    <ul className="unstyled block">
+    <ul className="unstyled block spam-filters-nav">
         {getNav().map(([type, getName]) => (
             <li
                 key={type}
