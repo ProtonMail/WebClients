@@ -6,7 +6,10 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
+import { useLoading } from '@proton/hooks/index';
 import clsx from '@proton/utils/clsx';
+import { encryptWalletDataWithWalletKey } from '@proton/wallet';
+import { getPassphraseLocalStorageKey } from '@proton/wallet';
 
 import { CoreButton } from '../atoms';
 import { Balance } from '../components/Balance';
@@ -23,6 +26,7 @@ export const WalletContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
     const history = useHistory();
     const { openDrawer } = useWalletDrawerContext();
+    const [loading, withLoading] = useLoading();
 
     // Used to reset bitcoin send modal at the end of the process
     const generateBitcoinSendKey = () => generateUID('bitcoin-send');
@@ -67,6 +71,19 @@ export const WalletContainer = () => {
 
     const isSyncingChainData = isSyncing(wallet.Wallet.ID);
 
+    const loadWalletWithPassphrase = async (passphrase: string) => {
+        setPassphrase(wallet.Wallet.ID, passphrase);
+        if (wallet.WalletKey?.DecryptedKey && wallet.Wallet.Fingerprint) {
+            const [encryptedPassphrase] = await encryptWalletDataWithWalletKey(
+                [passphrase],
+                wallet.WalletKey.DecryptedKey
+            );
+            localStorage.setItem(getPassphraseLocalStorageKey(wallet.Wallet.Fingerprint), encryptedPassphrase);
+        }
+
+        void syncSingleWallet({ walletId: wallet.Wallet.ID });
+    };
+
     return (
         <>
             <div className={clsx('flex flex-row w-full min-h-full flex-nowrap', theme)}>
@@ -81,6 +98,7 @@ export const WalletContainer = () => {
                                 shape="ghost"
                                 color="weak"
                                 className="ml-2 rounded-full bg-weak"
+                                disabled={loading}
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);
                                 }}
@@ -123,8 +141,7 @@ export const WalletContainer = () => {
                         isOpen={needPassphrase}
                         onClose={history.goBack}
                         onConfirmPassphrase={(passphrase) => {
-                            setPassphrase(wallet.Wallet.ID, passphrase);
-                            void syncSingleWallet({ walletId: wallet.Wallet.ID });
+                            withLoading(loadWalletWithPassphrase(passphrase));
                         }}
                     />
 
