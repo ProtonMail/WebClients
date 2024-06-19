@@ -101,7 +101,7 @@
 .plan-card-selector-container {
 	display: grid;
 	justify-content: center;
-	grid-template-columns: auto;
+	grid-template-columns: 1fr;
 	gap: var(--space-4);
 
 	&[data-plan-count='2'] {
