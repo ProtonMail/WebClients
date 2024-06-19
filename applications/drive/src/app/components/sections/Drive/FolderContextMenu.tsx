@@ -7,6 +7,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
@@ -16,6 +17,7 @@ import { ShareFileButton } from '../ContextMenu/buttons';
 import ShareFileButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareFileButtonLEGACY';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
+import CreateNewDocumentButton from './ContextMenuButtons/CreateNewDocumentButton';
 
 export function FolderContextMenu({
     shareId,
@@ -61,6 +63,9 @@ export function FolderContextMenu({
 
     const ShareFileButtonComponent = isSharingInviteAvailable ? ShareFileButton : ShareFileButtonLEGACY;
 
+    const { createDocument } = useDocumentActions();
+    const isDocsEnabled = useDriveDocsFeatureFlag();
+
     // All actions in this context menu needs editor permissions
     if (!isEditor) {
         return null;
@@ -79,6 +84,17 @@ export function FolderContextMenu({
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 {!isActiveLinkReadOnly && (
                     <CreateNewFolderButton close={close} action={() => showCreateFolderModal({})} />
+                )}
+                {isDocsEnabled && !isActiveLinkReadOnly && (
+                    <CreateNewDocumentButton
+                        close={close}
+                        action={() => {
+                            createDocument({
+                                shareId: activeFolder.shareId,
+                                parentLinkId: activeFolder.linkId,
+                            });
+                        }}
+                    />
                 )}
                 {isEditEnabled && !isActiveLinkReadOnly && (
                     <CreateNewFileButton close={close} action={() => showCreateFileModal({})} />
