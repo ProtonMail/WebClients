@@ -7,4 +7,5 @@ export enum BroadcastSource {
   HandleDocBeingUpdatedByLexical = 'HandleDocBeingUpdatedByLexical',
   DocPresenceState = 'DocPresenceState',
   DocumentBufferFlush = 'DocumentBufferFlush',
+  RetryingMessagesAfterReconnect = 'RetryingMessagesAfterReconnect',
 }

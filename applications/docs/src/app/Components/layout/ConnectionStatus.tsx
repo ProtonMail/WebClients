@@ -1,11 +1,9 @@
 import { Icon } from '@proton/components'
 import { useCallback, useEffect, useState } from 'react'
 import {
-  WebsocketAckStatusChangePayload,
   WebsocketConnectionEvent,
+  WebsocketConnectionEventPayloads,
   WebsocketConnectionEventStatusChange,
-  WebsocketDisconnectedPayload,
-  WebsocketFailedToConnectPayload,
 } from '@proton/docs-core'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
@@ -29,18 +27,27 @@ export const ConnectionStatus = () => {
       application.eventBus.addEventCallback(() => {
         setStatus(WebsocketConnectionEvent.Connecting)
       }, WebsocketConnectionEvent.Connecting),
-      application.eventBus.addEventCallback((payload: WebsocketDisconnectedPayload) => {
-        setStatus(WebsocketConnectionEvent.Disconnected)
-        setDisconnectReason(payload.serverReason)
-      }, WebsocketConnectionEvent.Disconnected),
-      application.eventBus.addEventCallback((payload: WebsocketFailedToConnectPayload) => {
-        setStatus(WebsocketConnectionEvent.FailedToConnect)
-        setDisconnectReason(payload.serverReason)
-      }, WebsocketConnectionEvent.FailedToConnect),
-      application.eventBus.addEventCallback((payload: WebsocketAckStatusChangePayload) => {
-        setHasConcerningMessages(payload.ledger.hasConcerningMessages())
-        setHasErroredMessages(payload.ledger.hasErroredMessages())
-      }, WebsocketConnectionEvent.AckStatusChange),
+      application.eventBus.addEventCallback(
+        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]) => {
+          setStatus(WebsocketConnectionEvent.Disconnected)
+          setDisconnectReason(payload.serverReason)
+        },
+        WebsocketConnectionEvent.Disconnected,
+      ),
+      application.eventBus.addEventCallback(
+        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]) => {
+          setStatus(WebsocketConnectionEvent.FailedToConnect)
+          setDisconnectReason(payload.serverReason)
+        },
+        WebsocketConnectionEvent.FailedToConnect,
+      ),
+      application.eventBus.addEventCallback(
+        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]) => {
+          setHasConcerningMessages(payload.ledger.hasConcerningMessages())
+          setHasErroredMessages(payload.ledger.hasErroredMessages())
+        },
+        WebsocketConnectionEvent.AckStatusChange,
+      ),
     )
   }, [application.eventBus])
 

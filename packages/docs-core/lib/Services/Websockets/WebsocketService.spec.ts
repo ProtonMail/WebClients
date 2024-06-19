@@ -39,6 +39,7 @@ describe('WebsocketService', () => {
       {
         info: jest.fn(),
         debug: jest.fn(),
+        error: jest.fn(),
       } as unknown as jest.Mocked<LoggerInterface>,
       eventBus,
     )
@@ -102,6 +103,26 @@ describe('WebsocketService', () => {
       await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
 
       expect(service.ledger.messagePosted).toHaveBeenCalled()
+    })
+  })
+
+  describe('onDocumentConnectionOpened', () => {
+    it('should retry failed messages', async () => {
+      service.retryAllFailedDocumentUpdates = jest.fn()
+
+      service.onDocumentConnectionOpened({ linkId: '123' } as NodeMeta)
+
+      expect(service.retryAllFailedDocumentUpdates).toHaveBeenCalled()
+    })
+  })
+
+  describe('retryAllFailedDocumentUpdates', () => {
+    it('should get ledger unacknowledged updates', async () => {
+      service.ledger.getUnacknowledgedUpdates = jest.fn().mockReturnValue([])
+
+      service.retryAllFailedDocumentUpdates({ linkId: '123' } as NodeMeta)
+
+      expect(service.ledger.getUnacknowledgedUpdates).toHaveBeenCalled()
     })
   })
 
