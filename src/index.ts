@@ -18,6 +18,7 @@ import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
+import { initializeNetLogger } from "./utils/log";
 
 (async function () {
     // Log initialization
@@ -105,6 +106,8 @@ import { handleWebContents } from "./utils/view/webContents";
             const secureSession = session.fromPartition(PARTITION, {
                 cache: false,
             });
+
+            initializeNetLogger(secureSession);
 
             app.on("activate", () => {
                 if (isMac) {
