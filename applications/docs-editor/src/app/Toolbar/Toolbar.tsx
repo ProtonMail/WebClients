@@ -963,7 +963,6 @@ export default function DocumentEditorToolbar({
         className="color-norm ml-auto flex gap-2 py-2"
         style={{
           border: '0',
-          backgroundColor: 'var(--primary-minor-1)',
         }}
         caretClassName="-ml-1"
         content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}

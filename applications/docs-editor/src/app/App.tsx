@@ -20,7 +20,6 @@ import { Icons } from '@proton/components'
 import { ApplicationProvider } from './ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { c } from 'ttag'
-import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
@@ -29,6 +28,7 @@ import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
 import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
 import { Application } from './Application'
+import { ThemeStyles } from './Theme'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -95,16 +95,6 @@ export function App({ nonInteractiveMode = false }: Props) {
             return
           }
           editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
-        },
-
-        async receiveThemeChanges(styles: string) {
-          const themeStylesheet = document.getElementById(THEME_ID)
-
-          if (!themeStylesheet) {
-            return
-          }
-
-          themeStylesheet.innerHTML = styles
         },
 
         async getClientId() {
@@ -299,6 +289,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         gridTemplateColumns: '3fr var(--comments-width)',
       }}
     >
+      <ThemeStyles />
       <ApplicationProvider application={application}>
         <Editor
           clientInvoker={bridge.getClientInvoker()}

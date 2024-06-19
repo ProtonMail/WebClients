@@ -21,8 +21,6 @@ import {
   WebsocketEncryptionErrorPayload,
 } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
-import { useTheme } from '@proton/components'
-import { THEME_ID } from '@proton/components/containers/themes/ThemeProvider'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
 import { NodeMeta } from '@proton/drive-store'
@@ -50,26 +48,6 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const [readyToShowDebugMenu, setReadyToShowDebugMenu] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const debug = useDebug()
-
-  const themeContext = useTheme()
-
-  useEffect(() => {
-    if (!bridge) {
-      return
-    }
-
-    const initialThemeStyles = document.getElementById(THEME_ID)?.innerHTML
-    if (initialThemeStyles) {
-      void bridge.editorInvoker.receiveThemeChanges(initialThemeStyles)
-    }
-    return themeContext.addListener(() => {
-      const themeStyles = document.getElementById(THEME_ID)?.innerHTML
-      if (!themeStyles) {
-        return
-      }
-      void bridge.editorInvoker.receiveThemeChanges(themeStyles)
-    })
-  }, [bridge, themeContext, editorFrame])
 
   useEffect(() => {
     if (!bridge) {
