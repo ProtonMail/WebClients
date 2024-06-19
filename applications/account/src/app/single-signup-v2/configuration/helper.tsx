@@ -52,24 +52,34 @@ export const getGenericBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getGenericFeatures = (isLargeViewport: boolean) => {
-    return [
-        {
-            key: 1,
-            left: <Icon size={6} className="color-primary" name="lock" />,
-            text: c('pass_signup_2023: Feature').t`End-to-end encrypted`,
-        },
-        {
-            key: 2,
-            left: <Icon size={6} className="color-primary" name="globe" />,
-            text: c('pass_signup_2023: Feature').t`Open source`,
-        },
-        {
-            key: 3,
-            left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
-            text: isLargeViewport
-                ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
-                : c('pass_signup_2023: Feature').t`Swiss based`,
-        },
-    ];
+export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience) => {
+    const e2e = {
+        key: 'e2e',
+        left: <Icon size={6} className="color-primary" name="lock" />,
+        text: c('pass_signup_2023: Feature').t`End-to-end encrypted`,
+    };
+
+    const swiss = {
+        key: 'swiss',
+        left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
+        text: isLargeViewport
+            ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
+            : c('pass_signup_2023: Feature').t`Swiss based`,
+    };
+
+    const openSource = {
+        key: 'open-source',
+        left: <Icon size={6} className="color-primary" name="globe" />,
+        text: c('pass_signup_2023: Feature').t`Open source`,
+    };
+
+    const gdpr = {
+        key: 'gdpr',
+        left: <Icon size={6} className="color-primary" name="shield" />,
+        text: c('signup_2024: Feature').t`GDPR compliant`,
+    };
+
+    const audienceSpecificFeatures = audience === Audience.B2B ? [e2e, swiss, gdpr] : [e2e, openSource, swiss];
+
+    return audienceSpecificFeatures;
 };

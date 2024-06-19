@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
@@ -108,9 +109,10 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
 const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY, PLANS.FAMILY];
 
 const PlanCardViewSlot = ({
-    hasMaxWidth,
     highlightPrice,
     selected,
+    interactive = true,
+    selectable = true,
     headerText,
     text,
     subsection,
@@ -122,10 +124,12 @@ const PlanCardViewSlot = ({
     billedText,
     dark,
     onSelect,
+    maxWidth = false,
 }: {
-    hasMaxWidth?: boolean;
     highlightPrice?: boolean;
     selected?: boolean;
+    interactive?: boolean;
+    selectable?: boolean;
     headerText?: ReactNode;
     text?: ReactNode;
     subsection?: ReactNode;
@@ -137,10 +141,13 @@ const PlanCardViewSlot = ({
     billedText: ReactNode;
     dark?: boolean;
     onSelect?: () => void;
+    maxWidth?: boolean;
 }) => {
     const wrapper = (children: ReactNode) => {
         const className = clsx(
-            'card-plan rounded-4xl border relative w-full h-full flex justify-center align-items-start'
+            'card-plan overflow-hidden rounded-4xl border relative w-full h-full flex flex-column justify-start align-items-start',
+            selected && 'border-primary',
+            !interactive && 'bg-weak'
         );
 
         if (onSelect) {
@@ -161,41 +168,63 @@ const PlanCardViewSlot = ({
     return (
         <div
             className={clsx(
-                'shrink-0 lg:flex-1 w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
+                'shrink-0 lg:flex-1 w-full pricing-box-content-cycle mx-auto lg:mx-0 max-w-custom',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
-                hasMaxWidth && 'max-w-custom'
+                maxWidth && 'max-w-custom'
             )}
-            style={hasMaxWidth ? { '--max-w-custom': '24em' } : undefined}
+            style={maxWidth ? { '--max-w-custom': '20rem' } : undefined}
         >
             {wrapper(
                 <>
-                    {headerText && (
+                    {headerText ? (
                         <div
                             className={clsx(
-                                'text-center card-plan-highlight text-sm text-semibold py-1 px-4 rounded absolute',
+                                'flex justify-center items-center text-center card-plan-highlight text-sm text-semibold px-4 w-full h-custom',
                                 selected && 'card-plan-highlight--selected'
                             )}
+                            style={{ '--h-custom': '1.56rem' }}
                         >
                             {headerText}
                         </div>
+                    ) : (
+                        <div className="w-full h-custom" style={{ '--h-custom': '1.56rem' }} />
                     )}
-                    <div className="p-6 w-full">
-                        <div className="flex items-center flex-column w-full">
-                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-1">
-                                <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${id}-text`}>
+
+                    <div className="px-6 pb-6 pt-4 w-full">
+                        <div className="flex items-start flex-column w-full">
+                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-3 items-center text-ellipsis">
+                                <strong className="text-2xl text-ellipsis text-left" id={`${id}-text`}>
                                     {text}
                                 </strong>
+                                {interactive && selectable && (
+                                    <span
+                                        className={clsx(
+                                            'card-plan-selected-indicator flex justify-center items-center ratio-square grow-0 shrink-0 rounded-full border w-custom h-custom',
+                                            selected && 'bg-primary border-primary'
+                                        )}
+                                        style={{ '--w-custom': '1.25rem', '--h-custom': '1.25rem' }}
+                                    >
+                                        {selected && (
+                                            <Icon name="checkmark" className="color-primary-contrast" size={4} />
+                                        )}
+                                    </span>
+                                )}
                             </div>
 
-                            <div className="mt-4 mb-6 text-center w-full">
+                            <div className="mt-4 mb-6 text-left w-full">
                                 <div
                                     id={`${id}-price`}
                                     className={clsx(
                                         !discount && 'items-baseline',
-                                        'flex gap-2 items-center justify-center'
+                                        'flex gap-2 items-center justify-start'
                                     )}
                                 >
-                                    <span className={clsx(highlightPrice && !dark && 'color-primary', 'text-bold h1')}>
+                                    <span
+                                        className={clsx(
+                                            highlightPrice && !dark && 'color-primary',
+                                            'text-bold card-plan-price'
+                                        )}
+                                    >
                                         {price}
                                     </span>
                                     <div className={clsx(!!discount && 'flex flex-column justify-center', 'text-left')}>
@@ -266,8 +295,10 @@ export const PlanCardSelector = ({
     onSelect: (planIDs: PlanIDs, plan: PLANS, upsellFrom?: PLANS) => void;
     onSelectedClick?: () => void;
 }) => {
+    const planCount = planCards.length;
+
     return (
-        <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
+        <div className="plan-card-selector-container mx-auto" data-plan-count={planCount}>
             {planCards.map((planCard) => {
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
@@ -285,12 +316,10 @@ export const PlanCardSelector = ({
 
                 const offer = getPlanOffer(planFromCard);
                 const highlight = planCard.type === 'best' || offer.valid;
-                const hasMaxWidth = planCards.length > 2;
 
                 if (planCard.interactive === false) {
                     return (
                         <PlanCardViewSlot
-                            hasMaxWidth={hasMaxWidth}
                             id={planCard.plan}
                             price={getLetsTalk()}
                             billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
@@ -298,6 +327,8 @@ export const PlanCardSelector = ({
                             key={planCard.plan}
                             dark={dark}
                             subsection={planCard.subsection}
+                            interactive={planCard.interactive}
+                            maxWidth={planCount > 2}
                         />
                     );
                 }
@@ -328,7 +359,6 @@ export const PlanCardSelector = ({
 
                 return (
                     <PlanCardViewSlot
-                        hasMaxWidth={hasMaxWidth}
                         highlightPrice={highlight}
                         selected={selected}
                         id={planCard.plan}
@@ -358,6 +388,7 @@ export const PlanCardSelector = ({
                         key={planCard.plan}
                         dark={dark}
                         subsection={planCard.subsection}
+                        maxWidth={planCount > 2}
                     />
                 );
             })}
@@ -459,6 +490,7 @@ export const UpsellCardSelector = ({
                         <PlanCardViewSlot
                             id={currentPlan.Name}
                             headerText={c('pass_signup_2023: Info').t`Current plan`}
+                            selectable={false}
                             highlightPrice={false}
                             selected={false}
                             text={currentPlan.Title || ''}
