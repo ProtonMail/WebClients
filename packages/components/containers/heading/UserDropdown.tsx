@@ -52,6 +52,7 @@ import {
     SSO_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
@@ -211,7 +212,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const inboxDesktopMultiAccountSupport = useFlag('InboxDesktopMultiAccountSupport');
     const showSwitchAccountButton =
         isElectronApp && authentication.mode === 'sso'
-            ? inboxDesktopMultiAccountSupport
+            ? inboxDesktopMultiAccountSupport && hasInboxDesktopFeature('MultiAccount')
             : authentication.mode === 'sso';
 
     const handleScheduleCallClick = async () => {
