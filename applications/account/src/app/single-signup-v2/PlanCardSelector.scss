@@ -6,21 +6,40 @@
 		box-shadow 0.4s ease, transform 0.4s ease;
 
 	&-highlight {
-		transition: var(--card-transition);
-		inset-inline-start: 50%;
-		transform: translateX(-50%) translateY(-50%);
-
 		&#{&} {
 			background-color: var(--background-weak);
 			color: var(--primary);
+			transition: var(--card-transition);
 
 			&--selected {
 				background-color: var(--primary);
 				color: var(--text-invert);
-				transform: translateX(-50%) translateY(-50%) scale(1.05);
 
 				@at-root .ui-prominent & {
 					color: var(--text-norm);
+				}
+			}
+		}
+	}
+
+	&-price {
+		font-size: rem(32);
+	}
+
+	&-selected-indicator {
+		svg {
+			animation: 0.25s easing(ease-out-back) both anime-selected-indicator-appear;
+			transition-delay: 0.1s;
+
+			@keyframes anime-selected-indicator-appear {
+				from {
+					opacity: 0;
+					transform: scale(0);
+				}
+
+				to {
+					opacity: 1;
+					transform: scale(1);
 				}
 			}
 		}
@@ -53,7 +72,6 @@
 	}
 
 	&[aria-pressed='true'] {
-		transform: translateY(-0.4rem);
 		box-shadow:
 			-4px 4px 5px 2px var(--card-box-shadow-color1),
 			6px 3px 7px 3px var(--card-box-shadow-color2),
@@ -80,8 +98,61 @@
 	}
 }
 
-@include media('<=medium') {
-	.pricing-box-content-cycle--highlighted {
-		order: -1;
+.plan-card-selector-container {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: auto;
+	gap: var(--space-4);
+
+	&[data-plan-count='2'] {
+		@include media('<=medium') {
+			.pricing-box-content-cycle--highlighted {
+				order: -1;
+			}
+		}
+
+		@include media('>=small') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&[data-plan-count='3'] {
+		@include media('<=medium') {
+			.pricing-box-content-cycle--highlighted {
+				order: -1;
+			}
+		}
+
+		@include media('>=medium') {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&[data-plan-count='4'] {
+		@include media('<large') {
+			.pricing-box-content-cycle {
+				@for $i from 1 through 4 {
+					&:nth-child(#{$i}) {
+						order: #{$i};
+					}
+				}
+			}
+
+			.pricing-box-content-cycle--highlighted.pricing-box-content-cycle--highlighted {
+				order: 1;
+			}
+		}
+
+		@include media('>=small') {
+			max-inline-size: fit-content;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-6);
+		}
+
+		@include media('>=large') {
+			max-inline-size: none;
+			grid-template-columns: repeat(4, 1fr);
+			gap: var(--space-4);
+		}
 	}
 }

@@ -19,14 +19,16 @@ import {
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PLANS,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
 import Benefits, { BenefitItem } from '../Benefits';
-import BundlePlanSubSection from '../BundlePlanSubSection';
-import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
+import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
+import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
+import { planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
 import CustomStep from './CustomStep';
@@ -66,7 +68,7 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace, { freePlan }),
+        getStorageFeature(plan.MaxSpace, { freePlan, family: plan.Name === PLANS.FAMILY ? true : false }),
         getNAddressesFeature({ n: plan.MaxAddresses }),
         getFoldersAndLabelsFeature('unlimited'),
         getNMessagesFeature('unlimited'),
@@ -91,8 +93,6 @@ export const getMailConfiguration = ({
     plan,
     audience,
     isLargeViewport,
-    vpnServersCountData,
-    planParameters,
     hideFreePlan,
     plansMap,
 }: {
@@ -108,50 +108,74 @@ export const getMailConfiguration = ({
 }): SignupConfiguration => {
     const logo = <MailLogo />;
 
-    const title = (() => {
-        if (mode === SignupMode.MailReferral) {
-            return c('Title').t`You’ve been invited to try ${MAIL_APP_NAME}`;
-        }
+    const title = c('mail_signup_2024: Info').t`An encrypted email service that puts your privacy first`;
+    const b2bTitle = c('mail_signup_2024: Info').t`Encrypted solutions to protect your entire business`;
+    const inviteTitle = c('mail_signup_2024: Info').t`You’ve been invited to try ${MAIL_APP_NAME}`;
+    const onboardingTitle = title;
 
-        return (
-            <>
-                {(planParameters?.defined && getPlanTitle(plan)) ||
-                    c('mail_signup_2023: Info').t`Secure email that protects your privacy`}
-            </>
-        );
-    })();
+    const features = getGenericFeatures(isLargeViewport, audience);
 
-    const features = getGenericFeatures(isLargeViewport);
-
-    let planCards: PlanCard[] = [
-        !hideFreePlan && {
-            plan: PLANS.FREE,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures(freePlan)} />,
-            type: 'standard' as const,
-            guarantee: false,
-        },
-        {
-            plan: PLANS.MAIL,
-            subsection: (
-                <PlanCardFeatureList
-                    {...planCardFeatureProps}
-                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
-                />
-            ),
-            type: 'best' as const,
-            guarantee: true,
-        },
-        {
-            plan: PLANS.BUNDLE,
-            subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
-            type: 'standard' as const,
-            guarantee: true,
-        },
-    ].filter(isTruthy);
-
-    if (mode === SignupMode.MailReferral) {
-        planCards = [
+    let planCards: SignupConfiguration['planCards'] = {
+        [Audience.B2B]: [
             {
+                plan: PLANS.MAIL_PRO,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('mail_signup_2024: Info').t`Encrypted email and calendar to get you started`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_PRO], freePlan)}
+                            />
+                        }
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.MAIL_BUSINESS,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('mail_signup_2024: Info').t`Enhanced security and premium features for teams`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_BUSINESS], freePlan)}
+                            />
+                        }
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.BUNDLE_PRO_2024,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('mail_signup_2024: Info')
+                            .t`All ${BRAND_NAME} business apps and premium features to protect your entire business`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
+                            />
+                        }
+                    />
+                ),
+                type: 'best' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.ENTERPRISE,
+                subsection: <LetsTalkGenericSubSection />,
+                type: 'standard' as const,
+                guarantee: true,
+                interactive: false,
+            },
+        ],
+        [Audience.B2C]: [
+            !hideFreePlan && {
                 plan: PLANS.FREE,
                 subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures(freePlan)} />,
                 type: 'standard' as const,
@@ -165,16 +189,67 @@ export const getMailConfiguration = ({
                         features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
                     />
                 ),
+                type: 'standard' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.BUNDLE,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE], freePlan)}
+                    />
+                ),
                 type: 'best' as const,
                 guarantee: true,
             },
-        ];
+            {
+                plan: PLANS.FAMILY,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomMailFeatures(plansMap?.[PLANS.FAMILY], freePlan)}
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: true,
+            },
+        ].filter(isTruthy),
+    };
+
+    if (mode === SignupMode.MailReferral) {
+        planCards = {
+            [Audience.B2C]: [
+                {
+                    plan: PLANS.FREE,
+                    subsection: (
+                        <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures(freePlan)} />
+                    ),
+                    type: 'standard' as const,
+                    guarantee: false,
+                },
+                {
+                    plan: PLANS.MAIL,
+                    subsection: (
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
+                        />
+                    ),
+                    type: 'best' as const,
+                    guarantee: true,
+                },
+            ],
+            [Audience.B2B]: [],
+        };
     }
 
     const benefitItems = getMailBenefits();
     const benefits = benefitItems && (
         <div>
-            <div className="text-lg text-semibold">{getBenefits(MAIL_APP_NAME)}</div>
+            <div className="text-lg text-semibold">
+                {getBenefits(plan?.Name === PLANS.BUNDLE_PRO_2024 ? BRAND_NAME : MAIL_APP_NAME)}
+            </div>
             <Benefits className="mt-5 mb-5" features={benefitItems} />
             <div>{getJoinString()}</div>
         </div>
@@ -183,10 +258,29 @@ export const getMailConfiguration = ({
     return {
         logo,
         audience,
-        title,
+        audiences: [
+            {
+                value: Audience.B2C,
+                pathname: SSO_PATHS.MAIL_SIGNUP,
+                title: c('mail_signup_2024: title').t`For individuals`,
+                defaultPlan: PLANS.BUNDLE,
+            },
+            {
+                value: Audience.B2B,
+                pathname: SSO_PATHS.MAIL_SIGNUP_B2B,
+                title: c('mail_signup_2024: title').t`For businesses`,
+                defaultPlan: PLANS.BUNDLE_PRO_2024,
+            },
+        ],
+        title: {
+            [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
+            [SignupMode.Onboarding]: onboardingTitle,
+            [SignupMode.Invite]: inviteTitle,
+            [SignupMode.MailReferral]: title,
+        }[mode],
         features,
         benefits,
-        planCards: { [Audience.B2C]: planCards, [Audience.B2B]: [] },
+        planCards,
         signupTypes: [SignupType.Username],
         onboarding: {
             user: false,
@@ -194,7 +288,12 @@ export const getMailConfiguration = ({
         },
         generateMnemonic: false,
         defaults: {
-            plan: PLANS.MAIL,
+            plan: (() => {
+                if (audience === Audience.B2B) {
+                    return PLANS.BUNDLE_PRO_2024;
+                }
+                return PLANS.BUNDLE;
+            })(),
             cycle: CYCLE.YEARLY,
         },
         product: APPS.PROTONMAIL,
@@ -207,6 +306,11 @@ export const getMailConfiguration = ({
             </>
         ),
         CustomStep,
-        cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
+        cycles: (() => {
+            if (audience === Audience.B2B) {
+                return [CYCLE.MONTHLY, CYCLE.YEARLY];
+            }
+            return [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS];
+        })(),
     };
 };

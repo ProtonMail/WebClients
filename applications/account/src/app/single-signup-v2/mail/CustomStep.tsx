@@ -1,25 +1,46 @@
 import { useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useErrorHandler, useMyCountry } from '@proton/components/hooks';
+import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getLocalPart } from '@proton/shared/lib/keys';
+import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import CongratulationsStep from '../../signup/CongratulationsStep';
 import ExploreStep from '../../signup/ExploreStep';
 import RecoveryStep from '../../signup/RecoveryStep';
 import { SignupCacheResult, SignupSteps, SignupType } from '../../signup/interfaces';
-import { handleDisplayName, handleDone, handleSaveRecovery } from '../../signup/signupActions';
+import { handleDisplayName, handleDone, handleSaveRecovery, handleSetupOrg } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
+import Step2 from '../Step2';
 import { SignupCustomStepProps } from '../interface';
+import OrgSetupStep from '../pass/OrgSetupStep';
 
 enum Step {
     Congratulations,
     SaveRecovery,
+    OrgSetup,
     Explore,
+    RedirectAdmin,
 }
 
-const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
+const CustomStep = ({
+    model,
+    onSetup,
+    logo,
+    productAppName,
+    measure,
+    product,
+    signupParameters,
+}: SignupCustomStepProps) => {
     const [step, setStep] = useState(Step.Congratulations);
     const createFlow = useFlowRef();
 
@@ -36,6 +57,7 @@ const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
 
     const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
     const planName = plan?.Title;
+    const isB2BAudienceFromPlan = plan && getIsB2BAudienceFromPlan(plan.Name);
 
     return (
         <Layout logo={logo} hasDecoration={false}>
@@ -94,10 +116,14 @@ const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
 
                             if (validateFlow()) {
                                 cacheRef.current = signupActionResponse.cache;
-                                if (signupActionResponse.to === SignupSteps.Done) {
-                                    await onSetup({ type: 'signup', payload: signupActionResponse });
+                                if (isB2BAudienceFromPlan) {
+                                    setStep(Step.OrgSetup);
                                 } else {
-                                    setStep(Step.Explore);
+                                    if (signupActionResponse.to === SignupSteps.Done) {
+                                        await onSetup({ type: 'signup', payload: signupActionResponse });
+                                    } else {
+                                        setStep(Step.Explore);
+                                    }
                                 }
                             }
                         } catch (error) {
@@ -105,6 +131,74 @@ const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
                         } finally {
                             createFlow.reset();
                         }
+                    }}
+                />
+            )}
+            {step === Step.OrgSetup && (
+                <OrgSetupStep
+                    defaultOrgName={signupParameters.orgName}
+                    onSubmit={async ({ orgName }) => {
+                        const validateFlow = createFlow();
+                        try {
+                            if (!cache || cache.type !== 'signup' || !cache.setupData?.api) {
+                                throw new Error('Missing cache');
+                            }
+                            const api = cache.setupData.api;
+                            const user = cache.setupData.user;
+                            const password = cache.accountData.password;
+                            const keyPassword = cache.setupData?.keyPassword || '';
+
+                            await handleSetupOrg({ api, user, password, keyPassword, orgName });
+
+                            if (validateFlow()) {
+                                setStep(Step.RedirectAdmin);
+                            }
+                        } catch (error) {
+                            handleError(error);
+                        } finally {
+                            createFlow.reset();
+                        }
+                    }}
+                />
+            )}
+            {step === Step.RedirectAdmin && (
+                <Step2
+                    steps={[c('pass_signup_2023: Info').t`Setting up your organization`]}
+                    img={<img src={onboardingFamilyPlan} alt="" />}
+                    product={productAppName}
+                    logo={logo}
+                    onSetup={async () => {
+                        const { localID, pathname } = (() => {
+                            if (model.cache?.type === 'user') {
+                                return {
+                                    pathname: '/multi-user-support',
+                                    localID: model.cache.session.localID,
+                                };
+                            } else if (model.cache?.type === 'signup') {
+                                return {
+                                    pathname: '/users-addresses',
+                                    localID: model.cache.setupData?.authResponse.LocalID,
+                                };
+                            }
+                            throw new Error('Unknown cache');
+                        })();
+
+                        await measure({
+                            event: TelemetryAccountSignupEvents.onboardFinish,
+                            dimensions: {},
+                        });
+
+                        await wait(1_500);
+
+                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE].includes(
+                            product as any
+                        )
+                            ? product
+                            : APPS.PROTONMAIL;
+
+                        document.location.assign(
+                            getAppHref(`/${getSlugFromApp(b2bSettingsApp)}${pathname}`, APPS.PROTONACCOUNT, localID)
+                        );
                     }}
                 />
             )}
@@ -121,6 +215,11 @@ const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
                             const signupActionResponse = handleDone({
                                 cache,
                                 appIntent: { app, ref: 'product-switch' },
+                            });
+
+                            await measure({
+                                event: TelemetryAccountSignupEvents.onboardFinish,
+                                dimensions: {},
                             });
 
                             if (validateFlow()) {
