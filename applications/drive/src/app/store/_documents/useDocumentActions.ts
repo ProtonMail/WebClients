@@ -59,10 +59,19 @@ export const useDocumentActions = () => {
         });
     };
 
+    const openDocumentHistory = ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+        openDocumentWindow({
+            mode: 'history',
+            volumeId: findVolume(shareId),
+            linkId,
+        });
+    };
+
     return {
         openDocument,
         createDocument,
         convertDocument,
         downloadDocument,
+        openDocumentHistory,
     };
 };
