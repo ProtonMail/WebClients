@@ -3,12 +3,13 @@ import { ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useApi, useEventManager } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics/index';
-import { addDomain } from '@proton/shared/lib/api/domains';
+import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain } from '@proton/shared/lib/interfaces';
+import { Domain, VERIFY_STATE } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import {
     Form,
@@ -21,6 +22,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../../components';
+import { useApi, useEventManager } from '../../../hooks';
 import TXTSection from './TXTSection';
 
 enum STEP {
@@ -52,6 +54,8 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
+    const [loadingVerification, withLoadingVerification] = useLoading();
+
     const { validator, onFormSubmit } = useFormErrors();
 
     const {
@@ -117,13 +121,29 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
         }
 
         if (step === STEP.TXT_RECORD && domain) {
+            const handleVerification = async () => {
+                if (domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
+                    onContinue();
+                    return;
+                }
+                const silentApi = getSilentApi(api);
+                const result = await silentApi<{ Domain: Domain }>(getDomain(domain.ID)).catch(noop);
+                if (result?.Domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
+                    call();
+                }
+                onContinue();
+            };
             return {
                 title: c('Info').t`Verify domain`,
                 content: <TXTSection domain={domain} />,
                 footer: (
                     <>
                         <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                        <Button onClick={onContinue} color="norm">
+                        <Button
+                            loading={loadingVerification}
+                            onClick={() => withLoadingVerification(handleVerification()).catch(noop)}
+                            color="norm"
+                        >
                             {c('Action').t`Continue`}
                         </Button>
                     </>

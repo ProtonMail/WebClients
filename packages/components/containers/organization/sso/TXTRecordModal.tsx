@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Domain } from '@proton/shared/lib/interfaces';
+import useLoading from '@proton/hooks/useLoading';
+import { getDomain } from '@proton/shared/lib/api/domains';
+import { Domain, VERIFY_STATE } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import {
     ModalTwo as Modal,
@@ -10,6 +13,8 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
 } from '../../../components';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
+import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';
 
 interface Props extends ModalProps {
@@ -17,6 +22,23 @@ interface Props extends ModalProps {
 }
 
 const TXTRecordModal = ({ domain, ...rest }: Props) => {
+    const onContinue = rest.onClose;
+    const { call } = useEventManager();
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
+    const handleVerification = async () => {
+        if (domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
+            return onContinue?.();
+        }
+        const { Domain } = await api<{ Domain: Domain }>(getDomain(domain.ID));
+        const error = verifyDomain(Domain);
+        if (error) {
+            return createNotification({ text: error, type: 'error' });
+        }
+        await call();
+        onContinue?.();
+    };
     return (
         <Modal size="large" {...rest}>
             <ModalHeader title={c('Info').t`Verify domain`} />
@@ -24,7 +46,13 @@ const TXTRecordModal = ({ domain, ...rest }: Props) => {
                 <TXTSection domain={domain} includeTimeInformation />
             </ModalContent>
             <ModalFooter className="justify-end">
-                <Button color="norm" onClick={rest.onClose}>{c('Action').t`Done`}</Button>
+                <Button
+                    color="norm"
+                    loading={loading}
+                    onClick={() => {
+                        withLoading(handleVerification()).catch(noop);
+                    }}
+                >{c('Action').t`Done`}</Button>
             </ModalFooter>
         </Modal>
     );
