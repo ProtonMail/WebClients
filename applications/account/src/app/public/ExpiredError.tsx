@@ -21,7 +21,7 @@ const ReportLink = () => {
 };
 
 interface Props {
-    type: 'report' | 'email' | 'unsubscribe' | 'forwarding';
+    type: 'report' | 'email' | 'unsubscribe' | 'forwarding' | 'magic-link' | 'magic-link-used';
 }
 
 const getTexts = (type: Props['type']) => {
@@ -49,6 +49,19 @@ const getTexts = (type: Props['type']) => {
         return {
             title: c('Info').t`Link expired`,
             description: c('Info').t`We just sent you a new link.`,
+        };
+    }
+    if (type === 'magic-link') {
+        return {
+            title: c('Info').t`Invitation link expired`,
+            description: c('Info')
+                .t`This invitation link has expired. Please contact your administrator to request access.`,
+        };
+    }
+    if (type === 'magic-link-used') {
+        return {
+            title: c('Info').t`Invitation link used`,
+            description: c('Info').t`This invitation link already used. Please sign in directly instead.`,
         };
     }
     return {

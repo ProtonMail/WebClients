@@ -6,16 +6,18 @@ import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import { useCustomDomains, useMembers } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
+import useFlag from '../../unleash/useFlag';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import { CsvConfig, downloadSampleCSV } from './csv';
 import { UserTemplate } from './types';
 
-const csvConfig: CsvConfig = {
+const defaultCsvConfig: Omit<CsvConfig, 'mode'> = {
     multipleAddresses: true,
     includeStorage: true,
     includeVpnAccess: true,
@@ -27,6 +29,13 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [members] = useMembers();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
+    const isMagicLinkEnabled = useFlag('MagicLink');
+    const mode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
+
+    const csvConfig = {
+        ...defaultCsvConfig,
+        mode,
+    };
 
     const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
@@ -43,6 +52,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
         <>
             {renderCreateUserAccountsModal && usersToImport && (
                 <CreateUserAccountsModal
+                    mode={mode}
                     members={members}
                     usersToImport={usersToImport}
                     app={app}

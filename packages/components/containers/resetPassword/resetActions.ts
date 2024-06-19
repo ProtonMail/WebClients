@@ -19,6 +19,7 @@ import {
     UserSettings,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
+import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
@@ -38,7 +39,6 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { createPreAuthKTVerifier } from '../keyTransparency';
 import {
     AccountType,
     RecoveryMethod,

@@ -1,7 +1,6 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
-import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
 import { V5PaymentToken, isTokenPayment, isWrappedPaymentsVersion } from '@proton/components/payments/core';
@@ -38,6 +37,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,

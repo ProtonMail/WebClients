@@ -22,6 +22,7 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
+    MagicLink = 'MagicLink',
     PersistedState = 'PersistedState',
     AIAssistantToggleKillSwitch = 'AIAssistantToggleKillSwitch',
     MailTrialOffer = 'MailTrialOffer',

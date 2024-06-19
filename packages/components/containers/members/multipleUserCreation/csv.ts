@@ -2,6 +2,7 @@ import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
 
 import { GIGA, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
@@ -14,6 +15,7 @@ export interface CsvConfig {
     includeStorage?: boolean;
     includeVpnAccess?: boolean;
     includePrivateSubUser?: boolean;
+    mode: CreateMemberMode;
 }
 
 const parseCsv = async <T>(file: File, config: Omit<ParseLocalConfig<T>, 'complete' | 'error'> = {}) =>
@@ -30,20 +32,30 @@ const toCsv = <T>(data: T[]) => Papa.unparse(data);
 const convertCSVUser = (
     csvUser: ImportedCSVUser,
     rowNumber: number,
-    { multipleAddresses, includeStorage, includeVpnAccess, includePrivateSubUser }: CsvConfig
+    { multipleAddresses, includeStorage, includeVpnAccess, includePrivateSubUser, mode }: CsvConfig
 ) => {
-    const { Name, EmailAddresses, Password, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
+    const {
+        Name,
+        EmailAddresses,
+        InvitationEmail,
+        Password,
+        TotalStorage,
+        VPNAccess = 0,
+        PrivateSubUser = 0,
+    } = csvUser;
 
     if (!EmailAddresses || typeof EmailAddresses !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.EMAIL_REQUIRED);
     }
 
-    if (!Password || typeof Password !== 'string') {
-        throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
-    }
+    if (mode === CreateMemberMode.Password) {
+        if (!Password || typeof Password !== 'string') {
+            throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
+        }
 
-    if (Password.length < MIN_PASSWORD_LENGTH) {
-        throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH);
+        if (Password.length < MIN_PASSWORD_LENGTH) {
+            throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH);
+        }
     }
 
     const emailAddresses = (() => {
@@ -52,8 +64,21 @@ const convertCSVUser = (
         return (multipleAddresses ? splitAddresses : [splitAddresses[0]]).map((item) => item.trim());
     })();
 
+    const invitationEmail = (() => {
+        if (multipleAddresses) {
+            return InvitationEmail;
+        }
+        return emailAddresses[0];
+    })();
+
     if (!multipleAddresses && emailAddresses.length > 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
+    }
+
+    if (mode === CreateMemberMode.Invitation) {
+        if (!invitationEmail || typeof invitationEmail !== 'string') {
+            throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVITATION_EMAIL_REQUIRED);
+        }
     }
 
     const displayName = (() => {
@@ -99,6 +124,7 @@ const convertCSVUser = (
     const user: UserTemplate = {
         id: `${rowNumber}`,
         emailAddresses,
+        invitationEmail,
         password: Password,
         displayName,
         totalStorage,
@@ -137,7 +163,7 @@ const convertCSVUsers = (csvUsers: ImportedCSVUser[], config: CsvConfig) => {
     };
 };
 
-export const parseMultiUserCsv = async (files: File[], config: CsvConfig = {}) => {
+export const parseMultiUserCsv = async (files: File[], config: CsvConfig) => {
     const { multipleAddresses } = config;
 
     if (files.length === 0) {
@@ -204,8 +230,25 @@ export const parseMultiUserCsv = async (files: File[], config: CsvConfig = {}) =
         });
     }
 
-    if (!meta.fields?.includes('Password')) {
-        throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD, fieldName: 'Password' });
+    if (config.mode === CreateMemberMode.Password) {
+        if (!meta.fields?.includes('Password')) {
+            throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD, fieldName: 'Password' });
+        }
+    }
+
+    if (config.mode === CreateMemberMode.Invitation) {
+        if (config.multipleAddresses) {
+            if (!meta.fields?.includes('InvitationEmail')) {
+                throw new CsvFormatError({
+                    type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD,
+                    fieldName: 'InvitationEmail',
+                });
+            }
+        } else {
+            if (!meta.fields?.includes('EmailAddresses')) {
+                throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD, fieldName: 'Email' });
+            }
+        }
     }
 
     if (parseCsvErrors.length) {
@@ -223,6 +266,7 @@ export const parseMultiUserCsv = async (files: File[], config: CsvConfig = {}) =
 const defaultSampleCSV: SampleCsvUser[] = [
     {
         Name: 'Alice',
+        InvitationEmail: 'alice@otherdomain.com',
         EmailAddresses: 'alice@mydomain.com',
         Password: 'alice_example_password',
         TotalStorage: 1,
@@ -231,6 +275,7 @@ const defaultSampleCSV: SampleCsvUser[] = [
     },
     {
         Name: 'Bob',
+        InvitationEmail: 'bob@otherdomain.com',
         EmailAddresses: 'bob@mydomain.com',
         Password: 'bob_example_password',
         TotalStorage: 1,
@@ -239,6 +284,7 @@ const defaultSampleCSV: SampleCsvUser[] = [
     },
     {
         Name: 'Charlie',
+        InvitationEmail: 'charlie@otherdomain.com',
         EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
         Password: 'charlie_example_password',
         TotalStorage: 1,
@@ -249,17 +295,33 @@ const defaultSampleCSV: SampleCsvUser[] = [
 
 export function getSampleCSV(
     userArray: SampleCsvUser[] = defaultSampleCSV,
-    { multipleAddresses, includeStorage, includeVpnAccess, includePrivateSubUser }: CsvConfig = {}
+    { multipleAddresses, includeStorage, includeVpnAccess, includePrivateSubUser, mode }: CsvConfig
 ) {
     const commentLine = {
         Name: '# Display name for the user (optional) must be unique',
-        ...(multipleAddresses
+        ...(mode === CreateMemberMode.Password
             ? {
-                  EmailAddresses:
-                      '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
+                  ...(multipleAddresses
+                      ? {
+                            EmailAddresses:
+                                '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
+                        }
+                      : {
+                            EmailAddress: '# Enter the email address you want to set up for this user',
+                        }),
+                  Password: '# Add a password with a minimum of 8 characters for their account',
               }
-            : { EmailAddress: '# Enter the email address you want to set up for this user' }),
-        Password: '# Add a password with a minimum of 8 characters for their account',
+            : {
+                  ...(multipleAddresses
+                      ? {
+                            InvitationEmail: '# An invitation will be sent to this email address',
+                            EmailAddresses:
+                                '# Enter the Proton email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
+                        }
+                      : {
+                            EmailAddress: '# An invitation will be sent to this email address',
+                        }),
+              }),
         ...(includeStorage ? { TotalStorage: '# Amount of storage the user will have in GiB' } : {}),
         ...(includeVpnAccess
             ? {
@@ -276,13 +338,32 @@ export function getSampleCSV(
     return toCsv([
         commentLine,
         ...userArray.map((user) => {
-            const { EmailAddresses, TotalStorage, VPNAccess, PrivateSubUser, ...rest } = user;
+            const { Password, EmailAddresses, InvitationEmail, TotalStorage, VPNAccess, PrivateSubUser, ...rest } =
+                user;
             return {
-                ...(multipleAddresses
-                    ? { EmailAddresses }
+                ...(mode === CreateMemberMode.Password
+                    ? {
+                          ...(multipleAddresses
+                              ? {
+                                    EmailAddresses,
+                                    Password,
+                                }
+                              : {
+                                    // Only use the first email from the sample data
+                                    EmailAddress: EmailAddresses.split(',')[0],
+                                    Password,
+                                }),
+                      }
                     : {
-                          // Only use the first email from the sample data
-                          EmailAddress: EmailAddresses.split(',')[0],
+                          ...(multipleAddresses
+                              ? {
+                                    EmailAddresses,
+                                    InvitationEmail,
+                                }
+                              : {
+                                    // Only use the first email from the sample data
+                                    EmailAddress: EmailAddresses.split(',')[0],
+                                }),
                       }),
                 ...(includeStorage ? { TotalStorage } : {}),
                 ...(includeVpnAccess ? { VPNAccess } : {}),
@@ -293,7 +374,7 @@ export function getSampleCSV(
     ]);
 }
 
-export const downloadSampleCSV = (config: CsvConfig = {}) => {
+export const downloadSampleCSV = (config: CsvConfig) => {
     const csv = getSampleCSV(undefined, config);
     const blob = new Blob([csv], { type: 'text/csv' });
 

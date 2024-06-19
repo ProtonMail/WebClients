@@ -9,7 +9,6 @@ import {
     getKeyRotationPayload,
 } from '@proton/account';
 import { Button } from '@proton/atoms';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -43,6 +42,7 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
 import AdministratorList from './AdministratorList';
 

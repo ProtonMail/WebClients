@@ -25,6 +25,7 @@ import {
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
+import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     getDecryptedUserKeysHelper,
     getRequiresPasswordSetup,
@@ -44,7 +45,6 @@ import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
-import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '../keyTransparency';
 import { AuthActionResponse, AuthCacheResult, AuthSession, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 

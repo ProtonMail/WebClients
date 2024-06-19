@@ -2,6 +2,7 @@ import { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     checkMemberAddressAvailability,
     createMemberAddress,
@@ -13,18 +14,30 @@ import {
     updateRole,
     updateVPN,
 } from '@proton/shared/lib/api/members';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    DEFAULT_KEYGEN_TYPE,
+    HTTP_STATUS_CODE,
+    KEYGEN_CONFIGS,
+    MEMBER_ROLE,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type {
+import {
     Address,
     Api,
+    CreateMemberMode,
     Domain,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
-import { getIsPasswordless, setupMemberKeys } from '@proton/shared/lib/keys';
+import {
+    getInvitationData,
+    getIsPasswordless,
+    getSignedInvitationData,
+    setupMemberKeys,
+} from '@proton/shared/lib/keys';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -34,12 +47,10 @@ import { organizationThunk } from '../organization';
 import { OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { MemberKeyPayload, getMemberKeyPayload, getPrivateAdminError, setAdminRoles } from '../organizationKey/actions';
 import { userKeysThunk } from '../userKeys';
-import { membersThunk } from './index';
+import InvalidAddressesError from './errors/InvalidAddressesError';
+import UnavailableAddressesError from './errors/UnavailableAddressesError';
+import { MemberCreationValidationError, membersThunk } from './index';
 import validateAddUser from './validateAddUser';
-
-class ValidationError extends Error {
-    public trace = false;
-}
 
 export const setAdminRole = ({
     member,
@@ -68,7 +79,9 @@ export const setAdminRole = ({
 
 interface CreateMemberPayload {
     name: string;
-    address: { Local: string; Domain: string };
+    addresses: { Local: string; Domain: string }[];
+    invitationEmail: string;
+    mode: CreateMemberMode;
     private: boolean;
     storage: number;
     vpn?: boolean;
@@ -163,45 +176,149 @@ export const createMember = ({
             ...validationOptions,
         });
         if (error) {
-            throw new ValidationError(error);
+            throw new MemberCreationValidationError(error);
         }
-        const normalizedAddress = model.address;
-        if (!validateEmailAddress(`${normalizedAddress.Local}@${normalizedAddress.Domain}`)) {
-            throw new ValidationError(c('Error').t`Email address is invalid`);
+
+        const invalidAddresses: string[] = [];
+        const invalidInvitationAddresses: string[] = [];
+        const validAddresses: string[] = [];
+
+        const addressParts = model.addresses.map((parts) => {
+            const emailAddress = `${parts.Local}@${parts.Domain}`;
+            const isValid = validateEmailAddress(emailAddress);
+            if (!isValid) {
+                invalidAddresses.push(emailAddress);
+            } else {
+                validAddresses.push(emailAddress);
+            }
+            return {
+                address: emailAddress,
+                ...parts,
+            };
+        });
+
+        if (model.mode === CreateMemberMode.Invitation) {
+            if (!validateEmailAddress(model.invitationEmail)) {
+                invalidInvitationAddresses.push(model.invitationEmail);
+            }
+        }
+
+        if (invalidAddresses.length || invalidInvitationAddresses.length) {
+            /**
+             * Throw if any of the addresses are not valid
+             */
+            throw new InvalidAddressesError(invalidAddresses, invalidInvitationAddresses, validAddresses);
         }
 
         if (!model.private) {
             if (!organizationKey?.privateKey) {
-                throw new ValidationError(c('Error').t`Organization key must be activated to create non-private users`);
+                throw new MemberCreationValidationError(
+                    c('Error').t`Organization key must be activated to create non-private users`
+                );
             }
         }
 
         if (model.private) {
             if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
                 if (getIsPasswordless(organizationKey?.Key)) {
-                    throw new ValidationError(getPrivateAdminError());
+                    throw new MemberCreationValidationError(getPrivateAdminError());
                 }
             }
         }
 
-        await api(checkMemberAddressAvailability(model.address));
+        const unavailableAddresses: { message: string; address: string }[] = [];
+        const availableAddresses: string[] = [];
 
-        const { Member } = await srpVerify<{ Member: Member }>({
+        const checkAddressAvailability = async ({ Local, Domain }: { Local: string; Domain: string }) => {
+            const address = `${Local}@${Domain}`;
+            try {
+                await api(
+                    checkMemberAddressAvailability({
+                        Local,
+                        Domain,
+                    })
+                );
+                availableAddresses.push(address);
+            } catch (error: any) {
+                const { status, message } = getApiError(error);
+                if (status === HTTP_STATUS_CODE.CONFLICT) {
+                    // Conflict error from address being not available
+                    unavailableAddresses.push({ message, address });
+                    return;
+                }
+
+                throw error;
+            }
+        };
+
+        const [firstAddressParts, ...restAddressParts] = addressParts;
+
+        /**
+         * Will prompt password prompt only once
+         */
+        await checkAddressAvailability(firstAddressParts);
+
+        /**
+         * No more password prompts will be needed
+         */
+        await Promise.all(restAddressParts.map(checkAddressAvailability));
+
+        if (unavailableAddresses.length) {
+            /**
+             * Throw if any of the addresses are not available
+             */
+            throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
+        }
+
+        const payload = {
+            Name: model.name || firstAddressParts.Local,
+            Private: +model.private,
+            MaxSpace: +model.storage,
+            MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
+            MaxAI: model.numAI ? 1 : 0,
+        };
+
+        if (model.mode === CreateMemberMode.Invitation) {
+            if (!organizationKey?.privateKey) {
+                throw new MemberCreationValidationError(
+                    c('Error').t`Organization key must be activated to create invited users`
+                );
+            }
+            const invitationData = await getInvitationData({
+                api,
+                address: `${firstAddressParts.Local}@${firstAddressParts.Domain}`,
+            });
+            const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
+            await api(
+                createMemberConfig({
+                    ...payload,
+                    Private: 1,
+                    InvitationEmail: model.invitationEmail,
+                    InvitationData: invitationData,
+                    InvitationSignature: invitationSignature,
+                })
+            ).then(({ Member }) => Member);
+            return;
+        }
+
+        const Member = await srpVerify<{ Member: Member }>({
             api,
             credentials: { password: model.password },
             config: createMemberConfig({
-                Name: model.name || model.address.Local,
-                Private: +model.private,
-                MaxSpace: +model.storage,
-                MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
-                MaxAI: model.numAI ? 1 : 0,
+                ...payload,
             }),
-        });
+        }).then(({ Member }) => Member);
 
-        const { Address: memberAddress } = await api<{ Address: Address }>(
-            createMemberAddress(Member.ID, model.address)
-        );
-        const memberAddresses = [memberAddress];
+        const memberAddresses: Address[] = [];
+        for (const { Local, Domain } of model.addresses) {
+            const { Address } = await api<{ Address: Address }>(
+                createMemberAddress(Member.ID, {
+                    Local,
+                    Domain,
+                })
+            );
+            memberAddresses.push(Address);
+        }
         let memberWithKeys: Member | undefined;
 
         organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
