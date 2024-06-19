@@ -17,10 +17,11 @@ import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
-import { initializeNetLogger, mainLogger } from "./utils/log";
+import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 
 (async function () {
-    // Log initialization
+    initializeLog();
+
     mainLogger.info(
         "App start is mac:",
         isMac,
@@ -105,7 +106,7 @@ import { initializeNetLogger, mainLogger } from "./utils/log";
                 cache: false,
             });
 
-            initializeNetLogger(secureSession);
+            connectNetLogger(secureSession);
 
             app.on("activate", () => {
                 if (isMac) {
