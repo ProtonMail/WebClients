@@ -30,7 +30,7 @@ const ShareLinkButton = ({ shareId, link, showLinkSharingModal, isSharedWithMe, 
             action={handleAction}
             close={close}
         >
-            <NewFeatureTag background="bg-primary" className="ml-2 md:ml-12 shrink-0 px-2 text-sm" />
+            <NewFeatureTag />
         </ContextMenuButton>
     );
 };

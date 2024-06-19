@@ -38,7 +38,7 @@ const NewFeatureTag = ({
     endDate,
     className,
     spotlightProps,
-    background = 'bg-success',
+    background = 'bg-primary',
     isActiveInEnvironment,
 }: NewFeatureTagProps) => {
     const key = `${featureKey}-new-tag`;
@@ -64,7 +64,8 @@ const NewFeatureTag = ({
     }
 
     const content = (
-        <span className={clsx('px-1.5 py-0.5 rounded text-semibold', background, className)}>{c('Info').t`New`}</span>
+        <span className={clsx('shrink-0 px-1.5 py-0.5 rounded text-sm text-semibold', background, className)}>{c('Info')
+            .t`New`}</span>
     );
     if (displaySpotlight) {
         return <Spotlight {...spotlightProps}>{content}</Spotlight>;
