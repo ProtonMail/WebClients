@@ -12,14 +12,30 @@ interface Props {
     onDownload?: () => void;
     browser?: boolean;
     tooLarge?: boolean;
+    isDocument?: boolean;
+    isPublic?: boolean;
 }
 
-const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLarge = false }: Props) => {
+const UnsupportedPreview = ({
+    onDownload,
+    type = 'file',
+    browser = false,
+    tooLarge = false,
+    isDocument = false,
+    isPublic = false,
+}: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     let message = c('Info').t`Preview for this file type is not supported`;
 
-    if (browser) {
+    if (isDocument) {
+        if (isPublic) {
+            message = c('Info')
+                .t`Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.`;
+        } else {
+            message = c('Info').t`Preview of documents is not yet supported. Please open the document to view it.`;
+        }
+    } else if (browser) {
         message = c('Info').t`Preview for this file type is currently not supported on this browser.`;
     } else if (tooLarge) {
         message = c('Info').t`This file is too large to preview`;
