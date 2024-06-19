@@ -35,7 +35,7 @@ import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { getErrorString } from '../../Util/GetErrorString'
 import { NativeVersionHistory } from '../../VersionHistory'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from './DocControllerEvent'
+import { DocControllerEvent, DocControllerEventPayloads } from './DocControllerEvent'
 import metrics from '@proton/metrics'
 import {
   ApplicationEvent,
@@ -48,12 +48,7 @@ import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import {
-  WebsocketAckStatusChangePayload,
-  WebsocketDisconnectedPayload,
-  WebsocketDocumentUpdateMessagePayload,
-  WebsocketEventMessagePayload,
-} from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
@@ -69,7 +64,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   editorInvoker?: ClientRequiresEditorMethods
   private docMeta!: DocumentMetaInterface
   private initialCommit?: DecryptedCommit
-  private lastCommitIdReceivedFromRts?: string
+  lastCommitIdReceivedFromRtsOrApi?: string
   private initialSyncTimer: NodeJS.Timeout | null = null
   private initialConnectionTimer: NodeJS.Timeout | null = null
   isExperiencingErroredSync = false
@@ -89,13 +84,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _squashDocument: SquashDocument,
     private _createInitialCommit: SeedInitialCommit,
     private _loadDocument: LoadDocument,
-    private _loadCommit: LoadCommit,
+    readonly _loadCommit: LoadCommit,
     private _duplicateDocument: DuplicateDocument,
     private _createNewDocument: CreateNewDocument,
-    private _getDocumentMeta: GetDocumentMeta,
+    readonly _getDocumentMeta: GetDocumentMeta,
     private _exportAndDownload: ExportAndDownload,
-    private websocketService: WebsocketServiceInterface,
-    private eventBus: InternalEventBusInterface,
+    readonly websocketService: WebsocketServiceInterface,
+    readonly eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {
     this.username = userService.user.Email || userService.getUserId()
@@ -106,6 +101,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.CommitIdOutOfSync)
   }
 
   public get role(): DocumentRole {
@@ -136,7 +132,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.reloadEditingLockedState()
   }
 
-  handleWebsocketDisconnectedEvent(payload: WebsocketDisconnectedPayload): void {
+  handleWebsocketDisconnectedEvent(
+    payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected],
+  ): void {
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {
       metrics.docs_document_updates_save_error_total.increment({
         type: 'document_too_big',
@@ -156,29 +154,42 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
-      void this.reloadIfCommitIdMismatch()
+      void this.refetchCommitDueToStaleContents()
     }
   }
 
   async handleEvent(event: InternalEventInterface<unknown>): Promise<void> {
     if (event.type === WebsocketConnectionEvent.Disconnected) {
-      this.handleWebsocketDisconnectedEvent(event.payload as WebsocketDisconnectedPayload)
+      this.handleWebsocketDisconnectedEvent(
+        event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected],
+      )
     } else if (event.type === WebsocketConnectionEvent.Connected) {
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
       this.handleWebsocketConnectingEvent()
     } else if (event.type === WebsocketConnectionEvent.DocumentUpdateMessage) {
-      const { message } = event.payload as WebsocketDocumentUpdateMessagePayload
+      const { message } =
+        event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]
       void this.handleDocumentUpdatesMessage(message)
     } else if (event.type === WebsocketConnectionEvent.EventMessage) {
-      const { message } = event.payload as WebsocketEventMessagePayload
+      const { message } = event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EventMessage]
       void this.handleRealtimeServerEvent(message)
     } else if (event.type === WebsocketConnectionEvent.AckStatusChange) {
-      this.handleWebsocketAckStatusChangeEvent(event.payload as WebsocketAckStatusChangePayload)
+      this.handleWebsocketAckStatusChangeEvent(
+        event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange],
+      )
+    } else if (event.type === WebsocketConnectionEvent.CommitIdOutOfSync) {
+      this.handleCommitIdOutOfSyncEvent()
     }
   }
 
-  handleWebsocketAckStatusChangeEvent(event: WebsocketAckStatusChangePayload): void {
+  handleCommitIdOutOfSyncEvent(): void {
+    void this.refetchCommitDueToStaleContents()
+  }
+
+  handleWebsocketAckStatusChangeEvent(
+    event: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange],
+  ): void {
     this.isExperiencingErroredSync = event.ledger.hasErroredMessages()
 
     this.reloadEditingLockedState()
@@ -345,8 +356,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       !this.isExperiencingErroredSync &&
       this.websocketStatus === 'connected'
     ) {
+      this.logger.info('Changing editing locked to false')
       void this.editorInvoker.changeLockedState(false)
     } else {
+      this.logger.info('Changing editing locked to true')
       void this.editorInvoker.changeLockedState(true)
     }
   }
@@ -360,27 +373,62 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   get commitId(): string | undefined {
-    return this.lastCommitIdReceivedFromRts ?? this.initialCommit?.commitId
+    return this.lastCommitIdReceivedFromRtsOrApi ?? this.initialCommit?.commitId
   }
 
-  private async reloadIfCommitIdMismatch() {
-    const currentCommitId = this.commitId
+  /**
+   * If the RTS rejects or drops our connection due to our commit ID not being what it has, we will refetch the document
+   * and its binary from the main API and update our content.
+   */
+  async refetchCommitDueToStaleContents() {
+    if (!this.entitlements) {
+      throw new Error('Attempting to reload document before entitlements are initialized')
+    }
+
+    this.logger.info('Refetching document due to stale commit ID')
 
     const result = await this._getDocumentMeta.execute(this.nodeMeta)
-
     if (result.isFailed()) {
-      console.error('Failed to get document meta', result.getError())
+      this.logger.error('Failed to reload document meta', result.getError())
+      this.eventBus.publish({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
+
       return
     }
 
-    const docMeta = result.getValue()
+    const latestCommitId = result.getValue().latestCommitId()
 
-    const newCommitId = docMeta.commitIds[docMeta.commitIds.length - 1]
+    if (!latestCommitId || latestCommitId === this.commitId) {
+      this.logger.error(
+        !latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current',
+      )
+      this.eventBus.publish({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
 
-    if (currentCommitId !== newCommitId) {
-      this.logger.info('Reloading document due to commit id mismatch')
-      window.location.reload()
+      return
     }
+
+    const decryptResult = await this._loadCommit.execute(this.nodeMeta, latestCommitId, this.entitlements.keys)
+    if (decryptResult.isFailed()) {
+      this.logger.error('Failed to reload or decrypt commit', decryptResult.getError())
+      this.eventBus.publish({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
+
+      return Result.fail(decryptResult.getError())
+    }
+
+    const decryptedCommit = decryptResult.getValue()
+    this.logger.info(`Reownloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+
+    this.setInitialCommit(decryptedCommit)
+
+    void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)
   }
 
   setInitialCommit(decryptedCommit: DecryptedCommit | undefined): void {
@@ -389,6 +437,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (!decryptedCommit) {
       return
     }
+
+    this.lastCommitIdReceivedFromRtsOrApi = decryptedCommit.commitId
 
     this.sendInitialCommitToEditor()
 
@@ -517,7 +567,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const result = await this._squashDocument.execute({
       docMeta: this.docMeta,
-      commitId: this.lastCommitIdReceivedFromRts ?? this.initialCommit.commitId,
+      commitId: this.initialCommit.commitId,
       keys: this.entitlements.keys,
       handleVerificationObjection,
     })
@@ -639,12 +689,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
           const decodedContent = uint8ArrayToString(event.props.content)
           const parsedMessage = JSON.parse(decodedContent)
-          this.lastCommitIdReceivedFromRts = parsedMessage.commitId
+          this.lastCommitIdReceivedFromRtsOrApi = parsedMessage.commitId
           break
         case EventTypeEnum.ClientHasSentACommentMessage: {
           this.eventBus.publish({
             type: DocControllerEvent.RealtimeCommentMessageReceived,
-            payload: <RealtimeCommentMessageReceivedPayload>{ message: event.props.content },
+            payload: <DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]>{
+              message: event.props.content,
+            },
           })
 
           break
@@ -670,8 +722,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   async handleDocumentUpdatesMessage(message: DecryptedMessage) {
-    this.logger.info('Received message with document updates')
-
     if (!this.editorInvoker) {
       this.updatesReceivedWhileEditorInvokerWasNotReady.push(message)
 

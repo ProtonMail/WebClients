@@ -8,7 +8,7 @@ import {
   SquashVerificationObjectionDecision,
   GeneralUserDisplayableErrorOccurredPayload,
   WebsocketConnectionEvent,
-  WebsocketEncryptionErrorPayload,
+  WebsocketConnectionEventPayloads,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
@@ -66,6 +66,16 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   }, [application.eventBus])
 
   useEffect(() => {
+    return application.eventBus.addEventCallback(() => {
+      showGenericAlertModal({
+        title: c('Title').t`Your document cannot be loaded`,
+        translatedMessage: c('Info')
+          .t`Please export a copy of your current changes from the main menu and reload the page.`,
+      })
+    }, DocControllerEvent.UnableToResolveCommitIdConflict)
+  }, [application.eventBus, showGenericAlertModal])
+
+  useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>((payload) => {
       showGenericAlertModal({
         title: payload.translatedErrorTitle || c('Title').t`An error occurred`,
@@ -76,12 +86,15 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   }, [application.eventBus, showGenericAlertModal])
 
   useEffect(() => {
-    return application.eventBus.addEventCallback((payload: WebsocketEncryptionErrorPayload) => {
-      showGenericAlertModal({
-        title: c('Title').t`An error occurred`,
-        translatedMessage: payload.error,
-      })
-    }, WebsocketConnectionEvent.EncryptionError)
+    return application.eventBus.addEventCallback(
+      (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]) => {
+        showGenericAlertModal({
+          title: c('Title').t`An error occurred`,
+          translatedMessage: payload.error,
+        })
+      },
+      WebsocketConnectionEvent.EncryptionError,
+    )
   }, [application.eventBus, showGenericAlertModal])
 
   const showFailedSignatureModal = useCallback(() => {

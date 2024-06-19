@@ -14,7 +14,6 @@ import {
 } from '@proton/docs-shared'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
-import { Result } from '../../Domain/Result/Result'
 import metrics from '@proton/metrics'
 import {
   ClientMessage,
@@ -28,6 +27,7 @@ import {
   DocumentUpdateVersion,
   ServerMessageWithEvents,
   ServerMessageWithDocumentUpdates,
+  CreateClientMessageWithDocumentUpdates,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -38,17 +38,10 @@ import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { GenerateUUID } from '../../Util/GenerateUuid'
 import { AckLedger } from './AckLedger/AckLedger'
 import { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
-import {
-  BaseWebsocketPayload,
-  WebsocketAckStatusChangePayload,
-  WebsocketConnectedPayload,
-  WebsocketDisconnectedPayload,
-  WebsocketDocumentUpdateMessagePayload,
-  WebsocketEncryptionErrorPayload,
-  WebsocketEventMessagePayload,
-  WebsocketFailedToConnectPayload,
-} from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import { ApiResult } from '../../Domain/Result/ApiResult'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 type LinkID = string
 
@@ -72,7 +65,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   handleLedgerStatusChangeCallback(): void {
-    this.eventBus.publish<WebsocketAckStatusChangePayload>({
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]>({
       type: WebsocketConnectionEvent.AckStatusChange,
       payload: {
         ledger: this.ledger,
@@ -121,7 +114,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     const callbacks: WebsocketCallbacks = {
       onConnecting: () => {
         if (!options.isStressTestor) {
-          this.eventBus.publish<BaseWebsocketPayload>({
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connecting]>({
             type: WebsocketConnectionEvent.Connecting,
             payload: {
               document: document,
@@ -132,7 +125,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       onFailToConnect: (reason) => {
         if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketFailedToConnectPayload>({
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]>({
             type: WebsocketConnectionEvent.FailedToConnect,
             payload: {
               document: document,
@@ -144,7 +137,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       onClose: (reason) => {
         if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketDisconnectedPayload>({
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]>({
             type: WebsocketConnectionEvent.Disconnected,
             payload: {
               document: document,
@@ -156,12 +149,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       onOpen: () => {
         if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketConnectedPayload>({
-            type: WebsocketConnectionEvent.Connected,
-            payload: {
-              document: document,
-            },
-          })
+          this.onDocumentConnectionOpened(document)
         }
       },
 
@@ -172,7 +160,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
 
       onEncryptionError: (error) => {
-        this.eventBus.publish<WebsocketEncryptionErrorPayload>({
+        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]>({
           type: WebsocketConnectionEvent.EncryptionError,
           payload: {
             document,
@@ -181,15 +169,29 @@ export class WebsocketService implements WebsocketServiceInterface {
         })
       },
 
+      onFailToGetToken: (errorCode) => {
+        if (errorCode === DocsApiErrorCode.CommitIdOutOfSync) {
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.CommitIdOutOfSync]>({
+            type: WebsocketConnectionEvent.CommitIdOutOfSync,
+            payload: {
+              document,
+            },
+          })
+        } else {
+          this.logger.error(`Failed to get token: ${errorCode}`)
+        }
+      },
+
       getUrlAndToken: async () => {
         if (options.isStressTestor && this.stressTestorCache.lastToken) {
-          return Result.ok(this.stressTestorCache.lastToken)
+          return ApiResult.ok(this.stressTestorCache.lastToken)
         }
 
         const result = await this._createRealtimeValetToken.execute(document, options.commitId())
         if (!result.isFailed()) {
           this.stressTestorCache.lastToken = result.getValue()
         }
+
         return result
       },
 
@@ -215,8 +217,56 @@ export class WebsocketService implements WebsocketServiceInterface {
     return connection
   }
 
+  onDocumentConnectionOpened(document: NodeMeta): void {
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connected]>({
+      type: WebsocketConnectionEvent.Connected,
+      payload: {
+        document: document,
+      },
+    })
+
+    this.retryAllFailedDocumentUpdates(document)
+  }
+
+  retryAllFailedDocumentUpdates(document: NodeMeta): void {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    const failedUpdates = this.ledger.getUnacknowledgedUpdates()
+    if (failedUpdates.length === 0) {
+      return
+    }
+
+    this.logger.info(`Retrying ${failedUpdates.length} failed document updates ${failedUpdates.map((u) => u.uuid)}`)
+
+    const message = CreateClientMessageWithDocumentUpdates({
+      updates: failedUpdates,
+    })
+
+    const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
+
+    const binary = messageWrapper.serializeBinary()
+
+    this.logger.info(`Broadcasting failed document update of size: ${binary.byteLength} bytes`)
+
+    void record.connection.broadcastMessage(binary, BroadcastSource.RetryingMessagesAfterReconnect)
+  }
+
   getConnectionRecord(linkId: LinkID): DocumentConnectionRecord | undefined {
     return this.connections[linkId]
+  }
+
+  async reconnectToDocumentWithoutDelay(document: NodeMeta): Promise<void> {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    this.logger.info(`Reconnecting to document without delay`)
+
+    await record.connection.connect()
   }
 
   async handleDocumentUpdateBufferFlush(document: NodeMeta, mergedUpdate: Uint8Array): Promise<void> {
@@ -241,16 +291,18 @@ export class WebsocketService implements WebsocketServiceInterface {
       BroadcastSource.DocumentBufferFlush,
     )
 
+    const uuid = GenerateUUID()
+
     const message = CreateDocumentUpdateMessage({
       content: encryptedContent,
-      uuid: GenerateUUID(),
+      uuid: uuid,
       ...metadata,
     })
 
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
     const binary = messageWrapper.serializeBinary()
 
-    this.logger.info(`Broadcasting document update of size: ${binary.byteLength} bytes`)
+    this.logger.info(`Broadcasting document update ${uuid} of size: ${binary.byteLength} bytes`)
 
     this.ledger.messagePosted(message)
 
@@ -328,7 +380,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       const message = c('Error')
         .t`A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.`
 
-      this.eventBus.publish<WebsocketEncryptionErrorPayload>({
+      this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]>({
         type: WebsocketConnectionEvent.EncryptionError,
         payload: {
           document,
@@ -384,6 +436,10 @@ export class WebsocketService implements WebsocketServiceInterface {
       return
     }
 
+    this.logger.info(
+      `Received ${message.updates.documentUpdates.length} document updates with ids ${message.updates.documentUpdates.map((u) => u.uuid)}`,
+    )
+
     const { keys, buffer, document } = record
 
     for (const update of message.updates.documentUpdates) {
@@ -405,7 +461,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       const decrypted = decryptionResult.getValue()
 
-      this.eventBus.publish<WebsocketDocumentUpdateMessagePayload>({
+      this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]>({
         type: WebsocketConnectionEvent.DocumentUpdateMessage,
         payload: {
           document,
@@ -491,7 +547,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       }
     }
 
-    this.eventBus.publish<WebsocketEventMessagePayload>({
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EventMessage]>({
       type: WebsocketConnectionEvent.EventMessage,
       payload: {
         document,

@@ -36,7 +36,7 @@ export class CommentsApi {
       const response = await this.protonApi(getAllCommentThreadsInDocument(volumeId, linkId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -59,7 +59,7 @@ export class CommentsApi {
       )
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -72,7 +72,7 @@ export class CommentsApi {
       const response = await this.protonApi(getCommentThreadInDocument(volumeId, linkId, threadId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -85,7 +85,7 @@ export class CommentsApi {
       const response = await this.protonApi(deleteThreadInDocument(volumeId, linkId, threadId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -109,7 +109,7 @@ export class CommentsApi {
       )
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -132,7 +132,7 @@ export class CommentsApi {
       )
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -150,7 +150,7 @@ export class CommentsApi {
       const response = await this.protonApi(deleteCommentInThreadInDocument(volumeId, linkId, threadId, commentId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -163,7 +163,7 @@ export class CommentsApi {
       const response = await this.protonApi(resolveThreadInDocument(volumeId, linkId, threadId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 
@@ -176,7 +176,7 @@ export class CommentsApi {
       const response = await this.protonApi(unresolveThreadInDocument(volumeId, linkId, threadId))
       return Result.ok(response)
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Unknown error')
+      return Result.fail(getErrorString(error) || 'Unknown error')
     }
   }
 }

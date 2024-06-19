@@ -1,4 +1,4 @@
-import { ClientMessageWithDocumentUpdates, ServerMessageWithMessageAcks } from '@proton/docs-proto'
+import { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
 
 export interface AckLedgerInterface {
   messagePosted(message: ClientMessageWithDocumentUpdates): void
@@ -6,4 +6,5 @@ export interface AckLedgerInterface {
   destroy(): void
   hasConcerningMessages(): boolean
   hasErroredMessages(): boolean
+  getUnacknowledgedUpdates(): DocumentUpdate[]
 }

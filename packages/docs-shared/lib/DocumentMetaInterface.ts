@@ -8,4 +8,5 @@ export interface DocumentMetaInterface {
 
   copyWithNewValues(newValues: Partial<DocumentMetaInterface>): DocumentMetaInterface
   get uniqueIdentifier(): string
+  latestCommitId(): string | undefined
 }

@@ -23,7 +23,7 @@ import { CreateComment } from '../../UseCase/CreateComment'
 import { LoadThreads } from '../../UseCase/LoadThreads'
 import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
-import { DocControllerEvent, RealtimeCommentMessageReceivedPayload } from '../../Controller/Document/DocControllerEvent'
+import { DocControllerEvent, DocControllerEventPayloads } from '../../Controller/Document/DocControllerEvent'
 import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
 
@@ -101,7 +101,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
       return
     }
 
-    const { message } = event.payload as RealtimeCommentMessageReceivedPayload
+    const { message } = event.payload as DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]
 
     this._handleRealtimeEvent.execute(this.localCommentsState, this.liveComments, message)
   }
