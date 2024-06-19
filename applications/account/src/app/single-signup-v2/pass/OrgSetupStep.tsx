@@ -14,11 +14,12 @@ import Main from '../../public/Main';
 import Text from '../../public/Text';
 
 interface Props {
+    defaultOrgName?: string;
     onSubmit: ({ orgName }: { orgName: string }) => Promise<void>;
 }
 
-const OrgSetupStep = ({ onSubmit }: Props) => {
-    const [orgName, setOrgName] = useState('');
+const OrgSetupStep = ({ defaultOrgName = '', onSubmit }: Props) => {
+    const [orgName, setOrgName] = useState(defaultOrgName);
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
 

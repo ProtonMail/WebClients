@@ -26,8 +26,8 @@ import { VPNServersCountData } from '@proton/shared/lib/interfaces';
 const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNServersCountData }) => {
     const logoSize = 8;
     return (
-        <div className="flex flex-column gap-4">
-            <div className="text-center">
+        <div className="flex flex-column gap-4 w-full">
+            <div className="text-left text-sm">
                 {c('pass_signup_2023: Info').t`Tailored made solutions for larger organizations with custom needs.`}
             </div>
             <ButtonLike
@@ -36,7 +36,7 @@ const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNS
                 color="norm"
                 fullWidth
                 pill
-                href={getStaticURL('/business/contact/pass?int=trial')}
+                href={getStaticURL('/business/contact?pd=pass&int=trial')}
                 target="_blank"
             >
                 {c('pass_signup_2023: Action').t`Request trial`}

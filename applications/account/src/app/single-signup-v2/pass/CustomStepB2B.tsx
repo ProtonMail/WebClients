@@ -30,7 +30,7 @@ enum Step {
     RedirectUser,
 }
 
-const CustomStepB2B = ({ measure, productAppName, logo, model }: SignupCustomStepProps) => {
+const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters }: SignupCustomStepProps) => {
     const mnemonicData = model.cache?.setupData?.mnemonicData;
     const handleError = useErrorHandler();
     const createFlow = useFlowRef();
@@ -123,6 +123,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model }: SignupCustomSte
             )}
             {step === Step.OrgSetup && (
                 <OrgSetupStep
+                    defaultOrgName={signupParameters.orgName}
                     onSubmit={async ({ orgName }) => {
                         const validateFlow = createFlow();
                         try {

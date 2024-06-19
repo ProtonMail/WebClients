@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,10 +24,12 @@ export interface Props {
     onBack?: () => void;
     className?: string;
     footer?: ReactNode;
+    footerWidth?: CSSProperties;
 }
 
 const Layout = ({
     footer,
+    footerWidth,
     logo,
     children,
     hasDecoration,
@@ -65,7 +67,7 @@ const Layout = ({
                 {children}
                 {hasDecoration && (
                     <div className="flex items-center flex-column">
-                        <Box className="w-full">
+                        <Box className={clsx('w-full', footerWidth && 'max-w-custom')} style={footerWidth}>
                             <footer
                                 className="w-full min-h-custom pb-8 flex flex-column justify-space-between gap-4"
                                 style={{ '--min-h-custom': '12rem' }}
