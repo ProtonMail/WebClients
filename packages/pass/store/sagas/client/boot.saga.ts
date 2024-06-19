@@ -2,7 +2,8 @@ import type { Action } from 'redux';
 import { call, put, race, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import {
     bootFailure,
     bootIntent,
@@ -52,6 +53,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             },
             options
         );
+
+        /* if we're booting online and `PassCrypto` has not been hydrated
+         * after state hydration, abort the boot sequence early */
+        if (online && !PassCrypto.ready) throw new PassCryptoError();
 
         yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
         yield put(draftsGarbageCollect());
