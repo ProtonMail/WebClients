@@ -9,7 +9,7 @@ import CreateUserAccountsModal from '@proton/components/containers/members/multi
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
 import { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
 import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import {
     ModalTwo as Modal,
@@ -30,9 +30,10 @@ interface IntroModalProps extends ModalProps {
     onBack: () => void;
     onCSVFileUpload: (usersToImport: UserTemplate[]) => void;
     csvConfig: CsvConfig;
+    mode: CreateMemberMode;
 }
 
-const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, ...rest }: IntroModalProps) => {
+const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, mode, ...rest }: IntroModalProps) => {
     const handleDownloadClick = () => {
         downloadSampleCSV(csvConfig);
     };
@@ -53,7 +54,11 @@ const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, ...rest }: IntroModalP
                     <li>{c('Info').t`Fill in user details`}</li>
                     <li>{c('Info').t`Upload your completed CSV file to create accounts`}</li>
                 </ol>
-                <SubUserCreateHint className="mt-2" />
+                {mode === CreateMemberMode.Password && (
+                    <SubUserCreateHint className="mt-2 bg-weak">
+                        {c('Info').t`Remember to share the user's sign in details with them.`}
+                    </SubUserCreateHint>
+                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={onBack}>{c('Action').t`Back`}</Button>
@@ -66,6 +71,7 @@ const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, ...rest }: IntroModalP
 interface Props extends ModalProps {
     onBack: () => void;
     app: APP_NAMES;
+    mode: CreateMemberMode;
     verifiedDomains: Domain[];
     members: EnhancedMember[] | undefined;
     csvConfig: CsvConfig;
@@ -77,6 +83,7 @@ interface Props extends ModalProps {
 const SubUserBulkCreateModal = ({
     onBack,
     app,
+    mode,
     verifiedDomains,
     members,
     csvConfig,
@@ -106,12 +113,13 @@ const SubUserBulkCreateModal = ({
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
                 disableAddressValidation={disableAddressValidation}
+                mode={mode}
                 {...createUserAccountsModal}
                 {...rest}
             />
         );
     }
-    return <IntroModal {...rest} onBack={onBack} onCSVFileUpload={onCSVFileUpload} csvConfig={csvConfig} />;
+    return <IntroModal {...rest} mode={mode} onBack={onBack} onCSVFileUpload={onCSVFileUpload} csvConfig={csvConfig} />;
 };
 
 export default SubUserBulkCreateModal;
