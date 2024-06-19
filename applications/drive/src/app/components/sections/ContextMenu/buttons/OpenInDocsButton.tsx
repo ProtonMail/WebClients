@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { NewFeatureTag } from '@proton/components/components';
 import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DecryptedLink } from '../../../../store';
@@ -25,7 +26,10 @@ const OpenInDocsButton = ({ shareId, link, close }: Props) => {
             testId="context-menu-open-in-docs"
             action={() => openInDocsAction({ shareId, linkId: link.linkId })}
             close={close}
-        />
+        >
+            {/* TODO: Remove New tag when expired */}
+            <NewFeatureTag featureKey="documents" endDate={new Date('2024-07-15')} className="ml-4" />
+        </ContextMenuButton>
     );
 };
 
