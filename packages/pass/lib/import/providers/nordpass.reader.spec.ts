@@ -40,8 +40,8 @@ describe('Import NordPass csv', () => {
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('nobody');
         expect(loginItem1.metadata.note).toEqual('Secure note');
-        expect(loginItem1.content.itemEmail).toEqual('');
-        expect(loginItem1.content.itemUsername).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemUsername).toEqual('');
         expect(loginItem1.content.password).toEqual('proton123');
         expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
 
