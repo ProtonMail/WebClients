@@ -27,6 +27,7 @@ export interface BitcoinBlockchainContextValue {
     syncSingleWalletAccount: (args: { walletId: string; accountId: string; manual?: boolean }) => void;
     syncSingleWallet: (args: { walletId: string; manual?: boolean }) => void;
     syncManyWallets: (args: { walletIds: string[]; manual?: boolean }) => void;
+    incrementSyncKey: (walletId: string, accountId: string) => void;
 
     isSyncing: (walletId: string, accountId?: string) => boolean;
     getSyncingData: (walletId: string, accountId?: string) => SyncingMetadata | undefined;
@@ -55,6 +56,7 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     syncSingleWalletAccount: async () => {},
     syncSingleWallet: async () => {},
     syncManyWallets: async () => {},
+    incrementSyncKey: () => {},
 
     isSyncing: () => false,
     getSyncingData: () => undefined,

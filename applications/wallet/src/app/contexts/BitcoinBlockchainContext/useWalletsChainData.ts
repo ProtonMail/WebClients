@@ -285,6 +285,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         syncManyWallets,
         syncSingleWallet,
         syncSingleWalletAccount,
+        incrementSyncKey,
 
         getSyncingData,
         isSyncing,
