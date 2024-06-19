@@ -19,6 +19,7 @@ import { UserAvatar } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
+import { useApplication } from '../../ApplicationProvider'
 
 export function CommentsPanelListComment({
   comment,
@@ -31,6 +32,8 @@ export function CommentsPanelListComment({
   isFirstComment: boolean
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
+  const application = useApplication()
+
   const { color } = useCollaborationContext()
   const { username, controller, removeMarkNode } = useCommentsContext()
 
@@ -83,12 +86,13 @@ export function CommentsPanelListComment({
 
   const isAuthorCurrentUser = comment.author === username
 
+  const canEdit = application.getRole().canEdit()
+
   const name = useMemo(() => {
     return comment.author.split('@')[0]
   }, [comment.author])
 
-  const canShowOptions =
-    isAuthorCurrentUser && !comment.isPlaceholder && !thread.isPlaceholder && !isDeleting && !isEditing
+  const canShowOptions = canEdit && !comment.isPlaceholder && !thread.isPlaceholder && !isDeleting && !isEditing
 
   const isThreadActive = thread.state === CommentThreadState.Active
 
