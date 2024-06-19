@@ -1,4 +1,4 @@
-import { Icon, QuickSettingsAppButton, UserDropdown } from '@proton/components'
+import { Icon, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
@@ -45,7 +45,6 @@ const DocsHeader = () => {
           <CommentsButton controller={controller} />
         </>
       )}
-      <QuickSettingsAppButton />
       <div className="w-4" />
       <UserDropdown app={APPS.PROTONDOCS} />
     </div>
