@@ -83,7 +83,7 @@ function LabelsSection() {
                 <Loader />
             ) : (
                 <>
-                    <div className="flex gap-4 mb-7">
+                    <div className="flex gap-4 mb-7 labels-action">
                         {canCreateLabel ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add label`}

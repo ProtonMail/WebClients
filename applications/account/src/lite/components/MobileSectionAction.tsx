@@ -3,12 +3,12 @@ import clsx from '@proton/utils/clsx';
 
 interface Props {
     children: React.ReactNode;
-    stackContent?: boolean;
-    to: string;
+    stackContent?: boolean; // The content is displayed horizontally by default
+    onClick: () => void;
     coloredLink?: boolean;
 }
 
-const MobileSectionLink = ({ children, stackContent = false, to, coloredLink = true }: Props) => {
+const MobileSectionAction = ({ children, stackContent = false, onClick, coloredLink = true }: Props) => {
     return (
         <div className="relative flex flex-nowrap mb-0.5 p-5 bg-norm items-center mobile-section-row">
             <div
@@ -17,16 +17,20 @@ const MobileSectionLink = ({ children, stackContent = false, to, coloredLink = t
                     stackContent ? 'flex-column *:min-size-auto' : 'items-center',
                 ])}
             >
-                <a
-                    href={to}
-                    className={clsx(['text-no-decoration expand-click-area', !coloredLink && 'color-inherit'])}
+                <button
+                    type="button"
+                    onClick={onClick}
+                    className={clsx([
+                        'text-no-decoration expand-click-area text-left',
+                        !coloredLink && 'color-inherit',
+                    ])}
                 >
                     {children}
-                </a>
+                </button>
             </div>
             <Icon name="chevron-right" className="shrink-0" />
         </div>
     );
 };
 
-export default MobileSectionLink;
+export default MobileSectionAction;
