@@ -1,8 +1,11 @@
+import { FC } from 'react';
+
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { Domain } from '@proton/shared/lib/interfaces';
 
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 
 interface ReadOnlyInputFieldProps {
@@ -10,7 +13,7 @@ interface ReadOnlyInputFieldProps {
     value: string;
 }
 
-const ReadOnlyInputField: React.FC<ReadOnlyInputFieldProps> = ({ label, value }: ReadOnlyInputFieldProps) => {
+const ReadOnlyInputField: FC<ReadOnlyInputFieldProps> = ({ label, value }: ReadOnlyInputFieldProps) => {
     return (
         <ReadonlyFieldWithCopy
             label={label}
@@ -28,13 +31,15 @@ interface Props {
 }
 
 const TXTSection = ({ domain, includeTimeInformation }: Props) => {
-    const boldDomainName = <b key={domain.ID}>{domain.DomainName}</b>;
+    const domainName = domain.DomainName;
 
     return (
         <div>
             <div>
-                {c('Info')
-                    .jt`To allow the domain ${boldDomainName} to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.`}
+                {getBoldFormattedText(
+                    c('Info')
+                        .t`To allow the domain **${domainName}** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.`
+                )}
             </div>
             <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
 
@@ -49,7 +54,7 @@ const TXTSection = ({ domain, includeTimeInformation }: Props) => {
             </p>
             {includeTimeInformation && (
                 <div>{c('Info')
-                    .t`This verification can take up to one hour. You can safely continue to the next steps.`}</div>
+                    .t`This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.`}</div>
             )}
         </div>
     );
