@@ -1,13 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* @param {string} word_start
-* @returns {(string)[]}
+* @returns {number}
 */
-export function getWordsAutocomplete(word_start: string): (string)[];
-/**
-*/
-export function setPanicHook(): void;
+export function getDefaultStopGap(): number;
 /**
 * @param {WasmPsbt} psbt
 * @param {WasmAccount} account
@@ -15,9 +11,13 @@ export function setPanicHook(): void;
 */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
-* @returns {number}
 */
-export function getDefaultStopGap(): number;
+export function setPanicHook(): void;
+/**
+* @param {string} word_start
+* @returns {(string)[]}
+*/
+export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
 export enum WasmCoinSelection {
@@ -25,13 +25,6 @@ export enum WasmCoinSelection {
   LargestFirst = 1,
   OldestFirst = 2,
   Manual = 3,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
 }
 /**
 */
@@ -48,6 +41,27 @@ export enum WasmLanguage {
 }
 /**
 */
+export enum WasmScriptType {
+  Legacy = 1,
+  NestedSegwit = 2,
+  NativeSegwit = 3,
+  Taproot = 4,
+}
+/**
+*/
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
 export enum WasmPaymentLinkKind {
   BitcoinAddress = 0,
   BitcoinURI = 1,
@@ -56,9 +70,15 @@ export enum WasmPaymentLinkKind {
 }
 /**
 */
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
 /**
 */
@@ -82,26 +102,6 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmScriptType {
-  Legacy = 1,
-  NestedSegwit = 2,
-  NativeSegwit = 3,
-  Taproot = 4,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
 export enum WasmWordCount {
   Words12 = 0,
   Words15 = 1,
@@ -109,6 +109,53 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    subject: string | null;
+    body: string | null;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export interface WasmTxOut {
+    value: number;
+    script_pubkey: WasmScript;
+    is_mine: boolean;
+    address: string;
+}
+
+export interface WasmTransactionDetails {
+    txid: string;
+    received: number;
+    sent: number;
+    fee: number | null;
+    time: WasmTransactionTime;
+    inputs: WasmDetailledTxIn[];
+    outputs: WasmTxOut[];
+    account_derivation_path: string;
+}
+
+export interface WasmTransactionTime {
+    confirmed: boolean;
+    confirmation_time: number | null;
+    last_seen: number | null;
+}
+
 export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 export interface WasmApiWalletBitcoinAddressLookup {
@@ -176,11 +223,6 @@ export interface WasmQuote {
 
 export interface WasmQuotes {
     data: WasmQuote[];
-}
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
 }
 
 export interface WasmApiExchangeRate {
@@ -280,48 +322,6 @@ export interface WasmAddressInfo {
     index: number;
     address: string;
     keychain: WasmKeychainKind;
-}
-
-export interface WasmTxOut {
-    value: number;
-    script_pubkey: WasmScript;
-    is_mine: boolean;
-    address: string;
-}
-
-export interface WasmTransactionDetails {
-    txid: string;
-    received: number;
-    sent: number;
-    fee: number | null;
-    time: WasmTransactionTime;
-    inputs: WasmDetailledTxIn[];
-    outputs: WasmTxOut[];
-    account_derivation_path: string;
-}
-
-export interface WasmTransactionTime {
-    confirmed: boolean;
-    confirmation_time: number | null;
-    last_seen: number | null;
-}
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    subject: string | null;
-    body: string | null;
 }
 
 /**

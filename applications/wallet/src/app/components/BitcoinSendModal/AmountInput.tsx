@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,6 +15,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { Button, CoreButton } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
+import { usePsbt } from '../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../store/hooks';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
@@ -47,7 +48,9 @@ export const AmountInput = ({
     const [settings] = useUserWalletSettings();
 
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
+    const [err, setErr] = useState<string | null>(null);
     const { createNotification } = useNotifications();
+    const { createDraftPsbt } = usePsbt({ txBuilder });
 
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
 
@@ -56,6 +59,34 @@ export const AmountInput = ({
     const totalSentAmount = txBuilder.getRecipients().reduce((acc, r) => {
         return acc + Number(r[2]);
     }, 0);
+
+    const checkCreatePsbt = useCallback(() => {
+        return createDraftPsbt()
+            .then(() => {
+                setErr(null);
+                return true;
+            })
+            .catch((err) => {
+                const message = ((): string => {
+                    if (err instanceof Error) {
+                        if (err.message.includes('OutputBelowDustLimit')) {
+                            return c('Wallet send').t`Amount is below minimum value`;
+                        }
+                    }
+                    return c('Wallet send').t`Could not create PSBT`;
+                })();
+
+                createNotification({ text: message, type: 'error' });
+                setErr(message);
+                return false;
+            });
+    }, [createDraftPsbt, createNotification]);
+
+    useEffect(() => {
+        if (err) {
+            void checkCreatePsbt();
+        }
+    }, [checkCreatePsbt, err]);
 
     const remainingAmount = accountBalance - totalSentAmount;
 
@@ -200,7 +231,12 @@ export const AmountInput = ({
                     shape="solid"
                     className="mt-6"
                     fullWidth
-                    onClick={() => {
+                    onClick={async () => {
+                        if (!(await checkCreatePsbt())) {
+                            return;
+                        }
+
+                        // Clean recipient with empty amounts
                         txBuilder.getRecipients().forEach((r, i) => {
                             if (!r[2]) {
                                 updateTxBuilder((txBuilder) => txBuilder.removeRecipient(i));
@@ -209,7 +245,7 @@ export const AmountInput = ({
 
                         onReview(exchangeRate ?? settings.BitcoinUnit);
                     }}
-                    disabled={txBuilder.getRecipients().every((r) => !r[2])}
+                    disabled={Boolean(err) || txBuilder.getRecipients().every((r) => !r[2])}
                 >{c('Wallet send').t`Review`}</Button>
             </div>
         </div>
