@@ -172,11 +172,34 @@ function ContextualThread({
 
 const ViewportWidthThreshold = 1080
 
+type ThreadWithPosition = {
+  thread: CommentThreadInterface
+  position: number
+}
+
+function sortThreadByPositionOrTime(a: ThreadWithPosition, b: ThreadWithPosition) {
+  const aPosition = a.position
+  const bPosition = b.position
+  if (aPosition === undefined || bPosition === undefined) {
+    return 0
+  }
+  const areThreadsOnSamePosition = aPosition === bPosition
+  if (areThreadsOnSamePosition) {
+    return b.thread.createTime.serverTimestamp - a.thread.createTime.serverTimestamp
+  }
+  return aPosition - bPosition
+}
+
 export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
   const [editor] = useLexicalComposerContext()
   const { markNodeMap } = useCommentsContext()
-  const [positions, setPositions] = useState(new Map<string, number>())
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
+  const [threadsSortedByPosition, setThreadsSortedByPosition] = useState<
+    {
+      thread: CommentThreadInterface
+      position: number
+    }[]
+  >([])
 
   const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
   useEffect(() => {
@@ -196,50 +219,50 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     if (!container) {
       return
     }
-    const positionsMap = new Map<string, number>()
-    for (const thread of activeThreads) {
+    const getMarkRectForThread = (thread: CommentThreadInterface) => {
       const markID = thread.markID
       const markNodeKeys = markNodeMap.get(markID)
       if (markNodeKeys === undefined) {
-        continue
+        return null
       }
       const markNodeKey = Array.from(markNodeKeys)[0]
       const markElement = editor.getElementByKey(markNodeKey)
       if (!markElement) {
-        continue
+        return null
       }
       const markRect = markElement.getBoundingClientRect()
-      positionsMap.set(thread.id, markRect.y + container.scrollTop - container.getBoundingClientRect().top)
+      return markRect
     }
-    setPositions(positionsMap)
+
+    const threadsSortedByPosition = (
+      activeThreads
+        .map((thread) => {
+          const markRect = getMarkRectForThread(thread)
+          if (!markRect) {
+            return null
+          }
+          return {
+            thread: thread,
+            position: markRect.y + container.scrollTop - container.getBoundingClientRect().top,
+          }
+        })
+        .filter((thread) => thread) as ThreadWithPosition[]
+    ).sort(sortThreadByPositionOrTime)
+
+    setThreadsSortedByPosition(threadsSortedByPosition)
   }, [activeThreads, editor, markNodeMap])
 
-  useEffect(() => {
-    getThreadPositions()
-  }, [getThreadPositions])
+  const debouncedGetThreadPositions = useMemo(() => debounce(getThreadPositions, 50), [getThreadPositions])
 
-  const debouncedGetThreadPositions = useMemo(() => debounce(getThreadPositions, 100), [getThreadPositions])
+  useEffect(() => {
+    debouncedGetThreadPositions()
+  }, [debouncedGetThreadPositions])
 
   useEffect(() => {
     return editor.registerUpdateListener(() => {
       debouncedGetThreadPositions()
     })
   }, [debouncedGetThreadPositions, editor])
-
-  const sortedThreads = useMemo(() => {
-    return activeThreads.slice().sort((a, b) => {
-      const aPosition = positions.get(a.id)
-      const bPosition = positions.get(b.id)
-      if (aPosition === undefined || bPosition === undefined) {
-        return 0
-      }
-      const areThreadsOnSamePosition = aPosition === bPosition
-      if (areThreadsOnSamePosition) {
-        return b.createTime.serverTimestamp - a.createTime.serverTimestamp
-      }
-      return aPosition - bPosition
-    })
-  }, [activeThreads, positions])
 
   const debouncedDispatchRecalculateEvent = useMemo(() => debounce(dispatchRecalculateEvent, SixtyFPSToMS), [])
   useEffect(() => {
@@ -267,12 +290,12 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
         width: 'var(--comments-width)',
       }}
     >
-      {sortedThreads.map((thread) => {
+      {threadsSortedByPosition.map((thread) => {
         return (
           <ContextualThread
-            key={thread.id}
-            thread={thread}
-            position={positions.get(thread.id)}
+            key={thread.thread.id}
+            thread={thread.thread}
+            position={thread.position}
             isViewportLarge={isViewportLarge}
           />
         )
