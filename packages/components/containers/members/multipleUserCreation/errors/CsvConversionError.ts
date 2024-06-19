@@ -3,6 +3,7 @@ export enum CSV_CONVERSION_ERROR_TYPE {
     PASSWORD_REQUIRED,
     PASSWORD_LESS_THAN_MIN_LENGTH,
     INVALID_TYPE,
+    INVITATION_EMAIL_REQUIRED,
 }
 
 export default class CsvConversionError extends Error {

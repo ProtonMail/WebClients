@@ -6,12 +6,8 @@ import {
     verifyAddressIsAbsent,
     verifyAddressIsObsolete,
 } from '@proton/key-transparency/lib';
-import {
-    Api,
-    FetchedSignedKeyList,
-    KeyMigrationKTVerifier,
-    KeyTransparencyActivation,
-} from '@proton/shared/lib/interfaces';
+
+import { Api, FetchedSignedKeyList, KeyMigrationKTVerifier, KeyTransparencyActivation } from '../interfaces';
 
 const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, api: Api): KeyMigrationKTVerifier => {
     return async (email: string, signedKeyList: Partial<FetchedSignedKeyList> | null | undefined) => {

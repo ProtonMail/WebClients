@@ -1,24 +1,39 @@
 import { BASE_SIZE, GIGA } from '@proton/shared/lib/constants';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
-import { getSampleCSV, parseMultiUserCsv } from './csv';
+import { CsvConfig, getSampleCSV, parseMultiUserCsv } from './csv';
 import { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
 import { SampleCsvUser } from './types';
 
+const csvConfig = {
+    mode: CreateMemberMode.Password,
+};
+
+const getCsvConfig = (partial?: Partial<CsvConfig>) => {
+    return {
+        ...csvConfig,
+        ...partial,
+    };
+};
+
 describe('getSampleCSV', () => {
     it('matches snapshot', () => {
-        const sampleCsv = getSampleCSV();
+        const sampleCsv = getSampleCSV(undefined, csvConfig);
 
         expect(sampleCsv).toMatchSnapshot();
     });
 
     it('allows custom user array', () => {
-        const sampleCsv = getSampleCSV([
-            {
-                Name: 'Derek',
-                EmailAddresses: 'derek@mydomain.com',
-                Password: 'derek_password',
-            },
-        ]);
+        const sampleCsv = getSampleCSV(
+            [
+                {
+                    Name: 'Derek',
+                    EmailAddresses: 'derek@mydomain.com',
+                    Password: 'derek_password',
+                },
+            ],
+            csvConfig
+        );
 
         const userLine = sampleCsv.split('\n');
         const items = userLine[2].split(',');
@@ -30,7 +45,7 @@ describe('getSampleCSV', () => {
 
     describe('multipleAddresses', () => {
         it('defaults to false', () => {
-            const sampleCsv = getSampleCSV();
+            const sampleCsv = getSampleCSV(undefined, csvConfig);
 
             expect(sampleCsv).toMatch(/EmailAddress\b/);
             expect(sampleCsv).not.toMatch(/EmailAddresses\b/);
@@ -38,7 +53,7 @@ describe('getSampleCSV', () => {
 
         describe('when false', () => {
             it('uses EmailAddress header', () => {
-                const sampleCsv = getSampleCSV();
+                const sampleCsv = getSampleCSV(undefined, csvConfig);
 
                 expect(sampleCsv).toMatch(/EmailAddress\b/);
                 expect(sampleCsv).not.toMatch(/EmailAddresses\b/);
@@ -53,7 +68,7 @@ describe('getSampleCSV', () => {
                             Password: 'alice_example_password',
                         },
                     ],
-                    { multipleAddresses: false }
+                    getCsvConfig({ multipleAddresses: false })
                 );
 
                 expect(sampleCsv).toMatch(/alice@mydomain.com\b/);
@@ -63,7 +78,7 @@ describe('getSampleCSV', () => {
 
         describe('when true', () => {
             it('uses EmailAddresses header', () => {
-                const sampleCsv = getSampleCSV(undefined, { multipleAddresses: true });
+                const sampleCsv = getSampleCSV(undefined, getCsvConfig({ multipleAddresses: true }));
 
                 expect(sampleCsv).toMatch(/EmailAddresses\b/);
                 expect(sampleCsv).not.toMatch(/EmailAddress\b/);
@@ -79,7 +94,7 @@ describe('getSampleCSV', () => {
                             Password: 'alice_example_password',
                         },
                     ],
-                    { multipleAddresses: true }
+                    getCsvConfig({ multipleAddresses: true })
                 );
 
                 expect(sampleCsv).toMatch(/alice@mydomain.com\b/);
@@ -90,14 +105,14 @@ describe('getSampleCSV', () => {
 
     describe('includeStorage', () => {
         it('defaults to false', () => {
-            const sampleCsv = getSampleCSV();
+            const sampleCsv = getSampleCSV(undefined, csvConfig);
 
             expect(sampleCsv).not.toMatch(/TotalStorage\b/);
         });
 
         describe('when false', () => {
             it('TotalStorage item is not present', () => {
-                const sampleCsv = getSampleCSV();
+                const sampleCsv = getSampleCSV(undefined, csvConfig);
 
                 expect(sampleCsv).not.toMatch(/TotalStorage\b/);
             });
@@ -105,7 +120,7 @@ describe('getSampleCSV', () => {
 
         describe('when true', () => {
             it('TotalStorage item is present', () => {
-                const sampleCsv = getSampleCSV(undefined, { includeStorage: true });
+                const sampleCsv = getSampleCSV(undefined, getCsvConfig({ includeStorage: true }));
 
                 expect(sampleCsv).toMatch(/TotalStorage\b/);
                 expect(sampleCsv).toMatchSnapshot();
@@ -115,14 +130,14 @@ describe('getSampleCSV', () => {
 
     describe('includeVpnAccess', () => {
         it('defaults to false', () => {
-            const sampleCsv = getSampleCSV();
+            const sampleCsv = getSampleCSV(undefined, csvConfig);
 
             expect(sampleCsv).not.toMatch(/VPNAccess\b/);
         });
 
         describe('when false', () => {
             it('VPNAccess item is not present', () => {
-                const sampleCsv = getSampleCSV();
+                const sampleCsv = getSampleCSV(undefined, csvConfig);
 
                 expect(sampleCsv).not.toMatch(/VPNAccess\b/);
             });
@@ -130,7 +145,7 @@ describe('getSampleCSV', () => {
 
         describe('when true', () => {
             it('VPNAccess item is present', () => {
-                const sampleCsv = getSampleCSV(undefined, { includeVpnAccess: true });
+                const sampleCsv = getSampleCSV(undefined, getCsvConfig({ includeVpnAccess: true }));
 
                 expect(sampleCsv).toMatch(/VPNAccess\b/);
                 expect(sampleCsv).toMatchSnapshot();
@@ -140,14 +155,14 @@ describe('getSampleCSV', () => {
 
     describe('includePrivateSubUser', () => {
         it('defaults to false', () => {
-            const sampleCsv = getSampleCSV();
+            const sampleCsv = getSampleCSV(undefined, csvConfig);
 
             expect(sampleCsv).not.toMatch(/PrivateSubUser\b/);
         });
 
         describe('when false', () => {
             it('PrivateSubUser item is not present', () => {
-                const sampleCsv = getSampleCSV();
+                const sampleCsv = getSampleCSV(undefined, csvConfig);
 
                 expect(sampleCsv).not.toMatch(/PrivateSubUser\b/);
             });
@@ -155,7 +170,7 @@ describe('getSampleCSV', () => {
 
         describe('when true', () => {
             it('PrivateSubUser item is present', () => {
-                const sampleCsv = getSampleCSV(undefined, { includePrivateSubUser: true });
+                const sampleCsv = getSampleCSV(undefined, getCsvConfig({ includePrivateSubUser: true }));
 
                 expect(sampleCsv).toMatch(/PrivateSubUser\b/);
                 expect(sampleCsv).toMatchSnapshot();
@@ -181,55 +196,55 @@ describe('parseMultiUserCsv', () => {
         };
 
         it('throws error if no files are passed', async () => {
-            await expect(parseMultiUserCsv([])).rejects.toThrow(
+            await expect(parseMultiUserCsv([], csvConfig)).rejects.toThrow(
                 'An error occurred uploading your file. No file has been selected.'
             );
         });
 
         it('throws error if no files are passed', async () => {
-            await expect(parseMultiUserCsv([])).rejects.toThrow(
+            await expect(parseMultiUserCsv([], csvConfig)).rejects.toThrow(
                 'An error occurred uploading your file. No file has been selected.'
             );
         });
 
         it('throws error if file is > 10MB', async () => {
-            const file = getFile(getSampleCSV([defaultUser]));
+            const file = getFile(getSampleCSV([defaultUser], csvConfig));
             /**
              * Mock large file size
              */
             Object.defineProperty(file, 'size', { value: 10 * BASE_SIZE ** 2 + 1 });
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow(
                 'An error occurred uploading your file "filename". Maximum file size is 10 MB.'
             );
         });
 
         it('does not throw error if file is <= 10MB', async () => {
-            const file = getFile(getSampleCSV([defaultUser]));
+            const file = getFile(getSampleCSV([defaultUser], csvConfig));
             /**
              * Mock ok file size
              */
             Object.defineProperty(file, 'size', { value: 10 * BASE_SIZE ** 2 });
 
-            await expect(parseMultiUserCsv([file])).resolves.not.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).resolves.not.toThrow(
                 'An error occurred uploading your file "filename". Maximum file size is 10 MB.'
             );
         });
 
         it('throws error if there are > 750 rows', async () => {
             const rows = Array.from({ length: 751 }, () => defaultUser);
-            const file = getFile(getSampleCSV(rows));
+            const file = getFile(getSampleCSV(rows, csvConfig));
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow(
                 'Upload a CSV file with 750 user accounts or less.'
             );
         });
 
         it('does not throw error if there are <= 750 rows', async () => {
             const rows = Array.from({ length: 750 }, () => defaultUser);
-            const file = getFile(getSampleCSV(rows));
+            const file = getFile(getSampleCSV(rows, csvConfig));
 
-            await expect(parseMultiUserCsv([file])).resolves.not.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).resolves.not.toThrow(
                 'Upload a CSV file with 750 user accounts or less.'
             );
         });
@@ -238,7 +253,7 @@ describe('parseMultiUserCsv', () => {
             const fileContent = ['Password', 'alice_example_password'].join('\n');
             const file = getFile(fileContent);
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow(
                 `It looks like your file is missing the 'EmailAddress' header.`
             );
         });
@@ -247,7 +262,7 @@ describe('parseMultiUserCsv', () => {
             const fileContent = ['EmailAddress', 'alice@mydomain.com'].join('\n');
             const file = getFile(fileContent);
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow(
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow(
                 `It looks like your file is missing the 'Password' header.`
             );
         });
@@ -258,7 +273,7 @@ describe('parseMultiUserCsv', () => {
             );
             const file = getFile(fileContent);
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow('Error on row 1.');
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow('Error on row 1.');
         });
 
         it('throws error if a row contains too many fields', async () => {
@@ -268,14 +283,14 @@ describe('parseMultiUserCsv', () => {
             ].join('\n');
             const file = getFile(fileContent);
 
-            await expect(parseMultiUserCsv([file])).rejects.toThrow('Error on row 1.');
+            await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow('Error on row 1.');
         });
     });
 
     describe('parsing', () => {
         it('parses the sample CSV with no errors', async () => {
-            const file = getFile(getSampleCSV());
-            const result = await parseMultiUserCsv([file]);
+            const file = getFile(getSampleCSV(undefined, csvConfig));
+            const result = await parseMultiUserCsv([file], csvConfig);
 
             expect(result.errors.length).toBe(0);
         });
@@ -290,11 +305,14 @@ describe('parseMultiUserCsv', () => {
             ].join('\n');
             const file = getFile(fileContent);
 
-            const result = await parseMultiUserCsv([file], {
-                includeStorage: true,
-                includeVpnAccess: true,
-                includePrivateSubUser: true,
-            });
+            const result = await parseMultiUserCsv(
+                [file],
+                getCsvConfig({
+                    includeStorage: true,
+                    includeVpnAccess: true,
+                    includePrivateSubUser: true,
+                })
+            );
             const user = result.users[0];
 
             expect(result.errors.length).toBe(0);
@@ -319,7 +337,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
 
                 expect(result.errors.length).toBe(0);
                 expect(result.users[0].id).toBe('1');
@@ -337,7 +355,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -352,7 +370,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -367,7 +385,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -384,7 +402,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
 
                 expect(result.errors.length).toBe(1);
                 expect(result.errors[0].rowNumber).toBe(1);
@@ -399,7 +417,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -412,7 +430,7 @@ describe('parseMultiUserCsv', () => {
                     const fileContent = ['Password', 'alice_example_password'].join('\n');
                     const file = getFile(fileContent);
 
-                    await expect(parseMultiUserCsv([file])).rejects.toThrow(
+                    await expect(parseMultiUserCsv([file], csvConfig)).rejects.toThrow(
                         `It looks like your file is missing the 'EmailAddress' header.`
                     );
                 });
@@ -426,7 +444,7 @@ describe('parseMultiUserCsv', () => {
                         ].join('\n');
                         const file = getFile(fileContent);
 
-                        const result = await parseMultiUserCsv([file], { multipleAddresses: false });
+                        const result = await parseMultiUserCsv([file], getCsvConfig({ multipleAddresses: false }));
 
                         const user = result.users[0];
 
@@ -441,9 +459,9 @@ describe('parseMultiUserCsv', () => {
                         const fileContent = ['Password', 'alice_example_password'].join('\n');
                         const file = getFile(fileContent);
 
-                        await expect(parseMultiUserCsv([file], { multipleAddresses: true })).rejects.toThrow(
-                            `It looks like your file is missing the 'EmailAddresses' header.`
-                        );
+                        await expect(
+                            parseMultiUserCsv([file], getCsvConfig({ multipleAddresses: true }))
+                        ).rejects.toThrow(`It looks like your file is missing the 'EmailAddresses' header.`);
                     });
 
                     it('parses a list of email addresses', async () => {
@@ -454,7 +472,7 @@ describe('parseMultiUserCsv', () => {
                         ].join('\n');
                         const file = getFile(fileContent);
 
-                        const result = await parseMultiUserCsv([file], { multipleAddresses: true });
+                        const result = await parseMultiUserCsv([file], getCsvConfig({ multipleAddresses: true }));
                         const user = result.users[0];
 
                         expect(result.errors.length).toBe(0);
@@ -473,9 +491,12 @@ describe('parseMultiUserCsv', () => {
                         ].join('\n');
                         const file = getFile(fileContent);
 
-                        const result = await parseMultiUserCsv([file], {
-                            multipleAddresses: true,
-                        });
+                        const result = await parseMultiUserCsv(
+                            [file],
+                            getCsvConfig({
+                                multipleAddresses: true,
+                            })
+                        );
                         const user = result.users[0];
 
                         expect(result.errors.length).toBe(0);
@@ -495,7 +516,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -511,7 +532,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -528,7 +549,7 @@ describe('parseMultiUserCsv', () => {
                 );
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
 
                 expect(result.errors.length).toBe(1);
                 expect(result.errors[0].rowNumber).toBe(1);
@@ -542,7 +563,7 @@ describe('parseMultiUserCsv', () => {
                 );
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
 
                 expect(result.errors.length).toBe(1);
                 expect(result.errors[0].rowNumber).toBe(1);
@@ -556,7 +577,7 @@ describe('parseMultiUserCsv', () => {
                 );
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -570,7 +591,7 @@ describe('parseMultiUserCsv', () => {
                 );
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
 
                 expect(
                     result.errors.map(({ type }) => type).includes(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED)
@@ -584,7 +605,7 @@ describe('parseMultiUserCsv', () => {
                 );
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -601,7 +622,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -617,7 +638,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: false });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: false }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -634,7 +655,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -649,7 +670,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -662,7 +683,7 @@ describe('parseMultiUserCsv', () => {
                     );
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -677,7 +698,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -695,7 +716,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -711,7 +732,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeVpnAccess: false });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeVpnAccess: false }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -728,7 +749,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeVpnAccess: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -743,7 +764,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeVpnAccess: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -758,7 +779,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeVpnAccess: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -771,7 +792,7 @@ describe('parseMultiUserCsv', () => {
                     );
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includeStorage: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -789,7 +810,7 @@ describe('parseMultiUserCsv', () => {
                 ].join('\n');
                 const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
+                const result = await parseMultiUserCsv([file], csvConfig);
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
@@ -805,7 +826,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file]);
+                    const result = await parseMultiUserCsv([file], csvConfig);
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -822,7 +843,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includePrivateSubUser: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -837,7 +858,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includePrivateSubUser: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -852,7 +873,7 @@ describe('parseMultiUserCsv', () => {
                     ].join('\n');
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includePrivateSubUser: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
@@ -865,7 +886,7 @@ describe('parseMultiUserCsv', () => {
                     );
                     const file = getFile(fileContent);
 
-                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const result = await parseMultiUserCsv([file], getCsvConfig({ includePrivateSubUser: true }));
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);

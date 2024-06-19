@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
 import { decryptAddressKeyToken } from '@proton/shared/lib/keys/addressKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { SIGNATURE_CONTEXT, getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
+import { ORGANIZATION_SIGNATURE_CONTEXT, getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 
 import { CachedOrganizationKey, DecryptedKey, KeyPair, OrganizationKey } from '../interfaces';
 
@@ -35,7 +35,7 @@ export const getOrganizationKeyToken = async ({
             privateKeys,
             Token: Key.Token,
             Signature: Key.Signature,
-            context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
+            context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
         });
     }
     return keyPassword;

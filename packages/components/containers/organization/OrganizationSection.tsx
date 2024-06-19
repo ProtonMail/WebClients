@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
-import { createPreAuthKTVerifier } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -20,6 +19,7 @@ import { getHasMemberCapablePlan, hasFamily } from '@proton/shared/lib/helpers/s
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
+import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { Credentials } from '@proton/shared/lib/srp';
 

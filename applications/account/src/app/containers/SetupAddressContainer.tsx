@@ -8,7 +8,6 @@ import {
     DropdownMenuButton,
     Icon,
     StandardLoadErrorPage,
-    createPreAuthKTVerifier,
     useApi,
     useAuthentication,
     useErrorHandler,
@@ -27,6 +26,7 @@ import mutatePassword from '@proton/shared/lib/authentication/mutate';
 import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { User } from '@proton/shared/lib/interfaces';
+import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     getAddressGenerationSetup,
     getDecryptedSetupBlob,

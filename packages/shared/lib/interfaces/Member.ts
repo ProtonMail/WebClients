@@ -28,6 +28,47 @@ export enum MEMBER_ORG_KEY_STATE {
     Pending = 3,
 }
 
+export interface MemberInvitationData {
+    Address: string;
+    Revision: number;
+}
+
+export enum MemberUnprivatizationState {
+    Declined,
+    Pending,
+    Ready,
+}
+
+export enum CreateMemberMode {
+    Password,
+    Invitation,
+}
+
+export type MemberUnprivatization =
+    | {
+          State: Exclude<MemberUnprivatizationState, MemberUnprivatizationState.Ready>;
+          InvitationData: string;
+          InvitationSignature: string;
+          PrivateKey: null;
+          ActivationToken: null;
+      }
+    | {
+          State: MemberUnprivatizationState.Ready;
+          InvitationData: string;
+          InvitationSignature: string;
+          PrivateKey: string;
+          ActivationToken: string;
+      };
+
+export interface MemberUnprivatizationOutput {
+    State: MemberUnprivatizationState;
+    InvitationData: string;
+    InvitationSignature: string;
+    AdminEmail: string;
+    OrgKeyFingerprintSignature: string;
+    OrgPublicKey: string;
+}
+
 export interface Member {
     ID: string;
     Role: MEMBER_ROLE;
@@ -50,6 +91,7 @@ export interface Member {
     State: MEMBER_STATE;
     TwoFactorRequiredTime: number;
     SSO: 1 | 0;
+    Unprivatization: null | MemberUnprivatization;
 }
 
 export type EnhancedMember = Member &

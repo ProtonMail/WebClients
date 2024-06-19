@@ -1,3 +1,5 @@
+import { PrivateKeyReference } from '@proton/crypto';
+
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
 import { Address, AddressKeyPayloadV2, KeyGenConfig, PreAuthKTVerify } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
@@ -17,11 +19,29 @@ export const getResetAddressesKeysV2 = async ({
     keyGenConfig?: KeyGenConfig;
     preAuthKTVerify: PreAuthKTVerify;
 }): Promise<
-    | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[]; onSKLPublishSuccess: OnSKLPublishSuccess }
-    | { userKeyPayload: undefined; addressKeysPayload: undefined; onSKLPublishSuccess: undefined }
+    | {
+          privateKeys: {
+              userKey: PrivateKeyReference;
+              addressKeys: { privateKey: PrivateKeyReference; addressID: string }[];
+          };
+          userKeyPayload: string;
+          addressKeysPayload: AddressKeyPayloadV2[];
+          onSKLPublishSuccess: OnSKLPublishSuccess;
+      }
+    | {
+          privateKeys: undefined;
+          userKeyPayload: undefined;
+          addressKeysPayload: undefined;
+          onSKLPublishSuccess: undefined;
+      }
 > => {
     if (!addresses.length) {
-        return { userKeyPayload: undefined, addressKeysPayload: undefined, onSKLPublishSuccess: undefined };
+        return {
+            privateKeys: undefined,
+            userKeyPayload: undefined,
+            addressKeysPayload: undefined,
+            onSKLPublishSuccess: undefined,
+        };
     }
     const { privateKey: userKey, privateKeyArmored: userKeyPayload } = await generateUserKey({
         passphrase,
@@ -56,6 +76,10 @@ export const getResetAddressesKeysV2 = async ({
                 keyTransparencyVerify
             );
             return {
+                addressKey: {
+                    privateKey,
+                    addressID: AddressID,
+                },
                 addressKeyPayload: {
                     AddressID,
                     PrivateKey: privateKeyArmored,
@@ -68,8 +92,12 @@ export const getResetAddressesKeysV2 = async ({
         })
     );
     const addressKeysPayload = addressKeysPayloadWithOnSKLPublish.map(({ addressKeyPayload }) => addressKeyPayload);
+    const privateKeys = {
+        userKey,
+        addressKeys: addressKeysPayloadWithOnSKLPublish.map(({ addressKey }) => addressKey),
+    };
     const onSKLPublishSuccessAll = async () => {
         await Promise.all(addressKeysPayloadWithOnSKLPublish.map(({ onSKLPublishSuccess }) => onSKLPublishSuccess()));
     };
-    return { userKeyPayload, addressKeysPayload, onSKLPublishSuccess: onSKLPublishSuccessAll };
+    return { privateKeys, userKeyPayload, addressKeysPayload, onSKLPublishSuccess: onSKLPublishSuccessAll };
 };

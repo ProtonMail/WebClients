@@ -1,6 +1,7 @@
 export interface UserTemplate {
     id: string;
     emailAddresses: string[];
+    invitationEmail?: string;
     password: string;
     displayName: string;
     totalStorage: number;
@@ -11,6 +12,7 @@ export interface UserTemplate {
 export interface ImportedCSVUser {
     Name: any;
     EmailAddresses: any;
+    InvitationEmail: any;
     Password: any;
     TotalStorage: any;
     VPNAccess: any;
@@ -20,6 +22,7 @@ export interface ImportedCSVUser {
 export interface SampleCsvUser {
     Name: string;
     Password: string;
+    InvitationEmail?: string;
     EmailAddresses: string;
     TotalStorage?: number;
     VPNAccess?: 1 | 0;
