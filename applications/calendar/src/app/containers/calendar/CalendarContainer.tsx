@@ -45,6 +45,8 @@ import {
     getTimezoneOffset,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Address, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
@@ -57,6 +59,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import unary from '@proton/utils/unary';
 
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
+import { embeddedDrawerAppInfos } from '../../helpers/drawer';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
@@ -285,11 +288,15 @@ const CalendarContainer = ({
     const utcDate = customUtcDate || utcDefaultDate;
 
     const defaultView = getDefaultView(calendarUserSettings);
-    const requestedView = customView || defaultView;
+
     const view = (() => {
-        if (SUPPORTED_VIEWS_IN_DRAWER.includes(requestedView)) {
-            return requestedView;
+        const requestedView = customView || defaultView;
+        const { view: drawerView, isDrawerApp } = embeddedDrawerAppInfos;
+
+        if (isDrawerApp) {
+            return drawerView;
         }
+
         if (isSmallViewport) {
             return requestedView === SEARCH ? SEARCH : WEEK;
         }
@@ -300,6 +307,28 @@ const CalendarContainer = ({
 
         return WEEK;
     })();
+
+    // Temporary log for debugging
+    const prevViewRef = useRef('' as unknown as VIEWS);
+    useEffect(() => {
+        if (getIsIframe() && SUPPORTED_VIEWS_IN_DRAWER.includes(prevViewRef.current)) {
+            captureMessage('Drawer iframe calendar container', {
+                level: 'info',
+                extra: {
+                    defaultView,
+                    customView,
+                    drawerView,
+                    view,
+                    locationOrigin: window.location.origin,
+                    locationHref: window.location.href,
+                },
+            });
+        }
+
+        if (prevViewRef.current !== view) {
+            prevViewRef.current = view;
+        }
+    }, [view]);
 
     const range = isSmallViewport ? undefined : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
