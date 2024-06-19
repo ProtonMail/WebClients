@@ -70,7 +70,7 @@ const STEPS = {
     DMARC: 6,
 };
 
-const verifyDomain = (domain?: Domain) => {
+export const verifyDomain = (domain?: Domain) => {
     if (domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT) {
         return c('Error').t`Verification did not succeed, please try again in an hour.`;
     }
