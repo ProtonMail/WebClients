@@ -311,7 +311,13 @@ export const DrawerProvider = ({
                     const user = await getUser();
 
                     const { url, app } = event.data.payload;
-                    setDrawerLocalStorageKey({ app, url }, user.ID);
+                    const path = new URL(url).pathname
+                        .split('/')
+                        .filter((el) => el !== '')
+                        .splice(2)
+                        .join('/');
+
+                    setDrawerLocalStorageKey({ app, path }, user.ID);
                     setIframeURLMap((iframeURLMap) => ({
                         ...iframeURLMap,
                         [app]: url,

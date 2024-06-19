@@ -27,8 +27,15 @@ const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolea
 
             if (appInView) {
                 const url = iframeSrcMap[appInView];
+                const path = url
+                    ? new URL(url).pathname
+                          .split('/')
+                          .filter((el) => el !== '')
+                          .splice(2)
+                          .join('/')
+                    : undefined;
                 hasSetAppInView.current = true;
-                const item = { app: appInView, url } as DrawerLocalStorageValue;
+                const item: DrawerLocalStorageValue = { app: appInView, path };
                 setDrawerLocalStorageKey(item, ID);
             } else if (hasSetAppInView.current) {
                 // When closing the drawer, clean up the value from the drawer local storage item
