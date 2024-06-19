@@ -12,11 +12,13 @@ import IMetricsRequestService from './lib/types/IMetricsRequestService';
 import { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
 import { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/docs_comments_error_total_v1.schema';
 import { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
+import { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
 import { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
+import { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
 import { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
 import { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
 import { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
@@ -98,6 +100,8 @@ class Metrics extends MetricsBase {
 
     public docs_comments_total: Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>;
 
+    public docs_document_updates_ack_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>;
+
     public docs_document_updates_decryption_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson>;
 
     public docs_document_updates_load_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson>;
@@ -107,6 +111,8 @@ class Metrics extends MetricsBase {
     public docs_document_updates_total: Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>;
 
     public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
+
+    public docs_realtime_disconnect_error_total: Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>;
 
     public docs_realtime_edit_latency_histogram: Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>;
 
@@ -272,6 +278,12 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.docs_document_updates_ack_error_total =
+            new Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>(
+                { name: 'docs_document_updates_ack_error_total', version: 1 },
+                this.requestService
+            );
+
         this.docs_document_updates_decryption_error_total =
             new Counter<HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson>(
                 { name: 'docs_document_updates_decryption_error_total', version: 1 },
@@ -298,6 +310,12 @@ class Metrics extends MetricsBase {
         this.docs_failed_websocket_connections_total =
             new Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>(
                 { name: 'docs_failed_websocket_connections_total', version: 1 },
+                this.requestService
+            );
+
+        this.docs_realtime_disconnect_error_total =
+            new Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>(
+                { name: 'docs_realtime_disconnect_error_total', version: 1 },
                 this.requestService
             );
 
