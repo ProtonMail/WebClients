@@ -1,9 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
-import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useUserKeys } from '@proton/components/hooks';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -24,40 +24,45 @@ interface BroadcastData
     encryptionKeys: PublicKeyReference[];
 }
 
-export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
+export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
 
     const { syncSingleWalletAccount, walletsChainData, network } = useBitcoinBlockchainContext();
-    const { createNotification } = useNotifications();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
     const [psbt, setPsbt] = useState<WasmPsbt>();
     const [broadcastedTxId, setBroadcastedTxId] = useState<string>();
 
     const [userKeys] = useUserKeys();
 
-    const createPsbt = useCallback(async () => {
-        if (!isUndefined(network)) {
-            try {
-                const psbt = await txBuilder.createPsbt(network);
-                setPsbt(psbt);
-            } catch (err) {
-                createNotification({ text: c('Wallet send').t`Could not create PSBT`, type: 'error' });
-            }
-        }
-    }, [txBuilder, network, createNotification]);
-
-    const createMockPsbt = useCallback(
-        async (txBuilder: WasmTxBuilder) => {
+    const createDraftPsbt = useCallback(
+        async (inputTxBuilder?: WasmTxBuilder) => {
             if (!isUndefined(network)) {
                 try {
-                    return await txBuilder.createPsbt(network);
+                    return await (inputTxBuilder ?? txBuilder).createDraftPsbt(network);
                 } catch (err) {
-                    console.error('an occured when building PSBT', err);
+                    console.error('An error occurred when building PSBT', err);
+                    throw err;
                 }
+            } else {
+                throw new Error('missing network');
             }
         },
-        [network]
+        [network, txBuilder]
     );
+
+    useEffect(() => {
+        const run = async () => {
+            const psbt = await createDraftPsbt();
+
+            if (psbt) {
+                setPsbt(psbt);
+            }
+        };
+
+        if (shouldCreatePsbt) {
+            void run();
+        }
+    }, [createDraftPsbt, shouldCreatePsbt]);
 
     const signAndBroadcastPsbt = (
         {
@@ -78,9 +83,11 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
                 account?.ID
             );
 
-            if (!psbt || !userKeys || !wasmAccount || isUndefined(network) || !wallet.WalletKey?.DecryptedKey) {
+            if (!userKeys || !wasmAccount || isUndefined(network) || !wallet.WalletKey?.DecryptedKey) {
                 return;
             }
+
+            const psbt = await txBuilder.createPsbt(network);
 
             const signed = await psbt.sign(wasmAccount.account, network).catch(() => {
                 throw new Error(c('Wallet Send').t`Could not sign transaction`);
@@ -132,5 +139,5 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }) => {
         setPsbt(undefined);
     }, []);
 
-    return { psbt, loadingBroadcast, broadcastedTxId, createPsbt, createMockPsbt, erasePsbt, signAndBroadcastPsbt };
+    return { psbt, loadingBroadcast, broadcastedTxId, createDraftPsbt, erasePsbt, signAndBroadcastPsbt };
 };
