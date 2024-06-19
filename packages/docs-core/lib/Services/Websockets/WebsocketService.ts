@@ -6,19 +6,11 @@ import { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import {
   InternalEventBusInterface,
-  WebsocketConnectionEvent,
   WebsocketConnectionInterface,
-  WebsocketConnectedPayload,
-  BaseWebsocketPayload,
-  WebsocketDisconnectedPayload,
   RealtimeUrlAndToken,
-  WebsocketFailedToConnectPayload,
-  WebsocketEncryptionErrorPayload,
   BroadcastSource,
   assertUnreachable,
   ProcessedIncomingRealtimeEventMessage,
-  WebsocketDocumentUpdateMessagePayload,
-  WebsocketEventMessagePayload,
 } from '@proton/docs-shared'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -42,8 +34,21 @@ import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
-import { DocumentUpdateBuffer } from './DocumentUpdateBuffer'
+import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { GenerateUUID } from '../../Util/GenerateUuid'
+import { AckLedger } from './AckLedger/AckLedger'
+import { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
+import {
+  BaseWebsocketPayload,
+  WebsocketAckStatusChangePayload,
+  WebsocketConnectedPayload,
+  WebsocketDisconnectedPayload,
+  WebsocketDocumentUpdateMessagePayload,
+  WebsocketEncryptionErrorPayload,
+  WebsocketEventMessagePayload,
+  WebsocketFailedToConnectPayload,
+} from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
 type LinkID = string
 
@@ -54,6 +59,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     lastKeys?: DocumentKeys
     lastDocument?: NodeMeta
   } = {}
+  readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
 
   constructor(
     private _createRealtimeValetToken: GetRealtimeUrlAndToken,
@@ -63,6 +69,15 @@ export class WebsocketService implements WebsocketServiceInterface {
     private eventBus: InternalEventBusInterface,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
+  }
+
+  handleLedgerStatusChangeCallback(): void {
+    this.eventBus.publish<WebsocketAckStatusChangePayload>({
+      type: WebsocketConnectionEvent.AckStatusChange,
+      payload: {
+        ledger: this.ledger,
+      },
+    })
   }
 
   handleWindowUnload = (event: BeforeUnloadEvent): void => {
@@ -89,6 +104,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   destroy(): void {
     window.removeEventListener('beforeunload', this.handleWindowUnload)
+    this.ledger.destroy()
 
     for (const { buffer } of Object.values(this.connections)) {
       buffer.destroy()
@@ -236,6 +252,8 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     this.logger.info(`Broadcasting document update of size: ${binary.byteLength} bytes`)
 
+    this.ledger.messagePosted(message)
+
     void connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
   }
 
@@ -338,7 +356,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     return new Uint8Array(result.getValue())
   }
 
-  private async handleConnectionMessage(document: NodeMeta, data: Uint8Array): Promise<void> {
+  async handleConnectionMessage(document: NodeMeta, data: Uint8Array): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -352,7 +370,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     } else if (type.hasEvents()) {
       await this.handleIncomingEventsMessage(record, message.eventsMessage)
     } else if (type.isMessageAck()) {
-      this.logger.info('Received message ack')
+      this.ledger.messageAcknowledgementReceived(message.acksMessage)
     } else {
       throw new Error('Unknown message type')
     }

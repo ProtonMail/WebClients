@@ -4,8 +4,6 @@ import { DocsAwareness } from './DocsAwareness'
 import { RtsMessagePayload } from './RtsMessagePayload'
 
 export interface DocStateInterface extends Observable<string> {
-  canBeEditable: boolean
-
   receiveMessage(message: RtsMessagePayload): void
   getDocState(): Uint8Array
   performOpeningCeremony(): void

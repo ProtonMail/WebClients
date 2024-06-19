@@ -71,8 +71,8 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('handleUnresolveCommentMarkNode', [markID])
   }
 
-  async changeEditingAllowance(allow: boolean): Promise<void> {
-    return this.invokeEditorMethod('changeEditingAllowance', [allow])
+  async changeLockedState(locked: boolean): Promise<void> {
+    return this.invokeEditorMethod('changeLockedState', [locked])
   }
 
   async broadcastPresenceState(): Promise<void> {
