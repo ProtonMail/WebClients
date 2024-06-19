@@ -369,7 +369,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 createNotification({
                     ...notification,
                     key: notification.key ?? NotificationKey.AUTH,
-                    type: 'error',
                     deduplicate: true,
                 }),
         });
