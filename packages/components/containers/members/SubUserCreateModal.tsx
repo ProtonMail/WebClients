@@ -2,12 +2,27 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { createMember, getPrivateAdminError } from '@proton/account';
-import { Button } from '@proton/atoms';
+import {
+    InvalidAddressesError,
+    MemberCreationValidationError,
+    UnavailableAddressesError,
+    createMember,
+    getPrivateAdminError,
+} from '@proton/account';
+import { Button, InlineLinkButton } from '@proton/atoms';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { APPS, APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_NAMES,
+    BRAND_NAME,
+    GIGA,
+    MAIL_APP_NAME,
+    MEMBER_ROLE,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -16,7 +31,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getHasVpnB2BPlan, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
-import { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode, Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -24,6 +39,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import {
     DropdownSizeUnit,
     Icon,
+    Info,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -118,7 +134,11 @@ const SubUserCreateModal = ({
 
     const hasVPN = Boolean(organization?.MaxVPN);
 
+    const isMagicLinkEnabled = useFlag('MagicLink');
+    const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
+
     const [model, setModel] = useState({
+        mode: isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password,
         name: '',
         private: false,
         admin: false,
@@ -126,6 +146,7 @@ const SubUserCreateModal = ({
         confirm: '',
         address: '',
         numAI: assistantSeatRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+        invitationEmail: '',
         domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&
@@ -141,10 +162,21 @@ const SubUserCreateModal = ({
 
     const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
-    const handleChange = (key: keyof typeof model) => (value: (typeof model)[typeof key]) =>
-        setModel({ ...model, [key]: value });
+    const setModelDiff = (diff: Partial<typeof model>) => {
+        setModel((previous) => ({ ...previous, ...diff }));
+    };
+
+    const handleChange = (key: keyof typeof model) => (value: (typeof model)[typeof key]) => {
+        return setModelDiff({ [key]: value });
+    };
 
     const getNormalizedAddress = () => {
+        // In email & invititation mode, the invited address is the same as the created address
+        if (useEmail && model.mode === CreateMemberMode.Invitation) {
+            const [Local, Domain] = getEmailParts(model.invitationEmail.trim());
+            return { Local, Domain };
+        }
+
         const address = model.address.trim();
 
         if (model.domain && !useEmail) {
@@ -160,26 +192,36 @@ const SubUserCreateModal = ({
     const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
     const save = async () => {
-        return dispatch(
-            createMember({
-                api: silentApi,
-                member: {
-                    ...model,
-                    address: emailAddressParts,
-                    role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
-                    numAI: model.numAI,
-                },
-                verifiedDomains,
-                validationOptions: {
-                    disableStorageValidation,
-                    disableDomainValidation,
-                    disableAddressValidation,
-                },
-                keyTransparencyCommit,
-                keyTransparencyVerify,
-                verifyOutboundPublicKeys,
-            })
-        );
+        try {
+            return await dispatch(
+                createMember({
+                    api: silentApi,
+                    member: {
+                        ...model,
+                        addresses: [emailAddressParts],
+                        role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
+                        numAI: model.numAI,
+                    },
+                    verifiedDomains,
+                    validationOptions: {
+                        disableStorageValidation,
+                        disableDomainValidation,
+                        disableAddressValidation,
+                    },
+                    keyTransparencyCommit,
+                    keyTransparencyVerify,
+                    verifyOutboundPublicKeys,
+                })
+            );
+        } catch (error) {
+            if (error instanceof InvalidAddressesError) {
+                throw new MemberCreationValidationError(c('Error').t`Email address is invalid`);
+            } else if (error instanceof UnavailableAddressesError) {
+                const first = error.unavailableAddresses[0];
+                throw new MemberCreationValidationError(first.message || c('Error').t`Email address is not available`);
+            }
+            throw error;
+        }
     };
 
     const handleSubmit = async () => {
@@ -187,7 +229,7 @@ const SubUserCreateModal = ({
         await save().finally(start);
         await call();
         onClose?.();
-        createNotification({ text: c('Success').t`User created` });
+        createNotification({ text: c('user_modal').t`User created` });
 
         onSuccess?.();
     };
@@ -210,6 +252,7 @@ const SubUserCreateModal = ({
         return (
             <SubUserBulkCreateModal
                 open
+                mode={isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password}
                 verifiedDomains={verifiedDomains}
                 members={members}
                 onBack={setSingleStep}
@@ -219,6 +262,7 @@ const SubUserCreateModal = ({
                 disableDomainValidation={disableDomainValidation}
                 disableAddressValidation={disableAddressValidation}
                 csvConfig={{
+                    mode: csvMode,
                     multipleAddresses: !useEmail,
                     includeStorage: allowStorageConfiguration,
                     includeVpnAccess: allowVpnAccessConfiguration,
@@ -258,6 +302,18 @@ const SubUserCreateModal = ({
         );
     })();
 
+    const protonAddressInfo = (
+        <Info
+            buttonClass="align-text-bottom"
+            title={c('user_modal').t`This will create a new ${MAIL_APP_NAME} address.`}
+        />
+    );
+    const protonAddressLabel = (
+        <span>
+            {c('user_modal').t`${BRAND_NAME} address`} {protonAddressInfo}
+        </span>
+    );
+
     return (
         <Modal
             as="form"
@@ -272,45 +328,98 @@ const SubUserCreateModal = ({
                 void withLoading(handleSubmit()).catch(errorHandler);
             }}
         >
-            <ModalHeader title={c('Title').t`Add new user`} />
+            <ModalHeader title={c('user_modal').t`Add new user`} />
             <ModalContent>
                 <InputFieldTwo
                     id="name"
                     autoFocus
                     value={model.name}
-                    hint={optionalName ? c('Info').t`Optional` : undefined}
+                    hint={optionalName ? c('user_modal').t`Optional` : undefined}
                     error={validator([!optionalName && requiredValidator(model.name)].filter(isTruthy))}
                     onValue={handleChange('name')}
-                    label={c('Label').t`Name`}
+                    label={c('user_modal').t`Name`}
                 />
-                <InputFieldTwo
-                    id="address"
-                    value={model.address}
-                    error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
-                    onValue={handleChange('address')}
-                    label={useEmail ? c('Label').t`Email` : c('Label').t`Address`}
-                    suffix={useEmail ? undefined : addressSuffix}
-                />
-                <InputFieldTwo
-                    id="password"
-                    as={PasswordInputTwo}
-                    value={model.password}
-                    error={validator([requiredValidator(model.password), passwordLengthValidator(model.password)])}
-                    onValue={handleChange('password')}
-                    label={c('Label').t`Create password`}
-                />
+                {model.mode === CreateMemberMode.Password && (
+                    <>
+                        <InputFieldTwo
+                            id="address"
+                            value={model.address}
+                            error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
+                            onValue={handleChange('address')}
+                            label={useEmail ? c('user_modal').t`Email` : protonAddressLabel}
+                            suffix={useEmail ? undefined : addressSuffix}
+                        />
 
-                <InputFieldTwo
-                    id="confirm-password"
-                    as={PasswordInputTwo}
-                    value={model.confirm}
-                    error={validator([
-                        requiredValidator(model.confirm),
-                        confirmPasswordValidator(model.password, model.confirm),
-                    ])}
-                    onValue={handleChange('confirm')}
-                    label={c('Label').t`Confirm password`}
-                />
+                        <InputFieldTwo
+                            id="password"
+                            as={PasswordInputTwo}
+                            value={model.password}
+                            error={validator([
+                                requiredValidator(model.password),
+                                passwordLengthValidator(model.password),
+                            ])}
+                            onValue={handleChange('password')}
+                            label={c('user_modal').t`Create password`}
+                        />
+
+                        <InputFieldTwo
+                            id="confirm-password"
+                            as={PasswordInputTwo}
+                            value={model.confirm}
+                            error={validator([
+                                requiredValidator(model.confirm),
+                                confirmPasswordValidator(model.password, model.confirm),
+                            ])}
+                            onValue={handleChange('confirm')}
+                            label={c('user_modal').t`Confirm password`}
+                        />
+
+                        {isMagicLinkEnabled && (
+                            <SubUserCreateHint className="mb-4 bg-weak">
+                                {c('user_modal').t`Remember to share the user's sign in details with them.`}{' '}
+                                <InlineLinkButton onClick={() => setModelDiff({ mode: CreateMemberMode.Invitation })}>
+                                    {c('user_modal').t`Send invite link via email instead`}
+                                </InlineLinkButton>
+                            </SubUserCreateHint>
+                        )}
+                    </>
+                )}
+                {model.mode === CreateMemberMode.Invitation && (
+                    <>
+                        {!useEmail && (
+                            <InputFieldTwo
+                                id="address"
+                                value={model.address}
+                                error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
+                                onValue={handleChange('address')}
+                                label={protonAddressLabel}
+                                suffix={addressSuffix}
+                            />
+                        )}
+                        <InputFieldTwo
+                            id="invitation-email"
+                            rootClassName="mb-4"
+                            value={model.invitationEmail}
+                            error={validator([
+                                requiredValidator(model.invitationEmail),
+                                emailValidator(model.invitationEmail),
+                            ])}
+                            onValue={handleChange('invitationEmail')}
+                            label={c('user_modal').t`Email`}
+                            assistiveText={
+                                <>
+                                    {c('user_modal').t`An invitation will be sent to this email address.`}&nbsp;
+                                    <InlineLinkButton
+                                        className="inline-block"
+                                        onClick={() => setModelDiff({ mode: CreateMemberMode.Password })}
+                                    >
+                                        {c('user_modal').t`Create password instead`}
+                                    </InlineLinkButton>
+                                </>
+                            }
+                        />
+                    </>
+                )}
 
                 {allowStorageConfiguration && (
                     <MemberStorageSelector
@@ -331,42 +440,46 @@ const SubUserCreateModal = ({
                             onChange={({ target }) => handleChange('vpn')(target.checked)}
                         />
                         <label className="text-semibold" htmlFor="vpn-toggle">
-                            {c('Label for new member').t`VPN connections`}
+                            {c('user_modal').t`VPN connections`}
                         </label>
                     </div>
                 )}
 
-                {allowPrivateMemberConfiguration && (
-                    <div className="flex items-center gap-2 mb-6">
-                        <Toggle
-                            id="private-toggle"
-                            checked={model.private}
-                            onChange={({ target }) => handleChange('private')(target.checked)}
-                        />
-                        <label className="text-semibold" htmlFor="private-toggle">
-                            {c('Label for new member').t`Private`}
-                        </label>
-                    </div>
-                )}
+                {model.mode === CreateMemberMode.Password && (
+                    <>
+                        {allowPrivateMemberConfiguration && (
+                            <div className="flex items-center gap-2 mb-6">
+                                <Toggle
+                                    id="private-toggle"
+                                    checked={model.private}
+                                    onChange={({ target }) => handleChange('private')(target.checked)}
+                                />
+                                <label className="text-semibold" htmlFor="private-toggle">
+                                    {c('user_modal').t`Private`}
+                                </label>
+                            </div>
+                        )}
 
-                <div className="flex items-center gap-2 mb-6">
-                    <Toggle
-                        id="admin-toggle"
-                        checked={model.admin}
-                        onChange={({ target }) => handleChange('admin')(target.checked)}
-                    />
-                    <label className="text-semibold" htmlFor="admin-toggle">
-                        {c('Label for new member').t`Admin`}
-                    </label>
-                    <Tooltip title={adminTooltipText()}>
-                        <Icon name="info-circle" className="color-primary" />
-                    </Tooltip>
-                    {passwordlessMode && model.private && model.admin && (
-                        <Tooltip title={getPrivateAdminError()} openDelay={0}>
-                            <Icon className="color-danger ml-2" name="info-circle-filled" />
-                        </Tooltip>
-                    )}
-                </div>
+                        <div className="flex items-center gap-2 mb-6">
+                            <Toggle
+                                id="admin-toggle"
+                                checked={model.admin}
+                                onChange={({ target }) => handleChange('admin')(target.checked)}
+                            />
+                            <label className="text-semibold" htmlFor="admin-toggle">
+                                {c('user_modal').t`Admin`}
+                            </label>
+                            <Tooltip title={adminTooltipText()}>
+                                <Icon name="info-circle" className="color-primary" />
+                            </Tooltip>
+                            {passwordlessMode && model.private && model.admin && (
+                                <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                                    <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                </Tooltip>
+                            )}
+                        </div>
+                    </>
+                )}
 
                 {allowAIAssistantConfiguration && (
                     <div className="flex items-center gap-2 mb-6">
@@ -377,7 +490,7 @@ const SubUserCreateModal = ({
                             onChange={({ target }) => handleChange('numAI')(target.checked)}
                         />
                         <label className="text-semibold" htmlFor="ai-assistant-toggle">
-                            {c('Info').t`Writing assistant`}
+                            {c('user_modal').t`Writing assistant`}
                         </label>
                         {!assistantSeatRemaining && (
                             <SettingsLink
@@ -388,20 +501,26 @@ const SubUserCreateModal = ({
                         )}
                     </div>
                 )}
-                <SubUserCreateHint className="mt-8" />
+
+                {model.mode !== CreateMemberMode.Password && (
+                    <SubUserCreateHint className="mb-4">
+                        {c('Info')
+                            .t`You will be able to promote the user to administrator or make them private once they've accepted the invitation.`}
+                    </SubUserCreateHint>
+                )}
             </ModalContent>
             <ModalFooter>
                 {showMultipleUserUploadButton ? (
                     <Button onClick={setBulkStep} disabled={submitting}>
-                        {c('Action').t`Add multiple users`}
+                        {c('user_modal').t`Add multiple users`}
                     </Button>
                 ) : (
                     <Button onClick={handleClose} disabled={submitting}>
-                        {c('Action').t`Cancel`}
+                        {c('user_modal').t`Cancel`}
                     </Button>
                 )}
                 <Button loading={submitting} type="submit" color="norm">
-                    {c('Action').t`Create user`}
+                    {c('user_modal').t`Create user`}
                 </Button>
             </ModalFooter>
         </Modal>

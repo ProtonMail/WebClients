@@ -16,6 +16,7 @@ import { useAddresses, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 import useOrganizationModals from './useOrganizationModals';
+import useUnprivatizeMembers from './useUnprivatizeMembers';
 
 interface Props {
     organization?: Organization;
@@ -29,6 +30,8 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
     const { modals, info, handleChangeOrganizationPassword, handleChangeOrganizationKeys } =
         useOrganizationModals(onceRef);
+
+    useUnprivatizeMembers();
 
     const tableHeaders = [c('Header').t`Organization key fingerprint`, c('Header').t`Key type`];
 

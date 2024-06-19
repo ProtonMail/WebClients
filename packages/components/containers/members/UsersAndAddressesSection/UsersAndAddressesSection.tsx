@@ -7,7 +7,7 @@ import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
-import { removeMember, updateRole } from '@proton/shared/lib/api/members';
+import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import {
     APP_NAMES,
     MEMBER_PRIVATE,
@@ -28,7 +28,14 @@ import {
     hasNewVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, EnhancedMember, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
+import {
+    Address,
+    EnhancedMember,
+    MEMBER_STATE,
+    Member,
+    MemberUnprivatizationState,
+} from '@proton/shared/lib/interfaces';
+import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
 import {
     getIsDomainActive,
     getOrganizationKeyInfo,
@@ -36,20 +43,11 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import {
-    Badge,
-    Block,
-    Info,
-    SearchInput,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    useModalState,
-} from '../../../components';
+import { Block, Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
 import {
     useAddresses,
     useApi,
+    useConfig,
     useCustomDomains,
     useEventManager,
     useGetOrganizationKey,
@@ -66,22 +64,38 @@ import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpo
 import { AddressModal } from '../../addresses';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
+import useUnprivatizeMembers from '../../organization/useUnprivatizeMembers';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal from '../LoginMemberModal';
-import MemberActions from '../MemberActions';
+import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../MemberActions';
 import MemberAddresses from '../MemberAddresses';
 import MemberFeatures from '../MemberFeatures';
 import MemberRole from '../MemberRole';
+import ResendInvitePrompt from '../ResendInvitePrompt';
 import SubUserCreateModal from '../SubUserCreateModal';
 import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
+import UserTableBadge from './UsersTableBadge';
+
+const getHasMagicLinkLayout = (
+    member?: Member
+): member is Member & { Unprivatization: NonNullable<Member['Unprivatization']> } => {
+    return Boolean(
+        member &&
+            member.Unprivatization &&
+            [MemberUnprivatizationState.Pending, MemberUnprivatizationState.Declined].includes(
+                member.Unprivatization.State as any
+            )
+    );
+};
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
+    const { APP_NAME } = useConfig();
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const getOrganizationKey = useGetOrganizationKey();
@@ -105,6 +119,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
+
+    useUnprivatizeMembers();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
@@ -133,6 +149,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const [addAddressModalProps, setAddAddressModalOpen, renderAddAddressModal] = useModalState();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
+    const [resendInviteProps, setResendInviteModalOpen, renderResendInviteModal] = useModalState(cleanOption);
     const [subUserEditModalProps, setSubUserEditModalOpen, renderSubUserEditModal] = useModalState(cleanOption);
     const [loginMemberModalProps, setLoginMemberModalOpen, renderLoginMemberModal] = useModalState(cleanOption);
     const [changeMemberPasswordModalProps, setChangeMemberPasswordModalOpen, renderChangeMemberPasswordModal] =
@@ -202,6 +219,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setTmpMemberID(member.ID);
         retry([member]);
         setUserSetupModal(true);
+    };
+
+    const handleResendMagicLinkInvite = async (member: EnhancedMember) => {
+        await api(resendUnprivatizationLink(member.ID));
+        createNotification({ text: c('Success message').t`Invitation resent` });
     };
 
     const handleDeleteUser = (member: EnhancedMember) => {
@@ -450,6 +472,22 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         {...subUserCreateModalProps}
                     />
                 )}
+                {renderResendInviteModal && tmpMember && (
+                    <ResendInvitePrompt
+                        email={(() => {
+                            try {
+                                const parsedInvitationData = parseInvitationData(
+                                    tmpMember.Unprivatization?.InvitationData || ''
+                                );
+                                return parsedInvitationData.Address;
+                            } catch {
+                                return tmpMember.Name;
+                            }
+                        })()}
+                        onResend={() => handleResendMagicLinkInvite(tmpMember)}
+                        {...resendInviteProps}
+                    />
+                )}
                 {renderSubUserEditModal && tmpMember && (
                     <SubUserEditModal
                         member={tmpMember}
@@ -457,7 +495,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
-                        showAddressesSection={showAddressesSection}
+                        showAddressesSection={showAddressesSection && !getHasMagicLinkLayout(tmpMember)}
                         {...subUserEditModalProps}
                     />
                 )}
@@ -557,16 +595,32 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                        const isInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
-
                         const memberName = member.Name || memberAddresses[0]?.Email;
-                        const canAddAddress = !member.SSO && memberAddresses.length === 0;
+
+                        const hasMagicLinkLayout = getHasMagicLinkLayout(member);
+                        const magicLinkInvitationPending =
+                            hasMagicLinkLayout && member.Unprivatization.State === MemberUnprivatizationState.Pending;
+                        const canMagicLinkResend = magicLinkInvitationPending;
+
+                        const isFamilyInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
+
+                        const hasFeatures = !magicLinkInvitationPending;
+
+                        const memberPermissions = getMemberPermissions({
+                            appName: APP_NAME,
+                            user,
+                            member,
+                            addresses: memberAddresses,
+                            organization,
+                            organizationKey,
+                            disableMemberSignIn: hasVpnOrPassB2BPlan,
+                        });
 
                         return (
                             <TableRow
                                 key={member.ID}
                                 labels={tableLabel}
-                                className={clsx('align-top', isInvitationPending && 'color-weak')}
+                                className={clsx('align-top', isFamilyInvitationPending && 'color-weak')}
                             >
                                 <TableCell className="align-baseline">
                                     <div className="flex items-center gap-3">
@@ -574,39 +628,67 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                             {getInitials(memberName)}
                                         </Avatar>
                                         <div
-                                            className="text-ellipsis flex-1 min-w-custom"
-                                            style={{ '--min-w-custom': '6rem' }}
+                                            className="text-ellipsis shrink-0"
                                             data-testid="users-and-addresses-table:memberName"
                                             title={memberName}
                                         >
                                             {memberName}
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            {allowPrivateMemberConfiguration &&
-                                                !hasFamily(subscription) &&
-                                                Boolean(member.Private) && (
-                                                    <Badge
-                                                        type="origin"
-                                                        data-testid="users-and-addresses-table:memberIsPrivate"
-                                                    >
-                                                        {c('Private Member').t`private`}
-                                                    </Badge>
-                                                )}
-                                            {member['2faStatus'] > 0 && (
-                                                <Badge type="origin">{c('Enabled 2FA').t`2FA`}</Badge>
-                                            )}
-                                            {member.NumAI > 0 && (
-                                                <Badge type="origin">{c('Users table: AI-powered').t`AI`}</Badge>
-                                            )}
-                                            {member.SSO > 0 && (
-                                                <Badge
-                                                    type="success"
-                                                    tooltip={c('Users table: single sign-on tooltip')
-                                                        .t`SSO user provided by your identity provider`}
-                                                >
-                                                    {c('Users table: single sign-on enabled').t`SSO`}
-                                                </Badge>
-                                            )}
+                                            {(() => {
+                                                if (!hasMagicLinkLayout) {
+                                                    return (
+                                                        <>
+                                                            {Boolean(member.Self) && (
+                                                                <UserTableBadge type="success" className="">
+                                                                    {c('Users table: badge').t`It's you`}
+                                                                </UserTableBadge>
+                                                            )}
+                                                            {allowPrivateMemberConfiguration &&
+                                                                !hasFamily(subscription) &&
+                                                                Boolean(member.Private) && (
+                                                                    <UserTableBadge
+                                                                        type="info"
+                                                                        tooltip={c('Users table: badge')
+                                                                            .t`Administrators can't access the data of private users`}
+                                                                        data-testid="users-and-addresses-table:memberIsPrivate"
+                                                                    >
+                                                                        {c('Users table: badge').t`Private`}
+                                                                    </UserTableBadge>
+                                                                )}
+                                                            {member.NumAI > 0 && (
+                                                                <UserTableBadge type="info">
+                                                                    {c('Users table: badge').t`AI`}
+                                                                </UserTableBadge>
+                                                            )}
+                                                            {Boolean(member.SSO) && (
+                                                                <UserTableBadge
+                                                                    type="success"
+                                                                    tooltip={c('Users table: badge')
+                                                                        .t`SSO user provided by your identity provider`}
+                                                                >
+                                                                    {c('Users table: badge').t`SSO`}
+                                                                </UserTableBadge>
+                                                            )}
+                                                        </>
+                                                    );
+                                                }
+
+                                                if (
+                                                    hasMagicLinkLayout &&
+                                                    member.Unprivatization.State === MemberUnprivatizationState.Pending
+                                                ) {
+                                                    return (
+                                                        <UserTableBadge
+                                                            type="weak"
+                                                            tooltip={c('Users table: badge')
+                                                                .t`Invitation sent, awaiting reply from the invited member`}
+                                                        >
+                                                            {c('Users table: badge').t`Invite sent`}
+                                                        </UserTableBadge>
+                                                    );
+                                                }
+                                            })()}
                                         </div>
                                     </div>
                                 </TableCell>
@@ -614,20 +696,25 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     className="text-cut align-baseline"
                                     data-testid="users-and-addresses-table:memberRole"
                                 >
-                                    <div className="flex flex-column flex-nowrap">
+                                    <div
+                                        className={clsx(
+                                            'flex flex-column flex-nowrap',
+                                            magicLinkInvitationPending && 'color-hint'
+                                        )}
+                                    >
                                         <MemberRole member={member} />
-                                        {isInvitationPending && (
+                                        {isFamilyInvitationPending && (
                                             <span>
-                                                <Badge type="origin" className="rounded-sm color-weak">{c(
-                                                    'familyOffer_2023:Family plan'
-                                                ).t`Pending`}</Badge>
+                                                <UserTableBadge type="weak">
+                                                    {c('familyOffer_2023:Family plan').t`Pending`}
+                                                </UserTableBadge>
                                             </span>
                                         )}
                                     </div>
                                 </TableCell>
                                 <TableCell className="align-baseline">
-                                    <div>
-                                        {member.State && member.State === MEMBER_STATE.STATUS_INVITED ? (
+                                    <div className={clsx(magicLinkInvitationPending && 'color-hint')}>
+                                        {isFamilyInvitationPending ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
                                             <MemberAddresses addresses={memberAddresses} />
@@ -636,28 +723,38 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 </TableCell>
                                 {showFeaturesColumn && (
                                     <TableCell className="align-baseline">
-                                        <MemberFeatures member={member} organization={organization} />
+                                        {hasFeatures && <MemberFeatures member={member} organization={organization} />}
                                     </TableCell>
                                 )}
                                 <TableCell className="align-baseline">
                                     <div>
-                                        <MemberActions
-                                            user={user}
-                                            organizationKey={organizationKey}
-                                            onAddAddress={
-                                                canAddAddress ? (member) => handleAddAddress(member) : undefined
-                                            }
-                                            onEdit={handleEditUser}
-                                            onDelete={handleDeleteUser}
-                                            onSetup={handleSetupUser}
-                                            onRevoke={handleRevokeUserSessions}
-                                            onLogin={handleLoginUser}
-                                            onChangePassword={handleChangeMemberPassword}
-                                            member={member}
-                                            addresses={memberAddresses}
-                                            organization={organization}
-                                            disableMemberSignIn={hasVpnOrPassB2BPlan}
-                                        />
+                                        {hasMagicLinkLayout ? (
+                                            <MagicLinkMemberActions
+                                                state={member.Unprivatization.State}
+                                                onEdit={() => handleEditUser(member)}
+                                                onResend={
+                                                    canMagicLinkResend
+                                                        ? () => {
+                                                              setTmpMemberID(member.ID);
+                                                              setResendInviteModalOpen(true);
+                                                          }
+                                                        : undefined
+                                                }
+                                                onDelete={() => handleDeleteUserConfirm(member)}
+                                            />
+                                        ) : (
+                                            <MemberActions
+                                                permissions={memberPermissions}
+                                                onAddAddress={handleAddAddress}
+                                                onEdit={handleEditUser}
+                                                onDelete={handleDeleteUser}
+                                                onSetup={handleSetupUser}
+                                                onRevoke={handleRevokeUserSessions}
+                                                onLogin={handleLoginUser}
+                                                onChangePassword={handleChangeMemberPassword}
+                                                member={member}
+                                            />
+                                        )}
                                     </div>
                                 </TableCell>
                             </TableRow>

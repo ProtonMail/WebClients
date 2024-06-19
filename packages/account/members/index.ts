@@ -230,3 +230,6 @@ export const getMemberAddresses = ({
 
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
+export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';
+export { default as InvalidAddressesError } from './errors/InvalidAddressesError';
+export { default as MemberCreationValidationError } from './errors/MemberCreationValidationError';

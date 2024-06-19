@@ -23,7 +23,10 @@ import { generateMemberAddressKey } from './organizationKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 import { generateUserKey } from './userKeys';
 
-export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: PrivateKeyReference) => {
+export const getDecryptedMemberKey = async (
+    { Token, PrivateKey }: tsKey,
+    organizationKey: PrivateKeyReference
+): Promise<PrivateKeyReference> => {
     if (!Token) {
         throw new Error('Member token invalid');
     }

@@ -2,6 +2,7 @@ import { ChangeEvent, JSX, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { InvalidAddressesError, UnavailableAddressesError, createMember } from '@proton/account';
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import {
@@ -31,24 +32,24 @@ import {
     useSubscription,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import removeIndex from '@proton/utils/removeIndex';
 
+import useVerifyOutboundPublicKeys from '../../../keyTransparency/useVerifyOutboundPublicKeys';
 import { CsvConfig } from '../csv';
-import InvalidAddressesError from '../errors/InvalidAddressesError';
-import UnavailableAddressesError from '../errors/UnavailableAddressesError';
-import { createUser } from '../lib';
 import { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
 import validateOrganizationCapacity, { OrganizationCapacityError } from './validateOrganizationCapacity';
@@ -97,35 +98,39 @@ const filterOptions = (searchValue: string, usersToImport: UserTemplate[]) => {
 };
 
 interface Props extends ModalProps {
+    mode: CreateMemberMode;
     members: EnhancedMember[] | undefined;
     usersToImport: UserTemplate[];
     app: APP_NAMES;
     verifiedDomains: Domain[];
-    expectedCsvConfig?: CsvConfig;
+    expectedCsvConfig: CsvConfig;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
 }
 
 const CreateUserAccountsModal = ({
+    mode,
     members,
     verifiedDomains,
     usersToImport,
     app,
     onClose,
-    expectedCsvConfig = {},
+    expectedCsvConfig,
     disableStorageValidation,
     disableDomainValidation,
     disableAddressValidation,
     ...rest
 }: Props) => {
     const api = useApi();
+    const dispatch = useDispatch();
     const getAddresses = useGetAddresses();
     const getOrganization = useGetOrganization();
     const getOrganizationKey = useGetOrganizationKey();
     const [organizationCapacityError, setOrganizationCapacityError] = useState<OrganizationCapacityError>();
     const getUserKeys = useGetUserKeys();
     const getUser = useGetUser();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => getUser());
 
     const [subscription] = useSubscription();
@@ -157,6 +162,7 @@ const CreateUserAccountsModal = ({
     const [currentProgress, setCurrentProgress] = useState(0);
     const [failedUsers, setFailedUsers] = useState<UserTemplate[]>([]);
     const [invalidAddresses, setInvalidAddresses] = useState<string[]>([]);
+    const [invalidInvitationAddresses, setInvalidInvitationAddresses] = useState<string[]>([]);
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
     const [orphanedAddresses, setOrphanedAddresses] = useState<string[]>([]);
     const [importing, withImporting] = useLoading();
@@ -273,6 +279,7 @@ const CreateUserAccountsModal = ({
         const localSuccessfullyCreatedUsers: UserTemplate[] = [];
         const localFailedUsers: UserTemplate[] = [];
         const localInvalidAddresses: string[] = [];
+        const localInvalidInvitationAddresses: string[] = [];
         const localUnavailableAddresses: string[] = [];
         const localOrphanedAddresses: string[] = [];
 
@@ -283,11 +290,14 @@ const CreateUserAccountsModal = ({
 
             setFailedUsers(localFailedUsers);
             setInvalidAddresses(localInvalidAddresses);
+            setInvalidInvitationAddresses(localInvalidInvitationAddresses);
             setUnavailableAddresses(localUnavailableAddresses);
             setOrphanedAddresses(localOrphanedAddresses);
         };
 
         stop();
+
+        const silentApi = getSilentApiWithAbort(api, signal);
 
         for (let i = 0; i < selectedUsers.length; i++) {
             if (signal.aborted) {
@@ -295,14 +305,40 @@ const CreateUserAccountsModal = ({
             }
 
             const user = selectedUsers[i];
+            const addresses = user.emailAddresses.map((emailAddress) => {
+                const [Local, Domain] = getEmailParts(emailAddress);
+                return {
+                    Local,
+                    Domain,
+                };
+            });
             try {
-                await createUser({
-                    user,
-                    api: getSilentApiWithAbort(api, signal),
-                    getAddresses,
-                    getOrganizationKey,
-                    keyTransparencyVerify,
-                });
+                await dispatch(
+                    createMember({
+                        api: silentApi,
+                        member: {
+                            mode,
+                            name: user.displayName,
+                            private: user.privateSubUser,
+                            password: user.password,
+                            addresses,
+                            storage: Math.round(user.totalStorage),
+                            invitationEmail: user.invitationEmail || '',
+                            role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+                            numAI: false,
+                            vpn: user.vpnAccess,
+                        },
+                        verifiedDomains,
+                        validationOptions: {
+                            disableStorageValidation,
+                            disableDomainValidation,
+                            disableAddressValidation,
+                        },
+                        keyTransparencyCommit,
+                        keyTransparencyVerify,
+                        verifyOutboundPublicKeys,
+                    })
+                );
 
                 localSuccessfullyCreatedUsers.push(user);
             } catch (error: any) {
@@ -321,9 +357,10 @@ const CreateUserAccountsModal = ({
                     setStep(STEPS.SELECT_USERS);
                 } else if (error instanceof InvalidAddressesError) {
                     localInvalidAddresses.push(...error.invalidAddresses);
+                    localInvalidInvitationAddresses.push(...error.invalidInvitationAddresses);
                     localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else if (error instanceof UnavailableAddressesError) {
-                    localUnavailableAddresses.push(...error.unavailableAddresses);
+                    localUnavailableAddresses.push(...error.unavailableAddresses.map(({ address }) => address));
                     localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else {
                     localFailedUsers.push(user);
@@ -349,7 +386,12 @@ const CreateUserAccountsModal = ({
 
         syncState();
 
-        if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
+        if (
+            localFailedUsers.length ||
+            localInvalidAddresses.length ||
+            localInvalidInvitationAddresses.length ||
+            localUnavailableAddresses.length
+        ) {
             setStep(STEPS.DONE_WITH_ERRORS);
             return;
         }
@@ -414,32 +456,36 @@ const CreateUserAccountsModal = ({
                                     onChange={handleSelectAllFilteredOptionsClick}
                                 />,
                                 <div>{c('TableHeader').t`Name`}</div>,
-                                expectedCsvConfig.multipleAddresses
-                                    ? c('TableHeader').t`Email addresses`
-                                    : c('TableHeader').t`Email address`,
+                                ...(expectedCsvConfig.mode === CreateMemberMode.Password
+                                    ? expectedCsvConfig.multipleAddresses
+                                        ? [
+                                              <div>{c('TableHeader').t`Email addresses`}</div>,
+                                              <div>{c('TableHeader').t`Password`}</div>,
+                                          ]
+                                        : [
+                                              <div>{c('TableHeader').t`Email address`}</div>,
+                                              <div>{c('TableHeader').t`Password`}</div>,
+                                          ]
+                                    : expectedCsvConfig.multipleAddresses
+                                      ? [
+                                            <div>{c('TableHeader').t`Email addresses`}</div>,
+                                            <div>{c('TableHeader').t`Invitation email`}</div>,
+                                        ]
+                                      : [<div>{c('TableHeader').t`Email address`}</div>]),
                                 expectedCsvConfig.includeStorage && (
                                     <div className="text-right">{c('TableHeader').t`Total storage`}</div>
                                 ),
-                                <div>{c('TableHeader').t`Password`}</div>,
                                 <div>{c('TableHeader').t`Role`}</div>,
                             ].filter(isTruthy)}
                         />
                         <TableBody colSpan={3}>
-                            {filteredOptions.map(({ id, totalStorage, displayName, emailAddresses, password }) => {
-                                const isItemSelected = selectedUserIds.indexOf(id) !== -1;
-                                const checkboxId = `user-${id}`;
-                                const humanReadableStorage = humanSize({ bytes: totalStorage, unit: 'GB' });
+                            {filteredOptions.map(
+                                ({ id, totalStorage, displayName, emailAddresses, invitationEmail, password }) => {
+                                    const isItemSelected = selectedUserIds.indexOf(id) !== -1;
+                                    const checkboxId = `user-${id}`;
+                                    const humanReadableStorage = humanSize({ bytes: totalStorage, unit: 'GB' });
 
-                                return (
-                                    <tr key={id} onClick={() => handleCheckboxChange(id)}>
-                                        <TableCell className="align-top">
-                                            <Checkbox id={checkboxId} checked={isItemSelected} readOnly />
-                                        </TableCell>
-                                        <TableCell key="displayName" className="align-top">
-                                            <div title={displayName.text}>
-                                                <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
-                                            </div>
-                                        </TableCell>
+                                    const emails = (
                                         <TableCell className="align-top">
                                             <ul className="unstyled m-0">
                                                 {emailAddresses.map(({ chunks, text }) => (
@@ -449,19 +495,50 @@ const CreateUserAccountsModal = ({
                                                 ))}
                                             </ul>
                                         </TableCell>
-                                        {expectedCsvConfig.includeStorage && (
-                                            <TableCell
-                                                className="text-right text-no-wrap align-top"
-                                                title={humanReadableStorage}
-                                            >
-                                                {humanReadableStorage}
+                                    );
+
+                                    return (
+                                        <tr key={id} onClick={() => handleCheckboxChange(id)}>
+                                            <TableCell className="align-top">
+                                                <Checkbox id={checkboxId} checked={isItemSelected} readOnly />
                                             </TableCell>
-                                        )}
-                                        <TableCell className="align-top">{password}</TableCell>
-                                        <TableCell className="align-top">{c('Info').t`Member`}</TableCell>
-                                    </tr>
-                                );
-                            })}
+                                            <TableCell key="displayName" className="align-top">
+                                                <div title={displayName.text}>
+                                                    <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
+                                                </div>
+                                            </TableCell>
+                                            {expectedCsvConfig.mode === CreateMemberMode.Password ? (
+                                                <>
+                                                    {emails}
+                                                    <TableCell className="align-top">{password}</TableCell>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {expectedCsvConfig.multipleAddresses ? (
+                                                        <>
+                                                            {emails}
+                                                            <TableCell className="align-top">
+                                                                {invitationEmail}
+                                                            </TableCell>
+                                                        </>
+                                                    ) : (
+                                                        <>{emails}</>
+                                                    )}
+                                                </>
+                                            )}
+                                            {expectedCsvConfig.includeStorage && (
+                                                <TableCell
+                                                    className="text-right text-no-wrap align-top"
+                                                    title={humanReadableStorage}
+                                                >
+                                                    {humanReadableStorage}
+                                                </TableCell>
+                                            )}
+                                            <TableCell className="align-top">{c('Info').t`Member`}</TableCell>
+                                        </tr>
+                                    );
+                                }
+                            )}
                         </TableBody>
                     </Table>
                 ) : (
@@ -538,7 +615,10 @@ const CreateUserAccountsModal = ({
                 title,
                 content: (
                     <>
-                        {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length ? (
+                        {failedUsers.length &&
+                        !invalidAddresses.length &&
+                        !unavailableAddresses.length &&
+                        !invalidInvitationAddresses.length ? (
                             <p className={clsx('mt-0', !orphanedAddresses.length && 'mb-0')}>
                                 {c('Title').ngettext(
                                     msgid`Failed to create ${failedUsers.length} user
@@ -561,6 +641,19 @@ const CreateUserAccountsModal = ({
                                     )}
                                 </p>
                                 {renderAddressList(invalidAddresses)}
+                            </>
+                        ) : null}
+
+                        {invalidInvitationAddresses.length ? (
+                            <>
+                                <p className="mt-0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address is invalid.`,
+                                        `The following addresses are invalid.`,
+                                        invalidInvitationAddresses.length
+                                    )}
+                                </p>
+                                {renderAddressList(invalidInvitationAddresses)}
                             </>
                         ) : null}
 

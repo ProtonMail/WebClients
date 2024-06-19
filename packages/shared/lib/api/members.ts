@@ -1,6 +1,7 @@
-import { Address, Api, Member, SignedKeyList } from '../interfaces';
+import type { Address, Api, Member, SignedKeyList } from '../interfaces';
+import type { UnprivatizeMemberResult } from '../keys/unprivatization';
 import queryPages from './helpers/queryPages';
-import { PaginationParams } from './interface';
+import type { PaginationParams } from './interface';
 
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
@@ -53,15 +54,34 @@ export const getAllMemberAddresses = (api: Api, memberID: string) => {
     });
 };
 
-export const createMember = (data: {
+interface MemberPayload {
     Name: string;
     Private: number;
     MaxSpace: number;
     MaxVPN: number;
     MaxAI: number;
-}) => ({
+}
+
+interface InviteMemberPayload extends MemberPayload {
+    InvitationEmail: string;
+    InvitationData: string;
+    InvitationSignature: string;
+}
+
+export const createMember = (data: MemberPayload | InviteMemberPayload) => ({
     method: 'post',
     url: 'core/v4/members',
+    data,
+});
+
+export const queryMemberUnprivatizationInfo = () => ({
+    method: 'get',
+    url: `core/v4/members/me/unprivatize`,
+});
+
+export const unprivatizeMemberKeysRoute = (memberID: string, data: UnprivatizeMemberResult) => ({
+    method: 'post',
+    url: `core/v4/members/${memberID}/keys/unprivatize`,
     data,
 });
 
@@ -135,6 +155,11 @@ export const updateAI = (memberID: string, MaxAI: number) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/ai`,
     data: { MaxAI },
+});
+
+export const resendUnprivatizationLink = (memberID: string) => ({
+    method: 'post',
+    url: `core/v4/members/${memberID}/unprivatize/resend`,
 });
 
 export const removeMember = (memberID: string) => ({
