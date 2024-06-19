@@ -21,6 +21,7 @@ import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS, DrawerApp, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
@@ -311,7 +312,10 @@ export const DrawerProvider = ({
                     const user = await getUser();
 
                     const { url, app } = event.data.payload;
-                    setDrawerLocalStorageKey({ app, url }, user.ID);
+                    const pathname = new URL(url).pathname || '';
+                    const path = stripLocalBasenameFromPathname(pathname);
+
+                    setDrawerLocalStorageKey({ app, path }, user.ID);
                     setIframeURLMap((iframeURLMap) => ({
                         ...iframeURLMap,
                         [app]: url,
