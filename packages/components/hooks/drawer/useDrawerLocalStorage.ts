@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useGetUser } from '@proton/components/hooks';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
 import { DrawerApp, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -27,8 +28,10 @@ const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolea
 
             if (appInView) {
                 const url = iframeSrcMap[appInView];
+                const pathname = url ? new URL(url).pathname : '';
+                const path = stripLocalBasenameFromPathname(pathname);
                 hasSetAppInView.current = true;
-                const item = { app: appInView, url } as DrawerLocalStorageValue;
+                const item: DrawerLocalStorageValue = { app: appInView, path };
                 setDrawerLocalStorageKey(item, ID);
             } else if (hasSetAppInView.current) {
                 // When closing the drawer, clean up the value from the drawer local storage item

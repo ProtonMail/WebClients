@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 
-import { useConfig, useDrawer, useOnline, useUser } from '@proton/components/hooks';
+import { useAuthentication, useConfig, useDrawer, useOnline, useUser } from '@proton/components/hooks';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
 import {
     addParentAppToUrl,
     getDisplayDrawerApp,
@@ -19,6 +20,7 @@ const useOpenDrawerOnLoad = () => {
     const { APP_NAME } = useConfig();
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
+    const authentication = useAuthentication();
     const { setIframeSrcMap, setIframeURLMap, setAppInView } = useDrawer();
 
     const isAppReachable = !offline && onlineStatus;
@@ -28,7 +30,11 @@ const useOpenDrawerOnLoad = () => {
         if (itemFromStorage) {
             // Surround JSON.parse by try/catch in case the value cannot be parsed
             try {
-                const { app, url } = JSON.parse(itemFromStorage) as DrawerLocalStorageValue;
+                const { app, path } = JSON.parse(itemFromStorage) as DrawerLocalStorageValue;
+
+                const url = APPS_CONFIGURATION[app as APP_NAMES]
+                    ? getAppHref(path || '', app as APP_NAMES, authentication.getLocalID())
+                    : undefined;
 
                 if (app && isAppReachable) {
                     const isValidApp = getIsDrawerApp(app);
@@ -39,7 +45,7 @@ const useOpenDrawerOnLoad = () => {
                     }
 
                     if (getIsIframedDrawerApp(app)) {
-                        if (url) {
+                        if (path && url) {
                             setIframeSrcMap((map) => ({
                                 ...map,
                                 [app]: url,
