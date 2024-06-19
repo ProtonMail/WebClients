@@ -75,6 +75,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
                     getFiatCurrencies: mockedValue?.payment_gateway?.getFiatCurrencies ?? vi.fn(),
                     getPaymentMethods: mockedValue?.payment_gateway?.getPaymentMethods ?? vi.fn(),
                     getQuotes: mockedValue?.payment_gateway?.getQuotes ?? vi.fn(),
+                    createOnRampCheckout: mockedValue?.payment_gateway?.createOnRampCheckout ?? vi.fn(),
                 }),
             }),
     });

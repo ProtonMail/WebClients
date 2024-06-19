@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
@@ -62,10 +62,7 @@ export const TransactionReview = ({
     const [message, setMessage] = useState('');
     const [noteToSelf, setNoteToSelf] = useState('');
 
-    const { createPsbt, createMockPsbt, psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder });
-    useEffect(() => {
-        void createPsbt();
-    }, [createPsbt, txBuilder]);
+    const { createDraftPsbt, psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
 
     const totalFees = Number(psbt?.total_fees ?? 0);
     const totalSentAmount = txBuilderRecipients.reduce((acc, r) => {
@@ -120,7 +117,7 @@ export const TransactionReview = ({
 
     const getTransactionFeesAtFeeRate = async (feeRate: number) => {
         const updatedTxBuilder = await txBuilder.setFeeRate(BigInt(feeRate));
-        const psbt = await createMockPsbt(updatedTxBuilder);
+        const psbt = await createDraftPsbt(updatedTxBuilder);
         return Number(psbt?.total_fees ?? 0);
     };
 
