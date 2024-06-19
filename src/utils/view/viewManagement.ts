@@ -148,7 +148,6 @@ async function updateLocalID(urlString: string) {
 export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
     const logPrefix = `${viewID}(showView)`;
     const url = targetURL ? await updateLocalID(targetURL) : targetURL;
-    const loggedURL = app.isPackaged ? "" : url;
 
     if (!mainWindow) {
         throw new Error("mainWindow is undefined");
@@ -160,7 +159,7 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
         view.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
 
         if (viewID === currentViewID) {
-            Logger.info(logPrefix, "loading in current view", loggedURL);
+            Logger.info(logPrefix, "loading in current view", url);
             await loadURL(viewID, url);
             return;
         }
@@ -169,7 +168,7 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
         mainWindow!.title = windowTitle;
 
         if (url && !isSameURL(url, await getViewURL(viewID))) {
-            Logger.info(logPrefix, "loading", loggedURL);
+            Logger.info(logPrefix, "loading", url);
             await loadURL(viewID, "about:blank");
             const loadPromise = loadURL(viewID, url);
             mainWindow!.setBrowserView(view);
@@ -198,15 +197,14 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
 
 export async function loadURL(viewID: ViewID, url: string) {
     const view = browserViewMap[viewID]!;
-    const loggedURL = app.isPackaged ? "" : url;
     const logPrefix = `${viewID}(loadURL)`;
 
     if (isSameURL(await getViewURL(viewID), url)) {
-        Logger.info(logPrefix, "already in given url", loggedURL);
+        Logger.info(logPrefix, "already in given url", url);
         return;
     }
 
-    Logger.info(logPrefix, "loading", loggedURL);
+    Logger.info(logPrefix, "loading", url);
 
     if (view.webContents.isLoadingMainFrame()) {
         view.webContents.stop();
@@ -216,13 +214,13 @@ export async function loadURL(viewID: ViewID, url: string) {
         let loadingTimeoutID: NodeJS.Timeout | undefined = undefined;
 
         const handleLoadingTimeout = () => {
-            Logger.error(logPrefix, "timeout", loggedURL);
+            Logger.error(logPrefix, "timeout", url);
             clearTimeout(loadingTimeoutID);
             reject();
         };
 
         const handleStopLoading = () => {
-            Logger.info(logPrefix, "loaded", loggedURL);
+            Logger.info(logPrefix, "loaded", url);
             clearTimeout(loadingTimeoutID);
             view.webContents.off("did-stop-loading", handleStopLoading);
             resolve();

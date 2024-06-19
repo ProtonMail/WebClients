@@ -81,16 +81,15 @@ export function handleWebContents(contents: WebContents) {
 
     contents.setWindowOpenHandler((details) => {
         const { url } = details;
-        const loggedURL = app.isPackaged ? "" : url;
 
         if (isCalendar(url)) {
-            log("Calendar link", loggedURL);
+            log("Calendar link", url);
             showView("calendar", url);
             return { action: "deny" };
         }
 
         if (isMail(url)) {
-            log("Mail link", loggedURL);
+            log("Mail link", url);
             showView("mail", url);
             return { action: "deny" };
         }
@@ -98,10 +97,10 @@ export function handleWebContents(contents: WebContents) {
         if (isAccount(url)) {
             // Upsell links should be opened in browser to avoid 3D secure issues
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                log("Account lite or upsell in browser", loggedURL);
+                log("Account lite or upsell in browser", url);
                 shell.openExternal(url);
             } else {
-                log("Account link", loggedURL);
+                log("Account link", url);
                 showView("account", url);
             }
 
@@ -109,21 +108,21 @@ export function handleWebContents(contents: WebContents) {
         }
 
         if (isHostAllowed(url)) {
-            log("Allowed host", loggedURL);
+            log("Allowed host", url);
             return { action: "allow" };
         }
 
         if (global.oauthProcess) {
-            log("OAuth link in app", loggedURL);
+            log("OAuth link in app", url);
             return { action: "allow" };
         }
 
         if (global.subscriptionProcess) {
-            log("Subscription link in modal", loggedURL);
+            log("Subscription link in modal", url);
             return { action: "allow" };
         }
 
-        log("Other link in browser", loggedURL);
+        log("Other link in browser", url);
         shell.openExternal(url);
         return { action: "deny" };
     });
