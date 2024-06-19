@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -56,4 +56,19 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     return <OrganizationContext.Provider value={context}>{children}</OrganizationContext.Provider>;
 };
 
-export const useOrganization = () => useContext(OrganizationContext);
+type Props = {
+    /** Fetch organization settings on component first mount */
+    sync: boolean;
+};
+
+export const useOrganization = (options?: Props) => {
+    const context = useContext(OrganizationContext);
+
+    useEffect(() => {
+        if (options?.sync) {
+            context?.settings.sync();
+        }
+    }, [options?.sync]);
+
+    return context;
+};

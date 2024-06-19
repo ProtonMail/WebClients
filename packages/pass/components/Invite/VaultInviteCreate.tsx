@@ -38,7 +38,7 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
-    const org = useOrganization();
+    const org = useOrganization({ sync: true });
 
     const defaultShareId = useSelector(selectDefaultVault).shareId;
     const shareId = props.withVaultCreation ? defaultShareId : props.vault.shareId;
@@ -103,10 +103,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             }
         },
     });
-
-    useEffect(() => {
-        if (org) org.settings.sync();
-    }, []);
 
     useEffect(() => {
         if (validateAddresses) {
