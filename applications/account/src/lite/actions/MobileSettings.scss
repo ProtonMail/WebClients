@@ -46,6 +46,156 @@
 			color: var(--field-norm);
 		}
 	}
+
+	// override for table design
+	.simple-table--responsive-cards {
+		background-color: var(--background-norm);
+		border-radius: var(--border-radius-xl);
+
+		tr {
+			border-width: 2px;
+			border-color: var(--background-weak);
+		}
+	}
+
+	// override for settings layout containers
+	.settings-layout {
+		display: flex;
+		flex-direction: row;
+		padding: var(--space-5);
+		background-color: var(--background-norm);
+		align-items: center;
+		border-radius: var(--border-radius-xl);
+
+		&-left {
+			flex: 1 1 0;
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+
+		&-right {
+			min-inline-size: 0;
+			display: flex;
+		}
+	}
+
+	// override for folders
+	.folders-action,
+	.labels-action {
+		margin-block: 2em 1em;
+	}
+
+	.treeview-header {
+		border-block-end: 0;
+		padding-inline-end: 2em;
+	}
+
+	.treeview-container {
+		background-color: var(--background-norm);
+		margin-block-end: 1em;
+		border-radius: var(--border-radius-xl);
+
+		.treeview-container {
+			margin-block-end: 0;
+			padding-inline: 0;
+		}
+
+		.treeview-item-name {
+			margin-block: 0.75em;
+			padding-inline-start: var(--space-4);
+		}
+
+		&:empty {
+			display: none;
+		}
+
+		.treeview-item {
+			border-color: var(--background-weak);
+			border-width: 2px;
+			margin-block-end: -2px;
+		}
+
+		.treeview-actions {
+			margin-inline-end: var(--space-4);
+		}
+	}
+
+	// overrides for spam/filters
+	.spam-filters {
+		.mb-5.max-w-custom {
+			// ugly but no better way ^^
+			background-color: var(--background-norm);
+			padding: var(--space-5);
+			border-radius: var(--border-radius-xl);
+			max-inline-size: none;
+		}
+
+		.spam-add-address > .button-medium {
+			inline-size: 100%;
+			margin-block: 1em 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		.spam-search-input {
+			margin-block: 1em var(--space-4);
+		}
+
+		.spam-filters-nav {
+			display: none;
+		}
+
+		.simple-table--responsive-cards {
+			background-color: transparent;
+
+			td:not(:last-child) {
+				padding-block-end: 0;
+			}
+
+			tr {
+				background-color: var(--background-norm);
+				padding: var(--space-5);
+				margin-block-end: 0;
+				display: grid;
+				border-radius: 0;
+				grid-template:
+					'a c'
+					'b c';
+				grid-template-columns: 1fr 4em;
+				gap: 0 0;
+
+				td:nth-child(1) {
+					grid-area: a;
+				}
+
+				td:nth-child(2) {
+					grid-area: b;
+				}
+
+				td:nth-child(3) {
+					grid-area: c;
+					place-items: center;
+					align-content: center;
+					display: grid;
+				}
+
+				&:first-child {
+					border-start-start-radius: var(--border-radius-xl);
+					border-start-end-radius: var(--border-radius-xl);
+				}
+
+				&:last-child {
+					border-end-start-radius: var(--border-radius-xl);
+					border-end-end-radius: var(--border-radius-xl);
+				}
+
+				.label-stack-item {
+					max-inline-size: none;
+				}
+			}
+		}
+	}
 }
 
 // global structure
@@ -60,5 +210,9 @@
 			border-end-start-radius: var(--border-radius-xl);
 			border-end-end-radius: var(--border-radius-xl);
 		}
+	}
+
+	> .max-w-custom {
+		max-inline-size: none;
 	}
 }
