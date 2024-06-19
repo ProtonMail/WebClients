@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
+import { ComponentType, ReactNode } from 'react';
 
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { Icons } from '../../components';
@@ -11,14 +12,18 @@ import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';
 import NotificationsProvider from '../notifications/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
-import ThemeProvider from '../themes/ThemeProvider';
+import DefaultThemeProvider from '../themes/ThemeProvider';
 
 interface Props {
     config: ProtonConfig;
     children: ReactNode;
+    ThemeProvider?: ComponentType<{
+        children: ReactNode;
+        appName: APP_NAMES;
+    }>;
 }
 
-const ProtonApp = ({ config, children }: Props) => {
+const ProtonApp = ({ config, children, ThemeProvider = DefaultThemeProvider }: Props) => {
     return (
         <ConfigProvider config={config}>
             <CompatibilityCheck>
