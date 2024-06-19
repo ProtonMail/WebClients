@@ -1,5 +1,12 @@
+interface Unavailable {
+    message: string;
+    address: string;
+}
+
 export default class UnavailableAddressesError extends Error {
-    readonly unavailableAddresses: string[];
+    public trace = false;
+
+    readonly unavailableAddresses: Unavailable[];
 
     readonly orphanedAddresses: string[];
 
@@ -7,7 +14,7 @@ export default class UnavailableAddressesError extends Error {
         /**
          * Addresses that are not available for use
          */
-        unavailableAddresses: string[],
+        unavailableAddresses: Unavailable[],
         /**
          * Extra addresses for the user that was not created
          */

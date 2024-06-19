@@ -1,4 +1,4 @@
-import { organizationKeysManagementListener } from '@proton/account';
+import { organizationKeysManagementListener, startListeningToPlanNameChange } from '@proton/account';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import type { AppStartListening } from './store';
@@ -7,5 +7,6 @@ export const start = ({ startListening, mode }: { startListening: AppStartListen
     if (mode === 'default') {
         startSharedListening(startListening);
         organizationKeysManagementListener(startListening);
+        startListeningToPlanNameChange(startListening);
     }
 };

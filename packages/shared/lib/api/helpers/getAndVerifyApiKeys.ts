@@ -12,6 +12,10 @@ import {
 import { getAllPublicKeys } from '../keys';
 
 export interface ApiKeysWithKTStatus {
+    Address: {
+        Keys: ApiAddressKey[];
+        SignedKeyList: FetchedSignedKeyList | null;
+    };
     addressKeys: ProcessedApiKey[];
     addressKTResult?: KeyTransparencyVerificationResult;
     catchAllKeys?: ProcessedApiKey[];
@@ -101,6 +105,7 @@ export const getAndVerifyApiKeys = async ({
           )
         : {};
     return {
+        Address,
         addressKeys,
         catchAllKeys,
         unverifiedKeys,

@@ -104,11 +104,18 @@ export const updateAddressActiveKeysRoute = (data: UpdateAddressActiveKeysRouteP
     data,
 });
 
-interface SetupKeysPayload {
+interface BaseSetupKeysPayload {
     PrimaryKey: string;
     KeySalt: string;
     AddressKeys: (AddressKeyPayload | AddressKeyPayloadV2)[];
 }
+
+interface UnprivatizationSetupKeysPayload extends BaseSetupKeysPayload {
+    OrgActivationToken: string;
+    OrgPrimaryUserKey: string;
+}
+
+type SetupKeysPayload = UnprivatizationSetupKeysPayload | BaseSetupKeysPayload;
 
 export const setupKeys = (data: SetupKeysPayload, product: ProductParam) => ({
     url: 'core/v4/keys/setup',
