@@ -1,23 +1,7 @@
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { NodeMeta } from '@proton/drive-store'
-import { DecryptedMessage } from './DecryptedMessage'
-import { ProcessedIncomingRealtimeEventMessage } from './ProcessedIncomingRealtimeMessage'
-
-export enum WebsocketConnectionEvent {
-  Connecting = 'connecting',
-  Connected = 'connected',
-  Disconnected = 'disconnected',
-  FailedToConnect = 'failed-to-connect',
-  DocumentUpdateMessage = 'du-message',
-  EventMessage = 'event-message',
-  EncryptionError = 'encryption-error',
-}
-
-export type WebsocketConnectionEventStatusChange =
-  | WebsocketConnectionEvent.Connecting
-  | WebsocketConnectionEvent.Connected
-  | WebsocketConnectionEvent.Disconnected
-  | WebsocketConnectionEvent.FailedToConnect
+import { DecryptedMessage, ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared'
+import { AckLedgerInterface } from '../../Services/Websockets/AckLedger/AckLedgerInterface'
 
 export type BaseWebsocketPayload = {
   document: NodeMeta
@@ -43,4 +27,8 @@ export type WebsocketDocumentUpdateMessagePayload = BaseWebsocketPayload & {
 
 export type WebsocketEventMessagePayload = BaseWebsocketPayload & {
   message: ProcessedIncomingRealtimeEventMessage[]
+}
+
+export type WebsocketAckStatusChangePayload = {
+  ledger: AckLedgerInterface
 }

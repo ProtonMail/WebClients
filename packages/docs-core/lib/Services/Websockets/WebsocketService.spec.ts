@@ -5,17 +5,13 @@ import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
-import {
-  BroadcastSource,
-  InternalEventBusInterface,
-  WebsocketConnectionEvent,
-  WebsocketConnectionInterface,
-} from '@proton/docs-shared'
-import { DocumentUpdateBuffer } from './DocumentUpdateBuffer'
+import { BroadcastSource, InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
+import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { Result } from '../../Domain/Result/Result'
 import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
 describe('WebsocketService', () => {
   let service: WebsocketService
@@ -42,6 +38,7 @@ describe('WebsocketService', () => {
       } as unknown as jest.Mocked<DecryptMessage>,
       {
         info: jest.fn(),
+        debug: jest.fn(),
       } as unknown as jest.Mocked<LoggerInterface>,
       eventBus,
     )
@@ -97,6 +94,14 @@ describe('WebsocketService', () => {
       await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
+    })
+
+    it('should add message to ack ledger', async () => {
+      service.ledger.messagePosted = jest.fn()
+
+      await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
+
+      expect(service.ledger.messagePosted).toHaveBeenCalled()
     })
   })
 
@@ -281,6 +286,17 @@ describe('WebsocketService', () => {
       await service.handleIncomingEventsMessage(record, events)
 
       expect(switchToRealtimeMode).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('handleLedgerStatusChangeCallback', () => {
+    it('should post AckStatusChange event', () => {
+      service.handleLedgerStatusChangeCallback()
+
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: WebsocketConnectionEvent.AckStatusChange,
+        payload: expect.anything(),
+      })
     })
   })
 

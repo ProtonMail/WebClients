@@ -7,6 +7,8 @@ import {
   EditorOrchestratorInterface,
   SquashVerificationObjectionDecision,
   GeneralUserDisplayableErrorOccurredPayload,
+  WebsocketConnectionEvent,
+  WebsocketEncryptionErrorPayload,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
@@ -17,8 +19,6 @@ import {
   FileToDocPendingConversion,
   LiveCommentsEvent,
   LiveCommentsTypeStatusChangeData,
-  WebsocketConnectionEvent,
-  WebsocketEncryptionErrorPayload,
 } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'

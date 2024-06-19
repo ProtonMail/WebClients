@@ -21,7 +21,6 @@ export enum DocUpdateOrigin {
 export class DocState extends Observable<string> implements DocStateInterface {
   public readonly doc: Doc
   public readonly awareness: DocsAwareness
-  public canBeEditable = false
   lastEmittedMyState?: DocsUserState = undefined
   lastEmittedClients?: number[] = undefined
 

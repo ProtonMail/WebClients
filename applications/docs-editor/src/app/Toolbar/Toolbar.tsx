@@ -69,13 +69,16 @@ import TableIcon from '../Icons/TableIcon'
 import { PredefinedTextColorOptions, PredefinedHighlightColorOptions } from '../Shared/Color'
 import { useActiveBreakpoint } from '@proton/components'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
+import { DocumentInteractionMode } from '../DocumentInteractionMode'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
 export default function DocumentEditorToolbar({
-  onEditingAllowanceChange,
+  onInteractionModeChange,
+  hasEditAccess,
 }: {
-  onEditingAllowanceChange: (editable: boolean) => void
+  onInteractionModeChange: (mode: DocumentInteractionMode) => void
+  hasEditAccess: boolean
 }) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
@@ -969,21 +972,21 @@ export default function DocumentEditorToolbar({
         hasCaret={!viewportWidth['<=small']}
       >
         <DropdownMenu>
+          {hasEditAccess && (
+            <DropdownMenuButton
+              className="flex items-center gap-2 text-left text-sm"
+              onClick={() => {
+                onInteractionModeChange('edit')
+              }}
+            >
+              <Icon name="pencil" size={4.5} />
+              {c('Info').t`Editing`}
+            </DropdownMenuButton>
+          )}
           <DropdownMenuButton
-            disabled={!isEditable}
             className="flex items-center gap-2 text-left text-sm"
             onClick={() => {
-              onEditingAllowanceChange(true)
-            }}
-          >
-            <Icon name="pencil" size={4.5} />
-            {c('Info').t`Editing`}
-          </DropdownMenuButton>
-          <DropdownMenuButton
-            disabled={!isEditable}
-            className="flex items-center gap-2 text-left text-sm"
-            onClick={() => {
-              onEditingAllowanceChange(false)
+              onInteractionModeChange('view')
             }}
           >
             <Icon name="eye" size={4.5} />
