@@ -57,6 +57,7 @@ export default function SharedFilePage({ token, link }: Props) {
                     mimeType={link?.mimeType}
                     fileSize={link?.size}
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
+                    isPublic
                 />
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />
