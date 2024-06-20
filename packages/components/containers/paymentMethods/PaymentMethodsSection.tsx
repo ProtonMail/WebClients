@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { Button, ButtonProps } from '@proton/atoms';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { MethodStorage, PAYMENT_METHOD_TYPES, isOnSessionMigration } from '@proton/components/payments/core';
 import useLoading from '@proton/hooks/useLoading';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader, useModalState } from '../../components';
-import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription } from '../../hooks';
+import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
@@ -36,6 +36,7 @@ const PaymentMethodsSection = () => {
     const [paypalV5ModalProps, setPaypalV5ModalOpen, renderPaypalV5Modal] = useModalState();
     const isChargebeeEnabled = useChargebeeEnabledCache();
     const [subscription] = useSubscription();
+    const [user] = useUser();
     const pollPaymentMethodsCreate = usePollEvents({
         subscribeToProperty: 'PaymentMethods',
         action: EVENT_ACTIONS.CREATE,
@@ -58,7 +59,7 @@ const PaymentMethodsSection = () => {
 
     const canAddV4 =
         isChargebeeEnabled() !== ChargebeeEnabled.CHARGEBEE_FORCED ||
-        subscription?.BillingPlatform === BillingPlatform.Proton;
+        isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform);
 
     const canAddPaypalV4 =
         !paymentMethods.some(
