@@ -971,6 +971,9 @@
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
       ],
+      "Run on servers": [
+        "გაშვება სერვერებზე"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -1183,10 +1186,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -5027,6 +5026,9 @@
       "Hardware not compatible": [
         "აპარატურა თავსებადი არაა"
       ],
+      "Report an issue": [
+        "პრობლემის ანგარიშის გადაგზავნა"
+      ],
       "Resume downloading": [
         "გადმოწერის გაგრძელება"
       ],
@@ -5980,6 +5982,12 @@
       "Estimating time remaining...": [
         "დაახლოებით დარჩენილი დროის გამოთვლა..."
       ],
+      "Expand selection": [
+        "მონიშვნის გაფართოება"
+      ],
+      "Expand text": [
+        "ტექსტის გაფართოება"
+      ],
       "Expiration time": [
         "ვადა"
       ],
@@ -6381,6 +6389,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
+      ],
+      "Please share what the issue is": [
+        "გაგვიზიარეთ, რა პრობლემა გაქვთ"
       ],
       "Please share what you expected": [
         "გაგვიზიარეთ, რას მოელოდით"
@@ -7029,6 +7040,9 @@
       ],
       "You can now return to the application to continue": [
         "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
+      ],
+      "You can open only one writing assistant at a time": [
+        "დროის ერთ მომენტში, მხოლოდ, ერთი წერის დამხმარის გახსნა შეგიძლიათ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -10895,11 +10909,17 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებით და ხელმისაწვდომობით"
+      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
       ],
       "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
+      ],
+      "${ DRIVE_APP_NAME } with version history": [
         "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
       ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
@@ -10908,8 +10928,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი",
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი"
+      ],
+      "${ maxEmails } email address per user": [
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } ${ DARK_WEB_MONITORING_NAME }-ით"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
       ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
@@ -10917,8 +10958,17 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
+      ],
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
+      ],
+      "20 email addresses per user": [
+        "20 ელფოსტის  მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "25 calendars per user": [
+        "25 კალენდარი თითოეული მომხმარებლისთვის"
       ],
       "6 users": [
         "6 მომხმარებელი"
@@ -10926,11 +10976,23 @@
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
       ],
+      "All you need for your business": [
+        "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
+      ],
+      "Any custom email domains will be disabled": [
+        "ყველა მორგებული ელფოსტის დომენი გაითიშება"
+      ],
+      "Automatic email forwarding": [
+        "ავტომატური ელფოსტის გადაგზავნა"
+      ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
+      ],
+      "Catch-all email address": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Comprehensive privacy and security": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
@@ -10938,20 +11000,38 @@
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
+      ],
       "Direct contribution to our mission": [
         "პირდაპირი შემოწირვა ჩვენს მისიაზე"
       ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
       ],
+      "Email productivity features": [
+        "ელფოსტის პროდუქტიულობის ფუნქციები"
+      ],
       "Extra storage and bonuses": [
         "დამატებითი საცავი და ბონუსები"
+      ],
+      "Extra storage and users": [
+        "დამატებითი საცავი და მომხმარებლები"
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
       ],
+      "Invited members will be removed from your organization": [
+        "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Make your business stand out": [
+        "გახადეთ თქვენი ბიზნესი გამორჩეული"
       ],
       "Manage your calendar": [
         "მართეთ თქვენი კალენდარი"
@@ -10968,14 +11048,26 @@
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
       ],
+      "Productivity features": [
+        "პროდუქტიულობის ფუნქციები"
+      ],
       "Read the story": [
         "ისტორიის წაკითხვა"
       ],
       "Receive new emails": [
         "ახალი ელფოსტების მიღება"
       ],
+      "See your colleagues’ availability": [
+        "დაინახეთ კოლეგის ხელმისაწვდომობა"
+      ],
       "Send emails with attachments": [
         "დანართებიანი ელფოსტების გაგზავნა"
+      ],
+      "Stay secure and connected anywhere": [
+        "დარჩით უსაფრთხოდ და მიერთებულად ნებისმიერი ადგილიდან"
+      ],
+      "Support your compliance objectives": [
+        "თავსებადობა თქვენს მოთხოვნებთან"
       ],
       "Sync files on devices": [
         "ფაილების დასინქრონება მოწყობილობებზე"
@@ -10986,8 +11078,20 @@
       "Unblocking internet access in Iran": [
         "ინტერნეტთან წვდომის განბლოკვა ირანში"
       ],
+      "Unlimited folders and labels": [
+        "შეუზღუდავი საქაღალდეები და ჭდეები"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
+      ],
+      "Users won’t be able to send emails": [
+        "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილებსი სინქრონიზაციის საშუალება არ ექნებათ"
       ],
       "Version history": [
         "ვერსიის ისტორია"
