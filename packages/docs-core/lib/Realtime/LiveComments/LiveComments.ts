@@ -5,6 +5,7 @@ import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateReal
 import { CommentTypers } from './CommentTypers'
 import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import { EventTypeEnum } from '@proton/docs-proto'
+import { LoggerInterface } from '@proton/utils/logs'
 
 export class LiveComments {
   private state: Record<string, CommentTypers> = {}
@@ -14,14 +15,16 @@ export class LiveComments {
     private readonly document: NodeMeta,
     private readonly userDisplayName: string,
     private readonly eventBus: InternalEventBusInterface,
+    private readonly logger: LoggerInterface,
   ) {}
 
   public setIsTypingComment(commentId: string, isTyping: boolean): void {
     const { didChange } = this.updateStatusOfTyper(commentId, this.userDisplayName, isTyping)
-
     if (!didChange) {
       return
     }
+
+    this.logger.info(`User ${this.userDisplayName} is ${isTyping ? 'typing' : 'stopped typing'} in thread ${commentId}`)
 
     const message = isTyping
       ? CreateRealtimeCommentPayload(CommentsMessageType.BeganTyping, {
