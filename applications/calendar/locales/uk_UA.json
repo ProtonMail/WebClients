@@ -482,11 +482,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -6287,14 +6287,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6316,6 +6308,14 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -8562,80 +8562,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Єдиним джерелом доходу ${ BRAND_NAME } є передплата користувачів. Ваша підтримка дає нам змогу бути незалежними, поширювати нашу місію, щоб зробити приватність в Інтернеті стандартом, а також сприяти активістам і організаціям, які відстоюють приватність і свободу."
-      ],
-      "${ dayDiff } day left": [
-        "Залишився ${ dayDiff } день",
-        "Залишилось ${ dayDiff } дні",
-        "Залишилось ${ dayDiff } днів",
-        "Залишилось ${ dayDiff } днів"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Програма ${ MAIL_APP_NAME } для комп'ютера"
-      ],
-      "${ planMaxSpace } total storage": [
-        "Усього ${ planMaxSpace } сховища"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Програма ${ PROTON_SENTINEL_NAME }"
-      ],
-      "10 email addresses": [
-        "10 адрес електронної пошти"
-      ],
-      "Calendar sharing": [
-        "Спільний доступ до календаря"
-      ],
-      "Custom schedule send and snooze times": [
-        "Власний час запланованого надсилання та відкладення"
-      ],
-      "Early access to new apps and features": [
-        "Ранній доступ до нових програм і функцій"
-      ],
-      "Helping activists in Hong Kong": [
-        "Допомога активістам у Гонконзі"
-      ],
-      "Learn more about our impact": [
-        "Дізнайтеся більше про результати нашої діяльності"
-      ],
-      "Online privacy, for your whole family": [
-        "Приватність в інтернеті для всієї родини"
-      ],
-      "Our fight against censorship in Russia": [
-        "Наша боротьба проти цензури в Росії"
-      ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
-      "Read the story": [
-        "Прочитати історію"
-      ],
-      "Unblocking internet access in Iran": [
-        "Розблокування доступу до Інтернету в Ірані"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Version history": [
-        "Історія версій"
-      ],
-      "Watch the interview": [
-        "Переглянути інтерв'ю"
-      ],
-      "Yearly free storage bonuses": [
-        "Щорічні бонуси на безплатне сховище"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вашій передплаті ${ planName } ще залишилося ${ expiryDate }. Ми додамо кредити за невикористаний залишок часу до вашого облікового запису ${ BRAND_NAME }. Перш ніж скасовувати передплату перевірте обмеження безплатного тарифного плану. ${ learnMoreLink }"
-      ],
-      "Your own custom email domain": [
-        "Ваш власний домен електронної пошти"
-      ],
-      "Your own short @pm.me email alias": [
-        "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8675,6 +8601,107 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Єдиним джерелом доходу ${ BRAND_NAME } є передплата користувачів. Ваша підтримка дає нам змогу бути незалежними, поширювати нашу місію, щоб зробити приватність в Інтернеті стандартом, а також сприяти активістам і організаціям, які відстоюють приватність і свободу."
+      ],
+      "${ dayDiff } day left": [
+        "Залишився ${ dayDiff } день",
+        "Залишилось ${ dayDiff } дні",
+        "Залишилось ${ dayDiff } днів",
+        "Залишилось ${ dayDiff } днів"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } календар на користувача",
+        "${ MaxCalendars } календарі на користувача",
+        "${ MaxCalendars } календарів на користувача",
+        "${ MaxCalendars } календарі на користувача"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } власний домен",
+        "${ maxDomainNames } власні домени",
+        "${ maxDomainNames } власних доменів",
+        "${ maxDomainNames } власних доменів"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адреса е-пошти на користувача",
+        "${ maxEmails } адреси е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Усього ${ planMaxSpace } сховища"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Програма ${ PROTON_SENTINEL_NAME }"
+      ],
+      "10 email addresses": [
+        "10 адрес електронної пошти"
+      ],
+      "Automatic email forwarding": [
+        "Автоматичне пересилання пошти"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до календаря"
+      ],
+      "Custom schedule send and snooze times": [
+        "Власний час запланованого надсилання та відкладення"
+      ],
+      "Early access to new apps and features": [
+        "Ранній доступ до нових програм і функцій"
+      ],
+      "Helping activists in Hong Kong": [
+        "Допомога активістам у Гонконзі"
+      ],
+      "Learn more about our impact": [
+        "Дізнайтеся більше про результати нашої діяльності"
+      ],
+      "Online privacy, for your whole family": [
+        "Приватність в інтернеті для всієї родини"
+      ],
+      "Our fight against censorship in Russia": [
+        "Наша боротьба проти цензури в Росії"
+      ],
+      "Priority support": [
+        "Пріоритетна підтримка"
+      ],
+      "Read the story": [
+        "Прочитати історію"
+      ],
+      "Unblocking internet access in Iran": [
+        "Розблокування доступу до Інтернету в Ірані"
+      ],
+      "Unlimited folders and labels": [
+        "Необмежена кількість тек і міток"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Version history": [
+        "Історія версій"
+      ],
+      "Watch the interview": [
+        "Переглянути інтерв'ю"
+      ],
+      "Yearly free storage bonuses": [
+        "Щорічні бонуси на безплатне сховище"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "У вашій передплаті ${ planName } ще залишилося ${ expiryDate }. Ми додамо кредити за невикористаний залишок часу до вашого облікового запису ${ BRAND_NAME }. Перш ніж скасовувати передплату перевірте обмеження безплатного тарифного плану. ${ learnMoreLink }"
+      ],
+      "Your own custom email domain": [
+        "Ваш власний домен електронної пошти"
+      ],
+      "Your own short @pm.me email alias": [
+        "Ваш власний короткий псевдонім електронної пошти @pm.me"
       ]
     },
     "Subscription renewal state": {
