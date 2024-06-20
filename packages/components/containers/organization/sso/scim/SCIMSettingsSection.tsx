@@ -7,7 +7,8 @@ import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
 import { Button } from '@proton/atoms/Button';
 import useLoading from '@proton/hooks/useLoading';
-import { type ProtonThunkArguments, baseUseDispatch } from '@proton/redux-shared-store';
+import { baseUseDispatch } from '@proton/react-redux-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
 

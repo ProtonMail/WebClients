@@ -9,8 +9,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "@proton/components": "workspace:packages/components",
-        "@proton/shared": "workspace:packages/shared",
+        "@proton/components": "workspace:^",
+        "@proton/shared": "workspace:^",
         "react": "^18.3.1"
     },
     "devDependencies": {

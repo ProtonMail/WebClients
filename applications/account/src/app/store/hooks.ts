@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook } from 'react-redux';
 
-import { baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 
 import { AccountDispatch, AccountState } from './store';
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getInvitations } from '@proton/shared/lib/api/user';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';

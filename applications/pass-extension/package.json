@@ -28,14 +28,14 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@proton/pass": "workspace:packages/pass",
+        "@proton/pass": "workspace:^",
         "@redux-devtools/remote": "^0.9.3",
         "react-helmet": "^6.1.0",
         "webextension-polyfill": "^0.12.0"
     },
     "devDependencies": {
-        "@proton/i18n": "workspace:packages/i18n",
-        "@proton/pack": "workspace:packages/pack",
+        "@proton/i18n": "workspace:^",
+        "@proton/pack": "workspace:^",
         "@types/react-helmet": "^6.1.11",
         "@types/webextension-polyfill": "^0.10.7",
         "babel-plugin-transform-require-context": "^0.1.1",

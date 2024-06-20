@@ -1,5 +1,5 @@
 import { selectUser } from '@proton/account';
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseSelector } from '@proton/react-redux-store';
 
 import { isScribePaymentsEnabled } from './helpers';
 

@@ -12,7 +12,7 @@
         "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types && yarn generate-metrics"
     },
     "dependencies": {
-        "@proton/shared": "workspace:packages/shared",
+        "@proton/shared": "workspace:^",
         "json-schema-to-typescript": "^13.1.2"
     },
     "devDependencies": {

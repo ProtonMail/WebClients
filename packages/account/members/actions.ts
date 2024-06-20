@@ -1,7 +1,7 @@
 import { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     checkMemberAddressAvailability,

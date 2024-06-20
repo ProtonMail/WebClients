@@ -1,6 +1,6 @@
 import { PayloadAction, ThunkAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
 import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
