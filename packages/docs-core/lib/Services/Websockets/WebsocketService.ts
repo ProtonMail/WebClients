@@ -336,6 +336,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     if (buffer.isBufferEnabled) {
       const eventsThatShouldNotBeSentIfNotInRealtimeMode: EventTypeEnum[] = [
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
+        EventTypeEnum.ClientHasSentACommentMessage,
       ]
 
       if (eventsThatShouldNotBeSentIfNotInRealtimeMode.includes(type)) {
