@@ -39,14 +39,10 @@ import {
 } from 'lexical'
 
 import { getSelectedNode } from '../Utils/getSelectedNode'
-import { blockTypeToBlockName } from '../BlockTypeToBlockName'
+import { blockTypeToBlockName } from './BlockTypeToBlockName'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components'
-import AlignLeftIcon from '../Icons/AlignLeftIcon'
 import OutdentIcon from '../Icons/OutdentIcon'
 import IndentIcon from '../Icons/IndentIcon'
-import BoldIcon from '../Icons/BoldIcon'
-import ItalicIcon from '../Icons/ItalicIcon'
-import UnderlineIcon from '../Icons/UnderlineIcon'
 import UndoIcon from '../Icons/UndoIcon'
 import RedoIcon from '../Icons/RedoIcon'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
@@ -89,12 +85,16 @@ export default function DocumentEditorToolbar({
   const [canRedo, setCanRedo] = useState(false)
 
   const [blockType, setBlockType] = useState<BlockType>('paragraph')
+  const [isCodeBlock, setIsCodeBlock] = useState(false)
+  const [isQuote, setIsQuote] = useState(false)
+
   const [listType, setListType] = useState<ListType>()
   const [elementFormat, setElementFormat] = useState<ElementFormatType>('left')
 
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
+  const [isStrikethrough, setIsStrikethrough] = useState(false)
   const [isLink, setIsLink] = useState(false)
 
   const defaultFontSize = `${rootFontSize()}px`
@@ -132,6 +132,11 @@ export default function DocumentEditorToolbar({
 
   const formatUnderline = () => {
     editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
+    focusEditor()
+  }
+
+  const formatStrikethrough = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')
     focusEditor()
   }
 
@@ -190,7 +195,7 @@ export default function DocumentEditorToolbar({
   }
 
   const formatQuote = () => {
-    if (blockType !== 'quote') {
+    if (!isQuote) {
       editor.update(
         () => {
           const selection = $getSelection()
@@ -200,11 +205,13 @@ export default function DocumentEditorToolbar({
           onUpdate: focusEditor,
         },
       )
+    } else {
+      formatParagraph()
     }
   }
 
   const formatCode = () => {
-    if (blockType !== 'code') {
+    if (!isCodeBlock) {
       editor.update(
         () => {
           let selection = $getSelection()
@@ -227,6 +234,8 @@ export default function DocumentEditorToolbar({
           onUpdate: focusEditor,
         },
       )
+    } else {
+      formatParagraph()
     }
   }
 
@@ -272,6 +281,7 @@ export default function DocumentEditorToolbar({
       setIsBold(selection.hasFormat('bold'))
       setIsItalic(selection.hasFormat('italic'))
       setIsUnderline(selection.hasFormat('underline'))
+      setIsStrikethrough(selection.hasFormat('strikethrough'))
 
       const node = getSelectedNode(selection)
       const parent = node.getParent()
@@ -283,20 +293,31 @@ export default function DocumentEditorToolbar({
       }
 
       if (elementDOM !== null) {
+        setBlockType('paragraph')
+
+        if ($isCodeNode(element)) {
+          setIsCodeBlock(true)
+        } else {
+          setIsCodeBlock(false)
+        }
+
+        if ($isQuoteNode(element)) {
+          setIsQuote(true)
+        } else {
+          setIsQuote(false)
+        }
+
+        if ($isHeadingNode(element)) {
+          const tag = element.getTag()
+          setBlockType(tag)
+        }
+
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
           const type = parentList ? parentList.getListType() : element.getListType()
           setListType(type)
-          setBlockType('paragraph')
         } else {
           setListType(undefined)
-          const type = $isHeadingNode(element) ? element.getTag() : element.getType()
-          if (type in blockTypeToBlockName) {
-            setBlockType(type as BlockType)
-          }
-          if ($isCodeNode(element)) {
-            return
-          }
         }
       }
 
@@ -439,14 +460,9 @@ export default function DocumentEditorToolbar({
       onClick: () => formatHeading('h3'),
     },
     {
-      type: 'quote',
-      name: blockTypeToBlockName.quote,
-      onClick: formatQuote,
-    },
-    {
-      type: 'code',
-      name: blockTypeToBlockName.code,
-      onClick: formatCode,
+      type: 'h4',
+      name: blockTypeToBlockName.h4,
+      onClick: () => formatHeading('h4'),
     },
   ]
 
@@ -511,6 +527,7 @@ export default function DocumentEditorToolbar({
   const showTextFormattingOptionsInToolbar = !viewportWidth['<=small']
   const showAlignmentOptionsInToolbar = !viewportWidth['<=medium']
   const showListTypeOptionsInToolbar = !viewportWidth['<=medium']
+  const showCodeAndQuoteOptionsInToolbar = !viewportWidth['<=medium']
   const showInsertOptionsInToolbar = viewportMoreThanLarge
 
   return (
@@ -550,7 +567,7 @@ export default function DocumentEditorToolbar({
             <span
               className="w-custom line-clamp-1 break-all"
               style={{
-                '--w-custom': '7ch',
+                '--w-custom': '9ch',
                 color: 'var(--text-norm)',
               }}
             >
@@ -634,7 +651,7 @@ export default function DocumentEditorToolbar({
         {showTextFormattingOptionsInToolbar && (
           <>
             <ToolbarButton label={c('Action').t`Bold`} disabled={!isEditable} active={isBold} onClick={formatBold}>
-              <BoldIcon className="h-4 w-4 fill-current" />
+              <Icon name="text-bold" />
             </ToolbarButton>
             <ToolbarButton
               label={c('Action').t`Italic`}
@@ -642,7 +659,7 @@ export default function DocumentEditorToolbar({
               active={isItalic}
               onClick={formatItalic}
             >
-              <ItalicIcon className="h-4 w-4 fill-current" />
+              <Icon name="text-italic" />
             </ToolbarButton>
             <ToolbarButton
               label={c('Action').t`Underline`}
@@ -650,7 +667,15 @@ export default function DocumentEditorToolbar({
               active={isUnderline}
               onClick={formatUnderline}
             >
-              <UnderlineIcon className="h-4 w-4 fill-current" />
+              <Icon name="text-underline" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={c('Action').t`Strikethrough`}
+              disabled={!isEditable}
+              active={isStrikethrough}
+              onClick={formatStrikethrough}
+            >
+              <Icon name="text-strikethrough" />
             </ToolbarButton>
             <SimpleDropdown
               as={ToolbarButton}
@@ -726,9 +751,7 @@ export default function DocumentEditorToolbar({
               type="button"
               className="text-[--text-norm]"
               content={
-                AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || (
-                  <AlignLeftIcon className="h-4 w-4 fill-current" />
-                )
+                AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />
               }
               disabled={!isEditable}
             >
@@ -784,22 +807,40 @@ export default function DocumentEditorToolbar({
           type="file"
           accept="image/*"
           onChange={async (event: React.ChangeEvent<HTMLInputElement>) => {
-            if (!event.target.files || event.target.files.length !== 1) {
-              return
-            }
-
-            if (!isEditable) {
-              return
-            }
-
             try {
+              if (!event.target.files || event.target.files.length !== 1) {
+                return
+              }
+
+              if (!isEditable) {
+                return
+              }
+
               const file = event.target.files[0]
               activeEditor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
             } catch (error: unknown) {
               sendErrorMessage(error)
+            } finally {
+              imageInputRef.current!.value = ''
             }
           }}
         />
+        {showCodeAndQuoteOptionsInToolbar && (
+          <>
+            <ToolbarButton
+              label={c('Action').t`Code block`}
+              active={isCodeBlock}
+              disabled={!isEditable}
+              onClick={formatCode}
+            >
+              <Icon name="code" />
+            </ToolbarButton>
+            <ToolbarButton label={c('Action').t`Quote`} active={isQuote} disabled={!isEditable} onClick={formatQuote}>
+              <Icon name="text-quote" />
+            </ToolbarButton>
+            <ToolbarSeparator />
+          </>
+        )}
         {showInsertOptionsInToolbar && (
           <>
             <ToolbarButton label={c('Action').t`Link`} disabled={!isEditable} active={isLink} onClick={editLink}>
@@ -931,7 +972,7 @@ export default function DocumentEditorToolbar({
                   onClick={formatBold}
                   disabled={!isEditable}
                 >
-                  <BoldIcon className="h-4 w-4 fill-current" />
+                  <Icon name="text-bold" />
                   {c('Action').t`Bold`}
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -939,7 +980,7 @@ export default function DocumentEditorToolbar({
                   onClick={formatItalic}
                   disabled={!isEditable}
                 >
-                  <ItalicIcon className="h-4 w-4 fill-current" />
+                  <Icon name="text-italic" />
                   {c('Action').t`Italic`}
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -947,8 +988,37 @@ export default function DocumentEditorToolbar({
                   onClick={formatUnderline}
                   disabled={!isEditable}
                 >
-                  <UnderlineIcon className="h-4 w-4 fill-current" />
+                  <Icon name="text-underline" />
                   {c('Action').t`Underline`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatStrikethrough}
+                  disabled={!isEditable}
+                >
+                  <Icon name="text-strikethrough" />
+                  {c('Action').t`Strikethrough`}
+                </DropdownMenuButton>
+              </>
+            )}
+            {!showCodeAndQuoteOptionsInToolbar && (
+              <>
+                <hr className="my-1" />
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatCode}
+                  disabled={!isEditable}
+                >
+                  <Icon name="code" />
+                  {c('Action').t`Code block`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={formatQuote}
+                  disabled={!isEditable}
+                >
+                  <Icon name="text-quote" />
+                  {c('Action').t`Quote`}
                 </DropdownMenuButton>
               </>
             )}
