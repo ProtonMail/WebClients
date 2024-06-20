@@ -45,6 +45,7 @@
 	padding-block: 0.5rem;
 	padding-inline: 1rem;
 	border-inline-start: 4px solid var(--border-weak);
+	quotes: none !important;
 }
 
 .Lexical__textBold {
@@ -116,6 +117,15 @@
 		cursor: text;
 		text-decoration: underline;
 	}
+}
+
+.Lexical__code {
+	font-size: 1em;
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	border: 1px solid var(--border-weak);
+	white-space: pre;
+	overflow-x: auto;
 }
 
 @for $i from 1 through 6 {
