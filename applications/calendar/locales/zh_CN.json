@@ -450,10 +450,10 @@
       "Not now": [
         "以后再说"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5895,14 +5895,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -5924,6 +5916,14 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -7685,12 +7685,35 @@
         "订阅"
       ]
     },
+    "subscription reminder": {
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "剩余 ${ dayDiff } 天"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "每位用户 ${ MaxCalendars } 个日历"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 个自有域名"
+      ],
+      "${ maxEmails } email address per user": [
+        "每位用户 ${ maxEmails } 个邮箱地址"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "每位用户 ${ planMaxSpace } 存储空间"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
@@ -7700,6 +7723,9 @@
       ],
       "10 email addresses": [
         "10 个邮箱地址"
+      ],
+      "Automatic email forwarding": [
+        "自动转发邮件"
       ],
       "Calendar sharing": [
         "日历共享"
@@ -7716,22 +7742,14 @@
       "Priority support": [
         "优先支持"
       ],
+      "Unlimited folders and labels": [
+        "文件夹和标签不限量"
+      ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
       ],
       "Version history": [
         "版本历史"
-      ]
-    },
-    "subscription reminder": {
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
       ]
     },
     "Subscription renewal state": {

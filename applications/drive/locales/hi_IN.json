@@ -192,6 +192,9 @@
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
       ],
+      "Copy invite link": [
+        "आमंत्रण लिंक कॉपी करें"
+      ],
       "Copy link": [
         "लिंक कॉपी करें"
       ],
@@ -362,6 +365,9 @@
       "Go to label": [
         "लेबल पे जाएं"
       ],
+      "Go to my files": [
+        "'मेरे फाइल' में जाएं"
+      ],
       "Go to panel ${ index }": [
         "${ index } पैनल पे जाएं"
       ],
@@ -437,6 +443,9 @@
       "Manage link": [
         "लिंक प्रबंधित करें"
       ],
+      "Manage share": [
+        "साझा प्रबंधित करें"
+      ],
       "Mark as resolved": [
         "सुलझा हुआ चिन्हित करें"
       ],
@@ -479,6 +488,12 @@
       "New": [
         "नया"
       ],
+      "New document": [
+        "नया दस्तावेज़"
+      ],
+      "New folder": [
+        "नया फ़ोल्डर"
+      ],
       "New message": [
         "नया संदेश"
       ],
@@ -499,6 +514,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -566,6 +584,9 @@
       "Remove gift code": [
         "उपहार कोड हटाएं"
       ],
+      "Remove me": [
+        "मुझे हटाएं"
+      ],
       "Rename": [
         "नाम बदलें"
       ],
@@ -589,6 +610,9 @@
       ],
       "Resend code": [
         "कोड वापस भेजें"
+      ],
+      "Resend invite": [
+        "आमंत्रण फिर से भेजें"
       ],
       "Reset to default": [
         "डिफ़ॉल्ट पर रीसेट करें"
@@ -631,6 +655,15 @@
       ],
       "Save changes": [
         "बदलाव सहेजें"
+      ],
+      "Scan & Download": [
+        "स्कैन करके डाउनलोड करें"
+      ],
+      "Scan & Download (${ count })": [
+        "स्कैन करके डाउनलोड करें (${ count })"
+      ],
+      "Scan & Download all": [
+        "स्कैन करें और सभी डाउनलोड करें"
       ],
       "Search": [
         "खोजें"
@@ -714,7 +747,7 @@
         "रुकें"
       ],
       "Stop sharing": [
-        "सांझा करना बंद करे"
+        "साझा करना बंद करें"
       ],
       "Stop transfers": [
         "ट्रांस्फर रोके"
@@ -820,6 +853,9 @@
       ],
       "What do I get?": [
         "मुझे क्या मिलेगा?"
+      ],
+      "Your 3 GB bonus": [
+        "आपका 3 GB का बोनस"
       ],
       "Zoom in": [
         "ज़ूम करें"
@@ -2213,6 +2249,18 @@
       "Error decrypting a computer": [
         "कंप्यूटर को डिक्रिप्ट करने में त्रुटि"
       ],
+      "External accounts are not supported yet": [
+        "बाहरी खाते अभी समर्थित नहीं हैं"
+      ],
+      "External invitations are not available yet.": [
+        "बाहरी आमंत्रण अभी उपलब्ध नहीं हैं।"
+      ],
+      "External invitations are temporarily disabled.": [
+        "बाहरी आमंत्रण फिलहाल अक्षम हैं।"
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "बाहरी आमंत्रण फिलहाल अक्षम हैं। कृपया बाद में फिर से कोशिश करें"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "फाइल \"${ item.name }\" \"${ error }\" त्रुटि के कारण अपलोड नहीं किया जा सकता है"
       ],
@@ -2406,6 +2454,12 @@
       "The folder name is too long. Please choose a different name.": [
         "फ़ोल्डर का नाम बहुत लंबा है। कृपया कोई दूसरा नाम चुनें।"
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "आमंत्रण अभी पूरा नहीं किया जा सकता है। कृपया बाद में फिर से कोशिश करें।"
+      ],
+      "The invitation doesn't exist anymore": [
+        "आमंत्रण अब मौजूद नहीं है"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "लेबल नाम अमान्य है. कृपया कोई दूसरा नाम चुनें |"
       ],
@@ -2468,6 +2522,9 @@
       ],
       "Unknown payment token status": [
         "अज्ञात भुगतान टोकन स्थिति"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "इस फ़ोल्डर में अपलोड फिलहाल अक्षम है"
       ],
       "Username must begin with a letter or digit": [
         "यूज़रनेम की शुरुआत में अक्षर या अंक होना चाहिए"
@@ -3513,6 +3570,9 @@
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
+      "Available": [
+        "उपलब्ध"
+      ],
       "Awaiting transaction": [
         "ट्रैन्ज़ैक्शन का इंतजार है"
       ],
@@ -3722,6 +3782,9 @@
       "Emails are automatically signed": [
         "ईमेल पे अपनेआप साइन होता है"
       ],
+      "Empty folder": [
+        "खाली फ़ोल्डर"
+      ],
       "Enabling drive search": [
         "ड्राइव खोज चालू कर रहे"
       ],
@@ -3730,6 +3793,9 @@
       ],
       "End-to-end encrypted": [
         "शुरु-से-अंत तक एन्क्रिप्ट किया"
+      ],
+      "End-to-End Encrypted": [
+        "एंड-टू-एंड एन्क्रिप्टेड"
       ],
       "Enter password": [
         "पासवर्ड डाले"
@@ -3789,6 +3855,9 @@
       "File will not be updated": [
         "फाइल अपडेट नहीं करी जाएगी"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "लोगों द्वारा आपके साथ साझा की गई फ़ाइलें और फ़ोल्डर यहां दिखाई देंगे"
+      ],
       "Finalizing": [
         "अंतिम रूप दिया जा रहा है"
       ],
@@ -3821,6 +3890,9 @@
       ],
       "Get the desktop app to sync files from your computer.": [
         "अपने कंप्यूटर से फ़ाइलों को समकालिक करने के लिए डेस्कटॉप ऐप करे।"
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "${ DRIVE_APP_NAME } के बारे में जानें और अपना 3 GB स्टोरेज बोनस अर्जित करें! आज ही कदम उठाएं।"
       ],
       "Go to \"My files\" and upload some files first.": [
         "\"मेरी फ़ाइलें\" पर जाएं और पहले कुछ फाइलें अपलोड करें।"
@@ -3871,6 +3943,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
       ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "इसी दौरान, अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
       ],
@@ -3897,6 +3972,9 @@
       ],
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
+      ],
+      "Invite link copied": [
+        "आमंत्रण लिंक कॉपी किया गया"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "ऐसा लगता है कि आपने हाल ही में ${ uploadName } अपलोड करने का प्रयास किया था। यदि अपलोड विफल हुआ, तो कृपया ${ replaceFile } | यदि अपलोड अभी भी प्रगति पर है, तो इसे बदलने से जारी अपलोड रद्द हो जाएगा।"
@@ -3969,6 +4047,10 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर",
+        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर"
       ],
       "Medium Priority": [
         "मध्यम प्राथमिकता"
@@ -4075,6 +4157,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "भुगतान टीएलएस एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं"
+      ],
+      "People with access": [
+        "जिनके पास पहुंच है"
       ],
       "Permanently delete all files in your locked drive": [
         "अपने लॉक किये गए ड्राइव से सभी फाइल हमेशा के लिए मिटाएं"
@@ -4185,6 +4270,9 @@
       "Report has been sent": [
         "रिपोर्ट भेजा गया"
       ],
+      "Request access, or switch to an account with access.": [
+        "पहुंच का अनुरोध करें, या पहुंच वाले खाते पर स्विच करें।"
+      ],
       "Restore": [
         "पहले जैसा करें"
       ],
@@ -4255,11 +4343,20 @@
       "Share files with links": [
         "लिंक के माध्यम से फ़ाइलें साझा करें"
       ],
+      "Share via link settings": [
+        "लिंक साझाकरण सेटिंग"
+      ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } के लिए शेयर लिंक"
       ],
       "Shared link not found": [
         "शेयर किया लिंक नहीं मिला"
+      ],
+      "Shared with me": [
+        "मेरे साथ साझा किया हुआ"
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "हस्ताक्षर नेटवर्क में गड़बड़ की वजह से सत्यापित नहीं हो सका, बाद में वापस कोशिश करें।"
@@ -4327,6 +4424,12 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "ऐसी फाइलें हैं जिन्हें अभी भी स्थानांतरित करने की आवश्यकता है। ट्रांसफर मैनेजर को बंद करने से सभी ऑपरेशन खत्म हो जाएंगे।"
       ],
+      "There is nothing to see here": [
+        "यहां देखने के लिए कुछ नहीं है"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "यह कार्रवाई लिंक मिटा देगी और सभी उपयोगकर्ताओं की पहुंच रद्द कर देगी।"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "यह पता अक्षम है। इस पते पर भेजने में सक्षम होने के लिए, मालिक को पहले पते को सक्षम करना होगा।"
       ],
@@ -4390,6 +4493,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "आपकी सुरक्षा के लिए, ${ DRIVE_APP_NAME } फ़ाइलों को स्कैन करके दुर्भावत फ़ाइलों को रोक सकता है। फिर भी, सिर्फ भरोसेमंद लोगों से ही फ़ाइलें डाउनलोड करें।"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "इवेंट आयात करने के लिए, पहले ${ CALENDAR_APP_NAME } में एक कैलेंडर बनाएं। आयात के बाद इवेंट इधर दिखाएं जाएंगे।"
@@ -4466,6 +4572,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
+      "upgrade your storage": [
+        "स्टोरेज अपग्रेड करें"
+      ],
       "Uploaded": [
         "अपलोड किए गए"
       ],
@@ -4501,6 +4610,9 @@
       ],
       "Want to sync files faster?": [
         "फ़ाइलों को तेज़ी से समकालिक करना चाहते हैं?"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "बहुत बढ़िया! आपका स्टोरेज अब 5GB हो गया!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "हम तकनीकी समस्याओं का सामना कर रहे हैं। नई तस्वीरों को अपलोड करना अस्थायी रूप से अक्षम किया गया है।"
@@ -4565,6 +4677,9 @@
       "Yesterday": [
         "कल"
       ],
+      "you": [
+        "आप"
+      ],
       "You already have a free account": [
         "आपके पास पहले से एक निःशुल्क खाता है"
       ],
@@ -4600,6 +4715,10 @@
       "You cannot undo this action.": [
         "आप इस क्रिया को पूर्ववत नहीं कर सकते।"
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और ",
+        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और "
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
       ],
@@ -4623,6 +4742,9 @@
       ],
       "You will lose all unsaved changes.": [
         "आप सभी असहेजित परिवर्तनों को खो देंगे।"
+      ],
+      "You will not be able to join again after.": [
+        "इसके बाद आप फिर से शामिल नहीं हो पाएंगे।"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
@@ -6656,6 +6778,9 @@
       "A way to contact you": [
         "आपसे संपर्क करने का एक तरीका"
       ],
+      "Choose password": [
+        "पासवर्ड चुनें"
+      ],
       "E.g., ": [
         "जैसे, "
       ],
@@ -6715,6 +6840,9 @@
       ],
       "Select a reason": [
         "कोई कारण चुनें"
+      ],
+      "Set date": [
+        "तारीख चूनें"
       ],
       "Start typing an email address": [
         "ईमेल पता लिखना शुरू करें"
@@ -7237,6 +7365,14 @@
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर"
+      ],
+      "${ maxEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पते"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -7245,6 +7381,9 @@
       ],
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Automatic email forwarding": [
+        "स्वचालित ईमेल फॉरवर्ड"
       ],
       "Calendar sharing": [
         "कैलेंडर शेयर"

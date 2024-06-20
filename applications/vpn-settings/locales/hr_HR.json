@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate": [
+        "Aktiviraj"
+      ],
       "activate": [
         "aktiviraj"
       ],
@@ -94,9 +97,6 @@
       ],
       "Create Gateway": [
         "Stvori pristupnik"
-      ],
-      "Create user": [
-        "Stvori korisnika"
       ],
       "Create users": [
         "Stvori korisnike"
@@ -1572,14 +1572,12 @@
         "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Error": {
@@ -2297,9 +2295,6 @@
       ],
       "Open source": [
         "Otvoreni kôd"
-      ],
-      "Optional": [
-        "Neobavezno"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
@@ -3403,11 +3398,6 @@
         "Besplatno"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privatno"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Poništi"
@@ -3636,6 +3626,11 @@
         "Nadogradnja"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mjesec",
@@ -3773,6 +3768,19 @@
       ]
     },
     "Subscription reminder": {
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendar po korisniku",
+        "${ MaxCalendars } kalendara po korisniku",
+        "${ MaxCalendars } kalendara po korisniku"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-pošta po korisniku",
+        "${ maxEmails } e-pošte po korisniku",
+        "${ maxEmails } e-pošte po korisniku"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -3797,6 +3805,9 @@
       "Reactivate": [
         "Ponovo aktiviraj"
       ],
+      "Unlimited folders and labels": [
+        "Neograničen broj mapa i oznaka"
+      ],
       "Version history": [
         "Povijest verzija"
       ]
@@ -3807,6 +3818,9 @@
       ],
       "Desktop app": [
         "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -3893,9 +3907,6 @@
       ],
       "Preference saved": [
         "Postavke su spremljene"
-      ],
-      "User created": [
-        "Korisnik je stvoren"
       ],
       "User updated": [
         "Korisnik je ažuriran"
@@ -4091,6 +4102,9 @@
       ],
       "Close": [
         "Zatvori"
+      ],
+      "Confirm": [
+        "Potvrdi"
       ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"

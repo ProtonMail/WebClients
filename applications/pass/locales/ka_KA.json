@@ -518,6 +518,9 @@
       "This account is vulnerable, visit the service and change your password.": [
         "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
       ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "ეს სერვისი გთავაზობთ 2FA-ს. ჩართეთ ის დამატებითი ანგარიშის უსაფრთხოებისთვის."
+      ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "თქვენი ელფოსტის მისამართები, სულ ცოტა, 1 მონაცემების გაჟონვაში გამოჩნდა."
       ]
@@ -743,6 +746,9 @@
       ],
       "The file you are trying to import is empty": [
         "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
+      ],
+      "The session has expired. Please sign in again.": [
+        "სესიას დრო გაუვიდა. თავიდან შედით."
       ],
       "Too many failed attempts. Please sign in again.": [
         "მეტისმეტად ბევრი ჩავარდნილი მცდელობა. თავიდან შედით."
@@ -1510,6 +1516,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "ამ ელფოსტის მისამართებისთვის მონაცემების გაჟონვისას გაფრთხილება მოგივათ."
       ],
       "You will be notified of data breaches for this email address.": [
         "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება მოგივათ."

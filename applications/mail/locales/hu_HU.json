@@ -1130,10 +1130,6 @@
       "Trust": [
         "Megbízható"
       ],
-      "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
-      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -4665,6 +4661,9 @@
     "Header": {
       "Contacts": [
         "Névjegyek"
+      ],
+      "Report an issue": [
+        "Hibabejelentés"
       ],
       "Search": [
         "Keresés"
@@ -9619,6 +9618,17 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } naptár felhasználónként",
+        "${ MaxCalendars } naptár felhasználónként"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mail cím felhasználónként",
+        "${ maxEmails } e-mail cím felhasználónként"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tárhely felhasználónként"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
@@ -9636,6 +9646,9 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders and labels": [
+        "Korlátlan mappa és címke"
       ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"

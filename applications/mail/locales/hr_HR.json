@@ -920,11 +920,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -1152,6 +1147,11 @@
       ],
       "New email": [
         "Nova e-pošta"
+      ]
+    },
+    "Assistant option": {
+      "No logs": [
+        "Bez zapisa"
       ]
     },
     "Attached ics file error": {
@@ -2721,6 +2721,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Error": {
@@ -3523,6 +3526,9 @@
     "Header": {
       "Contacts": [
         "Kontakti"
+      ],
+      "Report an issue": [
+        "Prijavite problem"
       ],
       "Search": [
         "Pretraga"
@@ -6512,6 +6518,11 @@
         "Nadogradnja"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mjesec",
@@ -6642,6 +6653,19 @@
       ]
     },
     "Subscription reminder": {
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendar po korisniku",
+        "${ MaxCalendars } kalendara po korisniku",
+        "${ MaxCalendars } kalendara po korisniku"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-pošta po korisniku",
+        "${ maxEmails } e-pošte po korisniku",
+        "${ maxEmails } e-pošte po korisniku"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -6654,6 +6678,9 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
+      "Unlimited folders and labels": [
+        "Neograničen broj mapa i oznaka"
+      ],
       "Version history": [
         "Povijest verzija"
       ]
@@ -6664,6 +6691,9 @@
       ],
       "Desktop app": [
         "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -7169,6 +7199,9 @@
       ],
       "Deleting contacts": [
         "Brisanje kontakata"
+      ],
+      "Details": [
+        "Pojedinosti"
       ],
       "Downgrade account": [
         "Smanjite svoj plan"
