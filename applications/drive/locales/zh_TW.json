@@ -428,7 +428,7 @@
         "瞭解詳情"
       ],
       "Let's talk": [
-        "讓我們來聊聊！"
+        "我們一起聊聊！"
       ],
       "Load": [
         "載入"
@@ -522,6 +522,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -866,7 +869,7 @@
         "查看帳單"
       ],
       "What do I get?": [
-        "我的方案服務內容："
+        "我的專屬服務方案："
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
@@ -4209,7 +4212,7 @@
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "若您取消，您的${ planTitle }訂購授權將會於${ expiryDate }到期"
+        "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -4713,7 +4716,7 @@
         "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
-        "每月自動續訂"
+        "每月自動續購授權"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -7183,9 +7186,6 @@
       "File removed": [
         "檔案已移除"
       ],
-      "Invitation email was sent again": [
-        "邀請函電子郵件已重新寄件"
-      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
@@ -8265,6 +8265,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "每位使用者${ MaxCalendars }個行事曆"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 個自訂電郵網域"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } 組電郵位址/每位使用者"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
@@ -8279,6 +8291,9 @@
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -8315,6 +8330,9 @@
       ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders and labels": [
+        "無限的資料夾 / 標籤"
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"

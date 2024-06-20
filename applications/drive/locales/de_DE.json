@@ -4677,6 +4677,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Die Vorschau von Dokumenten wird noch nicht unterstützt. Bitte öffne das Dokument, um es anzusehen."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Frühere Versionen werden für ${ retentionLabel } aufbewahrt."
       ],
@@ -4691,6 +4694,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Die private Suche ist aktiviert. Du kannst nun diesen Dialog schließen und nach Dateien und Ordnern suchen."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt. Bitte frage den Eigentümer, dich direkt zum Dokument einzuladen."
       ],
       "Queued": [
         "Eingereiht"
@@ -7486,9 +7492,6 @@
       "File removed": [
         "Datei entfernt"
       ],
-      "Invitation email was sent again": [
-        "Einladungs-E-Mail wurde erneut versendet"
-      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -8642,14 +8645,35 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } einschließlich Versionsverlauf"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } mit Versionsverlauf"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } und alle Premium-Produktivitätsfunktionen"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } Kalender pro Benutzer",
+        "${ MaxCalendars } Kalender pro Benutzer"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } eigene E-Mail-Domain",
+        "${ maxDomainNames } eigene E-Mail-Domains"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } E-Mail-Adresse pro Benutzer",
+        "${ maxEmails } E-Mail-Adressen pro Benutzer"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } einschließlich unbegrenzter hide-my-email-Aliasse"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } mit ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
@@ -8681,6 +8705,12 @@
       "10 email addresses": [
         "10 E-Mail-Adressen"
       ],
+      "20 email addresses per user": [
+        "20 E-Mail-Adressen pro Benutzer"
+      ],
+      "25 calendars per user": [
+        "25 Kalender pro Benutzer"
+      ],
       "6 users": [
         "6 Benutzer"
       ],
@@ -8692,6 +8722,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
+      ],
+      "Automatic email forwarding": [
+        "Automatische E-Mail-Weiterleitung"
       ],
       "Back up photos from your devices": [
         "Sichere Fotos von deinen Geräten"
@@ -8728,6 +8761,9 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Wenn du die Grenzen des kostenlosen Abonnements überschreitest, wenn dein ${ planName }-Abonnement ausläuft, kannst du Folgendes nicht mehr tun:"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
       ],
       "Learn more about our impact": [
         "Erfahre mehr über unsere Wirkung"
@@ -8767,6 +8803,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Entsperren des Internetzugangs im Iran"
+      ],
+      "Unlimited folders and labels": [
+        "Unbegrenzte Anzahl an Ordnern und Kategorien"
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"

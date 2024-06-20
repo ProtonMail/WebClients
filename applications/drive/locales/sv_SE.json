@@ -4691,6 +4691,9 @@
       "Preview for this file type is not supported": [
         "Förhandsgranskning för denna filtyp stöds inte"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Förhandsgranskning av dokument stöds inte ännu. Öppna dokumentet för att visa det."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Tidigare versioner behålls i ${ retentionLabel }"
       ],
@@ -4705,6 +4708,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig delning av dokument stöds ännu inte. Be ägaren att bjuda in dig direkt till dokumentet."
       ],
       "Queued": [
         "Köad"
@@ -7462,6 +7468,9 @@
       "External invitation removed from the share": [
         "Extern inbjudan borttagen från delningen"
       ],
+      "External invitation's email was sent again": [
+        "Extern e-postinbjudan skickades igen"
+      ],
       "Failed to accept share invitation": [
         "Misslyckades att acceptera delningsinbjudan"
       ],
@@ -7496,7 +7505,7 @@
       "File removed": [
         "Fil borttagen"
       ],
-      "Invitation email was sent again": [
+      "Invitation's email was sent again": [
         "E-postinbjudan skickades igen"
       ],
       "Link copied to clipboard": [

@@ -552,6 +552,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otevřít v ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -958,10 +961,10 @@
         "${ price } za uživatele"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } místo asistenta psaní",
-        "${ seats } místa asistenta psaní",
-        "${ seats } míst asistenta psaní",
-        "${ seats } míst asistenta psaní"
+        "${ seats } licence asistenta psaní",
+        "${ seats } licence asistenta psaní",
+        "${ seats } licencí asistenta psaní",
+        "${ seats } licencí asistenta psaní"
       ],
       "${ users } user": [
         "${ users } uživatel",
@@ -1067,7 +1070,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Přístup k blokovanému obsahu a soukromé procházení webu. Zahrnuje 3000+ serverů v 65+ zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrent a další funkce."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
@@ -7667,9 +7670,6 @@
       "File removed": [
         "Soubor odebrán"
       ],
-      "Invitation email was sent again": [
-        "E-mail s pozvánkou byl znovu odeslán"
-      ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
@@ -8894,8 +8894,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendář na uživatele",
+        "${ MaxCalendars } kalendáře na uživatele",
+        "${ MaxCalendars } kalendářů na uživatele",
+        "${ MaxCalendars } kalendářů na uživatele"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } vlastní e-mailová doména",
+        "${ maxDomainNames } vlastní e-mailové domény",
+        "${ maxDomainNames } vlastních e-mailových domén",
+        "${ maxDomainNames } vlastních e-mailových domén"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mailová adresa na uživatele",
+        "${ maxEmails } e-mailové adresy na uživatele",
+        "${ maxEmails } e-mailových adres na uživatele",
+        "${ maxEmails } e-mailových adres na uživatele"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostoru na uživatele"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného prostoru"
@@ -8927,6 +8948,12 @@
       "10 email addresses": [
         "10 e-mailových adres"
       ],
+      "20 email addresses per user": [
+        "20 e-mailových adres na uživatele"
+      ],
+      "25 calendars per user": [
+        "25 kalendářů na uživatele"
+      ],
       "6 users": [
         "6 uživatelů"
       ],
@@ -8938,6 +8965,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
+      "Automatic email forwarding": [
+        "Automatické přesměrování e-mailů"
       ],
       "Back up photos from your devices": [
         "Zálohovat fotografie ze svých zařízení"
@@ -9013,6 +9043,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Odblokování internetového přístupu v Íránu"
+      ],
+      "Unlimited folders and labels": [
+        "Neomezený počet složek a štítků"
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"

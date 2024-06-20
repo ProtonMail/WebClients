@@ -4683,6 +4683,9 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Forhåndsvisning af dokumenter understøttes ikke endnu. Åbn dokumentet for at se det."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Tidligere versioner gemmes i ${ retentionLabel }"
       ],
@@ -4697,6 +4700,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søgning aktiveret. Du kan nu lukke dialogen og søger efter filer og mapper."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig deling af dokumenter understøttes ikke endnu. Bed ejeren om at invitere dig direkte til dokumentet."
       ],
       "Queued": [
         "Sat i kø"
@@ -7401,6 +7407,9 @@
       "External invitation removed from the share": [
         "Ekstern invitation er fjernet fra delingen"
       ],
+      "External invitation's email was sent again": [
+        "E-mail med ekstern invitation blev sendt igen"
+      ],
       "Failed to accept share invitation": [
         "Kunne ikke acceptere invitation til at dele"
       ],
@@ -7435,8 +7444,8 @@
       "File removed": [
         "Fil fjernet"
       ],
-      "Invitation email was sent again": [
-        "Invitationsmail blev sendt igen"
+      "Invitation's email was sent again": [
+        "E-mailen med invitationen blev sendt igen"
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"

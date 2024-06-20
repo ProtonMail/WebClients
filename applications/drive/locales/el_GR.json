@@ -546,6 +546,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Άνοιγμα σε ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -7417,9 +7420,6 @@
       "File removed": [
         "Το αρχείο αφαιρέθηκε"
       ],
-      "Invitation email was sent again": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης στάλθηκε ξανά"
-      ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
@@ -8576,8 +8576,23 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } ημερολόγιο ανά χρήστη",
+        "${ MaxCalendars } ημερολόγια ανά χρήστη"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ maxDomainNames } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ maxEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } συμπεριλαμβανομένων απεριόριστων hide-my-email ψευδώνυμων"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
@@ -8609,6 +8624,12 @@
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "20 email addresses per user": [
+        "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "25 calendars per user": [
+        "25 ημερολόγια ανά χρήστη"
+      ],
       "6 users": [
         "6 χρήστες"
       ],
@@ -8620,6 +8641,12 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+      ],
+      "All you need for your business": [
+        "Όλα όσα χρειάζεστε για την επιχείρησή σας"
+      ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Back up photos from your devices": [
         "Δημιουργία αντιγράφων ασφαλείας φωτογραφιών από τις συσκευές σας"
@@ -8656,6 +8683,9 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Εάν υπερβείτε τα όρια του δωρεάν προγράμματος όταν λήξει η συνδρομή σας ${ planName }, δε θα μπορείτε να:"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
       ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
@@ -8695,6 +8725,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
+      "Unlimited folders and labels": [
+        "Απεριόριστοι φάκελοι και ετικέτες"
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"

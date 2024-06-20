@@ -4169,7 +4169,7 @@
         "S'està descarregant"
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Actualment, no s'admet la descàrrega de fitxers ${ DOCS_APP_NAME } de ${ DRIVE_APP_NAME }; aquests no s'inclouran en la descàrrega."
+        "Actualment, no s'admet la descàrrega de fitxers de ${ DOCS_APP_NAME } de ${ DRIVE_APP_NAME }; aquests no s'inclouran en la descàrrega."
       ],
       "Downloading all encrypted files": [
         "S'estan descarregant tots els fitxers xifrats"
@@ -4305,7 +4305,7 @@
         "Les carpetes que sincronitzeu des del vostre ordinador apareixeran aquí."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Per a obtenir els millors resultats, eviteu activitats intensives que consumeixin molta memòria, com l'streaming o dividiu la càrrega en lots més petits."
+        "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
       "from the version history?": [
         "de l'historial de versions?"
@@ -4620,7 +4620,7 @@
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
       "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Exporteu-los directament des de l'aplicació ${ DOCS_APP_NAME } si vol descarregar-los."
+        "Exporteu-los directament des de l'aplicació ${ DOCS_APP_NAME } si voleu descarregar-los."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
@@ -7435,8 +7435,8 @@
       "File removed": [
         "S'ha esborrat el fitxer."
       ],
-      "Invitation email was sent again": [
-        "El correu electrònic d'invitació s'ha tornat a enviar"
+      "Invitation's email was sent again": [
+        "S'ha tornat a enviar el correu electrònic de la invitació"
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -7561,7 +7561,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
+        "Configureu la vostra organització, enllaceu el vostre nom de domini i creeu comptes per assegurar-vos que tots els membres de l'organització estan protegits."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
@@ -8594,8 +8594,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } amb reenviament de correu automàtic"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendari per usuari",
+        "${ MaxCalendars } calendaris per usuari"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domini de correu electrònic personalitzat",
+        "${ maxDomainNames } dominis de correu electrònic personalitzats"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } adreça de correu electrònic per usuari",
+        "${ maxEmails } adreces de correu electrònic per usuari"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } inclosos àlies il·limitats de hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } amb ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'emmagatzematge total"
@@ -8627,6 +8648,12 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "20 email addresses per user": [
+        "20 adreces de correu electrònic per usuari"
+      ],
+      "25 calendars per user": [
+        "25 calendaris per usuari"
+      ],
       "6 users": [
         "6 usuaris"
       ],
@@ -8639,11 +8666,20 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Un cop caduqui la vostra subscripció a ${ planName }, baixareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
+      "All you need for your business": [
+        "Tot el que necessiteu per al vostre negoci"
+      ],
+      "Automatic email forwarding": [
+        "Reenviament automàtic de correu"
+      ],
       "Back up photos from your devices": [
         "Feu una còpia de seguretat de les fotos dels vostres dispositius."
       ],
       "Calendar sharing": [
         "Compartició de calendari"
+      ],
+      "Catch-all email address": [
+        "Adreça de correu electrònic d'arreplega"
       ],
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
@@ -8657,8 +8693,14 @@
       "Early access to new apps and features": [
         "Accés anticipat a noves aplicacions i característiques"
       ],
+      "Email productivity features": [
+        "Característiques de productivitat de correu electrònic"
+      ],
       "Extra storage and bonuses": [
         "Emmagatzematge addicional i bonificacions"
+      ],
+      "Extra storage and users": [
+        "Emmagatzematge i bonificacions addicionals"
       ],
       "Helping activists in Hong Kong": [
         "Ajuda per als activistes a Hong Kong"
@@ -8675,8 +8717,14 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Si supereu els límits del pla gratuït quan caduqui la vostra subscripció a ${ planName }, no podreu:"
       ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
+      ],
+      "Make your business stand out": [
+        "Feu que el vostre negoci destaqui"
       ],
       "Manage your calendar": [
         "Gestioneu el calendari"
@@ -8696,11 +8744,17 @@
       "Priority support": [
         "Suport prioritari"
       ],
+      "Productivity features": [
+        "Característiques de productivitat"
+      ],
       "Read the story": [
         "Llegiu la història"
       ],
       "Receive new emails": [
         "Rebeu nous correus electrònics"
+      ],
+      "See your colleagues’ availability": [
+        "Consulteu la disponibilitat dels vostres companys"
       ],
       "Send emails with attachments": [
         "Envieu correus electrònics amb adjunts"
@@ -8713,6 +8767,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Desbloqueig de l'accés a Internet a l'Iran"
+      ],
+      "Unlimited folders and labels": [
+        "Carpetes i etiquetes il·limitades"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"

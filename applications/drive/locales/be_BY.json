@@ -966,8 +966,8 @@
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
         "${ seats } ліцэнзіі памочніка ў напісанні",
-        "${ seats }ліцэнзій памочніка ў напісанні",
-        "${ seats }ліцэнзій памочніка ў напісанні"
+        "${ seats } ліцэнзій памочніка ў напісанні",
+        "${ seats } ліцэнзій памочніка ў напісанні"
       ],
       "${ users } user": [
         "${ users } карыстальнік",
@@ -4837,6 +4837,9 @@
       "Preview for this file type is not supported": [
         "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Папярэдні прагляд дакументаў пакуль не падтрымліваецца. Адкрыйце дакумент, каб паглядзець яго."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Папярэднія версіі пакідаюцца для ${ retentionLabel }"
       ],
@@ -4851,6 +4854,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Публічнае абагульванне дакументаў пакуль не падтрымліваецца. Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
       ],
       "Queued": [
         "У чарзе"
@@ -7700,6 +7706,9 @@
       "External invitation removed from the share": [
         "Знешнія запрашэнні выдалены з абагульвання"
       ],
+      "External invitation's email was sent again": [
+        "Знешні запрашальны ліст быў адпраўлены паўторна"
+      ],
       "Failed to accept share invitation": [
         "Не ўдалося прыняць абагуленае запрашэнне"
       ],
@@ -7736,8 +7745,8 @@
       "File removed": [
         "Файл выдалены"
       ],
-      "Invitation email was sent again": [
-        "Запрашальны ліст быў адпраўлены яшчэ раз"
+      "Invitation's email was sent again": [
+        "Запрашальны ліст быў адпраўлены паўторна"
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
@@ -8954,6 +8963,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } з абагульваннем календара і даступнасцю"
+      ],
       "${ dayDiff } day left": [
         "Застаўся ${ dayDiff } дзень",
         "Засталося ${ dayDiff } дні",
@@ -8963,6 +8975,9 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } з гісторыяй версій"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } і ўсе прэміяльныя функцыі прадукцыйнасці"
       ],
@@ -8971,6 +8986,9 @@
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з аўтаматычным перасыланнем лістоў"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } каляндар на карыстальніка",
@@ -8993,6 +9011,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } з ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
       ],
@@ -9004,6 +9025,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай і арганізаванай у сваёй працы з доступам да ўсіх праграм ${ BRAND_NAME } і іх прэміяльных функцый."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай, арганізаванай і кантраляваць сваю паштовую скрыню, расклад і іншыя рэчы."
@@ -9020,14 +9044,26 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } для вашых файлаў і фатаграфій. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } на карыстальніка для лістоў, далучэнняў, падзей, пароляў і файлаў. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } на карыстальніка для лістоў, далучэнняў, падзей, файлаў і пароляў. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Праграма ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } з доступам да ўсіх высакахуткасных сервераў у ${ vpnCountries } краінах"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } з блакіроўкай шкодных праграм і рэкламы"
+      ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
+      ],
+      "20 email addresses per user": [
+        "20 адрасоў электроннай пошты на карыстальніка"
       ],
       "25 calendars per user": [
         "25 календароў на карыстальніка"
@@ -9040,6 +9076,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
@@ -9085,6 +9124,9 @@
       ],
       "Extra storage and bonuses": [
         "Дадатковае сховішча і бонусы"
+      ],
+      "Extra storage and users": [
+        "Дадатковае сховішча і карыстальнікі"
       ],
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
@@ -9136,6 +9178,9 @@
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
+      ],
+      "Productivity features": [
+        "Функцыі прадукцыйнасці"
       ],
       "Read the story": [
         "Прачытайце гісторыю"
@@ -9190,6 +9235,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
